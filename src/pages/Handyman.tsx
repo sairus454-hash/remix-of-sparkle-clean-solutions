@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
 import HandymanPriceCalculator from '@/components/HandymanPriceCalculator';
+import HandymanSplash from '@/components/HandymanSplash';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Wrench, Hammer, Plug, Droplet, PaintBucket, DoorOpen, 
@@ -13,6 +15,11 @@ import handyman3 from '@/assets/handyman-3.jpg';
 
 const Handyman = () => {
   const { t } = useLanguage();
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
 
   const services = [
     { icon: Plug, name: t.handyman.electrical, desc: t.handyman.electricalDesc },
@@ -31,6 +38,8 @@ const Handyman = () => {
 
   return (
     <Layout>
+      {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
+      
       {/* Hero Section with animated title */}
       <section className="py-20 bg-gradient-section overflow-hidden">
         <div className="container mx-auto px-4">
