@@ -75,49 +75,51 @@ const Header = () => {
           </nav>
 
           {/* 24/7 Badge & Language Switcher & Phone & Mobile Menu Button */}
-          <div className="flex items-center gap-3">
-            {/* 24/7 Live Badge */}
-            <div className="flex items-center gap-2 bg-gradient-hero px-3 py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-              <div className="relative">
-                <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-ping absolute" />
-                <div className="w-2.5 h-2.5 bg-green-400 rounded-full" />
+          <div className="flex flex-col items-end gap-1">
+            <div className="flex items-center gap-3">
+              {/* 24/7 Live Badge */}
+              <div className="flex items-center gap-2 bg-gradient-hero px-3 py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                <div className="relative">
+                  <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-ping absolute" />
+                  <div className="w-2.5 h-2.5 bg-green-400 rounded-full" />
+                </div>
+                <span className="text-primary-foreground font-bold text-sm">24/7</span>
               </div>
-              <span className="text-primary-foreground font-bold text-sm">24/7</span>
+
+              <div className="flex items-center bg-muted rounded-lg p-1">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => setLanguage(lang.code)}
+                    className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${
+                      language === lang.code
+                        ? 'bg-primary text-primary-foreground'
+                        : 'text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+
+              <Button
+                variant="ghost"
+                size="icon"
+                className="lg:hidden"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </Button>
             </div>
 
-            <div className="flex items-center bg-muted rounded-lg p-1">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code)}
-                  className={`px-2 py-1 text-xs font-medium rounded-md transition-colors ${
-                    language === lang.code
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Phone Number */}
+            {/* Phone Number - Below language panel */}
             <a 
               href="tel:+48575211401" 
-              className="hidden sm:flex items-center gap-2 text-primary font-bold text-lg hover:text-fresh transition-colors"
+              className="flex items-center gap-2 text-primary font-bold text-lg hover:text-fresh transition-colors"
             >
               <Phone className="w-5 h-5" />
               <span>+48 575 211 401</span>
             </a>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
           </div>
         </div>
 
