@@ -1,0 +1,335 @@
+import { useState } from 'react';
+import { useLanguage } from '@/i18n/LanguageContext';
+import Layout from '@/components/Layout';
+import ContactForm from '@/components/ContactForm';
+import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2 } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
+import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
+import autoCleaning3 from '@/assets/auto-cleaning-3.jpg';
+
+interface AutoPriceItem {
+  id: string;
+  name: string;
+  price: number;
+}
+
+interface SelectedAutoItem {
+  item: AutoPriceItem;
+  quantity: number;
+}
+
+const Auto = () => {
+  const { t } = useLanguage();
+  const [selectedItems, setSelectedItems] = useState<SelectedAutoItem[]>([]);
+
+  const autoPrices: AutoPriceItem[] = [
+    { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450 },
+    { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80 },
+    { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300 },
+    { id: 'autoPlastics', name: t.prices.items.autoPlastics, price: 70 },
+    { id: 'autoCeiling', name: t.prices.items.autoCeiling, price: 100 },
+    { id: 'autoFloor', name: t.prices.items.autoFloor, price: 100 },
+    { id: 'autoTrunk', name: t.prices.items.autoTrunk, price: 80 },
+    { id: 'autoOzone', name: t.prices.items.autoOzone, price: 100 },
+  ];
+
+  const addItem = (item: AutoPriceItem) => {
+    const existing = selectedItems.find((s) => s.item.id === item.id);
+    if (existing) {
+      setSelectedItems(
+        selectedItems.map((s) =>
+          s.item.id === item.id ? { ...s, quantity: s.quantity + 1 } : s
+        )
+      );
+    } else {
+      setSelectedItems([...selectedItems, { item, quantity: 1 }]);
+    }
+  };
+
+  const updateQuantity = (itemId: string, newQuantity: number) => {
+    if (newQuantity <= 0) {
+      removeItem(itemId);
+    } else {
+      setSelectedItems(
+        selectedItems.map((s) =>
+          s.item.id === itemId ? { ...s, quantity: newQuantity } : s
+        )
+      );
+    }
+  };
+
+  const removeItem = (itemId: string) => {
+    setSelectedItems(selectedItems.filter((s) => s.item.id !== itemId));
+  };
+
+  const calculateTotal = () => {
+    return selectedItems.reduce((sum, s) => sum + s.item.price * s.quantity, 0);
+  };
+
+  const clearAll = () => {
+    setSelectedItems([]);
+  };
+
+  const services = [
+    { icon: Car, title: t.auto.interior, description: t.auto.interiorDesc },
+    { icon: Armchair, title: t.auto.leather, description: t.auto.leatherDesc },
+    { icon: Layers, title: t.auto.carpet, description: t.auto.carpetDesc },
+    { icon: Sparkles, title: t.auto.detailing, description: t.auto.detailingDesc },
+  ];
+
+  const galleryImages = [
+    { src: autoCleaning1, alt: 'Чистка сидений автомобиля' },
+    { src: autoCleaning2, alt: 'Паровая чистка салона' },
+    { src: autoCleaning3, alt: 'Чистка ковролина в авто' },
+  ];
+
+  return (
+    <Layout>
+      {/* Hero */}
+      <section className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Live Car Icon */}
+            <div className="flex justify-center mb-6 animate-fade-up">
+              <div className="relative">
+                <div className="w-20 h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                  <Car className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                </div>
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full animate-ping" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
+              </div>
+            </div>
+            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+              {t.auto.title}
+            </h1>
+            <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
+              {t.auto.subtitle}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="py-16 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {galleryImages.map((image, index) => (
+              <div 
+                key={index} 
+                className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-up bg-gradient-hero p-1"
+                style={{ animationDelay: `${index * 0.1}s`, animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
+              >
+                <div className="relative rounded-xl overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                    style={{ animation: `slowZoom ${18 + index * 2}s ease-in-out infinite alternate` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <div 
+                key={index} 
+                className="group flex gap-6 p-6 rounded-2xl bg-card border border-border hover:shadow-card-hover transition-all duration-300 animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="w-16 h-16 rounded-xl bg-gradient-hero flex items-center justify-center flex-shrink-0 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                  <service.icon className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-2">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Price List & Calculator */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+              {t.prices.autoCleaning}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Price List */}
+            <Card className="shadow-card animate-fade-up">
+              <CardHeader className="border-b border-border">
+                <CardTitle className="font-serif text-xl">{t.prices.autoCleaning}</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-1">
+                  {autoPrices.map((item) => (
+                    <div 
+                      key={item.id}
+                      className="flex items-center justify-between py-4 border-b border-border last:border-0 hover:bg-accent/30 transition-colors px-4 -mx-4 rounded-lg"
+                    >
+                      <span className="font-medium text-foreground">{item.name}</span>
+                      <span className="text-primary font-semibold">
+                        {t.prices.from} {item.price} {t.prices.currency}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Calculator */}
+            <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
+              <CardHeader className="border-b border-border">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
+                    <Calculator className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <CardTitle className="font-serif text-xl">{t.calculator.title}</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-6">
+                {/* Available Items */}
+                <div className="mb-6">
+                  <Label className="text-sm font-medium text-muted-foreground mb-3 block">
+                    {t.calculator.selectItems}
+                  </Label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {autoPrices.map((item) => (
+                      <Button
+                        key={item.id}
+                        variant="outline"
+                        size="sm"
+                        className="justify-start text-left h-auto py-2 px-3"
+                        onClick={() => addItem(item)}
+                      >
+                        <Plus className="w-4 h-4 mr-2 flex-shrink-0" />
+                        <span className="truncate">{item.name}</span>
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Selected Items */}
+                {selectedItems.length > 0 && (
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center justify-between">
+                      <Label className="text-sm font-medium text-muted-foreground">
+                        {t.calculator.selectedItems}
+                      </Label>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={clearAll}
+                        className="text-destructive hover:text-destructive h-auto py-1"
+                      >
+                        <Trash2 className="w-4 h-4 mr-1" />
+                        {t.calculator.clear}
+                      </Button>
+                    </div>
+
+                    <div className="space-y-2">
+                      {selectedItems.map((selected) => (
+                        <div
+                          key={selected.item.id}
+                          className="flex items-center justify-between p-3 bg-accent/30 rounded-lg"
+                        >
+                          <div className="flex-1 min-w-0">
+                            <span className="font-medium text-foreground truncate block">
+                              {selected.item.name}
+                            </span>
+                            <span className="text-sm text-muted-foreground">
+                              {t.prices.from} {selected.item.price} {t.prices.currency}
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-2 ml-4">
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="h-8 w-8"
+                              onClick={() => updateQuantity(selected.item.id, selected.quantity - 1)}
+                            >
+                              <Minus className="w-4 h-4" />
+                            </Button>
+                            <Input
+                              type="number"
+                              min="1"
+                              value={selected.quantity}
+                              onChange={(e) => updateQuantity(selected.item.id, parseInt(e.target.value) || 0)}
+                              className="w-16 h-8 text-center"
+                            />
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              className="h-8 w-8"
+                              onClick={() => updateQuantity(selected.item.id, selected.quantity + 1)}
+                            >
+                              <Plus className="w-4 h-4" />
+                            </Button>
+                          </div>
+
+                          <div className="w-24 text-right ml-4">
+                            <span className="font-semibold text-primary">
+                              {selected.item.price * selected.quantity} {t.prices.currency}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Total */}
+                <div className="pt-4 border-t border-border">
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-medium">{t.calculator.total}</span>
+                    <span className="text-2xl font-bold text-primary">
+                      {t.prices.from} {calculateTotal()} {t.prices.currency}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    {t.calculator.note}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                {t.form.title}
+              </h2>
+            </div>
+            <div className="bg-gradient-card p-8 rounded-2xl shadow-card border border-border">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Auto;
