@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
 import OzonePriceCalculator from '@/components/OzonePriceCalculator';
+import OzoneSplash from '@/components/OzoneSplash';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
@@ -9,6 +11,11 @@ import ozoneOffice from '@/assets/ozone-office.jpg';
 
 const Ozone = () => {
   const { t } = useLanguage();
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
 
   const benefits = [
     t.ozone.benefit1,
@@ -32,6 +39,8 @@ const Ozone = () => {
 
   return (
     <Layout>
+      {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}
+      
       {/* Hero */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
