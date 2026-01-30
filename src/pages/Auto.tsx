@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
+import AutoSplash from '@/components/AutoSplash';
 import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -25,6 +26,11 @@ interface SelectedAutoItem {
 const Auto = () => {
   const { t } = useLanguage();
   const [selectedItems, setSelectedItems] = useState<SelectedAutoItem[]>([]);
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
 
   const autoPrices: AutoPriceItem[] = [
     { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450 },
@@ -89,6 +95,8 @@ const Auto = () => {
 
   return (
     <Layout>
+      {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
+      
       {/* Hero */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
