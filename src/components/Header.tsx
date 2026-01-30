@@ -78,7 +78,7 @@ const Header = () => {
           <div className="flex flex-col items-end gap-1">
             <div className="flex items-center gap-3">
               {/* 24/7 Live Badge */}
-              <div className="flex items-center gap-2 bg-gradient-hero px-3 py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+              <div className="flex items-center gap-2 bg-gradient-hero px-3 py-1.5 rounded-full shadow-glow mt-2" style={{ animation: 'float 3s ease-in-out infinite' }}>
                 <div className="relative">
                   <div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-ping absolute" />
                   <div className="w-2.5 h-2.5 bg-green-400 rounded-full" />
