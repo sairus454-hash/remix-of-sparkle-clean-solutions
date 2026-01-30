@@ -13,6 +13,7 @@ import Auto from "./pages/Auto";
 import Ozone from "./pages/Ozone";
 import Reviews from "./pages/Reviews";
 import Contacts from "./pages/Contacts";
+import Handyman from "./pages/Handyman";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,8 +33,10 @@ const App = () => (
             <Route path="/equipment" element={<Equipment />} />
             <Route path="/auto" element={<Auto />} />
             <Route path="/ozone" element={<Ozone />} />
+            <Route path="/handyman" element={<Handyman />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="*" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

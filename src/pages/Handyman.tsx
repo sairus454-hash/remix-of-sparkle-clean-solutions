@@ -1,0 +1,237 @@
+import { useLanguage } from '@/i18n/LanguageContext';
+import Layout from '@/components/Layout';
+import ContactForm from '@/components/ContactForm';
+import { Card, CardContent } from '@/components/ui/card';
+import { 
+  Wrench, Hammer, Plug, Droplet, PaintBucket, DoorOpen, 
+  Lightbulb, Tv, Frame, ShowerHead, Lock, Fan
+} from 'lucide-react';
+
+const Handyman = () => {
+  const { t } = useLanguage();
+
+  const services = [
+    { icon: Plug, name: t.handyman.electrical, desc: t.handyman.electricalDesc },
+    { icon: Droplet, name: t.handyman.plumbing, desc: t.handyman.plumbingDesc },
+    { icon: Hammer, name: t.handyman.carpentry, desc: t.handyman.carpentryDesc },
+    { icon: PaintBucket, name: t.handyman.painting, desc: t.handyman.paintingDesc },
+    { icon: DoorOpen, name: t.handyman.doors, desc: t.handyman.doorsDesc },
+    { icon: Lightbulb, name: t.handyman.lighting, desc: t.handyman.lightingDesc },
+    { icon: Tv, name: t.handyman.mounting, desc: t.handyman.mountingDesc },
+    { icon: Frame, name: t.handyman.furniture, desc: t.handyman.furnitureDesc },
+    { icon: ShowerHead, name: t.handyman.bathroom, desc: t.handyman.bathroomDesc },
+    { icon: Lock, name: t.handyman.locks, desc: t.handyman.locksDesc },
+    { icon: Fan, name: t.handyman.ventilation, desc: t.handyman.ventilationDesc },
+    { icon: Wrench, name: t.handyman.other, desc: t.handyman.otherDesc },
+  ];
+
+  return (
+    <Layout>
+      {/* Hero Section with animated title */}
+      <section className="py-20 bg-gradient-section overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Animated tool icons */}
+            <div className="flex justify-center mb-8">
+              <div className="relative">
+                <div className="w-24 h-24 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow animate-float">
+                  <Wrench className="w-12 h-12 text-primary-foreground animate-pulse" />
+                </div>
+                {/* Floating small icons */}
+                <div className="absolute -top-2 -right-8 animate-bounce" style={{ animationDelay: '0.2s' }}>
+                  <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
+                    <Hammer className="w-5 h-5 text-yellow-900" />
+                  </div>
+                </div>
+                <div className="absolute -bottom-2 -left-8 animate-bounce" style={{ animationDelay: '0.5s' }}>
+                  <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
+                    <Plug className="w-5 h-5 text-yellow-900" />
+                  </div>
+                </div>
+                <div className="absolute top-1/2 -right-12 animate-bounce" style={{ animationDelay: '0.8s' }}>
+                  <div className="w-8 h-8 rounded-lg bg-yellow-300 flex items-center justify-center shadow-md">
+                    <Droplet className="w-4 h-4 text-yellow-800" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Title with yellow underline animation */}
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-up relative inline-block">
+              <span className="relative z-10">{t.handyman.title}</span>
+              <span 
+                className="absolute bottom-2 left-0 w-full h-4 bg-yellow-400/60 -z-0 rounded"
+                style={{ 
+                  animation: 'highlightExpand 1s ease-out forwards',
+                  transformOrigin: 'left'
+                }}
+              />
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground animate-fade-up max-w-2xl mx-auto" style={{ animationDelay: '0.1s' }}>
+              {t.handyman.subtitle}
+            </p>
+
+            {/* Animated badge */}
+            <div className="mt-8 inline-flex items-center gap-2 bg-yellow-400/20 border border-yellow-400/50 px-6 py-3 rounded-full animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <div className="w-3 h-3 rounded-full bg-yellow-400 animate-ping" />
+              <span className="font-medium text-foreground">{t.handyman.quickResponse}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+              <span className="relative z-10">{t.handyman.servicesTitle}</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">{t.handyman.servicesSubtitle}</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <Card 
+                key={index} 
+                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-up border-2 border-transparent hover:border-yellow-400/50"
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 rounded-xl bg-yellow-400/20 flex items-center justify-center mb-4 group-hover:bg-yellow-400/40 transition-colors group-hover:scale-110 duration-300">
+                    <service.icon className="w-7 h-7 text-yellow-600 group-hover:text-yellow-700" />
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2 group-hover:text-yellow-600 transition-colors">{service.name}</h3>
+                  <p className="text-sm text-muted-foreground">{service.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+                <span className="relative z-10">{t.handyman.whyUs}</span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { icon: '⚡', title: t.handyman.benefit1, desc: t.handyman.benefit1Desc },
+                { icon: '🛠️', title: t.handyman.benefit2, desc: t.handyman.benefit2Desc },
+                { icon: '💰', title: t.handyman.benefit3, desc: t.handyman.benefit3Desc },
+                { icon: '✅', title: t.handyman.benefit4, desc: t.handyman.benefit4Desc },
+              ].map((benefit, index) => (
+                <div 
+                  key={index}
+                  className="flex gap-4 p-6 bg-card rounded-xl shadow-card animate-fade-up hover:shadow-lg transition-shadow"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="text-4xl">{benefit.icon}</div>
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
+                    <p className="text-muted-foreground">{benefit.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+                <span className="relative z-10">{t.handyman.pricing}</span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+              </h2>
+            </div>
+
+            <Card className="shadow-card animate-fade-up border-2 border-yellow-400/30">
+              <CardContent className="p-8">
+                <div className="text-center mb-8">
+                  <div className="text-5xl font-bold text-primary mb-2">
+                    {t.prices.from} 80 {t.prices.currency}
+                  </div>
+                  <p className="text-muted-foreground">{t.handyman.perHour}</p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center py-3 border-b border-border">
+                    <span>{t.handyman.minOrder}</span>
+                    <span className="font-semibold">1 {t.handyman.hour}</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-border">
+                    <span>{t.handyman.travel}</span>
+                    <span className="font-semibold text-green-600">{t.handyman.free}</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 border-b border-border">
+                    <span>{t.handyman.materials}</span>
+                    <span className="font-semibold">{t.handyman.separate}</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3">
+                    <span>{t.handyman.warranty}</span>
+                    <span className="font-semibold">{t.handyman.warrantyValue}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+                <span className="relative z-10">{t.handyman.orderNow}</span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+              </h2>
+            </div>
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      {/* CSS for highlight animation */}
+      <style>{`
+        @keyframes highlightExpand {
+          0% {
+            transform: scaleX(0);
+          }
+          100% {
+            transform: scaleX(1);
+          }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+        }
+      `}</style>
+    </Layout>
+  );
+};
+
+export default Handyman;
