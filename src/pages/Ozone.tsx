@@ -1,6 +1,7 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
+import OzonePriceCalculator from '@/components/OzonePriceCalculator';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
@@ -134,6 +135,15 @@ const Ozone = () => {
                 <h3 className="font-medium text-foreground">{app.title}</h3>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <OzonePriceCalculator />
           </div>
         </div>
       </section>
