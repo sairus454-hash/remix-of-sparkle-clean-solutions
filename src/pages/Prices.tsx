@@ -3,61 +3,66 @@ import Layout from '@/components/Layout';
 import PriceItem from '@/components/PriceItem';
 import PriceCalculator from '@/components/PriceCalculator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, Coins, Package, Car, Wind, Armchair, BedDouble } from 'lucide-react';
+import { 
+  Home, Coins, Package, Car, Wind, Armchair, BedDouble,
+  Circle, Lamp, Sofa, LayoutGrid, Maximize2, Square,
+  Droplets, ShieldCheck, Grid3X3, Baby, Fan, CarFront, Sparkles
+} from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 
 const Prices = () => {
   const { t } = useLanguage();
 
-  const furniturePrices = [
-    { name: t.prices.items.pouf, price: 40 },
-    { name: t.prices.items.chair, price: 40 },
-    { name: t.prices.items.armchair, price: 70 },
-    { name: t.prices.items.sofa2, price: 140 },
-    { name: t.prices.items.sofa3, price: 170 },
-    { name: t.prices.items.sofaCorner, price: 200 },
-    { name: t.prices.items.sofaCornerLarge, price: 250 },
+  const furniturePrices: { name: string; price: number; icon: LucideIcon }[] = [
+    { name: t.prices.items.pouf, price: 40, icon: Circle },
+    { name: t.prices.items.chair, price: 40, icon: Lamp },
+    { name: t.prices.items.armchair, price: 70, icon: Armchair },
+    { name: t.prices.items.sofa2, price: 140, icon: Sofa },
+    { name: t.prices.items.sofa3, price: 170, icon: Sofa },
+    { name: t.prices.items.sofaCorner, price: 200, icon: LayoutGrid },
+    { name: t.prices.items.sofaCornerLarge, price: 250, icon: Maximize2 },
   ];
 
-  const leatherFurniturePrices = [
-    { name: t.prices.items.leatherPouf, price: 55 },
-    { name: t.prices.items.leatherChair, price: 50 },
-    { name: t.prices.items.leatherArmchair, price: 90 },
-    { name: t.prices.items.leatherSofa2, price: 180 },
-    { name: t.prices.items.leatherSofa3, price: 220 },
-    { name: t.prices.items.leatherSofaCorner, price: 270 },
+  const leatherFurniturePrices: { name: string; price: number; icon: LucideIcon }[] = [
+    { name: t.prices.items.leatherPouf, price: 55, icon: Circle },
+    { name: t.prices.items.leatherChair, price: 50, icon: Lamp },
+    { name: t.prices.items.leatherArmchair, price: 90, icon: Armchair },
+    { name: t.prices.items.leatherSofa2, price: 180, icon: Sofa },
+    { name: t.prices.items.leatherSofa3, price: 220, icon: Sofa },
+    { name: t.prices.items.leatherSofaCorner, price: 270, icon: LayoutGrid },
   ];
 
-  const mattressDryingPrices = [
-    { name: t.prices.items.mattressSingleDry, price: 140 },
-    { name: t.prices.items.mattressSingleDry2, price: 220 },
-    { name: t.prices.items.mattressDoubleDry, price: 180 },
-    { name: t.prices.items.mattressDoubleDry2, price: 280 },
+  const mattressDryingPrices: { name: string; price: number; icon: LucideIcon }[] = [
+    { name: t.prices.items.mattressSingleDry, price: 140, icon: BedDouble },
+    { name: t.prices.items.mattressSingleDry2, price: 220, icon: BedDouble },
+    { name: t.prices.items.mattressDoubleDry, price: 180, icon: BedDouble },
+    { name: t.prices.items.mattressDoubleDry2, price: 280, icon: BedDouble },
   ];
 
-  const autoPrices = [
-    { name: t.prices.items.autoComplex, price: 450 },
-    { name: t.prices.items.autoSeat, price: 80 },
-    { name: t.prices.items.autoSeats, price: 300 },
-    { name: t.prices.items.autoPlastics, price: 70 },
-    { name: t.prices.items.autoCeiling, price: 100 },
-    { name: t.prices.items.autoFloor, price: 100 },
-    { name: t.prices.items.autoTrunk, price: 80 },
-    { name: t.prices.items.autoOzone, price: 100 },
+  const autoPrices: { name: string; price: number; icon: LucideIcon }[] = [
+    { name: t.prices.items.autoComplex, price: 450, icon: CarFront },
+    { name: t.prices.items.autoSeat, price: 80, icon: Square },
+    { name: t.prices.items.autoSeats, price: 300, icon: LayoutGrid },
+    { name: t.prices.items.autoPlastics, price: 70, icon: Sparkles },
+    { name: t.prices.items.autoCeiling, price: 100, icon: Maximize2 },
+    { name: t.prices.items.autoFloor, price: 100, icon: Grid3X3 },
+    { name: t.prices.items.autoTrunk, price: 80, icon: Package },
+    { name: t.prices.items.autoOzone, price: 100, icon: Wind },
   ];
 
-  const ozonePrices = [
-    { name: t.prices.items.ozone1room, price: 120 },
-    { name: t.prices.items.ozone2room, price: 200 },
-    { name: t.prices.items.ozone3room, price: 300 },
-    { name: t.prices.items.ozoneOfficeSmall, price: 250 },
-    { name: t.prices.items.ozoneOfficeLarge, price: 400 },
+  const ozonePrices: { name: string; price: number; icon: LucideIcon }[] = [
+    { name: t.prices.items.ozone1room, price: 120, icon: Home },
+    { name: t.prices.items.ozone2room, price: 200, icon: Home },
+    { name: t.prices.items.ozone3room, price: 300, icon: Home },
+    { name: t.prices.items.ozoneOfficeSmall, price: 250, icon: LayoutGrid },
+    { name: t.prices.items.ozoneOfficeLarge, price: 400, icon: Maximize2 },
   ];
 
-  const otherPrices: { name: string; price: number; unit?: string }[] = [
-    { name: t.prices.items.stroller, price: 100 },
-    { name: t.prices.items.drying, price: 60 },
-    { name: t.prices.items.impregnation, price: 80 },
-    { name: t.prices.items.tileCleaning, price: 25, unit: 'm²' },
+  const otherPrices: { name: string; price: number; unit?: string; icon: LucideIcon }[] = [
+    { name: t.prices.items.stroller, price: 100, icon: Baby },
+    { name: t.prices.items.drying, price: 60, icon: Fan },
+    { name: t.prices.items.impregnation, price: 80, icon: ShieldCheck },
+    { name: t.prices.items.tileCleaning, price: 25, unit: 'm²', icon: Grid3X3 },
   ];
 
   return (
@@ -118,6 +123,7 @@ const Prices = () => {
                     price={item.price}
                     from={t.prices.from}
                     currency={t.prices.currency}
+                    icon={item.icon}
                   />
                 ))}
               </CardContent>
@@ -141,6 +147,7 @@ const Prices = () => {
                     price={item.price}
                     from={t.prices.from}
                     currency={t.prices.currency}
+                    icon={item.icon}
                   />
                 ))}
               </CardContent>
@@ -164,6 +171,7 @@ const Prices = () => {
                     price={item.price}
                     from={t.prices.from}
                     currency={t.prices.currency}
+                    icon={item.icon}
                   />
                 ))}
               </CardContent>
@@ -187,6 +195,7 @@ const Prices = () => {
                     price={item.price}
                     from={t.prices.from}
                     currency={t.prices.currency}
+                    icon={item.icon}
                   />
                 ))}
               </CardContent>
@@ -210,6 +219,7 @@ const Prices = () => {
                     price={item.price}
                     from={t.prices.from}
                     currency={t.prices.currency}
+                    icon={item.icon}
                   />
                 ))}
               </CardContent>
@@ -233,7 +243,8 @@ const Prices = () => {
                     price={item.price}
                     from={t.prices.from}
                     currency={t.prices.currency}
-                    unit={'unit' in item ? item.unit : undefined}
+                    unit={item.unit}
+                    icon={item.icon}
                   />
                 ))}
               </CardContent>
