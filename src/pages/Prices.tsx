@@ -1,7 +1,9 @@
+import { useState, useCallback } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import PriceItem from '@/components/PriceItem';
 import PriceCalculator from '@/components/PriceCalculator';
+import PriceSplash from '@/components/PriceSplash';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { 
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
@@ -12,6 +14,11 @@ import { LucideIcon } from 'lucide-react';
 
 const Prices = () => {
   const { t } = useLanguage();
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false);
+  }, []);
 
   const furniturePrices: { name: string; price: number; icon: LucideIcon }[] = [
     { name: t.prices.items.pouf, price: 40, icon: Circle },
@@ -66,193 +73,196 @@ const Prices = () => {
   ];
 
   return (
-    <Layout>
-      {/* Hero */}
-      <section className="py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Animated money icon */}
-            <div className="flex justify-center mb-6">
-              <div className="relative">
-                <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                  <Coins className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+    <>
+      {showSplash && <PriceSplash onComplete={handleSplashComplete} />}
+      <Layout>
+        {/* Hero */}
+        <section className="py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              {/* Animated money icon */}
+              <div className="flex justify-center mb-6">
+                <div className="relative">
+                  <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Coins className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-primary animate-ping" style={{ animationDelay: '0.5s' }} />
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-primary animate-ping" style={{ animationDelay: '0.5s' }} />
               </div>
+              
+              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                {t.prices.title}
+              </h1>
+              <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
+                {t.prices.subtitle}
+              </p>
             </div>
-            
-            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-              {t.prices.title}
-            </h1>
-            <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              {t.prices.subtitle}
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Price Calculator */}
-      <section className="py-12 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <PriceCalculator />
+        {/* Price Calculator */}
+        <section className="py-12 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <PriceCalculator />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Price Lists */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto space-y-8">
-            {/* Furniture */}
-            <Card className="shadow-card animate-fade-up">
-              <CardHeader className="border-b border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Home className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+        {/* Price Lists */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto space-y-8">
+              {/* Furniture */}
+              <Card className="shadow-card animate-fade-up">
+                <CardHeader className="border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Home className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <CardTitle className="font-serif text-xl">{t.prices.furniture}</CardTitle>
                   </div>
-                  <CardTitle className="font-serif text-xl">{t.prices.furniture}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-4">
-                {furniturePrices.map((item, index) => (
-                  <PriceItem
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    from={t.prices.from}
-                    currency={t.prices.currency}
-                    icon={item.icon}
-                  />
-                ))}
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  {furniturePrices.map((item, index) => (
+                    <PriceItem
+                      key={index}
+                      name={item.name}
+                      price={item.price}
+                      from={t.prices.from}
+                      currency={t.prices.currency}
+                      icon={item.icon}
+                    />
+                  ))}
+                </CardContent>
+              </Card>
 
-            {/* Leather Furniture */}
-            <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.05s' }}>
-              <CardHeader className="border-b border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Armchair className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              {/* Leather Furniture */}
+              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.05s' }}>
+                <CardHeader className="border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Armchair className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <CardTitle className="font-serif text-xl">{t.prices.items.leatherFurniture}</CardTitle>
                   </div>
-                  <CardTitle className="font-serif text-xl">{t.prices.items.leatherFurniture}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-4">
-                {leatherFurniturePrices.map((item, index) => (
-                  <PriceItem
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    from={t.prices.from}
-                    currency={t.prices.currency}
-                    icon={item.icon}
-                  />
-                ))}
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  {leatherFurniturePrices.map((item, index) => (
+                    <PriceItem
+                      key={index}
+                      name={item.name}
+                      price={item.price}
+                      from={t.prices.from}
+                      currency={t.prices.currency}
+                      icon={item.icon}
+                    />
+                  ))}
+                </CardContent>
+              </Card>
 
-            {/* Mattress with Drying */}
-            <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.07s' }}>
-              <CardHeader className="border-b border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <BedDouble className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              {/* Mattress with Drying */}
+              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.07s' }}>
+                <CardHeader className="border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <BedDouble className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <CardTitle className="font-serif text-xl">{t.prices.items.mattressWithDrying}</CardTitle>
                   </div>
-                  <CardTitle className="font-serif text-xl">{t.prices.items.mattressWithDrying}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-4">
-                {mattressDryingPrices.map((item, index) => (
-                  <PriceItem
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    from={t.prices.from}
-                    currency={t.prices.currency}
-                    icon={item.icon}
-                  />
-                ))}
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  {mattressDryingPrices.map((item, index) => (
+                    <PriceItem
+                      key={index}
+                      name={item.name}
+                      price={item.price}
+                      from={t.prices.from}
+                      currency={t.prices.currency}
+                      icon={item.icon}
+                    />
+                  ))}
+                </CardContent>
+              </Card>
 
-            {/* Auto Cleaning */}
-            <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              <CardHeader className="border-b border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Car className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              {/* Auto Cleaning */}
+              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
+                <CardHeader className="border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Car className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <CardTitle className="font-serif text-xl">{t.prices.autoCleaning}</CardTitle>
                   </div>
-                  <CardTitle className="font-serif text-xl">{t.prices.autoCleaning}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-4">
-                {autoPrices.map((item, index) => (
-                  <PriceItem
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    from={t.prices.from}
-                    currency={t.prices.currency}
-                    icon={item.icon}
-                  />
-                ))}
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  {autoPrices.map((item, index) => (
+                    <PriceItem
+                      key={index}
+                      name={item.name}
+                      price={item.price}
+                      from={t.prices.from}
+                      currency={t.prices.currency}
+                      icon={item.icon}
+                    />
+                  ))}
+                </CardContent>
+              </Card>
 
-            {/* Ozonation */}
-            <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.15s' }}>
-              <CardHeader className="border-b border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Wind className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              {/* Ozonation */}
+              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.15s' }}>
+                <CardHeader className="border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Wind className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <CardTitle className="font-serif text-xl">{t.prices.ozonation}</CardTitle>
                   </div>
-                  <CardTitle className="font-serif text-xl">{t.prices.ozonation}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-4">
-                {ozonePrices.map((item, index) => (
-                  <PriceItem
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    from={t.prices.from}
-                    currency={t.prices.currency}
-                    icon={item.icon}
-                  />
-                ))}
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  {ozonePrices.map((item, index) => (
+                    <PriceItem
+                      key={index}
+                      name={item.name}
+                      price={item.price}
+                      from={t.prices.from}
+                      currency={t.prices.currency}
+                      icon={item.icon}
+                    />
+                  ))}
+                </CardContent>
+              </Card>
 
-            {/* Other */}
-            <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              <CardHeader className="border-b border-border">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Package className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              {/* Other */}
+              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
+                <CardHeader className="border-b border-border">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Package className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <CardTitle className="font-serif text-xl">{t.prices.other}</CardTitle>
                   </div>
-                  <CardTitle className="font-serif text-xl">{t.prices.other}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-4">
-                {otherPrices.map((item, index) => (
-                  <PriceItem
-                    key={index}
-                    name={item.name}
-                    price={item.price}
-                    from={t.prices.from}
-                    currency={t.prices.currency}
-                    unit={item.unit}
-                    icon={item.icon}
-                  />
-                ))}
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent className="pt-4">
+                  {otherPrices.map((item, index) => (
+                    <PriceItem
+                      key={index}
+                      name={item.name}
+                      price={item.price}
+                      from={t.prices.from}
+                      currency={t.prices.currency}
+                      unit={item.unit}
+                      icon={item.icon}
+                    />
+                  ))}
+                </CardContent>
+              </Card>
+            </div>
           </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+      </Layout>
+    </>
   );
 };
 
