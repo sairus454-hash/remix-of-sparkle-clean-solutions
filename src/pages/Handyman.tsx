@@ -71,12 +71,6 @@ const Handyman = () => {
             <p className="text-lg md:text-xl text-muted-foreground animate-fade-up max-w-2xl mx-auto" style={{ animationDelay: '0.1s' }}>
               {t.handyman.subtitle}
             </p>
-
-            {/* Animated badge */}
-            <div className="mt-8 inline-flex items-center gap-2 bg-yellow-400/20 border border-yellow-400/50 px-6 py-3 rounded-full animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <div className="w-3 h-3 rounded-full bg-yellow-400 animate-ping" />
-              <span className="font-medium text-foreground">{t.handyman.quickResponse}</span>
-            </div>
           </div>
         </div>
       </section>
