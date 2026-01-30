@@ -1,8 +1,10 @@
+import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ServiceCard from '@/components/ServiceCard';
 import ContactForm from '@/components/ContactForm';
+import WaterDropSplash from '@/components/WaterDropSplash';
 import { Button } from '@/components/ui/button';
 import { 
   Sofa, Sparkles, ArrowRight, 
@@ -12,6 +14,11 @@ import heroImage from '@/assets/hero-cleaning.jpg';
 import mattressCleaningImage from '@/assets/mattress-cleaning.jpg';
 
 const Index = () => {
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false);
+  }, []);
   const { t } = useLanguage();
 
   const services = [
@@ -28,7 +35,9 @@ const Index = () => {
   ];
 
   return (
-    <Layout>
+    <>
+      {showSplash && <WaterDropSplash onComplete={handleSplashComplete} />}
+      <Layout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center bg-gradient-section overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -208,6 +217,7 @@ const Index = () => {
         </div>
       </section>
     </Layout>
+    </>
   );
 };
 
