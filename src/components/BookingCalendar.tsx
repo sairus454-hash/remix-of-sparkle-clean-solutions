@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,8 +10,19 @@ interface BookingCalendarProps {
   onDateSelect?: (date: Date | undefined) => void;
 }
 
+const isSameDay = (date1: Date, date2: Date) => {
+  return (
+    date1.getDate() === date2.getDate() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getFullYear() === date2.getFullYear()
+  );
+};
+
 const BookingCalendar = ({ selectedDate, onDateSelect }: BookingCalendarProps) => {
   const { t } = useLanguage();
+  const [doubleClickedDate, setDoubleClickedDate] = useState<Date | null>(null);
+  const [lastClickTime, setLastClickTime] = useState<number>(0);
+  const [lastClickedDate, setLastClickedDate] = useState<Date | null>(null);
 
   // Generate busy dates (example: some random dates in the next 2 months)
   const today = new Date();
@@ -40,6 +52,23 @@ const BookingCalendar = ({ selectedDate, onDateSelect }: BookingCalendarProps) =
     return date < todayStart;
   };
 
+  const handleDayClick = (date: Date) => {
+    const now = Date.now();
+    const doubleClickThreshold = 300; // ms
+
+    if (lastClickedDate && isSameDay(lastClickedDate, date) && now - lastClickTime < doubleClickThreshold) {
+      // Double click detected
+      if (doubleClickedDate && isSameDay(doubleClickedDate, date)) {
+        setDoubleClickedDate(null); // Toggle off
+      } else {
+        setDoubleClickedDate(date);
+      }
+    }
+
+    setLastClickTime(now);
+    setLastClickedDate(date);
+  };
+
   return (
     <Card className="shadow-card animate-fade-up">
       <CardHeader className="border-b border-border">
@@ -61,15 +90,18 @@ const BookingCalendar = ({ selectedDate, onDateSelect }: BookingCalendarProps) =
           mode="single"
           selected={selectedDate}
           onSelect={onDateSelect}
+          onDayClick={handleDayClick}
           disabled={(date) => isPastDate(date) || isBusyDate(date)}
           className={cn('p-3 pointer-events-auto mx-auto')}
           modifiers={{
             busy: (date) => isBusyDate(date) && !isPastDate(date),
             available: (date) => !isBusyDate(date) && !isPastDate(date),
+            doubleClicked: (date) => doubleClickedDate !== null && isSameDay(doubleClickedDate, date),
           }}
           modifiersClassNames={{
             busy: 'bg-destructive/20 text-destructive line-through',
             available: 'bg-fresh/20 text-fresh-foreground hover:bg-fresh/40',
+            doubleClicked: 'bg-red-500 text-white shadow-[0_0_15px_5px_rgba(239,68,68,0.6)] animate-pulse',
           }}
         />
 
