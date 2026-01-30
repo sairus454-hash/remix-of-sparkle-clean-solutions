@@ -3,11 +3,17 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
 import BookingCalendar from '@/components/BookingCalendar';
+import ContactsSplash from '@/components/ContactsSplash';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 const Contacts = () => {
   const { t } = useLanguage();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
 
   const contactInfo = [
     { icon: MapPin, label: t.contacts.address, value: t.contacts.addressValue, isHours: false },
@@ -17,7 +23,9 @@ const Contacts = () => {
   ];
 
   return (
-    <Layout>
+    <>
+      {showSplash && <ContactsSplash onComplete={handleSplashComplete} />}
+      <Layout>
       {/* Hero */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
@@ -99,7 +107,8 @@ const Contacts = () => {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 
