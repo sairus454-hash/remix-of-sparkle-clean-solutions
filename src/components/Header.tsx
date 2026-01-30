@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Droplets } from 'lucide-react';
+import { Menu, X, Droplets, Phone } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Language } from '@/i18n/translations';
 import { Button } from '@/components/ui/button';
@@ -74,7 +74,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* 24/7 Badge & Language Switcher & Mobile Menu Button */}
+          {/* 24/7 Badge & Language Switcher & Phone & Mobile Menu Button */}
           <div className="flex items-center gap-3">
             {/* 24/7 Live Badge */}
             <div className="flex items-center gap-2 bg-gradient-hero px-3 py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
@@ -100,6 +100,15 @@ const Header = () => {
                 </button>
               ))}
             </div>
+
+            {/* Phone Number */}
+            <a 
+              href="tel:+48575211401" 
+              className="hidden sm:flex items-center gap-2 text-primary font-bold text-lg hover:text-fresh transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              <span>+48 575 211 401</span>
+            </a>
 
             <Button
               variant="ghost"
