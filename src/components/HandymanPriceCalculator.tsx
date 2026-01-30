@@ -26,24 +26,24 @@ const HandymanPriceCalculator = () => {
 
   const availableItems: PriceItem[] = [
     // Plumbing
-    { id: 'faucet', name: 'Wymiana/montaż kranu baterii', price: 120, icon: Droplet },
-    { id: 'siphon', name: 'Montaż/wymiana syfonu w umywalce', price: 120, icon: Droplet },
-    { id: 'sink', name: 'Montaż umywalki', price: 180, icon: Droplet },
-    { id: 'toilet', name: 'Montaż sedesu', price: 220, icon: Droplet },
-    { id: 'sewer', name: 'Czyszczenie kanalizacji', price: 400, icon: Droplet },
+    { id: 'faucet', name: t.handyman.calcItems.faucet, price: 120, icon: Droplet },
+    { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, icon: Droplet },
+    { id: 'sink', name: t.handyman.calcItems.sink, price: 180, icon: Droplet },
+    { id: 'toilet', name: t.handyman.calcItems.toilet, price: 220, icon: Droplet },
+    { id: 'sewer', name: t.handyman.calcItems.sewer, price: 400, icon: Droplet },
     // Mounting
-    { id: 'curtainRod', name: 'Montaż karniszy', price: 120, icon: Frame },
-    { id: 'shelf', name: 'Montaż/wymiana półki, lustra', price: 100, icon: Frame },
-    { id: 'pictures', name: 'Montaż zawieszenie obrazów, tablic, plansz itp.', price: 80, icon: Frame },
-    { id: 'furniture', name: 'Skręcanie mebli', price: 80, isFrom: true, icon: Wrench },
+    { id: 'curtainRod', name: t.handyman.calcItems.curtainRod, price: 120, icon: Frame },
+    { id: 'shelf', name: t.handyman.calcItems.shelf, price: 100, icon: Frame },
+    { id: 'pictures', name: t.handyman.calcItems.pictures, price: 80, icon: Frame },
+    { id: 'furniture', name: t.handyman.calcItems.furnitureAssembly, price: 80, isFrom: true, icon: Wrench },
     // Electrical
-    { id: 'bulb', name: 'Wymiana żarówki, halogenu, jarzeniówki', price: 50, icon: Lightbulb },
-    { id: 'socket', name: 'Montaż/wymiana gniazdka elektrycznego', price: 40, icon: Lightbulb },
-    { id: 'lamp', name: 'Montaż/wymiana podłączenie żyrandola lampy', price: 100, icon: Lightbulb },
-    { id: 'stove', name: 'Podłączenie płyty elektrycznej', price: 200, icon: Lightbulb },
-    { id: 'repair', name: 'Naprawa połączeń elektrycznych', price: 100, isFrom: true, icon: Lightbulb },
-    { id: 'diagnostic', name: 'Diagnostyka elektryczna', price: 350, icon: Lightbulb },
-    { id: 'switch', name: 'Montaż/wymiana przełącznika', price: 50, icon: Lightbulb },
+    { id: 'bulb', name: t.handyman.calcItems.bulb, price: 50, icon: Lightbulb },
+    { id: 'socket', name: t.handyman.calcItems.socket, price: 40, icon: Lightbulb },
+    { id: 'lamp', name: t.handyman.calcItems.lamp, price: 100, icon: Lightbulb },
+    { id: 'stove', name: t.handyman.calcItems.stove, price: 200, icon: Lightbulb },
+    { id: 'repair', name: t.handyman.calcItems.repair, price: 100, isFrom: true, icon: Lightbulb },
+    { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: 350, icon: Lightbulb },
+    { id: 'switch', name: t.handyman.calcItems.switch, price: 50, icon: Lightbulb },
   ];
 
   const addItem = (item: PriceItem) => {
@@ -117,7 +117,7 @@ const HandymanPriceCalculator = () => {
                 <div className="flex-1 min-w-0">
                   <span className="block truncate text-sm">{item.name}</span>
                   <span className="text-xs text-muted-foreground">
-                    {item.isFrom ? `${t.prices.from} ` : ''}{item.price} zł
+                    {item.isFrom ? `${t.prices.from} ` : ''}{item.price} {t.prices.currency}
                   </span>
                 </div>
                 <Plus className="w-4 h-4 ml-2 flex-shrink-0 text-yellow-600" />
@@ -159,7 +159,7 @@ const HandymanPriceCalculator = () => {
                         {selected.item.name}
                       </span>
                       <span className="text-sm text-muted-foreground">
-                        {selected.item.isFrom ? `${t.prices.from} ` : ''}{selected.item.price} zł
+                        {selected.item.isFrom ? `${t.prices.from} ` : ''}{selected.item.price} {t.prices.currency}
                       </span>
                     </div>
                   </div>
@@ -201,7 +201,7 @@ const HandymanPriceCalculator = () => {
 
                   <div className="w-24 text-right ml-4">
                     <span className="font-semibold text-yellow-600">
-                      {selected.item.price * selected.quantity} zł
+                      {selected.item.price * selected.quantity} {t.prices.currency}
                     </span>
                   </div>
                 </div>
@@ -215,14 +215,14 @@ const HandymanPriceCalculator = () => {
           <div className="flex items-center justify-between">
             <span className="text-lg font-medium">{t.calculator.total}</span>
             <span className="text-2xl font-bold text-yellow-600">
-              {selectedItems.some(s => s.item.isFrom) ? `${t.prices.from} ` : ''}{calculateTotal()} zł
+              {selectedItems.some(s => s.item.isFrom) ? `${t.prices.from} ` : ''}{calculateTotal()} {t.prices.currency}
             </span>
           </div>
           <p className="text-sm text-muted-foreground mt-2">
             {t.calculator.note}
           </p>
           <p className="text-sm text-yellow-600 font-semibold mt-2">
-            Minimalny zakup wynosi 180 zł
+            {t.handyman.minOrderNote}
           </p>
         </div>
       </CardContent>
