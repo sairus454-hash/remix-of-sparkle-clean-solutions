@@ -7,6 +7,10 @@ import {
   Wrench, Hammer, Plug, Droplet, PaintBucket, DoorOpen, 
   Lightbulb, Tv, Frame, ShowerHead, Lock, Fan
 } from 'lucide-react';
+import handyman1 from '@/assets/handyman-1.jpg';
+import handyman2 from '@/assets/handyman-2.jpg';
+import handyman3 from '@/assets/handyman-3.jpg';
+
 const Handyman = () => {
   const { t } = useLanguage();
 
@@ -101,6 +105,44 @@ const Handyman = () => {
                   <p className="text-sm text-muted-foreground">{service.desc}</p>
                 </CardContent>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Team Photos */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+              <span className="relative z-10">Nasi Fachowcy</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { img: handyman1, name: 'Marek', specialty: t.handyman.electrical },
+              { img: handyman2, name: 'Piotr', specialty: t.handyman.plumbing },
+              { img: handyman3, name: 'Tomek', specialty: t.handyman.carpentry },
+            ].map((member, index) => (
+              <div 
+                key={index}
+                className="group animate-fade-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow">
+                  <img 
+                    src={member.img} 
+                    alt={member.name}
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                    <h3 className="text-white font-bold text-xl">{member.name}</h3>
+                    <p className="text-yellow-400">{member.specialty}</p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
