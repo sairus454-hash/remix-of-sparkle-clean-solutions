@@ -1,5 +1,7 @@
+import { useState, useCallback } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import ExtractorSplash from '@/components/ExtractorSplash';
 import { Cog, Leaf, ShieldCheck, Zap, Wind, Droplets, Sparkles, Fan, FlaskConical } from 'lucide-react';
 import extractorImage from '@/assets/extractor-santoemma.jpg';
 import steamImage from '@/assets/steam-generator.jpg';
@@ -11,6 +13,11 @@ import equipmentSetImage from '@/assets/equipment-set.jpg';
 
 const Equipment = () => {
   const { t } = useLanguage();
+  const [showSplash, setShowSplash] = useState(true);
+
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false);
+  }, []);
 
   const mainFeatures = [
     {
@@ -76,116 +83,119 @@ const Equipment = () => {
   ];
 
   return (
-    <Layout>
-      {/* Hero */}
-      <section className="py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            {/* Live Extractor Icon */}
-            <div className="flex justify-center mb-6 animate-fade-up">
-              <div className="relative">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                  <Droplets className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
-                </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full animate-ping" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
-              </div>
-            </div>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-              {t.equipment.title}
-            </h1>
-            <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              {t.equipment.subtitle}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Equipment Set Photo */}
-      <section className="py-12 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-card animate-fade-up bg-gradient-hero p-1 group" style={{ animation: 'float 5s ease-in-out infinite' }}>
-            <div className="relative rounded-xl overflow-hidden">
-              <img 
-                src={equipmentSetImage} 
-                alt="Профессиональное оборудование для химчистки" 
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                style={{ animation: 'slowZoom 30s ease-in-out infinite alternate' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-fresh/15" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Features */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {mainFeatures.map((feature, index) => (
-              <div 
-                key={index} 
-                className="group p-8 rounded-2xl bg-gradient-card border border-border hover:shadow-card-hover transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                  <feature.icon className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
-                </div>
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-4">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modern Technologies with Equipment Details */}
-      <section className="py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-              {t.equipment.modern}
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              {t.equipment.modernDesc}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {equipmentItems.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {item.image && (
-                  <div className="mb-6 rounded-xl overflow-hidden bg-gradient-hero p-0.5 group/img" style={{ animation: `float ${3 + index * 0.3}s ease-in-out infinite` }}>
-                    <div className="relative rounded-lg overflow-hidden bg-muted/30">
-                      <img 
-                        src={item.image} 
-                        alt={item.title} 
-                        className="w-full h-48 object-contain transition-transform duration-700 group-hover:scale-105"
-                        style={{ animation: `slowZoom ${15 + index * 2}s ease-in-out infinite alternate` }}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-fresh/10" />
-                    </div>
+    <>
+      {showSplash && <ExtractorSplash onComplete={handleSplashComplete} />}
+      <Layout>
+        {/* Hero */}
+        <section className="py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              {/* Live Extractor Icon */}
+              <div className="flex justify-center mb-6 animate-fade-up">
+                <div className="relative">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Droplets className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                   </div>
-                )}
-                {!item.image && (
-                  <item.icon className={`w-12 h-12 ${item.color} mb-4`} />
-                )}
-                <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {item.description}
-                </p>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full animate-ping" />
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
+                </div>
               </div>
-            ))}
+              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                {t.equipment.title}
+              </h1>
+              <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
+                {t.equipment.subtitle}
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
-    </Layout>
+        </section>
+
+        {/* Equipment Set Photo */}
+        <section className="py-12 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-card animate-fade-up bg-gradient-hero p-1 group" style={{ animation: 'float 5s ease-in-out infinite' }}>
+              <div className="relative rounded-xl overflow-hidden">
+                <img 
+                  src={equipmentSetImage} 
+                  alt="Профессиональное оборудование для химчистки" 
+                  className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  style={{ animation: 'slowZoom 30s ease-in-out infinite alternate' }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-fresh/15" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Main Features */}
+        <section className="py-16 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {mainFeatures.map((feature, index) => (
+                <div 
+                  key={index} 
+                  className="group p-8 rounded-2xl bg-gradient-card border border-border hover:shadow-card-hover transition-all duration-300 animate-fade-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <feature.icon className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-4">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Modern Technologies with Equipment Details */}
+        <section className="py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                {t.equipment.modern}
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                {t.equipment.modernDesc}
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+              {equipmentItems.map((item, index) => (
+                <div 
+                  key={index} 
+                  className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {item.image && (
+                    <div className="mb-6 rounded-xl overflow-hidden bg-gradient-hero p-0.5 group/img" style={{ animation: `float ${3 + index * 0.3}s ease-in-out infinite` }}>
+                      <div className="relative rounded-lg overflow-hidden bg-muted/30">
+                        <img 
+                          src={item.image} 
+                          alt={item.title} 
+                          className="w-full h-48 object-contain transition-transform duration-700 group-hover:scale-105"
+                          style={{ animation: `slowZoom ${15 + index * 2}s ease-in-out infinite alternate` }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-fresh/10" />
+                      </div>
+                    </div>
+                  )}
+                  {!item.image && (
+                    <item.icon className={`w-12 h-12 ${item.color} mb-4`} />
+                  )}
+                  <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </Layout>
+    </>
   );
 };
 
