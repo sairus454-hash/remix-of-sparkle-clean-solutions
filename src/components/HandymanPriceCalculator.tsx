@@ -221,6 +221,9 @@ const HandymanPriceCalculator = () => {
           <p className="text-sm text-muted-foreground mt-2">
             {t.calculator.note}
           </p>
+          <p className="text-sm text-yellow-600 font-semibold mt-2">
+            Minimalny zakup wynosi 180 zł
+          </p>
         </div>
       </CardContent>
     </Card>
