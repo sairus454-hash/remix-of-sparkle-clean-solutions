@@ -1,12 +1,12 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
+import HandymanPriceCalculator from '@/components/HandymanPriceCalculator';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Wrench, Hammer, Plug, Droplet, PaintBucket, DoorOpen, 
   Lightbulb, Tv, Frame, ShowerHead, Lock, Fan
 } from 'lucide-react';
-
 const Handyman = () => {
   const { t } = useLanguage();
 
@@ -144,7 +144,7 @@ const Handyman = () => {
       {/* Pricing */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
                 <span className="relative z-10">{t.handyman.pricing}</span>
@@ -152,35 +152,7 @@ const Handyman = () => {
               </h2>
             </div>
 
-            <Card className="shadow-card animate-fade-up border-2 border-yellow-400/30">
-              <CardContent className="p-8">
-                <div className="text-center mb-8">
-                  <div className="text-5xl font-bold text-primary mb-2">
-                    {t.prices.from} 80 {t.prices.currency}
-                  </div>
-                  <p className="text-muted-foreground">{t.handyman.perHour}</p>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center py-3 border-b border-border">
-                    <span>{t.handyman.minOrder}</span>
-                    <span className="font-semibold">1 {t.handyman.hour}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-border">
-                    <span>{t.handyman.travel}</span>
-                    <span className="font-semibold text-green-600">{t.handyman.free}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3 border-b border-border">
-                    <span>{t.handyman.materials}</span>
-                    <span className="font-semibold">{t.handyman.separate}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span>{t.handyman.warranty}</span>
-                    <span className="font-semibold">{t.handyman.warrantyValue}</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <HandymanPriceCalculator />
           </div>
         </div>
       </section>
