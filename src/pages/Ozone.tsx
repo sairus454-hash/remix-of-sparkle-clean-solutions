@@ -151,7 +151,7 @@ const Ozone = () => {
       {/* Pricing */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <OzonePriceCalculator />
           </div>
         </div>

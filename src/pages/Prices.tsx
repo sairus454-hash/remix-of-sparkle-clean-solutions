@@ -104,7 +104,7 @@ const Prices = () => {
         {/* Price Calculator */}
         <section className="py-12 bg-card">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-3xl mx-auto">
               <PriceCalculator />
             </div>
           </div>
@@ -113,7 +113,7 @@ const Prices = () => {
         {/* Price Lists */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto space-y-8">
+            <div className="max-w-3xl mx-auto space-y-8">
               {/* Furniture */}
               <Card className="shadow-card animate-fade-up">
                 <CardHeader className="border-b border-border">
