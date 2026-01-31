@@ -86,7 +86,7 @@ const Header = () => {
                 <span className="text-primary-foreground font-bold text-sm">24/7</span>
               </div>
 
-              <div className="flex items-center bg-muted rounded-lg p-1">
+              <div className="flex items-center bg-muted rounded-lg p-1 mt-2">
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
