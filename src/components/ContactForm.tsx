@@ -150,7 +150,7 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
         <div className="space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.phone}</label>
           <Input
-            type="tel"
+            type="text"
             placeholder={t.form.phonePlaceholder}
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
