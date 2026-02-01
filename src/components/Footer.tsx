@@ -11,11 +11,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center">
-                <Droplets className="w-6 h-6 text-primary-foreground" />
+            <Link to="/" className="flex items-center gap-2 group">
+              <div className="relative">
+                <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                  <Droplets className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                </div>
+                {/* Живые капли */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/80 rounded-full animate-ping" />
+                <div className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-primary/70 rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
               </div>
-              <span className="font-serif text-xl font-semibold">MasterClean</span>
+              <span className="font-serif text-xl font-semibold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                MasterClean
+              </span>
             </Link>
             <p className="text-muted-foreground text-sm">{t.hero.subtitle}</p>
           </div>

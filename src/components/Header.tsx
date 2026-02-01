@@ -61,10 +61,16 @@ const Header = () => {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <div className="relative">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                  <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                </div>
+                {/* Живые капли вокруг логотипа */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/80 rounded-full animate-ping" />
+                <div className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-primary/70 rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
+                <div className="absolute top-1/2 -right-1.5 w-1 h-1 bg-fresh rounded-full animate-ping" style={{ animationDelay: '1s' }} />
               </div>
-              <span className="font-serif text-lg sm:text-xl font-semibold text-foreground hidden sm:block">
+              <span className="font-serif text-lg sm:text-xl font-semibold hidden sm:block bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
                 MasterClean
               </span>
             </Link>
