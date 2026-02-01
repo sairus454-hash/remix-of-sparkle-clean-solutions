@@ -20,7 +20,7 @@ const PriceItem = ({ name, price, from, currency, unit, icon: Icon }: PriceItemP
         )}
         <span className="font-medium text-foreground">{name}</span>
       </div>
-      <span className="text-primary font-semibold whitespace-nowrap ml-4">
+      <span className="text-blue-600 font-semibold whitespace-nowrap ml-4">
         {from} {price} {currency}{unit && ` / ${unit}`}
       </span>
     </div>
