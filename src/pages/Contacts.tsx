@@ -5,6 +5,7 @@ import ContactForm from '@/components/ContactForm';
 import BookingCalendar from '@/components/BookingCalendar';
 import ContactsSplash from '@/components/ContactsSplash';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import mastercleanLogo from '@/assets/masterclean-logo-contacts.jpg';
 
 const Contacts = () => {
   const { t } = useLanguage();
@@ -79,6 +80,17 @@ const Contacts = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+              
+              {/* MasterClean Logo */}
+              <div className="mt-8 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+                <div className="rounded-2xl overflow-hidden shadow-glow bg-gradient-hero p-1">
+                  <img 
+                    src={mastercleanLogo} 
+                    alt="MasterClean" 
+                    className="w-full h-auto rounded-xl object-cover"
+                  />
+                </div>
               </div>
             </div>
 
