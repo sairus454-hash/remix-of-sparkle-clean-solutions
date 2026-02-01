@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
 import { Calendar } from '@/components/ui/calendar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CalendarCheck } from 'lucide-react';
+import { CalendarCheck, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface BookingCalendarProps {
@@ -23,19 +24,30 @@ const BookingCalendar = ({ selectedDate, onDateSelect }: BookingCalendarProps) =
   const [doubleClickedDate, setDoubleClickedDate] = useState<Date | null>(null);
   const [lastClickTime, setLastClickTime] = useState<number>(0);
   const [lastClickedDate, setLastClickedDate] = useState<Date | null>(null);
+  const [busyDates, setBusyDates] = useState<Date[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Generate busy dates (example: some random dates in the next 2 months)
-  const today = new Date();
-  const busyDates: Date[] = [
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 8),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 12),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 15),
-    new Date(today.getFullYear(), today.getMonth() + 1, 3),
-    new Date(today.getFullYear(), today.getMonth() + 1, 7),
-    new Date(today.getFullYear(), today.getMonth() + 1, 14),
-  ];
+  useEffect(() => {
+    const fetchBusyDates = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('booking_dates')
+          .select('date')
+          .eq('is_busy', true);
+
+        if (error) throw error;
+
+        const dates = (data || []).map(d => new Date(d.date + 'T00:00:00'));
+        setBusyDates(dates);
+      } catch (error) {
+        console.error('Error fetching busy dates:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBusyDates();
+  }, []);
 
   const isBusyDate = (date: Date) => {
     return busyDates.some(
@@ -86,53 +98,61 @@ const BookingCalendar = ({ selectedDate, onDateSelect }: BookingCalendarProps) =
         </div>
       </CardHeader>
       <CardContent className="pt-6">
-        <Calendar
-          mode="single"
-          selected={selectedDate}
-          onSelect={onDateSelect}
-          onDayClick={handleDayClick}
-          disabled={(date) => isPastDate(date) || isBusyDate(date)}
-          className={cn('p-3 pointer-events-auto mx-auto')}
-          modifiers={{
-            busy: (date) => isBusyDate(date) && !isPastDate(date),
-            available: (date) => !isBusyDate(date) && !isPastDate(date),
-            doubleClicked: (date) => doubleClickedDate !== null && isSameDay(doubleClickedDate, date),
-          }}
-          modifiersClassNames={{
-            busy: 'bg-destructive/20 text-destructive line-through',
-            available: 'bg-fresh/20 text-fresh-foreground hover:bg-fresh/40',
-            doubleClicked: 'bg-red-500 text-white shadow-[0_0_15px_5px_rgba(239,68,68,0.6)] animate-pulse',
-          }}
-        />
-
-        {/* Legend */}
-        <div className="flex flex-wrap justify-center gap-4 mt-6 pt-4 border-t border-border">
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded bg-fresh/30" />
-            <span className="text-sm text-muted-foreground">{t.booking.available}</span>
+        {isLoading ? (
+          <div className="flex justify-center py-8">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-4 h-4 rounded bg-destructive/30" />
-            <span className="text-sm text-muted-foreground">{t.booking.busy}</span>
-          </div>
-        </div>
+        ) : (
+          <>
+            <Calendar
+              mode="single"
+              selected={selectedDate}
+              onSelect={onDateSelect}
+              onDayClick={handleDayClick}
+              disabled={(date) => isPastDate(date) || isBusyDate(date)}
+              className={cn('p-3 pointer-events-auto mx-auto')}
+              modifiers={{
+                busy: (date) => isBusyDate(date) && !isPastDate(date),
+                available: (date) => !isBusyDate(date) && !isPastDate(date),
+                doubleClicked: (date) => doubleClickedDate !== null && isSameDay(doubleClickedDate, date),
+              }}
+              modifiersClassNames={{
+                busy: 'bg-destructive/20 text-destructive line-through',
+                available: 'bg-fresh/20 text-fresh-foreground hover:bg-fresh/40',
+                doubleClicked: 'bg-red-500 text-white shadow-[0_0_15px_5px_rgba(239,68,68,0.6)] animate-pulse',
+              }}
+            />
 
-        {/* Selected date info */}
-        {selectedDate && (
-          <div className="mt-4 p-4 rounded-xl bg-fresh/10 border border-fresh/30">
-            <div className="flex items-center gap-2">
-              <CalendarCheck className="w-5 h-5 text-fresh" />
-              <span className="font-medium text-foreground">
-                {t.booking.selected}: {selectedDate.toLocaleDateString()}
-              </span>
+            {/* Legend */}
+            <div className="flex flex-wrap justify-center gap-4 mt-6 pt-4 border-t border-border">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded bg-fresh/30" />
+                <span className="text-sm text-muted-foreground">{t.booking.available}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded bg-destructive/30" />
+                <span className="text-sm text-muted-foreground">{t.booking.busy}</span>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground mt-2">{t.booking.contactUs}</p>
-          </div>
-        )}
 
-        <p className="text-sm text-muted-foreground mt-4 text-center">
-          {t.booking.note}
-        </p>
+            {/* Selected date info */}
+            {selectedDate && (
+              <div className="mt-4 p-4 rounded-xl bg-fresh/10 border border-fresh/30">
+                <div className="flex items-center gap-2">
+                  <CalendarCheck className="w-5 h-5 text-fresh" />
+                  <span className="font-medium text-foreground">
+                    {t.booking.selected}: {selectedDate.toLocaleDateString()}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-2">{t.booking.contactUs}</p>
+              </div>
+            )}
+
+            <p className="text-sm text-muted-foreground mt-4 text-center">
+              {t.booking.note}
+            </p>
+          </>
+        )}
       </CardContent>
     </Card>
   );
