@@ -11,6 +11,8 @@ import { Send, Loader2, CalendarIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
+import SimpleCaptcha from './SimpleCaptcha';
+import { supabase } from '@/integrations/supabase/client';
 
 interface ContactFormProps {
   selectedDate?: Date;
@@ -20,6 +22,7 @@ interface ContactFormProps {
 const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
   const { t, language } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [formData, setFormData] = useState({
     name: '',
@@ -83,20 +86,51 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!isCaptchaValid) {
+      toast({
+        title: language === 'ru' ? 'Ошибка' : 'Error',
+        description: language === 'ru' ? 'Пожалуйста, решите капчу' : 'Please solve the captcha',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setIsLoading(true);
 
-    // Simulate form submission - in real app, this would send to Telegram
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const { data, error } = await supabase.functions.invoke('send-telegram', {
+        body: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          service: formData.service,
+          message: formData.message,
+          date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined,
+        },
+      });
 
-    toast({
-      title: t.form.success,
-      description: `${formData.name}, ${t.form.success}`,
-    });
+      if (error) throw error;
 
-    setFormData({ name: '', phone: '', email: '', service: '', message: '' });
-    setDate(undefined);
-    onDateChange?.(undefined);
-    setIsLoading(false);
+      toast({
+        title: t.form.success,
+        description: `${formData.name}, ${t.form.success}`,
+      });
+
+      setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+      setDate(undefined);
+      onDateChange?.(undefined);
+      setIsCaptchaValid(false);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: language === 'ru' ? 'Ошибка' : 'Error',
+        description: language === 'ru' ? 'Не удалось отправить заявку. Попробуйте позже.' : 'Failed to send. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -207,9 +241,12 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
         />
       </div>
 
+      {/* Simple Captcha */}
+      <SimpleCaptcha onVerify={setIsCaptchaValid} language={language} />
+
       <Button
         type="submit"
-        disabled={isLoading}
+        disabled={isLoading || !isCaptchaValid}
         className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all"
       >
         {isLoading ? (
