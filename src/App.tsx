@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { AuthProvider } from "@/hooks/useAuth";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -15,32 +17,44 @@ import Reviews from "./pages/Reviews";
 import Contacts from "./pages/Contacts";
 import Handyman from "./pages/Handyman";
 import NotFound from "./pages/NotFound";
+import AdminLogin from "./pages/AdminLogin";
+import Admin from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/prices" element={<Prices />} />
-            <Route path="/equipment" element={<Equipment />} />
-            <Route path="/auto" element={<Auto />} />
-            <Route path="/ozone" element={<Ozone />} />
-            <Route path="/handyman" element={<Handyman />} />
-            <Route path="/reviews" element={<Reviews />} />
-            <Route path="/contacts" element={<Contacts />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/prices" element={<Prices />} />
+              <Route path="/equipment" element={<Equipment />} />
+              <Route path="/auto" element={<Auto />} />
+              <Route path="/ozone" element={<Ozone />} />
+              <Route path="/handyman" element={<Handyman />} />
+              <Route path="/reviews" element={<Reviews />} />
+              <Route path="/contacts" element={<Contacts />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute requireAdmin>
+                    <Admin />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </AuthProvider>
     </LanguageProvider>
   </QueryClientProvider>
 );
