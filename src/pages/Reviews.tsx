@@ -11,6 +11,7 @@ import { Star, Send, Loader2, MapPin, ExternalLink, Sparkles } from 'lucide-reac
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import happyCustomerImage from '@/assets/happy-customer.jpg';
 import { supabase } from '@/integrations/supabase/client';
+import SimpleCaptcha from '@/components/SimpleCaptcha';
 
 interface Review {
   id: string;
@@ -33,12 +34,13 @@ const sampleReviews = [
 const GOOGLE_REVIEW_URL = 'https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z/data=!4m8!3m7!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.953761!4d19.1343692!9m1!1b1!16s%2Fg%2F11xm28yrtl?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D';
 
 const Reviews = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [showSplash, setShowSplash] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
   const [dbReviews, setDbReviews] = useState<Review[]>([]);
   const [showGooglePrompt, setShowGooglePrompt] = useState(false);
+  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [formData, setFormData] = useState({
@@ -99,6 +101,15 @@ const Reviews = () => {
       return;
     }
 
+    if (!isCaptchaValid) {
+      toast({
+        title: language === 'ru' ? 'Ошибка' : language === 'uk' ? 'Помилка' : language === 'pl' ? 'Błąd' : 'Error',
+        description: language === 'ru' ? 'Пожалуйста, решите капчу' : language === 'uk' ? 'Будь ласка, розв\'яжіть капчу' : language === 'pl' ? 'Proszę rozwiązać captcha' : 'Please solve the captcha',
+        variant: 'destructive',
+      });
+      return;
+    }
+
     setIsLoading(true);
     
     try {
@@ -130,6 +141,7 @@ const Reviews = () => {
       
       setFormData({ name: '', text: '' });
       setRating(0);
+      setIsCaptchaValid(false);
       setShowGooglePrompt(true);
     } catch (error) {
       console.error('Error submitting review:', error);
@@ -341,9 +353,12 @@ const Reviews = () => {
                         />
                       </div>
 
+                      {/* Captcha */}
+                      <SimpleCaptcha onVerify={setIsCaptchaValid} language={language} />
+
                       <Button
                         type="submit"
-                        disabled={isLoading}
+                        disabled={isLoading || !isCaptchaValid}
                         className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all"
                       >
                         {isLoading ? (
