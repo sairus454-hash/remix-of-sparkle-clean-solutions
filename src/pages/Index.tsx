@@ -10,7 +10,7 @@ import {
   Sofa, Sparkles, ArrowRight, 
   CheckCircle2, Star, Users, Award, Armchair, Car, LayoutGrid, Droplets
 } from 'lucide-react';
-import heroImage from '@/assets/hero-cleaning.jpg';
+import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import mattressCleaningImage from '@/assets/mattress-cleaning.jpg';
 
 const Index = () => {
