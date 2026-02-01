@@ -125,7 +125,7 @@ const Header = () => {
             </a>
 
             {/* Messenger Icons */}
-            <div className="hidden xs:flex items-center gap-1.5 sm:gap-2">
+            <div className="flex items-center gap-1.5 sm:gap-2">
               <a 
                 href="https://t.me/+48575211401" 
                 target="_blank" 
