@@ -24,6 +24,10 @@ serve(async (req) => {
     const TELEGRAM_BOT_TOKEN = Deno.env.get('TELEGRAM_BOT_TOKEN');
     const TELEGRAM_CHAT_ID = Deno.env.get('TELEGRAM_CHAT_ID');
 
+    console.log('Bot token exists:', !!TELEGRAM_BOT_TOKEN);
+    console.log('Bot token length:', TELEGRAM_BOT_TOKEN?.length || 0);
+    console.log('Chat ID:', TELEGRAM_CHAT_ID);
+
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
       console.error('Missing Telegram credentials');
       return new Response(
@@ -57,6 +61,8 @@ ${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
     // Send to Telegram
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
     
+    console.log('Sending to Telegram...');
+    
     const telegramResponse = await fetch(telegramUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -72,7 +78,7 @@ ${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
     if (!telegramResponse.ok) {
       console.error('Telegram API error:', telegramResult);
       return new Response(
-        JSON.stringify({ error: 'Failed to send message' }),
+        JSON.stringify({ error: 'Failed to send message', details: telegramResult }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
