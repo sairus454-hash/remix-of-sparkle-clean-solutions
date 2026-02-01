@@ -8,7 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { useToast } from '@/hooks/use-toast';
-import { Droplets, LogOut, Star, Trash2, MessageSquare, DollarSign, Loader2, Home } from 'lucide-react';
+import { Droplets, LogOut, Star, Trash2, MessageSquare, DollarSign, Loader2, Home, CalendarX } from 'lucide-react';
+import BookingDatesManager from '@/components/admin/BookingDatesManager';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -182,6 +183,10 @@ const Admin = () => {
         <Tabs defaultValue="reviews" className="space-y-6">
           <TabsList>
             <TabsTrigger value="reviews">{t.admin.reviews}</TabsTrigger>
+            <TabsTrigger value="dates" className="flex items-center gap-2">
+              <CalendarX className="w-4 h-4" />
+              {t.admin.bookingDates}
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="reviews">
@@ -272,6 +277,10 @@ const Admin = () => {
                 )}
               </CardContent>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="dates">
+            <BookingDatesManager />
           </TabsContent>
         </Tabs>
       </main>
