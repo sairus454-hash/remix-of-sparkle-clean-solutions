@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import Layout from '@/components/Layout';
 import ReviewsSplash from '@/components/ReviewsSplash';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -10,20 +10,35 @@ import { toast } from '@/hooks/use-toast';
 import { Star, Send, Loader2, MapPin, ExternalLink, Sparkles } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import happyCustomerImage from '@/assets/happy-customer.jpg';
+import { supabase } from '@/integrations/supabase/client';
 
 interface Review {
   id: string;
   name: string;
   rating: number;
   text: string;
-  date: string;
-  source: 'google' | 'local';
+  created_at: string;
+  source?: 'google' | 'local';
 }
+
+// Sample reviews for display alongside database reviews
+const sampleReviews = [
+  { id: 'sample-1', name: 'Anna K.', rating: 5, date: '2025-01-15', source: 'google' as const },
+  { id: 'sample-2', name: 'Piotr M.', rating: 5, date: '2025-01-10', source: 'google' as const },
+  { id: 'sample-3', name: 'Olena S.', rating: 5, date: '2025-01-05', source: 'google' as const },
+  { id: 'sample-4', name: 'Michał W.', rating: 5, date: '2024-12-28', source: 'google' as const },
+  { id: 'sample-5', name: 'Kateryna P.', rating: 5, date: '2024-12-20', source: 'google' as const },
+];
+
+const GOOGLE_REVIEW_URL = 'https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z/data=!4m8!3m7!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.953761!4d19.1343692!9m1!1b1!16s%2Fg%2F11xm28yrtl?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D';
 
 const Reviews = () => {
   const { t } = useLanguage();
   const [showSplash, setShowSplash] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingReviews, setIsLoadingReviews] = useState(true);
+  const [dbReviews, setDbReviews] = useState<Review[]>([]);
+  const [showGooglePrompt, setShowGooglePrompt] = useState(false);
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [formData, setFormData] = useState({
@@ -35,48 +50,42 @@ const Reviews = () => {
     setShowSplash(false);
   }, []);
 
-  // Sample reviews (in real app, these would come from database/API)
-  const reviews: Review[] = [
-    {
-      id: '1',
-      name: 'Anna K.',
-      rating: 5,
-      text: t.reviews.review1,
-      date: '2025-01-15',
-      source: 'google',
-    },
-    {
-      id: '2',
-      name: 'Piotr M.',
-      rating: 5,
-      text: t.reviews.review2,
-      date: '2025-01-10',
-      source: 'google',
-    },
-    {
-      id: '3',
-      name: 'Olena S.',
-      rating: 5,
-      text: t.reviews.review3,
-      date: '2025-01-05',
-      source: 'google',
-    },
-    {
-      id: '4',
-      name: 'Michał W.',
-      rating: 5,
-      text: t.reviews.review4,
-      date: '2024-12-28',
-      source: 'google',
-    },
-    {
-      id: '5',
-      name: 'Kateryna P.',
-      rating: 5,
-      text: t.reviews.review5,
-      date: '2024-12-20',
-      source: 'google',
-    },
+  // Fetch reviews from database
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('reviews')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        setDbReviews(data || []);
+      } catch (error) {
+        console.error('Error fetching reviews:', error);
+      } finally {
+        setIsLoadingReviews(false);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+
+  // Combine sample reviews with database reviews
+  const getSampleReviewText = (id: string) => {
+    const textMap: { [key: string]: string } = {
+      'sample-1': t.reviews.review1,
+      'sample-2': t.reviews.review2,
+      'sample-3': t.reviews.review3,
+      'sample-4': t.reviews.review4,
+      'sample-5': t.reviews.review5,
+    };
+    return textMap[id] || '';
+  };
+
+  const allReviews = [
+    ...dbReviews.map(r => ({ ...r, source: 'local' as const })),
+    ...sampleReviews.map(r => ({ ...r, text: getSampleReviewText(r.id), created_at: r.date })),
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -92,17 +101,46 @@ const Reviews = () => {
 
     setIsLoading(true);
     
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    toast({
-      title: t.reviews.successTitle,
-      description: t.reviews.successMessage,
-    });
-    
-    setFormData({ name: '', text: '' });
-    setRating(0);
-    setIsLoading(false);
+    try {
+      const { error } = await supabase
+        .from('reviews')
+        .insert({
+          name: formData.name,
+          rating: rating,
+          text: formData.text,
+        });
+
+      if (error) throw error;
+
+      // Add review to local state immediately
+      const newReview: Review = {
+        id: crypto.randomUUID(),
+        name: formData.name,
+        rating: rating,
+        text: formData.text,
+        created_at: new Date().toISOString(),
+        source: 'local',
+      };
+      setDbReviews(prev => [newReview, ...prev]);
+
+      toast({
+        title: t.reviews.successTitle,
+        description: t.reviews.successMessage,
+      });
+      
+      setFormData({ name: '', text: '' });
+      setRating(0);
+      setShowGooglePrompt(true);
+    } catch (error) {
+      console.error('Error submitting review:', error);
+      toast({
+        title: 'Error',
+        description: 'Failed to submit review. Please try again.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const renderStars = (count: number, interactive = false) => {
@@ -152,7 +190,7 @@ const Reviews = () => {
             
             {/* Google Maps Link */}
             <a
-              href="https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z/data=!4m8!3m7!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.953761!4d19.1343692!9m1!1b1!16s%2Fg%2F11xm28yrtl"
+              href={GOOGLE_REVIEW_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:underline"
@@ -188,38 +226,47 @@ const Reviews = () => {
               {t.reviews.customerReviews}
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {reviews.map((review) => (
-                <Card key={review.id} className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4 mb-4">
-                      <Avatar className="w-12 h-12">
-                        <AvatarFallback className="bg-primary/10 text-primary font-semibold">
-                          {review.name.split(' ').map(n => n[0]).join('')}
-                        </AvatarFallback>
-                      </Avatar>
-                      <div className="flex-1">
-                        <h3 className="font-semibold text-foreground">{review.name}</h3>
-                        <div className="flex items-center gap-2 mt-1">
-                          {renderStars(review.rating)}
-                          {review.source === 'google' && (
-                            <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
-                              Google
-                            </span>
-                          )}
+            {isLoadingReviews ? (
+              <div className="flex justify-center py-12">
+                <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                <span className="ml-2 text-muted-foreground">{t.reviews.loading}</span>
+              </div>
+            ) : allReviews.length === 0 ? (
+              <p className="text-center text-muted-foreground py-12">{t.reviews.noReviews}</p>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                {allReviews.map((review) => (
+                  <Card key={review.id} className="hover:shadow-lg transition-shadow">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4 mb-4">
+                        <Avatar className="w-12 h-12">
+                          <AvatarFallback className="bg-primary/10 text-primary font-semibold">
+                            {review.name.split(' ').map(n => n[0]).join('')}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-foreground">{review.name}</h3>
+                          <div className="flex items-center gap-2 mt-1">
+                            {renderStars(review.rating)}
+                            {review.source === 'google' && (
+                              <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded">
+                                Google
+                              </span>
+                            )}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {review.text}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-4">
-                      {new Date(review.date).toLocaleDateString()}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {review.text}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-4">
+                        {new Date(review.created_at).toLocaleDateString()}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
 
             {/* Leave Review Form */}
             <div className="max-w-2xl mx-auto">
@@ -229,57 +276,85 @@ const Reviews = () => {
                     {t.reviews.leaveReview}
                   </h2>
                   
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-foreground">
-                        {t.reviews.yourRating}
-                      </label>
-                      <div className="flex justify-center py-2">
-                        {renderStars(rating, true)}
+                  {showGooglePrompt ? (
+                    <div className="text-center space-y-6">
+                      <div className="py-8">
+                        <Sparkles className="w-16 h-16 text-fresh mx-auto mb-4" />
+                        <h3 className="text-xl font-semibold mb-2">{t.reviews.successTitle}</h3>
+                        <p className="text-muted-foreground mb-6">{t.reviews.googleReviewPrompt}</p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                          <a
+                            href={GOOGLE_REVIEW_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center justify-center gap-2 bg-gradient-hero hover:opacity-90 text-primary-foreground px-6 py-3 rounded-lg shadow-glow transition-all font-medium"
+                          >
+                            <MapPin className="w-5 h-5" />
+                            {t.reviews.leaveGoogleReview}
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                          <Button
+                            variant="outline"
+                            onClick={() => setShowGooglePrompt(false)}
+                          >
+                            {t.reviews.leaveReview}
+                          </Button>
+                        </div>
                       </div>
                     </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-foreground">
+                          {t.reviews.yourRating}
+                        </label>
+                        <div className="flex justify-center py-2">
+                          {renderStars(rating, true)}
+                        </div>
+                      </div>
 
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-foreground">
-                        {t.form.name}
-                      </label>
-                      <Input
-                        type="text"
-                        placeholder={t.form.namePlaceholder}
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        required
-                        className="bg-card border-border"
-                      />
-                    </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-foreground">
+                          {t.form.name}
+                        </label>
+                        <Input
+                          type="text"
+                          placeholder={t.form.namePlaceholder}
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          required
+                          className="bg-card border-border"
+                        />
+                      </div>
 
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-foreground">
-                        {t.reviews.yourReview}
-                      </label>
-                      <Textarea
-                        placeholder={t.reviews.reviewPlaceholder}
-                        value={formData.text}
-                        onChange={(e) => setFormData({ ...formData, text: e.target.value })}
-                        rows={4}
-                        required
-                        className="bg-card border-border resize-none"
-                      />
-                    </div>
+                      <div className="space-y-2">
+                        <label className="text-sm font-medium text-foreground">
+                          {t.reviews.yourReview}
+                        </label>
+                        <Textarea
+                          placeholder={t.reviews.reviewPlaceholder}
+                          value={formData.text}
+                          onChange={(e) => setFormData({ ...formData, text: e.target.value })}
+                          rows={4}
+                          required
+                          className="bg-card border-border resize-none"
+                        />
+                      </div>
 
-                    <Button
-                      type="submit"
-                      disabled={isLoading}
-                      className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all"
-                    >
-                      {isLoading ? (
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      ) : (
-                        <Send className="w-4 h-4 mr-2" />
-                      )}
-                      {t.reviews.submit}
-                    </Button>
-                  </form>
+                      <Button
+                        type="submit"
+                        disabled={isLoading}
+                        className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all"
+                      >
+                        {isLoading ? (
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        ) : (
+                          <Send className="w-4 h-4 mr-2" />
+                        )}
+                        {t.reviews.submit}
+                      </Button>
+                    </form>
+                  )}
                 </CardContent>
               </Card>
             </div>
