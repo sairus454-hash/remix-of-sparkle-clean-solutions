@@ -47,15 +47,28 @@ const Header = () => {
     >
       <div className="container mx-auto px-2 sm:px-4">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
-              <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
-            </div>
-            <span className="font-serif text-lg sm:text-xl font-semibold text-foreground hidden sm:block">
-              MasterClean
-            </span>
-          </Link>
+          {/* Left Section: Mobile Menu Button + Logo */}
+          <div className="flex items-center gap-2">
+            {/* Mobile Menu Button - Now on the left */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              </div>
+              <span className="font-serif text-lg sm:text-xl font-semibold text-foreground hidden sm:block">
+                MasterClean
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -74,15 +87,15 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Mobile & Desktop Right Section */}
+          {/* Right Section */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* 24/7 Badge - Hidden on very small screens */}
-            <div className="hidden xs:flex items-center gap-1.5 sm:gap-2 bg-gradient-hero px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+            {/* 24/7 Badge - Now visible on all screens */}
+            <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
               <div className="relative">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-400 rounded-full animate-ping absolute" />
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-400 rounded-full" />
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full animate-ping absolute" />
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-green-400 rounded-full" />
               </div>
-              <span className="text-primary-foreground font-bold text-xs sm:text-sm">24/7</span>
+              <span className="text-primary-foreground font-bold text-[10px] sm:text-xs md:text-sm">24/7</span>
             </div>
 
             {/* Language Switcher */}
@@ -112,7 +125,7 @@ const Header = () => {
             </a>
 
             {/* Messenger Icons */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="hidden xs:flex items-center gap-1.5 sm:gap-2">
               <a 
                 href="https://t.me/+48575211401" 
                 target="_blank" 
@@ -136,16 +149,6 @@ const Header = () => {
                 </svg>
               </a>
             </div>
-
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </Button>
           </div>
         </div>
 
