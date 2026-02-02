@@ -44,6 +44,7 @@ const HandymanPriceCalculator = () => {
     { id: 'repair', name: t.handyman.calcItems.repair, price: 100, isFrom: true, icon: Lightbulb },
     { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: 350, icon: Lightbulb },
     { id: 'switch', name: t.handyman.calcItems.switch, price: 50, icon: Lightbulb },
+    { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: 140, icon: Wrench },
   ];
 
   const addItem = (item: PriceItem) => {
