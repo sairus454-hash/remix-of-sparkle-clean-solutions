@@ -125,31 +125,24 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Preview */}
+      {/* Promotions Section */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 animate-float bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] animate-shimmer" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-              {t.services.title}
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+              Акции
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">{t.services.subtitle}</p>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Специальные предложения для наших клиентов</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
-                <ServiceCard {...service} />
+          {/* Placeholder for promotions content */}
+          <div className="flex justify-center">
+            <div className="bg-card p-8 rounded-2xl shadow-card text-center max-w-md animate-fade-up">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                <Sparkles className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
               </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link to="/services">
-              <Button variant="outline" className="border-primary text-primary hover:bg-accent">
-                {t.hero.secondary}
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-            </Link>
+              <p className="text-muted-foreground">Скоро здесь появятся актуальные акции и скидки!</p>
+            </div>
           </div>
         </div>
       </section>
