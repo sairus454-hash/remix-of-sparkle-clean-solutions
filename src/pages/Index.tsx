@@ -2,11 +2,11 @@ import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import ServiceCard from '@/components/ServiceCard';
 import ContactForm from '@/components/ContactForm';
 import WaterDropSplash from '@/components/WaterDropSplash';
+import PriceSection from '@/components/PriceSection';
 import { Button } from '@/components/ui/button';
-import { Sofa, Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Armchair, Car, LayoutGrid, Droplets } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets } from 'lucide-react';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import mattressCleaningImage from '@/assets/mattress-cleaning.jpg';
 const Index = () => {
@@ -17,23 +17,7 @@ const Index = () => {
   const {
     t
   } = useLanguage();
-  const services = [{
-    icon: Sofa,
-    title: t.services.furniture,
-    description: t.services.furnitureDesc
-  }, {
-    icon: Sparkles,
-    title: t.services.carpets,
-    description: t.services.carpetsDesc
-  }, {
-    icon: Armchair,
-    title: t.services.leather,
-    description: t.services.leatherDesc
-  }, {
-    icon: LayoutGrid,
-    title: t.services.balcony,
-    description: t.services.balconyDesc
-  }];
+  
   const stats = [{
     icon: Star,
     value: '3+',
@@ -230,6 +214,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Price Section */}
+      <PriceSection />
 
       {/* Why Choose Us */}
       <section className="py-12 sm:py-20 bg-card">
