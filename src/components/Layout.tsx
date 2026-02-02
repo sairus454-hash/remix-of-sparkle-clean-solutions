@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       <main className="flex-1 pt-14 sm:pt-16 lg:pt-20">
         {/* Marquee Section */}
@@ -19,7 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="relative">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...Array(4)].map((_, i) => (
-                <span key={i} className="mx-4 sm:mx-8 text-primary-foreground font-medium text-sm sm:text-lg flex items-center gap-1.5 sm:gap-2">
+                <span key={i} className="mx-4 sm:mx-8 text-primary-foreground font-medium text-xs sm:text-sm md:text-lg flex items-center gap-1.5 sm:gap-2">
                   <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-foreground/80 rounded-full animate-pulse" />
                   {t.hero.marquee}
                 </span>

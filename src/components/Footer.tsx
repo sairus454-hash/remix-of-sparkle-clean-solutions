@@ -6,11 +6,11 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer className="bg-foreground text-background py-8 sm:py-12 pb-safe">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Logo & Description */}
-          <div className="space-y-4">
+          <div className="col-span-2 md:col-span-1 space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
               <div className="relative">
                 <div className="w-10 h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
@@ -24,25 +24,25 @@ const Footer = () => {
                 MasterClean
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm">{t.hero.subtitle}</p>
+            <p className="text-muted-foreground text-sm leading-relaxed">{t.hero.subtitle}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-4">{t.nav.services}</h4>
-            <ul className="space-y-2">
+            <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.services}</h4>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-background text-sm transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.services.clothing}
                 </Link>
               </li>
               <li>
-                <Link to="/auto" className="text-muted-foreground hover:text-background text-sm transition-colors">
+                <Link to="/auto" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.nav.auto}
                 </Link>
               </li>
               <li>
-                <Link to="/ozone" className="text-muted-foreground hover:text-background text-sm transition-colors">
+                <Link to="/ozone" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.nav.ozone}
                 </Link>
               </li>
@@ -51,37 +51,41 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-4">{t.nav.contacts}</h4>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary" />
-                {t.contacts.addressValue}
+            <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.contacts}</h4>
+            <ul className="space-y-2 sm:space-y-3">
+              <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span className="leading-tight">{t.contacts.addressValue}</span>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="w-4 h-4 text-primary" />
-                {t.contacts.phoneValue}
+              <li>
+                <a href="tel:+48575211401" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
+                  <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                  {t.contacts.phoneValue}
+                </a>
               </li>
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary" />
-                {t.contacts.emailValue}
+              <li>
+                <a href="mailto:masterclean@email.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                  {t.contacts.emailValue}
+                </a>
               </li>
             </ul>
           </div>
 
           {/* Working Hours */}
           <div>
-            <h4 className="font-serif text-lg font-semibold mb-4">{t.contacts.hours}</h4>
-            <p className="font-serif text-3xl font-bold text-primary">
+            <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.contacts.hours}</h4>
+            <p className="font-serif text-2xl sm:text-3xl font-bold text-primary">
               {t.contacts.hoursValue}
             </p>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
             © {new Date().getFullYear()} MasterClean. {t.footer.rights}
           </p>
-          <Link to="#" className="text-muted-foreground hover:text-background text-sm transition-colors">
+          <Link to="#" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
             {t.footer.privacy}
           </Link>
         </div>

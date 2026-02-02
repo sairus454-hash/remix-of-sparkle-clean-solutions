@@ -79,24 +79,24 @@ const Prices = () => {
       {showSplash && <PriceSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Hero */}
-        <section className="py-20 bg-gradient-section">
+        <section className="py-12 sm:py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               {/* Animated money icon */}
-              <div className="flex justify-center mb-6">
+              <div className="flex justify-center mb-4 sm:mb-6">
                 <div className="relative">
-                  <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Coins className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Coins className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
-                  <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-primary animate-ping" style={{ animationDelay: '0.5s' }} />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-fresh animate-ping" />
+                  <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-primary animate-ping" style={{ animationDelay: '0.5s' }} />
                 </div>
               </div>
               
-              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
                 {t.prices.title}
               </h1>
-              <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
+              <p className="text-base sm:text-lg text-muted-foreground animate-fade-up px-4" style={{ animationDelay: '0.1s' }}>
                 {t.prices.subtitle}
               </p>
             </div>
@@ -104,7 +104,7 @@ const Prices = () => {
         </section>
 
         {/* Price Calculator */}
-        <section className="py-12 bg-card">
+        <section className="py-8 sm:py-12 bg-card">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <PriceCalculator />
@@ -113,20 +113,20 @@ const Prices = () => {
         </section>
 
         {/* Price Lists */}
-        <section className="py-20 bg-background">
+        <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto space-y-8">
+            <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8">
               {/* Furniture */}
-              <Card className="shadow-card animate-fade-up">
-                <CardHeader className="border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <Home className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <Card className="shadow-card animate-fade-up overflow-hidden">
+                <CardHeader className="border-b border-border p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Home className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
-                    <CardTitle className="font-serif text-xl">{t.prices.furniture}</CardTitle>
+                    <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.furniture}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-4">
+                <CardContent className="pt-2 sm:pt-4 px-3 sm:px-6">
                   {furniturePrices.map((item, index) => (
                     <PriceItem
                       key={index}
@@ -141,16 +141,16 @@ const Prices = () => {
               </Card>
 
               {/* Leather Furniture */}
-              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.05s' }}>
-                <CardHeader className="border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <Armchair className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <Card className="shadow-card animate-fade-up overflow-hidden" style={{ animationDelay: '0.05s' }}>
+                <CardHeader className="border-b border-border p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Armchair className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
-                    <CardTitle className="font-serif text-xl">{t.prices.items.leatherFurniture}</CardTitle>
+                    <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.items.leatherFurniture}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-4">
+                <CardContent className="pt-2 sm:pt-4 px-3 sm:px-6">
                   {leatherFurniturePrices.map((item, index) => (
                     <PriceItem
                       key={index}
@@ -165,16 +165,16 @@ const Prices = () => {
               </Card>
 
               {/* Mattress with Drying */}
-              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.07s' }}>
-                <CardHeader className="border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <BedDouble className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <Card className="shadow-card animate-fade-up overflow-hidden" style={{ animationDelay: '0.07s' }}>
+                <CardHeader className="border-b border-border p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <BedDouble className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
-                    <CardTitle className="font-serif text-xl">{t.prices.items.mattressWithDrying}</CardTitle>
+                    <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.items.mattressWithDrying}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-4">
+                <CardContent className="pt-2 sm:pt-4 px-3 sm:px-6">
                   {mattressDryingPrices.map((item, index) => (
                     <PriceItem
                       key={index}
@@ -189,16 +189,16 @@ const Prices = () => {
               </Card>
 
               {/* Auto Cleaning */}
-              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
-                <CardHeader className="border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <Car className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <Card className="shadow-card animate-fade-up overflow-hidden" style={{ animationDelay: '0.1s' }}>
+                <CardHeader className="border-b border-border p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Car className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
-                    <CardTitle className="font-serif text-xl">{t.prices.autoCleaning}</CardTitle>
+                    <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.autoCleaning}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-4">
+                <CardContent className="pt-2 sm:pt-4 px-3 sm:px-6">
                   {autoPrices.map((item, index) => (
                     <PriceItem
                       key={index}
@@ -213,16 +213,16 @@ const Prices = () => {
               </Card>
 
               {/* Ozonation */}
-              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.15s' }}>
-                <CardHeader className="border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <Wind className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <Card className="shadow-card animate-fade-up overflow-hidden" style={{ animationDelay: '0.15s' }}>
+                <CardHeader className="border-b border-border p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Wind className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
-                    <CardTitle className="font-serif text-xl">{t.prices.ozonation}</CardTitle>
+                    <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.ozonation}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-4">
+                <CardContent className="pt-2 sm:pt-4 px-3 sm:px-6">
                   {ozonePrices.map((item, index) => (
                     <PriceItem
                       key={index}
@@ -237,16 +237,16 @@ const Prices = () => {
               </Card>
 
               {/* Other */}
-              <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
-                <CardHeader className="border-b border-border">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <Package className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <Card className="shadow-card animate-fade-up overflow-hidden" style={{ animationDelay: '0.1s' }}>
+                <CardHeader className="border-b border-border p-4 sm:p-6">
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Package className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
-                    <CardTitle className="font-serif text-xl">{t.prices.other}</CardTitle>
+                    <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.other}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-4">
+                <CardContent className="pt-2 sm:pt-4 px-3 sm:px-6">
                   {otherPrices.map((item, index) => (
                     <PriceItem
                       key={index}
