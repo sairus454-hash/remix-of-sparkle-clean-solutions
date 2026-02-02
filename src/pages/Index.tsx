@@ -135,13 +135,44 @@ const Index = () => {
             <p className="text-muted-foreground max-w-2xl mx-auto">Специальные предложения для наших клиентов</p>
           </div>
           
-          {/* Placeholder for promotions content */}
-          <div className="flex justify-center">
-            <div className="bg-card p-8 rounded-2xl shadow-card text-center max-w-md animate-fade-up">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                <Sparkles className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Акция недели */}
+            <div className="bg-card p-6 rounded-2xl shadow-card animate-fade-up group hover:shadow-glow transition-all duration-300" style={{ animationDelay: '0.1s' }}>
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                <Sparkles className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
               </div>
-              <p className="text-muted-foreground">Скоро здесь появятся актуальные акции и скидки!</p>
+              <h3 className="font-serif text-xl font-bold text-center mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
+                Акция недели
+              </h3>
+              <p className="text-muted-foreground text-center text-sm">
+                Скоро здесь появится специальное предложение!
+              </p>
+            </div>
+
+            {/* Акция месяца */}
+            <div className="bg-card p-6 rounded-2xl shadow-card animate-fade-up group hover:shadow-glow transition-all duration-300" style={{ animationDelay: '0.2s' }}>
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite' }}>
+                <Star className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              </div>
+              <h3 className="font-serif text-xl font-bold text-center mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
+                Акция месяца
+              </h3>
+              <p className="text-muted-foreground text-center text-sm">
+                Скоро здесь появится специальное предложение!
+              </p>
+            </div>
+
+            {/* Акция до конца года */}
+            <div className="bg-card p-6 rounded-2xl shadow-card animate-fade-up group hover:shadow-glow transition-all duration-300" style={{ animationDelay: '0.3s' }}>
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                <Award className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              </div>
+              <h3 className="font-serif text-xl font-bold text-center mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
+                Акция до конца года
+              </h3>
+              <p className="text-muted-foreground text-center text-sm">
+                Скоро здесь появится специальное предложение!
+              </p>
             </div>
           </div>
         </div>
