@@ -23,6 +23,7 @@ const Prices = () => {
   const furniturePrices: { name: string; price: number; icon: LucideIcon }[] = [
     { name: t.prices.items.pouf, price: 40, icon: Circle },
     { name: t.prices.items.chair, price: 40, icon: Lamp },
+    { name: t.prices.items.pillow, price: 10, icon: Square },
     { name: t.prices.items.armchair, price: 70, icon: Armchair },
     { name: t.prices.items.sofa2, price: 140, icon: Sofa },
     { name: t.prices.items.sofa3, price: 170, icon: Sofa },
@@ -33,6 +34,7 @@ const Prices = () => {
   const leatherFurniturePrices: { name: string; price: number; icon: LucideIcon }[] = [
     { name: t.prices.items.leatherPouf, price: 55, icon: Circle },
     { name: t.prices.items.leatherChair, price: 50, icon: Lamp },
+    { name: t.prices.items.leatherPillow, price: 10, icon: Square },
     { name: t.prices.items.leatherArmchair, price: 90, icon: Armchair },
     { name: t.prices.items.leatherSofa2, price: 180, icon: Sofa },
     { name: t.prices.items.leatherSofa3, price: 220, icon: Sofa },
