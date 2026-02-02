@@ -145,7 +145,7 @@ const Index = () => {
                 Акция недели
               </h3>
               <p className="text-muted-foreground text-center text-sm">
-                Скоро здесь появится специальное предложение!
+                Химчистка матрасов со скидкой 10%
               </p>
             </div>
 
@@ -158,7 +158,7 @@ const Index = () => {
                 Акция месяца
               </h3>
               <p className="text-muted-foreground text-center text-sm">
-                Скоро здесь появится специальное предложение!
+                Закажи услугу химчистки и получи на вторую другую услугу скидку 15%
               </p>
             </div>
 
@@ -171,7 +171,7 @@ const Index = () => {
                 Акция до конца года
               </h3>
               <p className="text-muted-foreground text-center text-sm">
-                Скоро здесь появится специальное предложение!
+                Скидки для постоянных клиентов до конца года -15%
               </p>
             </div>
           </div>
