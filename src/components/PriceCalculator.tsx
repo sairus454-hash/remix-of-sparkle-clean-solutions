@@ -201,10 +201,10 @@ const PriceCalculator = () => {
           <Label className="text-sm font-medium text-muted-foreground mb-3 block">
             {t.calculator.selectItems}
           </Label>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 border-2">
-            {availableItems.map(item => <Button key={item.id} variant="outline" size="sm" className="justify-start text-left h-auto py-2 px-3" onClick={() => addItem(item)}>
-                <Plus className="w-4 h-4 mr-2 flex-shrink-0" />
-                <span className="truncate">{item.name}</span>
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-2 border rounded-lg p-2 bg-muted/20">
+            {availableItems.map(item => <Button key={item.id} variant="outline" size="sm" className="justify-start text-left h-auto py-3 px-3 touch-manipulation active:scale-95 transition-transform" onClick={() => addItem(item)}>
+                <Plus className="w-5 h-5 mr-2 flex-shrink-0" />
+                <span className="truncate text-sm">{item.name}</span>
               </Button>)}
           </div>
         </div>
@@ -215,38 +215,40 @@ const PriceCalculator = () => {
               <Label className="text-sm font-medium text-muted-foreground">
                 {t.calculator.selectedItems}
               </Label>
-              <Button variant="ghost" size="sm" onClick={clearAll} className="text-destructive hover:text-destructive h-auto py-1">
+              <Button variant="ghost" size="sm" onClick={clearAll} className="text-destructive hover:text-destructive h-auto py-2 px-3 touch-manipulation">
                 <Trash2 className="w-4 h-4 mr-1" />
                 {t.calculator.clear}
               </Button>
             </div>
 
-            <div className="space-y-2">
-              {selectedItems.map(selected => <div key={selected.item.id} className="flex items-center justify-between p-3 bg-accent/30 rounded-lg">
+            <div className="space-y-3">
+              {selectedItems.map(selected => <div key={selected.item.id} className="flex flex-col sm:flex-row sm:items-center gap-3 p-3 sm:p-4 bg-accent/30 rounded-xl">
                   <div className="flex-1 min-w-0">
-                    <span className="font-medium text-foreground truncate block">
+                    <span className="font-medium text-foreground text-sm sm:text-base block leading-tight">
                       {selected.item.name}
                     </span>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-xs sm:text-sm text-muted-foreground">
                       {t.prices.from} {selected.item.price} {t.prices.currency}
                       {selected.item.unit && ` / ${selected.item.unit}`}
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-2 ml-4">
-                    <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(selected.item.id, selected.quantity - 1)}>
-                      <Minus className="w-4 h-4" />
-                    </Button>
-                    <Input type="number" min="1" value={selected.quantity} onChange={e => updateQuantity(selected.item.id, parseInt(e.target.value) || 0)} className="w-16 h-8 text-center" />
-                    <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(selected.item.id, selected.quantity + 1)}>
-                      <Plus className="w-4 h-4" />
-                    </Button>
-                  </div>
+                  <div className="flex items-center justify-between sm:justify-end gap-3">
+                    <div className="flex items-center gap-1 sm:gap-2">
+                      <Button variant="outline" size="icon" className="h-10 w-10 sm:h-9 sm:w-9 touch-manipulation active:scale-95" onClick={() => updateQuantity(selected.item.id, selected.quantity - 1)}>
+                        <Minus className="w-5 h-5 sm:w-4 sm:h-4" />
+                      </Button>
+                      <Input type="number" min="1" value={selected.quantity} onChange={e => updateQuantity(selected.item.id, parseInt(e.target.value) || 0)} className="w-14 sm:w-16 h-10 sm:h-9 text-center text-base" inputMode="numeric" />
+                      <Button variant="outline" size="icon" className="h-10 w-10 sm:h-9 sm:w-9 touch-manipulation active:scale-95" onClick={() => updateQuantity(selected.item.id, selected.quantity + 1)}>
+                        <Plus className="w-5 h-5 sm:w-4 sm:h-4" />
+                      </Button>
+                    </div>
 
-                  <div className="w-24 text-right ml-4">
-                    <span className="font-semibold text-primary">
-                      {selected.item.price * selected.quantity} {t.prices.currency}
-                    </span>
+                    <div className="w-20 sm:w-24 text-right">
+                      <span className="font-semibold text-primary text-base sm:text-lg">
+                        {selected.item.price * selected.quantity} {t.prices.currency}
+                      </span>
+                    </div>
                   </div>
                 </div>)}
             </div>

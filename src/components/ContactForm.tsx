@@ -134,9 +134,9 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+        <div className="space-y-1.5 sm:space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.name}</label>
           <Input
             type="text"
@@ -144,46 +144,48 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
-            className="bg-card border-border"
+            className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
           />
         </div>
-        <div className="space-y-2">
+        <div className="space-y-1.5 sm:space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.phone}</label>
           <Input
-            type="text"
+            type="tel"
+            inputMode="tel"
             placeholder={t.form.phonePlaceholder}
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             required
-            className="bg-card border-border"
+            className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+        <div className="space-y-1.5 sm:space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.email}</label>
           <Input
             type="email"
+            inputMode="email"
             placeholder={t.form.emailPlaceholder}
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
-            className="bg-card border-border"
+            className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
           />
         </div>
-        <div className="space-y-2">
+        <div className="space-y-1.5 sm:space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.service}</label>
           <Select
             value={formData.service}
             onValueChange={(value) => setFormData({ ...formData, service: value })}
           >
-            <SelectTrigger className="bg-card border-border">
+            <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
               <SelectValue placeholder={t.form.service} />
             </SelectTrigger>
             <SelectContent>
               {services.map((service) => (
-                <SelectItem key={service} value={service}>
+                <SelectItem key={service} value={service} className="py-3 sm:py-2">
                   {service}
                 </SelectItem>
               ))}
@@ -193,14 +195,14 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
       </div>
 
       {/* Date Picker */}
-      <div className="space-y-2">
+      <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">{t.form.preferredDate}</label>
         <Popover>
           <PopoverTrigger asChild>
             <Button
               variant="outline"
               className={cn(
-                'w-full justify-start text-left font-normal bg-card border-border',
+                'w-full justify-start text-left font-normal bg-card border-border h-11 sm:h-10 text-base sm:text-sm',
                 !date && 'text-muted-foreground'
               )}
             >
@@ -230,14 +232,14 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
         </Popover>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">{t.form.message}</label>
         <Textarea
           placeholder={t.form.messagePlaceholder}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
           rows={4}
-          className="bg-card border-border resize-none"
+          className="bg-card border-border resize-none text-base sm:text-sm min-h-[100px]"
         />
       </div>
 
@@ -247,12 +249,12 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
       <Button
         type="submit"
         disabled={isLoading || !isCaptchaValid}
-        className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all"
+        className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all h-12 sm:h-11 text-base touch-manipulation active:scale-[0.98]"
       >
         {isLoading ? (
-          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
         ) : (
-          <Send className="w-4 h-4 mr-2" />
+          <Send className="w-5 h-5 mr-2" />
         )}
         {t.form.submit}
       </Button>
