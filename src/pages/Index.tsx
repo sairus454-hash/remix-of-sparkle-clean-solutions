@@ -185,8 +185,8 @@ const Index = () => {
               <h3 className="font-serif text-xl font-bold text-center mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
                 Акция недели
               </h3>
-              <p className="text-muted-foreground text-center text-3xl">
-                Скоро здесь появится специальное предложение!
+              <p className="text-muted-foreground text-center text-lg">
+                Химчистка матрасов со скидкой 10%
               </p>
             </div>
 
@@ -204,8 +204,8 @@ const Index = () => {
               <h3 className="font-serif text-xl font-bold text-center mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
                 Акция месяца
               </h3>
-              <p className="text-muted-foreground text-center text-2xl">
-                Скоро здесь появится специальное предложение!
+              <p className="text-muted-foreground text-center text-lg">
+                Закажи услугу химчистки и получи на вторую другую услугу скидку 15%
               </p>
             </div>
 
@@ -223,8 +223,8 @@ const Index = () => {
               <h3 className="font-serif text-xl font-bold text-center mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
                 Акция до конца года
               </h3>
-              <p className="text-muted-foreground text-center text-2xl">
-                Скоро здесь появится специальное предложение!
+              <p className="text-muted-foreground text-center text-lg">
+                Скидки для постоянных клиентов до конца года -15%
               </p>
             </div>
           </div>
