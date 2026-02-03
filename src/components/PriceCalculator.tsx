@@ -67,6 +67,14 @@ const PriceCalculator = () => {
     id: 'mattressSingle',
     name: t.prices.items.mattressSingle,
     price: 140
+  }, {
+    id: 'bedHeadboard',
+    name: t.prices.items.bedHeadboard,
+    price: 100
+  }, {
+    id: 'bedFrame',
+    name: t.prices.items.bedFrame,
+    price: 100
   },
   // Leather Furniture
   {
