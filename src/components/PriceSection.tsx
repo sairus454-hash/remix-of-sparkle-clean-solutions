@@ -21,6 +21,8 @@ const PriceSection = () => {
     { name: t.prices.items.sofa3, price: 170, icon: Sofa },
     { name: t.prices.items.sofaCorner, price: 200, icon: LayoutGrid },
     { name: t.prices.items.sofaCornerLarge, price: 250, icon: Maximize2 },
+    { name: t.prices.items.bedHeadboard, price: 100, icon: BedDouble },
+    { name: t.prices.items.bedFrame, price: 100, icon: BedDouble },
   ];
 
   const leatherFurniturePrices: { name: string; price: number; icon: LucideIcon }[] = [
