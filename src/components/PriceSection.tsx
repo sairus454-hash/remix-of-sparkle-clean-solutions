@@ -119,6 +119,9 @@ const PriceSection = () => {
                     icon={item.icon}
                   />
                 ))}
+                <p className="text-sm text-muted-foreground mt-4 pt-4 border-t border-border italic">
+                  {t.prices.items.flockNote}
+                </p>
               </CardContent>
             </Card>
 
