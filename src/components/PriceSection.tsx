@@ -51,6 +51,8 @@ const PriceSection = () => {
     { name: t.prices.items.autoFloor, price: 100, icon: Grid3X3 },
     { name: t.prices.items.autoTrunk, price: 80, icon: Package },
     { name: t.prices.items.autoOzone, price: 100, icon: Wind },
+    { name: t.prices.items.autoTruckCabin, price: 650, icon: CarFront },
+    { name: t.prices.items.autoVanCabin, price: 400, icon: CarFront },
   ];
 
   const ozonePrices: { name: string; price: number; icon: LucideIcon }[] = [
