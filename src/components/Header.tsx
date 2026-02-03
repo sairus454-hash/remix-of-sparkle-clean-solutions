@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Droplets, Phone } from 'lucide-react';
+import { Menu, X, Droplets, Phone, Globe, ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Language } from '@/i18n/translations';
 import { Button } from '@/components/ui/button';
@@ -15,8 +15,10 @@ const languages: { code: Language; label: string }[] = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
+  const langDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,17 @@ const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
+        setIsLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navItems = [
@@ -39,6 +52,8 @@ const Header = () => {
     { path: '/contacts', label: t.nav.contacts },
   ];
 
+  const currentLang = languages.find(l => l.code === language);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -49,14 +64,18 @@ const Header = () => {
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Left Section: Mobile Menu Button + Logo */}
           <div className="flex items-center gap-2">
-            {/* Mobile Menu Button - Now on the left */}
+            {/* Mobile Menu Button - Larger with green accent */}
             <Button
               variant="ghost"
               size="icon"
-              className="lg:hidden w-9 h-9 sm:w-10 sm:h-10"
+              className="lg:hidden w-11 h-11 sm:w-10 sm:h-10 bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 rounded-xl touch-manipulation active:scale-95"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-fresh" />
+              ) : (
+                <Menu className="w-6 h-6 text-fresh" />
+              )}
             </Button>
 
             {/* Logo */}
@@ -104,13 +123,47 @@ const Header = () => {
               <span className="text-primary-foreground font-bold text-[10px] sm:text-xs md:text-sm">24/7</span>
             </div>
 
-            {/* Language Switcher */}
-            <div className="flex items-center bg-muted rounded-lg p-0.5 sm:p-1">
+            {/* Language Switcher - Dropdown on mobile, inline on desktop */}
+            {/* Mobile Language Dropdown */}
+            <div className="lg:hidden relative" ref={langDropdownRef}>
+              <button
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                className="flex items-center gap-1 px-2 py-1.5 bg-muted rounded-lg text-sm font-medium touch-manipulation active:scale-95 min-w-[52px] justify-center"
+              >
+                <Globe className="w-4 h-4 text-fresh" />
+                <span className="text-foreground">{currentLang?.label}</span>
+                <ChevronDown className={`w-3 h-3 text-muted-foreground transition-transform ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isLangDropdownOpen && (
+                <div className="absolute top-full right-0 mt-1 bg-card border border-border rounded-lg shadow-lg py-1 min-w-[80px] animate-fade-up z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setIsLangDropdownOpen(false);
+                      }}
+                      className={`w-full px-3 py-2 text-left text-sm font-medium transition-colors ${
+                        language === lang.code
+                          ? 'bg-primary text-primary-foreground'
+                          : 'text-foreground hover:bg-accent'
+                      }`}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Language Switcher - inline buttons */}
+            <div className="hidden lg:flex items-center bg-muted rounded-lg p-1">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
                   onClick={() => setLanguage(lang.code)}
-                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 text-xs font-medium rounded-md transition-colors min-w-[28px] sm:min-w-[32px] ${
+                  className={`px-2 py-1 text-xs font-medium rounded-md transition-colors min-w-[32px] ${
                     language === lang.code
                       ? 'bg-primary text-primary-foreground'
                       : 'text-muted-foreground hover:text-foreground'
