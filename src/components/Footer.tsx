@@ -1,12 +1,13 @@
+import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Droplets, Phone, Mail, MapPin } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-foreground text-background py-8 sm:py-12 pb-safe">
+    <footer ref={ref} className="bg-foreground text-background py-8 sm:py-12 pb-safe">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Logo & Description */}
@@ -92,6 +93,8 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = 'Footer';
 
 export default Footer;

@@ -8,10 +8,12 @@ const corsHeaders = {
 interface FormData {
   name: string;
   phone: string;
-  email: string;
+  email?: string;
   service?: string;
   message?: string;
   date?: string;
+  time?: string;
+  address?: string;
 }
 
 serve(async (req) => {
@@ -38,8 +40,8 @@ serve(async (req) => {
 
     const formData: FormData = await req.json();
 
-    // Validate required fields
-    if (!formData.name || !formData.phone || !formData.email) {
+    // Validate required fields (name and phone only)
+    if (!formData.name || !formData.phone) {
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -52,9 +54,11 @@ serve(async (req) => {
 
 👤 *Имя:* ${formData.name}
 📞 *Телефон:* ${formData.phone}
-📧 *Email:* ${formData.email}
+${formData.email ? `📧 *Email:* ${formData.email}` : ''}
 ${formData.service ? `🛠 *Услуга:* ${formData.service}` : ''}
+${formData.address ? `📍 *Адрес:* ${formData.address}` : ''}
 ${formData.date ? `📅 *Дата:* ${formData.date}` : ''}
+${formData.time ? `🕐 *Время:* ${formData.time}` : ''}
 ${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
     `.trim();
 
