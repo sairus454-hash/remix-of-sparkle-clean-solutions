@@ -3,11 +3,11 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ServiceCard from '@/components/ServiceCard';
 import ServicesSplash from '@/components/ServicesSplash';
+import AnimatedImage from '@/components/AnimatedImage';
 import { Sofa, Sparkles, Armchair, Car, LayoutGrid, Baby, Wind, Wrench } from 'lucide-react';
 import leatherSofaCleaning from '@/assets/leather-sofa-cleaning.jpg';
 import mattressCleaningService from '@/assets/mattress-cleaning-service.jpg';
 import armchairCleaning from '@/assets/armchair-cleaning.jpg';
-
 const Services = () => {
   const { t } = useLanguage();
   const [showSplash, setShowSplash] = useState(true);
@@ -68,17 +68,18 @@ const Services = () => {
               {galleryImages.map((image, index) => (
                 <div 
                   key={index} 
-                  className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-up bg-gradient-hero p-1"
-                  style={{ animationDelay: `${index * 0.1}s`, animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
+                  className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
+                  style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
                 >
                   <div className="relative rounded-xl overflow-hidden">
-                    <img 
+                    <AnimatedImage 
                       src={image.src} 
                       alt={image.alt} 
+                      delay={index * 150}
+                      duration={800}
                       className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                      style={{ animation: `slowZoom ${18 + index * 2}s ease-in-out infinite alternate` }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
                   </div>
                 </div>
               ))}

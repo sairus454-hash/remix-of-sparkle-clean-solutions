@@ -4,11 +4,11 @@ import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
 import OzonePriceCalculator from '@/components/OzonePriceCalculator';
 import OzoneSplash from '@/components/OzoneSplash';
+import AnimatedImage from '@/components/AnimatedImage';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
 import ozoneOffice from '@/assets/ozone-office.jpg';
-
 const Ozone = () => {
   const { t } = useLanguage();
   const [showSplash, setShowSplash] = useState(true);
@@ -74,17 +74,18 @@ const Ozone = () => {
             {galleryImages.map((image, index) => (
               <div 
                 key={index} 
-                className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-up bg-gradient-hero p-1"
-                style={{ animationDelay: `${index * 0.1}s`, animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
+                className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
+                style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
               >
                 <div className="relative rounded-xl overflow-hidden">
-                  <img 
+                  <AnimatedImage 
                     src={image.src} 
                     alt={image.alt} 
+                    delay={index * 150}
+                    duration={800}
                     className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                    style={{ animation: `slowZoom ${18 + index * 2}s ease-in-out infinite alternate` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
                 </div>
               </div>
             ))}
