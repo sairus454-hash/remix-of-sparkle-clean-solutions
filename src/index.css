@@ -254,3 +254,58 @@
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+/* Custom Scrollbar Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(var(--primary)), hsl(var(--fresh)));
+  border-radius: 10px;
+  border: 3px solid hsl(var(--muted));
+  min-height: 60px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(var(--primary) / 0.9), hsl(var(--fresh) / 0.9));
+  border: 2px solid hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, hsl(var(--primary) / 0.8), hsl(var(--fresh) / 0.8));
+}
+
+::-webkit-scrollbar-corner {
+  background: hsl(var(--muted));
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: hsl(var(--primary)) hsl(var(--muted));
+}
+
+/* Smooth scroll with reduced speed effect via scroll-snap */
+@supports (scroll-snap-type: y proximity) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+  
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
