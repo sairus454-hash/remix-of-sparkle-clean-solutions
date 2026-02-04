@@ -16,7 +16,7 @@ const FreeDeliveryBadge = () => {
   if (isDismissed) return null;
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-40 flex items-center">
+    <div className="fixed right-4 top-20 sm:top-24 lg:top-28 z-40 flex items-center">
       {/* Expanded text bubble */}
       <div
         className={`
