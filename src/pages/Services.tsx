@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import ServiceCard from '@/components/ServiceCard';
 import ServicesSplash from '@/components/ServicesSplash';
 import AnimatedImage from '@/components/AnimatedImage';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { Sofa, Sparkles, Armchair, Car, LayoutGrid, Baby, Wind, Wrench } from 'lucide-react';
 import leatherSofaCleaning from '@/assets/leather-sofa-cleaning.jpg';
 import mattressCleaningService from '@/assets/mattress-cleaning-service.jpg';
@@ -92,9 +93,9 @@ const Services = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <div key={index} className="animate-fade-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                <CircularRevealCard key={index} index={index}>
                   <ServiceCard {...service} />
-                </div>
+                </CircularRevealCard>
               ))}
             </div>
           </div>
