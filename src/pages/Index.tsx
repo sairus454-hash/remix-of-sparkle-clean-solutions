@@ -173,61 +173,108 @@ const Index = () => {
             <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">Специальные предложения для наших клиентов</p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Акция недели */}
-            <CircularRevealCard index={0}>
-              <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card group hover:shadow-glow transition-all duration-300 touch-manipulation h-full">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
-                  animation: 'float 3s ease-in-out infinite'
-                }}>
-                  <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
-                    animation: 'pulse 2s ease-in-out infinite'
-                  }} />
+            <CircularRevealCard index={0} slow className="h-full">
+              <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-card to-fresh/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-primary/20 hover:border-primary/40 hover:scale-[1.02]">
+                {/* Декоративный фон */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/20 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-fresh/20 to-transparent rounded-full blur-xl translate-y-1/2 -translate-x-1/2" />
+                
+                {/* Бейдж */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-hero text-primary-foreground shadow-glow animate-pulse">
+                    -10%
+                  </span>
                 </div>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
-                  Акция недели
-                </h3>
-                <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
-                  Химчистка матрасов со скидкой 10%
-                </p>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-500" style={{
+                    animation: 'float 3s ease-in-out infinite'
+                  }}>
+                    <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{
+                      animation: 'pulse 2s ease-in-out infinite'
+                    }} />
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
+                    Акция недели
+                  </h3>
+                  <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
+                    Химчистка матрасов со скидкой
+                  </p>
+                  <p className="text-primary text-center text-2xl sm:text-3xl font-bold mt-2">
+                    10%
+                  </p>
+                </div>
               </div>
             </CircularRevealCard>
 
             {/* Акция месяца */}
-            <CircularRevealCard index={1}>
-              <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card group hover:shadow-glow transition-all duration-300 touch-manipulation h-full">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
-                  animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite'
-                }}>
-                  <Star className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
-                    animation: 'pulse 2s ease-in-out infinite'
-                  }} />
+            <CircularRevealCard index={1} slow className="h-full">
+              <div className="relative overflow-hidden bg-gradient-to-br from-fresh/10 via-card to-primary/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-fresh/20 hover:border-fresh/40 hover:scale-[1.02]">
+                {/* Декоративный фон */}
+                <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-fresh/20 to-transparent rounded-full blur-2xl -translate-y-1/2 -translate-x-1/2" />
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-primary/20 to-transparent rounded-full blur-xl translate-y-1/2 translate-x-1/2" />
+                
+                {/* Бейдж */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-fresh to-primary text-primary-foreground shadow-glow animate-pulse">
+                    -15%
+                  </span>
                 </div>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
-                  Акция месяца
-                </h3>
-                <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
-                  Закажи услугу химчистки и получи на вторую другую услугу скидку 15%
-                </p>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-2xl bg-gradient-to-r from-fresh to-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-500" style={{
+                    animation: 'float 3s ease-in-out infinite'
+                  }}>
+                    <Star className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{
+                      animation: 'pulse 2s ease-in-out infinite'
+                    }} />
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-fresh to-primary bg-clip-text text-transparent">
+                    Акция месяца
+                  </h3>
+                  <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
+                    Закажи химчистку и получи скидку на вторую услугу
+                  </p>
+                  <p className="text-fresh text-center text-2xl sm:text-3xl font-bold mt-2">
+                    15%
+                  </p>
+                </div>
               </div>
             </CircularRevealCard>
 
             {/* Акция до конца года */}
-            <CircularRevealCard index={2} className="sm:col-span-2 lg:col-span-1">
-              <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card group hover:shadow-glow transition-all duration-300 touch-manipulation h-full">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
-                  animation: 'float 3s ease-in-out infinite'
-                }}>
-                  <Award className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
-                    animation: 'pulse 2s ease-in-out infinite'
-                  }} />
+            <CircularRevealCard index={2} slow className="sm:col-span-2 lg:col-span-1 h-full">
+              <div className="relative overflow-hidden bg-gradient-to-br from-accent/30 via-card to-primary/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-accent/30 hover:border-accent/50 hover:scale-[1.02]">
+                {/* Декоративный фон */}
+                <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-gradient-to-r from-accent/20 to-primary/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+                
+                {/* Бейдж */}
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-accent to-primary text-accent-foreground shadow-glow animate-pulse">
+                    VIP
+                  </span>
                 </div>
-                <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
-                  Акция до конца года
-                </h3>
-                <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
-                  Скидки для постоянных клиентов до конца года -15%
-                </p>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-2xl bg-gradient-to-r from-accent to-primary flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-500" style={{
+                    animation: 'float 3s ease-in-out infinite'
+                  }}>
+                    <Award className="w-8 h-8 sm:w-10 sm:h-10 text-accent-foreground" style={{
+                      animation: 'pulse 2s ease-in-out infinite'
+                    }} />
+                  </div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+                    Для постоянных клиентов
+                  </h3>
+                  <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
+                    Скидки до конца года
+                  </p>
+                  <p className="text-accent text-center text-2xl sm:text-3xl font-bold mt-2">
+                    до 15%
+                  </p>
+                </div>
               </div>
             </CircularRevealCard>
           </div>
