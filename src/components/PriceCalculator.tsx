@@ -144,6 +144,11 @@ const PriceCalculator = () => {
   },
   // Other
   {
+    id: 'carpetCovering',
+    name: t.prices.items.carpetCovering,
+    price: 25,
+    unit: 'm²'
+  }, {
     id: 'stroller',
     name: t.prices.items.stroller,
     price: 100
