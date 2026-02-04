@@ -54,6 +54,7 @@ const ChatBot = () => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
+  const [hasAutoOpened, setHasAutoOpened] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', contact: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
@@ -103,6 +104,18 @@ const ChatBot = () => {
     ]);
     setShowQuickReplies(true);
   }, [language, t.chatbot.welcome, t.chatbot.welcomeMobile, isMobile]);
+
+  // Auto-open chatbot after 4 seconds on first visit
+  useEffect(() => {
+    if (hasAutoOpened) return;
+    
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+      setHasAutoOpened(true);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, [hasAutoOpened]);
 
   useEffect(() => {
     const scrollToBottom = () => {
