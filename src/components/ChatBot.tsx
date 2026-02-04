@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
+import { useLanguage } from '@/i18n/LanguageContext';
 import ReactMarkdown from 'react-markdown';
 
 interface Message {
@@ -20,21 +21,27 @@ interface LeadForm {
 }
 
 const ChatBot = () => {
+  const { t, language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', contact: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: 'welcome',
-      role: 'assistant',
-      content: 'Здравствуйте! 👋 Я AI-консультант MasterClean. Чем могу помочь? Расскажите о вашей задаче, и я подберу подходящее решение.',
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Initialize welcome message when language changes
+  useEffect(() => {
+    setMessages([
+      {
+        id: 'welcome',
+        role: 'assistant',
+        content: t.chatbot.welcome,
+      },
+    ]);
+  }, [language, t.chatbot.welcome]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -69,7 +76,7 @@ const ChatBot = () => {
       conversationHistory.push({ role: 'user', content: userMessage.content });
 
       const { data, error } = await supabase.functions.invoke('chat-bot', {
-        body: { messages: conversationHistory },
+        body: { messages: conversationHistory, language },
       });
 
       if (error) throw error;
@@ -77,7 +84,7 @@ const ChatBot = () => {
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: data.message || 'Извините, не удалось получить ответ.',
+        content: data.message || t.chatbot.error,
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
@@ -86,7 +93,7 @@ const ChatBot = () => {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: 'Извините, произошла ошибка. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.',
+        content: t.chatbot.error,
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -107,14 +114,12 @@ const ChatBot = () => {
     setIsLoading(true);
     
     try {
-      // Формируем краткое содержание разговора для контекста
       const chatSummary = messages
         .filter(m => m.id !== 'welcome')
-        .slice(-6) // Последние 6 сообщений
-        .map(m => `${m.role === 'user' ? 'Клиент' : 'Бот'}: ${m.content}`)
+        .slice(-6)
+        .map(m => `${m.role === 'user' ? 'Client' : 'Bot'}: ${m.content}`)
         .join('\n');
 
-      // Отправляем в Telegram
       const { error } = await supabase.functions.invoke('send-telegram', {
         body: {
           name: leadForm.name.trim(),
@@ -128,11 +133,10 @@ const ChatBot = () => {
         console.error('Telegram send error:', error);
       }
 
-      // Показываем сообщение об успехе
       const leadMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
-        content: `Спасибо, ${leadForm.name}! 🎉 Ваша заявка принята. Мы свяжемся с вами по контакту: ${leadForm.contact} в ближайшее время!`,
+        content: `${t.chatbot.thankYou}, ${leadForm.name}! 🎉 ${t.chatbot.requestAccepted}: ${leadForm.contact} ${t.chatbot.soon}`,
       };
       setMessages((prev) => [...prev, leadMessage]);
       setLeadSubmitted(true);
@@ -143,7 +147,7 @@ const ChatBot = () => {
       const errorMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
-        content: 'Произошла ошибка при отправке заявки. Пожалуйста, попробуйте ещё раз или свяжитесь с нами по телефону.',
+        content: t.chatbot.error,
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -156,7 +160,7 @@ const ChatBot = () => {
     const botMessage: Message = {
       id: Date.now().toString(),
       role: 'assistant',
-      content: 'Чтобы помочь дальше, подскажите, как с вами связаться 👇',
+      content: t.chatbot.contactPrompt,
     };
     setMessages((prev) => [...prev, botMessage]);
   };
@@ -171,7 +175,7 @@ const ChatBot = () => {
           "bg-gradient-to-br from-primary to-fresh hover:scale-110 hover:shadow-glow",
           isOpen && "rotate-180"
         )}
-        aria-label={isOpen ? "Закрыть чат" : "Открыть чат"}
+        aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
       >
         {isOpen ? (
           <X className="w-6 h-6 text-primary-foreground" />
@@ -195,14 +199,13 @@ const ChatBot = () => {
             <Bot className="w-5 h-5 text-primary-foreground" />
           </div>
           <div className="flex-1">
-            <h3 className="font-semibold text-primary-foreground">AI-консультант</h3>
-            <p className="text-xs text-primary-foreground/80">MasterClean</p>
+            <h3 className="font-semibold text-primary-foreground">{t.chatbot.title}</h3>
+            <p className="text-xs text-primary-foreground/80">{t.chatbot.subtitle}</p>
           </div>
-          {/* Close button in header */}
           <button
             onClick={() => setIsOpen(false)}
             className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
-            aria-label="Закрыть чат"
+            aria-label={t.chatbot.closeChat}
           >
             <X className="w-4 h-4 text-primary-foreground" />
           </button>
@@ -265,33 +268,33 @@ const ChatBot = () => {
           <div className="absolute bottom-16 left-0 right-0 p-4 bg-card border-t border-border">
             <div className="space-y-3">
               <div>
-                <Label htmlFor="lead-name" className="text-xs text-muted-foreground">Имя</Label>
+                <Label htmlFor="lead-name" className="text-xs text-muted-foreground">{t.chatbot.name}</Label>
                 <Input
                   id="lead-name"
                   value={leadForm.name}
                   onChange={(e) => setLeadForm(prev => ({ ...prev, name: e.target.value }))}
-                  placeholder="Ваше имя"
+                  placeholder={t.chatbot.namePlaceholder}
                   className="h-9"
                 />
               </div>
               <div>
-                <Label htmlFor="lead-contact" className="text-xs text-muted-foreground">Телефон / Email / Telegram</Label>
+                <Label htmlFor="lead-contact" className="text-xs text-muted-foreground">{t.chatbot.contact}</Label>
                 <Input
                   id="lead-contact"
                   value={leadForm.contact}
                   onChange={(e) => setLeadForm(prev => ({ ...prev, contact: e.target.value }))}
-                  placeholder="+7... или @username"
+                  placeholder={t.chatbot.contactPlaceholder}
                   className="h-9"
                 />
               </div>
               <Button
                 onClick={handleLeadSubmit}
-                disabled={!leadForm.name.trim() || !leadForm.contact.trim()}
+                disabled={!leadForm.name.trim() || !leadForm.contact.trim() || isLoading}
                 className="w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90"
                 size="sm"
               >
                 <FileText className="w-4 h-4 mr-2" />
-                Отправить заявку
+                {t.chatbot.sendRequest}
               </Button>
             </div>
           </div>
@@ -308,7 +311,7 @@ const ChatBot = () => {
               disabled={leadSubmitted}
             >
               <Phone className="w-3 h-3 mr-1" />
-              Связаться с менеджером
+              {t.chatbot.contactManager}
             </Button>
             <Button
               onClick={() => setShowLeadForm(true)}
@@ -317,7 +320,7 @@ const ChatBot = () => {
               disabled={leadSubmitted}
             >
               <FileText className="w-3 h-3 mr-1" />
-              Оставить заявку
+              {t.chatbot.submitRequest}
             </Button>
           </div>
         )}
@@ -330,7 +333,7 @@ const ChatBot = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Напишите сообщение..."
+              placeholder={t.chatbot.placeholder}
               disabled={isLoading}
               className="flex-1 h-9"
             />

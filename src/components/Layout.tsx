@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CleaningBackground from './CleaningBackground';
-import FreeDeliveryBadge from './FreeDeliveryBadge';
+import ChatBot from './ChatBot';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -12,7 +12,6 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
@@ -35,6 +34,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
+      <ChatBot />
     </div>
   );
 };
