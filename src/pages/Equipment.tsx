@@ -133,17 +133,15 @@ const Equipment = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {mainFeatures.map((feature, index) => (
-                <div 
-                  key={index} 
-                  className="group p-8 rounded-2xl bg-gradient-card border border-border hover:shadow-card-hover transition-all duration-300 animate-fade-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <feature.icon className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                <CircularRevealCard key={index} index={index}>
+                  <div className="group p-8 rounded-2xl bg-gradient-card border border-border hover:shadow-card-hover transition-all duration-300 h-full">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <feature.icon className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <h3 className="font-serif text-xl font-semibold text-foreground mb-4">{feature.title}</h3>
+                    <p className="text-muted-foreground">{feature.description}</p>
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-4">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
+                </CircularRevealCard>
               ))}
             </div>
           </div>
