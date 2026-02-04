@@ -3,6 +3,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import PriceSplash from '@/components/PriceSplash';
 import PriceAccordion, { PriceAccordionCategory } from '@/components/PriceAccordion';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -168,27 +169,29 @@ const Prices = () => {
         <section className="py-6 sm:py-10 bg-card">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <Card 
-                className="shadow-card animate-fade-up cursor-pointer hover:shadow-lg transition-shadow"
-                onClick={() => setIsCalcOpen(true)}
-              >
-                <CardContent className="py-5 sm:py-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                        <Calculator className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
+              <CircularRevealCard index={0}>
+                <Card 
+                  className="shadow-card cursor-pointer hover:shadow-lg transition-shadow"
+                  onClick={() => setIsCalcOpen(true)}
+                >
+                  <CardContent className="py-5 sm:py-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
+                          <Calculator className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
+                        </div>
+                        <div>
+                          <h2 className="font-serif text-lg sm:text-xl font-semibold">{t.calculator.title}</h2>
+                          <p className="text-sm text-muted-foreground">{t.calculator.selectItems}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h2 className="font-serif text-lg sm:text-xl font-semibold">{t.calculator.title}</h2>
-                        <p className="text-sm text-muted-foreground">{t.calculator.selectItems}</p>
-                      </div>
+                      <Button variant="outline" size="sm" className="hidden sm:flex">
+                        {t.calculator.title}
+                      </Button>
                     </div>
-                    <Button variant="outline" size="sm" className="hidden sm:flex">
-                      {t.calculator.title}
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </CircularRevealCard>
             </div>
           </div>
         </section>
