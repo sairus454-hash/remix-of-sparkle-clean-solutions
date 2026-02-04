@@ -5,6 +5,12 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AutoSplash from '@/components/AutoSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2, Send } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -202,25 +208,70 @@ const Auto = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {/* Price List */}
+            {/* Price List - Accordion */}
             <Card className="shadow-card animate-fade-up">
               <CardHeader className="border-b border-border p-4 sm:p-6">
-                <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.autoCleaning}</CardTitle>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0">
+                    <Car className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
+                  </div>
+                  <CardTitle className="font-serif text-lg sm:text-xl">{t.prices.autoCleaning}</CardTitle>
+                </div>
               </CardHeader>
               <CardContent className="pt-4 sm:pt-6 p-4 sm:p-6">
-                <div className="space-y-1">
-                  {autoPrices.map((item) => (
-                    <div 
-                      key={item.id}
-                      className="flex items-center justify-between py-3 sm:py-4 border-b border-border last:border-0 hover:bg-accent/30 transition-colors px-2 sm:px-4 -mx-2 sm:-mx-4 rounded-lg gap-2"
-                    >
-                      <span className="font-medium text-foreground text-sm sm:text-base">{item.name}</span>
-                      <span className="text-primary font-semibold text-sm sm:text-base whitespace-nowrap">
-                        {t.prices.from} {item.price} {t.prices.currency}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <Accordion type="single" collapsible className="space-y-2">
+                  <AccordionItem value="standard" className="border rounded-lg px-3">
+                    <AccordionTrigger className="hover:no-underline py-3">
+                      <div className="flex items-center justify-between w-full pr-2">
+                        <span className="font-medium text-sm sm:text-base">{t.prices.items.autoComplex}</span>
+                        <span className="text-primary font-semibold text-sm sm:text-base whitespace-nowrap ml-2">
+                          {t.prices.from} 450 {t.prices.currency}
+                        </span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3">
+                      <div className="space-y-2 pt-2 border-t">
+                        {autoPrices.slice(1, 8).map((item) => (
+                          <div 
+                            key={item.id}
+                            className="flex items-center justify-between py-2 text-sm"
+                          >
+                            <span className="text-muted-foreground">{item.name}</span>
+                            <span className="text-primary font-medium whitespace-nowrap ml-2">
+                              {t.prices.from} {item.price} {t.prices.currency}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                  
+                  <AccordionItem value="trucks" className="border rounded-lg px-3">
+                    <AccordionTrigger className="hover:no-underline py-3">
+                      <div className="flex items-center justify-between w-full pr-2">
+                        <span className="font-medium text-sm sm:text-base">{t.prices.items.autoTruckCabin}</span>
+                        <span className="text-primary font-semibold text-sm sm:text-base whitespace-nowrap ml-2">
+                          {t.prices.from} 400 {t.prices.currency}
+                        </span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3">
+                      <div className="space-y-2 pt-2 border-t">
+                        {autoPrices.slice(8).map((item) => (
+                          <div 
+                            key={item.id}
+                            className="flex items-center justify-between py-2 text-sm"
+                          >
+                            <span className="text-muted-foreground">{item.name}</span>
+                            <span className="text-primary font-medium whitespace-nowrap ml-2">
+                              {t.prices.from} {item.price} {t.prices.currency}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </CardContent>
             </Card>
 
