@@ -2,7 +2,9 @@ import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CleaningBackground from './CleaningBackground';
+import FreeDeliveryBadge from './FreeDeliveryBadge';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,10 +12,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
       <CleaningBackground />
+      {isMobile && <FreeDeliveryBadge />}
       <Header />
       <main className="flex-1 pt-14 sm:pt-16 lg:pt-20">
         {/* Marquee Section */}
