@@ -6,6 +6,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import ContactsSplash from '@/components/ContactsSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import ChatBot from '@/components/ChatBot';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import mastercleanLogo from '@/assets/masterclean-logo-contacts.jpg';
 import { CalculatorItem } from '@/types/calculator';
@@ -134,6 +135,7 @@ const Contacts = () => {
           </div>
         </div>
       </section>
+      <ChatBot />
       </Layout>
     </>
   );
