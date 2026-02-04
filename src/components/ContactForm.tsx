@@ -53,28 +53,7 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
     t.nav.handyman,
   ];
 
-  // Busy dates (same as in BookingCalendar)
-  const today = new Date();
-  const busyDates: Date[] = [
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 2),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 8),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 12),
-    new Date(today.getFullYear(), today.getMonth(), today.getDate() + 15),
-    new Date(today.getFullYear(), today.getMonth() + 1, 3),
-    new Date(today.getFullYear(), today.getMonth() + 1, 7),
-    new Date(today.getFullYear(), today.getMonth() + 1, 14),
-  ];
-
-  const isBusyDate = (checkDate: Date) => {
-    return busyDates.some(
-      (busyDate) =>
-        busyDate.getDate() === checkDate.getDate() &&
-        busyDate.getMonth() === checkDate.getMonth() &&
-        busyDate.getFullYear() === checkDate.getFullYear()
-    );
-  };
-
+  // Only disable past dates
   const isPastDate = (checkDate: Date) => {
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
@@ -193,12 +172,14 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
               <SelectValue placeholder={t.form.selectTime} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="08:00-10:00" className="py-3 sm:py-2">08:00-10:00</SelectItem>
-              <SelectItem value="10:00-12:00" className="py-3 sm:py-2">10:00-12:00</SelectItem>
-              <SelectItem value="12:00-14:00" className="py-3 sm:py-2">12:00-14:00</SelectItem>
-              <SelectItem value="14:00-16:00" className="py-3 sm:py-2">14:00-16:00</SelectItem>
-              <SelectItem value="16:00-18:00" className="py-3 sm:py-2">16:00-18:00</SelectItem>
-              <SelectItem value="18:00-20:00" className="py-3 sm:py-2">18:00-20:00</SelectItem>
+              {Array.from({ length: 24 }, (_, i) => {
+                const hour = i.toString().padStart(2, '0');
+                return (
+                  <SelectItem key={hour} value={`${hour}:00`} className="py-3 sm:py-2">
+                    {hour}:00
+                  </SelectItem>
+                );
+              })}
             </SelectContent>
           </Select>
         </div>
@@ -238,18 +219,10 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
               mode="single"
               selected={date}
               onSelect={handleDateSelect}
-              disabled={(d) => isPastDate(d) || isBusyDate(d)}
+              disabled={(d) => isPastDate(d)}
               initialFocus
               locale={currentLocale}
               className={cn('p-3 pointer-events-auto')}
-              modifiers={{
-                busy: (d) => isBusyDate(d) && !isPastDate(d),
-                available: (d) => !isBusyDate(d) && !isPastDate(d),
-              }}
-              modifiersClassNames={{
-                busy: 'bg-destructive/20 text-destructive line-through',
-                available: 'hover:bg-fresh/40',
-              }}
             />
           </PopoverContent>
         </Popover>
