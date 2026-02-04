@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User, Loader2 } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -13,8 +14,16 @@ interface Message {
   content: string;
 }
 
+interface LeadForm {
+  name: string;
+  contact: string;
+}
+
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLeadForm, setShowLeadForm] = useState(false);
+  const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', contact: '' });
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -92,6 +101,33 @@ const ChatBot = () => {
     }
   };
 
+  const handleLeadSubmit = async () => {
+    if (!leadForm.name.trim() || !leadForm.contact.trim()) return;
+    
+    // Add lead submission message to chat
+    const leadMessage: Message = {
+      id: Date.now().toString(),
+      role: 'assistant',
+      content: `Спасибо, ${leadForm.name}! 🎉 Ваша заявка принята. Мы свяжемся с вами по контакту: ${leadForm.contact} в ближайшее время!`,
+    };
+    setMessages((prev) => [...prev, leadMessage]);
+    setLeadSubmitted(true);
+    setShowLeadForm(false);
+    
+    // Here you could also send to Telegram or save to database
+    console.log('Lead captured:', leadForm);
+  };
+
+  const openContactManager = () => {
+    setShowLeadForm(true);
+    const botMessage: Message = {
+      id: Date.now().toString(),
+      role: 'assistant',
+      content: 'Чтобы помочь дальше, подскажите, как с вами связаться 👇',
+    };
+    setMessages((prev) => [...prev, botMessage]);
+  };
+
   return (
     <>
       {/* Chat Toggle Button */}
@@ -121,18 +157,26 @@ const ChatBot = () => {
         )}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-primary to-fresh p-4 flex items-center gap-3">
+        <div className="bg-gradient-to-r from-primary to-fresh p-4 flex items-center gap-3 relative">
           <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
             <Bot className="w-5 h-5 text-primary-foreground" />
           </div>
-          <div>
+          <div className="flex-1">
             <h3 className="font-semibold text-primary-foreground">AI-консультант</h3>
             <p className="text-xs text-primary-foreground/80">MasterClean</p>
           </div>
+          {/* Close button in header */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+            aria-label="Закрыть чат"
+          >
+            <X className="w-4 h-4 text-primary-foreground" />
+          </button>
         </div>
 
         {/* Messages */}
-        <ScrollArea className="h-[calc(100%-8rem)] p-4" ref={scrollRef}>
+        <ScrollArea className="h-[calc(100%-12rem)] p-4" ref={scrollRef}>
           <div className="space-y-4">
             {messages.map((message) => (
               <div
@@ -183,8 +227,70 @@ const ChatBot = () => {
           </div>
         </ScrollArea>
 
+        {/* Lead Form */}
+        {showLeadForm && !leadSubmitted && (
+          <div className="absolute bottom-16 left-0 right-0 p-4 bg-card border-t border-border">
+            <div className="space-y-3">
+              <div>
+                <Label htmlFor="lead-name" className="text-xs text-muted-foreground">Имя</Label>
+                <Input
+                  id="lead-name"
+                  value={leadForm.name}
+                  onChange={(e) => setLeadForm(prev => ({ ...prev, name: e.target.value }))}
+                  placeholder="Ваше имя"
+                  className="h-9"
+                />
+              </div>
+              <div>
+                <Label htmlFor="lead-contact" className="text-xs text-muted-foreground">Телефон / Email / Telegram</Label>
+                <Input
+                  id="lead-contact"
+                  value={leadForm.contact}
+                  onChange={(e) => setLeadForm(prev => ({ ...prev, contact: e.target.value }))}
+                  placeholder="+7... или @username"
+                  className="h-9"
+                />
+              </div>
+              <Button
+                onClick={handleLeadSubmit}
+                disabled={!leadForm.name.trim() || !leadForm.contact.trim()}
+                className="w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90"
+                size="sm"
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                Отправить заявку
+              </Button>
+            </div>
+          </div>
+        )}
+
+        {/* Action Buttons */}
+        {!showLeadForm && (
+          <div className="absolute bottom-16 left-0 right-0 px-4 py-2 bg-card border-t border-border flex gap-2">
+            <Button
+              onClick={openContactManager}
+              variant="outline"
+              size="sm"
+              className="flex-1 text-xs"
+              disabled={leadSubmitted}
+            >
+              <Phone className="w-3 h-3 mr-1" />
+              Связаться с менеджером
+            </Button>
+            <Button
+              onClick={() => setShowLeadForm(true)}
+              size="sm"
+              className="flex-1 text-xs bg-gradient-to-r from-primary to-fresh hover:opacity-90"
+              disabled={leadSubmitted}
+            >
+              <FileText className="w-3 h-3 mr-1" />
+              Оставить заявку
+            </Button>
+          </div>
+        )}
+
         {/* Input */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-card border-t border-border">
+        <div className="absolute bottom-0 left-0 right-0 p-3 bg-card border-t border-border">
           <div className="flex gap-2">
             <Input
               ref={inputRef}
@@ -193,13 +299,13 @@ const ChatBot = () => {
               onKeyPress={handleKeyPress}
               placeholder="Напишите сообщение..."
               disabled={isLoading}
-              className="flex-1"
+              className="flex-1 h-9"
             />
             <Button
               onClick={sendMessage}
               disabled={!input.trim() || isLoading}
               size="icon"
-              className="bg-gradient-to-r from-primary to-fresh hover:opacity-90"
+              className="h-9 w-9 bg-gradient-to-r from-primary to-fresh hover:opacity-90"
             >
               <Send className="w-4 h-4" />
             </Button>
