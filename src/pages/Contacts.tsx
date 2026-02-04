@@ -1,19 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import ContactForm from '@/components/ContactForm';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import ContactsSplash from '@/components/ContactsSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import mastercleanLogo from '@/assets/masterclean-logo-contacts.jpg';
+import { CalculatorItem } from '@/types/calculator';
+
+interface LocationState {
+  calculatorItems?: CalculatorItem[];
+  calculatorTotal?: number;
+}
+
 const Contacts = () => {
   const { t } = useLanguage();
+  const location = useLocation();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const [showSplash, setShowSplash] = useState(true);
+  const formRef = useRef<ContactFormRef>(null);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
   };
+
+  // Handle incoming calculator data from navigation
+  useEffect(() => {
+    const state = location.state as LocationState;
+    if (state?.calculatorItems && state?.calculatorTotal) {
+      // Wait for splash to complete and form to be ready
+      const timer = setTimeout(() => {
+        formRef.current?.setCalculatorData(state.calculatorItems!, state.calculatorTotal!);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.state]);
 
   const contactInfo = [
     { icon: MapPin, label: t.contacts.address, value: t.contacts.addressValue, isHours: false },
@@ -101,6 +123,7 @@ const Contacts = () => {
                 {t.form.title}
               </h2>
               <ContactForm 
+                ref={formRef}
                 selectedDate={selectedDate} 
                 onDateChange={setSelectedDate} 
               />

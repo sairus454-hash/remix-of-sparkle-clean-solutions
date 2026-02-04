@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import ContactForm from '@/components/ContactForm';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import OzonePriceCalculator from '@/components/OzonePriceCalculator';
 import OzoneSplash from '@/components/OzoneSplash';
 import AnimatedImage from '@/components/AnimatedImage';
@@ -9,12 +9,21 @@ import { Wind, CheckCircle2, Car, Home, Building2, Wrench } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
 import ozoneOffice from '@/assets/ozone-office.jpg';
+import { CalculatorItem } from '@/types/calculator';
+
 const Ozone = () => {
   const { t } = useLanguage();
   const [showSplash, setShowSplash] = useState(true);
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
+  };
+
+  const handleSendToForm = (items: CalculatorItem[], total: number) => {
+    formRef.current?.setCalculatorData(items, total);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const benefits = [
@@ -153,13 +162,13 @@ const Ozone = () => {
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <OzonePriceCalculator />
+            <OzonePriceCalculator onSendToForm={handleSendToForm} />
           </div>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-gradient-section">
+      <section ref={formSectionRef} className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
@@ -168,7 +177,7 @@ const Ozone = () => {
               </h2>
             </div>
             <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
-              <ContactForm />
+              <ContactForm ref={formRef} />
             </div>
           </div>
         </div>

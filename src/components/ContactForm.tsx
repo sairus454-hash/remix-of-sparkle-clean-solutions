@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,23 +7,30 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { toast } from '@/hooks/use-toast';
-import { Send, Loader2, CalendarIcon } from 'lucide-react';
+import { Send, Loader2, CalendarIcon, ShoppingCart, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
 import SimpleCaptcha from './SimpleCaptcha';
 import { supabase } from '@/integrations/supabase/client';
+import { CalculatorItem } from '@/types/calculator';
+
+export interface ContactFormRef {
+  setCalculatorData: (items: CalculatorItem[], total: number) => void;
+}
 
 interface ContactFormProps {
   selectedDate?: Date;
   onDateChange?: (date: Date | undefined) => void;
 }
 
-const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
+const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate, onDateChange }, ref) => {
   const { t, language } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
   const [date, setDate] = useState<Date | undefined>(selectedDate);
+  const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>([]);
+  const [calculatorTotal, setCalculatorTotal] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -33,12 +40,39 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
     message: '',
   });
 
+  // Expose setCalculatorData method
+  useImperativeHandle(ref, () => ({
+    setCalculatorData: (items: CalculatorItem[], total: number) => {
+      setCalculatorItems(items);
+      setCalculatorTotal(total);
+    }
+  }));
+
   // Sync with external selectedDate prop
   useEffect(() => {
     if (selectedDate) {
       setDate(selectedDate);
     }
   }, [selectedDate]);
+
+  // Auto-generate message from calculator data
+  useEffect(() => {
+    if (calculatorItems.length > 0) {
+      const orderLabel = t.form.orderFromCalculator || 'Заказ из калькулятора';
+      const totalLabel = language === 'ru' ? 'Итого:' :
+                         language === 'pl' ? 'Razem:' :
+                         language === 'uk' ? 'Разом:' :
+                         'Total:';
+      
+      const lines = calculatorItems.map(item => {
+        const unitPart = item.unit ? ` (${item.unit})` : '';
+        return `• ${item.name}${unitPart} × ${item.quantity} = ${item.price * item.quantity} ${t.prices.currency}`;
+      });
+      
+      const message = `${orderLabel}:\n${lines.join('\n')}\n\n${totalLabel} ${calculatorTotal} ${t.prices.currency}`;
+      setFormData(prev => ({ ...prev, message }));
+    }
+  }, [calculatorItems, calculatorTotal, t, language]);
 
   const locales = { ru, pl, uk, en: enUS };
   const currentLocale = locales[language] || enUS;
@@ -63,6 +97,12 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
   const handleDateSelect = (newDate: Date | undefined) => {
     setDate(newDate);
     onDateChange?.(newDate);
+  };
+
+  const clearCalculatorData = () => {
+    setCalculatorItems([]);
+    setCalculatorTotal(0);
+    setFormData(prev => ({ ...prev, message: '' }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -103,6 +143,7 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
       setDate(undefined);
       onDateChange?.(undefined);
       setIsCaptchaValid(false);
+      clearCalculatorData();
     } catch (error) {
       console.error('Form submission error:', error);
       toast({
@@ -117,6 +158,47 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+      {/* Calculator Data Preview */}
+      {calculatorItems.length > 0 && (
+        <div className="bg-fresh/10 border border-fresh/30 rounded-xl p-4 animate-fade-up">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <ShoppingCart className="w-5 h-5 text-fresh" />
+              <span className="font-semibold text-foreground">{t.form.orderFromCalculator}</span>
+            </div>
+            <Button
+              type="button"
+              variant="ghost"
+              size="sm"
+              onClick={clearCalculatorData}
+              className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive"
+            >
+              <X className="w-4 h-4" />
+            </Button>
+          </div>
+          
+          <div className="space-y-2 max-h-40 overflow-y-auto">
+            {calculatorItems.map((item, index) => (
+              <div key={index} className="flex justify-between text-sm">
+                <span className="text-muted-foreground">
+                  {item.name} {item.unit && `(${item.unit})`} × {item.quantity}
+                </span>
+                <span className="font-medium text-foreground">
+                  {item.price * item.quantity} {t.prices.currency}
+                </span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-3 pt-3 border-t border-fresh/30 flex justify-between items-center">
+            <span className="font-semibold text-foreground">{t.calculator.total}</span>
+            <span className="text-lg font-bold text-primary">{calculatorTotal} {t.prices.currency}</span>
+          </div>
+          
+          <p className="text-xs text-muted-foreground mt-2">{t.form.checkOrder}</p>
+        </div>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-1.5 sm:space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.name}</label>
@@ -234,7 +316,7 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
           placeholder={t.form.messagePlaceholder}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          rows={4}
+          rows={calculatorItems.length > 0 ? 8 : 4}
           className="bg-card border-border resize-none text-base sm:text-sm min-h-[100px]"
         />
       </div>
@@ -256,6 +338,8 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
       </Button>
     </form>
   );
-};
+});
+
+ContactForm.displayName = 'ContactForm';
 
 export default ContactForm;

@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import ContactForm from '@/components/ContactForm';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AutoSplash from '@/components/AutoSplash';
 import AnimatedImage from '@/components/AnimatedImage';
-import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2 } from 'lucide-react';
+import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2, Send } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,6 +12,7 @@ import { Label } from '@/components/ui/label';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
 import autoCleaning3 from '@/assets/auto-cleaning-3.jpg';
+import { CalculatorItem } from '@/types/calculator';
 
 interface AutoPriceItem {
   id: string;
@@ -28,6 +29,8 @@ const Auto = () => {
   const { t } = useLanguage();
   const [selectedItems, setSelectedItems] = useState<SelectedAutoItem[]>([]);
   const [showSplash, setShowSplash] = useState(true);
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
@@ -81,6 +84,22 @@ const Auto = () => {
 
   const clearAll = () => {
     setSelectedItems([]);
+  };
+
+  const sendToForm = () => {
+    if (selectedItems.length === 0) return;
+    
+    const items: CalculatorItem[] = selectedItems.map(s => ({
+      id: s.item.id,
+      name: s.item.name,
+      price: s.item.price,
+      quantity: s.quantity,
+    }));
+    
+    formRef.current?.setCalculatorData(items, calculateTotal());
+    
+    // Scroll to form
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const services = [
@@ -320,6 +339,17 @@ const Auto = () => {
                   <p className="text-xs sm:text-sm text-muted-foreground mt-2">
                     {t.calculator.note}
                   </p>
+                  
+                  {/* Send to Form Button */}
+                  {selectedItems.length > 0 && (
+                    <Button
+                      onClick={sendToForm}
+                      className="w-full mt-4 bg-fresh hover:bg-fresh/90 text-white shadow-glow transition-all h-11 touch-manipulation active:scale-[0.98]"
+                    >
+                      <Send className="w-4 h-4 mr-2" />
+                      {t.form.sendToForm}
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -328,7 +358,7 @@ const Auto = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-12 sm:py-20 bg-gradient-section">
+      <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">
@@ -337,7 +367,7 @@ const Auto = () => {
               </h2>
             </div>
             <div className="bg-gradient-card p-4 sm:p-8 rounded-xl sm:rounded-2xl shadow-card border border-border">
-              <ContactForm />
+              <ContactForm ref={formRef} />
             </div>
           </div>
         </div>
