@@ -5,6 +5,7 @@ import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
 import WaterDropSplash from '@/components/WaterDropSplash';
 import PriceSection from '@/components/PriceSection';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator } from 'lucide-react';
@@ -174,61 +175,61 @@ const Index = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Акция недели */}
-            <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card animate-fade-up group hover:shadow-glow transition-all duration-300 touch-manipulation" style={{
-              animationDelay: '0.1s'
-            }}>
-              <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
-                animation: 'float 3s ease-in-out infinite'
-              }}>
-                <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
-                  animation: 'pulse 2s ease-in-out infinite'
-                }} />
+            <CircularRevealCard index={0}>
+              <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card group hover:shadow-glow transition-all duration-300 touch-manipulation h-full">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
+                  animation: 'float 3s ease-in-out infinite'
+                }}>
+                  <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
+                    animation: 'pulse 2s ease-in-out infinite'
+                  }} />
+                </div>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
+                  Акция недели
+                </h3>
+                <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
+                  Химчистка матрасов со скидкой 10%
+                </p>
               </div>
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
-                Акция недели
-              </h3>
-              <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
-                Химчистка матрасов со скидкой 10%
-              </p>
-            </div>
+            </CircularRevealCard>
 
             {/* Акция месяца */}
-            <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card animate-fade-up group hover:shadow-glow transition-all duration-300 touch-manipulation" style={{
-              animationDelay: '0.2s'
-            }}>
-              <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
-                animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite'
-              }}>
-                <Star className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
-                  animation: 'pulse 2s ease-in-out infinite'
-                }} />
+            <CircularRevealCard index={1}>
+              <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card group hover:shadow-glow transition-all duration-300 touch-manipulation h-full">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
+                  animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite'
+                }}>
+                  <Star className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
+                    animation: 'pulse 2s ease-in-out infinite'
+                  }} />
+                </div>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
+                  Акция месяца
+                </h3>
+                <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
+                  Закажи услугу химчистки и получи на вторую другую услугу скидку 15%
+                </p>
               </div>
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
-                Акция месяца
-              </h3>
-              <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
-                Закажи услугу химчистки и получи на вторую другую услугу скидку 15%
-              </p>
-            </div>
+            </CircularRevealCard>
 
             {/* Акция до конца года */}
-            <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card animate-fade-up group hover:shadow-glow transition-all duration-300 sm:col-span-2 lg:col-span-1 touch-manipulation" style={{
-              animationDelay: '0.3s'
-            }}>
-              <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
-                animation: 'float 3s ease-in-out infinite'
-              }}>
-                <Award className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
-                  animation: 'pulse 2s ease-in-out infinite'
-                }} />
+            <CircularRevealCard index={2} className="sm:col-span-2 lg:col-span-1">
+              <div className="bg-card p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-card group hover:shadow-glow transition-all duration-300 touch-manipulation h-full">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{
+                  animation: 'float 3s ease-in-out infinite'
+                }}>
+                  <Award className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{
+                    animation: 'pulse 2s ease-in-out infinite'
+                  }} />
+                </div>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
+                  Акция до конца года
+                </h3>
+                <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
+                  Скидки для постоянных клиентов до конца года -15%
+                </p>
               </div>
-              <h3 className="font-serif text-lg sm:text-xl font-bold text-center mb-2 sm:mb-3 bg-gradient-to-r from-primary to-fresh bg-clip-text text-transparent">
-                Акция до конца года
-              </h3>
-              <p className="text-muted-foreground text-center text-sm sm:text-base leading-relaxed">
-                Скидки для постоянных клиентов до конца года -15%
-              </p>
-            </div>
+            </CircularRevealCard>
           </div>
         </div>
       </section>
