@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CleanSplash from '@/components/CleanSplash';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
 import mattressBeforeAfter from '@/assets/mattress-before-after.jpg';
 import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
@@ -131,37 +132,45 @@ const About = () => {
               </div>
               
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-gradient-hero rounded-2xl p-8 text-center shadow-glow">
-                  <Users className="w-12 h-12 text-primary-foreground mx-auto mb-4" style={{
-                  animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite'
-                }} />
-                  <p className="font-serif text-4xl font-bold text-primary-foreground mb-2">5000+</p>
-                  <p className="text-primary-foreground/80 text-sm">{t.about.clients}</p>
-                </div>
-                <div className="bg-card border border-border rounded-2xl p-8 text-center shadow-card">
-                  <Award className="w-12 h-12 text-primary mx-auto mb-4" style={{
-                  animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite',
-                  animationDelay: '0.5s'
-                }} />
-                  <p className="font-serif text-4xl font-bold text-foreground mb-2">3+</p>
-                  <p className="text-muted-foreground text-sm">{t.about.experience}</p>
-                </div>
-                <div className="bg-card border border-border rounded-2xl p-8 text-center shadow-card">
-                  <ThumbsUp className="w-12 h-12 text-primary mx-auto mb-4" style={{
-                  animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite',
-                  animationDelay: '1s'
-                }} />
-                  <p className="font-serif text-4xl font-bold text-foreground mb-2">100%</p>
-                  <p className="text-muted-foreground text-sm">{t.about.quality}</p>
-                </div>
-                <div className="bg-fresh rounded-2xl p-8 text-center shadow-glow">
-                  <Shield className="w-12 h-12 text-fresh-foreground mx-auto mb-4" style={{
-                  animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite',
-                  animationDelay: '1.5s'
-                }} />
-                  <p className="font-serif text-4xl font-bold text-fresh-foreground mb-2">ECO</p>
-                  <p className="text-fresh-foreground/80 text-sm">{t.equipment.eco}</p>
-                </div>
+                <CircularRevealCard index={0}>
+                  <div className="bg-gradient-hero rounded-2xl p-8 text-center shadow-glow h-full">
+                    <Users className="w-12 h-12 text-primary-foreground mx-auto mb-4" style={{
+                    animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite'
+                  }} />
+                    <p className="font-serif text-4xl font-bold text-primary-foreground mb-2">5000+</p>
+                    <p className="text-primary-foreground/80 text-sm">{t.about.clients}</p>
+                  </div>
+                </CircularRevealCard>
+                <CircularRevealCard index={1}>
+                  <div className="bg-card border border-border rounded-2xl p-8 text-center shadow-card h-full">
+                    <Award className="w-12 h-12 text-primary mx-auto mb-4" style={{
+                    animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite',
+                    animationDelay: '0.5s'
+                  }} />
+                    <p className="font-serif text-4xl font-bold text-foreground mb-2">3+</p>
+                    <p className="text-muted-foreground text-sm">{t.about.experience}</p>
+                  </div>
+                </CircularRevealCard>
+                <CircularRevealCard index={2}>
+                  <div className="bg-card border border-border rounded-2xl p-8 text-center shadow-card h-full">
+                    <ThumbsUp className="w-12 h-12 text-primary mx-auto mb-4" style={{
+                    animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite',
+                    animationDelay: '1s'
+                  }} />
+                    <p className="font-serif text-4xl font-bold text-foreground mb-2">100%</p>
+                    <p className="text-muted-foreground text-sm">{t.about.quality}</p>
+                  </div>
+                </CircularRevealCard>
+                <CircularRevealCard index={3}>
+                  <div className="bg-fresh rounded-2xl p-8 text-center shadow-glow h-full">
+                    <Shield className="w-12 h-12 text-fresh-foreground mx-auto mb-4" style={{
+                    animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite',
+                    animationDelay: '1.5s'
+                  }} />
+                    <p className="font-serif text-4xl font-bold text-fresh-foreground mb-2">ECO</p>
+                    <p className="text-fresh-foreground/80 text-sm">{t.equipment.eco}</p>
+                  </div>
+                </CircularRevealCard>
               </div>
             </div>
           </div>
@@ -178,32 +187,36 @@ const About = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Sofa Before/After */}
-                <div className="relative rounded-2xl overflow-hidden shadow-card group">
-                  <img src={sofaBeforeAfter} alt="Before and after sofa cleaning" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 flex">
-                    <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">
-                      {t.about.before || 'До'}
-                    </div>
-                    <div className="flex-1 bg-fresh/80 text-fresh-foreground py-2 text-center font-semibold text-sm">
-                      {t.about.after || 'После'}
+                <CircularRevealCard index={0}>
+                  <div className="relative rounded-2xl overflow-hidden shadow-card group">
+                    <img src={sofaBeforeAfter} alt="Before and after sofa cleaning" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 flex">
+                      <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">
+                        {t.about.before || 'До'}
+                      </div>
+                      <div className="flex-1 bg-fresh/80 text-fresh-foreground py-2 text-center font-semibold text-sm">
+                        {t.about.after || 'После'}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </CircularRevealCard>
                 
                 {/* Stroller Before/After */}
-                <div className="relative rounded-2xl overflow-hidden shadow-card group">
-                  <img src={strollerBeforeAfter} alt="Before and after stroller cleaning" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 right-0 flex">
-                    <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">
-                      {t.about.before || 'До'}
-                    </div>
-                    <div className="flex-1 bg-fresh/80 text-fresh-foreground py-2 text-center font-semibold text-sm">
-                      {t.about.after || 'После'}
+                <CircularRevealCard index={1}>
+                  <div className="relative rounded-2xl overflow-hidden shadow-card group">
+                    <img src={strollerBeforeAfter} alt="Before and after stroller cleaning" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 right-0 flex">
+                      <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">
+                        {t.about.before || 'До'}
+                      </div>
+                      <div className="flex-1 bg-fresh/80 text-fresh-foreground py-2 text-center font-semibold text-sm">
+                        {t.about.after || 'После'}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </CircularRevealCard>
               </div>
             </div>
           </div>
@@ -213,19 +226,21 @@ const About = () => {
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {values.map((value, index) => <div key={index} className="bg-card p-8 rounded-2xl shadow-card text-center animate-fade-up" style={{
-              animationDelay: `${index * 0.1}s`
-            }}>
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mx-auto mb-6 shadow-glow" style={{
-                animation: 'float 3s ease-in-out infinite'
-              }}>
-                    <value.icon className="w-8 h-8 text-primary-foreground" style={{
-                  animation: 'pulse 2s ease-in-out infinite'
-                }} />
+              {values.map((value, index) => (
+                <CircularRevealCard key={index} index={index}>
+                  <div className="bg-card p-8 rounded-2xl shadow-card text-center h-full">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mx-auto mb-6 shadow-glow" style={{
+                  animation: 'float 3s ease-in-out infinite'
+                }}>
+                      <value.icon className="w-8 h-8 text-primary-foreground" style={{
+                    animation: 'pulse 2s ease-in-out infinite'
+                  }} />
+                    </div>
+                    <h3 className="font-serif text-xl font-semibold text-foreground mb-3">{value.title}</h3>
+                    <p className="text-muted-foreground text-sm">{value.description}</p>
                   </div>
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground text-sm">{value.description}</p>
-                </div>)}
+                </CircularRevealCard>
+              ))}
             </div>
           </div>
         </section>
