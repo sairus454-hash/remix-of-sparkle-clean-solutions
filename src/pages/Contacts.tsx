@@ -3,9 +3,9 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
 import ContactsSplash from '@/components/ContactsSplash';
+import AnimatedImage from '@/components/AnimatedImage';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import mastercleanLogo from '@/assets/masterclean-logo-contacts.jpg';
-
 const Contacts = () => {
   const { t } = useLanguage();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
@@ -82,11 +82,13 @@ const Contacts = () => {
               </div>
               
               {/* MasterClean Logo */}
-              <div className="mt-8 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              <div className="mt-8">
                 <div className="rounded-2xl overflow-hidden shadow-glow bg-gradient-hero p-1">
-                  <img 
+                  <AnimatedImage 
                     src={mastercleanLogo} 
                     alt="MasterClean" 
+                    delay={400}
+                    duration={800}
                     className="w-full h-auto rounded-xl object-cover"
                   />
                 </div>
