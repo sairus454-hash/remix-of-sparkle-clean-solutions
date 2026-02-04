@@ -168,20 +168,20 @@ const Index = () => {
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
               animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
             }}>
-              Акции
+              {t.promotions.title}
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">Специальные предложения для наших клиентов</p>
+            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">{t.promotions.subtitle}</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Акция недели */}
+            {/* Weekly Deal */}
             <CircularRevealCard index={0} slow className="h-full">
               <div className="relative overflow-hidden bg-gradient-to-br from-orange-500/15 via-card to-teal-500/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-orange-500/25 hover:border-orange-500/50 hover:scale-[1.02]">
-                {/* Декоративный фон */}
+                {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-500/25 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-500/20 to-transparent rounded-full blur-xl translate-y-1/2 -translate-x-1/2" />
                 
-                {/* Бейдж */}
+                {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-500 to-teal-500 text-white shadow-glow animate-pulse">
                     -10%
@@ -197,10 +197,10 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
-                    Акция недели
+                    {t.promotions.weeklyTitle}
                   </h3>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
-                    Химчистка матрасов со скидкой
+                    {t.promotions.weeklyDesc}
                   </p>
                   <p className="text-orange-500 text-center text-2xl sm:text-3xl font-bold mt-2">
                     10%
@@ -209,14 +209,14 @@ const Index = () => {
               </div>
             </CircularRevealCard>
 
-            {/* Акция месяца */}
+            {/* Monthly Deal */}
             <CircularRevealCard index={1} slow className="h-full">
               <div className="relative overflow-hidden bg-gradient-to-br from-orange-400/15 via-card to-cyan-500/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-orange-400/25 hover:border-orange-500/50 hover:scale-[1.02]">
-                {/* Декоративный фон */}
+                {/* Decorative background */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-orange-400/25 to-transparent rounded-full blur-2xl -translate-y-1/2 -translate-x-1/2" />
                 <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-cyan-500/20 to-transparent rounded-full blur-xl translate-y-1/2 translate-x-1/2" />
                 
-                {/* Бейдж */}
+                {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-400 to-cyan-500 text-white shadow-glow animate-pulse">
                     -15%
@@ -232,10 +232,10 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-400 to-cyan-500 bg-clip-text text-transparent">
-                    Акция месяца
+                    {t.promotions.monthlyTitle}
                   </h3>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
-                    Закажи химчистку и получи скидку на вторую услугу
+                    {t.promotions.monthlyDesc}
                   </p>
                   <p className="text-orange-500 text-center text-2xl sm:text-3xl font-bold mt-2">
                     15%
@@ -244,13 +244,13 @@ const Index = () => {
               </div>
             </CircularRevealCard>
 
-            {/* Акция до конца года */}
+            {/* Loyalty Deal */}
             <CircularRevealCard index={2} slow className="sm:col-span-2 lg:col-span-1 h-full">
               <div className="relative overflow-hidden bg-gradient-to-br from-orange-600/15 via-card to-teal-600/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-orange-600/25 hover:border-orange-600/50 hover:scale-[1.02]">
-                {/* Декоративный фон */}
+                {/* Decorative background */}
                 <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-gradient-to-r from-orange-600/20 to-teal-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
                 
-                {/* Бейдж */}
+                {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-600 to-teal-600 text-white shadow-glow animate-pulse">
                     VIP
@@ -266,13 +266,13 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">
-                    Для постоянных клиентов
+                    {t.promotions.loyaltyTitle}
                   </h3>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
-                    Скидки до конца года
+                    {t.promotions.loyaltyDesc}
                   </p>
                   <p className="text-orange-600 text-center text-2xl sm:text-3xl font-bold mt-2">
-                    до 15%
+                    {t.promotions.upTo} 15%
                   </p>
                 </div>
               </div>
