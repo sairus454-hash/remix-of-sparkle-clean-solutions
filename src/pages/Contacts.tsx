@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
-import BookingCalendar from '@/components/BookingCalendar';
 import ContactsSplash from '@/components/ContactsSplash';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import mastercleanLogo from '@/assets/masterclean-logo-contacts.jpg';
@@ -104,18 +103,6 @@ const Contacts = () => {
                 onDateChange={setSelectedDate} 
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Booking Calendar */}
-      <section className="py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-md mx-auto">
-            <BookingCalendar 
-              selectedDate={selectedDate}
-              onDateSelect={setSelectedDate}
-            />
           </div>
         </div>
       </section>
