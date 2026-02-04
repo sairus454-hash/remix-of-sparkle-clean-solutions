@@ -9,6 +9,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollButton from "@/components/ScrollButton";
 import FreeDeliveryBadge from "@/components/FreeDeliveryBadge";
+import GlobalCalculator from "@/components/GlobalCalculator";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -36,6 +37,7 @@ const App = () => (
             <ScrollToTop />
             <ScrollButton />
             <FreeDeliveryBadge />
+            <GlobalCalculator />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
