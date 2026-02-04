@@ -8,6 +8,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollButton from "@/components/ScrollButton";
+import FreeDeliveryBadge from "@/components/FreeDeliveryBadge";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -34,6 +35,7 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <ScrollButton />
+            <FreeDeliveryBadge />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
