@@ -105,6 +105,20 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
     setFormData(prev => ({ ...prev, message: '' }));
   };
 
+  const removeCalculatorItem = (itemId: string) => {
+    setCalculatorItems(prev => {
+      const updated = prev.filter(item => item.id !== itemId);
+      if (updated.length === 0) {
+        setCalculatorTotal(0);
+        setFormData(prevForm => ({ ...prevForm, message: '' }));
+      } else {
+        const newTotal = updated.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        setCalculatorTotal(newTotal);
+      }
+      return updated;
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -179,13 +193,22 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
           
           <div className="space-y-2 max-h-40 overflow-y-auto">
             {calculatorItems.map((item, index) => (
-              <div key={index} className="flex justify-between text-sm">
-                <span className="text-muted-foreground">
+              <div key={index} className="flex justify-between items-center text-sm group">
+                <span className="text-muted-foreground flex-1">
                   {item.name} {item.unit && `(${item.unit})`} × {item.quantity}
                 </span>
-                <span className="font-medium text-foreground">
+                <span className="font-medium text-foreground mr-2">
                   {item.price * item.quantity} {t.prices.currency}
                 </span>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => removeCalculatorItem(item.id)}
+                  className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive opacity-60 hover:opacity-100 transition-opacity"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </Button>
               </div>
             ))}
           </div>
