@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ExtractorSplash from '@/components/ExtractorSplash';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { Cog, Leaf, ShieldCheck, Zap, Wind, Droplets, Sparkles, Fan, FlaskConical } from 'lucide-react';
 import extractorImage from '@/assets/extractor-santoemma.jpg';
 import steamImage from '@/assets/steam-generator.jpg';
@@ -162,34 +163,32 @@ const Equipment = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {equipmentItems.map((item, index) => (
-                <div 
-                  key={index} 
-                  className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 animate-fade-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {item.image && (
-                    <div className="mb-6 rounded-xl overflow-hidden bg-gradient-hero p-0.5 group/img" style={{ animation: `float ${3 + index * 0.3}s ease-in-out infinite` }}>
-                      <div className="relative rounded-lg overflow-hidden bg-muted/30">
-                        <img 
-                          src={item.image} 
-                          alt={item.title} 
-                          className="w-full h-48 object-contain transition-transform duration-700 group-hover:scale-105"
-                          style={{ animation: `slowZoom ${15 + index * 2}s ease-in-out infinite alternate` }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-fresh/10" />
+                <CircularRevealCard key={index} index={index}>
+                  <div className="bg-card p-8 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 h-full">
+                    {item.image && (
+                      <div className="mb-6 rounded-xl overflow-hidden bg-gradient-hero p-0.5 group/img" style={{ animation: `float ${3 + index * 0.3}s ease-in-out infinite` }}>
+                        <div className="relative rounded-lg overflow-hidden bg-muted/30">
+                          <img 
+                            src={item.image} 
+                            alt={item.title} 
+                            className="w-full h-48 object-contain transition-transform duration-700 group-hover:scale-105"
+                            style={{ animation: `slowZoom ${15 + index * 2}s ease-in-out infinite alternate` }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-fresh/10" />
+                        </div>
                       </div>
-                    </div>
-                  )}
-                  {!item.image && (
-                    <item.icon className={`w-12 h-12 ${item.color} mb-4`} />
-                  )}
-                  <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground">
-                    {item.description}
-                  </p>
-                </div>
+                    )}
+                    {!item.image && (
+                      <item.icon className={`w-12 h-12 ${item.color} mb-4`} />
+                    )}
+                    <h3 className="font-serif text-xl font-semibold text-foreground mb-4">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </CircularRevealCard>
               ))}
             </div>
           </div>
