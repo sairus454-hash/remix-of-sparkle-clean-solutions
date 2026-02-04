@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <main className="flex-1 pt-14 sm:pt-16 lg:pt-20">
         {/* Marquee Section */}
-        <section className="py-1.5 sm:py-2 mt-14 sm:mt-16 bg-gradient-to-r from-primary via-fresh to-primary overflow-hidden">
+        <section className="py-1.5 sm:py-2 mt-14 sm:mt-16 bg-gradient-to-r from-primary via-[hsl(45_80%_55%/0.3)] via-30% via-fresh to-[hsl(160_60%_45%/0.3)] to-70% to-primary overflow-hidden" style={{ background: 'linear-gradient(to right, hsl(195 85% 42%), hsl(45 80% 55% / 0.7), hsl(160 60% 45%), hsl(30 85% 55% / 0.7), hsl(195 85% 42%))' }}>
           <div className="relative">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...Array(4)].map((_, i) => (
