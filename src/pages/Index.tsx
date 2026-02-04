@@ -6,11 +6,29 @@ import ContactForm from '@/components/ContactForm';
 import WaterDropSplash from '@/components/WaterDropSplash';
 import PriceSection from '@/components/PriceSection';
 import { Button } from '@/components/ui/button';
-import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+} from '@/components/ui/drawer';
+import { useIsMobile } from '@/hooks/use-mobile';
+import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import mattressCleaningImage from '@/assets/mattress-cleaning.jpg';
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const [isCalcOpen, setIsCalcOpen] = useState(false);
+  const isMobile = useIsMobile();
+  
   const handleSplashComplete = useCallback(() => {
     setShowSplash(false);
   }, []);
@@ -214,6 +232,74 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Calculator Trigger */}
+      <section className="py-6 sm:py-10 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <Card 
+              className="shadow-card animate-fade-up cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => setIsCalcOpen(true)}
+            >
+              <CardContent className="py-5 sm:py-6">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
+                      <Calculator className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-lg sm:text-xl font-semibold">{t.calculator.title}</h2>
+                      <p className="text-sm text-muted-foreground">{t.calculator.selectItems}</p>
+                    </div>
+                  </div>
+                  <Button variant="outline" size="sm" className="hidden sm:flex">
+                    {t.calculator.title}
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator Modal/Drawer */}
+      {isMobile ? (
+        <Drawer open={isCalcOpen} onOpenChange={setIsCalcOpen}>
+          <DrawerContent className="max-h-[90vh]">
+            <DrawerHeader className="border-b border-border pb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
+                  <Calculator className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <DrawerTitle className="font-serif text-lg">
+                  {t.calculator.title}
+                </DrawerTitle>
+              </div>
+            </DrawerHeader>
+            <div className="overflow-y-auto p-4 pb-8">
+              <PriceCalculatorContent />
+            </div>
+          </DrawerContent>
+        </Drawer>
+      ) : (
+        <Dialog open={isCalcOpen} onOpenChange={setIsCalcOpen}>
+          <DialogContent className="max-w-2xl max-h-[85vh] overflow-hidden flex flex-col">
+            <DialogHeader className="border-b border-border pb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
+                  <Calculator className="w-5 h-5 text-primary-foreground" />
+                </div>
+                <DialogTitle className="font-serif text-xl">
+                  {t.calculator.title}
+                </DialogTitle>
+              </div>
+            </DialogHeader>
+            <div className="overflow-y-auto flex-1 py-4">
+              <PriceCalculatorContent />
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
 
       {/* Price Section */}
       <PriceSection />
