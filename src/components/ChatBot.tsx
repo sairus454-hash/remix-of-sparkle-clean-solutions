@@ -104,18 +104,51 @@ const ChatBot = () => {
   const handleLeadSubmit = async () => {
     if (!leadForm.name.trim() || !leadForm.contact.trim()) return;
     
-    // Add lead submission message to chat
-    const leadMessage: Message = {
-      id: Date.now().toString(),
-      role: 'assistant',
-      content: `Спасибо, ${leadForm.name}! 🎉 Ваша заявка принята. Мы свяжемся с вами по контакту: ${leadForm.contact} в ближайшее время!`,
-    };
-    setMessages((prev) => [...prev, leadMessage]);
-    setLeadSubmitted(true);
-    setShowLeadForm(false);
+    setIsLoading(true);
     
-    // Here you could also send to Telegram or save to database
-    console.log('Lead captured:', leadForm);
+    try {
+      // Формируем краткое содержание разговора для контекста
+      const chatSummary = messages
+        .filter(m => m.id !== 'welcome')
+        .slice(-6) // Последние 6 сообщений
+        .map(m => `${m.role === 'user' ? 'Клиент' : 'Бот'}: ${m.content}`)
+        .join('\n');
+
+      // Отправляем в Telegram
+      const { error } = await supabase.functions.invoke('send-telegram', {
+        body: {
+          name: leadForm.name.trim(),
+          phone: leadForm.contact.trim(),
+          service: 'Заявка из чат-бота',
+          message: chatSummary ? `📝 История чата:\n${chatSummary}` : 'Заявка из чат-бота (без истории)',
+        },
+      });
+
+      if (error) {
+        console.error('Telegram send error:', error);
+      }
+
+      // Показываем сообщение об успехе
+      const leadMessage: Message = {
+        id: Date.now().toString(),
+        role: 'assistant',
+        content: `Спасибо, ${leadForm.name}! 🎉 Ваша заявка принята. Мы свяжемся с вами по контакту: ${leadForm.contact} в ближайшее время!`,
+      };
+      setMessages((prev) => [...prev, leadMessage]);
+      setLeadSubmitted(true);
+      setShowLeadForm(false);
+      setLeadForm({ name: '', contact: '' });
+    } catch (error) {
+      console.error('Lead submit error:', error);
+      const errorMessage: Message = {
+        id: Date.now().toString(),
+        role: 'assistant',
+        content: 'Произошла ошибка при отправке заявки. Пожалуйста, попробуйте ещё раз или свяжитесь с нами по телефону.',
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const openContactManager = () => {
