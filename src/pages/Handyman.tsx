@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import ContactForm from '@/components/ContactForm';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import HandymanPriceCalculator from '@/components/HandymanPriceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
 import AnimatedImage from '@/components/AnimatedImage';
@@ -13,13 +13,21 @@ import {
 import handyman1 from '@/assets/handyman-1.jpg';
 import handyman2 from '@/assets/handyman-2.jpg';
 import handyman3 from '@/assets/handyman-3.jpg';
+import { CalculatorItem } from '@/types/calculator';
 
 const Handyman = () => {
   const { t } = useLanguage();
   const [showSplash, setShowSplash] = useState(true);
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
+  };
+
+  const handleSendToForm = (items: CalculatorItem[], total: number) => {
+    formRef.current?.setCalculatorData(items, total);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const services = [
@@ -205,13 +213,13 @@ const Handyman = () => {
               </h2>
             </div>
 
-            <HandymanPriceCalculator />
+            <HandymanPriceCalculator onSendToForm={handleSendToForm} />
           </div>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 bg-gradient-section">
+      <section ref={formSectionRef} className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
@@ -220,7 +228,7 @@ const Handyman = () => {
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
               </h2>
             </div>
-            <ContactForm />
+            <ContactForm ref={formRef} />
           </div>
         </div>
       </section>

@@ -241,6 +241,9 @@ export const translations = {
       namePlaceholder: 'Введите ваше имя',
       phonePlaceholder: '+48 XXX XXX XXX',
       messagePlaceholder: 'Опишите вашу задачу...',
+      sendToForm: 'Отправить в форму заявки',
+      orderFromCalculator: 'Заказ из калькулятора',
+      checkOrder: 'Проверьте данные заказа перед отправкой',
     },
     footer: {
       rights: 'Все права защищены',
@@ -607,6 +610,9 @@ export const translations = {
       namePlaceholder: 'Enter your name',
       phonePlaceholder: '+48 XXX XXX XXX',
       messagePlaceholder: 'Describe your task...',
+      sendToForm: 'Send to order form',
+      orderFromCalculator: 'Order from calculator',
+      checkOrder: 'Please review the order before submitting',
     },
     footer: {
       rights: 'All rights reserved',
@@ -973,6 +979,9 @@ export const translations = {
       namePlaceholder: 'Wprowadź swoje imię',
       phonePlaceholder: '+48 XXX XXX XXX',
       messagePlaceholder: 'Opisz swoje zadanie...',
+      sendToForm: 'Wyślij do formularza',
+      orderFromCalculator: 'Zamówienie z kalkulatora',
+      checkOrder: 'Sprawdź zamówienie przed wysłaniem',
     },
     footer: {
       rights: 'Wszelkie prawa zastrzeżone',
@@ -1339,6 +1348,9 @@ export const translations = {
       namePlaceholder: 'Введіть ваше ім\'я',
       phonePlaceholder: '+48 XXX XXX XXX',
       messagePlaceholder: 'Опишіть ваше завдання...',
+      sendToForm: 'Відправити у форму замовлення',
+      orderFromCalculator: 'Замовлення з калькулятора',
+      checkOrder: 'Перевірте замовлення перед відправкою',
     },
     footer: {
       rights: 'Всі права захищені',

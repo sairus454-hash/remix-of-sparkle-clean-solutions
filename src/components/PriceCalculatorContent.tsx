@@ -1,15 +1,17 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Plus, Minus, Trash2 } from 'lucide-react';
+import { Plus, Minus, Trash2, Send } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles } from 'lucide-react';
+import { CalculatorItem } from '@/types/calculator';
 
 interface PriceItem {
   id: string;
@@ -30,8 +32,14 @@ interface Category {
   items: PriceItem[];
 }
 
-const PriceCalculatorContent = () => {
-  const { t } = useLanguage();
+interface PriceCalculatorContentProps {
+  onSendToForm?: (items: CalculatorItem[], total: number) => void;
+  onClose?: () => void;
+}
+
+const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorContentProps) => {
+  const { t, language } = useLanguage();
+  const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
@@ -142,6 +150,36 @@ const PriceCalculatorContent = () => {
 
   const clearAll = () => {
     setSelectedItems([]);
+  };
+
+  const getCalculatorItems = (): CalculatorItem[] => {
+    return selectedItems.map(s => ({
+      id: s.item.id,
+      name: s.item.name,
+      price: s.item.price,
+      quantity: s.quantity,
+      unit: s.item.unit,
+    }));
+  };
+
+  const handleSendToForm = () => {
+    if (selectedItems.length === 0) return;
+    
+    const items = getCalculatorItems();
+    const total = calculateTotal();
+    
+    if (onSendToForm) {
+      onSendToForm(items, total);
+    } else {
+      // Navigate to contacts page with data in URL state
+      onClose?.();
+      navigate('/contacts', { 
+        state: { 
+          calculatorItems: items, 
+          calculatorTotal: total 
+        } 
+      });
+    }
   };
 
   return (
@@ -286,6 +324,17 @@ const PriceCalculatorContent = () => {
         <p className="text-xs text-muted-foreground mt-1 font-medium">
           {t.calculator.minOrder}
         </p>
+        
+        {/* Send to Form Button */}
+        {selectedItems.length > 0 && (
+          <Button
+            onClick={handleSendToForm}
+            className="w-full mt-4 bg-fresh hover:bg-fresh/90 text-white shadow-glow transition-all h-11 touch-manipulation active:scale-[0.98]"
+          >
+            <Send className="w-4 h-4 mr-2" />
+            {t.form.sendToForm}
+          </Button>
+        )}
       </div>
     </div>
   );

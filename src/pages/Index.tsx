@@ -277,7 +277,7 @@ const Index = () => {
               </div>
             </DrawerHeader>
             <div className="overflow-y-auto p-4 pb-8">
-              <PriceCalculatorContent />
+              <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
             </div>
           </DrawerContent>
         </Drawer>
@@ -295,7 +295,7 @@ const Index = () => {
               </div>
             </DialogHeader>
             <div className="overflow-y-auto flex-1 py-4">
-              <PriceCalculatorContent />
+              <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
             </div>
           </DialogContent>
         </Dialog>
