@@ -1,6 +1,6 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import PriceItem from '@/components/PriceItem';
-import PriceCalculator from '@/components/PriceCalculator';
+
 import { 
   Accordion,
   AccordionContent,
@@ -150,12 +150,6 @@ const PriceSection = () => {
               {t.prices.subtitle}
             </p>
           </div>
-
-          {/* Price Calculator */}
-          <div className="max-w-3xl mx-auto mb-8 sm:mb-12">
-            <PriceCalculator />
-          </div>
-
           {/* Accordion Price Lists */}
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
