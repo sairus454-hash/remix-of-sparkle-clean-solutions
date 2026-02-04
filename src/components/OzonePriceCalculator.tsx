@@ -1,11 +1,16 @@
-import { useState, useRef, forwardRef, useImperativeHandle } from 'react';
+import { useState, forwardRef, useImperativeHandle } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Calculator, Plus, Minus, Trash2, Wind, Send } from 'lucide-react';
-import PriceItem from '@/components/PriceItem';
+import { Calculator, Plus, Minus, Trash2, Wind, Send, Home, LayoutGrid, Maximize2 } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 import { CalculatorItem } from '@/types/calculator';
 
 interface OzoneItem {
@@ -102,7 +107,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
 
     return (
       <div className="space-y-8">
-        {/* Price List */}
+        {/* Price List - Accordion */}
         <Card className="shadow-card animate-fade-up">
           <CardHeader className="border-b border-border">
             <div className="flex items-center gap-3">
@@ -113,15 +118,65 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
             </div>
           </CardHeader>
           <CardContent className="pt-4">
-            {ozoneItems.map((item, index) => (
-              <PriceItem
-                key={index}
-                name={item.name}
-                price={item.price}
-                from={t.prices.from}
-                currency={t.prices.currency}
-              />
-            ))}
+            <Accordion type="single" collapsible className="space-y-2">
+              <AccordionItem value="apartments" className="border rounded-lg px-3">
+                <AccordionTrigger className="hover:no-underline py-3">
+                  <div className="flex items-center gap-3 w-full pr-2">
+                    <Home className="w-5 h-5 text-primary flex-shrink-0" />
+                    <div className="flex items-center justify-between flex-1">
+                      <span className="font-medium text-sm sm:text-base">{t.ozone.app2}</span>
+                      <span className="text-primary font-semibold text-xs sm:text-sm whitespace-nowrap ml-2">
+                        {t.prices.from} 120 {t.prices.currency}
+                      </span>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-3">
+                  <div className="space-y-2 pt-2 border-t">
+                    {ozoneItems.slice(0, 3).map((item) => (
+                      <div 
+                        key={item.id}
+                        className="flex items-center justify-between py-2 text-sm"
+                      >
+                        <span className="text-muted-foreground">{item.name}</span>
+                        <span className="text-primary font-medium whitespace-nowrap ml-2">
+                          {t.prices.from} {item.price} {t.prices.currency}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="offices" className="border rounded-lg px-3">
+                <AccordionTrigger className="hover:no-underline py-3">
+                  <div className="flex items-center gap-3 w-full pr-2">
+                    <LayoutGrid className="w-5 h-5 text-primary flex-shrink-0" />
+                    <div className="flex items-center justify-between flex-1">
+                      <span className="font-medium text-sm sm:text-base">{t.ozone.app3}</span>
+                      <span className="text-primary font-semibold text-xs sm:text-sm whitespace-nowrap ml-2">
+                        {t.prices.from} 250 {t.prices.currency}
+                      </span>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pb-3">
+                  <div className="space-y-2 pt-2 border-t">
+                    {ozoneItems.slice(3).map((item) => (
+                      <div 
+                        key={item.id}
+                        className="flex items-center justify-between py-2 text-sm"
+                      >
+                        <span className="text-muted-foreground">{item.name}</span>
+                        <span className="text-primary font-medium whitespace-nowrap ml-2">
+                          {t.prices.from} {item.price} {t.prices.currency}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </CardContent>
         </Card>
 
