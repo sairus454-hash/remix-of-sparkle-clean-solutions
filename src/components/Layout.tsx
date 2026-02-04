@@ -17,7 +17,6 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
       <CleaningBackground />
-      {isMobile && <FreeDeliveryBadge />}
       <Header />
       <main className="flex-1 pt-14 sm:pt-16 lg:pt-20">
         {/* Marquee Section */}
