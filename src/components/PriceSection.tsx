@@ -64,6 +64,7 @@ const PriceSection = () => {
   ];
 
   const otherPrices: { name: string; price: number; unit?: string; icon: LucideIcon }[] = [
+    { name: t.prices.items.carpetCovering, price: 25, unit: 'm²', icon: Grid3X3 },
     { name: t.prices.items.stroller, price: 100, icon: Baby },
     { name: t.prices.items.drying, price: 60, icon: Fan },
     { name: t.prices.items.impregnation, price: 80, icon: ShieldCheck },

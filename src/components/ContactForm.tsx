@@ -27,8 +27,9 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
     service: '',
+    time: '',
+    address: '',
     message: '',
   });
 
@@ -49,6 +50,7 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
     t.services.balcony,
     t.nav.auto,
     t.nav.ozone,
+    t.nav.handyman,
   ];
 
   // Busy dates (same as in BookingCalendar)
@@ -103,8 +105,9 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
         body: {
           name: formData.name,
           phone: formData.phone,
-          email: formData.email,
           service: formData.service,
+          time: formData.time,
+          address: formData.address,
           message: formData.message,
           date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined,
         },
@@ -117,7 +120,7 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
         description: `${formData.name}, ${t.form.success}`,
       });
 
-      setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+      setFormData({ name: '', phone: '', service: '', time: '', address: '', message: '' });
       setDate(undefined);
       onDateChange?.(undefined);
       setIsCaptchaValid(false);
@@ -163,18 +166,6 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">{t.form.email}</label>
-          <Input
-            type="email"
-            inputMode="email"
-            placeholder={t.form.emailPlaceholder}
-            value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            required
-            className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
-          />
-        </div>
-        <div className="space-y-1.5 sm:space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.service}</label>
           <Select
             value={formData.service}
@@ -192,6 +183,38 @@ const ContactForm = ({ selectedDate, onDateChange }: ContactFormProps) => {
             </SelectContent>
           </Select>
         </div>
+        <div className="space-y-1.5 sm:space-y-2">
+          <label className="text-sm font-medium text-foreground">{t.form.preferredTime}</label>
+          <Select
+            value={formData.time}
+            onValueChange={(value) => setFormData({ ...formData, time: value })}
+          >
+            <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
+              <SelectValue placeholder={t.form.selectTime} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="08:00-10:00" className="py-3 sm:py-2">08:00-10:00</SelectItem>
+              <SelectItem value="10:00-12:00" className="py-3 sm:py-2">10:00-12:00</SelectItem>
+              <SelectItem value="12:00-14:00" className="py-3 sm:py-2">12:00-14:00</SelectItem>
+              <SelectItem value="14:00-16:00" className="py-3 sm:py-2">14:00-16:00</SelectItem>
+              <SelectItem value="16:00-18:00" className="py-3 sm:py-2">16:00-18:00</SelectItem>
+              <SelectItem value="18:00-20:00" className="py-3 sm:py-2">18:00-20:00</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
+
+      {/* Address */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">{t.form.address}</label>
+        <Input
+          type="text"
+          placeholder={t.form.addressPlaceholder}
+          value={formData.address}
+          onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+          required
+          className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
+        />
       </div>
 
       {/* Date Picker */}

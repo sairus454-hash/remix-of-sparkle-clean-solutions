@@ -41,6 +41,8 @@ const Auto = () => {
     { id: 'autoFloor', name: t.prices.items.autoFloor, price: 100 },
     { id: 'autoTrunk', name: t.prices.items.autoTrunk, price: 80 },
     { id: 'autoOzone', name: t.prices.items.autoOzone, price: 100 },
+    { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650 },
+    { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400 },
   ];
 
   const addItem = (item: AutoPriceItem) => {
