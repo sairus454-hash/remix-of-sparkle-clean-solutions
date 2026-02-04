@@ -5,6 +5,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import OzonePriceCalculator from '@/components/OzonePriceCalculator';
 import OzoneSplash from '@/components/OzoneSplash';
 import AnimatedImage from '@/components/AnimatedImage';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
@@ -81,22 +82,23 @@ const Ozone = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
-              <div 
-                key={index} 
-                className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
-                style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
-              >
-                <div className="relative rounded-xl overflow-hidden">
-                  <AnimatedImage 
-                    src={image.src} 
-                    alt={image.alt} 
-                    delay={index * 150}
-                    duration={800}
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
+              <CircularRevealCard key={index} index={index}>
+                <div 
+                  className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
+                  style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
+                >
+                  <div className="relative rounded-xl overflow-hidden">
+                    <AnimatedImage 
+                      src={image.src} 
+                      alt={image.alt} 
+                      delay={index * 150}
+                      duration={800}
+                      className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
+                  </div>
                 </div>
-              </div>
+              </CircularRevealCard>
             ))}
           </div>
         </div>
@@ -106,31 +108,35 @@ const Ozone = () => {
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-20 h-20 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                <Wind className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+            <CircularRevealCard index={0}>
+              <div>
+                <div className="w-20 h-20 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                  <Wind className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                </div>
+                <h2 className="font-serif text-3xl font-bold mb-6 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                  {t.ozone.what}
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t.ozone.whatDesc}
+                </p>
               </div>
-              <h2 className="font-serif text-3xl font-bold mb-6 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                {t.ozone.what}
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {t.ozone.whatDesc}
-              </p>
-            </div>
+            </CircularRevealCard>
             
-            <div className="bg-card p-8 rounded-2xl border border-border shadow-card">
-              <h3 className="font-serif text-xl font-semibold text-foreground mb-6">
-                {t.ozone.benefits}
-              </h3>
-              <ul className="space-y-4">
-                {benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-fresh flex-shrink-0" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
-                    <span className="text-foreground">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <CircularRevealCard index={1}>
+              <div className="bg-card p-8 rounded-2xl border border-border shadow-card h-full">
+                <h3 className="font-serif text-xl font-semibold text-foreground mb-6">
+                  {t.ozone.benefits}
+                </h3>
+                <ul className="space-y-4">
+                  {benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-fresh flex-shrink-0" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                      <span className="text-foreground">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </CircularRevealCard>
           </div>
         </div>
       </section>
@@ -143,16 +149,14 @@ const Ozone = () => {
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {applications.map((app, index) => (
-              <div 
-                key={index} 
-                className="group p-6 rounded-2xl bg-gradient-card border border-border text-center hover:shadow-card-hover transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center mx-auto mb-4 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                  <app.icon className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <CircularRevealCard key={index} index={index}>
+                <div className="group p-6 rounded-2xl bg-gradient-card border border-border text-center hover:shadow-card-hover transition-all duration-300 h-full">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center mx-auto mb-4 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <app.icon className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <h3 className="font-medium text-foreground">{app.title}</h3>
                 </div>
-                <h3 className="font-medium text-foreground">{app.title}</h3>
-              </div>
+              </CircularRevealCard>
             ))}
           </div>
         </div>
@@ -162,7 +166,9 @@ const Ozone = () => {
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <OzonePriceCalculator onSendToForm={handleSendToForm} />
+            <CircularRevealCard index={0}>
+              <OzonePriceCalculator onSendToForm={handleSendToForm} />
+            </CircularRevealCard>
           </div>
         </div>
       </section>
@@ -176,9 +182,11 @@ const Ozone = () => {
                 {t.form.title}
               </h2>
             </div>
-            <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
-              <ContactForm ref={formRef} />
-            </div>
+            <CircularRevealCard index={0}>
+              <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
+                <ContactForm ref={formRef} />
+              </div>
+            </CircularRevealCard>
           </div>
         </div>
       </section>

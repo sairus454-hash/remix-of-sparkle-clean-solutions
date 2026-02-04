@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AutoSplash from '@/components/AutoSplash';
 import AnimatedImage from '@/components/AnimatedImage';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2, Send } from 'lucide-react';
 import {
   Accordion,
@@ -154,22 +155,23 @@ const Auto = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {galleryImages.map((image, index) => (
-              <div 
-                key={index} 
-                className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
-                style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
-              >
-                <div className="relative rounded-xl overflow-hidden">
-                  <AnimatedImage 
-                    src={image.src} 
-                    alt={image.alt} 
-                    delay={index * 150}
-                    duration={800}
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
+              <CircularRevealCard key={index} index={index}>
+                <div 
+                  className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
+                  style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
+                >
+                  <div className="relative rounded-xl overflow-hidden">
+                    <AnimatedImage 
+                      src={image.src} 
+                      alt={image.alt} 
+                      delay={index * 150}
+                      duration={800}
+                      className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
+                  </div>
                 </div>
-              </div>
+              </CircularRevealCard>
             ))}
           </div>
         </div>
@@ -180,19 +182,17 @@ const Auto = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
             {services.map((service, index) => (
-              <div 
-                key={index} 
-                className="group flex gap-3 sm:gap-6 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border hover:shadow-card-hover transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center flex-shrink-0 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                  <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <CircularRevealCard key={index} index={index}>
+                <div className="group flex gap-3 sm:gap-6 p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border hover:shadow-card-hover transition-all duration-300 h-full">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center flex-shrink-0 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">{service.title}</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground">{service.description}</p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">{service.title}</h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">{service.description}</p>
-                </div>
-              </div>
+              </CircularRevealCard>
             ))}
           </div>
         </div>
@@ -209,7 +209,8 @@ const Auto = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {/* Price List - Accordion */}
-            <Card className="shadow-card animate-fade-up">
+            <CircularRevealCard index={0}>
+              <Card className="shadow-card h-full">
               <CardHeader className="border-b border-border p-4 sm:p-6">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0">
@@ -274,9 +275,11 @@ const Auto = () => {
                 </Accordion>
               </CardContent>
             </Card>
+            </CircularRevealCard>
 
             {/* Calculator */}
-            <Card className="shadow-card animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <CircularRevealCard index={1}>
+              <Card className="shadow-card h-full">
               <CardHeader className="border-b border-border p-4 sm:p-6">
                 <div className="flex items-center gap-2 sm:gap-3">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
@@ -404,6 +407,7 @@ const Auto = () => {
                 </div>
               </CardContent>
             </Card>
+            </CircularRevealCard>
           </div>
         </div>
       </section>
@@ -417,9 +421,11 @@ const Auto = () => {
                 {t.form.title}
               </h2>
             </div>
-            <div className="bg-gradient-card p-4 sm:p-8 rounded-xl sm:rounded-2xl shadow-card border border-border">
-              <ContactForm ref={formRef} />
-            </div>
+            <CircularRevealCard index={0}>
+              <div className="bg-gradient-card p-4 sm:p-8 rounded-xl sm:rounded-2xl shadow-card border border-border">
+                <ContactForm ref={formRef} />
+              </div>
+            </CircularRevealCard>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import HandymanPriceCalculator from '@/components/HandymanPriceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
 import AnimatedImage from '@/components/AnimatedImage';
+import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Wrench, Hammer, Plug, Droplet, PaintBucket, DoorOpen, 
@@ -110,19 +111,17 @@ const Handyman = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-up border-2 border-transparent hover:border-yellow-400/50"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-xl bg-yellow-400/20 flex items-center justify-center mb-4 group-hover:bg-yellow-400/40 transition-colors group-hover:scale-110 duration-300">
-                    <service.icon className="w-7 h-7 text-yellow-600 group-hover:text-yellow-700" />
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2 group-hover:text-yellow-600 transition-colors">{service.name}</h3>
-                  <p className="text-sm text-muted-foreground">{service.desc}</p>
-                </CardContent>
-              </Card>
+              <CircularRevealCard key={index} index={index}>
+                <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-yellow-400/50 h-full">
+                  <CardContent className="p-6">
+                    <div className="w-14 h-14 rounded-xl bg-yellow-400/20 flex items-center justify-center mb-4 group-hover:bg-yellow-400/40 transition-colors group-hover:scale-110 duration-300">
+                      <service.icon className="w-7 h-7 text-yellow-600 group-hover:text-yellow-700" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-yellow-600 transition-colors">{service.name}</h3>
+                    <p className="text-sm text-muted-foreground">{service.desc}</p>
+                  </CardContent>
+                </Card>
+              </CircularRevealCard>
             ))}
           </div>
         </div>
@@ -144,24 +143,23 @@ const Handyman = () => {
               { img: handyman2, name: 'Piotr', specialty: t.handyman.plumbing },
               { img: handyman3, name: 'Tomek', specialty: t.handyman.carpentry },
             ].map((member, index) => (
-              <div 
-                key={index}
-                className="group"
-              >
-                <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow">
-                  <AnimatedImage 
-                    src={member.img} 
-                    alt={member.name}
-                    delay={index * 150}
-                    duration={800}
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
-                    <h3 className="text-white font-bold text-xl">{member.name}</h3>
-                    <p className="text-yellow-400">{member.specialty}</p>
+              <CircularRevealCard key={index} index={index}>
+                <div className="group">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow">
+                    <AnimatedImage 
+                      src={member.img} 
+                      alt={member.name}
+                      delay={index * 150}
+                      duration={800}
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
+                      <h3 className="text-white font-bold text-xl">{member.name}</h3>
+                      <p className="text-yellow-400">{member.specialty}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </CircularRevealCard>
             ))}
           </div>
         </div>
@@ -185,17 +183,15 @@ const Handyman = () => {
                 { icon: '💰', title: t.handyman.benefit3, desc: t.handyman.benefit3Desc },
                 { icon: '✅', title: t.handyman.benefit4, desc: t.handyman.benefit4Desc },
               ].map((benefit, index) => (
-                <div 
-                  key={index}
-                  className="flex gap-4 p-6 bg-card rounded-xl shadow-card animate-fade-up hover:shadow-lg transition-shadow"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="text-4xl">{benefit.icon}</div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                    <p className="text-muted-foreground">{benefit.desc}</p>
+                <CircularRevealCard key={index} index={index}>
+                  <div className="flex gap-4 p-6 bg-card rounded-xl shadow-card hover:shadow-lg transition-shadow h-full">
+                    <div className="text-4xl">{benefit.icon}</div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
+                      <p className="text-muted-foreground">{benefit.desc}</p>
+                    </div>
                   </div>
-                </div>
+                </CircularRevealCard>
               ))}
             </div>
           </div>
@@ -213,7 +209,9 @@ const Handyman = () => {
               </h2>
             </div>
 
-            <HandymanPriceCalculator onSendToForm={handleSendToForm} />
+            <CircularRevealCard index={0}>
+              <HandymanPriceCalculator onSendToForm={handleSendToForm} />
+            </CircularRevealCard>
           </div>
         </div>
       </section>
@@ -228,7 +226,9 @@ const Handyman = () => {
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
               </h2>
             </div>
-            <ContactForm ref={formRef} />
+            <CircularRevealCard index={0}>
+              <ContactForm ref={formRef} />
+            </CircularRevealCard>
           </div>
         </div>
       </section>
