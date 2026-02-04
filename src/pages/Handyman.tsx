@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
 import HandymanPriceCalculator from '@/components/HandymanPriceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
+import AnimatedImage from '@/components/AnimatedImage';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Wrench, Hammer, Plug, Droplet, PaintBucket, DoorOpen, 
@@ -137,16 +138,17 @@ const Handyman = () => {
             ].map((member, index) => (
               <div 
                 key={index}
-                className="group animate-fade-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group"
               >
                 <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow">
-                  <img 
+                  <AnimatedImage 
                     src={member.img} 
                     alt={member.name}
+                    delay={index * 150}
+                    duration={800}
                     className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
                     <h3 className="text-white font-bold text-xl">{member.name}</h3>
                     <p className="text-yellow-400">{member.specialty}</p>
                   </div>
