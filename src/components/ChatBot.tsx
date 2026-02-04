@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -7,6 +7,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { useIsMobile } from '@/hooks/use-mobile';
 import ReactMarkdown from 'react-markdown';
 
 interface Message {
@@ -18,6 +19,12 @@ interface Message {
 interface LeadForm {
   name: string;
   contact: string;
+}
+
+interface QuickReply {
+  icon: React.ReactNode;
+  label: string;
+  message: string;
 }
 
 // Notification sound using Web Audio API
@@ -39,13 +46,13 @@ const playNotificationSound = () => {
     oscillator.start(audioContext.currentTime);
     oscillator.stop(audioContext.currentTime + 0.3);
   } catch (e) {
-    // Silently fail if audio not supported
     console.log('Audio notification not supported');
   }
 };
 
 const ChatBot = () => {
   const { t, language } = useLanguage();
+  const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', contact: '' });
@@ -53,22 +60,51 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showQuickReplies, setShowQuickReplies] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+  // Quick reply buttons configuration
+  const quickReplies: QuickReply[] = [
+    {
+      icon: <Sofa className="w-4 h-4" />,
+      label: t.chatbot.quickReplies?.furniture || '🛋 Мебель',
+      message: t.chatbot.quickMessages?.furniture || 'Интересует химчистка мебели'
+    },
+    {
+      icon: <Car className="w-4 h-4" />,
+      label: t.chatbot.quickReplies?.auto || '🚗 Авто',
+      message: t.chatbot.quickMessages?.auto || 'Интересует химчистка авто'
+    },
+    {
+      icon: <Wind className="w-4 h-4" />,
+      label: t.chatbot.quickReplies?.ozone || '🌫 Озон',
+      message: t.chatbot.quickMessages?.ozone || 'Интересует озонирование'
+    },
+    {
+      icon: <Wrench className="w-4 h-4" />,
+      label: t.chatbot.quickReplies?.handyman || '🔧 Мастер',
+      message: t.chatbot.quickMessages?.handyman || 'Нужен мастер на час'
+    }
+  ];
+
   // Initialize welcome message when language changes
   useEffect(() => {
+    const welcomeMessage = isMobile 
+      ? (t.chatbot.welcomeMobile || 'Здравствуйте 👋\n\nПомогу с уборкой и химчисткой.\n\nЧто нужно?')
+      : t.chatbot.welcome;
+    
     setMessages([
       {
         id: 'welcome',
         role: 'assistant',
-        content: t.chatbot.welcome,
+        content: welcomeMessage,
       },
     ]);
-  }, [language, t.chatbot.welcome]);
+    setShowQuickReplies(true);
+  }, [language, t.chatbot.welcome, t.chatbot.welcomeMobile, isMobile]);
 
   useEffect(() => {
-    // Scroll to bottom when messages change
     const scrollToBottom = () => {
       if (scrollRef.current) {
         const scrollContainer = scrollRef.current.querySelector('[data-radix-scroll-area-viewport]');
@@ -77,7 +113,6 @@ const ChatBot = () => {
         }
       }
     };
-    // Small delay to ensure content is rendered
     setTimeout(scrollToBottom, 50);
   }, [messages, isLoading]);
 
@@ -87,18 +122,20 @@ const ChatBot = () => {
     }
   }, [isOpen]);
 
-  const sendMessage = async () => {
-    if (!input.trim() || isLoading) return;
+  const sendMessage = async (messageText?: string) => {
+    const text = messageText || input.trim();
+    if (!text || isLoading) return;
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
-      content: input.trim(),
+      content: text,
     };
 
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
+    setShowQuickReplies(false);
 
     try {
       const conversationHistory = messages
@@ -132,6 +169,10 @@ const ChatBot = () => {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleQuickReply = (reply: QuickReply) => {
+    sendMessage(reply.message);
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -169,7 +210,7 @@ const ChatBot = () => {
       const leadMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
-        content: `${t.chatbot.thankYou}, ${leadForm.name}! 🎉 ${t.chatbot.requestAccepted}: ${leadForm.contact} ${t.chatbot.soon}`,
+        content: `${t.chatbot.thankYou}, ${leadForm.name}! 🎉\n\n${t.chatbot.requestAccepted}: ${leadForm.contact}\n\n${t.chatbot.soon}`,
       };
       setMessages((prev) => [...prev, leadMessage]);
       setLeadSubmitted(true);
@@ -204,8 +245,10 @@ const ChatBot = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "fixed bottom-20 right-4 z-50 w-14 h-14 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center",
+          "fixed z-50 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center",
           "bg-gradient-to-br from-primary to-fresh hover:scale-110 hover:shadow-glow",
+          // Mobile: larger touch target, positioned for thumb reach
+          isMobile ? "bottom-20 right-3 w-14 h-14" : "bottom-20 right-4 w-14 h-14",
           isOpen && "rotate-180"
         )}
         aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
@@ -220,33 +263,64 @@ const ChatBot = () => {
       {/* Chat Window */}
       <div
         className={cn(
-          "fixed bottom-36 right-4 z-50 w-[calc(100vw-2rem)] sm:w-96 h-[500px] max-h-[70vh]",
-          "bg-card border border-border rounded-2xl shadow-2xl overflow-hidden",
+          "fixed z-50 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden",
           "transition-all duration-300 origin-bottom-right",
+          // Mobile: full width with safe margins, taller
+          isMobile 
+            ? "bottom-36 right-2 left-2 h-[65vh] max-h-[500px]" 
+            : "bottom-36 right-4 w-96 h-[500px] max-h-[70vh]",
           isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"
         )}
       >
         {/* Header */}
-        <div className="bg-gradient-to-r from-primary to-fresh p-4 flex items-center gap-3 relative">
-          <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-            <Bot className="w-5 h-5 text-primary-foreground" />
+        <div className="bg-gradient-to-r from-primary to-fresh p-3 sm:p-4 flex items-center gap-3 relative">
+          <div className={cn(
+            "rounded-full bg-white/20 flex items-center justify-center",
+            isMobile ? "w-9 h-9" : "w-10 h-10"
+          )}>
+            <Bot className={cn(
+              "text-primary-foreground",
+              isMobile ? "w-4 h-4" : "w-5 h-5"
+            )} />
           </div>
-          <div className="flex-1">
-            <h3 className="font-semibold text-primary-foreground">{t.chatbot.title}</h3>
-            <p className="text-xs text-primary-foreground/80">{t.chatbot.subtitle}</p>
+          <div className="flex-1 min-w-0">
+            <h3 className={cn(
+              "font-semibold text-primary-foreground truncate",
+              isMobile && "text-sm"
+            )}>
+              {t.chatbot.title}
+            </h3>
+            <p className={cn(
+              "text-primary-foreground/80 truncate",
+              isMobile ? "text-[10px]" : "text-xs"
+            )}>
+              {t.chatbot.subtitle}
+            </p>
           </div>
           <button
             onClick={() => setIsOpen(false)}
-            className="w-8 h-8 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors"
+            className={cn(
+              "rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition-colors",
+              isMobile ? "w-9 h-9" : "w-8 h-8"
+            )}
             aria-label={t.chatbot.closeChat}
           >
-            <X className="w-4 h-4 text-primary-foreground" />
+            <X className={cn(
+              "text-primary-foreground",
+              isMobile ? "w-4 h-4" : "w-4 h-4"
+            )} />
           </button>
         </div>
 
         {/* Messages */}
-        <ScrollArea className="h-[calc(100%-12rem)] p-4" ref={scrollRef}>
-          <div className="space-y-4">
+        <ScrollArea 
+          className={cn(
+            "p-3 sm:p-4",
+            showLeadForm ? "h-[calc(100%-14rem)]" : "h-[calc(100%-12rem)]"
+          )} 
+          ref={scrollRef}
+        >
+          <div className="space-y-3">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -256,20 +330,30 @@ const ChatBot = () => {
                 )}
               >
                 {message.role === 'assistant' && (
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-fresh flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-4 h-4 text-primary-foreground" />
+                  <div className={cn(
+                    "rounded-full bg-gradient-to-br from-primary to-fresh flex items-center justify-center flex-shrink-0",
+                    isMobile ? "w-7 h-7" : "w-8 h-8"
+                  )}>
+                    <Bot className={cn(
+                      "text-primary-foreground",
+                      isMobile ? "w-3.5 h-3.5" : "w-4 h-4"
+                    )} />
                   </div>
                 )}
                 <div
                   className={cn(
-                    "max-w-[80%] rounded-2xl px-4 py-2 text-sm",
+                    "max-w-[85%] rounded-2xl px-3 py-2",
+                    isMobile ? "text-sm" : "text-sm",
                     message.role === 'user'
                       ? "bg-primary text-primary-foreground rounded-br-md"
                       : "bg-muted text-foreground rounded-bl-md"
                   )}
                 >
                   {message.role === 'assistant' ? (
-                    <div className="prose prose-sm dark:prose-invert max-w-none [&>p]:m-0 [&>ul]:my-1 [&>ol]:my-1">
+                    <div className={cn(
+                      "prose dark:prose-invert max-w-none [&>p]:m-0 [&>ul]:my-1 [&>ol]:my-1",
+                      isMobile ? "prose-sm [&>p]:text-sm [&>p]:leading-relaxed" : "prose-sm"
+                    )}>
                       <ReactMarkdown>{message.content}</ReactMarkdown>
                     </div>
                   ) : (
@@ -277,16 +361,51 @@ const ChatBot = () => {
                   )}
                 </div>
                 {message.role === 'user' && (
-                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center flex-shrink-0">
-                    <User className="w-4 h-4 text-muted-foreground" />
+                  <div className={cn(
+                    "rounded-full bg-muted flex items-center justify-center flex-shrink-0",
+                    isMobile ? "w-7 h-7" : "w-8 h-8"
+                  )}>
+                    <User className={cn(
+                      "text-muted-foreground",
+                      isMobile ? "w-3.5 h-3.5" : "w-4 h-4"
+                    )} />
                   </div>
                 )}
               </div>
             ))}
+            
+            {/* Quick Reply Buttons */}
+            {showQuickReplies && !isLoading && messages.length <= 2 && (
+              <div className="flex flex-wrap gap-2 mt-3">
+                {quickReplies.map((reply, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleQuickReply(reply)}
+                    className={cn(
+                      "flex items-center gap-1.5 px-3 py-2 rounded-full",
+                      "bg-primary/10 hover:bg-primary/20 text-primary",
+                      "border border-primary/20 hover:border-primary/40",
+                      "transition-all duration-200 active:scale-95",
+                      isMobile ? "text-xs min-h-[44px]" : "text-xs"
+                    )}
+                  >
+                    {reply.icon}
+                    <span>{reply.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+            
             {isLoading && (
               <div className="flex gap-2 justify-start">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-fresh flex items-center justify-center">
-                  <Bot className="w-4 h-4 text-primary-foreground" />
+                <div className={cn(
+                  "rounded-full bg-gradient-to-br from-primary to-fresh flex items-center justify-center",
+                  isMobile ? "w-7 h-7" : "w-8 h-8"
+                )}>
+                  <Bot className={cn(
+                    "text-primary-foreground",
+                    isMobile ? "w-3.5 h-3.5" : "w-4 h-4"
+                  )} />
                 </div>
                 <div className="bg-muted rounded-2xl rounded-bl-md px-4 py-3">
                   <Loader2 className="w-4 h-4 animate-spin text-muted-foreground" />
@@ -298,8 +417,8 @@ const ChatBot = () => {
 
         {/* Lead Form */}
         {showLeadForm && !leadSubmitted && (
-          <div className="absolute bottom-16 left-0 right-0 p-4 bg-card border-t border-border">
-            <div className="space-y-3">
+          <div className="absolute bottom-16 left-0 right-0 p-3 bg-card border-t border-border">
+            <div className="space-y-2">
               <div>
                 <Label htmlFor="lead-name" className="text-xs text-muted-foreground">{t.chatbot.name}</Label>
                 <Input
@@ -307,7 +426,7 @@ const ChatBot = () => {
                   value={leadForm.name}
                   onChange={(e) => setLeadForm(prev => ({ ...prev, name: e.target.value }))}
                   placeholder={t.chatbot.namePlaceholder}
-                  className="h-9"
+                  className={cn("h-10", isMobile && "text-base")}
                 />
               </div>
               <div>
@@ -317,13 +436,16 @@ const ChatBot = () => {
                   value={leadForm.contact}
                   onChange={(e) => setLeadForm(prev => ({ ...prev, contact: e.target.value }))}
                   placeholder={t.chatbot.contactPlaceholder}
-                  className="h-9"
+                  className={cn("h-10", isMobile && "text-base")}
                 />
               </div>
               <Button
                 onClick={handleLeadSubmit}
                 disabled={!leadForm.name.trim() || !leadForm.contact.trim() || isLoading}
-                className="w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90"
+                className={cn(
+                  "w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90",
+                  isMobile && "h-12 text-base"
+                )}
                 size="sm"
               >
                 <FileText className="w-4 h-4 mr-2" />
@@ -335,25 +457,34 @@ const ChatBot = () => {
 
         {/* Action Buttons */}
         {!showLeadForm && (
-          <div className="absolute bottom-16 left-0 right-0 px-4 py-2 bg-card border-t border-border flex gap-2">
+          <div className={cn(
+            "absolute bottom-16 left-0 right-0 px-3 py-2 bg-card border-t border-border flex gap-2",
+            isMobile && "px-2"
+          )}>
             <Button
               onClick={openContactManager}
               variant="outline"
               size="sm"
-              className="flex-1 text-xs"
+              className={cn(
+                "flex-1",
+                isMobile ? "text-xs h-11 px-2" : "text-xs"
+              )}
               disabled={leadSubmitted}
             >
-              <Phone className="w-3 h-3 mr-1" />
-              {t.chatbot.contactManager}
+              <Phone className="w-3.5 h-3.5 mr-1" />
+              <span className="truncate">{t.chatbot.contactManager}</span>
             </Button>
             <Button
               onClick={() => setShowLeadForm(true)}
               size="sm"
-              className="flex-1 text-xs bg-gradient-to-r from-primary to-fresh hover:opacity-90"
+              className={cn(
+                "flex-1 bg-gradient-to-r from-primary to-fresh hover:opacity-90",
+                isMobile ? "text-xs h-11 px-2" : "text-xs"
+              )}
               disabled={leadSubmitted}
             >
-              <FileText className="w-3 h-3 mr-1" />
-              {t.chatbot.submitRequest}
+              <FileText className="w-3.5 h-3.5 mr-1" />
+              <span className="truncate">{t.chatbot.submitRequest}</span>
             </Button>
           </div>
         )}
@@ -368,13 +499,19 @@ const ChatBot = () => {
               onKeyPress={handleKeyPress}
               placeholder={t.chatbot.placeholder}
               disabled={isLoading}
-              className="flex-1 h-9"
+              className={cn(
+                "flex-1",
+                isMobile ? "h-11 text-base" : "h-9"
+              )}
             />
             <Button
-              onClick={sendMessage}
+              onClick={() => sendMessage()}
               disabled={!input.trim() || isLoading}
               size="icon"
-              className="h-9 w-9 bg-gradient-to-r from-primary to-fresh hover:opacity-90"
+              className={cn(
+                "bg-gradient-to-r from-primary to-fresh hover:opacity-90",
+                isMobile ? "h-11 w-11" : "h-9 w-9"
+              )}
             >
               <Send className="w-4 h-4" />
             </Button>
