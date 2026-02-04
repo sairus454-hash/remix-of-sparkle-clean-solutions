@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import CleaningBackground from './CleaningBackground';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 interface LayoutProps {
@@ -11,7 +12,8 @@ const Layout = ({ children }: LayoutProps) => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-hidden relative">
+      <CleaningBackground />
       <Header />
       <main className="flex-1 pt-14 sm:pt-16 lg:pt-20">
         {/* Marquee Section */}
