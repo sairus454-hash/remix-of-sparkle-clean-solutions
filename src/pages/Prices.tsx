@@ -95,8 +95,11 @@ const Prices = () => {
       icon: Car,
       items: [
         { name: t.prices.items.autoComplex, price: 450, icon: CarFront },
+        { name: t.prices.items.autoComplexLeather, price: 550, icon: CarFront },
         { name: t.prices.items.autoSeat, price: 80, icon: Square },
         { name: t.prices.items.autoSeats, price: 300, icon: LayoutGrid },
+        { name: t.prices.items.autoLeatherSeats, price: 350, icon: LayoutGrid },
+        { name: t.prices.items.autoDoorCard, price: 40, icon: Square },
         { name: t.prices.items.autoPlastics, price: 70, icon: Sparkles },
         { name: t.prices.items.autoCeiling, price: 100, icon: Maximize2 },
         { name: t.prices.items.autoFloor, price: 100, icon: Grid3X3 },

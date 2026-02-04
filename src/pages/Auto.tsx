@@ -45,8 +45,11 @@ const Auto = () => {
 
   const autoPrices: AutoPriceItem[] = [
     { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450 },
+    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 550 },
     { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80 },
     { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300 },
+    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350 },
+    { id: 'autoDoorCard', name: t.prices.items.autoDoorCard, price: 40 },
     { id: 'autoPlastics', name: t.prices.items.autoPlastics, price: 70 },
     { id: 'autoCeiling', name: t.prices.items.autoCeiling, price: 100 },
     { id: 'autoFloor', name: t.prices.items.autoFloor, price: 100 },
