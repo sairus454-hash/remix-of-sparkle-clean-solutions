@@ -64,6 +64,7 @@ const ChatBot = () => {
   const [showQuickReplies, setShowQuickReplies] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [inputReadonly, setInputReadonly] = useState(true);
 
   // Quick reply buttons configuration
   const quickReplies: QuickReply[] = [
@@ -117,6 +118,13 @@ const ChatBot = () => {
     return () => clearTimeout(timer);
   }, [hasAutoOpened]);
 
+  // Reset readonly state when chat opens (for mobile keyboard prevention)
+  useEffect(() => {
+    if (isOpen && isMobile) {
+      setInputReadonly(true);
+    }
+  }, [isOpen, isMobile]);
+
   useEffect(() => {
     const scrollToBottom = () => {
       if (scrollRef.current) {
@@ -130,10 +138,18 @@ const ChatBot = () => {
   }, [messages, isLoading]);
 
   useEffect(() => {
-    if (isOpen && inputRef.current) {
+    // Only auto-focus on desktop, not mobile (prevents keyboard popup)
+    if (isOpen && inputRef.current && !isMobile) {
       inputRef.current.focus();
     }
-  }, [isOpen]);
+  }, [isOpen, isMobile]);
+
+  // Handle input focus on mobile - remove readonly when user taps
+  const handleInputFocus = () => {
+    if (isMobile && inputReadonly) {
+      setInputReadonly(false);
+    }
+  };
 
   const sendMessage = async (messageText?: string) => {
     const text = messageText || input.trim();
@@ -277,12 +293,16 @@ const ChatBot = () => {
       <div
         className={cn(
           "fixed z-50 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden",
-          "transition-all duration-300 origin-bottom-right",
+          "origin-bottom-right",
+          // Smooth animation with opacity and transform
+          "transition-[transform,opacity] duration-500 ease-out",
           // Mobile: full width with safe margins, taller
           isMobile 
             ? "bottom-36 right-2 left-2 h-[65vh] max-h-[500px]" 
             : "bottom-36 right-4 w-96 h-[500px] max-h-[70vh]",
-          isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"
+          isOpen 
+            ? "scale-100 opacity-100 translate-y-0" 
+            : "scale-95 opacity-0 translate-y-4 pointer-events-none"
         )}
       >
         {/* Header */}
@@ -510,6 +530,8 @@ const ChatBot = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
+              onFocus={handleInputFocus}
+              readOnly={isMobile && inputReadonly}
               placeholder={t.chatbot.placeholder}
               disabled={isLoading}
               className={cn(
