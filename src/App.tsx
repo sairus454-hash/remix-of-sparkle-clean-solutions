@@ -23,6 +23,7 @@ import Handyman from "./pages/Handyman";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
+ import Windows from "./pages/Windows";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
               <Route path="/equipment" element={<Equipment />} />
               <Route path="/auto" element={<Auto />} />
               <Route path="/ozone" element={<Ozone />} />
+               <Route path="/windows" element={<Windows />} />
               <Route path="/handyman" element={<Handyman />} />
               <Route path="/reviews" element={<Reviews />} />
               <Route path="/contacts" element={<Contacts />} />

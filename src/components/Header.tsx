@@ -48,6 +48,7 @@ const Header = () => {
     { path: '/equipment', label: t.nav.equipment },
     { path: '/auto', label: t.nav.auto },
     { path: '/ozone', label: t.nav.ozone },
+     { path: '/windows', label: t.nav.windows },
     { path: '/handyman', label: t.nav.handyman },
     { path: '/reviews', label: t.nav.reviews },
     { path: '/contacts', label: t.nav.contacts },

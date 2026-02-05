@@ -3,7 +3,7 @@ import PriceAccordion, { PriceAccordionCategory } from '@/components/PriceAccord
 import { 
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
   Circle, Lamp, Sofa, LayoutGrid, Maximize2, Square,
-  ShieldCheck, Grid3X3, Baby, Fan, CarFront, Sparkles
+   ShieldCheck, Grid3X3, Baby, Fan, CarFront, Sparkles, Sun, Fence
 } from 'lucide-react';
 
 const PriceSection = () => {
@@ -109,6 +109,22 @@ const PriceSection = () => {
         { name: t.prices.items.tileCleaning, price: 25, unit: 'm²', icon: Grid3X3 },
       ],
     },
+     {
+       id: 'windows',
+       title: t.windows?.title || 'Мойка окон',
+       description: t.windows?.subtitle || 'Профессиональная мойка окон',
+       minPrice: 40,
+       icon: Sparkles,
+       items: [
+         { name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, icon: Square },
+         { name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, icon: LayoutGrid },
+         { name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, icon: Grid3X3 },
+         { name: t.windows?.items?.balcony || 'Балконное окно', price: 60, icon: Home },
+         { name: t.windows?.items?.terrace || 'Террасное окно', price: 85, icon: Maximize2 },
+         { name: t.windows?.items?.attic || 'Мансардное окно', price: 40, icon: Sun },
+         { name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, icon: Fence },
+       ],
+     },
   ];
 
   return (
