@@ -113,7 +113,7 @@ const ChatBot = () => {
     const timer = setTimeout(() => {
       setIsOpen(true);
       setHasAutoOpened(true);
-    }, 4000);
+     }, 8000);
 
     return () => clearTimeout(timer);
   }, [hasAutoOpened]);

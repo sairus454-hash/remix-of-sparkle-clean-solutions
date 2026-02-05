@@ -10,7 +10,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles } from 'lucide-react';
+ import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 
 interface PriceItem {
@@ -116,6 +116,20 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, unit: 'm²' },
       ],
     },
+     {
+       id: 'windows',
+       name: t.windows?.title || 'Мойка окон',
+       icon: <Square className="w-5 h-5" />,
+       items: [
+         { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40 },
+         { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50 },
+         { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80 },
+         { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60 },
+         { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85 },
+         { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40 },
+         { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40 },
+       ],
+     },
   ];
 
   const addItem = (item: PriceItem) => {
