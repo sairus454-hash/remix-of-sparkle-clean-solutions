@@ -37,6 +37,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
     time: '',
     address: '',
     postalCode: '',
+    paymentType: '',
     message: '',
   });
 
@@ -131,6 +132,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
           time: formData.time,
           address: formData.address,
           postalCode: formData.postalCode,
+          paymentType: formData.paymentType,
           message: formData.message,
           date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined,
         },
@@ -143,7 +145,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
         description: `${formData.name}, ${t.form.success}`,
       });
 
-      setFormData({ name: '', phone: '', time: '', address: '', postalCode: '', message: '' });
+      setFormData({ name: '', phone: '', time: '', address: '', postalCode: '', paymentType: '', message: '' });
       setDate(undefined);
       onDateChange?.(undefined);
       setIsCaptchaValid(false);
@@ -270,6 +272,27 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
             className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
           />
         </div>
+      </div>
+
+      {/* Payment Type */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">{t.form.paymentType || 'Вид оплаты'}</label>
+        <Select
+          value={formData.paymentType}
+          onValueChange={(value) => setFormData({ ...formData, paymentType: value })}
+        >
+          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
+            <SelectValue placeholder={t.form.selectPaymentType || 'Выберите способ оплаты'} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="cash" className="py-3 sm:py-2">
+              💵 {t.form.paymentCash || 'Наличные'}
+            </SelectItem>
+            <SelectItem value="blik" className="py-3 sm:py-2">
+              📱 BLIK
+            </SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       {/* Address */}

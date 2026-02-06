@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -52,6 +53,7 @@ const playNotificationSound = () => {
 
 const ChatBot = () => {
   const { t, language } = useLanguage();
+  const location = useLocation();
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [hasAutoOpened, setHasAutoOpened] = useState(false);
@@ -132,9 +134,10 @@ const ChatBot = () => {
     setShowQuickReplies(true);
   }, [language, t.chatbot.welcome, t.chatbot.welcomeMobile, isMobile]);
 
-  // Auto-open chatbot after 4 seconds on first visit
+  // Auto-open chatbot after 8 seconds ONLY on homepage
   useEffect(() => {
     if (hasAutoOpened) return;
+    if (location.pathname !== '/') return; // Only auto-open on homepage
     
     const timer = setTimeout(() => {
       setIsOpen(true);
@@ -142,7 +145,7 @@ const ChatBot = () => {
      }, 8000);
 
     return () => clearTimeout(timer);
-  }, [hasAutoOpened]);
+  }, [hasAutoOpened, location.pathname]);
 
   // Reset readonly state when chat opens (for mobile keyboard prevention)
   useEffect(() => {

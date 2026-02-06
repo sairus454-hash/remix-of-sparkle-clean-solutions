@@ -219,8 +219,8 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Phone - Simplified on mobile */}
-            <div style={getHeaderItemStyle(14, headerRevealed)}>
+            {/* Phone - Simplified on mobile, lowered position */}
+            <div style={getHeaderItemStyle(14, headerRevealed)} className="mt-1 sm:mt-2">
               <a 
                 href="tel:+48575211401" 
                 className="flex items-center gap-1 sm:gap-2 text-primary font-bold text-sm sm:text-base hover:text-fresh transition-colors"
