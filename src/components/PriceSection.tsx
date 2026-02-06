@@ -2,9 +2,9 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import PriceAccordion, { PriceAccordionCategory } from '@/components/PriceAccordion';
 import { 
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
-  Circle, Lamp, Sofa, LayoutGrid, Maximize2, Square,
+   Circle, Lamp, Sofa, LayoutGrid, Maximize2, Square,
    ShieldCheck, Grid3X3, Baby, Fan, CarFront, Sparkles, Sun, Fence,
-   Wrench, Droplet, Lightbulb, Frame
+   Wrench, Droplet, Lightbulb, Frame, Leaf
 } from 'lucide-react';
 
 const PriceSection = () => {
@@ -143,6 +143,9 @@ const PriceSection = () => {
           { name: t.handyman?.calcItems?.lamp || 'Монтаж люстры/лампы', price: 100, icon: Lightbulb },
           { name: t.handyman?.calcItems?.switch || 'Монтаж/замена переключателя', price: 50, icon: Lightbulb },
           { name: t.handyman?.calcItems?.mailboxLock || 'Замена замка на почт. ящике', price: 140, icon: Wrench },
+          { name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 110, icon: Leaf },
+          { name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 110, icon: Leaf },
+          { name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 110, icon: Leaf },
         ],
         note: t.handyman?.minOrderNote || 'Минимальный заказ 180 zł',
       },
