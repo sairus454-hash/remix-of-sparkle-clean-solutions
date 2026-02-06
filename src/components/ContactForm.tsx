@@ -113,6 +113,7 @@ const [formData, setFormData] = useState({
     'Mietków',
     'Mirków',
     'Mokronos Górny',
+    'Ozimek',
     'Pęgów',
     'Prusice',
     'Przeworno',
