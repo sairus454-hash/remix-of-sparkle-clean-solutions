@@ -43,7 +43,7 @@ const Index = () => {
     label: t.about.experience
   }, {
     icon: Users,
-    value: '5000+',
+    value: '1000+',
     label: t.about.clients
   }, {
     icon: Award,
