@@ -110,6 +110,33 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
     });
   };
 
+  // Voice notification function
+  const speakSuccess = () => {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance('Заявка отправлена!');
+      utterance.lang = 'ru-RU';
+      utterance.rate = 1.0;
+      utterance.pitch = 1.1;
+      
+      // Try to find a female voice
+      const voices = speechSynthesis.getVoices();
+      const femaleVoice = voices.find(voice => 
+        voice.lang.includes('ru') && 
+        (voice.name.toLowerCase().includes('female') || 
+         voice.name.toLowerCase().includes('женск') ||
+         voice.name.includes('Milena') ||
+         voice.name.includes('Irina') ||
+         voice.name.includes('Anna'))
+      ) || voices.find(voice => voice.lang.includes('ru'));
+      
+      if (femaleVoice) {
+        utterance.voice = femaleVoice;
+      }
+      
+      speechSynthesis.speak(utterance);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -139,6 +166,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
       });
 
       if (error) throw error;
+
+      // Play voice notification
+      speakSuccess();
 
       toast({
         title: t.form.success,
