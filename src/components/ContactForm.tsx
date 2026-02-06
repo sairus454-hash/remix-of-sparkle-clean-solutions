@@ -31,15 +31,54 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>([]);
   const [calculatorTotal, setCalculatorTotal] = useState(0);
-  const [formData, setFormData] = useState({
+const [formData, setFormData] = useState({
     name: '',
     phone: '',
     time: '',
+    city: '',
     address: '',
     postalCode: '',
     paymentType: '',
     message: '',
   });
+
+  // Cities within 150km radius of Wrocław
+  const cities = [
+    'Wrocław',
+    'Opole',
+    'Legnica',
+    'Wałbrzych',
+    'Jelenia Góra',
+    'Świdnica',
+    'Lubin',
+    'Głogów',
+    'Brzeg',
+    'Oława',
+    'Oleśnica',
+    'Kłodzko',
+    'Nysa',
+    'Zgorzelec',
+    'Bolesławiec',
+    'Dzierżoniów',
+    'Kalisz',
+    'Leszno',
+    'Góra',
+    'Rawicz',
+    'Środa Śląska',
+    'Trzebnica',
+    'Milicz',
+    'Strzelin',
+    'Ząbkowice Śląskie',
+    'Kędzierzyn-Koźle',
+    'Namysłów',
+    'Kluczbork',
+    'Prudnik',
+    'Zielona Góra',
+    'Nowa Sól',
+    'Żagań',
+    'Żary',
+    'Wschowa',
+  ];
 
   // Expose setCalculatorData method
   useImperativeHandle(ref, () => ({
@@ -169,6 +208,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
           name: formData.name,
           phone: formData.phone,
           time: formData.time,
+          city: formData.city,
           address: formData.address,
           postalCode: formData.postalCode,
           paymentType: formData.paymentType,
@@ -187,7 +227,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
         description: `${formData.name}, ${t.form.success}`,
       });
 
-      setFormData({ name: '', phone: '', time: '', address: '', postalCode: '', paymentType: '', message: '' });
+      setFormData({ name: '', phone: '', time: '', city: '', address: '', postalCode: '', paymentType: '', message: '' });
       setDate(undefined);
       onDateChange?.(undefined);
       setIsCaptchaValid(false);
@@ -314,6 +354,26 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
             className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
           />
         </div>
+      </div>
+
+      {/* City Selection */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">{t.form.city || 'Город или населенный пункт'}</label>
+        <Select
+          value={formData.city}
+          onValueChange={(value) => setFormData({ ...formData, city: value })}
+        >
+          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
+            <SelectValue placeholder={t.form.selectCity || 'Выберите город'} />
+          </SelectTrigger>
+          <SelectContent>
+            {cities.map((city) => (
+              <SelectItem key={city} value={city} className="py-3 sm:py-2">
+                {city}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       {/* Payment Type */}
