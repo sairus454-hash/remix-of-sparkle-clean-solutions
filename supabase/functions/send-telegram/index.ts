@@ -13,6 +13,7 @@ interface FormData {
   message?: string;
   date?: string;
   time?: string;
+  city?: string;
   address?: string;
   postalCode?: string;
   paymentType?: string;
@@ -62,6 +63,7 @@ serve(async (req) => {
 📞 *Телефон:* ${formData.phone}
 ${formData.email ? `📧 *Email:* ${formData.email}` : ''}
 ${formData.service ? `🛠 *Услуга:* ${formData.service}` : ''}
+${formData.city ? `🏙 *Город:* ${formData.city}` : ''}
 ${formData.address ? `📍 *Адрес:* ${formData.address}` : ''}
 ${formData.postalCode ? `📮 *Почтовый код:* ${formData.postalCode}` : ''}
 ${formData.date ? `📅 *Дата:* ${formData.date}` : ''}
