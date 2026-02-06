@@ -129,9 +129,22 @@ const Auto = () => {
     <Layout>
       {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
       
-      {/* Hero */}
-      <section className="py-12 sm:py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
+      {/* Hero with Video Background */}
+      <section className="relative py-12 sm:py-20 overflow-hidden min-h-[400px] sm:min-h-[500px] flex items-center">
+        {/* YouTube Video Background */}
+        <div className="absolute inset-0 z-0">
+          <iframe
+            src="https://www.youtube.com/embed/FPFpQDscE4c?autoplay=1&mute=1&loop=1&playlist=FPFpQDscE4c&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] sm:w-[200%] sm:h-[200%] pointer-events-none"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title="Auto cleaning background video"
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             {/* Live Car Icon */}
             <div className="flex justify-center mb-4 sm:mb-6 animate-fade-up">
@@ -146,7 +159,7 @@ const Auto = () => {
             <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
               {t.auto.title}
             </h1>
-            <p className="text-base sm:text-lg text-muted-foreground animate-fade-up px-2" style={{ animationDelay: '0.1s' }}>
+            <p className="text-base sm:text-lg text-foreground/90 animate-fade-up px-2" style={{ animationDelay: '0.1s' }}>
               {t.auto.subtitle}
             </p>
           </div>
