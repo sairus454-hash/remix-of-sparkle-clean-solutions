@@ -6,7 +6,7 @@ import OzonePriceCalculator from '@/components/OzonePriceCalculator';
 import OzoneSplash from '@/components/OzoneSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import { Wind, CheckCircle2, Car, Home, Building2, Wrench } from 'lucide-react';
+import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
 import ozoneOffice from '@/assets/ozone-office.jpg';
@@ -158,6 +158,43 @@ const Ozone = () => {
                 </div>
               </CircularRevealCard>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What to know before cleaning */}
+      <section className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <CircularRevealCard index={0}>
+              <div className="bg-card p-8 md:p-10 rounded-2xl border border-border shadow-card">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <AlertCircle className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                    {t.ozone.prepTitle}
+                  </h2>
+                </div>
+                <ul className="space-y-4">
+                  {[
+                    t.ozone.prep1,
+                    t.ozone.prep2,
+                    t.ozone.prep3,
+                    t.ozone.prep4,
+                    t.ozone.prep5,
+                    t.ozone.prep6,
+                    t.ozone.prep7,
+                    t.ozone.prep8,
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-fresh flex-shrink-0 mt-0.5" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                      <span className="text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </CircularRevealCard>
           </div>
         </div>
       </section>
