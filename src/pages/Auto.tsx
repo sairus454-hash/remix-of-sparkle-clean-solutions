@@ -129,15 +129,15 @@ const Auto = () => {
     <Layout>
       {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
       
-      {/* Hero with Video Background */}
-      <section className="relative py-12 sm:py-20 overflow-hidden min-h-[400px] sm:min-h-[500px] flex items-center">
+      {/* Hero with Fullscreen Video Background */}
+      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
         {/* YouTube Video Background */}
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <iframe
-            src="https://www.youtube.com/embed/FPFpQDscE4c?autoplay=1&mute=1&loop=1&playlist=FPFpQDscE4c&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300%] h-[300%] sm:w-[200%] sm:h-[200%] pointer-events-none"
+            src="https://www.youtube.com/embed/FPFpQDscE4c?autoplay=1&mute=1&loop=1&playlist=FPFpQDscE4c&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0&iv_load_policy=3"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-[177.78vh] h-[56.25vw] border-0"
+            style={{ aspectRatio: '16/9' }}
             allow="autoplay; encrypted-media"
-            allowFullScreen
             title="Auto cleaning background video"
           />
           {/* Overlay for better text readability */}
