@@ -90,11 +90,16 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
         ],
       },
       {
-        id: 'other',
+        id: 'locksmith',
         name: t.handyman.other,
         icon: Wrench,
         items: [
           { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: 140, icon: Wrench },
+          { id: 'doorHandle', name: t.handyman.calcItems.doorHandle, price: 60, icon: Wrench },
+          { id: 'doorCylinder', name: t.handyman.calcItems.doorCylinder, price: 100, icon: Wrench },
+          { id: 'aluminumDoorRepair', name: t.handyman.calcItems.aluminumDoorRepair, price: 200, icon: Wrench },
+          { id: 'windowDoorAdjustment', name: t.handyman.calcItems.windowDoorAdjustment, price: 200, icon: Wrench },
+          { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, icon: Wrench },
         ],
       },
       {
