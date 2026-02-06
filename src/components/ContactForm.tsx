@@ -110,24 +110,36 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
     });
   };
 
-  // Voice notification function
+  // Voice notification function with language support
   const speakSuccess = () => {
     if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance('Заявка отправлена!');
-      utterance.lang = 'ru-RU';
+      // Messages and language codes for each supported language
+      const voiceConfig: Record<string, { text: string; lang: string; langPrefix: string }> = {
+        ru: { text: 'Заявка отправлена!', lang: 'ru-RU', langPrefix: 'ru' },
+        en: { text: 'Request sent successfully!', lang: 'en-US', langPrefix: 'en' },
+        pl: { text: 'Zgłoszenie zostało wysłane!', lang: 'pl-PL', langPrefix: 'pl' },
+        uk: { text: 'Заявку успішно надіслано!', lang: 'uk-UA', langPrefix: 'uk' },
+      };
+      
+      const config = voiceConfig[language] || voiceConfig.ru;
+      const utterance = new SpeechSynthesisUtterance(config.text);
+      utterance.lang = config.lang;
       utterance.rate = 1.0;
       utterance.pitch = 1.1;
       
-      // Try to find a female voice
+      // Try to find a female voice for the current language
       const voices = speechSynthesis.getVoices();
       const femaleVoice = voices.find(voice => 
-        voice.lang.includes('ru') && 
+        voice.lang.includes(config.langPrefix) && 
         (voice.name.toLowerCase().includes('female') || 
-         voice.name.toLowerCase().includes('женск') ||
+         voice.name.toLowerCase().includes('woman') ||
          voice.name.includes('Milena') ||
          voice.name.includes('Irina') ||
-         voice.name.includes('Anna'))
-      ) || voices.find(voice => voice.lang.includes('ru'));
+         voice.name.includes('Anna') ||
+         voice.name.includes('Zosia') ||
+         voice.name.includes('Ewa') ||
+         voice.name.includes('Lesya'))
+      ) || voices.find(voice => voice.lang.includes(config.langPrefix));
       
       if (femaleVoice) {
         utterance.voice = femaleVoice;
