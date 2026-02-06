@@ -14,6 +14,8 @@ interface FormData {
   date?: string;
   time?: string;
   address?: string;
+  postalCode?: string;
+  paymentType?: string;
 }
 
 serve(async (req) => {
@@ -48,6 +50,10 @@ serve(async (req) => {
       );
     }
 
+    // Format payment type for display
+    const paymentTypeLabel = formData.paymentType === 'cash' ? '💵 Наличные' : 
+                             formData.paymentType === 'blik' ? '📱 BLIK' : '';
+
     // Format message for Telegram
     const message = `
 🔔 *Новая заявка с сайта!*
@@ -57,8 +63,10 @@ serve(async (req) => {
 ${formData.email ? `📧 *Email:* ${formData.email}` : ''}
 ${formData.service ? `🛠 *Услуга:* ${formData.service}` : ''}
 ${formData.address ? `📍 *Адрес:* ${formData.address}` : ''}
+${formData.postalCode ? `📮 *Почтовый код:* ${formData.postalCode}` : ''}
 ${formData.date ? `📅 *Дата:* ${formData.date}` : ''}
 ${formData.time ? `🕐 *Время:* ${formData.time}` : ''}
+${paymentTypeLabel ? `💳 *Оплата:* ${paymentTypeLabel}` : ''}
 ${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
     `.trim();
 

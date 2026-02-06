@@ -5,7 +5,7 @@ import ServiceCard from '@/components/ServiceCard';
 import ServicesSplash from '@/components/ServicesSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import { Sofa, Sparkles, Armchair, Car, LayoutGrid, Baby, Wind, Wrench } from 'lucide-react';
+import { Sofa, Sparkles, Armchair, Car, LayoutGrid, Baby, Wind, Wrench, Droplets } from 'lucide-react';
 import leatherSofaCleaning from '@/assets/leather-sofa-cleaning.jpg';
 import mattressCleaningService from '@/assets/mattress-cleaning-service.jpg';
 import armchairCleaning from '@/assets/armchair-cleaning.jpg';
@@ -24,6 +24,7 @@ const Services = () => {
     { icon: LayoutGrid, title: t.services.balcony, description: t.services.balconyDesc },
     { icon: Car, title: t.nav.auto, description: t.auto.subtitle },
     { icon: Baby, title: t.services.stroller, description: t.services.strollerDesc },
+    { icon: Droplets, title: t.nav.windows, description: t.windows.subtitle },
     { icon: Wind, title: t.nav.ozone, description: t.ozone.subtitle },
     { icon: Wrench, title: t.nav.handyman, description: t.handyman.subtitle },
   ];
