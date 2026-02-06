@@ -10,7 +10,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
- import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square } from 'lucide-react';
+ import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 
 interface PriceItem {
@@ -128,6 +128,43 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
          { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85 },
          { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40 },
          { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40 },
+       ],
+     },
+     {
+       id: 'handyman',
+       name: t.handyman?.title || 'Мастер на час',
+       icon: <Wrench className="w-5 h-5" />,
+       items: [
+         // Сантехника
+         { id: 'faucet', name: t.handyman?.calcItems?.faucet || 'Замена/монтаж крана', price: 120 },
+         { id: 'siphon', name: t.handyman?.calcItems?.siphon || 'Монтаж/замена сифона', price: 120 },
+         { id: 'sink', name: t.handyman?.calcItems?.sink || 'Монтаж раковины', price: 180 },
+         { id: 'toilet', name: t.handyman?.calcItems?.toilet || 'Монтаж унитаза', price: 220 },
+         { id: 'bidet', name: t.handyman?.calcItems?.bidet || 'Монтаж биде', price: 220 },
+         { id: 'urinal', name: t.handyman?.calcItems?.urinal || 'Монтаж писсуара', price: 200 },
+         { id: 'hoseReplacement', name: t.handyman?.calcItems?.hoseReplacement || 'Замена шлангов', price: 50 },
+         // Монтаж
+         { id: 'curtainRod', name: t.handyman?.calcItems?.curtainRod || 'Монтаж карнизов', price: 120 },
+         { id: 'shelf', name: t.handyman?.calcItems?.shelf || 'Монтаж полки/зеркала', price: 100 },
+         { id: 'bedSofaRepair', name: t.handyman?.calcItems?.bedSofaRepair || 'Ремонт кроватей и диванов', price: 130 },
+         { id: 'wardrobeRepair', name: t.handyman?.calcItems?.wardrobeRepair || 'Ремонт шкафов-купе/зеркал', price: 240 },
+         // Электрика
+         { id: 'socket', name: t.handyman?.calcItems?.socket || 'Монтаж розетки', price: 40 },
+         { id: 'lamp', name: t.handyman?.calcItems?.lamp || 'Монтаж люстры/лампы', price: 100 },
+         { id: 'switch', name: t.handyman?.calcItems?.switch || 'Монтаж переключателя', price: 50 },
+         { id: 'fuseReplacement', name: t.handyman?.calcItems?.fuseReplacement || 'Замена предохранителей', price: 120 },
+         { id: 'lampRepair', name: t.handyman?.calcItems?.lampRepair || 'Ремонт люстры', price: 130 },
+         { id: 'chandelierInstall', name: t.handyman?.calcItems?.chandelierInstall || 'Монтаж люстры с лампой', price: 130 },
+         // Слесарные работы
+         { id: 'mailboxLock', name: t.handyman?.calcItems?.mailboxLock || 'Замена замка почт. ящика', price: 140 },
+         { id: 'doorHandle', name: t.handyman?.calcItems?.doorHandle || 'Замена дверной ручки', price: 60 },
+         { id: 'doorCylinder', name: t.handyman?.calcItems?.doorCylinder || 'Замена цилиндра замка', price: 100 },
+         { id: 'aluminumDoorRepair', name: t.handyman?.calcItems?.aluminumDoorRepair || 'Ремонт алюм. дверей', price: 200 },
+         { id: 'windowDoorAdjustment', name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон/дверей', price: 200 },
+         { id: 'fridgeHinges', name: t.handyman?.calcItems?.fridgeHinges || 'Замена петель холодильника', price: 200 },
+         // Услуги огородника
+         { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы (час)', price: 110 },
+         { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев (час)', price: 110 },
        ],
      },
   ];
