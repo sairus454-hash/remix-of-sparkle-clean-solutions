@@ -14,6 +14,7 @@ interface FormData {
   date?: string;
   time?: string;
   city?: string;
+  village?: string;
   address?: string;
   postalCode?: string;
   paymentType?: string;
@@ -64,6 +65,7 @@ serve(async (req) => {
 ${formData.email ? `📧 *Email:* ${formData.email}` : ''}
 ${formData.service ? `🛠 *Услуга:* ${formData.service}` : ''}
 ${formData.city ? `🏙 *Город:* ${formData.city}` : ''}
+${formData.village ? `🏘 *Село:* ${formData.village}` : ''}
 ${formData.address ? `📍 *Адрес:* ${formData.address}` : ''}
 ${formData.postalCode ? `📮 *Почтовый код:* ${formData.postalCode}` : ''}
 ${formData.date ? `📅 *Дата:* ${formData.date}` : ''}

@@ -36,6 +36,7 @@ const [formData, setFormData] = useState({
     phone: '',
     time: '',
     city: '',
+    village: '',
     address: '',
     postalCode: '',
     paymentType: '',
@@ -78,6 +79,60 @@ const [formData, setFormData] = useState({
     'Żagań',
     'Żary',
     'Wschowa',
+  ];
+
+  // Villages within 150km radius of Wrocław
+  const villages = [
+    'Bielany Wrocławskie',
+    'Siechnice',
+    'Święta Katarzyna',
+    'Żórawina',
+    'Kobierzyce',
+    'Długołęka',
+    'Czernica',
+    'Kąty Wrocławskie',
+    'Sobótka',
+    'Jordanów Śląski',
+    'Mietków',
+    'Żmigród',
+    'Prusice',
+    'Wisznia Mała',
+    'Miękinia',
+    'Kostomłoty',
+    'Malczyce',
+    'Wińsko',
+    'Dobroszyce',
+    'Bierutów',
+    'Jelcz-Laskowice',
+    'Domaniów',
+    'Borów',
+    'Kondratowice',
+    'Przeworno',
+    'Ciepłowody',
+    'Kamieniec Wrocławski',
+    'Kiełczów',
+    'Mirków',
+    'Radwanice',
+    'Krzyżanowice',
+    'Iwiny',
+    'Tyniec Mały',
+    'Chrząstawa Wielka',
+    'Wojnowice',
+    'Pęgów',
+    'Smardzów',
+    'Gaj Oławski',
+    'Bystrzyca',
+    'Stanowice',
+    'Gajków',
+    'Szczepanów',
+    'Ratowice',
+    'Domaszczyn',
+    'Wilczyce',
+    'Smolec',
+    'Wysoka',
+    'Mokronos Górny',
+    'Cesarzowice',
+    'Bogdaszowice',
   ];
 
   // Expose setCalculatorData method
@@ -209,6 +264,7 @@ const [formData, setFormData] = useState({
           phone: formData.phone,
           time: formData.time,
           city: formData.city,
+          village: formData.village,
           address: formData.address,
           postalCode: formData.postalCode,
           paymentType: formData.paymentType,
@@ -227,7 +283,7 @@ const [formData, setFormData] = useState({
         description: `${formData.name}, ${t.form.success}`,
       });
 
-      setFormData({ name: '', phone: '', time: '', city: '', address: '', postalCode: '', paymentType: '', message: '' });
+      setFormData({ name: '', phone: '', time: '', city: '', village: '', address: '', postalCode: '', paymentType: '', message: '' });
       setDate(undefined);
       onDateChange?.(undefined);
       setIsCaptchaValid(false);
@@ -370,6 +426,26 @@ const [formData, setFormData] = useState({
             {cities.map((city) => (
               <SelectItem key={city} value={city} className="py-3 sm:py-2">
                 {city}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Village Selection */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">{t.form.village || 'Село'}</label>
+        <Select
+          value={formData.village}
+          onValueChange={(value) => setFormData({ ...formData, village: value })}
+        >
+          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
+            <SelectValue placeholder={t.form.selectVillage || 'Выберите село'} />
+          </SelectTrigger>
+          <SelectContent>
+            {villages.map((village) => (
+              <SelectItem key={village} value={village} className="py-3 sm:py-2">
+                {village}
               </SelectItem>
             ))}
           </SelectContent>
