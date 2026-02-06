@@ -34,9 +34,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    service: '',
     time: '',
     address: '',
+    postalCode: '',
     message: '',
   });
 
@@ -76,16 +76,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
 
   const locales = { ru, pl, uk, en: enUS };
   const currentLocale = locales[language] || enUS;
-
-  const services = [
-    t.services.carpets,
-    t.services.furniture,
-    t.services.leather,
-    t.services.balcony,
-    t.nav.auto,
-    t.nav.ozone,
-    t.nav.handyman,
-  ];
 
   // Only disable past dates
   const isPastDate = (checkDate: Date) => {
@@ -138,9 +128,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
         body: {
           name: formData.name,
           phone: formData.phone,
-          service: formData.service,
           time: formData.time,
           address: formData.address,
+          postalCode: formData.postalCode,
           message: formData.message,
           date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined,
         },
@@ -153,7 +143,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
         description: `${formData.name}, ${t.form.success}`,
       });
 
-      setFormData({ name: '', phone: '', service: '', time: '', address: '', message: '' });
+      setFormData({ name: '', phone: '', time: '', address: '', postalCode: '', message: '' });
       setDate(undefined);
       onDateChange?.(undefined);
       setIsCaptchaValid(false);
@@ -250,24 +240,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">{t.form.service}</label>
-          <Select
-            value={formData.service}
-            onValueChange={(value) => setFormData({ ...formData, service: value })}
-          >
-            <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
-              <SelectValue placeholder={t.form.service} />
-            </SelectTrigger>
-            <SelectContent>
-              {services.map((service) => (
-                <SelectItem key={service} value={service} className="py-3 sm:py-2">
-                  {service}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="space-y-1.5 sm:space-y-2">
           <label className="text-sm font-medium text-foreground">{t.form.preferredTime}</label>
           <Select
             value={formData.time}
@@ -287,6 +259,16 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({ selectedDate
               })}
             </SelectContent>
           </Select>
+        </div>
+        <div className="space-y-1.5 sm:space-y-2">
+          <label className="text-sm font-medium text-foreground">{t.form.postalCode || 'Почтовый код'}</label>
+          <Input
+            type="text"
+            placeholder="00-000"
+            value={formData.postalCode}
+            onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
+            className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
+          />
         </div>
       </div>
 

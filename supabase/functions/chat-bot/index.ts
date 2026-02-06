@@ -48,6 +48,15 @@ const PRICE_LIST = {
 • Офис 100-150 м² — 400 PLN
 • Озонирование авто — 100 PLN
 
+🪟 МОЙКА ОКОН:
+• Одностворчатое окно — 40 PLN
+• Двухстворчатое окно — 50 PLN
+• Трёхстворчатое окно — 80 PLN
+• Балконное окно — 60 PLN
+• Террасное окно — 85 PLN
+• Мансардное окно — 40 PLN
+• Балюстрада — 40 PLN
+
 ✨ ДОПОЛНИТЕЛЬНО:
 • Детская коляска — 100 PLN
 • Сушка мебели — 60 PLN
@@ -56,6 +65,7 @@ const PRICE_LIST = {
 
 🔧 МАСТЕР НА ЧАС — от 90 PLN/час (мин. заказ 180 PLN)
 
+📍 ЗОНА ОБСЛУЖИВАНИЯ: Работаем в радиусе 140 км от Вроцлава!
 ⚠️ Минимальный заказ: 170 PLN (Вроцлав), 300 PLN (другие города)`,
 
   en: `
@@ -101,6 +111,15 @@ CURRENT PRICE LIST (prices in PLN):
 • Office 100-150 m² — 400 PLN
 • Car ozonation — 100 PLN
 
+🪟 WINDOW CLEANING:
+• Single-sash window — 40 PLN
+• Double-sash window — 50 PLN
+• Triple-sash window — 80 PLN
+• Balcony window — 60 PLN
+• Terrace window — 85 PLN
+• Attic window — 40 PLN
+• Balustrade — 40 PLN
+
 ✨ ADDITIONAL:
 • Baby stroller — 100 PLN
 • Furniture drying — 60 PLN
@@ -109,6 +128,7 @@ CURRENT PRICE LIST (prices in PLN):
 
 🔧 HANDYMAN — from 90 PLN/hour (min. order 180 PLN)
 
+📍 SERVICE AREA: We work within 140 km radius from Wrocław!
 ⚠️ Minimum order: 170 PLN (Wrocław), 300 PLN (other cities)`,
 
   pl: `
@@ -154,6 +174,15 @@ AKTUALNY CENNIK (ceny w PLN):
 • Biuro 100-150 m² — 400 PLN
 • Ozonowanie auta — 100 PLN
 
+🪟 MYCIE OKIEN:
+• Okno jednoskrzydłowe — 40 PLN
+• Okno dwuskrzydłowe — 50 PLN
+• Okno trzyskrzydłowe — 80 PLN
+• Okno balkonowe — 60 PLN
+• Okno tarasowe — 85 PLN
+• Okno dachowe — 40 PLN
+• Balustrada — 40 PLN
+
 ✨ DODATKOWO:
 • Wózek dziecięcy — 100 PLN
 • Suszenie mebli — 60 PLN
@@ -162,6 +191,7 @@ AKTUALNY CENNIK (ceny w PLN):
 
 🔧 ZŁOTA RĄCZKA — od 90 PLN/godz. (min. zamówienie 180 PLN)
 
+📍 STREFA USŁUG: Pracujemy w promieniu 140 km od Wrocławia!
 ⚠️ Minimalne zamówienie: 170 PLN (Wrocław), 300 PLN (inne miasta)`,
 
   uk: `
@@ -207,6 +237,15 @@ AKTUALNY CENNIK (ceny w PLN):
 • Офіс 100-150 м² — 400 PLN
 • Озонування авто — 100 PLN
 
+🪟 МИТТЯ ВІКОН:
+• Одностулкове вікно — 40 PLN
+• Двостулкове вікно — 50 PLN
+• Тристулкове вікно — 80 PLN
+• Балконне вікно — 60 PLN
+• Терасне вікно — 85 PLN
+• Мансардне вікно — 40 PLN
+• Балюстрада — 40 PLN
+
 ✨ ДОДАТКОВО:
 • Дитячий візок — 100 PLN
 • Сушіння меблів — 60 PLN
@@ -215,6 +254,7 @@ AKTUALNY CENNIK (ceny w PLN):
 
 🔧 МАЙСТЕР НА ГОДИНУ — від 90 PLN/год (мін. замовлення 180 PLN)
 
+📍 ЗОНА ОБСЛУГОВУВАННЯ: Працюємо в радіусі 140 км від Вроцлава!
 ⚠️ Мінімальне замовлення: 170 PLN (Вроцлав), 300 PLN (інші міста)`
 };
 

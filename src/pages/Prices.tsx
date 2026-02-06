@@ -10,7 +10,7 @@ import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
   Circle, Lamp, Sofa, LayoutGrid, Maximize2, Square,
   ShieldCheck, Grid3X3, Baby, Fan, CarFront, Sparkles,
-  Calculator
+  Calculator, Sun, Fence, Wrench, Droplet, Lightbulb, Frame
 } from 'lucide-react';
 import {
   Dialog,
@@ -136,6 +136,42 @@ const Prices = () => {
         { name: t.prices.items.impregnation, price: 80, icon: ShieldCheck },
         { name: t.prices.items.tileCleaning, price: 25, unit: 'm²', icon: Grid3X3 },
       ],
+    },
+    {
+      id: 'windows',
+      title: t.windows?.title || 'Мойка окон',
+      description: t.windows?.subtitle || 'Профессиональная мойка окон',
+      minPrice: 40,
+      icon: Sparkles,
+      items: [
+        { name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, icon: Square },
+        { name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, icon: LayoutGrid },
+        { name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, icon: Grid3X3 },
+        { name: t.windows?.items?.balcony || 'Балконное окно', price: 60, icon: Home },
+        { name: t.windows?.items?.terrace || 'Террасное окно', price: 85, icon: Maximize2 },
+        { name: t.windows?.items?.attic || 'Мансардное окно', price: 40, icon: Sun },
+        { name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, icon: Fence },
+      ],
+    },
+    {
+      id: 'handyman',
+      title: t.handyman?.title || 'Мастер на час',
+      description: t.handyman?.subtitle || 'Быстрое решение бытовых проблем',
+      minPrice: 90,
+      icon: Wrench,
+      items: [
+        { name: t.handyman?.calcItems?.faucet || 'Замена/монтаж крана', price: 120, icon: Droplet },
+        { name: t.handyman?.calcItems?.siphon || 'Монтаж/замена сифона', price: 120, icon: Droplet },
+        { name: t.handyman?.calcItems?.sink || 'Монтаж раковины', price: 180, icon: Droplet },
+        { name: t.handyman?.calcItems?.toilet || 'Монтаж унитаза', price: 220, icon: Droplet },
+        { name: t.handyman?.calcItems?.curtainRod || 'Монтаж карнизов', price: 120, icon: Frame },
+        { name: t.handyman?.calcItems?.shelf || 'Монтаж полки/зеркала', price: 100, icon: Frame },
+        { name: t.handyman?.calcItems?.socket || 'Монтаж электрической розетки', price: 40, icon: Lightbulb },
+        { name: t.handyman?.calcItems?.lamp || 'Монтаж люстры/лампы', price: 100, icon: Lightbulb },
+        { name: t.handyman?.calcItems?.switch || 'Монтаж/замена переключателя', price: 50, icon: Lightbulb },
+        { name: t.handyman?.calcItems?.mailboxLock || 'Замена замка на почт. ящике', price: 140, icon: Wrench },
+      ],
+      note: t.handyman?.minOrderNote || 'Минимальный заказ 180 zł',
     },
   ];
 

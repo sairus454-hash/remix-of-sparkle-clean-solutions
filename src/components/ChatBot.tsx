@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -66,6 +66,32 @@ const ChatBot = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputReadonly, setInputReadonly] = useState(true);
 
+  // Block body scroll when chat is open on mobile
+  useEffect(() => {
+    if (isMobile && isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+    };
+  }, [isMobile, isOpen]);
+
   // Quick reply buttons configuration
   const quickReplies: QuickReply[] = [
     {
@@ -79,9 +105,9 @@ const ChatBot = () => {
       message: t.chatbot.quickMessages?.auto || 'Интересует химчистка авто'
     },
     {
-      icon: <Wind className="w-4 h-4" />,
-      label: t.chatbot.quickReplies?.ozone || '🌫 Озон',
-      message: t.chatbot.quickMessages?.ozone || 'Интересует озонирование'
+      icon: <Sparkles className="w-4 h-4" />,
+      label: t.chatbot.quickReplies?.windows || '🪟 Окна',
+      message: t.chatbot.quickMessages?.windows || 'Интересует мойка окон'
     },
     {
       icon: <Wrench className="w-4 h-4" />,
@@ -292,14 +318,14 @@ const ChatBot = () => {
       {/* Chat Window */}
       <div
         className={cn(
-          "fixed z-50 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden",
+          "fixed z-50 bg-card border border-border shadow-2xl overflow-hidden",
           "origin-bottom-right",
           // Smooth animation with opacity and transform
           "transition-[transform,opacity] duration-500 ease-out",
-          // Mobile: full width with safe margins, taller
+          // Mobile: full screen for better UX on iOS/Android
           isMobile 
-            ? "bottom-36 right-2 left-2 h-[65vh] max-h-[500px]" 
-            : "bottom-36 right-4 w-96 h-[500px] max-h-[70vh]",
+            ? "inset-0 rounded-none pb-safe pt-safe" 
+            : "bottom-36 right-4 w-96 h-[500px] max-h-[70vh] rounded-2xl",
           isOpen 
             ? "scale-100 opacity-100 translate-y-0" 
             : "scale-95 opacity-0 translate-y-4 pointer-events-none"
