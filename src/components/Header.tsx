@@ -47,9 +47,9 @@ const Header = () => {
     { path: '/prices', label: t.nav.prices },
     { path: '/equipment', label: t.nav.equipment },
     { path: '/auto', label: t.nav.auto },
-    { path: '/ozone', label: t.nav.ozone },
-     { path: '/windows', label: t.nav.windows },
-    { path: '/handyman', label: t.nav.handyman },
+    { path: '/ozone', label: t.nav.ozone, highlight: 'ozone' as const },
+    { path: '/windows', label: t.nav.windows },
+    { path: '/handyman', label: t.nav.handyman, highlight: 'handyman' as const },
     { path: '/reviews', label: t.nav.reviews },
     { path: '/contacts', label: t.nav.contacts },
   ];
@@ -135,20 +135,34 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item, index) => (
-              <div key={item.path} style={getHeaderItemStyle(index + 2, headerRevealed)}>
-                <Link
-                  to={item.path}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    location.pathname === item.path
-                      ? 'text-primary bg-accent'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </div>
-            ))}
+            {navItems.map((item, index) => {
+              const getHighlightClass = () => {
+                if (item.highlight === 'ozone') {
+                  return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
+                }
+                if (item.highlight === 'handyman') {
+                  return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                }
+                return '';
+              };
+              
+              return (
+                <div key={item.path} style={getHeaderItemStyle(index + 2, headerRevealed)}>
+                  <Link
+                    to={item.path}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                      location.pathname === item.path
+                        ? 'text-primary bg-accent'
+                        : item.highlight
+                          ? getHighlightClass()
+                          : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </div>
+              );
+            })}
           </nav>
 
           {/* Right Section */}
@@ -265,20 +279,34 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav className="lg:hidden py-4 border-t border-border animate-fade-up">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                  location.pathname === item.path
-                    ? 'text-primary bg-accent'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const getMobileHighlightClass = () => {
+                if (item.highlight === 'ozone') {
+                  return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
+                }
+                if (item.highlight === 'handyman') {
+                  return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                }
+                return '';
+              };
+              
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
+                    location.pathname === item.path
+                      ? 'text-primary bg-accent'
+                      : item.highlight
+                        ? getMobileHighlightClass()
+                        : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
         )}
       </div>

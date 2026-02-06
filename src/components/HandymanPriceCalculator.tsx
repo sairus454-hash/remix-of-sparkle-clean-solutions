@@ -73,6 +73,8 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
           { id: 'shelf', name: t.handyman.calcItems.shelf, price: 100, icon: Frame },
           { id: 'pictures', name: t.handyman.calcItems.pictures, price: 80, icon: Frame },
           { id: 'furniture', name: t.handyman.calcItems.furnitureAssembly, price: 80, isFrom: true, icon: Wrench },
+          { id: 'bedSofaRepair', name: t.handyman.calcItems.bedSofaRepair, price: 130, isFrom: true, icon: Frame },
+          { id: 'wardrobeRepair', name: t.handyman.calcItems.wardrobeRepair, price: 240, icon: Frame },
         ],
       },
       {
@@ -87,6 +89,9 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
           { id: 'repair', name: t.handyman.calcItems.repair, price: 100, isFrom: true, icon: Lightbulb },
           { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: 350, icon: Lightbulb },
           { id: 'switch', name: t.handyman.calcItems.switch, price: 50, icon: Lightbulb },
+          { id: 'fuseReplacement', name: t.handyman.calcItems.fuseReplacement, price: 120, icon: Lightbulb },
+          { id: 'lampRepair', name: t.handyman.calcItems.lampRepair, price: 130, icon: Lightbulb },
+          { id: 'chandelierInstall', name: t.handyman.calcItems.chandelierInstall, price: 130, icon: Lightbulb },
         ],
       },
       {
