@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Calculator, Plus, Minus, Trash2, Wrench, Droplet, Lightbulb, Frame, ChevronDown, ChevronUp, Send } from 'lucide-react';
+import { Calculator, Plus, Minus, Trash2, Wrench, Droplet, Lightbulb, Frame, ChevronDown, ChevronUp, Send, Leaf } from 'lucide-react';
 import { LucideIcon } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { CalculatorItem } from '@/types/calculator';
@@ -88,6 +88,16 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
         icon: Wrench,
         items: [
           { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: 140, icon: Wrench },
+        ],
+      },
+      {
+        id: 'gardening',
+        name: t.handyman.gardening,
+        icon: Leaf,
+        items: [
+          { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 110, icon: Leaf },
+          { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, icon: Leaf },
+          { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, icon: Leaf },
         ],
       },
     ];
