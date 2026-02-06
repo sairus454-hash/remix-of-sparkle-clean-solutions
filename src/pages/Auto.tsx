@@ -141,7 +141,7 @@ const Auto = () => {
             title="Auto cleaning background video"
           />
           {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/40 to-background/55" />
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
