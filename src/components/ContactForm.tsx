@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { SearchableSelect } from '@/components/ui/searchable-select';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { toast } from '@/hooks/use-toast';
@@ -416,41 +417,27 @@ const [formData, setFormData] = useState({
       {/* City Selection */}
       <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">{t.form.city || 'Город или населенный пункт'}</label>
-        <Select
+        <SearchableSelect
           value={formData.city}
           onValueChange={(value) => setFormData({ ...formData, city: value })}
-        >
-          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
-            <SelectValue placeholder={t.form.selectCity || 'Выберите город'} />
-          </SelectTrigger>
-          <SelectContent>
-            {cities.map((city) => (
-              <SelectItem key={city} value={city} className="py-3 sm:py-2">
-                {city}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+          options={cities}
+          placeholder={t.form.selectCity || 'Выберите город'}
+          searchPlaceholder={t.form.searchCity || 'Поиск города...'}
+          emptyMessage={t.form.noCityFound || 'Город не найден'}
+        />
       </div>
 
       {/* Village Selection */}
       <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">{t.form.village || 'Село'}</label>
-        <Select
+        <SearchableSelect
           value={formData.village}
           onValueChange={(value) => setFormData({ ...formData, village: value })}
-        >
-          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
-            <SelectValue placeholder={t.form.selectVillage || 'Выберите село'} />
-          </SelectTrigger>
-          <SelectContent>
-            {villages.map((village) => (
-              <SelectItem key={village} value={village} className="py-3 sm:py-2">
-                {village}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+          options={villages}
+          placeholder={t.form.selectVillage || 'Выберите село'}
+          searchPlaceholder={t.form.searchVillage || 'Поиск села...'}
+          emptyMessage={t.form.noVillageFound || 'Село не найдено'}
+        />
       </div>
 
       {/* Payment Type */}
