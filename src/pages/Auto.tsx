@@ -166,32 +166,6 @@ const Auto = () => {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
-              <CircularRevealCard key={index} index={index}>
-                <div 
-                  className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
-                  style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
-                >
-                  <div className="relative rounded-xl overflow-hidden">
-                    <AnimatedImage 
-                      src={image.src} 
-                      alt={image.alt} 
-                      delay={index * 150}
-                      duration={800}
-                      className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
-                  </div>
-                </div>
-              </CircularRevealCard>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Services */}
       <section className="py-12 sm:py-20 bg-gradient-section">
