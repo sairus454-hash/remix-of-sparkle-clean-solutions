@@ -134,10 +134,10 @@ const ChatBot = () => {
     setShowQuickReplies(true);
   }, [language, t.chatbot.welcome, t.chatbot.welcomeMobile, isMobile]);
 
-  // Auto-open chatbot after 8 seconds ONLY on homepage
+  // Auto-open chatbot after 8 seconds on desktop (all pages)
   useEffect(() => {
     if (hasAutoOpened) return;
-    if (location.pathname !== '/') return; // Only auto-open on homepage
+    if (isMobile) return; // Only auto-open on desktop
     
     const timer = setTimeout(() => {
       setIsOpen(true);
@@ -145,7 +145,7 @@ const ChatBot = () => {
      }, 8000);
 
     return () => clearTimeout(timer);
-  }, [hasAutoOpened, location.pathname]);
+  }, [hasAutoOpened, isMobile]);
 
   // Reset readonly state when chat opens (for mobile keyboard prevention)
   useEffect(() => {
