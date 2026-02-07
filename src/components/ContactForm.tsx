@@ -127,6 +127,39 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     });
   };
 
+  // Sound notification function - plays a pleasant success beep
+  const playSuccessSound = () => {
+    try {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      
+      // Create a pleasant two-tone success sound
+      const playTone = (frequency: number, startTime: number, duration: number) => {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = frequency;
+        oscillator.type = 'sine';
+        
+        gainNode.gain.setValueAtTime(0, startTime);
+        gainNode.gain.linearRampToValueAtTime(0.3, startTime + 0.05);
+        gainNode.gain.linearRampToValueAtTime(0, startTime + duration);
+        
+        oscillator.start(startTime);
+        oscillator.stop(startTime + duration);
+      };
+      
+      const now = audioContext.currentTime;
+      playTone(523.25, now, 0.15); // C5
+      playTone(659.25, now + 0.15, 0.15); // E5
+      playTone(783.99, now + 0.3, 0.25); // G5
+    } catch (error) {
+      console.log('Audio not supported');
+    }
+  };
+
   // Voice notification function with language support
   const speakSuccess = () => {
     if ('speechSynthesis' in window) {
@@ -225,7 +258,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       });
       if (error) throw error;
 
-      // Play voice notification
+      // Play sound and voice notification
+      playSuccessSound();
       speakSuccess();
       toast({
         title: t.form.success,
