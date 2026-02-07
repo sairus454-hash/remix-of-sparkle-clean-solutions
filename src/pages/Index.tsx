@@ -24,7 +24,7 @@ import {
 import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
-import heroMasterImage from '@/assets/hero-master.jpg';
+import heroBannerImage from '@/assets/hero-banner.jpg';
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
   const [isCalcOpen, setIsCalcOpen] = useState(false);
@@ -53,85 +53,33 @@ const Index = () => {
   return <>
       {showSplash && <WaterDropSplash onComplete={handleSplashComplete} />}
       <Layout>
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center bg-gradient-section overflow-hidden py-8 sm:py-0">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-60 sm:w-80 h-60 sm:h-80 bg-primary/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute -bottom-40 -left-40 w-60 sm:w-80 h-60 sm:h-80 bg-fresh/10 rounded-full blur-3xl animate-float" style={{
-            animationDelay: '3s'
-          }} />
-        </div>
+      {/* Hero Banner Section */}
+      <section 
+        className="relative h-[350px] sm:h-[400px] md:h-[450px] w-full flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroBannerImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center top',
+        }}
+      >
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent" />
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-              {/* Exploding Water Drop Icon */}
-              <div className="flex justify-center lg:justify-start mb-4 sm:mb-6 animate-fade-up">
-                <div className="relative">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{
-                    animation: 'float 3s ease-in-out infinite'
-                  }}>
-                    <Droplets className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{
-                      animation: 'pulse 2s ease-in-out infinite'
-                    }} />
-                  </div>
-                  {/* Explosion effect - multiple pinging circles */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 bg-fresh/60 rounded-full animate-ping" />
-                  <div className="absolute top-0 right-0 w-3 h-3 sm:w-4 sm:h-4 bg-primary/70 rounded-full animate-ping" style={{
-                    animationDelay: '0.2s'
-                  }} />
-                  <div className="absolute bottom-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-fresh rounded-full animate-ping" style={{
-                    animationDelay: '0.4s'
-                  }} />
-                  <div className="absolute top-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-primary rounded-full animate-ping" style={{
-                    animationDelay: '0.6s'
-                  }} />
-                  <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 bg-fresh/80 rounded-full animate-ping" style={{
-                    animationDelay: '0.8s'
-                  }} />
-                </div>
-              </div>
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] leading-tight" style={{
-                animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
-              }}>
-                {t.hero.title}
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 animate-fade-up leading-relaxed" style={{
-                animationDelay: '0.1s'
-              }}>
-                {t.hero.subtitle}
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up justify-center lg:justify-start" style={{
-                animationDelay: '0.2s'
-              }}>
-                <Link to="/contacts" className="w-full sm:w-auto">
-                  <Button className="w-full sm:w-auto bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 touch-manipulation active:scale-95 transition-transform">
-                    {t.hero.cta}
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
-                <Link to="/services" className="w-full sm:w-auto">
-                  <Button variant="outline" className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-primary text-primary hover:bg-accent touch-manipulation active:scale-95 transition-transform">
-                    {t.hero.secondary}
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            
-            <div className="relative animate-fade-up group order-first lg:order-last" style={{
-              animationDelay: '0.3s'
-            }}>
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-hero p-1 shadow-glow overflow-hidden" style={{
-                animation: 'float 4s ease-in-out infinite'
-              }}>
-                <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                  <img src={heroMasterImage} alt="Professional cleaning service" className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110" style={{
-                    animation: 'slowZoom 20s ease-in-out infinite alternate'
-                  }} />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 rounded-2xl" />
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 w-20 sm:w-24 h-20 sm:h-24 bg-fresh/20 rounded-2xl blur-2xl animate-pulse" />
+          <div className="max-w-xl">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground leading-tight animate-fade-up">
+              {t.hero.title}
+            </h1>
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 animate-fade-up leading-relaxed" style={{ animationDelay: '0.1s' }}>
+              {t.hero.subtitle}
+            </p>
+            <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <Link to="/contacts">
+                <Button className="bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 touch-manipulation active:scale-95 transition-transform">
+                  {t.hero.cta}
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
