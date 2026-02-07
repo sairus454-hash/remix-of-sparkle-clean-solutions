@@ -24,7 +24,7 @@ import {
 import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
-import mattressCleaningImage from '@/assets/mattress-cleaning.jpg';
+import heroMasterImage from '@/assets/hero-master.jpg';
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
   const [isCalcOpen, setIsCalcOpen] = useState(false);
@@ -125,7 +125,7 @@ const Index = () => {
                 animation: 'float 4s ease-in-out infinite'
               }}>
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                  <img src={mattressCleaningImage} alt="Professional mattress cleaning" className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110" style={{
+                  <img src={heroMasterImage} alt="Professional cleaning service" className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110" style={{
                     animation: 'slowZoom 20s ease-in-out infinite alternate'
                   }} />
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 rounded-2xl" />
