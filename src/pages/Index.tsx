@@ -66,7 +66,7 @@ const Index = () => {
           style={{
             backgroundImage: `url(${heroBannerImage})`,
             backgroundSize: 'contain',
-            backgroundPosition: 'center right',
+            backgroundPosition: 'center 65%',
             backgroundRepeat: 'no-repeat',
           }}
         />
