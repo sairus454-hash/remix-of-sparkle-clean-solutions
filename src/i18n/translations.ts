@@ -385,7 +385,7 @@ export const translations = {
       warranty: 'Гарантия',
       warrantyValue: '30 дней',
       orderNow: 'Заказать мастера',
-      minOrderNote: 'Минимальный заказ 180 zł',
+      minOrderNote: 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł',
       minOrderNoteOther: 'Минимальный заказ для других населённых пунктов — 350 zł',
       calcItems: {
         faucet: 'Замена/монтаж крана батареи',
@@ -884,7 +884,7 @@ export const translations = {
       warranty: 'Warranty',
       warrantyValue: '30 days',
       orderNow: 'Order a Handyman',
-      minOrderNote: 'Minimum order 180 zł',
+      minOrderNote: 'Minimum order for Wrocław and suburbs (R=10 km) — 180 zł',
       minOrderNoteOther: 'Minimum order for other locations — 350 zł',
       calcItems: {
         faucet: 'Faucet replacement/installation',
@@ -1383,7 +1383,7 @@ export const translations = {
       warranty: 'Gwarancja',
       warrantyValue: '30 dni',
       orderNow: 'Zamów fachowca',
-      minOrderNote: 'Minimalny zakup wynosi 180 zł',
+      minOrderNote: 'Minimalny zakup dla Wrocławia i okolic (R=10 km) — 180 zł',
       minOrderNoteOther: 'Minimalny zakup dla innych miejscowości — 350 zł',
       calcItems: {
         faucet: 'Wymiana/montaż kranu baterii',
@@ -1882,7 +1882,7 @@ export const translations = {
       warranty: 'Гарантія',
       warrantyValue: '30 днів',
       orderNow: 'Замовити майстра',
-      minOrderNote: 'Мінімальне замовлення 180 zł',
+      minOrderNote: 'Мінімальне замовлення для Вроцлава та передмістя (R=10 km) — 180 zł',
       minOrderNoteOther: 'Мінімальне замовлення для інших населених пунктів — 350 zł',
       calcItems: {
         faucet: 'Заміна/монтаж крана батареї',
