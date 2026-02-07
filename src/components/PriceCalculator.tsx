@@ -281,6 +281,9 @@ const PriceCalculator = () => {
           <p className="text-sm text-muted-foreground mt-2 font-medium">
             {t.calculator.minOrder}
           </p>
+          <p className="text-sm text-muted-foreground font-medium">
+            {t.calculator.minOrderOther}
+          </p>
         </div>
       </CardContent>
     </Card>;

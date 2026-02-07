@@ -170,7 +170,7 @@ const PriceSection = () => {
           { name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 110, icon: Leaf },
           { name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 110, icon: Leaf },
         ],
-        note: `${t.handyman?.minOrderNote || 'Минимальный заказ 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 350 zł'}`,
+        note: `${t.handyman?.minOrderNote || 'Минимальный заказ 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 400 zł'}`,
       },
   ];
 
