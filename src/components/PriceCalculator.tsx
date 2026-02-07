@@ -275,9 +275,6 @@ const PriceCalculator = () => {
               {t.prices.from} {calculateTotal()} {t.prices.currency}
             </span>
           </div>
-          <p className="text-sm text-muted-foreground mt-2">
-            {t.calculator.note}
-          </p>
           <p className="text-sm text-muted-foreground mt-2 font-medium">
             {t.calculator.minOrder}
           </p>
