@@ -123,12 +123,28 @@ const Index = () => {
       <section className="py-12 sm:py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
-              animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
-            }}>
-              {t.promotions.title}
+            {/* Premium animated icon */}
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <div className="relative">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-teal-500 flex items-center justify-center shadow-glow animate-pulse">
+                  <span className="text-3xl sm:text-4xl" style={{ animation: 'float 2s ease-in-out infinite' }}>🎁</span>
+                </div>
+                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-orange-500 animate-ping" style={{ animationDelay: '0.5s' }} />
+              </div>
+            </div>
+            
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 animate-fade-up">
+              <span className="bg-gradient-to-r from-orange-500 via-amber-400 to-teal-500 bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 2s linear infinite' }}>
+                🔥 {t.promotions.title} 🔥
+              </span>
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto px-4">{t.promotions.subtitle}</p>
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+              <span className="font-medium text-foreground/80">✨ {t.promotions.subtitle} ✨</span>
+            </p>
+            <p className="text-sm sm:text-base text-fresh font-semibold mt-2 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              💰 Экономьте до 20% на наших услугах!
+            </p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
