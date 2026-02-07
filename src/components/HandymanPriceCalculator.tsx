@@ -66,6 +66,8 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
           { id: 'showerCabinInstall', name: t.handyman.calcItems.showerCabinInstall, price: 450, icon: Droplet },
           { id: 'showerTrayInstall', name: t.handyman.calcItems.showerTrayInstall, price: 200, icon: Droplet },
           { id: 'bathtubInstall', name: t.handyman.calcItems.bathtubInstall, price: 300, icon: Droplet },
+          { id: 'bathroomAccessories', name: t.handyman.calcItems.bathroomAccessories, price: 30, icon: Droplet },
+          { id: 'wallMountedShower', name: t.handyman.calcItems.wallMountedShower, price: 200, icon: Droplet },
         ],
       },
       {

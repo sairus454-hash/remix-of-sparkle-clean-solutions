@@ -148,6 +148,8 @@ const PriceSection = () => {
           { name: t.handyman?.calcItems?.showerCabinInstall || 'Установка душевой кабины', price: 450, icon: Droplet },
           { name: t.handyman?.calcItems?.showerTrayInstall || 'Установка поддона', price: 200, icon: Droplet },
           { name: t.handyman?.calcItems?.bathtubInstall || 'Установка ванны', price: 300, icon: Droplet },
+          { name: t.handyman?.calcItems?.bathroomAccessories || 'Установка аксессуаров в ванной', price: 30, icon: Droplet },
+          { name: t.handyman?.calcItems?.wallMountedShower || 'Монтаж навесного душа', price: 200, icon: Droplet },
           { name: t.handyman?.calcItems?.curtainRod || 'Монтаж карнизов', price: 120, icon: Frame },
           { name: t.handyman?.calcItems?.shelf || 'Монтаж полки/зеркала', price: 100, icon: Frame },
           { name: t.handyman?.calcItems?.bedSofaRepair || 'Ремонт кроватей и диванов', price: 130, icon: Frame },
