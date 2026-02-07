@@ -55,15 +55,24 @@ const Index = () => {
       <Layout>
       {/* Hero Banner Section */}
       <section 
-        className="relative h-[350px] sm:h-[400px] md:h-[450px] w-full flex items-center justify-center overflow-hidden"
+        className="relative min-h-[500px] sm:min-h-[550px] md:min-h-[600px] w-full flex items-center overflow-hidden py-12 sm:py-16 md:py-20"
         style={{
-          backgroundImage: `url(${heroBannerImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center top',
+          background: 'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 40% 96%) 50%, hsl(var(--background)) 100%)',
         }}
       >
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/60 to-transparent" />
+        {/* Background image container with contain */}
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${heroBannerImage})`,
+            backgroundSize: 'contain',
+            backgroundPosition: 'center right',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+        
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-[1]" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-xl">
