@@ -7,6 +7,7 @@ import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'l
 import mattressBeforeAfter from '@/assets/mattress-before-after.jpg';
 import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
 import strollerBeforeAfter from '@/assets/stroller-before-after.jpg';
+import aboutBanner from '@/assets/about-banner.jpg';
 
 // TikTok icon component
 const TikTokIcon = ({
@@ -40,9 +41,22 @@ const About = () => {
   return <>
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
       <Layout>
-        {/* Hero */}
-        <section className="py-20 bg-gradient-section">
-          <div className="container mx-auto px-4">
+        {/* Hero with Banner */}
+        <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 overflow-hidden min-h-[50vh] sm:min-h-[60vh] md:min-h-[70vh] flex items-center">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 z-0"
+            style={{
+              backgroundImage: `url(${aboutBanner})`,
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background/70 via-background/50 to-background/80" />
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               {/* Live Sparkles Icon */}
               <div className="flex justify-center mb-6 animate-fade-up">
