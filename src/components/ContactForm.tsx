@@ -48,56 +48,83 @@ const [formData, setFormData] = useState({
   const cities = [
     'Bardo',
     'Bielawa',
+    'Bierutów',
     'Bolesławiec',
     'Brzeg',
     'Brzeg Dolny',
+    'Bystrzyca Kłodzka',
+    'Chojnów',
     'Dzierżoniów',
     'Głogów',
+    'Głuchołazy',
     'Góra',
+    'Gryfów Śląski',
     'Jawor',
+    'Jaworzyna Śląska',
+    'Jelcz-Laskowice',
     'Jelenia Góra',
+    'Kamienna Góra',
     'Kalisz',
     'Karpacz',
+    'Kąty Wrocławskie',
     'Kędzierzyn-Koźle',
-    'Kempno',
+    'Kępno',
     'Kłodzko',
     'Kluczbork',
+    'Koźle',
     'Krotoszyn',
+    'Kudowa-Zdrój',
     'Legnica',
     'Leszno',
+    'Lubań',
     'Lubin',
+    'Lwówek Śląski',
     'Milicz',
     'Namysłów',
+    'Niemcza',
+    'Nowa Ruda',
     'Nowa Sól',
     'Nysa',
+    'Oborniki Śląskie',
     'Oława',
     'Oleśnica',
     'Opole',
-    'Ostrow Wielkopolski',
-    'Ostrzeszow',
-    'Proszkow',
+    'Ostrów Wielkopolski',
+    'Ostrzeszów',
+    'Paczków',
+    'Pieszyce',
+    'Piława Górna',
+    'Polkowice',
+    'Polanica-Zdrój',
+    'Prószków',
     'Prudnik',
     'Rawicz',
+    'Sobótka',
     'Strzegom',
     'Strzelin',
+    'Strzelce Opolskie',
     'Środa Śląska',
     'Świdnica',
+    'Syców',
+    'Szklarska Poręba',
     'Trzebnica',
     'Wałbrzych',
+    'Wołów',
     'Wrocław',
     'Wschowa',
     'Ząbkowice Śląskie',
     'Zgorzelec',
     'Zielona Góra',
-    'Zmigrod',
+    'Ziębice',
+    'Złotoryja',
     'Żagań',
     'Żary',
+    'Żmigród',
   ];
 
   // Villages within 150km radius of Wrocław (alphabetically sorted)
   const villages = [
     'Bielany Wrocławskie',
-    'Bierutów',
     'Bogdaszowice',
     'Borów',
     'Bystrzyca',
@@ -112,29 +139,24 @@ const [formData, setFormData] = useState({
     'Gaj Oławski',
     'Gajków',
     'Iwiny',
-    'Jelcz-Laskowice',
     'Jordanów Śląski',
     'Kamieniec Wrocławski',
-    'Kąty Wrocławskie',
     'Kiełczów',
     'Kobierzyce',
     'Kondratowice',
     'Kostomłoty',
-    'Krzeptow',
+    'Krzeptów',
     'Krzyżanowice',
     'Lutynia',
-    'Lwowek-Slaski',
     'Malczyce',
-    'Medlow',
+    'Mędłów',
     'Miękinia',
     'Mietków',
-    'Miloszyce',
+    'Miłoszyce',
     'Mirków',
-    'Mirsk',
     'Mokronos Dolny',
     'Mokronos Górny',
-    'Niemodlin',
-    'Oborniki Slaski',
+    'Oborniki Śląskie',
     'Osiek',
     'Ozimek',
     'Pęgów',
@@ -144,27 +166,20 @@ const [formData, setFormData] = useState({
     'Przeworno',
     'Radwanice',
     'Ratowice',
-    'Scinawa',
+    'Ścinawy',
     'Siechnice',
     'Smardzów',
     'Smolec',
-    'Sobótka',
     'Stanowice',
     'Szczepanów',
-    'Szprotawa',
     'Święta Katarzyna',
     'Tyniec Mały',
-    'Wielun',
     'Wilczyce',
     'Wińsko',
     'Wisznia Mała',
     'Wojnowice',
-    'Wolow',
-    'Wroblowice',
+    'Wróblowice',
     'Wysoka',
-    'Ziebice',
-    'Zlotoryja',
-    'Żmigród',
     'Żórawina',
   ];
 
@@ -291,7 +306,7 @@ const [formData, setFormData] = useState({
       return;
     }
 
-    // Validate required fields
+    // Validate required fields - city OR village must be filled
     if (!formData.name || !formData.phone || !formData.time || !formData.postalCode || !formData.address || !date) {
       toast({
         title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
@@ -299,6 +314,19 @@ const [formData, setFormData] = useState({
                      language === 'pl' ? 'Proszę wypełnić wszystkie wymagane pola' :
                      language === 'uk' ? 'Будь ласка, заповніть всі обов\'язкові поля' :
                      'Please fill in all required fields',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    // At least one of city or village must be filled
+    if (!formData.city && !formData.village) {
+      toast({
+        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
+        description: language === 'ru' ? 'Укажите город или населённый пункт' : 
+                     language === 'pl' ? 'Wybierz miasto lub miejscowość' :
+                     language === 'uk' ? 'Вкажіть місто або населений пункт' :
+                     'Please select a city or village',
         variant: 'destructive',
       });
       return;
@@ -473,7 +501,9 @@ const [formData, setFormData] = useState({
 
       {/* City Selection */}
       <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">{t.form.city || 'Город или населенный пункт'}</label>
+        <label className="text-sm font-medium text-foreground">
+          {t.form.city || 'Город или населенный пункт'} <span className="text-destructive">*</span>
+        </label>
         <SearchableSelect
           value={formData.city}
           onValueChange={(value) => setFormData({ ...formData, city: value })}
@@ -486,7 +516,9 @@ const [formData, setFormData] = useState({
 
       {/* Village Selection */}
       <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">{t.form.village || 'Село'}</label>
+        <label className="text-sm font-medium text-foreground">
+          {t.form.village || 'Село'} <span className="text-destructive">*</span>
+        </label>
         <SearchableSelect
           value={formData.village}
           onValueChange={(value) => setFormData({ ...formData, village: value })}
