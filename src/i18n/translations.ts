@@ -166,7 +166,8 @@ export const translations = {
       clear: 'Очистить',
       total: 'Итого',
       note: 'Окончательная стоимость может отличаться в зависимости от сложности работы и размера изделия',
-      minOrder: 'Стоимость минимального заказа — 170 злотых во Вроцлаве. В остальных городах составляет 300 злотых.',
+      minOrder: 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł',
+      minOrderOther: 'Минимальный заказ для других населённых пунктов — 400 zł',
     },
     booking: {
       title: 'График свободных дат',
@@ -386,7 +387,7 @@ export const translations = {
       warrantyValue: '30 дней',
       orderNow: 'Заказать мастера',
       minOrderNote: 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł',
-      minOrderNoteOther: 'Минимальный заказ для других населённых пунктов — 350 zł',
+      minOrderNoteOther: 'Минимальный заказ для других населённых пунктов — 400 zł',
       calcItems: {
         faucet: 'Замена/монтаж крана батареи',
         siphon: 'Монтаж/замена сифона в раковине',
@@ -667,7 +668,8 @@ export const translations = {
       clear: 'Clear',
       total: 'Total',
       note: 'Final price may vary depending on the complexity of work and item size',
-      minOrder: 'Minimum order cost is 170 PLN in Wrocław. In other cities, it is 300 PLN.',
+      minOrder: 'Minimum order for Wrocław and suburbs (R=10 km) — 180 zł',
+      minOrderOther: 'Minimum order for other locations — 400 zł',
     },
     booking: {
       title: 'Available Dates',
@@ -887,7 +889,7 @@ export const translations = {
       warrantyValue: '30 days',
       orderNow: 'Order a Handyman',
       minOrderNote: 'Minimum order for Wrocław and suburbs (R=10 km) — 180 zł',
-      minOrderNoteOther: 'Minimum order for other locations — 350 zł',
+      minOrderNoteOther: 'Minimum order for other locations — 400 zł',
       calcItems: {
         faucet: 'Faucet replacement/installation',
         siphon: 'Siphon installation/replacement in sink',
@@ -1168,7 +1170,8 @@ export const translations = {
       clear: 'Wyczyść',
       total: 'Razem',
       note: 'Ostateczna cena może się różnić w zależności od złożoności pracy i rozmiaru przedmiotu',
-      minOrder: 'Minimalna wartość zamówienia wynosi 170 zł we Wrocławiu. W innych miastach wynosi 300 zł.',
+      minOrder: 'Minimalne zamówienie dla Wrocławia i okolic (R=10 km) — 180 zł',
+      minOrderOther: 'Minimalne zamówienie dla innych miejscowości — 400 zł',
     },
     booking: {
       title: 'Dostępne terminy',
@@ -1388,7 +1391,7 @@ export const translations = {
       warrantyValue: '30 dni',
       orderNow: 'Zamów fachowca',
       minOrderNote: 'Minimalny zakup dla Wrocławia i okolic (R=10 km) — 180 zł',
-      minOrderNoteOther: 'Minimalny zakup dla innych miejscowości — 350 zł',
+      minOrderNoteOther: 'Minimalny zakup dla innych miejscowości — 400 zł',
       calcItems: {
         faucet: 'Wymiana/montaż kranu baterii',
         siphon: 'Montaż/wymiana syfonu w umywalce',
@@ -1669,7 +1672,8 @@ export const translations = {
       clear: 'Очистити',
       total: 'Разом',
       note: 'Остаточна вартість може відрізнятися залежно від складності роботи та розміру виробу',
-      minOrder: 'Вартість мінімального замовлення — 170 злотих у Вроцлаві. В інших містах становить 300 злотих.',
+      minOrder: 'Мінімальне замовлення для Вроцлава та передмістя (R=10 km) — 180 zł',
+      minOrderOther: 'Мінімальне замовлення для інших населених пунктів — 400 zł',
     },
     booking: {
       title: 'Графік вільних дат',
@@ -1889,7 +1893,7 @@ export const translations = {
       warrantyValue: '30 днів',
       orderNow: 'Замовити майстра',
       minOrderNote: 'Мінімальне замовлення для Вроцлава та передмістя (R=10 km) — 180 zł',
-      minOrderNoteOther: 'Мінімальне замовлення для інших населених пунктів — 350 zł',
+      minOrderNoteOther: 'Мінімальне замовлення для інших населених пунктів — 400 zł',
       calcItems: {
         faucet: 'Заміна/монтаж крана батареї',
         siphon: 'Монтаж/заміна сифона в раковині',

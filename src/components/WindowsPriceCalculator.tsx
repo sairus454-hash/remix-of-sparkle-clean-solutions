@@ -261,9 +261,12 @@
              {t.prices?.from || 'от'} {calculateTotal()} {t.prices?.currency || 'PLN'}
            </span>
          </div>
-         <p className="text-xs text-muted-foreground mt-2">
-           {t.calculator?.note || 'Окончательная стоимость может отличаться'}
-         </p>
+          <p className="text-xs text-muted-foreground mt-2 font-medium">
+            {t.calculator?.minOrder || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}
+          </p>
+          <p className="text-xs text-muted-foreground font-medium">
+            {t.calculator?.minOrderOther || 'Минимальный заказ для других населённых пунктов — 400 zł'}
+          </p>
          
          {/* Send to Form Button */}
          {selectedItems.length > 0 && (

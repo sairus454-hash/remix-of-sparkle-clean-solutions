@@ -302,6 +302,12 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
               <p className="text-sm text-muted-foreground mt-2">
                 {t.calculator.note}
               </p>
+              <p className="text-sm text-muted-foreground mt-2 font-medium">
+                {t.calculator.minOrder}
+              </p>
+              <p className="text-sm text-muted-foreground font-medium">
+                {t.calculator.minOrderOther}
+              </p>
               
               {/* Send to Form Button */}
               {selectedItems.length > 0 && onSendToForm && (
