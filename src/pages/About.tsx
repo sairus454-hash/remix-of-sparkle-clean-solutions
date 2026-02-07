@@ -51,6 +51,7 @@ const About = () => {
               backgroundSize: 'contain',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
+              filter: 'brightness(0.7)',
             }}
           />
           {/* Gradient overlay for text readability */}
