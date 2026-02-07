@@ -374,9 +374,11 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
             {t.prices.from} {calculateTotal()} {t.prices.currency}
           </span>
         </div>
-        <p className="text-xs text-muted-foreground mt-1.5">{t.calculator.note}</p>
-        <p className="text-xs text-muted-foreground mt-1 font-medium">
+        <p className="text-xs text-muted-foreground mt-1.5 font-medium">
           {t.calculator.minOrder}
+        </p>
+        <p className="text-xs text-muted-foreground font-medium">
+          {t.calculator.minOrderOther}
         </p>
         
         {/* Send to Form Button */}
