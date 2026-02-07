@@ -116,6 +116,19 @@ export function SearchableSelect({
         ) : (
           <Command className="bg-popover">
             <CommandInput placeholder={searchPlaceholder} className="h-10" />
+            {/* Custom input option - always visible under search */}
+            {allowCustom && (
+              <div className="border-b border-border">
+                <button
+                  type="button"
+                  onClick={() => setShowCustomInput(true)}
+                  className="w-full flex items-center gap-2 px-3 py-3 sm:py-2.5 text-sm text-primary hover:bg-accent transition-colors"
+                >
+                  <Edit3 className="h-4 w-4" />
+                  <span className="font-medium">{customLabel}</span>
+                </button>
+              </div>
+            )}
             <CommandList className="max-h-60">
               <CommandEmpty>{emptyMessage}</CommandEmpty>
               <CommandGroup>
@@ -139,20 +152,6 @@ export function SearchableSelect({
                   </CommandItem>
                 ))}
               </CommandGroup>
-              {allowCustom && (
-                <>
-                  <CommandSeparator />
-                  <CommandGroup>
-                    <CommandItem
-                      onSelect={() => setShowCustomInput(true)}
-                      className="py-3 sm:py-2 text-muted-foreground"
-                    >
-                      <Edit3 className="mr-2 h-4 w-4" />
-                      {customLabel}
-                    </CommandItem>
-                  </CommandGroup>
-                </>
-              )}
             </CommandList>
           </Command>
         )}
