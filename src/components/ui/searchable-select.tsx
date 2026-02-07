@@ -28,6 +28,8 @@ interface SearchableSelectProps {
   className?: string;
   allowCustom?: boolean;
   customLabel?: string;
+  disabled?: boolean;
+  disabledMessage?: string;
 }
 
 export function SearchableSelect({
@@ -40,6 +42,8 @@ export function SearchableSelect({
   className,
   allowCustom = false,
   customLabel = "Enter custom value",
+  disabled = false,
+  disabledMessage,
 }: SearchableSelectProps) {
   const [open, setOpen] = React.useState(false);
   const [showCustomInput, setShowCustomInput] = React.useState(false);
@@ -69,13 +73,15 @@ export function SearchableSelect({
           variant="outline"
           role="combobox"
           aria-expanded={open}
+          disabled={disabled}
           className={cn(
             "w-full justify-between bg-card border-border h-11 sm:h-10 text-base sm:text-sm font-normal",
             !value && "text-muted-foreground",
+            disabled && "opacity-50 cursor-not-allowed bg-muted",
             className
           )}
         >
-          {value || placeholder}
+          {disabled && disabledMessage ? disabledMessage : (value || placeholder)}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
