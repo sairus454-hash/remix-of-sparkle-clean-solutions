@@ -511,6 +511,8 @@ const [formData, setFormData] = useState({
           placeholder={t.form.selectCity || 'Выберите город'}
           searchPlaceholder={t.form.searchCity || 'Поиск города...'}
           emptyMessage={t.form.noCityFound || 'Город не найден'}
+          allowCustom={true}
+          customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'}
         />
       </div>
 
