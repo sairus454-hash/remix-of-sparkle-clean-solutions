@@ -65,7 +65,7 @@ const Index = () => {
           className="absolute inset-0 z-0"
           style={{
             backgroundImage: `url(${heroBannerImage})`,
-            backgroundSize: 'contain',
+            backgroundSize: '120% auto',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             filter: isMobile ? 'brightness(0.8) saturate(1.25)' : 'none',
