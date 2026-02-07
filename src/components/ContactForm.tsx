@@ -125,6 +125,7 @@ const [formData, setFormData] = useState({
     'Lutynia',
     'Lwowek-Slaski',
     'Malczyce',
+    'Medlow',
     'Miękinia',
     'Mietków',
     'Miloszyce',
@@ -133,6 +134,8 @@ const [formData, setFormData] = useState({
     'Mokronos Dolny',
     'Mokronos Górny',
     'Niemodlin',
+    'Oborniki Slaski',
+    'Osiek',
     'Ozimek',
     'Pęgów',
     'Pietrzykowice',
@@ -157,6 +160,7 @@ const [formData, setFormData] = useState({
     'Wisznia Mała',
     'Wojnowice',
     'Wolow',
+    'Wroblowice',
     'Wysoka',
     'Ziebice',
     'Zlotoryja',
@@ -277,8 +281,24 @@ const [formData, setFormData] = useState({
     
     if (!isCaptchaValid) {
       toast({
-        title: language === 'ru' ? 'Ошибка' : 'Error',
-        description: language === 'ru' ? 'Пожалуйста, решите капчу' : 'Please solve the captcha',
+        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
+        description: language === 'ru' ? 'Пожалуйста, решите капчу' : 
+                     language === 'pl' ? 'Proszę rozwiązać captcha' :
+                     language === 'uk' ? 'Будь ласка, розв\'яжіть капчу' :
+                     'Please solve the captcha',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    // Validate required fields
+    if (!formData.name || !formData.phone || !formData.time || !formData.postalCode || !formData.address || !date) {
+      toast({
+        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
+        description: language === 'ru' ? 'Пожалуйста, заполните все обязательные поля' : 
+                     language === 'pl' ? 'Proszę wypełnić wszystkie wymagane pola' :
+                     language === 'uk' ? 'Будь ласка, заповніть всі обов\'язкові поля' :
+                     'Please fill in all required fields',
         variant: 'destructive',
       });
       return;
@@ -383,7 +403,9 @@ const [formData, setFormData] = useState({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">{t.form.name}</label>
+          <label className="text-sm font-medium text-foreground">
+            {t.form.name} <span className="text-destructive">*</span>
+          </label>
           <Input
             type="text"
             placeholder={t.form.namePlaceholder}
@@ -394,7 +416,9 @@ const [formData, setFormData] = useState({
           />
         </div>
         <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">{t.form.phone}</label>
+          <label className="text-sm font-medium text-foreground">
+            {t.form.phone} <span className="text-destructive">*</span>
+          </label>
           <Input
             type="tel"
             inputMode="tel"
@@ -409,10 +433,13 @@ const [formData, setFormData] = useState({
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">{t.form.preferredTime}</label>
+          <label className="text-sm font-medium text-foreground">
+            {t.form.preferredTime} <span className="text-destructive">*</span>
+          </label>
           <Select
             value={formData.time}
             onValueChange={(value) => setFormData({ ...formData, time: value })}
+            required
           >
             <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
               <SelectValue placeholder={t.form.selectTime} />
@@ -430,12 +457,15 @@ const [formData, setFormData] = useState({
           </Select>
         </div>
         <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">{t.form.postalCode || 'Почтовый код'}</label>
+          <label className="text-sm font-medium text-foreground">
+            {t.form.postalCode || 'Почтовый код'} <span className="text-destructive">*</span>
+          </label>
           <Input
             type="text"
             placeholder="00-000"
             value={formData.postalCode}
             onChange={(e) => setFormData({ ...formData, postalCode: e.target.value })}
+            required
             className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm"
           />
         </div>
@@ -464,6 +494,8 @@ const [formData, setFormData] = useState({
           placeholder={t.form.selectVillage || 'Выберите село'}
           searchPlaceholder={t.form.searchVillage || 'Поиск села...'}
           emptyMessage={t.form.noVillageFound || 'Село не найдено'}
+          allowCustom={true}
+          customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'}
         />
       </div>
 
@@ -490,7 +522,9 @@ const [formData, setFormData] = useState({
 
       {/* Address */}
       <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">{t.form.address}</label>
+        <label className="text-sm font-medium text-foreground">
+          {t.form.address} <span className="text-destructive">*</span>
+        </label>
         <Input
           type="text"
           placeholder={t.form.addressPlaceholder}
@@ -503,7 +537,9 @@ const [formData, setFormData] = useState({
 
       {/* Date Picker */}
       <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">{t.form.preferredDate}</label>
+        <label className="text-sm font-medium text-foreground">
+          {t.form.preferredDate} <span className="text-destructive">*</span>
+        </label>
         <Popover>
           <PopoverTrigger asChild>
             <Button

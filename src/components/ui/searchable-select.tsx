@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Check, ChevronsUpDown, Search } from "lucide-react";
+import { Check, ChevronsUpDown, Edit3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,12 +9,14 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
+  CommandSeparator,
 } from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Input } from "@/components/ui/input";
 
 interface SearchableSelectProps {
   value: string;
@@ -24,6 +26,8 @@ interface SearchableSelectProps {
   searchPlaceholder?: string;
   emptyMessage?: string;
   className?: string;
+  allowCustom?: boolean;
+  customLabel?: string;
 }
 
 export function SearchableSelect({
@@ -34,11 +38,32 @@ export function SearchableSelect({
   searchPlaceholder = "Search...",
   emptyMessage = "No results found.",
   className,
+  allowCustom = false,
+  customLabel = "Enter custom value",
 }: SearchableSelectProps) {
   const [open, setOpen] = React.useState(false);
+  const [showCustomInput, setShowCustomInput] = React.useState(false);
+  const [customValue, setCustomValue] = React.useState("");
+
+  const isCustomValue = value && !options.includes(value);
+
+  const handleCustomSubmit = () => {
+    if (customValue.trim()) {
+      onValueChange(customValue.trim());
+      setCustomValue("");
+      setShowCustomInput(false);
+      setOpen(false);
+    }
+  };
 
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover open={open} onOpenChange={(newOpen) => {
+      setOpen(newOpen);
+      if (!newOpen) {
+        setShowCustomInput(false);
+        setCustomValue("");
+      }
+    }}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"
@@ -55,33 +80,82 @@ export function SearchableSelect({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0 bg-popover border-border" align="start">
-        <Command className="bg-popover">
-          <CommandInput placeholder={searchPlaceholder} className="h-10" />
-          <CommandList className="max-h-60">
-            <CommandEmpty>{emptyMessage}</CommandEmpty>
-            <CommandGroup>
-              {options.map((option) => (
-                <CommandItem
-                  key={option}
-                  value={option}
-                  onSelect={(currentValue) => {
-                    onValueChange(currentValue === value ? "" : currentValue);
-                    setOpen(false);
-                  }}
-                  className="py-3 sm:py-2"
-                >
-                  <Check
-                    className={cn(
-                      "mr-2 h-4 w-4",
-                      value === option ? "opacity-100" : "opacity-0"
-                    )}
-                  />
-                  {option}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
+        {showCustomInput ? (
+          <div className="p-3 space-y-3">
+            <Input
+              placeholder={customLabel}
+              value={customValue}
+              onChange={(e) => setCustomValue(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleCustomSubmit();
+                }
+              }}
+              autoFocus
+              className="h-10"
+            />
+            <div className="flex gap-2">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setShowCustomInput(false)}
+                className="flex-1"
+              >
+                ← Назад
+              </Button>
+              <Button
+                size="sm"
+                onClick={handleCustomSubmit}
+                disabled={!customValue.trim()}
+                className="flex-1"
+              >
+                OK
+              </Button>
+            </div>
+          </div>
+        ) : (
+          <Command className="bg-popover">
+            <CommandInput placeholder={searchPlaceholder} className="h-10" />
+            <CommandList className="max-h-60">
+              <CommandEmpty>{emptyMessage}</CommandEmpty>
+              <CommandGroup>
+                {options.map((option) => (
+                  <CommandItem
+                    key={option}
+                    value={option}
+                    onSelect={(currentValue) => {
+                      onValueChange(currentValue === value ? "" : currentValue);
+                      setOpen(false);
+                    }}
+                    className="py-3 sm:py-2"
+                  >
+                    <Check
+                      className={cn(
+                        "mr-2 h-4 w-4",
+                        value === option ? "opacity-100" : "opacity-0"
+                      )}
+                    />
+                    {option}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+              {allowCustom && (
+                <>
+                  <CommandSeparator />
+                  <CommandGroup>
+                    <CommandItem
+                      onSelect={() => setShowCustomInput(true)}
+                      className="py-3 sm:py-2 text-muted-foreground"
+                    >
+                      <Edit3 className="mr-2 h-4 w-4" />
+                      {customLabel}
+                    </CommandItem>
+                  </CommandGroup>
+                </>
+              )}
+            </CommandList>
+          </Command>
+        )}
       </PopoverContent>
     </Popover>
   );
