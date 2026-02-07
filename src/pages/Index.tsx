@@ -55,7 +55,7 @@ const Index = () => {
       <Layout>
       {/* Hero Banner Section */}
       <section 
-        className="relative min-h-[500px] sm:min-h-[550px] md:min-h-[600px] w-full flex items-center overflow-hidden py-12 sm:py-16 md:py-20"
+        className="relative min-h-[600px] md:min-h-[700px] w-full flex items-center overflow-hidden py-12 sm:py-16 md:py-20"
         style={{
           background: 'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 40% 96%) 50%, hsl(var(--background)) 100%)',
         }}
@@ -65,8 +65,8 @@ const Index = () => {
           className="absolute inset-0 z-0"
           style={{
             backgroundImage: `url(${heroBannerImage})`,
-            backgroundSize: '55%',
-            backgroundPosition: 'center 65%',
+            backgroundSize: 'contain',
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             filter: 'brightness(0.8) saturate(1.25)',
           }}
