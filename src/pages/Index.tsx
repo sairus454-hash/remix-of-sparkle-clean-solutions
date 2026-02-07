@@ -68,12 +68,12 @@ const Index = () => {
             backgroundSize: 'contain',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            filter: 'brightness(0.8) saturate(1.25)',
+            filter: isMobile ? 'brightness(0.8) saturate(1.25)' : 'none',
           }}
         />
         
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-[1]" />
+        {/* Gradient overlay for text readability - lighter on desktop for natural look */}
+        <div className={`absolute inset-0 z-[1] ${isMobile ? 'bg-gradient-to-r from-background via-background/90 to-transparent' : 'bg-gradient-to-r from-background/60 via-background/40 to-transparent'}`} />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-xl">
