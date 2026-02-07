@@ -516,6 +516,13 @@ const [formData, setFormData] = useState({
         />
       </div>
 
+      {/* Or Separator */}
+      <div className="flex items-center justify-center py-1">
+        <span className="text-sm text-muted-foreground font-medium">
+          {language === 'ru' ? 'или' : language === 'pl' ? 'lub' : language === 'uk' ? 'або' : 'or'}
+        </span>
+      </div>
+
       {/* Village Selection */}
       <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">
