@@ -350,13 +350,27 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
 
       {/* City Selection */}
       <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">
+        <label className={cn(
+          "text-sm font-medium",
+          formData.village ? "text-muted-foreground" : "text-foreground"
+        )}>
           {t.form.city || 'Город или населенный пункт'} <span className="text-destructive">*</span>
         </label>
-        <SearchableSelect value={formData.city} onValueChange={value => setFormData({
-        ...formData,
-        city: value
-      })} options={cities} placeholder={t.form.selectCity || 'Выберите город'} searchPlaceholder={t.form.searchCity || 'Поиск города...'} emptyMessage={t.form.noCityFound || 'Город не найден'} allowCustom={true} customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'} />
+        <SearchableSelect 
+          value={formData.city} 
+          onValueChange={value => setFormData({
+            ...formData,
+            city: value
+          })} 
+          options={cities} 
+          placeholder={t.form.selectCity || 'Выберите город'} 
+          searchPlaceholder={t.form.searchCity || 'Поиск города...'} 
+          emptyMessage={t.form.noCityFound || 'Город не найден'} 
+          allowCustom={true} 
+          customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'}
+          disabled={!!formData.village}
+          disabledMessage={language === 'ru' ? 'Уже выбрано село' : language === 'pl' ? 'Miejscowość już wybrana' : language === 'uk' ? 'Вже обрано село' : 'Village already selected'}
+        />
       </div>
 
       {/* Or Separator */}
@@ -368,13 +382,27 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
 
       {/* Village Selection */}
       <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">
+        <label className={cn(
+          "text-sm font-medium",
+          formData.city ? "text-muted-foreground" : "text-foreground"
+        )}>
           {t.form.village || 'Село'} <span className="text-destructive">*</span>
         </label>
-        <SearchableSelect value={formData.village} onValueChange={value => setFormData({
-        ...formData,
-        village: value
-      })} options={villages} placeholder={t.form.selectVillage || 'Выберите село'} searchPlaceholder={t.form.searchVillage || 'Поиск села...'} emptyMessage={t.form.noVillageFound || 'Село не найдено'} allowCustom={true} customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'} />
+        <SearchableSelect 
+          value={formData.village} 
+          onValueChange={value => setFormData({
+            ...formData,
+            village: value
+          })} 
+          options={villages} 
+          placeholder={t.form.selectVillage || 'Выберите село'} 
+          searchPlaceholder={t.form.searchVillage || 'Поиск села...'} 
+          emptyMessage={t.form.noVillageFound || 'Село не найдено'} 
+          allowCustom={true} 
+          customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'}
+          disabled={!!formData.city}
+          disabledMessage={language === 'ru' ? 'Уже выбран город' : language === 'pl' ? 'Miasto już wybrane' : language === 'uk' ? 'Вже обрано місто' : 'City already selected'}
+        />
       </div>
 
       {/* Payment Type */}
