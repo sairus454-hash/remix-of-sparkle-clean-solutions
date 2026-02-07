@@ -386,6 +386,7 @@ export const translations = {
       warrantyValue: '30 дней',
       orderNow: 'Заказать мастера',
       minOrderNote: 'Минимальный заказ 180 zł',
+      minOrderNoteOther: 'Минимальный заказ для других населённых пунктов — 350 zł',
       calcItems: {
         faucet: 'Замена/монтаж крана батареи',
         siphon: 'Монтаж/замена сифона в раковине',
@@ -884,6 +885,7 @@ export const translations = {
       warrantyValue: '30 days',
       orderNow: 'Order a Handyman',
       minOrderNote: 'Minimum order 180 zł',
+      minOrderNoteOther: 'Minimum order for other locations — 350 zł',
       calcItems: {
         faucet: 'Faucet replacement/installation',
         siphon: 'Siphon installation/replacement in sink',
@@ -1382,6 +1384,7 @@ export const translations = {
       warrantyValue: '30 dni',
       orderNow: 'Zamów fachowca',
       minOrderNote: 'Minimalny zakup wynosi 180 zł',
+      minOrderNoteOther: 'Minimalny zakup dla innych miejscowości — 350 zł',
       calcItems: {
         faucet: 'Wymiana/montaż kranu baterii',
         siphon: 'Montaż/wymiana syfonu w umywalce',
@@ -1880,6 +1883,7 @@ export const translations = {
       warrantyValue: '30 днів',
       orderNow: 'Замовити майстра',
       minOrderNote: 'Мінімальне замовлення 180 zł',
+      minOrderNoteOther: 'Мінімальне замовлення для інших населених пунктів — 350 zł',
       calcItems: {
         faucet: 'Заміна/монтаж крана батареї',
         siphon: 'Монтаж/заміна сифона в раковині',

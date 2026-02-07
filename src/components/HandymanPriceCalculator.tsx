@@ -358,7 +358,11 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
               </p>
               <p className="text-yellow-600 font-semibold flex items-start gap-2 bg-yellow-400/20 rounded-lg p-2">
                 <span>⚠️</span>
-                {t.handyman.minOrderNote}
+                <span>
+                  {t.handyman.minOrderNote}
+                  <br />
+                  {t.handyman.minOrderNoteOther}
+                </span>
               </p>
             </div>
 
