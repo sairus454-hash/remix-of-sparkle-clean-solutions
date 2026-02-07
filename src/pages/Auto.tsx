@@ -382,8 +382,11 @@ const Auto = () => {
                       {t.prices.from} {calculateTotal()} {t.prices.currency}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-muted-foreground mt-2">
-                    {t.calculator.note}
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium">
+                    {t.calculator.minOrder}
+                  </p>
+                  <p className="text-xs sm:text-sm text-muted-foreground font-medium">
+                    {t.calculator.minOrderOther}
                   </p>
                   
                   {/* Send to Form Button */}
