@@ -324,7 +324,7 @@ const ChatBot = () => {
           isMobile 
             ? "right-3 top-1/2 -translate-y-1/2 w-14 h-14" 
             : "bottom-20 right-4 w-14 h-14",
-          isOpen && "rotate-180"
+          isOpen ? "rotate-180" : "animate-pulse-slow"
         )}
         aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
       >
