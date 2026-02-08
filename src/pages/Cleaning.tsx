@@ -162,7 +162,7 @@ const Cleaning = () => {
                       onValueChange={(value) => setArea(value[0])}
                       min={20}
                       max={300}
-                      step={5}
+                      step={1}
                       className="w-full"
                     />
                     <div className="flex justify-between text-sm text-muted-foreground mt-1">
