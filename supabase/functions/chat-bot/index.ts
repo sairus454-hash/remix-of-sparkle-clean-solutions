@@ -103,8 +103,13 @@ const PRICE_LIST = {
 • Обрезка деревьев — 110 PLN/час
 • Помощь на участке — 110 PLN/час
 
-📍 ЗОНА ОБСЛУЖИВАНИЯ: Работаем в радиусе 140 км от Вроцлава!
-⚠️ Минимальный заказ: 170 PLN (Вроцлав), 300 PLN (другие города)`,
+📍 ЗОНА ОБСЛУЖИВАНИЯ: Работаем в радиусе 150 км от Вроцлава!
+⚠️ Минимальный заказ: 180 PLN (Вроцлав и пригород до 10 км), 400 PLN (города дальше 10 км от Вроцлава)
+
+🎁 АКТУАЛЬНЫЕ АКЦИИ:
+• Скидка 10% — при заказе от 2 услуг (например, диван + ковёр)
+• Скидка 15% — постоянным клиентам при 3-м и каждом последующем заказе
+• VIP-программа лояльности — накопительные скидки до 15%`,
 
   en: `
 CURRENT PRICE LIST (prices in PLN):
@@ -204,8 +209,13 @@ CURRENT PRICE LIST (prices in PLN):
 • Tree trimming — 110 PLN/hour
 • Yard help — 110 PLN/hour
 
-📍 SERVICE AREA: We work within 140 km radius from Wrocław!
-⚠️ Minimum order: 170 PLN (Wrocław), 300 PLN (other cities)`,
+📍 SERVICE AREA: We work within 150 km radius from Wrocław!
+⚠️ Minimum order: 180 PLN (Wrocław and suburbs within 10 km), 400 PLN (cities beyond 10 km from Wrocław)
+
+🎁 CURRENT PROMOTIONS:
+• 10% discount — when ordering 2+ services (e.g., sofa + carpet)
+• 15% discount — for regular customers on 3rd and subsequent orders
+• VIP loyalty program — cumulative discounts up to 15%`,
 
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
@@ -305,8 +315,13 @@ AKTUALNY CENNIK (ceny w PLN):
 • Przycinanie drzew — 110 PLN/godz.
 • Pomoc na działce — 110 PLN/godz.
 
-📍 STREFA USŁUG: Pracujemy w promieniu 140 km od Wrocławia!
-⚠️ Minimalne zamówienie: 170 PLN (Wrocław), 300 PLN (inne miasta)`,
+📍 STREFA USŁUG: Pracujemy w promieniu 150 km od Wrocławia!
+⚠️ Minimalne zamówienie: 180 PLN (Wrocław i przedmieścia do 10 km), 400 PLN (miasta dalej niż 10 km od Wrocławia)
+
+🎁 AKTUALNE PROMOCJE:
+• Rabat 10% — przy zamówieniu 2+ usług (np. sofa + dywan)
+• Rabat 15% — dla stałych klientów przy 3. i kolejnych zamówieniach
+• Program lojalnościowy VIP — rabaty kumulacyjne do 15%`,
 
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
@@ -406,8 +421,13 @@ AKTUALNY CENNIK (ceny w PLN):
 • Обрізка дерев — 110 PLN/год
 • Допомога на ділянці — 110 PLN/год
 
-📍 ЗОНА ОБСЛУГОВУВАННЯ: Працюємо в радіусі 140 км від Вроцлава!
-⚠️ Мінімальне замовлення: 170 PLN (Вроцлав), 300 PLN (інші міста)`
+📍 ЗОНА ОБСЛУГОВУВАННЯ: Працюємо в радіусі 150 км від Вроцлава!
+⚠️ Мінімальне замовлення: 180 PLN (Вроцлав і передмістя до 10 км), 400 PLN (міста далі 10 км від Вроцлава)
+
+🎁 АКТУАЛЬНІ АКЦІЇ:
+• Знижка 10% — при замовленні 2+ послуг (наприклад, диван + килим)
+• Знижка 15% — постійним клієнтам при 3-му та кожному наступному замовленні
+• VIP-програма лояльності — накопичувальні знижки до 15%`
 };
 
 const SYSTEM_PROMPTS: Record<string, string> = {
