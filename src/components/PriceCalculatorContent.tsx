@@ -406,13 +406,13 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         </div>
       </div>
 
-      {/* Selected Items */}
-      {selectedItems.length > 0 && (
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <Label className="text-sm font-medium text-muted-foreground">
-              {t.calculator.selectedItems}
-            </Label>
+      {/* Selected Items - Always visible */}
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <Label className="text-sm font-medium text-muted-foreground">
+            {t.calculator.selectedItems}
+          </Label>
+          {selectedItems.length > 0 && (
             <Button
               variant="ghost"
               size="sm"
@@ -422,10 +422,22 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
               <Trash2 className="w-3 h-3 mr-1" />
               {t.calculator.clear}
             </Button>
-          </div>
+          )}
+        </div>
 
-          <div className="space-y-2 max-h-48 overflow-y-auto">
-            {selectedItems.map((selected) => (
+        <div className="min-h-[120px] space-y-2 max-h-48 overflow-y-auto rounded-lg border border-dashed border-border p-2 bg-muted/10">
+          {selectedItems.length === 0 ? (
+            <div className="flex flex-col items-center justify-center h-full min-h-[100px] text-muted-foreground">
+              <Plus className="w-6 h-6 mb-2 opacity-50" />
+              <span className="text-xs text-center">
+                {language === 'ru' ? 'Выберите услуги из списка выше' : 
+                 language === 'en' ? 'Select services from the list above' : 
+                 language === 'pl' ? 'Wybierz usługi z listy powyżej' : 
+                 'Виберіть послуги зі списку вище'}
+              </span>
+            </div>
+          ) : (
+            selectedItems.map((selected) => (
               <div
                 key={selected.item.id}
                 className="flex items-center gap-2 p-2 bg-accent/30 rounded-lg"
@@ -479,10 +491,10 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                   </span>
                 </div>
               </div>
-            ))}
-          </div>
+            ))
+          )}
         </div>
-      )}
+      </div>
 
       {/* Discount Tiers Info */}
       <div className="p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
