@@ -94,6 +94,16 @@ const ChatBot = () => {
     };
   }, [isMobile, isOpen]);
 
+  // Listen for custom event to open chatbot from navigation menu
+  useEffect(() => {
+    const handleOpenChat = () => {
+      setIsOpen(true);
+    };
+    
+    window.addEventListener('openChatBot', handleOpenChat);
+    return () => window.removeEventListener('openChatBot', handleOpenChat);
+  }, []);
+
   // Quick reply buttons configuration
   const quickReplies: QuickReply[] = [
     {
