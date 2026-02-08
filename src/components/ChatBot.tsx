@@ -320,8 +320,10 @@ const ChatBot = () => {
         className={cn(
           "fixed z-50 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center",
           "bg-gradient-to-br from-primary to-fresh hover:scale-110 hover:shadow-glow",
-          // Mobile: larger touch target, positioned for thumb reach
-          isMobile ? "bottom-20 right-3 w-14 h-14" : "bottom-20 right-4 w-14 h-14",
+          // Mobile: left side, vertically centered; Desktop: bottom right
+          isMobile 
+            ? "left-3 top-1/2 -translate-y-1/2 w-14 h-14" 
+            : "bottom-20 right-4 w-14 h-14",
           isOpen && "rotate-180"
         )}
         aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
