@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
@@ -11,7 +12,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator } from 'lucide-react';
+import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight } from 'lucide-react';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import cleaningTeam2 from '@/assets/cleaning-team-work-2.jpg';
 import cleaningTeam3 from '@/assets/cleaning-team-work-3.jpg';
@@ -380,6 +381,41 @@ const Cleaning = () => {
                   ))}
                 </ul>
               </div>
+            </CircularRevealCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Window Cleaning Link Block */}
+      <section className="py-10 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <CircularRevealCard index={0}>
+              <Link to="/windows" className="block group">
+                <Card className="shadow-card hover:shadow-card-hover transition-all duration-300 border-2 border-sky-200 dark:border-sky-800 bg-gradient-to-r from-sky-50 to-blue-50 dark:from-sky-950/30 dark:to-blue-950/30">
+                  <CardContent className="py-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                          <Droplets className="w-7 h-7 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="font-serif text-xl font-semibold text-sky-700 dark:text-sky-300">
+                            {t.nav?.windows || 'Мойка окон'}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            {t.windows?.subtitle || 'Профессиональная мойка окон любой сложности'}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 group-hover:translate-x-1 transition-transform">
+                        <span className="hidden sm:inline font-medium">{'Узнать больше'}</span>
+                        <ArrowRight className="w-5 h-5" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </CircularRevealCard>
           </div>
         </div>
