@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { Plus, Minus, Trash2, Send } from 'lucide-react';
+import { Plus, Minus, Trash2, Send, Percent, Gift } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
@@ -14,6 +14,7 @@ import {
 import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
 
 interface PriceItem {
   id: string;
@@ -226,13 +227,20 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
     setSelectedItems(selectedItems.filter((s) => s.item.id !== itemId));
   };
 
-  const calculateTotal = () => {
-    return selectedItems.reduce((sum, s) => sum + s.item.price * s.quantity, 0);
-  };
-
   const clearAll = () => {
     setSelectedItems([]);
   };
+
+  // Применяем хук для расчёта скидок
+  const discountInfo = useDiscountCalculator(
+    selectedItems.map(s => ({
+      id: s.item.id,
+      price: s.item.price,
+      quantity: s.quantity,
+    }))
+  );
+
+  const discountTiers = getDiscountTiers(language);
 
   const getCalculatorItems = (): CalculatorItem[] => {
     return selectedItems.map(s => ({
@@ -248,7 +256,8 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
     if (selectedItems.length === 0) return;
     
     const items = getCalculatorItems();
-    const total = calculateTotal();
+    // Используем finalTotal со скидкой
+    const total = discountInfo.finalTotal;
     
     if (onSendToForm) {
       onSendToForm(items, total);
@@ -258,7 +267,9 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
       navigate('/contacts', { 
         state: { 
           calculatorItems: items, 
-          calculatorTotal: total 
+          calculatorTotal: total,
+          discountPercent: discountInfo.discountPercent,
+          discountAmount: discountInfo.discountAmount,
         } 
       });
     }
@@ -473,12 +484,57 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         </div>
       )}
 
+      {/* Discount Tiers Info */}
+      <div className="p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
+        <div className="flex items-center gap-2 mb-2">
+          <Gift className="w-4 h-4 text-primary" />
+          <span className="text-xs font-semibold text-foreground">
+            {language === 'ru' ? 'Система скидок' : 
+             language === 'en' ? 'Discount system' : 
+             language === 'pl' ? 'System rabatowy' : 
+             'Система знижок'}
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {discountTiers.map((tier, index) => (
+            <div 
+              key={index}
+              className={`px-2 py-1 rounded-full text-xs font-medium ${
+                selectedItems.length >= parseInt(tier.services) 
+                  ? 'bg-primary text-primary-foreground' 
+                  : 'bg-muted text-muted-foreground'
+              }`}
+            >
+              {tier.services} {tier.label}: <span className="font-bold">{tier.discount}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Total */}
       <div className="pt-3 border-t border-border">
+        {/* Показываем информацию о скидке */}
+        {discountInfo.hasDiscount && (
+          <div className="mb-3 p-3 bg-fresh/10 rounded-lg border border-fresh/30">
+            <div className="flex items-center gap-2 mb-1">
+              <Percent className="w-4 h-4 text-fresh" />
+              <span className="text-sm font-semibold text-fresh">{discountInfo.discountReason}</span>
+            </div>
+            <div className="flex items-center justify-between text-sm">
+              <span className="text-muted-foreground line-through">
+                {discountInfo.originalTotal} {t.prices.currency}
+              </span>
+              <span className="font-bold text-fresh">
+                -{discountInfo.discountAmount} {t.prices.currency}
+              </span>
+            </div>
+          </div>
+        )}
+
         <div className="flex items-center justify-between">
           <span className="text-base font-medium">{t.calculator.total}</span>
           <span className="text-xl font-bold text-primary">
-            {t.prices.from} {calculateTotal()} {t.prices.currency}
+            {t.prices.from} {discountInfo.finalTotal} {t.prices.currency}
           </span>
         </div>
         <p className="text-xs text-muted-foreground mt-1.5 font-medium">

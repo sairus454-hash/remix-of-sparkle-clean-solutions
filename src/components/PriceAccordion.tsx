@@ -40,7 +40,9 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
   const GENERAL_PRICE_PER_M2 = 10;
   
   const getCleaningPrice = () => {
-    return cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
+    const basePrice = cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
+    // В аккордеоне показываем базовую цену без скидки
+    return basePrice;
   };
 
   return (
