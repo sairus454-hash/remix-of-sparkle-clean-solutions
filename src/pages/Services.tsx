@@ -5,7 +5,7 @@ import ServiceCard from '@/components/ServiceCard';
 import ServicesSplash from '@/components/ServicesSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import { Sofa, Sparkles, Armchair, Car, LayoutGrid, Baby, Wind, Wrench, Droplets } from 'lucide-react';
+import { Sofa, Sparkles, Armchair, Car, LayoutGrid, Baby, Wind, Wrench, Droplets, ShieldCheck } from 'lucide-react';
 import leatherSofaCleaning from '@/assets/leather-sofa-cleaning.jpg';
 import mattressCleaningService from '@/assets/mattress-cleaning-service.jpg';
 import armchairCleaning from '@/assets/armchair-cleaning.jpg';
@@ -39,6 +39,35 @@ const Services = () => {
     <>
       {showSplash && <ServicesSplash onComplete={handleSplashComplete} />}
       <Layout>
+        {/* Impregnation Card */}
+        <section className="py-12 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <CircularRevealCard index={0}>
+              <a 
+                href="/impregnation" 
+                className="group block max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-hero border border-border hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <ShieldCheck className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-xl font-semibold text-primary-foreground">{t.impregnation.cardTitle}</h3>
+                      <p className="text-primary-foreground/80 text-sm">{t.impregnation.cardSubtitle}</p>
+                    </div>
+                  </div>
+                  <div className="text-primary-foreground group-hover:translate-x-2 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </CircularRevealCard>
+          </div>
+        </section>
+
         {/* Hero */}
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
