@@ -326,7 +326,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                     onValueChange={(value) => setCleaningArea(value[0])}
                     min={20}
                     max={300}
-                    step={5}
+                    step={1}
                     className="w-full"
                   />
                   <div className="flex justify-between text-xs text-muted-foreground">
