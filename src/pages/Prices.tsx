@@ -10,7 +10,7 @@ import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
   Circle, Lamp, Sofa, LayoutGrid, Maximize2, Square,
   ShieldCheck, Grid3X3, Baby, Fan, CarFront, Sparkles,
-  Calculator, Sun, Fence, Wrench, Droplet, Lightbulb, Frame
+  Calculator, Sun, Fence, Wrench, Droplet, Lightbulb, Frame, Brush
 } from 'lucide-react';
 import {
   Dialog,
@@ -38,6 +38,15 @@ const Prices = () => {
   }, []);
 
   const categories: PriceAccordionCategory[] = [
+    {
+      id: 'cleaning',
+      title: t.nav?.cleaning || 'Уборка',
+      description: t.cleaning?.subtitle || 'Стандартная и генеральная уборка',
+      minPrice: 8,
+      icon: Brush,
+      items: [],
+      isSlider: true,
+    },
     {
       id: 'furniture',
       title: t.prices.furniture,
