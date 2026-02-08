@@ -2,7 +2,11 @@ import { useState, useCallback } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import AnimatedImage from '@/components/AnimatedImage';
 import { Shield, Droplets, Clock, Leaf, SprayCan, CheckCircle } from 'lucide-react';
+import impregnationWaterBeading from '@/assets/impregnation-water-beading.jpg';
+import impregnationCoffeeSpill from '@/assets/impregnation-coffee-spill.jpg';
+import impregnationBeforeAfter from '@/assets/impregnation-before-after.jpg';
 
 const Impregnation = () => {
   const { t } = useLanguage();
@@ -27,6 +31,24 @@ const Impregnation = () => {
       icon: Leaf,
       title: t.impregnation.eco,
       description: t.impregnation.ecoDesc,
+    },
+  ];
+
+  const examples = [
+    {
+      image: impregnationWaterBeading,
+      title: t.impregnation.example1Title,
+      description: t.impregnation.example1Desc,
+    },
+    {
+      image: impregnationCoffeeSpill,
+      title: t.impregnation.example2Title,
+      description: t.impregnation.example2Desc,
+    },
+    {
+      image: impregnationBeforeAfter,
+      title: t.impregnation.example3Title,
+      description: t.impregnation.example3Desc,
     },
   ];
 
@@ -146,6 +168,41 @@ const Impregnation = () => {
                   <div className="text-5xl font-bold text-primary/20 mb-4">{step.number}</div>
                   <h3 className="font-serif text-xl font-semibold text-foreground mb-4">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
+                </div>
+              </CircularRevealCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Examples Gallery */}
+      <section className="py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+              {t.impregnation.examplesTitle}
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              {t.impregnation.examplesSubtitle}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {examples.map((example, index) => (
+              <CircularRevealCard key={index} index={index}>
+                <div className="group rounded-2xl bg-gradient-card border border-border overflow-hidden hover:shadow-card-hover transition-all duration-300">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <AnimatedImage
+                      src={example.image}
+                      alt={example.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      delay={index * 100}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-serif text-xl font-semibold text-foreground mb-2">{example.title}</h3>
+                    <p className="text-muted-foreground text-sm">{example.description}</p>
+                  </div>
                 </div>
               </CircularRevealCard>
             ))}
