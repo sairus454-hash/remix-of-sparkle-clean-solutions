@@ -12,11 +12,29 @@ const PriceSection = () => {
 
   const categories: PriceAccordionCategory[] = [
     {
+      id: 'cleaning',
+      title: t.cleaning?.service || 'Уборка',
+      description: t.cleaning?.subtitle || 'Профессиональная уборка помещений',
+      minPrice: 8,
+      icon: Home,
+      items: [
+        { name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} (${t.cleaning?.pricePerMeter || 'за м²'})`, price: 8, unit: 'm²', icon: Home },
+        { name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} (${t.cleaning?.pricePerMeter || 'за м²'})`, price: 10, unit: 'm²', icon: Sparkles },
+        { name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 50 м²`, price: 400, icon: Home },
+        { name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 80 м²`, price: 640, icon: Home },
+        { name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 100 м²`, price: 800, icon: Home },
+        { name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 50 м²`, price: 500, icon: Sparkles },
+        { name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 80 м²`, price: 800, icon: Sparkles },
+        { name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 100 м²`, price: 1000, icon: Sparkles },
+      ],
+      note: 'Площадь: от 20 до 300 м²',
+    },
+    {
       id: 'furniture',
       title: t.prices.furniture,
       description: t.prices.furnitureDesc,
       minPrice: 10,
-      icon: Home,
+      icon: Armchair,
       items: [
         { name: t.prices.items.pouf, price: 40, icon: Circle },
         { name: t.prices.items.chair, price: 40, icon: Lamp },
