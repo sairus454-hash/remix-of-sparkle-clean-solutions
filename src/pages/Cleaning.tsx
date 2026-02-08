@@ -230,33 +230,109 @@ const Cleaning = () => {
         </Drawer>
       ) : (
         <Dialog open={isCalcOpen} onOpenChange={setIsCalcOpen}>
-          <DialogContent className="max-w-2xl max-h-[85vh] overflow-hidden flex flex-col">
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
             <DialogHeader className="border-b border-border pb-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                  <Calculator className="w-5 h-5 text-primary-foreground" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
+                  <Calculator className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <DialogTitle className="font-serif text-xl">
-                  {t.cleaning?.calculatorTitle || 'Рассчитайте стоимость уборки'}
-                </DialogTitle>
+                <div>
+                  <DialogTitle className="font-serif text-2xl">
+                    {t.cleaning?.calculatorTitle || 'Рассчитайте стоимость уборки'}
+                  </DialogTitle>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {t.cleaning?.subtitle || 'Профессиональная уборка квартир, домов и офисов'}
+                  </p>
+                </div>
               </div>
             </DialogHeader>
-            <div className="overflow-y-auto flex-1 py-4">
-              <CleaningCalculatorContent 
-                area={area}
-                setArea={setArea}
-                cleaningType={cleaningType}
-                setCleaningType={setCleaningType}
-                pricePerMeter={pricePerMeter}
-                totalPrice={totalPrice}
-                standardServices={standardServices}
-                generalServices={generalServices}
-                onOrder={() => {
-                  setIsCalcOpen(false);
-                  handleSendToForm();
-                }}
-                t={t}
-              />
+            <div className="overflow-y-auto flex-1 py-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Left column - Calculator */}
+                <div className="space-y-6">
+                  {/* Cleaning Type Tabs */}
+                  <div>
+                    <label className="block text-foreground mb-3 font-medium text-lg">
+                      {t.cleaning?.selectType || 'Выберите тип уборки'}:
+                    </label>
+                    <Tabs value={cleaningType} onValueChange={(v) => setCleaningType(v as 'standard' | 'general')} className="w-full">
+                      <TabsList className="grid w-full grid-cols-2 h-auto">
+                        <TabsTrigger value="standard" className="py-4 text-base">
+                          <div className="text-center">
+                            <div className="font-semibold">{t.cleaning?.standardCleaning || 'Стандартная'}</div>
+                            <div className="text-sm text-muted-foreground">8 PLN/м²</div>
+                          </div>
+                        </TabsTrigger>
+                        <TabsTrigger value="general" className="py-4 text-base">
+                          <div className="text-center">
+                            <div className="font-semibold">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
+                            <div className="text-sm text-muted-foreground">10 PLN/м²</div>
+                          </div>
+                        </TabsTrigger>
+                      </TabsList>
+                    </Tabs>
+                  </div>
+                  
+                  {/* Area Slider */}
+                  <div className="bg-muted/30 p-6 rounded-xl">
+                    <label className="block text-foreground mb-4 text-lg">
+                      {t.cleaning?.area || 'Площадь'}: <strong className="text-primary text-2xl">{area} м²</strong>
+                    </label>
+                    <Slider
+                      value={[area]}
+                      onValueChange={(value) => setArea(value[0])}
+                      min={20}
+                      max={300}
+                      step={1}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-sm text-muted-foreground mt-2">
+                      <span>20 м²</span>
+                      <span>300 м²</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-muted-foreground text-lg">
+                    {t.cleaning?.pricePerMeter || 'Цена за м²'}: <strong className="text-foreground">{pricePerMeter} PLN</strong>
+                  </p>
+                  
+                  <div className="pt-6 border-t border-border">
+                    <h4 className="font-serif text-4xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
+                      {t.cleaning?.total || 'Итого'}: {totalPrice} PLN
+                    </h4>
+                  </div>
+                  
+                  <button
+                    onClick={() => {
+                      setIsCalcOpen(false);
+                      handleSendToForm();
+                    }}
+                    className="w-full py-4 px-6 bg-gradient-hero text-primary-foreground font-semibold text-lg rounded-xl hover:opacity-90 transition-opacity shadow-glow"
+                  >
+                    {t.cleaning?.order || 'Заказать уборку'}
+                  </button>
+                  
+                  <p className="text-xs text-muted-foreground text-center">
+                    {t.calculator?.minOrder}
+                  </p>
+                </div>
+                
+                {/* Right column - Services included */}
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2 text-lg">
+                    <CheckCircle2 className="w-6 h-6 text-fresh" />
+                    {t.cleaning?.includedTitle || 'Что входит в уборку:'}
+                  </h4>
+                  <ul className="space-y-3 text-sm text-muted-foreground max-h-[400px] overflow-y-auto pr-2">
+                    {(cleaningType === 'standard' ? standardServices : generalServices).map((service, index) => (
+                      <li key={index} className="flex items-start gap-3 py-1">
+                        <CheckCircle2 className="w-4 h-4 text-fresh mt-0.5 flex-shrink-0" />
+                        <span>{service}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </DialogContent>
         </Dialog>
