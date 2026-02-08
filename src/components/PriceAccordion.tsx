@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import PriceItem from '@/components/PriceItem';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -8,6 +9,9 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { LucideIcon } from 'lucide-react';
+import { Slider } from '@/components/ui/slider';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
 
 export interface PriceAccordionCategory {
   id: string;
@@ -17,6 +21,7 @@ export interface PriceAccordionCategory {
   icon: LucideIcon;
   items: { name: string; price: number; unit?: string; icon?: LucideIcon }[];
   note?: string;
+  isSlider?: boolean;
 }
 
 interface PriceAccordionProps {
@@ -26,6 +31,17 @@ interface PriceAccordionProps {
 
 const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => {
   const { t } = useLanguage();
+  
+  // Cleaning slider state
+  const [cleaningArea, setCleaningArea] = useState(50);
+  const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
+  
+  const STANDARD_PRICE_PER_M2 = 8;
+  const GENERAL_PRICE_PER_M2 = 10;
+  
+  const getCleaningPrice = () => {
+    return cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
+  };
 
   return (
     <Accordion type="single" collapsible className={`space-y-4 ${className}`}>
@@ -56,28 +72,94 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
                   
                   {/* Min price badge */}
                   <div className="flex-shrink-0 bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap">
-                    {t.prices.from} {category.minPrice} {t.prices.currency}
+                    {t.prices.from} {category.minPrice} {t.prices.currency}{category.id === 'cleaning' ? '/м²' : ''}
                   </div>
                 </div>
               </AccordionTrigger>
               
               <AccordionContent className="px-3 sm:px-6 pb-4">
                 <div className="pt-2 border-t border-border">
-                  {category.items.map((item, itemIndex) => (
-                    <PriceItem
-                      key={itemIndex}
-                      name={item.name}
-                      price={item.price}
-                      from={t.prices.from}
-                      currency={t.prices.currency}
-                      unit={item.unit}
-                      icon={item.icon}
-                    />
-                  ))}
-                  {category.note && (
-                    <p className="text-sm text-muted-foreground mt-4 pt-4 border-t border-border italic">
-                      {category.note}
-                    </p>
+                  {/* Slider content for cleaning */}
+                  {category.isSlider ? (
+                    <div className="space-y-6 py-4">
+                      {/* Cleaning Type Selection */}
+                      <div className="space-y-3">
+                        <Label className="text-sm font-medium">
+                          Тип уборки
+                        </Label>
+                        <RadioGroup
+                          value={cleaningType}
+                          onValueChange={(value) => setCleaningType(value as 'standard' | 'general')}
+                          className="flex flex-col sm:flex-row gap-3"
+                        >
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="standard" id="accordion-standard" />
+                            <Label htmlFor="accordion-standard" className="cursor-pointer">
+                              {t.cleaning?.standardCleaning || 'Стандартная уборка'} ({STANDARD_PRICE_PER_M2} {t.prices.currency}/м²)
+                            </Label>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <RadioGroupItem value="general" id="accordion-general" />
+                            <Label htmlFor="accordion-general" className="cursor-pointer">
+                              {t.cleaning?.generalCleaning || 'Генеральная уборка'} ({GENERAL_PRICE_PER_M2} {t.prices.currency}/м²)
+                            </Label>
+                          </div>
+                        </RadioGroup>
+                      </div>
+                      
+                      {/* Area Slider */}
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-center">
+                          <Label className="text-sm font-medium">
+                            {t.cleaning?.area || 'Площадь'}
+                          </Label>
+                          <span className="text-lg font-bold text-primary">
+                            {cleaningArea} м²
+                          </span>
+                        </div>
+                        <Slider
+                          value={[cleaningArea]}
+                          onValueChange={(value) => setCleaningArea(value[0])}
+                          min={20}
+                          max={300}
+                          step={1}
+                          className="w-full"
+                        />
+                        <div className="flex justify-between text-xs text-muted-foreground">
+                          <span>20 м²</span>
+                          <span>300 м²</span>
+                        </div>
+                      </div>
+                      
+                      {/* Calculated Price */}
+                      <div className="bg-primary/5 rounded-xl p-4 flex items-center justify-between">
+                        <span className="text-sm font-medium">
+                          Расчетная стоимость:
+                        </span>
+                        <span className="text-2xl font-bold text-primary">
+                          {getCleaningPrice()} {t.prices.currency}
+                        </span>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      {category.items.map((item, itemIndex) => (
+                        <PriceItem
+                          key={itemIndex}
+                          name={item.name}
+                          price={item.price}
+                          from={t.prices.from}
+                          currency={t.prices.currency}
+                          unit={item.unit}
+                          icon={item.icon}
+                        />
+                      ))}
+                      {category.note && (
+                        <p className="text-sm text-muted-foreground mt-4 pt-4 border-t border-border italic">
+                          {category.note}
+                        </p>
+                      )}
+                    </>
                   )}
                 </div>
               </AccordionContent>
