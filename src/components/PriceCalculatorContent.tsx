@@ -45,6 +45,19 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
 
   const categories: Category[] = [
     {
+      id: 'cleaning',
+      name: t.cleaning?.service || 'Уборка',
+      icon: <Home className="w-5 h-5" />,
+      items: [
+        { id: 'cleaningStandard50', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 50 м²`, price: 400 },
+        { id: 'cleaningStandard80', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 80 м²`, price: 640 },
+        { id: 'cleaningStandard100', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 100 м²`, price: 800 },
+        { id: 'cleaningGeneral50', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 50 м²`, price: 500 },
+        { id: 'cleaningGeneral80', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 80 м²`, price: 800 },
+        { id: 'cleaningGeneral100', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 100 м²`, price: 1000 },
+      ],
+    },
+    {
       id: 'furniture',
       name: t.prices.furniture,
       icon: <Sofa className="w-5 h-5" />,
@@ -165,19 +178,6 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
          // Услуги огородника
          { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы (час)', price: 110 },
          { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев (час)', price: 110 },
-       ],
-     },
-     {
-       id: 'cleaning',
-       name: t.cleaning?.service || 'Уборка',
-       icon: <Home className="w-5 h-5" />,
-       items: [
-         { id: 'cleaningStandard50', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 50 м²`, price: 400 },
-         { id: 'cleaningStandard80', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 80 м²`, price: 640 },
-         { id: 'cleaningStandard100', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 100 м²`, price: 800 },
-         { id: 'cleaningGeneral50', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 50 м²`, price: 500 },
-         { id: 'cleaningGeneral80', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 80 м²`, price: 800 },
-         { id: 'cleaningGeneral100', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 100 м²`, price: 1000 },
        ],
      },
   ];
