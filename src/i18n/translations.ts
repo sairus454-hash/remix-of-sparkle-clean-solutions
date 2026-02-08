@@ -575,6 +575,9 @@ export const translations = {
       whatDesc: 'Наша команда профессиональных клинеров выполнит полный комплекс уборочных работ для вашего дома или офиса. Используем только проверенные и безопасные средства.',
       benefitsTitle: 'Почему выбирают нас',
       typesTitle: 'Виды уборки',
+      selectType: 'Выберите тип уборки',
+      standardCleaning: 'Стандартная уборка',
+      generalCleaning: 'Генеральная уборка',
     },
   },
   en: {
@@ -1151,6 +1154,9 @@ export const translations = {
       whatDesc: 'Our team of professional cleaners will perform a full range of cleaning services for your home or office. We use only proven and safe products.',
       benefitsTitle: 'Why choose us',
       typesTitle: 'Types of cleaning',
+      selectType: 'Select cleaning type',
+      standardCleaning: 'Standard cleaning',
+      generalCleaning: 'Deep cleaning',
     },
   },
   pl: {
@@ -1727,6 +1733,9 @@ export const translations = {
       whatDesc: 'Nasz zespół profesjonalnych sprzątaczy wykona pełen zakres usług sprzątających dla Twojego domu lub biura. Używamy tylko sprawdzonych i bezpiecznych środków.',
       benefitsTitle: 'Dlaczego nas wybierać',
       typesTitle: 'Rodzaje sprzątania',
+      selectType: 'Wybierz rodzaj sprzątania',
+      standardCleaning: 'Sprzątanie standardowe',
+      generalCleaning: 'Sprzątanie generalne',
     },
   },
   uk: {
@@ -2303,6 +2312,9 @@ export const translations = {
       whatDesc: 'Наша команда професійних клінерів виконає повний комплекс прибиральних робіт для вашого дому або офісу. Використовуємо тільки перевірені та безпечні засоби.',
       benefitsTitle: 'Чому обирають нас',
       typesTitle: 'Види прибирання',
+      selectType: 'Оберіть тип прибирання',
+      standardCleaning: 'Стандартне прибирання',
+      generalCleaning: 'Генеральне прибирання',
     },
   },
 };

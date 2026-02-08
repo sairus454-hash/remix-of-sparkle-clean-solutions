@@ -5,6 +5,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Slider } from '@/components/ui/slider';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users } from 'lucide-react';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import cleaningTeam2 from '@/assets/cleaning-team-work-2.jpg';
@@ -17,12 +18,18 @@ const Cleaning = () => {
   
   // Slider state
   const [area, setArea] = useState(50);
-  const pricePerMeter = 6;
+  const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
+  
+  const pricePerMeter = cleaningType === 'standard' ? 8 : 10;
   const totalPrice = area * pricePerMeter;
+  
+  const cleaningTypeLabel = cleaningType === 'standard' 
+    ? (t.cleaning?.standardCleaning || 'Стандартная уборка')
+    : (t.cleaning?.generalCleaning || 'Генеральная уборка');
 
   const handleSendToForm = () => {
     const cleaningData = [
-      { id: 'cleaning-area', name: `${t.cleaning?.service || 'Уборка'} ${area} м²`, price: totalPrice, quantity: 1 }
+      { id: 'cleaning-area', name: `${cleaningTypeLabel} ${area} м²`, price: totalPrice, quantity: 1 }
     ];
     formRef.current?.setCalculatorData(cleaningData, totalPrice);
     formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -122,6 +129,30 @@ const Cleaning = () => {
                 </h3>
                 
                 <div className="space-y-6">
+                  {/* Cleaning Type Tabs */}
+                  <div>
+                    <label className="block text-foreground mb-3 font-medium">
+                      {t.cleaning?.selectType || 'Выберите тип уборки'}:
+                    </label>
+                    <Tabs value={cleaningType} onValueChange={(v) => setCleaningType(v as 'standard' | 'general')} className="w-full">
+                      <TabsList className="grid w-full grid-cols-2 h-auto">
+                        <TabsTrigger value="standard" className="py-3 text-sm">
+                          <div className="text-center">
+                            <div className="font-medium">{t.cleaning?.standardCleaning || 'Стандартная'}</div>
+                            <div className="text-xs text-muted-foreground">8 PLN/м²</div>
+                          </div>
+                        </TabsTrigger>
+                        <TabsTrigger value="general" className="py-3 text-sm">
+                          <div className="text-center">
+                            <div className="font-medium">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
+                            <div className="text-xs text-muted-foreground">10 PLN/м²</div>
+                          </div>
+                        </TabsTrigger>
+                      </TabsList>
+                    </Tabs>
+                  </div>
+                  
+                  {/* Area Slider */}
                   <div>
                     <label className="block text-foreground mb-2">
                       {t.cleaning?.area || 'Площадь'}: <strong className="text-primary">{area} м²</strong>
@@ -141,7 +172,7 @@ const Cleaning = () => {
                   </div>
                   
                   <p className="text-muted-foreground">
-                    {t.cleaning?.pricePerMeter || 'Цена за м²'}: <strong className="text-foreground">6 PLN</strong>
+                    {t.cleaning?.pricePerMeter || 'Цена за м²'}: <strong className="text-foreground">{pricePerMeter} PLN</strong>
                   </p>
                   
                   <div className="pt-4 border-t border-border">
