@@ -8,7 +8,7 @@ import PriceSection from '@/components/PriceSection';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator, Shield } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -250,6 +250,46 @@ const Index = () => {
                   </p>
                 </div>
               </div>
+            </CircularRevealCard>
+          </div>
+
+          {/* Impregnation Banner */}
+          <div className="mt-8 sm:mt-12">
+            <CircularRevealCard index={3} slow>
+              <Link to="/impregnation">
+                <div className="relative overflow-hidden bg-gradient-to-r from-primary/10 via-card to-fresh/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation border border-primary/25 hover:border-primary/50 hover:scale-[1.02] cursor-pointer">
+                  {/* Decorative background */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-primary/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-fresh/15 to-transparent rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+                  
+                  <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+                    {/* Pulsing Icon */}
+                    <div className="relative">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow group-hover:scale-110 transition-transform duration-500">
+                        <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                      </div>
+                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full animate-ping" />
+                      <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
+                    </div>
+                    
+                    {/* Text */}
+                    <div className="text-center sm:text-left flex-1">
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold mb-2 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                        {t.impregnation.cardTitle}
+                      </h3>
+                      <p className="text-muted-foreground text-sm sm:text-base">
+                        {t.impregnation.subtitle}
+                      </p>
+                    </div>
+                    
+                    {/* CTA Button */}
+                    <Button className="bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow whitespace-nowrap">
+                      {t.impregnation.cardSubtitle}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+              </Link>
             </CircularRevealCard>
           </div>
         </div>
