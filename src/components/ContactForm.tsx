@@ -1,4 +1,4 @@
-import { useState, useEffect, forwardRef, useImperativeHandle } from 'react';
+import { useState, useEffect, forwardRef, useImperativeHandle, useCallback } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
 import SimpleCaptcha from './SimpleCaptcha';
+import SuccessAnimation from './SuccessAnimation';
 import { supabase } from '@/integrations/supabase/client';
 import { CalculatorItem } from '@/types/calculator';
 export interface ContactFormRef {
@@ -32,6 +33,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>([]);
   const [calculatorTotal, setCalculatorTotal] = useState(0);
@@ -258,6 +260,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       });
       if (error) throw error;
 
+      // Show success animation with confetti
+      setShowSuccessAnimation(true);
+      
       // Play sound and voice notification
       playSuccessSound();
       speakSuccess();
@@ -291,7 +296,19 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       setIsLoading(false);
     }
   };
-  return <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+
+  const handleAnimationComplete = useCallback(() => {
+    setShowSuccessAnimation(false);
+  }, []);
+
+  return <>
+    {/* Success Animation Overlay */}
+    <SuccessAnimation 
+      isVisible={showSuccessAnimation} 
+      onComplete={handleAnimationComplete} 
+    />
+    
+    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       {/* Calculator Data Preview */}
       {calculatorItems.length > 0 && <div className="bg-fresh/10 border border-fresh/30 rounded-xl p-4 animate-fade-up">
           <div className="flex items-center justify-between mb-3">
@@ -506,7 +523,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
         {t.form.submit}
       </Button>
-    </form>;
+    </form>
+  </>;
 });
 ContactForm.displayName = 'ContactForm';
 export default ContactForm;
