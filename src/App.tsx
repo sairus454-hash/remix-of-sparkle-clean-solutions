@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Prices from "./pages/Prices";
 import Equipment from "./pages/Equipment";
+import Impregnation from "./pages/Impregnation";
 import Auto from "./pages/Auto";
 import Ozone from "./pages/Ozone";
 import Reviews from "./pages/Reviews";
@@ -23,7 +24,7 @@ import Handyman from "./pages/Handyman";
 import NotFound from "./pages/NotFound";
 import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
- import Windows from "./pages/Windows";
+import Windows from "./pages/Windows";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => (
               <Route path="/services" element={<Services />} />
               <Route path="/prices" element={<Prices />} />
               <Route path="/equipment" element={<Equipment />} />
+              <Route path="/impregnation" element={<Impregnation />} />
               <Route path="/auto" element={<Auto />} />
               <Route path="/ozone" element={<Ozone />} />
                <Route path="/windows" element={<Windows />} />
