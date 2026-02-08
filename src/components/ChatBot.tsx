@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -106,6 +106,16 @@ const ChatBot = () => {
 
   // Quick reply buttons configuration
   const quickReplies: QuickReply[] = [
+    {
+      icon: <Brush className="w-4 h-4" />,
+      label: t.chatbot.quickReplies?.cleaning || '🧹 Уборка',
+      message: t.chatbot.quickMessages?.cleaning || 'Интересует уборка помещений'
+    },
+    {
+      icon: <Wind className="w-4 h-4" />,
+      label: t.chatbot.quickReplies?.ozone || '💨 Озон',
+      message: t.chatbot.quickMessages?.ozone || 'Интересует озонирование'
+    },
     {
       icon: <Sofa className="w-4 h-4" />,
       label: t.chatbot.quickReplies?.furniture || '🛋 Мебель',

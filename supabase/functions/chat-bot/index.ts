@@ -8,6 +8,24 @@ const PRICE_LIST = {
   ru: `
 АКТУАЛЬНЫЙ ПРАЙС-ЛИСТ (цены в PLN):
 
+🧹 УБОРКА ПОМЕЩЕНИЙ:
+• Стандартная уборка — 8 PLN/м² (от 20 м²)
+• Генеральная уборка — 10 PLN/м² (от 20 м²)
+
+Стандартная уборка включает:
+— Уборка пыли с поверхностей (до 2 м)
+— Чистка плиты, мытьё полов
+— Очистка сантехники и зеркал
+— Чистка микроволновки и кухонного фартука
+— Уборка пыли с мягкой мебели пылесосом
+
+Генеральная уборка включает ВСЁ из стандартной, ПЛЮС:
+— Уборка пыли и паутины от потолка до пола
+— Мытьё полов с передвижением мебели
+— Чистка плитки в ванной (стены и пол)
+— Чистка вытяжки и вентиляционных решёток
+— Чистка и дезинфекция стиральной и посудомоечной машин
+
 🛋 МЕБЕЛЬ:
 • Пуф — 40 PLN
 • Стул — 40 PLN
@@ -113,6 +131,24 @@ const PRICE_LIST = {
 
   en: `
 CURRENT PRICE LIST (prices in PLN):
+
+🧹 CLEANING SERVICES:
+• Standard cleaning — 8 PLN/m² (from 20 m²)
+• Deep cleaning — 10 PLN/m² (from 20 m²)
+
+Standard cleaning includes:
+— Dust cleaning from surfaces (up to 2 m)
+— Stove cleaning, floor mopping
+— Bathroom fixtures and mirror cleaning
+— Microwave and kitchen backsplash cleaning
+— Vacuum cleaning of upholstered furniture
+
+Deep cleaning includes EVERYTHING from standard, PLUS:
+— Dust and cobweb removal from ceiling to floor
+— Floor washing with furniture moving
+— Bathroom tile cleaning (walls and floor)
+— Hood and ventilation grille cleaning
+— Washing machine and dishwasher cleaning and disinfection
 
 🛋 FURNITURE:
 • Ottoman — 40 PLN
@@ -220,6 +256,24 @@ CURRENT PRICE LIST (prices in PLN):
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
 
+🧹 SPRZĄTANIE:
+• Sprzątanie standardowe — 8 PLN/m² (od 20 m²)
+• Sprzątanie generalne — 10 PLN/m² (od 20 m²)
+
+Sprzątanie standardowe obejmuje:
+— Usuwanie kurzu z powierzchni (do 2 m)
+— Czyszczenie kuchenki, mycie podłóg
+— Czyszczenie armatury i luster
+— Czyszczenie mikrofalówki i fartuca kuchennego
+— Odkurzanie mebli tapicerowanych
+
+Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
+— Usuwanie kurzu i pajęczyn od sufitu do podłogi
+— Mycie podłóg z przesuwaniem mebli
+— Czyszczenie płytek w łazience (ściany i podłoga)
+— Czyszczenie okapu i kratek wentylacyjnych
+— Czyszczenie i dezynfekcja pralki i zmywarki
+
 🛋 MEBLE:
 • Pufa — 40 PLN
 • Krzesło — 40 PLN
@@ -325,6 +379,24 @@ AKTUALNY CENNIK (ceny w PLN):
 
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
+
+🧹 ПРИБИРАННЯ:
+• Стандартне прибирання — 8 PLN/м² (від 20 м²)
+• Генеральне прибирання — 10 PLN/м² (від 20 м²)
+
+Стандартне прибирання включає:
+— Прибирання пилу з поверхонь (до 2 м)
+— Чистка плити, миття підлог
+— Чистка сантехніки та дзеркал
+— Чистка мікрохвильовки та кухонного фартуха
+— Прибирання пилу з м'яких меблів пилососом
+
+Генеральне прибирання включає ВСЕ зі стандартного, ПЛЮС:
+— Прибирання пилу та павутиння від стелі до підлоги
+— Миття підлог з пересуванням меблів
+— Чистка плитки у ванній (стіни та підлога)
+— Чистка витяжки та вентиляційних решіток
+— Чистка та дезінфекція пральної та посудомийної машин
 
 🛋 МЕБЛІ:
 • Пуф — 40 PLN
