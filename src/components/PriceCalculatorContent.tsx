@@ -4,14 +4,16 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Slider } from '@/components/ui/slider';
 import { Plus, Minus, Trash2, Send } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
- import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home } from 'lucide-react';
+import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
 interface PriceItem {
   id: string;
@@ -42,21 +44,34 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  
+  // Cleaning slider state
+  const [cleaningArea, setCleaningArea] = useState(50);
+  const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
+  
+  const STANDARD_PRICE_PER_M2 = 8;
+  const GENERAL_PRICE_PER_M2 = 10;
+  
+  const getCleaningPrice = () => {
+    return cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
+  };
+  
+  const addCleaningToCart = () => {
+    const typeName = cleaningType === 'standard' 
+      ? (t.cleaning?.standardCleaning || 'Стандартная уборка')
+      : (t.cleaning?.generalCleaning || 'Генеральная уборка');
+    const item: PriceItem = {
+      id: `cleaning_${cleaningType}_${cleaningArea}`,
+      name: `${typeName} ${cleaningArea} м²`,
+      price: getCleaningPrice(),
+    };
+    
+    // Remove any existing cleaning items of the same type and area
+    const filteredItems = selectedItems.filter(s => !s.item.id.startsWith('cleaning_'));
+    setSelectedItems([...filteredItems, { item, quantity: 1 }]);
+  };
 
   const categories: Category[] = [
-    {
-      id: 'cleaning',
-      name: t.cleaning?.service || 'Уборка',
-      icon: <Home className="w-5 h-5" />,
-      items: [
-        { id: 'cleaningStandard50', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 50 м²`, price: 400 },
-        { id: 'cleaningStandard80', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 80 м²`, price: 640 },
-        { id: 'cleaningStandard100', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'} 100 м²`, price: 800 },
-        { id: 'cleaningGeneral50', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 50 м²`, price: 500 },
-        { id: 'cleaningGeneral80', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 80 м²`, price: 800 },
-        { id: 'cleaningGeneral100', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 100 м²`, price: 1000 },
-      ],
-    },
     {
       id: 'furniture',
       name: t.prices.furniture,
@@ -257,6 +272,85 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
           {t.calculator.selectItems}
         </Label>
         <div className="space-y-2">
+          {/* Cleaning Category with Slider */}
+          <Collapsible
+            open={openCategory === 'cleaning'}
+            onOpenChange={(open) => setOpenCategory(open ? 'cleaning' : null)}
+          >
+            <CollapsibleTrigger className="flex items-center justify-between w-full p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                  <Home className="w-5 h-5" />
+                </div>
+                <span className="font-medium text-sm">{t.cleaning?.service || 'Уборка'}</span>
+              </div>
+              <ChevronDown
+                className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${
+                  openCategory === 'cleaning' ? 'rotate-180' : ''
+                }`}
+              />
+            </CollapsibleTrigger>
+            <CollapsibleContent className="pt-3 px-2">
+              <div className="space-y-4 p-3 bg-accent/20 rounded-lg">
+                {/* Cleaning Type Selection */}
+                <div className="space-y-2">
+                  <Label className="text-xs font-medium">{'Тип уборки'}</Label>
+                  <RadioGroup 
+                    value={cleaningType} 
+                    onValueChange={(value) => setCleaningType(value as 'standard' | 'general')}
+                    className="flex gap-4"
+                  >
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="standard" id="calc-standard" />
+                      <Label htmlFor="calc-standard" className="text-xs cursor-pointer">
+                        {t.cleaning?.standardCleaning || 'Стандартная'} ({STANDARD_PRICE_PER_M2} {t.prices.currency}/м²)
+                      </Label>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <RadioGroupItem value="general" id="calc-general" />
+                      <Label htmlFor="calc-general" className="text-xs cursor-pointer">
+                        {t.cleaning?.generalCleaning || 'Генеральная'} ({GENERAL_PRICE_PER_M2} {t.prices.currency}/м²)
+                      </Label>
+                    </div>
+                  </RadioGroup>
+                </div>
+                
+                {/* Area Slider */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <Label className="text-xs font-medium">{'Площадь'}</Label>
+                    <span className="text-sm font-bold text-primary">{cleaningArea} м²</span>
+                  </div>
+                  <Slider
+                    value={[cleaningArea]}
+                    onValueChange={(value) => setCleaningArea(value[0])}
+                    min={20}
+                    max={300}
+                    step={5}
+                    className="w-full"
+                  />
+                  <div className="flex justify-between text-xs text-muted-foreground">
+                    <span>20 м²</span>
+                    <span>300 м²</span>
+                  </div>
+                </div>
+                
+                {/* Price and Add Button */}
+                <div className="flex items-center justify-between pt-2 border-t border-border">
+                  <div>
+                    <span className="text-xs text-muted-foreground">{'Стоимость'}:</span>
+                    <span className="ml-2 text-lg font-bold text-primary">{getCleaningPrice()} {t.prices.currency}</span>
+                  </div>
+                  <Button size="sm" onClick={addCleaningToCart}>
+                    <Plus className="w-4 h-4 mr-1" />
+                    {'Добавить'}
+                  </Button>
+                </div>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+          
+          {/* Other Categories */}
           {categories.map((category) => (
             <Collapsible
               key={category.id}
