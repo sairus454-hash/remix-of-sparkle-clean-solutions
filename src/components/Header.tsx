@@ -48,7 +48,6 @@ const Header = () => {
     { path: '/equipment', label: t.nav.equipment },
     { path: '/cleaning', label: t.nav.cleaning, highlight: 'cleaning' as const },
     { path: '/ozone', label: t.nav.ozone, highlight: 'ozone' as const },
-    { path: '/windows', label: t.nav.windows },
     { path: '/auto', label: t.nav.auto },
     { path: '/handyman', label: t.nav.handyman, highlight: 'handyman' as const },
     { path: '/reviews', label: t.nav.reviews },
