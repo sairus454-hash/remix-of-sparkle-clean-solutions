@@ -136,25 +136,21 @@ const ChatBot = () => {
 
   // Auto-open chatbot after delay
   // Desktop: all pages after 8 seconds
-  // Mobile: only main page after 5 seconds
+  // Mobile: disabled (no auto-open)
   useEffect(() => {
     if (hasAutoOpened) return;
     
-    const isMainPage = location.pathname === '/';
+    // Disable auto-open on mobile completely
+    if (isMobile) return;
     
-    // On mobile, only auto-open on main page
-    if (isMobile && !isMainPage) return;
-    
-    // Shorter delay for mobile (5s), longer for desktop (8s)
-    const delay = isMobile ? 5000 : 8000;
-    
+    // Desktop: 8 seconds delay
     const timer = setTimeout(() => {
       setIsOpen(true);
       setHasAutoOpened(true);
-    }, delay);
+    }, 8000);
 
     return () => clearTimeout(timer);
-  }, [hasAutoOpened, isMobile, location.pathname]);
+  }, [hasAutoOpened, isMobile]);
 
   // Reset readonly state when chat opens (for mobile keyboard prevention)
   useEffect(() => {
