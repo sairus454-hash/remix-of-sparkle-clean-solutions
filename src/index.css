@@ -286,6 +286,19 @@ html {
   scrollbar-color: hsl(var(--primary) / 0.4) hsl(var(--muted));
 }
 
+/* Hide scrollbar on mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  
+  * {
+    scrollbar-width: none;
+  }
+}
+
 /* Custom animations for floating badge */
 @keyframes pulse-slow {
   0%, 100% {
