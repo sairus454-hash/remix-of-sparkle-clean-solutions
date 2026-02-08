@@ -134,11 +134,22 @@ const Index = () => {
               </div>
             </div>
             
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 animate-fade-up">
-              <span className="bg-gradient-to-r from-orange-500 via-amber-400 to-teal-500 bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 2s linear infinite' }}>
-                🔥 {t.promotions.title} 🔥
-              </span>
-            </h2>
+            {/* Glassmorphism title container */}
+            <div 
+              className="inline-block px-6 sm:px-10 py-4 sm:py-6 rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 animate-fade-up"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.3)',
+              }}
+            >
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold">
+                <span className="bg-gradient-to-r from-orange-500 via-amber-400 to-teal-500 bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 2s linear infinite' }}>
+                  🔥 {t.promotions.title} 🔥
+                </span>
+              </h2>
+            </div>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4 animate-fade-up" style={{ animationDelay: '0.1s' }}>
               <span className="font-medium text-foreground/80">✨ {t.promotions.subtitle} ✨</span>
             </p>
@@ -150,7 +161,15 @@ const Index = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Weekly Deal */}
             <CircularRevealCard index={0} slow className="h-full">
-              <div className="relative overflow-hidden bg-gradient-to-br from-orange-500/15 via-card to-teal-500/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-orange-500/25 hover:border-orange-500/50 hover:scale-[1.02]">
+              <div 
+                className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                }}
+              >
                 {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-500/25 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-500/20 to-transparent rounded-full blur-xl translate-y-1/2 -translate-x-1/2" />
@@ -185,7 +204,15 @@ const Index = () => {
 
             {/* Monthly Deal */}
             <CircularRevealCard index={1} slow className="h-full">
-              <div className="relative overflow-hidden bg-gradient-to-br from-orange-400/15 via-card to-cyan-500/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-orange-400/25 hover:border-orange-500/50 hover:scale-[1.02]">
+              <div 
+                className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                }}
+              >
                 {/* Decorative background */}
                 <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-orange-400/25 to-transparent rounded-full blur-2xl -translate-y-1/2 -translate-x-1/2" />
                 <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-cyan-500/20 to-transparent rounded-full blur-xl translate-y-1/2 translate-x-1/2" />
@@ -220,7 +247,15 @@ const Index = () => {
 
             {/* Loyalty Deal */}
             <CircularRevealCard index={2} slow className="sm:col-span-2 lg:col-span-1 h-full">
-              <div className="relative overflow-hidden bg-gradient-to-br from-orange-600/15 via-card to-teal-600/10 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full border border-orange-600/25 hover:border-orange-600/50 hover:scale-[1.02]">
+              <div 
+                className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02]"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                }}
+              >
                 {/* Decorative background */}
                 <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-gradient-to-r from-orange-600/20 to-teal-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
                 
