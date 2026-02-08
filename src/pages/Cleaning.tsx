@@ -1,10 +1,11 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import CleaningSplash from '@/components/CleaningSplash';
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
@@ -23,6 +24,11 @@ const Cleaning = () => {
   const formSectionRef = useRef<HTMLDivElement>(null);
   
   const isMobile = useIsMobile();
+  const [showSplash, setShowSplash] = useState(true);
+  
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false);
+  }, []);
   
   // Calculator state
   const [isCalcOpen, setIsCalcOpen] = useState(false);
@@ -112,7 +118,9 @@ const Cleaning = () => {
   ];
 
   return (
-    <Layout>
+    <>
+      {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
+      <Layout>
       {/* Hero */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
@@ -461,6 +469,7 @@ const Cleaning = () => {
         </div>
       </section>
     </Layout>
+    </>
   );
 };
 
