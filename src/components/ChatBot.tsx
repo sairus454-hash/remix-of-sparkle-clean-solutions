@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -10,6 +10,38 @@ import { supabase } from '@/integrations/supabase/client';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ReactMarkdown from 'react-markdown';
+
+// Web Speech API types
+interface SpeechRecognitionEvent extends Event {
+  results: SpeechRecognitionResultList;
+}
+
+interface SpeechRecognitionErrorEvent extends Event {
+  error: string;
+}
+
+interface SpeechRecognition extends EventTarget {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  onresult: ((event: SpeechRecognitionEvent) => void) | null;
+  onend: (() => void) | null;
+  onerror: ((event: SpeechRecognitionErrorEvent) => void) | null;
+  start: () => void;
+  stop: () => void;
+  abort: () => void;
+}
+
+interface SpeechRecognitionConstructor {
+  new (): SpeechRecognition;
+}
+
+declare global {
+  interface Window {
+    SpeechRecognition?: SpeechRecognitionConstructor;
+    webkitSpeechRecognition?: SpeechRecognitionConstructor;
+  }
+}
 
 interface Message {
   id: string;
@@ -67,6 +99,71 @@ const ChatBot = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [inputReadonly, setInputReadonly] = useState(true);
+  
+  // Voice input state
+  const [isListening, setIsListening] = useState(false);
+  const [speechSupported, setSpeechSupported] = useState(false);
+  const recognitionRef = useRef<SpeechRecognition | null>(null);
+
+  // Check if speech recognition is supported
+  useEffect(() => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      setSpeechSupported(true);
+      recognitionRef.current = new SpeechRecognition();
+      recognitionRef.current.continuous = false;
+      recognitionRef.current.interimResults = true;
+      
+      recognitionRef.current.onresult = (event) => {
+        const transcript = Array.from(event.results)
+          .map(result => result[0].transcript)
+          .join('');
+        setInput(transcript);
+      };
+      
+      recognitionRef.current.onend = () => {
+        setIsListening(false);
+      };
+      
+      recognitionRef.current.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        setIsListening(false);
+      };
+    }
+  }, []);
+
+  // Update recognition language when language changes
+  useEffect(() => {
+    if (recognitionRef.current) {
+      const langMap: Record<string, string> = {
+        ru: 'ru-RU',
+        en: 'en-US',
+        pl: 'pl-PL',
+        uk: 'uk-UA',
+      };
+      recognitionRef.current.lang = langMap[language] || 'ru-RU';
+    }
+  }, [language]);
+
+  const toggleListening = () => {
+    if (!recognitionRef.current) return;
+    
+    if (isListening) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    } else {
+      try {
+        recognitionRef.current.start();
+        setIsListening(true);
+        // Remove readonly on mobile when using voice
+        if (isMobile) {
+          setInputReadonly(false);
+        }
+      } catch (error) {
+        console.error('Failed to start speech recognition:', error);
+      }
+    }
+  };
 
   // Block body scroll when chat is open on mobile
   useEffect(() => {
@@ -588,13 +685,29 @@ const ChatBot = () => {
               onKeyPress={handleKeyPress}
               onFocus={handleInputFocus}
               readOnly={isMobile && inputReadonly}
-              placeholder={t.chatbot.placeholder}
+              placeholder={isListening ? (t.chatbot?.listening || 'Говорите...') : t.chatbot.placeholder}
               disabled={isLoading}
               className={cn(
                 "flex-1",
-                isMobile ? "h-11 text-base" : "h-9"
+                isMobile ? "h-11 text-base" : "h-9",
+                isListening && "border-primary ring-2 ring-primary/20"
               )}
             />
+            {speechSupported && (
+              <Button
+                onClick={toggleListening}
+                disabled={isLoading}
+                size="icon"
+                variant={isListening ? "destructive" : "outline"}
+                className={cn(
+                  isMobile ? "h-11 w-11" : "h-9 w-9",
+                  isListening && "animate-pulse"
+                )}
+                title={isListening ? (t.chatbot?.stopListening || 'Остановить') : (t.chatbot?.startListening || 'Голосовой ввод')}
+              >
+                {isListening ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
+              </Button>
+            )}
             <Button
               onClick={() => sendMessage()}
               disabled={!input.trim() || isLoading}

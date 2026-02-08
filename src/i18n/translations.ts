@@ -473,6 +473,9 @@ export const translations = {
         windows: 'Интересует мойка окон',
       },
       menuButton: 'Открыть чат',
+      listening: 'Говорите...',
+      startListening: 'Голосовой ввод',
+      stopListening: 'Остановить запись',
     },
      windows: {
        title: 'Мойка окон',
@@ -1091,6 +1094,9 @@ export const translations = {
         windows: 'I\'m interested in window cleaning',
       },
       menuButton: 'Open chat',
+      listening: 'Listening...',
+      startListening: 'Voice input',
+      stopListening: 'Stop recording',
     },
      windows: {
        title: 'Window Cleaning',
@@ -1709,6 +1715,9 @@ export const translations = {
         windows: 'Interesuje mnie mycie okien',
       },
       menuButton: 'Otwórz czat',
+      listening: 'Słucham...',
+      startListening: 'Wprowadzanie głosowe',
+      stopListening: 'Zatrzymaj nagrywanie',
     },
      windows: {
        title: 'Mycie okien',
@@ -2327,6 +2336,9 @@ export const translations = {
         windows: 'Цікавить миття вікон',
       },
       menuButton: 'Відкрити чат',
+      listening: 'Слухаю...',
+      startListening: 'Голосовий ввід',
+      stopListening: 'Зупинити запис',
     },
      windows: {
        title: 'Миття вікон',
