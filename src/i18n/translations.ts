@@ -469,6 +469,7 @@ export const translations = {
         handyman: 'Нужен мастер на час',
         windows: 'Интересует мойка окон',
       },
+      menuButton: 'Открыть чат',
     },
      windows: {
        title: 'Мойка окон',
@@ -1000,6 +1001,7 @@ export const translations = {
         handyman: 'I need handyman services',
         windows: 'I\'m interested in window cleaning',
       },
+      menuButton: 'Open chat',
     },
      windows: {
        title: 'Window Cleaning',
@@ -1531,6 +1533,7 @@ export const translations = {
         handyman: 'Potrzebuję usługi złotej rączki',
         windows: 'Interesuje mnie mycie okien',
       },
+      menuButton: 'Otwórz czat',
     },
      windows: {
        title: 'Mycie okien',
@@ -2062,6 +2065,7 @@ export const translations = {
         handyman: 'Потрібен майстер на годину',
         windows: 'Цікавить миття вікон',
       },
+      menuButton: 'Відкрити чат',
     },
      windows: {
        title: 'Миття вікон',

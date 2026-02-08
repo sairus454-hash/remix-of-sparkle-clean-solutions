@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Droplets, Phone, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Droplets, Phone, Globe, ChevronDown, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Language } from '@/i18n/translations';
 import { Button } from '@/components/ui/button';
@@ -279,6 +279,19 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <nav className="lg:hidden py-4 border-t border-border animate-fade-up">
+            {/* Chat Button for Mobile */}
+            <button
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                // Dispatch custom event to open chatbot
+                window.dispatchEvent(new CustomEvent('openChatBot'));
+              }}
+              className="w-full flex items-center gap-3 px-4 py-3 mb-2 rounded-xl bg-gradient-hero text-primary-foreground font-medium transition-colors active:scale-98"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>{t.chatbot?.menuButton || 'Открыть чат'}</span>
+            </button>
+            
             {navItems.map((item) => {
               const getMobileHighlightClass = () => {
                 if (item.highlight === 'ozone') {
