@@ -276,7 +276,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
   };
 
   return (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-4">
       {/* Categories with items */}
       <div className="space-y-2">
         <Label className="text-sm font-medium text-muted-foreground">
@@ -406,26 +406,34 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         </div>
       </div>
 
-      {/* Selected Items - Always visible */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between">
-          <Label className="text-sm font-medium text-muted-foreground">
-            {t.calculator.selectedItems}
-          </Label>
-          {selectedItems.length > 0 && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={clearAll}
-              className="text-destructive hover:text-destructive h-auto py-1 px-2"
-            >
-              <Trash2 className="w-3 h-3 mr-1" />
-              {t.calculator.clear}
-            </Button>
-          )}
-        </div>
+      {/* Selected Items - Sticky section */}
+      <div className="sticky bottom-0 z-10 bg-background/95 backdrop-blur-sm pt-3 -mx-1 px-1 border-t border-border shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.1)]">
+        <div className="space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Label className="text-sm font-medium text-muted-foreground">
+                {t.calculator.selectedItems}
+              </Label>
+              {selectedItems.length > 0 && (
+                <span className="px-2 py-0.5 text-xs font-bold rounded-full bg-primary text-primary-foreground">
+                  {selectedItems.length}
+                </span>
+              )}
+            </div>
+            {selectedItems.length > 0 && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearAll}
+                className="text-destructive hover:text-destructive h-auto py-1 px-2"
+              >
+                <Trash2 className="w-3 h-3 mr-1" />
+                {t.calculator.clear}
+              </Button>
+            )}
+          </div>
 
-        <div className="min-h-[120px] space-y-2 max-h-48 overflow-y-auto rounded-lg border border-dashed border-border p-2 bg-muted/10">
+          <div className="min-h-[80px] space-y-2 max-h-36 overflow-y-auto rounded-lg border border-dashed border-border p-2 bg-muted/10">
           {selectedItems.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full min-h-[100px] text-muted-foreground">
               <Plus className="w-6 h-6 mb-2 opacity-50" />
@@ -494,78 +502,79 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
             ))
           )}
         </div>
-      </div>
-
-      {/* Discount Tiers Info */}
-      <div className="p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
-        <div className="flex items-center gap-2 mb-2">
-          <Gift className="w-4 h-4 text-primary" />
-          <span className="text-xs font-semibold text-foreground">
-            {language === 'ru' ? 'Система скидок' : 
-             language === 'en' ? 'Discount system' : 
-             language === 'pl' ? 'System rabatowy' : 
-             'Система знижок'}
-          </span>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {discountTiers.map((tier, index) => (
-            <div 
-              key={index}
-              className={`px-2 py-1 rounded-full text-xs font-medium ${
-                selectedItems.length >= parseInt(tier.services) 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-muted text-muted-foreground'
-              }`}
-            >
-              {tier.services} {tier.label}: <span className="font-bold">{tier.discount}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* Total */}
-      <div className="pt-3 border-t border-border">
-        {/* Показываем информацию о скидке */}
-        {discountInfo.hasDiscount && (
-          <div className="mb-3 p-3 bg-fresh/10 rounded-lg border border-fresh/30">
-            <div className="flex items-center gap-2 mb-1">
-              <Percent className="w-4 h-4 text-fresh" />
-              <span className="text-sm font-semibold text-fresh">{discountInfo.discountReason}</span>
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-muted-foreground line-through">
-                {discountInfo.originalTotal} {t.prices.currency}
-              </span>
-              <span className="font-bold text-fresh">
-                -{discountInfo.discountAmount} {t.prices.currency}
-              </span>
-            </div>
+        {/* Discount Tiers Info */}
+        <div className="p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
+          <div className="flex items-center gap-2 mb-2">
+            <Gift className="w-4 h-4 text-primary" />
+            <span className="text-xs font-semibold text-foreground">
+              {language === 'ru' ? 'Система скидок' : 
+               language === 'en' ? 'Discount system' : 
+               language === 'pl' ? 'System rabatowy' : 
+               'Система знижок'}
+            </span>
           </div>
-        )}
-
-        <div className="flex items-center justify-between">
-          <span className="text-base font-medium">{t.calculator.total}</span>
-          <span className="text-xl font-bold text-primary">
-            {t.prices.from} {discountInfo.finalTotal} {t.prices.currency}
-          </span>
+          <div className="flex flex-wrap gap-2">
+            {discountTiers.map((tier, index) => (
+              <div 
+                key={index}
+                className={`px-2 py-1 rounded-full text-xs font-medium ${
+                  selectedItems.length >= parseInt(tier.services) 
+                    ? 'bg-primary text-primary-foreground' 
+                    : 'bg-muted text-muted-foreground'
+                }`}
+              >
+                {tier.services} {tier.label}: <span className="font-bold">{tier.discount}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <p className="text-xs text-muted-foreground mt-1.5 font-medium">
-          {t.calculator.minOrder}
-        </p>
-        <p className="text-xs text-muted-foreground font-medium">
-          {t.calculator.minOrderOther}
-        </p>
-        
-        {/* Send to Form Button */}
-        {selectedItems.length > 0 && (
-          <Button
-            onClick={handleSendToForm}
-            className="w-full mt-4 bg-fresh hover:bg-fresh/90 text-white shadow-glow transition-all h-11 touch-manipulation active:scale-[0.98]"
-          >
-            <Send className="w-4 h-4 mr-2" />
-            {t.form.sendToForm}
-          </Button>
-        )}
+
+        {/* Total */}
+        <div className="pt-3 border-t border-border">
+          {/* Показываем информацию о скидке */}
+          {discountInfo.hasDiscount && (
+            <div className="mb-3 p-3 bg-fresh/10 rounded-lg border border-fresh/30">
+              <div className="flex items-center gap-2 mb-1">
+                <Percent className="w-4 h-4 text-fresh" />
+                <span className="text-sm font-semibold text-fresh">{discountInfo.discountReason}</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-muted-foreground line-through">
+                  {discountInfo.originalTotal} {t.prices.currency}
+                </span>
+                <span className="font-bold text-fresh">
+                  -{discountInfo.discountAmount} {t.prices.currency}
+                </span>
+              </div>
+            </div>
+          )}
+
+          <div className="flex items-center justify-between">
+            <span className="text-base font-medium">{t.calculator.total}</span>
+            <span className="text-xl font-bold text-primary">
+              {t.prices.from} {discountInfo.finalTotal} {t.prices.currency}
+            </span>
+          </div>
+          <p className="text-xs text-muted-foreground mt-1.5 font-medium">
+            {t.calculator.minOrder}
+          </p>
+          <p className="text-xs text-muted-foreground font-medium">
+            {t.calculator.minOrderOther}
+          </p>
+          
+          {/* Send to Form Button */}
+          {selectedItems.length > 0 && (
+            <Button
+              onClick={handleSendToForm}
+              className="w-full mt-4 bg-fresh hover:bg-fresh/90 text-white shadow-glow transition-all h-11 touch-manipulation active:scale-[0.98]"
+            >
+              <Send className="w-4 h-4 mr-2" />
+              {t.form.sendToForm}
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );
