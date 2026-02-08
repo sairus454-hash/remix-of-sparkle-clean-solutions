@@ -12,12 +12,12 @@ const CleaningSplash = ({ onComplete }: CleaningSplashProps) => {
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 2700);
+    }, 1700);
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 3000);
+    }, 2000);
 
     return () => {
       clearTimeout(fadeTimer);
