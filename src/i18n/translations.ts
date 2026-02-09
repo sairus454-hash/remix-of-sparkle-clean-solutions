@@ -162,6 +162,7 @@ export const translations = {
     },
     calculator: {
       title: 'Калькулятор стоимости',
+      quickTitle: 'Быстрый расчёт',
       selectItems: 'Выберите услуги',
       selectedItems: 'Выбранные услуги',
       clear: 'Очистить',
@@ -783,6 +784,7 @@ export const translations = {
     },
     calculator: {
       title: 'Price Calculator',
+      quickTitle: 'Quick Estimate',
       selectItems: 'Select services',
       selectedItems: 'Selected services',
       clear: 'Clear',
@@ -1404,6 +1406,7 @@ export const translations = {
     },
     calculator: {
       title: 'Kalkulator kosztów',
+      quickTitle: 'Szybka wycena',
       selectItems: 'Wybierz usługi',
       selectedItems: 'Wybrane usługi',
       clear: 'Wyczyść',
@@ -2025,6 +2028,7 @@ export const translations = {
     },
     calculator: {
       title: 'Калькулятор вартості',
+      quickTitle: 'Швидкий розрахунок',
       selectItems: 'Оберіть послуги',
       selectedItems: 'Обрані послуги',
       clear: 'Очистити',

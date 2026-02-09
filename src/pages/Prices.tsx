@@ -26,12 +26,14 @@ import {
 } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
+import QuickCalculator from '@/components/QuickCalculator';
 
 const Prices = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
   const [showSplash, setShowSplash] = useState(true);
   const [isCalcOpen, setIsCalcOpen] = useState(false);
+  const [isFullCalc, setIsFullCalc] = useState(false);
 
   const handleSplashComplete = useCallback(() => {
     setShowSplash(false);
@@ -246,7 +248,10 @@ const Prices = () => {
 
         {/* Calculator Modal/Drawer */}
         {isMobile ? (
-          <Drawer open={isCalcOpen} onOpenChange={setIsCalcOpen}>
+          <Drawer open={isCalcOpen} onOpenChange={(open) => {
+            setIsCalcOpen(open);
+            if (!open) setIsFullCalc(false);
+          }}>
             <DrawerContent className="max-h-[90vh]">
               <DrawerHeader className="border-b border-border pb-4">
                 <div className="flex items-center gap-3">
@@ -254,12 +259,19 @@ const Prices = () => {
                     <Calculator className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <DrawerTitle className="font-serif text-lg">
-                    {t.calculator.title}
+                    {isFullCalc ? t.calculator.title : t.calculator.quickTitle}
                   </DrawerTitle>
                 </div>
               </DrawerHeader>
               <div className="overflow-y-auto p-4 pb-8">
-                <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+                {isFullCalc ? (
+                  <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+                ) : (
+                  <QuickCalculator 
+                    onOpenFull={() => setIsFullCalc(true)} 
+                    onClose={() => setIsCalcOpen(false)} 
+                  />
+                )}
               </div>
             </DrawerContent>
           </Drawer>
