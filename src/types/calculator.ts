@@ -4,6 +4,7 @@ export interface CalculatorItem {
   price: number;
   quantity: number;
   unit?: string;
+  category?: string;
 }
 
 export interface CalculatorData {

@@ -16,6 +16,7 @@ interface CalculatorItem {
   id: string;
   price: number;
   quantity: number;
+  category?: string;
 }
 
 // ID матрасов для определения скидки
@@ -27,9 +28,9 @@ const MATTRESS_IDS = [
 /**
  * Алгоритм расчёта скидок:
  * - 10% на один матрас (если заказан ровно 1 матрас с quantity=1)
- * - 10% при заказе от 2 разных услуг
- * - 15% при заказе от 4 разных услуг (для постоянных клиентов / крупный заказ)
- * - 20% при заказе от 6 разных услуг (VIP программа)
+ * - 10% при заказе из 2+ разных категорий услуг
+ * - 15% при заказе из 4+ разных категорий
+ * - 20% при заказе из 6+ разных категорий (VIP программа)
  */
 export const useDiscountCalculator = (items: CalculatorItem[]) => {
   const { language } = useLanguage();
@@ -37,14 +38,15 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
   const discountInfo = useMemo((): DiscountInfo => {
     const originalTotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     
-    // Подсчитываем количество уникальных услуг (разных позиций)
-    const uniqueServicesCount = items.length;
+    // Подсчитываем количество уникальных категорий
+    const uniqueCategories = new Set(items.map(item => item.category || item.id));
+    const uniqueCategoriesCount = uniqueCategories.size;
     
     // Проверяем скидку на один матрас
     const mattressItems = items.filter(item => MATTRESS_IDS.includes(item.id));
     const hasSingleMattress = mattressItems.length === 1 && 
                                mattressItems[0].quantity === 1 && 
-                               uniqueServicesCount === 1;
+                               uniqueCategoriesCount === 1;
     
     let discountPercent = 0;
     let discountReason = '';
@@ -58,14 +60,14 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
       hasMattressDiscount = true;
       mattressDiscountAmount = Math.round(originalTotal * 0.1);
     }
-    // Определяем скидку на основе количества уникальных услуг
-    else if (uniqueServicesCount >= 6) {
+    // Определяем скидку на основе количества уникальных категорий
+    else if (uniqueCategoriesCount >= 6) {
       discountPercent = 20;
       discountReason = getDiscountReason('vip', language);
-    } else if (uniqueServicesCount >= 4) {
+    } else if (uniqueCategoriesCount >= 4) {
       discountPercent = 15;
       discountReason = getDiscountReason('loyal', language);
-    } else if (uniqueServicesCount >= 2) {
+    } else if (uniqueCategoriesCount >= 2) {
       discountPercent = 10;
       discountReason = getDiscountReason('multi', language);
     }
@@ -102,22 +104,22 @@ function getMattressDiscountReason(language: string): string {
 function getDiscountReason(type: 'multi' | 'loyal' | 'vip', language: string): string {
   const reasons = {
     multi: {
-      ru: 'Скидка 10% за 2+ услуги',
-      en: '10% discount for 2+ services',
-      pl: '10% rabatu za 2+ usługi',
-      uk: 'Знижка 10% за 2+ послуги',
+      ru: 'Скидка 10% за 2+ категории',
+      en: '10% discount for 2+ categories',
+      pl: '10% rabatu za 2+ kategorie',
+      uk: 'Знижка 10% за 2+ категорії',
     },
     loyal: {
-      ru: 'Скидка 15% за 4+ услуги',
-      en: '15% discount for 4+ services',
-      pl: '15% rabatu za 4+ usługi',
-      uk: 'Знижка 15% за 4+ послуги',
+      ru: 'Скидка 15% за 4+ категории',
+      en: '15% discount for 4+ categories',
+      pl: '15% rabatu za 4+ kategorie',
+      uk: 'Знижка 15% за 4+ категорії',
     },
     vip: {
-      ru: 'VIP скидка 20% за 6+ услуг',
-      en: 'VIP 20% discount for 6+ services',
-      pl: 'VIP 20% rabatu za 6+ usług',
-      uk: 'VIP знижка 20% за 6+ послуг',
+      ru: 'VIP скидка 20% за 6+ категорий',
+      en: 'VIP 20% discount for 6+ categories',
+      pl: 'VIP 20% rabatu za 6+ kategorii',
+      uk: 'VIP знижка 20% за 6+ категорій',
     },
   };
   
@@ -128,24 +130,24 @@ function getDiscountReason(type: 'multi' | 'loyal' | 'vip', language: string): s
 export function getDiscountTiers(language: string) {
   const tiers = {
     ru: [
-      { services: '2+', discount: '10%', label: 'услуг' },
-      { services: '4+', discount: '15%', label: 'услуг' },
-      { services: '6+', discount: '20%', label: 'услуг (VIP)' },
+      { services: '2+', discount: '10%', label: 'категорий' },
+      { services: '4+', discount: '15%', label: 'категорий' },
+      { services: '6+', discount: '20%', label: 'категорий (VIP)' },
     ],
     en: [
-      { services: '2+', discount: '10%', label: 'services' },
-      { services: '4+', discount: '15%', label: 'services' },
-      { services: '6+', discount: '20%', label: 'services (VIP)' },
+      { services: '2+', discount: '10%', label: 'categories' },
+      { services: '4+', discount: '15%', label: 'categories' },
+      { services: '6+', discount: '20%', label: 'categories (VIP)' },
     ],
     pl: [
-      { services: '2+', discount: '10%', label: 'usług' },
-      { services: '4+', discount: '15%', label: 'usług' },
-      { services: '6+', discount: '20%', label: 'usług (VIP)' },
+      { services: '2+', discount: '10%', label: 'kategorii' },
+      { services: '4+', discount: '15%', label: 'kategorii' },
+      { services: '6+', discount: '20%', label: 'kategorii (VIP)' },
     ],
     uk: [
-      { services: '2+', discount: '10%', label: 'послуг' },
-      { services: '4+', discount: '15%', label: 'послуг' },
-      { services: '6+', discount: '20%', label: 'послуг (VIP)' },
+      { services: '2+', discount: '10%', label: 'категорій' },
+      { services: '4+', discount: '15%', label: 'категорій' },
+      { services: '6+', discount: '20%', label: 'категорій (VIP)' },
     ],
   };
   
