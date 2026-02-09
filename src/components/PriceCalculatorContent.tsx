@@ -547,8 +547,8 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
             </div>
           </div>
 
-          {/* Discount Tiers Info - Compact on mobile */}
-          <div className="p-2 sm:p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
+          {/* Discount Tiers Info - Hidden on mobile */}
+          <div className="hidden lg:block p-2 sm:p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
             <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
               <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
               <span className="text-[10px] sm:text-xs font-semibold text-foreground">
@@ -576,9 +576,9 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
 
           {/* Total */}
           <div className="pt-2 sm:pt-3 border-t border-border">
-            {/* Показываем информацию о скидке */}
+            {/* Показываем информацию о скидке - hidden on mobile */}
             {discountInfo.hasDiscount && (
-              <div className="mb-2 sm:mb-3 p-2 sm:p-3 bg-fresh/10 rounded-lg border border-fresh/30">
+              <div className="hidden lg:block mb-2 sm:mb-3 p-2 sm:p-3 bg-fresh/10 rounded-lg border border-fresh/30">
                 <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5 sm:mb-1">
                   <Percent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-fresh" />
                   <span className="text-xs sm:text-sm font-semibold text-fresh">{discountInfo.discountReason}</span>
@@ -600,10 +600,11 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                 {t.prices.from} {discountInfo.finalTotal} {t.prices.currency}
               </span>
             </div>
-            <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 sm:mt-1.5 font-medium">
+            {/* Min order info - hidden on mobile */}
+            <p className="hidden lg:block text-[10px] sm:text-xs text-muted-foreground mt-1 sm:mt-1.5 font-medium">
               {t.calculator.minOrder}
             </p>
-            <p className="text-[10px] sm:text-xs text-muted-foreground font-medium">
+            <p className="hidden lg:block text-[10px] sm:text-xs text-muted-foreground font-medium">
               {t.calculator.minOrderOther}
             </p>
             
