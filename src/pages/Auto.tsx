@@ -264,7 +264,7 @@ const Auto = () => {
                       <div className="flex items-center justify-between w-full pr-2">
                         <span className="font-medium text-sm sm:text-base">{t.prices.items.autoComplex}</span>
                         <span className="text-primary font-semibold text-sm sm:text-base whitespace-nowrap ml-2">
-                          {t.prices.from} 450 {t.prices.currency}
+                          450 {t.prices.currency}
                         </span>
                       </div>
                     </AccordionTrigger>
@@ -273,7 +273,7 @@ const Auto = () => {
                         {autoPrices.slice(1, 8).map(item => <div key={item.id} className="flex items-center justify-between py-2 text-sm">
                             <span className="text-muted-foreground">{item.name}</span>
                             <span className="text-primary font-medium whitespace-nowrap ml-2">
-                              {t.prices.from} {item.price} {t.prices.currency}
+                              {item.price} {t.prices.currency}
                             </span>
                           </div>)}
                       </div>
@@ -285,7 +285,7 @@ const Auto = () => {
                       <div className="flex items-center justify-between w-full pr-2">
                         <span className="font-medium text-sm sm:text-base">{t.prices.items.autoTruckCabin}</span>
                         <span className="text-primary font-semibold text-sm sm:text-base whitespace-nowrap ml-2">
-                          {t.prices.from} 400 {t.prices.currency}
+                          400 {t.prices.currency}
                         </span>
                       </div>
                     </AccordionTrigger>
@@ -294,7 +294,7 @@ const Auto = () => {
                         {autoPrices.slice(8).map(item => <div key={item.id} className="flex items-center justify-between py-2 text-sm">
                             <span className="text-muted-foreground">{item.name}</span>
                             <span className="text-primary font-medium whitespace-nowrap ml-2">
-                              {t.prices.from} {item.price} {t.prices.currency}
+                              {item.price} {t.prices.currency}
                             </span>
                           </div>)}
                       </div>
