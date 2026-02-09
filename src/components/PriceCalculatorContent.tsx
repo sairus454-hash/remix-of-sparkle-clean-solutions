@@ -256,12 +256,24 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
     setSelectedItems([]);
   };
 
+  // Определяем категорию для каждого выбранного элемента
+  const getCategoryForItem = (itemId: string): string => {
+    if (itemId.startsWith('cleaning_')) return 'cleaning';
+    for (const category of categories) {
+      if (category.items.some(item => item.id === itemId)) {
+        return category.id;
+      }
+    }
+    return 'other';
+  };
+
   // Применяем хук для расчёта скидок
   const discountInfo = useDiscountCalculator(
     selectedItems.map(s => ({
       id: s.item.id,
       price: s.item.price,
       quantity: s.quantity,
+      category: getCategoryForItem(s.item.id),
     }))
   );
 
@@ -274,6 +286,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
       price: s.item.price,
       quantity: s.quantity,
       unit: s.item.unit,
+      category: getCategoryForItem(s.item.id),
     }));
   };
 

@@ -97,7 +97,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     calculatorItems.map(item => ({
       id: item.id,
       price: item.price,
-      quantity: item.quantity
+      quantity: item.quantity,
+      category: item.category,
     })), [calculatorItems]);
 
   // Use the discount calculator hook
