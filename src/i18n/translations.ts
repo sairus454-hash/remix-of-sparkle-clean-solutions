@@ -484,6 +484,9 @@ export const translations = {
       sending: 'Отправка...',
       photoSent: '✅ Фото отправлено менеджеру!',
       photoError: '❌ Не удалось отправить фото. Попробуйте ещё раз.',
+      photosSelected: 'фото выбрано',
+      captionPlaceholder: 'Добавьте подпись (необязательно)...',
+      sendPhoto: 'Отправить фото',
     },
      windows: {
        title: 'Мойка окон',
@@ -1113,6 +1116,9 @@ export const translations = {
       sending: 'Sending...',
       photoSent: '✅ Photo sent to manager!',
       photoError: '❌ Failed to send photo. Please try again.',
+      photosSelected: 'photo(s) selected',
+      captionPlaceholder: 'Add a caption (optional)...',
+      sendPhoto: 'Send photo',
     },
      windows: {
        title: 'Window Cleaning',
@@ -1742,6 +1748,9 @@ export const translations = {
       sending: 'Wysyłanie...',
       photoSent: '✅ Zdjęcie wysłane do menedżera!',
       photoError: '❌ Nie udało się wysłać zdjęcia. Spróbuj ponownie.',
+      photosSelected: 'zdjęć wybrano',
+      captionPlaceholder: 'Dodaj podpis (opcjonalnie)...',
+      sendPhoto: 'Wyślij zdjęcie',
     },
      windows: {
        title: 'Mycie okien',
@@ -2371,6 +2380,9 @@ export const translations = {
       sending: 'Відправка...',
       photoSent: '✅ Фото відправлено менеджеру!',
       photoError: '❌ Не вдалося відправити фото. Спробуйте ще раз.',
+      photosSelected: 'фото вибрано',
+      captionPlaceholder: 'Додайте підпис (необов\'язково)...',
+      sendPhoto: 'Відправити фото',
     },
      windows: {
        title: 'Миття вікон',
