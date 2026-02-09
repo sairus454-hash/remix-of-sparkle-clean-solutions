@@ -47,6 +47,8 @@ const AnimatedImage = ({
       <img
         src={src}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         onLoad={() => setIsLoaded(true)}
         className={cn(
           className,
