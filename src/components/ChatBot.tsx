@@ -438,7 +438,7 @@ const ChatBot = () => {
         {isOpen ? (
           <X className="w-6 h-6 text-primary-foreground" />
         ) : (
-          <MessageCircle className="w-6 h-6 text-primary-foreground" />
+          <span className="text-primary-foreground font-bold text-lg">AI</span>
         )}
       </button>
 
