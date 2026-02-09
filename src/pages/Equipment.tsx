@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ExtractorSplash from '@/components/ExtractorSplash';
@@ -85,6 +86,12 @@ const Equipment = () => {
 
   return (
     <>
+      <SEO
+        title="Оборудование и технологии — Современная техника"
+        description="Профессиональное оборудование для химчистки: экстракторы, парогенераторы, озонаторы. Экологичные средства и передовые технологии."
+        keywords="оборудование химчистки, экстрактор, парогенератор, озонатор, технологии чистки"
+        canonical="/equipment"
+      />
       {showSplash && <ExtractorSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Impregnation Card */}

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
@@ -48,6 +49,13 @@ const Ozone = () => {
   ];
 
   return (
+    <>
+      <SEO
+        title="Озонирование помещений и авто — Удаление запахов"
+        description="Профессиональное озонирование квартир, офисов и автомобилей. Устранение неприятных запахов, дезинфекция, уничтожение бактерий и вирусов."
+        keywords="озонирование, удаление запахов, дезинфекция, озонирование квартиры, озонирование авто"
+        canonical="/ozone"
+      />
     <Layout>
       {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}
       
@@ -228,6 +236,7 @@ const Ozone = () => {
         </div>
       </section>
     </Layout>
+    </>
   );
 };
 

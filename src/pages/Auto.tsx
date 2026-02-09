@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
@@ -164,7 +165,14 @@ const Auto = () => {
     src: autoCleaning3,
     alt: 'Чистка ковролина в авто'
   }];
-  return <Layout>
+  return <>
+    <SEO
+      title="Химчистка салона авто — Чистка сидений, ковриков"
+      description="Профессиональная химчистка салона автомобиля. Чистка сидений, потолка, ковриков, багажника. Удаление пятен и запахов."
+      keywords="химчистка авто, чистка салона, химчистка сидений, чистка автомобиля, удаление запахов авто"
+      canonical="/auto"
+    />
+    <Layout>
       {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
       
       {/* Hero with Fullscreen Video Background */}
@@ -421,6 +429,8 @@ const Auto = () => {
           </div>
         </div>
       </section>
-    </Layout>;
+    </Layout>
+    </>;
+
 };
 export default Auto;

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
@@ -47,6 +48,13 @@ const Handyman = () => {
   ];
 
   return (
+    <>
+      <SEO
+        title="Мастер на час — Мелкий ремонт и бытовые услуги"
+        description="Мастер на час: сантехника, электрика, мебель, мелкий ремонт. Быстро, качественно, с гарантией. Вызов мастера 24/7."
+        keywords="мастер на час, мелкий ремонт, сантехник, электрик, сборка мебели, бытовые услуги"
+        canonical="/handyman"
+      />
     <Layout>
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
       
@@ -258,6 +266,7 @@ const Handyman = () => {
         }
       `}</style>
     </Layout>
+    </>
   );
 };
 

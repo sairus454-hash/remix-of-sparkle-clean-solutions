@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from 'react';
+import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -119,6 +120,12 @@ const Cleaning = () => {
 
   return (
     <>
+      <SEO
+        title="Уборка квартир и домов — Стандартная и генеральная"
+        description="Профессиональная уборка квартир, домов и офисов. Стандартная и генеральная уборка. Рассчитайте стоимость онлайн."
+        keywords="уборка квартир, генеральная уборка, стандартная уборка, клининг, уборка дома"
+        canonical="/cleaning"
+      />
       {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
       <Layout>
       {/* Hero */}

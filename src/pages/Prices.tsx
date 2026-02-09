@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import PriceSplash from '@/components/PriceSplash';
@@ -188,6 +189,12 @@ const Prices = () => {
 
   return (
     <>
+      <SEO
+        title="Прайс-лист на химчистку — Цены на услуги MasterClean"
+        description="Актуальные цены на химчистку мебели, ковров, матрасов, авто, озонирование и уборку. Калькулятор стоимости онлайн."
+        keywords="цены химчистка, прайс химчистка мебели, стоимость чистки ковров, цены озонирование"
+        canonical="/prices"
+      />
       {showSplash && <PriceSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Hero */}

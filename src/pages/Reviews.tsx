@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
+import SEO from '@/components/SEO';
 import Layout from '@/components/Layout';
 import ReviewsSplash from '@/components/ReviewsSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -184,6 +185,12 @@ const Reviews = () => {
       </div>;
   };
   return <>
+      <SEO
+        title="Отзывы клиентов MasterClean"
+        description="Реальные отзывы клиентов о химчистке мебели, ковров и авто. Узнайте, почему нам доверяют. Оставьте свой отзыв."
+        keywords="отзывы химчистка, отзывы MasterClean, отзывы клиентов, качество чистки"
+        canonical="/reviews"
+      />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Hero Section */}
