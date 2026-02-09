@@ -235,12 +235,6 @@ const Index = () => {
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-400 to-cyan-500 bg-clip-text text-transparent">
                     4+ услуг: 15%
                   </h3>
-                  <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
-                    {t.promotions.monthlyDesc}
-                  </p>
-                  <p className="text-orange-500 text-center text-2xl sm:text-3xl font-bold mt-2">
-                    -15%
-                  </p>
                 </div>
               </div>
             </CircularRevealCard>
