@@ -100,6 +100,9 @@ const ChatBot = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isSendingPhoto, setIsSendingPhoto] = useState(false);
+  const [pendingPhotos, setPendingPhotos] = useState<File[]>([]);
+  const [photoCaption, setPhotoCaption] = useState('');
+  const [showPhotoPreview, setShowPhotoPreview] = useState(false);
   const [inputReadonly, setInputReadonly] = useState(true);
   
   // Voice input state
@@ -411,30 +414,44 @@ const ChatBot = () => {
     }
   };
 
-  const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
+    const imageFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
+    if (imageFiles.length === 0) return;
+    setPendingPhotos(imageFiles);
+    setPhotoCaption('');
+    setShowPhotoPreview(true);
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
 
+  const cancelPhotoUpload = () => {
+    setPendingPhotos([]);
+    setPhotoCaption('');
+    setShowPhotoPreview(false);
+  };
+
+  const sendPhotosWithCaption = async () => {
+    if (pendingPhotos.length === 0) return;
     setIsSendingPhoto(true);
+    setShowPhotoPreview(false);
 
-    for (const file of Array.from(files)) {
-      if (!file.type.startsWith('image/')) continue;
+    const caption = photoCaption.trim();
 
+    for (const file of pendingPhotos) {
       try {
-        // Show preview message
         const photoMsg: Message = {
           id: Date.now().toString() + Math.random(),
           role: 'user',
-          content: `📷 ${file.name}`,
+          content: caption ? `📷 ${file.name}\n💬 ${caption}` : `📷 ${file.name}`,
         };
         setMessages((prev) => [...prev, photoMsg]);
 
-        // Convert to base64
         const base64 = await new Promise<string>((resolve, reject) => {
           const reader = new FileReader();
           reader.onload = () => {
             const result = reader.result as string;
-            resolve(result.split(',')[1]); // Remove data:image/...;base64, prefix
+            resolve(result.split(',')[1]);
           };
           reader.onerror = reject;
           reader.readAsDataURL(file);
@@ -444,7 +461,9 @@ const ChatBot = () => {
           body: {
             imageBase64: base64,
             fileName: file.name,
-            caption: `📷 Фото из чат-бота на сайте`,
+            caption: caption
+              ? `📷 Фото из чат-бота\n💬 ${caption}`
+              : '📷 Фото из чат-бота на сайте',
           },
         });
 
@@ -468,9 +487,9 @@ const ChatBot = () => {
       }
     }
 
+    setPendingPhotos([]);
+    setPhotoCaption('');
     setIsSendingPhoto(false);
-    // Reset input so same file can be selected again
-    if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
   const openContactManager = () => {
@@ -714,8 +733,42 @@ const ChatBot = () => {
           </div>
         )}
 
+        {/* Photo Preview with Caption */}
+        {showPhotoPreview && pendingPhotos.length > 0 && (
+          <div className="absolute bottom-16 left-0 right-0 p-3 bg-card border-t border-border">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Camera className="w-4 h-4" />
+                <span>{pendingPhotos.length} {t.chatbot?.photosSelected || 'фото выбрано'}</span>
+                <button onClick={cancelPhotoUpload} className="ml-auto text-destructive hover:text-destructive/80">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              <Input
+                value={photoCaption}
+                onChange={(e) => setPhotoCaption(e.target.value)}
+                onKeyPress={(e) => { if (e.key === 'Enter') sendPhotosWithCaption(); }}
+                placeholder={t.chatbot?.captionPlaceholder || 'Добавьте подпись (необязательно)...'}
+                className={cn("h-10", isMobile && "text-base")}
+                autoFocus
+              />
+              <Button
+                onClick={sendPhotosWithCaption}
+                className={cn(
+                  "w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90",
+                  isMobile && "h-12 text-base"
+                )}
+                size="sm"
+              >
+                <Send className="w-4 h-4 mr-2" />
+                {t.chatbot?.sendPhoto || 'Отправить фото'}
+              </Button>
+            </div>
+          </div>
+        )}
+
         {/* Action Buttons */}
-        {!showLeadForm && (
+        {!showLeadForm && !showPhotoPreview && (
           <div className={cn(
             "absolute bottom-16 left-0 right-0 px-3 py-2 bg-card border-t border-border flex gap-2",
             isMobile && "px-2"
@@ -726,7 +779,7 @@ const ChatBot = () => {
               accept="image/*"
               multiple
               className="hidden"
-              onChange={handlePhotoUpload}
+              onChange={handlePhotoSelect}
             />
             <Button
               onClick={() => fileInputRef.current?.click()}
