@@ -11,7 +11,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home } from 'lucide-react';
+import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home, Armchair } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
@@ -87,6 +87,20 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200 },
         { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 250 },
         { id: 'carpet', name: t.prices.items.carpet, price: 25, unit: 'm²' },
+      ],
+    },
+    {
+      id: 'leather',
+      name: t.prices.leatherFurnitureTitle,
+      icon: <Armchair className="w-5 h-5" />,
+      items: [
+        { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 55 },
+        { id: 'leatherChair', name: t.prices.items.leatherChair, price: 50 },
+        { id: 'leatherPillow', name: t.prices.items.leatherPillow, price: 10 },
+        { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 90 },
+        { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 180 },
+        { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 220 },
+        { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 250 },
       ],
     },
     {
@@ -276,9 +290,9 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      {/* Categories with items */}
-      <div className="space-y-2">
+    <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
+      {/* Left Column - Categories with items */}
+      <div className="flex-1 space-y-2 lg:max-h-[70vh] lg:overflow-y-auto lg:pr-2">
         <Label className="text-sm font-medium text-muted-foreground">
           {t.calculator.selectItems}
         </Label>
@@ -406,9 +420,9 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         </div>
       </div>
 
-      {/* Selected Items - Always at bottom sticky section */}
-      <div className="sticky bottom-0 z-10 bg-background/95 backdrop-blur-sm pt-2 sm:pt-3 -mx-1 px-1 border-t border-border shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.1)]">
-        <div className="space-y-2 sm:space-y-3">
+      {/* Right Column - Selected Items (always visible on desktop, sticky on mobile) */}
+      <div className="lg:w-80 xl:w-96 flex-shrink-0 sticky bottom-0 lg:relative lg:bottom-auto z-10 bg-background/95 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none pt-2 sm:pt-3 lg:pt-0 -mx-1 px-1 lg:mx-0 lg:px-0 border-t lg:border-t-0 border-border shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.1)] lg:shadow-none">
+        <div className="lg:sticky lg:top-4 space-y-2 sm:space-y-3 lg:p-4 lg:bg-muted/30 lg:rounded-xl lg:border lg:border-border">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Label className="text-sm font-medium text-muted-foreground">
@@ -433,143 +447,143 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
             )}
           </div>
 
-          <div className="min-h-[48px] sm:min-h-[60px] space-y-1 sm:space-y-1.5 max-h-32 sm:max-h-48 overflow-y-auto rounded-lg border border-dashed border-border p-1 sm:p-2 bg-muted/10">
-          {selectedItems.length === 0 ? (
-            <div className="flex items-center justify-center gap-1.5 h-full min-h-[40px] sm:min-h-[50px] text-muted-foreground">
-              <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-50" />
-              <span className="text-[10px] sm:text-xs">
-                {language === 'ru' ? 'Выберите услуги' : 
-                 language === 'en' ? 'Select services' : 
-                 language === 'pl' ? 'Wybierz usługi' : 
-                 'Виберіть послуги'}
+          <div className="min-h-[48px] sm:min-h-[60px] lg:min-h-[120px] space-y-1 sm:space-y-1.5 max-h-32 sm:max-h-48 lg:max-h-64 overflow-y-auto rounded-lg border border-dashed border-border p-1 sm:p-2 bg-muted/10 lg:bg-background/50">
+            {selectedItems.length === 0 ? (
+              <div className="flex items-center justify-center gap-1.5 h-full min-h-[40px] sm:min-h-[50px] lg:min-h-[100px] text-muted-foreground">
+                <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-50" />
+                <span className="text-[10px] sm:text-xs">
+                  {language === 'ru' ? 'Выберите услуги' : 
+                   language === 'en' ? 'Select services' : 
+                   language === 'pl' ? 'Wybierz usługi' : 
+                   'Виберіть послуги'}
+                </span>
+              </div>
+            ) : (
+              selectedItems.map((selected) => (
+                <div
+                  key={selected.item.id}
+                  className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg"
+                >
+                  <div className="flex-1 min-w-0">
+                    <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">
+                      {selected.item.name}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-0.5">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="h-5 w-5 sm:h-6 sm:w-6"
+                      onClick={() =>
+                        updateQuantity(selected.item.id, selected.quantity - 1)
+                      }
+                    >
+                      <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                    </Button>
+                    <Input
+                      type="number"
+                      min="1"
+                      value={selected.quantity}
+                      onChange={(e) =>
+                        updateQuantity(selected.item.id, parseInt(e.target.value) || 0)
+                      }
+                      className="w-8 sm:w-10 h-5 sm:h-6 text-center text-[10px] sm:text-xs p-0"
+                      inputMode="numeric"
+                    />
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="h-5 w-5 sm:h-6 sm:w-6"
+                      onClick={() =>
+                        updateQuantity(selected.item.id, selected.quantity + 1)
+                      }
+                    >
+                      <Plus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                    </Button>
+                  </div>
+
+                  <div className="w-12 sm:w-14 text-right">
+                    <span className="font-semibold text-primary text-[10px] sm:text-xs">
+                      {selected.item.price * selected.quantity} {t.prices.currency}
+                    </span>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          {/* Discount Tiers Info - Compact on mobile */}
+          <div className="p-2 sm:p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
+            <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
+              <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
+              <span className="text-[10px] sm:text-xs font-semibold text-foreground">
+                {language === 'ru' ? 'Скидки' : 
+                 language === 'en' ? 'Discounts' : 
+                 language === 'pl' ? 'Rabaty' : 
+                 'Знижки'}
               </span>
             </div>
-          ) : (
-            selectedItems.map((selected) => (
-              <div
-                key={selected.item.id}
-                className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg"
-              >
-                <div className="flex-1 min-w-0">
-                  <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">
-                    {selected.item.name}
-                  </span>
+            <div className="flex flex-wrap gap-1 sm:gap-2">
+              {discountTiers.map((tier, index) => (
+                <div 
+                  key={index}
+                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-medium ${
+                    selectedItems.length >= parseInt(tier.services) 
+                      ? 'bg-primary text-primary-foreground' 
+                      : 'bg-muted text-muted-foreground'
+                  }`}
+                >
+                  {tier.services}+: <span className="font-bold">{tier.discount}</span>
                 </div>
-
-                <div className="flex items-center gap-0.5">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-5 w-5 sm:h-6 sm:w-6"
-                    onClick={() =>
-                      updateQuantity(selected.item.id, selected.quantity - 1)
-                    }
-                  >
-                    <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                  </Button>
-                  <Input
-                    type="number"
-                    min="1"
-                    value={selected.quantity}
-                    onChange={(e) =>
-                      updateQuantity(selected.item.id, parseInt(e.target.value) || 0)
-                    }
-                    className="w-8 sm:w-10 h-5 sm:h-6 text-center text-[10px] sm:text-xs p-0"
-                    inputMode="numeric"
-                  />
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-5 w-5 sm:h-6 sm:w-6"
-                    onClick={() =>
-                      updateQuantity(selected.item.id, selected.quantity + 1)
-                    }
-                  >
-                    <Plus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                  </Button>
-                </div>
-
-                <div className="w-12 sm:w-14 text-right">
-                  <span className="font-semibold text-primary text-[10px] sm:text-xs">
-                    {selected.item.price * selected.quantity} {t.prices.currency}
-                  </span>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
-        </div>
-
-        {/* Discount Tiers Info - Compact on mobile */}
-        <div className="p-2 sm:p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
-          <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-            <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
-            <span className="text-[10px] sm:text-xs font-semibold text-foreground">
-              {language === 'ru' ? 'Скидки' : 
-               language === 'en' ? 'Discounts' : 
-               language === 'pl' ? 'Rabaty' : 
-               'Знижки'}
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-1 sm:gap-2">
-            {discountTiers.map((tier, index) => (
-              <div 
-                key={index}
-                className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-medium ${
-                  selectedItems.length >= parseInt(tier.services) 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'bg-muted text-muted-foreground'
-                }`}
-              >
-                {tier.services}+: <span className="font-bold">{tier.discount}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Total */}
-        <div className="pt-2 sm:pt-3 border-t border-border">
-          {/* Показываем информацию о скидке */}
-          {discountInfo.hasDiscount && (
-            <div className="mb-2 sm:mb-3 p-2 sm:p-3 bg-fresh/10 rounded-lg border border-fresh/30">
-              <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5 sm:mb-1">
-                <Percent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-fresh" />
-                <span className="text-xs sm:text-sm font-semibold text-fresh">{discountInfo.discountReason}</span>
-              </div>
-              <div className="flex items-center justify-between text-xs sm:text-sm">
-                <span className="text-muted-foreground line-through">
-                  {discountInfo.originalTotal} {t.prices.currency}
-                </span>
-                <span className="font-bold text-fresh">
-                  -{discountInfo.discountAmount} {t.prices.currency}
-                </span>
-              </div>
+              ))}
             </div>
-          )}
-
-          <div className="flex items-center justify-between">
-            <span className="text-sm sm:text-base font-medium">{t.calculator.total}</span>
-            <span className="text-lg sm:text-xl font-bold text-primary">
-              {t.prices.from} {discountInfo.finalTotal} {t.prices.currency}
-            </span>
           </div>
-          <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 sm:mt-1.5 font-medium">
-            {t.calculator.minOrder}
-          </p>
-          <p className="text-[10px] sm:text-xs text-muted-foreground font-medium">
-            {t.calculator.minOrderOther}
-          </p>
-          
-          {/* Send to Form Button */}
-          {selectedItems.length > 0 && (
-            <Button
-              onClick={handleSendToForm}
-              className="w-full mt-3 sm:mt-4 bg-fresh hover:bg-fresh/90 text-white shadow-glow transition-all h-10 sm:h-11 touch-manipulation active:scale-[0.98]"
-            >
-              <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
-              <span className="text-sm sm:text-base">{t.form.sendToForm}</span>
-            </Button>
-          )}
+
+          {/* Total */}
+          <div className="pt-2 sm:pt-3 border-t border-border">
+            {/* Показываем информацию о скидке */}
+            {discountInfo.hasDiscount && (
+              <div className="mb-2 sm:mb-3 p-2 sm:p-3 bg-fresh/10 rounded-lg border border-fresh/30">
+                <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5 sm:mb-1">
+                  <Percent className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-fresh" />
+                  <span className="text-xs sm:text-sm font-semibold text-fresh">{discountInfo.discountReason}</span>
+                </div>
+                <div className="flex items-center justify-between text-xs sm:text-sm">
+                  <span className="text-muted-foreground line-through">
+                    {discountInfo.originalTotal} {t.prices.currency}
+                  </span>
+                  <span className="font-bold text-fresh">
+                    -{discountInfo.discountAmount} {t.prices.currency}
+                  </span>
+                </div>
+              </div>
+            )}
+
+            <div className="flex items-center justify-between">
+              <span className="text-sm sm:text-base font-medium">{t.calculator.total}</span>
+              <span className="text-lg sm:text-xl font-bold text-primary">
+                {t.prices.from} {discountInfo.finalTotal} {t.prices.currency}
+              </span>
+            </div>
+            <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 sm:mt-1.5 font-medium">
+              {t.calculator.minOrder}
+            </p>
+            <p className="text-[10px] sm:text-xs text-muted-foreground font-medium">
+              {t.calculator.minOrderOther}
+            </p>
+            
+            {/* Send to Form Button */}
+            {selectedItems.length > 0 && (
+              <Button
+                onClick={handleSendToForm}
+                className="w-full mt-3 sm:mt-4 bg-fresh hover:bg-fresh/90 text-white shadow-glow transition-all h-10 sm:h-11 touch-manipulation active:scale-[0.98]"
+              >
+                <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+                <span className="text-sm sm:text-base">{t.form.sendToForm}</span>
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </div>
