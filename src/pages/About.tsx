@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CleanSplash from '@/components/CleanSplash';
@@ -39,6 +40,12 @@ const About = () => {
     description: t.equipment.modernDesc
   }];
   return <>
+      <SEO
+        title="О компании MasterClean — Опыт и качество"
+        description="Узнайте о команде MasterClean. Профессиональная химчистка мебели и ковров в Польше. Современное оборудование, экологичные средства, опытные специалисты."
+        keywords="о нас, MasterClean, команда химчистки, профессиональная химчистка, Польша"
+        canonical="/about"
+      />
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Hero */}

@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -71,6 +72,13 @@ const Impregnation = () => {
   ];
 
   return (
+    <>
+      <SEO
+        title="Импрегнация мебели и тканей — Защита от загрязнений"
+        description="Профессиональная импрегнация мебели, ковров и тканей. Защита от воды, грязи и пятен. Гидрофобное покрытие продлевает срок службы."
+        keywords="импрегнация, защита мебели, гидрофобное покрытие, защита ткани, импрегнация ковров"
+        canonical="/impregnation"
+      />
     <Layout>
       {/* Hero */}
       <section className="py-20 bg-gradient-section">
@@ -247,6 +255,7 @@ const Impregnation = () => {
         </div>
       </section>
     </Layout>
+    </>
   );
 };
 

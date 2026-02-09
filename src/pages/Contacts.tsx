@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import SEO from '@/components/SEO';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -47,6 +48,12 @@ const Contacts = () => {
 
   return (
     <>
+      <SEO
+        title="Контакты MasterClean — Свяжитесь с нами"
+        description="Свяжитесь с MasterClean: телефон +48 575 211 401, email, адрес. Работаем 24/7. Оставьте заявку онлайн."
+        keywords="контакты химчистка, MasterClean контакты, заказать химчистку, телефон химчистки"
+        canonical="/contacts"
+      />
       {showSplash && <ContactsSplash onComplete={handleSplashComplete} />}
       <Layout>
       {/* Hero */}

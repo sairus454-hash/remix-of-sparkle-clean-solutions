@@ -1,4 +1,5 @@
  import { useState, useRef } from 'react';
+import SEO from '@/components/SEO';
  import { useLanguage } from '@/i18n/LanguageContext';
  import Layout from '@/components/Layout';
  import ContactForm, { ContactFormRef } from '@/components/ContactForm';
@@ -35,6 +36,13 @@
    ];
  
    return (
+     <>
+      <SEO
+        title="Мойка окон — Профессиональная чистка окон"
+        description="Профессиональная мойка окон любой сложности. Чистые окна — больше света и комфорта в вашем доме. Быстро, качественно, доступно."
+        keywords="мойка окон, чистка окон, мытьё окон, профессиональная мойка, Польша"
+        canonical="/windows"
+      />
      <Layout>
        {/* Hero */}
        <section className="py-20 bg-gradient-section">
@@ -182,6 +190,7 @@
          </div>
        </section>
      </Layout>
+     </>
    );
  };
  

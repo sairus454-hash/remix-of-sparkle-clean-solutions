@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ServiceCard from '@/components/ServiceCard';
@@ -38,6 +39,12 @@ const Services = () => {
 
   return (
     <>
+      <SEO
+        title="Услуги химчистки — Мебель, ковры, авто, озонирование"
+        description="Полный спектр клининговых услуг: химчистка мебели, ковров, матрасов, кожаных изделий, салонов авто, озонирование, мойка окон, уборка."
+        keywords="услуги химчистки, чистка мебели, чистка ковров, химчистка авто, озонирование, мойка окон"
+        canonical="/services"
+      />
       {showSplash && <ServicesSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Impregnation Card */}

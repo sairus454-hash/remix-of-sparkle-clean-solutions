@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm from '@/components/ContactForm';
@@ -54,6 +55,12 @@ const Index = () => {
     label: t.about.quality
   }];
   return <>
+      <SEO
+        title="MasterClean — Химчистка мебели, ковров и авто в Польше"
+        description="Профессиональная химчистка мебели, матрасов, ковров и салонов авто. Озонирование, уборка, мойка окон. Работаем 24/7. Звоните: +48 575 211 401"
+        keywords="химчистка мебели, химчистка ковров, химчистка матрасов, химчистка авто, озонирование, уборка, Ополе, Вроцлав"
+        canonical="/"
+      />
       {showSplash && <WaterDropSplash onComplete={handleSplashComplete} />}
       <Layout>
       {/* Hero Banner Section */}
