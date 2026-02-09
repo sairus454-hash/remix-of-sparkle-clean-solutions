@@ -241,7 +241,7 @@ const PriceCalculator = () => {
                       {selected.item.name}
                     </span>
                     <span className="text-xs sm:text-sm text-muted-foreground">
-                      {t.prices.from} {selected.item.price} {t.prices.currency}
+                      {selected.item.price} {t.prices.currency}
                       {selected.item.unit && ` / ${selected.item.unit}`}
                     </span>
                   </div>
@@ -272,7 +272,7 @@ const PriceCalculator = () => {
           <div className="flex items-center justify-between">
             <span className="text-lg font-medium">{t.calculator.total}</span>
             <span className="text-2xl font-bold text-primary">
-              {t.prices.from} {calculateTotal()} {t.prices.currency}
+              {calculateTotal()} {t.prices.currency}
             </span>
           </div>
           <p className="text-sm text-muted-foreground mt-2 font-medium">

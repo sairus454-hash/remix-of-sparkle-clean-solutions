@@ -253,7 +253,7 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
                           <div className="flex-1 min-w-0">
                             <span className="block font-medium text-sm">{item.name}</span>
                             <span className="text-xs text-yellow-600 font-semibold">
-                              {item.isFrom ? `${t.prices.from} ` : ''}{item.price} {t.prices.currency}
+                              {item.price} {t.prices.currency}
                             </span>
                           </div>
                           <Plus className="w-5 h-5 ml-2 flex-shrink-0 text-yellow-600" />
@@ -298,7 +298,7 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
                         {selected.item.name}
                       </span>
                       <span className="text-xs text-muted-foreground">
-                        {selected.item.isFrom ? `${t.prices.from} ` : ''}{selected.item.price} {t.prices.currency} / шт.
+                        {selected.item.price} {t.prices.currency} / шт.
                       </span>
                     </div>
 
@@ -347,7 +347,7 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
               <span className="text-lg font-semibold">{t.calculator.total}</span>
               <div className="text-right">
                 <span className="text-3xl font-bold text-yellow-600">
-                  {selectedItems.some(s => s.item.isFrom) ? `${t.prices.from} ` : ''}{calculateTotal()}
+                  {calculateTotal()}
                 </span>
                 <span className="text-xl font-bold text-yellow-600 ml-1">{t.prices.currency}</span>
               </div>

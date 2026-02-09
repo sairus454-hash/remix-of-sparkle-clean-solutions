@@ -74,7 +74,7 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
                   
                   {/* Min price badge */}
                   <div className="flex-shrink-0 bg-primary/10 text-primary px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap">
-                    {t.prices.from} {category.minPrice} {t.prices.currency}{category.id === 'cleaning' ? '/м²' : ''}
+                    {category.minPrice} {t.prices.currency}{category.id === 'cleaning' ? '/м²' : ''}
                   </div>
                 </div>
               </AccordionTrigger>

@@ -126,7 +126,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
                     <div className="flex items-center justify-between flex-1">
                       <span className="font-medium text-sm sm:text-base">{t.ozone.app2}</span>
                       <span className="text-primary font-semibold text-xs sm:text-sm whitespace-nowrap ml-2">
-                        {t.prices.from} 120 {t.prices.currency}
+                        120 {t.prices.currency}
                       </span>
                     </div>
                   </div>
@@ -140,7 +140,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
                       >
                         <span className="text-muted-foreground">{item.name}</span>
                         <span className="text-primary font-medium whitespace-nowrap ml-2">
-                          {t.prices.from} {item.price} {t.prices.currency}
+                          {item.price} {t.prices.currency}
                         </span>
                       </div>
                     ))}
@@ -155,7 +155,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
                     <div className="flex items-center justify-between flex-1">
                       <span className="font-medium text-sm sm:text-base">{t.ozone.app3}</span>
                       <span className="text-primary font-semibold text-xs sm:text-sm whitespace-nowrap ml-2">
-                        {t.prices.from} 250 {t.prices.currency}
+                        250 {t.prices.currency}
                       </span>
                     </div>
                   </div>
@@ -169,7 +169,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
                       >
                         <span className="text-muted-foreground">{item.name}</span>
                         <span className="text-primary font-medium whitespace-nowrap ml-2">
-                          {t.prices.from} {item.price} {t.prices.currency}
+                          {item.price} {t.prices.currency}
                         </span>
                       </div>
                     ))}
@@ -241,7 +241,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
                           {selected.item.name}
                         </span>
                         <span className="text-sm text-muted-foreground">
-                          {t.prices.from} {selected.item.price} {t.prices.currency}
+                          {selected.item.price} {t.prices.currency}
                         </span>
                       </div>
 
@@ -296,7 +296,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
               <div className="flex items-center justify-between">
                 <span className="text-lg font-medium">{t.calculator.total}</span>
                 <span className="text-2xl font-bold text-primary">
-                  {t.prices.from} {calculateTotal()} {t.prices.currency}
+                  {calculateTotal()} {t.prices.currency}
                 </span>
               </div>
               <p className="text-sm text-muted-foreground mt-2">
