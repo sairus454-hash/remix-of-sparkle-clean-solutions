@@ -396,7 +396,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                 />
               </CollapsibleTrigger>
               <CollapsibleContent className="pt-2">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pl-2">
+                <div className="grid grid-cols-1 gap-1.5 pl-2">
                   {category.items.map((item) => (
                     <Button
                       key={item.id}
