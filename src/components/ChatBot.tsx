@@ -438,7 +438,16 @@ const ChatBot = () => {
         {isOpen ? (
           <X className="w-6 h-6 text-primary-foreground" />
         ) : (
-          <span className="text-primary-foreground font-bold text-lg">AI</span>
+          <span 
+            className="font-bold text-xl tracking-wide"
+            style={{
+              color: 'white',
+              textShadow: '0 0 8px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.5), 2px 2px 4px rgba(0,0,0,0.3)',
+              WebkitTextStroke: '0.5px rgba(0,0,0,0.2)',
+            }}
+          >
+            AI
+          </span>
         )}
       </button>
 
