@@ -144,7 +144,7 @@ const About = () => {
                     <Users className="w-12 h-12 text-primary-foreground mx-auto mb-4" style={{
                     animation: 'float 3s ease-in-out infinite, pulse 2s ease-in-out infinite'
                   }} />
-                    <p className="font-serif text-4xl font-bold text-primary-foreground mb-2">5000+</p>
+                    <p className="font-serif text-4xl font-bold text-primary-foreground mb-2">1000+</p>
                     <p className="text-primary-foreground/80 text-sm">{t.about.clients}</p>
                   </div>
                 </CircularRevealCard>
