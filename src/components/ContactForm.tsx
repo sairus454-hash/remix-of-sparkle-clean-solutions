@@ -1,4 +1,4 @@
-import { useState, useEffect, forwardRef, useImperativeHandle, useCallback } from 'react';
+import { useState, useEffect, forwardRef, useImperativeHandle, useCallback, useMemo } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,7 +8,7 @@ import { SearchableSelect } from '@/components/ui/searchable-select';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { toast } from '@/hooks/use-toast';
-import { Send, Loader2, CalendarIcon, ShoppingCart, X } from 'lucide-react';
+import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
@@ -16,6 +16,7 @@ import SimpleCaptcha from './SimpleCaptcha';
 import SuccessAnimation from './SuccessAnimation';
 import { supabase } from '@/integrations/supabase/client';
 import { CalculatorItem } from '@/types/calculator';
+import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
 export interface ContactFormRef {
   setCalculatorData: (items: CalculatorItem[], total: number) => void;
 }
@@ -91,22 +92,46 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     }
   }, [selectedDate]);
 
-  // Auto-generate message from calculator data
+  // Convert calculator items to format for discount calculator
+  const discountItems = useMemo(() => 
+    calculatorItems.map(item => ({
+      id: item.id,
+      price: item.price,
+      quantity: item.quantity
+    })), [calculatorItems]);
+
+  // Use the discount calculator hook
+  const discountInfo = useDiscountCalculator(discountItems);
+
+  // Get discount tiers for display
+  const discountTiers = getDiscountTiers(language);
+
+  // Auto-generate message from calculator data with discount info
   useEffect(() => {
     if (calculatorItems.length > 0) {
       const orderLabel = t.form.orderFromCalculator || 'Заказ из калькулятора';
       const totalLabel = language === 'ru' ? 'Итого:' : language === 'pl' ? 'Razem:' : language === 'uk' ? 'Разом:' : 'Total:';
+      const discountLabel = language === 'ru' ? 'Скидка:' : language === 'pl' ? 'Rabat:' : language === 'uk' ? 'Знижка:' : 'Discount:';
+      
       const lines = calculatorItems.map(item => {
         const unitPart = item.unit ? ` (${item.unit})` : '';
         return `• ${item.name}${unitPart} × ${item.quantity} = ${item.price * item.quantity} ${t.prices.currency}`;
       });
-      const message = `${orderLabel}:\n${lines.join('\n')}\n\n${totalLabel} ${calculatorTotal} ${t.prices.currency}`;
+      
+      let message = `${orderLabel}:\n${lines.join('\n')}`;
+      
+      if (discountInfo.hasDiscount) {
+        message += `\n\n${discountLabel} -${discountInfo.discountPercent}% (-${discountInfo.discountAmount} ${t.prices.currency})`;
+      }
+      
+      message += `\n\n${totalLabel} ${discountInfo.finalTotal} ${t.prices.currency}`;
+      
       setFormData(prev => ({
         ...prev,
         message
       }));
     }
-  }, [calculatorItems, calculatorTotal, t, language]);
+  }, [calculatorItems, discountInfo, t, language]);
   const locales = {
     ru,
     pl,
@@ -330,7 +355,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     />
     
     <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-      {/* Calculator Data Preview */}
+      {/* Calculator Data Preview with Discount System */}
       {calculatorItems.length > 0 && <div className="bg-fresh/10 border border-fresh/30 rounded-xl p-4 animate-fade-up">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
@@ -356,9 +381,63 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               </div>)}
           </div>
           
+          {/* Discount Tiers Info */}
+          <div className="mt-3 pt-3 border-t border-fresh/30">
+            <div className="flex items-center gap-1.5 mb-2">
+              <Gift className="w-4 h-4 text-primary" />
+              <span className="text-xs font-semibold text-foreground">{t.calculator.discountSystem}</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {discountTiers.map((tier, index) => (
+                <div 
+                  key={index}
+                  className={cn(
+                    "flex items-center gap-1 px-2 py-1 rounded-full text-xs border transition-all",
+                    calculatorItems.length >= (index === 0 ? 2 : index === 1 ? 4 : 6)
+                      ? "bg-fresh/20 border-fresh/50 text-fresh font-semibold"
+                      : "bg-muted/50 border-border text-muted-foreground"
+                  )}
+                >
+                  <span>{tier.services}</span>
+                  <span className="font-bold">{tier.discount}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Discount Applied */}
+          {discountInfo.hasDiscount && (
+            <div className="mt-3 p-2 bg-fresh/20 rounded-lg border border-fresh/40">
+              <div className="flex items-center gap-1.5 mb-1">
+                <Percent className="w-4 h-4 text-fresh" />
+                <span className="text-sm font-semibold text-fresh">{discountInfo.discountReason}</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-muted-foreground line-through">{discountInfo.originalTotal} {t.prices.currency}</span>
+                <span className="text-fresh font-medium">-{discountInfo.discountAmount} {t.prices.currency}</span>
+              </div>
+            </div>
+          )}
+
+          {/* No discount yet - hint */}
+          {!discountInfo.hasDiscount && calculatorItems.length === 1 && (
+            <div className="mt-2 p-2 bg-primary/10 rounded-lg border border-primary/20">
+              <div className="flex items-start gap-1.5">
+                <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <span className="text-xs text-primary">
+                  {language === 'ru' ? 'Добавьте ещё одну услугу и получите скидку 10%!' :
+                   language === 'pl' ? 'Dodaj jeszcze jedną usługę i otrzymaj 10% rabatu!' :
+                   language === 'uk' ? 'Додайте ще одну послугу та отримайте знижку 10%!' :
+                   'Add one more service and get 10% off!'}
+                </span>
+              </div>
+            </div>
+          )}
+          
+          {/* Total */}
           <div className="mt-3 pt-3 border-t border-fresh/30 flex justify-between items-center">
             <span className="font-semibold text-foreground">{t.calculator.total}</span>
-            <span className="text-lg font-bold text-primary">{calculatorTotal} {t.prices.currency}</span>
+            <span className="text-lg font-bold text-primary">{discountInfo.finalTotal} {t.prices.currency}</span>
           </div>
           
           <p className="text-xs text-muted-foreground mt-2">{t.form.checkOrder}</p>
