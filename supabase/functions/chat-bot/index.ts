@@ -125,14 +125,17 @@ const PRICE_LIST = {
 ⚠️ Минимальный заказ: 180 PLN (Вроцлав и пригород до 10 км), 400 PLN (города дальше 10 км от Вроцлава)
 
 🎁 СИСТЕМА СКИДОК (АВТОМАТИЧЕСКИ):
-• 10% скидка — при заказе 2+ разных услуг (например, диван + ковёр)
-• 15% скидка — при заказе 4+ разных услуг (постоянные клиенты / крупный заказ)
-• 20% VIP скидка — при заказе 6+ разных услуг (максимальная экономия!)
+• 10% скидка — при заказе услуг из 2+ разных КАТЕГОРИЙ (например, Мебель + Авто)
+• 15% скидка — при заказе услуг из 4+ разных КАТЕГОРИЙ
+• 20% VIP скидка — при заказе услуг из 6+ разных КАТЕГОРИЙ (максимальная экономия!)
 • 10% скидка — специальная акция на химчистку одного матраса
 
-ВАЖНО: Скидки рассчитываются автоматически по количеству РАЗНЫХ услуг в заказе.
-Пример: диван + ковёр + 2 стула = 3 разных услуги = 10% скидка
-Пример: диван + ковёр + матрас + кресло = 4 разных услуги = 15% скидка`,
+КАТЕГОРИИ для скидок: Уборка, Мебель, Кожаная мебель, Авто, Матрасы, Озонирование, Мойка окон, Доп. услуги, Мастер на час.
+
+ВАЖНО: Скидки считаются по КАТЕГОРИЯМ, а не по отдельным позициям! 
+Несколько позиций из одной категории (3 стула из "Мебель") = 1 категория = нет скидки.
+Пример: диван (Мебель) + сиденья авто (Авто) = 2 категории = 10% скидка
+Пример: мебель + авто + матрас + озонирование = 4 категории = 15% скидка`,
 
   en: `
 CURRENT PRICE LIST (prices in PLN):
@@ -254,14 +257,17 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 ⚠️ Minimum order: 180 PLN (Wrocław and suburbs within 10 km), 400 PLN (cities beyond 10 km from Wrocław)
 
 🎁 DISCOUNT SYSTEM (AUTOMATIC):
-• 10% discount — when ordering 2+ different services (e.g., sofa + carpet)
-• 15% discount — when ordering 4+ different services (regular customers / large orders)
-• 20% VIP discount — when ordering 6+ different services (maximum savings!)
+• 10% discount — when ordering from 2+ different CATEGORIES (e.g., Furniture + Auto)
+• 15% discount — when ordering from 4+ different CATEGORIES
+• 20% VIP discount — when ordering from 6+ different CATEGORIES (maximum savings!)
 • 10% discount — special promotion for single mattress cleaning
 
-IMPORTANT: Discounts are calculated automatically based on the number of DIFFERENT services in the order.
-Example: sofa + carpet + 2 chairs = 3 different services = 10% discount
-Example: sofa + carpet + mattress + armchair = 4 different services = 15% discount`,
+CATEGORIES for discounts: Cleaning, Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Additional Services, Handyman.
+
+IMPORTANT: Discounts are based on CATEGORIES, not individual items!
+Multiple items from one category (3 chairs from "Furniture") = 1 category = no discount.
+Example: sofa (Furniture) + car seats (Auto) = 2 categories = 10% discount
+Example: furniture + auto + mattress + ozonation = 4 categories = 15% discount`,
 
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
@@ -383,14 +389,17 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 ⚠️ Minimalne zamówienie: 180 PLN (Wrocław i przedmieścia do 10 km), 400 PLN (miasta dalej niż 10 km od Wrocławia)
 
 🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
-• Rabat 10% — przy zamówieniu 2+ różnych usług (np. sofa + dywan)
-• Rabat 15% — przy zamówieniu 4+ różnych usług (stali klienci / duże zamówienia)
-• Rabat 20% VIP — przy zamówieniu 6+ różnych usług (maksymalna oszczędność!)
+• Rabat 10% — przy zamówieniu z 2+ różnych KATEGORII (np. Meble + Auto)
+• Rabat 15% — przy zamówieniu z 4+ różnych KATEGORII
+• Rabat 20% VIP — przy zamówieniu z 6+ różnych KATEGORII (maksymalna oszczędność!)
 • Rabat 10% — specjalna promocja na czyszczenie jednego materaca
 
-WAŻNE: Rabaty są naliczane automatycznie na podstawie liczby RÓŻNYCH usług w zamówieniu.
-Przykład: sofa + dywan + 2 krzesła = 3 różne usługi = 10% rabatu
-Przykład: sofa + dywan + materac + fotel = 4 różne usługi = 15% rabatu`,
+KATEGORIE do rabatów: Sprzątanie, Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Usługi dodatkowe, Złota rączka.
+
+WAŻNE: Rabaty są naliczane na podstawie KATEGORII, nie poszczególnych pozycji!
+Kilka pozycji z jednej kategorii (3 krzesła z "Meble") = 1 kategoria = brak rabatu.
+Przykład: sofa (Meble) + siedzenia auta (Auto) = 2 kategorie = 10% rabatu
+Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
@@ -512,14 +521,17 @@ Przykład: sofa + dywan + materac + fotel = 4 różne usługi = 15% rabatu`,
 ⚠️ Мінімальне замовлення: 180 PLN (Вроцлав і передмістя до 10 км), 400 PLN (міста далі 10 км від Вроцлава)
 
 🎁 СИСТЕМА ЗНИЖОК (АВТОМАТИЧНО):
-• 10% знижка — при замовленні 2+ різних послуг (наприклад, диван + килим)
-• 15% знижка — при замовленні 4+ різних послуг (постійні клієнти / великі замовлення)
-• 20% VIP знижка — при замовленні 6+ різних послуг (максимальна економія!)
+• 10% знижка — при замовленні з 2+ різних КАТЕГОРІЙ (наприклад, Меблі + Авто)
+• 15% знижка — при замовленні з 4+ різних КАТЕГОРІЙ
+• 20% VIP знижка — при замовленні з 6+ різних КАТЕГОРІЙ (максимальна економія!)
 • 10% знижка — спеціальна акція на хімчистку одного матраца
 
-ВАЖЛИВО: Знижки розраховуються автоматично за кількістю РІЗНИХ послуг у замовленні.
-Приклад: диван + килим + 2 стільці = 3 різних послуги = 10% знижка
-Приклад: диван + килим + матрац + крісло = 4 різних послуги = 15% знижка`
+КАТЕГОРІЇ для знижок: Прибирання, Меблі, Шкіряні меблі, Авто, Матраци, Озонування, Миття вікон, Додаткові послуги, Майстер на годину.
+
+ВАЖЛИВО: Знижки рахуються за КАТЕГОРІЯМИ, а не за окремими позиціями!
+Кілька позицій з однієї категорії (3 стільці з "Меблі") = 1 категорія = немає знижки.
+Приклад: диван (Меблі) + сидіння авто (Авто) = 2 категорії = 10% знижка
+Приклад: меблі + авто + матрац + озонування = 4 категорії = 15% знижка`
 };
 
 const SYSTEM_PROMPTS: Record<string, string> = {
@@ -589,7 +601,8 @@ ${PRICE_LIST.ru}
 ВАЖНО:
 — ВСЕГДА называй точные цены
 — АКТИВНО ПРОДВИГАЙ СКИДКИ! При любом заказе говори о возможности получить скидку
-— Если клиент называет 1 услугу — предложи добавить ещё что-то для скидки 10%
+— Скидки считаются по КАТЕГОРИЯМ (Мебель, Авто, Матрасы и т.д.), а НЕ по отдельным позициям
+— Если клиент заказывает из одной категории — предложи добавить услугу из ДРУГОЙ категории для скидки 10%
 — При расчёте стоимости ПОКАЗЫВАЙ экономию: "Итого: 310 zł (экономия 34 zł!)"
 — Если клиент молчит — предложи помощь и кнопку заявки
 — Если вопрос сложный — предложи "Связаться с менеджером"`,
@@ -660,7 +673,8 @@ SERVICES:
 IMPORTANT:
 — ALWAYS give exact prices
 — ACTIVELY PROMOTE DISCOUNTS! For any order, mention the possibility of getting a discount
-— If customer mentions 1 service — suggest adding something else for 10% discount
+— Discounts are based on CATEGORIES (Furniture, Auto, Mattresses, etc.), NOT individual items
+— If customer orders from one category — suggest adding a service from ANOTHER category for 10% discount
 — When calculating cost, SHOW savings: "Total: 310 zł (saving 34 zł!)"
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"`,
@@ -731,7 +745,8 @@ USŁUGI:
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny
 — AKTYWNIE PROMUJ RABATY! Przy każdym zamówieniu mów o możliwości uzyskania rabatu
-— Jeśli klient wymienia 1 usługę — zaproponuj dodanie czegoś dla 10% rabatu
+— Rabaty naliczane są na podstawie KATEGORII (Meble, Auto, Materace itd.), a NIE poszczególnych pozycji
+— Jeśli klient zamawia z jednej kategorii — zaproponuj dodanie usługi z INNEJ kategorii dla 10% rabatu
 — Przy obliczaniu kosztu POKAŻ oszczędności: "Razem: 310 zł (oszczędność 34 zł!)"
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
 — Jeśli pytanie jest trudne — zaproponuj "Kontakt z menedżerem"`,
@@ -802,7 +817,8 @@ ${PRICE_LIST.uk}
 ВАЖЛИВО:
 — ЗАВЖДИ називай точні ціни
 — АКТИВНО ПРОСУВАЙ ЗНИЖКИ! При будь-якому замовленні кажи про можливість отримати знижку
-— Якщо клієнт називає 1 послугу — запропонуй додати щось для знижки 10%
+— Знижки рахуються за КАТЕГОРІЯМИ (Меблі, Авто, Матраци тощо), а НЕ за окремими позиціями
+— Якщо клієнт замовляє з однієї категорії — запропонуй додати послугу з ІНШОЇ категорії для знижки 10%
 — При розрахунку вартості ПОКАЗУЙ економію: "Разом: 310 zł (економія 34 zł!)"
 — Якщо клієнт мовчить — запропонуй допомогу і кнопку заявки
 — Якщо питання складне — запропонуй "Зв'язатися з менеджером"`
