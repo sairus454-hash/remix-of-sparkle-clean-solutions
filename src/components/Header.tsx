@@ -48,7 +48,7 @@ const Header = () => {
     { path: '/equipment', label: t.nav.equipment },
     { path: '/cleaning', label: t.nav.cleaning, highlight: 'cleaning' as const },
     { path: '/ozone', label: t.nav.ozone, highlight: 'ozone' as const },
-    { path: '/auto', label: t.nav.auto },
+    { path: '/auto', label: t.nav.auto, highlight: 'auto' as const },
     { path: '/handyman', label: t.nav.handyman, highlight: 'handyman' as const },
     { path: '/reviews', label: t.nav.reviews },
     { path: '/contacts', label: t.nav.contacts },
@@ -142,6 +142,9 @@ const Header = () => {
                 }
                 if (item.highlight === 'cleaning') {
                   return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                }
+                if (item.highlight === 'auto') {
+                  return 'bg-sky-50 text-sky-600 dark:bg-sky-900/30 dark:text-sky-300';
                 }
                 if (item.highlight === 'handyman') {
                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
@@ -302,6 +305,9 @@ const Header = () => {
                 }
                 if (item.highlight === 'cleaning') {
                   return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                }
+                if (item.highlight === 'auto') {
+                  return 'bg-sky-50 text-sky-600 dark:bg-sky-900/30 dark:text-sky-300';
                 }
                 if (item.highlight === 'handyman') {
                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
