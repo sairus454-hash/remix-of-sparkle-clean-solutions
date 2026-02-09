@@ -55,11 +55,32 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   // Villages within 150km radius of Wrocław (alphabetically sorted)
   const villages = ['Bielany Wrocławskie', 'Bogdaszowice', 'Borów', 'Bystrzyca', 'Cesarzowice', 'Chrząstawa Wielka', 'Ciepłowody', 'Czernica', 'Długołęka', 'Dobroszyce', 'Domaszczyn', 'Domaniów', 'Gaj Oławski', 'Gajków', 'Iwiny', 'Jordanów Śląski', 'Kamieniec Wrocławski', 'Kiełczów', 'Kobierzyce', 'Kondratowice', 'Kostomłoty', 'Krzeptów', 'Krzyżanowice', 'Lutynia', 'Malczyce', 'Mędłów', 'Miękinia', 'Mietków', 'Miłoszyce', 'Mirków', 'Mokronos Dolny', 'Mokronos Górny', 'Oborniki Śląskie', 'Osiek', 'Ozimek', 'Pęgów', 'Pietrzykowice', 'Prochowice', 'Prusice', 'Przeworno', 'Radwanice', 'Ratowice', 'Ścinawy', 'Siechnice', 'Smardzów', 'Smolec', 'Stanowice', 'Szczepanów', 'Święta Katarzyna', 'Tyniec Mały', 'Wilczyce', 'Wińsko', 'Wisznia Mała', 'Wojnowice', 'Wróblowice', 'Wysoka', 'Żórawina'];
 
-  // Expose setCalculatorData method
+  // Expose setCalculatorData method - now ADDS to existing items instead of replacing
   useImperativeHandle(ref, () => ({
-    setCalculatorData: (items: CalculatorItem[], total: number) => {
-      setCalculatorItems(items);
-      setCalculatorTotal(total);
+    setCalculatorData: (newItems: CalculatorItem[], newTotal: number) => {
+      setCalculatorItems(prevItems => {
+        // Merge new items with existing ones
+        const mergedItems = [...prevItems];
+        
+        newItems.forEach(newItem => {
+          const existingIndex = mergedItems.findIndex(item => item.id === newItem.id);
+          if (existingIndex >= 0) {
+            // Update quantity if item already exists
+            mergedItems[existingIndex] = {
+              ...mergedItems[existingIndex],
+              quantity: mergedItems[existingIndex].quantity + newItem.quantity
+            };
+          } else {
+            // Add new item
+            mergedItems.push(newItem);
+          }
+        });
+        
+        return mergedItems;
+      });
+      
+      // Recalculate total based on merged items
+      setCalculatorTotal(prevTotal => prevTotal + newTotal);
     }
   }));
 
