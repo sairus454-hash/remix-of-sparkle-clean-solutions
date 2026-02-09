@@ -433,38 +433,34 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
             )}
           </div>
 
-          <div className="min-h-[80px] space-y-2 max-h-36 overflow-y-auto rounded-lg border border-dashed border-border p-2 bg-muted/10">
+          <div className="min-h-[60px] space-y-1.5 max-h-48 sm:max-h-56 overflow-y-auto rounded-lg border border-dashed border-border p-1.5 sm:p-2 bg-muted/10">
           {selectedItems.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-full min-h-[100px] text-muted-foreground">
-              <Plus className="w-6 h-6 mb-2 opacity-50" />
-              <span className="text-xs text-center">
-                {language === 'ru' ? 'Выберите услуги из списка выше' : 
-                 language === 'en' ? 'Select services from the list above' : 
-                 language === 'pl' ? 'Wybierz usługi z listy powyżej' : 
-                 'Виберіть послуги зі списку вище'}
+            <div className="flex items-center justify-center gap-2 h-full min-h-[50px] text-muted-foreground">
+              <Plus className="w-4 h-4 opacity-50" />
+              <span className="text-xs">
+                {language === 'ru' ? 'Выберите услуги выше' : 
+                 language === 'en' ? 'Select services above' : 
+                 language === 'pl' ? 'Wybierz usługi powyżej' : 
+                 'Виберіть послуги вище'}
               </span>
             </div>
           ) : (
             selectedItems.map((selected) => (
               <div
                 key={selected.item.id}
-                className="flex items-center gap-2 p-2 bg-accent/30 rounded-lg"
+                className="flex items-center gap-1.5 p-1.5 sm:p-2 bg-accent/30 rounded-lg"
               >
                 <div className="flex-1 min-w-0">
-                  <span className="font-medium text-foreground text-xs block truncate">
+                  <span className="font-medium text-foreground text-[11px] sm:text-xs block truncate">
                     {selected.item.name}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {selected.item.price} {t.prices.currency}
-                    {selected.item.unit && ` / ${selected.item.unit}`}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-0.5 sm:gap-1">
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-7 w-7"
+                    className="h-6 w-6 sm:h-7 sm:w-7"
                     onClick={() =>
                       updateQuantity(selected.item.id, selected.quantity - 1)
                     }
@@ -478,13 +474,13 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                     onChange={(e) =>
                       updateQuantity(selected.item.id, parseInt(e.target.value) || 0)
                     }
-                    className="w-12 h-7 text-center text-sm p-1"
+                    className="w-10 sm:w-12 h-6 sm:h-7 text-center text-xs p-0.5"
                     inputMode="numeric"
                   />
                   <Button
                     variant="outline"
                     size="icon"
-                    className="h-7 w-7"
+                    className="h-6 w-6 sm:h-7 sm:w-7"
                     onClick={() =>
                       updateQuantity(selected.item.id, selected.quantity + 1)
                     }
@@ -493,8 +489,8 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                   </Button>
                 </div>
 
-                <div className="w-16 text-right">
-                  <span className="font-semibold text-primary text-sm">
+                <div className="w-14 sm:w-16 text-right">
+                  <span className="font-semibold text-primary text-xs sm:text-sm">
                     {selected.item.price * selected.quantity} {t.prices.currency}
                   </span>
                 </div>

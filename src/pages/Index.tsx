@@ -159,7 +159,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Weekly Deal */}
+            {/* Weekly Deal - 2+ услуг: 10% */}
             <CircularRevealCard index={0} slow className="h-full">
               <div 
                 className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02]"
@@ -177,7 +177,7 @@ const Index = () => {
                 {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-500 to-teal-500 text-white shadow-glow animate-pulse">
-                    -10%
+                    2+ услуг
                   </span>
                 </div>
                 
@@ -190,19 +190,19 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
-                    {t.promotions.weeklyTitle}
+                    2+ услуг: 10%
                   </h3>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
                     {t.promotions.weeklyDesc}
                   </p>
                   <p className="text-orange-500 text-center text-2xl sm:text-3xl font-bold mt-2">
-                    10%
+                    -10%
                   </p>
                 </div>
               </div>
             </CircularRevealCard>
 
-            {/* Monthly Deal */}
+            {/* Monthly Deal - 4+ услуг: 15% */}
             <CircularRevealCard index={1} slow className="h-full">
               <div 
                 className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02]"
@@ -220,7 +220,7 @@ const Index = () => {
                 {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-400 to-cyan-500 text-white shadow-glow animate-pulse">
-                    -15%
+                    4+ услуг
                   </span>
                 </div>
                 
@@ -233,19 +233,19 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-400 to-cyan-500 bg-clip-text text-transparent">
-                    {t.promotions.monthlyTitle}
+                    4+ услуг: 15%
                   </h3>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
                     {t.promotions.monthlyDesc}
                   </p>
                   <p className="text-orange-500 text-center text-2xl sm:text-3xl font-bold mt-2">
-                    15%
+                    -15%
                   </p>
                 </div>
               </div>
             </CircularRevealCard>
 
-            {/* Loyalty Deal */}
+            {/* VIP Deal - 6+ услуг: 20% */}
             <CircularRevealCard index={2} slow className="sm:col-span-2 lg:col-span-1 h-full">
               <div 
                 className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02]"
@@ -275,13 +275,13 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">
-                    {t.promotions.loyaltyTitle}
+                    6+ услуг (VIP): 20%
                   </h3>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
                     {t.promotions.loyaltyDesc}
                   </p>
                   <p className="text-orange-600 text-center text-2xl sm:text-3xl font-bold mt-2">
-                    {t.promotions.upTo} 15%
+                    -20%
                   </p>
                 </div>
               </div>
