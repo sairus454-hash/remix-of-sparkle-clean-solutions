@@ -1,10 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode, lazy, Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CleaningBackground from './CleaningBackground';
-import ChatBot from './ChatBot';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { useIsMobile } from '@/hooks/use-mobile';
+
+// Lazy load ChatBot - it's heavy and not needed on initial render
+const ChatBot = lazy(() => import('./ChatBot'));
 
 interface LayoutProps {
   children: ReactNode;
@@ -34,7 +35,9 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
-      <ChatBot />
+      <Suspense fallback={null}>
+        <ChatBot />
+      </Suspense>
     </div>
   );
 };

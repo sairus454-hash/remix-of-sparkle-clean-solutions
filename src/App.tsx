@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,24 +11,39 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ScrollButton from "@/components/ScrollButton";
 import FreeDeliveryBadge from "@/components/FreeDeliveryBadge";
 
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Prices from "./pages/Prices";
-import Equipment from "./pages/Equipment";
-import Impregnation from "./pages/Impregnation";
-import Auto from "./pages/Auto";
-import Ozone from "./pages/Ozone";
-import Reviews from "./pages/Reviews";
-import Contacts from "./pages/Contacts";
-import Handyman from "./pages/Handyman";
-import NotFound from "./pages/NotFound";
-import AdminLogin from "./pages/AdminLogin";
-import Admin from "./pages/Admin";
-import Windows from "./pages/Windows";
-import Cleaning from "./pages/Cleaning";
+// Lazy load all pages for code splitting
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const Services = lazy(() => import("./pages/Services"));
+const Prices = lazy(() => import("./pages/Prices"));
+const Equipment = lazy(() => import("./pages/Equipment"));
+const Impregnation = lazy(() => import("./pages/Impregnation"));
+const Auto = lazy(() => import("./pages/Auto"));
+const Ozone = lazy(() => import("./pages/Ozone"));
+const Reviews = lazy(() => import("./pages/Reviews"));
+const Contacts = lazy(() => import("./pages/Contacts"));
+const Handyman = lazy(() => import("./pages/Handyman"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const AdminLogin = lazy(() => import("./pages/AdminLogin"));
+const Admin = lazy(() => import("./pages/Admin"));
+const Windows = lazy(() => import("./pages/Windows"));
+const Cleaning = lazy(() => import("./pages/Cleaning"));
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 min cache
+      gcTime: 10 * 60 * 1000,
+    },
+  },
+});
+
+// Minimal loading fallback
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+  </div>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -41,31 +57,33 @@ const App = () => (
             <ScrollButton />
             <FreeDeliveryBadge />
             
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/prices" element={<Prices />} />
-              <Route path="/equipment" element={<Equipment />} />
-              <Route path="/impregnation" element={<Impregnation />} />
-              <Route path="/auto" element={<Auto />} />
-              <Route path="/ozone" element={<Ozone />} />
-               <Route path="/windows" element={<Windows />} />
-              <Route path="/cleaning" element={<Cleaning />} />
-              <Route path="/handyman" element={<Handyman />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/contacts" element={<Contacts />} />
-              <Route path="/admin/login" element={<AdminLogin />} />
-              <Route
-                path="/admin"
-                element={
-                  <ProtectedRoute requireAdmin>
-                    <Admin />
-                  </ProtectedRoute>
-                }
-              />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
+                <Route path="/prices" element={<Prices />} />
+                <Route path="/equipment" element={<Equipment />} />
+                <Route path="/impregnation" element={<Impregnation />} />
+                <Route path="/auto" element={<Auto />} />
+                <Route path="/ozone" element={<Ozone />} />
+                <Route path="/windows" element={<Windows />} />
+                <Route path="/cleaning" element={<Cleaning />} />
+                <Route path="/handyman" element={<Handyman />} />
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="/contacts" element={<Contacts />} />
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute requireAdmin>
+                      <Admin />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
           </BrowserRouter>
         </TooltipProvider>
       </AuthProvider>
