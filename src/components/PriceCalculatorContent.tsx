@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { Plus, Minus, Trash2, Send, Percent, Gift } from 'lucide-react';
+import { Plus, Minus, Trash2, Send, Percent, Gift, ChevronUp } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
@@ -15,6 +15,7 @@ import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, 
 import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PriceItem {
   id: string;
@@ -43,8 +44,10 @@ interface PriceCalculatorContentProps {
 const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorContentProps) => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [isCartExpanded, setIsCartExpanded] = useState(false);
   
   // Cleaning slider state
   const [cleaningArea, setCleaningArea] = useState(50);
@@ -70,6 +73,10 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
     // Remove any existing cleaning items of the same type and area
     const filteredItems = selectedItems.filter(s => !s.item.id.startsWith('cleaning_'));
     setSelectedItems([...filteredItems, { item, quantity: 1 }]);
+    // Collapse cart on mobile when adding items
+    if (isMobile) {
+      setIsCartExpanded(false);
+    }
   };
 
   const categories: Category[] = [
@@ -222,6 +229,10 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
       );
     } else {
       setSelectedItems([...selectedItems, { item, quantity: 1 }]);
+    }
+    // Collapse cart on mobile when adding items
+    if (isMobile) {
+      setIsCartExpanded(false);
     }
   };
 
@@ -419,9 +430,13 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
       {/* Right Column - Selected Items (always visible on desktop, sticky on mobile) */}
       <div className="lg:w-80 xl:w-96 flex-shrink-0 sticky bottom-0 lg:relative lg:bottom-auto z-10 bg-background/95 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none pt-2 sm:pt-3 lg:pt-0 -mx-1 px-1 lg:mx-0 lg:px-0 border-t lg:border-t-0 border-border shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.1)] lg:shadow-none">
         <div className="lg:sticky lg:top-4 space-y-2 sm:space-y-3 lg:p-4 lg:bg-muted/30 lg:rounded-xl lg:border lg:border-border">
-          <div className="flex items-center justify-between">
+          {/* Header - clickable on mobile to expand/collapse */}
+          <button
+            onClick={() => isMobile && setIsCartExpanded(!isCartExpanded)}
+            className="flex items-center justify-between w-full lg:cursor-default"
+          >
             <div className="flex items-center gap-2">
-              <Label className="text-sm font-medium text-muted-foreground">
+              <Label className="text-sm font-medium text-muted-foreground pointer-events-none">
                 {t.calculator.selectedItems}
               </Label>
               {selectedItems.length > 0 && (
@@ -429,84 +444,107 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                   {selectedItems.length}
                 </span>
               )}
+              {/* Mobile expand indicator */}
+              {isMobile && selectedItems.length > 0 && (
+                <ChevronUp className={`w-4 h-4 text-muted-foreground transition-transform lg:hidden ${isCartExpanded ? 'rotate-180' : ''}`} />
+              )}
             </div>
             {selectedItems.length > 0 && (
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={clearAll}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  clearAll();
+                }}
                 className="text-destructive hover:text-destructive h-auto py-1 px-2"
               >
                 <Trash2 className="w-3 h-3 mr-1" />
                 {t.calculator.clear}
               </Button>
             )}
-          </div>
+          </button>
 
-          <div className="min-h-[48px] sm:min-h-[60px] lg:min-h-[120px] space-y-1 sm:space-y-1.5 max-h-32 sm:max-h-48 lg:max-h-64 overflow-y-auto rounded-lg border border-dashed border-border p-1 sm:p-2 bg-muted/10 lg:bg-background/50">
-            {selectedItems.length === 0 ? (
-              <div className="flex items-center justify-center gap-1.5 h-full min-h-[40px] sm:min-h-[50px] lg:min-h-[100px] text-muted-foreground">
-                <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-50" />
-                <span className="text-[10px] sm:text-xs">
-                  {language === 'ru' ? 'Выберите услуги' : 
-                   language === 'en' ? 'Select services' : 
-                   language === 'pl' ? 'Wybierz usługi' : 
-                   'Виберіть послуги'}
-                </span>
-              </div>
-            ) : (
-              selectedItems.map((selected) => (
-                <div
-                  key={selected.item.id}
-                  className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg"
-                >
-                  <div className="flex-1 min-w-0">
-                    <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">
-                      {selected.item.name}
-                    </span>
-                  </div>
+          {/* Mobile: Compact summary when collapsed */}
+          {isMobile && !isCartExpanded && selectedItems.length > 0 && (
+            <div className="flex items-center justify-between px-2 py-1.5 bg-accent/30 rounded-lg lg:hidden">
+              <span className="text-xs text-muted-foreground truncate max-w-[60%]">
+                {selectedItems.slice(0, 2).map(s => s.item.name).join(', ')}
+                {selectedItems.length > 2 && ` +${selectedItems.length - 2}`}
+              </span>
+              <span className="text-sm font-bold text-primary">
+                {discountInfo.finalTotal} zł
+              </span>
+            </div>
+          )}
 
-                  <div className="flex items-center gap-0.5">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-5 w-5 sm:h-6 sm:w-6"
-                      onClick={() =>
-                        updateQuantity(selected.item.id, selected.quantity - 1)
-                      }
-                    >
-                      <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                    </Button>
-                    <Input
-                      type="number"
-                      min="1"
-                      value={selected.quantity}
-                      onChange={(e) =>
-                        updateQuantity(selected.item.id, parseInt(e.target.value) || 0)
-                      }
-                      className="w-8 sm:w-10 h-5 sm:h-6 text-center text-[10px] sm:text-xs p-0"
-                      inputMode="numeric"
-                    />
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-5 w-5 sm:h-6 sm:w-6"
-                      onClick={() =>
-                        updateQuantity(selected.item.id, selected.quantity + 1)
-                      }
-                    >
-                      <Plus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
-                    </Button>
-                  </div>
-
-                  <div className="w-12 sm:w-14 text-right">
-                    <span className="font-semibold text-primary text-[10px] sm:text-xs">
-                      {selected.item.price * selected.quantity} {t.prices.currency}
-                    </span>
-                  </div>
+          {/* Selected items list - collapsible on mobile */}
+          <div className={`${isMobile && !isCartExpanded ? 'hidden' : 'block'} lg:block`}>
+            <div className="min-h-[48px] sm:min-h-[60px] lg:min-h-[120px] space-y-1 sm:space-y-1.5 max-h-32 sm:max-h-48 lg:max-h-64 overflow-y-auto rounded-lg border border-dashed border-border p-1 sm:p-2 bg-muted/10 lg:bg-background/50">
+              {selectedItems.length === 0 ? (
+                <div className="flex items-center justify-center gap-1.5 h-full min-h-[40px] sm:min-h-[50px] lg:min-h-[100px] text-muted-foreground">
+                  <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-50" />
+                  <span className="text-[10px] sm:text-xs">
+                    {language === 'ru' ? 'Выберите услуги' : 
+                     language === 'en' ? 'Select services' : 
+                     language === 'pl' ? 'Wybierz usługi' : 
+                     'Виберіть послуги'}
+                  </span>
                 </div>
-              ))
-            )}
+              ) : (
+                selectedItems.map((selected) => (
+                  <div
+                    key={selected.item.id}
+                    className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">
+                        {selected.item.name}
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-0.5">
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="h-5 w-5 sm:h-6 sm:w-6"
+                        onClick={() =>
+                          updateQuantity(selected.item.id, selected.quantity - 1)
+                        }
+                      >
+                        <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                      </Button>
+                      <Input
+                        type="number"
+                        min="1"
+                        value={selected.quantity}
+                        onChange={(e) =>
+                          updateQuantity(selected.item.id, parseInt(e.target.value) || 0)
+                        }
+                        className="w-8 sm:w-10 h-5 sm:h-6 text-center text-[10px] sm:text-xs p-0"
+                        inputMode="numeric"
+                      />
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        className="h-5 w-5 sm:h-6 sm:w-6"
+                        onClick={() =>
+                          updateQuantity(selected.item.id, selected.quantity + 1)
+                        }
+                      >
+                        <Plus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                      </Button>
+                    </div>
+
+                    <div className="w-12 sm:w-14 text-right">
+                      <span className="font-semibold text-primary text-[10px] sm:text-xs">
+                        {selected.item.price * selected.quantity} {t.prices.currency}
+                      </span>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
 
           {/* Discount Tiers Info - Compact on mobile */}
