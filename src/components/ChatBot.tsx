@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MessageCircle, X, Send, Bot, User, Loader2, Phone, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Camera, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -98,6 +98,8 @@ const ChatBot = () => {
   const [showQuickReplies, setShowQuickReplies] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isSendingPhoto, setIsSendingPhoto] = useState(false);
   const [inputReadonly, setInputReadonly] = useState(true);
   
   // Voice input state
@@ -409,6 +411,68 @@ const ChatBot = () => {
     }
   };
 
+  const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+
+    setIsSendingPhoto(true);
+
+    for (const file of Array.from(files)) {
+      if (!file.type.startsWith('image/')) continue;
+
+      try {
+        // Show preview message
+        const photoMsg: Message = {
+          id: Date.now().toString() + Math.random(),
+          role: 'user',
+          content: `📷 ${file.name}`,
+        };
+        setMessages((prev) => [...prev, photoMsg]);
+
+        // Convert to base64
+        const base64 = await new Promise<string>((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => {
+            const result = reader.result as string;
+            resolve(result.split(',')[1]); // Remove data:image/...;base64, prefix
+          };
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+
+        const { error } = await supabase.functions.invoke('send-telegram-photo', {
+          body: {
+            imageBase64: base64,
+            fileName: file.name,
+            caption: `📷 Фото из чат-бота на сайте`,
+          },
+        });
+
+        if (error) throw error;
+
+        const successMsg: Message = {
+          id: Date.now().toString() + Math.random(),
+          role: 'assistant',
+          content: t.chatbot?.photoSent || '✅ Фото отправлено менеджеру!',
+        };
+        setMessages((prev) => [...prev, successMsg]);
+        playNotificationSound();
+      } catch (error) {
+        console.error('Photo upload error:', error);
+        const errorMsg: Message = {
+          id: Date.now().toString() + Math.random(),
+          role: 'assistant',
+          content: t.chatbot?.photoError || '❌ Не удалось отправить фото. Попробуйте ещё раз.',
+        };
+        setMessages((prev) => [...prev, errorMsg]);
+      }
+    }
+
+    setIsSendingPhoto(false);
+    // Reset input so same file can be selected again
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  };
+
   const openContactManager = () => {
     setShowLeadForm(true);
     const botMessage: Message = {
@@ -656,18 +720,30 @@ const ChatBot = () => {
             "absolute bottom-16 left-0 right-0 px-3 py-2 bg-card border-t border-border flex gap-2",
             isMobile && "px-2"
           )}>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              multiple
+              className="hidden"
+              onChange={handlePhotoUpload}
+            />
             <Button
-              onClick={openContactManager}
+              onClick={() => fileInputRef.current?.click()}
               variant="outline"
               size="sm"
               className={cn(
                 "flex-1",
                 isMobile ? "text-xs h-11 px-2" : "text-xs"
               )}
-              disabled={leadSubmitted}
+              disabled={isSendingPhoto}
             >
-              <Phone className="w-3.5 h-3.5 mr-1" />
-              <span className="truncate">{t.chatbot.contactManager}</span>
+              {isSendingPhoto ? (
+                <Loader2 className="w-3.5 h-3.5 mr-1 animate-spin" />
+              ) : (
+                <Camera className="w-3.5 h-3.5 mr-1" />
+              )}
+              <span className="truncate">{isSendingPhoto ? (t.chatbot?.sending || 'Отправка...') : (t.chatbot?.addPhoto || '📷 Фото')}</span>
             </Button>
             <Button
               onClick={() => setShowLeadForm(true)}

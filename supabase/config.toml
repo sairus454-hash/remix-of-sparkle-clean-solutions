@@ -1,1 +1,4 @@
 project_id = "iycukvmyvphufsdhlzmj"
+
+[functions.send-telegram-photo]
+verify_jwt = false
