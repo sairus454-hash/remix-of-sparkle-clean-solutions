@@ -396,23 +396,17 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
                 />
               </CollapsibleTrigger>
               <CollapsibleContent className="pt-2">
-                <div className="grid grid-cols-1 gap-1.5 pl-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 pl-2">
                   {category.items.map((item) => (
                     <Button
                       key={item.id}
                       variant="ghost"
                       size="sm"
-                      className="justify-between text-left h-auto py-2.5 px-3 hover:bg-accent/50 w-full"
+                      className="justify-start text-left h-auto py-2 px-3 hover:bg-accent/50 w-full"
                       onClick={() => addItem(item)}
                     >
-                      <div className="flex items-center gap-2 min-w-0 flex-1">
-                        <Plus className="w-4 h-4 flex-shrink-0 text-primary" />
-                        <span className="text-xs sm:text-sm">{item.name}</span>
-                      </div>
-                      <span className="ml-3 text-xs sm:text-sm font-medium text-primary whitespace-nowrap">
-                        {item.price} {t.prices.currency}
-                        {item.unit && `/${item.unit}`}
-                      </span>
+                      <Plus className="w-4 h-4 mr-2 flex-shrink-0 text-primary" />
+                      <span className="text-xs sm:text-sm">{item.name}</span>
                     </Button>
                   ))}
                 </div>
