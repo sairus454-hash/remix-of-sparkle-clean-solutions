@@ -480,6 +480,10 @@ export const translations = {
       listening: 'Говорите...',
       startListening: 'Голосовой ввод',
       stopListening: 'Остановить запись',
+      addPhoto: '📷 Фото',
+      sending: 'Отправка...',
+      photoSent: '✅ Фото отправлено менеджеру!',
+      photoError: '❌ Не удалось отправить фото. Попробуйте ещё раз.',
     },
      windows: {
        title: 'Мойка окон',
@@ -1105,6 +1109,10 @@ export const translations = {
       listening: 'Listening...',
       startListening: 'Voice input',
       stopListening: 'Stop recording',
+      addPhoto: '📷 Photo',
+      sending: 'Sending...',
+      photoSent: '✅ Photo sent to manager!',
+      photoError: '❌ Failed to send photo. Please try again.',
     },
      windows: {
        title: 'Window Cleaning',
@@ -1730,6 +1738,10 @@ export const translations = {
       listening: 'Słucham...',
       startListening: 'Wprowadzanie głosowe',
       stopListening: 'Zatrzymaj nagrywanie',
+      addPhoto: '📷 Zdjęcie',
+      sending: 'Wysyłanie...',
+      photoSent: '✅ Zdjęcie wysłane do menedżera!',
+      photoError: '❌ Nie udało się wysłać zdjęcia. Spróbuj ponownie.',
     },
      windows: {
        title: 'Mycie okien',
@@ -2355,6 +2367,10 @@ export const translations = {
       listening: 'Слухаю...',
       startListening: 'Голосовий ввід',
       stopListening: 'Зупинити запис',
+      addPhoto: '📷 Фото',
+      sending: 'Відправка...',
+      photoSent: '✅ Фото відправлено менеджеру!',
+      photoError: '❌ Не вдалося відправити фото. Спробуйте ще раз.',
     },
      windows: {
        title: 'Миття вікон',
