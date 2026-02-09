@@ -122,6 +122,35 @@ const Index = () => {
         </div>
       </section>
 
+      {/* AI Service Banner - Desktop only */}
+      <section className="hidden lg:block py-8 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
+            <div 
+              className="relative px-8 py-4 rounded-2xl animate-fade-up overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05))',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255,255,255,0.3)',
+              }}
+            >
+              {/* Pulsing glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-fresh/20 to-primary/20 animate-pulse rounded-2xl" />
+              
+              <div className="relative z-10 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'pulse 2s ease-in-out infinite' }}>
+                  <Sparkles className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <h2 className="font-serif text-2xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 2s linear infinite' }}>
+                  Сервис бытовых услуг с AI консультантом
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Promotions Section */}
       <section className="py-12 sm:py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
