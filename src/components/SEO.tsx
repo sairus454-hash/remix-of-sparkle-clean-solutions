@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 interface SEOProps {
   title: string;
@@ -13,6 +14,20 @@ interface SEOProps {
 const SITE_URL = 'https://shine-clean-connect.lovable.app';
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
+const hreflangMap: Record<string, string> = {
+  ru: 'ru',
+  en: 'en',
+  pl: 'pl',
+  uk: 'uk',
+};
+
+const ogLocaleMap: Record<string, string> = {
+  ru: 'ru_RU',
+  en: 'en_US',
+  pl: 'pl_PL',
+  uk: 'uk_UA',
+};
+
 const SEO = ({
   title,
   description,
@@ -22,8 +37,10 @@ const SEO = ({
   image = DEFAULT_IMAGE,
   jsonLd,
 }: SEOProps) => {
+  const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
+  const path = canonical || '/';
 
   const defaultJsonLd = {
     '@context': 'https://schema.org',
@@ -50,6 +67,18 @@ const SEO = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <html lang={hreflangMap[language] || 'ru'} />
+
+      {/* Hreflang tags for multilingual SEO */}
+      {Object.entries(hreflangMap).map(([lang, hreflang]) => (
+        <link
+          key={hreflang}
+          rel="alternate"
+          hrefLang={hreflang}
+          href={`${SITE_URL}${path}?lang=${lang}`}
+        />
+      ))}
+      <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${path}`} />
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
@@ -57,7 +86,12 @@ const SEO = ({
       <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
-      <meta property="og:locale" content="ru_RU" />
+      <meta property="og:locale" content={ogLocaleMap[language] || 'ru_RU'} />
+      {Object.entries(ogLocaleMap)
+        .filter(([lang]) => lang !== language)
+        .map(([, locale]) => (
+          <meta key={locale} property="og:locale:alternate" content={locale} />
+        ))}
       <meta property="og:site_name" content="MasterClean" />
 
       {/* Twitter */}
