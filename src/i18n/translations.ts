@@ -45,6 +45,8 @@ export const translations = {
       cta: 'Оставить заявку',
       secondary: 'Узнать больше',
       marquee: 'Мы работаем в 4 воеводствах: Опольское, Вроцлавское, Познаньское и Зеленогурское',
+      aiService: 'Сервис бытовых услуг с AI консультантом',
+      aiServiceDesc: 'Умный помощник 24/7 для расчёта стоимости и оформления заказа',
     },
     promotions: {
       title: 'Акции',
@@ -668,6 +670,8 @@ export const translations = {
       cta: 'Get a Quote',
       secondary: 'Learn More',
       marquee: 'We operate in 4 voivodeships: Opole, Wrocław, Poznań and Zielona Góra',
+      aiService: 'Home Services with AI Consultant',
+      aiServiceDesc: 'Smart assistant 24/7 for cost calculation and order placement',
     },
     promotions: {
       title: 'Promotions',
@@ -1291,6 +1295,8 @@ export const translations = {
       cta: 'Zostaw zapytanie',
       secondary: 'Dowiedz się więcej',
       marquee: 'Działamy w 4 województwach: Opolskie, Dolnośląskie, Wielkopolskie i Lubuskie',
+      aiService: 'Usługi domowe z konsultantem AI',
+      aiServiceDesc: 'Inteligentny asystent 24/7 do kalkulacji kosztów i składania zamówień',
     },
     promotions: {
       title: 'Promocje',
@@ -1914,6 +1920,8 @@ export const translations = {
       cta: 'Залишити заявку',
       secondary: 'Дізнатись більше',
       marquee: 'Ми працюємо у 4 воєводствах: Опольське, Вроцлавське, Познанське та Зеленогурське',
+      aiService: 'Сервіс побутових послуг з AI консультантом',
+      aiServiceDesc: 'Розумний помічник 24/7 для розрахунку вартості та оформлення замовлення',
     },
     promotions: {
       title: 'Акції',

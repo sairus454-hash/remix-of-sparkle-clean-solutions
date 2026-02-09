@@ -143,7 +143,7 @@ const Index = () => {
                   <Sparkles className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h2 className="font-serif text-2xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 2s linear infinite' }}>
-                  Сервис бытовых услуг с AI консультантом
+                  {t.hero.aiService}
                 </h2>
               </div>
             </div>
