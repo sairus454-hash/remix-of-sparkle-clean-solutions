@@ -192,6 +192,9 @@ const Index = () => {
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
                     {t.promotions.weeklyTitle}
                   </h3>
+                  <p className="text-foreground text-center text-lg sm:text-xl font-bold mb-2 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
+                    2+ услуг: 10%
+                  </p>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
                     {t.promotions.weeklyDesc}
                   </p>
