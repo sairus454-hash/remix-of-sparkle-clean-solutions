@@ -8,6 +8,8 @@ export interface DiscountInfo {
   finalTotal: number;
   discountReason: string;
   hasDiscount: boolean;
+  hasMattressDiscount: boolean;
+  mattressDiscountAmount: number;
 }
 
 interface CalculatorItem {
@@ -16,8 +18,15 @@ interface CalculatorItem {
   quantity: number;
 }
 
+// ID матрасов для определения скидки
+const MATTRESS_IDS = [
+  'mattressDouble', 'mattressSingle', 'mattressSingleDry', 'mattressSingleDry2',
+  'mattressDoubleDry', 'mattressDoubleDry2'
+];
+
 /**
  * Алгоритм расчёта скидок:
+ * - 10% на один матрас (если заказан ровно 1 матрас с quantity=1)
  * - 10% при заказе от 2 разных услуг
  * - 15% при заказе от 4 разных услуг (для постоянных клиентов / крупный заказ)
  * - 20% при заказе от 6 разных услуг (VIP программа)
@@ -31,11 +40,26 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
     // Подсчитываем количество уникальных услуг (разных позиций)
     const uniqueServicesCount = items.length;
     
+    // Проверяем скидку на один матрас
+    const mattressItems = items.filter(item => MATTRESS_IDS.includes(item.id));
+    const hasSingleMattress = mattressItems.length === 1 && 
+                               mattressItems[0].quantity === 1 && 
+                               uniqueServicesCount === 1;
+    
     let discountPercent = 0;
     let discountReason = '';
+    let hasMattressDiscount = false;
+    let mattressDiscountAmount = 0;
     
+    // Скидка на один матрас (только если один матрас и больше ничего)
+    if (hasSingleMattress) {
+      discountPercent = 10;
+      discountReason = getMattressDiscountReason(language);
+      hasMattressDiscount = true;
+      mattressDiscountAmount = Math.round(originalTotal * 0.1);
+    }
     // Определяем скидку на основе количества уникальных услуг
-    if (uniqueServicesCount >= 6) {
+    else if (uniqueServicesCount >= 6) {
       discountPercent = 20;
       discountReason = getDiscountReason('vip', language);
     } else if (uniqueServicesCount >= 4) {
@@ -56,11 +80,24 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
       finalTotal,
       discountReason,
       hasDiscount: discountPercent > 0,
+      hasMattressDiscount,
+      mattressDiscountAmount,
     };
   }, [items, language]);
 
   return discountInfo;
 };
+
+function getMattressDiscountReason(language: string): string {
+  const reasons = {
+    ru: 'Скидка 10% на химчистку матраса',
+    en: '10% off mattress cleaning',
+    pl: '10% rabatu na czyszczenie materaca',
+    uk: 'Знижка 10% на хімчистку матраца',
+  };
+  
+  return reasons[language as keyof typeof reasons] || reasons.ru;
+}
 
 function getDiscountReason(type: 'multi' | 'loyal' | 'vip', language: string): string {
   const reasons = {
