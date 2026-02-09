@@ -124,10 +124,15 @@ const PRICE_LIST = {
 📍 ЗОНА ОБСЛУЖИВАНИЯ: Работаем в радиусе 150 км от Вроцлава!
 ⚠️ Минимальный заказ: 180 PLN (Вроцлав и пригород до 10 км), 400 PLN (города дальше 10 км от Вроцлава)
 
-🎁 АКТУАЛЬНЫЕ АКЦИИ:
-• Скидка 10% — при заказе от 2 услуг (например, диван + ковёр)
-• Скидка 15% — постоянным клиентам при 3-м и каждом последующем заказе
-• VIP-программа лояльности — накопительные скидки до 15%`,
+🎁 СИСТЕМА СКИДОК (АВТОМАТИЧЕСКИ):
+• 10% скидка — при заказе 2+ разных услуг (например, диван + ковёр)
+• 15% скидка — при заказе 4+ разных услуг (постоянные клиенты / крупный заказ)
+• 20% VIP скидка — при заказе 6+ разных услуг (максимальная экономия!)
+• 10% скидка — специальная акция на химчистку одного матраса
+
+ВАЖНО: Скидки рассчитываются автоматически по количеству РАЗНЫХ услуг в заказе.
+Пример: диван + ковёр + 2 стула = 3 разных услуги = 10% скидка
+Пример: диван + ковёр + матрас + кресло = 4 разных услуги = 15% скидка`,
 
   en: `
 CURRENT PRICE LIST (prices in PLN):
@@ -248,10 +253,15 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 📍 SERVICE AREA: We work within 150 km radius from Wrocław!
 ⚠️ Minimum order: 180 PLN (Wrocław and suburbs within 10 km), 400 PLN (cities beyond 10 km from Wrocław)
 
-🎁 CURRENT PROMOTIONS:
-• 10% discount — when ordering 2+ services (e.g., sofa + carpet)
-• 15% discount — for regular customers on 3rd and subsequent orders
-• VIP loyalty program — cumulative discounts up to 15%`,
+🎁 DISCOUNT SYSTEM (AUTOMATIC):
+• 10% discount — when ordering 2+ different services (e.g., sofa + carpet)
+• 15% discount — when ordering 4+ different services (regular customers / large orders)
+• 20% VIP discount — when ordering 6+ different services (maximum savings!)
+• 10% discount — special promotion for single mattress cleaning
+
+IMPORTANT: Discounts are calculated automatically based on the number of DIFFERENT services in the order.
+Example: sofa + carpet + 2 chairs = 3 different services = 10% discount
+Example: sofa + carpet + mattress + armchair = 4 different services = 15% discount`,
 
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
@@ -372,10 +382,15 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 📍 STREFA USŁUG: Pracujemy w promieniu 150 km od Wrocławia!
 ⚠️ Minimalne zamówienie: 180 PLN (Wrocław i przedmieścia do 10 km), 400 PLN (miasta dalej niż 10 km od Wrocławia)
 
-🎁 AKTUALNE PROMOCJE:
-• Rabat 10% — przy zamówieniu 2+ usług (np. sofa + dywan)
-• Rabat 15% — dla stałych klientów przy 3. i kolejnych zamówieniach
-• Program lojalnościowy VIP — rabaty kumulacyjne do 15%`,
+🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
+• Rabat 10% — przy zamówieniu 2+ różnych usług (np. sofa + dywan)
+• Rabat 15% — przy zamówieniu 4+ różnych usług (stali klienci / duże zamówienia)
+• Rabat 20% VIP — przy zamówieniu 6+ różnych usług (maksymalna oszczędność!)
+• Rabat 10% — specjalna promocja na czyszczenie jednego materaca
+
+WAŻNE: Rabaty są naliczane automatycznie na podstawie liczby RÓŻNYCH usług w zamówieniu.
+Przykład: sofa + dywan + 2 krzesła = 3 różne usługi = 10% rabatu
+Przykład: sofa + dywan + materac + fotel = 4 różne usługi = 15% rabatu`,
 
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
@@ -496,10 +511,15 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 📍 ЗОНА ОБСЛУГОВУВАННЯ: Працюємо в радіусі 150 км від Вроцлава!
 ⚠️ Мінімальне замовлення: 180 PLN (Вроцлав і передмістя до 10 км), 400 PLN (міста далі 10 км від Вроцлава)
 
-🎁 АКТУАЛЬНІ АКЦІЇ:
-• Знижка 10% — при замовленні 2+ послуг (наприклад, диван + килим)
-• Знижка 15% — постійним клієнтам при 3-му та кожному наступному замовленні
-• VIP-програма лояльності — накопичувальні знижки до 15%`
+🎁 СИСТЕМА ЗНИЖОК (АВТОМАТИЧНО):
+• 10% знижка — при замовленні 2+ різних послуг (наприклад, диван + килим)
+• 15% знижка — при замовленні 4+ різних послуг (постійні клієнти / великі замовлення)
+• 20% VIP знижка — при замовленні 6+ різних послуг (максимальна економія!)
+• 10% знижка — спеціальна акція на хімчистку одного матраца
+
+ВАЖЛИВО: Знижки розраховуються автоматично за кількістю РІЗНИХ послуг у замовленні.
+Приклад: диван + килим + 2 стільці = 3 різних послуги = 10% знижка
+Приклад: диван + килим + матрац + крісло = 4 різних послуги = 15% знижка`
 };
 
 const SYSTEM_PROMPTS: Record<string, string> = {
@@ -568,6 +588,9 @@ ${PRICE_LIST.ru}
 
 ВАЖНО:
 — ВСЕГДА называй точные цены
+— АКТИВНО ПРОДВИГАЙ СКИДКИ! При любом заказе говори о возможности получить скидку
+— Если клиент называет 1 услугу — предложи добавить ещё что-то для скидки 10%
+— При расчёте стоимости ПОКАЗЫВАЙ экономию: "Итого: 310 zł (экономия 34 zł!)"
 — Если клиент молчит — предложи помощь и кнопку заявки
 — Если вопрос сложный — предложи "Связаться с менеджером"`,
 
@@ -636,6 +659,9 @@ SERVICES:
 
 IMPORTANT:
 — ALWAYS give exact prices
+— ACTIVELY PROMOTE DISCOUNTS! For any order, mention the possibility of getting a discount
+— If customer mentions 1 service — suggest adding something else for 10% discount
+— When calculating cost, SHOW savings: "Total: 310 zł (saving 34 zł!)"
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"`,
 
@@ -704,6 +730,9 @@ USŁUGI:
 
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny
+— AKTYWNIE PROMUJ RABATY! Przy każdym zamówieniu mów o możliwości uzyskania rabatu
+— Jeśli klient wymienia 1 usługę — zaproponuj dodanie czegoś dla 10% rabatu
+— Przy obliczaniu kosztu POKAŻ oszczędności: "Razem: 310 zł (oszczędność 34 zł!)"
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
 — Jeśli pytanie jest trudne — zaproponuj "Kontakt z menedżerem"`,
 
@@ -772,6 +801,9 @@ ${PRICE_LIST.uk}
 
 ВАЖЛИВО:
 — ЗАВЖДИ називай точні ціни
+— АКТИВНО ПРОСУВАЙ ЗНИЖКИ! При будь-якому замовленні кажи про можливість отримати знижку
+— Якщо клієнт називає 1 послугу — запропонуй додати щось для знижки 10%
+— При розрахунку вартості ПОКАЗУЙ економію: "Разом: 310 zł (економія 34 zł!)"
 — Якщо клієнт мовчить — запропонуй допомогу і кнопку заявки
 — Якщо питання складне — запропонуй "Зв'язатися з менеджером"`
 };
