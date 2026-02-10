@@ -51,6 +51,7 @@ interface Message {
 
 interface LeadForm {
   name: string;
+  phone: string;
   contact: string;
 }
 
@@ -90,7 +91,7 @@ const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasAutoOpened, setHasAutoOpened] = useState(false);
   const [showLeadForm, setShowLeadForm] = useState(false);
-  const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', contact: '' });
+  const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', phone: '', contact: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -368,7 +369,7 @@ const ChatBot = () => {
   };
 
   const handleLeadSubmit = async () => {
-    if (!leadForm.name.trim() || !leadForm.contact.trim()) return;
+    if (!leadForm.name.trim() || !leadForm.phone.trim() || !leadForm.contact.trim()) return;
     
     setIsLoading(true);
     
@@ -382,9 +383,9 @@ const ChatBot = () => {
       const { error } = await supabase.functions.invoke('send-telegram', {
         body: {
           name: leadForm.name.trim(),
-          phone: leadForm.contact.trim(),
+          phone: leadForm.phone.trim(),
           service: 'Заявка из чат-бота',
-          message: chatSummary ? `📝 История чата:\n${chatSummary}` : 'Заявка из чат-бота (без истории)',
+          message: `📞 Телефон: ${leadForm.phone.trim()}\n📧 Контакт: ${leadForm.contact.trim()}${chatSummary ? `\n\n📝 История чата:\n${chatSummary}` : ''}`,
         },
       });
 
@@ -400,7 +401,7 @@ const ChatBot = () => {
       setMessages((prev) => [...prev, leadMessage]);
       setLeadSubmitted(true);
       setShowLeadForm(false);
-      setLeadForm({ name: '', contact: '' });
+      setLeadForm({ name: '', phone: '', contact: '' });
     } catch (error) {
       console.error('Lead submit error:', error);
       const errorMessage: Message = {
@@ -708,6 +709,20 @@ const ChatBot = () => {
                 />
               </div>
               <div>
+                <Label htmlFor="lead-phone" className="text-xs text-muted-foreground">
+                  {language === 'ru' ? 'Телефон' : language === 'pl' ? 'Telefon' : language === 'uk' ? 'Телефон' : 'Phone'} <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="lead-phone"
+                  type="tel"
+                  inputMode="tel"
+                  value={leadForm.phone}
+                  onChange={(e) => setLeadForm(prev => ({ ...prev, phone: e.target.value }))}
+                  placeholder="+48 ..."
+                  className={cn("h-10", isMobile && "text-base")}
+                />
+              </div>
+              <div>
                 <Label htmlFor="lead-contact" className="text-xs text-muted-foreground">{t.chatbot.contact}</Label>
                 <Input
                   id="lead-contact"
@@ -719,7 +734,7 @@ const ChatBot = () => {
               </div>
               <Button
                 onClick={handleLeadSubmit}
-                disabled={!leadForm.name.trim() || !leadForm.contact.trim() || isLoading}
+                disabled={!leadForm.name.trim() || !leadForm.phone.trim() || !leadForm.contact.trim() || isLoading}
                 className={cn(
                   "w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90",
                   isMobile && "h-12 text-base"

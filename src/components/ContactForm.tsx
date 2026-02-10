@@ -611,10 +611,21 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
 
       <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">{t.form.message}</label>
-        <Textarea placeholder={t.form.messagePlaceholder} value={formData.message} onChange={e => setFormData({
-        ...formData,
-        message: e.target.value
-      })} rows={calculatorItems.length > 0 ? 8 : 4} className="bg-card border-border resize-none text-base sm:text-sm min-h-[100px]" />
+        <Textarea 
+          placeholder={t.form.messagePlaceholder} 
+          value={formData.message} 
+          onChange={e => {
+            if (calculatorItems.length === 0) {
+              setFormData({ ...formData, message: e.target.value });
+            }
+          }} 
+          readOnly={calculatorItems.length > 0}
+          rows={calculatorItems.length > 0 ? 8 : 4} 
+          className={cn(
+            "bg-card border-border resize-none text-base sm:text-sm min-h-[100px]",
+            calculatorItems.length > 0 && "opacity-70 cursor-not-allowed"
+          )} 
+        />
       </div>
 
       {/* Simple Captcha */}
