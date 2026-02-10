@@ -40,6 +40,8 @@ const Prices = () => {
     setShowSplash(false);
   }, []);
 
+  const minOrderNote = `${t.handyman?.minOrderNote || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 400 zł'}`;
+
   const categories: PriceAccordionCategory[] = [
     {
       id: 'cleaning',
@@ -49,6 +51,7 @@ const Prices = () => {
       icon: Brush,
       items: [],
       isSlider: true,
+      note: minOrderNote,
     },
     {
       id: 'furniture',
@@ -68,7 +71,7 @@ const Prices = () => {
         { name: t.prices.items.bedHeadboard, price: 100, icon: BedDouble },
         { name: t.prices.items.bedFrame, price: 100, icon: BedDouble },
       ],
-      note: t.prices.items.flockNote,
+      note: `${t.prices.items.flockNote}\n${minOrderNote}`,
     },
     {
       id: 'leather',
@@ -85,6 +88,7 @@ const Prices = () => {
         { name: t.prices.items.leatherSofa3, price: 220, icon: Sofa },
         { name: t.prices.items.leatherSofaCorner, price: 270, icon: LayoutGrid },
       ],
+      note: minOrderNote,
     },
     {
       id: 'mattress',
@@ -98,6 +102,7 @@ const Prices = () => {
         { name: t.prices.items.mattressDoubleDry, price: 180, icon: BedDouble },
         { name: t.prices.items.mattressDoubleDry2, price: 280, icon: BedDouble },
       ],
+      note: minOrderNote,
     },
     {
       id: 'auto',
@@ -120,6 +125,7 @@ const Prices = () => {
         { name: t.prices.items.autoTruckCabin, price: 650, icon: CarFront },
         { name: t.prices.items.autoVanCabin, price: 400, icon: CarFront },
       ],
+      note: minOrderNote,
     },
     {
       id: 'ozone',
@@ -134,6 +140,7 @@ const Prices = () => {
         { name: t.prices.items.ozoneOfficeSmall, price: 250, icon: LayoutGrid },
         { name: t.prices.items.ozoneOfficeLarge, price: 400, icon: Maximize2 },
       ],
+      note: minOrderNote,
     },
     {
       id: 'other',
@@ -148,6 +155,7 @@ const Prices = () => {
         { name: t.prices.items.impregnation, price: 80, icon: ShieldCheck },
         { name: t.prices.items.tileCleaning, price: 25, unit: 'm²', icon: Grid3X3 },
       ],
+      note: minOrderNote,
     },
     {
       id: 'windows',
@@ -164,6 +172,7 @@ const Prices = () => {
         { name: t.windows?.items?.attic || 'Мансардное окно', price: 40, icon: Sun },
         { name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, icon: Fence },
       ],
+      note: minOrderNote,
     },
     {
       id: 'handyman',
@@ -209,7 +218,7 @@ const Prices = () => {
         { name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 110, icon: Leaf },
         { name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 110, icon: Leaf },
       ],
-      note: `${t.handyman?.minOrderNote || 'Минимальный заказ 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 400 zł'}`,
+      note: minOrderNote,
     },
   ];
 

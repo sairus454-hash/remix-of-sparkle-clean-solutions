@@ -142,6 +142,14 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
                           {getCleaningPrice()} {t.prices.currency}
                         </span>
                       </div>
+                      {category.note && (
+                        <div className="mt-4 pt-4 border-t border-border">
+                          <p className="text-sm font-semibold text-yellow-600 dark:text-yellow-400 flex items-start gap-2 bg-yellow-400/10 dark:bg-yellow-400/20 rounded-lg p-3 whitespace-pre-line">
+                            <span className="flex-shrink-0">⚠️</span>
+                            <span>{category.note}</span>
+                          </p>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <>
