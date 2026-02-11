@@ -103,6 +103,7 @@ const ChatBot = () => {
   const [isSendingPhoto, setIsSendingPhoto] = useState(false);
   const [pendingPhotos, setPendingPhotos] = useState<File[]>([]);
   const [photoCaption, setPhotoCaption] = useState('');
+  const [photoPhone, setPhotoPhone] = useState('');
   const [showPhotoPreview, setShowPhotoPreview] = useState(false);
   const [inputReadonly, setInputReadonly] = useState(true);
   
@@ -429,15 +430,17 @@ const ChatBot = () => {
   const cancelPhotoUpload = () => {
     setPendingPhotos([]);
     setPhotoCaption('');
+    setPhotoPhone('');
     setShowPhotoPreview(false);
   };
 
   const sendPhotosWithCaption = async () => {
-    if (pendingPhotos.length === 0) return;
+    if (pendingPhotos.length === 0 || !photoPhone.trim()) return;
     setIsSendingPhoto(true);
     setShowPhotoPreview(false);
 
     const caption = photoCaption.trim();
+    const phone = photoPhone.trim();
 
     for (const file of pendingPhotos) {
       try {
@@ -462,9 +465,7 @@ const ChatBot = () => {
           body: {
             imageBase64: base64,
             fileName: file.name,
-            caption: caption
-              ? `📷 Фото из чат-бота\n💬 ${caption}`
-              : '📷 Фото из чат-бота на сайте',
+            caption: `📷 Фото из чат-бота\n📞 ${phone}${caption ? `\n💬 ${caption}` : ''}`,
           },
         });
 
@@ -490,6 +491,7 @@ const ChatBot = () => {
 
     setPendingPhotos([]);
     setPhotoCaption('');
+    setPhotoPhone('');
     setIsSendingPhoto(false);
   };
 
@@ -759,16 +761,31 @@ const ChatBot = () => {
                   <X className="w-4 h-4" />
                 </button>
               </div>
+              <div>
+                <Label htmlFor="photo-phone" className="text-xs text-muted-foreground">
+                  {language === 'ru' ? 'Телефон' : language === 'pl' ? 'Telefon' : language === 'uk' ? 'Телефон' : 'Phone'} <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="photo-phone"
+                  type="tel"
+                  inputMode="tel"
+                  value={photoPhone}
+                  onChange={(e) => setPhotoPhone(e.target.value)}
+                  placeholder="+48 ..."
+                  className={cn("h-10", isMobile && "text-base")}
+                  autoFocus
+                />
+              </div>
               <Input
                 value={photoCaption}
                 onChange={(e) => setPhotoCaption(e.target.value)}
-                onKeyPress={(e) => { if (e.key === 'Enter') sendPhotosWithCaption(); }}
-                placeholder={t.chatbot?.captionPlaceholder || 'Добавьте подпись (необязательно)...'}
+                onKeyPress={(e) => { if (e.key === 'Enter' && photoPhone.trim()) sendPhotosWithCaption(); }}
+                placeholder={t.chatbot?.captionPlaceholder || 'Добавьте описание (необязательно)...'}
                 className={cn("h-10", isMobile && "text-base")}
-                autoFocus
               />
               <Button
                 onClick={sendPhotosWithCaption}
+                disabled={!photoPhone.trim()}
                 className={cn(
                   "w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90",
                   isMobile && "h-12 text-base"
