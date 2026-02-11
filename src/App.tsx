@@ -28,6 +28,7 @@ const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Windows = lazy(() => import("./pages/Windows"));
 const Cleaning = lazy(() => import("./pages/Cleaning"));
+const Blog = lazy(() => import("./pages/Blog"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -69,6 +70,7 @@ const App = () => (
                 <Route path="/ozone" element={<Ozone />} />
                 <Route path="/windows" element={<Windows />} />
                 <Route path="/cleaning" element={<Cleaning />} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="/handyman" element={<Handyman />} />
                 <Route path="/reviews" element={<Reviews />} />
                 <Route path="/contacts" element={<Contacts />} />
