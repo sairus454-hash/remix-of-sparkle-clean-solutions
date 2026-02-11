@@ -9,7 +9,7 @@ import PriceSection from '@/components/PriceSection';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator, Shield } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator, Shield, BookOpen } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -38,7 +38,7 @@ const Index = () => {
     setShowSplash(false);
   }, []);
   const {
-    t
+    t, language
   } = useLanguage();
   
   const stats = [{
@@ -105,8 +105,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Blog Icon */}
+      <section className="py-6 sm:py-8 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center">
+            <Link to="/blog" className="group">
+              <div className="flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl bg-gradient-card shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border/50 hover:border-primary/30">
+                <div className="relative">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow group-hover:scale-110 transition-transform duration-300">
+                    <BookOpen className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-fresh animate-ping" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg sm:text-xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                    📝 {language === 'ru' ? 'Блог чистоты' : language === 'pl' ? 'Blog czystości' : language === 'uk' ? 'Блог чистоти' : 'Cleanliness Blog'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    {language === 'ru' ? 'Полезные советы и статьи' : language === 'pl' ? 'Przydatne porady i artykuły' : language === 'uk' ? 'Корисні поради та статті' : 'Useful tips & articles'}
+                  </p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-primary group-hover:translate-x-1 transition-transform" />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      {/* Stats Section */}
       <section className="py-10 sm:py-16 bg-card">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8">
