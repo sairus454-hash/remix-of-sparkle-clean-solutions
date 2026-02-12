@@ -45,8 +45,18 @@ import SEO from '@/components/SEO';
       />
      <Layout>
        {/* Hero */}
-       <section className="py-20 bg-gradient-section">
-         <div className="container mx-auto px-4">
+        <section className="py-20 bg-gradient-section relative overflow-hidden">
+          {/* Floating water drop decorations */}
+          <div className="absolute top-16 left-8 opacity-10 pointer-events-none hidden lg:block">
+            <Sparkles className="w-14 h-14 text-primary" style={{ animation: 'float 5s ease-in-out infinite' }} />
+          </div>
+          <div className="absolute top-32 right-12 opacity-10 pointer-events-none hidden lg:block">
+            <Sun className="w-10 h-10 text-fresh" style={{ animation: 'float 4s ease-in-out infinite, pulse 2s ease-in-out infinite' }} />
+          </div>
+          <div className="absolute bottom-10 left-20 opacity-10 pointer-events-none hidden lg:block">
+            <Eye className="w-12 h-12 text-primary" style={{ animation: 'float 6s ease-in-out infinite' }} />
+          </div>
+          <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
              {/* Animated window icon */}
              <div className="flex justify-center mb-6">

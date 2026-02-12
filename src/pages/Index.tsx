@@ -112,9 +112,9 @@ const Index = () => {
             <Link to="/blog" className="group">
               <div className="flex items-center gap-3 sm:gap-4 px-6 sm:px-8 py-3 sm:py-4 rounded-2xl bg-gradient-card shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 border border-border/50 hover:border-primary/30">
                 <div className="relative">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow group-hover:scale-110 transition-transform duration-300">
-                    <BookOpen className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
-                  </div>
+                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow group-hover:scale-110 transition-transform duration-300">
+                     <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" />
+                   </div>
                   <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-fresh animate-ping" />
                 </div>
                 <div>
