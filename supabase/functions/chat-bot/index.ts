@@ -37,6 +37,7 @@ const PRICE_LIST = {
 • Большой угловой диван — 250 PLN
 • Ковровое покрытие — 25 PLN/м²
 • Мебель из флока — +50% к обычной цене
+• Экспресс освежение с удалением неприятного запаха — 150 PLN
 
 🚗 ХИМЧИСТКА АВТО:
 • Химчистка сидений (спереди и сзади) — 300 PLN
@@ -57,6 +58,7 @@ const PRICE_LIST = {
 • Чистка каркаса кровати — 100 PLN
 • Матрас односпальный (2 стороны) — 220 PLN
 • Матрас двухспальный (2 стороны) — 280 PLN
+• Экспресс освежение с удалением неприятного запаха — 150 PLN
 
 💨 ОЗОНИРОВАНИЕ:
 • 1-комнатная квартира (20-40 м²) — 120 PLN
@@ -169,6 +171,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Large corner sofa — 250 PLN
 • Carpet — 25 PLN/m²
 • Flock furniture — +50% to regular price
+• Express freshening with odor removal — 150 PLN
 
 🚗 CAR CLEANING:
 • Seat cleaning (front and back) — 300 PLN
@@ -189,6 +192,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Bed frame cleaning — 100 PLN
 • Single mattress (2 sides) — 220 PLN
 • Double mattress (2 sides) — 280 PLN
+• Express freshening with odor removal — 150 PLN
 
 💨 OZONATION:
 • 1-room apartment (20-40 m²) — 120 PLN
@@ -301,6 +305,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Duża sofa narożna — 250 PLN
 • Dywan — 25 PLN/m²
 • Meble z floku — +50% do ceny zwykłej
+• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie siedzeń (przód i tył) — 300 PLN
@@ -321,6 +326,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Czyszczenie ramy łóżka — 100 PLN
 • Materac jednoosobowy (2 strony) — 220 PLN
 • Materac dwuosobowy (2 strony) — 280 PLN
+• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN
 
 💨 OZONOWANIE:
 • Mieszkanie 1-pokojowe (20-40 m²) — 120 PLN
@@ -433,6 +439,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 • Великий кутовий диван — 250 PLN
 • Килимове покриття — 25 PLN/м²
 • Меблі з флоку — +50% до звичайної ціни
+• Експрес освіження з видаленням неприємного запаху — 150 PLN
 
 🚗 ХІМЧИСТКА АВТО:
 • Хімчистка сидінь (спереду і ззаду) — 300 PLN
@@ -453,6 +460,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 • Чистка каркаса ліжка — 100 PLN
 • Матрац односпальний (2 сторони) — 220 PLN
 • Матрац двоспальний (2 сторони) — 280 PLN
+• Експрес освіження з видаленням неприємного запаху — 150 PLN
 
 💨 ОЗОНУВАННЯ:
 • 1-кімнатна квартира (20-40 м²) — 120 PLN
@@ -841,7 +849,22 @@ Deno.serve(async (req) => {
       throw new Error("LOVABLE_API_KEY is not configured");
     }
 
-    const systemPrompt = SYSTEM_PROMPTS[language] || SYSTEM_PROMPTS.ru;
+    // Detect language from last user message, fallback to provided language
+    const lastUserMessage = [...messages].reverse().find((m: { role: string; content: string }) => m.role === 'user')?.content || '';
+    
+    const detectLanguage = (text: string): string => {
+      // Simple language detection based on character patterns
+      if (/[а-яёА-ЯЁ]/.test(text)) {
+        // Distinguish Ukrainian from Russian
+        if (/[іїєґІЇЄҐ]/.test(text)) return 'uk';
+        return 'ru';
+      }
+      if (/[ąćęłńóśźżĄĆĘŁŃÓŚŹŻ]/.test(text)) return 'pl';
+      return 'en';
+    };
+    
+    const detectedLang = lastUserMessage ? detectLanguage(lastUserMessage) : language;
+    const systemPrompt = SYSTEM_PROMPTS[detectedLang] || SYSTEM_PROMPTS.ru;
 
     const response = await fetch(
       "https://ai.gateway.lovable.dev/v1/chat/completions",

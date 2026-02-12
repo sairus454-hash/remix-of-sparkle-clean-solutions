@@ -94,6 +94,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200 },
         { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 250 },
         { id: 'carpet', name: t.prices.items.carpet, price: 25, unit: 'm²' },
+        { id: 'expressRefreshFurniture', name: t.prices.items.expressRefresh, price: 150 },
       ],
     },
     {
@@ -140,6 +141,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 220 },
         { id: 'mattressDoubleDry', name: t.prices.items.mattressDoubleDry, price: 180 },
         { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 280 },
+        { id: 'expressRefreshMattress', name: t.prices.items.expressRefresh, price: 150 },
       ],
     },
     {
