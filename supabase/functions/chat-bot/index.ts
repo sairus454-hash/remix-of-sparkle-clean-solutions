@@ -37,7 +37,7 @@ const PRICE_LIST = {
 • Большой угловой диван — 250 PLN
 • Ковровое покрытие — 25 PLN/м²
 • Мебель из флока — +50% к обычной цене
-• Экспресс освежение с удалением неприятного запаха — 150 PLN
+• Экспресс освежение с удалением неприятного запаха — 150 PLN (⛔ скидка НЕ применяется!)
 
 🚗 ХИМЧИСТКА АВТО:
 • Химчистка сидений (спереди и сзади) — 300 PLN
@@ -58,7 +58,7 @@ const PRICE_LIST = {
 • Чистка каркаса кровати — 100 PLN
 • Матрас односпальный (2 стороны) — 220 PLN
 • Матрас двухспальный (2 стороны) — 280 PLN
-• Экспресс освежение с удалением неприятного запаха — 150 PLN
+• Экспресс освежение с удалением неприятного запаха — 150 PLN (⛔ скидка НЕ применяется!)
 
 💨 ОЗОНИРОВАНИЕ:
 • 1-комнатная квартира (20-40 м²) — 120 PLN
@@ -83,18 +83,27 @@ const PRICE_LIST = {
 • Импрегнация (защита на 1 год) — 80 PLN
 • Чистка плитки — 25 PLN/м²
 
-🔧 МАСТЕР НА ЧАС (мин. заказ 180 PLN):
+🔧 МАСТЕР НА ЧАС:
 
 💧 Сантехника:
 • Замена/монтаж крана — 120 PLN
+• Монтаж/замена сифона — 120 PLN
 • Монтаж раковины — 180 PLN
 • Монтаж унитаза — 220 PLN
-• Подключение стиральной/посудомоечной машины — 140 PLN
+• Подключение стиральной машины — 140 PLN
+• Подключение посудомоечной машины — 140 PLN
 • Установка вентилятора в ванной — 80 PLN
 • Установка биде — 220 PLN
 • Установка писсуара — 200 PLN
 • Замена шлангов для смесителя — 50 PLN
 • Демонтаж сантехники — 80 PLN
+• Герметизация швов — 40 PLN/м²
+• Установка душевой кабины — 450 PLN
+• Установка поддона — 200 PLN
+• Установка ванны — 300 PLN
+• Установка аксессуаров в ванной — 30 PLN/шт
+• Монтаж навесного душа — 200 PLN
+• Чистка канализации — 200 PLN
 
 🪑 Навеска и монтаж:
 • Монтаж карнизов — 120 PLN
@@ -124,13 +133,20 @@ const PRICE_LIST = {
 • Помощь на участке — 110 PLN/час
 
 📍 ЗОНА ОБСЛУЖИВАНИЯ: Работаем в радиусе 150 км от Вроцлава!
-⚠️ Минимальный заказ: 180 PLN (Вроцлав и пригород до 10 км), 400 PLN (города дальше 10 км от Вроцлава)
+
+⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
+• Вроцлав и пригород (до 10 км) — 180 PLN
+• Другие населённые пункты (дальше 10 км) — 400 PLN
+Минимальный заказ действует для ВСЕХ категорий услуг.
 
 🎁 СИСТЕМА СКИДОК (АВТОМАТИЧЕСКИ):
 • 10% скидка — при заказе услуг из 2+ разных КАТЕГОРИЙ (например, Мебель + Авто)
 • 15% скидка — при заказе услуг из 4+ разных КАТЕГОРИЙ
 • 20% VIP скидка — при заказе услуг из 6+ разных КАТЕГОРИЙ (максимальная экономия!)
 • 10% скидка — специальная акция на химчистку одного матраса
+
+⛔ ИСКЛЮЧЕНИЯ ИЗ СКИДОК:
+• Экспресс освежение с удалением запаха (150 PLN) — скидка НЕ применяется!
 
 КАТЕГОРИИ для скидок: Уборка, Мебель, Кожаная мебель, Авто, Матрасы, Озонирование, Мойка окон, Доп. услуги, Мастер на час.
 
@@ -171,7 +187,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Large corner sofa — 250 PLN
 • Carpet — 25 PLN/m²
 • Flock furniture — +50% to regular price
-• Express freshening with odor removal — 150 PLN
+• Express freshening with odor removal — 150 PLN (⛔ discount does NOT apply!)
 
 🚗 CAR CLEANING:
 • Seat cleaning (front and back) — 300 PLN
@@ -192,7 +208,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Bed frame cleaning — 100 PLN
 • Single mattress (2 sides) — 220 PLN
 • Double mattress (2 sides) — 280 PLN
-• Express freshening with odor removal — 150 PLN
+• Express freshening with odor removal — 150 PLN (⛔ discount does NOT apply!)
 
 💨 OZONATION:
 • 1-room apartment (20-40 m²) — 120 PLN
@@ -217,18 +233,27 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Impregnation (1 year protection) — 80 PLN
 • Tile cleaning — 25 PLN/m²
 
-🔧 HANDYMAN (min. order 180 PLN):
+🔧 HANDYMAN:
 
 💧 Plumbing:
 • Faucet installation/replacement — 120 PLN
+• Siphon installation/replacement — 120 PLN
 • Sink installation — 180 PLN
 • Toilet installation — 220 PLN
-• Washing machine/dishwasher connection — 140 PLN
+• Washing machine connection — 140 PLN
+• Dishwasher connection — 140 PLN
 • Bathroom fan installation — 80 PLN
 • Bidet installation — 220 PLN
 • Urinal installation — 200 PLN
 • Faucet hose replacement — 50 PLN
 • Plumbing demontage — 80 PLN
+• Joint sealing — 40 PLN/m²
+• Shower cabin installation — 450 PLN
+• Shower tray installation — 200 PLN
+• Bathtub installation — 300 PLN
+• Bathroom accessories installation — 30 PLN/pc
+• Wall-mounted shower installation — 200 PLN
+• Drain/sewer cleaning — 200 PLN
 
 🪑 Mounting:
 • Curtain rod installation — 120 PLN
@@ -258,13 +283,20 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Yard help — 110 PLN/hour
 
 📍 SERVICE AREA: We work within 150 km radius from Wrocław!
-⚠️ Minimum order: 180 PLN (Wrocław and suburbs within 10 km), 400 PLN (cities beyond 10 km from Wrocław)
+
+⚠️ MINIMUM ORDER:
+• Wrocław and suburbs (within 10 km) — 180 PLN
+• Other locations (beyond 10 km) — 400 PLN
+Minimum order applies to ALL service categories.
 
 🎁 DISCOUNT SYSTEM (AUTOMATIC):
 • 10% discount — when ordering from 2+ different CATEGORIES (e.g., Furniture + Auto)
 • 15% discount — when ordering from 4+ different CATEGORIES
 • 20% VIP discount — when ordering from 6+ different CATEGORIES (maximum savings!)
 • 10% discount — special promotion for single mattress cleaning
+
+⛔ DISCOUNT EXCEPTIONS:
+• Express freshening with odor removal (150 PLN) — discount does NOT apply!
 
 CATEGORIES for discounts: Cleaning, Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Additional Services, Handyman.
 
@@ -305,7 +337,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Duża sofa narożna — 250 PLN
 • Dywan — 25 PLN/m²
 • Meble z floku — +50% do ceny zwykłej
-• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN
+• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN (⛔ rabat NIE dotyczy!)
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie siedzeń (przód i tył) — 300 PLN
@@ -326,7 +358,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Czyszczenie ramy łóżka — 100 PLN
 • Materac jednoosobowy (2 strony) — 220 PLN
 • Materac dwuosobowy (2 strony) — 280 PLN
-• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN
+• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN (⛔ rabat NIE dotyczy!)
 
 💨 OZONOWANIE:
 • Mieszkanie 1-pokojowe (20-40 m²) — 120 PLN
@@ -351,18 +383,27 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 25 PLN/m²
 
-🔧 ZŁOTA RĄCZKA (min. zamówienie 180 PLN):
+🔧 ZŁOTA RĄCZKA:
 
 💧 Hydraulika:
 • Montaż/wymiana kranu — 120 PLN
+• Montaż/wymiana syfonu — 120 PLN
 • Montaż umywalki — 180 PLN
 • Montaż sedesu — 220 PLN
-• Podłączenie pralki/zmywarki — 140 PLN
+• Podłączenie pralki — 140 PLN
+• Podłączenie zmywarki — 140 PLN
 • Montaż wentylatora w łazience — 80 PLN
 • Montaż bidetu — 220 PLN
 • Montaż pisuaru — 200 PLN
 • Wymiana węży do baterii — 50 PLN
 • Demontaż sanitarny — 80 PLN
+• Uszczelnianie spoin — 40 PLN/m²
+• Montaż kabiny prysznicowej — 450 PLN
+• Montaż brodzika — 200 PLN
+• Montaż wanny — 300 PLN
+• Montaż akcesoriów łazienkowych — 30 PLN/szt
+• Montaż prysznica ściennego — 200 PLN
+• Czyszczenie kanalizacji — 200 PLN
 
 🪑 Montaż:
 • Montaż karniszy — 120 PLN
@@ -392,13 +433,20 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Pomoc na działce — 110 PLN/godz.
 
 📍 STREFA USŁUG: Pracujemy w promieniu 150 km od Wrocławia!
-⚠️ Minimalne zamówienie: 180 PLN (Wrocław i przedmieścia do 10 km), 400 PLN (miasta dalej niż 10 km od Wrocławia)
+
+⚠️ MINIMALNE ZAMÓWIENIE:
+• Wrocław i przedmieścia (do 10 km) — 180 PLN
+• Inne miejscowości (dalej niż 10 km) — 400 PLN
+Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
 
 🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
 • Rabat 10% — przy zamówieniu z 2+ różnych KATEGORII (np. Meble + Auto)
 • Rabat 15% — przy zamówieniu z 4+ różnych KATEGORII
 • Rabat 20% VIP — przy zamówieniu z 6+ różnych KATEGORII (maksymalna oszczędność!)
 • Rabat 10% — specjalna promocja na czyszczenie jednego materaca
+
+⛔ WYJĄTKI OD RABATÓW:
+• Ekspresowe odświeżenie z usunięciem zapachu (150 PLN) — rabat NIE dotyczy!
 
 KATEGORIE do rabatów: Sprzątanie, Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Usługi dodatkowe, Złota rączka.
 
@@ -439,7 +487,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 • Великий кутовий диван — 250 PLN
 • Килимове покриття — 25 PLN/м²
 • Меблі з флоку — +50% до звичайної ціни
-• Експрес освіження з видаленням неприємного запаху — 150 PLN
+• Експрес освіження з видаленням неприємного запаху — 150 PLN (⛔ знижка НЕ застосовується!)
 
 🚗 ХІМЧИСТКА АВТО:
 • Хімчистка сидінь (спереду і ззаду) — 300 PLN
@@ -460,7 +508,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 • Чистка каркаса ліжка — 100 PLN
 • Матрац односпальний (2 сторони) — 220 PLN
 • Матрац двоспальний (2 сторони) — 280 PLN
-• Експрес освіження з видаленням неприємного запаху — 150 PLN
+• Експрес освіження з видаленням неприємного запаху — 150 PLN (⛔ знижка НЕ застосовується!)
 
 💨 ОЗОНУВАННЯ:
 • 1-кімнатна квартира (20-40 м²) — 120 PLN
@@ -485,18 +533,27 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 • Імпрегнація (захист на 1 рік) — 80 PLN
 • Чистка плитки — 25 PLN/м²
 
-🔧 МАЙСТЕР НА ГОДИНУ (мін. замовлення 180 PLN):
+🔧 МАЙСТЕР НА ГОДИНУ:
 
 💧 Сантехніка:
 • Заміна/монтаж крана — 120 PLN
+• Монтаж/заміна сифона — 120 PLN
 • Монтаж раковини — 180 PLN
 • Монтаж унітазу — 220 PLN
-• Підключення пральної/посудомийної машини — 140 PLN
+• Підключення пральної машини — 140 PLN
+• Підключення посудомийної машини — 140 PLN
 • Встановлення вентилятора у ванній — 80 PLN
 • Встановлення біде — 220 PLN
 • Встановлення пісуара — 200 PLN
 • Заміна шлангів для змішувача — 50 PLN
 • Демонтаж сантехніки — 80 PLN
+• Герметизація швів — 40 PLN/м²
+• Встановлення душової кабіни — 450 PLN
+• Встановлення піддону — 200 PLN
+• Встановлення ванни — 300 PLN
+• Встановлення аксесуарів у ванній — 30 PLN/шт
+• Монтаж навісного душу — 200 PLN
+• Чистка каналізації — 200 PLN
 
 🪑 Навішування та монтаж:
 • Монтаж карнизів — 120 PLN
@@ -526,13 +583,20 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 • Допомога на ділянці — 110 PLN/год
 
 📍 ЗОНА ОБСЛУГОВУВАННЯ: Працюємо в радіусі 150 км від Вроцлава!
-⚠️ Мінімальне замовлення: 180 PLN (Вроцлав і передмістя до 10 км), 400 PLN (міста далі 10 км від Вроцлава)
+
+⚠️ МІНІМАЛЬНЕ ЗАМОВЛЕННЯ:
+• Вроцлав і передмістя (до 10 км) — 180 PLN
+• Інші населені пункти (далі 10 км) — 400 PLN
+Мінімальне замовлення діє для ВСІХ категорій послуг.
 
 🎁 СИСТЕМА ЗНИЖОК (АВТОМАТИЧНО):
 • 10% знижка — при замовленні з 2+ різних КАТЕГОРІЙ (наприклад, Меблі + Авто)
 • 15% знижка — при замовленні з 4+ різних КАТЕГОРІЙ
 • 20% VIP знижка — при замовленні з 6+ різних КАТЕГОРІЙ (максимальна економія!)
 • 10% знижка — спеціальна акція на хімчистку одного матраца
+
+⛔ ВИКЛЮЧЕННЯ ЗІ ЗНИЖОК:
+• Експрес освіження з видаленням запаху (150 PLN) — знижка НЕ застосовується!
 
 КАТЕГОРІЇ для знижок: Прибирання, Меблі, Шкіряні меблі, Авто, Матраци, Озонування, Миття вікон, Додаткові послуги, Майстер на годину.
 
@@ -603,7 +667,8 @@ ${PRICE_LIST.ru}
 — Химчистка авто
 — Озонирование
 — Мойка окон
-— Мастер на час (сантехника, электрика, монтаж, слесарные работы)
+— Уборка помещений
+— Мастер на час (сантехника, электрика, монтаж, слесарные работы, чистка канализации)
 — Услуги огородника (покос травы, обрезка деревьев)
 
 ВАЖНО:
@@ -612,6 +677,8 @@ ${PRICE_LIST.ru}
 — Скидки считаются по КАТЕГОРИЯМ (Мебель, Авто, Матрасы и т.д.), а НЕ по отдельным позициям
 — Если клиент заказывает из одной категории — предложи добавить услугу из ДРУГОЙ категории для скидки 10%
 — При расчёте стоимости ПОКАЗЫВАЙ экономию: "Итого: 310 zł (экономия 34 zł!)"
+— Экспресс освежение (150 PLN) — скидка НЕ применяется, сообщай об этом клиенту
+— ВСЕГДА упоминай минимальный заказ: 180 PLN (Вроцлав), 400 PLN (другие города)
 — Если клиент молчит — предложи помощь и кнопку заявки
 — Если вопрос сложный — предложи "Связаться с менеджером"`,
 
@@ -675,7 +742,8 @@ SERVICES:
 — Car cleaning
 — Ozonation
 — Window cleaning
-— Handyman (plumbing, electrical, mounting, locksmith work)
+— Premises cleaning
+— Handyman (plumbing, electrical, mounting, locksmith work, drain/sewer cleaning)
 — Gardening services (lawn mowing, tree trimming)
 
 IMPORTANT:
@@ -684,6 +752,8 @@ IMPORTANT:
 — Discounts are based on CATEGORIES (Furniture, Auto, Mattresses, etc.), NOT individual items
 — If customer orders from one category — suggest adding a service from ANOTHER category for 10% discount
 — When calculating cost, SHOW savings: "Total: 310 zł (saving 34 zł!)"
+— Express freshening (150 PLN) — discount does NOT apply, inform the customer
+— ALWAYS mention minimum order: 180 PLN (Wrocław), 400 PLN (other cities)
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"`,
 
@@ -747,7 +817,8 @@ USŁUGI:
 — Czyszczenie auta
 — Ozonowanie
 — Mycie okien
-— Złota rączka (hydraulika, elektryka, montaż, prace ślusarskie)
+— Sprzątanie pomieszczeń
+— Złota rączka (hydraulika, elektryka, montaż, prace ślusarskie, czyszczenie kanalizacji)
 — Usługi ogrodnicze (koszenie trawy, przycinanie drzew)
 
 WAŻNE:
@@ -756,6 +827,8 @@ WAŻNE:
 — Rabaty naliczane są na podstawie KATEGORII (Meble, Auto, Materace itd.), a NIE poszczególnych pozycji
 — Jeśli klient zamawia z jednej kategorii — zaproponuj dodanie usługi z INNEJ kategorii dla 10% rabatu
 — Przy obliczaniu kosztu POKAŻ oszczędności: "Razem: 310 zł (oszczędność 34 zł!)"
+— Ekspresowe odświeżenie (150 PLN) — rabat NIE dotyczy, poinformuj klienta
+— ZAWSZE wspominaj o minimalnym zamówieniu: 180 PLN (Wrocław), 400 PLN (inne miasta)
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
 — Jeśli pytanie jest trudne — zaproponuj "Kontakt z menedżerem"`,
 
@@ -819,7 +892,8 @@ ${PRICE_LIST.uk}
 — Хімчистка авто
 — Озонування
 — Миття вікон
-— Майстер на годину (сантехніка, електрика, монтаж, слюсарні роботи)
+— Прибирання приміщень
+— Майстер на годину (сантехніка, електрика, монтаж, слюсарні роботи, чистка каналізації)
 — Послуги садівника (покос трави, обрізка дерев)
 
 ВАЖЛИВО:
@@ -828,6 +902,8 @@ ${PRICE_LIST.uk}
 — Знижки рахуються за КАТЕГОРІЯМИ (Меблі, Авто, Матраци тощо), а НЕ за окремими позиціями
 — Якщо клієнт замовляє з однієї категорії — запропонуй додати послугу з ІНШОЇ категорії для знижки 10%
 — При розрахунку вартості ПОКАЗУЙ економію: "Разом: 310 zł (економія 34 zł!)"
+— Експрес освіження (150 PLN) — знижка НЕ застосовується, повідом про це клієнту
+— ЗАВЖДИ згадуй мінімальне замовлення: 180 PLN (Вроцлав), 400 PLN (інші міста)
 — Якщо клієнт мовчить — запропонуй допомогу і кнопку заявки
 — Якщо питання складне — запропонуй "Зв'язатися з менеджером"`
 };
@@ -853,9 +929,7 @@ Deno.serve(async (req) => {
     const lastUserMessage = [...messages].reverse().find((m: { role: string; content: string }) => m.role === 'user')?.content || '';
     
     const detectLanguage = (text: string): string => {
-      // Simple language detection based on character patterns
       if (/[а-яёА-ЯЁ]/.test(text)) {
-        // Distinguish Ukrainian from Russian
         if (/[іїєґІЇЄҐ]/.test(text)) return 'uk';
         return 'ru';
       }
