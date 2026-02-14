@@ -94,6 +94,8 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
         { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200 },
         { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 250 },
         { id: 'carpet', name: t.prices.items.carpet, price: 25, unit: 'm²' },
+        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100 },
+        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100 },
         { id: 'expressRefreshFurniture', name: t.prices.items.expressRefresh, price: 150 },
       ],
     },
@@ -210,7 +212,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
          // Слесарные работы
          { id: 'mailboxLock', name: t.handyman?.calcItems?.mailboxLock || 'Замена замка почт. ящика', price: 140 },
          { id: 'doorHandle', name: t.handyman?.calcItems?.doorHandle || 'Замена дверной ручки', price: 60 },
-         { id: 'doorCylinder', name: t.handyman?.calcItems?.doorCylinder || 'Замена цилиндра замка', price: 100 },
+         { id: 'doorCylinder', name: t.handyman?.calcItems?.doorCylinder || 'Замена цилиндра замка', price: 140 },
          { id: 'aluminumDoorRepair', name: t.handyman?.calcItems?.aluminumDoorRepair || 'Ремонт алюм. дверей', price: 200 },
          { id: 'windowDoorAdjustment', name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон/дверей', price: 200 },
          { id: 'fridgeHinges', name: t.handyman?.calcItems?.fridgeHinges || 'Замена петель холодильника', price: 200 },

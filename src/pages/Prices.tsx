@@ -321,7 +321,7 @@ const Prices = () => {
           </Drawer>
         ) : (
           <Dialog open={isCalcOpen} onOpenChange={setIsCalcOpen}>
-            <DialogContent className="max-w-2xl max-h-[85vh] overflow-hidden flex flex-col">
+            <DialogContent className="max-w-4xl max-h-[85vh] overflow-hidden flex flex-col">
               <DialogHeader className="border-b border-border pb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">

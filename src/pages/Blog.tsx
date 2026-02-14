@@ -298,8 +298,8 @@ const Blog = () => {
         <section className="py-12 sm:py-16 bg-gradient-section relative overflow-hidden">
           <div className="container mx-auto px-4">
             <Link to="/">
-              <Button variant="ghost" className="mb-6 text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="w-4 h-4 mr-2" />
+              <Button variant="ghost" className="mb-6 text-fresh hover:text-fresh/80 animate-pulse-slow font-semibold">
+                <ArrowLeft className="w-5 h-5 mr-2" />
                 {titles.back}
               </Button>
             </Link>
