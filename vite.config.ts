@@ -20,12 +20,14 @@ export default defineConfig(({ mode }) => ({
   build: {
     target: "esnext",
     cssMinify: true,
+    minify: 'esbuild',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ["react", "react-dom", "react-router-dom"],
           ui: ["@radix-ui/react-dialog", "@radix-ui/react-accordion", "@radix-ui/react-tabs", "@radix-ui/react-tooltip", "@radix-ui/react-popover"],
           supabase: ["@supabase/supabase-js"],
+          helmet: ["react-helmet-async"],
         },
       },
     },

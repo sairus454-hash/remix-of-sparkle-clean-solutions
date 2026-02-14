@@ -60,6 +60,37 @@ const Index = () => {
         description="Профессиональная химчистка мебели, матрасов, ковров и салонов авто. Озонирование, уборка, мойка окон. Работаем 24/7. Звоните: +48 575 211 401"
         keywords="химчистка мебели, химчистка ковров, химчистка матрасов, химчистка авто, озонирование, уборка, Ополе, Вроцлав"
         canonical="/"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: 'MasterClean',
+          description: 'Профессиональная химчистка мебели, матрасов, ковров и салонов авто в Польше. Озонирование, уборка, мойка окон.',
+          url: 'https://shine-clean-connect.lovable.app',
+          telephone: '+48575211401',
+          email: 'masterclean@email.com',
+          image: 'https://shine-clean-connect.lovable.app/og-image.png',
+          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          priceRange: '$$',
+          openingHoursSpecification: {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+            opens: '00:00',
+            closes: '23:59',
+          },
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Услуги клининга',
+            itemListElement: [
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка мебели' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка ковров' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка матрасов' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка авто' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Озонирование' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Мойка окон' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Уборка помещений' } },
+            ],
+          },
+        }}
       />
       {showSplash && <WaterDropSplash onComplete={handleSplashComplete} />}
       <Layout>
