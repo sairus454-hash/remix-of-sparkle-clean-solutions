@@ -103,7 +103,7 @@ const PRICE_LIST = {
 • Установка ванны — 300 PLN
 • Установка аксессуаров в ванной — 30 PLN/шт
 • Монтаж навесного душа — 200 PLN
-• Чистка канализации — 200 PLN
+• Чистка канализации — 400 PLN
 
 🪑 Навеска и монтаж:
 • Монтаж карнизов — 120 PLN
@@ -121,7 +121,7 @@ const PRICE_LIST = {
 
 🔩 Слесарные работы:
 • Установка/ремонт дверной ручки — 60 PLN
-• Установка/замена цилиндра замка — 100 PLN
+• Установка/замена цилиндра замка — 140 PLN
 • Замена замка на почт. ящике — 140 PLN
 • Ремонт алюминиевых дверей — 200 PLN
 • Регулировка окон и дверей — 200 PLN
@@ -253,7 +253,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Bathtub installation — 300 PLN
 • Bathroom accessories installation — 30 PLN/pc
 • Wall-mounted shower installation — 200 PLN
-• Drain/sewer cleaning — 200 PLN
+• Drain/sewer cleaning — 400 PLN
 
 🪑 Mounting:
 • Curtain rod installation — 120 PLN
@@ -271,7 +271,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 
 🔩 Locksmith work:
 • Door handle installation/repair — 60 PLN
-• Door lock cylinder replacement — 100 PLN
+• Door lock cylinder replacement — 140 PLN
 • Mailbox lock replacement — 140 PLN
 • Aluminum door repair — 200 PLN
 • Window and door adjustment — 200 PLN
@@ -403,7 +403,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Montaż wanny — 300 PLN
 • Montaż akcesoriów łazienkowych — 30 PLN/szt
 • Montaż prysznica ściennego — 200 PLN
-• Czyszczenie kanalizacji — 200 PLN
+• Czyszczenie kanalizacji — 400 PLN
 
 🪑 Montaż:
 • Montaż karniszy — 120 PLN
@@ -421,7 +421,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 
 🔩 Prace ślusarskie:
 • Montaż/naprawa klamki — 60 PLN
-• Wymiana wkładki zamka — 100 PLN
+• Wymiana wkładki zamka — 140 PLN
 • Wymiana zamka w skrzynce — 140 PLN
 • Naprawa drzwi aluminiowych — 200 PLN
 • Regulacja okien i drzwi — 200 PLN
@@ -553,7 +553,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 • Встановлення ванни — 300 PLN
 • Встановлення аксесуарів у ванній — 30 PLN/шт
 • Монтаж навісного душу — 200 PLN
-• Чистка каналізації — 200 PLN
+• Чистка каналізації — 400 PLN
 
 🪑 Навішування та монтаж:
 • Монтаж карнизів — 120 PLN
@@ -571,7 +571,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 
 🔩 Слюсарні роботи:
 • Встановлення/ремонт ручки — 60 PLN
-• Заміна циліндра замка — 100 PLN
+• Заміна циліндра замка — 140 PLN
 • Заміна замка на поштовій скриньці — 140 PLN
 • Ремонт алюмінієвих дверей — 200 PLN
 • Регулювання вікон і дверей — 200 PLN

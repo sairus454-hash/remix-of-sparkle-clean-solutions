@@ -188,7 +188,7 @@ const PriceSection = () => {
           { name: t.handyman?.calcItems?.chandelierInstall || 'Монтаж/замена люстры с лампой', price: 130, icon: Lightbulb },
           { name: t.handyman?.calcItems?.mailboxLock || 'Замена замка на почт. ящике', price: 140, icon: Wrench },
           { name: t.handyman?.calcItems?.doorHandle || 'Установка/ремонт дверной ручки', price: 60, icon: Wrench },
-          { name: t.handyman?.calcItems?.doorCylinder || 'Установка/замена цилиндра замка', price: 100, icon: Wrench },
+          { name: t.handyman?.calcItems?.doorCylinder || 'Установка/замена цилиндра замка', price: 140, icon: Wrench },
           { name: t.handyman?.calcItems?.aluminumDoorRepair || 'Ремонт алюминиевых дверей', price: 200, icon: Wrench },
           { name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон и дверей', price: 200, icon: Wrench },
           { name: t.handyman?.calcItems?.fridgeHinges || 'Ремонт петель холодильника', price: 200, icon: Wrench },
