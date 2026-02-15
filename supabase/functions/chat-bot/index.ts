@@ -908,9 +908,47 @@ ${PRICE_LIST.uk}
 — Якщо питання складне — запропонуй "Зв'язатися з менеджером"`
 };
 
+// Rate limiting
+const rateLimits = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_MAX = 10;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+
+function checkRateLimit(req: Request): boolean {
+  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+                   req.headers.get('cf-connecting-ip') ||
+                   req.headers.get('x-real-ip') || 'unknown';
+  const now = Date.now();
+
+  if (rateLimits.size > 500) {
+    for (const [key, value] of rateLimits.entries()) {
+      if (now > value.resetAt) rateLimits.delete(key);
+    }
+  }
+
+  const record = rateLimits.get(clientIP);
+  if (!record || now > record.resetAt) {
+    rateLimits.set(clientIP, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return true;
+  }
+  if (record.count >= RATE_LIMIT_MAX) return false;
+  record.count++;
+  return true;
+}
+
+const MAX_MESSAGES = 50;
+const MAX_MESSAGE_CONTENT_LENGTH = 5000;
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Rate limit check
+  if (!checkRateLimit(req)) {
+    return new Response(
+      JSON.stringify({ error: 'Too many requests. Please try again later.', message: 'Слишком много запросов. Попробуйте через 10 минут.' }),
+      { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
   }
 
   try {
@@ -918,6 +956,20 @@ Deno.serve(async (req) => {
 
     if (!messages || !Array.isArray(messages)) {
       throw new Error("Messages array is required");
+    }
+
+    // Validate messages array size and content
+    if (messages.length > MAX_MESSAGES) {
+      throw new Error("Too many messages");
+    }
+
+    for (const msg of messages) {
+      if (!msg.content || typeof msg.content !== 'string' || msg.content.length > MAX_MESSAGE_CONTENT_LENGTH) {
+        throw new Error("Invalid message content");
+      }
+      if (!msg.role || typeof msg.role !== 'string' || !['user', 'assistant', 'system'].includes(msg.role)) {
+        throw new Error("Invalid message role");
+      }
     }
 
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
