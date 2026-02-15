@@ -190,6 +190,13 @@ const Reviews = () => {
         description="Реальные отзывы клиентов о химчистке мебели, ковров и авто. Узнайте, почему нам доверяют. Оставьте свой отзыв."
         keywords="отзывы химчистка, отзывы MasterClean, отзывы клиентов, качество чистки"
         canonical="/reviews"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: 'MasterClean',
+          aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', bestRating: '5', ratingCount: '100' },
+          url: 'https://shine-clean-connect.lovable.app/reviews',
+        }}
       />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
       <Layout>

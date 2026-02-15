@@ -54,6 +54,18 @@ const Handyman = () => {
         description="Мастер на час: сантехника, электрика, мебель, мелкий ремонт. Быстро, качественно, с гарантией. Вызов мастера 24/7."
         keywords="мастер на час, мелкий ремонт, сантехник, электрик, сборка мебели, бытовые услуги"
         canonical="/handyman"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: 'Мастер на час — бытовые услуги',
+          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          offers: [
+            { '@type': 'Offer', name: 'Сантехнические работы', price: '120', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Электромонтажные работы', price: '40', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Чистка канализации', price: '400', priceCurrency: 'PLN' },
+          ],
+        }}
       />
     <Layout>
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}

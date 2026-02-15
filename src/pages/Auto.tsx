@@ -171,6 +171,18 @@ const Auto = () => {
       description="Профессиональная химчистка салона автомобиля. Чистка сидений, потолка, ковриков, багажника. Удаление пятен и запахов."
       keywords="химчистка авто, чистка салона, химчистка сидений, чистка автомобиля, удаление запахов авто"
       canonical="/auto"
+      jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        serviceType: 'Химчистка салона автомобиля',
+        provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+        areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+        offers: [
+          { '@type': 'Offer', name: 'Химчистка сидений', price: '300', priceCurrency: 'PLN' },
+          { '@type': 'Offer', name: 'Комплексная химчистка авто', price: '450', priceCurrency: 'PLN' },
+          { '@type': 'Offer', name: 'Комплексная чистка (кожа)', price: '550', priceCurrency: 'PLN' },
+        ],
+      }}
     />
     <Layout>
       {showSplash && <AutoSplash onComplete={handleSplashComplete} />}

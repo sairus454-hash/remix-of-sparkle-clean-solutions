@@ -42,6 +42,18 @@ import SEO from '@/components/SEO';
         description="Профессиональная мойка окон любой сложности. Чистые окна — больше света и комфорта в вашем доме. Быстро, качественно, доступно."
         keywords="мойка окон, чистка окон, мытьё окон, профессиональная мойка, Польша"
         canonical="/windows"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: 'Мойка окон',
+          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          offers: [
+            { '@type': 'Offer', name: 'Одностворчатое окно', price: '40', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Двухстворчатое окно', price: '50', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Трёхстворчатое окно', price: '80', priceCurrency: 'PLN' },
+          ],
+        }}
       />
      <Layout>
        {/* Hero */}

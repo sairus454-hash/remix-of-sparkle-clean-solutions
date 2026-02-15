@@ -44,6 +44,27 @@ const Services = () => {
         description="Полный спектр клининговых услуг: химчистка мебели, ковров, матрасов, кожаных изделий, салонов авто, озонирование, мойка окон, уборка."
         keywords="услуги химчистки, чистка мебели, чистка ковров, химчистка авто, озонирование, мойка окон"
         canonical="/services"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: 'Cleaning Services',
+          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Клининговые услуги',
+            itemListElement: [
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка мебели' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка ковров' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка авто' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Озонирование' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Мойка окон' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Уборка помещений' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Импрегнация' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Мастер на час' } },
+            ],
+          },
+        }}
       />
       {showSplash && <ServicesSplash onComplete={handleSplashComplete} />}
       <Layout>
