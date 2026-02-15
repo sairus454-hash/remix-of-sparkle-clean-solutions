@@ -78,6 +78,13 @@ const Impregnation = () => {
         description="Профессиональная импрегнация мебели, ковров и тканей. Защита от воды, грязи и пятен. Гидрофобное покрытие продлевает срок службы."
         keywords="импрегнация, защита мебели, гидрофобное покрытие, защита ткани, импрегнация ковров"
         canonical="/impregnation"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: 'Импрегнация мебели и тканей',
+          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+          offers: { '@type': 'Offer', name: 'Импрегнация (защита на 1 год)', price: '80', priceCurrency: 'PLN' },
+        }}
       />
     <Layout>
       {/* Hero */}

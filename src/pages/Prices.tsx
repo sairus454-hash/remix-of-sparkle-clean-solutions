@@ -231,6 +231,14 @@ const Prices = () => {
         description="Актуальные цены на химчистку мебели, ковров, матрасов, авто, озонирование и уборку. Калькулятор стоимости онлайн."
         keywords="цены химчистка, прайс химчистка мебели, стоимость чистки ковров, цены озонирование"
         canonical="/prices"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'PriceSpecification',
+          name: 'Прайс-лист MasterClean',
+          description: 'Актуальные цены на все услуги химчистки и клининга',
+          priceCurrency: 'PLN',
+          url: 'https://shine-clean-connect.lovable.app/prices',
+        }}
       />
       {showSplash && <PriceSplash onComplete={handleSplashComplete} />}
       <Layout>

@@ -91,6 +91,13 @@ const Equipment = () => {
         description="Профессиональное оборудование для химчистки: экстракторы, парогенераторы, озонаторы. Экологичные средства и передовые технологии."
         keywords="оборудование химчистки, экстрактор, парогенератор, озонатор, технологии чистки"
         canonical="/equipment"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Оборудование и технологии MasterClean',
+          description: 'Профессиональное оборудование для химчистки: экстракторы Santoemma, парогенераторы, озонаторы.',
+          isPartOf: { '@type': 'WebSite', name: 'MasterClean', url: 'https://shine-clean-connect.lovable.app' },
+        }}
       />
       {showSplash && <ExtractorSplash onComplete={handleSplashComplete} />}
       <Layout>

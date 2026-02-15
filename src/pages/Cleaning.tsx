@@ -125,6 +125,17 @@ const Cleaning = () => {
         description="Профессиональная уборка квартир, домов и офисов. Стандартная и генеральная уборка. Рассчитайте стоимость онлайн."
         keywords="уборка квартир, генеральная уборка, стандартная уборка, клининг, уборка дома"
         canonical="/cleaning"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: 'Уборка помещений',
+          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          offers: [
+            { '@type': 'Offer', name: 'Стандартная уборка', price: '8', priceCurrency: 'PLN', unitText: 'за м²' },
+            { '@type': 'Offer', name: 'Генеральная уборка', price: '10', priceCurrency: 'PLN', unitText: 'за м²' },
+          ],
+        }}
       />
       {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
       <Layout>

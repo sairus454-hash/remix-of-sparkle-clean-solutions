@@ -55,6 +55,18 @@ const Ozone = () => {
         description="Профессиональное озонирование квартир, офисов и автомобилей. Устранение неприятных запахов, дезинфекция, уничтожение бактерий и вирусов."
         keywords="озонирование, удаление запахов, дезинфекция, озонирование квартиры, озонирование авто"
         canonical="/ozone"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          serviceType: 'Озонирование помещений и автомобилей',
+          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          offers: [
+            { '@type': 'Offer', name: 'Озонирование 1-комн. квартиры', price: '120', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Озонирование 2-комн. квартиры', price: '200', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Озонирование авто', price: '100', priceCurrency: 'PLN' },
+          ],
+        }}
       />
     <Layout>
       {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}

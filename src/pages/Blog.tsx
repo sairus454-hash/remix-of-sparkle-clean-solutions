@@ -292,6 +292,14 @@ const Blog = () => {
         description={titles.subtitle}
         keywords="блог чистоты, химчистка, уборка, советы по чистке"
         canonical="/blog"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Blog',
+          name: titles.title,
+          description: titles.subtitle,
+          publisher: { '@type': 'Organization', name: 'MasterClean', url: 'https://shine-clean-connect.lovable.app' },
+          url: 'https://shine-clean-connect.lovable.app/blog',
+        }}
       />
       <Layout>
         {/* Hero */}

@@ -53,6 +53,22 @@ const Contacts = () => {
         description="Свяжитесь с MasterClean: телефон +48 575 211 401, email, адрес. Работаем 24/7. Оставьте заявку онлайн."
         keywords="контакты химчистка, MasterClean контакты, заказать химчистку, телефон химчистки"
         canonical="/contacts"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'ContactPage',
+          mainEntity: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            telephone: '+48575211401',
+            email: 'masterclean@email.com',
+            openingHoursSpecification: {
+              '@type': 'OpeningHoursSpecification',
+              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+              opens: '00:00',
+              closes: '23:59',
+            },
+          },
+        }}
       />
       {showSplash && <ContactsSplash onComplete={handleSplashComplete} />}
       <Layout>

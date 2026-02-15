@@ -45,6 +45,18 @@ const About = () => {
         description="Узнайте о команде MasterClean. Профессиональная химчистка мебели и ковров в Польше. Современное оборудование, экологичные средства, опытные специалисты."
         keywords="о нас, MasterClean, команда химчистки, профессиональная химчистка, Польша"
         canonical="/about"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          mainEntity: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            description: 'Профессиональная клининговая компания в Польше. Современное оборудование, экологичные средства.',
+            telephone: '+48575211401',
+            areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+            foundingDate: '2022',
+          },
+        }}
       />
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
       <Layout>
