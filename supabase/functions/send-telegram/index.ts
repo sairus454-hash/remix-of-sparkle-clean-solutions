@@ -5,6 +5,46 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
+// Rate limiting
+const rateLimits = new Map<string, { count: number; resetAt: number }>();
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+
+function checkRateLimit(req: Request): boolean {
+  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+                   req.headers.get('cf-connecting-ip') ||
+                   req.headers.get('x-real-ip') || 'unknown';
+  const now = Date.now();
+
+  // Cleanup old entries
+  if (rateLimits.size > 500) {
+    for (const [key, value] of rateLimits.entries()) {
+      if (now > value.resetAt) rateLimits.delete(key);
+    }
+  }
+
+  const record = rateLimits.get(clientIP);
+  if (!record || now > record.resetAt) {
+    rateLimits.set(clientIP, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return true;
+  }
+  if (record.count >= RATE_LIMIT_MAX) return false;
+  record.count++;
+  return true;
+}
+
+// Input validation limits
+const MAX_NAME = 100;
+const MAX_PHONE = 30;
+const MAX_EMAIL = 255;
+const MAX_SHORT = 200;
+const MAX_MESSAGE = 2000;
+
+function sanitize(val: unknown, maxLen: number): string {
+  if (typeof val !== 'string') return '';
+  return val.trim().slice(0, maxLen);
+}
+
 interface FormData {
   name: string;
   phone: string;
@@ -21,18 +61,21 @@ interface FormData {
 }
 
 serve(async (req) => {
-  // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Rate limit check
+  if (!checkRateLimit(req)) {
+    return new Response(
+      JSON.stringify({ error: 'Too many requests. Please try again in 10 minutes.' }),
+      { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+    );
   }
 
   try {
     const TELEGRAM_BOT_TOKEN = Deno.env.get('TELEGRAM_BOT_TOKEN');
     const TELEGRAM_CHAT_ID = Deno.env.get('TELEGRAM_CHAT_ID');
-
-    console.log('Bot token exists:', !!TELEGRAM_BOT_TOKEN);
-    console.log('Bot token length:', TELEGRAM_BOT_TOKEN?.length || 0);
-    console.log('Chat ID:', TELEGRAM_CHAT_ID);
 
     if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
       console.error('Missing Telegram credentials');
@@ -42,9 +85,24 @@ serve(async (req) => {
       );
     }
 
-    const formData: FormData = await req.json();
+    const raw = await req.json();
 
-    // Validate required fields (name and phone only)
+    // Validate and sanitize inputs
+    const formData: FormData = {
+      name: sanitize(raw.name, MAX_NAME),
+      phone: sanitize(raw.phone, MAX_PHONE),
+      email: sanitize(raw.email, MAX_EMAIL),
+      service: sanitize(raw.service, MAX_SHORT),
+      message: sanitize(raw.message, MAX_MESSAGE),
+      date: sanitize(raw.date, MAX_SHORT),
+      time: sanitize(raw.time, MAX_SHORT),
+      city: sanitize(raw.city, MAX_SHORT),
+      village: sanitize(raw.village, MAX_SHORT),
+      address: sanitize(raw.address, MAX_SHORT),
+      postalCode: sanitize(raw.postalCode, 20),
+      paymentType: sanitize(raw.paymentType, 20),
+    };
+
     if (!formData.name || !formData.phone) {
       return new Response(
         JSON.stringify({ error: 'Missing required fields' }),
@@ -52,11 +110,9 @@ serve(async (req) => {
       );
     }
 
-    // Format payment type for display
     const paymentTypeLabel = formData.paymentType === 'cash' ? '💵 Наличные' : 
                              formData.paymentType === 'blik' ? '📱 BLIK' : '';
 
-    // Format message for Telegram
     const message = `
 🔔 *Новая заявка с сайта!*
 
@@ -74,11 +130,8 @@ ${paymentTypeLabel ? `💳 *Оплата:* ${paymentTypeLabel}` : ''}
 ${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
     `.trim();
 
-    // Send to Telegram
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-    
-    console.log('Sending to Telegram...');
-    
+
     const telegramResponse = await fetch(telegramUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -94,12 +147,10 @@ ${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
     if (!telegramResponse.ok) {
       console.error('Telegram API error:', telegramResult);
       return new Response(
-        JSON.stringify({ error: 'Failed to send message', details: telegramResult }),
+        JSON.stringify({ error: 'Failed to send message' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
-
-    console.log('Message sent successfully to Telegram');
 
     return new Response(
       JSON.stringify({ success: true }),
