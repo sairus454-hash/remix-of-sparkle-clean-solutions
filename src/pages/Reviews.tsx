@@ -1,4 +1,5 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import Layout from '@/components/Layout';
 import ReviewsSplash from '@/components/ReviewsSplash';
@@ -61,7 +62,7 @@ const Reviews = () => {
     t,
     language
   } = useLanguage();
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, handleSplashComplete } = useSplash('reviews');
   const [isLoading, setIsLoading] = useState(false);
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
   const [dbReviews, setDbReviews] = useState<Review[]>([]);
@@ -73,9 +74,6 @@ const Reviews = () => {
     name: '',
     text: ''
   });
-  const handleSplashComplete = useCallback(() => {
-    setShowSplash(false);
-  }, []);
 
   // Fetch reviews from database
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -15,11 +15,7 @@ import equipmentSetImage from '@/assets/equipment-set.jpg';
 
 const Equipment = () => {
   const { t } = useLanguage();
-  const [showSplash, setShowSplash] = useState(true);
-
-  const handleSplashComplete = useCallback(() => {
-    setShowSplash(false);
-  }, []);
+  const { showSplash, handleSplashComplete } = useSplash('equipment');
 
   const mainFeatures = [
     {

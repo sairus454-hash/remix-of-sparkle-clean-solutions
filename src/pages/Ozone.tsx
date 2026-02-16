@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -12,16 +12,13 @@ import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
 import ozoneOffice from '@/assets/ozone-office.jpg';
 import { CalculatorItem } from '@/types/calculator';
+import { useSplash } from '@/hooks/useSplash';
 
 const Ozone = () => {
   const { t } = useLanguage();
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, handleSplashComplete } = useSplash('ozone');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
-
-  const handleSplashComplete = () => {
-    setShowSplash(false);
-  };
 
   const handleSendToForm = (items: CalculatorItem[], total: number) => {
     formRef.current?.setCalculatorData(items, total);

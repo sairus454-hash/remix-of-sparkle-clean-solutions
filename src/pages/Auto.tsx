@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -30,12 +31,9 @@ const Auto = () => {
     t
   } = useLanguage();
   const [selectedItems, setSelectedItems] = useState<SelectedAutoItem[]>([]);
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, handleSplashComplete } = useSplash('auto');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
-  const handleSplashComplete = () => {
-    setShowSplash(false);
-  };
   const autoPrices: AutoPriceItem[] = [{
     id: 'autoComplex',
     name: t.prices.items.autoComplex,

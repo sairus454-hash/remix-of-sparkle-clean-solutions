@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -20,12 +21,8 @@ const Contacts = () => {
   const { t } = useLanguage();
   const location = useLocation();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, handleSplashComplete } = useSplash('contacts');
   const formRef = useRef<ContactFormRef>(null);
-
-  const handleSplashComplete = () => {
-    setShowSplash(false);
-  };
 
   // Handle incoming calculator data from navigation
   useEffect(() => {

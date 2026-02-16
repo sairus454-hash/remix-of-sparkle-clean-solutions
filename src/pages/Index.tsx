@@ -1,5 +1,4 @@
-import { useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -23,20 +22,18 @@ import {
   DrawerTitle,
 } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import QuickCalculator from '@/components/QuickCalculator';
+import PriceCalculatorContent from '@/components/PriceCalculatorContent';
+import { useSplash } from '@/hooks/useSplash';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import heroBannerImage from '@/assets/hero-banner.jpg';
+import { Link } from 'react-router-dom';
 
 const Index = () => {
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, handleSplashComplete } = useSplash('index');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
   const isMobile = useIsMobile();
-  
-  const handleSplashComplete = useCallback(() => {
-    setShowSplash(false);
-  }, []);
   const {
     t, language
   } = useLanguage();

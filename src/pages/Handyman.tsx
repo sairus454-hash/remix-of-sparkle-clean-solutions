@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
+import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -19,13 +20,9 @@ import { CalculatorItem } from '@/types/calculator';
 
 const Handyman = () => {
   const { t } = useLanguage();
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, handleSplashComplete } = useSplash('handyman');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
-
-  const handleSplashComplete = () => {
-    setShowSplash(false);
-  };
 
   const handleSendToForm = (items: CalculatorItem[], total: number) => {
     formRef.current?.setCalculatorData(items, total);
