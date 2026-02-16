@@ -58,9 +58,9 @@ const FreeDeliveryBadge = () => {
         `}
         aria-label="Free delivery info"
       >
-        {/* Animated rings */}
-        <span className="absolute inset-0 rounded-full bg-fresh/30 animate-ping opacity-75" />
-        <span className="absolute inset-2 rounded-full bg-fresh/20 animate-ping opacity-50 animation-delay-150" />
+        {/* Static accent rings instead of animate-ping */}
+        <span className="absolute inset-0 rounded-full bg-fresh/20 opacity-75" />
+        <span className="absolute inset-2 rounded-full bg-fresh/10 opacity-50" />
         
         {/* Icon container */}
         <div className="relative z-10 flex items-center justify-center">

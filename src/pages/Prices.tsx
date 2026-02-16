@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -28,17 +28,14 @@ import {
 import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import QuickCalculator from '@/components/QuickCalculator';
+import { useSplash } from '@/hooks/useSplash';
 
 const Prices = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, handleSplashComplete } = useSplash('prices');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
-
-  const handleSplashComplete = useCallback(() => {
-    setShowSplash(false);
-  }, []);
 
   const minOrderNote = `${t.handyman?.minOrderNote || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 400 zł'}`;
 

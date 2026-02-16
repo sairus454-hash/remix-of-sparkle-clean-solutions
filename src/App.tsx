@@ -9,7 +9,9 @@ import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollButton from "@/components/ScrollButton";
-import FreeDeliveryBadge from "@/components/FreeDeliveryBadge";
+
+// Lazy load non-critical UI
+const FreeDeliveryBadge = lazy(() => import("@/components/FreeDeliveryBadge"));
 
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -56,7 +58,9 @@ const App = () => (
           <BrowserRouter>
             <ScrollToTop />
             <ScrollButton />
-            <FreeDeliveryBadge />
+            <Suspense fallback={null}>
+              <FreeDeliveryBadge />
+            </Suspense>
             
             <Suspense fallback={<PageLoader />}>
               <Routes>

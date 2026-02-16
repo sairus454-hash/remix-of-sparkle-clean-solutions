@@ -1,4 +1,5 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef } from 'react';
+import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -25,11 +26,7 @@ const Cleaning = () => {
   const formSectionRef = useRef<HTMLDivElement>(null);
   
   const isMobile = useIsMobile();
-  const [showSplash, setShowSplash] = useState(true);
-  
-  const handleSplashComplete = useCallback(() => {
-    setShowSplash(false);
-  }, []);
+  const { showSplash, handleSplashComplete } = useSplash('cleaning');
   
   // Calculator state
   const [isCalcOpen, setIsCalcOpen] = useState(false);
