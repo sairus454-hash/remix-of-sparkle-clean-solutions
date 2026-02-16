@@ -87,6 +87,14 @@ serve(async (req) => {
 
     const raw = await req.json();
 
+    // Honeypot check - if filled, it's a bot
+    if (raw.website) {
+      return new Response(
+        JSON.stringify({ success: true }),
+        { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     // Validate and sanitize inputs
     const formData: FormData = {
       name: sanitize(raw.name, MAX_NAME),
