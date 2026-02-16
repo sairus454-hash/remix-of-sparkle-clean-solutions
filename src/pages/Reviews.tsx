@@ -139,11 +139,14 @@ const Reviews = () => {
     setIsLoading(true);
     try {
       const {
+        data,
         error
-      } = await supabase.from('reviews').insert({
-        name: formData.name,
-        rating: rating,
-        text: formData.text
+      } = await supabase.functions.invoke('submit-review', {
+        body: {
+          name: formData.name,
+          rating: rating,
+          text: formData.text
+        }
       });
       if (error) throw error;
 

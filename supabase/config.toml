@@ -2,3 +2,6 @@ project_id = "iycukvmyvphufsdhlzmj"
 
 [functions.send-telegram-photo]
 verify_jwt = false
+
+[functions.submit-review]
+verify_jwt = false
