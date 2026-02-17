@@ -1,12 +1,13 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import AnimatedImage from '@/components/AnimatedImage';
 import { ArrowLeft, Calendar, Clock, Sparkles, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
 import cleaningTeamWork from '@/assets/cleaning-team-work-1.jpg';
@@ -14,6 +15,43 @@ import autoCleaning from '@/assets/auto-cleaning-1.jpg';
 import mattressCleaning from '@/assets/mattress-cleaning.jpg';
 import leatherSofa from '@/assets/leather-sofa-cleaning.jpg';
 import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
+
+// Lazy image: renders only when near viewport
+const LazyBlogImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setIsVisible(true); observer.disconnect(); } },
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={cn("bg-muted", className)}>
+      {isVisible && (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          onLoad={() => setIsLoaded(true)}
+          className={cn(
+            "w-full h-full object-cover transition-opacity duration-500",
+            isLoaded ? "opacity-100" : "opacity-0"
+          )}
+        />
+      )}
+    </div>
+  );
+};
+
 
 const blogArticles = {
   ru: [
@@ -374,11 +412,10 @@ const Blog = () => {
                 <CircularRevealCard key={article.id} index={index} slow className="h-full">
                   <Card className="overflow-hidden h-full bg-gradient-card border-border hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1 group">
                     <div className="relative overflow-hidden aspect-video">
-                      <AnimatedImage
+                      <LazyBlogImage
                         src={article.image}
                         alt={article.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        delay={index * 100}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 aspect-video"
                       />
                       <div className="absolute top-3 left-3">
                         <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-card/90 backdrop-blur-sm text-foreground shadow-sm">

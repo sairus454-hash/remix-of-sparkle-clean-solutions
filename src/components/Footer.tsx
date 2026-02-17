@@ -33,8 +33,8 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.services}</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
-                  {t.services.clothing}
+                <Link to="/handyman" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                  {t.nav.handyman}
                 </Link>
               </li>
               <li>
