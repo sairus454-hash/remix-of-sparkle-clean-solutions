@@ -62,10 +62,10 @@ const Index = () => {
           '@type': 'LocalBusiness',
           name: 'MasterClean',
           description: 'Профессиональная химчистка мебели, матрасов, ковров и салонов авто в Польше. Озонирование, уборка, мойка окон.',
-          url: 'https://shine-clean-connect.lovable.app',
+          url: 'https://masterclean1885.lovable.app',
           telephone: '+48575211401',
           email: 'masterclean@email.com',
-          image: 'https://shine-clean-connect.lovable.app/og-image.png',
+          image: 'https://masterclean1885.lovable.app/og-image.png',
           areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
           priceRange: '$$',
           openingHoursSpecification: {
@@ -143,7 +143,7 @@ const Index = () => {
                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow group-hover:scale-110 transition-transform duration-300">
                      <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" />
                    </div>
-                  <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-fresh animate-ping" />
+                  <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-fresh opacity-75" />
                 </div>
                 <div>
                   <h3 className="font-serif text-lg sm:text-xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
@@ -221,8 +221,8 @@ const Index = () => {
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-teal-500 flex items-center justify-center shadow-glow animate-pulse">
                   <span className="text-3xl sm:text-4xl" style={{ animation: 'float 2s ease-in-out infinite' }}>🎁</span>
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-orange-500 animate-ping" style={{ animationDelay: '0.5s' }} />
+                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh opacity-75" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-orange-500 opacity-60" />
               </div>
             </div>
             
@@ -389,8 +389,8 @@ const Index = () => {
                       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow group-hover:scale-110 transition-transform duration-500">
                         <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                       </div>
-                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full animate-ping" />
-                      <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full animate-ping" style={{ animationDelay: '0.5s' }} />
+                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full opacity-75" />
+                      <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full opacity-60" />
                     </div>
                     
                     {/* Text */}

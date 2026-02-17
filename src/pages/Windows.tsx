@@ -76,8 +76,8 @@ import SEO from '@/components/SEO';
                  <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
                    <Sparkles className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                  </div>
-                 <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
-                 <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-primary animate-ping" style={{ animationDelay: '0.5s' }} />
+                 <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh opacity-75" />
+                 <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-primary opacity-60" />
                </div>
              </div>
              

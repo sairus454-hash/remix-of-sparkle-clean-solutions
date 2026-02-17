@@ -176,7 +176,7 @@ const Header = () => {
             <div style={getHeaderItemStyle(12, headerRevealed)}>
               <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
                 <div className="relative">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full animate-ping absolute" />
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full opacity-75 absolute" />
                   <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full" />
                 </div>
                 <span className="text-primary-foreground font-bold text-[10px] sm:text-xs md:text-sm">24/7</span>

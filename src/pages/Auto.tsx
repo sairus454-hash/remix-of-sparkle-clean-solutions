@@ -208,10 +208,8 @@ const Auto = () => {
                   animation: 'pulse 2s ease-in-out infinite'
                 }} />
                 </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-fresh rounded-full animate-ping" />
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full animate-ping" style={{
-                animationDelay: '0.5s'
-              }} />
+                <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 bg-fresh rounded-full opacity-75" />
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full opacity-60" />
               </div>
             </div>
             <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{

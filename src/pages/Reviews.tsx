@@ -196,7 +196,7 @@ const Reviews = () => {
           '@type': 'LocalBusiness',
           name: 'MasterClean',
           aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', bestRating: '5', ratingCount: '100' },
-          url: 'https://shine-clean-connect.lovable.app/reviews',
+          url: 'https://masterclean1885.lovable.app/reviews',
         }}
       />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
@@ -214,10 +214,8 @@ const Reviews = () => {
                   animation: 'pulse 2s ease-in-out infinite'
                 }} />
                 </div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-primary animate-ping" style={{
-                animationDelay: '0.5s'
-              }} />
+                <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh opacity-75" />
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 rounded-full bg-primary opacity-60" />
               </div>
             </div>
             
@@ -247,9 +245,7 @@ const Reviews = () => {
                 animation: 'float 5s ease-in-out infinite'
               }}>
                 <div className="relative rounded-xl overflow-hidden">
-                  <img src={happyCustomerImage} alt="Довольный клиент MasterClean" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" style={{
-                    animation: 'slowZoom 25s ease-in-out infinite alternate'
-                  }} />
+                  <img src={happyCustomerImage} alt="Довольный клиент MasterClean" loading="lazy" decoding="async" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20" />
                 </div>
               </div>
