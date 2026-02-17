@@ -71,10 +71,8 @@ const About = () => {
                     animation: 'pulse 2s ease-in-out infinite'
                   }} />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full animate-ping" />
-                  <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full animate-ping" style={{
-                  animationDelay: '0.5s'
-                }} />
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full opacity-75" />
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full opacity-60" />
                 </div>
               </div>
               <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
@@ -212,7 +210,7 @@ const About = () => {
                 {/* Sofa Before/After */}
                 <CircularRevealCard index={0}>
                   <div className="relative rounded-2xl overflow-hidden shadow-card group">
-                    <img src={sofaBeforeAfter} alt="Before and after sofa cleaning" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={sofaBeforeAfter} alt="Before and after sofa cleaning" loading="lazy" decoding="async" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
                     <div className="absolute bottom-0 left-0 right-0 flex">
                       <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">
@@ -228,7 +226,7 @@ const About = () => {
                 {/* Stroller Before/After */}
                 <CircularRevealCard index={1}>
                   <div className="relative rounded-2xl overflow-hidden shadow-card group">
-                    <img src={strollerBeforeAfter} alt="Before and after stroller cleaning" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={strollerBeforeAfter} alt="Before and after stroller cleaning" loading="lazy" decoding="async" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
                     <div className="absolute bottom-0 left-0 right-0 flex">
                       <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">

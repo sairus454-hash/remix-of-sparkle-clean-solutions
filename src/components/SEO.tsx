@@ -11,7 +11,7 @@ interface SEOProps {
   jsonLd?: Record<string, unknown>;
 }
 
-const SITE_URL = 'https://shine-clean-connect.lovable.app';
+const SITE_URL = 'https://masterclean1885.lovable.app';
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
 const hreflangMap: Record<string, string> = {

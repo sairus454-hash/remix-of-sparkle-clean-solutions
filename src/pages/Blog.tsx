@@ -356,7 +356,7 @@ const Blog = () => {
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow">
                     <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" />
                   </div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh animate-ping" />
+                  <div className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-fresh opacity-75" />
                 </div>
               </div>
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
