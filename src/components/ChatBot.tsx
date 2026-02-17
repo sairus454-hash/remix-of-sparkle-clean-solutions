@@ -266,6 +266,9 @@ const ChatBot = () => {
     
     // Disable auto-open on mobile completely
     if (isMobile) return;
+
+    // Disable auto-open on contacts page (has its own form)
+    if (location.pathname === '/contacts') return;
     
     // Desktop: 8 seconds delay
     const timer = setTimeout(() => {
@@ -274,7 +277,7 @@ const ChatBot = () => {
     }, 8000);
 
     return () => clearTimeout(timer);
-  }, [hasAutoOpened, isMobile]);
+  }, [hasAutoOpened, isMobile, location.pathname]);
 
   // Reset readonly state when chat opens (for mobile keyboard prevention)
   useEffect(() => {
