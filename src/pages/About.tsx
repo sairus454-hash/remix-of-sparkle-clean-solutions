@@ -42,6 +42,7 @@ const About = () => {
         description="Узнайте о команде MasterClean. Профессиональная химчистка мебели и ковров в Польше. Современное оборудование, экологичные средства, опытные специалисты."
         keywords="о нас, MasterClean, команда химчистки, профессиональная химчистка, Польша"
         canonical="/about"
+        image="https://masterclean1885.lovable.app/og-about.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'AboutPage',

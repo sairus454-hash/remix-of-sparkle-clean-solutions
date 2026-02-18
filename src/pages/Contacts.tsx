@@ -50,6 +50,7 @@ const Contacts = () => {
         description="Свяжитесь с MasterClean: телефон +48 575 211 401, email, адрес. Работаем 24/7. Оставьте заявку онлайн."
         keywords="контакты химчистка, MasterClean контакты, заказать химчистку, телефон химчистки"
         canonical="/contacts"
+        image="https://masterclean1885.lovable.app/og-contacts.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ContactPage',

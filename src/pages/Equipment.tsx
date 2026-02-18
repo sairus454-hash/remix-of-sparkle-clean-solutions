@@ -87,6 +87,7 @@ const Equipment = () => {
         description="Профессиональное оборудование для химчистки: экстракторы, парогенераторы, озонаторы. Экологичные средства и передовые технологии."
         keywords="оборудование химчистки, экстрактор, парогенератор, озонатор, технологии чистки"
         canonical="/equipment"
+        image="https://masterclean1885.lovable.app/og-equipment.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',

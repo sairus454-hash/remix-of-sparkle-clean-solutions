@@ -122,6 +122,7 @@ const Cleaning = () => {
         description="Профессиональная уборка квартир, домов и офисов. Стандартная и генеральная уборка. Рассчитайте стоимость онлайн."
         keywords="уборка квартир, генеральная уборка, стандартная уборка, клининг, уборка дома"
         canonical="/cleaning"
+        image="https://masterclean1885.lovable.app/og-cleaning.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
