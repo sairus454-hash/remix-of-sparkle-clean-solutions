@@ -22,6 +22,7 @@ interface PriceItem {
   name: string;
   price: number;
   unit?: string;
+  subcategory?: string;
 }
 
 interface SelectedItem {
@@ -188,56 +189,56 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
        id: 'handyman',
        name: t.handyman?.title || 'Мастер на час',
        icon: <Wrench className="w-5 h-5" />,
-       items: [
-         // Сантехника
-         { id: 'faucet', name: t.handyman?.calcItems?.faucet || 'Замена/монтаж крана', price: 120 },
-         { id: 'siphon', name: t.handyman?.calcItems?.siphon || 'Монтаж/замена сифона', price: 120 },
-         { id: 'sink', name: t.handyman?.calcItems?.sink || 'Монтаж раковины', price: 180 },
-         { id: 'toilet', name: t.handyman?.calcItems?.toilet || 'Монтаж унитаза', price: 220 },
-         { id: 'sewer', name: t.handyman?.calcItems?.sewer || 'Чистка канализации', price: 300 },
-         { id: 'washingMachine', name: t.handyman?.calcItems?.washingMachine || 'Подключение стиральной машины', price: 140 },
-         { id: 'dishwasher', name: t.handyman?.calcItems?.dishwasher || 'Подключение посудомоечной машины', price: 140 },
-         { id: 'bathroomFan', name: t.handyman?.calcItems?.bathroomFan || 'Установка вентилятора в ванной', price: 80 },
-         { id: 'bidet', name: t.handyman?.calcItems?.bidet || 'Установка биде', price: 220 },
-         { id: 'urinal', name: t.handyman?.calcItems?.urinal || 'Установка писсуара', price: 200 },
-         { id: 'hoseReplacement', name: t.handyman?.calcItems?.hoseReplacement || 'Замена шлангов для смесителя', price: 50 },
-         { id: 'plumbingDemontage', name: t.handyman?.calcItems?.plumbingDemontage || 'Демонтаж сантехники', price: 80 },
-         { id: 'sealingJoints', name: t.handyman?.calcItems?.sealingJoints || 'Герметизация швов', price: 40, unit: 'm²' },
-         { id: 'showerCabinInstall', name: t.handyman?.calcItems?.showerCabinInstall || 'Установка душевой кабины', price: 450 },
-         { id: 'showerTrayInstall', name: t.handyman?.calcItems?.showerTrayInstall || 'Установка поддона', price: 200 },
-         { id: 'bathtubInstall', name: t.handyman?.calcItems?.bathtubInstall || 'Установка ванны', price: 300 },
-         { id: 'bathroomAccessories', name: t.handyman?.calcItems?.bathroomAccessories || 'Установка аксессуаров в ванной', price: 30 },
-         { id: 'wallMountedShower', name: t.handyman?.calcItems?.wallMountedShower || 'Монтаж навесного душа', price: 200 },
-         // Монтаж
-         { id: 'curtainRod', name: t.handyman?.calcItems?.curtainRod || 'Монтаж карнизов', price: 120 },
-         { id: 'shelf', name: t.handyman?.calcItems?.shelf || 'Монтаж полки/зеркала', price: 100 },
-         { id: 'pictures', name: t.handyman?.calcItems?.pictures || 'Навешивание картин/фото', price: 80 },
-         { id: 'furnitureAssembly', name: t.handyman?.calcItems?.furnitureAssembly || 'Сборка мебели', price: 80 },
-         { id: 'bedSofaRepair', name: t.handyman?.calcItems?.bedSofaRepair || 'Ремонт кроватей и диванов', price: 130 },
-         { id: 'wardrobeRepair', name: t.handyman?.calcItems?.wardrobeRepair || 'Ремонт шкафов-купе/приклеивание зеркал', price: 240 },
-         // Электрика
-         { id: 'bulb', name: t.handyman?.calcItems?.bulb || 'Замена лампочки/стартера', price: 50 },
-         { id: 'socket', name: t.handyman?.calcItems?.socket || 'Монтаж электрической розетки', price: 40 },
-         { id: 'lamp', name: t.handyman?.calcItems?.lamp || 'Монтаж люстры/лампы', price: 100 },
-         { id: 'stove', name: t.handyman?.calcItems?.stove || 'Подключение электроплиты', price: 200 },
-         { id: 'repair', name: t.handyman?.calcItems?.repair || 'Ремонт электрики', price: 100 },
-         { id: 'diagnostic', name: t.handyman?.calcItems?.diagnostic || 'Диагностика электрики', price: 350 },
-         { id: 'switch', name: t.handyman?.calcItems?.switch || 'Монтаж/замена переключателя', price: 50 },
-         { id: 'fuseReplacement', name: t.handyman?.calcItems?.fuseReplacement || 'Замена предохранителей', price: 120 },
-         { id: 'lampRepair', name: t.handyman?.calcItems?.lampRepair || 'Ремонт люстры/светильника', price: 130 },
-         { id: 'chandelierInstall', name: t.handyman?.calcItems?.chandelierInstall || 'Монтаж/замена люстры с лампой', price: 130 },
-         // Слесарные работы
-         { id: 'mailboxLock', name: t.handyman?.calcItems?.mailboxLock || 'Замена замка на почт. ящике', price: 140 },
-         { id: 'doorHandle', name: t.handyman?.calcItems?.doorHandle || 'Установка/ремонт дверной ручки', price: 60 },
-         { id: 'doorCylinder', name: t.handyman?.calcItems?.doorCylinder || 'Установка/замена цилиндра замка', price: 100 },
-         { id: 'aluminumDoorRepair', name: t.handyman?.calcItems?.aluminumDoorRepair || 'Ремонт алюминиевых дверей', price: 200 },
-         { id: 'windowDoorAdjustment', name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон и дверей', price: 200 },
-         { id: 'fridgeHinges', name: t.handyman?.calcItems?.fridgeHinges || 'Ремонт петель холодильника', price: 200 },
-         // Услуги огородника
-         { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 110 },
-         { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 110 },
-         { id: 'yardHelp', name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 110 },
-       ],
+        items: [
+          // Сантехника
+          { id: 'faucet', name: t.handyman?.calcItems?.faucet || 'Замена/монтаж крана', price: 120, subcategory: '🔧 Сантехника' },
+          { id: 'siphon', name: t.handyman?.calcItems?.siphon || 'Монтаж/замена сифона', price: 120, subcategory: '🔧 Сантехника' },
+          { id: 'sink', name: t.handyman?.calcItems?.sink || 'Монтаж раковины', price: 180, subcategory: '🔧 Сантехника' },
+          { id: 'toilet', name: t.handyman?.calcItems?.toilet || 'Монтаж унитаза', price: 220, subcategory: '🔧 Сантехника' },
+          { id: 'sewer', name: t.handyman?.calcItems?.sewer || 'Чистка канализации', price: 300, subcategory: '🔧 Сантехника' },
+          { id: 'washingMachine', name: t.handyman?.calcItems?.washingMachine || 'Подключение стиральной машины', price: 140, subcategory: '🔧 Сантехника' },
+          { id: 'dishwasher', name: t.handyman?.calcItems?.dishwasher || 'Подключение посудомоечной машины', price: 140, subcategory: '🔧 Сантехника' },
+          { id: 'bathroomFan', name: t.handyman?.calcItems?.bathroomFan || 'Установка вентилятора в ванной', price: 80, subcategory: '🔧 Сантехника' },
+          { id: 'bidet', name: t.handyman?.calcItems?.bidet || 'Установка биде', price: 220, subcategory: '🔧 Сантехника' },
+          { id: 'urinal', name: t.handyman?.calcItems?.urinal || 'Установка писсуара', price: 200, subcategory: '🔧 Сантехника' },
+          { id: 'hoseReplacement', name: t.handyman?.calcItems?.hoseReplacement || 'Замена шлангов для смесителя', price: 50, subcategory: '🔧 Сантехника' },
+          { id: 'plumbingDemontage', name: t.handyman?.calcItems?.plumbingDemontage || 'Демонтаж сантехники', price: 80, subcategory: '🔧 Сантехника' },
+          { id: 'sealingJoints', name: t.handyman?.calcItems?.sealingJoints || 'Герметизация швов', price: 40, unit: 'm²', subcategory: '🔧 Сантехника' },
+          { id: 'showerCabinInstall', name: t.handyman?.calcItems?.showerCabinInstall || 'Установка душевой кабины', price: 450, subcategory: '🔧 Сантехника' },
+          { id: 'showerTrayInstall', name: t.handyman?.calcItems?.showerTrayInstall || 'Установка поддона', price: 200, subcategory: '🔧 Сантехника' },
+          { id: 'bathtubInstall', name: t.handyman?.calcItems?.bathtubInstall || 'Установка ванны', price: 300, subcategory: '🔧 Сантехника' },
+          { id: 'bathroomAccessories', name: t.handyman?.calcItems?.bathroomAccessories || 'Установка аксессуаров в ванной', price: 30, subcategory: '🔧 Сантехника' },
+          { id: 'wallMountedShower', name: t.handyman?.calcItems?.wallMountedShower || 'Монтаж навесного душа', price: 200, subcategory: '🔧 Сантехника' },
+          // Монтаж
+          { id: 'curtainRod', name: t.handyman?.calcItems?.curtainRod || 'Монтаж карнизов', price: 120, subcategory: '🛠 Монтаж' },
+          { id: 'shelf', name: t.handyman?.calcItems?.shelf || 'Монтаж полки/зеркала', price: 100, subcategory: '🛠 Монтаж' },
+          { id: 'pictures', name: t.handyman?.calcItems?.pictures || 'Навешивание картин/фото', price: 80, subcategory: '🛠 Монтаж' },
+          { id: 'furnitureAssembly', name: t.handyman?.calcItems?.furnitureAssembly || 'Сборка мебели', price: 80, subcategory: '🛠 Монтаж' },
+          { id: 'bedSofaRepair', name: t.handyman?.calcItems?.bedSofaRepair || 'Ремонт кроватей и диванов', price: 130, subcategory: '🛠 Монтаж' },
+          { id: 'wardrobeRepair', name: t.handyman?.calcItems?.wardrobeRepair || 'Ремонт шкафов-купе/приклеивание зеркал', price: 240, subcategory: '🛠 Монтаж' },
+          // Электрика
+          { id: 'bulb', name: t.handyman?.calcItems?.bulb || 'Замена лампочки/стартера', price: 50, subcategory: '⚡ Электрика' },
+          { id: 'socket', name: t.handyman?.calcItems?.socket || 'Монтаж электрической розетки', price: 40, subcategory: '⚡ Электрика' },
+          { id: 'lamp', name: t.handyman?.calcItems?.lamp || 'Монтаж люстры/лампы', price: 100, subcategory: '⚡ Электрика' },
+          { id: 'stove', name: t.handyman?.calcItems?.stove || 'Подключение электроплиты', price: 200, subcategory: '⚡ Электрика' },
+          { id: 'repair', name: t.handyman?.calcItems?.repair || 'Ремонт электрики', price: 100, subcategory: '⚡ Электрика' },
+          { id: 'diagnostic', name: t.handyman?.calcItems?.diagnostic || 'Диагностика электрики', price: 350, subcategory: '⚡ Электрика' },
+          { id: 'switch', name: t.handyman?.calcItems?.switch || 'Монтаж/замена переключателя', price: 50, subcategory: '⚡ Электрика' },
+          { id: 'fuseReplacement', name: t.handyman?.calcItems?.fuseReplacement || 'Замена предохранителей', price: 120, subcategory: '⚡ Электрика' },
+          { id: 'lampRepair', name: t.handyman?.calcItems?.lampRepair || 'Ремонт люстры/светильника', price: 130, subcategory: '⚡ Электрика' },
+          { id: 'chandelierInstall', name: t.handyman?.calcItems?.chandelierInstall || 'Монтаж/замена люстры с лампой', price: 130, subcategory: '⚡ Электрика' },
+          // Слесарные работы
+          { id: 'mailboxLock', name: t.handyman?.calcItems?.mailboxLock || 'Замена замка на почт. ящике', price: 140, subcategory: '🔑 Слесарные работы' },
+          { id: 'doorHandle', name: t.handyman?.calcItems?.doorHandle || 'Установка/ремонт дверной ручки', price: 60, subcategory: '🔑 Слесарные работы' },
+          { id: 'doorCylinder', name: t.handyman?.calcItems?.doorCylinder || 'Установка/замена цилиндра замка', price: 100, subcategory: '🔑 Слесарные работы' },
+          { id: 'aluminumDoorRepair', name: t.handyman?.calcItems?.aluminumDoorRepair || 'Ремонт алюминиевых дверей', price: 200, subcategory: '🔑 Слесарные работы' },
+          { id: 'windowDoorAdjustment', name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон и дверей', price: 200, subcategory: '🔑 Слесарные работы' },
+          { id: 'fridgeHinges', name: t.handyman?.calcItems?.fridgeHinges || 'Ремонт петель холодильника', price: 200, subcategory: '🔑 Слесарные работы' },
+          // Услуги огородника
+          { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 110, subcategory: '🌿 Услуги огородника' },
+          { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 110, subcategory: '🌿 Услуги огородника' },
+          { id: 'yardHelp', name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 110, subcategory: '🌿 Услуги огородника' },
+        ],
      },
   ];
 
@@ -443,18 +444,28 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
               </CollapsibleTrigger>
               <CollapsibleContent className="pt-2">
                 <div className="grid grid-cols-1 gap-1.5 pl-2">
-                  {category.items.map((item) => (
-                    <Button
-                      key={item.id}
-                      variant="ghost"
-                      size="sm"
-                      className="justify-start text-left h-auto py-2 px-3 hover:bg-accent/50 w-full"
-                      onClick={() => addItem(item)}
-                    >
-                      <Plus className="w-4 h-4 mr-2 flex-shrink-0 text-primary" />
-                      <span className="text-xs sm:text-sm">{item.name}</span>
-                    </Button>
-                  ))}
+                  {category.items.map((item, index) => {
+                    const showSubcategoryHeader = item.subcategory && 
+                      (index === 0 || category.items[index - 1]?.subcategory !== item.subcategory);
+                    return (
+                      <div key={item.id}>
+                        {showSubcategoryHeader && (
+                          <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider pt-3 pb-1 px-3 border-b border-border/50 mb-1">
+                            {item.subcategory}
+                          </div>
+                        )}
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="justify-start text-left h-auto py-2 px-3 hover:bg-accent/50 w-full"
+                          onClick={() => addItem(item)}
+                        >
+                          <Plus className="w-4 h-4 mr-2 flex-shrink-0 text-primary" />
+                          <span className="text-xs sm:text-sm">{item.name}</span>
+                        </Button>
+                      </div>
+                    );
+                  })}
                 </div>
               </CollapsibleContent>
             </Collapsible>
