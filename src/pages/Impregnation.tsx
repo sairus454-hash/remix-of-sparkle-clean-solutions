@@ -78,6 +78,7 @@ const Impregnation = () => {
         description="Профессиональная импрегнация мебели, ковров и тканей. Защита от воды, грязи и пятен. Гидрофобное покрытие продлевает срок службы."
         keywords="импрегнация, защита мебели, гидрофобное покрытие, защита ткани, импрегнация ковров"
         canonical="/impregnation"
+        image="https://masterclean1885.lovable.app/og-impregnation.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

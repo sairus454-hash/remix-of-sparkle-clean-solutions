@@ -52,6 +52,7 @@ const Ozone = () => {
         description="Профессиональное озонирование квартир, офисов и автомобилей. Устранение неприятных запахов, дезинфекция, уничтожение бактерий и вирусов."
         keywords="озонирование, удаление запахов, дезинфекция, озонирование квартиры, озонирование авто"
         canonical="/ozone"
+        image="https://masterclean1885.lovable.app/og-ozone.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

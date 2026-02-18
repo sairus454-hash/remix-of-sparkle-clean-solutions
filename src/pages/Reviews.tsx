@@ -191,6 +191,7 @@ const Reviews = () => {
         description="Реальные отзывы клиентов о химчистке мебели, ковров и авто. Узнайте, почему нам доверяют. Оставьте свой отзыв."
         keywords="отзывы химчистка, отзывы MasterClean, отзывы клиентов, качество чистки"
         canonical="/reviews"
+        image="https://masterclean1885.lovable.app/og-reviews.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',

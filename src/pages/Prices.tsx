@@ -228,6 +228,7 @@ const Prices = () => {
         description="Актуальные цены на химчистку мебели, ковров, матрасов, авто, озонирование и уборку. Калькулятор стоимости онлайн."
         keywords="цены химчистка, прайс химчистка мебели, стоимость чистки ковров, цены озонирование"
         canonical="/prices"
+        image="https://masterclean1885.lovable.app/og-prices.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'PriceSpecification',

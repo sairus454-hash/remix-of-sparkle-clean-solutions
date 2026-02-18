@@ -40,6 +40,7 @@ const Services = () => {
         description="Полный спектр клининговых услуг: химчистка мебели, ковров, матрасов, кожаных изделий, салонов авто, озонирование, мойка окон, уборка."
         keywords="услуги химчистки, чистка мебели, чистка ковров, химчистка авто, озонирование, мойка окон"
         canonical="/services"
+        image="https://masterclean1885.lovable.app/og-services.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
