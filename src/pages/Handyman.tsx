@@ -61,7 +61,7 @@ const Handyman = () => {
           offers: [
             { '@type': 'Offer', name: 'Сантехнические работы', price: '120', priceCurrency: 'PLN' },
             { '@type': 'Offer', name: 'Электромонтажные работы', price: '40', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Чистка канализации', price: '400', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Чистка канализации', price: '300', priceCurrency: 'PLN' },
           ],
         }}
       />
