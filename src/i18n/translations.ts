@@ -440,6 +440,13 @@ export const translations = {
         yardHelp: 'Не сложная помощь на участке',
       },
       gardening: 'Услуги огородника',
+      subcategories: {
+        plumbing: '🔧 Сантехника',
+        mounting: '🛠 Монтаж',
+        electrical: '⚡ Электрика',
+        locksmith: '🔑 Слесарные работы',
+        gardening: '🌿 Услуги огородника',
+      },
     },
     chatbot: {
       title: 'AI-консультант',
@@ -1073,6 +1080,13 @@ export const translations = {
         yardHelp: 'Simple yard help',
       },
       gardening: 'Gardening services',
+      subcategories: {
+        plumbing: '🔧 Plumbing',
+        mounting: '🛠 Mounting',
+        electrical: '⚡ Electrical',
+        locksmith: '🔑 Locksmith Work',
+        gardening: '🌿 Gardening',
+      },
     },
     chatbot: {
       title: 'AI Consultant',
@@ -1706,6 +1720,13 @@ export const translations = {
         yardHelp: 'Prosta pomoc na działce',
       },
       gardening: 'Usługi ogrodnicze',
+      subcategories: {
+        plumbing: '🔧 Hydraulika',
+        mounting: '🛠 Montaż',
+        electrical: '⚡ Elektryka',
+        locksmith: '🔑 Ślusarstwo',
+        gardening: '🌿 Usługi ogrodnicze',
+      },
     },
     chatbot: {
       title: 'Konsultant AI',
@@ -2339,6 +2360,13 @@ export const translations = {
         yardHelp: 'Нескладна допомога на ділянці',
       },
       gardening: 'Послуги садівника',
+      subcategories: {
+        plumbing: '🔧 Сантехніка',
+        mounting: '🛠 Монтаж',
+        electrical: '⚡ Електрика',
+        locksmith: '🔑 Слюсарні роботи',
+        gardening: '🌿 Послуги садівника',
+      },
     },
     chatbot: {
       title: 'AI-консультант',
