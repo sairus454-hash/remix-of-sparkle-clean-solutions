@@ -163,7 +163,7 @@ const PriceSection = () => {
           { name: t.handyman?.calcItems?.siphon || 'Монтаж/замена сифона', price: 120, icon: Droplet },
           { name: t.handyman?.calcItems?.sink || 'Монтаж раковины', price: 180, icon: Droplet },
           { name: t.handyman?.calcItems?.toilet || 'Монтаж унитаза', price: 220, icon: Droplet },
-          { name: t.handyman?.calcItems?.sewer || 'Чистка канализации', price: 300, icon: Droplet },
+          { name: t.handyman?.calcItems?.sewer || 'Чистка канализации', price: 250, icon: Droplet },
           { name: t.handyman?.calcItems?.washingMachine || 'Подключение стиральной машины', price: 140, icon: Droplet },
           { name: t.handyman?.calcItems?.dishwasher || 'Подключение посудомоечной машины', price: 140, icon: Droplet },
           { name: t.handyman?.calcItems?.bathroomFan || 'Установка вентилятора в ванной', price: 80, icon: Droplet },
