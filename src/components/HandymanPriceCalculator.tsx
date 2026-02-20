@@ -54,7 +54,7 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
           { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, icon: Droplet },
           { id: 'sink', name: t.handyman.calcItems.sink, price: 180, icon: Droplet },
           { id: 'toilet', name: t.handyman.calcItems.toilet, price: 220, icon: Droplet },
-          { id: 'sewer', name: t.handyman.calcItems.sewer, price: 300, icon: Droplet },
+          { id: 'sewer', name: t.handyman.calcItems.sewer, price: 250, icon: Droplet },
           { id: 'washingMachine', name: t.handyman.calcItems.washingMachine, price: 140, icon: Droplet },
           { id: 'dishwasher', name: t.handyman.calcItems.dishwasher, price: 140, icon: Droplet },
           { id: 'bathroomFan', name: t.handyman.calcItems.bathroomFan, price: 80, icon: Droplet },

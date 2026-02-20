@@ -195,7 +195,7 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
           { id: 'siphon', name: t.handyman?.calcItems?.siphon || 'Монтаж/замена сифона', price: 120, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
           { id: 'sink', name: t.handyman?.calcItems?.sink || 'Монтаж раковины', price: 180, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
           { id: 'toilet', name: t.handyman?.calcItems?.toilet || 'Монтаж унитаза', price: 220, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
-          { id: 'sewer', name: t.handyman?.calcItems?.sewer || 'Чистка канализации', price: 300, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
+          { id: 'sewer', name: t.handyman?.calcItems?.sewer || 'Чистка канализации', price: 250, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
           { id: 'washingMachine', name: t.handyman?.calcItems?.washingMachine || 'Подключение стиральной машины', price: 140, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
           { id: 'dishwasher', name: t.handyman?.calcItems?.dishwasher || 'Подключение посудомоечной машины', price: 140, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
           { id: 'bathroomFan', name: t.handyman?.calcItems?.bathroomFan || 'Установка вентилятора в ванной', price: 80, subcategory: t.handyman?.subcategories?.plumbing || '🔧 Сантехника' },
