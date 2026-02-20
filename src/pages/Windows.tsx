@@ -42,7 +42,7 @@ import SEO from '@/components/SEO';
         description="Профессиональная мойка окон любой сложности. Чистые окна — больше света и комфорта в вашем доме. Быстро, качественно, доступно."
         keywords="мойка окон, чистка окон, мытьё окон, профессиональная мойка, Польша"
         canonical="/windows"
-        image="https://masterclean1885.lovable.app/og-windows.png"
+        image="https://masterclean1885.pl/og-windows.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

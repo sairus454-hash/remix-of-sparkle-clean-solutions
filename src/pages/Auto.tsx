@@ -169,7 +169,7 @@ const Auto = () => {
       description="Профессиональная химчистка салона автомобиля. Чистка сидений, потолка, ковриков, багажника. Удаление пятен и запахов."
       keywords="химчистка авто, чистка салона, химчистка сидений, чистка автомобиля, удаление запахов авто"
       canonical="/auto"
-      image="https://masterclean1885.lovable.app/og-auto.png"
+      image="https://masterclean1885.pl/og-auto.png"
       jsonLd={{
         '@context': 'https://schema.org',
         '@type': 'Service',

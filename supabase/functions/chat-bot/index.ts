@@ -103,7 +103,7 @@ const PRICE_LIST = {
 • Установка ванны — 300 PLN
 • Установка аксессуаров в ванной — 30 PLN/шт
 • Монтаж навесного душа — 200 PLN
-• Чистка канализации — 400 PLN
+• Чистка канализации — 250 PLN
 
 🪑 Навеска и монтаж:
 • Монтаж карнизов — 120 PLN
@@ -253,7 +253,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 • Bathtub installation — 300 PLN
 • Bathroom accessories installation — 30 PLN/pc
 • Wall-mounted shower installation — 200 PLN
-• Drain/sewer cleaning — 400 PLN
+• Drain/sewer cleaning — 250 PLN
 
 🪑 Mounting:
 • Curtain rod installation — 120 PLN

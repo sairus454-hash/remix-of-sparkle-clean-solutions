@@ -191,13 +191,13 @@ const Reviews = () => {
         description="Реальные отзывы клиентов о химчистке мебели, ковров и авто. Узнайте, почему нам доверяют. Оставьте свой отзыв."
         keywords="отзывы химчистка, отзывы MasterClean, отзывы клиентов, качество чистки"
         canonical="/reviews"
-        image="https://masterclean1885.lovable.app/og-reviews.png"
+        image="https://masterclean1885.pl/og-reviews.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'MasterClean',
           aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', bestRating: '5', ratingCount: '100' },
-          url: 'https://masterclean1885.lovable.app/reviews',
+          url: 'https://masterclean1885.pl/reviews',
         }}
       />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}

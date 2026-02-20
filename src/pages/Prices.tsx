@@ -235,14 +235,14 @@ const Prices = () => {
         description="Актуальные цены на химчистку мебели, ковров, матрасов, авто, озонирование и уборку. Калькулятор стоимости онлайн."
         keywords="цены химчистка, прайс химчистка мебели, стоимость чистки ковров, цены озонирование"
         canonical="/prices"
-        image="https://masterclean1885.lovable.app/og-prices.png"
+        image="https://masterclean1885.pl/og-prices.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'PriceSpecification',
           name: 'Прайс-лист MasterClean',
           description: 'Актуальные цены на все услуги химчистки и клининга',
           priceCurrency: 'PLN',
-          url: 'https://masterclean1885.lovable.app/prices',
+          url: 'https://masterclean1885.pl/prices',
         }}
       />
       {showSplash && <PriceSplash onComplete={handleSplashComplete} />}

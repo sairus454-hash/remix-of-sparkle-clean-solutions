@@ -330,14 +330,14 @@ const Blog = () => {
         description={titles.subtitle}
         keywords="блог чистоты, химчистка, уборка, советы по чистке"
         canonical="/blog"
-        image="https://masterclean1885.lovable.app/og-blog.png"
+        image="https://masterclean1885.pl/og-blog.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Blog',
           name: titles.title,
           description: titles.subtitle,
-          publisher: { '@type': 'Organization', name: 'MasterClean', url: 'https://masterclean1885.lovable.app' },
-          url: 'https://masterclean1885.lovable.app/blog',
+          publisher: { '@type': 'Organization', name: 'MasterClean', url: 'https://masterclean1885.pl' },
+          url: 'https://masterclean1885.pl/blog',
         }}
       />
       <Layout>

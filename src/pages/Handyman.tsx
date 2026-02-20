@@ -51,7 +51,7 @@ const Handyman = () => {
         description="Мастер на час: сантехника, электрика, мебель, мелкий ремонт. Быстро, качественно, с гарантией. Вызов мастера 24/7."
         keywords="мастер на час, мелкий ремонт, сантехник, электрик, сборка мебели, бытовые услуги"
         canonical="/handyman"
-        image="https://masterclean1885.lovable.app/og-handyman.png"
+        image="https://masterclean1885.pl/og-handyman.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
