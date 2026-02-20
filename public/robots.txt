@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://masterclean1885.lovable.app/sitemap.xml
+Sitemap: https://masterclean1885.pl/sitemap.xml

@@ -57,16 +57,16 @@ const Index = () => {
         description="Профессиональная химчистка мебели, матрасов, ковров и салонов авто. Озонирование, уборка, мойка окон. Работаем 24/7. Звоните: +48 575 211 401"
         keywords="химчистка мебели, химчистка ковров, химчистка матрасов, химчистка авто, озонирование, уборка, Ополе, Вроцлав"
         canonical="/"
-        image="https://masterclean1885.lovable.app/og-image.png"
+        image="https://masterclean1885.pl/og-image.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'MasterClean',
           description: 'Профессиональная химчистка мебели, матрасов, ковров и салонов авто в Польше. Озонирование, уборка, мойка окон.',
-          url: 'https://masterclean1885.lovable.app',
+          url: 'https://masterclean1885.pl',
           telephone: '+48575211401',
           email: 'masterclean@email.com',
-          image: 'https://masterclean1885.lovable.app/og-image.png',
+          image: 'https://masterclean1885.pl/og-image.png',
           areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
           priceRange: '$$',
           openingHoursSpecification: {
