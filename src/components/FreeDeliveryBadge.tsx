@@ -7,10 +7,11 @@ const FreeDeliveryBadge = () => {
   const [isDismissed, setIsDismissed] = useState(false);
   const { language } = useLanguage();
 
-  const texts = {
+  const texts: Record<string, string> = {
     ru: 'Доезд до клиента — бесплатно!!!',
     uk: 'Виїзд до клієнта — безкоштовно!!!',
     pl: 'Dojazd do klienta — gratis!!!',
+    en: 'Free travel to client!!!',
   };
 
   if (isDismissed) return null;
