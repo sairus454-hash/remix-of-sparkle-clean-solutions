@@ -365,7 +365,7 @@ const ChatBot = () => {
     sendMessage(reply.message);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
@@ -782,7 +782,7 @@ const ChatBot = () => {
               <Input
                 value={photoCaption}
                 onChange={(e) => setPhotoCaption(e.target.value)}
-                onKeyPress={(e) => { if (e.key === 'Enter' && photoPhone.trim()) sendPhotosWithCaption(); }}
+                onKeyDown={(e) => { if (e.key === 'Enter' && photoPhone.trim()) sendPhotosWithCaption(); }}
                 placeholder={t.chatbot?.captionPlaceholder || 'Добавьте описание (необязательно)...'}
                 className={cn("h-10", isMobile && "text-base")}
               />
@@ -855,7 +855,7 @@ const ChatBot = () => {
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyDown}
               onFocus={handleInputFocus}
               readOnly={isMobile && inputReadonly}
               placeholder={isListening ? (t.chatbot?.listening || 'Говорите...') : t.chatbot.placeholder}

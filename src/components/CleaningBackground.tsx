@@ -5,10 +5,14 @@ const CleaningBackground = () => {
 
   useEffect(() => {
     // Delay mounting to not block initial render
-    const timer = requestIdleCallback ? requestIdleCallback(() => setMounted(true)) : setTimeout(() => setMounted(true), 100);
-    return () => {
-      if (typeof timer === 'number' && cancelIdleCallback) cancelIdleCallback(timer);
-    };
+    // Safari < 16.4 doesn't support requestIdleCallback
+    if (typeof window.requestIdleCallback === 'function') {
+      const handle = window.requestIdleCallback(() => setMounted(true));
+      return () => window.cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(() => setMounted(true), 100);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   if (!mounted) return null;
