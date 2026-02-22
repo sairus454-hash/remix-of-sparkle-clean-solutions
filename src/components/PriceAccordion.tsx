@@ -36,8 +36,8 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
   const [cleaningArea, setCleaningArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const STANDARD_PRICE_PER_M2 = 8;
-  const GENERAL_PRICE_PER_M2 = 10;
+  const STANDARD_PRICE_PER_M2 = 6;
+  const GENERAL_PRICE_PER_M2 = 8;
   
   const getCleaningPrice = () => {
     const basePrice = cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);

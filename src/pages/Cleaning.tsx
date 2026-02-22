@@ -33,7 +33,7 @@ const Cleaning = () => {
   const [area, setArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const pricePerMeter = cleaningType === 'standard' ? 8 : 10;
+  const pricePerMeter = cleaningType === 'standard' ? 6 : 8;
   const totalPrice = area * pricePerMeter;
   
   const cleaningTypeLabel = cleaningType === 'standard' 
@@ -130,8 +130,8 @@ const Cleaning = () => {
           provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
           areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
           offers: [
-            { '@type': 'Offer', name: 'Стандартная уборка', price: '8', priceCurrency: 'PLN', unitText: 'за м²' },
-            { '@type': 'Offer', name: 'Генеральная уборка', price: '10', priceCurrency: 'PLN', unitText: 'за м²' },
+            { '@type': 'Offer', name: 'Стандартная уборка', price: '6', priceCurrency: 'PLN', unitText: 'за м²' },
+            { '@type': 'Offer', name: 'Генеральная уборка', price: '8', priceCurrency: 'PLN', unitText: 'за м²' },
           ],
         }}
       />
@@ -285,13 +285,13 @@ const Cleaning = () => {
                         <TabsTrigger value="standard" className="py-4 text-base">
                           <div className="text-center">
                             <div className="font-semibold">{t.cleaning?.standardCleaning || 'Стандартная'}</div>
-                            <div className="text-sm text-muted-foreground">8 PLN/м²</div>
+                            <div className="text-sm text-muted-foreground">6 PLN/м²</div>
                           </div>
                         </TabsTrigger>
                         <TabsTrigger value="general" className="py-4 text-base">
                           <div className="text-center">
                             <div className="font-semibold">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
-                            <div className="text-sm text-muted-foreground">10 PLN/м²</div>
+                            <div className="text-sm text-muted-foreground">8 PLN/м²</div>
                           </div>
                         </TabsTrigger>
                       </TabsList>
