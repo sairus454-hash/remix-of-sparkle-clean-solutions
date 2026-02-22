@@ -9,6 +9,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollButton from "@/components/ScrollButton";
+import SecurityHeaders from "@/components/SecurityHeaders";
 
 // Lazy load non-critical UI
 const FreeDeliveryBadge = lazy(() => import("@/components/FreeDeliveryBadge"));
@@ -56,6 +57,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <SecurityHeaders />
             <ScrollToTop />
             <ScrollButton />
             <Suspense fallback={null}>
