@@ -403,7 +403,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 • Montaż wanny — 300 PLN
 • Montaż akcesoriów łazienkowych — 30 PLN/szt
 • Montaż prysznica ściennego — 200 PLN
-• Czyszczenie kanalizacji — 400 PLN
+• Czyszczenie kanalizacji — 250 PLN
 
 🪑 Montaż:
 • Montaż karniszy — 120 PLN
