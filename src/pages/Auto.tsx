@@ -6,6 +6,7 @@ import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AutoSplash from '@/components/AutoSplash';
 import AnimatedImage from '@/components/AnimatedImage';
+import AutoHeroSlideshow from '@/components/AutoHeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2, Send } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -186,16 +187,11 @@ const Auto = () => {
     <Layout>
       {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
       
-      {/* Hero with Fullscreen Video Background */}
+      {/* Hero with Fullscreen Photo Slideshow Background */}
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
-        {/* YouTube Video Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-black/70">
-          <iframe src="https://www.youtube.com/embed/FPFpQDscE4c?autoplay=1&mute=1&loop=1&playlist=FPFpQDscE4c&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&fs=0&iv_load_policy=3" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[100vw] min-h-[100vh] w-[177.78vh] h-[56.25vw] border-0" style={{
-          aspectRatio: '16/9'
-        }} allow="autoplay; encrypted-media" title="Auto cleaning background video" />
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/40 to-background/55" />
-        </div>
+        {/* Photo Slideshow Background */}
+        <AutoHeroSlideshow />
+
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
