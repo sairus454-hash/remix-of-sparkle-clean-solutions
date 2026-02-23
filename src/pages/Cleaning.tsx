@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
-import AnimatedImage from '@/components/AnimatedImage';
+import HeroSlideshow from '@/components/HeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CleaningSplash from '@/components/CleaningSplash';
 import { Slider } from '@/components/ui/slider';
@@ -137,9 +137,10 @@ const Cleaning = () => {
       />
       {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
       <Layout>
-      {/* Hero */}
-      <section className="py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
+      {/* Hero with Background Photo Slideshow */}
+      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
+        <HeroSlideshow images={galleryImages} />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             {/* Animated icon */}
             <div className="flex justify-center mb-6">
@@ -155,36 +156,9 @@ const Cleaning = () => {
             <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
               {t.cleaning?.title || 'Уборка помещений'}
             </h1>
-            <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <p className="text-lg animate-fade-up text-secondary-foreground" style={{ animationDelay: '0.1s' }}>
               {t.cleaning?.subtitle || 'Профессиональная уборка квартир, домов и офисов'}
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Gallery */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {galleryImages.map((image, index) => (
-              <CircularRevealCard key={index} index={index}>
-                <div 
-                  className="group rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 bg-gradient-hero p-1"
-                  style={{ animation: `float ${4 + index * 0.5}s ease-in-out infinite` }}
-                >
-                  <div className="relative rounded-xl overflow-hidden">
-                    <AnimatedImage 
-                      src={image.src} 
-                      alt={image.alt} 
-                      delay={index * 150}
-                      duration={800}
-                      className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
-                  </div>
-                </div>
-              </CircularRevealCard>
-            ))}
           </div>
         </div>
       </section>
