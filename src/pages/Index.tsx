@@ -247,7 +247,7 @@ const Index = () => {
               <span className="font-medium text-foreground/80">✨ {t.promotions.subtitle} ✨</span>
             </p>
             <p className="text-sm sm:text-base text-fresh font-semibold mt-2 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              💰 Экономьте до 20% на наших услугах!
+              💰 {t.promotions.saveUpTo}
             </p>
           </div>
           
@@ -270,7 +270,7 @@ const Index = () => {
                 {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-500 to-teal-500 text-white shadow-glow animate-pulse">
-                    🛏️ Матрас
+                    🛏️ {t.promotions.mattressBadge}
                   </span>
                 </div>
                 
@@ -286,7 +286,7 @@ const Index = () => {
                     {t.promotions.weeklyTitle}
                   </h3>
                   <p className="text-foreground text-center text-lg sm:text-xl font-bold mb-2 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
-                    2+ услуг: 10%
+                    {t.promotions.services2plus}
                   </p>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
                     {t.promotions.weeklyDesc}
@@ -313,7 +313,7 @@ const Index = () => {
                 {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-400 to-cyan-500 text-white shadow-glow animate-pulse">
-                    4+ услуг
+                     {t.promotions.services4plusBadge}
                   </span>
                 </div>
                 
@@ -326,7 +326,7 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-400 to-cyan-500 bg-clip-text text-transparent">
-                    4+ услуг: 15%
+                     {t.promotions.services4plus}
                   </h3>
                 </div>
               </div>
@@ -362,7 +362,7 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">
-                    6+ услуг (VIP): 20%
+                    {t.promotions.services6plus}
                   </h3>
                   <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
                     {t.promotions.loyaltyDesc}
