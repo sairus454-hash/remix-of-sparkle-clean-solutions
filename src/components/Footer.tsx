@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Droplets, Phone, Mail, MapPin } from 'lucide-react';
+import { Droplets, Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
@@ -87,6 +87,19 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <p>© {new Date().getFullYear()} MasterClean. {t.footer.rights}</p>
             <p className="mt-1">NIP: 8943280388</p>
           </div>
+
+          {/* Euro Quality Standard Badge */}
+          <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-primary/30 bg-primary/5">
+            <div className="relative w-10 h-10 flex items-center justify-center">
+              <ShieldCheck className="w-8 h-8 text-primary" />
+              <span className="absolute -bottom-0.5 -right-0.5 text-[8px] font-bold text-fresh bg-foreground rounded px-0.5">EU</span>
+            </div>
+            <div className="text-[10px] sm:text-xs leading-tight">
+              <p className="font-semibold text-background">Euro Standard</p>
+              <p className="text-muted-foreground">ISO 9001 · Certified Quality</p>
+            </div>
+          </div>
+
           <Link to="#" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
             {t.footer.privacy}
           </Link>
