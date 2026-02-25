@@ -48,7 +48,7 @@ const Prices = () => {
       icon: Brush,
       items: [],
       isSlider: true,
-      note: minOrderNote,
+      note: `${minOrderNote}\n${t.calculator?.cleaningTempNote || ''}`,
     },
     {
       id: 'furniture',

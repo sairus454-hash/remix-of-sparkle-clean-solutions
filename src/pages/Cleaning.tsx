@@ -311,9 +311,12 @@ const Cleaning = () => {
                     {t.cleaning?.order || 'Заказать уборку'}
                   </button>
                   
-                  <p className="text-xs text-muted-foreground text-center">
-                    {t.calculator?.minOrder}
-                  </p>
+                   <p className="text-xs text-muted-foreground text-center">
+                     {t.calculator?.minOrder}
+                   </p>
+                   <p className="text-xs text-yellow-600 dark:text-yellow-400 text-center font-semibold mt-1">
+                     {t.calculator?.cleaningTempNote}
+                   </p>
                 </div>
                 
                 {/* Right column - Services included */}
@@ -549,9 +552,12 @@ const CleaningCalculatorContent = ({
       {t.cleaning?.order || 'Заказать уборку'}
     </button>
     
-    <p className="text-xs text-muted-foreground text-center">
-      {t.calculator?.minOrder}
-    </p>
+     <p className="text-xs text-muted-foreground text-center">
+       {t.calculator?.minOrder}
+     </p>
+     <p className="text-xs text-yellow-600 dark:text-yellow-400 text-center font-semibold mt-1">
+       {t.calculator?.cleaningTempNote}
+     </p>
     
     {/* Services included */}
     <div className="mt-4 pt-4 border-t border-border">
