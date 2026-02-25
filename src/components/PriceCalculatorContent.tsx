@@ -650,9 +650,12 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
             <p className="hidden lg:block text-[10px] sm:text-xs text-muted-foreground mt-1 sm:mt-1.5 font-medium">
               {t.calculator.minOrder}
             </p>
-            <p className="hidden lg:block text-[10px] sm:text-xs text-muted-foreground font-medium">
-              {t.calculator.minOrderOther}
-            </p>
+             <p className="hidden lg:block text-[10px] sm:text-xs text-muted-foreground font-medium">
+               {t.calculator.minOrderOther}
+             </p>
+             <p className="hidden lg:block text-[10px] sm:text-xs text-yellow-600 dark:text-yellow-400 font-semibold mt-1">
+               {t.calculator.cleaningTempNote}
+             </p>
             
             {/* Send to Form Button */}
             {selectedItems.length > 0 && (

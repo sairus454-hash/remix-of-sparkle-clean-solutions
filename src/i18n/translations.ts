@@ -179,6 +179,7 @@ export const translations = {
       note: 'Окончательная стоимость может отличаться в зависимости от сложности работы и размера изделия',
       minOrder: 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł',
       minOrderOther: 'Минимальный заказ для других населённых пунктов — 400 zł',
+      cleaningTempNote: '⚠️ Услуга уборка действует временно на территории Вроцлава',
       discountSystem: 'Система скидок',
     },
     booking: {
@@ -825,6 +826,7 @@ export const translations = {
       note: 'Final price may vary depending on the complexity of work and item size',
       minOrder: 'Minimum order for Wrocław and suburbs (R=10 km) — 180 zł',
       minOrderOther: 'Minimum order for other locations — 400 zł',
+      cleaningTempNote: '⚠️ Cleaning service is temporarily available in the Wrocław area only',
       discountSystem: 'Discount System',
     },
     booking: {
@@ -1471,6 +1473,7 @@ export const translations = {
       note: 'Ostateczna cena może się różnić w zależności od złożoności pracy i rozmiaru przedmiotu',
       minOrder: 'Minimalne zamówienie dla Wrocławia i okolic (R=10 km) — 180 zł',
       minOrderOther: 'Minimalne zamówienie dla innych miejscowości — 400 zł',
+      cleaningTempNote: '⚠️ Usługa sprzątania działa tymczasowo na terenie Wrocławia',
       discountSystem: 'System rabatowy',
     },
     booking: {
@@ -2117,6 +2120,7 @@ export const translations = {
       note: 'Остаточна вартість може відрізнятися залежно від складності роботи та розміру виробу',
       minOrder: 'Мінімальне замовлення для Вроцлава та передмістя (R=10 km) — 180 zł',
       minOrderOther: 'Мінімальне замовлення для інших населених пунктів — 400 zł',
+      cleaningTempNote: '⚠️ Послуга прибирання діє тимчасово на території Вроцлава',
       discountSystem: 'Система знижок',
     },
     booking: {
