@@ -27,6 +27,7 @@ import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import { useSplash } from '@/hooks/useSplash';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import heroBannerImage from '@/assets/hero-banner.jpg';
+import IndexHeroSlideshow from '@/components/IndexHeroSlideshow';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -95,24 +96,9 @@ const Index = () => {
       {/* Hero Banner Section */}
       <section 
         className="relative min-h-[600px] md:min-h-[700px] w-full flex items-center overflow-hidden py-12 sm:py-16 md:py-20"
-        style={{
-          background: 'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 40% 96%) 50%, hsl(var(--background)) 100%)',
-        }}
       >
-        {/* Background image container with contain */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${heroBannerImage})`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            filter: isMobile ? 'brightness(0.8) saturate(1.25)' : 'none',
-          }}
-        />
-        
-        {/* Gradient overlay for text readability - lighter on desktop for natural look */}
-        <div className={`absolute inset-0 z-[1] ${isMobile ? 'bg-gradient-to-r from-background via-background/90 to-transparent' : 'bg-gradient-to-r from-background/60 via-background/40 to-transparent'}`} />
+        {/* Background Photo Slideshow */}
+        <IndexHeroSlideshow />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-xl">
