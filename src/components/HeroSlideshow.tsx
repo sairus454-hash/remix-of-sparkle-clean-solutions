@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 interface HeroSlideshowProps {
   images: { src: string; alt: string }[];
   interval?: number;
+  objectFit?: 'cover' | 'contain';
 }
 
-const HeroSlideshow = ({ images, interval = 5000 }: HeroSlideshowProps) => {
+const HeroSlideshow = ({ images, interval = 5000, objectFit = 'cover' }: HeroSlideshowProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -16,13 +17,13 @@ const HeroSlideshow = ({ images, interval = 5000 }: HeroSlideshowProps) => {
   }, [images.length, interval]);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+    <div className="absolute inset-0 z-0 overflow-hidden" style={{ background: 'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 40% 96%) 50%, hsl(var(--background)) 100%)' }}>
       {images.map((img, index) => (
         <img
           key={index}
           src={img.src}
           alt={img.alt}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${objectFit === 'contain' ? 'object-contain' : 'object-cover'}`}
           style={{ opacity: index === currentIndex ? 1 : 0 }}
         />
       ))}
