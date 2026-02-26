@@ -6,6 +6,7 @@ import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import HandymanPriceCalculator from '@/components/HandymanPriceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
+import HandymanHeroSlideshow from '@/components/HandymanHeroSlideshow';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
@@ -69,9 +70,10 @@ const Handyman = () => {
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
       
       {/* Hero Section with animated title */}
-      <section className="py-20 bg-gradient-section overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center py-20">
+        <HandymanHeroSlideshow />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             {/* Animated tool icons */}
             <div className="flex justify-center mb-8">
               <div className="relative">

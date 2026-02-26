@@ -213,7 +213,7 @@ export const translations = {
       dryingDesc: 'Профессиональные системы сушки ускоряют высыхание обработанных поверхностей. Это предотвращает появление плесени и позволяет быстро вернуть мебель в эксплуатацию.',
     },
     auto: {
-      title: 'Химчистка автомобилей',
+      title: 'Выездная химчистка авто',
       subtitle: 'Химчистка салона является важным этапом для любого автомобиля. Во-первых, это повышает комфорт для водителя и пассажиров. Чистый и ухоженный салон создает приятную атмосферу в автомобиле и способствует более комфортной поездке.',
       interior: 'Чистка салона',
       interiorDesc: 'Полная химчистка сидений, потолка, дверных карт',
@@ -860,7 +860,7 @@ export const translations = {
       dryingDesc: 'Professional drying systems speed up the drying of treated surfaces. This prevents mold growth and allows furniture to return to use quickly.',
     },
     auto: {
-      title: 'Auto Dry Cleaning',
+      title: 'Mobile Auto Dry Cleaning',
       subtitle: 'Interior dry cleaning is an important step for any car. First of all, it increases comfort for the driver and passengers. A clean and well-maintained interior creates a pleasant atmosphere in the car and contributes to a more comfortable ride.',
       interior: 'Interior Cleaning',
       interiorDesc: 'Complete dry cleaning of seats, ceiling, door panels',
@@ -1507,7 +1507,7 @@ export const translations = {
       dryingDesc: 'Profesjonalne systemy suszenia przyspieszają schnięcie obrabianych powierzchni. Zapobiega to rozwojowi pleśni i pozwala szybko przywrócić meble do użytku.',
     },
     auto: {
-      title: 'Pranie chemiczne samochodów',
+      title: 'Mobilne pranie chemiczne aut',
       subtitle: 'Pranie chemiczne wnętrza to ważny etap dla każdego samochodu. Po pierwsze, zwiększa komfort kierowcy i pasażerów. Czyste i zadbane wnętrze tworzy przyjemną atmosferę w samochodzie i przyczynia się do bardziej komfortowej jazdy.',
       interior: 'Czyszczenie wnętrza',
       interiorDesc: 'Pełne pranie chemiczne siedzeń, sufitu, paneli drzwiowych',
@@ -2154,7 +2154,7 @@ export const translations = {
       dryingDesc: 'Професійні системи сушіння прискорюють висихання оброблених поверхонь. Це запобігає появі цвілі та дозволяє швидко повернути меблі в експлуатацію.',
     },
     auto: {
-      title: 'Хімчистка автомобілів',
+      title: 'Виїзна хімчистка авто',
       subtitle: 'Хімчистка салону є важливим етапом для будь-якого автомобіля. По-перше, це підвищує комфорт для водія та пасажирів. Чистий та доглянутий салон створює приємну атмосферу в автомобілі.',
       interior: 'Чистка салону',
       interiorDesc: 'Повна хімчистка сидінь, стелі, дверних карт',
