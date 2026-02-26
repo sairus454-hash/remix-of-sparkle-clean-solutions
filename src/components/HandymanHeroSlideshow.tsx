@@ -9,6 +9,6 @@ const images = [
   { src: handyman3, alt: 'Столярные работы' },
 ];
 
-const HandymanHeroSlideshow = () => <HeroSlideshow images={images} />;
+const HandymanHeroSlideshow = () => <HeroSlideshow images={images} objectFit="contain" />;
 
 export default HandymanHeroSlideshow;
