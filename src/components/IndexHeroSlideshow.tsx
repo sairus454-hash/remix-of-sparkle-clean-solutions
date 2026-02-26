@@ -13,6 +13,6 @@ const images = [
   { src: handyman2, alt: 'Сантехнические работы' },
 ];
 
-const IndexHeroSlideshow = () => <HeroSlideshow images={images} />;
+const IndexHeroSlideshow = () => <HeroSlideshow images={images} objectFit="contain" />;
 
 export default IndexHeroSlideshow;
