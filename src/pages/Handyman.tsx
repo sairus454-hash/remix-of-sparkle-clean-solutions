@@ -73,9 +73,9 @@ const Handyman = () => {
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center py-20">
         <HandymanHeroSlideshow />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="max-w-4xl text-left relative z-10">
             {/* Animated tool icons */}
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-start mb-8">
               <div className="relative">
                 <div className="w-24 h-24 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow animate-float">
                   <Wrench className="w-12 h-12 text-primary-foreground animate-pulse" />
@@ -111,7 +111,7 @@ const Handyman = () => {
               />
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground animate-fade-up max-w-2xl mx-auto" style={{ animationDelay: '0.1s' }}>
+            <p className="text-lg md:text-xl text-muted-foreground animate-fade-up max-w-2xl" style={{ animationDelay: '0.1s' }}>
               {t.handyman.subtitle}
             </p>
           </div>
