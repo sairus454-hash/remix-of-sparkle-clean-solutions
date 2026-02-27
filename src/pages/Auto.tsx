@@ -8,6 +8,7 @@ import AutoSplash from '@/components/AutoSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import AutoHeroSlideshow from '@/components/AutoHeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import Auto3DCarousel from '@/components/Auto3DCarousel';
 import { Car, Armchair, Layers, Sparkles, Calculator, Plus, Minus, Trash2, Send } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -246,6 +247,9 @@ const Auto = () => {
           </div>
         </div>
       </section>
+
+      {/* Before/After 3D Carousel */}
+      <Auto3DCarousel />
 
       {/* Price List & Calculator */}
       <section className="py-12 sm:py-20 bg-card">
