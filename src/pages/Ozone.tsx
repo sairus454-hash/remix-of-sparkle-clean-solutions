@@ -7,6 +7,7 @@ import OzonePriceCalculator from '@/components/OzonePriceCalculator';
 import OzoneSplash from '@/components/OzoneSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import HeroSlideshow from '@/components/HeroSlideshow';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
@@ -69,11 +70,15 @@ const Ozone = () => {
     <Layout>
       {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}
       
-      {/* Hero */}
-      <section className="py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
+      {/* Hero with Background Photo Slideshow */}
+      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
+        <HeroSlideshow images={[
+          { src: ozoneRoom, alt: 'Озонирование квартиры' },
+          { src: ozoneCar, alt: 'Озонирование автомобиля' },
+          { src: ozoneOffice, alt: 'Озонирование офиса' },
+        ]} />
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            {/* Animated fresh air icon */}
             <div className="flex justify-center mb-6">
               <div className="relative">
                 <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
@@ -88,7 +93,7 @@ const Ozone = () => {
             <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
               {t.ozone.title}
             </h1>
-            <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
+            <p className="text-lg text-white animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
               {t.ozone.subtitle}
             </p>
           </div>
