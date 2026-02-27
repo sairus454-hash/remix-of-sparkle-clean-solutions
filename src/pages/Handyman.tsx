@@ -107,7 +107,7 @@ const Handyman = () => {
               </div>
             </div>
             
-            <p className="text-lg md:text-xl text-muted-foreground animate-fade-up max-w-2xl" style={{ animationDelay: '0.1s' }}>
+            <p className="text-lg md:text-xl text-white animate-fade-up max-w-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
               {t.handyman.subtitle}
             </p>
           </div>
