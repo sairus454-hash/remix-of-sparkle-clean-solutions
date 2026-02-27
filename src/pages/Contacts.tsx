@@ -8,6 +8,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import ContactsSplash from '@/components/ContactsSplash';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import mastercleanLogo from '@/assets/masterclean-logo-contacts.jpg';
 import { CalculatorItem } from '@/types/calculator';
@@ -70,6 +71,7 @@ const Contacts = () => {
       />
       {showSplash && <ContactsSplash onComplete={handleSplashComplete} />}
       <Layout>
+      <PremiumGlareBackground />
       {/* Hero */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
