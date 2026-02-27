@@ -369,7 +369,7 @@ const Blog = () => {
 
               {/* Social Media Links */}
               <div className="mt-6">
-                <p className="text-muted-foreground mb-3 text-sm">{titles.social}:</p>
+                <p className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-3 text-sm" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>{titles.social}:</p>
                 <div className="flex justify-center flex-wrap gap-3">
                   <CircularRevealCard index={0}>
                     <a href="https://www.tiktok.com/@oleksii764" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-card hover:shadow-glow">
