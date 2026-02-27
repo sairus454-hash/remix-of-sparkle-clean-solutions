@@ -10,6 +10,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollButton from "@/components/ScrollButton";
 import SecurityHeaders from "@/components/SecurityHeaders";
+import PWAUpdatePrompt from "@/components/PWAUpdatePrompt";
 
 // Lazy load non-critical UI
 const FreeDeliveryBadge = lazy(() => import("@/components/FreeDeliveryBadge"));
@@ -58,6 +59,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <SecurityHeaders />
+            <PWAUpdatePrompt />
             <ScrollToTop />
             <ScrollButton />
             <Suspense fallback={null}>
