@@ -87,7 +87,7 @@ const About = () => {
               
               {/* Social Media Links */}
               <div className="mt-8">
-                <p className="text-muted-foreground mb-4">{t.about.socialMedia}:</p>
+                <p className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-4" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>{t.about.socialMedia}:</p>
                 <div className="flex justify-center flex-wrap gap-4">
                   <CircularRevealCard index={0}>
                     <a href="https://www.tiktok.com/@oleksii764" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-card hover:shadow-glow">
