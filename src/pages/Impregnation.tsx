@@ -198,7 +198,7 @@ const Impregnation = () => {
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
               {t.impregnation.examplesTitle}
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
               {t.impregnation.examplesSubtitle}
             </p>
           </div>
