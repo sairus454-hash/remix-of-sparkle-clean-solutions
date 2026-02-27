@@ -227,7 +227,7 @@ const Reviews = () => {
           }}>
               {t.reviews.title}
             </h1>
-            <p className="text-lg max-w-2xl mx-auto mb-8 text-secondary bg-muted">
+            <p className="text-lg max-w-2xl mx-auto mb-8 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
               {t.reviews.subtitle}
             </p>
             
