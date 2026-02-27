@@ -363,7 +363,7 @@ const Blog = () => {
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
                 📝 {titles.title}
               </h1>
-              <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
+              <p className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] text-base sm:text-lg max-w-2xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
                 {titles.subtitle}
               </p>
 
