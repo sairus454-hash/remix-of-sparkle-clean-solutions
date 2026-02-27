@@ -361,7 +361,7 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 const Blog = () => {
   const { language } = useLanguage();
-  const articles = blogArticles[language] || blogArticles.ru;
+  const articles = [...(blogArticles[language] || blogArticles.ru)].reverse();
   const titles = blogTitles[language] || blogTitles.ru;
 
   return (
