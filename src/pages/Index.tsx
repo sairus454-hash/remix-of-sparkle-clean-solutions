@@ -102,7 +102,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-xl">
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground leading-tight animate-fade-up">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground leading-tight animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
               {t.hero.title}
             </h1>
             <p className="text-base sm:text-lg text-muted-foreground mb-6 animate-fade-up leading-relaxed" style={{ animationDelay: '0.1s' }}>

@@ -94,7 +94,7 @@ const Handyman = () => {
                   </div>
                 </div>
 
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-up relative inline-block">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-up relative inline-block drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
               <span className="relative z-10">{t.handyman.title}</span>
               <span 
                 className="absolute bottom-2 left-0 w-full h-4 bg-yellow-400/60 -z-0 rounded"
