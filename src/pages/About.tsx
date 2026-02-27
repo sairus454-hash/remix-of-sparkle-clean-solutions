@@ -5,9 +5,7 @@ import Layout from '@/components/Layout';
 import CleanSplash from '@/components/CleanSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
-import mattressBeforeAfter from '@/assets/mattress-before-after.jpg';
-import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
-import strollerBeforeAfter from '@/assets/stroller-before-after.jpg';
+import About3DCarousel from '@/components/About3DCarousel';
 
 
 // TikTok icon component
@@ -196,51 +194,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* Before/After Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="font-serif text-3xl font-bold mb-10 text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
-              animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
-            }}>
-                {t.about.beforeAfter || 'До и После'}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Sofa Before/After */}
-                <CircularRevealCard index={0}>
-                  <div className="relative rounded-2xl overflow-hidden shadow-card group">
-                    <img src={sofaBeforeAfter} alt="Before and after sofa cleaning" loading="lazy" decoding="async" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 right-0 flex">
-                      <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">
-                        {t.about.before || 'До'}
-                      </div>
-                      <div className="flex-1 bg-fresh/80 text-fresh-foreground py-2 text-center font-semibold text-sm">
-                        {t.about.after || 'После'}
-                      </div>
-                    </div>
-                  </div>
-                </CircularRevealCard>
-                
-                {/* Stroller Before/After */}
-                <CircularRevealCard index={1}>
-                  <div className="relative rounded-2xl overflow-hidden shadow-card group">
-                    <img src={strollerBeforeAfter} alt="Before and after stroller cleaning" loading="lazy" decoding="async" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-destructive/20 via-transparent to-fresh/20 pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 right-0 flex">
-                      <div className="flex-1 bg-destructive/80 text-destructive-foreground py-2 text-center font-semibold text-sm">
-                        {t.about.before || 'До'}
-                      </div>
-                      <div className="flex-1 bg-fresh/80 text-fresh-foreground py-2 text-center font-semibold text-sm">
-                        {t.about.after || 'После'}
-                      </div>
-                    </div>
-                  </div>
-                </CircularRevealCard>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Before/After 3D Carousel */}
+        <About3DCarousel />
 
         {/* Values */}
         <section className="py-20 bg-gradient-section">
