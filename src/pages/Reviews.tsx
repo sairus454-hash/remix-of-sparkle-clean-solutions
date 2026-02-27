@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
 import { Star, Send, Loader2, MapPin, ExternalLink, Sparkles } from 'lucide-react';
+import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import happyCustomerImage from '@/assets/happy-customer.jpg';
 import { supabase } from '@/integrations/supabase/client';
@@ -202,6 +203,7 @@ const Reviews = () => {
       />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
       <Layout>
+        <PremiumGlareBackground />
         {/* Hero Section */}
         <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/50 to-background">
           <div className="container mx-auto px-4 text-center">
