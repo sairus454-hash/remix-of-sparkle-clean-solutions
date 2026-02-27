@@ -15,6 +15,7 @@ import autoCleaning from '@/assets/auto-cleaning-1.jpg';
 import mattressCleaning from '@/assets/mattress-cleaning.jpg';
 import leatherSofa from '@/assets/leather-sofa-cleaning.jpg';
 import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
+import topExecutor2025 from '@/assets/top-executor-2025.jpg';
 
 // Lazy image: renders only when near viewport
 const LazyBlogImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
@@ -115,6 +116,16 @@ const blogArticles = {
       readTime: '5 мин',
       tag: '🚗 Авто',
     },
+    {
+      id: 7,
+      title: 'Топ исполнитель 2025',
+      summary: '🏆 MasterClean — признанный лидер среди компаний по уборке и химчистке на Fixly.pl в 2025',
+      content: 'В 2025 году компания MasterClean заслуженно выделилась среди многочисленных исполнителей на популярной польской платформе услуг Fixly.pl. Благодаря высокому качеству работы, профессиональному подходу и отличным отзывам клиентов эта фирма снискала репутацию одной из самых надёжных в сфере уборки и химчистки.\n\n📍 Что делает MasterClean особенной?\n\n✔️ Высокие оценки и отзывы клиентов — рейтинг 5.0/5 на основе положительных отзывов, стопроцентное удовлетворение качеством услуг.\n\n✔️ Широкий спектр услуг — комплексные услуги по уборке квартир, домов, офисов, мойке окон и фасадов.\n\n✔️ Профессиональный подход — компания работает на территории Силезского воеводства, уделяя внимание деталям и индивидуальному подходу.\n\n🌟 Почему клиенты выбирают MasterClean?\n\n• Точность и аккуратность выполнения работ\n• Профессиональное оборудование и опытная команда\n• Дружелюбное общение и быстрая реакция на запросы\n\nБлагодаря этим сильным сторонам MasterClean стала одной из лучших фирм по уборке и химчистке на Fixly.pl в 2025 году — подтверждённый рейтинг и отличные отзывы делают её надёжным выбором для всех, кто ценит чистоту и качество.',
+      image: topExecutor2025,
+      date: '2025-03-01',
+      readTime: '5 мин',
+      tag: '🏆 Награда',
+    },
   ],
   en: [
     {
@@ -176,6 +187,16 @@ const blogArticles = {
       date: '2025-01-28',
       readTime: '5 min',
       tag: '🚗 Auto',
+    },
+    {
+      id: 7,
+      title: 'Top Executor 2025',
+      summary: '🏆 MasterClean — a recognized leader in cleaning and dry cleaning on Fixly.pl in 2025',
+      content: 'In 2025, MasterClean stood out among numerous service providers on the popular Polish platform Fixly.pl. Thanks to high-quality work, professional approach and excellent customer reviews, the company earned a reputation as one of the most reliable in cleaning services.\n\n📍 What makes MasterClean special?\n\n✔️ High ratings — 5.0/5 rating based on positive reviews, 100% customer satisfaction.\n\n✔️ Wide range of services — comprehensive cleaning of apartments, houses, offices, window and facade washing.\n\n✔️ Professional approach — operating in the Silesian Voivodeship with attention to detail.\n\n🌟 Why do customers choose MasterClean?\n\n• Precision and accuracy\n• Professional equipment and experienced team\n• Friendly communication and quick response\n\nMasterClean became one of the best cleaning companies on Fixly.pl in 2025 — confirmed rating and excellent reviews make it a reliable choice.',
+      image: topExecutor2025,
+      date: '2025-03-01',
+      readTime: '5 min',
+      tag: '🏆 Award',
     },
   ],
   pl: [
@@ -239,6 +260,16 @@ const blogArticles = {
       readTime: '5 min',
       tag: '🚗 Auto',
     },
+    {
+      id: 7,
+      title: 'Top Wykonawca 2025',
+      summary: '🏆 MasterClean — uznany lider wśród firm sprzątających i czyszczących na Fixly.pl w 2025',
+      content: 'W 2025 roku firma MasterClean zasłużenie wyróżniła się wśród licznych wykonawców na popularnej polskiej platformie usług Fixly.pl. Dzięki wysokiej jakości pracy, profesjonalnemu podejściu i doskonałym opiniom klientów firma zyskała reputację jednej z najbardziej niezawodnych w branży sprzątania i czyszczenia.\n\n📍 Co wyróżnia MasterClean?\n\n✔️ Wysokie oceny klientów — ocena 5.0/5 na podstawie pozytywnych opinii, 100% satysfakcji.\n\n✔️ Szeroki zakres usług — kompleksowe sprzątanie mieszkań, domów, biur, mycie okien i elewacji.\n\n✔️ Profesjonalne podejście — firma działa na terenie województwa śląskiego, dbając o każdy szczegół.\n\n🌟 Dlaczego klienci wybierają MasterClean?\n\n• Dokładność i staranność wykonania\n• Profesjonalny sprzęt i doświadczony zespół\n• Przyjazna komunikacja i szybka reakcja\n\nMasterClean została jedną z najlepszych firm sprzątających na Fixly.pl w 2025 roku — potwierdzony rating i doskonałe opinie czynią ją niezawodnym wyborem.',
+      image: topExecutor2025,
+      date: '2025-03-01',
+      readTime: '5 min',
+      tag: '🏆 Nagroda',
+    },
   ],
   uk: [
     {
@@ -300,6 +331,16 @@ const blogArticles = {
       date: '2025-01-28',
       readTime: '5 хв',
       tag: '🚗 Авто',
+    },
+    {
+      id: 7,
+      title: 'Топ виконавець 2025',
+      summary: '🏆 MasterClean — визнаний лідер серед компаній з прибирання та хімчистки на Fixly.pl у 2025',
+      content: 'У 2025 році компанія MasterClean заслужено виділилася серед численних виконавців на популярній польській платформі послуг Fixly.pl. Завдяки високій якості роботи, професійному підходу та відмінним відгукам клієнтів фірма здобула репутацію однієї з найнадійніших у сфері прибирання та хімчистки.\n\n📍 Що робить MasterClean особливою?\n\n✔️ Високі оцінки клієнтів — рейтинг 5.0/5 на основі позитивних відгуків, 100% задоволення якістю.\n\n✔️ Широкий спектр послуг — комплексне прибирання квартир, будинків, офісів, миття вікон та фасадів.\n\n✔️ Професійний підхід — компанія працює на території Сілезького воєводства, приділяючи увагу деталям.\n\n🌟 Чому клієнти обирають MasterClean?\n\n• Точність та акуратність виконання\n• Професійне обладнання та досвідчена команда\n• Дружнє спілкування та швидка реакція\n\nMasterClean стала однією з найкращих фірм з прибирання та хімчистки на Fixly.pl у 2025 році — підтверджений рейтинг та відмінні відгуки роблять її надійним вибором.',
+      image: topExecutor2025,
+      date: '2025-03-01',
+      readTime: '5 хв',
+      tag: '🏆 Нагорода',
     },
   ],
 };
