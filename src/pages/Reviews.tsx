@@ -220,7 +220,7 @@ const Reviews = () => {
               </div>
             </div>
             
-            <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
+            <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" style={{
             animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
           }}>
               {t.reviews.title}
