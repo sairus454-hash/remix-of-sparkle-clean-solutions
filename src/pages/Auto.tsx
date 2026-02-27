@@ -214,8 +214,8 @@ const Auto = () => {
           }}>
               {t.auto.title}
             </h1>
-            <p className="text-base sm:text-lg animate-fade-up text-secondary-foreground" style={{
-            animationDelay: '0.1s'
+            <p className="text-base sm:text-lg animate-fade-up text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{
+            animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)'
           }}>
               {t.auto.subtitle}
             </p>
