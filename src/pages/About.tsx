@@ -81,9 +81,7 @@ const About = () => {
             }}>
                 {t.about.title}
               </h1>
-              <p className="text-lg text-muted-foreground animate-fade-up" style={{
-              animationDelay: '0.1s'
-            }}>
+              <p className="text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-fade-up" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
                 {t.about.subtitle}
               </p>
               
