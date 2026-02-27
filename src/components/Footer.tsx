@@ -2,6 +2,7 @@ import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Droplets, Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import fixlyBadge from '@/assets/fixly-badge.jpg';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t } = useLanguage();
@@ -87,6 +88,13 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <p>© {new Date().getFullYear()} MasterClean. {t.footer.rights}</p>
             <p className="mt-1">NIP: 8943280388</p>
           </div>
+
+          {/* Fixly Top Wykonawca Badge */}
+          <a href="https://fixly.pl" target="_blank" rel="noopener noreferrer" className="relative group">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-yellow-400/60 shadow-lg animate-pulse">
+              <img src={fixlyBadge} alt="MasterClean — Top Wykonawca 2025 Fixly.pl" className="w-full h-full object-cover" />
+            </div>
+          </a>
 
           {/* Euro Quality Standard Badge */}
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-primary/30 bg-primary/5">
