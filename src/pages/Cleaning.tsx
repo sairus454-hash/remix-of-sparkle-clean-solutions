@@ -410,7 +410,7 @@ const Cleaning = () => {
                         </div>
                       </div>
                       <div className="flex items-center gap-2 text-sky-600 dark:text-sky-400 group-hover:translate-x-1 transition-transform">
-                        <span className="hidden sm:inline font-medium">{'Узнать больше'}</span>
+                        <span className="hidden sm:inline font-medium">{t.hero?.secondary || 'Узнать больше'}</span>
                         <ArrowRight className="w-5 h-5" />
                       </div>
                     </div>
