@@ -74,33 +74,27 @@ const Handyman = () => {
         <HandymanHeroSlideshow />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl text-left relative z-10">
-            {/* Animated tool icons */}
-            <div className="flex justify-start mb-8">
-              <div className="relative">
-                <div className="w-24 h-24 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow animate-float">
-                  <Wrench className="w-12 h-12 text-primary-foreground animate-pulse" />
-                </div>
-                {/* Floating small icons */}
-                <div className="absolute -top-2 -right-8 animate-bounce" style={{ animationDelay: '0.2s' }}>
-                  <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
-                    <Hammer className="w-5 h-5 text-yellow-900" />
+            {/* Title with icon centered above */}
+            <div className="flex justify-start mb-6">
+              <div className="relative inline-flex flex-col items-center">
+                {/* Animated tool icon centered over title */}
+                <div className="mb-4 relative">
+                  <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow animate-float">
+                    <Wrench className="w-10 h-10 text-primary-foreground animate-pulse" />
+                  </div>
+                  <div className="absolute -top-2 -right-6 animate-bounce" style={{ animationDelay: '0.2s' }}>
+                    <div className="w-8 h-8 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
+                      <Hammer className="w-4 h-4 text-yellow-900" />
+                    </div>
+                  </div>
+                  <div className="absolute -bottom-1 -left-6 animate-bounce" style={{ animationDelay: '0.5s' }}>
+                    <div className="w-8 h-8 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
+                      <Plug className="w-4 h-4 text-yellow-900" />
+                    </div>
                   </div>
                 </div>
-                <div className="absolute -bottom-2 -left-8 animate-bounce" style={{ animationDelay: '0.5s' }}>
-                  <div className="w-10 h-10 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
-                    <Plug className="w-5 h-5 text-yellow-900" />
-                  </div>
-                </div>
-                <div className="absolute top-1/2 -right-12 animate-bounce" style={{ animationDelay: '0.8s' }}>
-                  <div className="w-8 h-8 rounded-lg bg-yellow-300 flex items-center justify-center shadow-md">
-                    <Droplet className="w-4 h-4 text-yellow-800" />
-                  </div>
-                </div>
-              </div>
-            </div>
 
-            {/* Title with yellow underline animation */}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-up relative inline-block">
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-up relative inline-block">
               <span className="relative z-10">{t.handyman.title}</span>
               <span 
                 className="absolute bottom-2 left-0 w-full h-4 bg-yellow-400/60 -z-0 rounded"
@@ -109,7 +103,9 @@ const Handyman = () => {
                   transformOrigin: 'left'
                 }}
               />
-            </h1>
+                </h1>
+              </div>
+            </div>
             
             <p className="text-lg md:text-xl text-muted-foreground animate-fade-up max-w-2xl" style={{ animationDelay: '0.1s' }}>
               {t.handyman.subtitle}
