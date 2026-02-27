@@ -215,6 +215,8 @@ export const translations = {
     auto: {
       title: 'Выездная химчистка авто',
       subtitle: 'Химчистка салона является важным этапом для любого автомобиля. Во-первых, это повышает комфорт для водителя и пассажиров. Чистый и ухоженный салон создает приятную атмосферу в автомобиле и способствует более комфортной поездке.',
+      carouselTitle: 'Примеры работ — До и После',
+      carouselSubtitle: 'Реальные результаты нашей химчистки салона',
       interior: 'Чистка салона',
       interiorDesc: 'Полная химчистка сидений, потолка, дверных карт',
       leather: 'Обработка кожи',
@@ -862,6 +864,8 @@ export const translations = {
     auto: {
       title: 'Mobile Auto Dry Cleaning',
       subtitle: 'Interior dry cleaning is an important step for any car. First of all, it increases comfort for the driver and passengers. A clean and well-maintained interior creates a pleasant atmosphere in the car and contributes to a more comfortable ride.',
+      carouselTitle: 'Our Work — Before and After',
+      carouselSubtitle: 'Real results of our interior dry cleaning',
       interior: 'Interior Cleaning',
       interiorDesc: 'Complete dry cleaning of seats, ceiling, door panels',
       leather: 'Leather Treatment',
@@ -1509,6 +1513,8 @@ export const translations = {
     auto: {
       title: 'Mobilne pranie chemiczne aut',
       subtitle: 'Pranie chemiczne wnętrza to ważny etap dla każdego samochodu. Po pierwsze, zwiększa komfort kierowcy i pasażerów. Czyste i zadbane wnętrze tworzy przyjemną atmosferę w samochodzie i przyczynia się do bardziej komfortowej jazdy.',
+      carouselTitle: 'Przykłady prac — Przed i Po',
+      carouselSubtitle: 'Realne wyniki naszego prania chemicznego wnętrza',
       interior: 'Czyszczenie wnętrza',
       interiorDesc: 'Pełne pranie chemiczne siedzeń, sufitu, paneli drzwiowych',
       leather: 'Obróbka skóry',
@@ -2156,6 +2162,8 @@ export const translations = {
     auto: {
       title: 'Виїзна хімчистка авто',
       subtitle: 'Хімчистка салону є важливим етапом для будь-якого автомобіля. По-перше, це підвищує комфорт для водія та пасажирів. Чистий та доглянутий салон створює приємну атмосферу в автомобілі.',
+      carouselTitle: 'Приклади робіт — До і Після',
+      carouselSubtitle: 'Реальні результати нашої хімчистки салону',
       interior: 'Чистка салону',
       interiorDesc: 'Повна хімчистка сидінь, стелі, дверних карт',
       leather: 'Обробка шкіри',

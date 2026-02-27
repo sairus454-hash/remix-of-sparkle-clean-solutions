@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 import autoBa1 from '@/assets/auto-ba-1.jpg';
 import autoBa2 from '@/assets/auto-ba-2.jpg';
@@ -23,6 +24,7 @@ const slides = [
 ];
 
 const Auto3DCarousel = () => {
+  const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useIsMobile();
@@ -84,10 +86,10 @@ const Auto3DCarousel = () => {
             className="font-serif text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]"
             style={{ animation: 'shimmer 3s linear infinite' }}
           >
-            Примеры работ — До и После
+            {t.auto.carouselTitle}
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Реальные результаты нашей химчистки салона
+          <p className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] text-sm sm:text-base" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+            {t.auto.carouselSubtitle}
           </p>
         </div>
 
