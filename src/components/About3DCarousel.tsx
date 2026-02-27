@@ -12,23 +12,16 @@ import aboutBa6 from '@/assets/about-ba-6.jpg';
 import aboutBa7 from '@/assets/about-ba-7.jpg';
 import aboutBa8 from '@/assets/about-ba-8.jpg';
 
-const slides = [
-  { src: aboutBa1, alt: 'Чистка дивана — до и после' },
-  { src: aboutBa2, alt: 'Чистка ковра — до и после' },
-  { src: aboutBa3, alt: 'Чистка матраса — до и после' },
-  { src: aboutBa4, alt: 'Чистка коляски — до и после' },
-  { src: aboutBa5, alt: 'Чистка кресла — до и после' },
-  { src: aboutBa6, alt: 'Реставрация ковра — до и после' },
-  { src: aboutBa7, alt: 'Чистка кожаного дивана — до и после' },
-  { src: aboutBa8, alt: 'Чистка детского кресла — до и после' },
-];
+const slideImages = [aboutBa1, aboutBa2, aboutBa3, aboutBa4, aboutBa5, aboutBa6, aboutBa7, aboutBa8];
+const slideKeys = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6', 'slide7', 'slide8'] as const;
 
 const About3DCarousel = () => {
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useIsMobile();
-  const total = slides.length;
+  const total = slideImages.length;
+  const slides = slideImages.map((src, i) => ({ src, alt: (t.about as any)[slideKeys[i]] || slideKeys[i] }));
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % total);
