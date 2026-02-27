@@ -122,7 +122,7 @@ const Handyman = () => {
               <span className="relative z-10">{t.handyman.servicesTitle}</span>
               <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">{t.handyman.servicesSubtitle}</p>
+            <p className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] max-w-xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>{t.handyman.servicesSubtitle}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
