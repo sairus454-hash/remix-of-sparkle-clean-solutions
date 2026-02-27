@@ -12,23 +12,16 @@ import autoBa6 from '@/assets/auto-ba-6.jpg';
 import autoBa7 from '@/assets/auto-ba-7.jpg';
 import autoBa8 from '@/assets/auto-ba-8.jpg';
 
-const slides = [
-  { src: autoBa1, alt: 'Чистка сидений — до и после' },
-  { src: autoBa2, alt: 'Чистка ковролина — до и после' },
-  { src: autoBa3, alt: 'Чистка руля — до и после' },
-  { src: autoBa4, alt: 'Чистка дверных карт — до и после' },
-  { src: autoBa5, alt: 'Чистка потолка — до и после' },
-  { src: autoBa6, alt: 'Чистка багажника — до и после' },
-  { src: autoBa7, alt: 'Чистка кожаных сидений — до и после' },
-  { src: autoBa8, alt: 'Чистка торпедо — до и после' },
-];
+const slideImages = [autoBa1, autoBa2, autoBa3, autoBa4, autoBa5, autoBa6, autoBa7, autoBa8];
+const slideKeys = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6', 'slide7', 'slide8'] as const;
 
 const Auto3DCarousel = () => {
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useIsMobile();
-  const total = slides.length;
+  const total = slideImages.length;
+  const slides = slideImages.map((src, i) => ({ src, alt: (t.auto as any)[slideKeys[i]] || slideKeys[i] }));
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % total);
