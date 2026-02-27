@@ -91,7 +91,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           {/* Fixly Top Wykonawca Badge */}
           <a href="https://fixly.pl" target="_blank" rel="noopener noreferrer" className="relative group">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-yellow-400/60 shadow-lg animate-pulse">
+            <div className="w-20 h-20 sm:w-[84px] sm:h-[84px] rounded-full overflow-hidden border-2 border-yellow-400/60 shadow-lg animate-pulse">
               <img src={fixlyBadge} alt="MasterClean — Top Wykonawca 2025 Fixly.pl" className="w-full h-full object-cover" />
             </div>
           </a>
