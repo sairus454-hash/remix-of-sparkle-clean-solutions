@@ -136,9 +136,11 @@ const About = () => {
                 <p className="text-xl md:text-2xl text-foreground mb-4 leading-relaxed font-medium">
                   {t.about.description}
                 </p>
-                <p className="mb-6 leading-relaxed font-medium text-2xl font-mono text-fresh drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-                  {t.about.regions}
-                </p>
+                <CircularRevealCard index={4}>
+                  <p className="mb-6 leading-relaxed font-medium text-2xl font-mono text-fresh drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+                    {t.about.regions}
+                  </p>
+                </CircularRevealCard>
                 <ul className="space-y-4">
                   {[t.equipment.modern, t.equipment.eco, t.equipment.quality].map((item, index) => <li key={index} className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-fresh flex-shrink-0" style={{
