@@ -6,6 +6,7 @@ import CleanSplash from '@/components/CleanSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
 import About3DCarousel from '@/components/About3DCarousel';
+import PolandRegionsMap from '@/components/PolandRegionsMap';
 
 
 // TikTok icon component
@@ -195,6 +196,9 @@ const About = () => {
             </div>
           </div>
         </section>
+
+        {/* Poland Regions Map */}
+        <PolandRegionsMap />
 
         {/* Before/After 3D Carousel */}
         <About3DCarousel />
