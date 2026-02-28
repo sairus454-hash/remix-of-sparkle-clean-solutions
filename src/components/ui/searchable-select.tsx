@@ -32,6 +32,9 @@ interface SearchableSelectProps {
   disabledMessage?: string;
 }
 
+const removeDiacritics = (str: string) =>
+  str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
 export function SearchableSelect({
   value,
   onValueChange,
@@ -120,7 +123,11 @@ export function SearchableSelect({
             </div>
           </div>
         ) : (
-          <Command className="bg-popover">
+          <Command className="bg-popover" filter={(value, search) => {
+            const normalizedValue = removeDiacritics(value.toLowerCase());
+            const normalizedSearch = removeDiacritics(search.toLowerCase());
+            return normalizedValue.includes(normalizedSearch) ? 1 : 0;
+          }}>
             <CommandInput placeholder={searchPlaceholder} className="h-10" />
             {/* Custom input option - always visible under search */}
             {allowCustom && (
