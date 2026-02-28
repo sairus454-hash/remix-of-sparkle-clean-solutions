@@ -1,7 +1,7 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import CircularRevealCard from './CircularRevealCard';
 import { MapPin, ChevronDown, ChevronUp } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 // Cities & villages mapped to voivodeships
 const locationsByRegion: Record<string, string[]> = {
@@ -114,6 +114,15 @@ const PolandRegionsMap = () => {
   const { language } = useLanguage();
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
   const [expandedRegions, setExpandedRegions] = useState<Record<string, boolean>>({});
+  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const scrollToCard = useCallback((regionId: string) => {
+    const el = cardRefs.current[regionId];
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setHoveredRegion(regionId);
+    }
+  }, []);
 
   const getLabel = (region: (typeof highlightedRegions)[0]) => {
     switch (language) {
@@ -177,6 +186,7 @@ const PolandRegionsMap = () => {
                       className="cursor-pointer transition-all duration-300"
                       onMouseEnter={() => setHoveredRegion(region.id)}
                       onMouseLeave={() => setHoveredRegion(null)}
+                      onClick={() => scrollToCard(region.id)}
                       style={{
                         animation: `fade-in 0.6s ease-out ${0.3 + i * 0.15}s both`,
                       }}
@@ -220,6 +230,7 @@ const PolandRegionsMap = () => {
               return (
                 <CircularRevealCard key={region.id} index={i + 2}>
                   <div
+                    ref={(el) => { cardRefs.current[region.id] = el; }}
                     className={`p-5 rounded-2xl border transition-all duration-300 h-full ${
                       hoveredRegion === region.id
                         ? 'bg-primary/10 border-primary shadow-glow'
