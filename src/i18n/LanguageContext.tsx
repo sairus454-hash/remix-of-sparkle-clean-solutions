@@ -9,10 +9,22 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+const detectBrowserLanguage = (): Language => {
+  const supported: Language[] = ['ru', 'en', 'pl', 'uk'];
+  const browserLangs = navigator.languages || [navigator.language];
+  for (const lang of browserLangs) {
+    const code = lang.toLowerCase().split('-')[0];
+    if (code === 'uk' || code === 'ua') return 'uk';
+    if (supported.includes(code as Language)) return code as Language;
+  }
+  return 'ru';
+};
+
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
-    return (saved as Language) || 'ru';
+    if (saved && ['ru', 'en', 'pl', 'uk'].includes(saved)) return saved as Language;
+    return detectBrowserLanguage();
   });
 
   useEffect(() => {
