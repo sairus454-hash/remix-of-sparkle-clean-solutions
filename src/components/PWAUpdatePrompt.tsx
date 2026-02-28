@@ -2,16 +2,17 @@ import { useEffect, useState } from 'react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import { RefreshCw, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const PWAUpdatePrompt = () => {
   const [showPrompt, setShowPrompt] = useState(false);
+  const { t } = useLanguage();
 
   const {
     needRefresh: [needRefresh],
     updateServiceWorker,
   } = useRegisterSW({
     onRegisteredSW(swUrl, registration) {
-      // Check for updates every 60 seconds
       if (registration) {
         setInterval(() => {
           registration.update();
@@ -38,15 +39,15 @@ const PWAUpdatePrompt = () => {
           <RefreshCw className="w-5 h-5 text-primary" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-semibold text-foreground">Доступно обновление</p>
-          <p className="text-xs text-muted-foreground">Нажмите для загрузки новой версии</p>
+          <p className="text-sm font-semibold text-foreground">{t.pwa.updateAvailable}</p>
+          <p className="text-xs text-muted-foreground">{t.pwa.updateDescription}</p>
         </div>
         <Button
           size="sm"
           onClick={() => updateServiceWorker(true)}
           className="flex-shrink-0 h-8"
         >
-          Обновить
+          {t.pwa.update}
         </Button>
         <button
           onClick={() => setShowPrompt(false)}
