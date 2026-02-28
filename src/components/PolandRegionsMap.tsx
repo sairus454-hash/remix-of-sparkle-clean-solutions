@@ -1,7 +1,44 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import CircularRevealCard from './CircularRevealCard';
-import { MapPin } from 'lucide-react';
+import { MapPin, ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
+
+// Cities & villages mapped to voivodeships
+const locationsByRegion: Record<string, string[]> = {
+  dolnoslaskie: [
+    'Wrocław', 'Bardo', 'Bielawa', 'Bierutów', 'Bolesławiec', 'Brzeg Dolny', 'Bystrzyca Kłodzka',
+    'Chojnów', 'Dzierżoniów', 'Głogów', 'Gryfów Śląski', 'Jawor', 'Jaworzyna Śląska',
+    'Jelcz-Laskowice', 'Jelenia Góra', 'Kamienna Góra', 'Karpacz', 'Kąty Wrocławskie',
+    'Kłodzko', 'Kudowa-Zdrój', 'Legnica', 'Lubań', 'Lubin', 'Lwówek Śląski', 'Milicz',
+    'Niemcza', 'Nowa Ruda', 'Oborniki Śląskie', 'Oława', 'Oleśnica', 'Pieszyce',
+    'Piława Górna', 'Polkowice', 'Polanica-Zdrój', 'Sobótka', 'Strzegom', 'Strzelin',
+    'Środa Śląska', 'Świdnica', 'Szklarska Poręba', 'Trzebnica', 'Wałbrzych', 'Wołów',
+    'Ząbkowice Śląskie', 'Zgorzelec', 'Ziębice', 'Złotoryja', 'Żmigród',
+    // Villages
+    'Bielany Wrocławskie', 'Bogdaszowice', 'Borów', 'Bystrzyca', 'Cesarzowice',
+    'Chrząstawa Wielka', 'Ciepłowody', 'Czernica', 'Długołęka', 'Dobroszyce', 'Domaszczyn',
+    'Domaniów', 'Gaj Oławski', 'Gajków', 'Iwiny', 'Jordanów Śląski', 'Kamieniec Wrocławski',
+    'Kiełczów', 'Kobierzyce', 'Kondratowice', 'Kostomłoty', 'Krzeptów', 'Krzyżanowice',
+    'Lutynia', 'Malczyce', 'Mędłów', 'Miękinia', 'Mietków', 'Miłoszyce', 'Mirków',
+    'Mokronos Dolny', 'Mokronos Górny', 'Pęgów', 'Pietrzykowice', 'Prochowice', 'Prusice',
+    'Przeworno', 'Radwanice', 'Ratowice', 'Ścinawy', 'Siechnice', 'Smardzów', 'Smolec',
+    'Stanowice', 'Szczepanów', 'Święta Katarzyna', 'Tyniec Mały', 'Wilczyce', 'Wińsko',
+    'Wisznia Mała', 'Wojnowice', 'Wróblowice', 'Wysoka', 'Żórawina',
+  ],
+  opolskie: [
+    'Opole', 'Brzeg', 'Głuchołazy', 'Kędzierzyn-Koźle', 'Kluczbork', 'Koźle', 'Namysłów',
+    'Nysa', 'Paczków', 'Prószków', 'Prudnik', 'Strzelce Opolskie', 'Ozimek', 'Osiek',
+  ],
+  wielkopolskie: [
+    'Kalisz', 'Kępno', 'Krotoszyn', 'Leszno', 'Ostrów Wielkopolski', 'Ostrzeszów',
+    'Rawicz', 'Syców', 'Wschowa',
+  ],
+  lubuskie: [
+    'Nowa Sól', 'Zielona Góra', 'Żagań', 'Żary',
+  ],
+};
+
+const INITIAL_SHOW = 6;
 
 // Real SVG paths from simplemaps.com Poland map (viewBox 0 0 1000 950)
 const polandOutlinePaths = [
@@ -76,6 +113,7 @@ const highlightedRegions = [
 const PolandRegionsMap = () => {
   const { language } = useLanguage();
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
+  const [expandedRegions, setExpandedRegions] = useState<Record<string, boolean>>({});
 
   const getLabel = (region: (typeof highlightedRegions)[0]) => {
     switch (language) {
@@ -172,31 +210,69 @@ const PolandRegionsMap = () => {
           </CircularRevealCard>
 
           {/* Region cards */}
-          <div className="grid grid-cols-2 gap-4">
-            {highlightedRegions.map((region, i) => (
-              <CircularRevealCard key={region.id} index={i + 2}>
-                <div
-                  className={`p-5 rounded-2xl border transition-all duration-300 cursor-pointer h-full ${
-                    hoveredRegion === region.id
-                      ? 'bg-primary/10 border-primary shadow-glow scale-[1.03]'
-                      : 'bg-card border-border shadow-card hover:border-primary/50'
-                  }`}
-                  onMouseEnter={() => setHoveredRegion(region.id)}
-                  onMouseLeave={() => setHoveredRegion(null)}
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className={`w-3 h-3 rounded-full transition-colors duration-300 ${
-                      hoveredRegion === region.id ? 'bg-primary' : 'bg-fresh'
-                    }`} />
-                    <h3 className="font-serif font-semibold text-foreground text-sm">{getLabel(region)}</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {highlightedRegions.map((region, i) => {
+              const locations = locationsByRegion[region.id] || [];
+              const isExpanded = expandedRegions[region.id];
+              const visibleLocations = isExpanded ? locations : locations.slice(0, INITIAL_SHOW);
+              const hasMore = locations.length > INITIAL_SHOW;
+
+              return (
+                <CircularRevealCard key={region.id} index={i + 2}>
+                  <div
+                    className={`p-5 rounded-2xl border transition-all duration-300 h-full ${
+                      hoveredRegion === region.id
+                        ? 'bg-primary/10 border-primary shadow-glow'
+                        : 'bg-card border-border shadow-card hover:border-primary/50'
+                    }`}
+                    onMouseEnter={() => setHoveredRegion(region.id)}
+                    onMouseLeave={() => setHoveredRegion(null)}
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        hoveredRegion === region.id ? 'bg-primary' : 'bg-fresh'
+                      }`} />
+                      <h3 className="font-serif font-semibold text-foreground text-sm">{getLabel(region)}</h3>
+                    </div>
+                    <p className="text-muted-foreground text-xs flex items-center gap-1 mb-3">
+                      <MapPin className="w-3 h-3" />
+                      {region.capital}
+                    </p>
+
+                    {/* Locations list */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {visibleLocations.map((loc) => (
+                        <span
+                          key={loc}
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-muted text-muted-foreground border border-border"
+                        >
+                          {loc}
+                        </span>
+                      ))}
+                    </div>
+
+                    {hasMore && (
+                      <button
+                        onClick={() => setExpandedRegions(prev => ({ ...prev, [region.id]: !prev[region.id] }))}
+                        className="mt-2 flex items-center gap-1 text-xs text-primary hover:text-primary/80 transition-colors touch-manipulation"
+                      >
+                        {isExpanded ? (
+                          <>
+                            <ChevronUp className="w-3.5 h-3.5" />
+                            {language === 'ru' ? 'Свернуть' : language === 'en' ? 'Show less' : language === 'pl' ? 'Zwiń' : 'Згорнути'}
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="w-3.5 h-3.5" />
+                            {language === 'ru' ? `Ещё ${locations.length - INITIAL_SHOW}` : language === 'en' ? `${locations.length - INITIAL_SHOW} more` : language === 'pl' ? `Jeszcze ${locations.length - INITIAL_SHOW}` : `Ще ${locations.length - INITIAL_SHOW}`}
+                          </>
+                        )}
+                      </button>
+                    )}
                   </div>
-                  <p className="text-muted-foreground text-xs flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {region.capital}
-                  </p>
-                </div>
-              </CircularRevealCard>
-            ))}
+                </CircularRevealCard>
+              );
+            })}
           </div>
         </div>
       </div>
