@@ -667,6 +667,11 @@ export const translations = {
         'Чистка и дезинфекция посудомоечной машины.',
       ],
     },
+    pwa: {
+      updateAvailable: 'Доступно обновление',
+      updateDescription: 'Нажмите для загрузки новой версии',
+      update: 'Обновить',
+    },
   },
   en: {
     nav: {
@@ -1333,6 +1338,11 @@ export const translations = {
         'Cleaning exhaust hood and ventilation grilles.',
         'Cleaning and disinfecting dishwasher.',
       ],
+    },
+    pwa: {
+      updateAvailable: 'Update available',
+      updateDescription: 'Tap to load the new version',
+      update: 'Update',
     },
   },
   pl: {
@@ -2001,6 +2011,11 @@ export const translations = {
         'Czyszczenie i dezynfekcja zmywarki.',
       ],
     },
+    pwa: {
+      updateAvailable: 'Dostępna aktualizacja',
+      updateDescription: 'Kliknij, aby załadować nową wersję',
+      update: 'Aktualizuj',
+    },
   },
   uk: {
     nav: {
@@ -2667,6 +2682,11 @@ export const translations = {
         'Чистка витяжки та вентиляційних решіток.',
         'Чистка та дезінфекція посудомийної машини.',
       ],
+    },
+    pwa: {
+      updateAvailable: 'Доступне оновлення',
+      updateDescription: 'Натисніть для завантаження нової версії',
+      update: 'Оновити',
     },
   },
 };
