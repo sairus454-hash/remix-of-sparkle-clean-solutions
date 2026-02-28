@@ -414,3 +414,8 @@ html {
   0%, 100% { transform: translateX(-30%) translateY(-10%); }
   50% { transform: translateX(30%) translateY(10%); }
 }
+
+@keyframes border-blink {
+  0%, 100% { border-color: hsl(var(--primary)); box-shadow: var(--shadow-glow); }
+  50% { border-color: hsl(var(--fresh)); box-shadow: 0 0 40px hsl(var(--fresh) / 0.3); }
+}

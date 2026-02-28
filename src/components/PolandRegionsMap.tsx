@@ -113,6 +113,7 @@ const highlightedRegions = [
 const PolandRegionsMap = () => {
   const { language } = useLanguage();
   const [hoveredRegion, setHoveredRegion] = useState<string | null>(null);
+  const [highlightedCard, setHighlightedCard] = useState<string | null>(null);
   const [expandedRegions, setExpandedRegions] = useState<Record<string, boolean>>({});
   const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -121,6 +122,8 @@ const PolandRegionsMap = () => {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setHoveredRegion(regionId);
+      setHighlightedCard(regionId);
+      setTimeout(() => setHighlightedCard(null), 1500);
     }
   }, []);
 
@@ -232,9 +235,11 @@ const PolandRegionsMap = () => {
                   <div
                     ref={(el) => { cardRefs.current[region.id] = el; }}
                     className={`p-5 rounded-2xl border transition-all duration-300 h-full ${
-                      hoveredRegion === region.id
-                        ? 'bg-primary/10 border-primary shadow-glow'
-                        : 'bg-card border-border shadow-card hover:border-primary/50'
+                      highlightedCard === region.id
+                        ? 'bg-primary/10 border-primary shadow-glow animate-[border-blink_0.5s_ease-in-out_3]'
+                        : hoveredRegion === region.id
+                          ? 'bg-primary/10 border-primary shadow-glow'
+                          : 'bg-card border-border shadow-card hover:border-primary/50'
                     }`}
                     onMouseEnter={() => setHoveredRegion(region.id)}
                     onMouseLeave={() => setHoveredRegion(null)}
