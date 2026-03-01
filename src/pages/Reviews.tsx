@@ -203,6 +203,16 @@ const Reviews = () => {
       />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
       <Layout>
+        {/* Background photo */}
+        <div className="fixed inset-0 z-0">
+          <img
+            src={happyCustomerImage}
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+        </div>
         <PremiumGlareBackground />
         {/* Hero Section */}
         <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/50 to-background">
