@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useLanguage } from '@/i18n/LanguageContext';
 import PriceItem from '@/components/PriceItem';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -36,13 +37,18 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
   const [cleaningArea, setCleaningArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const STANDARD_PRICE_PER_M2 = 8;
+  const STANDARD_PRICE_PER_M2 = 6;
   const GENERAL_PRICE_PER_M2 = 10;
+  const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
   
+  const toggleExtra = (id: string) => {
+    setSelectedExtras(prev => prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id]);
+  };
+
   const getCleaningPrice = () => {
     const basePrice = cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
-    // В аккордеоне показываем базовую цену без скидки
-    return basePrice;
+    const extrasTotal = getExtrasTotal(selectedExtras, cleaningType);
+    return basePrice + extrasTotal;
   };
 
   return (
@@ -141,6 +147,15 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
                         <span className="text-2xl font-bold text-primary">
                           {getCleaningPrice()} {t.prices.currency}
                         </span>
+                      </div>
+
+                      {/* Extras with checkboxes */}
+                      <div className="pt-3 border-t border-border">
+                        <CleaningExtrasCheckboxes
+                          cleaningType={cleaningType}
+                          selectedExtras={selectedExtras}
+                          onToggleExtra={toggleExtra}
+                        />
                       </div>
 
                       {/* What's included info */}

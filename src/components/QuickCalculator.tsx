@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -31,8 +32,9 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const [mattressType, setMattressType] = useState<string>('mattressDouble');
   const [autoType, setAutoType] = useState<string>('autoSeats');
 
-  const STANDARD_PRICE_PER_M2 = 8;
+  const STANDARD_PRICE_PER_M2 = 6;
   const GENERAL_PRICE_PER_M2 = 10;
+  const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
 
   const serviceOptions = [
     { id: 'cleaning', label: t.cleaning?.service || 'Уборка', icon: Home },
@@ -64,9 +66,11 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
 
   const getPrice = (): number => {
     switch (serviceType) {
-      case 'cleaning':
-        return cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
-      case 'furniture':
+      case 'cleaning': {
+        const base = cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
+        const extras = getExtrasTotal(selectedExtras, cleaningType);
+        return base + extras;
+      }
         return furnitureOptions.find(o => o.id === furnitureType)?.price || 140;
       case 'mattress':
         return mattressOptions.find(o => o.id === mattressType)?.price || 180;
@@ -208,6 +212,14 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
                   step={5}
                 />
               </div>
+
+              {/* Extras checkboxes */}
+              <CleaningExtrasCheckboxes
+                cleaningType={cleaningType}
+                selectedExtras={selectedExtras}
+                onToggleExtra={(id) => setSelectedExtras(prev => prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id])}
+                compact
+              />
             </div>
           )}
 
