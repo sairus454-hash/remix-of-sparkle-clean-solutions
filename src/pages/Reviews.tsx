@@ -257,7 +257,7 @@ const Reviews = () => {
             </p>
             
             {/* Google Maps Link */}
-            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline">
+            <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-card/90 backdrop-blur-sm text-primary font-medium px-5 py-2.5 rounded-xl shadow-lg hover:bg-card transition-colors border border-border">
               <MapPin className="w-5 h-5" />
               {t.reviews.viewOnGoogle}
               <ExternalLink className="w-4 h-4" />
