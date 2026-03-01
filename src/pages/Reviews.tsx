@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import Layout from '@/components/Layout';
@@ -75,6 +75,19 @@ const Reviews = () => {
     name: '',
     text: ''
   });
+
+  // Parallax effect
+  const parallaxRef = useRef<HTMLImageElement>(null);
+  const [parallaxOffset, setParallaxOffset] = useState(0);
+
+  const handleScroll = useCallback(() => {
+    setParallaxOffset(window.scrollY * -0.3);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   // Fetch reviews from database
   useEffect(() => {
@@ -203,13 +216,15 @@ const Reviews = () => {
       />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
       <Layout>
-        {/* Background photo */}
-        <div className="fixed inset-0 z-0">
+        {/* Parallax background photo */}
+        <div className="fixed inset-0 z-0 overflow-hidden">
           <img
+            ref={parallaxRef}
             src={leatherSofaImage}
             alt=""
             aria-hidden="true"
-            className="w-full h-full object-cover"
+            className="w-full h-[120%] object-cover will-change-transform transition-none"
+            style={{ transform: `translate3d(0, ${parallaxOffset}px, 0)` }}
           />
           <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         </div>
