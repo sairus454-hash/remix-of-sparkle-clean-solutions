@@ -574,6 +574,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             <SelectItem value="blik" className="py-3 sm:py-2">
               📱 BLIK
             </SelectItem>
+            <SelectItem value="invoice" className="py-3 sm:py-2">
+              🧾 {t.form.paymentInvoice || 'Фактура'}
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
