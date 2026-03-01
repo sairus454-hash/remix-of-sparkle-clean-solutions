@@ -265,7 +265,7 @@
             {t.calculator?.minOrder || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}
           </p>
           <p className="text-xs text-muted-foreground font-medium">
-            {t.calculator?.minOrderOther || 'Минимальный заказ для других населённых пунктов — 400 zł'}
+            {t.calculator?.minOrderOther || 'Минимальный заказ для других населённых пунктов — 300 zł'}
           </p>
          
          {/* Send to Form Button */}

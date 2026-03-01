@@ -37,7 +37,7 @@ const Prices = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
 
-  const minOrderNote = `${t.handyman?.minOrderNote || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 400 zł'}`;
+  const minOrderNote = `${t.handyman?.minOrderNote || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 300 zł'}`;
 
   const categories: PriceAccordionCategory[] = [
     {
