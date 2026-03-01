@@ -1,6 +1,8 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { cleaningExtras, CleaningExtra } from '@/data/cleaningExtras';
 
+const GENERAL_ONLY_EXTRAS = ['ironing', 'balcony', 'petLitter'];
+
 interface CleaningExtrasCheckboxesProps {
   cleaningType: 'standard' | 'general';
   selectedExtras: string[];
@@ -9,6 +11,10 @@ interface CleaningExtrasCheckboxesProps {
 }
 
 const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra, compact = false }: CleaningExtrasCheckboxesProps) => {
+  const filteredExtras = cleaningType === 'general'
+    ? cleaningExtras.filter(e => GENERAL_ONLY_EXTRAS.includes(e.id))
+    : cleaningExtras;
+
   const getPrice = (extra: CleaningExtra) => {
     return cleaningType === 'standard' ? extra.standardPrice : extra.generalPrice;
   };
@@ -24,7 +30,7 @@ const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra,
         Дополнительные услуги:
       </p>
       <div className={`space-y-1 ${compact ? 'max-h-48' : 'max-h-64'} overflow-y-auto pr-1`}>
-        {cleaningExtras.map((extra) => {
+        {filteredExtras.map((extra) => {
           const price = getPrice(extra);
           const isChecked = selectedExtras.includes(extra.id);
           return (
@@ -64,7 +70,10 @@ const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra,
 export default CleaningExtrasCheckboxes;
 
 export const getExtrasTotal = (selectedExtras: string[], cleaningType: 'standard' | 'general'): number => {
-  return selectedExtras.reduce((sum, id) => {
+  const validIds = cleaningType === 'general'
+    ? selectedExtras.filter(id => GENERAL_ONLY_EXTRAS.includes(id))
+    : selectedExtras;
+  return validIds.reduce((sum, id) => {
     const extra = cleaningExtras.find(e => e.id === id);
     if (!extra) return sum;
     return sum + (cleaningType === 'standard' ? extra.standardPrice : extra.generalPrice);
