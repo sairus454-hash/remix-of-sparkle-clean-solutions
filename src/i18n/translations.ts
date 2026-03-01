@@ -2025,7 +2025,7 @@ export const translations = {
         'Czyszczenie kuchenki mikrofalowej.',
         'Czyszczenie płytek kuchennych z tłuszczu i brudu.',
         'Sprzątanie blatu i strefy jadalnej.',
-        'Czyszczenie innych urządzeń AGD z zewnątrz.',
+        'Czyszczenie innych urządzeń AGD z zewnątrz i wewnątrz.',
         'Odkurzanie mebli tapicerowanych.',
       ],
       generalServices: [
@@ -2037,7 +2037,7 @@ export const translations = {
         'Czyszczenie kuchenki mikrofalowej.',
         'Czyszczenie płytek kuchennych z tłuszczu i brudu.',
         'Sprzątanie blatu i strefy jadalnej.',
-        'Czyszczenie innych urządzeń AGD z zewnątrz.',
+        'Czyszczenie innych urządzeń AGD z zewnątrz i wewnątrz.',
         'Odkurzanie mebli tapicerowanych.',
         'Odkurzanie i mycie podłóg na mokro (z przesuwaniem mebli lub pod nimi).',
         'Usuwanie kurzu i pajęczyn od sufitu do podłogi.',
