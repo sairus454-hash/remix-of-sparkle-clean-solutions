@@ -33,7 +33,7 @@ const Cleaning = () => {
   const [area, setArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const pricePerMeter = cleaningType === 'standard' ? 6 : 8;
+  const pricePerMeter = cleaningType === 'standard' ? 8 : 10;
   const totalPrice = area * pricePerMeter;
   
   const cleaningTypeLabel = cleaningType === 'standard' 
