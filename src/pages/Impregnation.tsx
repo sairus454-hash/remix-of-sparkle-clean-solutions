@@ -2,6 +2,8 @@ import { useState, useCallback } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import ImpregnationSplash from '@/components/ImpregnationSplash';
+import { useSplash } from '@/hooks/useSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import AnimatedImage from '@/components/AnimatedImage';
 import { Shield, Droplets, Clock, Leaf, SprayCan, CheckCircle } from 'lucide-react';
@@ -11,6 +13,7 @@ import impregnationBeforeAfter from '@/assets/impregnation-before-after.jpg';
 
 const Impregnation = () => {
   const { t } = useLanguage();
+  const { showSplash, handleSplashComplete } = useSplash('impregnation');
 
   const benefits = [
     {
@@ -73,6 +76,7 @@ const Impregnation = () => {
 
   return (
     <>
+      {showSplash && <ImpregnationSplash onComplete={handleSplashComplete} />}
       <SEO
         title="Импрегнация мебели и тканей — Защита от загрязнений"
         description="Профессиональная импрегнация мебели, ковров и тканей. Защита от воды, грязи и пятен. Гидрофобное покрытие продлевает срок службы."

@@ -12,12 +12,12 @@ const ReviewsSplash = ({ onComplete }: ReviewsSplashProps) => {
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 700);
+    }, 1200);
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 1000);
+    }, 1500);
 
     return () => {
       clearTimeout(fadeTimer);

@@ -1,7 +1,9 @@
- import { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import SEO from '@/components/SEO';
- import { useLanguage } from '@/i18n/LanguageContext';
- import Layout from '@/components/Layout';
+import { useLanguage } from '@/i18n/LanguageContext';
+import Layout from '@/components/Layout';
+import WindowsSplash from '@/components/WindowsSplash';
+import { useSplash } from '@/hooks/useSplash';
  import ContactForm, { ContactFormRef } from '@/components/ContactForm';
  import WindowsPriceCalculator from '@/components/WindowsPriceCalculator';
  import AnimatedImage from '@/components/AnimatedImage';
@@ -16,6 +18,7 @@ import SEO from '@/components/SEO';
    const { t } = useLanguage();
    const formRef = useRef<ContactFormRef>(null);
    const formSectionRef = useRef<HTMLDivElement>(null);
+   const { showSplash, handleSplashComplete } = useSplash('windows');
  
    const handleSendToForm = (items: CalculatorItem[], total: number) => {
      formRef.current?.setCalculatorData(items, total);
@@ -37,6 +40,7 @@ import SEO from '@/components/SEO';
  
    return (
      <>
+      {showSplash && <WindowsSplash onComplete={handleSplashComplete} />}
       <SEO
         title="Мойка окон — Профессиональная чистка окон"
         description="Профессиональная мойка окон любой сложности. Чистые окна — больше света и комфорта в вашем доме. Быстро, качественно, доступно."

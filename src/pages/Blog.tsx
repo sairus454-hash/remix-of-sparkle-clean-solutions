@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import BlogSplash from '@/components/BlogSplash';
+import { useSplash } from '@/hooks/useSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { ArrowLeft, Calendar, Clock, Sparkles, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -371,6 +373,7 @@ const Blog = () => {
   const articles = [...(blogArticles[language] || blogArticles.ru)].reverse();
   const titles = blogTitles[language] || blogTitles.ru;
   const [expandedIds, setExpandedIds] = useState<Set<number>>(new Set());
+  const { showSplash, handleSplashComplete } = useSplash('blog');
 
   const toggleExpand = (id: number) => {
     setExpandedIds(prev => {
@@ -382,6 +385,7 @@ const Blog = () => {
 
   return (
     <>
+      {showSplash && <BlogSplash onComplete={handleSplashComplete} />}
       <SEO
         title={`${titles.title} — MasterClean`}
         description={titles.subtitle}
