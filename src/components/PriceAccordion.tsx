@@ -142,6 +142,27 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
                           {getCleaningPrice()} {t.prices.currency}
                         </span>
                       </div>
+
+                      {/* What's included info */}
+                      <div className="pt-2">
+                        <p className="text-sm font-semibold text-foreground mb-2">
+                          {cleaningType === 'standard' 
+                            ? `${t.cleaning?.standardCleaning || 'Стандартная уборка'} — ${t.cleaning?.includedTitle || 'Что входит:'}`
+                            : `${t.cleaning?.generalCleaning || 'Генеральная уборка'} — ${t.cleaning?.includedTitle || 'Что входит:'}`
+                          }
+                        </p>
+                        <ul className="space-y-1 max-h-48 overflow-y-auto pr-1">
+                          {(cleaningType === 'standard' 
+                            ? (t.cleaning?.standardServices || []) 
+                            : (t.cleaning?.generalServices || [])
+                          ).map((service: string, idx: number) => (
+                            <li key={idx} className="text-xs text-muted-foreground flex items-start gap-1.5">
+                              <span className="text-primary mt-0.5 flex-shrink-0">✓</span>
+                              <span>{service}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                       {category.note && (
                         <div className="mt-4 pt-4 border-t border-border">
                           <p className="text-sm font-semibold text-yellow-600 dark:text-yellow-400 flex items-start gap-2 bg-yellow-400/10 dark:bg-yellow-400/20 rounded-lg p-3 whitespace-pre-line">

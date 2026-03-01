@@ -407,7 +407,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                   </div>
                 </div>
                 
-                {/* Price and Add Button */}
+              {/* Price and Add Button */}
                 <div className="flex items-center justify-between pt-2 border-t border-border">
                   <div>
                     <span className="text-xs text-muted-foreground">{'Стоимость'}:</span>
@@ -417,6 +417,27 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                     <Plus className="w-4 h-4 mr-1" />
                     {'Добавить'}
                   </Button>
+                </div>
+
+                {/* What's included info */}
+                <div className="pt-3 border-t border-border">
+                  <p className="text-xs font-semibold text-foreground mb-2">
+                    {cleaningType === 'standard' 
+                      ? `${t.cleaning?.standardCleaning || 'Стандартная уборка'} — ${t.cleaning?.includedTitle || 'Что входит:'}`
+                      : `${t.cleaning?.generalCleaning || 'Генеральная уборка'} — ${t.cleaning?.includedTitle || 'Что входит:'}`
+                    }
+                  </p>
+                  <ul className="space-y-1 max-h-40 overflow-y-auto pr-1">
+                    {(cleaningType === 'standard' 
+                      ? (t.cleaning?.standardServices || []) 
+                      : (t.cleaning?.generalServices || [])
+                    ).map((service: string, idx: number) => (
+                      <li key={idx} className="text-xs text-muted-foreground flex items-start gap-1.5">
+                        <span className="text-primary mt-0.5 flex-shrink-0">✓</span>
+                        <span>{service}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </CollapsibleContent>
