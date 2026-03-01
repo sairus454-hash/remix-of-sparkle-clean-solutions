@@ -11,7 +11,7 @@ import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
-  Wrench, Hammer, Plug, Droplet, PaintBucket, DoorOpen, 
+  Wrench, Hammer, Plug, Droplet, Flower2, DoorOpen, 
   Lightbulb, Tv, Frame, ShowerHead, Lock, Fan
 } from 'lucide-react';
 import handyman1 from '@/assets/handyman-1.jpg';
@@ -34,7 +34,7 @@ const Handyman = () => {
     { icon: Plug, name: t.handyman.electrical, desc: t.handyman.electricalDesc },
     { icon: Droplet, name: t.handyman.plumbing, desc: t.handyman.plumbingDesc },
     { icon: Hammer, name: t.handyman.carpentry, desc: t.handyman.carpentryDesc },
-    { icon: PaintBucket, name: t.handyman.painting, desc: t.handyman.paintingDesc },
+    { icon: Flower2, name: t.handyman.painting, desc: t.handyman.paintingDesc },
     { icon: DoorOpen, name: t.handyman.doors, desc: t.handyman.doorsDesc },
     { icon: Lightbulb, name: t.handyman.lighting, desc: t.handyman.lightingDesc },
     { icon: Tv, name: t.handyman.mounting, desc: t.handyman.mountingDesc },
