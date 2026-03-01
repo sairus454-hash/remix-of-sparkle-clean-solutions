@@ -48,6 +48,16 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                   {t.nav.ozone}
                 </Link>
               </li>
+              <li>
+                <Link to="/windows" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                  {t.nav.windows}
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                  {t.services.furniture}
+                </Link>
+              </li>
             </ul>
           </div>
 
