@@ -261,7 +261,7 @@ const Reviews = () => {
               <MapPin className="w-5 h-5" />
               <span>
                 {t.reviews.viewOnGoogle.replace(/Google Maps/i, '').trim()}{' '}
-                <span className="bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent font-bold">Google Maps</span>
+                <span className="bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 via-red-500 to-blue-500 bg-clip-text text-transparent font-bold">Google Maps</span>
               </span>
               <ExternalLink className="w-4 h-4" />
             </a>
