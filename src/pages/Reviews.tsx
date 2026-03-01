@@ -259,7 +259,10 @@ const Reviews = () => {
             {/* Google Maps Link */}
             <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-card/90 backdrop-blur-sm text-primary font-medium px-5 py-2.5 rounded-xl shadow-lg hover:bg-card transition-colors border border-border">
               <MapPin className="w-5 h-5" />
-              {t.reviews.viewOnGoogle}
+              <span>
+                {t.reviews.viewOnGoogle.replace(/Google Maps/i, '').trim()}{' '}
+                <span className="bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent font-bold">Google Maps</span>
+              </span>
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
