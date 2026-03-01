@@ -3,6 +3,7 @@ import { cleaningExtras, CleaningExtra } from '@/data/cleaningExtras';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const GENERAL_ONLY_EXTRAS = ['ironing', 'balcony', 'petLitter'];
+const STANDARD_EXCLUDED_EXTRAS = ['microwave'];
 
 interface CleaningExtrasCheckboxesProps {
   cleaningType: 'standard' | 'general';
@@ -17,7 +18,7 @@ const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra,
 
   const filteredExtras = cleaningType === 'general'
     ? cleaningExtras.filter(e => GENERAL_ONLY_EXTRAS.includes(e.id))
-    : cleaningExtras;
+    : cleaningExtras.filter(e => !STANDARD_EXCLUDED_EXTRAS.includes(e.id));
 
   const getPrice = (extra: CleaningExtra) => {
     return cleaningType === 'standard' ? extra.standardPrice : extra.generalPrice;
