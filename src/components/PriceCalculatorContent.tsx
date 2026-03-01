@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -54,11 +55,18 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
   const [cleaningArea, setCleaningArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const STANDARD_PRICE_PER_M2 = 8;
+  const STANDARD_PRICE_PER_M2 = 6;
   const GENERAL_PRICE_PER_M2 = 10;
+  const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
   
+  const toggleExtra = (id: string) => {
+    setSelectedExtras(prev => prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id]);
+  };
+
   const getCleaningPrice = () => {
-    return cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
+    const base = cleaningArea * (cleaningType === 'standard' ? STANDARD_PRICE_PER_M2 : GENERAL_PRICE_PER_M2);
+    const extras = getExtrasTotal(selectedExtras, cleaningType);
+    return base + extras;
   };
   
   const addCleaningToCart = () => {
@@ -417,6 +425,16 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                     <Plus className="w-4 h-4 mr-1" />
                     {'Добавить'}
                   </Button>
+                </div>
+
+                {/* Extras with checkboxes */}
+                <div className="pt-3 border-t border-border">
+                  <CleaningExtrasCheckboxes
+                    cleaningType={cleaningType}
+                    selectedExtras={selectedExtras}
+                    onToggleExtra={toggleExtra}
+                    compact
+                  />
                 </div>
 
                 {/* What's included info */}
