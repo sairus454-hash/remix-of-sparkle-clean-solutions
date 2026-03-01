@@ -119,7 +119,8 @@ serve(async (req) => {
     }
 
     const paymentTypeLabel = formData.paymentType === 'cash' ? '💵 Наличные' : 
-                             formData.paymentType === 'blik' ? '📱 BLIK' : '';
+                             formData.paymentType === 'blik' ? '📱 BLIK' :
+                             formData.paymentType === 'invoice' ? '🧾 Фактура' : '';
 
     const message = `
 🔔 *Новая заявка с сайта!*
