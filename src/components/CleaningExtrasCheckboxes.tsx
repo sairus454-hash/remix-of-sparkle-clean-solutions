@@ -1,5 +1,6 @@
 import { Checkbox } from '@/components/ui/checkbox';
 import { cleaningExtras, CleaningExtra } from '@/data/cleaningExtras';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const GENERAL_ONLY_EXTRAS = ['ironing', 'balcony', 'petLitter'];
 
@@ -11,12 +12,24 @@ interface CleaningExtrasCheckboxesProps {
 }
 
 const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra, compact = false }: CleaningExtrasCheckboxesProps) => {
+  const { t } = useLanguage();
+  const extras = t.cleaning?.extras;
+
   const filteredExtras = cleaningType === 'general'
     ? cleaningExtras.filter(e => GENERAL_ONLY_EXTRAS.includes(e.id))
     : cleaningExtras;
 
   const getPrice = (extra: CleaningExtra) => {
     return cleaningType === 'standard' ? extra.standardPrice : extra.generalPrice;
+  };
+
+  const getExtraName = (extra: CleaningExtra) => {
+    return (extras as any)?.[extra.id] || extra.name;
+  };
+
+  const getUnit = (extra: CleaningExtra) => {
+    if (!extra.unit) return '';
+    return extras?.perHour || extra.unit;
   };
 
   const totalExtras = selectedExtras.reduce((sum, id) => {
@@ -27,7 +40,7 @@ const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra,
   return (
     <div className="space-y-2">
       <p className={`font-semibold text-foreground ${compact ? 'text-xs' : 'text-sm'}`}>
-        Дополнительные услуги:
+        {extras?.title || 'Дополнительные услуги:'}
       </p>
       <div className={`space-y-1 ${compact ? 'max-h-48' : 'max-h-64'} overflow-y-auto pr-1`}>
         {filteredExtras.map((extra) => {
@@ -47,11 +60,11 @@ const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra,
                   className="flex-shrink-0"
                 />
                 <span className={`${compact ? 'text-xs' : 'text-sm'} text-foreground leading-tight`}>
-                  {extra.name}
+                  {getExtraName(extra)}
                 </span>
               </div>
               <span className={`${compact ? 'text-xs' : 'text-sm'} font-semibold text-primary whitespace-nowrap ml-2`}>
-                {price.toFixed(2)} zł{extra.unit || ''}
+                {price.toFixed(2)} zł{getUnit(extra)}
               </span>
             </label>
           );
@@ -59,7 +72,7 @@ const CleaningExtrasCheckboxes = ({ cleaningType, selectedExtras, onToggleExtra,
       </div>
       {totalExtras > 0 && (
         <div className={`flex items-center justify-between pt-2 border-t border-border ${compact ? 'text-xs' : 'text-sm'}`}>
-          <span className="font-medium text-muted-foreground">Доп. услуги:</span>
+          <span className="font-medium text-muted-foreground">{extras?.subtotal || 'Доп. услуги:'}</span>
           <span className="font-bold text-primary">{totalExtras.toFixed(2)} zł</span>
         </div>
       )}
