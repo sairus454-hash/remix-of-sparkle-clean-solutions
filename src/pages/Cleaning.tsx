@@ -12,7 +12,7 @@ import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight } from 'lucide-react';
@@ -239,6 +239,7 @@ const Cleaning = () => {
                   <DialogTitle className="font-serif text-2xl">
                     {t.cleaning?.calculatorTitle || 'Рассчитайте стоимость уборки'}
                   </DialogTitle>
+                  <DialogDescription className="sr-only">{t.cleaning?.subtitle || 'Профессиональная уборка квартир, домов и офисов'}</DialogDescription>
                   <p className="text-sm text-muted-foreground mt-1">
                     {t.cleaning?.subtitle || 'Профессиональная уборка квартир, домов и офисов'}
                   </p>
