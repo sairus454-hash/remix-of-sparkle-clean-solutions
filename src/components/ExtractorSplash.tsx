@@ -10,16 +10,14 @@ const ExtractorSplash = ({ onComplete }: ExtractorSplashProps) => {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    // Start fading at 0.7 seconds
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 700);
+    }, 1200);
 
-    // Complete at 1 second
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 1000);
+    }, 1500);
 
     return () => {
       clearTimeout(fadeTimer);
