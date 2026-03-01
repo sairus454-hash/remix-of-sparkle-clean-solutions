@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === "development" && componentTagger(),
     VitePWA({
-      registerType: "prompt",
+      registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "og-image.png"],
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,jpg,webp,svg,woff,woff2}"],
