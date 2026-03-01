@@ -13,7 +13,7 @@ import { toast } from '@/hooks/use-toast';
 import { Star, Send, Loader2, MapPin, ExternalLink, Sparkles } from 'lucide-react';
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import happyCustomerImage from '@/assets/happy-customer.jpg';
+import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
 import { supabase } from '@/integrations/supabase/client';
 import SimpleCaptcha from '@/components/SimpleCaptcha';
 interface Review {
@@ -206,7 +206,7 @@ const Reviews = () => {
         {/* Background photo */}
         <div className="fixed inset-0 z-0">
           <img
-            src={happyCustomerImage}
+            src={leatherSofaImage}
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
@@ -250,21 +250,6 @@ const Reviews = () => {
           </div>
         </section>
 
-        {/* Happy Customer Photo */}
-        <section className="py-12 bg-card">
-          <div className="container mx-auto px-4">
-            <CircularRevealCard index={0}>
-              <div className="max-w-md mx-auto rounded-2xl overflow-hidden shadow-card bg-gradient-hero p-1 group" style={{
-                animation: 'float 5s ease-in-out infinite'
-              }}>
-                <div className="relative rounded-xl overflow-hidden">
-                  <img src={happyCustomerImage} alt="Довольный клиент MasterClean" loading="lazy" decoding="async" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-fresh/20" />
-                </div>
-              </div>
-            </CircularRevealCard>
-          </div>
-        </section>
 
         {/* Reviews Grid */}
         <section className="py-16 bg-background">
