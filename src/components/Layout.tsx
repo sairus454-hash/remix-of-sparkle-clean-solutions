@@ -18,7 +18,7 @@ const Layout = ({ children }: LayoutProps) => {
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
       <CleaningBackground />
       <Header />
-      <main className="flex-1 pt-14 sm:pt-16 lg:pt-20">
+      <main className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10">
         {/* Marquee Section */}
         <section className="py-2 sm:py-2.5 mt-14 sm:mt-16 overflow-hidden shadow-md" style={{ background: 'linear-gradient(90deg, hsl(195 85% 42%) 0%, hsl(170 65% 45%) 25%, hsl(45 70% 55% / 0.5) 50%, hsl(170 65% 45%) 75%, hsl(195 85% 42%) 100%)' }}>
           <div className="relative">
@@ -34,7 +34,9 @@ const Layout = ({ children }: LayoutProps) => {
         </section>
         {children}
       </main>
-      <Footer />
+      <div className="relative z-10">
+        <Footer />
+      </div>
       <Suspense fallback={null}>
         <ChatBot />
       </Suspense>

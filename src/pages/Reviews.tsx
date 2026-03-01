@@ -230,7 +230,7 @@ const Reviews = () => {
         </div>
         <PremiumGlareBackground />
         {/* Hero Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-b from-accent/50 to-background">
+        <section className="relative z-10 py-16 lg:py-24 bg-gradient-to-b from-accent/50 to-background">
           <div className="container mx-auto px-4 text-center">
             {/* Animated cleanliness icon */}
             <div className="flex justify-center mb-6">
@@ -270,7 +270,7 @@ const Reviews = () => {
 
 
         {/* Reviews Grid */}
-        <section className="py-16 bg-background">
+        <section className="relative z-10 py-16 bg-background">
           <div className="container mx-auto px-4">
             <h2 className="font-serif text-3xl font-bold mb-8 text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
             animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
