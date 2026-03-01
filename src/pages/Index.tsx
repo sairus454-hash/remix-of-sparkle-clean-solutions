@@ -14,6 +14,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from '@/components/ui/dialog';
 import {
   Drawer,
@@ -474,6 +475,7 @@ const Index = () => {
                 <DialogTitle className="font-serif text-xl">
                   {t.calculator.title}
                 </DialogTitle>
+                <DialogDescription className="sr-only">{t.calculator.selectItems}</DialogDescription>
               </div>
             </DialogHeader>
             <div className="overflow-y-auto flex-1 py-4">

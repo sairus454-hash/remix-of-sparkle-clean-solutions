@@ -27,7 +27,7 @@ const PriceSection = () => {
         { name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 80 м²`, price: 640, icon: Sparkles },
         { name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'} 100 м²`, price: 800, icon: Sparkles },
       ],
-      note: `${t.handyman?.minOrderNote || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктів — 300 zł'}`,
+      note: `${t.handyman?.minOrderNote || 'Минимальный заказ для Вроцлава и пригорода (R=10 km) — 180 zł'}\n${t.handyman?.minOrderNoteOther || 'Минимальный заказ для других населённых пунктов — 300 zł'}`,
     },
     {
       id: 'furniture',

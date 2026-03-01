@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -42,7 +42,7 @@ interface PriceCalculatorContentProps {
   onClose?: () => void;
 }
 
-const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorContentProps) => {
+const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorContentProps>(({ onSendToForm, onClose }, ref) => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
@@ -672,6 +672,8 @@ const PriceCalculatorContent = ({ onSendToForm, onClose }: PriceCalculatorConten
       </div>
     </div>
   );
-};
+});
+
+PriceCalculatorContent.displayName = 'PriceCalculatorContent';
 
 export default PriceCalculatorContent;
