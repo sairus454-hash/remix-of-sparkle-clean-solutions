@@ -31,8 +31,8 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const [mattressType, setMattressType] = useState<string>('mattressDouble');
   const [autoType, setAutoType] = useState<string>('autoSeats');
 
-  const STANDARD_PRICE_PER_M2 = 6;
-  const GENERAL_PRICE_PER_M2 = 8;
+  const STANDARD_PRICE_PER_M2 = 8;
+  const GENERAL_PRICE_PER_M2 = 10;
 
   const serviceOptions = [
     { id: 'cleaning', label: t.cleaning?.service || 'Уборка', icon: Home },
