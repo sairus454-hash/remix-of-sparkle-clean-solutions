@@ -135,6 +135,8 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         { id: 'autoDoorCard', name: t.prices.items.autoDoorCard, price: 40 },
         { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450 },
         { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 550 },
+        { id: 'autoVip', name: t.prices.items.autoVip, price: 650 },
+        { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 750 },
         { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650 },
         { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400 },
       ],
