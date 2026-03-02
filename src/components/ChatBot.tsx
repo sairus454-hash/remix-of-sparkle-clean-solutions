@@ -518,7 +518,7 @@ const ChatBot = () => {
           "bg-gradient-to-br from-primary to-fresh hover:scale-110 hover:shadow-glow",
           // Mobile: right side, slightly below center; Desktop: bottom right
           isMobile 
-            ? "right-3 top-[55%] -translate-y-1/2 w-14 h-14" 
+            ? "right-3 top-[60%] -translate-y-1/2 w-14 h-14" 
             : "bottom-20 right-4 w-14 h-14",
           isOpen ? "rotate-180" : "animate-pulse-slow"
         )}
