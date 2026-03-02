@@ -71,9 +71,11 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           <div>
             <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.contacts}</h4>
             <ul className="space-y-2 sm:space-y-3">
-              <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                <span className="leading-tight">{t.contacts.addressValue}</span>
+              <li>
+                <a href="https://maps.app.goo.gl/uvzboZg432I31j3ZX" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
+                  <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="leading-tight">{t.contacts.addressValue}</span>
+                </a>
               </li>
               <li>
                 <a href="tel:+48575211401" onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('footer'))} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
