@@ -1,11 +1,11 @@
 import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Droplets, Phone, Mail, MapPin, ShieldCheck } from 'lucide-react';
+import { Droplets, Phone, Mail, MapPin, ShieldCheck, BookOpen } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import fixlyBadge from '@/assets/fixly-badge.jpg';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer ref={ref} className="bg-foreground text-background py-8 sm:py-12 pb-safe">
@@ -27,6 +27,12 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">{t.hero.subtitle}</p>
+            <Link to="/blog" className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-primary hover:text-fresh transition-colors group">
+              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
+                <BookOpen className="w-4 h-4 text-primary" />
+              </div>
+              <span>{language === 'ru' ? 'Блог чистоты' : language === 'pl' ? 'Blog czystości' : language === 'uk' ? 'Блог чистоти' : 'Cleanliness Blog'}</span>
+            </Link>
           </div>
 
           {/* Quick Links */}
