@@ -15,6 +15,7 @@ export const translations = {
       contacts: 'Контакты',
       windows: 'Мойка окон',
       cleaning: 'Уборка',
+      blog: 'Блог',
     },
     reviews: {
       title: 'Отзывы наших клиентов',
@@ -707,6 +708,7 @@ export const translations = {
       contacts: 'Contacts',
       windows: 'Window Cleaning',
       cleaning: 'Cleaning',
+      blog: 'Blog',
     },
     reviews: {
       title: 'Customer Reviews',
@@ -1399,6 +1401,7 @@ export const translations = {
       contacts: 'Kontakt',
       windows: 'Mycie okien',
       cleaning: 'Sprzątanie',
+      blog: 'Blog',
     },
     reviews: {
       title: 'Opinie naszych klientów',
@@ -2091,6 +2094,7 @@ export const translations = {
       contacts: 'Контакти',
       windows: 'Миття вікон',
       cleaning: 'Прибирання',
+      blog: 'Блог',
     },
     reviews: {
       title: 'Відгуки наших клієнтів',

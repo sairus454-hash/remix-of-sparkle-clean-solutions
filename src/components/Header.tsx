@@ -51,6 +51,7 @@ const Header = () => {
     { path: '/auto', label: t.nav.auto, highlight: 'auto' as const },
     { path: '/handyman', label: t.nav.handyman, highlight: 'handyman' as const },
     { path: '/reviews', label: t.nav.reviews },
+    { path: '/blog', label: t.nav.blog, highlight: 'blog' as const },
     { path: '/contacts', label: t.nav.contacts },
   ];
 
@@ -147,6 +148,9 @@ const Header = () => {
                 }
                 if (item.highlight === 'handyman') {
                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                }
+                if (item.highlight === 'blog') {
+                  return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300';
                 }
                 return '';
               };
@@ -310,6 +314,9 @@ const Header = () => {
                 }
                 if (item.highlight === 'handyman') {
                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                }
+                if (item.highlight === 'blog') {
+                  return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300';
                 }
                 return '';
               };
