@@ -260,21 +260,19 @@ const ChatBot = () => {
 
   // Auto-open chatbot after delay
   // Desktop: all pages after 8 seconds
-  // Mobile: disabled (no auto-open)
+  // Mobile: after 30 seconds
   useEffect(() => {
     if (hasAutoOpened) return;
-    
-    // Disable auto-open on mobile completely
-    if (isMobile) return;
 
     // Disable auto-open on contacts page (has its own form)
     if (location.pathname === '/contacts') return;
     
-    // Desktop: 8 seconds delay
+    // Mobile: 30 seconds, Desktop: 8 seconds
+    const delay = isMobile ? 30000 : 8000;
     const timer = setTimeout(() => {
       setIsOpen(true);
       setHasAutoOpened(true);
-    }, 8000);
+    }, delay);
 
     return () => clearTimeout(timer);
   }, [hasAutoOpened, isMobile, location.pathname]);
