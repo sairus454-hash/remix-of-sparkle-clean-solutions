@@ -90,6 +90,7 @@ const FreeDeliveryBadge = () => {
           href="https://wa.me/48575211401" 
           target="_blank" 
           rel="noopener noreferrer"
+          onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.whatsappClick('floating_badge'))}
           className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#25D366] flex items-center justify-center hover:scale-110 transition-transform shadow-md"
           aria-label="WhatsApp"
         >

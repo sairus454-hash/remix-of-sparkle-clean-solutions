@@ -123,6 +123,7 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
     const item = getSelectedItem();
     if (!item) return;
     
+    import('@/lib/gtm').then(m => m.gtmEvents.calculatorUse(item.name, discountInfo.finalTotal));
     onClose?.();
     navigate('/contacts', { 
       state: { 

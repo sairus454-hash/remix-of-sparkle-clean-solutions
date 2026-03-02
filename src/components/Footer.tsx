@@ -76,7 +76,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <span className="leading-tight">{t.contacts.addressValue}</span>
               </li>
               <li>
-                <a href="tel:+48575211401" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
+                <a href="tel:+48575211401" onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('footer'))} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
                   <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                   {t.contacts.phoneValue}
                 </a>
