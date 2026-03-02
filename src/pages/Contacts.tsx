@@ -106,23 +106,34 @@ const Contacts = () => {
                 {t.contacts.title}
               </h2>
               <div className="space-y-6">
-                {contactInfo.map((item, index) => (
-                  <CircularRevealCard key={index} index={index}>
-                    <div className="flex gap-4 p-4 rounded-xl bg-gradient-card border border-border">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                        <item.icon className="w-5 h-5 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
-                        {item.isHours ? (
-                          <p className="font-serif text-4xl font-bold text-primary">{item.value}</p>
-                        ) : (
-                          <p className="font-medium text-foreground whitespace-pre-line">{item.value}</p>
-                        )}
-                      </div>
-                    </div>
-                  </CircularRevealCard>
-                ))}
+                {contactInfo.map((item, index) => {
+                  const isPhone = item.icon === Phone;
+                  const isAddress = item.icon === MapPin;
+                  const Wrapper = isPhone || isAddress ? 'a' : 'div';
+                  const wrapperProps = isPhone
+                    ? { href: 'tel:+48575211401' }
+                    : isAddress
+                      ? { href: 'https://maps.app.goo.gl/uvzboZg432I31j3ZX', target: '_blank', rel: 'noopener noreferrer' }
+                      : {};
+
+                  return (
+                    <CircularRevealCard key={index} index={index}>
+                      <Wrapper {...wrapperProps} className={`flex gap-4 p-4 rounded-xl bg-gradient-card border border-border ${isPhone || isAddress ? 'hover:border-primary/50 transition-colors cursor-pointer' : ''}`}>
+                        <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                          <item.icon className="w-5 h-5 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                        </div>
+                        <div>
+                          <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
+                          {item.isHours ? (
+                            <p className="font-serif text-4xl font-bold text-primary">{item.value}</p>
+                          ) : (
+                            <p className="font-medium text-foreground whitespace-pre-line">{item.value}</p>
+                          )}
+                        </div>
+                      </Wrapper>
+                    </CircularRevealCard>
+                  );
+                })}
               </div>
               
               {/* MasterClean Logo */}
