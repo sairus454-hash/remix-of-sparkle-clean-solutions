@@ -91,6 +91,8 @@ const PriceSection = () => {
       items: [
         { name: t.prices.items.autoComplex, price: 450, icon: CarFront },
         { name: t.prices.items.autoComplexLeather, price: 550, icon: CarFront },
+        { name: t.prices.items.autoVip, price: 650, icon: CarFront },
+        { name: t.prices.items.autoVipLeather, price: 750, icon: CarFront },
         { name: t.prices.items.autoSeat, price: 80, icon: Square },
         { name: t.prices.items.autoSeats, price: 300, icon: LayoutGrid },
         { name: t.prices.items.autoLeatherSeats, price: 350, icon: LayoutGrid },
