@@ -202,6 +202,7 @@ const ChatBot = () => {
   useEffect(() => {
     const handleOpenChat = () => {
       setIsOpen(true);
+      import('@/lib/gtm').then(m => m.gtmEvents.chatbotOpen('manual'));
     };
     
     window.addEventListener('openChatBot', handleOpenChat);
@@ -272,6 +273,7 @@ const ChatBot = () => {
     const timer = setTimeout(() => {
       setIsOpen(true);
       setHasAutoOpened(true);
+      import('@/lib/gtm').then(m => m.gtmEvents.chatbotOpen('auto'));
     }, delay);
 
     return () => clearTimeout(timer);
@@ -313,6 +315,7 @@ const ChatBot = () => {
   const sendMessage = async (messageText?: string) => {
     const text = messageText || input.trim();
     if (!text || isLoading) return;
+    import('@/lib/gtm').then(m => m.gtmEvents.chatbotMessage());
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -394,6 +397,8 @@ const ChatBot = () => {
       if (error) {
         console.error('Telegram send error:', error);
       }
+
+      import('@/lib/gtm').then(m => m.gtmEvents.chatbotLeadSubmit());
 
       const leadMessage: Message = {
         id: Date.now().toString(),

@@ -307,6 +307,12 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       });
       if (error) throw error;
 
+      // GTM event
+      (await import('@/lib/gtm')).gtmEvents.formSubmit('contact_form', {
+        has_calculator: calculatorItems.length > 0,
+        city: formData.city || formData.village,
+      });
+
       // Show success animation with confetti
       setShowSuccessAnimation(true);
       

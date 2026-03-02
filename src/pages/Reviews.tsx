@@ -162,6 +162,8 @@ const Reviews = () => {
       });
       if (error) throw error;
 
+      import('@/lib/gtm').then(m => m.gtmEvents.reviewSubmit(rating));
+
       // Add review to local state immediately
       const newReview: Review = {
         id: crypto.randomUUID(),

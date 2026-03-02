@@ -229,7 +229,7 @@ const Header = () => {
                 {languages.map((lang) => (
                   <button
                     key={lang.code}
-                    onClick={() => setLanguage(lang.code)}
+                    onClick={() => { setLanguage(lang.code); import('@/lib/gtm').then(m => m.gtmEvents.languageChange(lang.code)); }}
                     className={`px-2 py-1 text-xs font-medium rounded-md transition-colors min-w-[32px] ${
                       language === lang.code
                         ? 'bg-primary text-primary-foreground'
@@ -245,7 +245,8 @@ const Header = () => {
             {/* Phone */}
             <div style={getHeaderItemStyle(14, headerRevealed)} className="flex items-center flex-shrink-0">
               <a 
-                href="tel:+48575211401" 
+                href="tel:+48575211401"
+                onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('header'))}
                 className="flex items-center gap-1 text-primary font-bold text-xs sm:text-sm hover:text-fresh transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
