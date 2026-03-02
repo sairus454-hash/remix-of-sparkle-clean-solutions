@@ -175,7 +175,7 @@ const Header = () => {
           </nav>
 
           {/* Right Section */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             {/* 24/7 Badge - Now visible on all screens */}
             <div style={getHeaderItemStyle(12, headerRevealed)}>
               <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
@@ -254,7 +254,7 @@ const Header = () => {
             </div>
 
             {/* Messenger Icons */}
-            <div className="flex items-center gap-1.5 sm:gap-2">
+            <div className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
               <div style={getHeaderItemStyle(15, headerRevealed)}>
                 <a 
                   href="https://t.me/+48575211401" 
