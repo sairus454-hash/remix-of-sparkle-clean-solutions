@@ -18,6 +18,7 @@ import mattressCleaning from '@/assets/mattress-cleaning.jpg';
 import leatherSofa from '@/assets/leather-sofa-cleaning.jpg';
 import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
 import topExecutor2025 from '@/assets/top-executor-2025.jpg';
+import sofaSeatsGuide from '@/assets/sofa-seats-guide.jpg';
 
 // Lazy image: renders only when near viewport
 const LazyBlogImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
@@ -129,6 +130,16 @@ const blogArticles = {
       readTime: '5 мин',
       tag: '🏆 Награда',
     },
+    {
+      id: 8,
+      title: 'Как считать посадочные места на диване?',
+      summary: 'Ширина одного посадочного места — примерно 50–60 см. Количество подушек подскажет число мест, а подлокотники уменьшают полезную площадь.',
+      content: 'Чтобы правильно посчитать посадочные места, замерьте общую длину дивана и разделите на 55 см. Учитывайте комплекцию людей — крупным людям нужно больше пространства. Подлокотники занимают место, поэтому реальных посадочных мест может быть меньше, чем кажется. Это важно знать при заказе химчистки — стоимость часто зависит от количества мест.',
+      image: sofaSeatsGuide,
+      date: '2025-03-02',
+      readTime: '2 мин',
+      tag: '🛋️ Химчистка',
+    },
   ],
   en: [
     {
@@ -201,6 +212,16 @@ const blogArticles = {
       date: '2025-03-01',
       readTime: '5 min',
       tag: '🏆 Award',
+    },
+    {
+      id: 8,
+      title: 'How to Count Sofa Seats?',
+      summary: 'One seat is approximately 50–60 cm wide. The number of cushions hints at the number of seats, and armrests reduce usable space.',
+      content: 'To count seats correctly, measure the total sofa length and divide by 55 cm. Consider body size — larger people need more space. Armrests take up room, so actual seating may be less than expected. This matters when ordering upholstery cleaning — pricing often depends on the number of seats.',
+      image: sofaSeatsGuide,
+      date: '2025-03-02',
+      readTime: '2 min',
+      tag: '🛋️ Cleaning',
     },
   ],
   pl: [
@@ -275,6 +296,16 @@ const blogArticles = {
       readTime: '5 min',
       tag: '🏆 Nagroda',
     },
+    {
+      id: 8,
+      title: 'Jak liczyć miejsca siedzące na sofie?',
+      summary: 'Szerokość jednego miejsca to około 50–60 cm. Liczba poduszek podpowiada liczbę miejsc, a podłokietniki zmniejszają użyteczną przestrzeń.',
+      content: 'Aby prawidłowo policzyć miejsca, zmierz całkowitą długość sofy i podziel przez 55 cm. Uwzględnij budowę ciała — większe osoby potrzebują więcej miejsca. Podłokietniki zajmują przestrzeń, więc rzeczywistych miejsc może być mniej. To ważne przy zamawianiu prania tapicerki — cena często zależy od liczby miejsc.',
+      image: sofaSeatsGuide,
+      date: '2025-03-02',
+      readTime: '2 min',
+      tag: '🛋️ Czyszczenie',
+    },
   ],
   uk: [
     {
@@ -347,6 +378,16 @@ const blogArticles = {
       date: '2025-03-01',
       readTime: '5 хв',
       tag: '🏆 Нагорода',
+    },
+    {
+      id: 8,
+      title: 'Як рахувати посадочні місця на дивані?',
+      summary: 'Ширина одного місця — приблизно 50–60 см. Кількість подушок підкаже число місць, а підлокітники зменшують корисну площу.',
+      content: 'Щоб правильно порахувати місця, виміряйте загальну довжину дивана і поділіть на 55 см. Враховуйте комплекцію людей — великим людям потрібно більше простору. Підлокітники займають місце, тому реальних посадочних місць може бути менше. Це важливо при замовленні хімчистки — вартість часто залежить від кількості місць.',
+      image: sofaSeatsGuide,
+      date: '2025-03-02',
+      readTime: '2 хв',
+      tag: '🛋️ Хімчистка',
     },
   ],
 };
