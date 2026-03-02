@@ -550,7 +550,7 @@ const ChatBot = () => {
           // Mobile: full screen for better UX on iOS/Android
           isMobile 
             ? "inset-0 rounded-none pb-safe pt-safe" 
-            : "bottom-36 right-4 w-96 h-[500px] max-h-[70vh] rounded-2xl",
+            : "bottom-[120px] right-4 w-96 h-[500px] max-h-[70vh] rounded-2xl",
           isOpen 
             ? "scale-100 opacity-100 translate-y-0" 
             : "scale-95 opacity-0 translate-y-4 pointer-events-none"
