@@ -19,6 +19,7 @@ import leatherSofa from '@/assets/leather-sofa-cleaning.jpg';
 import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
 import topExecutor2025 from '@/assets/top-executor-2025.jpg';
 import sofaSeatsGuide from '@/assets/sofa-seats-guide.jpg';
+import sofaSeatsGuidePl from '@/assets/sofa-seats-guide-pl.jpg';
 
 // Lazy image: renders only when near viewport
 const LazyBlogImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
@@ -301,7 +302,7 @@ const blogArticles = {
       title: 'Jak liczyć miejsca siedzące na sofie?',
       summary: 'Szerokość jednego miejsca to około 50–60 cm. Liczba poduszek podpowiada liczbę miejsc, a podłokietniki zmniejszają użyteczną przestrzeń.',
       content: 'Aby prawidłowo policzyć miejsca, zmierz całkowitą długość sofy i podziel przez 55 cm. Uwzględnij budowę ciała — większe osoby potrzebują więcej miejsca. Podłokietniki zajmują przestrzeń, więc rzeczywistych miejsc może być mniej. To ważne przy zamawianiu prania tapicerki — cena często zależy od liczby miejsc.',
-      image: sofaSeatsGuide,
+      image: sofaSeatsGuidePl,
       date: '2025-03-02',
       readTime: '2 min',
       tag: '🛋️ Czyszczenie',
