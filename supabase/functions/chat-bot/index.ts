@@ -671,6 +671,11 @@ ${PRICE_LIST.ru}
 — Мастер на час (сантехника, электрика, монтаж, слесарные работы, чистка канализации)
 — Услуги огородника (покос травы, обрезка деревьев)
 
+🔧 ОБОРУДОВАНИЕ И ХИМИЯ:
+— Используем профессиональное оборудование Santoemma и Kärcher
+— Применяем профессиональную химию: Allegrini, Bissell, Global
+— Если клиент спрашивает про оборудование или химию — подчеркни профессиональный уровень!
+
 ВАЖНО:
 — ВСЕГДА называй точные цены
 — АКТИВНО ПРОДВИГАЙ СКИДКИ! При любом заказе говори о возможности получить скидку
@@ -761,6 +766,11 @@ SERVICES:
 — Premises cleaning
 — Handyman (plumbing, electrical, mounting, locksmith work, drain/sewer cleaning)
 — Gardening services (lawn mowing, tree trimming)
+
+🔧 EQUIPMENT & CHEMICALS:
+— We use professional equipment: Santoemma and Kärcher
+— We use professional cleaning chemicals: Allegrini, Bissell, Global
+— If customer asks about equipment or chemicals — emphasize the professional level!
 
 IMPORTANT:
 — ALWAYS give exact prices
@@ -853,6 +863,11 @@ USŁUGI:
 — Złota rączka (hydraulika, elektryka, montaż, prace ślusarskie, czyszczenie kanalizacji)
 — Usługi ogrodnicze (koszenie trawy, przycinanie drzew)
 
+🔧 SPRZĘT I CHEMIA:
+— Używamy profesjonalnego sprzętu: Santoemma i Kärcher
+— Stosujemy profesjonalną chemię: Allegrini, Bissell, Global
+— Jeśli klient pyta o sprzęt lub chemię — podkreśl profesjonalny poziom!
+
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny
 — AKTYWNIE PROMUJ RABATY! Przy każdym zamówieniu mów o możliwości uzyskania rabatu
@@ -943,6 +958,11 @@ ${PRICE_LIST.uk}
 — Прибирання приміщень
 — Майстер на годину (сантехніка, електрика, монтаж, слюсарні роботи, чистка каналізації)
 — Послуги садівника (покос трави, обрізка дерев)
+
+🔧 ОБЛАДНАННЯ ТА ХІМІЯ:
+— Використовуємо професійне обладнання: Santoemma та Kärcher
+— Застосовуємо професійну хімію: Allegrini, Bissell, Global
+— Якщо клієнт питає про обладнання або хімію — підкресли професійний рівень!
 
 ВАЖЛИВО:
 — ЗАВЖДИ називай точні ціни
