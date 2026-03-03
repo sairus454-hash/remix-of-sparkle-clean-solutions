@@ -69,6 +69,8 @@ const Reviews = () => {
   const [dbReviews, setDbReviews] = useState<Review[]>([]);
   const [showGooglePrompt, setShowGooglePrompt] = useState(false);
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  const [captchaChallenge, setCaptchaChallenge] = useState('');
+  const [captchaAnswer, setCaptchaAnswer] = useState(0);
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [formData, setFormData] = useState({
@@ -157,7 +159,9 @@ const Reviews = () => {
         body: {
           name: formData.name,
           rating: rating,
-          text: formData.text
+          text: formData.text,
+          captchaChallenge,
+          captchaAnswer,
         }
       });
       if (error) throw error;
@@ -374,7 +378,11 @@ const Reviews = () => {
                         </div>
 
                         {/* Captcha */}
-                        <SimpleCaptcha onVerify={setIsCaptchaValid} language={language} />
+                        <SimpleCaptcha onVerify={(valid, challenge, answer) => {
+                          setIsCaptchaValid(valid);
+                          if (challenge) setCaptchaChallenge(challenge);
+                          if (answer !== undefined) setCaptchaAnswer(answer);
+                        }} language={language} />
 
                         <Button type="submit" disabled={isLoading || !isCaptchaValid} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all">
                           {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
