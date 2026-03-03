@@ -123,7 +123,7 @@ const Cleaning = () => {
       <SEO
         title="Уборка квартир и домов — Стандартная и генеральная"
         description="Профессиональная уборка квартир, домов и офисов. Стандартная и генеральная уборка. Рассчитайте стоимость онлайн."
-        keywords="уборка квартир, генеральная уборка, стандартная уборка, клининг, уборка дома"
+        keywords="уборка квартир, генеральная уборка, клининг, sprzątanie mieszkań, sprzątanie domów, sprzątanie biur, sprzątanie generalne, firma sprzątająca, usługi sprzątania Opole Wrocław, house cleaning Poland"
         canonical="/cleaning"
         image="https://masterclean1885.pl/og-cleaning.png"
         jsonLd={{

@@ -39,7 +39,7 @@ const About = () => {
       <SEO
         title="О компании MasterClean — Опыт и качество"
         description="Узнайте о команде MasterClean. Профессиональная химчистка мебели и ковров в Польше. Современное оборудование, экологичные средства, опытные специалисты."
-        keywords="о нас, MasterClean, команда химчистки, профессиональная химчистка, Польша"
+        keywords="о нас MasterClean, команда химчистки, o nas, firma sprzątająca Opole, profesjonalne usługi czyszczenia, cleaning company Poland Wrocław Poznań"
         canonical="/about"
         image="https://masterclean1885.pl/og-about.png"
         jsonLd={{

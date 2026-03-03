@@ -57,7 +57,7 @@ const Index = () => {
       <SEO
         title="MasterClean — Химчистка мебели, ковров и авто в Польше"
         description="Профессиональная химчистка мебели, матрасов, ковров и салонов авто. Озонирование, уборка, мойка окон. Работаем 24/7. Звоните: +48 575 211 401"
-        keywords="химчистка мебели, химчистка ковров, химчистка матрасов, химчистка авто, озонирование, уборка, Ополе, Вроцлав"
+        keywords="химчистка мебели, химчистка ковров, химчистка авто, озонирование, уборка, pranie tapicerki, czyszczenie dywanów, czyszczenie materacy, sprzątanie mieszkań, ozonowanie, mycie okien, pranie kanap, Opole, Wrocław, Poznań, Zielona Góra, usługi sprzątania, cleaning services Poland"
         canonical="/"
         image="https://masterclean1885.pl/og-image.png"
         jsonLd={{

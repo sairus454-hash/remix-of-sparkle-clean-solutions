@@ -234,7 +234,7 @@ const Prices = () => {
       <SEO
         title="Прайс-лист на химчистку — Цены на услуги MasterClean"
         description="Актуальные цены на химчистку мебели, ковров, матрасов, авто, озонирование и уборку. Калькулятор стоимости онлайн."
-        keywords="цены химчистка, прайс химчистка мебели, стоимость чистки ковров, цены озонирование"
+        keywords="цены химчистка, прайс химчистка, cennik prania tapicerki, cennik sprzątania, ceny czyszczenia dywanów, cennik ozonowania, cennik mycia okien, cleaning prices Poland"
         canonical="/prices"
         image="https://masterclean1885.pl/og-prices.png"
         jsonLd={{

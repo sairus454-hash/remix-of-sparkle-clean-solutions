@@ -38,7 +38,7 @@ const Services = () => {
       <SEO
         title="Услуги химчистки — Мебель, ковры, авто, озонирование"
         description="Полный спектр клининговых услуг: химчистка мебели, ковров, матрасов, кожаных изделий, салонов авто, озонирование, мойка окон, уборка."
-        keywords="услуги химчистки, чистка мебели, чистка ковров, химчистка авто, озонирование, мойка окон"
+        keywords="услуги химчистки, чистка мебели, usługi czyszczenia, pranie tapicerki, czyszczenie dywanów, ozonowanie, mycie okien, sprzątanie, złota rączka, impregnacja, cleaning services Opole Wrocław Poland"
         canonical="/services"
         image="https://masterclean1885.pl/og-services.png"
         jsonLd={{
