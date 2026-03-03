@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { RefreshCw } from 'lucide-react';
 
 interface SimpleCaptchaProps {
-  onVerify: (isValid: boolean) => void;
+  onVerify: (isValid: boolean, challenge?: string, answer?: number) => void;
   language?: 'ru' | 'pl' | 'uk' | 'en';
 }
 
@@ -43,7 +43,7 @@ const SimpleCaptcha = forwardRef<HTMLDivElement, SimpleCaptchaProps>(
       const answer = parseInt(value, 10);
       const isCorrect = answer === num1 + num2;
       setIsVerified(isCorrect);
-      onVerify(isCorrect);
+      onVerify(isCorrect, `${num1}+${num2}`, answer);
     };
 
     return (
