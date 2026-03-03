@@ -169,7 +169,7 @@ const Auto = () => {
     <SEO
       title="Химчистка салона авто — Чистка сидений, ковриков"
       description="Профессиональная химчистка салона автомобиля. Чистка сидений, потолка, ковриков, багажника. Удаление пятен и запахов."
-      keywords="химчистка авто, чистка салона, химчистка сидений, pranie tapicerki samochodowej, czyszczenie wnętrza samochodu, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników, car interior cleaning, auto detailing Opole Wrocław"
+      keywords="химчистка авто, чистка салона, химчистка на дому, выезд к клиенту, pranie tapicerki samochodowej, czyszczenie wnętrza samochodu, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników, czyszczenie z dojazdem, dojazd do klienta, car interior cleaning, mobile car cleaning, auto detailing Opole Wrocław"
       canonical="/auto"
       image="https://masterclean1885.pl/og-auto.png"
       jsonLd={{
