@@ -27,18 +27,20 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">{t.hero.subtitle}</p>
-            <Link to="/blog" className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-primary hover:text-fresh transition-colors group">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
-                <BookOpen className="w-4 h-4 text-primary" />
-              </div>
-              <span>{language === 'ru' ? 'Блог чистоты' : language === 'pl' ? 'Blog czystości' : language === 'uk' ? 'Блог чистоти' : 'Cleanliness Blog'}</span>
-            </Link>
-            <Link to="/#promotions" className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-primary hover:text-fresh transition-colors group">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
-                <Sparkles className="w-4 h-4 text-primary" />
-              </div>
-              <span>{language === 'ru' ? 'Акции' : language === 'pl' ? 'Promocje' : language === 'uk' ? 'Акції' : 'Promotions'}</span>
-            </Link>
+            <div className="flex flex-col gap-2 mt-3">
+              <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-fresh transition-colors group">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
+                  <BookOpen className="w-4 h-4 text-primary" />
+                </div>
+                <span>{language === 'ru' ? 'Блог чистоты' : language === 'pl' ? 'Blog czystości' : language === 'uk' ? 'Блог чистоти' : 'Cleanliness Blog'}</span>
+              </Link>
+              <Link to="/#promotions" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-fresh transition-colors group">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                </div>
+                <span>{language === 'ru' ? 'Акции' : language === 'pl' ? 'Promocje' : language === 'uk' ? 'Акції' : 'Promotions'}</span>
+              </Link>
+            </div>
           </div>
 
           {/* Quick Links */}

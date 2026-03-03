@@ -6,10 +6,21 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (hash) {
-      setTimeout(() => {
+      // Try immediately, then retry after page renders
+      const scrollToHash = () => {
         const el = document.querySelector(hash);
-        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return true;
+        }
+        return false;
+      };
+      
+      if (!scrollToHash()) {
+        const timer1 = setTimeout(scrollToHash, 300);
+        const timer2 = setTimeout(scrollToHash, 800);
+        return () => { clearTimeout(timer1); clearTimeout(timer2); };
+      }
     } else {
       window.scrollTo(0, 0);
     }
