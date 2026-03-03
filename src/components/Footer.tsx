@@ -33,7 +33,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </div>
               <span>{language === 'ru' ? 'Блог чистоты' : language === 'pl' ? 'Blog czystości' : language === 'uk' ? 'Блог чистоти' : 'Cleanliness Blog'}</span>
             </Link>
-            <Link to="/#promotions" className="inline-flex items-center gap-2 mt-2 text-sm font-medium text-primary hover:text-fresh transition-colors group">
+            <Link to="/#promotions" className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-primary hover:text-fresh transition-colors group">
               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
                 <Sparkles className="w-4 h-4 text-primary" />
               </div>
