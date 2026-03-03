@@ -254,38 +254,15 @@ const Auto = () => {
       {/* Video Showcase */}
       <section className="py-12 sm:py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
-              animation: 'shimmer 3s linear infinite'
-            }}>
-              {t.auto.title}
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <CircularRevealCard index={0}>
-              <div className="rounded-2xl overflow-hidden shadow-card border border-border aspect-[9/16]">
-                <iframe
-                  src="https://www.youtube.com/embed/G5tgW5YYH3M"
-                  title="Химчистка авто — видео 1"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-            </CircularRevealCard>
-            <CircularRevealCard index={1}>
-              <div className="rounded-2xl overflow-hidden shadow-card border border-border aspect-[9/16]">
-                <iframe
-                  src="https://www.youtube.com/embed/fm-7lNTKixs"
-                  title="Химчистка авто — видео 2"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-            </CircularRevealCard>
+          <div className="max-w-md mx-auto">
+            <div style={{ position: 'relative', paddingBottom: '177.78%', height: 0 }}>
+              <iframe
+                src="https://www.youtube.com/shorts/fm-7lNTKixs"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                frameBorder="0"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>
