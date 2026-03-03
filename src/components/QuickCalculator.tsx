@@ -32,7 +32,7 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const [mattressType, setMattressType] = useState<string>('mattressDouble');
   const [autoType, setAutoType] = useState<string>('autoSeats');
 
-  const STANDARD_PRICE_PER_M2 = 6;
+  const STANDARD_PRICE_PER_M2 = 7;
   const GENERAL_PRICE_PER_M2 = 10;
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
 

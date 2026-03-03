@@ -266,7 +266,7 @@ const Cleaning = () => {
                         <TabsTrigger value="standard" className="py-4 text-base">
                           <div className="text-center">
                             <div className="font-semibold">{t.cleaning?.standardCleaning || 'Стандартная'}</div>
-                            <div className="text-sm text-muted-foreground">6 PLN/м²</div>
+                            <div className="text-sm text-muted-foreground">7 PLN/м²</div>
                           </div>
                         </TabsTrigger>
                         <TabsTrigger value="general" className="py-4 text-base">
@@ -675,7 +675,7 @@ const CleaningCalculatorContent = ({
           <TabsTrigger value="standard" className="py-3 text-sm">
             <div className="text-center">
               <div className="font-medium">{t.cleaning?.standardCleaning || 'Стандартная'}</div>
-              <div className="text-xs text-muted-foreground">6 PLN/м²</div>
+              <div className="text-xs text-muted-foreground">7 PLN/м²</div>
             </div>
           </TabsTrigger>
           <TabsTrigger value="general" className="py-3 text-sm">
