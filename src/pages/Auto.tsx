@@ -251,21 +251,6 @@ const Auto = () => {
       {/* Before/After 3D Carousel */}
       <Auto3DCarousel />
 
-      {/* Video Showcase */}
-      <section className="py-12 sm:py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-md mx-auto">
-            <div style={{ position: 'relative', paddingBottom: '177.78%', height: 0 }}>
-              <iframe
-                src="https://www.youtube.com/shorts/fm-7lNTKixs"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                frameBorder="0"
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Price List & Calculator */}
       <section className="py-12 sm:py-20 bg-card">
