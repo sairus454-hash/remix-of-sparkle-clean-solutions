@@ -3,8 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Plus, Minus, Trash2, Send } from 'lucide-react';
+import { Plus, Minus, Trash2, Send, CheckCircle2 } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
+import { cn } from '@/lib/utils';
 
 interface ServiceItem {
   id: string;
@@ -22,6 +23,7 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceItem; quantity: number }[]>([]);
+  const [justAdded, setJustAdded] = useState<string | null>(null);
 
   const addItem = (item: ServiceItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
@@ -32,6 +34,9 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
     } else {
       setSelectedItems([...selectedItems, { item, quantity: 1 }]);
     }
+    // Flash feedback
+    setJustAdded(item.id);
+    setTimeout(() => setJustAdded(null), 600);
   };
 
   const updateQuantity = (itemId: string, qty: number) => {
@@ -43,6 +48,9 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
       ));
     }
   };
+
+  const isSelected = (id: string) => selectedItems.some(s => s.item.id === id);
+  const getQty = (id: string) => selectedItems.find(s => s.item.id === id)?.quantity || 0;
 
   const total = selectedItems.reduce((sum, s) => sum + s.item.price * s.quantity, 0);
 
@@ -65,25 +73,62 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
     <div className="space-y-4">
       {/* Items grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-        {items.map((item) => (
-          <Button
-            key={item.id}
-            variant="ghost"
-            size="sm"
-            className="justify-between text-left h-auto py-3 px-4 hover:bg-accent/50 border border-border rounded-xl"
-            onClick={() => addItem(item)}
-          >
-            <span className="text-sm flex-1 mr-2">{item.name}</span>
-            <span className="text-sm font-semibold text-primary whitespace-nowrap">
-              {item.price} zł{item.unit ? `/${item.unit}` : ''}
-            </span>
-          </Button>
-        ))}
+        {items.map((item, index) => {
+          const selected = isSelected(item.id);
+          const qty = getQty(item.id);
+          const wasJustAdded = justAdded === item.id;
+
+          return (
+            <button
+              key={item.id}
+              onClick={() => addItem(item)}
+              className={cn(
+                "relative flex items-center justify-between text-left h-auto py-3 px-4 rounded-xl border transition-all duration-300 group overflow-hidden",
+                selected
+                  ? "border-primary/50 bg-primary/5 shadow-sm"
+                  : "border-border hover:border-primary/30 hover:bg-accent/40",
+                wasJustAdded && "scale-[1.03]"
+              )}
+              style={{
+                animation: `fade-in 0.3s ease-out ${index * 0.04}s both`,
+              }}
+            >
+              {/* Ripple on add */}
+              {wasJustAdded && (
+                <span className="absolute inset-0 bg-primary/10 animate-scale-in rounded-xl pointer-events-none" />
+              )}
+
+              <div className="flex items-center gap-2 flex-1 min-w-0 mr-2">
+                {selected && (
+                  <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 animate-scale-in" />
+                )}
+                <span className={cn(
+                  "text-sm transition-colors duration-200",
+                  selected ? "text-foreground font-medium" : "text-foreground"
+                )}>
+                  {item.name}
+                </span>
+                {selected && qty > 1 && (
+                  <span className="text-xs bg-primary text-primary-foreground rounded-full w-5 h-5 flex items-center justify-center font-bold flex-shrink-0 animate-scale-in">
+                    {qty}
+                  </span>
+                )}
+              </div>
+
+              <span className={cn(
+                "text-sm font-semibold whitespace-nowrap transition-colors duration-200",
+                selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
+              )}>
+                {item.price} zł{item.unit ? `/${item.unit}` : ''}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {/* Selected items */}
       {selectedItems.length > 0 && (
-        <div className="space-y-2 pt-4 border-t border-border">
+        <div className="space-y-2 pt-4 border-t border-border animate-fade-in">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-muted-foreground">
               {t.calculator?.selectedItems || 'Выбранные услуги'}
@@ -100,8 +145,12 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
           </div>
 
           <div className="space-y-2 max-h-48 overflow-y-auto">
-            {selectedItems.map((selected) => (
-              <div key={selected.item.id} className="flex items-center gap-2 p-3 bg-accent/30 rounded-xl">
+            {selectedItems.map((selected, i) => (
+              <div
+                key={selected.item.id}
+                className="flex items-center gap-2 p-3 bg-accent/30 rounded-xl"
+                style={{ animation: `fade-in 0.3s ease-out ${i * 0.05}s both` }}
+              >
                 <div className="flex-1 min-w-0">
                   <span className="font-medium text-foreground text-sm block truncate">{selected.item.name}</span>
                   <span className="text-xs text-muted-foreground">{selected.item.price} zł</span>
@@ -130,7 +179,7 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
           </div>
 
           {/* Total & send */}
-          <div className="pt-4 border-t border-border">
+          <div className="pt-4 border-t border-border animate-fade-in">
             <div className="flex items-center justify-between mb-3">
               <span className="text-lg font-medium">{t.calculator?.total || 'Итого'}</span>
               <span className="text-2xl font-bold text-primary">{total} zł</span>
