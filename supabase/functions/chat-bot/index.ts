@@ -10,7 +10,7 @@ const PRICE_LIST = {
 
 🧹 УБОРКА ПОМЕЩЕНИЙ:
 • Стандартная уборка — 7 PLN/м² (от 20 м²)
-• Генеральная уборка — 8 PLN/м² (от 20 м²)
+• Генеральная уборка — 10 PLN/м² (от 20 м²)
 
 Стандартная уборка включает:
 — Уборка пыли с поверхностей (до 2 м)
@@ -160,7 +160,7 @@ CURRENT PRICE LIST (prices in PLN):
 
 🧹 CLEANING SERVICES:
 • Standard cleaning — 7 PLN/m² (from 20 m²)
-• Deep cleaning — 8 PLN/m² (from 20 m²)
+• Deep cleaning — 10 PLN/m² (from 20 m²)
 
 Standard cleaning includes:
 — Dust cleaning from surfaces (up to 2 m)
@@ -310,7 +310,7 @@ AKTUALNY CENNIK (ceny w PLN):
 
 🧹 SPRZĄTANIE:
 • Sprzątanie standardowe — 7 PLN/m² (od 20 m²)
-• Sprzątanie generalne — 8 PLN/m² (od 20 m²)
+• Sprzątanie generalne — 10 PLN/m² (od 20 m²)
 
 Sprzątanie standardowe obejmuje:
 — Usuwanie kurzu z powierzchni (do 2 m)
