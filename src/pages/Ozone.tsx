@@ -51,7 +51,7 @@ const Ozone = () => {
       <SEO
         title="Озонирование помещений и авто — Удаление запахов"
         description="Профессиональное озонирование квартир, офисов и автомобилей. Устранение неприятных запахов, дезинфекция, уничтожение бактерий и вирусов."
-        keywords="озонирование, удаление запахов, дезинфекция, озонирование квартиры, озонирование авто"
+        keywords="озонирование, удаление запахов, дезинфекция, ozonowanie pomieszczeń, ozonowanie samochodu, usuwanie zapachów, dezynfekcja ozonem, ozonowanie mieszkania, ozone treatment Poland, Opole Wrocław"
         canonical="/ozone"
         image="https://masterclean1885.pl/og-ozone.png"
         jsonLd={{

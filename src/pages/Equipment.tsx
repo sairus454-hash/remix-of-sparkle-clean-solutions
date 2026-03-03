@@ -86,7 +86,7 @@ const Equipment = () => {
       <SEO
         title="Оборудование и технологии — Современная техника"
         description="Профессиональное оборудование для химчистки: экстракторы, парогенераторы, озонаторы. Экологичные средства и передовые технологии."
-        keywords="оборудование химчистки, экстрактор, парогенератор, озонатор, технологии чистки"
+        keywords="оборудование химчистки, экстрактор, sprzęt do czyszczenia, ekstraktor, generator pary, ozonator, profesjonalny sprzęt czyszczący, cleaning equipment technology"
         canonical="/equipment"
         image="https://masterclean1885.pl/og-equipment.png"
         jsonLd={{

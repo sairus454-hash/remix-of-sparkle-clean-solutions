@@ -80,7 +80,7 @@ const Impregnation = () => {
       <SEO
         title="Импрегнация мебели и тканей — Защита от загрязнений"
         description="Профессиональная импрегнация мебели, ковров и тканей. Защита от воды, грязи и пятен. Гидрофобное покрытие продлевает срок службы."
-        keywords="импрегнация, защита мебели, гидрофобное покрытие, защита ткани, импрегнация ковров"
+        keywords="импрегнация, защита мебели, impregnacja tkanin, impregnacja mebli, impregnacja dywanów, ochrona przed plamami, powłoka hydrofobowa, fabric protection, impregnation services Poland"
         canonical="/impregnation"
         image="https://masterclean1885.pl/og-impregnation.png"
         jsonLd={{

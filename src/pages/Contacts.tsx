@@ -49,7 +49,7 @@ const Contacts = () => {
       <SEO
         title="Контакты MasterClean — Свяжитесь с нами"
         description="Свяжитесь с MasterClean: телефон +48 575 211 401, email, адрес. Работаем 24/7. Оставьте заявку онлайн."
-        keywords="контакты химчистка, MasterClean контакты, заказать химчистку, телефон химчистки"
+        keywords="контакты MasterClean, заказать химчистку, kontakt firma sprzątająca, zamów sprzątanie, kontakt czyszczenie tapicerki, contact cleaning service Opole"
         canonical="/contacts"
         image="https://masterclean1885.pl/og-contacts.png"
         jsonLd={{

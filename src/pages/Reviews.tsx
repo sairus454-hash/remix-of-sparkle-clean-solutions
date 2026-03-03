@@ -205,7 +205,7 @@ const Reviews = () => {
       <SEO
         title="Отзывы клиентов MasterClean"
         description="Реальные отзывы клиентов о химчистке мебели, ковров и авто. Узнайте, почему нам доверяют. Оставьте свой отзыв."
-        keywords="отзывы химчистка, отзывы MasterClean, отзывы клиентов, качество чистки"
+        keywords="отзывы химчистка, отзывы MasterClean, opinie klientów, recenzje usług sprzątania, opinie pranie tapicerki, customer reviews cleaning Poland"
         canonical="/reviews"
         image="https://masterclean1885.pl/og-reviews.png"
         jsonLd={{

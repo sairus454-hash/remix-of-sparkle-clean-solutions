@@ -44,7 +44,7 @@ import { useSplash } from '@/hooks/useSplash';
       <SEO
         title="Мойка окон — Профессиональная чистка окон"
         description="Профессиональная мойка окон любой сложности. Чистые окна — больше света и комфорта в вашем доме. Быстро, качественно, доступно."
-        keywords="мойка окон, чистка окон, мытьё окон, профессиональная мойка, Польша"
+        keywords="мойка окон, чистка окон, mycie okien, czyszczenie okien, mycie okien na wysokości, profesjonalne mycie okien, window cleaning, mycie okien Opole Wrocław Poznań"
         canonical="/windows"
         image="https://masterclean1885.pl/og-windows.png"
         jsonLd={{

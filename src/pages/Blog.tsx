@@ -431,7 +431,7 @@ const Blog = () => {
       <SEO
         title={`${titles.title} — MasterClean`}
         description={titles.subtitle}
-        keywords="блог чистоты, химчистка, уборка, советы по чистке"
+        keywords="блог чистоты, советы по чистке, blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, cleaning tips blog"
         canonical="/blog"
         image="https://masterclean1885.pl/og-blog.png"
         jsonLd={{
