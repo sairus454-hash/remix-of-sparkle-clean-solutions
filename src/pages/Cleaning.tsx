@@ -472,6 +472,38 @@ const Cleaning = () => {
                 </Card>
               </CircularRevealCard>
             </div>
+
+            {/* Other Services */}
+            <div className="mt-6">
+              <CircularRevealCard index={2}>
+                <Card className="shadow-card">
+                  <CardContent className="py-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-600 flex items-center justify-center shadow-lg" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                        <Sparkles className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h2 className="font-serif text-xl font-semibold">{t.prices?.other || 'Другое'}</h2>
+                        <p className="text-sm text-muted-foreground">{t.prices?.otherDesc || 'Ковры, коляски, плитка и дополнительные услуги'}</p>
+                      </div>
+                    </div>
+                    <MiniServiceCalculator
+                      items={[
+                        { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, unit: 'm²' },
+                        { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100 },
+                        { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 60 },
+                        { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80 },
+                        { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, unit: 'm²' },
+                      ]}
+                      onSendToForm={(items, total) => {
+                        formRef.current?.setCalculatorData(items, total);
+                        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </CircularRevealCard>
+            </div>
           </div>
         </div>
       </section>
