@@ -200,7 +200,7 @@ const Index = () => {
       </section>
 
       {/* Promotions Section */}
-      <section className="py-12 sm:py-20 bg-gradient-section">
+      <section id="promotions" className="py-12 sm:py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             {/* Premium animated icon */}
