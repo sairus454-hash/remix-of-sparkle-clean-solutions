@@ -406,8 +406,8 @@ const Cleaning = () => {
                       <Sofa className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h2 className="font-serif text-xl font-semibold">{t.prices?.furniture || 'Химчистка мебели'}</h2>
-                      <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель и ковры'}</p>
+                      <h2 className="font-serif text-xl font-semibold">{t.prices?.furniture || 'Химчистка мебели'} & {t.prices?.mattressTitle || 'Матрасы'}</h2>
+                      <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель, ковры и матрасы'}</p>
                     </div>
                   </div>
                   <MiniServiceCalculator
@@ -423,6 +423,12 @@ const Cleaning = () => {
                       { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 25, unit: 'm²' },
                       { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 100 },
                       { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 100 },
+                      { id: 'mattressDouble', name: t.prices?.items?.mattressDouble || 'Двуспальный матрас', price: 180 },
+                      { id: 'mattressSingle', name: t.prices?.items?.mattressSingle || 'Односпальный матрас', price: 140 },
+                      { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 140 },
+                      { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 220 },
+                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 180 },
+                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 280 },
                     ]}
                     onSendToForm={(items, total) => {
                       formRef.current?.setCalculatorData(items, total);
