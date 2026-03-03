@@ -16,7 +16,8 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight } from 'lucide-react';
+import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square } from 'lucide-react';
+import MiniServiceCalculator from '@/components/MiniServiceCalculator';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import cleaningTeam2 from '@/assets/cleaning-team-work-2.jpg';
 import cleaningTeam3 from '@/assets/cleaning-team-work-3.jpg';
@@ -354,6 +355,120 @@ const Cleaning = () => {
           </DialogContent>
         </Dialog>
       )}
+
+      {/* Window Cleaning Calculator */}
+      <section className="py-10 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <CircularRevealCard index={0}>
+              <Card className="shadow-card">
+                <CardContent className="py-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center shadow-lg" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Square className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-xl font-semibold">{t.windows?.calcTitle || 'Калькулятор мойки окон'}</h2>
+                      <p className="text-sm text-muted-foreground">{t.windows?.calcSubtitle || 'Рассчитайте стоимость услуги'}</p>
+                    </div>
+                  </div>
+                  <MiniServiceCalculator
+                    items={[
+                      { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40 },
+                      { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50 },
+                      { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80 },
+                      { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60 },
+                      { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85 },
+                      { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40 },
+                      { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40 },
+                    ]}
+                    onSendToForm={(items, total) => {
+                      formRef.current?.setCalculatorData(items, total);
+                      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  />
+                </CardContent>
+              </Card>
+            </CircularRevealCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Furniture Cleaning Calculator */}
+      <section className="py-10 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <CircularRevealCard index={0}>
+              <Card className="shadow-card">
+                <CardContent className="py-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Sofa className="w-6 h-6 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-xl font-semibold">{t.prices?.furniture || 'Химчистка мебели'}</h2>
+                      <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель и ковры'}</p>
+                    </div>
+                  </div>
+                  <MiniServiceCalculator
+                    items={[
+                      { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 40 },
+                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 40 },
+                      { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 70 },
+                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 15 },
+                      { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 140 },
+                      { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 170 },
+                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 200 },
+                      { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 250 },
+                      { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 25, unit: 'm²' },
+                      { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 100 },
+                      { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 100 },
+                    ]}
+                    onSendToForm={(items, total) => {
+                      formRef.current?.setCalculatorData(items, total);
+                      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  />
+                </CardContent>
+              </Card>
+            </CircularRevealCard>
+
+            {/* Leather Furniture */}
+            <div className="mt-6">
+              <CircularRevealCard index={1}>
+                <Card className="shadow-card">
+                  <CardContent className="py-6">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                        <Armchair className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h2 className="font-serif text-xl font-semibold">{t.prices?.leatherFurnitureTitle || 'Кожаная мебель'}</h2>
+                        <p className="text-sm text-muted-foreground">{t.prices?.leatherFurnitureTitle || 'Чистка кожаной мебели'}</p>
+                      </div>
+                    </div>
+                    <MiniServiceCalculator
+                      items={[
+                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 55 },
+                        { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 50 },
+                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 10 },
+                        { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 90 },
+                        { id: 'leatherSofa2', name: t.prices?.items?.leatherSofa2 || 'Кожаный диван 2-мест.', price: 180 },
+                        { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 220 },
+                        { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 250 },
+                      ]}
+                      onSendToForm={(items, total) => {
+                        formRef.current?.setCalculatorData(items, total);
+                        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                    />
+                  </CardContent>
+                </Card>
+              </CircularRevealCard>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* What We Clean */}
       <section className="py-20 bg-card">
