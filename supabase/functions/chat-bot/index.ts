@@ -374,6 +374,7 @@ Sprzątanie standardowe:
 • Mycie okien (strona wewnętrzna, szt.) — 28 PLN
 • Dodatkowe godziny — 46 PLN/godz.
 • Sprzątanie szafy — 28 PLN
+• Usuwanie grzyba ze ściany — 80 PLN
 
 Sprzątanie generalne:
 • Sprzątanie balkonu — 35 PLN
