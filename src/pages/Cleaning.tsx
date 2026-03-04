@@ -62,7 +62,7 @@ const Cleaning = () => {
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
-  const pricePerMeter = cleaningType === 'standard' ? 6 : 10;
+  const pricePerMeter = 7;
   const extrasTotal = getExtrasTotal(selectedExtras, cleaningType);
   const totalPrice = area * pricePerMeter + extrasTotal;
   
@@ -298,7 +298,7 @@ const Cleaning = () => {
                         <TabsTrigger value="general" className="py-4 text-base">
                           <div className="text-center">
                             <div className="font-semibold">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
-                            <div className="text-sm text-muted-foreground">10 PLN/м²</div>
+                            <div className="text-sm text-muted-foreground">7 PLN/м²</div>
                           </div>
                         </TabsTrigger>
                       </TabsList>
@@ -708,7 +708,7 @@ const CleaningCalculatorContent = ({
           <TabsTrigger value="general" className="py-3 text-sm">
             <div className="text-center">
               <div className="font-medium">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
-              <div className="text-xs text-muted-foreground">10 PLN/м²</div>
+              <div className="text-xs text-muted-foreground">7 PLN/м²</div>
             </div>
           </TabsTrigger>
         </TabsList>
