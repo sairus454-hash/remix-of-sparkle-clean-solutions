@@ -111,7 +111,7 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
 
   const total = selectedItems.reduce((sum, s) => sum + s.item.price * s.quantity, 0);
 
-  const handleSend = () => {
+  const handleSendToContacts = () => {
     if (selectedItems.length === 0) return;
     const calcItems: CalculatorItem[] = selectedItems.map(s => ({
       id: s.item.id,
@@ -119,11 +119,7 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
       price: s.item.price,
       quantity: s.quantity,
     }));
-    if (onSendToForm) {
-      onSendToForm(calcItems, total);
-    } else {
-      navigate('/contacts', { state: { calculatorItems: calcItems, calculatorTotal: total } });
-    }
+    navigate('/contacts', { state: { calculatorItems: calcItems, calculatorTotal: total } });
   };
 
   return (
@@ -283,7 +279,7 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
                 <Zap className="w-4 h-4 mr-2" />
                 {t.form?.quickOrder || 'Быстрый заказ'}
               </Button>
-              <Button onClick={handleSend} variant="outline" className="w-full border-primary/40 text-primary hover:bg-primary/10 h-12">
+              <Button onClick={handleSendToContacts} variant="outline" className="w-full border-primary/40 text-primary hover:bg-primary/10 h-12">
                 <ArrowRight className="w-4 h-4 mr-2" />
                 {t.form?.addToFullOrder || 'Добавить в общую заявку'}
               </Button>
