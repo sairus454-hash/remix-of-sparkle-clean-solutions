@@ -61,6 +61,7 @@ import calcExtraIroning from '@/assets/calc-extra-ironing.jpg';
 import calcExtraPetLitter from '@/assets/calc-extra-pet-litter.jpg';
 import calcExtraHours from '@/assets/calc-extra-hours.jpg';
 import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
+import calcExtraMoldRemoval from '@/assets/calc-mold-removal.jpg';
 
 const Cleaning = () => {
   const { t, language } = useLanguage();
@@ -442,6 +443,7 @@ const Cleaning = () => {
                       { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 9, image: calcExtraPetLitter },
                       { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 46, image: calcExtraHours, unit: 'ч' },
                       { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 28, image: calcExtraCloset },
+                      { id: 'extra-moldRemoval', name: t.cleaning?.extras?.moldRemoval || 'Устранение грибка со стены', price: 80, image: calcExtraMoldRemoval },
                     ]}
                     onSendToForm={handleCardToForm}
                     onQuickOrder={handleQuickAdd}

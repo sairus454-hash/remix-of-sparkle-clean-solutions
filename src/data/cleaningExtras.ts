@@ -19,4 +19,5 @@ export const cleaningExtras: CleaningExtra[] = [
   { id: 'petLitter', name: 'Убрать лоток для животных', standardPrice: 9, generalPrice: 12 },
   { id: 'extraHours', name: 'Дополнительные часы', standardPrice: 46, generalPrice: 58, unit: '/ч' },
   { id: 'closet', name: 'Убрать в шкафу', standardPrice: 28, generalPrice: 35 },
+  { id: 'moldRemoval', name: 'Устранение грибка со стены', standardPrice: 80, generalPrice: 80 },
 ];
