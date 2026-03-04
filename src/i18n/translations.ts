@@ -690,6 +690,7 @@ export const translations = {
         petLitter: 'Убрать лоток для животных',
         extraHours: 'Дополнительные часы',
         closet: 'Убрать в шкафу',
+        moldRemoval: 'Устранение грибка со стены',
         perHour: '/ч',
       },
     },
