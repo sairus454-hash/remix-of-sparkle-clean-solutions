@@ -65,6 +65,7 @@ const Cleaning = () => {
   const { t } = useLanguage();
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
+  const extrasSectionRef = useRef<HTMLDivElement>(null);
   
   const isMobile = useIsMobile();
   const { showSplash, handleSplashComplete } = useSplash('cleaning');
@@ -263,6 +264,10 @@ const Cleaning = () => {
                   setIsCalcOpen(false);
                   handleSendToForm();
                 }}
+                onExtrasHint={() => {
+                  setIsCalcOpen(false);
+                  setTimeout(() => extrasSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+                }}
                 t={t}
               />
             </div>
@@ -359,6 +364,17 @@ const Cleaning = () => {
                    <p className="text-xs text-yellow-600 dark:text-yellow-400 text-center font-semibold mt-1">
                      {t.calculator?.cleaningTempNote}
                    </p>
+                   <button
+                     type="button"
+                     onClick={() => {
+                       setIsCalcOpen(false);
+                       setTimeout(() => extrasSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+                     }}
+                     className="w-full text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors mt-2 flex items-center justify-center gap-1.5"
+                   >
+                     <Sparkles className="w-3.5 h-3.5" />
+                     {'Смотрите дополнительные услуги ниже ↓'}
+                   </button>
                 </div>
                 
                 {/* Right column - Services included */}
@@ -383,7 +399,7 @@ const Cleaning = () => {
       )}
 
       {/* Cleaning Extras - Additional Services */}
-      <section className="py-10 bg-gradient-section">
+      <section ref={extrasSectionRef} className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <CircularRevealCard index={0}>
@@ -717,6 +733,7 @@ interface CleaningCalculatorContentProps {
   standardServices: string[];
   generalServices: string[];
   onOrder: () => void;
+  onExtrasHint: () => void;
   t: any;
 }
 
@@ -730,6 +747,7 @@ const CleaningCalculatorContent = ({
   standardServices,
   generalServices,
   onOrder,
+  onExtrasHint,
   t,
 }: CleaningCalculatorContentProps) => (
   <div className="space-y-6">
@@ -798,6 +816,14 @@ const CleaningCalculatorContent = ({
      <p className="text-xs text-yellow-600 dark:text-yellow-400 text-center font-semibold mt-1">
        {t.calculator?.cleaningTempNote}
      </p>
+     <button
+       type="button"
+       onClick={onExtrasHint}
+       className="w-full text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors mt-2 flex items-center justify-center gap-1.5"
+     >
+       <Sparkles className="w-3.5 h-3.5" />
+       {'Смотрите дополнительные услуги ниже ↓'}
+     </button>
     
     {/* Services included */}
     <div className="mt-4 pt-4 border-t border-border">
