@@ -38,6 +38,7 @@ import calcImpregnation from '@/assets/calc-impregnation.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
 import calcStroller from '@/assets/calc-stroller.jpg';
+import calcCarseat from '@/assets/calc-carseat.jpg';
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -70,6 +71,7 @@ const Services = () => {
     { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 60, image: calcDrying },
     { id: 'carpet', name: language === 'pl' ? 'Wykładzina dywanowa' : language === 'en' ? 'Carpet cleaning' : 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
     { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
+    { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
   ];
 
   const leatherItems = [
