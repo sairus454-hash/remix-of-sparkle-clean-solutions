@@ -88,7 +88,6 @@ const Cleaning = () => {
       { id: 'cleaning-area', name: `${cleaningTypeLabel} ${area} м²`, price: totalPrice, quantity: 1 }
     ];
     formRef.current?.setCalculatorData(cleaningData, totalPrice);
-    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const handleCardToForm = (calcItems: any[], calcTotal: number) => {
