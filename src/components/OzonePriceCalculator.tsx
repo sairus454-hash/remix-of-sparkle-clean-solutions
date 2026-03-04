@@ -39,11 +39,11 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
     const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
 
     const ozoneItems: OzoneItem[] = [
-      { id: 'ozone1room', name: t.prices.items.ozone1room, price: 120 },
-      { id: 'ozone2room', name: t.prices.items.ozone2room, price: 200 },
-      { id: 'ozone3room', name: t.prices.items.ozone3room, price: 300 },
-      { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 250 },
-      { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 400 },
+      { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144 },
+      { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240 },
+      { id: 'ozone3room', name: t.prices.items.ozone3room, price: 360 },
+      { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 300 },
+      { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 480 },
     ];
 
     const addItem = (item: OzoneItem) => {

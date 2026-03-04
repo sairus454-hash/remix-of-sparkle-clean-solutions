@@ -77,12 +77,12 @@ const PRICE_LIST = {
 • Экспресс освежение с удалением неприятного запаха — 150 PLN (⛔ скидка НЕ применяется!)
 
 💨 ОЗОНИРОВАНИЕ:
-• 1-комнатная квартира (20-40 м²) — 120 PLN
-• 2-комнатная квартира (40-60 м²) — 200 PLN
-• 3-комнатная квартира (60+ м²) — 300 PLN
-• Офис до 100 м² — 250 PLN
-• Офис 100-150 м² — 400 PLN
-• Озонирование авто — 100 PLN
+• 1-комнатная квартира (20-40 м²) — 144 PLN
+• 2-комнатная квартира (40-60 м²) — 240 PLN
+• 3-комнатная квартира (60+ м²) — 360 PLN
+• Офис до 100 м² — 300 PLN
+• Офис 100-150 м² — 480 PLN
+• Озонирование авто — 120 PLN
 
 🪟 МОЙКА ОКОН:
 • Одностворчатое окно — 40 PLN
@@ -245,12 +245,12 @@ Deep cleaning:
 • Express freshening with odor removal — 150 PLN (⛔ discount does NOT apply!)
 
 💨 OZONATION:
-• 1-room apartment (20-40 m²) — 120 PLN
-• 2-room apartment (40-60 m²) — 200 PLN
-• 3-room apartment (60+ m²) — 300 PLN
-• Office up to 100 m² — 250 PLN
-• Office 100-150 m² — 400 PLN
-• Car ozonation — 100 PLN
+• 1-room apartment (20-40 m²) — 144 PLN
+• 2-room apartment (40-60 m²) — 240 PLN
+• 3-room apartment (60+ m²) — 360 PLN
+• Office up to 100 m² — 300 PLN
+• Office 100-150 m² — 480 PLN
+• Car ozonation — 120 PLN
 
 🪟 WINDOW CLEANING:
 • Single-sash window — 40 PLN
@@ -413,12 +413,12 @@ Sprzątanie generalne:
 • Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN (⛔ rabat NIE dotyczy!)
 
 💨 OZONOWANIE:
-• Mieszkanie 1-pokojowe (20-40 m²) — 120 PLN
-• Mieszkanie 2-pokojowe (40-60 m²) — 200 PLN
-• Mieszkanie 3-pokojowe (60+ m²) — 300 PLN
-• Biuro do 100 m² — 250 PLN
-• Biuro 100-150 m² — 400 PLN
-• Ozonowanie auta — 100 PLN
+• Mieszkanie 1-pokojowe (20-40 m²) — 144 PLN
+• Mieszkanie 2-pokojowe (40-60 m²) — 240 PLN
+• Mieszkanie 3-pokojowe (60+ m²) — 360 PLN
+• Biuro do 100 m² — 300 PLN
+• Biuro 100-150 m² — 480 PLN
+• Ozonowanie auta — 120 PLN
 
 🪟 MYCIE OKIEN:
 • Okno jednoskrzydłowe — 40 PLN
@@ -581,12 +581,12 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Експрес освіження з видаленням неприємного запаху — 150 PLN (⛔ знижка НЕ застосовується!)
 
 💨 ОЗОНУВАННЯ:
-• 1-кімнатна квартира (20-40 м²) — 120 PLN
-• 2-кімнатна квартира (40-60 м²) — 200 PLN
-• 3-кімнатна квартира (60+ м²) — 300 PLN
-• Офіс до 100 м² — 250 PLN
-• Офіс 100-150 м² — 400 PLN
-• Озонування авто — 100 PLN
+• 1-кімнатна квартира (20-40 м²) — 144 PLN
+• 2-кімнатна квартира (40-60 м²) — 240 PLN
+• 3-кімнатна квартира (60+ м²) — 360 PLN
+• Офіс до 100 м² — 300 PLN
+• Офіс 100-150 м² — 480 PLN
+• Озонування авто — 120 PLN
 
 🪟 МИТТЯ ВІКОН:
 • Одностулкове вікно — 40 PLN

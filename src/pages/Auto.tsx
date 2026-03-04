@@ -49,7 +49,7 @@ const Auto = () => {
     { id: 'autoCeiling', name: t.prices.items.autoCeiling, price: 100, image: calcAutoCeiling },
     { id: 'autoFloor', name: t.prices.items.autoFloor, price: 100, image: calcAutoFloor },
     { id: 'autoTrunk', name: t.prices.items.autoTrunk, price: 80, image: calcAutoTrunk },
-    { id: 'autoOzone', name: t.prices.items.autoOzone, price: 100, image: calcAutoOzone },
+    { id: 'autoOzone', name: t.prices.items.autoOzone, price: 120, image: calcAutoOzone },
     { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650, image: calcAutoTruck },
     { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400, image: calcAutoVan },
     { id: 'carseat', name: t.prices.items.carseat, price: 80, image: calcCarseat },

@@ -162,11 +162,11 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       name: t.prices.ozonation,
       icon: <Droplets className="w-5 h-5" />,
       items: [
-        { id: 'ozone1room', name: t.prices.items.ozone1room, price: 120 },
-        { id: 'ozone2room', name: t.prices.items.ozone2room, price: 200 },
-        { id: 'ozone3room', name: t.prices.items.ozone3room, price: 300 },
-        { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 250 },
-        { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 400 },
+        { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144 },
+        { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240 },
+        { id: 'ozone3room', name: t.prices.items.ozone3room, price: 360 },
+        { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 300 },
+        { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 480 },
       ],
     },
     {
