@@ -355,7 +355,7 @@ const Index = () => {
                     {t.promotions.loyaltyDesc}
                   </p>
                   <p className="text-orange-600 text-center text-2xl sm:text-3xl font-bold mt-2">
-                    -20%
+                    -15%
                   </p>
                 </div>
               </div>
