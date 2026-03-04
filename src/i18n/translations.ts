@@ -1389,6 +1389,7 @@ export const translations = {
         petLitter: 'Pet litter box cleaning',
         extraHours: 'Additional hours',
         closet: 'Closet cleaning',
+        moldRemoval: 'Wall mold removal',
         perHour: '/h',
       },
     },
