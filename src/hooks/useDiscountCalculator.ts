@@ -22,8 +22,8 @@ interface CalculatorItem {
 // Нормализация категории: уборка и доп. услуги считаются как одна категория; химчистка мебели и «другое» — тоже одна
 function normalizeCategory(item: CalculatorItem): string {
   const cat = item.category || item.id;
-  // cleaning и extra- (доп. услуги к уборке) → одна категория «cleaning»
-  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-')) return 'cleaning';
+  // cleaning, extra- (доп. услуги к уборке) → одна категория «cleaning»
+  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-') || cat === 'extras') return 'cleaning';
   // other («другое») → объединяем с furniture, не считается отдельной категорией
   if (cat === 'other') return 'furniture';
   // Все items без явной категории группируются по их id-префиксу
