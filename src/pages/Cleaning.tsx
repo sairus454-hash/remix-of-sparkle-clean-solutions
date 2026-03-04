@@ -537,7 +537,7 @@ const Cleaning = () => {
                       items={[
                         { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 55, image: calcLeatherPouf },
                         { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 50, image: calcLeatherChair },
-                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 10, image: calcPillow },
+                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 20, image: calcPillow },
                         { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 90, image: calcLeatherArmchair },
                         { id: 'leatherSofa2', name: t.prices?.items?.leatherSofa2 || 'Кожаный диван 2-мест.', price: 180, image: calcLeatherSofa2 },
                         { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 220, image: calcLeatherSofa3 },

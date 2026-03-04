@@ -59,7 +59,7 @@ const PriceSection = () => {
       items: [
         { name: t.prices.items.leatherPouf, price: 55, icon: Circle },
         { name: t.prices.items.leatherChair, price: 50, icon: Lamp },
-        { name: t.prices.items.leatherPillow, price: 10, icon: Square },
+        { name: t.prices.items.leatherPillow, price: 20, icon: Square },
         { name: t.prices.items.leatherArmchair, price: 90, icon: Armchair },
         { name: t.prices.items.leatherSofa2, price: 180, icon: Sofa },
         { name: t.prices.items.leatherSofa3, price: 220, icon: Sofa },
