@@ -90,6 +90,11 @@ const Cleaning = () => {
     formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const handleCardToForm = (calcItems: any[], calcTotal: number) => {
+    formRef.current?.setCalculatorData(calcItems, calcTotal);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const benefits = [
     { icon: Clock, text: t.cleaning?.benefit1 || 'Экономия вашего времени' },
     { icon: Shield, text: t.cleaning?.benefit2 || 'Профессиональные средства' },
@@ -430,10 +435,8 @@ const Cleaning = () => {
                       { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 46, image: calcExtraHours, unit: 'ч' },
                       { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 28, image: calcExtraCloset },
                     ]}
-                    onSendToForm={(items, total) => {
-                      formRef.current?.setCalculatorData(items, total);
-                      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
+                    onSendToForm={handleCardToForm}
+                    onQuickOrder={handleCardToForm}
                   />
                 </CardContent>
               </Card>
@@ -468,10 +471,8 @@ const Cleaning = () => {
                       { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: windowCleaning3 },
                       { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: windowCleaning1 },
                     ]}
-                    onSendToForm={(items, total) => {
-                      formRef.current?.setCalculatorData(items, total);
-                      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
+                    onSendToForm={handleCardToForm}
+                    onQuickOrder={handleCardToForm}
                   />
                 </CardContent>
               </Card>
@@ -515,10 +516,8 @@ const Cleaning = () => {
                       { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 180, image: calcMattressDouble },
                       { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 280, image: calcMattressDouble },
                     ]}
-                    onSendToForm={(items, total) => {
-                      formRef.current?.setCalculatorData(items, total);
-                      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
+                    onSendToForm={handleCardToForm}
+                    onQuickOrder={handleCardToForm}
                   />
                 </CardContent>
               </Card>
@@ -549,10 +548,8 @@ const Cleaning = () => {
                         { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 220, image: calcLeatherSofa3 },
                         { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 250, image: calcLeatherCorner },
                       ]}
-                      onSendToForm={(items, total) => {
-                        formRef.current?.setCalculatorData(items, total);
-                        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }}
+                      onSendToForm={handleCardToForm}
+                      onQuickOrder={handleCardToForm}
                     />
                   </CardContent>
                 </Card>
@@ -583,10 +580,8 @@ const Cleaning = () => {
                         { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80, image: calcImpregnation },
                         { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcTileCleaning, unit: 'm²' },
                       ]}
-                      onSendToForm={(items, total) => {
-                        formRef.current?.setCalculatorData(items, total);
-                        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }}
+                      onSendToForm={handleCardToForm}
+                      onQuickOrder={handleCardToForm}
                     />
                   </CardContent>
                 </Card>

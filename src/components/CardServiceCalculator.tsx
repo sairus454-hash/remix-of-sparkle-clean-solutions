@@ -21,6 +21,7 @@ interface CardServiceCalculatorProps {
   items: ServiceCardItem[];
   category?: string;
   onSendToForm?: (items: CalculatorItem[], total: number) => void;
+  onQuickOrder?: (items: CalculatorItem[], total: number) => void;
 }
 
 /* Cascade scroll-reveal grid */
@@ -77,7 +78,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
   );
 };
 
-const CardServiceCalculator = ({ items, category, onSendToForm }: CardServiceCalculatorProps) => {
+const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
@@ -277,7 +278,16 @@ const CardServiceCalculator = ({ items, category, onSendToForm }: CardServiceCal
               {t.calculator?.minOrder}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <Button onClick={() => setQuickOrderOpen(true)} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
+              <Button onClick={() => {
+                const calcItems: CalculatorItem[] = selectedItems.map(s => ({
+                  id: s.item.id, name: s.item.name, price: s.item.price, quantity: s.quantity, category,
+                }));
+                if (onQuickOrder) {
+                  onQuickOrder(calcItems, total);
+                } else {
+                  setQuickOrderOpen(true);
+                }
+              }} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
                 <Zap className="w-4 h-4 mr-2" />
                 {t.form?.quickOrder || 'Быстрый заказ'}
               </Button>
