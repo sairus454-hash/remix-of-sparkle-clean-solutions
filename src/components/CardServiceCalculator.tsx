@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Plus, Minus, Trash2, Send, CheckCircle2 } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ServiceCardItem {
   id: string;
@@ -19,6 +20,60 @@ interface CardServiceCalculatorProps {
   items: ServiceCardItem[];
   onSendToForm?: (items: CalculatorItem[], total: number) => void;
 }
+
+/* Cascade scroll-reveal grid */
+const CascadeGrid = ({ children }: { children: React.ReactNode }) => (
+  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+    {children}
+  </div>
+);
+
+/* Individual card with IntersectionObserver cascade */
+const CascadeCard = ({ children, index }: { children: React.ReactNode; index: number }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  const isMobile = useIsMobile();
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const delay = index * (isMobile ? 60 : 80);
+          setTimeout(() => setVisible(true), delay);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05, rootMargin: '40px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [index, isMobile]);
+
+  const angle = (index * 55) % 360;
+  const radius = isMobile ? 25 : 50;
+  const x = Math.cos((angle * Math.PI) / 180) * radius;
+  const y = Math.sin((angle * Math.PI) / 180) * radius;
+
+  return (
+    <div
+      ref={ref}
+      className="will-change-transform"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible
+          ? 'translateX(0) translateY(0) scale(1) rotate(0deg)'
+          : `translateX(${x}px) translateY(${y}px) scale(0.88) rotate(${index * 4}deg)`,
+        transitionDuration: isMobile ? '700ms' : '900ms',
+        transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        transitionProperty: 'opacity, transform',
+      }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorProps) => {
   const { t } = useLanguage();
@@ -72,28 +127,25 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
   return (
     <div className="space-y-6">
       {/* Cards grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      <CascadeGrid>
         {items.map((item, index) => {
           const selected = isSelected(item.id);
           const qty = getQty(item.id);
           const wasJustAdded = justAdded === item.id;
 
           return (
-            <button
-              key={item.id}
-              onClick={() => addItem(item)}
-              className={cn(
-                "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer",
-                "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
-                selected
-                  ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
-                  : "border-border bg-card hover:border-primary/40",
-                wasJustAdded && "scale-[1.03]"
-              )}
-              style={{
-                animation: `fade-in 0.3s ease-out ${index * 0.05}s both`,
-              }}
-            >
+            <CascadeCard key={item.id} index={index}>
+              <button
+                onClick={() => addItem(item)}
+                className={cn(
+                  "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer w-full",
+                  "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
+                  selected
+                    ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
+                    : "border-border bg-card hover:border-primary/40",
+                  wasJustAdded && "scale-[1.03]"
+                )}
+              >
               {/* Hover glow overlay */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[1] rounded-2xl bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
               
@@ -152,10 +204,11 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
                   {item.price} zł
                 </p>
               </div>
-            </button>
+              </button>
+            </CascadeCard>
           );
         })}
-      </div>
+      </CascadeGrid>
 
       {/* Selected items summary */}
       {selectedItems.length > 0 && (
