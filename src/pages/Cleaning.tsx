@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { toast } from '@/hooks/use-toast';
 import { useSplash } from '@/hooks/useSplash';
 
 import SEO from '@/components/SEO';
@@ -62,7 +63,7 @@ import calcExtraHours from '@/assets/calc-extra-hours.jpg';
 import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
 
 const Cleaning = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
   const extrasSectionRef = useRef<HTMLDivElement>(null);
@@ -92,11 +93,15 @@ const Cleaning = () => {
 
   const handleCardToForm = (calcItems: any[], calcTotal: number) => {
     formRef.current?.setCalculatorData(calcItems, calcTotal);
-    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const handleQuickAdd = (calcItems: any[], calcTotal: number) => {
     formRef.current?.setCalculatorData(calcItems, calcTotal);
+    toast({
+      title: '✅ ' + (language === 'ru' ? 'Принято!' : language === 'pl' ? 'Przyjęto!' : language === 'uk' ? 'Прийнято!' : 'Accepted!'),
+      description: language === 'ru' ? 'Услуги добавлены в заявку' : language === 'pl' ? 'Usługi dodane do zamówienia' : language === 'uk' ? 'Послуги додані до замовлення' : 'Services added to order',
+      duration: 2000,
+    });
   };
 
   const benefits = [
