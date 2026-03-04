@@ -205,6 +205,7 @@ Standard cleaning:
 • Window cleaning (inside, per unit) — 28 PLN
 • Extra hours — 46 PLN/h
 • Wardrobe cleaning — 28 PLN
+• Wall mold removal — 80 PLN
 
 Deep cleaning:
 • Balcony cleaning — 35 PLN
