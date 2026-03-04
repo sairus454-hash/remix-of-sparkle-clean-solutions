@@ -43,7 +43,7 @@ const Header = () => {
   const navItems = [
     { path: '/', label: t.nav.home },
     { path: '/about', label: t.nav.about },
-    { path: '/services', label: t.nav.services },
+    { path: '/services', label: t.nav.services, highlight: 'services' as const },
     { path: '/prices', label: t.nav.prices },
     { path: '/equipment', label: t.nav.equipment },
     { path: '/cleaning', label: t.nav.cleaning, highlight: 'cleaning' as const },
@@ -141,6 +141,9 @@ const Header = () => {
                   return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
                 }
                 if (item.highlight === 'cleaning') {
+                  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                }
+                if (item.highlight === 'services') {
                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
                 }
                 if (item.highlight === 'auto') {
@@ -278,6 +281,9 @@ const Header = () => {
                   return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
                 }
                 if (item.highlight === 'cleaning') {
+                  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                }
+                if (item.highlight === 'services') {
                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
                 }
                 if (item.highlight === 'auto') {
