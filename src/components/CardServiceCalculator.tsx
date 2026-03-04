@@ -3,10 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Plus, Minus, Trash2, Send, CheckCircle2 } from 'lucide-react';
+import { Plus, Minus, Trash2, Send, CheckCircle2, Zap, ArrowRight } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
+import QuickOrderDialog from './QuickOrderDialog';
 
 interface ServiceCardItem {
   id: string;
@@ -80,6 +81,7 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
+  const [quickOrderOpen, setQuickOrderOpen] = useState(false);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
@@ -276,11 +278,29 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
             <p className="text-xs text-muted-foreground mb-2">
               {t.calculator?.minOrder}
             </p>
-            <Button onClick={handleSend} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
-              <Send className="w-4 h-4 mr-2" />
-              {t.form?.sendToForm || 'Отправить в форму заявки'}
-            </Button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <Button onClick={() => setQuickOrderOpen(true)} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
+                <Zap className="w-4 h-4 mr-2" />
+                {t.form?.quickOrder || 'Быстрый заказ'}
+              </Button>
+              <Button onClick={handleSend} variant="outline" className="w-full border-primary/40 text-primary hover:bg-primary/10 h-12">
+                <ArrowRight className="w-4 h-4 mr-2" />
+                {t.form?.addToFullOrder || 'Добавить в общую заявку'}
+              </Button>
+            </div>
           </div>
+
+          <QuickOrderDialog
+            open={quickOrderOpen}
+            onOpenChange={setQuickOrderOpen}
+            items={selectedItems.map(s => ({
+              id: s.item.id,
+              name: s.item.name,
+              price: s.item.price,
+              quantity: s.quantity,
+            }))}
+            total={total}
+          />
         </div>
       )}
     </div>
