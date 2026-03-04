@@ -2088,6 +2088,7 @@ export const translations = {
         petLitter: 'Czyszczenie kuwety dla zwierząt',
         extraHours: 'Dodatkowe godziny',
         closet: 'Sprzątanie szafy',
+        moldRemoval: 'Usuwanie grzyba ze ściany',
         perHour: '/godz.',
       },
     },
