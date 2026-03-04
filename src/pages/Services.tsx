@@ -34,9 +34,11 @@ import calcLeatherArmchair from '@/assets/calc-leather-armchair.jpg';
 import calcLeatherSofa2 from '@/assets/calc-leather-sofa2.jpg';
 import calcLeatherSofa3 from '@/assets/calc-leather-sofa3.jpg';
 import calcLeatherCorner from '@/assets/calc-leather-corner.jpg';
+import calcImpregnation from '@/assets/calc-impregnation.jpg';
+import calcDrying from '@/assets/calc-drying.jpg';
 
 const Services = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const heroImages = [
     { src: leatherSofaCleaning, alt: 'Leather sofa cleaning' },
@@ -59,6 +61,11 @@ const Services = () => {
     { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 180, image: calcMattressDouble },
     { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100, image: calcHeadboard },
     { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100, image: calcBedframe },
+  ];
+
+  const extrasItems = [
+    { id: 'impregnation', name: language === 'pl' ? 'Impregnacja mebli na 1 rok' : language === 'en' ? 'Furniture impregnation 1 year' : 'Импрегнация мебели на 1 год', price: 80, image: calcImpregnation },
+    { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 60, image: calcDrying },
   ];
 
   const leatherItems = [
@@ -127,7 +134,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.furnitureDesc}</p>
                   </div>
                 </div>
-                <CardServiceCalculator items={furnitureItems} />
+                <CardServiceCalculator items={[...furnitureItems, ...extrasItems]} />
               </div>
             </CircularRevealCard>
           </div>
