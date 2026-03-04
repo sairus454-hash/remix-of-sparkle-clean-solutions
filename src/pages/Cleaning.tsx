@@ -17,10 +17,36 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square } from 'lucide-react';
-import MiniServiceCalculator from '@/components/MiniServiceCalculator';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import cleaningTeam2 from '@/assets/cleaning-team-work-2.jpg';
 import cleaningTeam3 from '@/assets/cleaning-team-work-3.jpg';
+import windowCleaning1 from '@/assets/window-cleaning-1.jpg';
+import windowCleaning2 from '@/assets/window-cleaning-2.jpg';
+import windowCleaning3 from '@/assets/window-cleaning-3.jpg';
+import calcPouf from '@/assets/calc-pouf.jpg';
+import calcChair from '@/assets/calc-chair.jpg';
+import calcArmchair from '@/assets/calc-armchair.jpg';
+import calcPillow from '@/assets/calc-pillow.jpg';
+import calcSofa2 from '@/assets/calc-sofa2.jpg';
+import calcSofa3 from '@/assets/calc-sofa3.jpg';
+import calcSofaCorner from '@/assets/calc-sofa-corner.jpg';
+import calcSofaCornerLarge from '@/assets/calc-sofa-corner-large.jpg';
+import calcCarpet from '@/assets/calc-carpet.jpg';
+import calcHeadboard from '@/assets/calc-headboard.jpg';
+import calcBedframe from '@/assets/calc-bedframe.jpg';
+import calcMattressDouble from '@/assets/calc-mattress-double.jpg';
+import calcMattressSingle from '@/assets/calc-mattress-single.jpg';
+import calcLeatherPouf from '@/assets/calc-leather-pouf.jpg';
+import calcLeatherChair from '@/assets/calc-leather-chair.jpg';
+import calcLeatherArmchair from '@/assets/calc-leather-armchair.jpg';
+import calcLeatherSofa2 from '@/assets/calc-leather-sofa2.jpg';
+import calcLeatherSofa3 from '@/assets/calc-leather-sofa3.jpg';
+import calcLeatherCorner from '@/assets/calc-leather-corner.jpg';
+import calcStroller from '@/assets/calc-stroller.jpg';
+import calcCarseat from '@/assets/calc-carseat.jpg';
+import calcDrying from '@/assets/calc-drying.jpg';
+import calcImpregnation from '@/assets/calc-impregnation.jpg';
 
 const Cleaning = () => {
   const { t } = useLanguage();
@@ -372,15 +398,15 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.windows?.calcSubtitle || 'Рассчитайте стоимость услуги'}</p>
                     </div>
                   </div>
-                  <MiniServiceCalculator
+                  <CardServiceCalculator
                     items={[
-                      { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40 },
-                      { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50 },
-                      { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80 },
-                      { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60 },
-                      { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85 },
-                      { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40 },
-                      { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40 },
+                      { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: windowCleaning1 },
+                      { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: windowCleaning2 },
+                      { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, image: windowCleaning3 },
+                      { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60, image: windowCleaning1 },
+                      { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: windowCleaning2 },
+                      { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: windowCleaning3 },
+                      { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: windowCleaning1 },
                     ]}
                     onSendToForm={(items, total) => {
                       formRef.current?.setCalculatorData(items, total);
@@ -410,25 +436,25 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель, ковры и матрасы'}</p>
                     </div>
                   </div>
-                  <MiniServiceCalculator
+                  <CardServiceCalculator
                     items={[
-                      { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 40 },
-                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 40 },
-                      { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 70 },
-                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 15 },
-                      { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 140 },
-                      { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 170 },
-                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 200 },
-                      { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 250 },
-                      { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 25, unit: 'm²' },
-                      { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 100 },
-                      { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 100 },
-                      { id: 'mattressDouble', name: t.prices?.items?.mattressDouble || 'Двуспальный матрас', price: 180 },
-                      { id: 'mattressSingle', name: t.prices?.items?.mattressSingle || 'Односпальный матрас', price: 140 },
-                      { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 140 },
-                      { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 220 },
-                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 180 },
-                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 280 },
+                      { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 40, image: calcPouf },
+                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 40, image: calcChair },
+                      { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 70, image: calcArmchair },
+                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 15, image: calcPillow },
+                      { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 140, image: calcSofa2 },
+                      { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 170, image: calcSofa3 },
+                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 200, image: calcSofaCorner },
+                      { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 250, image: calcSofaCornerLarge },
+                      { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 25, image: calcCarpet, unit: 'm²' },
+                      { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 100, image: calcHeadboard },
+                      { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 100, image: calcBedframe },
+                      { id: 'mattressDouble', name: t.prices?.items?.mattressDouble || 'Двуспальный матрас', price: 180, image: calcMattressDouble },
+                      { id: 'mattressSingle', name: t.prices?.items?.mattressSingle || 'Односпальный матрас', price: 140, image: calcMattressSingle },
+                      { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 140, image: calcMattressSingle },
+                      { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 220, image: calcMattressSingle },
+                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 180, image: calcMattressDouble },
+                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 280, image: calcMattressDouble },
                     ]}
                     onSendToForm={(items, total) => {
                       formRef.current?.setCalculatorData(items, total);
@@ -453,15 +479,15 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.leatherFurnitureTitle || 'Чистка кожаной мебели'}</p>
                       </div>
                     </div>
-                    <MiniServiceCalculator
+                    <CardServiceCalculator
                       items={[
-                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 55 },
-                        { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 50 },
-                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 10 },
-                        { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 90 },
-                        { id: 'leatherSofa2', name: t.prices?.items?.leatherSofa2 || 'Кожаный диван 2-мест.', price: 180 },
-                        { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 220 },
-                        { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 250 },
+                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 55, image: calcLeatherPouf },
+                        { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 50, image: calcLeatherChair },
+                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 10, image: calcPillow },
+                        { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 90, image: calcLeatherArmchair },
+                        { id: 'leatherSofa2', name: t.prices?.items?.leatherSofa2 || 'Кожаный диван 2-мест.', price: 180, image: calcLeatherSofa2 },
+                        { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 220, image: calcLeatherSofa3 },
+                        { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 250, image: calcLeatherCorner },
                       ]}
                       onSendToForm={(items, total) => {
                         formRef.current?.setCalculatorData(items, total);
@@ -487,14 +513,14 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.otherDesc || 'Ковры, коляски, плитка и дополнительные услуги'}</p>
                       </div>
                     </div>
-                    <MiniServiceCalculator
+                    <CardServiceCalculator
                       items={[
-                        { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, unit: 'm²' },
-                        { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100 },
-                        { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80 },
-                        { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 60 },
-                        { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80 },
-                        { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, unit: 'm²' },
+                        { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
+                        { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100, image: calcStroller },
+                        { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80, image: calcCarseat },
+                        { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 60, image: calcDrying },
+                        { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80, image: calcImpregnation },
+                        { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcCarpet, unit: 'm²' },
                       ]}
                       onSendToForm={(items, total) => {
                         formRef.current?.setCalculatorData(items, total);
