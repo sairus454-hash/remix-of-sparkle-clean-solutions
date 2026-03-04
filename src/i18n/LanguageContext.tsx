@@ -17,7 +17,7 @@ const detectBrowserLanguage = (): Language => {
     if (code === 'uk' || code === 'ua') return 'uk';
     if (supported.includes(code as Language)) return code as Language;
   }
-  return 'ru';
+  return 'pl';
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
