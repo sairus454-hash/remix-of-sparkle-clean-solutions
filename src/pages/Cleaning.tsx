@@ -491,6 +491,7 @@ const Cleaning = () => {
                       items={[
                         { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, unit: 'm²' },
                         { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100 },
+                        { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80 },
                         { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 60 },
                         { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80 },
                         { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, unit: 'm²' },
