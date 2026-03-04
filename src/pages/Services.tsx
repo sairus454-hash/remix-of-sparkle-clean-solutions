@@ -36,6 +36,8 @@ import calcLeatherSofa3 from '@/assets/calc-leather-sofa3.jpg';
 import calcLeatherCorner from '@/assets/calc-leather-corner.jpg';
 import calcImpregnation from '@/assets/calc-impregnation.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
+import calcCarpet from '@/assets/calc-carpet.jpg';
+import calcStroller from '@/assets/calc-stroller.jpg';
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -66,6 +68,8 @@ const Services = () => {
   const extrasItems = [
     { id: 'impregnation', name: language === 'pl' ? 'Impregnacja mebli na 1 rok' : language === 'en' ? 'Furniture impregnation 1 year' : 'Импрегнация мебели на 1 год', price: 80, image: calcImpregnation },
     { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 60, image: calcDrying },
+    { id: 'carpet', name: language === 'pl' ? 'Wykładzina dywanowa' : language === 'en' ? 'Carpet cleaning' : 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
+    { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
   ];
 
   const leatherItems = [
