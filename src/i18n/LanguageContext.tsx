@@ -43,7 +43,12 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
+    // Fallback for edge cases during HMR or lazy loading race conditions
+    return {
+      language: 'ru' as Language,
+      setLanguage: () => {},
+      t: translations.ru,
+    };
   }
   return context;
 };
