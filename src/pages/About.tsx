@@ -4,9 +4,14 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CleanSplash from '@/components/CleanSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
+import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles, Sofa, Armchair, Car, LayoutGrid, Baby, Wind, Wrench, Droplets, ShieldCheck, Home } from 'lucide-react';
 import About3DCarousel from '@/components/About3DCarousel';
 import PolandRegionsMap from '@/components/PolandRegionsMap';
+import ServiceCard from '@/components/ServiceCard';
+import HeroSlideshow from '@/components/HeroSlideshow';
+import leatherSofaCleaning from '@/assets/leather-sofa-cleaning.jpg';
+import mattressCleaningService from '@/assets/mattress-cleaning-service.jpg';
+import armchairCleaning from '@/assets/armchair-cleaning.jpg';
 
 
 // TikTok icon component
@@ -220,6 +225,85 @@ const About = () => {
                     <h3 className="font-serif text-xl font-semibold text-foreground mb-3">{value.title}</h3>
                     <p className="text-muted-foreground text-sm">{value.description}</p>
                   </div>
+                </CircularRevealCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section (moved from /services) */}
+        <section id="services" className="py-12 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <CircularRevealCard index={0}>
+              <a 
+                href="/impregnation" 
+                className="group block max-w-2xl mx-auto p-8 rounded-2xl bg-gradient-hero border border-border hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-xl bg-primary-foreground/20 flex items-center justify-center group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <ShieldCheck className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-xl font-semibold text-primary-foreground">{t.impregnation.cardTitle}</h3>
+                      <p className="text-primary-foreground/80 text-sm">{t.impregnation.cardSubtitle}</p>
+                    </div>
+                  </div>
+                  <div className="text-primary-foreground group-hover:translate-x-2 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </CircularRevealCard>
+          </div>
+        </section>
+
+        <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
+          <HeroSlideshow images={[
+            { src: leatherSofaCleaning, alt: 'Чистка кожаного дивана' },
+            { src: mattressCleaningService, alt: 'Чистка матраса' },
+            { src: armchairCleaning, alt: 'Чистка кресла' },
+          ]} />
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="flex justify-center mb-6 animate-fade-up">
+                <div className="relative">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Sparkles className="w-10 h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full opacity-75" />
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full opacity-60" />
+                </div>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                {t.nav.services}
+              </h2>
+              <p className="text-lg animate-fade-up text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+                {t.services.subtitle}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { icon: Home, title: t.nav.cleaning, description: t.cleaning?.subtitle || 'Профессиональная уборка помещений' },
+                { icon: Sparkles, title: t.services.carpets, description: t.services.carpetsDesc },
+                { icon: Sofa, title: t.services.furniture, description: t.services.furnitureDesc },
+                { icon: Armchair, title: t.services.leather, description: t.services.leatherDesc },
+                { icon: LayoutGrid, title: t.services.balcony, description: t.services.balconyDesc },
+                { icon: Car, title: t.nav.auto, description: t.auto.subtitle },
+                { icon: Baby, title: t.services.stroller, description: t.services.strollerDesc },
+                { icon: Droplets, title: t.nav.windows, description: t.windows.subtitle },
+                { icon: Wind, title: t.nav.ozone, description: t.ozone.subtitle },
+                { icon: Wrench, title: t.nav.handyman, description: t.handyman.subtitle },
+              ].map((service, index) => (
+                <CircularRevealCard key={index} index={index}>
+                  <ServiceCard {...service} />
                 </CircularRevealCard>
               ))}
             </div>

@@ -5,7 +5,7 @@ export const translations = {
     nav: {
       home: 'Главная',
       about: 'О нас',
-      services: 'Наши услуги',
+      services: 'Химчистка мебели',
       prices: 'Прайс',
       equipment: 'Современные технологии',
       auto: 'Химчистка авто',
@@ -698,7 +698,7 @@ export const translations = {
     nav: {
       home: 'Home',
       about: 'About Us',
-      services: 'Services',
+      services: 'Upholstery Cleaning',
       prices: 'Prices',
       equipment: 'Modern Technologies',
       auto: 'Auto Cleaning',
@@ -1391,7 +1391,7 @@ export const translations = {
     nav: {
       home: 'Główna',
       about: 'O nas',
-      services: 'Usługi',
+      services: 'Pranie tapicerki',
       prices: 'Cennik',
       equipment: 'Nowoczesne technologie',
       auto: 'Czyszczenie aut',
@@ -2084,7 +2084,7 @@ export const translations = {
     nav: {
       home: 'Головна',
       about: 'Про нас',
-      services: 'Наші послуги',
+      services: 'Хімчистка меблів',
       prices: 'Прайс',
       equipment: 'Сучасні технології',
       auto: 'Хімчистка авто',

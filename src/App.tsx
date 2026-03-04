@@ -18,7 +18,7 @@ const FreeDeliveryBadge = lazy(() => import("@/components/FreeDeliveryBadge"));
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
-const Services = lazy(() => import("./pages/Services"));
+// Services page content moved to About page
 const Prices = lazy(() => import("./pages/Prices"));
 const Equipment = lazy(() => import("./pages/Equipment"));
 const Impregnation = lazy(() => import("./pages/Impregnation"));
@@ -70,7 +70,7 @@ const App = () => (
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/services" element={<Services />} />
+                {/* /services removed — content moved to /about#services */}
                 <Route path="/prices" element={<Prices />} />
                 <Route path="/equipment" element={<Equipment />} />
                 <Route path="/impregnation" element={<Impregnation />} />
