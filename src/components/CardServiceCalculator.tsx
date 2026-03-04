@@ -201,7 +201,7 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
                   "text-sm sm:text-base font-bold transition-colors",
                   selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
                 )}>
-                  {item.price} zł
+                  {item.price} zł{item.unit ? `/${item.unit}` : ''}
                 </p>
               </div>
               </button>
