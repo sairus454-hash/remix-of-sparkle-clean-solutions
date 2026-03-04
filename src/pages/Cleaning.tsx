@@ -95,6 +95,10 @@ const Cleaning = () => {
     formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
+  const handleQuickAdd = (calcItems: any[], calcTotal: number) => {
+    formRef.current?.setCalculatorData(calcItems, calcTotal);
+  };
+
   const benefits = [
     { icon: Clock, text: t.cleaning?.benefit1 || 'Экономия вашего времени' },
     { icon: Shield, text: t.cleaning?.benefit2 || 'Профессиональные средства' },
@@ -436,7 +440,7 @@ const Cleaning = () => {
                       { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 28, image: calcExtraCloset },
                     ]}
                     onSendToForm={handleCardToForm}
-                    onQuickOrder={handleCardToForm}
+                    onQuickOrder={handleQuickAdd}
                   />
                 </CardContent>
               </Card>
@@ -472,7 +476,7 @@ const Cleaning = () => {
                       { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: windowCleaning1 },
                     ]}
                     onSendToForm={handleCardToForm}
-                    onQuickOrder={handleCardToForm}
+                    onQuickOrder={handleQuickAdd}
                   />
                 </CardContent>
               </Card>
@@ -517,7 +521,7 @@ const Cleaning = () => {
                       { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 280, image: calcMattressDouble },
                     ]}
                     onSendToForm={handleCardToForm}
-                    onQuickOrder={handleCardToForm}
+                    onQuickOrder={handleQuickAdd}
                   />
                 </CardContent>
               </Card>
@@ -549,7 +553,7 @@ const Cleaning = () => {
                         { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 250, image: calcLeatherCorner },
                       ]}
                       onSendToForm={handleCardToForm}
-                      onQuickOrder={handleCardToForm}
+                      onQuickOrder={handleQuickAdd}
                     />
                   </CardContent>
                 </Card>
@@ -581,7 +585,7 @@ const Cleaning = () => {
                         { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcTileCleaning, unit: 'm²' },
                       ]}
                       onSendToForm={handleCardToForm}
-                      onQuickOrder={handleCardToForm}
+                      onQuickOrder={handleQuickAdd}
                     />
                   </CardContent>
                 </Card>
