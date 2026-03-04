@@ -2787,6 +2787,7 @@ export const translations = {
         petLitter: 'Прибрати лоток для тварин',
         extraHours: 'Додаткові години',
         closet: 'Прибрати в шафі',
+        moldRemoval: 'Усунення грибка зі стіни',
         perHour: '/год',
       },
     },
