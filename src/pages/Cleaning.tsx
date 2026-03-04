@@ -394,7 +394,49 @@ const Cleaning = () => {
         </Dialog>
       )}
 
-      {/* Window Cleaning Calculator */}
+      {/* Cleaning Extras - Additional Services */}
+      <section className="py-10 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <CircularRevealCard index={0}>
+              <Card className="shadow-card">
+                <CardContent className="py-6">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Sparkles className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="font-serif text-xl font-semibold">{t.cleaning?.extras?.title || 'Дополнительные услуги'}</h2>
+                      <p className="text-sm text-muted-foreground">{'Дополнительно к уборке'}</p>
+                    </div>
+                  </div>
+                  <CardServiceCalculator
+                    items={[
+                      { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 37, image: calcExtraOven },
+                      { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 37, image: calcExtraHood },
+                      { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 55, image: calcExtraCabinets },
+                      { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 23, image: calcExtraDishes },
+                      { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 37, image: calcExtraFridge },
+                      { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 17, image: calcExtraMicrowave },
+                      { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 28, image: calcExtraBalcony },
+                      { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: 28, image: calcExtraWindowInside },
+                      { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: 46, image: calcExtraIroning, unit: 'ч' },
+                      { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 9, image: calcExtraPetLitter },
+                      { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 46, image: calcExtraHours, unit: 'ч' },
+                      { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 28, image: calcExtraCloset },
+                    ]}
+                    onSendToForm={(items, total) => {
+                      formRef.current?.setCalculatorData(items, total);
+                      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                  />
+                </CardContent>
+              </Card>
+            </CircularRevealCard>
+          </div>
+        </div>
+      </section>
+
       <section className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -547,48 +589,6 @@ const Cleaning = () => {
         </div>
       </section>
 
-      {/* Cleaning Extras - Additional Services */}
-      <section className="py-10 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <CircularRevealCard index={0}>
-              <Card className="shadow-card">
-                <CardContent className="py-6">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <Sparkles className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h2 className="font-serif text-xl font-semibold">{t.cleaning?.extras?.title || 'Дополнительные услуги'}</h2>
-                      <p className="text-sm text-muted-foreground">{'Дополнительно к уборке'}</p>
-                    </div>
-                  </div>
-                  <CardServiceCalculator
-                    items={[
-                      { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 37, image: calcExtraOven },
-                      { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 37, image: calcExtraHood },
-                      { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 55, image: calcExtraCabinets },
-                      { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 23, image: calcExtraDishes },
-                      { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 37, image: calcExtraFridge },
-                      { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 17, image: calcExtraMicrowave },
-                      { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 28, image: calcExtraBalcony },
-                      { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: 28, image: calcExtraWindowInside },
-                      { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: 46, image: calcExtraIroning, unit: 'ч' },
-                      { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 9, image: calcExtraPetLitter },
-                      { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 46, image: calcExtraHours, unit: 'ч' },
-                      { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 28, image: calcExtraCloset },
-                    ]}
-                    onSendToForm={(items, total) => {
-                      formRef.current?.setCalculatorData(items, total);
-                      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }}
-                  />
-                </CardContent>
-              </Card>
-            </CircularRevealCard>
-          </div>
-        </div>
-      </section>
 
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
