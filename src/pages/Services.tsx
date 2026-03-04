@@ -3,13 +3,37 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import MiniServiceCalculator from '@/components/MiniServiceCalculator';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Sparkles, Sofa, Armchair } from 'lucide-react';
+
+// Hero images
 import leatherSofaCleaning from '@/assets/leather-sofa-cleaning.jpg';
 import mattressCleaningService from '@/assets/mattress-cleaning-service.jpg';
 import armchairCleaning from '@/assets/armchair-cleaning.jpg';
 import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
 import mattressBeforeAfter from '@/assets/mattress-before-after.jpg';
+
+// Furniture calculator images
+import calcPouf from '@/assets/calc-pouf.jpg';
+import calcChair from '@/assets/calc-chair.jpg';
+import calcArmchair from '@/assets/calc-armchair.jpg';
+import calcPillow from '@/assets/calc-pillow.jpg';
+import calcSofa2 from '@/assets/calc-sofa2.jpg';
+import calcSofa3 from '@/assets/calc-sofa3.jpg';
+import calcSofaCorner from '@/assets/calc-sofa-corner.jpg';
+import calcSofaCornerLarge from '@/assets/calc-sofa-corner-large.jpg';
+import calcMattressSingle from '@/assets/calc-mattress-single.jpg';
+import calcMattressDouble from '@/assets/calc-mattress-double.jpg';
+import calcHeadboard from '@/assets/calc-headboard.jpg';
+import calcBedframe from '@/assets/calc-bedframe.jpg';
+
+// Leather calculator images
+import calcLeatherPouf from '@/assets/calc-leather-pouf.jpg';
+import calcLeatherChair from '@/assets/calc-leather-chair.jpg';
+import calcLeatherArmchair from '@/assets/calc-leather-armchair.jpg';
+import calcLeatherSofa2 from '@/assets/calc-leather-sofa2.jpg';
+import calcLeatherSofa3 from '@/assets/calc-leather-sofa3.jpg';
+import calcLeatherCorner from '@/assets/calc-leather-corner.jpg';
 
 const Services = () => {
   const { t } = useLanguage();
@@ -23,27 +47,27 @@ const Services = () => {
   ];
 
   const furnitureItems = [
-    { id: 'pouf', name: t.prices.items.pouf, price: 40 },
-    { id: 'chair', name: t.prices.items.chair, price: 40 },
-    { id: 'armchair', name: t.prices.items.armchair, price: 70 },
-    { id: 'pillow', name: t.prices.items.pillow, price: 15 },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 140 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 170 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200 },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 250 },
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 140 },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 180 },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100 },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100 },
+    { id: 'pouf', name: t.prices.items.pouf, price: 40, image: calcPouf },
+    { id: 'chair', name: t.prices.items.chair, price: 40, image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: 70, image: calcArmchair },
+    { id: 'pillow', name: t.prices.items.pillow, price: 15, image: calcPillow },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 140, image: calcSofa2 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 170, image: calcSofa3 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200, image: calcSofaCorner },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 250, image: calcSofaCornerLarge },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 140, image: calcMattressSingle },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 180, image: calcMattressDouble },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100, image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100, image: calcBedframe },
   ];
 
   const leatherItems = [
-    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 55 },
-    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 50 },
-    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 90 },
-    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 180 },
-    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 220 },
-    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 270 },
+    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 55, image: calcLeatherPouf },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 50, image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 90, image: calcLeatherArmchair },
+    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 180, image: calcLeatherSofa2 },
+    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 220, image: calcLeatherSofa3 },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 270, image: calcLeatherCorner },
   ];
 
   return (
@@ -63,7 +87,7 @@ const Services = () => {
         }}
       />
       <Layout>
-        {/* Hero with Background Photo Slideshow */}
+        {/* Hero */}
         <section className="relative min-h-[60vh] overflow-hidden flex items-center">
           <HeroSlideshow images={heroImages} />
           <div className="container mx-auto px-4 relative z-10">
@@ -91,7 +115,7 @@ const Services = () => {
         <section className="py-16 bg-gradient-section">
           <div className="container mx-auto px-4">
             <CircularRevealCard index={0}>
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
                     <Sofa className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
@@ -103,9 +127,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.furnitureDesc}</p>
                   </div>
                 </div>
-                <div className="bg-card border border-border rounded-2xl p-6 shadow-card">
-                  <MiniServiceCalculator items={furnitureItems} />
-                </div>
+                <CardServiceCalculator items={furnitureItems} />
               </div>
             </CircularRevealCard>
           </div>
@@ -115,7 +137,7 @@ const Services = () => {
         <section className="py-16 bg-card">
           <div className="container mx-auto px-4">
             <CircularRevealCard index={1}>
-              <div className="max-w-4xl mx-auto">
+              <div className="max-w-5xl mx-auto">
                 <div className="flex items-center gap-4 mb-8">
                   <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
                     <Armchair className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
@@ -127,9 +149,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.leatherDesc}</p>
                   </div>
                 </div>
-                <div className="bg-card border border-border rounded-2xl p-6 shadow-card">
-                  <MiniServiceCalculator items={leatherItems} />
-                </div>
+                <CardServiceCalculator items={leatherItems} />
               </div>
             </CircularRevealCard>
           </div>
