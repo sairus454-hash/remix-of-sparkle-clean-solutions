@@ -68,7 +68,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 </Link>
               </li>
               <li>
-                <Link to="/about#services" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                <Link to="/services" className="text-muted-foreground hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.services.furniture}
                 </Link>
               </li>

@@ -43,7 +43,7 @@ const Header = () => {
   const navItems = [
     { path: '/', label: t.nav.home },
     { path: '/about', label: t.nav.about },
-    { path: '/about#services', label: t.nav.services },
+    { path: '/services', label: t.nav.services },
     { path: '/prices', label: t.nav.prices },
     { path: '/equipment', label: t.nav.equipment },
     { path: '/cleaning', label: t.nav.cleaning, highlight: 'cleaning' as const },
