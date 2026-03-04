@@ -443,6 +443,7 @@ const Cleaning = () => {
                       { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 9, image: calcExtraPetLitter },
                       { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 46, image: calcExtraHours, unit: 'ч' },
                       { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 28, image: calcExtraCloset },
+                      { id: 'extra-moldRemoval', name: t.cleaning?.extras?.moldRemoval || 'Устранение грибка со стены', price: 80, image: calcExtraMoldRemoval },
                     ]}
                     onSendToForm={handleCardToForm}
                     onQuickOrder={handleQuickAdd}
