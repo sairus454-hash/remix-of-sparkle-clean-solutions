@@ -83,17 +83,25 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
               key={item.id}
               onClick={() => addItem(item)}
               className={cn(
-                "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-300 group",
-                "hover:shadow-card-hover hover:-translate-y-1",
+                "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer",
+                "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
                 selected
                   ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
-                  : "border-border bg-card hover:border-primary/30",
+                  : "border-border bg-card hover:border-primary/40",
                 wasJustAdded && "scale-[1.03]"
               )}
               style={{
                 animation: `fade-in 0.3s ease-out ${index * 0.05}s both`,
               }}
             >
+              {/* Hover glow overlay */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[1] rounded-2xl bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
+              
+              {/* Shimmer effect on hover */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-[2] overflow-hidden rounded-2xl">
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+              </div>
+
               {/* Selection badge */}
               {selected && (
                 <div className="absolute top-2 right-2 z-10">
@@ -113,18 +121,20 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
               )}
 
               {/* Image */}
-              <div className="w-full aspect-square overflow-hidden bg-accent/20">
+              <div className="w-full aspect-square overflow-hidden bg-accent/20 relative">
                 <img
                   src={item.image}
                   alt={item.name}
                   loading="lazy"
                   decoding="async"
                   className={cn(
-                    "w-full h-full object-cover transition-transform duration-500",
-                    "group-hover:scale-110",
+                    "w-full h-full object-cover transition-all duration-700 ease-out",
+                    "group-hover:scale-110 group-hover:brightness-105 group-hover:saturate-[1.1]",
                     selected && "brightness-95"
                   )}
                 />
+                {/* Bottom gradient on hover */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Info */}
