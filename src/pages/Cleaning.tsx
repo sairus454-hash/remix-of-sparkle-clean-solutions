@@ -75,7 +75,7 @@ const Cleaning = () => {
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
-  const pricePerMeter = 7;
+  const pricePerMeter = cleaningType === 'standard' ? 7 : 10;
   const extrasTotal = getExtrasTotal(selectedExtras, cleaningType);
   const totalPrice = area * pricePerMeter + extrasTotal;
   
