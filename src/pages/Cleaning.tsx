@@ -174,7 +174,7 @@ const Cleaning = () => {
           areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
           offers: [
             { '@type': 'Offer', name: 'Стандартная уборка', price: '6', priceCurrency: 'PLN', unitText: 'за м²' },
-            { '@type': 'Offer', name: 'Генеральная уборка', price: '8', priceCurrency: 'PLN', unitText: 'за м²' },
+            { '@type': 'Offer', name: 'Генеральная уборка', price: '10', priceCurrency: 'PLN', unitText: 'за м²' },
           ],
         }}
       />
@@ -311,7 +311,7 @@ const Cleaning = () => {
                         <TabsTrigger value="general" className="py-4 text-base">
                           <div className="text-center">
                             <div className="font-semibold">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
-                            <div className="text-sm text-muted-foreground">7 PLN/м²</div>
+                            <div className="text-sm text-muted-foreground">10 PLN/м²</div>
                           </div>
                         </TabsTrigger>
                       </TabsList>
@@ -762,7 +762,7 @@ const CleaningCalculatorContent = ({
           <TabsTrigger value="general" className="py-3 text-sm">
             <div className="text-center">
               <div className="font-medium">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
-              <div className="text-xs text-muted-foreground">7 PLN/м²</div>
+              <div className="text-xs text-muted-foreground">10 PLN/м²</div>
             </div>
           </TabsTrigger>
         </TabsList>

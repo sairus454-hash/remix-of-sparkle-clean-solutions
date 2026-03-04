@@ -45,7 +45,7 @@ const Prices = () => {
       id: 'cleaning',
       title: t.nav?.cleaning || 'Уборка',
       description: t.cleaning?.subtitle || 'Стандартная и генеральная уборка',
-      minPrice: 8,
+      minPrice: 7,
       icon: Brush,
       items: [],
       isSlider: true,
