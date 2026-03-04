@@ -165,9 +165,10 @@ const PRICE_LIST = {
 ⛔ ИСКЛЮЧЕНИЯ ИЗ СКИДОК:
 • Экспресс освежение с удалением запаха (150 PLN) — скидка НЕ применяется!
 
-КАТЕГОРИИ для скидок: Уборка, Мебель, Кожаная мебель, Авто, Матрасы, Озонирование, Мойка окон, Доп. услуги, Мастер на час.
+КАТЕГОРИИ для скидок: Уборка (включая доп. услуги к уборке), Мебель, Кожаная мебель, Авто, Матрасы, Озонирование, Мойка окон, Мастер на час.
 
 ВАЖНО: Скидки считаются по КАТЕГОРИЯМ, а не по отдельным позициям! 
+Уборка и дополнительные услуги к уборке (духовка, холодильник, глажка и т.д.) считаются как ОДНА категория!
 Несколько позиций из одной категории (3 стула из "Мебель") = 1 категория = нет скидки.
 Пример: диван (Мебель) + сиденья авто (Авто) = 2 категории = 10% скидка
 Пример: мебель + авто + матрас + озонирование = 4 категории = 15% скидка`,
@@ -332,9 +333,10 @@ Minimum order applies to ALL service categories.
 ⛔ DISCOUNT EXCEPTIONS:
 • Express freshening with odor removal (150 PLN) — discount does NOT apply!
 
-CATEGORIES for discounts: Cleaning, Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Additional Services, Handyman.
+CATEGORIES for discounts: Cleaning (including cleaning add-ons), Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Handyman.
 
 IMPORTANT: Discounts are based on CATEGORIES, not individual items!
+Cleaning and cleaning add-ons (oven, fridge, ironing, etc.) count as ONE category!
 Multiple items from one category (3 chairs from "Furniture") = 1 category = no discount.
 Example: sofa (Furniture) + car seats (Auto) = 2 categories = 10% discount
 Example: furniture + auto + mattress + ozonation = 4 categories = 15% discount`,
@@ -499,9 +501,10 @@ Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
 ⛔ WYJĄTKI OD RABATÓW:
 • Ekspresowe odświeżenie z usunięciem zapachu (150 PLN) — rabat NIE dotyczy!
 
-KATEGORIE do rabatów: Sprzątanie, Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Usługi dodatkowe, Złota rączka.
+KATEGORIE do rabatów: Sprzątanie (w tym usługi dodatkowe do sprzątania), Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Złota rączka.
 
 WAŻNE: Rabaty są naliczane na podstawie KATEGORII, nie poszczególnych pozycji!
+Sprzątanie i usługi dodatkowe do sprzątania (piekarnik, lodówka, prasowanie itp.) liczą się jako JEDNA kategoria!
 Kilka pozycji z jednej kategorii (3 krzesła z "Meble") = 1 kategoria = brak rabatu.
 Przykład: sofa (Meble) + siedzenia auta (Auto) = 2 kategorie = 10% rabatu
 Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
@@ -666,9 +669,10 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 ⛔ ВИКЛЮЧЕННЯ ЗІ ЗНИЖОК:
 • Експрес освіження з видаленням запаху (150 PLN) — знижка НЕ застосовується!
 
-КАТЕГОРІЇ для знижок: Прибирання, Меблі, Шкіряні меблі, Авто, Матраци, Озонування, Миття вікон, Додаткові послуги, Майстер на годину.
+КАТЕГОРІЇ для знижок: Прибирання (включаючи додаткові послуги до прибирання), Меблі, Шкіряні меблі, Авто, Матраци, Озонування, Миття вікон, Майстер на годину.
 
 ВАЖЛИВО: Знижки рахуються за КАТЕГОРІЯМИ, а не за окремими позиціями!
+Прибирання і додаткові послуги до прибирання (духовка, холодильник, прасування тощо) вважаються ОДНІЄЮ категорією!
 Кілька позицій з однієї категорії (3 стільці з "Меблі") = 1 категорія = немає знижки.
 Приклад: диван (Меблі) + сидіння авто (Авто) = 2 категорії = 10% знижка
 Приклад: меблі + авто + матрац + озонування = 4 категорії = 15% знижка`
