@@ -24,8 +24,8 @@ function normalizeCategory(item: CalculatorItem): string {
   const cat = item.category || item.id;
   // cleaning и extra- (доп. услуги к уборке) → одна категория «cleaning»
   if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-')) return 'cleaning';
-  // furniture и other (химчистка мебели и «другое») → одна категория «furniture»
-  if (cat === 'furniture' || cat === 'other') return 'furniture';
+  // other («другое») → объединяем с furniture, не считается отдельной категорией
+  if (cat === 'other') return 'furniture';
   // Все items без явной категории группируются по их id-префиксу
   return cat;
 }
