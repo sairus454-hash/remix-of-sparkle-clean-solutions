@@ -504,7 +504,6 @@ const Cleaning = () => {
                       { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 100, image: calcHeadboard },
                       { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 100, image: calcBedframe },
                       { id: 'mattressDouble', name: t.prices?.items?.mattressDouble || 'Двуспальный матрас', price: 180, image: calcMattressDouble },
-                      { id: 'mattressSingle', name: t.prices?.items?.mattressSingle || 'Односпальный матрас', price: 140, image: calcMattressSingle },
                       { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 140, image: calcMattressSingle },
                       { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 220, image: calcMattressSingle },
                       { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 180, image: calcMattressDouble },
