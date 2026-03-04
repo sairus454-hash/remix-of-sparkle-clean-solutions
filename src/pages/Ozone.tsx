@@ -3,15 +3,19 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
-import OzonePriceCalculator from '@/components/OzonePriceCalculator';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
 import OzoneSplash from '@/components/OzoneSplash';
-import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
 import ozoneOffice from '@/assets/ozone-office.jpg';
+import ozone1room from '@/assets/ozone-1room.jpg';
+import ozone2room from '@/assets/ozone-2room.jpg';
+import ozone3room from '@/assets/ozone-3room.jpg';
+import ozoneOfficeSmall from '@/assets/ozone-office-small.jpg';
+import ozoneOfficeLarge from '@/assets/ozone-office-large.jpg';
 import { CalculatorItem } from '@/types/calculator';
 import { useSplash } from '@/hooks/useSplash';
 
@@ -195,13 +199,23 @@ const Ozone = () => {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Pricing - Card Calculator */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <CircularRevealCard index={0}>
-              <OzonePriceCalculator onSendToForm={handleSendToForm} />
-            </CircularRevealCard>
+          <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+            {t.prices.ozonation}
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <CardServiceCalculator
+              items={[
+                { id: 'ozone1room', name: t.prices.items.ozone1room, price: 120, image: ozone1room },
+                { id: 'ozone2room', name: t.prices.items.ozone2room, price: 200, image: ozone2room },
+                { id: 'ozone3room', name: t.prices.items.ozone3room, price: 300, image: ozone3room },
+                { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 250, image: ozoneOfficeSmall },
+                { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 400, image: ozoneOfficeLarge },
+              ]}
+              onSendToForm={handleSendToForm}
+            />
           </div>
         </div>
       </section>
