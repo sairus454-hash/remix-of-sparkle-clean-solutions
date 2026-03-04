@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { useSplash } from '@/hooks/useSplash';
-import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
+
 import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -74,10 +74,8 @@ const Cleaning = () => {
   const [area, setArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
   const pricePerMeter = cleaningType === 'standard' ? 7 : 10;
-  const extrasTotal = getExtrasTotal(selectedExtras, cleaningType);
-  const totalPrice = area * pricePerMeter + extrasTotal;
+  const totalPrice = area * pricePerMeter;
   
   const cleaningTypeLabel = cleaningType === 'standard' 
     ? (t.cleaning?.standardCleaning || 'Стандартная уборка')
@@ -261,8 +259,6 @@ const Cleaning = () => {
                 totalPrice={totalPrice}
                 standardServices={standardServices}
                 generalServices={generalServices}
-                selectedExtras={selectedExtras}
-                onToggleExtra={(id) => setSelectedExtras(prev => prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id])}
                 onOrder={() => {
                   setIsCalcOpen(false);
                   handleSendToForm();
@@ -341,15 +337,6 @@ const Cleaning = () => {
                     {t.cleaning?.pricePerMeter || 'Цена за м²'}: <strong className="text-foreground">{pricePerMeter} PLN</strong>
                   </p>
 
-                  {/* Extras with checkboxes */}
-                  <div className="pt-4 border-t border-border">
-                    <CleaningExtrasCheckboxes
-                      cleaningType={cleaningType}
-                      selectedExtras={selectedExtras}
-                      onToggleExtra={(id) => setSelectedExtras(prev => prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id])}
-                    />
-                  </div>
-                  
                   <div className="pt-6 border-t border-border">
                     <h4 className="font-serif text-4xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
                       {t.cleaning?.total || 'Итого'}: {totalPrice} PLN
@@ -729,8 +716,6 @@ interface CleaningCalculatorContentProps {
   totalPrice: number;
   standardServices: string[];
   generalServices: string[];
-  selectedExtras: string[];
-  onToggleExtra: (id: string) => void;
   onOrder: () => void;
   t: any;
 }
@@ -744,8 +729,6 @@ const CleaningCalculatorContent = ({
   totalPrice,
   standardServices,
   generalServices,
-  selectedExtras,
-  onToggleExtra,
   onOrder,
   t,
 }: CleaningCalculatorContentProps) => (
@@ -796,16 +779,6 @@ const CleaningCalculatorContent = ({
       {t.cleaning?.pricePerMeter || 'Цена за м²'}: <strong className="text-foreground">{pricePerMeter} PLN</strong>
     </p>
     
-    {/* Extras with checkboxes */}
-    <div className="pt-4 border-t border-border">
-      <CleaningExtrasCheckboxes
-        cleaningType={cleaningType}
-        selectedExtras={selectedExtras}
-        onToggleExtra={onToggleExtra}
-        compact
-      />
-    </div>
-
     <div className="pt-4 border-t border-border">
       <h4 className="font-serif text-3xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
         {t.cleaning?.total || 'Итого'}: {totalPrice} PLN
