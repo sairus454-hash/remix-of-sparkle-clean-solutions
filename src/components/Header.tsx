@@ -141,7 +141,7 @@ const Header = () => {
                   return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
                 }
                 if (item.highlight === 'cleaning') {
-                  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                  return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
                 }
                 if (item.highlight === 'auto') {
                   return 'bg-sky-50 text-sky-600 dark:bg-sky-900/30 dark:text-sky-300';
@@ -278,7 +278,7 @@ const Header = () => {
                   return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
                 }
                 if (item.highlight === 'cleaning') {
-                  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                  return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
                 }
                 if (item.highlight === 'auto') {
                   return 'bg-sky-50 text-sky-600 dark:bg-sky-900/30 dark:text-sky-300';
