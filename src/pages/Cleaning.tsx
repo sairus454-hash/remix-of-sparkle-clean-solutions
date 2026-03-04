@@ -47,6 +47,7 @@ import calcStroller from '@/assets/calc-stroller.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
 import calcImpregnation from '@/assets/calc-impregnation.jpg';
+import calcTileCleaning from '@/assets/calc-tile-cleaning.jpg';
 import calcExtraOven from '@/assets/calc-extra-oven.jpg';
 import calcExtraHood from '@/assets/calc-extra-hood.jpg';
 import calcExtraCabinets from '@/assets/calc-extra-cabinets.jpg';
@@ -573,7 +574,7 @@ const Cleaning = () => {
                         { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80, image: calcCarseat },
                         { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 60, image: calcDrying },
                         { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80, image: calcImpregnation },
-                        { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcCarpet, unit: 'm²' },
+                        { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcTileCleaning, unit: 'm²' },
                       ]}
                       onSendToForm={(items, total) => {
                         formRef.current?.setCalculatorData(items, total);
