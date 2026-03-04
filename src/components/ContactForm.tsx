@@ -422,20 +422,29 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               <span className="text-xs font-semibold text-foreground">{t.calculator.discountSystem}</span>
             </div>
             <div className="flex flex-wrap gap-2">
-              {discountTiers.map((tier, index) => (
-                <div 
-                  key={index}
-                  className={cn(
-                    "flex items-center gap-1 px-2 py-1 rounded-full text-xs border transition-all",
-                    calculatorItems.length >= (index === 0 ? 2 : index === 1 ? 4 : 6)
-                      ? "bg-fresh/20 border-fresh/50 text-fresh font-semibold"
-                      : "bg-muted/50 border-border text-muted-foreground"
-                  )}
-                >
-                  <span>{tier.services}</span>
-                  <span className="font-bold">{tier.discount}</span>
-                </div>
-              ))}
+              {(() => {
+                // Count unique categories for tier highlighting
+                const uniqueCats = new Set(calculatorItems.map(item => {
+                  const cat = item.category || item.id;
+                  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-')) return 'cleaning';
+                  return cat;
+                }));
+                const catCount = uniqueCats.size;
+                return discountTiers.map((tier, index) => (
+                  <div 
+                    key={index}
+                    className={cn(
+                      "flex items-center gap-1 px-2 py-1 rounded-full text-xs border transition-all",
+                      catCount >= (index === 0 ? 2 : index === 1 ? 4 : 6)
+                        ? "bg-fresh/20 border-fresh/50 text-fresh font-semibold"
+                        : "bg-muted/50 border-border text-muted-foreground"
+                    )}
+                  >
+                    <span>{tier.services}</span>
+                    <span className="font-bold">{tier.discount}</span>
+                  </div>
+                ));
+              })()}
             </div>
           </div>
 

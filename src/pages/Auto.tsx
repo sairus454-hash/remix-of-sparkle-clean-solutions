@@ -155,7 +155,7 @@ const Auto = () => {
                     <p className="text-muted-foreground text-sm">{t.auto.subtitle}</p>
                   </div>
                 </div>
-                <CardServiceCalculator items={autoItems} onSendToForm={handleSendToForm} />
+                <CardServiceCalculator category="auto" items={autoItems} onSendToForm={handleSendToForm} />
               </div>
             </CircularRevealCard>
           </div>

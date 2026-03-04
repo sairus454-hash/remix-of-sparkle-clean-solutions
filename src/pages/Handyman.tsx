@@ -365,6 +365,7 @@ const Handyman = () => {
 
             <CircularRevealCard index={0}>
               <CardServiceCalculator
+                category="handyman"
                 items={categoryItems[activeTab] || []}
                 onSendToForm={handleSendToForm}
               />
