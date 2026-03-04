@@ -743,6 +743,27 @@ ${PRICE_LIST.ru}
 — Мастер на час (сантехника, электрика, монтаж, слесарные работы, чистка канализации)
 — Услуги огородника (покос травы, обрезка деревьев)
 
+💨 ОЗОНИРОВАНИЕ — ПОДРОБНАЯ ИНФОРМАЦИЯ:
+Озонирование — это процесс обработки помещений или предметов озоном, который эффективно уничтожает бактерии, вирусы, грибки и неприятные запахи.
+
+✅ Преимущества:
+— Уничтожение 99.9% бактерий и вирусов
+— Полное устранение неприятных запахов
+— Экологически чистый метод
+— Безопасно для материалов
+
+🏠 Применение: автомобили, квартиры и дома, офисы, после ремонта
+
+⚠️ Подготовка к озонированию (обязательно сообщай клиенту!):
+— Обработка должна проводиться в чистом помещении
+— Необходимо загерметизировать вентиляционные отверстия и щели
+— Произведения искусства убрать или накрыть фольгой/лентой
+— Убрать растения из помещения
+— Электронное оборудование накрыть фольгой или лентой
+— Убедиться, что нет домашних животных и живых организмов
+— Зимой обработка проводится по комнатам
+— Удалить источники неприятных запахов (например, плесень)
+
 🔧 ОБОРУДОВАНИЕ И ХИМИЯ:
 — Используем профессиональное оборудование Santoemma и Kärcher
 — Применяем профессиональную химию: Allegrini, Bissell, Global
@@ -838,6 +859,27 @@ SERVICES:
 — Premises cleaning
 — Handyman (plumbing, electrical, mounting, locksmith work, drain/sewer cleaning)
 — Gardening services (lawn mowing, tree trimming)
+
+💨 OZONATION — DETAILED INFORMATION:
+Ozonation is a process of treating spaces or objects with ozone, which effectively destroys bacteria, viruses, fungi, and unpleasant odors.
+
+✅ Benefits:
+— Destroys 99.9% of bacteria and viruses
+— Complete elimination of unpleasant odors
+— Environmentally friendly method
+— Safe for materials
+
+🏠 Applications: automobiles, apartments and houses, offices, after renovation
+
+⚠️ Preparation for ozonation (always inform the customer!):
+— Treatment must be carried out in a clean room
+— Ventilation openings and any cracks/gaps must be sealed
+— Artwork should be removed or covered with foil/tape
+— Plants must be removed from the room
+— Electronic equipment must be covered with foil or tape
+— Ensure no pets or living organisms in the room
+— In winter, treatment is done room by room
+— Remove sources of odors (e.g. mold must be removed first)
 
 🔧 EQUIPMENT & CHEMICALS:
 — We use professional equipment: Santoemma and Kärcher
@@ -935,6 +977,27 @@ USŁUGI:
 — Złota rączka (hydraulika, elektryka, montaż, prace ślusarskie, czyszczenie kanalizacji)
 — Usługi ogrodnicze (koszenie trawy, przycinanie drzew)
 
+💨 OZONOWANIE — SZCZEGÓŁOWE INFORMACJE:
+Ozonowanie to proces obróbki pomieszczeń lub przedmiotów ozonem, który skutecznie niszczy bakterie, wirusy, grzyby i nieprzyjemne zapachy.
+
+✅ Korzyści:
+— Niszczy 99,9% bakterii i wirusów
+— Całkowita eliminacja nieprzyjemnych zapachów
+— Metoda przyjazna środowisku
+— Bezpieczna dla materiałów
+
+🏠 Zastosowania: samochody, mieszkania i domy, biura, po remoncie
+
+⚠️ Przygotowanie do ozonowania (zawsze informuj klienta!):
+— Obróbka musi być przeprowadzona w czystym pomieszczeniu
+— Otwory wentylacyjne i szczeliny muszą być uszczelnione
+— Dzieła sztuki usunąć lub przykryć folią/taśmą
+— Rośliny usunąć z pomieszczenia
+— Sprzęt elektroniczny przykryć folią lub taśmą
+— Upewnić się, że nie ma zwierząt ani żywych organizmów
+— Zimą ozonowanie przeprowadza się pokój po pokoju
+— Usunąć źródła zapachów (np. pleśń musi być usunięta)
+
 🔧 SPRZĘT I CHEMIA:
 — Używamy profesjonalnego sprzętu: Santoemma i Kärcher
 — Stosujemy profesjonalną chemię: Allegrini, Bissell, Global
@@ -1030,6 +1093,27 @@ ${PRICE_LIST.uk}
 — Прибирання приміщень
 — Майстер на годину (сантехніка, електрика, монтаж, слюсарні роботи, чистка каналізації)
 — Послуги садівника (покос трави, обрізка дерев)
+
+💨 ОЗОНУВАННЯ — ДЕТАЛЬНА ІНФОРМАЦІЯ:
+Озонування — це процес обробки приміщень або предметів озоном, який ефективно знищує бактерії, віруси, грибки та неприємні запахи.
+
+✅ Переваги:
+— Знищення 99.9% бактерій та вірусів
+— Повне усунення неприємних запахів
+— Екологічно чистий метод
+— Безпечно для матеріалів
+
+🏠 Застосування: автомобілі, квартири та будинки, офіси, після ремонту
+
+⚠️ Підготовка до озонування (обов'язково повідомляй клієнту!):
+— Обробка повинна проводитися в чистому приміщенні
+— Необхідно загерметизувати вентиляційні отвори та щілини
+— Твори мистецтва прибрати або накрити фольгою/стрічкою
+— Прибрати рослини з приміщення
+— Електронне обладнання накрити фольгою або стрічкою
+— Переконатися, що немає домашніх тварин та живих організмів
+— Взимку обробка проводиться по кімнатах
+— Видалити джерела неприємних запахів (наприклад, грибок повинен бути видалений)
 
 🔧 ОБЛАДНАННЯ ТА ХІМІЯ:
 — Використовуємо професійне обладнання: Santoemma та Kärcher
