@@ -208,11 +208,11 @@ const Ozone = () => {
           <div className="max-w-4xl mx-auto">
             <CardServiceCalculator
               items={[
-                { id: 'ozone1room', name: t.prices.items.ozone1room, price: 120, image: ozone1room },
-                { id: 'ozone2room', name: t.prices.items.ozone2room, price: 200, image: ozone2room },
-                { id: 'ozone3room', name: t.prices.items.ozone3room, price: 300, image: ozone3room },
-                { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 250, image: ozoneOfficeSmall },
-                { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 400, image: ozoneOfficeLarge },
+                { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144, image: ozone1room },
+                { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240, image: ozone2room },
+                { id: 'ozone3room', name: t.prices.items.ozone3room, price: 360, image: ozone3room },
+                { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 300, image: ozoneOfficeSmall },
+                { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 480, image: ozoneOfficeLarge },
               ]}
               onSendToForm={handleSendToForm}
             />
