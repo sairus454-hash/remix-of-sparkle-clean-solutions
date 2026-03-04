@@ -61,6 +61,7 @@ import calcExtraIroning from '@/assets/calc-extra-ironing.jpg';
 import calcExtraPetLitter from '@/assets/calc-extra-pet-litter.jpg';
 import calcExtraHours from '@/assets/calc-extra-hours.jpg';
 import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
+import calcExtraMoldRemoval from '@/assets/calc-mold-removal.jpg';
 
 const Cleaning = () => {
   const { t, language } = useLanguage();
