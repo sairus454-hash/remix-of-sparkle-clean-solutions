@@ -26,6 +26,22 @@ const PRICE_LIST = {
 — Чистка вытяжки и вентиляционных решёток
 — Чистка и дезинфекция стиральной и посудомоечной машин
 
+🧹➕ ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ К УБОРКЕ:
+Стандартная уборка:
+• Помоем духовку — 37 PLN
+• Помоем вытяжку — 37 PLN
+• Уберем в кухонных шкафчиках — 55 PLN
+• Помоем посуду — 23 PLN
+• Почистим холодильник — 37 PLN
+• Мытье окон (внутренняя сторона, шт.) — 28 PLN
+• Дополнительные часы — 46 PLN/ч
+• Убрать в шкафу — 28 PLN
+
+Генеральная уборка:
+• Уберем на балконе — 35 PLN
+• Глажка — 58 PLN/ч
+• Убрать лоток для животных — 12 PLN
+
 🛋 МЕБЕЛЬ:
 • Пуф — 40 PLN
 • Стул — 40 PLN
@@ -79,6 +95,7 @@ const PRICE_LIST = {
 
 ✨ ДОПОЛНИТЕЛЬНО:
 • Детская коляска — 100 PLN
+• Автокресло (детское) — 80 PLN
 • Сушка мебели — 60 PLN
 • Импрегнация (защита на 1 год) — 80 PLN
 • Чистка плитки — 25 PLN/м²
@@ -176,6 +193,22 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 — Hood and ventilation grille cleaning
 — Washing machine and dishwasher cleaning and disinfection
 
+🧹➕ CLEANING ADD-ONS:
+Standard cleaning:
+• Oven cleaning — 37 PLN
+• Hood cleaning — 37 PLN
+• Kitchen cabinet cleaning — 55 PLN
+• Dish washing — 23 PLN
+• Fridge cleaning — 37 PLN
+• Window cleaning (inside, per unit) — 28 PLN
+• Extra hours — 46 PLN/h
+• Wardrobe cleaning — 28 PLN
+
+Deep cleaning:
+• Balcony cleaning — 35 PLN
+• Ironing — 58 PLN/h
+• Pet litter box cleaning — 12 PLN
+
 🛋 FURNITURE:
 • Ottoman — 40 PLN
 • Chair — 40 PLN
@@ -229,6 +262,7 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 
 ✨ ADDITIONAL:
 • Baby stroller — 100 PLN
+• Child car seat — 80 PLN
 • Furniture drying — 60 PLN
 • Impregnation (1 year protection) — 80 PLN
 • Tile cleaning — 25 PLN/m²
@@ -326,6 +360,22 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 — Czyszczenie okapu i kratek wentylacyjnych
 — Czyszczenie i dezynfekcja pralki i zmywarki
 
+🧹➕ USŁUGI DODATKOWE DO SPRZĄTANIA:
+Sprzątanie standardowe:
+• Czyszczenie piekarnika — 37 PLN
+• Czyszczenie okapu — 37 PLN
+• Sprzątanie szafek kuchennych — 55 PLN
+• Mycie naczyń — 23 PLN
+• Czyszczenie lodówki — 37 PLN
+• Mycie okien (strona wewnętrzna, szt.) — 28 PLN
+• Dodatkowe godziny — 46 PLN/godz.
+• Sprzątanie szafy — 28 PLN
+
+Sprzątanie generalne:
+• Sprzątanie balkonu — 35 PLN
+• Prasowanie — 58 PLN/godz.
+• Sprzątanie kuwety — 12 PLN
+
 🛋 MEBLE:
 • Pufa — 40 PLN
 • Krzesło — 40 PLN
@@ -379,6 +429,7 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 
 ✨ DODATKOWO:
 • Wózek dziecięcy — 100 PLN
+• Fotelik samochodowy (dziecięcy) — 80 PLN
 • Suszenie mebli — 60 PLN
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 25 PLN/m²
@@ -459,7 +510,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
 
 🧹 ПРИБИРАННЯ:
-• Стандартне прибирання — 8 PLN/м² (від 20 м²)
+• Стандартне прибирання — 7 PLN/м² (від 20 м²)
 • Генеральне прибирання — 10 PLN/м² (від 20 м²)
 
 Стандартне прибирання включає:
@@ -475,6 +526,22 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 — Чистка плитки у ванній (стіни та підлога)
 — Чистка витяжки та вентиляційних решіток
 — Чистка та дезінфекція пральної та посудомийної машин
+
+🧹➕ ДОДАТКОВІ ПОСЛУГИ ДО ПРИБИРАННЯ:
+Стандартне прибирання:
+• Чистка духовки — 37 PLN
+• Чистка витяжки — 37 PLN
+• Прибирання кухонних шафок — 55 PLN
+• Миття посуду — 23 PLN
+• Чистка холодильника — 37 PLN
+• Миття вікон (внутрішня сторона, шт.) — 28 PLN
+• Додаткові години — 46 PLN/год
+• Прибирання шафи — 28 PLN
+
+Генеральне прибирання:
+• Прибирання балкона — 35 PLN
+• Прасування — 58 PLN/год
+• Прибирання лотка для тварин — 12 PLN
 
 🛋 МЕБЛІ:
 • Пуф — 40 PLN
@@ -529,6 +596,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 15% rabatu`,
 
 ✨ ДОДАТКОВО:
 • Дитячий візок — 100 PLN
+• Автокрісло (дитяче) — 80 PLN
 • Сушіння меблів — 60 PLN
 • Імпрегнація (захист на 1 рік) — 80 PLN
 • Чистка плитки — 25 PLN/м²
