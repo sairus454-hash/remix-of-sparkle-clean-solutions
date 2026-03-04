@@ -19,6 +19,7 @@ interface ServiceCardItem {
 
 interface CardServiceCalculatorProps {
   items: ServiceCardItem[];
+  category?: string;
   onSendToForm?: (items: CalculatorItem[], total: number) => void;
 }
 
@@ -76,7 +77,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
   );
 };
 
-const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorProps) => {
+const CardServiceCalculator = ({ items, category, onSendToForm }: CardServiceCalculatorProps) => {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
@@ -118,6 +119,7 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
       name: s.item.name,
       price: s.item.price,
       quantity: s.quantity,
+      category,
     }));
     navigate('/contacts', { state: { calculatorItems: calcItems, calculatorTotal: total } });
   };
@@ -294,6 +296,7 @@ const CardServiceCalculator = ({ items, onSendToForm }: CardServiceCalculatorPro
               name: s.item.name,
               price: s.item.price,
               quantity: s.quantity,
+              category,
             }))}
             total={total}
           />

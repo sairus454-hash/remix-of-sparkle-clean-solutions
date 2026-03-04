@@ -22,8 +22,9 @@ interface CalculatorItem {
 // Нормализация категории: уборка и доп. услуги считаются как одна категория
 function normalizeCategory(item: CalculatorItem): string {
   const cat = item.category || item.id;
-  // cleaning_ prefix (уборка) и extra- prefix (доп. услуги к уборке) → одна категория
-  if (cat.startsWith('cleaning_') || cat.startsWith('extra-') || cat === 'cleaning') return 'cleaning';
+  // cleaning и extra- (доп. услуги к уборке) → одна категория «cleaning»
+  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-')) return 'cleaning';
+  // Все items без явной категории группируются по их id-префиксу
   return cat;
 }
 

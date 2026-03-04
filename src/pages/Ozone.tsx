@@ -207,6 +207,7 @@ const Ozone = () => {
           </h2>
           <div className="max-w-4xl mx-auto">
             <CardServiceCalculator
+              category="ozone"
               items={[
                 { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144, image: ozone1room },
                 { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240, image: ozone2room },

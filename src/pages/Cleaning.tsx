@@ -412,6 +412,7 @@ const Cleaning = () => {
                     </div>
                   </div>
                   <CardServiceCalculator
+                    category="cleaning"
                     items={[
                       { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 37, image: calcExtraOven },
                       { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 37, image: calcExtraHood },
@@ -454,6 +455,7 @@ const Cleaning = () => {
                     </div>
                   </div>
                   <CardServiceCalculator
+                    category="windows"
                     items={[
                       { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: windowCleaning1 },
                       { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: windowCleaning2 },
@@ -492,6 +494,7 @@ const Cleaning = () => {
                     </div>
                   </div>
                   <CardServiceCalculator
+                    category="furniture"
                     items={[
                       { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 40, image: calcPouf },
                       { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 40, image: calcChair },
@@ -533,6 +536,7 @@ const Cleaning = () => {
                       </div>
                     </div>
                     <CardServiceCalculator
+                      category="leather"
                       items={[
                         { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 55, image: calcLeatherPouf },
                         { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 50, image: calcLeatherChair },
@@ -567,6 +571,7 @@ const Cleaning = () => {
                       </div>
                     </div>
                     <CardServiceCalculator
+                      category="other"
                       items={[
                         { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
                         { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100, image: calcStroller },

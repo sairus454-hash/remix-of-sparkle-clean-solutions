@@ -142,7 +142,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.furnitureDesc}</p>
                   </div>
                 </div>
-                <CardServiceCalculator items={[...furnitureItems, ...extrasItems]} />
+                <CardServiceCalculator category="furniture" items={[...furnitureItems, ...extrasItems]} />
               </div>
             </CircularRevealCard>
           </div>
@@ -164,7 +164,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.leatherDesc}</p>
                   </div>
                 </div>
-                <CardServiceCalculator items={leatherItems} />
+                <CardServiceCalculator category="leather" items={leatherItems} />
               </div>
             </CircularRevealCard>
           </div>
