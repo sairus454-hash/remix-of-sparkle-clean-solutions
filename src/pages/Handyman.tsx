@@ -1,10 +1,10 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
-import HandymanPriceCalculator from '@/components/HandymanPriceCalculator';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
 import HandymanHeroSlideshow from '@/components/HandymanHeroSlideshow';
 import AnimatedImage from '@/components/AnimatedImage';
@@ -12,18 +12,64 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Wrench, Hammer, Plug, Droplet, Flower2, DoorOpen, 
-  Lightbulb, Tv, Frame, ShowerHead, Lock, Fan
+  Lightbulb, Tv, Frame, ShowerHead, Lock, Fan, Leaf, Calculator
 } from 'lucide-react';
 import handyman1 from '@/assets/handyman-1.jpg';
 import handyman2 from '@/assets/handyman-2.jpg';
 import handyman3 from '@/assets/handyman-3.jpg';
 import { CalculatorItem } from '@/types/calculator';
 
+// Handyman service images
+import imgFaucet from '@/assets/handyman/faucet.jpg';
+import imgSiphon from '@/assets/handyman/siphon.jpg';
+import imgSink from '@/assets/handyman/sink.jpg';
+import imgToilet from '@/assets/handyman/toilet.jpg';
+import imgSewer from '@/assets/handyman/sewer.jpg';
+import imgWashingMachine from '@/assets/handyman/washing-machine.jpg';
+import imgDishwasher from '@/assets/handyman/dishwasher.jpg';
+import imgBathroomFan from '@/assets/handyman/bathroom-fan.jpg';
+import imgBidet from '@/assets/handyman/bidet.jpg';
+import imgUrinal from '@/assets/handyman/urinal.jpg';
+import imgHose from '@/assets/handyman/hose.jpg';
+import imgDemontage from '@/assets/handyman/demontage.jpg';
+import imgSealing from '@/assets/handyman/sealing.jpg';
+import imgShowerCabin from '@/assets/handyman/shower-cabin.jpg';
+import imgShowerTray from '@/assets/handyman/shower-tray.jpg';
+import imgBathtub from '@/assets/handyman/bathtub.jpg';
+import imgBathroomAccessories from '@/assets/handyman/bathroom-accessories.jpg';
+import imgWallShower from '@/assets/handyman/wall-shower.jpg';
+import imgCurtainRod from '@/assets/handyman/curtain-rod.jpg';
+import imgShelf from '@/assets/handyman/shelf.jpg';
+import imgPictures from '@/assets/handyman/pictures.jpg';
+import imgFurnitureAssembly from '@/assets/handyman/furniture-assembly.jpg';
+import imgBedSofaRepair from '@/assets/handyman/bed-sofa-repair.jpg';
+import imgWardrobeRepair from '@/assets/handyman/wardrobe-repair.jpg';
+import imgBulb from '@/assets/handyman/bulb.jpg';
+import imgSocket from '@/assets/handyman/socket.jpg';
+import imgLamp from '@/assets/handyman/lamp.jpg';
+import imgStove from '@/assets/handyman/stove.jpg';
+import imgRepair from '@/assets/handyman/repair.jpg';
+import imgDiagnostic from '@/assets/handyman/diagnostic.jpg';
+import imgSwitch from '@/assets/handyman/switch.jpg';
+import imgFuse from '@/assets/handyman/fuse.jpg';
+import imgLampRepair from '@/assets/handyman/lamp-repair.jpg';
+import imgChandelier from '@/assets/handyman/chandelier.jpg';
+import imgMailboxLock from '@/assets/handyman/mailbox-lock.jpg';
+import imgDoorHandle from '@/assets/handyman/door-handle.jpg';
+import imgDoorCylinder from '@/assets/handyman/door-cylinder.jpg';
+import imgAluminumDoor from '@/assets/handyman/aluminum-door.jpg';
+import imgWindowAdjustment from '@/assets/handyman/window-adjustment.jpg';
+import imgFridgeHinges from '@/assets/handyman/fridge-hinges.jpg';
+import imgLawnMowing from '@/assets/handyman/lawn-mowing.jpg';
+import imgTreeTrimming from '@/assets/handyman/tree-trimming.jpg';
+import imgYardHelp from '@/assets/handyman/yard-help.jpg';
+
 const Handyman = () => {
   const { t } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('handyman');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState('plumbing');
 
   const handleSendToForm = (items: CalculatorItem[], total: number) => {
     formRef.current?.setCalculatorData(items, total);
@@ -44,6 +90,70 @@ const Handyman = () => {
     { icon: Fan, name: t.handyman.ventilation, desc: t.handyman.ventilationDesc },
     { icon: Wrench, name: t.handyman.other, desc: t.handyman.otherDesc },
   ];
+
+  const categoryTabs = [
+    { id: 'plumbing', name: t.handyman.plumbing, icon: Droplet },
+    { id: 'mounting', name: t.handyman.mounting, icon: Frame },
+    { id: 'electrical', name: t.handyman.electrical, icon: Lightbulb },
+    { id: 'locksmith', name: t.handyman.other, icon: Wrench },
+    { id: 'gardening', name: t.handyman.gardening, icon: Leaf },
+  ];
+
+  const categoryItems: Record<string, { id: string; name: string; price: number; image: string }[]> = {
+    plumbing: [
+      { id: 'faucet', name: t.handyman.calcItems.faucet, price: 120, image: imgFaucet },
+      { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, image: imgSiphon },
+      { id: 'sink', name: t.handyman.calcItems.sink, price: 180, image: imgSink },
+      { id: 'toilet', name: t.handyman.calcItems.toilet, price: 220, image: imgToilet },
+      { id: 'sewer', name: t.handyman.calcItems.sewer, price: 250, image: imgSewer },
+      { id: 'washingMachine', name: t.handyman.calcItems.washingMachine, price: 140, image: imgWashingMachine },
+      { id: 'dishwasher', name: t.handyman.calcItems.dishwasher, price: 140, image: imgDishwasher },
+      { id: 'bathroomFan', name: t.handyman.calcItems.bathroomFan, price: 80, image: imgBathroomFan },
+      { id: 'bidet', name: t.handyman.calcItems.bidet, price: 220, image: imgBidet },
+      { id: 'urinal', name: t.handyman.calcItems.urinal, price: 200, image: imgUrinal },
+      { id: 'hoseReplacement', name: t.handyman.calcItems.hoseReplacement, price: 50, image: imgHose },
+      { id: 'plumbingDemontage', name: t.handyman.calcItems.plumbingDemontage, price: 80, image: imgDemontage },
+      { id: 'sealingJoints', name: t.handyman.calcItems.sealingJoints, price: 40, image: imgSealing },
+      { id: 'showerCabinInstall', name: t.handyman.calcItems.showerCabinInstall, price: 450, image: imgShowerCabin },
+      { id: 'showerTrayInstall', name: t.handyman.calcItems.showerTrayInstall, price: 200, image: imgShowerTray },
+      { id: 'bathtubInstall', name: t.handyman.calcItems.bathtubInstall, price: 300, image: imgBathtub },
+      { id: 'bathroomAccessories', name: t.handyman.calcItems.bathroomAccessories, price: 30, image: imgBathroomAccessories },
+      { id: 'wallMountedShower', name: t.handyman.calcItems.wallMountedShower, price: 200, image: imgWallShower },
+    ],
+    mounting: [
+      { id: 'curtainRod', name: t.handyman.calcItems.curtainRod, price: 120, image: imgCurtainRod },
+      { id: 'shelf', name: t.handyman.calcItems.shelf, price: 100, image: imgShelf },
+      { id: 'pictures', name: t.handyman.calcItems.pictures, price: 80, image: imgPictures },
+      { id: 'furniture', name: t.handyman.calcItems.furnitureAssembly, price: 80, image: imgFurnitureAssembly },
+      { id: 'bedSofaRepair', name: t.handyman.calcItems.bedSofaRepair, price: 130, image: imgBedSofaRepair },
+      { id: 'wardrobeRepair', name: t.handyman.calcItems.wardrobeRepair, price: 240, image: imgWardrobeRepair },
+    ],
+    electrical: [
+      { id: 'bulb', name: t.handyman.calcItems.bulb, price: 50, image: imgBulb },
+      { id: 'socket', name: t.handyman.calcItems.socket, price: 40, image: imgSocket },
+      { id: 'lamp', name: t.handyman.calcItems.lamp, price: 100, image: imgLamp },
+      { id: 'stove', name: t.handyman.calcItems.stove, price: 200, image: imgStove },
+      { id: 'repair', name: t.handyman.calcItems.repair, price: 100, image: imgRepair },
+      { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: 350, image: imgDiagnostic },
+      { id: 'switch', name: t.handyman.calcItems.switch, price: 50, image: imgSwitch },
+      { id: 'fuseReplacement', name: t.handyman.calcItems.fuseReplacement, price: 120, image: imgFuse },
+      { id: 'lampRepair', name: t.handyman.calcItems.lampRepair, price: 130, image: imgLampRepair },
+      { id: 'chandelierInstall', name: t.handyman.calcItems.chandelierInstall, price: 130, image: imgChandelier },
+    ],
+    locksmith: [
+      { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: 140, image: imgMailboxLock },
+      { id: 'doorHandle', name: t.handyman.calcItems.doorHandle, price: 60, image: imgDoorHandle },
+      { id: 'doorCylinder', name: t.handyman.calcItems.doorCylinder, price: 100, image: imgDoorCylinder },
+      { id: 'aluminumDoorRepair', name: t.handyman.calcItems.aluminumDoorRepair, price: 200, image: imgAluminumDoor },
+      { id: 'windowDoorAdjustment', name: t.handyman.calcItems.windowDoorAdjustment, price: 200, image: imgWindowAdjustment },
+      { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, image: imgFridgeHinges },
+    ],
+    gardening: [
+      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 110, image: imgLawnMowing },
+      { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, image: imgTreeTrimming },
+      { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, image: imgYardHelp },
+    ],
+  };
 
   return (
     <>
@@ -217,16 +327,47 @@ const Handyman = () => {
       {/* Pricing */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
               <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
                 <span className="relative z-10">{t.handyman.pricing}</span>
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
               </h2>
             </div>
 
+            {/* Category Tabs */}
+            <div className="flex flex-wrap gap-2 justify-center mb-8">
+              {categoryTabs.map((tab) => {
+                const Icon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border ${
+                      activeTab === tab.id
+                        ? 'bg-yellow-400/20 border-yellow-400 text-yellow-700 dark:text-yellow-400 shadow-md'
+                        : 'bg-card border-border text-muted-foreground hover:border-yellow-400/50 hover:bg-yellow-400/10'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span className="hidden sm:inline">{tab.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Min order note */}
+            <div className="text-sm text-yellow-600 font-semibold bg-yellow-400/20 rounded-lg p-3 mb-6 text-center">
+              <span>⚠️ {t.handyman.minOrderNote}</span>
+              <br />
+              <span>{t.handyman.minOrderNoteOther}</span>
+            </div>
+
             <CircularRevealCard index={0}>
-              <HandymanPriceCalculator onSendToForm={handleSendToForm} />
+              <CardServiceCalculator
+                items={categoryItems[activeTab] || []}
+                onSendToForm={handleSendToForm}
+              />
             </CircularRevealCard>
           </div>
         </div>
