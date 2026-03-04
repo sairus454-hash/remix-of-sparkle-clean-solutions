@@ -36,8 +36,18 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
   const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
   const [date, setDate] = useState<Date | undefined>(selectedDate);
-  const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>([]);
-  const [calculatorTotal, setCalculatorTotal] = useState(0);
+  const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>(() => {
+    try {
+      const saved = localStorage.getItem('mc_calculator_items');
+      return saved ? JSON.parse(saved) : [];
+    } catch { return []; }
+  });
+  const [calculatorTotal, setCalculatorTotal] = useState(() => {
+    try {
+      const saved = localStorage.getItem('mc_calculator_total');
+      return saved ? Number(saved) : 0;
+    } catch { return 0; }
+  });
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -84,6 +94,19 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       setCalculatorTotal(prevTotal => prevTotal + newTotal);
     }
   }));
+
+  // Persist calculator data to localStorage
+  useEffect(() => {
+    try {
+      if (calculatorItems.length > 0) {
+        localStorage.setItem('mc_calculator_items', JSON.stringify(calculatorItems));
+        localStorage.setItem('mc_calculator_total', String(calculatorTotal));
+      } else {
+        localStorage.removeItem('mc_calculator_items');
+        localStorage.removeItem('mc_calculator_total');
+      }
+    } catch {}
+  }, [calculatorItems, calculatorTotal]);
 
   // Sync with external selectedDate prop
   useEffect(() => {
@@ -158,6 +181,10 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       ...prev,
       message: ''
     }));
+    try {
+      localStorage.removeItem('mc_calculator_items');
+      localStorage.removeItem('mc_calculator_total');
+    } catch {}
   };
   const removeCalculatorItem = (itemId: string) => {
     setCalculatorItems(prev => {
