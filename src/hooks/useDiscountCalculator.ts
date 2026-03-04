@@ -19,6 +19,14 @@ interface CalculatorItem {
   category?: string;
 }
 
+// Нормализация категории: уборка и доп. услуги считаются как одна категория
+function normalizeCategory(item: CalculatorItem): string {
+  const cat = item.category || item.id;
+  // cleaning_ prefix (уборка) и extra- prefix (доп. услуги к уборке) → одна категория
+  if (cat.startsWith('cleaning_') || cat.startsWith('extra-') || cat === 'cleaning') return 'cleaning';
+  return cat;
+}
+
 // ID матрасов для определения скидки
 const MATTRESS_IDS = [
   'mattressDouble', 'mattressSingle', 'mattressSingleDry', 'mattressSingleDry2',
@@ -38,8 +46,8 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
   const discountInfo = useMemo((): DiscountInfo => {
     const originalTotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
     
-    // Подсчитываем количество уникальных категорий
-    const uniqueCategories = new Set(items.map(item => item.category || item.id));
+    // Подсчитываем количество уникальных категорий (уборка + доп. услуги = одна категория)
+    const uniqueCategories = new Set(items.map(normalizeCategory));
     const uniqueCategoriesCount = uniqueCategories.size;
     
     // Проверяем скидку на один матрас
