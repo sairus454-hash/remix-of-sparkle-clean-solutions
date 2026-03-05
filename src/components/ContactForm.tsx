@@ -355,7 +355,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       });
       setDate(undefined);
       onDateChange?.(undefined);
-      setIsCaptchaValid(false);
       clearCalculatorData();
     } catch (error) {
       console.error('Form submission error:', error);
