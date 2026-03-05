@@ -222,13 +222,26 @@ const Header = () => {
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             {/* 24/7 Badge - Now visible on all screens */}
             <div style={getHeaderItemStyle(12, headerRevealed)}>
-              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+              <motion.div
+                className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow"
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                whileHover={{ scale: 1.12 }}
+              >
                 <div className="relative">
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full opacity-75 absolute" />
-                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full" />
+                  <motion.div
+                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full absolute"
+                    animate={{ scale: [1, 1.8, 1], opacity: [0.75, 0, 0.75] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeOut' }}
+                  />
+                  <motion.div
+                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full"
+                    animate={{ scale: [1, 1.15, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                  />
                 </div>
                 <span className="text-primary-foreground font-bold text-[10px] sm:text-xs md:text-sm">24/7</span>
-              </div>
+              </motion.div>
             </div>
 
             {/* Language Switcher - Dropdown on mobile, inline on desktop */}
