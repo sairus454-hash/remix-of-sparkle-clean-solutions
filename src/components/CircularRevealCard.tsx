@@ -85,6 +85,8 @@ const CircularRevealCard = forwardRef<HTMLDivElement, CircularRevealCardProps>((
       {children}
     </div>
   );
-};
+});
+
+CircularRevealCard.displayName = 'CircularRevealCard';
 
 export default CircularRevealCard;
