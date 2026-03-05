@@ -14,6 +14,9 @@ import { Star, Send, Loader2, MapPin, ExternalLink, Sparkles } from 'lucide-reac
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
+import reviewsInterior1 from '@/assets/reviews-interior-1.jpg';
+import reviewsInterior2 from '@/assets/reviews-interior-2.jpg';
+import reviewsInterior3 from '@/assets/reviews-interior-3.jpg';
 import { supabase } from '@/integrations/supabase/client';
 
 interface Review {
@@ -75,8 +78,19 @@ const Reviews = () => {
     text: ''
   });
 
+  // Background slideshow
+  const bgImages = [leatherSofaImage, reviewsInterior1, reviewsInterior2, reviewsInterior3];
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgIndex(prev => (prev + 1) % bgImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [bgImages.length]);
+
   // Parallax effect
-  const parallaxRef = useRef<HTMLImageElement>(null);
+  const parallaxRef = useRef<HTMLDivElement>(null);
   const [parallaxOffset, setParallaxOffset] = useState(0);
 
   const handleScroll = useCallback(() => {
@@ -209,15 +223,20 @@ const Reviews = () => {
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Parallax background photo */}
-        <div className="fixed inset-0 z-0 overflow-hidden">
-          <img
-            ref={parallaxRef}
-            src={leatherSofaImage}
-            alt=""
-            aria-hidden="true"
-            className="w-full h-[120%] object-cover will-change-transform transition-none"
-            style={{ transform: `translate3d(0, ${parallaxOffset}px, 0)` }}
-          />
+        <div className="fixed inset-0 z-0 overflow-hidden" ref={parallaxRef}>
+          {bgImages.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-[120%] object-cover will-change-transform transition-opacity duration-1000"
+              style={{
+                transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+                opacity: currentBgIndex === i ? 1 : 0,
+              }}
+            />
+          ))}
           <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         </div>
         <PremiumGlareBackground />
