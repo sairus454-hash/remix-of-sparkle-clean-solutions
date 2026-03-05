@@ -254,7 +254,7 @@ const Handyman = () => {
       </section>
 
       {/* Our Team Photos */}
-      <section className="py-20 bg-card">
+      <section className="hidden md:block py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
