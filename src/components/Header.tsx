@@ -177,7 +177,10 @@ const Header = () => {
                     title={item.highlight === 'ozone' ? item.label : undefined}
                   >
                     {item.highlight === 'ozone' ? (
-                      <span className="font-bold text-base leading-none">O₃</span>
+                      <span className="relative font-extrabold text-lg leading-none tracking-tight">
+                        <span className="relative z-10">O₃</span>
+                        <span className="absolute inset-0 rounded-full bg-sky-400/20 blur-sm animate-pulse" />
+                      </span>
                     ) : item.label}
                   </Link>
                 </div>
