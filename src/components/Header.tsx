@@ -176,7 +176,7 @@ const Header = () => {
                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
                 }
                 if (item.highlight === 'blog') {
-                  return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300';
+                  return '';
                 }
                 return '';
               };
