@@ -12,7 +12,7 @@ import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info } fro
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
-import SimpleCaptcha from './SimpleCaptcha';
+
 import SuccessAnimation from './SuccessAnimation';
 import { supabase } from '@/integrations/supabase/client';
 import { CalculatorItem } from '@/types/calculator';
