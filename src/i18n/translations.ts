@@ -606,6 +606,7 @@ export const translations = {
     cleaning: {
       title: 'Уборка помещений',
       subtitle: 'Профессиональная уборка квартир, домов и офисов',
+      videoTitle: 'Смотрите как мы работаем',
       service: 'Уборка',
       benefit1: 'Экономия вашего времени',
       benefit2: 'Профессиональные средства',
@@ -1307,6 +1308,7 @@ export const translations = {
     cleaning: {
       title: 'House Cleaning',
       subtitle: 'Professional cleaning of apartments, houses and offices',
+      videoTitle: 'See how we work',
       service: 'Cleaning',
       benefit1: 'Save your time',
       benefit2: 'Professional products',
@@ -2008,6 +2010,7 @@ export const translations = {
     cleaning: {
       title: 'Sprzątanie pomieszczeń',
       subtitle: 'Profesjonalne sprzątanie mieszkań, domów i biur',
+      videoTitle: 'Zobacz jak pracujemy',
       service: 'Sprzątanie',
       benefit1: 'Oszczędność Twojego czasu',
       benefit2: 'Profesjonalne środki',
@@ -2709,6 +2712,7 @@ export const translations = {
     cleaning: {
       title: 'Прибирання приміщень',
       subtitle: 'Професійне прибирання квартир, будинків та офісів',
+      videoTitle: 'Дивіться як ми працюємо',
       service: 'Прибирання',
       benefit1: 'Економія вашого часу',
       benefit2: 'Професійні засоби',
