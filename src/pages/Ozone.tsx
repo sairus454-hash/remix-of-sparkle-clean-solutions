@@ -9,6 +9,7 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
+import ozoneBg from '@/assets/ozone-bg.webp';
 import ozoneCar from '@/assets/ozone-car.jpg';
 import ozoneOffice from '@/assets/ozone-office.jpg';
 import ozone1room from '@/assets/ozone-1room.jpg';
@@ -72,6 +73,12 @@ const Ozone = () => {
         }}
       />
     <Layout>
+      {/* Fixed ozone molecule background behind everything */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        <img src={ozoneBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/60" />
+      </div>
+      <div className="relative z-10">
       {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}
       
       {/* Hero with Background Photo Slideshow */}
@@ -238,6 +245,7 @@ const Ozone = () => {
           </div>
         </div>
       </section>
+      </div>
     </Layout>
     </>
   );
