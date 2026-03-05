@@ -21,7 +21,6 @@ import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, D
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
-import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import heroHouseCleaning2 from '@/assets/hero-house-cleaning-2.jpg';
 import cleaningTeam3 from '@/assets/cleaning-team-work-3.jpg';
 import windowCleaning1 from '@/assets/window-cleaning-1.jpg';
