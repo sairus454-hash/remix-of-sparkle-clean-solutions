@@ -17,6 +17,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const langDropdownRef = useRef<HTMLDivElement>(null);
@@ -246,15 +247,23 @@ const Header = () => {
             </div>
 
             {/* Phone */}
-            <div style={getHeaderItemStyle(14, headerRevealed)} className="flex items-center flex-shrink-0">
-              <a 
-                href="tel:+48575211401"
-                onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('header'))}
-                className="flex items-center gap-1 text-primary font-bold text-xs sm:text-sm hover:text-fresh transition-colors"
+            <div style={getHeaderItemStyle(14, headerRevealed)} className="flex items-center flex-shrink-0 relative">
+              <button
+                onClick={() => setShowPhone(!showPhone)}
+                className="flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 text-fresh transition-colors touch-manipulation active:scale-95"
+                aria-label="Show phone number"
               >
-                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                <span className="hidden sm:inline">+48 575 211 401</span>
-              </a>
+                <Phone className="w-4 h-4 sm:w-4 sm:h-4" />
+              </button>
+              {showPhone && (
+                <a
+                  href="tel:+48575211401"
+                  onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('header'))}
+                  className="absolute top-full right-0 mt-2 px-4 py-2.5 bg-card border border-border rounded-xl shadow-lg text-primary font-bold text-sm whitespace-nowrap animate-fade-up z-50"
+                >
+                  +48 575 211 401
+                </a>
+              )}
             </div>
           </div>
         </div>
