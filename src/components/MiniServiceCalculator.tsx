@@ -184,8 +184,11 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
               <span className="text-lg font-medium">{t.calculator?.total || 'Итого'}</span>
               <span className="text-2xl font-bold text-primary">{total} zł</span>
             </div>
-            <p className="text-xs text-muted-foreground mb-2">
+            <p className="text-xs text-muted-foreground mb-1">
               {t.calculator?.minOrder}
+            </p>
+            <p className="text-xs text-muted-foreground mb-2">
+              {t.calculator?.minOrderOther}
             </p>
             <Button onClick={handleSend} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
               <Send className="w-4 h-4 mr-2" />

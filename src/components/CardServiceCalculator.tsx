@@ -274,8 +274,11 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
               <span className="text-lg font-medium">{t.calculator?.total || 'Итого'}</span>
               <span className="text-2xl font-bold text-primary">{total} zł</span>
             </div>
-            <p className="text-xs text-muted-foreground mb-2">
+            <p className="text-xs text-muted-foreground mb-1">
               {t.calculator?.minOrder}
+            </p>
+            <p className="text-xs text-muted-foreground mb-2">
+              {t.calculator?.minOrderOther}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Button onClick={() => {
