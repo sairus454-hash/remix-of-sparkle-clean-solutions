@@ -7,6 +7,7 @@ import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Sparkles, Sofa, Armchair } from 'lucide-react';
 
 // Hero images
+import heroUpholsteryCleaning from '@/assets/hero-upholstery-cleaning.jpg';
 import mattressCleaningService from '@/assets/mattress-cleaning-service.jpg';
 import armchairCleaning from '@/assets/armchair-cleaning.jpg';
 import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
@@ -43,7 +44,7 @@ const Services = () => {
   const { t, language } = useLanguage();
 
   const heroImages = [
-    { src: mattressCleaningService, alt: 'Mattress cleaning' },
+    { src: heroUpholsteryCleaning, alt: 'Professional upholstery cleaning' },
     { src: armchairCleaning, alt: 'Armchair cleaning' },
     { src: sofaBeforeAfter, alt: 'Sofa before and after' },
     { src: mattressBeforeAfter, alt: 'Mattress before and after' },
