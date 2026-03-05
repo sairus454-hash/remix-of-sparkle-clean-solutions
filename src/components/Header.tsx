@@ -185,7 +185,7 @@ const Header = () => {
                 <div key={item.path} style={getHeaderItemStyle(index + 2, headerRevealed)}>
                   <Link
                     to={item.path}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`px-3 py-2 rounded-md text-[15px] font-medium transition-colors ${
                       location.pathname === item.path
                         ? 'text-primary bg-accent'
                         : item.highlight
