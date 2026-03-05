@@ -140,6 +140,7 @@ interface CategorySection {
 const PriceSection = () => {
   const { t } = useLanguage();
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
 
   const categories: CategorySection[] = [
     {
