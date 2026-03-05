@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, ReactNode } from 'react';
+import { useState, useEffect, useRef, ReactNode, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -9,7 +9,7 @@ interface CircularRevealCardProps {
   slow?: boolean; // Slower animation for marketing cards
 }
 
-const CircularRevealCard = ({ children, index, className, slow = false }: CircularRevealCardProps) => {
+const CircularRevealCard = forwardRef<HTMLDivElement, CircularRevealCardProps>(({ children, index, className, slow = false }, _ref) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
@@ -85,6 +85,8 @@ const CircularRevealCard = ({ children, index, className, slow = false }: Circul
       {children}
     </div>
   );
-};
+});
+
+CircularRevealCard.displayName = 'CircularRevealCard';
 
 export default CircularRevealCard;
