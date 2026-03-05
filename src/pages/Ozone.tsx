@@ -76,7 +76,7 @@ const Ozone = () => {
       {/* Fixed ozone molecule background behind everything */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img src={ozoneBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background/40" />
       </div>
       <div className="relative z-10">
       {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}
@@ -112,7 +112,7 @@ const Ozone = () => {
       </section>
 
       {/* What is Ozonation */}
-      <section className="py-20 bg-gradient-section">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <CircularRevealCard index={0}>
@@ -149,7 +149,7 @@ const Ozone = () => {
       </section>
 
       {/* Applications */}
-      <section className="py-20 bg-card">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
             {t.ozone.applications}
@@ -170,7 +170,7 @@ const Ozone = () => {
       </section>
 
       {/* What to know before cleaning */}
-      <section className="py-20 bg-gradient-section">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <CircularRevealCard index={0}>
@@ -207,7 +207,7 @@ const Ozone = () => {
       </section>
 
       {/* Pricing - Card Calculator */}
-      <section className="py-20 bg-gradient-section">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
             {t.prices.ozonation}
@@ -229,7 +229,7 @@ const Ozone = () => {
       </section>
 
       {/* Contact Form */}
-      <section ref={formSectionRef} className="py-20 bg-gradient-section">
+      <section ref={formSectionRef} className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
