@@ -280,7 +280,7 @@ const Reviews = () => {
 
 
         {/* Reviews Grid */}
-        <section className="relative z-10 py-16 bg-background">
+        <section className="relative z-10 py-16">
           <div className="container mx-auto px-4">
             <h2 className="font-serif text-3xl font-bold mb-8 text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{
             animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
