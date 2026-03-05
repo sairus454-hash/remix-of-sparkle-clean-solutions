@@ -245,6 +245,7 @@ const Ozone = () => {
           </div>
         </div>
       </section>
+      </div>
     </Layout>
     </>
   );
