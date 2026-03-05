@@ -44,6 +44,14 @@ const AnimatedImage = ({
 
   return (
     <div ref={ref} className={cn("overflow-hidden", containerClassName)}>
+      {/* Blur placeholder background */}
+      <div
+        className="absolute inset-0 transition-opacity duration-500"
+        style={{
+          background: 'linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--muted)) 100%)',
+          opacity: isLoaded ? 0 : 1,
+        }}
+      />
       <img
         src={src}
         alt={alt}
@@ -59,7 +67,8 @@ const AnimatedImage = ({
         )}
         style={{
           transitionDuration: `${duration}ms`,
-          transitionProperty: 'opacity, transform',
+          transitionProperty: 'opacity, transform, filter',
+          filter: isLoaded ? 'blur(0px)' : 'blur(15px)',
         }}
       />
     </div>
