@@ -15,7 +15,7 @@ import aboutBa8 from '@/assets/about-ba-8.jpg';
 const slideImages = [aboutBa1, aboutBa2, aboutBa3, aboutBa4, aboutBa5, aboutBa6, aboutBa7, aboutBa8];
 const slideKeys = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6', 'slide7', 'slide8'] as const;
 
-const About3DCarousel = () => {
+const About3DCarousel = forwardRef<HTMLElement>((_, _ref) => {
   const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
