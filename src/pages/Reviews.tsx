@@ -14,6 +14,9 @@ import { Star, Send, Loader2, MapPin, ExternalLink, Sparkles } from 'lucide-reac
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
+import reviewsInterior1 from '@/assets/reviews-interior-1.jpg';
+import reviewsInterior2 from '@/assets/reviews-interior-2.jpg';
+import reviewsInterior3 from '@/assets/reviews-interior-3.jpg';
 import { supabase } from '@/integrations/supabase/client';
 
 interface Review {
