@@ -21,6 +21,7 @@ const Header = () => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const langDropdownRef = useRef<HTMLDivElement>(null);
+  const phoneRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +31,14 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
+  // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {
         setIsLangDropdownOpen(false);
+      }
+      if (phoneRef.current && !phoneRef.current.contains(event.target as Node)) {
+        setShowPhone(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -247,7 +251,7 @@ const Header = () => {
             </div>
 
             {/* Phone */}
-            <div style={getHeaderItemStyle(14, headerRevealed)} className="flex items-center flex-shrink-0 relative">
+            <div ref={phoneRef} style={getHeaderItemStyle(14, headerRevealed)} className="flex items-center flex-shrink-0 relative">
               <button
                 onClick={() => setShowPhone(!showPhone)}
                 className="flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 text-fresh transition-colors touch-manipulation active:scale-95"
