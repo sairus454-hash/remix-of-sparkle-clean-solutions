@@ -237,7 +237,7 @@ const Reviews = () => {
               }}
             />
           ))}
-          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-background/50 backdrop-blur-[1px]" />
         </div>
         <PremiumGlareBackground />
         {/* Hero Section */}
