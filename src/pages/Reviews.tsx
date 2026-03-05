@@ -15,7 +15,7 @@ import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
 import { supabase } from '@/integrations/supabase/client';
-import SimpleCaptcha from '@/components/SimpleCaptcha';
+
 interface Review {
   id: string;
   name: string;
