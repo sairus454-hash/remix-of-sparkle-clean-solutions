@@ -15,7 +15,7 @@ import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
 import cleaningTeamWork from '@/assets/cleaning-team-work-1.jpg';
 import autoCleaning from '@/assets/auto-cleaning-1.jpg';
 import mattressCleaning from '@/assets/mattress-cleaning.jpg';
-import leatherSofa from '@/assets/leather-sofa-cleaning.jpg';
+import leatherSofa from '@/assets/leather-care-blog.jpg';
 import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
 import topExecutor2025 from '@/assets/top-executor-2025.jpg';
 import sofaSeatsGuide from '@/assets/sofa-seats-guide.jpg';
