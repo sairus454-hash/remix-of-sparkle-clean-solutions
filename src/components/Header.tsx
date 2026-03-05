@@ -124,14 +124,30 @@ const Header = () => {
             {/* Logo */}
             <div style={getHeaderItemStyle(1, headerRevealed)}>
               <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
-                <div className="relative">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                <motion.div
+                  className="relative"
+                  whileHover={{ scale: 1.15, rotate: 5 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                >
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <motion.div
+                      animate={{ rotate: [0, 10, -10, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                    >
+                      <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
+                    </motion.div>
                   </div>
-                  {/* Subtle accent dots */}
-                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/60 rounded-full" />
-                  <div className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-primary/50 rounded-full" />
-                </div>
+                  <motion.div
+                    className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/60 rounded-full"
+                    animate={{ scale: [1, 1.4, 1], opacity: [0.6, 1, 0.6] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  />
+                  <motion.div
+                    className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-primary/50 rounded-full"
+                    animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.9, 0.5] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                  />
+                </motion.div>
                 <span className="font-serif text-lg sm:text-xl font-semibold hidden sm:block bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
                   MasterClean
                 </span>
