@@ -174,11 +174,10 @@ const Header = () => {
                           ? getHighlightClass()
                           : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                     }`}
+                    title={item.highlight === 'ozone' ? item.label : undefined}
                   >
                     {item.highlight === 'ozone' ? (
-                      <span className="flex items-center gap-1">
-                        <span className="font-bold text-base leading-none">O<sub className="text-[9px]">₃</sub></span>
-                      </span>
+                      <span className="font-bold text-base leading-none">O₃</span>
                     ) : item.label}
                   </Link>
                 </div>
