@@ -21,7 +21,7 @@ import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, D
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
-import cleaningTeam2 from '@/assets/cleaning-team-work-2.jpg';
+import heroHouseCleaning2 from '@/assets/hero-house-cleaning-2.jpg';
 import cleaningTeam3 from '@/assets/cleaning-team-work-3.jpg';
 import windowCleaning1 from '@/assets/window-cleaning-1.jpg';
 import windowCleaning2 from '@/assets/window-cleaning-2.jpg';
@@ -168,7 +168,7 @@ const Cleaning = () => {
 
   const galleryImages = [
     { src: heroHouseCleaning, alt: t.cleaning?.gallery1 || 'Профессиональная уборка' },
-    { src: cleaningTeam2, alt: t.cleaning?.gallery2 || 'Уборка кухни' },
+    { src: heroHouseCleaning2, alt: t.cleaning?.gallery2 || 'Уборка квартиры' },
     { src: cleaningTeam3, alt: t.cleaning?.gallery3 || 'Уборка комнат' },
   ];
 
