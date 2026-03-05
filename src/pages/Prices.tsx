@@ -161,14 +161,6 @@ const Prices = () => {
       items: [
         { id: 'cleaning-standard', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'}`, price: 7, image: heroHouseCleaning, unit: 'm²' },
         { id: 'cleaning-general', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'}`, price: 10, image: heroHouseCleaning2, unit: 'm²' },
-      ],
-    },
-    {
-      id: 'cleaning-extras',
-      title: t.cleaning?.extras?.title || 'Дополнительные услуги',
-      description: t.cleaning?.subtitle || 'Доп. услуги к уборке',
-      icon: Sparkles,
-      items: [
         { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 37, image: calcExtraOven },
         { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 37, image: calcExtraHood },
         { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 55, image: calcExtraCabinets },
