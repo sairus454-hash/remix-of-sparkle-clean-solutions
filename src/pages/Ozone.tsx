@@ -207,7 +207,7 @@ const Ozone = () => {
       </section>
 
       {/* Pricing - Card Calculator */}
-      <section className="py-20 bg-gradient-section">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
             {t.prices.ozonation}
