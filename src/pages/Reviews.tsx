@@ -240,7 +240,7 @@ const Reviews = () => {
           <div className="absolute inset-0 bg-background/40" />
         </div>
         {/* Hero Section */}
-        <section className="relative z-10 py-16 lg:py-24 bg-gradient-to-b from-accent/50 to-background">
+        <section className="relative z-10 py-16 lg:py-24">
           <div className="container mx-auto px-4 text-center">
             {/* Animated cleanliness icon */}
             <div className="flex justify-center mb-6">
