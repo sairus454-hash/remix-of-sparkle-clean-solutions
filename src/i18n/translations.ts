@@ -1308,6 +1308,7 @@ export const translations = {
     cleaning: {
       title: 'House Cleaning',
       subtitle: 'Professional cleaning of apartments, houses and offices',
+      videoTitle: 'See how we work',
       service: 'Cleaning',
       benefit1: 'Save your time',
       benefit2: 'Professional products',
