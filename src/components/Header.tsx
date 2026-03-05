@@ -178,10 +178,23 @@ const Header = () => {
                     title={item.highlight === 'ozone' ? item.label : undefined}
                   >
                     {item.highlight === 'ozone' ? (
-                      <span className="relative font-extrabold text-lg leading-none tracking-tight">
+                      <motion.span
+                        className="relative font-extrabold text-lg leading-none tracking-tight inline-flex items-center"
+                        whileHover={{ scale: 1.15 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        <motion.span
+                          className="absolute -inset-1.5 rounded-full bg-primary/15 blur-md"
+                          animate={{ opacity: [0.3, 0.7, 0.3], scale: [0.9, 1.1, 0.9] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+                        <motion.span
+                          className="absolute -inset-1 rounded-full border border-primary/20"
+                          animate={{ opacity: [0, 0.5, 0], scale: [0.95, 1.2, 0.95] }}
+                          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                        />
                         <span className="relative z-10">O₃</span>
-                        <span className="absolute inset-0 rounded-full bg-sky-400/20 blur-sm animate-pulse" />
-                      </span>
+                      </motion.span>
                     ) : item.label}
                   </Link>
                 </div>
