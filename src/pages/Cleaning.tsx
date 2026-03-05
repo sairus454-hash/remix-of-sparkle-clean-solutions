@@ -459,6 +459,26 @@ const Cleaning = () => {
         </div>
       </section>
 
+      {/* YouTube Video */}
+      <section className="py-10 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <CircularRevealCard index={0}>
+              <div className="rounded-2xl overflow-hidden shadow-card aspect-[9/16] max-w-sm mx-auto">
+                <iframe
+                  src="https://www.youtube.com/embed/TTqMIWtDpBc"
+                  title="MasterClean — профессиональная уборка"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                />
+              </div>
+            </CircularRevealCard>
+          </div>
+        </div>
+      </section>
+
       <section className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
