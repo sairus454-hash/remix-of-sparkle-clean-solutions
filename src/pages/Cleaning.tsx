@@ -20,6 +20,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
+import cleaningPromoVideo from '@/assets/cleaning-promo.mp4';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import heroHouseCleaning2 from '@/assets/hero-house-cleaning-2.jpg';
 import cleaningTeam3 from '@/assets/cleaning-team-work-3.jpg';
