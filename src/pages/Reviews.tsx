@@ -237,9 +237,8 @@ const Reviews = () => {
               }}
             />
           ))}
-          <div className="absolute inset-0 bg-background/50 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-background/40" />
         </div>
-        <PremiumGlareBackground />
         {/* Hero Section */}
         <section className="relative z-10 py-16 lg:py-24 bg-gradient-to-b from-accent/50 to-background">
           <div className="container mx-auto px-4 text-center">
