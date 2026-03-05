@@ -9,7 +9,7 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
-import ozoneBg from '@/assets/ozone-bg.webp';
+import ozoneBg from '@/assets/ozone-bg.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
 import ozoneOffice from '@/assets/ozone-office.jpg';
 import ozone1room from '@/assets/ozone-1room.jpg';
