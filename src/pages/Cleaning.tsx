@@ -460,29 +460,7 @@ const Cleaning = () => {
         </div>
       </section>
 
-      {/* Promo Video */}
-      <section className="py-10 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <CircularRevealCard index={0}>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold text-center mb-6 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
-                {t.cleaning?.videoTitle || 'Смотрите как мы работаем'}
-              </h2>
-              <div className="rounded-2xl overflow-hidden shadow-card max-w-sm mx-auto">
-                <video
-                  src={cleaningPromoVideo}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto"
-                  poster={heroHouseCleaning}
-                />
-              </div>
-            </CircularRevealCard>
-          </div>
-        </div>
-      </section>
+
 
       <section className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
