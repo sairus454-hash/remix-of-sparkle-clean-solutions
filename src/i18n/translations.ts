@@ -2010,6 +2010,7 @@ export const translations = {
     cleaning: {
       title: 'Sprzątanie pomieszczeń',
       subtitle: 'Profesjonalne sprzątanie mieszkań, domów i biur',
+      videoTitle: 'Zobacz jak pracujemy',
       service: 'Sprzątanie',
       benefit1: 'Oszczędność Twojego czasu',
       benefit2: 'Profesjonalne środki',
