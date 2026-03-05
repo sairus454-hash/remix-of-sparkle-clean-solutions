@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Plus, Minus, Trash2, Send, CheckCircle2, Zap, ArrowRight } from 'lucide-react';
+import { Plus, Minus, Trash2, Send, CheckCircle2, Zap, ArrowRight, Check } from 'lucide-react';
+import { toast } from 'sonner';
 import { CalculatorItem } from '@/types/calculator';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -122,7 +123,29 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
       quantity: s.quantity,
       category,
     }));
-    navigate('/contacts', { state: { calculatorItems: calcItems, calculatorTotal: total } });
+    // Save to localStorage for ContactForm to pick up
+    try {
+      const existing = JSON.parse(localStorage.getItem('mc_calculator_items') || '[]');
+      const merged = [...existing];
+      calcItems.forEach(item => {
+        const idx = merged.findIndex((e: CalculatorItem) => e.id === item.id);
+        if (idx >= 0) {
+          merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
+        } else {
+          merged.push(item);
+        }
+      });
+      const newTotal = merged.reduce((s: number, i: CalculatorItem) => s + i.price * (i.quantity || 1), 0);
+      localStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+      localStorage.setItem('mc_calculator_total', String(newTotal));
+    } catch {}
+    toast.success(t.form?.addedToOrder || 'Добавлено в заявку ✓', {
+      description: `${calcItems.length} ${calcItems.length === 1 ? 'услуга' : 'услуг'} — ${total} zł`,
+      action: {
+        label: t.nav?.contacts || 'Контакты',
+        onClick: () => navigate('/contacts'),
+      },
+    });
   };
 
   return (
