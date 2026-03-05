@@ -78,8 +78,19 @@ const Reviews = () => {
     text: ''
   });
 
+  // Background slideshow
+  const bgImages = [leatherSofaImage, reviewsInterior1, reviewsInterior2, reviewsInterior3];
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgIndex(prev => (prev + 1) % bgImages.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [bgImages.length]);
+
   // Parallax effect
-  const parallaxRef = useRef<HTMLImageElement>(null);
+  const parallaxRef = useRef<HTMLDivElement>(null);
   const [parallaxOffset, setParallaxOffset] = useState(0);
 
   const handleScroll = useCallback(() => {
