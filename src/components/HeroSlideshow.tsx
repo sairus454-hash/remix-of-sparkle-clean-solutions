@@ -53,6 +53,7 @@ const HeroSlideshow = ({ images, interval = 5000, objectFit = 'cover' }: HeroSli
               alt={img.alt}
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding={index === 0 ? 'sync' : 'async'}
+              fetchPriority={index === 0 ? 'high' : 'low'}
               onLoad={() => handleImageLoad(index)}
               className={`absolute inset-0 w-full h-full transition-all duration-700 ease-out ${
                 objectFit === 'contain' ? 'object-contain' : 'object-cover'
