@@ -92,7 +92,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 </a>
               </li>
               <li>
-                <a href="mailto:masterclean@email.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
+                <a href="mailto:sairus454@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-background transition-colors touch-manipulation py-1">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                   {t.contacts.emailValue}
                 </a>
