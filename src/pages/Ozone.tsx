@@ -76,7 +76,7 @@ const Ozone = () => {
       {/* Fixed ozone molecule background behind everything */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img src={ozoneBg} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-background/60" />
+        <div className="absolute inset-0 bg-background/40" />
       </div>
       <div className="relative z-10">
       {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}
