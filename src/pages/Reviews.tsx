@@ -139,14 +139,6 @@ const Reviews = () => {
       });
       return;
     }
-    if (!isCaptchaValid) {
-      toast({
-        title: language === 'ru' ? 'Ошибка' : language === 'uk' ? 'Помилка' : language === 'pl' ? 'Błąd' : 'Error',
-        description: language === 'ru' ? 'Пожалуйста, решите капчу' : language === 'uk' ? 'Будь ласка, розв\'яжіть капчу' : language === 'pl' ? 'Proszę rozwiązać captcha' : 'Please solve the captcha',
-        variant: 'destructive'
-      });
-      return;
-    }
     setIsLoading(true);
     try {
       const {
