@@ -28,14 +28,6 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isCaptchaValid) {
-      toast({
-        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
-        description: language === 'ru' ? 'Пожалуйста, решите капчу' : language === 'pl' ? 'Proszę rozwiązać captcha' : language === 'uk' ? 'Будь ласка, розв\'яжіть капчу' : 'Please solve the captcha',
-        variant: 'destructive',
-      });
-      return;
-    }
 
     if (!name.trim() || !phone.trim()) {
       toast({
