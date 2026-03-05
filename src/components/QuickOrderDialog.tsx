@@ -149,8 +149,7 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
                 required
               />
             </div>
-            <SimpleCaptcha onVerify={(isValid) => setIsCaptchaValid(isValid)} language={language as 'ru' | 'pl' | 'uk' | 'en'} />
-            <Button type="submit" disabled={isLoading || !isCaptchaValid} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
+            <Button type="submit" disabled={isLoading} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
               {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
               {t.form.submit}
             </Button>

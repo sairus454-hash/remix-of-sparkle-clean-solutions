@@ -664,10 +664,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         />
       </div>
 
-      {/* Simple Captcha */}
-      <SimpleCaptcha onVerify={setIsCaptchaValid} language={language} />
-
-      <Button type="submit" disabled={isLoading || !isCaptchaValid} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all h-12 sm:h-11 text-base touch-manipulation active:scale-[0.98]">
+      <Button type="submit" disabled={isLoading} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all h-12 sm:h-11 text-base touch-manipulation active:scale-[0.98]">
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
         {t.form.submit}
       </Button>

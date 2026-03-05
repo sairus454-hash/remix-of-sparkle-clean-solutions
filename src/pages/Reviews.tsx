@@ -363,14 +363,7 @@ const Reviews = () => {
                           })} rows={4} required className="bg-card border-border resize-none" />
                         </div>
 
-                        {/* Captcha */}
-                        <SimpleCaptcha onVerify={(valid, challenge, answer) => {
-                          setIsCaptchaValid(valid);
-                          if (challenge) setCaptchaChallenge(challenge);
-                          if (answer !== undefined) setCaptchaAnswer(answer);
-                        }} language={language} />
-
-                        <Button type="submit" disabled={isLoading || !isCaptchaValid} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all">
+                        <Button type="submit" disabled={isLoading} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all">
                           {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
                           {t.reviews.submit}
                         </Button>
