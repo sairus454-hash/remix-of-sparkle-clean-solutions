@@ -12,7 +12,7 @@ import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info } fro
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
-import SimpleCaptcha from './SimpleCaptcha';
+
 import SuccessAnimation from './SuccessAnimation';
 import { supabase } from '@/integrations/supabase/client';
 import { CalculatorItem } from '@/types/calculator';
@@ -33,7 +33,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     language
   } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  
   const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>(() => {
@@ -283,14 +283,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isCaptchaValid) {
-      toast({
-        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
-        description: language === 'ru' ? 'Пожалуйста, решите капчу' : language === 'pl' ? 'Proszę rozwiązać captcha' : language === 'uk' ? 'Будь ласка, розв\'яжіть капчу' : 'Please solve the captcha',
-        variant: 'destructive'
-      });
-      return;
-    }
 
     // Validate required fields - city OR village must be filled
     if (!formData.name || !formData.phone || !formData.time || !formData.postalCode || !formData.address || !date) {
@@ -363,7 +355,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       });
       setDate(undefined);
       onDateChange?.(undefined);
-      setIsCaptchaValid(false);
       clearCalculatorData();
     } catch (error) {
       console.error('Form submission error:', error);
@@ -673,10 +664,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         />
       </div>
 
-      {/* Simple Captcha */}
-      <SimpleCaptcha onVerify={setIsCaptchaValid} language={language} />
-
-      <Button type="submit" disabled={isLoading || !isCaptchaValid} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all h-12 sm:h-11 text-base touch-manipulation active:scale-[0.98]">
+      <Button type="submit" disabled={isLoading} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all h-12 sm:h-11 text-base touch-manipulation active:scale-[0.98]">
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
         {t.form.submit}
       </Button>

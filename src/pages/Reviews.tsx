@@ -15,7 +15,7 @@ import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
 import { supabase } from '@/integrations/supabase/client';
-import SimpleCaptcha from '@/components/SimpleCaptcha';
+
 interface Review {
   id: string;
   name: string;
@@ -68,9 +68,6 @@ const Reviews = () => {
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
   const [dbReviews, setDbReviews] = useState<Review[]>([]);
   const [showGooglePrompt, setShowGooglePrompt] = useState(false);
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
-  const [captchaChallenge, setCaptchaChallenge] = useState('');
-  const [captchaAnswer, setCaptchaAnswer] = useState(0);
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [formData, setFormData] = useState({
@@ -142,14 +139,6 @@ const Reviews = () => {
       });
       return;
     }
-    if (!isCaptchaValid) {
-      toast({
-        title: language === 'ru' ? 'Ошибка' : language === 'uk' ? 'Помилка' : language === 'pl' ? 'Błąd' : 'Error',
-        description: language === 'ru' ? 'Пожалуйста, решите капчу' : language === 'uk' ? 'Будь ласка, розв\'яжіть капчу' : language === 'pl' ? 'Proszę rozwiązać captcha' : 'Please solve the captcha',
-        variant: 'destructive'
-      });
-      return;
-    }
     setIsLoading(true);
     try {
       const {
@@ -160,8 +149,6 @@ const Reviews = () => {
           name: formData.name,
           rating: rating,
           text: formData.text,
-          captchaChallenge,
-          captchaAnswer,
         }
       });
       if (error) throw error;
@@ -187,7 +174,6 @@ const Reviews = () => {
         text: ''
       });
       setRating(0);
-      setIsCaptchaValid(false);
       setShowGooglePrompt(true);
     } catch (error) {
       console.error('Error submitting review:', error);
@@ -377,14 +363,7 @@ const Reviews = () => {
                           })} rows={4} required className="bg-card border-border resize-none" />
                         </div>
 
-                        {/* Captcha */}
-                        <SimpleCaptcha onVerify={(valid, challenge, answer) => {
-                          setIsCaptchaValid(valid);
-                          if (challenge) setCaptchaChallenge(challenge);
-                          if (answer !== undefined) setCaptchaAnswer(answer);
-                        }} language={language} />
-
-                        <Button type="submit" disabled={isLoading || !isCaptchaValid} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all">
+                        <Button type="submit" disabled={isLoading} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all">
                           {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
                           {t.reviews.submit}
                         </Button>

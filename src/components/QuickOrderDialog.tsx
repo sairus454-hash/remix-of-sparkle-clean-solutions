@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Send, Loader2, Phone, User } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
-import SimpleCaptcha from './SimpleCaptcha';
+
 import SuccessAnimation from './SuccessAnimation';
 import { CalculatorItem } from '@/types/calculator';
 
@@ -22,20 +22,12 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isCaptchaValid) {
-      toast({
-        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
-        description: language === 'ru' ? 'Пожалуйста, решите капчу' : language === 'pl' ? 'Proszę rozwiązać captcha' : language === 'uk' ? 'Будь ласка, розв\'яжіть капчу' : 'Please solve the captcha',
-        variant: 'destructive',
-      });
-      return;
-    }
 
     if (!name.trim() || !phone.trim()) {
       toast({
@@ -90,7 +82,6 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
       toast({ title: t.form.success, description: `${name}, ${t.form.success}` });
       setName('');
       setPhone('');
-      setIsCaptchaValid(false);
       setTimeout(() => onOpenChange(false), 2000);
     } catch {
       toast({
@@ -158,8 +149,7 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
                 required
               />
             </div>
-            <SimpleCaptcha onVerify={(isValid) => setIsCaptchaValid(isValid)} language={language as 'ru' | 'pl' | 'uk' | 'en'} />
-            <Button type="submit" disabled={isLoading || !isCaptchaValid} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
+            <Button type="submit" disabled={isLoading} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
               {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
               {t.form.submit}
             </Button>
