@@ -149,8 +149,6 @@ const Reviews = () => {
           name: formData.name,
           rating: rating,
           text: formData.text,
-          captchaChallenge,
-          captchaAnswer,
         }
       });
       if (error) throw error;
