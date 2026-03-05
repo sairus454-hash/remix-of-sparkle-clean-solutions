@@ -157,7 +157,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {navItems.map((item, index) => {
               const getHighlightClass = () => {
                 if (item.highlight === 'ozone') {
