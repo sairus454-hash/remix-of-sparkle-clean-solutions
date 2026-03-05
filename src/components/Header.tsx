@@ -351,6 +351,8 @@ const Header = () => {
                 return '';
               };
               
+              const mobileHighlight = getMobileHighlightClass();
+              
               return (
                 <Link
                   key={item.path}
@@ -359,8 +361,8 @@ const Header = () => {
                   className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
                     location.pathname === item.path
                       ? 'text-primary bg-accent'
-                      : item.highlight
-                        ? getMobileHighlightClass()
+                      : mobileHighlight
+                        ? mobileHighlight
                         : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                   }`}
                 >
