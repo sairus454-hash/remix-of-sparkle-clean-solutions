@@ -85,7 +85,7 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
       toast.success(t.form?.addedToOrder || 'Добавлено в заявку ✓', {
         description: `${calcItems.length} ${calcItems.length === 1 ? 'услуга' : 'услуг'} — ${total} zł`,
         action: {
-          label: t.nav?.contacts || 'Контакты',
+          label: t.form?.fullOrder || 'Общая заявка',
           onClick: () => navigate('/contacts'),
         },
       });
