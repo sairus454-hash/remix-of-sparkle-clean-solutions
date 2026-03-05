@@ -1277,10 +1277,9 @@ Deno.serve(async (req) => {
     );
   } catch (error: unknown) {
     console.error("Chat bot error:", error);
-    const errorMessage = error instanceof Error ? error.message : "Failed to process request";
     return new Response(
       JSON.stringify({
-        error: errorMessage,
+        error: "service_error",
         message: "Sorry, an error occurred. Please try again later or contact us by phone.",
       }),
       {
