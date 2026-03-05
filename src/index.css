@@ -419,3 +419,29 @@ html {
   0%, 100% { border-color: hsl(var(--primary)); box-shadow: var(--shadow-glow); }
   50% { border-color: hsl(var(--fresh)); box-shadow: 0 0 40px hsl(var(--fresh) / 0.3); }
 }
+
+/* Smooth page enter transition */
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-enter {
+  animation: page-enter 0.4s ease-out both;
+}
+
+/* Smooth page loader fade */
+@keyframes page-loader-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.animate-page-loader {
+  animation: page-loader-pulse 1.2s ease-in-out infinite;
+}
