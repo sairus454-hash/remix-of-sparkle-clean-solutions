@@ -89,7 +89,9 @@ const ChatBot = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
-  const [hasAutoOpened, setHasAutoOpened] = useState(false);
+  const [hasAutoOpened, setHasAutoOpened] = useState(() => {
+    try { return !!sessionStorage.getItem('chatbot_auto_opened'); } catch { return false; }
+  });
   const [showLeadForm, setShowLeadForm] = useState(false);
   const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', phone: '', contact: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
@@ -273,6 +275,7 @@ const ChatBot = () => {
     const timer = setTimeout(() => {
       setIsOpen(true);
       setHasAutoOpened(true);
+      try { sessionStorage.setItem('chatbot_auto_opened', '1'); } catch {}
       import('@/lib/gtm').then(m => m.gtmEvents.chatbotOpen('auto'));
     }, delay);
 
