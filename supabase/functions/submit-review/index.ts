@@ -70,25 +70,6 @@ serve(async (req) => {
       );
     }
 
-    // Server-side captcha validation
-    const captchaChallenge = typeof raw.captchaChallenge === 'string' ? raw.captchaChallenge : '';
-    const captchaAnswer = typeof raw.captchaAnswer === 'number' ? raw.captchaAnswer : NaN;
-    const challengeParts = captchaChallenge.match(/^(\d{1,2})\+(\d{1,2})$/);
-
-    if (!challengeParts || isNaN(captchaAnswer)) {
-      return new Response(
-        JSON.stringify({ error: 'Invalid captcha' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
-
-    const expectedAnswer = parseInt(challengeParts[1], 10) + parseInt(challengeParts[2], 10);
-    if (captchaAnswer !== expectedAnswer) {
-      return new Response(
-        JSON.stringify({ error: 'Incorrect captcha answer' }),
-        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
-      );
-    }
 
     const name = sanitize(raw.name, 100);
     const text = sanitize(raw.text, 1000);
