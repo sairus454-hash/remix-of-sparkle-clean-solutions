@@ -223,15 +223,20 @@ const Reviews = () => {
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Parallax background photo */}
-        <div className="fixed inset-0 z-0 overflow-hidden">
-          <img
-            ref={parallaxRef}
-            src={leatherSofaImage}
-            alt=""
-            aria-hidden="true"
-            className="w-full h-[120%] object-cover will-change-transform transition-none"
-            style={{ transform: `translate3d(0, ${parallaxOffset}px, 0)` }}
-          />
+        <div className="fixed inset-0 z-0 overflow-hidden" ref={parallaxRef}>
+          {bgImages.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-[120%] object-cover will-change-transform transition-opacity duration-1000"
+              style={{
+                transform: `translate3d(0, ${parallaxOffset}px, 0)`,
+                opacity: currentBgIndex === i ? 1 : 0,
+              }}
+            />
+          ))}
           <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         </div>
         <PremiumGlareBackground />
