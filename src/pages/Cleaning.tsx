@@ -432,18 +432,18 @@ const Cleaning = () => {
                   <CardServiceCalculator
                     category="cleaning"
                     items={[
-                      { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 37, image: calcExtraOven },
-                      { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 37, image: calcExtraHood },
+                      { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 40, image: calcExtraOven },
+                      { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 40, image: calcExtraHood },
                       { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 55, image: calcExtraCabinets },
-                      { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 23, image: calcExtraDishes },
-                      { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 37, image: calcExtraFridge },
-                      { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 17, image: calcExtraMicrowave },
-                      { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 28, image: calcExtraBalcony },
-                      { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: 28, image: calcExtraWindowInside },
-                      { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: 46, image: calcExtraIroning, unit: 'ч' },
-                      { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 9, image: calcExtraPetLitter },
-                      { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 46, image: calcExtraHours, unit: 'ч' },
-                      { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 28, image: calcExtraCloset },
+                      { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 25, image: calcExtraDishes },
+                      { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 40, image: calcExtraFridge },
+                      { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 20, image: calcExtraMicrowave },
+                      { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 30, image: calcExtraBalcony },
+                      { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: 30, image: calcExtraWindowInside },
+                      { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: 50, image: calcExtraIroning, unit: 'ч' },
+                      { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 10, image: calcExtraPetLitter },
+                      { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 50, image: calcExtraHours, unit: 'ч' },
+                      { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 30, image: calcExtraCloset },
                       { id: 'extra-moldRemoval', name: t.cleaning?.extras?.moldRemoval || 'Устранение грибка со стены', price: 80, image: calcExtraMoldRemoval },
                     ]}
                     onSendToForm={handleCardToForm}
