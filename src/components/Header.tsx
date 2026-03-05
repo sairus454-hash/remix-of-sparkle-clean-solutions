@@ -175,7 +175,11 @@ const Header = () => {
                           : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                     }`}
                   >
-                    {item.label}
+                    {item.highlight === 'ozone' ? (
+                      <span className="flex items-center gap-1">
+                        <span className="font-bold text-base leading-none">O<sub className="text-[9px]">₃</sub></span>
+                      </span>
+                    ) : item.label}
                   </Link>
                 </div>
               );
@@ -324,7 +328,12 @@ const Header = () => {
                         : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                   }`}
                 >
-                  {item.label}
+                  {item.highlight === 'ozone' ? (
+                    <span className="flex items-center gap-1.5">
+                      <span className="font-bold text-base leading-none">O<sub className="text-[9px]">₃</sub></span>
+                      <span>{item.label}</span>
+                    </span>
+                  ) : item.label}
                 </Link>
               );
             })}
