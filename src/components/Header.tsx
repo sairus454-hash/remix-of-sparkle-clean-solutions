@@ -215,39 +215,30 @@ const Header = () => {
                         <span className="relative z-10">O₃</span>
                       </motion.span>
                     ) : item.path === '/reviews' ? (
-                      <TooltipProvider delayDuration={200}>
-                        <Tooltip>
-                          <TooltipTrigger asChild>
+                      <motion.span
+                        className="relative inline-flex items-center gap-1"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        <span className="inline-flex items-center gap-0.5 relative">
+                          <motion.span
+                            className="absolute -inset-1 rounded-full bg-yellow-400/20 blur-sm"
+                            animate={{ opacity: [0.2, 0.6, 0.2], scale: [0.9, 1.15, 0.9] }}
+                            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+                          />
+                          {[0, 1, 2].map((i) => (
                             <motion.span
-                              className="relative inline-flex items-center gap-1"
-                              whileHover={{ scale: 1.1 }}
-                              transition={{ type: 'spring', stiffness: 300 }}
+                              key={i}
+                              className="relative text-yellow-400 text-sm"
+                              animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                              transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
                             >
-                              <span className="inline-flex items-center gap-0.5 relative">
-                                <motion.span
-                                  className="absolute -inset-1 rounded-full bg-yellow-400/20 blur-sm"
-                                  animate={{ opacity: [0.2, 0.6, 0.2], scale: [0.9, 1.15, 0.9] }}
-                                  transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-                                />
-                                {[0, 1, 2].map((i) => (
-                                  <motion.span
-                                    key={i}
-                                    className="relative text-yellow-400 text-sm"
-                                    animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
-                                    transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
-                                  >
-                                    ★
-                                  </motion.span>
-                                ))}
-                              </span>
-                              <span className="relative z-10">{item.label}</span>
+                              ★
                             </motion.span>
-                          </TooltipTrigger>
-                          <TooltipContent side="bottom">
-                            <p>{{ ru: 'Отзывы', en: 'Reviews', pl: 'Opinie', uk: 'Відгуки' }[language]}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
+                          ))}
+                        </span>
+                        <span className="relative z-10">{item.label}</span>
+                      </motion.span>
                     ) : item.highlight === 'auto' ? (
                       <span className="inline-flex items-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
