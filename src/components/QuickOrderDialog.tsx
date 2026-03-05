@@ -22,7 +22,7 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  
   const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
