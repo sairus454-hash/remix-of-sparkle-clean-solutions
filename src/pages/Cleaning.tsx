@@ -19,6 +19,7 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/u
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import cleaningTeam2 from '@/assets/cleaning-team-work-2.jpg';
 import cleaningTeam3 from '@/assets/cleaning-team-work-3.jpg';
@@ -166,7 +167,7 @@ const Cleaning = () => {
   ];
 
   const galleryImages = [
-    { src: cleaningTeam1, alt: t.cleaning?.gallery1 || 'Команда клинеров' },
+    { src: heroHouseCleaning, alt: t.cleaning?.gallery1 || 'Профессиональная уборка' },
     { src: cleaningTeam2, alt: t.cleaning?.gallery2 || 'Уборка кухни' },
     { src: cleaningTeam3, alt: t.cleaning?.gallery3 || 'Уборка комнат' },
   ];
