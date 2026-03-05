@@ -170,7 +170,7 @@ const Ozone = () => {
       </section>
 
       {/* What to know before cleaning */}
-      <section className="py-20 bg-gradient-section">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <CircularRevealCard index={0}>
