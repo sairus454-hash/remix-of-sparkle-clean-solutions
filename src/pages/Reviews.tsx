@@ -11,7 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from '@/hooks/use-toast';
 import { Star, Send, Loader2, MapPin, ExternalLink, Sparkles } from 'lucide-react';
-import PremiumGlareBackground from '@/components/PremiumGlareBackground';
+
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
 import reviewsInterior1 from '@/assets/reviews-interior-1.jpg';
