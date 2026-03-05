@@ -82,7 +82,6 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
       toast({ title: t.form.success, description: `${name}, ${t.form.success}` });
       setName('');
       setPhone('');
-      setIsCaptchaValid(false);
       setTimeout(() => onOpenChange(false), 2000);
     } catch {
       toast({
