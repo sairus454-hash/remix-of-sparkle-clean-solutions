@@ -161,6 +161,8 @@ const About3DCarousel = forwardRef<HTMLElement>((_, _ref) => {
       </div>
     </section>
   );
-};
+});
+
+About3DCarousel.displayName = 'About3DCarousel';
 
 export default About3DCarousel;
