@@ -1152,31 +1152,33 @@ ${PRICE_LIST.uk}
 — "Ми не чарівники, але диван після нас виглядає як новий! 🪄"`
 };
 
-// Rate limiting
-const rateLimits = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_MAX = 10;
-const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+// Persistent rate limiting via Supabase DB
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-function checkRateLimit(req: Request): boolean {
+async function checkRateLimit(req: Request, functionName: string, maxRequests: number, windowMinutes: number): Promise<boolean> {
   const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
                    req.headers.get('cf-connecting-ip') ||
                    req.headers.get('x-real-ip') || 'unknown';
-  const now = Date.now();
-
-  if (rateLimits.size > 500) {
-    for (const [key, value] of rateLimits.entries()) {
-      if (now > value.resetAt) rateLimits.delete(key);
+  try {
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    );
+    const { data, error } = await supabase.rpc('check_rate_limit', {
+      p_function_name: functionName,
+      p_client_ip: clientIP,
+      p_max_requests: maxRequests,
+      p_window_minutes: windowMinutes,
+    });
+    if (error) {
+      console.error('Rate limit check error:', error.message);
+      return true; // Allow on error to not block legitimate users
     }
-  }
-
-  const record = rateLimits.get(clientIP);
-  if (!record || now > record.resetAt) {
-    rateLimits.set(clientIP, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return data === true;
+  } catch (e) {
+    console.error('Rate limit exception:', e);
     return true;
   }
-  if (record.count >= RATE_LIMIT_MAX) return false;
-  record.count++;
-  return true;
 }
 
 const MAX_MESSAGES = 50;
@@ -1187,8 +1189,9 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Rate limit check
-  if (!checkRateLimit(req)) {
+  // Persistent rate limit check: 10 requests per 10 minutes
+  const allowed = await checkRateLimit(req, 'chat-bot', 10, 10);
+  if (!allowed) {
     return new Response(
       JSON.stringify({ error: 'Too many requests. Please try again later.', message: 'Слишком много запросов. Попробуйте через 10 минут.' }),
       { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }

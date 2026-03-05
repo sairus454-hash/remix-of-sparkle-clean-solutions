@@ -1,36 +1,36 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Rate limiting
-const rateLimits = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_MAX = 5;
-const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
-
-function checkRateLimit(req: Request): boolean {
+// Persistent rate limiting via Supabase DB
+async function checkRateLimit(req: Request, functionName: string, maxRequests: number, windowMinutes: number): Promise<boolean> {
   const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
                    req.headers.get('cf-connecting-ip') ||
                    req.headers.get('x-real-ip') || 'unknown';
-  const now = Date.now();
-
-  // Cleanup old entries
-  if (rateLimits.size > 500) {
-    for (const [key, value] of rateLimits.entries()) {
-      if (now > value.resetAt) rateLimits.delete(key);
+  try {
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    );
+    const { data, error } = await supabase.rpc('check_rate_limit', {
+      p_function_name: functionName,
+      p_client_ip: clientIP,
+      p_max_requests: maxRequests,
+      p_window_minutes: windowMinutes,
+    });
+    if (error) {
+      console.error('Rate limit check error:', error.message);
+      return true;
     }
-  }
-
-  const record = rateLimits.get(clientIP);
-  if (!record || now > record.resetAt) {
-    rateLimits.set(clientIP, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return data === true;
+  } catch (e) {
+    console.error('Rate limit exception:', e);
     return true;
   }
-  if (record.count >= RATE_LIMIT_MAX) return false;
-  record.count++;
-  return true;
 }
 
 // Input validation limits
@@ -65,8 +65,9 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  // Rate limit check
-  if (!checkRateLimit(req)) {
+  // Persistent rate limit: 5 requests per 10 minutes
+  const allowed = await checkRateLimit(req, 'send-telegram', 5, 10);
+  if (!allowed) {
     return new Response(
       JSON.stringify({ error: 'Too many requests. Please try again in 10 minutes.' }),
       { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }

@@ -6,32 +6,31 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Rate limiting
-const rateLimits = new Map<string, { count: number; resetAt: number }>();
-const RATE_LIMIT_MAX = 3;
-const RATE_LIMIT_WINDOW_MS = 30 * 60 * 1000; // 30 minutes
-
-function getClientIP(req: Request): string {
-  return req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    req.headers.get('cf-connecting-ip') ||
-    req.headers.get('x-real-ip') || 'unknown';
-}
-
-function checkRateLimit(ip: string): boolean {
-  const now = Date.now();
-  if (rateLimits.size > 500) {
-    for (const [key, value] of rateLimits.entries()) {
-      if (now > value.resetAt) rateLimits.delete(key);
+// Persistent rate limiting via Supabase DB
+async function checkRateLimit(req: Request, functionName: string, maxRequests: number, windowMinutes: number): Promise<boolean> {
+  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+                   req.headers.get('cf-connecting-ip') ||
+                   req.headers.get('x-real-ip') || 'unknown';
+  try {
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    );
+    const { data, error } = await supabase.rpc('check_rate_limit', {
+      p_function_name: functionName,
+      p_client_ip: clientIP,
+      p_max_requests: maxRequests,
+      p_window_minutes: windowMinutes,
+    });
+    if (error) {
+      console.error('Rate limit check error:', error.message);
+      return true;
     }
-  }
-  const record = rateLimits.get(ip);
-  if (!record || now > record.resetAt) {
-    rateLimits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return data === true;
+  } catch (e) {
+    console.error('Rate limit exception:', e);
     return true;
   }
-  if (record.count >= RATE_LIMIT_MAX) return false;
-  record.count++;
-  return true;
 }
 
 // Strip HTML tags and dangerous characters
@@ -49,9 +48,9 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  const clientIP = getClientIP(req);
-
-  if (!checkRateLimit(clientIP)) {
+  // Persistent rate limit: 3 requests per 30 minutes
+  const allowed = await checkRateLimit(req, 'submit-review', 3, 30);
+  if (!allowed) {
     return new Response(
       JSON.stringify({ error: 'Too many reviews. Please try again later.' }),
       { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
@@ -69,7 +68,6 @@ serve(async (req) => {
         { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
-
 
     const name = sanitize(raw.name, 100);
     const text = sanitize(raw.text, 1000);
