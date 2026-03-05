@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import { Coins, Home, Armchair, Sofa, BedDouble, Car, Wind, Package, Sparkles, Wrench } from 'lucide-react';
+import { Coins, Home, Armchair, Sofa, BedDouble, Car, Wind, Package, Sparkles, Wrench, ChevronDown } from 'lucide-react';
 
 // Cleaning images
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
@@ -138,6 +139,7 @@ interface CategorySection {
 
 const PriceSection = () => {
   const { t } = useLanguage();
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   const categories: CategorySection[] = [
     {
@@ -357,22 +359,37 @@ const PriceSection = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto space-y-12 sm:space-y-16">
+        <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
           {categories.map((cat, catIndex) => (
             <CircularRevealCard key={cat.id} index={catIndex}>
-              <div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <cat.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+              <div className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card">
+                <button
+                  onClick={() => setOpenCategory(openCategory === cat.id ? null : cat.id)}
+                  className="flex items-center gap-4 w-full p-4 sm:p-5 cursor-pointer text-left transition-colors hover:bg-accent/30"
+                >
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0">
+                    <cat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                   </div>
-                  <div>
-                    <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground">
                       {cat.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm">{cat.description}</p>
+                    <p className="text-muted-foreground text-xs sm:text-sm truncate">{cat.description}</p>
+                  </div>
+                  <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${openCategory === cat.id ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  className="grid transition-all duration-500 ease-in-out"
+                  style={{
+                    gridTemplateRows: openCategory === cat.id ? '1fr' : '0fr',
+                  }}
+                >
+                  <div className="overflow-hidden">
+                    <div className="p-4 sm:p-5 pt-0">
+                      <CardServiceCalculator category={cat.id} items={cat.items} />
+                    </div>
                   </div>
                 </div>
-                <CardServiceCalculator category={cat.id} items={cat.items} />
               </div>
             </CircularRevealCard>
           ))}
