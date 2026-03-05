@@ -100,12 +100,15 @@ const FreeDeliveryBadge = () => {
         </a>
         <a 
           href="mailto:sairus454@gmail.com" 
-          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA4335] flex items-center justify-center hover:scale-110 transition-transform shadow-md"
+          className="relative group w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA4335] flex items-center justify-center hover:scale-110 transition-transform shadow-md"
           aria-label="Email"
         >
           <svg className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
+          <span className="absolute right-full mr-2 px-2 py-1 bg-foreground text-background text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md">
+            sairus454@gmail.com
+          </span>
         </a>
       </div>
     </div>
