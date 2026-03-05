@@ -211,6 +211,28 @@ const Header = () => {
                         />
                         <span className="relative z-10">O₃</span>
                       </motion.span>
+                    ) : item.path === '/reviews' ? (
+                      <motion.span
+                        className="relative inline-flex items-center gap-0.5"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        <motion.span
+                          className="absolute -inset-1 rounded-full bg-yellow-400/20 blur-sm"
+                          animate={{ opacity: [0.2, 0.6, 0.2], scale: [0.9, 1.15, 0.9] }}
+                          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+                        />
+                        {[0, 1, 2].map((i) => (
+                          <motion.span
+                            key={i}
+                            className="relative text-yellow-400 text-sm"
+                            animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
+                            transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
+                          >
+                            ★
+                          </motion.span>
+                        ))}
+                      </motion.span>
                     ) : item.label}
                   </Link>
                 </div>
