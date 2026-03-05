@@ -68,9 +68,6 @@ const Reviews = () => {
   const [isLoadingReviews, setIsLoadingReviews] = useState(true);
   const [dbReviews, setDbReviews] = useState<Review[]>([]);
   const [showGooglePrompt, setShowGooglePrompt] = useState(false);
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
-  const [captchaChallenge, setCaptchaChallenge] = useState('');
-  const [captchaAnswer, setCaptchaAnswer] = useState(0);
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [formData, setFormData] = useState({
