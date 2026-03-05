@@ -33,7 +33,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     language
   } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  
   const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>(() => {
