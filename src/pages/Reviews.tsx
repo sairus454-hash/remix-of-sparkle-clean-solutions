@@ -174,7 +174,6 @@ const Reviews = () => {
         text: ''
       });
       setRating(0);
-      setIsCaptchaValid(false);
       setShowGooglePrompt(true);
     } catch (error) {
       console.error('Error submitting review:', error);
