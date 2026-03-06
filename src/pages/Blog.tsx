@@ -330,8 +330,18 @@ const blogArticles = {
       readTime: '2 min',
       tag: '🛋️ Czyszczenie',
     },
+    {
+      id: 9,
+      title: 'Dlaczego warto suszyć meble po czyszczeniu?',
+      summary: 'Po czyszczeniu w tapicerce pozostaje wilgoć, która może prowadzić do pleśni i nieprzyjemnego zapachu. Profesjonalne suszenie to niezbędny etap.',
+      content: 'Wiele osób uważa, że po czyszczeniu meble wystarczy zostawić do wyschnięcia na powietrzu. To błąd! Bez wymuszonego suszenia wilgoć wnika w głąb wypełnienia, tworząc idealne środowisko dla bakterii i pleśni.',
+      fullContent: '🌬️ Dlaczego suszenie jest tak ważne?\n\n💧 Resztkowa wilgoć to wróg mebli. Po ekstrakcji w tapicerce pozostaje 10–15% wilgoci. Bez suszenia może utrzymywać się 24–48 godzin, co prowadzi do:\n\n• Pojawienia się pleśni i grzybów wewnątrz wypełnienia\n• Nieprzyjemnego, stęchłego zapachu\n• Deformacji pianki i wypełnienia\n• Zacieków na tkaninie\n\n⏱️ Co daje profesjonalne suszenie?\n\n✔️ Skraca czas schnięcia z 24–48 godzin do 2–4 godzin\n✔️ Zapobiega powstawaniu pleśni w 100%\n✔️ Zachowuje kształt i strukturę wypełnienia\n✔️ Eliminuje zacieki i plamy\n✔️ Meble są gotowe do użytku w ciągu kilku godzin\n\n🎉 Promocja: suszenie mebli do końca wiosny — gratis!\n\nUżywamy profesjonalnych turbosuszarek, które równomiernie osuszają tapicerkę i wypełnienie. To szczególnie ważne dla materacy — spanie na wilgotnym materacu jest nie tylko nieprzyjemne, ale i niebezpieczne dla zdrowia.',
+      image: dryingAfterCleaning,
+      date: '2025-03-06',
+      readTime: '3 min',
+      tag: '🌬️ Suszenie',
+    },
   ],
-  uk: [
     {
       id: 1,
       title: 'Як часто потрібно чистити диван?',
