@@ -248,6 +248,7 @@ const blogArticles = {
       tag: '🌬️ Drying',
     },
   ],
+  pl: [
     {
       id: 1,
       title: 'Jak często czyścić sofę?',
