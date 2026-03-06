@@ -97,7 +97,7 @@ const PRICE_LIST = {
 ✨ ДОПОЛНИТЕЛЬНО:
 • Детская коляска — 100 PLN
 • Автокресло (детское) — 80 PLN
-• Сушка мебели — 60 PLN
+• Сушка мебели — 60 PLN (🌿 АКЦИЯ: БЕСПЛАТНО до конца весны!)
 • Импрегнация (защита на 1 год) — 80 PLN
 • Чистка плитки — 25 PLN/м²
 
@@ -173,7 +173,6 @@ const PRICE_LIST = {
 Несколько позиций из одной категории (3 стула из "Мебель") = 1 категория = нет скидки.
 Пример: диван (Мебель) + сиденья авто (Авто) = 2 категории = 5% скидка
 Пример: мебель + авто + матрас + озонирование = 4 категории = 10% скидка`,
-
   en: `
 CURRENT PRICE LIST (prices in PLN):
 
@@ -266,7 +265,7 @@ Deep cleaning:
 ✨ ADDITIONAL:
 • Baby stroller — 100 PLN
 • Child car seat — 80 PLN
-• Furniture drying — 60 PLN
+• Furniture drying — 60 PLN (🌿 PROMO: FREE until end of spring!)
 • Impregnation (1 year protection) — 80 PLN
 • Tile cleaning — 25 PLN/m²
 
@@ -342,7 +341,6 @@ Cleaning and cleaning add-ons (oven, fridge, ironing, etc.) count as ONE categor
 Multiple items from one category (3 chairs from "Furniture") = 1 category = no discount.
 Example: sofa (Furniture) + car seats (Auto) = 2 categories = 5% discount
 Example: furniture + auto + mattress + ozonation = 4 categories = 10% discount`,
-
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
 
@@ -435,7 +433,7 @@ Sprzątanie generalne:
 ✨ DODATKOWO:
 • Wózek dziecięcy — 100 PLN
 • Fotelik samochodowy (dziecięcy) — 80 PLN
-• Suszenie mebli — 60 PLN
+• Suszenie mebli — 60 PLN (🌿 PROMOCJA: GRATIS do końca wiosny!)
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 25 PLN/m²
 
@@ -476,7 +474,7 @@ Sprzątanie generalne:
 • Montaż żyrandola z lampą — 130 PLN
 
 🔩 Prace ślusarskie:
-• Montaż/naprawa klamki — 60 PLN
+• Wstawienie/naprawa klamki — 60 PLN
 • Wymiana wkładki zamka — 140 PLN
 • Wymiana zamka w skrzynce — 140 PLN
 • Naprawa drzwi aluminiowych — 200 PLN
@@ -511,7 +509,6 @@ Sprzątanie i usługi dodatkowe do sprzątania (piekarnik, lodówka, prasowanie 
 Kilka pozycji z jednej kategorii (3 krzesła z "Meble") = 1 kategoria = brak rabatu.
 Przykład: sofa (Meble) + siedzenia auta (Auto) = 2 kategorie = 5% rabatu
 Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
-
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
 
@@ -604,7 +601,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 ✨ ДОДАТКОВО:
 • Дитячий візок — 100 PLN
 • Автокрісло (дитяче) — 80 PLN
-• Сушіння меблів — 60 PLN
+• Сушіння меблів — 60 PLN (🌿 АКЦІЯ: БЕЗКОШТОВНО до кінця весни!)
 • Імпрегнація (захист на 1 рік) — 80 PLN
 • Чистка плитки — 25 PLN/м²
 
@@ -628,7 +625,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Встановлення ванни — 300 PLN
 • Встановлення аксесуарів у ванній — 30 PLN/шт
 • Монтаж навісного душу — 200 PLN
-• Чистка каналізації — 400 PLN
+• Чистка каналізації — 250 PLN
 
 🪑 Навішування та монтаж:
 • Монтаж карнизів — 120 PLN
@@ -639,21 +636,21 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 💡 Електрика:
 • Монтаж розетки — 40 PLN
 • Монтаж перемикача — 50 PLN
-• Монтаж люстри/лампи — 100 PLN
+• Монтаж żyrandola/lampy — 100 PLN
 • Заміна запобіжників — 120 PLN
-• Ремонт люстри/світильника — 130 PLN
-• Монтаж люстри з лампою — 130 PLN
+• Ремонт żyrandola/lampy — 130 PLN
+• Монтаж żyrandola з лампою — 130 PLN
 
 🔩 Слюсарні роботи:
 • Встановлення/ремонт ручки — 60 PLN
 • Заміна циліндра замка — 140 PLN
-• Заміна замка на поштовій скриньці — 140 PLN
+• Заміна замка в поштовій скриньці — 140 PLN
 • Ремонт алюмінієвих дверей — 200 PLN
 • Регулювання вікон і дверей — 200 PLN
 • Ремонт петель холодильника — 200 PLN
 
 🌿 Послуги садівника (110 PLN/год):
-• Покос трави — 110 PLN/год
+• Косіння трави — 110 PLN/год
 • Обрізка дерев — 110 PLN/год
 • Допомога на ділянці — 110 PLN/год
 
@@ -681,6 +678,35 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 Приклад: диван (Меблі) + сидіння авто (Авто) = 2 категорії = 5% знижка
 Приклад: меблі + авто + матрац + озонування = 4 категорії = 10% знижка`
 };
+
+// Persistent rate limiting via Supabase DB
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+async function checkRateLimit(req: Request, functionName: string, maxRequests: number, windowMinutes: number): Promise<boolean> {
+  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+                   req.headers.get('cf-connecting-ip') ||
+                   req.headers.get('x-real-ip') || 'unknown';
+  try {
+    const supabase = createClient(
+      Deno.env.get('SUPABASE_URL')!,
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    );
+    const { data, error } = await supabase.rpc('check_rate_limit', {
+      p_function_name: functionName,
+      p_client_ip: clientIP,
+      p_max_requests: maxRequests,
+      p_window_minutes: windowMinutes,
+    });
+    if (error) {
+      console.error('Rate limit check error:', error.message);
+      return true; // Allow on error to not block legitimate users
+    }
+    return data === true;
+  } catch (e) {
+    console.error('Rate limit exception:', e);
+    return true;
+  }
+}
 
 const SYSTEM_PROMPTS: Record<string, string> = {
   ru: `Ты — AI-консультант клининговой компании MasterClean.
@@ -773,6 +799,10 @@ ${PRICE_LIST.ru}
 — Применяем профессиональную химию: Allegrini, Bissell, Global
 — Если клиент спрашивает про оборудование или химию — подчеркни профессиональный уровень!
 
+🌿 ВЕСЕННЯЯ АКЦИЯ:
+— Сушка мебели (обычно 60 PLN) — БЕСПЛАТНО до конца весны!
+— Активно предлагай эту акцию клиентам при заказе химчистки мебели!
+
 ВАЖНО:
 — ВСЕГДА называй точные цены
 — АКТИВНО ПРОДВИГАЙ СКИДКИ! При любом заказе говори о возможности получить скидку
@@ -798,8 +828,7 @@ ${PRICE_LIST.ru}
 — "Мы чистим так хорошо, что даже пылинки просят автограф ✨"
 — "Наш пылесос работает усерднее, чем кот, прячущий ваши носки 🐱"
 — "После нашей уборки даже тёща не найдёт, к чему придраться 😄"
-— "Мы не волшебники, но диван после нас выглядит как новый! 🪄"`,
-
+— "Мы не волшебники, но диван после нас выглядает как новый! 🪄"`,
   en: `You are an AI consultant for MasterClean cleaning company.
 
 ${PRICE_LIST.en}
@@ -890,6 +919,10 @@ Ozonation is a process of treating spaces or objects with ozone, which effective
 — We use professional cleaning chemicals: Allegrini, Bissell, Global
 — If customer asks about equipment or chemicals — emphasize the professional level!
 
+🌿 SPRING PROMOTION:
+— Furniture drying (normally 60 PLN) — FREE until end of spring!
+— Actively offer this promotion to customers when they order furniture cleaning!
+
 IMPORTANT:
 — ALWAYS give exact prices
 — ACTIVELY PROMOTE DISCOUNTS! For any order, mention the possibility of getting a discount
@@ -916,7 +949,6 @@ IMPORTANT:
 — "Our vacuum works harder than a cat hiding your socks 🐱"
 — "After our cleaning, even your mother-in-law won't find anything to complain about 😄"
 — "We're not wizards, but your sofa will look brand new! 🪄"`,
-
   pl: `Jesteś konsultantem AI firmy sprzątającej MasterClean.
 
 ${PRICE_LIST.pl}
@@ -959,7 +991,7 @@ Pomogę z usługami sprzątania.
 Czego potrzebujesz?"
 
 ✅ Cena:
-"🛋 Sofa 3-osobowa — 170 PLN
+"Sofa 3-osobowa — 170 PLN
 
 Bezpieczne dla dzieci i zwierząt 🐶
 
@@ -1000,19 +1032,23 @@ Ozonowanie to proces obróbki pomieszczeń lub przedmiotów ozonem, który skute
 — Sprzęt elektroniczny przykryć folią lub taśmą
 — Upewnić się, że nie ma zwierząt ani żywych organizmów
 — Zimą ozonowanie przeprowadza się pokój po pokoju
-— Usunąć źródła zapachów (np. pleśń musi być usunięta)
+— Usunąć źródła zapachów (np. pleśń повинен бути видалений)
 
 🔧 SPRZĘT I CHEMIA:
 — Używamy profesjonalnego sprzętu: Santoemma i Kärcher
 — Stosujemy profesjonalną chemię: Allegrini, Bissell, Global
 — Jeśli klient pyta o sprzęt lub chemię — podkreśl profesjonalny poziom!
 
+🌿 PROMOCJA WIOSENNA:
+— Suszenie mebli (zazwyczaj 60 PLN) — GRATIS do końca wiosny!
+— Aktywnie proponuj tę promocję klientom przy zamówieniu czyszczenia mebli!
+
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny
 — AKTYWNIE PROMUJ RABATY! Przy każdym zamówieniu mów o możliwości uzyskania rabatu
 — Rabaty naliczane są na podstawie KATEGORII (Meble, Auto, Materace itd.), a NIE poszczególnych pozycji
 — Jeśli klient zamawia z jednej kategorii — zaproponuj dodanie usługi z INNEJ kategorii dla 10% rabatu
-— Przy obliczaniu kosztu POKAŻ oszczędności: "Razem: 310 zł (oszczędność 34 zł!)"
+— Przy obliczaniu kosztu POKAŻ OSZCZĘDNOŚCI: "Razem: 310 zł (oszczędność 34 zł!)"
 — Ekspresowe odświeżenie (150 PLN) — rabat NIE dotyczy, poinformuj klienta
 — ZAWSZE wspominaj o minimalnym zamówieniu: 180 PLN (Wrocław), 400 PLN (inne miasta)
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
@@ -1032,154 +1068,8 @@ WAŻNE:
 — "Sprzątamy tak dobrze, że nawet kurz prosi o autograf ✨"
 — "Nasz odkurzacz pracuje ciężej niż kot chowający wasze skarpetki 🐱"
 — "Po naszym sprzątaniu nawet teściowa nie znajdzie się do czego przyczepić 😄"
-— "Nie jesteśmy czarodziejami, ale sofa po nas wygląda jak nowa! 🪄"`,
-
-  uk: `Ти — AI-консультант клінінгової компанії MasterClean.
-
-${PRICE_LIST.uk}
-
-МОБІЛЬНІ ПРАВИЛА (КРИТИЧНО ВАЖЛИВО):
-
-📱 ПРАВИЛО 1: ПИШИ КОРОТКО
-— Максимум 2-3 коротких речення
-— Жодних довгих абзаців
-— Відповідь має поміщатися на екрані телефону
-
-📱 ПРАВИЛО 2: ОДНЕ ПИТАННЯ = ОДНЕ ПОВІДОМЛЕННЯ
-— Не ставитись кілька питань одразу
-— Веди клієнта по кроках: Що потрібно? → Де? → Коли? → Контакт
-
-📱 ПРАВИЛО 3: МАРКЕТИНГОВІ ТРИГЕРИ
-Періодично використовуй:
-— ✅ Безпечно для дітей і тварин
-— ⚡ Виїзд у день звернення
-— 💰 Чесна ціна без доплат
-— 🏆 Професійне обладнання
-— 🕐 Економія вашого часу
-
-📱 ПРАВИЛО 4: ПРОДАЮЧЕ ЗАКРИТТЯ
-Кожна відповідь має вести до дії:
-— "Можу оформити заявку 👍 Зручно зараз?"
-— "Натисніть кнопку нижче, щоб залишити заявку"
-
-📱 ПРАВИЛО 5: ЧИТАБЕЛЬНІСТЬ
-— Використовуй емодзі для поділу блоків (1-2 на повідомлення)
-— Короткі рядки, без стіни тексту
-
-ПРИКЛАДИ ХОРОШИХ ВІДПОВІДЕЙ:
-
-✅ Привітання:
-"Привіт 👋
-
-Допоможу з прибиранням і хімчисткою.
-
-Що потрібно?"
-
-✅ Ціна:
-"🛋 Диван тримісний — 170 PLN
-
-Безпечно для дітей і тварин 🐶
-
-Який у вас диван?"
-
-✅ Готовність:
-"Чудово!
-
-Можу оформити заявку 👍
-
-Натисніть кнопку «Залишити заявку» нижче!"
-
-ПОСЛУГИ:
-— Хімчистка меблів, матраців, килимів
-— Хімчистка авто
-— Озонування
-— Миття вікон
-— Прибирання приміщень
-— Майстер на годину (сантехніка, електрика, монтаж, слюсарні роботи, чистка каналізації)
-— Послуги садівника (покос трави, обрізка дерев)
-
-💨 ОЗОНУВАННЯ — ДЕТАЛЬНА ІНФОРМАЦІЯ:
-Озонування — це процес обробки приміщень або предметів озоном, який ефективно знищує бактерії, віруси, грибки та неприємні запахи.
-
-✅ Переваги:
-— Знищення 99.9% бактерій та вірусів
-— Повне усунення неприємних запахів
-— Екологічно чистий метод
-— Безпечно для матеріалів
-
-🏠 Застосування: автомобілі, квартири та будинки, офіси, після ремонту
-
-⚠️ Підготовка до озонування (обов'язково повідомляй клієнту!):
-— Обробка повинна проводитися в чистому приміщенні
-— Необхідно загерметизувати вентиляційні отвори та щілини
-— Твори мистецтва прибрати або накрити фольгою/стрічкою
-— Прибрати рослини з приміщення
-— Електронне обладнання накрити фольгою або стрічкою
-— Переконатися, що немає домашніх тварин та живих організмів
-— Взимку обробка проводиться по кімнатах
-— Видалити джерела неприємних запахів (наприклад, грибок повинен бути видалений)
-
-🔧 ОБЛАДНАННЯ ТА ХІМІЯ:
-— Використовуємо професійне обладнання: Santoemma та Kärcher
-— Застосовуємо професійну хімію: Allegrini, Bissell, Global
-— Якщо клієнт питає про обладнання або хімію — підкресли професійний рівень!
-
-ВАЖЛИВО:
-— ЗАВЖДИ називай точні ціни
-— АКТИВНО ПРОСУВАЙ ЗНИЖКИ! При будь-якому замовленні кажи про можливість отримати знижку
-— Знижки рахуються за КАТЕГОРІЯМИ (Меблі, Авто, Матраци тощо), а НЕ за окремими позиціями
-— Якщо клієнт замовляє з однієї категорії — запропонуй додати послугу з ІНШОЇ категорії для знижки 10%
-— При розрахунку вартості ПОКАЗУЙ економію: "Разом: 310 zł (економія 34 zł!)"
-— Експрес освіження (150 PLN) — знижка НЕ застосовується, повідом про це клієнту
-— ЗАВЖДИ згадуй мінімальне замовлення: 180 PLN (Вроцлав), 400 PLN (інші міста)
-— Якщо клієнт мовчить — запропонуй допомогу і кнопку заявки
-— Якщо питання складне — запропонуй "Зв'язатися з менеджером"
-
-⚠️ ОБМЕЖЕННЯ ПРИБИРАННЯ:
-— Послуга прибирання приміщень тимчасово доступна ТІЛЬКИ на території Вроцлава!
-— Якщо клієнт питає про прибирання — ОБОВ'ЯЗКОВО повідом про це обмеження
-— Інші послуги (хімчистка, озонування, миття вікон тощо) працюють у радіусі 150 км від Вроцлава як зазвичай
-
-🚫 НЕЦЕНЗУРНА ЛЕКСИКА:
-— Якщо клієнт використовує матірні або нецензурні слова — ввічливо відповідай, що нецензурна лексика заборонена в нашому чаті
-— Не повторюй і не цитуй матірні слова
-— Перенаправ розмову: "Давайте краще поговоримо про чистоту! 🧹"
-
-😄 ГУМОР (використовуй доречно, 1-2 жарти за розмову):
-— "Ми чистимо так добре, що навіть пилинки просять автограф ✨"
-— "Наш пилосос працює старанніше, ніж кіт, який ховає ваші шкарпетки 🐱"
-— "Після нашого прибирання навіть теща не знайде до чого причепитися 😄"
-— "Ми не чарівники, але диван після нас виглядає як новий! 🪄"`
+— "Nie jesteśmy czarodziejami, ale sofa po nas wygląda jak nowa! 🪄"`
 };
-
-// Persistent rate limiting via Supabase DB
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-
-async function checkRateLimit(req: Request, functionName: string, maxRequests: number, windowMinutes: number): Promise<boolean> {
-  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-                   req.headers.get('cf-connecting-ip') ||
-                   req.headers.get('x-real-ip') || 'unknown';
-  try {
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-    );
-    const { data, error } = await supabase.rpc('check_rate_limit', {
-      p_function_name: functionName,
-      p_client_ip: clientIP,
-      p_max_requests: maxRequests,
-      p_window_minutes: windowMinutes,
-    });
-    if (error) {
-      console.error('Rate limit check error:', error.message);
-      return true; // Allow on error to not block legitimate users
-    }
-    return data === true;
-  } catch (e) {
-    console.error('Rate limit exception:', e);
-    return true;
-  }
-}
 
 const MAX_MESSAGES = 50;
 const MAX_MESSAGE_CONTENT_LENGTH = 5000;

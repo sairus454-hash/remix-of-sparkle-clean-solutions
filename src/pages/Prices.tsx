@@ -250,7 +250,7 @@ const Prices = () => {
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 25, image: calcCarpet, unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: calcStroller },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: calcCarseat },
-        { id: 'drying', name: t.prices.items.drying, price: 60, image: calcDrying },
+        { id: 'drying', name: t.prices.items.drying, price: 60, image: calcDrying, promoBadge: t.promotions.dryingFreeSpring },
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80, image: calcImpregnation },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
         { id: 'moldRemoval', name: t.cleaning?.extras?.moldRemoval || 'Устранение грибка со стены', price: 80, image: calcMoldRemoval },

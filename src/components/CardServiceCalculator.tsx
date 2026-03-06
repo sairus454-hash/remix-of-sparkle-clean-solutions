@@ -16,6 +16,7 @@ interface ServiceCardItem {
   price: number;
   image: string;
   unit?: string;
+  promoBadge?: string;
 }
 
 interface CardServiceCalculatorProps {
@@ -213,6 +214,15 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                 <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
+              {/* Promo badge */}
+              {item.promoBadge && (
+                <div className="absolute top-2 left-2 z-10">
+                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md animate-pulse">
+                    {item.promoBadge}
+                  </span>
+                </div>
+              )}
+
               {/* Info */}
               <div className="p-3 w-full">
                 <h3 className={cn(
@@ -221,12 +231,19 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                 )}>
                   {item.name}
                 </h3>
-                <p className={cn(
-                  "text-sm sm:text-base font-bold transition-colors",
-                  selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
-                )}>
-                  {item.price} zł{item.unit ? `/${item.unit}` : ''}
-                </p>
+                {item.promoBadge ? (
+                  <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
+                    <span className="line-through text-muted-foreground mr-1">{item.price} zł</span>
+                    <span className="text-green-600 font-bold">0 zł</span>
+                  </p>
+                ) : (
+                  <p className={cn(
+                    "text-sm sm:text-base font-bold transition-colors",
+                    selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
+                  )}>
+                    {item.price} zł{item.unit ? `/${item.unit}` : ''}
+                  </p>
+                )}
               </div>
               </button>
             </CascadeCard>

@@ -64,6 +64,8 @@ export const translations = {
       services2plus: '2+ услуг: 5%',
       services4plusBadge: '4+ услуг',
       services4plus: '4+ услуг: 10%',
+      springDryingPromo: '🌿 Сушение мебели до конца весны — бесплатно!',
+      dryingFreeSpring: 'БЕСПЛАТНО до конца весны!',
       services6plus: '6+ услуг (VIP): 15%',
     },
     about: {
@@ -766,6 +768,8 @@ export const translations = {
       services2plus: '2+ services: 5%',
       services4plusBadge: '4+ services',
       services4plus: '4+ services: 10%',
+      springDryingPromo: '🌿 Furniture drying until end of spring — FREE!',
+      dryingFreeSpring: 'FREE until end of spring!',
       services6plus: '6+ services (VIP): 15%',
     },
     about: {
@@ -1468,6 +1472,8 @@ export const translations = {
       services2plus: '2+ usług: 5%',
       services4plusBadge: '4+ usług',
       services4plus: '4+ usług: 10%',
+      springDryingPromo: '🌿 Suszenie mebli do końca wiosny — gratis!',
+      dryingFreeSpring: 'GRATIS do końca wiosny!',
       services6plus: '6+ usług (VIP): 15%',
     },
     about: {
@@ -2170,6 +2176,8 @@ export const translations = {
       services2plus: '2+ послуг: 5%',
       services4plusBadge: '4+ послуг',
       services4plus: '4+ послуг: 10%',
+      springDryingPromo: '🌿 Сушіння меблів до кінця весни — безкоштовно!',
+      dryingFreeSpring: 'БЕЗКОШТОВНО до кінця весни!',
       services6plus: '6+ послуг (VIP): 15%',
     },
     about: {
