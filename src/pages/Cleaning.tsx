@@ -19,6 +19,7 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/u
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square, Zap } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import QuickOrderDialog from '@/components/QuickOrderDialog';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import heroHouseCleaning2 from '@/assets/hero-house-cleaning-2.jpg';
@@ -75,6 +76,7 @@ const Cleaning = () => {
   
   // Calculator state
   const [isCalcOpen, setIsCalcOpen] = useState(false);
+  const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [area, setArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
@@ -94,12 +96,7 @@ const Cleaning = () => {
   };
 
   const handleCleaningQuickOrder = () => {
-    formRef.current?.setCalculatorData(getCleaningCalcItems(), totalPrice);
-    toast({
-      title: '✅ ' + (language === 'ru' ? 'Принято!' : language === 'pl' ? 'Przyjęto!' : language === 'uk' ? 'Прийнято!' : 'Accepted!'),
-      description: language === 'ru' ? 'Услуги добавлены в заявку' : language === 'pl' ? 'Usługi dodane do zamówienia' : language === 'uk' ? 'Послуги додані до замовлення' : 'Services added to order',
-      duration: 2000,
-    });
+    setQuickOrderOpen(true);
   };
 
   const handleCleaningAddToFullOrder = () => {
@@ -781,6 +778,12 @@ const Cleaning = () => {
         </div>
       </section>
     </Layout>
+    <QuickOrderDialog
+      open={quickOrderOpen}
+      onOpenChange={setQuickOrderOpen}
+      items={getCleaningCalcItems()}
+      total={totalPrice}
+    />
     </>
   );
 };
