@@ -506,17 +506,13 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {recommendations.map(rec => (
-                    <button
+                    <a
                       key={rec.key}
-                      type="button"
-                      onClick={() => {
-                        if (onClose) onClose();
-                        window.location.href = rec.page;
-                      }}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 text-primary border border-primary/20 hover:border-primary/40 transition-all cursor-pointer"
+                      href={rec.page}
+                      className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 text-primary border border-primary/20 hover:border-primary/40 transition-all cursor-pointer no-underline"
                     >
                       {rec.label[language] || rec.label.ru}
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>
