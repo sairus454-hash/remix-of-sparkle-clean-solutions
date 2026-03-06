@@ -19,7 +19,7 @@ interface LocationState {
 }
 
 const Contacts = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const location = useLocation();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>();
   const { showSplash, handleSplashComplete } = useSplash('contacts');
