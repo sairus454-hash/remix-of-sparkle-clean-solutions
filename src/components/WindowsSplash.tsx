@@ -12,12 +12,12 @@ const WindowsSplash = ({ onComplete }: WindowsSplashProps) => {
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 1200);
+    }, 800);
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 1500);
+    }, 1050);
 
     return () => {
       clearTimeout(fadeTimer);
