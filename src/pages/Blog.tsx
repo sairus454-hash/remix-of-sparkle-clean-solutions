@@ -342,6 +342,7 @@ const blogArticles = {
       tag: '🌬️ Suszenie',
     },
   ],
+  uk: [
     {
       id: 1,
       title: 'Як часто потрібно чистити диван?',
