@@ -61,7 +61,7 @@ const App = () => (
             <SecurityHeaders />
             <PWAUpdatePrompt />
             <ScrollToTop />
-            <ScrollButton />
+            
             <Suspense fallback={null}>
               <FreeDeliveryBadge />
             </Suspense>
