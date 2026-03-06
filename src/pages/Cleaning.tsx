@@ -19,6 +19,7 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/u
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square, Zap } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import QuickOrderDialog from '@/components/QuickOrderDialog';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
 import heroHouseCleaning2 from '@/assets/hero-house-cleaning-2.jpg';
