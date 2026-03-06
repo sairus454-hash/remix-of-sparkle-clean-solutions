@@ -310,11 +310,20 @@ const Cleaning = () => {
                 totalPrice={totalPrice}
                 standardServices={standardServices}
                 generalServices={generalServices}
-                onOrder={() => {
+                onQuickOrder={() => {
                   setIsCalcOpen(false);
-                  handleSendToForm();
+                  handleCleaningQuickOrder();
+                }}
+                onAddToFullOrder={() => {
+                  setIsCalcOpen(false);
+                  handleCleaningAddToFullOrder();
                 }}
                 onExtrasHint={() => {
+                  setIsCalcOpen(false);
+                  setTimeout(() => extrasSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+                }}
+                t={t}
+              />
                   setIsCalcOpen(false);
                   setTimeout(() => extrasSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
                 }}
