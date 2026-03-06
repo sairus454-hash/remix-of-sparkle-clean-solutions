@@ -20,6 +20,7 @@ import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
 import topExecutor2025 from '@/assets/top-executor-2025.jpg';
 import sofaSeatsGuide from '@/assets/sofa-seats-guide.jpg';
 import sofaSeatsGuidePl from '@/assets/sofa-seats-guide-pl.jpg';
+import dryingAfterCleaning from '@/assets/drying-after-cleaning-blog.jpg';
 
 // Lazy image: renders only when near viewport
 const LazyBlogImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
@@ -141,6 +142,17 @@ const blogArticles = {
       readTime: '2 мин',
       tag: '🛋️ Химчистка',
     },
+    {
+      id: 9,
+      title: 'Зачем сушить мебель после химчистки?',
+      summary: 'После химчистки в обивке остаётся влага, которая может привести к плесени и неприятному запаху. Профессиональная сушка — обязательный этап качественной химчистки.',
+      content: 'Многие думают, что после химчистки мебель достаточно оставить сохнуть на воздухе. Но это ошибка! Без принудительной сушки влага проникает вглубь наполнителя, создавая идеальную среду для размножения бактерий и плесени.',
+      fullContent: '🌬️ Почему сушение так важно?\n\n💧 Остаточная влага — враг мебели. После экстракции в обивке остаётся 10–15% влаги. Без сушки она может задержаться на 24–48 часов, что приводит к:\n\n• Появлению плесени и грибка внутри наполнителя\n• Неприятному затхлому запаху\n• Деформации поролона и набивки\n• Разводам на ткани при высыхании\n\n⏱️ Что даёт профессиональная сушка?\n\n✔️ Сокращает время высыхания с 24–48 часов до 2–4 часов\n✔️ Предотвращает образование плесени на 100%\n✔️ Сохраняет форму и структуру наполнителя\n✔️ Исключает появление разводов и пятен\n✔️ Мебелью можно пользоваться уже через несколько часов\n\n🎉 Акция: сушение мебели до конца весны — бесплатно!\n\nМы используем мощные профессиональные турбосушки, которые равномерно просушивают обивку и наполнитель. Это особенно важно для матрасов — спать на влажном матрасе не только неприятно, но и опасно для здоровья.',
+      image: dryingAfterCleaning,
+      date: '2025-03-06',
+      readTime: '3 мин',
+      tag: '🌬️ Сушение',
+    },
   ],
   en: [
     {
@@ -223,6 +235,17 @@ const blogArticles = {
       date: '2025-03-02',
       readTime: '2 min',
       tag: '🛋️ Cleaning',
+    },
+    {
+      id: 9,
+      title: 'Why Dry Furniture After Cleaning?',
+      summary: 'After cleaning, residual moisture can lead to mold and bad odors. Professional drying is an essential step for quality upholstery care.',
+      content: 'Many people think air-drying is enough after cleaning. But without forced drying, moisture penetrates deep into the padding, creating a perfect environment for bacteria and mold.',
+      fullContent: '🌬️ Why is drying so important?\n\n💧 Residual moisture is furniture\'s enemy. After extraction, 10–15% moisture remains. Without drying it can linger 24–48 hours, causing:\n\n• Mold and mildew inside the padding\n• Musty, unpleasant odors\n• Foam and stuffing deformation\n• Water stains on fabric\n\n⏱️ What does professional drying provide?\n\n✔️ Reduces drying time from 24–48 hours to 2–4 hours\n✔️ 100% mold prevention\n✔️ Preserves padding shape and structure\n✔️ Eliminates water marks and stains\n✔️ Furniture is ready to use within hours\n\n🎉 Promotion: furniture drying until end of spring — FREE!\n\nWe use powerful professional turbo dryers that evenly dry upholstery and padding. This is especially important for mattresses — sleeping on a damp mattress is not only unpleasant but also a health risk.',
+      image: dryingAfterCleaning,
+      date: '2025-03-06',
+      readTime: '3 min',
+      tag: '🌬️ Drying',
     },
   ],
   pl: [
@@ -307,6 +330,17 @@ const blogArticles = {
       readTime: '2 min',
       tag: '🛋️ Czyszczenie',
     },
+    {
+      id: 9,
+      title: 'Dlaczego warto suszyć meble po czyszczeniu?',
+      summary: 'Po czyszczeniu w tapicerce pozostaje wilgoć, która może prowadzić do pleśni i nieprzyjemnego zapachu. Profesjonalne suszenie to niezbędny etap.',
+      content: 'Wiele osób uważa, że po czyszczeniu meble wystarczy zostawić do wyschnięcia na powietrzu. To błąd! Bez wymuszonego suszenia wilgoć wnika w głąb wypełnienia, tworząc idealne środowisko dla bakterii i pleśni.',
+      fullContent: '🌬️ Dlaczego suszenie jest tak ważne?\n\n💧 Resztkowa wilgoć to wróg mebli. Po ekstrakcji w tapicerce pozostaje 10–15% wilgoci. Bez suszenia może utrzymywać się 24–48 godzin, co prowadzi do:\n\n• Pojawienia się pleśni i grzybów wewnątrz wypełnienia\n• Nieprzyjemnego, stęchłego zapachu\n• Deformacji pianki i wypełnienia\n• Zacieków na tkaninie\n\n⏱️ Co daje profesjonalne suszenie?\n\n✔️ Skraca czas schnięcia z 24–48 godzin do 2–4 godzin\n✔️ Zapobiega powstawaniu pleśni w 100%\n✔️ Zachowuje kształt i strukturę wypełnienia\n✔️ Eliminuje zacieki i plamy\n✔️ Meble są gotowe do użytku w ciągu kilku godzin\n\n🎉 Promocja: suszenie mebli do końca wiosny — gratis!\n\nUżywamy profesjonalnych turbosuszarek, które równomiernie osuszają tapicerkę i wypełnienie. To szczególnie ważne dla materacy — spanie na wilgotnym materacu jest nie tylko nieprzyjemne, ale i niebezpieczne dla zdrowia.',
+      image: dryingAfterCleaning,
+      date: '2025-03-06',
+      readTime: '3 min',
+      tag: '🌬️ Suszenie',
+    },
   ],
   uk: [
     {
@@ -389,6 +423,17 @@ const blogArticles = {
       date: '2025-03-02',
       readTime: '2 хв',
       tag: '🛋️ Хімчистка',
+    },
+    {
+      id: 9,
+      title: 'Навіщо сушити меблі після хімчистки?',
+      summary: 'Після хімчистки в оббивці залишається волога, яка може призвести до цвілі та неприємного запаху. Професійне сушіння — обов\'язковий етап.',
+      content: 'Багато хто думає, що після хімчистки меблі достатньо залишити сохнути на повітрі. Але це помилка! Без примусового сушіння волога проникає вглиб наповнювача, створюючи ідеальне середовище для бактерій і цвілі.',
+      fullContent: '🌬️ Чому сушіння таке важливе?\n\n💧 Залишкова волога — ворог меблів. Після екстракції в оббивці залишається 10–15% вологи. Без сушіння вона може затриматися на 24–48 годин, що призводить до:\n\n• Появи цвілі та грибка всередині наповнювача\n• Неприємного затхлого запаху\n• Деформації поролону та набивки\n• Розводів на тканині\n\n⏱️ Що дає професійне сушіння?\n\n✔️ Скорочує час висихання з 24–48 годин до 2–4 годин\n✔️ Запобігає утворенню цвілі на 100%\n✔️ Зберігає форму та структуру наповнювача\n✔️ Виключає появу розводів і плям\n✔️ Меблями можна користуватися вже через кілька годин\n\n🎉 Акція: сушіння меблів до кінця весни — безкоштовно!\n\nМи використовуємо потужні професійні турбосушки, які рівномірно просушують оббивку та наповнювач. Це особливо важливо для матраців — спати на вологому матраці не тільки неприємно, але й небезпечно для здоров\'я.',
+      image: dryingAfterCleaning,
+      date: '2025-03-06',
+      readTime: '3 хв',
+      tag: '🌬️ Сушіння',
     },
   ],
 };
