@@ -20,6 +20,7 @@ import autoCleaning2 from '@/assets/auto-cleaning-2.jpg';
 import topExecutor2025 from '@/assets/top-executor-2025.jpg';
 import sofaSeatsGuide from '@/assets/sofa-seats-guide.jpg';
 import sofaSeatsGuidePl from '@/assets/sofa-seats-guide-pl.jpg';
+import dryingAfterCleaning from '@/assets/drying-after-cleaning-blog.jpg';
 
 // Lazy image: renders only when near viewport
 const LazyBlogImage = ({ src, alt, className }: { src: string; alt: string; className?: string }) => {
