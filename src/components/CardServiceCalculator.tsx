@@ -141,6 +141,7 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
       sessionStorage.setItem('mc_calculator_total', String(newTotal));
     } catch {}
     toast.success(t.form?.addedToOrder || 'Добавлено в заявку ✓', {
+      duration: 2000,
       description: `${calcItems.length} ${calcItems.length === 1 ? 'услуга' : 'услуг'} — ${total} zł`,
       action: {
         label: t.form?.fullOrder || 'Общая заявка',
