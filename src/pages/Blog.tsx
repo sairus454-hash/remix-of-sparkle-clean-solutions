@@ -436,8 +436,8 @@ const blogArticles = {
       tag: '🌬️ Сушіння',
     },
   ],
+};
 
-const blogTitles = {
   ru: { title: 'Блог чистоты', subtitle: 'Полезные статьи о химчистке, уборке и уходе за вещами', back: 'На главную', social: 'Мы в соцсетях' },
   en: { title: 'Cleanliness Blog', subtitle: 'Useful articles about cleaning and care', back: 'Back to Home', social: 'Follow Us' },
   pl: { title: 'Blog czystości', subtitle: 'Przydatne artykuły o czyszczeniu i pielęgnacji', back: 'Strona główna', social: 'Nasze media' },
