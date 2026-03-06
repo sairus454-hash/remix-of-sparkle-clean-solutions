@@ -12,7 +12,7 @@ export const translations = {
       ozone: 'Озонирование',
       handyman: 'Мастер на час',
       reviews: 'Отзывы',
-      contacts: 'Контакты',
+      contacts: 'Общая заявка',
       windows: 'Мойка окон',
       cleaning: 'Уборка',
       blog: 'Блог',
