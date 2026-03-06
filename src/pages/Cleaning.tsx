@@ -778,6 +778,12 @@ const Cleaning = () => {
         </div>
       </section>
     </Layout>
+    <QuickOrderDialog
+      open={quickOrderOpen}
+      onOpenChange={setQuickOrderOpen}
+      items={getCleaningCalcItems()}
+      total={totalPrice}
+    />
     </>
   );
 };
