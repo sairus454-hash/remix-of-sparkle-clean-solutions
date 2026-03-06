@@ -39,13 +39,13 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>(() => {
     try {
-      const saved = localStorage.getItem('mc_calculator_items');
+      const saved = sessionStorage.getItem('mc_calculator_items');
       return saved ? JSON.parse(saved) : [];
     } catch { return []; }
   });
   const [calculatorTotal, setCalculatorTotal] = useState(() => {
     try {
-      const saved = localStorage.getItem('mc_calculator_total');
+      const saved = sessionStorage.getItem('mc_calculator_total');
       return saved ? Number(saved) : 0;
     } catch { return 0; }
   });
