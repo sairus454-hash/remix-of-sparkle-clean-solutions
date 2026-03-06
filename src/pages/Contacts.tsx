@@ -97,7 +97,7 @@ const Contacts = () => {
       </section>
 
       {/* Contact Info & Form */}
-      <section className="py-20 bg-card">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
