@@ -96,12 +96,7 @@ const Cleaning = () => {
   };
 
   const handleCleaningQuickOrder = () => {
-    formRef.current?.setCalculatorData(getCleaningCalcItems(), totalPrice);
-    toast({
-      title: '✅ ' + (language === 'ru' ? 'Принято!' : language === 'pl' ? 'Przyjęto!' : language === 'uk' ? 'Прийнято!' : 'Accepted!'),
-      description: language === 'ru' ? 'Услуги добавлены в заявку' : language === 'pl' ? 'Usługi dodane do zamówienia' : language === 'uk' ? 'Послуги додані до замовлення' : 'Services added to order',
-      duration: 2000,
-    });
+    setQuickOrderOpen(true);
   };
 
   const handleCleaningAddToFullOrder = () => {
