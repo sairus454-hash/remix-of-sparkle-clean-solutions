@@ -2,6 +2,7 @@ import { ReactNode, lazy, Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CleaningBackground from './CleaningBackground';
+import FloatingOrderSummary from './FloatingOrderSummary';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 // Lazy load ChatBot - it's heavy and not needed on initial render
@@ -40,6 +41,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Suspense fallback={null}>
         <ChatBot />
       </Suspense>
+      <FloatingOrderSummary />
     </div>
   );
 };
