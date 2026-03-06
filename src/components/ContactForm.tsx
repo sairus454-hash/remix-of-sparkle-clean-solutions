@@ -498,7 +498,14 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             const recommendations = missing.slice(0, 4);
             
             return (
-              <div className="mt-2 p-2.5 bg-primary/10 rounded-lg border border-primary/20">
+              <motion.div
+                key={`rec-${catCount}-${nextDiscount}`}
+                initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -8, scale: 0.96 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
+                className="mt-2 p-2.5 bg-primary/10 rounded-lg border border-primary/20"
+              >
                 <div className="flex items-start gap-1.5 mb-2">
                   <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <span className="text-xs font-semibold text-primary">
@@ -506,17 +513,21 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {recommendations.map(rec => (
-                    <a
+                  {recommendations.map((rec, i) => (
+                    <motion.a
                       key={rec.key}
                       href={rec.page}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 text-primary border border-primary/20 hover:border-primary/40 transition-all cursor-pointer no-underline"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.1 + i * 0.07, duration: 0.25, ease: 'easeOut' }}
+                      whileHover={{ scale: 1.08 }}
+                      className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 text-primary border border-primary/20 hover:border-primary/40 transition-colors cursor-pointer no-underline"
                     >
                       {rec.label[language] || rec.label.ru}
-                    </a>
+                    </motion.a>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             );
           })()}
           
