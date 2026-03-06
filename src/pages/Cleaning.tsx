@@ -324,11 +324,6 @@ const Cleaning = () => {
                 }}
                 t={t}
               />
-                  setIsCalcOpen(false);
-                  setTimeout(() => extrasSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
-                }}
-                t={t}
-              />
             </div>
           </DrawerContent>
         </Drawer>
