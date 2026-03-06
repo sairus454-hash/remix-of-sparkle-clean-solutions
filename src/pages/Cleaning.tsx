@@ -782,7 +782,8 @@ interface CleaningCalculatorContentProps {
   totalPrice: number;
   standardServices: string[];
   generalServices: string[];
-  onOrder: () => void;
+  onQuickOrder: () => void;
+  onAddToFullOrder: () => void;
   onExtrasHint: () => void;
   t: any;
 }
@@ -796,7 +797,8 @@ const CleaningCalculatorContent = ({
   totalPrice,
   standardServices,
   generalServices,
-  onOrder,
+  onQuickOrder,
+  onAddToFullOrder,
   onExtrasHint,
   t,
 }: CleaningCalculatorContentProps) => (
