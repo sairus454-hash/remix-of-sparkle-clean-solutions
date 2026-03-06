@@ -455,6 +455,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           )}
 
           {/* Smart recommendations to increase discount */}
+          <AnimatePresence mode="wait">
           {(() => {
             const existingCats = new Set(calculatorItems.map(item => {
               const cat = item.category || item.id;
