@@ -96,15 +96,15 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     }
   }));
 
-  // Persist calculator data to localStorage
+  // Persist calculator data to sessionStorage
   useEffect(() => {
     try {
       if (calculatorItems.length > 0) {
-        localStorage.setItem('mc_calculator_items', JSON.stringify(calculatorItems));
-        localStorage.setItem('mc_calculator_total', String(calculatorTotal));
+        sessionStorage.setItem('mc_calculator_items', JSON.stringify(calculatorItems));
+        sessionStorage.setItem('mc_calculator_total', String(calculatorTotal));
       } else {
-        localStorage.removeItem('mc_calculator_items');
-        localStorage.removeItem('mc_calculator_total');
+        sessionStorage.removeItem('mc_calculator_items');
+        sessionStorage.removeItem('mc_calculator_total');
       }
     } catch {}
   }, [calculatorItems, calculatorTotal]);
