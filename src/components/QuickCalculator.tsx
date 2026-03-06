@@ -71,6 +71,7 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
         const extras = getExtrasTotal(selectedExtras, cleaningType);
         return base + extras;
       }
+      case 'furniture':
         return furnitureOptions.find(o => o.id === furnitureType)?.price || 140;
       case 'mattress':
         return mattressOptions.find(o => o.id === mattressType)?.price || 180;
