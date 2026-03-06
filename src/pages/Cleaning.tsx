@@ -402,15 +402,28 @@ const Cleaning = () => {
                     </h4>
                   </div>
                   
-                  <button
-                    onClick={() => {
-                      setIsCalcOpen(false);
-                      handleSendToForm();
-                    }}
-                    className="w-full py-4 px-6 bg-gradient-hero text-primary-foreground font-semibold text-lg rounded-xl hover:opacity-90 transition-opacity shadow-glow"
-                  >
-                    {t.cleaning?.order || 'Заказать уборку'}
-                  </button>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button
+                      onClick={() => {
+                        setIsCalcOpen(false);
+                        handleCleaningQuickOrder();
+                      }}
+                      className="w-full py-4 px-6 bg-fresh text-white font-semibold text-lg rounded-xl hover:bg-fresh/90 transition-opacity shadow-glow flex items-center justify-center gap-2"
+                    >
+                      <Zap className="w-5 h-5" />
+                      {t.form?.quickOrder || 'Быстрый заказ'}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setIsCalcOpen(false);
+                        handleCleaningAddToFullOrder();
+                      }}
+                      className="w-full py-4 px-6 border border-primary/40 text-primary font-semibold text-lg rounded-xl hover:bg-primary/10 transition-colors flex items-center justify-center gap-2"
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                      {t.form?.addToFullOrder || 'В общую заявку'}
+                    </button>
+                  </div>
                   
                    <p className="text-xs text-muted-foreground text-center">
                      {t.calculator?.minOrder}
