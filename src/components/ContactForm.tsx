@@ -39,13 +39,13 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>(() => {
     try {
-      const saved = localStorage.getItem('mc_calculator_items');
+      const saved = sessionStorage.getItem('mc_calculator_items');
       return saved ? JSON.parse(saved) : [];
     } catch { return []; }
   });
   const [calculatorTotal, setCalculatorTotal] = useState(() => {
     try {
-      const saved = localStorage.getItem('mc_calculator_total');
+      const saved = sessionStorage.getItem('mc_calculator_total');
       return saved ? Number(saved) : 0;
     } catch { return 0; }
   });
@@ -96,15 +96,15 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     }
   }));
 
-  // Persist calculator data to localStorage
+  // Persist calculator data to sessionStorage
   useEffect(() => {
     try {
       if (calculatorItems.length > 0) {
-        localStorage.setItem('mc_calculator_items', JSON.stringify(calculatorItems));
-        localStorage.setItem('mc_calculator_total', String(calculatorTotal));
+        sessionStorage.setItem('mc_calculator_items', JSON.stringify(calculatorItems));
+        sessionStorage.setItem('mc_calculator_total', String(calculatorTotal));
       } else {
-        localStorage.removeItem('mc_calculator_items');
-        localStorage.removeItem('mc_calculator_total');
+        sessionStorage.removeItem('mc_calculator_items');
+        sessionStorage.removeItem('mc_calculator_total');
       }
     } catch {}
   }, [calculatorItems, calculatorTotal]);
@@ -183,8 +183,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       message: ''
     }));
     try {
-      localStorage.removeItem('mc_calculator_items');
-      localStorage.removeItem('mc_calculator_total');
+      sessionStorage.removeItem('mc_calculator_items');
+      sessionStorage.removeItem('mc_calculator_total');
     } catch {}
   };
   const removeCalculatorItem = (itemId: string) => {
