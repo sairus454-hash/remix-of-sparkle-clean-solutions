@@ -85,23 +85,45 @@ const Cleaning = () => {
     ? (t.cleaning?.standardCleaning || 'Стандартная уборка')
     : (t.cleaning?.generalCleaning || 'Генеральная уборка');
 
+  const getCleaningCalcItems = () => [
+    { id: 'cleaning-area', name: `${cleaningTypeLabel} ${area} м²`, price: totalPrice, quantity: 1 }
+  ];
+
   const handleSendToForm = () => {
-    const cleaningData = [
-      { id: 'cleaning-area', name: `${cleaningTypeLabel} ${area} м²`, price: totalPrice, quantity: 1 }
-    ];
-    formRef.current?.setCalculatorData(cleaningData, totalPrice);
+    formRef.current?.setCalculatorData(getCleaningCalcItems(), totalPrice);
   };
 
-  const handleCardToForm = (calcItems: any[], calcTotal: number) => {
-    formRef.current?.setCalculatorData(calcItems, calcTotal);
-  };
-
-  const handleQuickAdd = (calcItems: any[], calcTotal: number) => {
-    formRef.current?.setCalculatorData(calcItems, calcTotal);
+  const handleCleaningQuickOrder = () => {
+    formRef.current?.setCalculatorData(getCleaningCalcItems(), totalPrice);
     toast({
       title: '✅ ' + (language === 'ru' ? 'Принято!' : language === 'pl' ? 'Przyjęto!' : language === 'uk' ? 'Прийнято!' : 'Accepted!'),
       description: language === 'ru' ? 'Услуги добавлены в заявку' : language === 'pl' ? 'Usługi dodane do zamówienia' : language === 'uk' ? 'Послуги додані до замовлення' : 'Services added to order',
       duration: 2000,
+    });
+  };
+
+  const handleCleaningAddToFullOrder = () => {
+    const items = getCleaningCalcItems();
+    try {
+      const existing = JSON.parse(localStorage.getItem('mc_calculator_items') || '[]');
+      const merged = [...existing];
+      items.forEach(item => {
+        const idx = merged.findIndex((e: any) => e.id === item.id);
+        if (idx >= 0) {
+          merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
+        } else {
+          merged.push({ ...item, category: 'cleaning' });
+        }
+      });
+      const newTotal = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
+      localStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+      localStorage.setItem('mc_calculator_total', String(newTotal));
+    } catch {}
+    toast({
+      title: '✅ ' + (t.form?.addedToOrder || 'Добавлено в заявку ✓'),
+      description: `${totalPrice} zł`,
+      action: <Button variant="outline" size="sm" onClick={() => window.location.href = '/contacts'}>{t.form?.fullOrder || 'Общая заявка'}</Button>,
+      duration: 8000,
     });
   };
 
