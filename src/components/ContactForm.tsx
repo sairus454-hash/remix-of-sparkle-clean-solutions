@@ -531,6 +531,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               </motion.div>
             );
           })()}
+          </AnimatePresence>
           
           {/* Total */}
           <div className="mt-3 pt-3 border-t border-fresh/30 flex justify-between items-center">
