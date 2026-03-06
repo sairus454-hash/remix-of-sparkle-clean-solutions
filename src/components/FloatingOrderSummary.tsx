@@ -17,8 +17,8 @@ const FloatingOrderSummary = () => {
 
   const readStorage = useCallback(() => {
     try {
-      const stored = JSON.parse(localStorage.getItem('mc_calculator_items') || '[]');
-      const storedTotal = parseFloat(localStorage.getItem('mc_calculator_total') || '0');
+      const stored = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+      const storedTotal = parseFloat(sessionStorage.getItem('mc_calculator_total') || '0');
       setItems(stored);
       setTotal(storedTotal);
     } catch {
@@ -70,8 +70,8 @@ const FloatingOrderSummary = () => {
 
   const handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
-    localStorage.removeItem('mc_calculator_items');
-    localStorage.removeItem('mc_calculator_total');
+    sessionStorage.removeItem('mc_calculator_items');
+    sessionStorage.removeItem('mc_calculator_total');
     setItems([]);
     setTotal(0);
     setIsExpanded(false);

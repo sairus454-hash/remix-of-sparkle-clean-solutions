@@ -102,19 +102,19 @@ const Cleaning = () => {
   const handleCleaningAddToFullOrder = () => {
     const items = getCleaningCalcItems();
     try {
-      const existing = JSON.parse(localStorage.getItem('mc_calculator_items') || '[]');
+      const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
       const merged = [...existing];
       items.forEach(item => {
         const idx = merged.findIndex((e: any) => e.id === item.id);
         if (idx >= 0) {
           merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
         } else {
-          merged.push({ ...item, category: 'cleaning' });
+          merged.push(item);
         }
       });
       const newTotal = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
-      localStorage.setItem('mc_calculator_items', JSON.stringify(merged));
-      localStorage.setItem('mc_calculator_total', String(newTotal));
+      sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+      sessionStorage.setItem('mc_calculator_total', String(newTotal));
     } catch {}
     toast({
       title: '✅ ' + (t.form?.addedToOrder || 'Добавлено в заявку ✓'),
