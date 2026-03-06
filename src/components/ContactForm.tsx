@@ -100,11 +100,11 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   useEffect(() => {
     try {
       if (calculatorItems.length > 0) {
-        localStorage.setItem('mc_calculator_items', JSON.stringify(calculatorItems));
-        localStorage.setItem('mc_calculator_total', String(calculatorTotal));
+        sessionStorage.setItem('mc_calculator_items', JSON.stringify(calculatorItems));
+        sessionStorage.setItem('mc_calculator_total', String(calculatorTotal));
       } else {
-        localStorage.removeItem('mc_calculator_items');
-        localStorage.removeItem('mc_calculator_total');
+        sessionStorage.removeItem('mc_calculator_items');
+        sessionStorage.removeItem('mc_calculator_total');
       }
     } catch {}
   }, [calculatorItems, calculatorTotal]);
