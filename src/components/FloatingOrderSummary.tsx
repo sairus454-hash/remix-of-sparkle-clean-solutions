@@ -152,7 +152,7 @@ const FloatingOrderSummary = () => {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={() => navigate('/contacts')}
           className={cn(
             "relative flex items-center gap-2.5 py-3 px-5 rounded-full shadow-xl transition-all",
             "bg-primary text-primary-foreground hover:shadow-2xl",
