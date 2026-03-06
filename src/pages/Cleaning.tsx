@@ -76,6 +76,7 @@ const Cleaning = () => {
   
   // Calculator state
   const [isCalcOpen, setIsCalcOpen] = useState(false);
+  const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [area, setArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
