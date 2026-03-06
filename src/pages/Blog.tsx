@@ -236,8 +236,18 @@ const blogArticles = {
       readTime: '2 min',
       tag: '🛋️ Cleaning',
     },
+    {
+      id: 9,
+      title: 'Why Dry Furniture After Cleaning?',
+      summary: 'After cleaning, residual moisture can lead to mold and bad odors. Professional drying is an essential step for quality upholstery care.',
+      content: 'Many people think air-drying is enough after cleaning. But without forced drying, moisture penetrates deep into the padding, creating a perfect environment for bacteria and mold.',
+      fullContent: '🌬️ Why is drying so important?\n\n💧 Residual moisture is furniture\'s enemy. After extraction, 10–15% moisture remains. Without drying it can linger 24–48 hours, causing:\n\n• Mold and mildew inside the padding\n• Musty, unpleasant odors\n• Foam and stuffing deformation\n• Water stains on fabric\n\n⏱️ What does professional drying provide?\n\n✔️ Reduces drying time from 24–48 hours to 2–4 hours\n✔️ 100% mold prevention\n✔️ Preserves padding shape and structure\n✔️ Eliminates water marks and stains\n✔️ Furniture is ready to use within hours\n\n🎉 Promotion: furniture drying until end of spring — FREE!\n\nWe use powerful professional turbo dryers that evenly dry upholstery and padding. This is especially important for mattresses — sleeping on a damp mattress is not only unpleasant but also a health risk.',
+      image: dryingAfterCleaning,
+      date: '2025-03-06',
+      readTime: '3 min',
+      tag: '🌬️ Drying',
+    },
   ],
-  pl: [
     {
       id: 1,
       title: 'Jak często czyścić sofę?',
