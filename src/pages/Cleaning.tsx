@@ -17,7 +17,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square } from 'lucide-react';
+import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square, Zap } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
@@ -85,11 +85,46 @@ const Cleaning = () => {
     ? (t.cleaning?.standardCleaning || 'Стандартная уборка')
     : (t.cleaning?.generalCleaning || 'Генеральная уборка');
 
+  const getCleaningCalcItems = () => [
+    { id: 'cleaning-area', name: `${cleaningTypeLabel} ${area} м²`, price: totalPrice, quantity: 1 }
+  ];
+
   const handleSendToForm = () => {
-    const cleaningData = [
-      { id: 'cleaning-area', name: `${cleaningTypeLabel} ${area} м²`, price: totalPrice, quantity: 1 }
-    ];
-    formRef.current?.setCalculatorData(cleaningData, totalPrice);
+    formRef.current?.setCalculatorData(getCleaningCalcItems(), totalPrice);
+  };
+
+  const handleCleaningQuickOrder = () => {
+    formRef.current?.setCalculatorData(getCleaningCalcItems(), totalPrice);
+    toast({
+      title: '✅ ' + (language === 'ru' ? 'Принято!' : language === 'pl' ? 'Przyjęto!' : language === 'uk' ? 'Прийнято!' : 'Accepted!'),
+      description: language === 'ru' ? 'Услуги добавлены в заявку' : language === 'pl' ? 'Usługi dodane do zamówienia' : language === 'uk' ? 'Послуги додані до замовлення' : 'Services added to order',
+      duration: 2000,
+    });
+  };
+
+  const handleCleaningAddToFullOrder = () => {
+    const items = getCleaningCalcItems();
+    try {
+      const existing = JSON.parse(localStorage.getItem('mc_calculator_items') || '[]');
+      const merged = [...existing];
+      items.forEach(item => {
+        const idx = merged.findIndex((e: any) => e.id === item.id);
+        if (idx >= 0) {
+          merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
+        } else {
+          merged.push({ ...item, category: 'cleaning' });
+        }
+      });
+      const newTotal = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
+      localStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+      localStorage.setItem('mc_calculator_total', String(newTotal));
+    } catch {}
+    toast({
+      title: '✅ ' + (t.form?.addedToOrder || 'Добавлено в заявку ✓'),
+      description: `${totalPrice} zł`,
+      action: <Button variant="outline" size="sm" onClick={() => window.location.href = '/contacts'}>{t.form?.fullOrder || 'Общая заявка'}</Button>,
+      duration: 8000,
+    });
   };
 
   const handleCardToForm = (calcItems: any[], calcTotal: number) => {
@@ -275,9 +310,13 @@ const Cleaning = () => {
                 totalPrice={totalPrice}
                 standardServices={standardServices}
                 generalServices={generalServices}
-                onOrder={() => {
+                onQuickOrder={() => {
                   setIsCalcOpen(false);
-                  handleSendToForm();
+                  handleCleaningQuickOrder();
+                }}
+                onAddToFullOrder={() => {
+                  setIsCalcOpen(false);
+                  handleCleaningAddToFullOrder();
                 }}
                 onExtrasHint={() => {
                   setIsCalcOpen(false);
@@ -363,15 +402,28 @@ const Cleaning = () => {
                     </h4>
                   </div>
                   
-                  <button
-                    onClick={() => {
-                      setIsCalcOpen(false);
-                      handleSendToForm();
-                    }}
-                    className="w-full py-4 px-6 bg-gradient-hero text-primary-foreground font-semibold text-lg rounded-xl hover:opacity-90 transition-opacity shadow-glow"
-                  >
-                    {t.cleaning?.order || 'Заказать уборку'}
-                  </button>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button
+                      onClick={() => {
+                        setIsCalcOpen(false);
+                        handleCleaningQuickOrder();
+                      }}
+                      className="w-full py-4 px-6 bg-fresh text-white font-semibold text-lg rounded-xl hover:bg-fresh/90 transition-opacity shadow-glow flex items-center justify-center gap-2"
+                    >
+                      <Zap className="w-5 h-5" />
+                      {t.form?.quickOrder || 'Быстрый заказ'}
+                    </button>
+                    <button
+                      onClick={() => {
+                        setIsCalcOpen(false);
+                        handleCleaningAddToFullOrder();
+                      }}
+                      className="w-full py-4 px-6 border border-primary/40 text-primary font-semibold text-lg rounded-xl hover:bg-primary/10 transition-colors flex items-center justify-center gap-2"
+                    >
+                      <ArrowRight className="w-5 h-5" />
+                      {t.form?.addToFullOrder || 'В общую заявку'}
+                    </button>
+                  </div>
                   
                    <p className="text-xs text-muted-foreground text-center">
                      {t.calculator?.minOrder}
@@ -743,7 +795,8 @@ interface CleaningCalculatorContentProps {
   totalPrice: number;
   standardServices: string[];
   generalServices: string[];
-  onOrder: () => void;
+  onQuickOrder: () => void;
+  onAddToFullOrder: () => void;
   onExtrasHint: () => void;
   t: any;
 }
@@ -757,7 +810,8 @@ const CleaningCalculatorContent = ({
   totalPrice,
   standardServices,
   generalServices,
-  onOrder,
+  onQuickOrder,
+  onAddToFullOrder,
   onExtrasHint,
   t,
 }: CleaningCalculatorContentProps) => (
@@ -814,12 +868,22 @@ const CleaningCalculatorContent = ({
       </h4>
     </div>
     
-    <button
-      onClick={onOrder}
-      className="w-full py-3 px-6 bg-gradient-hero text-primary-foreground font-medium rounded-xl hover:opacity-90 transition-opacity shadow-glow"
-    >
-      {t.cleaning?.order || 'Заказать уборку'}
-    </button>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <button
+        onClick={onQuickOrder}
+        className="w-full py-3 px-6 bg-fresh text-white font-medium rounded-xl hover:bg-fresh/90 transition-opacity shadow-glow flex items-center justify-center gap-2"
+      >
+        <Zap className="w-4 h-4" />
+        {t.form?.quickOrder || 'Быстрый заказ'}
+      </button>
+      <button
+        onClick={onAddToFullOrder}
+        className="w-full py-3 px-6 border border-primary/40 text-primary font-medium rounded-xl hover:bg-primary/10 transition-colors flex items-center justify-center gap-2"
+      >
+        <ArrowRight className="w-4 h-4" />
+        {t.form?.addToFullOrder || 'Добавить в общую заявку'}
+      </button>
+    </div>
     
      <p className="text-xs text-muted-foreground text-center">
        {t.calculator?.minOrder}
