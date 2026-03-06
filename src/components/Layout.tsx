@@ -41,6 +41,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Suspense fallback={null}>
         <ChatBot />
       </Suspense>
+      <FloatingOrderSummary />
     </div>
   );
 };
