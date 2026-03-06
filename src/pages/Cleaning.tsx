@@ -127,6 +127,19 @@ const Cleaning = () => {
     });
   };
 
+  const handleCardToForm = (calcItems: any[], calcTotal: number) => {
+    formRef.current?.setCalculatorData(calcItems, calcTotal);
+  };
+
+  const handleQuickAdd = (calcItems: any[], calcTotal: number) => {
+    formRef.current?.setCalculatorData(calcItems, calcTotal);
+    toast({
+      title: '✅ ' + (language === 'ru' ? 'Принято!' : language === 'pl' ? 'Przyjęto!' : language === 'uk' ? 'Прийнято!' : 'Accepted!'),
+      description: language === 'ru' ? 'Услуги добавлены в заявку' : language === 'pl' ? 'Usługi dodane do zamówienia' : language === 'uk' ? 'Послуги додані до замовлення' : 'Services added to order',
+      duration: 2000,
+    });
+  };
+
   const benefits = [
     { icon: Clock, text: t.cleaning?.benefit1 || 'Экономия вашего времени' },
     { icon: Shield, text: t.cleaning?.benefit2 || 'Профессиональные средства' },
