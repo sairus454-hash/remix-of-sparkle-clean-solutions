@@ -453,20 +453,75 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             </div>
           )}
 
-          {/* No discount yet - hint */}
-          {!discountInfo.hasDiscount && calculatorItems.length === 1 && (
-            <div className="mt-2 p-2 bg-primary/10 rounded-lg border border-primary/20">
-              <div className="flex items-start gap-1.5">
-                <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span className="text-xs text-primary">
-                  {language === 'ru' ? 'Добавьте ещё одну услугу и получите скидку 10%!' :
-                   language === 'pl' ? 'Dodaj jeszcze jedną usługę i otrzymaj 10% rabatu!' :
-                   language === 'uk' ? 'Додайте ще одну послугу та отримайте знижку 10%!' :
-                   'Add one more service and get 10% off!'}
-                </span>
+          {/* Smart recommendations to increase discount */}
+          {(() => {
+            const existingCats = new Set(calculatorItems.map(item => {
+              const cat = item.category || item.id;
+              if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-')) return 'cleaning';
+              if (cat === 'other') return 'furniture';
+              return cat;
+            }));
+            const catCount = existingCats.size;
+            
+            // Define all possible categories with suggestions
+            const allCategories: { key: string; label: Record<string, string>; page: string }[] = [
+              { key: 'cleaning', label: { ru: '🏠 Уборку квартиры', pl: '🏠 Sprzątanie mieszkania', uk: '🏠 Прибирання квартири', en: '🏠 House cleaning' }, page: '/cleaning' },
+              { key: 'furniture', label: { ru: '🛋️ Химчистку мебели', pl: '🛋️ Czyszczenie mebli', uk: '🛋️ Хімчистку меблів', en: '🛋️ Furniture cleaning' }, page: '/prices' },
+              { key: 'mattress', label: { ru: '🛏️ Химчистку матраса', pl: '🛏️ Czyszczenie materaca', uk: '🛏️ Хімчистку матраца', en: '🛏️ Mattress cleaning' }, page: '/prices' },
+              { key: 'auto', label: { ru: '🚗 Химчистку авто', pl: '🚗 Czyszczenie auta', uk: '🚗 Хімчистку авто', en: '🚗 Auto cleaning' }, page: '/auto' },
+              { key: 'leather', label: { ru: '💼 Чистку кожи', pl: '💼 Czyszczenie skóry', uk: '💼 Чистку шкіри', en: '💼 Leather cleaning' }, page: '/prices' },
+              { key: 'ozone', label: { ru: '🌬️ Озонирование', pl: '🌬️ Ozonowanie', uk: '🌬️ Озонування', en: '🌬️ Ozone treatment' }, page: '/ozone' },
+              { key: 'impregnation', label: { ru: '🛡️ Импрегнацию', pl: '🛡️ Impregnację', uk: '🛡️ Імпрегнацію', en: '🛡️ Impregnation' }, page: '/impregnation' },
+              { key: 'windows', label: { ru: '🪟 Мытьё окон', pl: '🪟 Mycie okien', uk: '🪟 Миття вікон', en: '🪟 Window cleaning' }, page: '/windows' },
+            ];
+            
+            const missing = allCategories.filter(c => !existingCats.has(c.key));
+            
+            // Determine next discount tier
+            let nextTier = 0;
+            let nextDiscount = '';
+            if (catCount < 2) { nextTier = 2 - catCount; nextDiscount = '5%'; }
+            else if (catCount < 4) { nextTier = 4 - catCount; nextDiscount = '10%'; }
+            else if (catCount < 6) { nextTier = 6 - catCount; nextDiscount = '15%'; }
+            
+            if (missing.length === 0 || !nextDiscount) return null;
+            
+            const headerText = {
+              ru: `Добавьте ещё ${nextTier} ${nextTier === 1 ? 'категорию' : 'категории'} для скидки ${nextDiscount}:`,
+              pl: `Dodaj jeszcze ${nextTier} ${nextTier === 1 ? 'kategorię' : 'kategorie'} dla rabatu ${nextDiscount}:`,
+              uk: `Додайте ще ${nextTier} ${nextTier === 1 ? 'категорію' : 'категорії'} для знижки ${nextDiscount}:`,
+              en: `Add ${nextTier} more ${nextTier === 1 ? 'category' : 'categories'} for ${nextDiscount} off:`,
+            };
+            
+            // Show up to 4 recommendations
+            const recommendations = missing.slice(0, 4);
+            
+            return (
+              <div className="mt-2 p-2.5 bg-primary/10 rounded-lg border border-primary/20">
+                <div className="flex items-start gap-1.5 mb-2">
+                  <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span className="text-xs font-semibold text-primary">
+                    {headerText[language as keyof typeof headerText] || headerText.ru}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {recommendations.map(rec => (
+                    <button
+                      key={rec.key}
+                      type="button"
+                      onClick={() => {
+                        if (onClose) onClose();
+                        window.location.href = rec.page;
+                      }}
+                      className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 text-primary border border-primary/20 hover:border-primary/40 transition-all cursor-pointer"
+                    >
+                      {rec.label[language] || rec.label.ru}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
           
           {/* Total */}
           <div className="mt-3 pt-3 border-t border-fresh/30 flex justify-between items-center">
