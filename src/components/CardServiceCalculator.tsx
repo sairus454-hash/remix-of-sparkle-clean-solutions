@@ -124,9 +124,9 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
       quantity: s.quantity,
       category,
     }));
-    // Save to sessionStorage for ContactForm to pick up (clears on tab close)
+    // Save to localStorage for ContactForm to pick up
     try {
-      const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+      const existing = JSON.parse(localStorage.getItem('mc_calculator_items') || '[]');
       const merged = [...existing];
       calcItems.forEach(item => {
         const idx = merged.findIndex((e: CalculatorItem) => e.id === item.id);
@@ -137,11 +137,10 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
         }
       });
       const newTotal = merged.reduce((s: number, i: CalculatorItem) => s + i.price * (i.quantity || 1), 0);
-      sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
-      sessionStorage.setItem('mc_calculator_total', String(newTotal));
+      localStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+      localStorage.setItem('mc_calculator_total', String(newTotal));
     } catch {}
     toast.success(t.form?.addedToOrder || 'Добавлено в заявку ✓', {
-      duration: 2000,
       description: `${calcItems.length} ${calcItems.length === 1 ? 'услуга' : 'услуг'} — ${total} zł`,
       action: {
         label: t.form?.fullOrder || 'Общая заявка',
