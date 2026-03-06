@@ -70,8 +70,8 @@ const FloatingOrderSummary = () => {
 
   const handleClear = (e: React.MouseEvent) => {
     e.stopPropagation();
-    localStorage.removeItem('mc_calculator_items');
-    localStorage.removeItem('mc_calculator_total');
+    sessionStorage.removeItem('mc_calculator_items');
+    sessionStorage.removeItem('mc_calculator_total');
     setItems([]);
     setTotal(0);
     setIsExpanded(false);

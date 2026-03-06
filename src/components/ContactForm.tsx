@@ -183,8 +183,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       message: ''
     }));
     try {
-      localStorage.removeItem('mc_calculator_items');
-      localStorage.removeItem('mc_calculator_total');
+      sessionStorage.removeItem('mc_calculator_items');
+      sessionStorage.removeItem('mc_calculator_total');
     } catch {}
   };
   const removeCalculatorItem = (itemId: string) => {
