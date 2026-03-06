@@ -17,7 +17,7 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square } from 'lucide-react';
+import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square, Zap } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
