@@ -8,7 +8,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
-import ScrollButton from "@/components/ScrollButton";
+
 import SecurityHeaders from "@/components/SecurityHeaders";
 import PWAUpdatePrompt from "@/components/PWAUpdatePrompt";
 
@@ -61,7 +61,7 @@ const App = () => (
             <SecurityHeaders />
             <PWAUpdatePrompt />
             <ScrollToTop />
-            <ScrollButton />
+            
             <Suspense fallback={null}>
               <FreeDeliveryBadge />
             </Suspense>
