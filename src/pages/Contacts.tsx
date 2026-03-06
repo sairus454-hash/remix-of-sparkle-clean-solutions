@@ -154,9 +154,9 @@ const Contacts = () => {
 
             {/* Form */}
             <CircularRevealCard index={0}>
-              <div className="bg-gradient-card p-8 rounded-2xl border border-border shadow-card h-full">
+              <div className="p-8 rounded-2xl h-full">
                 <h2 className="font-serif text-2xl font-bold mb-6 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                  {t.form.title}
+                  {language === 'ru' ? 'Общая заявка' : language === 'pl' ? 'Formularz zamówienia' : language === 'uk' ? 'Загальна заявка' : 'Order Form'}
                 </h2>
                 <ContactForm 
                   ref={formRef}
