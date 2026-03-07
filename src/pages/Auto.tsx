@@ -136,7 +136,22 @@ const Auto = () => {
           </div>
         </section>
 
-        {/* Before/After 3D Carousel */}
+        {/* Important Note about Floor Mats */}
+        <section className="py-8 sm:py-12 bg-amber-50 dark:bg-amber-900/20 border-t border-b border-amber-200 dark:border-amber-900">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto flex items-start gap-3 sm:gap-4">
+              <div className="flex-shrink-0 mt-1">
+                <svg className="w-6 h-6 sm:w-7 sm:h-7 text-amber-600 dark:text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-amber-900 dark:text-amber-100 mb-1 sm:mb-2">Чистим только тканевые коврики</h3>
+                <p className="text-sm sm:text-base text-amber-800 dark:text-amber-200">Мы специализируемся на чистке тканевых ковриков и ковровых покрытий. Резиновые коврики мы не чистим — их можно вымыть самостоятельно дома.</p>
+              </div>
+            </div>
+          </div>
+        </section>
         <Auto3DCarousel />
 
         {/* Card Calculator */}
