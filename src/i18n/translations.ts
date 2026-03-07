@@ -231,7 +231,7 @@ export const translations = {
     },
     auto: {
       title: 'Выездная химчистка авто',
-      subtitle: 'Химчистка салона является важным этапом для любого автомобиля. Во-первых, это повышает комфорт для водителя и пассажиров. Чистый и ухоженный салон создает приятную атмосферу в автомобиле и способствует более комфортной поездке.',
+      subtitle: 'Приезжаем к вам на адрес! Химчистка салона является важным этапом для любого автомобиля. Во-первых, это повышает комфорт для водителя и пассажиров. Чистый и ухоженный салон создает приятную атмосферу в автомобиле и способствует более комфортной поездке.',
       carouselTitle: 'Примеры работ — До и После',
       carouselSubtitle: 'Реальные результаты нашей химчистки салона',
       slide1: 'Чистка сидений — до и после',
@@ -936,7 +936,7 @@ export const translations = {
     },
     auto: {
       title: 'Mobile Auto Dry Cleaning',
-      subtitle: 'Interior dry cleaning is an important step for any car. First of all, it increases comfort for the driver and passengers. A clean and well-maintained interior creates a pleasant atmosphere in the car and contributes to a more comfortable ride.',
+      subtitle: 'We come to your address! Interior dry cleaning is an important step for any car. First of all, it increases comfort for the driver and passengers. A clean and well-maintained interior creates a pleasant atmosphere in the car and contributes to a more comfortable ride.',
       carouselTitle: 'Our Work — Before and After',
       carouselSubtitle: 'Real results of our interior dry cleaning',
       slide1: 'Seat cleaning — before and after',
@@ -1641,7 +1641,7 @@ export const translations = {
     },
     auto: {
       title: 'Mobilne pranie chemiczne aut',
-      subtitle: 'Pranie chemiczne wnętrza to ważny etap dla każdego samochodu. Po pierwsze, zwiększa komfort kierowcy i pasażerów. Czyste i zadbane wnętrze tworzy przyjemną atmosferę w samochodzie i przyczynia się do bardziej komfortowej jazdy.',
+      subtitle: 'Przyjeżdżamy do ciebie pod adres! Pranie chemiczne wnętrza to ważny etap dla każdego samochodu. Po pierwsze, zwiększa komfort kierowcy i pasażerów. Czyste i zadbane wnętrze tworzy przyjemną atmosferę w samochodzie i przyczynia się do bardziej komfortowej jazdy.',
       carouselTitle: 'Przykłady prac — Przed i Po',
       carouselSubtitle: 'Realne wyniki naszego prania chemicznego wnętrza',
       slide1: 'Czyszczenie siedzeń — przed i po',
@@ -2346,7 +2346,7 @@ export const translations = {
     },
     auto: {
       title: 'Виїзна хімчистка авто',
-      subtitle: 'Хімчистка салону є важливим етапом для будь-якого автомобіля. По-перше, це підвищує комфорт для водія та пасажирів. Чистий та доглянутий салон створює приємну атмосферу в автомобілі.',
+      subtitle: 'Приїжджаємо до вас за адресою! Хімчистка салону є важливим етапом для будь-якого автомобіля. По-перше, це підвищує комфорт для водія та пасажирів. Чистий та доглянутий салон створює приємну атмосферу в автомобілі.',
       carouselTitle: 'Приклади робіт — До і Після',
       carouselSubtitle: 'Реальні результати нашої хімчистки салону',
       slide1: 'Чистка сидінь — до і після',
