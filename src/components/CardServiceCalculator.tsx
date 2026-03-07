@@ -162,92 +162,132 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
 
           return (
             <CascadeCard key={item.id} index={index}>
-              <button
-                onClick={() => addItem(item)}
-                className={cn(
-                  "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer w-full",
-                  "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
-                  selected
-                    ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
-                    : "border-border bg-card hover:border-primary/40",
-                  wasJustAdded && "scale-[1.03]"
-                )}
-              >
-              {/* Hover glow overlay */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[1] rounded-2xl bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
-              
-              {/* Shimmer effect on hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-[2] overflow-hidden rounded-2xl">
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-              </div>
+              <Popover open={popoverId === item.id} onOpenChange={(open) => {
+                if (open) {
+                  if (!isSelected(item.id)) addItem(item);
+                  setPopoverId(item.id);
+                } else {
+                  setPopoverId(null);
+                }
+              }}>
+                <PopoverTrigger asChild>
+                  <button
+                    className={cn(
+                      "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer w-full",
+                      "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
+                      selected
+                        ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
+                        : "border-border bg-card hover:border-primary/40",
+                      wasJustAdded && "scale-[1.03]"
+                    )}
+                  >
+                  {/* Hover glow overlay */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[1] rounded-2xl bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
+                  
+                  {/* Shimmer effect on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-[2] overflow-hidden rounded-2xl">
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+                  </div>
 
-              {/* Selection badge */}
-              {selected && (
-                <div className="absolute top-2 right-2 z-10">
-                  {qty > 1 ? (
-                    <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold animate-scale-in shadow-glow">
-                      {qty}
-                    </span>
-                  ) : (
-                    <CheckCircle2 className="w-6 h-6 text-primary animate-scale-in drop-shadow-md" />
+                  {/* Selection badge */}
+                  {selected && (
+                    <div className="absolute top-2 right-2 z-10">
+                      {qty > 1 ? (
+                        <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold animate-scale-in shadow-glow">
+                          {qty}
+                        </span>
+                      ) : (
+                        <CheckCircle2 className="w-6 h-6 text-primary animate-scale-in drop-shadow-md" />
+                      )}
+                    </div>
                   )}
-                </div>
-              )}
 
-              {/* Ripple */}
-              {wasJustAdded && (
-                <span className="absolute inset-0 bg-primary/10 animate-scale-in rounded-2xl pointer-events-none z-20" />
-              )}
-
-              {/* Image */}
-              <div className="w-full aspect-square overflow-hidden bg-accent/20 relative">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  loading="lazy"
-                  decoding="async"
-                  className={cn(
-                    "w-full h-full object-cover transition-all duration-700 ease-out",
-                    "group-hover:scale-110 group-hover:brightness-105 group-hover:saturate-[1.1]",
-                    selected && "brightness-95"
+                  {/* Ripple */}
+                  {wasJustAdded && (
+                    <span className="absolute inset-0 bg-primary/10 animate-scale-in rounded-2xl pointer-events-none z-20" />
                   )}
-                />
-                {/* Bottom gradient on hover */}
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
 
-              {/* Promo badge */}
-              {item.promoBadge && (
-                <div className="absolute top-2 left-2 z-10">
-                  <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md animate-pulse">
-                    {item.promoBadge}
-                  </span>
-                </div>
-              )}
+                  {/* Image */}
+                  <div className="w-full aspect-square overflow-hidden bg-accent/20 relative">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      loading="lazy"
+                      decoding="async"
+                      className={cn(
+                        "w-full h-full object-cover transition-all duration-700 ease-out",
+                        "group-hover:scale-110 group-hover:brightness-105 group-hover:saturate-[1.1]",
+                        selected && "brightness-95"
+                      )}
+                    />
+                    {/* Bottom gradient on hover */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
 
-              {/* Info */}
-              <div className="p-3 w-full">
-                <h3 className={cn(
-                  "text-xs sm:text-sm font-medium leading-tight mb-1 transition-colors",
-                  selected ? "text-foreground" : "text-foreground"
-                )}>
-                  {item.name}
-                </h3>
-                {item.promoBadge ? (
-                  <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
-                    <span className="line-through text-muted-foreground mr-1">{item.price} zł</span>
-                    <span className="text-green-600 font-bold">0 zł</span>
-                  </p>
-                ) : (
-                  <p className={cn(
-                    "text-sm sm:text-base font-bold transition-colors",
-                    selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
-                  )}>
-                    {item.price} zł{item.unit ? `/${item.unit}` : ''}
-                  </p>
-                )}
-              </div>
-              </button>
+                  {/* Promo badge */}
+                  {item.promoBadge && (
+                    <div className="absolute top-2 left-2 z-10">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md animate-pulse">
+                        {item.promoBadge}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Info */}
+                  <div className="p-3 w-full">
+                    <h3 className={cn(
+                      "text-xs sm:text-sm font-medium leading-tight mb-1 transition-colors",
+                      selected ? "text-foreground" : "text-foreground"
+                    )}>
+                      {item.name}
+                    </h3>
+                    {item.promoBadge ? (
+                      <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
+                        <span className="line-through text-muted-foreground mr-1">{item.price} zł</span>
+                        <span className="text-green-600 font-bold">0 zł</span>
+                      </p>
+                    ) : (
+                      <p className={cn(
+                        "text-sm sm:text-base font-bold transition-colors",
+                        selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
+                      )}>
+                        {item.price} zł{item.unit ? `/${item.unit}` : ''}
+                      </p>
+                    )}
+                  </div>
+                  </button>
+                </PopoverTrigger>
+                <PopoverContent side="top" align="center" className="w-auto p-3 rounded-xl shadow-lg border-primary/20">
+                  <div className="flex items-center gap-3">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="h-9 w-9 rounded-full border-primary/30"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        const newQty = qty - 1;
+                        updateQuantity(item.id, newQty);
+                        if (newQty <= 0) setPopoverId(null);
+                      }}
+                    >
+                      <Minus className="w-4 h-4" />
+                    </Button>
+                    <span className="text-lg font-bold text-foreground min-w-[2ch] text-center">{qty}</span>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="h-9 w-9 rounded-full border-primary/30"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        updateQuantity(item.id, qty + 1);
+                      }}
+                    >
+                      <Plus className="w-4 h-4" />
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground text-center mt-1.5">{item.price * qty} zł</p>
+                </PopoverContent>
+              </Popover>
             </CascadeCard>
           );
         })}
