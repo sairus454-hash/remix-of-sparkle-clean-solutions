@@ -45,12 +45,12 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const delay = index * (isMobile ? 60 : 80);
+          const delay = index * (isMobile ? 25 : 35);
           setTimeout(() => setVisible(true), delay);
           observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: '40px' }
+      { threshold: 0.02, rootMargin: '80px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
