@@ -1641,7 +1641,7 @@ export const translations = {
     },
     auto: {
       title: 'Mobilne pranie chemiczne aut',
-      subtitle: 'Pranie chemiczne wnętrza to ważny etap dla każdego samochodu. Po pierwsze, zwiększa komfort kierowcy i pasażerów. Czyste i zadbane wnętrze tworzy przyjemną atmosferę w samochodzie i przyczynia się do bardziej komfortowej jazdy.',
+      subtitle: 'Przyjeżdżamy do ciebie pod adres! Pranie chemiczne wnętrza to ważny etap dla każdego samochodu. Po pierwsze, zwiększa komfort kierowcy i pasażerów. Czyste i zadbane wnętrze tworzy przyjemną atmosferę w samochodzie i przyczynia się do bardziej komfortowej jazdy.',
       carouselTitle: 'Przykłady prac — Przed i Po',
       carouselSubtitle: 'Realne wyniki naszego prania chemicznego wnętrza',
       slide1: 'Czyszczenie siedzeń — przed i po',
