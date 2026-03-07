@@ -36,6 +36,7 @@ import calcSofa3 from '@/assets/calc-sofa3.jpg';
 import calcSofaCorner from '@/assets/calc-sofa-corner.jpg';
 import calcSofaCornerLarge from '@/assets/calc-sofa-corner-large.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
+import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
 import calcHeadboard from '@/assets/calc-headboard.jpg';
 import calcBedframe from '@/assets/calc-bedframe.jpg';
 import calcMattressDouble from '@/assets/calc-mattress-double.jpg';
