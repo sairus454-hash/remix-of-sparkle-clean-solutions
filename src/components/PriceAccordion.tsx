@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useLanguage } from '@/i18n/LanguageContext';
 import PriceItem from '@/components/PriceItem';
@@ -51,12 +51,26 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
     return basePrice + extrasTotal;
   };
 
+  const accordionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const handleValueChange = useCallback((value: string) => {
+    if (value && accordionRefs.current[value]) {
+      setTimeout(() => {
+        accordionRefs.current[value]?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }, 300);
+    }
+  }, []);
+
   return (
-    <Accordion type="single" collapsible className={`space-y-4 ${className}`}>
+    <Accordion type="single" collapsible className={`space-y-4 ${className}`} onValueChange={handleValueChange}>
       {categories.map((category, index) => {
         const IconComponent = category.icon;
         return (
           <CircularRevealCard key={category.id} index={index}>
+            <div ref={(el) => { accordionRefs.current[category.id] = el; }}>
             <AccordionItem 
               value={category.id}
               className="bg-card border border-border rounded-xl shadow-card overflow-hidden"
@@ -213,6 +227,7 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
                 </div>
               </AccordionContent>
             </AccordionItem>
+            </div>
           </CircularRevealCard>
         );
       })}
