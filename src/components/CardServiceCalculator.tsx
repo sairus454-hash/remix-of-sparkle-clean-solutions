@@ -4,6 +4,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Plus, Minus, Trash2, Send, CheckCircle2, Zap, ArrowRight, Check } from 'lucide-react';
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
 import { toast } from 'sonner';
 import { CalculatorItem } from '@/types/calculator';
 import { cn } from '@/lib/utils';
