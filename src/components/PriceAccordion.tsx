@@ -227,6 +227,7 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
                 </div>
               </AccordionContent>
             </AccordionItem>
+            </div>
           </CircularRevealCard>
         );
       })}
