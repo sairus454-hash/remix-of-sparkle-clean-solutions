@@ -51,8 +51,21 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
     return basePrice + extrasTotal;
   };
 
+  const accordionRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  const handleValueChange = useCallback((value: string) => {
+    if (value && accordionRefs.current[value]) {
+      setTimeout(() => {
+        accordionRefs.current[value]?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }, 300);
+    }
+  }, []);
+
   return (
-    <Accordion type="single" collapsible className={`space-y-4 ${className}`}>
+    <Accordion type="single" collapsible className={`space-y-4 ${className}`} onValueChange={handleValueChange}>
       {categories.map((category, index) => {
         const IconComponent = category.icon;
         return (
