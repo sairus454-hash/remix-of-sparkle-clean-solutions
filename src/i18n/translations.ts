@@ -936,7 +936,7 @@ export const translations = {
     },
     auto: {
       title: 'Mobile Auto Dry Cleaning',
-      subtitle: 'Interior dry cleaning is an important step for any car. First of all, it increases comfort for the driver and passengers. A clean and well-maintained interior creates a pleasant atmosphere in the car and contributes to a more comfortable ride.',
+      subtitle: 'We come to your address! Interior dry cleaning is an important step for any car. First of all, it increases comfort for the driver and passengers. A clean and well-maintained interior creates a pleasant atmosphere in the car and contributes to a more comfortable ride.',
       carouselTitle: 'Our Work — Before and After',
       carouselSubtitle: 'Real results of our interior dry cleaning',
       slide1: 'Seat cleaning — before and after',
