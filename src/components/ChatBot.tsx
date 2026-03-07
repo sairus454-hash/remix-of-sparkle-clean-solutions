@@ -177,26 +177,17 @@ const ChatBot = () => {
   // Block body scroll when chat is open on mobile
   useEffect(() => {
     if (isMobile && isOpen) {
+      const scrollY = window.scrollY;
       document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.paddingRight = '0px';
     } else {
-      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      }
+      document.body.style.paddingRight = '';
     }
     
     return () => {
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
+      document.body.style.paddingRight = '';
     };
   }, [isMobile, isOpen]);
 
@@ -553,9 +544,9 @@ const ChatBot = () => {
           "origin-bottom-right",
           // Smooth animation with opacity and transform
           "transition-[transform,opacity] duration-500 ease-out",
-          // Mobile: full screen for better UX on iOS/Android
+          // Mobile: compact bottom modal, Desktop: side window
           isMobile 
-            ? "inset-0 rounded-none pb-safe pt-safe" 
+            ? "bottom-0 left-0 right-0 w-full max-h-[85vh] rounded-t-3xl" 
             : "bottom-[120px] right-4 w-96 h-[500px] max-h-[70vh] rounded-2xl",
           isOpen 
             ? "scale-100 opacity-100 translate-y-0" 
