@@ -35,6 +35,7 @@ import calcLeatherSofa2 from '@/assets/calc-leather-sofa2.jpg';
 import calcLeatherSofa3 from '@/assets/calc-leather-sofa3.jpg';
 import calcLeatherCorner from '@/assets/calc-leather-corner.jpg';
 import calcImpregnation from '@/assets/calc-impregnation.jpg';
+import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
 import calcStroller from '@/assets/calc-stroller.jpg';
