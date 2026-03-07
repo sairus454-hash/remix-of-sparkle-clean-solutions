@@ -553,9 +553,9 @@ const ChatBot = () => {
           "origin-bottom-right",
           // Smooth animation with opacity and transform
           "transition-[transform,opacity] duration-500 ease-out",
-          // Mobile: full screen for better UX on iOS/Android
+          // Mobile: compact bottom modal, Desktop: side window
           isMobile 
-            ? "inset-0 rounded-none pb-safe pt-safe" 
+            ? "bottom-0 left-0 right-0 w-full max-h-[85vh] rounded-t-3xl" 
             : "bottom-[120px] right-4 w-96 h-[500px] max-h-[70vh] rounded-2xl",
           isOpen 
             ? "scale-100 opacity-100 translate-y-0" 
