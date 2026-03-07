@@ -86,6 +86,7 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
+  const [popoverId, setPopoverId] = useState<string | null>(null);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
