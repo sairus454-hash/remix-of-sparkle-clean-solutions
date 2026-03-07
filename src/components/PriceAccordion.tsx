@@ -70,6 +70,7 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
         const IconComponent = category.icon;
         return (
           <CircularRevealCard key={category.id} index={index}>
+            <div ref={(el) => { accordionRefs.current[category.id] = el; }}>
             <AccordionItem 
               value={category.id}
               className="bg-card border border-border rounded-xl shadow-card overflow-hidden"
