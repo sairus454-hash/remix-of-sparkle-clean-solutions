@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useLanguage } from '@/i18n/LanguageContext';
 import PriceItem from '@/components/PriceItem';
