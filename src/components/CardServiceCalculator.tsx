@@ -45,33 +45,32 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const delay = index * (isMobile ? 60 : 80);
+          const delay = index * (isMobile ? 25 : 35);
           setTimeout(() => setVisible(true), delay);
           observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: '40px' }
+      { threshold: 0.02, rootMargin: '80px' }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, [index, isMobile]);
 
   const angle = (index * 55) % 360;
-  const radius = isMobile ? 25 : 50;
+  const radius = isMobile ? 15 : 25;
   const x = Math.cos((angle * Math.PI) / 180) * radius;
   const y = Math.sin((angle * Math.PI) / 180) * radius;
 
   return (
     <div
       ref={ref}
-      className="will-change-transform"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible
-          ? 'translateX(0) translateY(0) scale(1) rotate(0deg)'
-          : `translateX(${x}px) translateY(${y}px) scale(0.88) rotate(${index * 4}deg)`,
-        transitionDuration: isMobile ? '700ms' : '900ms',
-        transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+          ? 'translate3d(0,0,0) scale(1)'
+          : `translate3d(${x}px,${y}px,0) scale(0.93)`,
+        transitionDuration: isMobile ? '350ms' : '450ms',
+        transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
         transitionProperty: 'opacity, transform',
       }}
     >

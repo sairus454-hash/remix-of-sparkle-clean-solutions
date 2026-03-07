@@ -45,7 +45,7 @@ const HeroSlideshow = ({ images, interval = 5000, objectFit = 'cover' }: HeroSli
         return (
           <div
             key={index}
-            className="absolute inset-0 transition-opacity duration-1000"
+            className="absolute inset-0 transition-opacity duration-500"
             style={{ opacity: isActive ? 1 : 0 }}
           >
             <img

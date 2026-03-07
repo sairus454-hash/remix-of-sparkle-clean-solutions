@@ -77,22 +77,16 @@ const Header = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Calculate circular trajectory for header elements
   const getHeaderItemStyle = (index: number, isRevealed: boolean) => {
-    const angle = (index * 45) % 360;
-    const radius = isMobile ? 20 : 40;
-    const x = Math.cos((angle * Math.PI) / 180) * radius;
-    const y = Math.sin((angle * Math.PI) / 180) * radius;
-    
     return {
       opacity: isRevealed ? 1 : 0,
       transform: isRevealed 
-        ? 'translateX(0) translateY(0) scale(1)' 
-        : `translateX(${x}px) translateY(${y}px) scale(${isMobile ? 0.9 : 0.85})`,
-      transitionDuration: isMobile ? '600ms' : '800ms',
-      transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        ? 'translate3d(0,0,0) scale(1)' 
+        : `translate3d(0,8px,0) scale(0.97)`,
+      transitionDuration: '300ms',
+      transitionTimingFunction: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
       transitionProperty: 'opacity, transform',
-      transitionDelay: `${index * 80}ms`,
+      transitionDelay: `${index * 30}ms`,
     };
   };
 
