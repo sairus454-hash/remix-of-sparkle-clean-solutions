@@ -55,12 +55,16 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
 
   const handleValueChange = useCallback((value: string) => {
     if (value && accordionRefs.current[value]) {
+      // Wait for accordion expand animation to finish before scrolling
       setTimeout(() => {
-        accordionRefs.current[value]?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
-        });
-      }, 300);
+        const el = accordionRefs.current[value];
+        if (el) {
+          const headerHeight = 80; // approximate header height
+          const rect = el.getBoundingClientRect();
+          const scrollTop = window.pageYOffset + rect.top - headerHeight;
+          window.scrollTo({ top: scrollTop, behavior: 'smooth' });
+        }
+      }, 450);
     }
   }, []);
 
