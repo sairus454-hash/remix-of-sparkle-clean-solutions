@@ -18,8 +18,7 @@ const CircularRevealCard = forwardRef<HTMLDivElement, CircularRevealCardProps>((
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Stagger the animation based on index - slower for marketing cards
-          const baseDelay = slow ? 200 : 150;
+          const baseDelay = slow ? 80 : 50;
           const delay = index * baseDelay;
           setTimeout(() => {
             setIsVisible(true);
@@ -27,7 +26,7 @@ const CircularRevealCard = forwardRef<HTMLDivElement, CircularRevealCardProps>((
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: '50px' }
+      { threshold: 0.05, rootMargin: '80px' }
     );
 
     if (ref.current) {
