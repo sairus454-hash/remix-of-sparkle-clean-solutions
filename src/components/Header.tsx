@@ -159,27 +159,27 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-0.5">
             {navItems.map((item, index) => {
-              const getHighlightClass = () => {
-                if (item.highlight === 'ozone') {
-                  return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
-                }
-                if (item.highlight === 'cleaning') {
-                  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
-                }
-                if (item.highlight === 'services') {
-                  return '';
-                }
-                if (item.highlight === 'auto') {
-                  return '';
-                }
-                if (item.highlight === 'handyman') {
-                  return '';
-                }
-                if (item.highlight === 'blog') {
-                  return '';
-                }
-                return '';
-              };
+               const getHighlightClass = () => {
+                 if (item.highlight === 'ozone') {
+                   return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
+                 }
+                 if (item.highlight === 'cleaning') {
+                   return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                 }
+                 if (item.highlight === 'services') {
+                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                 }
+                 if (item.highlight === 'auto') {
+                   return '';
+                 }
+                 if (item.highlight === 'handyman') {
+                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                 }
+                 if (item.highlight === 'blog') {
+                   return '';
+                 }
+                 return '';
+               };
               
               return (
                 <div key={item.path} style={getHeaderItemStyle(index + 2, headerRevealed)}>
