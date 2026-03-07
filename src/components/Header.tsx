@@ -368,21 +368,40 @@ const Header = () => {
 
             {/* Phone */}
             <div ref={phoneRef} style={getHeaderItemStyle(14, headerRevealed)} className="flex items-center flex-shrink-0 relative">
-              <button
+              <motion.button
                 onClick={() => setShowPhone(!showPhone)}
-                className="flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 text-fresh transition-colors touch-manipulation active:scale-95"
+                className="flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-gradient-to-r from-fresh to-fresh/80 hover:from-fresh/90 hover:to-fresh/70 border-2 border-fresh text-primary-foreground font-bold transition-all touch-manipulation active:scale-95 shadow-glow relative overflow-hidden"
                 aria-label="Show phone number"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 300 }}
               >
-                <Phone className="w-4 h-4 sm:w-4 sm:h-4" />
-              </button>
+                {/* Pulsing background glow */}
+                <motion.div
+                  className="absolute inset-0 rounded-full bg-fresh/30 blur-md"
+                  animate={{ opacity: [0.4, 0.8, 0.4], scale: [0.9, 1.1, 0.9] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                {/* Icon with relative positioning */}
+                <motion.div
+                  className="relative z-10"
+                  animate={{ scale: [1, 1.15, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+                >
+                  <Phone className="w-5 h-5 sm:w-4 sm:h-4" />
+                </motion.div>
+              </motion.button>
               {showPhone && (
-                <a
+                <motion.a
                   href="tel:+48575211401"
                   onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('header'))}
-                  className="absolute top-full right-0 mt-2 px-4 py-2.5 bg-card border border-border rounded-xl shadow-lg text-primary font-bold text-sm whitespace-nowrap animate-fade-up z-50"
+                  className="absolute top-full right-0 mt-2 px-4 py-2.5 bg-gradient-hero text-primary-foreground border border-primary rounded-xl shadow-glow font-bold text-sm whitespace-nowrap z-50"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.2 }}
                 >
                   +48 575 211 401
-                </a>
+                </motion.a>
               )}
             </div>
           </div>
