@@ -134,7 +134,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             </div>
           </div>
 
-          <Link to="#" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+          <Link to="/privacy-policy" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
             {t.footer.privacy}
           </Link>
         </div>
