@@ -90,6 +90,7 @@ import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
 
 // Other
 import calcCarpet from '@/assets/calc-carpet.jpg';
+import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
 import calcStroller from '@/assets/calc-stroller.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
