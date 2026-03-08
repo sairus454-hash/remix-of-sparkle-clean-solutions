@@ -588,7 +588,7 @@ const ChatBot = () => {
 
                 {/* Close button */}
                 <button
-                  onClick={(e) => { e.stopPropagation(); setMobileExpanded(false); }}
+                  onClick={(e) => { e.stopPropagation(); setIsDismissed(true); setMobileExpanded(false); }}
                   className={cn(
                     "absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-300",
                     "bg-foreground/80 hover:bg-foreground",
