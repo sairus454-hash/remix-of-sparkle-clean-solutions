@@ -6,7 +6,7 @@ import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
-import HandymanHeroSlideshow from '@/components/HandymanHeroSlideshow';
+import HeroVideo from '@/components/HeroVideo';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
@@ -180,8 +180,8 @@ const Handyman = () => {
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
       
       {/* Hero Section with animated title */}
-      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center py-20">
-        <HandymanHeroSlideshow />
+      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
+        <HeroVideo src="/hero-handyman-video.mp4" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl text-left relative z-10">
             {/* Title with icon centered above */}
