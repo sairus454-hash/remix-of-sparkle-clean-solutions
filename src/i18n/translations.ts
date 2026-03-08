@@ -2451,6 +2451,7 @@ export const translations = {
     footer: {
       rights: 'Всі права захищені',
       privacy: 'Політика конфіденційності',
+      terms: 'Умови використання',
     },
     admin: {
       loginTitle: 'Вхід в адмін-панель',
