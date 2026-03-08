@@ -511,30 +511,25 @@ const ChatBot = () => {
     <>
       {/* Chat Toggle Button */}
       {isMobile ? (
-        // Mobile: Simple circular button with AI text
+        // Mobile: Circular button with girl image and greenish-blue background
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={cn(
-            "fixed z-50 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center",
-            "bg-gradient-to-br from-primary to-fresh hover:scale-110 hover:shadow-glow",
+            "fixed z-50 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center overflow-hidden",
+            "bg-teal-mobile hover:scale-110 hover:shadow-glow",
             "right-3 top-[60%] -translate-y-1/2 w-14 h-14",
             isOpen ? "rotate-180" : "animate-pulse-slow"
           )}
           aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
         >
           {isOpen ? (
-            <X className="w-6 h-6 text-primary-foreground" />
+            <X className="w-6 h-6 text-teal-mobile-foreground" />
           ) : (
-            <span 
-              className="font-bold text-xl tracking-wide"
-              style={{
-                color: 'white',
-                textShadow: '0 0 8px rgba(255,255,255,0.8), 0 0 16px rgba(255,255,255,0.5), 2px 2px 4px rgba(0,0,0,0.3)',
-                WebkitTextStroke: '0.5px rgba(0,0,0,0.2)',
-              }}
-            >
-              AI
-            </span>
+            <img 
+              src={chatbotGirl} 
+              alt="Consultant" 
+              className="w-14 h-14 object-cover object-top"
+            />
           )}
         </button>
       ) : (
