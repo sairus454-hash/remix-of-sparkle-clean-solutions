@@ -333,6 +333,7 @@ export const translations = {
     footer: {
       rights: 'Все права защищены',
       privacy: 'Политика конфиденциальности',
+      terms: 'Условия использования',
     },
     admin: {
       loginTitle: 'Вход в админ-панель',
@@ -1038,6 +1039,7 @@ export const translations = {
     footer: {
       rights: 'All rights reserved',
       privacy: 'Privacy Policy',
+      terms: 'Terms of Use',
     },
     admin: {
       loginTitle: 'Admin Login',
@@ -1743,6 +1745,7 @@ export const translations = {
     footer: {
       rights: 'Wszelkie prawa zastrzeżone',
       privacy: 'Polityka prywatności',
+      terms: 'Warunki korzystania',
     },
     admin: {
       loginTitle: 'Logowanie administratora',
@@ -2448,6 +2451,7 @@ export const translations = {
     footer: {
       rights: 'Всі права захищені',
       privacy: 'Політика конфіденційності',
+      terms: 'Умови використання',
     },
     admin: {
       loginTitle: 'Вхід в адмін-панель',
