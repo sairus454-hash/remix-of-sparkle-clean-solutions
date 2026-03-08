@@ -96,7 +96,7 @@ const Header = () => {
         isScrolled ? 'bg-card/95 backdrop-blur-md shadow-card' : 'bg-card/70 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto px-2 sm:px-4 lg:pr-8">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-3 xl:px-4">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Left Section: Mobile Menu Button + Logo */}
           <div className="flex items-center gap-2">
@@ -151,7 +151,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5">
+          <nav className="hidden lg:flex items-center gap-0
             {navItems.map((item, index) => {
                const getHighlightClass = () => {
                  if (item.highlight === 'ozone') {
@@ -179,7 +179,7 @@ const Header = () => {
                 <div key={item.path} style={getHeaderItemStyle(index + 2, headerRevealed)}>
                   <Link
                     to={item.path}
-                    className={`px-2 py-1.5 rounded-md text-[14px] font-medium transition-colors ${
+                    className={`px-1.5 py-1.5 rounded-md text-[13px] font-medium transition-colors ${
                       location.pathname === item.path
                         ? 'text-primary bg-accent'
                         : item.highlight
