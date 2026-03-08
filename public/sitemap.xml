@@ -14,5 +14,7 @@
   <url><loc>https://masterclean1885.lovable.app/reviews</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://masterclean1885.lovable.app/contacts</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://masterclean1885.lovable.app/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.lovable.app/privacy-policy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+   <url><loc>https://masterclean1885.lovable.app/privacy-policy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+   <url><loc>https://masterclean1885.lovable.app/terms</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+   <url><loc>https://masterclean1885.lovable.app/cookies</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
 </urlset>
