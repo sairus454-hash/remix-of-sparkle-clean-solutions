@@ -94,28 +94,27 @@ const Index = () => {
       />
       {showSplash && <WaterDropSplash onComplete={handleSplashComplete} />}
       <Layout>
-      {/* Hero Banner Section */}
-      <section 
-        className="relative min-h-[600px] md:min-h-[700px] w-full flex items-center overflow-hidden py-12 sm:py-16 md:py-20"
-      >
-        {/* Background Photo Slideshow */}
-        <IndexHeroSlideshow />
+      {/* Hero Video Banner */}
+      <section className="relative w-full overflow-hidden" style={{ height: '80vh', padding: 0, maxWidth: 'none' }}>
+        <HeroVideo />
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-xl">
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground leading-tight animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-              {t.hero.title}
-            </h1>
-            <p className="text-base sm:text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-6 animate-fade-up leading-relaxed" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-              {t.hero.subtitle}
-            </p>
-            <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              <Link to="/contacts">
-                <Button className="bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 touch-manipulation active:scale-95 transition-transform">
-                  {t.hero.cta}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
+        <div className="absolute inset-0 z-10 flex items-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-xl">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground leading-tight animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+                {t.hero.title}
+              </h1>
+              <p className="text-base sm:text-lg text-primary-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-6 animate-fade-up leading-relaxed" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+                {t.hero.subtitle}
+              </p>
+              <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+                <Link to="/contacts">
+                  <Button className="bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 touch-manipulation active:scale-95 transition-transform">
+                    {t.hero.cta}
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
