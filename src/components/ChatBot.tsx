@@ -592,8 +592,10 @@ const ChatBot = () => {
             >
               <X className="w-3 h-3 text-background" />
             </button>
+          <div className="relative">
+            {/* wrapper for close button positioning */}
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Chat Window */}
