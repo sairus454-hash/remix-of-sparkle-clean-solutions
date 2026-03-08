@@ -1,7 +1,7 @@
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import HeroSlideshow from '@/components/HeroSlideshow';
+import HeroVideo from '@/components/HeroVideo';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Sparkles, Sofa, Armchair } from 'lucide-react';
