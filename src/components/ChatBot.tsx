@@ -534,68 +534,72 @@ const ChatBot = () => {
       {isMobile ? (
         // Mobile: Circular button, expands horizontally on tap
         !isOpen && (
-          <motion.div
-            className="fixed z-50 right-3 bottom-24"
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
-          >
-            <div className="relative">
-              <motion.button
-                onClick={handleMobileToggle}
-                className={cn(
-                  "flex items-center justify-center rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh overflow-hidden",
-                  !mobileExpanded && "animate-pulse-slow animate-glow-ring"
-                )}
-                animate={{
-                  width: mobileExpanded ? 'auto' : 56,
-                  height: 56,
-                }}
-                transition={{ type: 'spring', stiffness: 150, damping: 18 }}
-                aria-label={t.chatbot.openChat}
-              >
-                {/* Girl image - centered vertically and horizontally */}
-                <img 
-                  src={chatbotGirl} 
-                  alt="Consultant" 
-                  className="w-14 h-14 object-cover object-center rounded-full flex-shrink-0"
-                />
-
-                {/* Expanded text content - appears on horizontal expansion */}
-                <motion.div
-                  className="flex items-center gap-2 px-3 overflow-hidden"
-                  animate={{
-                    width: mobileExpanded ? 'auto' : 0,
-                    opacity: mobileExpanded ? 1 : 0,
-                  }}
-                  transition={{ type: 'spring', stiffness: 150, damping: 18 }}
-                >
-                  <div className="text-left whitespace-nowrap">
-                    <div className="text-xs font-semibold text-primary-foreground leading-tight">
-                      {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
-                    </div>
-                    <div className="text-[10px] text-primary-foreground/80">
-                      {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
-                    </div>
+          <>
+            {/* Expanded text pill - separate fixed element */}
+            <motion.div
+              className="fixed z-50 bottom-24 right-[68px] flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer"
+              animate={{ 
+                opacity: mobileExpanded ? 1 : 0,
+                x: mobileExpanded ? 0 : 40,
+              }}
+              transition={{ type: 'spring', stiffness: 150, damping: 20 }}
+              onClick={() => { setIsOpen(true); setMobileExpanded(false); }}
+              style={{ 
+                height: 56, 
+                pointerEvents: mobileExpanded ? 'auto' : 'none',
+              }}
+            >
+              <div className="flex items-center gap-2 px-4" style={{ whiteSpace: 'nowrap' }}>
+                <div>
+                  <div className="text-xs font-semibold text-primary-foreground leading-tight">
+                    {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
                   </div>
-                  <ChevronRight className="w-4 h-4 text-primary-foreground animate-bounce flex-shrink-0" style={{ animationDuration: '2s' }} />
-                </motion.div>
-              </motion.button>
+                  <div className="text-[10px] text-primary-foreground/80">
+                    {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 text-primary-foreground flex-shrink-0" />
+              </div>
+            </motion.div>
 
-              {/* Close button */}
-              <button
-                onClick={(e) => { e.stopPropagation(); setMobileExpanded(false); }}
-                className={cn(
-                  "absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-300",
-                  "bg-foreground/80 hover:bg-foreground",
-                  mobileExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
-                )}
-                aria-label={t.chatbot.closeChat}
-              >
-                <X className="w-3 h-3 text-background" />
-              </button>
-            </div>
-          </motion.div>
+            {/* Circle icon button */}
+            <motion.div
+              className="fixed z-50 right-3 bottom-24"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
+            >
+              <div className="relative">
+                <button
+                  onClick={handleMobileToggle}
+                  className={cn(
+                    "w-14 h-14 rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh flex items-center justify-center overflow-hidden",
+                    !mobileExpanded && "animate-pulse-slow animate-glow-ring"
+                  )}
+                  aria-label={t.chatbot.openChat}
+                >
+                  <img 
+                    src={chatbotGirl} 
+                    alt="Consultant" 
+                    className="w-14 h-14 object-cover object-top rounded-full"
+                  />
+                </button>
+
+                {/* Close button */}
+                <button
+                  onClick={(e) => { e.stopPropagation(); setMobileExpanded(false); }}
+                  className={cn(
+                    "absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-300",
+                    "bg-foreground/80 hover:bg-foreground",
+                    mobileExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
+                  )}
+                  aria-label={t.chatbot.closeChat}
+                >
+                  <X className="w-3 h-3 text-background" />
+                </button>
+              </div>
+            </motion.div>
+          </>
         )
       ) : (
         // Desktop: Extended button with girl image, text and "More" arrow
