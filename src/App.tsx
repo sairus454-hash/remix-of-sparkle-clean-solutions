@@ -34,6 +34,7 @@ const Windows = lazy(() => import("./pages/Windows"));
 const Cleaning = lazy(() => import("./pages/Cleaning"));
 const Blog = lazy(() => import("./pages/Blog"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const Terms = lazy(() => import("./pages/Terms"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
