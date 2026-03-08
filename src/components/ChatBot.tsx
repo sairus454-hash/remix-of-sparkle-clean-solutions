@@ -572,8 +572,8 @@ const ChatBot = () => {
                   onClick={handleMobileToggle}
                   className={cn(
                     "relative rounded-full shadow-lg flex items-center justify-center",
-                    "bg-teal-mobile hover:scale-110 hover:shadow-glow",
-                    "w-14 h-14 animate-pulse-slow"
+                    "bg-teal-mobile hover:scale-110",
+                    "w-14 h-14 animate-pulse-slow animate-glow-ring"
                   )}
                   aria-label={t.chatbot.openChat}
                 >
