@@ -1,6 +1,10 @@
 import { useRef, useEffect, useState } from 'react';
 
-const HeroVideo = () => {
+interface HeroVideoProps {
+  src?: string;
+}
+
+const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
