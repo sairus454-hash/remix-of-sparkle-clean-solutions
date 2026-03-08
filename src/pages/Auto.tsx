@@ -5,7 +5,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AutoSplash from '@/components/AutoSplash';
-import AutoHeroSlideshow from '@/components/AutoHeroSlideshow';
+import HeroVideo from '@/components/HeroVideo';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import Auto3DCarousel from '@/components/Auto3DCarousel';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
@@ -92,8 +92,8 @@ const Auto = () => {
         {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
 
         {/* Hero */}
-        <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
-          <AutoHeroSlideshow />
+         <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
+          <HeroVideo src="/hero-auto-video.mp4" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <div className="flex justify-center mb-4 sm:mb-6 animate-fade-up">
