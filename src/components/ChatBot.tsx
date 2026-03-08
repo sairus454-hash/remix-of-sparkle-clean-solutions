@@ -507,31 +507,99 @@ const ChatBot = () => {
     setMessages((prev) => [...prev, botMessage]);
   };
 
+  const [mobileExpanded, setMobileExpanded] = useState(false);
+
+  const handleMobileToggle = () => {
+    if (mobileExpanded) {
+      // Second tap on expanded → open chat
+      setIsOpen(true);
+      setMobileExpanded(false);
+    } else {
+      // First tap → expand to show full widget
+      setMobileExpanded(true);
+    }
+  };
+
+  // Auto-collapse mobile expanded after 5 seconds
+  useEffect(() => {
+    if (mobileExpanded) {
+      const timer = setTimeout(() => setMobileExpanded(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [mobileExpanded]);
+
   return (
     <>
       {/* Chat Toggle Button */}
       {isMobile ? (
-        // Mobile: Circular button with girl image and greenish-blue background
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={cn(
-            "fixed z-50 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center overflow-hidden",
-            "bg-teal-mobile hover:scale-110 hover:shadow-glow",
-            "right-3 top-[60%] -translate-y-1/2 w-14 h-14",
-            isOpen ? "rotate-180" : "animate-pulse-slow"
-          )}
-          aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
-        >
-          {isOpen ? (
-            <X className="w-6 h-6 text-teal-mobile-foreground" />
-          ) : (
-            <img 
-              src={chatbotGirl} 
-              alt="Consultant" 
-              className="w-14 h-14 object-cover object-top"
-            />
-          )}
-        </button>
+        // Mobile: Circular button with overflowing girl image, expands to full widget on tap
+        !isOpen && (
+          <motion.div
+            className="fixed z-50 right-3 top-[60%] -translate-y-1/2"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
+          >
+            <div className="relative">
+              {mobileExpanded ? (
+                // Expanded: full desktop-style widget with text
+                <motion.button
+                  onClick={handleMobileToggle}
+                  className="flex items-center gap-1 pl-1 pr-3 py-1 rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh"
+                  initial={{ width: 56, opacity: 0.8 }}
+                  animate={{ width: 'auto', opacity: 1 }}
+                  transition={{ type: 'spring', stiffness: 120, damping: 14 }}
+                  aria-label={t.chatbot.openChat}
+                >
+                  <img 
+                    src={chatbotGirl} 
+                    alt="Consultant" 
+                    className="w-20 h-20 -my-6 -ml-3 object-cover object-top rounded-full drop-shadow-lg flex-shrink-0"
+                  />
+                  <div className="text-left mx-1 whitespace-nowrap">
+                    <div className="text-xs font-semibold text-primary-foreground leading-tight">
+                      {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
+                    </div>
+                    <div className="text-[10px] text-primary-foreground/80">
+                      {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
+                    </div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-primary-foreground animate-bounce flex-shrink-0" style={{ animationDuration: '2s' }} />
+                </motion.button>
+              ) : (
+                // Collapsed: circular button with overflowing girl
+                <button
+                  onClick={handleMobileToggle}
+                  className={cn(
+                    "relative rounded-full shadow-lg flex items-center justify-center",
+                    "bg-teal-mobile hover:scale-110 hover:shadow-glow",
+                    "w-14 h-14 animate-pulse-slow"
+                  )}
+                  aria-label={t.chatbot.openChat}
+                >
+                  <img 
+                    src={chatbotGirl} 
+                    alt="Consultant" 
+                    className="absolute w-[68px] h-[68px] -top-[7px] -left-[7px] object-cover object-top rounded-full drop-shadow-md"
+                  />
+                </button>
+              )}
+
+              {/* Close button */}
+              <button
+                onClick={(e) => { e.stopPropagation(); setMobileExpanded(false); }}
+                className={cn(
+                  "absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-300",
+                  "bg-foreground/80 hover:bg-foreground",
+                  mobileExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
+                )}
+                aria-label={t.chatbot.closeChat}
+              >
+                <X className="w-3 h-3 text-background" />
+              </button>
+            </div>
+          </motion.div>
+        )
       ) : (
         // Desktop: Extended button with girl image, text and "More" arrow
         <motion.div 
