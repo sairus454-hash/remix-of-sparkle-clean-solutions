@@ -541,30 +541,33 @@ const ChatBot = () => {
             transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
           >
             <div className="relative">
-              {/* Expanded text - slides out to the LEFT of the icon */}
-              {mobileExpanded && (
-                <motion.div
-                  className="absolute top-0 flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer"
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  transition={{ type: 'spring', stiffness: 150, damping: 20 }}
-                  onClick={() => { setIsOpen(true); setMobileExpanded(false); }}
-                  style={{ height: 56, right: 60, whiteSpace: 'nowrap' }}
-                >
-                  <div className="flex items-center gap-2 px-4">
-                    <div className="text-left">
-                      <div className="text-xs font-semibold text-primary-foreground leading-tight">
-                        {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
-                      </div>
-                      <div className="text-[10px] text-primary-foreground/80">
-                        {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
-                      </div>
+              {/* Expanded text pill - to the LEFT of the circle */}
+              <motion.div
+                className="absolute top-0 flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer pointer-events-auto"
+                animate={{ 
+                  opacity: mobileExpanded ? 1 : 0,
+                  x: mobileExpanded ? 0 : 40,
+                }}
+                transition={{ type: 'spring', stiffness: 150, damping: 20 }}
+                onClick={() => { setIsOpen(true); setMobileExpanded(false); }}
+                style={{ 
+                  height: 56, 
+                  right: 60, 
+                  pointerEvents: mobileExpanded ? 'auto' : 'none',
+                }}
+              >
+                <div className="flex items-center gap-2 px-4" style={{ whiteSpace: 'nowrap' }}>
+                  <div>
+                    <div className="text-xs font-semibold text-primary-foreground leading-tight">
+                      {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
                     </div>
-                    <ChevronRight className="w-4 h-4 text-primary-foreground flex-shrink-0" />
+                    <div className="text-[10px] text-primary-foreground/80">
+                      {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
+                    </div>
                   </div>
-                </motion.div>
-              )}
+                  <ChevronRight className="w-4 h-4 text-primary-foreground flex-shrink-0" />
+                </div>
+              </motion.div>
 
               {/* Circle icon button */}
               <button
