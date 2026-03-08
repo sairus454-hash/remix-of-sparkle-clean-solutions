@@ -545,6 +545,7 @@ const ChatBot = () => {
           animate={{ x: 0, opacity: 1, rotate: 0 }}
           transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
         >
+          <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
@@ -592,8 +593,6 @@ const ChatBot = () => {
             >
               <X className="w-3 h-3 text-background" />
             </button>
-          <div className="relative">
-            {/* wrapper for close button positioning */}
           </div>
         </motion.div>
       )}
