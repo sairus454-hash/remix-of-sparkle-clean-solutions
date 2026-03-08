@@ -333,6 +333,7 @@ export const translations = {
     footer: {
       rights: 'Все права защищены',
       privacy: 'Политика конфиденциальности',
+      terms: 'Условия использования',
     },
     admin: {
       loginTitle: 'Вход в админ-панель',
