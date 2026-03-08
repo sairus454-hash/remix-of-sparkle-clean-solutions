@@ -184,43 +184,19 @@ const Handyman = () => {
         <div className="absolute inset-0">
           <HeroVideo src="/hero-handyman-video.mp4" />
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-4">
-            {/* Title with icon centered above */}
-            <div className="flex justify-start mb-6">
-              <div className="relative inline-flex flex-col items-center">
-                {/* Animated tool icon centered over title */}
-                <div className="mb-4 relative">
-                  <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow animate-float">
-                    <Wrench className="w-10 h-10 text-primary-foreground animate-pulse" />
-                  </div>
-                  <div className="absolute -top-2 -right-6 animate-bounce" style={{ animationDelay: '0.2s' }}>
-                    <div className="w-8 h-8 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
-                      <Hammer className="w-4 h-4 text-yellow-900" />
-                    </div>
-                  </div>
-                  <div className="absolute -bottom-1 -left-6 animate-bounce" style={{ animationDelay: '0.5s' }}>
-                    <div className="w-8 h-8 rounded-lg bg-yellow-400 flex items-center justify-center shadow-lg">
-                      <Plug className="w-4 h-4 text-yellow-900" />
-                    </div>
-                  </div>
-                </div>
-
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold animate-fade-up relative inline-block drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
-              <span className="relative z-10">{t.handyman.title}</span>
-              <span 
-                className="absolute bottom-2 left-0 w-full h-4 bg-yellow-400/60 -z-0 rounded"
-                style={{ 
-                  animation: 'highlightExpand 1s ease-out forwards',
-                  transformOrigin: 'left'
-                }}
-              />
-                </h1>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="text-center">
+            {/* Center Icon and Title */}
+            <div className="flex justify-center mb-6">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-r from-primary to-fresh flex items-center justify-center shadow-2xl animate-pulse">
+                <Wrench className="w-12 h-12 text-primary-foreground" />
               </div>
             </div>
-            
-            <p className="text-lg md:text-xl text-white animate-fade-up max-w-2xl drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-              {t.handyman.subtitle}
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              Złota rączka
+            </h1>
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+              Szybkie rozwiązanie problemów domowych. Drobne naprawy, montaż, składanie mebli i wiele więcej.
             </p>
           </div>
         </div>
