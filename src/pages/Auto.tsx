@@ -5,7 +5,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AutoSplash from '@/components/AutoSplash';
-import AutoHeroSlideshow from '@/components/AutoHeroSlideshow';
+import HeroVideo from '@/components/HeroVideo';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import Auto3DCarousel from '@/components/Auto3DCarousel';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
