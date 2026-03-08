@@ -539,8 +539,12 @@ const ChatBot = () => {
         </button>
       ) : (
         // Desktop: Extended button with girl image, text and "More" arrow
-        <div className="fixed z-50 bottom-20 right-4">
-          <div className="relative">
+        <motion.div 
+          className="fixed z-50 bottom-20 right-4"
+          initial={{ x: 300, opacity: 0, rotate: 90 }}
+          animate={{ x: 0, opacity: 1, rotate: 0 }}
+          transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
+        >
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={cn(
