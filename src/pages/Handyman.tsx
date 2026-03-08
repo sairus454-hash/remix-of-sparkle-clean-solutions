@@ -184,8 +184,22 @@ const Handyman = () => {
         <div className="absolute inset-0">
           <HeroVideo src="/hero-handyman-video.mp4" />
         </div>
-        <div className="relative z-10 h-full flex items-center">
-          <div className="container mx-auto px-4">
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="text-center">
+            {/* Center Icon and Title */}
+            <div className="flex justify-center mb-6">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-r from-primary to-fresh flex items-center justify-center shadow-2xl animate-pulse">
+                <Wrench className="w-12 h-12 text-primary-foreground" />
+              </div>
+            </div>
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              Złota rączka
+            </h1>
+            <p className="text-lg md:text-xl text-white max-w-2xl mx-auto animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+              Szybkie rozwiązanie problemów domowych. Drobne naprawy, montaż, składanie mebli i wiele więcej.
+            </p>
+          </div>
+          <div className="container mx-auto px-4 absolute" style={{ display: 'none' }}>
             {/* Title with icon centered above */}
             <div className="flex justify-start mb-6">
               <div className="relative inline-flex flex-col items-center">
