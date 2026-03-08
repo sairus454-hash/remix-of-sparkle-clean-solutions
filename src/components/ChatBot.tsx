@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { MessageCircle, X, Send, Bot, User, Loader2, Camera, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff, ImageIcon, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -538,7 +539,12 @@ const ChatBot = () => {
         </button>
       ) : (
         // Desktop: Extended button with girl image, text and "More" arrow
-        <div className="fixed z-50 bottom-20 right-4">
+        <motion.div 
+          className="fixed z-50 bottom-20 right-4"
+          initial={{ x: 300, opacity: 0, rotate: 90 }}
+          animate={{ x: 0, opacity: 1, rotate: 0 }}
+          transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
+        >
           <div className="relative">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -588,7 +594,7 @@ const ChatBot = () => {
               <X className="w-3 h-3 text-background" />
             </button>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Chat Window */}
