@@ -6,7 +6,7 @@ import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
-import HandymanHeroSlideshow from '@/components/HandymanHeroSlideshow';
+import HeroVideo from '@/components/HeroVideo';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
