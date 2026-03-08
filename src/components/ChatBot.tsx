@@ -91,6 +91,7 @@ const ChatBot = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
   const [hasAutoOpened, setHasAutoOpened] = useState(() => {
     try { return !!sessionStorage.getItem('chatbot_auto_opened'); } catch { return false; }
   });
