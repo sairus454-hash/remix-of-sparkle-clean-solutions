@@ -614,7 +614,7 @@ const ChatBot = () => {
               className={cn(
                 "flex items-center gap-1 pl-1 pr-3 py-1 rounded-full shadow-lg transition-all duration-300",
                 "bg-gradient-to-br from-primary to-fresh hover:scale-105 hover:shadow-glow",
-                isOpen ? "opacity-0 pointer-events-none" : "animate-pulse-slow"
+                isOpen ? "opacity-0 pointer-events-none" : "animate-pulse-slow animate-glow-ring"
               )}
               aria-label={t.chatbot.openChat}
             >
