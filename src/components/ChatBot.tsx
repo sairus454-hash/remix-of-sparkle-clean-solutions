@@ -536,44 +536,45 @@ const ChatBot = () => {
           )}
         </button>
       ) : (
-        // Desktop: Extended button with icon, label and close button
-        <div className="fixed z-50 bottom-20 right-4 flex items-center gap-2">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={cn(
-              "flex items-center gap-2 px-4 py-2.5 rounded-full shadow-lg transition-all duration-300",
-              "bg-gradient-to-br from-primary to-fresh hover:scale-105 hover:shadow-glow",
-              isOpen ? "rotate-180 opacity-0 pointer-events-none" : "animate-pulse-slow"
-            )}
-            aria-label={t.chatbot.openChat}
-          >
-            <div className="rounded-full bg-white/20 flex items-center justify-center w-8 h-8">
-              <MessageCircle className="w-4 h-4 text-primary-foreground" />
-            </div>
-            <div className="text-left">
-              <div className="text-sm font-semibold text-primary-foreground leading-tight">
-                {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
-              </div>
-              <div className="text-xs text-primary-foreground/80">
-                {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
-              </div>
-            </div>
-          </button>
-          
-          {/* Close button when chat is open */}
-          {isOpen && (
+        // Desktop: Extended button with icon, label and close button overlay
+        <div className="fixed z-50 bottom-20 right-4">
+          <div className="relative">
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsOpen(!isOpen)}
               className={cn(
-                "flex items-center justify-center p-2.5 rounded-full shadow-lg transition-all duration-300",
-                "bg-gradient-to-br from-primary to-fresh hover:scale-110 hover:shadow-glow",
-                "animate-in fade-in scale-in duration-200"
+                "flex items-center gap-2 px-4 py-2.5 rounded-full shadow-lg transition-all duration-300",
+                "bg-gradient-to-br from-primary to-fresh hover:scale-105 hover:shadow-glow",
+                isOpen ? "opacity-0 pointer-events-none" : "animate-pulse-slow"
               )}
-              aria-label={t.chatbot.closeChat}
+              aria-label={t.chatbot.openChat}
             >
-              <X className="w-5 h-5 text-primary-foreground" />
+              <div className="rounded-full bg-white/20 flex items-center justify-center w-8 h-8">
+                <MessageCircle className="w-4 h-4 text-primary-foreground" />
+              </div>
+              <div className="text-left">
+                <div className="text-sm font-semibold text-primary-foreground leading-tight">
+                  {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
+                </div>
+                <div className="text-xs text-primary-foreground/80">
+                  {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
+                </div>
+              </div>
             </button>
-          )}
+            
+            {/* Close button overlay - always visible when chat is closed */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={cn(
+                "absolute top-0 right-0 flex items-center justify-center w-6 h-6 rounded-full shadow-lg transition-all duration-300",
+                "bg-gradient-to-br from-primary to-fresh hover:scale-125 hover:shadow-glow",
+                isOpen ? "animate-in fade-in scale-in duration-200" : "animate-out fade-out scale-out duration-200"
+              )}
+              aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
+              title={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
+            >
+              <X className="w-3.5 h-3.5 text-primary-foreground" />
+            </button>
+          </div>
         </div>
       )}
 
