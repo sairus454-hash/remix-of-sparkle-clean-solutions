@@ -540,20 +540,20 @@ const ChatBot = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
           >
-            <div className="relative flex flex-row items-center">
-              {/* Expanded text - slides out to the LEFT of the icon */}
+            <div className="relative">
+              {/* Expanded text - positioned absolutely to the LEFT of the icon */}
               <motion.div
-                className="overflow-hidden flex items-center rounded-l-full bg-gradient-to-r from-primary to-fresh shadow-lg"
+                className="absolute right-full mr-1 top-0 overflow-hidden flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer"
                 initial={false}
                 animate={{
-                  width: mobileExpanded ? 200 : 0,
+                  width: mobileExpanded ? 210 : 0,
                   opacity: mobileExpanded ? 1 : 0,
                 }}
                 transition={{ type: 'spring', stiffness: 150, damping: 20 }}
                 onClick={() => { setIsOpen(true); setMobileExpanded(false); }}
                 style={{ height: 56 }}
               >
-                <div className="flex items-center gap-2 px-4 whitespace-nowrap">
+                <div className="flex items-center gap-2 px-4 whitespace-nowrap min-w-[210px]">
                   <div className="text-left">
                     <div className="text-xs font-semibold text-primary-foreground leading-tight">
                       {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
@@ -570,7 +570,7 @@ const ChatBot = () => {
               <button
                 onClick={handleMobileToggle}
                 className={cn(
-                  "w-14 h-14 rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh flex items-center justify-center flex-shrink-0 overflow-hidden",
+                  "w-14 h-14 rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh flex items-center justify-center overflow-hidden",
                   !mobileExpanded && "animate-pulse-slow animate-glow-ring"
                 )}
                 aria-label={t.chatbot.openChat}
