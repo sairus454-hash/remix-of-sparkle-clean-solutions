@@ -31,7 +31,7 @@ const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
         style={{ opacity: isLoaded ? 1 : 0 }}
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src={src} type="video/mp4" />
       </video>
 
       {/* Fallback gradient while loading */}

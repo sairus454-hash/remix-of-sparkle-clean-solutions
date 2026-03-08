@@ -92,8 +92,8 @@ const Auto = () => {
         {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
 
         {/* Hero */}
-        <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
-          <AutoHeroSlideshow />
+         <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
+          <HeroVideo src="/hero-auto-video.mp4" />
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <div className="flex justify-center mb-4 sm:mb-6 animate-fade-up">
