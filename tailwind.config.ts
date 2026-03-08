@@ -55,6 +55,10 @@ export default {
           DEFAULT: "hsl(var(--fresh))",
           foreground: "hsl(var(--fresh-foreground))",
         },
+        "teal-mobile": {
+          DEFAULT: "hsl(var(--teal-mobile))",
+          foreground: "hsl(var(--teal-mobile-foreground))",
+        },
         clean: {
           DEFAULT: "hsl(var(--clean))",
           dark: "hsl(var(--clean-dark))",
