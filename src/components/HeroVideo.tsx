@@ -8,6 +8,19 @@ const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
+  // Preload video via link tag for faster loading
+  useEffect(() => {
+    const existing = document.querySelector(`link[href="${src}"]`);
+    if (!existing) {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'video';
+      link.href = src;
+      link.type = 'video/mp4';
+      document.head.appendChild(link);
+    }
+  }, [src]);
+
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
@@ -27,8 +40,8 @@ const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
         loop
         playsInline
         preload="auto"
-        onLoadedData={() => setIsLoaded(true)}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+        onCanPlay={() => setIsLoaded(true)}
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
         style={{ opacity: isLoaded ? 1 : 0 }}
       >
         <source src={src} type="video/mp4" />
