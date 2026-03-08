@@ -549,11 +549,11 @@ const ChatBot = () => {
               )}
               aria-label={t.chatbot.openChat}
             >
-              {/* Girl with phone image */}
+              {/* Girl with phone image - overflows the button */}
               <img 
                 src={chatbotGirl} 
                 alt="Consultant" 
-                className="w-12 h-12 rounded-full object-cover object-top border-2 border-white/30"
+                className="w-20 h-20 -my-6 -ml-2 object-cover object-top rounded-full drop-shadow-lg"
               />
               
               {/* Text */}
