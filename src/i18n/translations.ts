@@ -1039,6 +1039,7 @@ export const translations = {
     footer: {
       rights: 'All rights reserved',
       privacy: 'Privacy Policy',
+      terms: 'Terms of Use',
     },
     admin: {
       loginTitle: 'Admin Login',
