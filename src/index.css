@@ -333,6 +333,15 @@ html {
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
+@keyframes glow-ring {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(170 60% 50% / 0.6); }
+  50% { box-shadow: 0 0 18px 8px hsl(170 60% 50% / 0.35); }
+}
+
+.animate-glow-ring {
+  animation: glow-ring 2s ease-in-out infinite;
+}
+
 .animate-twinkle {
   animation: twinkle 2s ease-in-out infinite;
 }
