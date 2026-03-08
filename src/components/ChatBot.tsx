@@ -604,6 +604,7 @@ const ChatBot = () => {
         )
       ) : (
         // Desktop: Extended button with girl image, text and "More" arrow
+        !isDismissed && (
         <motion.div 
           className="fixed z-50 bottom-20 right-4"
           initial={{ x: 300, opacity: 0, rotate: 90 }}
@@ -660,6 +661,7 @@ const ChatBot = () => {
             </button>
           </div>
         </motion.div>
+        )
       )}
 
       {/* Chat Window */}
