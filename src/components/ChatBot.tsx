@@ -516,14 +516,14 @@ const ChatBot = () => {
           onClick={() => setIsOpen(!isOpen)}
           className={cn(
             "fixed z-50 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center overflow-hidden",
-            "bg-gradient-to-br from-teal-500 to-cyan-600 hover:scale-110 hover:shadow-glow",
+            "bg-teal-mobile hover:scale-110 hover:shadow-glow",
             "right-3 top-[60%] -translate-y-1/2 w-14 h-14",
             isOpen ? "rotate-180" : "animate-pulse-slow"
           )}
           aria-label={isOpen ? t.chatbot.closeChat : t.chatbot.openChat}
         >
           {isOpen ? (
-            <X className="w-6 h-6 text-white" />
+            <X className="w-6 h-6 text-teal-mobile-foreground" />
           ) : (
             <img 
               src={chatbotGirl} 
