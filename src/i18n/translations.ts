@@ -1745,6 +1745,7 @@ export const translations = {
     footer: {
       rights: 'Wszelkie prawa zastrzeżone',
       privacy: 'Polityka prywatności',
+      terms: 'Warunki korzystania',
     },
     admin: {
       loginTitle: 'Logowanie administratora',
