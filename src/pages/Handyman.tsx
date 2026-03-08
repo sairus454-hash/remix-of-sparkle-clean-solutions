@@ -180,10 +180,12 @@ const Handyman = () => {
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
       
       {/* Hero Section with animated title */}
-      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
-        <HeroVideo src="/hero-handyman-video.mp4" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl text-left">
+      <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
+        <div className="absolute inset-0">
+          <HeroVideo src="/hero-handyman-video.mp4" />
+        </div>
+        <div className="relative z-10 h-full flex items-center">
+          <div className="container mx-auto px-4">
             {/* Title with icon centered above */}
             <div className="flex justify-start mb-6">
               <div className="relative inline-flex flex-col items-center">
