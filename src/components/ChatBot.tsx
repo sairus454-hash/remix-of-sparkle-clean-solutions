@@ -544,7 +544,7 @@ const ChatBot = () => {
               <motion.button
                 onClick={handleMobileToggle}
                 className={cn(
-                  "flex items-center rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh overflow-visible",
+                  "flex items-center justify-center rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh overflow-hidden",
                   !mobileExpanded && "animate-pulse-slow animate-glow-ring"
                 )}
                 animate={{
@@ -554,18 +554,16 @@ const ChatBot = () => {
                 transition={{ type: 'spring', stiffness: 150, damping: 18 }}
                 aria-label={t.chatbot.openChat}
               >
-                {/* Girl image - always visible, normal orientation */}
-                <div className="relative flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img 
-                    src={chatbotGirl} 
-                    alt="Consultant" 
-                    className="absolute w-[68px] h-[68px] -top-[6px] left-1/2 -translate-x-1/2 object-cover object-top rounded-full drop-shadow-md"
-                  />
-                </div>
+                {/* Girl image - centered vertically and horizontally */}
+                <img 
+                  src={chatbotGirl} 
+                  alt="Consultant" 
+                  className="w-14 h-14 object-cover object-center rounded-full flex-shrink-0"
+                />
 
-                {/* Expanded content */}
+                {/* Expanded text content - appears on horizontal expansion */}
                 <motion.div
-                  className="flex items-center gap-1 pr-3 overflow-hidden"
+                  className="flex items-center gap-2 px-3 overflow-hidden"
                   animate={{
                     width: mobileExpanded ? 'auto' : 0,
                     opacity: mobileExpanded ? 1 : 0,
