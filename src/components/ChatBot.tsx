@@ -559,7 +559,7 @@ const ChatBot = () => {
               <img 
                 src={chatbotGirl} 
                 alt="Consultant" 
-                className="w-20 h-20 -my-6 -ml-2 object-cover object-top rounded-full drop-shadow-lg"
+                className="w-24 h-24 -my-8 -ml-3 object-cover object-top rounded-full drop-shadow-lg"
               />
               
               {/* Text */}
