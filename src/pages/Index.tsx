@@ -28,7 +28,7 @@ import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import { useSplash } from '@/hooks/useSplash';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import heroBannerImage from '@/assets/hero-banner.jpg';
-import IndexHeroSlideshow from '@/components/IndexHeroSlideshow';
+import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
