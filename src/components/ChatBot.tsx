@@ -534,7 +534,7 @@ const ChatBot = () => {
       {/* Chat Toggle Button */}
       {isMobile ? (
         // Mobile: Circular button, expands horizontally on tap
-        !isOpen && (
+        !isOpen && !isDismissed && (
           <>
             {/* Expanded text pill - separate fixed element */}
             <motion.div
