@@ -592,7 +592,7 @@ const ChatBot = () => {
                   className={cn(
                     "absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-300",
                     "bg-foreground/80 hover:bg-foreground",
-                    mobileExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
+                    "opacity-100"
                   )}
                   aria-label={t.chatbot.closeChat}
                 >
