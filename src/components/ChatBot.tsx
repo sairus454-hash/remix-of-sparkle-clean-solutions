@@ -91,6 +91,7 @@ const ChatBot = () => {
   const location = useLocation();
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
   const [hasAutoOpened, setHasAutoOpened] = useState(() => {
     try { return !!sessionStorage.getItem('chatbot_auto_opened'); } catch { return false; }
   });
@@ -533,7 +534,7 @@ const ChatBot = () => {
       {/* Chat Toggle Button */}
       {isMobile ? (
         // Mobile: Circular button, expands horizontally on tap
-        !isOpen && (
+        !isOpen && !isDismissed && (
           <>
             {/* Expanded text pill - separate fixed element */}
             <motion.div
@@ -587,11 +588,11 @@ const ChatBot = () => {
 
                 {/* Close button */}
                 <button
-                  onClick={(e) => { e.stopPropagation(); setMobileExpanded(false); }}
+                  onClick={(e) => { e.stopPropagation(); setIsDismissed(true); setMobileExpanded(false); }}
                   className={cn(
                     "absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-300",
                     "bg-foreground/80 hover:bg-foreground",
-                    mobileExpanded ? "opacity-100" : "opacity-0 pointer-events-none"
+                    "opacity-100"
                   )}
                   aria-label={t.chatbot.closeChat}
                 >
@@ -603,6 +604,7 @@ const ChatBot = () => {
         )
       ) : (
         // Desktop: Extended button with girl image, text and "More" arrow
+        !isDismissed && (
         <motion.div 
           className="fixed z-50 bottom-20 right-4"
           initial={{ x: 300, opacity: 0, rotate: 90 }}
@@ -647,7 +649,7 @@ const ChatBot = () => {
             
             {/* Close button overlay */}
             <button
-              onClick={(e) => { e.stopPropagation(); setIsOpen(false); }}
+              onClick={(e) => { e.stopPropagation(); setIsDismissed(true); }}
               className={cn(
                 "absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 rounded-full shadow-md transition-all duration-300",
                 "bg-foreground/80 hover:bg-foreground hover:scale-125",
@@ -659,6 +661,7 @@ const ChatBot = () => {
             </button>
           </div>
         </motion.div>
+        )
       )}
 
       {/* Chat Window */}
