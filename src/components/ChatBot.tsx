@@ -669,7 +669,7 @@ const ChatBot = () => {
           "transition-[transform,opacity] duration-500 ease-out",
           // Mobile: compact bottom modal, Desktop: side window
           isMobile 
-            ? "bottom-0 left-0 right-0 w-full max-h-[65vh] rounded-t-3xl" 
+            ? "inset-0 w-full h-full rounded-none" 
             : "bottom-[120px] right-4 w-96 h-[500px] max-h-[70vh] rounded-2xl",
           isOpen 
             ? "scale-100 opacity-100 translate-y-0" 
