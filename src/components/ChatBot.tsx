@@ -551,9 +551,11 @@ const ChatBot = () => {
               <MessageCircle className="w-4 h-4 text-primary-foreground" />
             </div>
             <div className="text-left">
-              <div className="text-sm font-semibold text-primary-foreground leading-tight">AI</div>
+              <div className="text-sm font-semibold text-primary-foreground leading-tight">
+                {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
+              </div>
               <div className="text-xs text-primary-foreground/80">
-                {language === 'ru' ? 'твой консультант' : language === 'pl' ? 'Twój konsultant' : language === 'uk' ? 'твій консультант' : 'your consultant'}
+                {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
               </div>
             </div>
           </button>
