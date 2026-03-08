@@ -543,17 +543,17 @@ const ChatBot = () => {
             <div className="relative">
               {/* Expanded text - positioned absolutely to the LEFT of the icon */}
               <motion.div
-                className="absolute right-full mr-1 top-0 overflow-hidden flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer"
+                className="absolute right-full mr-1 top-0 flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer"
                 initial={false}
                 animate={{
-                  width: mobileExpanded ? 210 : 0,
+                  scaleX: mobileExpanded ? 1 : 0,
                   opacity: mobileExpanded ? 1 : 0,
                 }}
+                style={{ height: 56, transformOrigin: 'right center', width: 210 }}
                 transition={{ type: 'spring', stiffness: 150, damping: 20 }}
                 onClick={() => { setIsOpen(true); setMobileExpanded(false); }}
-                style={{ height: 56 }}
               >
-                <div className="flex items-center gap-2 px-4 whitespace-nowrap min-w-[210px]">
+                <div className="flex items-center gap-2 px-4 whitespace-nowrap">
                   <div className="text-left">
                     <div className="text-xs font-semibold text-primary-foreground leading-tight">
                       {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
