@@ -224,6 +224,7 @@ const Handyman = () => {
             </p>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Services Grid */}
