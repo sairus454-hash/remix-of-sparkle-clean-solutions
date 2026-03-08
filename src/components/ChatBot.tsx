@@ -532,31 +532,47 @@ const ChatBot = () => {
     <>
       {/* Chat Toggle Button */}
       {isMobile ? (
-        // Mobile: Circular button with overflowing girl image, expands to full widget on tap
+        // Mobile: Circular button, expands horizontally on tap
         !isOpen && (
           <motion.div
-            className="fixed z-50 right-3 top-[60%] -translate-y-1/2"
+            className="fixed z-50 right-3 bottom-24"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
           >
             <div className="relative">
-              {mobileExpanded ? (
-                // Expanded: full desktop-style widget with text
-                <motion.button
-                  onClick={handleMobileToggle}
-                  className="flex items-center gap-1 pl-1 pr-3 py-1 rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh"
-                  initial={{ width: 56, opacity: 0.8 }}
-                  animate={{ width: 'auto', opacity: 1 }}
-                  transition={{ type: 'spring', stiffness: 120, damping: 14 }}
-                  aria-label={t.chatbot.openChat}
-                >
+              <motion.button
+                onClick={handleMobileToggle}
+                className={cn(
+                  "flex items-center rounded-full shadow-lg bg-gradient-to-br from-primary to-fresh overflow-visible",
+                  !mobileExpanded && "animate-pulse-slow animate-glow-ring"
+                )}
+                animate={{
+                  width: mobileExpanded ? 'auto' : 56,
+                  height: 56,
+                }}
+                transition={{ type: 'spring', stiffness: 150, damping: 18 }}
+                aria-label={t.chatbot.openChat}
+              >
+                {/* Girl image - always visible, normal orientation */}
+                <div className="relative flex-shrink-0 w-14 h-14 flex items-center justify-center">
                   <img 
                     src={chatbotGirl} 
                     alt="Consultant" 
-                    className="w-20 h-20 -my-6 -ml-3 object-cover object-top rounded-full drop-shadow-lg flex-shrink-0"
+                    className="absolute w-[68px] h-[68px] -top-[6px] left-1/2 -translate-x-1/2 object-cover object-top rounded-full drop-shadow-md"
                   />
-                  <div className="text-left mx-1 whitespace-nowrap">
+                </div>
+
+                {/* Expanded content */}
+                <motion.div
+                  className="flex items-center gap-1 pr-3 overflow-hidden"
+                  animate={{
+                    width: mobileExpanded ? 'auto' : 0,
+                    opacity: mobileExpanded ? 1 : 0,
+                  }}
+                  transition={{ type: 'spring', stiffness: 150, damping: 18 }}
+                >
+                  <div className="text-left whitespace-nowrap">
                     <div className="text-xs font-semibold text-primary-foreground leading-tight">
                       {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
                     </div>
@@ -565,25 +581,8 @@ const ChatBot = () => {
                     </div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-primary-foreground animate-bounce flex-shrink-0" style={{ animationDuration: '2s' }} />
-                </motion.button>
-              ) : (
-                // Collapsed: circular button with overflowing girl
-                <button
-                  onClick={handleMobileToggle}
-                  className={cn(
-                    "relative rounded-full shadow-lg flex items-center justify-center",
-                    "bg-teal-mobile hover:scale-110",
-                    "w-14 h-14 animate-pulse-slow animate-glow-ring"
-                  )}
-                  aria-label={t.chatbot.openChat}
-                >
-                  <img 
-                    src={chatbotGirl} 
-                    alt="Consultant" 
-                    className="absolute w-[68px] h-[68px] -top-[7px] -left-[7px] object-cover object-top rounded-full drop-shadow-md"
-                  />
-                </button>
-              )}
+                </motion.div>
+              </motion.button>
 
               {/* Close button */}
               <button
