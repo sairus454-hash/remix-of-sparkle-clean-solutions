@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import BackToOrderButton from '@/components/BackToOrderButton';
 import WindowsSplash from '@/components/WindowsSplash';
 import { useSplash } from '@/hooks/useSplash';
  import ContactForm, { ContactFormRef } from '@/components/ContactForm';
@@ -62,6 +63,7 @@ import { useSplash } from '@/hooks/useSplash';
         }}
       />
      <Layout>
+       <BackToOrderButton />
        {/* Hero */}
         <section className="py-20 bg-gradient-section relative overflow-hidden">
           {/* Floating water drop decorations */}

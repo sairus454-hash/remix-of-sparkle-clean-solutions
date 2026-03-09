@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import BackToOrderButton from '@/components/BackToOrderButton';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import OzoneSplash from '@/components/OzoneSplash';
@@ -74,6 +75,7 @@ const Ozone = () => {
         }}
       />
     <Layout>
+      <BackToOrderButton />
       {/* Fixed ozone molecule background behind everything */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img src={ozoneBg} alt="" className="w-full h-full object-cover" />

@@ -6,6 +6,7 @@ import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import BackToOrderButton from '@/components/BackToOrderButton';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -228,6 +229,7 @@ const Cleaning = () => {
       />
       {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
       <Layout>
+      <BackToOrderButton />
       {/* Hero with Background Photo Slideshow */}
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
         <HeroSlideshow images={galleryImages} />
