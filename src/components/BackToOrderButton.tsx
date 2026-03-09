@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
@@ -11,9 +12,14 @@ const BackToOrderButton = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
+  const [show, setShow] = useState(false);
 
-  const state = location.state as { openCategory?: string } | null;
-  const show = !!state?.openCategory;
+  useEffect(() => {
+    const state = location.state as { openCategory?: string } | null;
+    if (state?.openCategory) {
+      setShow(true);
+    }
+  }, [location.state]);
 
   const label: Record<string, string> = {
     ru: 'Назад к заявке',
