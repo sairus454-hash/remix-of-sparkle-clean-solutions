@@ -163,6 +163,7 @@ const Handyman = () => {
         keywords="мастер на час, мелкий ремонт, złota rączka, drobne naprawy, hydraulik, elektryk, montaż mebli, usługi domowe, handyman services Poland, Opole Wrocław"
         canonical="/handyman"
         image="https://masterclean1885.pl/og-handyman.png"
+        breadcrumbs={[{ name: t.nav.handyman, path: '/handyman' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

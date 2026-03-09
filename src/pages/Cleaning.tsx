@@ -213,6 +213,7 @@ const Cleaning = () => {
         keywords="уборка квартир, генеральная уборка, клининг, sprzątanie mieszkań, sprzątanie domów, sprzątanie biur, sprzątanie generalne, firma sprzątająca, usługi sprzątania Opole Wrocław, house cleaning Poland"
         canonical="/cleaning"
         image="https://masterclean1885.pl/og-cleaning.png"
+        breadcrumbs={[{ name: t.nav.cleaning, path: '/cleaning' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

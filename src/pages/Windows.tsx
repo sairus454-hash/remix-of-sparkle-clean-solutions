@@ -47,6 +47,7 @@ import { useSplash } from '@/hooks/useSplash';
         keywords="мойка окон, чистка окон, mycie okien, czyszczenie okien, mycie okien na wysokości, profesjonalne mycie okien, window cleaning, mycie okien Opole Wrocław Poznań"
         canonical="/windows"
         image="https://masterclean1885.pl/og-windows.png"
+        breadcrumbs={[{ name: t.nav.windows, path: '/windows' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
