@@ -95,6 +95,7 @@ const Impregnation = () => {
         }}
       />
     <Layout>
+      <BackToOrderButton />
       {/* Hero */}
       <section className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">

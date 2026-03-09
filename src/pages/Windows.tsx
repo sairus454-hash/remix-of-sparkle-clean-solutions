@@ -63,6 +63,7 @@ import { useSplash } from '@/hooks/useSplash';
         }}
       />
      <Layout>
+       <BackToOrderButton />
        {/* Hero */}
         <section className="py-20 bg-gradient-section relative overflow-hidden">
           {/* Floating water drop decorations */}

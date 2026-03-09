@@ -75,6 +75,7 @@ const Ozone = () => {
         }}
       />
     <Layout>
+      <BackToOrderButton />
       {/* Fixed ozone molecule background behind everything */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img src={ozoneBg} alt="" className="w-full h-full object-cover" />

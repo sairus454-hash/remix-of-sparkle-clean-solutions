@@ -367,6 +367,7 @@ const Prices = () => {
       />
       {showSplash && <PriceSplash onComplete={handleSplashComplete} />}
       <Layout>
+        <BackToOrderButton />
         {/* Hero */}
         <section className="py-12 sm:py-20 bg-gradient-section">
           <div className="container mx-auto px-4">

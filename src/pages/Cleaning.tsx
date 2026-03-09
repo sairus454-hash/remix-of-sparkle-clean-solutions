@@ -229,6 +229,7 @@ const Cleaning = () => {
       />
       {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
       <Layout>
+      <BackToOrderButton />
       {/* Hero with Background Photo Slideshow */}
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
         <HeroSlideshow images={galleryImages} />

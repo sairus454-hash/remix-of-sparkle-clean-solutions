@@ -91,6 +91,7 @@ const Auto = () => {
         }}
       />
       <Layout>
+        <BackToOrderButton />
         {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
 
          {/* Hero */}
