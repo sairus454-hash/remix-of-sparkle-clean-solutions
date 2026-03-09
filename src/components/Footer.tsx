@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Droplets, Phone, Mail, MapPin, ShieldCheck, BookOpen, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import fixlyBadge from '@/assets/fixly-badge.jpg';
+import fixlyBadge from '@/assets/fixly-top-executor-2025.jpg';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
@@ -117,7 +117,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           {/* Fixly Top Wykonawca Badge */}
           <a href="https://fixly.pl" target="_blank" rel="noopener noreferrer" className="relative group">
-            <div className="w-20 h-20 sm:w-[84px] sm:h-[84px] rounded-full overflow-hidden border-2 border-yellow-400/60 shadow-lg animate-pulse">
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg animate-pulse hover:scale-105 transition-transform">
               <img src={fixlyBadge} alt="MasterClean — Top Wykonawca 2025 Fixly.pl" className="w-full h-full object-cover" />
             </div>
           </a>
