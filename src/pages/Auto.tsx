@@ -3,6 +3,7 @@ import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import BackToOrderButton from '@/components/BackToOrderButton';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AutoSplash from '@/components/AutoSplash';
 import HeroVideo from '@/components/HeroVideo';
