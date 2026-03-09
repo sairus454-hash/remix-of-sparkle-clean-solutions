@@ -1598,6 +1598,8 @@ export const translations = {
          bedHeadboard: 'Czyszczenie zagłówka łóżka',
          bedFrame: 'Czyszczenie ramy łóżka',
          carpetCovering: 'Wykładzina dywanowa',
+         carpetFloorMedium: 'Czyszczenie wykładziny (20-50 m²)',
+         carpetFloorLarge: 'Czyszczenie wykładziny (50+ m²)',
          flockNote: 'Meble z floku + 50% do kosztu zwykłych mebli',
        },
        ozonation: 'Ozonowanie',
