@@ -1,6 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 
+interface BreadcrumbItem {
+  name: string;
+  path: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -9,6 +14,7 @@ interface SEOProps {
   type?: string;
   image?: string;
   jsonLd?: Record<string, unknown>;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const SITE_URL = 'https://masterclean1885.pl';
