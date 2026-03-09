@@ -67,7 +67,7 @@ const SEO = ({
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-      <html lang={hreflangMap[language] || 'ru'} />
+      <html lang={hreflangMap[language] || 'pl'} />
 
       {/* Hreflang tags for multilingual SEO */}
       {Object.entries(hreflangMap).map(([lang, hreflang]) => (
