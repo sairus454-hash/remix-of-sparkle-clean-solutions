@@ -34,6 +34,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     t,
     language
   } = useLanguage();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   
   const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
