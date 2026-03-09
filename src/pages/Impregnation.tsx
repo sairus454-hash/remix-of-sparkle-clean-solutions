@@ -88,6 +88,7 @@ const Impregnation = () => {
           '@type': 'Service',
           serviceType: 'Импрегнация мебели и тканей',
           provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
+          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
           offers: { '@type': 'Offer', name: 'Импрегнация (защита на 1 год)', price: '80', priceCurrency: 'PLN' },
         }}
       />
