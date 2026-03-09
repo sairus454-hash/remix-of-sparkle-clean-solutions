@@ -6,6 +6,7 @@ import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
+import BackToOrderButton from '@/components/BackToOrderButton';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
