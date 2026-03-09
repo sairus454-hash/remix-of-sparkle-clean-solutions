@@ -100,6 +100,9 @@ const PRICE_LIST = {
 • Сушка мебели — 60 PLN (🌿 АКЦИЯ: БЕСПЛАТНО до конца весны!)
 • Импрегнация (защита на 1 год) — 80 PLN
 • Чистка плитки — 25 PLN/м²
+• Импрегнация ковра — 5 PLN/м²
+• Чистка ковролина (20-50 м²) — 15 PLN/м²
+• Чистка ковролина (50+ м²) — 10 PLN/м²
 
 🔧 МАСТЕР НА ЧАС:
 
@@ -268,6 +271,9 @@ Deep cleaning:
 • Furniture drying — 60 PLN (🌿 PROMO: FREE until end of spring!)
 • Impregnation (1 year protection) — 80 PLN
 • Tile cleaning — 25 PLN/m²
+• Carpet impregnation — 5 PLN/m²
+• Carpet floor cleaning (20-50 m²) — 15 PLN/m²
+• Carpet floor cleaning (50+ m²) — 10 PLN/m²
 
 🔧 HANDYMAN:
 
@@ -436,6 +442,9 @@ Sprzątanie generalne:
 • Suszenie mebli — 60 PLN (🌿 PROMOCJA: GRATIS do końca wiosny!)
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 25 PLN/m²
+• Impregnacja dywanu — 5 PLN/m²
+• Czyszczenie wykładziny (20-50 m²) — 15 PLN/m²
+• Czyszczenie wykładziny (50+ m²) — 10 PLN/m²
 
 🔧 ZŁOTA RĄCZKA:
 
