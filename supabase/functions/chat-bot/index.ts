@@ -442,6 +442,9 @@ Sprzątanie generalne:
 • Suszenie mebli — 60 PLN (🌿 PROMOCJA: GRATIS do końca wiosny!)
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 25 PLN/m²
+• Impregnacja dywanu — 5 PLN/m²
+• Czyszczenie wykładziny (20-50 m²) — 15 PLN/m²
+• Czyszczenie wykładziny (50+ m²) — 10 PLN/m²
 
 🔧 ZŁOTA RĄCZKA:
 
