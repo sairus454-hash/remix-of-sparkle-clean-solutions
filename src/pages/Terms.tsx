@@ -71,6 +71,7 @@ const Terms = () => {
         title={c.title}
         description={`${c.title} — MasterClean 1885`}
         canonical="/terms"
+        breadcrumbs={[{ name: c.title, path: '/terms' }]}
       />
       <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4 max-w-3xl">
