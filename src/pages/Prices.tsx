@@ -330,11 +330,19 @@ const Prices = () => {
         image="https://masterclean1885.pl/og-prices.png"
         jsonLd={{
           '@context': 'https://schema.org',
-          '@type': 'PriceSpecification',
+          '@type': 'WebPage',
           name: 'Прайс-лист MasterClean',
           description: 'Актуальные цены на все услуги химчистки и клининга',
-          priceCurrency: 'PLN',
-          url: 'https://masterclean1885.pl/prices',
+          isPartOf: { '@type': 'WebSite', name: 'MasterClean', url: 'https://masterclean1885.pl' },
+          mainEntity: {
+            '@type': 'OfferCatalog',
+            name: 'Услуги MasterClean',
+            itemListElement: [
+              { '@type': 'Offer', name: 'Химчистка мебели', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Озонирование', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Уборка', priceCurrency: 'PLN' },
+            ],
+          },
         }}
       />
       {showSplash && <PriceSplash onComplete={handleSplashComplete} />}
