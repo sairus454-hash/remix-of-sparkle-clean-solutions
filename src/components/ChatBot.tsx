@@ -582,7 +582,7 @@ const ChatBot = () => {
                   <img 
                     src={chatbotGirl} 
                     alt="Consultant" 
-                    className="w-14 h-14 object-cover object-top rounded-full"
+                    className="w-14 h-14 object-cover object-top rounded-full animate-wave-hello"
                   />
                 </button>
 
@@ -625,7 +625,7 @@ const ChatBot = () => {
               <img 
                 src={chatbotGirl} 
                 alt="Consultant" 
-                className="w-24 h-24 -my-8 -ml-3 object-cover object-top rounded-full drop-shadow-lg"
+                className="w-24 h-24 -my-8 -ml-3 object-cover object-top rounded-full drop-shadow-lg animate-wave-hello"
               />
               
               {/* Text */}
