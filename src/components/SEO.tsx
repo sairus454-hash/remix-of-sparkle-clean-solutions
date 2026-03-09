@@ -125,6 +125,11 @@ const SEO = ({
       <script type="application/ld+json">
         {JSON.stringify(jsonLd || defaultJsonLd)}
       </script>
+      {breadcrumbJsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbJsonLd)}
+        </script>
+      )}
     </Helmet>
   );
 };
