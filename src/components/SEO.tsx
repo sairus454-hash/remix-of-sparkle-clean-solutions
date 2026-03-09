@@ -86,7 +86,7 @@ const SEO = ({
       <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
       {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
-      <meta property="og:locale" content={ogLocaleMap[language] || 'ru_RU'} />
+      <meta property="og:locale" content={ogLocaleMap[language] || 'pl_PL'} />
       {Object.entries(ogLocaleMap)
         .filter(([lang]) => lang !== language)
         .map(([, locale]) => (
