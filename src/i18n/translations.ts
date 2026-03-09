@@ -182,6 +182,8 @@ export const translations = {
          bedHeadboard: 'Чистка изголовья кровати',
          bedFrame: 'Чистка каркаса кровати',
          carpetCovering: 'Ковровое покрытие',
+         carpetFloorMedium: 'Чистка ковролина (20-50 м²)',
+         carpetFloorLarge: 'Чистка ковролина (50+ м²)',
          flockNote: 'Мебель из флока + 50% к стоимости обычной мебели',
        },
        ozonation: 'Озонирование',
