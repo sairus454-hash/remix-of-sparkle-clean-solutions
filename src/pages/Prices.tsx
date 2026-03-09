@@ -476,7 +476,10 @@ const Prices = () => {
             <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
               {categories.map((cat, catIndex) => (
                 <CircularRevealCard key={cat.id} index={catIndex}>
-                  <div className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card">
+                  <div 
+                    ref={(el) => { categoryRefs.current[cat.id] = el; }}
+                    className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card"
+                  >
                     <button
                       onClick={() => setOpenCategory(openCategory === cat.id ? null : cat.id)}
                       className="flex items-center gap-4 w-full p-4 sm:p-5 cursor-pointer text-left transition-colors hover:bg-accent/30"
