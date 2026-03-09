@@ -40,6 +40,8 @@ import calcDrying from '@/assets/calc-drying.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
 import calcStroller from '@/assets/calc-stroller.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
+import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
+import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
 
 const Services = () => {
   const { t, language } = useLanguage();
