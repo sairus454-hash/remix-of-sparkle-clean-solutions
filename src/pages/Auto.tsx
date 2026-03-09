@@ -75,6 +75,7 @@ const Auto = () => {
         keywords="химчистка авто, чистка салона, химчистка на дому, выезд к клиенту, pranie tapicerki samochodowej, czyszczenie wnętrza samochodu, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników, czyszczenie z dojazdem, dojazd do klienta, car interior cleaning, mobile car cleaning, auto detailing Opole Wrocław"
         canonical="/auto"
         image="https://masterclean1885.pl/og-auto.png"
+        breadcrumbs={[{ name: t.nav.auto, path: '/auto' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

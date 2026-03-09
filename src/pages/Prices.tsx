@@ -328,6 +328,7 @@ const Prices = () => {
         keywords="цены химчистка, прайс химчистка, cennik prania tapicerki, cennik sprzątania, ceny czyszczenia dywanów, cennik ozonowania, cennik mycia okien, cleaning prices Poland"
         canonical="/prices"
         image="https://masterclean1885.pl/og-prices.png"
+        breadcrumbs={[{ name: t.nav.prices, path: '/prices' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',

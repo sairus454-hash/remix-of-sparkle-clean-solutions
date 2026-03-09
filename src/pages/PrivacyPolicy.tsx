@@ -389,6 +389,7 @@ const PrivacyPolicy = () => {
         title={content.title}
         description={content.seoDesc}
         canonical="/privacy-policy"
+        breadcrumbs={[{ name: content.title, path: '/privacy-policy' }]}
       />
       <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4 max-w-3xl">

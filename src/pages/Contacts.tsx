@@ -52,6 +52,7 @@ const Contacts = () => {
         keywords="контакты MasterClean, заказать химчистку, kontakt firma sprzątająca, zamów sprzątanie, kontakt czyszczenie tapicerki, contact cleaning service Opole"
         canonical="/contacts"
         image="https://masterclean1885.pl/og-contacts.png"
+        breadcrumbs={[{ name: t.nav.contacts, path: '/contacts' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ContactPage',

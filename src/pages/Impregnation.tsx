@@ -83,6 +83,7 @@ const Impregnation = () => {
         keywords="импрегнация, защита мебели, impregnacja tkanin, impregnacja mebli, impregnacja dywanów, ochrona przed plamami, powłoka hydrofobowa, fabric protection, impregnation services Poland"
         canonical="/impregnation"
         image="https://masterclean1885.pl/og-impregnation.png"
+        breadcrumbs={[{ name: t.impregnation.title, path: '/impregnation' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

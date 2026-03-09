@@ -95,6 +95,7 @@ const Services = () => {
         keywords="химчистка мебели, pranie tapicerki, czyszczenie mebli, upholstery cleaning, leather cleaning, czyszczenie skóry, Opole, Wrocław"
         canonical="/services"
         image="https://masterclean1885.pl/og-services.png"
+        breadcrumbs={[{ name: t.nav.services, path: '/services' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',

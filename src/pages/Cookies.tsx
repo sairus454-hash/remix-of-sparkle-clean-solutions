@@ -283,7 +283,8 @@ const Cookies = () => {
       <SEO
         title={`${content.title} | MasterClean`}
         description={content.intro}
-        canonical="https://masterclean1885.com/cookies"
+        canonical="/cookies"
+        breadcrumbs={[{ name: content.title, path: '/cookies' }]}
       />
       <Header />
       <main className="min-h-screen bg-background text-foreground pt-24 pb-8">

@@ -43,6 +43,7 @@ const About = () => {
         keywords="о нас MasterClean, команда химчистки, o nas, firma sprzątająca Opole, profesjonalne usługi czyszczenia, cleaning company Poland Wrocław Poznań"
         canonical="/about"
         image="https://masterclean1885.pl/og-about.png"
+        breadcrumbs={[{ name: t.nav.about, path: '/about' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'AboutPage',

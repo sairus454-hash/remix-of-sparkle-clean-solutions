@@ -1,6 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/i18n/LanguageContext';
 
+interface BreadcrumbItem {
+  name: string;
+  path: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -9,6 +14,7 @@ interface SEOProps {
   type?: string;
   image?: string;
   jsonLd?: Record<string, unknown>;
+  breadcrumbs?: BreadcrumbItem[];
 }
 
 const SITE_URL = 'https://masterclean1885.pl';
@@ -36,11 +42,26 @@ const SEO = ({
   type = 'website',
   image = DEFAULT_IMAGE,
   jsonLd,
+  breadcrumbs,
 }: SEOProps) => {
   const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
   const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
   const path = canonical || '/';
+
+  const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'MasterClean', item: SITE_URL },
+      ...breadcrumbs.map((crumb, i) => ({
+        '@type': 'ListItem',
+        position: i + 2,
+        name: crumb.name,
+        item: `${SITE_URL}${crumb.path}`,
+      })),
+    ],
+  } : null;
 
   const defaultJsonLd = {
     '@context': 'https://schema.org',
@@ -104,6 +125,11 @@ const SEO = ({
       <script type="application/ld+json">
         {JSON.stringify(jsonLd || defaultJsonLd)}
       </script>
+      {breadcrumbJsonLd && (
+        <script type="application/ld+json">
+          {JSON.stringify(breadcrumbJsonLd)}
+        </script>
+      )}
     </Helmet>
   );
 };

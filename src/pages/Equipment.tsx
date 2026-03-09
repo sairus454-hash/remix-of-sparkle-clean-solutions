@@ -89,6 +89,7 @@ const Equipment = () => {
         keywords="оборудование химчистки, экстрактор, sprzęt do czyszczenia, ekstraktor, generator pary, ozonator, profesjonalny sprzęt czyszczący, cleaning equipment technology"
         canonical="/equipment"
         image="https://masterclean1885.pl/og-equipment.png"
+        breadcrumbs={[{ name: t.nav.equipment, path: '/equipment' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',

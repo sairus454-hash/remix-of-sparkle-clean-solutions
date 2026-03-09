@@ -479,6 +479,7 @@ const Blog = () => {
         keywords="блог чистоты, советы по чистке, blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, cleaning tips blog"
         canonical="/blog"
         image="https://masterclean1885.pl/og-blog.png"
+        breadcrumbs={[{ name: titles.title, path: '/blog' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Blog',

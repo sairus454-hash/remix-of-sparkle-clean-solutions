@@ -212,6 +212,7 @@ const Reviews = () => {
         keywords="отзывы химчистка, отзывы MasterClean, opinie klientów, recenzje usług sprzątania, opinie pranie tapicerki, customer reviews cleaning Poland"
         canonical="/reviews"
         image="https://masterclean1885.pl/og-reviews.png"
+        breadcrumbs={[{ name: t.nav.reviews, path: '/reviews' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',

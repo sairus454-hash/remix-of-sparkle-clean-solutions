@@ -59,6 +59,7 @@ const Ozone = () => {
         keywords="озонирование, удаление запахов, дезинфекция, ozonowanie pomieszczeń, ozonowanie samochodu, usuwanie zapachów, dezynfekcja ozonem, ozonowanie mieszkania, ozone treatment Poland, Opole Wrocław"
         canonical="/ozone"
         image="https://masterclean1885.pl/og-ozone.png"
+        breadcrumbs={[{ name: t.nav.ozone, path: '/ozone' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
