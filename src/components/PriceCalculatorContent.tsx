@@ -181,6 +181,8 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80 },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, unit: 'm²' },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, unit: 'm²' },
+        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, unit: 'm²' },
       ],
     },
      {
