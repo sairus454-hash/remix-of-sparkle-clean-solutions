@@ -890,6 +890,8 @@ export const translations = {
          bedHeadboard: 'Bed Headboard Cleaning',
          bedFrame: 'Bed Frame Cleaning',
          carpetCovering: 'Carpet Covering',
+         carpetFloorMedium: 'Carpet floor cleaning (20-50 m²)',
+         carpetFloorLarge: 'Carpet floor cleaning (50+ m²)',
          flockNote: 'Flock furniture + 50% to the cost of regular furniture',
        },
       ozonation: 'Ozonation',
