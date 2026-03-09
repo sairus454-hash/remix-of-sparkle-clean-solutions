@@ -159,6 +159,21 @@ const Prices = () => {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
+  // Auto-open category from navigation state (e.g., from recommendation chips)
+  useEffect(() => {
+    const state = location.state as { openCategory?: string } | null;
+    if (state?.openCategory) {
+      const catId = state.openCategory;
+      setOpenCategory(catId);
+      // Scroll to category after a brief delay for render
+      setTimeout(() => {
+        categoryRefs.current[catId]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+      // Clear the state so it doesn't re-trigger
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
+
   const categories = [
     {
       id: 'cleaning', title: t.nav?.cleaning || 'Уборка', description: t.cleaning?.subtitle || 'Стандартная и генеральная уборка', icon: Home,
