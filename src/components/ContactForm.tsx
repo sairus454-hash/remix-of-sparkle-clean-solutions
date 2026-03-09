@@ -1,4 +1,5 @@
 import { useState, useEffect, forwardRef, useImperativeHandle, useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -33,6 +34,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     t,
     language
   } = useLanguage();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   
   const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
@@ -515,9 +517,10 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {recommendations.map((rec, i) => (
-                    <motion.a
+                    <motion.button
                       key={rec.key}
-                      href={rec.page}
+                      type="button"
+                      onClick={() => navigate(rec.page, { state: { openCategory: rec.key } })}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.1 + i * 0.07, duration: 0.25, ease: 'easeOut' }}
@@ -525,7 +528,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
                       className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 text-primary border border-primary/20 hover:border-primary/40 transition-colors cursor-pointer no-underline"
                     >
                       {rec.label[language] || rec.label.ru}
-                    </motion.a>
+                    </motion.button>
                   ))}
                 </div>
               </motion.div>

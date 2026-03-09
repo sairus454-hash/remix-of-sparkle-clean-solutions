@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -151,10 +152,27 @@ import handyYardHelp from '@/assets/handyman/yard-help.jpg';
 const Prices = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+  const location = useLocation();
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
+  // Auto-open category from navigation state (e.g., from recommendation chips)
+  useEffect(() => {
+    const state = location.state as { openCategory?: string } | null;
+    if (state?.openCategory) {
+      const catId = state.openCategory;
+      setOpenCategory(catId);
+      // Scroll to category after a brief delay for render
+      setTimeout(() => {
+        categoryRefs.current[catId]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+      // Clear the state so it doesn't re-trigger
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
 
   const categories = [
     {
@@ -458,7 +476,10 @@ const Prices = () => {
             <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
               {categories.map((cat, catIndex) => (
                 <CircularRevealCard key={cat.id} index={catIndex}>
-                  <div className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card">
+                  <div 
+                    ref={(el) => { categoryRefs.current[cat.id] = el; }}
+                    className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card"
+                  >
                     <button
                       onClick={() => setOpenCategory(openCategory === cat.id ? null : cat.id)}
                       className="flex items-center gap-4 w-full p-4 sm:p-5 cursor-pointer text-left transition-colors hover:bg-accent/30"
