@@ -99,6 +99,8 @@ import calcDrying from '@/assets/calc-drying.jpg';
 import calcImpregnation from '@/assets/calc-impregnation.jpg';
 import calcTileCleaning from '@/assets/calc-tile-cleaning.jpg';
 import calcMoldRemoval from '@/assets/calc-mold-removal.jpg';
+import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
+import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
 
 // Windows images
 import windowCleaning1 from '@/assets/window-cleaning-1.jpg';
@@ -274,6 +276,8 @@ const Prices = () => {
         { id: 'drying', name: t.prices.items.drying, price: 60, image: calcDrying, promoBadge: t.promotions.dryingFreeSpring },
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80, image: calcImpregnation },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
+        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: calcCarpetMedium, unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²' },
         
       ],
     },
