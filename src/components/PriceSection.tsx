@@ -73,6 +73,8 @@ import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
 // Other
 import calcCarpet from '@/assets/calc-carpet.jpg';
 import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
+import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
+import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
 import calcStroller from '@/assets/calc-stroller.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
@@ -262,7 +264,8 @@ const PriceSection = () => {
         { id: 'drying', name: t.prices.items.drying, price: 60, image: calcDrying, promoBadge: t.promotions.dryingFreeSpring },
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80, image: calcImpregnation },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
-        
+        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: calcCarpetMedium, unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²' },
       ],
     },
     {
