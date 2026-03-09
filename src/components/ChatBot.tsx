@@ -257,21 +257,20 @@ const ChatBot = () => {
 
   // Auto-open chatbot after delay
   // Desktop: all pages after 8 seconds
-  // Mobile: after 30 seconds
+  // Mobile: disabled (no auto-open)
   useEffect(() => {
     if (hasAutoOpened) return;
 
-    // Disable auto-open on contacts page (has its own form)
-    if (location.pathname === '/contacts') return;
+    // Disable auto-open on mobile and contacts page (has its own form)
+    if (isMobile || location.pathname === '/contacts') return;
     
-    // Mobile: 30 seconds, Desktop: 8 seconds
-    const delay = isMobile ? 30000 : 8000;
+    // Desktop only: 8 seconds
     const timer = setTimeout(() => {
       setIsOpen(true);
       setHasAutoOpened(true);
       try { sessionStorage.setItem('chatbot_auto_opened', '1'); } catch {}
       import('@/lib/gtm').then(m => m.gtmEvents.chatbotOpen('auto'));
-    }, delay);
+    }, 8000);
 
     return () => clearTimeout(timer);
   }, [hasAutoOpened, isMobile, location.pathname]);
