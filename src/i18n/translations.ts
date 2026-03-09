@@ -2306,6 +2306,8 @@ export const translations = {
          bedHeadboard: 'Чистка узголів\'я ліжка',
          bedFrame: 'Чистка каркаса ліжка',
          carpetCovering: 'Килимове покриття',
+         carpetFloorMedium: 'Чистка ковроліну (20-50 м²)',
+         carpetFloorLarge: 'Чистка ковроліну (50+ м²)',
          flockNote: 'Меблі з флоку + 50% до вартості звичайних меблів',
        },
        ozonation: 'Озонування',
