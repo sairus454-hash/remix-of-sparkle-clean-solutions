@@ -152,10 +152,12 @@ import handyYardHelp from '@/assets/handyman/yard-help.jpg';
 const Prices = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
+  const location = useLocation();
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const categories = [
     {
