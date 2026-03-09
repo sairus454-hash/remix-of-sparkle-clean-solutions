@@ -271,6 +271,9 @@ Deep cleaning:
 • Furniture drying — 60 PLN (🌿 PROMO: FREE until end of spring!)
 • Impregnation (1 year protection) — 80 PLN
 • Tile cleaning — 25 PLN/m²
+• Carpet impregnation — 5 PLN/m²
+• Carpet floor cleaning (20-50 m²) — 15 PLN/m²
+• Carpet floor cleaning (50+ m²) — 10 PLN/m²
 
 🔧 HANDYMAN:
 
