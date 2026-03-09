@@ -582,7 +582,8 @@ const ChatBot = () => {
                   <img 
                     src={chatbotGirl} 
                     alt="Consultant" 
-                    className="w-14 h-14 object-cover object-top rounded-full animate-wave-hello"
+                    className={cn("w-14 h-14 object-cover object-top rounded-full", !sessionStorage.getItem('chatbot_waved') && "animate-wave-hello")}
+                    onAnimationEnd={() => { try { sessionStorage.setItem('chatbot_waved', '1'); } catch {} }}
                   />
                 </button>
 
