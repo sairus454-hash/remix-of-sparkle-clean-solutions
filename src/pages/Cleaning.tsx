@@ -651,6 +651,8 @@ const Cleaning = () => {
                         { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 60, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно до конца весны' },
                         { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80, image: calcImpregnation },
                         { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcTileCleaning, unit: 'm²' },
+                        { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 15, image: calcCarpetMedium, unit: 'm²' },
+                        { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 10, image: calcCarpetLarge, unit: 'm²' },
                       ]}
                       onSendToForm={handleCardToForm}
                       onQuickOrder={handleQuickAdd}
