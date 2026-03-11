@@ -14,6 +14,7 @@ import PWAUpdatePrompt from "@/components/PWAUpdatePrompt";
 
 // Lazy load non-critical UI
 const FreeDeliveryBadge = lazy(() => import("@/components/FreeDeliveryBadge"));
+const CookieConsent = lazy(() => import("@/components/CookieConsent"));
 
 // Lazy load all pages for code splitting
 const Index = lazy(() => import("./pages/Index"));
@@ -67,6 +68,9 @@ const App = () => (
             
             <Suspense fallback={null}>
               <FreeDeliveryBadge />
+            </Suspense>
+            <Suspense fallback={null}>
+              <CookieConsent />
             </Suspense>
             
             <Suspense fallback={<PageLoader />}>
