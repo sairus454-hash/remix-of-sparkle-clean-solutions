@@ -142,9 +142,12 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                {t.footer.terms}
              </Link>
              <Link to="/cookies" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
-               {language === 'ru' ? 'Политика Cookie' : language === 'pl' ? 'Polityka Cookies' : language === 'uk' ? 'Політика Cookie' : 'Cookie Policy'}
-             </Link>
-           </div>
+                {language === 'ru' ? 'Политика Cookie' : language === 'pl' ? 'Polityka Cookies' : language === 'uk' ? 'Політика Cookie' : 'Cookie Policy'}
+              </Link>
+              <Link to="/sitemap" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+                Sitemap
+              </Link>
+            </div>
         </div>
       </div>
     </footer>
