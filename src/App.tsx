@@ -69,6 +69,9 @@ const App = () => (
             <Suspense fallback={null}>
               <FreeDeliveryBadge />
             </Suspense>
+            <Suspense fallback={null}>
+              <CookieConsent />
+            </Suspense>
             
             <Suspense fallback={<PageLoader />}>
               <Routes>
