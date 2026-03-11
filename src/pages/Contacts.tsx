@@ -47,9 +47,9 @@ const Contacts = () => {
   return (
     <>
       <SEO
-        title="Контакты MasterClean — Свяжитесь с нами"
-        description="Свяжитесь с MasterClean: телефон +48 575 211 401, email, адрес. Работаем 24/7. Оставьте заявку онлайн."
-        keywords="контакты MasterClean, заказать химчистку, kontakt firma sprzątająca, zamów sprzątanie, kontakt czyszczenie tapicerki, contact cleaning service Opole"
+        title="Kontakt MasterClean — Skontaktuj się z nami"
+        description="Skontaktuj się z MasterClean: telefon +48 575 211 401, email, adres. Pracujemy 24/7. Złóż zamówienie online. Opole, Wrocław, Poznań."
+        keywords="kontakt MasterClean, zamów sprzątanie, kontakt firma sprzątająca, czyszczenie tapicerki kontakt, zamów pranie tapicerki, Opole, Wrocław"
         canonical="/contacts"
         image="https://masterclean1885.pl/og-contacts.png"
         breadcrumbs={[{ name: t.nav.contacts, path: '/contacts' }]}

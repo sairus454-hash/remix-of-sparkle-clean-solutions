@@ -72,7 +72,20 @@ const SEO = ({
     telephone: '+48575211401',
     email: 'masterclean@email.com',
     image: DEFAULT_IMAGE,
-    areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'PL',
+      addressRegion: 'opolskie',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Opole' },
+      { '@type': 'City', name: 'Wrocław' },
+      { '@type': 'City', name: 'Poznań' },
+      { '@type': 'City', name: 'Zielona Góra' },
+    ],
+    sameAs: [
+      'https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z',
+    ],
     priceRange: '$$',
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',

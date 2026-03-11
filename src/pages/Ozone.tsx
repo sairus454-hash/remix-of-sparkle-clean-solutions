@@ -55,22 +55,32 @@ const Ozone = () => {
   return (
     <>
       <SEO
-        title="Озонирование помещений и авто — Удаление запахов"
-        description="Профессиональное озонирование квартир, офисов и автомобилей. Устранение неприятных запахов, дезинфекция, уничтожение бактерий и вирусов."
-        keywords="озонирование, удаление запахов, дезинфекция, ozonowanie pomieszczeń, ozonowanie samochodu, usuwanie zapachów, dezynfekcja ozonem, ozonowanie mieszkania, ozone treatment Poland, Opole Wrocław"
+        title="Ozonowanie pomieszczeń i samochodów — Usuwanie zapachów"
+        description="Profesjonalne ozonowanie mieszkań, biur i samochodów. Usuwanie nieprzyjemnych zapachów, dezynfekcja, eliminacja bakterii i wirusów. Opole, Wrocław, Poznań."
+        keywords="ozonowanie pomieszczeń, ozonowanie samochodu, ozonowanie mieszkania, usuwanie zapachów, dezynfekcja ozonem, ozonowanie biura, ozone treatment, Opole, Wrocław, Poznań"
         canonical="/ozone"
         image="https://masterclean1885.pl/og-ozone.png"
         breadcrumbs={[{ name: t.nav.ozone, path: '/ozone' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
-          serviceType: 'Озонирование помещений и автомобилей',
-          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          serviceType: 'Ozonowanie pomieszczeń i samochodów',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            telephone: '+48575211401',
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Opole' },
+            { '@type': 'City', name: 'Wrocław' },
+            { '@type': 'City', name: 'Poznań' },
+            { '@type': 'City', name: 'Zielona Góra' },
+          ],
           offers: [
-            { '@type': 'Offer', name: 'Озонирование 1-комн. квартиры', price: '120', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Озонирование 2-комн. квартиры', price: '200', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Озонирование авто', price: '100', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Ozonowanie mieszkania 1-pokojowego', price: '120', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Ozonowanie mieszkania 2-pokojowego', price: '200', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Ozonowanie samochodu', price: '100', priceCurrency: 'PLN' },
           ],
         }}
       />

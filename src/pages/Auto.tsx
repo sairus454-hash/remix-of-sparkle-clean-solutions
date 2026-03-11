@@ -71,22 +71,32 @@ const Auto = () => {
   return (
     <>
       <SEO
-        title="Химчистка салона авто — Чистка сидений, ковриков"
-        description="Профессиональная химчистка салона автомобиля. Чистка сидений, потолка, ковриков, багажника. Удаление пятен и запахов."
-        keywords="химчистка авто, чистка салона, химчистка на дому, выезд к клиенту, pranie tapicerki samochodowej, czyszczenie wnętrza samochodu, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników, czyszczenie z dojazdem, dojazd do klienta, car interior cleaning, mobile car cleaning, auto detailing Opole Wrocław"
+        title="Pranie tapicerki samochodowej — Czyszczenie wnętrza auta"
+        description="Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, podsufitki, dywaników, bagażnika. Usuwanie plam i zapachów. Opole, Wrocław."
+        keywords="pranie tapicerki samochodowej, czyszczenie wnętrza samochodu, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników, czyszczenie z dojazdem, dojazd do klienta, auto detailing, Opole, Wrocław, Poznań"
         canonical="/auto"
         image="https://masterclean1885.pl/og-auto.png"
         breadcrumbs={[{ name: t.nav.auto, path: '/auto' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
-          serviceType: 'Химчистка салона автомобиля',
-          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          serviceType: 'Pranie tapicerki samochodowej',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            telephone: '+48575211401',
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Opole' },
+            { '@type': 'City', name: 'Wrocław' },
+            { '@type': 'City', name: 'Poznań' },
+            { '@type': 'City', name: 'Zielona Góra' },
+          ],
           offers: [
-            { '@type': 'Offer', name: 'Химчистка сидений', price: '300', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Комплексная химчистка авто', price: '450', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Комплексная чистка (кожа)', price: '550', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: '300', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '450', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Czyszczenie skóry w samochodzie', price: '550', priceCurrency: 'PLN' },
           ],
         }}
       />

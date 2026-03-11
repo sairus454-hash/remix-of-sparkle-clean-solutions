@@ -84,17 +84,17 @@ const Equipment = () => {
   return (
     <>
       <SEO
-        title="Оборудование и технологии — Современная техника"
-        description="Профессиональное оборудование для химчистки: экстракторы, парогенераторы, озонаторы. Экологичные средства и передовые технологии."
-        keywords="оборудование химчистки, экстрактор, sprzęt do czyszczenia, ekstraktor, generator pary, ozonator, profesjonalny sprzęt czyszczący, cleaning equipment technology"
+        title="Sprzęt i technologie — Profesjonalny sprzęt czyszczący"
+        description="Profesjonalny sprzęt do czyszczenia: ekstraktory Santoemma, generatory pary, ozonatory. Ekologiczne środki i nowoczesne technologie czyszczenia."
+        keywords="sprzęt do czyszczenia, ekstraktor, generator pary, ozonator, profesjonalny sprzęt czyszczący, Santoemma, technologie czyszczenia, cleaning equipment"
         canonical="/equipment"
         image="https://masterclean1885.pl/og-equipment.png"
         breadcrumbs={[{ name: t.nav.equipment, path: '/equipment' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Оборудование и технологии MasterClean',
-          description: 'Профессиональное оборудование для химчистки: экстракторы Santoemma, парогенераторы, озонаторы.',
+          name: 'Sprzęt i technologie MasterClean',
+          description: 'Profesjonalny sprzęt do czyszczenia: ekstraktory Santoemma, generatory pary, ozonatory.',
           isPartOf: { '@type': 'WebSite', name: 'MasterClean', url: 'https://masterclean1885.pl' },
         }}
       />
