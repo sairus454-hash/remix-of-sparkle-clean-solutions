@@ -38,9 +38,9 @@ const About = () => {
   }];
   return <>
       <SEO
-        title="О компании MasterClean — Опыт и качество"
-        description="Узнайте о команде MasterClean. Профессиональная химчистка мебели и ковров в Польше. Современное оборудование, экологичные средства, опытные специалисты."
-        keywords="о нас MasterClean, команда химчистки, o nas, firma sprzątająca Opole, profesjonalne usługi czyszczenia, cleaning company Poland Wrocław Poznań"
+        title="O firmie MasterClean — Doświadczenie i jakość"
+        description="Poznaj zespół MasterClean. Profesjonalne pranie tapicerki i czyszczenie dywanów w Polsce. Nowoczesny sprzęt, ekologiczne środki, doświadczeni specjaliści."
+        keywords="o nas MasterClean, firma sprzątająca, profesjonalne usługi czyszczenia, firma czyszcząca Opole, cleaning company Poland, Wrocław, Poznań"
         canonical="/about"
         image="https://masterclean1885.pl/og-about.png"
         breadcrumbs={[{ name: t.nav.about, path: '/about' }]}
@@ -50,9 +50,15 @@ const About = () => {
           mainEntity: {
             '@type': 'LocalBusiness',
             name: 'MasterClean',
-            description: 'Профессиональная клининговая компания в Польше. Современное оборудование, экологичные средства.',
+            description: 'Profesjonalna firma sprzątająca w Polsce. Nowoczesny sprzęt, ekologiczne środki.',
             telephone: '+48575211401',
-            areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+            areaServed: [
+              { '@type': 'City', name: 'Opole' },
+              { '@type': 'City', name: 'Wrocław' },
+              { '@type': 'City', name: 'Poznań' },
+              { '@type': 'City', name: 'Zielona Góra' },
+            ],
             foundingDate: '2022',
           },
         }}

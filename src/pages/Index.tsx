@@ -55,22 +55,35 @@ const Index = () => {
   }];
   return <>
       <SEO
-        title="MasterClean — Химчистка мебели, ковров и авто в Польше"
-        description="Профессиональная химчистка мебели, матрасов, ковров и салонов авто. Озонирование, уборка, мойка окон. Работаем 24/7. Звоните: +48 575 211 401"
-        keywords="химчистка мебели, химчистка ковров, химчистка авто, химчистка на дому, озонирование, уборка, pranie tapicerki, czyszczenie dywanów, czyszczenie materacy, sprzątanie mieszkań, ozonowanie, mycie okien, pranie kanap, czyszczenie z dojazdem, dojazd do klienta, Opole, Wrocław, Poznań, Zielona Góra, usługi sprzątania, cleaning services Poland"
+        title="MasterClean — Pranie tapicerki, dywanów i czyszczenie aut"
+        description="Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i wnętrz samochodowych. Ozonowanie, sprzątanie, mycie okien. Pracujemy 24/7. Zadzwoń: +48 575 211 401"
+        keywords="pranie tapicerki, czyszczenie dywanów, czyszczenie materacy, pranie kanap, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, Opole, Wrocław, Poznań, Zielona Góra, usługi sprzątania, cleaning services Poland"
         canonical="/"
         image="https://masterclean1885.pl/og-image.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'MasterClean',
-          description: 'Профессиональная химчистка мебели, матрасов, ковров и салонов авто в Польше. Озонирование, уборка, мойка окон.',
+          description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i wnętrz samochodowych w Polsce. Ozonowanie, sprzątanie, mycie okien.',
           url: 'https://masterclean1885.pl',
           telephone: '+48575211401',
           email: 'masterclean@email.com',
           image: 'https://masterclean1885.pl/og-image.png',
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          address: {
+            '@type': 'PostalAddress',
+            addressCountry: 'PL',
+            addressRegion: 'opolskie',
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Opole' },
+            { '@type': 'City', name: 'Wrocław' },
+            { '@type': 'City', name: 'Poznań' },
+            { '@type': 'City', name: 'Zielona Góra' },
+          ],
           priceRange: '$$',
+          sameAs: [
+            'https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z',
+          ],
           openingHoursSpecification: {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -79,15 +92,15 @@ const Index = () => {
           },
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
-            name: 'Услуги клининга',
+            name: 'Usługi czyszczenia',
             itemListElement: [
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка мебели' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка ковров' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка матрасов' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Химчистка авто' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Озонирование' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Мойка окон' } },
-              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Уборка помещений' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pranie tapicerki meblowej' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Czyszczenie dywanów' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Czyszczenie materacy' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Pranie tapicerki samochodowej' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ozonowanie pomieszczeń' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mycie okien' } },
+              { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sprzątanie mieszkań i domów' } },
             ],
           },
         }}

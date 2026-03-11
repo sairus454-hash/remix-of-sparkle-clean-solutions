@@ -346,25 +346,27 @@ const Prices = () => {
   return (
     <>
       <SEO
-        title="Прайс-лист на химчистку — Цены на услуги MasterClean"
-        description="Актуальные цены на химчистку мебели, ковров, матрасов, авто, озонирование и уборку. Калькулятор стоимости онлайн."
-        keywords="цены химчистка, прайс химчистка, cennik prania tapicerki, cennik sprzątania, ceny czyszczenia dywanów, cennik ozonowania, cennik mycia okien, cleaning prices Poland"
+        title="Cennik usług MasterClean — Pranie tapicerki, sprzątanie"
+        description="Aktualne ceny prania tapicerki, czyszczenia dywanów, materacy, samochodów, ozonowania i sprzątania. Kalkulator kosztów online. Opole, Wrocław, Poznań."
+        keywords="cennik prania tapicerki, cennik sprzątania, ceny czyszczenia dywanów, cennik ozonowania, cennik mycia okien, cennik złota rączka, cleaning prices Poland"
         canonical="/prices"
         image="https://masterclean1885.pl/og-prices.png"
         breadcrumbs={[{ name: t.nav.prices, path: '/prices' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'WebPage',
-          name: 'Прайс-лист MasterClean',
-          description: 'Актуальные цены на все услуги химчистки и клининга',
+          name: 'Cennik usług MasterClean',
+          description: 'Aktualne ceny wszystkich usług czyszczenia i sprzątania',
           isPartOf: { '@type': 'WebSite', name: 'MasterClean', url: 'https://masterclean1885.pl' },
           mainEntity: {
             '@type': 'OfferCatalog',
-            name: 'Услуги MasterClean',
+            name: 'Usługi MasterClean',
             itemListElement: [
-              { '@type': 'Offer', name: 'Химчистка мебели', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Озонирование', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Уборка', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Pranie tapicerki meblowej', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonowanie', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Sprzątanie', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Mycie okien', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Złota rączka', priceCurrency: 'PLN' },
             ],
           },
         }}

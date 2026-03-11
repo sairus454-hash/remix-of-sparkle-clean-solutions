@@ -211,21 +211,31 @@ const Cleaning = () => {
   return (
     <>
       <SEO
-        title="Уборка квартир и домов — Стандартная и генеральная"
-        description="Профессиональная уборка квартир, домов и офисов. Стандартная и генеральная уборка. Рассчитайте стоимость онлайн."
-        keywords="уборка квартир, генеральная уборка, клининг, sprzątanie mieszkań, sprzątanie domów, sprzątanie biur, sprzątanie generalne, firma sprzątająca, usługi sprzątania Opole Wrocław, house cleaning Poland"
+        title="Sprzątanie mieszkań i domów — Standardowe i generalne"
+        description="Profesjonalne sprzątanie mieszkań, domów i biur w Opolu, Wrocławiu i Poznaniu. Sprzątanie standardowe i generalne. Oblicz koszt online."
+        keywords="sprzątanie mieszkań, sprzątanie domów, sprzątanie biur, sprzątanie generalne, firma sprzątająca, usługi sprzątania, sprzątanie Opole, sprzątanie Wrocław, house cleaning Poland"
         canonical="/cleaning"
         image="https://masterclean1885.pl/og-cleaning.png"
         breadcrumbs={[{ name: t.nav.cleaning, path: '/cleaning' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
-          serviceType: 'Уборка помещений',
-          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          serviceType: 'Sprzątanie mieszkań i domów',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            telephone: '+48575211401',
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Opole' },
+            { '@type': 'City', name: 'Wrocław' },
+            { '@type': 'City', name: 'Poznań' },
+            { '@type': 'City', name: 'Zielona Góra' },
+          ],
           offers: [
-            { '@type': 'Offer', name: 'Стандартная уборка', price: '6', priceCurrency: 'PLN', unitText: 'за м²' },
-            { '@type': 'Offer', name: 'Генеральная уборка', price: '10', priceCurrency: 'PLN', unitText: 'за м²' },
+            { '@type': 'Offer', name: 'Sprzątanie standardowe', price: '7', priceCurrency: 'PLN', unitText: 'za m²' },
+            { '@type': 'Offer', name: 'Sprzątanie generalne', price: '10', priceCurrency: 'PLN', unitText: 'za m²' },
           ],
         }}
       />

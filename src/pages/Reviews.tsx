@@ -207,9 +207,9 @@ const Reviews = () => {
   };
   return <>
       <SEO
-        title="Отзывы клиентов MasterClean"
-        description="Реальные отзывы клиентов о химчистке мебели, ковров и авто. Узнайте, почему нам доверяют. Оставьте свой отзыв."
-        keywords="отзывы химчистка, отзывы MasterClean, opinie klientów, recenzje usług sprzątania, opinie pranie tapicerki, customer reviews cleaning Poland"
+        title="Opinie klientów MasterClean — Recenzje i oceny"
+        description="Prawdziwe opinie klientów o praniu tapicerki, czyszczeniu dywanów i samochodów. Dowiedz się, dlaczego nam zaufali. Zostaw swoją opinię."
+        keywords="opinie MasterClean, opinie klientów, recenzje usług sprzątania, opinie pranie tapicerki, opinie czyszczenie, customer reviews cleaning Poland"
         canonical="/reviews"
         image="https://masterclean1885.pl/og-reviews.png"
         breadcrumbs={[{ name: t.nav.reviews, path: '/reviews' }]}

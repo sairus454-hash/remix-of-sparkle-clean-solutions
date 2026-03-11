@@ -94,18 +94,28 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Химчистка мебели — Прайс и калькулятор стоимости"
-        description="Химчистка мягкой и кожаной мебели с выездом. Калькулятор стоимости, прайс-лист. Диваны, кресла, матрасы, стулья."
-        keywords="химчистка мебели, pranie tapicerki, czyszczenie mebli, upholstery cleaning, leather cleaning, czyszczenie skóry, Opole, Wrocław"
+        title="Pranie tapicerki meblowej — Cennik i kalkulator"
+        description="Profesjonalne pranie tapicerki meblowej i skórzanej z dojazdem. Kalkulator kosztów online. Kanapy, fotele, materace, krzesła. Opole, Wrocław, Poznań."
+        keywords="pranie tapicerki, czyszczenie mebli, pranie kanapy, czyszczenie fotela, pranie materaca, czyszczenie skóry, pranie tapicerki cennik, Opole, Wrocław, Poznań"
         canonical="/services"
         image="https://masterclean1885.pl/og-services.png"
         breadcrumbs={[{ name: t.nav.services, path: '/services' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
-          serviceType: 'Upholstery Cleaning',
-          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          serviceType: 'Pranie tapicerki meblowej',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            telephone: '+48575211401',
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Opole' },
+            { '@type': 'City', name: 'Wrocław' },
+            { '@type': 'City', name: 'Poznań' },
+            { '@type': 'City', name: 'Zielona Góra' },
+          ],
         }}
       />
       <Layout>

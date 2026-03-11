@@ -43,21 +43,31 @@ import { useSplash } from '@/hooks/useSplash';
      <>
       {showSplash && <WindowsSplash onComplete={handleSplashComplete} />}
       <SEO
-        title="Мойка окон — Профессиональная чистка окон"
-        description="Профессиональная мойка окон любой сложности. Чистые окна — больше света и комфорта в вашем доме. Быстро, качественно, доступно."
-        keywords="мойка окон, чистка окон, mycie okien, czyszczenie okien, mycie okien na wysokości, profesjonalne mycie okien, window cleaning, mycie okien Opole Wrocław Poznań"
+        title="Mycie okien — Profesjonalne czyszczenie okien"
+        description="Profesjonalne mycie okien o każdym stopniu trudności. Czyste okna — więcej światła i komfortu w Twoim domu. Szybko, solidnie, przystępnie. Opole, Wrocław."
+        keywords="mycie okien, czyszczenie okien, mycie okien na wysokości, profesjonalne mycie okien, mycie okien cennik, mycie okien Opole, mycie okien Wrocław, mycie okien Poznań"
         canonical="/windows"
         image="https://masterclean1885.pl/og-windows.png"
         breadcrumbs={[{ name: t.nav.windows, path: '/windows' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
-          serviceType: 'Мойка окон',
-          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          serviceType: 'Mycie okien',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            telephone: '+48575211401',
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Opole' },
+            { '@type': 'City', name: 'Wrocław' },
+            { '@type': 'City', name: 'Poznań' },
+            { '@type': 'City', name: 'Zielona Góra' },
+          ],
           offers: [
-            { '@type': 'Offer', name: 'Одностворчатое окно', price: '40', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Двухстворчатое окно', price: '50', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Okno jednoskrzydłowe', price: '40', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Okno dwuskrzydłowe', price: '50', priceCurrency: 'PLN' },
             { '@type': 'Offer', name: 'Трёхстворчатое окно', price: '80', priceCurrency: 'PLN' },
           ],
         }}

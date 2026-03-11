@@ -158,22 +158,32 @@ const Handyman = () => {
   return (
     <>
       <SEO
-        title="Мастер на час — Мелкий ремонт и бытовые услуги"
-        description="Мастер на час: сантехника, электрика, мебель, мелкий ремонт. Быстро, качественно, с гарантией. Вызов мастера 24/7."
-        keywords="мастер на час, мелкий ремонт, złota rączka, drobne naprawy, hydraulik, elektryk, montaż mebli, usługi domowe, handyman services Poland, Opole Wrocław"
+        title="Złota rączka — Drobne naprawy i usługi domowe"
+        description="Złota rączka: hydraulika, elektryka, montaż mebli, drobne naprawy. Szybko, solidnie, z gwarancją. Wezwij fachowca 24/7. Opole, Wrocław, Poznań."
+        keywords="złota rączka, drobne naprawy, hydraulik, elektryk, montaż mebli, usługi domowe, fachowiec, handyman, naprawa, Opole, Wrocław, Poznań"
         canonical="/handyman"
         image="https://masterclean1885.pl/og-handyman.png"
         breadcrumbs={[{ name: t.nav.handyman, path: '/handyman' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Service',
-          serviceType: 'Мастер на час — бытовые услуги',
-          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
+          serviceType: 'Złota rączka — usługi domowe',
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            telephone: '+48575211401',
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Opole' },
+            { '@type': 'City', name: 'Wrocław' },
+            { '@type': 'City', name: 'Poznań' },
+            { '@type': 'City', name: 'Zielona Góra' },
+          ],
           offers: [
-            { '@type': 'Offer', name: 'Сантехнические работы', price: '120', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Электромонтажные работы', price: '40', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Чистка канализации', price: '250', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Usługi hydrauliczne', price: '120', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Usługi elektryczne', price: '40', priceCurrency: 'PLN' },
+            { '@type': 'Offer', name: 'Udrażnianie kanalizacji', price: '250', priceCurrency: 'PLN' },
           ],
         }}
       />

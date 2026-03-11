@@ -474,9 +474,9 @@ const Blog = () => {
     <>
       {showSplash && <BlogSplash onComplete={handleSplashComplete} />}
       <SEO
-        title={`${titles.title} — MasterClean`}
-        description={titles.subtitle}
-        keywords="блог чистоты, советы по чистке, blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, cleaning tips blog"
+        title="Blog czystości — Porady czyszczenia | MasterClean"
+        description="Przydatne artykuły o praniu tapicerki, sprzątaniu i pielęgnacji mebli. Porady ekspertów, jak dbać o czystość w domu i samochodzie."
+        keywords="blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, jak prać kanapę, porady czystość, cleaning tips blog, czyszczenie mebli porady"
         canonical="/blog"
         image="https://masterclean1885.pl/og-blog.png"
         breadcrumbs={[{ name: titles.title, path: '/blog' }]}
