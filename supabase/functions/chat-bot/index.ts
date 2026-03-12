@@ -57,6 +57,7 @@ const PRICE_LIST = {
 • Экспресс освежение с удалением неприятного запаха — 150 PLN (⛔ скидка НЕ применяется!)
 
 🚗 ХИМЧИСТКА АВТО (приезжаем к вам на адрес):
+• Чистка 1 сидения — 80 PLN
 • Химчистка сидений (спереди и сзади) — 300 PLN
 • Чистка сидений из кожи — 350 PLN
 • Чистка потолка — 100 PLN
@@ -228,6 +229,7 @@ Deep cleaning:
 • Express freshening with odor removal — 150 PLN (⛔ discount does NOT apply!)
 
 🚗 CAR CLEANING:
+• Single seat cleaning — 80 PLN
 • Seat cleaning (front and back) — 300 PLN
 • Leather seat cleaning — 350 PLN
 • Ceiling cleaning — 100 PLN
@@ -399,6 +401,7 @@ Sprzątanie generalne:
 • Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN (⛔ rabat NIE dotyczy!)
 
 🚗 CZYSZCZENIE AUTA:
+• Czyszczenie 1 siedzenia — 80 PLN
 • Czyszczenie siedzeń (przód i tył) — 300 PLN
 • Czyszczenie siedzeń skórzanych — 350 PLN
 • Czyszczenie sufitu — 100 PLN
@@ -570,6 +573,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Експрес освіження з видаленням неприємного запаху — 150 PLN (⛔ знижка НЕ застосовується!)
 
 🚗 ХІМЧИСТКА АВТО:
+• Чистка 1 сидіння — 80 PLN
 • Хімчистка сидінь (спереду і ззаду) — 300 PLN
 • Чистка сидінь зі шкіри — 350 PLN
 • Чистка стелі — 100 PLN
