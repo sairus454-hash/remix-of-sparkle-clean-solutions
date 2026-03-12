@@ -401,6 +401,7 @@ Sprzątanie generalne:
 • Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN (⛔ rabat NIE dotyczy!)
 
 🚗 CZYSZCZENIE AUTA:
+• Czyszczenie 1 siedzenia — 80 PLN
 • Czyszczenie siedzeń (przód i tył) — 300 PLN
 • Czyszczenie siedzeń skórzanych — 350 PLN
 • Czyszczenie sufitu — 100 PLN
