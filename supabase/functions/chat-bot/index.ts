@@ -229,6 +229,7 @@ Deep cleaning:
 • Express freshening with odor removal — 150 PLN (⛔ discount does NOT apply!)
 
 🚗 CAR CLEANING:
+• Single seat cleaning — 80 PLN
 • Seat cleaning (front and back) — 300 PLN
 • Leather seat cleaning — 350 PLN
 • Ceiling cleaning — 100 PLN
