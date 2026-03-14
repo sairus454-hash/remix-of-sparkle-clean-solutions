@@ -34,6 +34,7 @@ const Admin = lazy(() => import("./pages/Admin"));
 const Windows = lazy(() => import("./pages/Windows"));
 const Cleaning = lazy(() => import("./pages/Cleaning"));
 const Blog = lazy(() => import("./pages/Blog"));
+const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Cookies = lazy(() => import("./pages/Cookies"));
