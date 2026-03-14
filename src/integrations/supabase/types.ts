@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_comments: {
+        Row: {
+          article_id: number
+          created_at: string
+          id: string
+          name: string
+          text: string
+        }
+        Insert: {
+          article_id: number
+          created_at?: string
+          id?: string
+          name: string
+          text: string
+        }
+        Update: {
+          article_id?: number
+          created_at?: string
+          id?: string
+          name?: string
+          text?: string
+        }
+        Relationships: []
+      }
       booking_dates: {
         Row: {
           created_at: string
