@@ -146,6 +146,7 @@ const FloatingOrderSummary = () => {
           </span>
         </motion.button>
       </motion.div>
+      )}
     </AnimatePresence>
   );
 };
