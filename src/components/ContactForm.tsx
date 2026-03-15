@@ -510,192 +510,66 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           <p className="text-xs text-muted-foreground mt-2">{t.form.checkOrder}</p>
         </div>}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-        <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">
-            {t.form.name} <span className="text-destructive">*</span>
-          </label>
-          <Input type="text" placeholder={t.form.namePlaceholder} value={formData.name} onChange={e => setFormData({
+      {/* Name */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {language === 'uk' ? 'Ваше ім\'я' : t.form.name} <span className="text-destructive">*</span>
+        </label>
+        <Input type="text" placeholder={t.form.namePlaceholder} value={formData.name} onChange={e => setFormData({
           ...formData,
           name: e.target.value
-        })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" />
-        </div>
-        <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">
-            {t.form.phone} <span className="text-destructive">*</span>
-          </label>
-          <Input type="tel" inputMode="tel" placeholder={t.form.phonePlaceholder} value={formData.phone} onChange={e => setFormData({
-          ...formData,
-          phone: e.target.value
-        })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" />
-        </div>
+        })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" maxLength={100} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-        <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">
-            {t.form.preferredTime} <span className="text-destructive">*</span>
-          </label>
-          <Select value={formData.time} onValueChange={value => setFormData({
+      {/* Phone */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {language === 'uk' ? 'Телефон' : t.form.phone} <span className="text-destructive">*</span>
+        </label>
+        <Input type="tel" inputMode="tel" placeholder={t.form.phonePlaceholder} value={formData.phone} onChange={e => setFormData({
           ...formData,
-          time: value
-        })} required>
+          phone: e.target.value
+        })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" maxLength={30} />
+      </div>
+
+      {/* Desired time & date */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {language === 'ru' ? 'Желаемое время и дата' : language === 'pl' ? 'Preferowany czas i data' : language === 'uk' ? 'Бажаний час та дата' : 'Preferred time & date'} <span className="text-destructive">*</span>
+        </label>
+        <div className="grid grid-cols-2 gap-3">
+          <Select value={formData.time} onValueChange={value => setFormData({
+            ...formData,
+            time: value
+          })}>
             <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
               <SelectValue placeholder={t.form.selectTime} />
             </SelectTrigger>
             <SelectContent>
-              {Array.from({
-              length: 24
-            }, (_, i) => {
-              const hour = i.toString().padStart(2, '0');
-              return <SelectItem key={hour} value={`${hour}:00`} className="py-3 sm:py-2">
-                    {hour}:00
-                  </SelectItem>;
-            })}
+              {Array.from({ length: 24 }, (_, i) => {
+                const hour = i.toString().padStart(2, '0');
+                return <SelectItem key={hour} value={`${hour}:00`} className="py-3 sm:py-2">{hour}:00</SelectItem>;
+              })}
             </SelectContent>
           </Select>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" className={cn('w-full justify-start text-left font-normal bg-card border-border h-11 sm:h-10 text-base sm:text-sm', !date && 'text-muted-foreground')}>
+                <CalendarIcon className="mr-2 h-4 w-4" />
+                {date ? format(date, 'dd.MM', { locale: currentLocale }) : t.form.selectDate}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-auto p-0" align="start">
+              <Calendar mode="single" selected={date} onSelect={handleDateSelect} disabled={d => isPastDate(d)} initialFocus locale={currentLocale} className={cn('p-3 pointer-events-auto')} />
+            </PopoverContent>
+          </Popover>
         </div>
-        <div className="space-y-1.5 sm:space-y-2">
-          <label className="text-sm font-medium text-foreground">
-            {t.form.postalCode || 'Почтовый код'} <span className="text-destructive">*</span>
-          </label>
-          <Input type="text" placeholder="00-000" value={formData.postalCode} onChange={e => setFormData({
-          ...formData,
-          postalCode: e.target.value
-        })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" />
-        </div>
       </div>
 
-      {/* City Selection */}
-      <div className="space-y-1.5 sm:space-y-2">
-        <label className={cn(
-          "text-sm font-medium",
-          formData.village ? "text-muted-foreground" : "text-foreground"
-        )}>
-          {t.form.city || 'Город или населенный пункт'} <span className="text-destructive">*</span>
-        </label>
-        <SearchableSelect 
-          value={formData.city} 
-          onValueChange={value => setFormData({
-            ...formData,
-            city: value
-          })} 
-          options={cities} 
-          placeholder={t.form.selectCity || 'Выберите город'} 
-          searchPlaceholder={t.form.searchCity || 'Поиск города...'} 
-          emptyMessage={t.form.noCityFound || 'Город не найден'} 
-          allowCustom={true} 
-          customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'}
-          disabled={!!formData.village}
-          disabledMessage={language === 'ru' ? 'Уже выбрано село' : language === 'pl' ? 'Miejscowość już wybrana' : language === 'uk' ? 'Вже обрано село' : 'Village already selected'}
-        />
-      </div>
-
-      {/* Or Separator */}
-      <div className="flex items-center justify-center py-1">
-        <span className="font-medium text-3xl text-sidebar-foreground">
-          {language === 'ru' ? 'или' : language === 'pl' ? 'lub' : language === 'uk' ? 'або' : 'or'}
-        </span>
-      </div>
-
-      {/* Village Selection */}
-      <div className="space-y-1.5 sm:space-y-2">
-        <label className={cn(
-          "text-sm font-medium",
-          formData.city ? "text-muted-foreground" : "text-foreground"
-        )}>
-          {t.form.village || 'Село'} <span className="text-destructive">*</span>
-        </label>
-        <SearchableSelect 
-          value={formData.village} 
-          onValueChange={value => setFormData({
-            ...formData,
-            village: value
-          })} 
-          options={villages} 
-          placeholder={t.form.selectVillage || 'Выберите село'} 
-          searchPlaceholder={t.form.searchVillage || 'Поиск села...'} 
-          emptyMessage={t.form.noVillageFound || 'Село не найдено'} 
-          allowCustom={true} 
-          customLabel={t.form.enterCustomLocation || 'Впишите свой населенный пункт'}
-          disabled={!!formData.city}
-          disabledMessage={language === 'ru' ? 'Уже выбран город' : language === 'pl' ? 'Miasto już wybrane' : language === 'uk' ? 'Вже обрано місто' : 'City already selected'}
-        />
-      </div>
-
-      {/* Payment Type */}
-      <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">{t.form.paymentType || 'Вид оплаты'}</label>
-        <Select value={formData.paymentType} onValueChange={value => setFormData({
-        ...formData,
-        paymentType: value
-      })}>
-          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
-            <SelectValue placeholder={t.form.selectPaymentType || 'Выберите способ оплаты'} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="cash" className="py-3 sm:py-2">
-              💵 {t.form.paymentCash || 'Наличные'}
-            </SelectItem>
-            <SelectItem value="blik" className="py-3 sm:py-2">
-              📱 BLIK
-            </SelectItem>
-            <SelectItem value="invoice" className="py-3 sm:py-2">
-              🧾 {t.form.paymentInvoice || 'Фактура'}
-            </SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Address */}
-      <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">
-          {t.form.address} <span className="text-destructive">*</span>
-        </label>
-        <Input type="text" placeholder={t.form.addressPlaceholder} value={formData.address} onChange={e => setFormData({
-        ...formData,
-        address: e.target.value
-      })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" />
-      </div>
-
-      {/* Date Picker */}
-      <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">
-          {t.form.preferredDate} <span className="text-destructive">*</span>
-        </label>
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button variant="outline" className={cn('w-full justify-start text-left font-normal bg-card border-border h-11 sm:h-10 text-base sm:text-sm', !date && 'text-muted-foreground')}>
-              <CalendarIcon className="mr-2 h-4 w-4" />
-              {date ? format(date, 'PPP', {
-              locale: currentLocale
-            }) : t.form.selectDate}
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-auto p-0" align="start">
-            <Calendar mode="single" selected={date} onSelect={handleDateSelect} disabled={d => isPastDate(d)} initialFocus locale={currentLocale} className={cn('p-3 pointer-events-auto')} />
-          </PopoverContent>
-        </Popover>
-      </div>
-
-      <div className="space-y-1.5 sm:space-y-2">
-        <label className="text-sm font-medium text-foreground">{t.form.message}</label>
-        <Textarea 
-          placeholder={t.form.messagePlaceholder} 
-          value={formData.message} 
-          onChange={e => {
-            if (calculatorItems.length === 0) {
-              setFormData({ ...formData, message: e.target.value });
-            }
-          }} 
-          readOnly={calculatorItems.length > 0}
-          rows={calculatorItems.length > 0 ? 8 : 4} 
-          className={cn(
-            "bg-card border-border resize-none text-base sm:text-sm min-h-[100px]",
-            calculatorItems.length > 0 && "opacity-70 cursor-not-allowed"
-          )} 
-        />
-      </div>
+      {/* Hidden message for calculator data */}
+      {calculatorItems.length > 0 && (
+        <input type="hidden" value={formData.message} />
+      )}
 
       <Button type="submit" disabled={isLoading} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all h-12 sm:h-11 text-base touch-manipulation active:scale-[0.98]">
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
