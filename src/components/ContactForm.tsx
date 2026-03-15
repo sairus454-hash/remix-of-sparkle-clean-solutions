@@ -56,11 +56,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     message: ''
   });
 
-  // Cities within 150km radius of Wrocław (alphabetically sorted)
-  const cities = ['Bardo', 'Bielawa', 'Bierutów', 'Bolesławiec', 'Brzeg', 'Brzeg Dolny', 'Bystrzyca Kłodzka', 'Chojnów', 'Dzierżoniów', 'Głogów', 'Głuchołazy', 'Góra', 'Gryfów Śląski', 'Jawor', 'Jaworzyna Śląska', 'Jelcz-Laskowice', 'Jelenia Góra', 'Kamienna Góra', 'Kalisz', 'Karpacz', 'Kąty Wrocławskie', 'Kędzierzyn-Koźle', 'Kępno', 'Kłodzko', 'Kluczbork', 'Koźle', 'Krotoszyn', 'Kudowa-Zdrój', 'Legnica', 'Leszno', 'Lubań', 'Lubin', 'Lwówek Śląski', 'Milicz', 'Namysłów', 'Niemcza', 'Nowa Ruda', 'Nowa Sól', 'Nysa', 'Oborniki Śląskie', 'Oława', 'Oleśnica', 'Opole', 'Ostrów Wielkopolski', 'Ostrzeszów', 'Paczków', 'Pieszyce', 'Piława Górna', 'Polkowice', 'Polanica-Zdrój', 'Prószków', 'Prudnik', 'Rawicz', 'Sobótka', 'Strzegom', 'Strzelin', 'Strzelce Opolskie', 'Środa Śląska', 'Świdnica', 'Syców', 'Szklarska Poręba', 'Trzebnica', 'Wałbrzych', 'Wołów', 'Wrocław', 'Wschowa', 'Ząbkowice Śląskie', 'Zgorzelec', 'Zielona Góra', 'Ziębice', 'Złotoryja', 'Żagań', 'Żary', 'Żmigród'];
 
-  // Villages within 150km radius of Wrocław (alphabetically sorted)
-  const villages = ['Bielany Wrocławskie', 'Bogdaszowice', 'Borów', 'Bystrzyca', 'Cesarzowice', 'Chrząstawa Wielka', 'Ciepłowody', 'Czernica', 'Długołęka', 'Dobroszyce', 'Domaszczyn', 'Domaniów', 'Gaj Oławski', 'Gajków', 'Iwiny', 'Jordanów Śląski', 'Kamieniec Wrocławski', 'Kiełczów', 'Kobierzyce', 'Kondratowice', 'Kostomłoty', 'Krzeptów', 'Krzyżanowice', 'Lutynia', 'Malczyce', 'Mędłów', 'Miękinia', 'Mietków', 'Miłoszyce', 'Mirków', 'Mokronos Dolny', 'Mokronos Górny', 'Oborniki Śląskie', 'Osiek', 'Ozimek', 'Pęgów', 'Pietrzykowice', 'Prochowice', 'Prusice', 'Przeworno', 'Radwanice', 'Ratowice', 'Ścinawy', 'Siechnice', 'Smardzów', 'Smolec', 'Stanowice', 'Szczepanów', 'Święta Katarzyna', 'Tyniec Mały', 'Wilczyce', 'Wińsko', 'Wisznia Mała', 'Wojnowice', 'Wróblowice', 'Wysoka', 'Żórawina'];
 
   // Expose setCalculatorData method - now ADDS to existing items instead of replacing
   useImperativeHandle(ref, () => ({
