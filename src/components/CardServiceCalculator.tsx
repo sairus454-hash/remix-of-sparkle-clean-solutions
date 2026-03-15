@@ -175,6 +175,12 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
             <CascadeCard key={item.id} index={index}>
               <Popover open={popoverId === item.id} onOpenChange={(open) => {
                 if (open) {
+                  if (isSelected(item.id) && getQty(item.id) === 1) {
+                    // Toggle deselect
+                    addItem(item);
+                    setPopoverId(null);
+                    return;
+                  }
                   if (!isSelected(item.id)) addItem(item);
                   setPopoverId(item.id);
                 } else {
