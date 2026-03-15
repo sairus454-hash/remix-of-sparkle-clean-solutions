@@ -109,6 +109,7 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
           const selected = isSelected(item.id);
           const qty = getQty(item.id);
           const wasJustAdded = justAdded === item.id;
+          const wasJustRemoved = justRemoved === item.id;
 
           return (
             <button
