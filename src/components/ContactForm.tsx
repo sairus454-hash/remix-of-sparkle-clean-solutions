@@ -282,8 +282,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate required fields - city OR village must be filled
-    if (!formData.name || !formData.phone || !formData.time || !formData.postalCode || !formData.address || !date) {
+    if (!formData.name || !formData.phone || (!formData.time && !date)) {
       toast({
         title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
         description: language === 'ru' ? 'Пожалуйста, заполните все обязательные поля' : language === 'pl' ? 'Proszę wypełnić wszystkie wymagane pola' : language === 'uk' ? 'Будь ласка, заповніть всі обов\'язкові поля' : 'Please fill in all required fields',
@@ -292,48 +291,24 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       return;
     }
 
-    // At least one of city or village must be filled
-    if (!formData.city && !formData.village) {
-      toast({
-        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
-        description: language === 'ru' ? 'Укажите город или населённый пункт' : language === 'pl' ? 'Wybierz miasto lub miejscowość' : language === 'uk' ? 'Вкажіть місто або населений пункт' : 'Please select a city or village',
-        variant: 'destructive'
-      });
-      return;
-    }
     setIsLoading(true);
     try {
-      const {
-        data,
-        error
-      } = await supabase.functions.invoke('send-telegram', {
+      const { data, error } = await supabase.functions.invoke('send-telegram', {
         body: {
           name: formData.name,
           phone: formData.phone,
           time: formData.time,
-          city: formData.city,
-          village: formData.village,
-          address: formData.address,
-          postalCode: formData.postalCode,
-          paymentType: formData.paymentType,
           message: formData.message,
-          date: date ? format(date, 'PPP', {
-            locale: currentLocale
-          }) : undefined
+          date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined
         }
       });
       if (error) throw error;
 
-      // GTM event
       (await import('@/lib/gtm')).gtmEvents.formSubmit('contact_form', {
         has_calculator: calculatorItems.length > 0,
-        city: formData.city || formData.village,
       });
 
-      // Show success animation with confetti
       setShowSuccessAnimation(true);
-      
-      // Play sound and voice notification
       playSuccessSound();
       speakSuccess();
       toast({
@@ -344,11 +319,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         name: '',
         phone: '',
         time: '',
-        city: '',
-        village: '',
-        address: '',
-        postalCode: '',
-        paymentType: '',
         message: ''
       });
       setDate(undefined);
