@@ -1,4 +1,5 @@
 import { useState, forwardRef, useImperativeHandle } from 'react';
+import { cn } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -68,9 +69,19 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
       }
     };
 
+    const [removingListItemId, setRemovingListItemId] = useState<string | null>(null);
+
+    const animatedRemoveFromList = (itemId: string) => {
+      setRemovingListItemId(itemId);
+      setTimeout(() => {
+        setSelectedItems(prev => prev.filter((s) => s.item.id !== itemId));
+        setRemovingListItemId(null);
+      }, 300);
+    };
+
     const updateQuantity = (itemId: string, newQuantity: number) => {
       if (newQuantity <= 0) {
-        removeItem(itemId);
+        animatedRemoveFromList(itemId);
       } else {
         setSelectedItems(
           selectedItems.map((s) =>
@@ -81,7 +92,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
     };
 
     const removeItem = (itemId: string) => {
-      setSelectedItems(selectedItems.filter((s) => s.item.id !== itemId));
+      animatedRemoveFromList(itemId);
     };
 
     const calculateTotal = () => {
@@ -243,7 +254,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
                   {selectedItems.map((selected) => (
                     <div
                       key={selected.item.id}
-                      className="flex items-center justify-between p-3 bg-accent/30 rounded-lg"
+                      className={cn("flex items-center justify-between p-3 bg-accent/30 rounded-lg transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}
                     >
                       <div className="flex-1 min-w-0">
                         <span className="font-medium text-foreground truncate block">

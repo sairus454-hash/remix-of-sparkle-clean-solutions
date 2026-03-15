@@ -1,4 +1,5 @@
  import { useState } from 'react';
+ import { cn } from '@/lib/utils';
  import { useNavigate } from 'react-router-dom';
  import { useLanguage } from '@/i18n/LanguageContext';
  import { Button } from '@/components/ui/button';
@@ -95,9 +96,19 @@
     }
   };
  
+  const [removingListItemId, setRemovingListItemId] = useState<string | null>(null);
+
+  const animatedRemoveFromList = (itemId: string) => {
+    setRemovingListItemId(itemId);
+    setTimeout(() => {
+      setSelectedItems(prev => prev.filter((s) => s.item.id !== itemId));
+      setRemovingListItemId(null);
+    }, 300);
+  };
+
    const updateQuantity = (itemId: string, newQuantity: number) => {
      if (newQuantity <= 0) {
-       removeItem(itemId);
+       animatedRemoveFromList(itemId);
      } else {
        setSelectedItems(
          selectedItems.map((s) =>
@@ -108,7 +119,7 @@
    };
  
    const removeItem = (itemId: string) => {
-     setSelectedItems(selectedItems.filter((s) => s.item.id !== itemId));
+     animatedRemoveFromList(itemId);
    };
  
    const calculateTotal = () => {
@@ -210,7 +221,7 @@
              {selectedItems.map((selected) => (
                <div
                  key={selected.item.id}
-                 className="flex items-center gap-2 p-3 bg-accent/30 rounded-xl"
+                 className={cn("flex items-center gap-2 p-3 bg-accent/30 rounded-xl transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}
                >
                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                    {selected.item.icon}

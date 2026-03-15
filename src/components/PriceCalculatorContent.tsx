@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { cn } from '@/lib/utils';
 import { useNavigate } from 'react-router-dom';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -282,9 +283,19 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
     }
   };
 
+  const [removingListItemId, setRemovingListItemId] = useState<string | null>(null);
+
+  const animatedRemoveFromList = (itemId: string) => {
+    setRemovingListItemId(itemId);
+    setTimeout(() => {
+      setSelectedItems(prev => prev.filter((s) => s.item.id !== itemId));
+      setRemovingListItemId(null);
+    }, 300);
+  };
+
   const updateQuantity = (itemId: string, newQuantity: number) => {
     if (newQuantity <= 0) {
-      removeItem(itemId);
+      animatedRemoveFromList(itemId);
     } else {
       setSelectedItems(
         selectedItems.map((s) =>
@@ -295,7 +306,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
   };
 
   const removeItem = (itemId: string) => {
-    setSelectedItems(selectedItems.filter((s) => s.item.id !== itemId));
+    animatedRemoveFromList(itemId);
   };
 
   const clearAll = () => {
@@ -595,7 +606,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                 selectedItems.map((selected) => (
                   <div
                     key={selected.item.id}
-                    className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg"
+                    className={cn("flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}
                   >
                     <div className="flex-1 min-w-0">
                       <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">
