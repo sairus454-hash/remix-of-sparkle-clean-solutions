@@ -169,6 +169,10 @@ const PriceCalculator = () => {
   const addItem = (item: PriceItem) => {
     const existing = selectedItems.find(s => s.item.id === item.id);
     if (existing) {
+      if (existing.quantity === 1) {
+        setSelectedItems(selectedItems.filter(s => s.item.id !== item.id));
+        return;
+      }
       setSelectedItems(selectedItems.map(s => s.item.id === item.id ? {
         ...s,
         quantity: s.quantity + 1
