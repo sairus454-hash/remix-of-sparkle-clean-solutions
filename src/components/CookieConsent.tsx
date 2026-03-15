@@ -32,7 +32,7 @@ const CookieConsent = () => {
   const t = texts[language as keyof typeof texts] || texts.pl;
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
+    const consent = sessionStorage.getItem('cookie-consent');
     if (!consent) setVisible(true);
   }, []);
 
