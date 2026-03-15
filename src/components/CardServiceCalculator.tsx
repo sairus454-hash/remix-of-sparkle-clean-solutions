@@ -186,10 +186,11 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                     className={cn(
                       "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer w-full",
                       "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
-                      selected
+                      selected && !wasJustRemoved
                         ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
                         : "border-border bg-card hover:border-primary/40",
-                      wasJustAdded && "scale-[1.03]"
+                      wasJustAdded && "scale-[1.03]",
+                      wasJustRemoved && "animate-scale-out opacity-70 ring-0 border-destructive/30"
                     )}
                   >
                   {/* Hover glow overlay */}
