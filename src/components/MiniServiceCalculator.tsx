@@ -117,10 +117,11 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
               onClick={() => addItem(item)}
               className={cn(
                 "relative flex items-center justify-between text-left h-auto py-3 px-4 rounded-xl border transition-all duration-300 group overflow-hidden",
-                selected
+                selected && !wasJustRemoved
                   ? "border-primary/50 bg-primary/5 shadow-sm"
                   : "border-border hover:border-primary/30 hover:bg-accent/40",
-                wasJustAdded && "scale-[1.03]"
+                wasJustAdded && "scale-[1.03]",
+                wasJustRemoved && "animate-scale-out opacity-70 border-destructive/30"
               )}
               style={{
                 animation: `fade-in 0.3s ease-out ${index * 0.04}s both`,
