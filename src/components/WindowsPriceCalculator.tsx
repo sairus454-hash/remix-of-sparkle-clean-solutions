@@ -95,9 +95,19 @@
     }
   };
  
+  const [removingListItemId, setRemovingListItemId] = useState<string | null>(null);
+
+  const animatedRemoveFromList = (itemId: string) => {
+    setRemovingListItemId(itemId);
+    setTimeout(() => {
+      setSelectedItems(prev => prev.filter((s) => s.item.id !== itemId));
+      setRemovingListItemId(null);
+    }, 300);
+  };
+
    const updateQuantity = (itemId: string, newQuantity: number) => {
      if (newQuantity <= 0) {
-       removeItem(itemId);
+       animatedRemoveFromList(itemId);
      } else {
        setSelectedItems(
          selectedItems.map((s) =>
@@ -108,7 +118,7 @@
    };
  
    const removeItem = (itemId: string) => {
-     setSelectedItems(selectedItems.filter((s) => s.item.id !== itemId));
+     animatedRemoveFromList(itemId);
    };
  
    const calculateTotal = () => {
