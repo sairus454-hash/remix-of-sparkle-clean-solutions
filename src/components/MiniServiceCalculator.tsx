@@ -25,13 +25,17 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
+  const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
   const addItem = (item: ServiceItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
-      // Toggle: remove if already selected with qty 1
       if (existing.quantity === 1) {
-        setSelectedItems(selectedItems.filter((s) => s.item.id !== item.id));
+        setJustRemoved(item.id);
+        setTimeout(() => {
+          setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
+          setJustRemoved(null);
+        }, 300);
         return;
       }
       setSelectedItems(selectedItems.map((s) =>
@@ -40,7 +44,6 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
     } else {
       setSelectedItems([...selectedItems, { item, quantity: 1 }]);
     }
-    // Flash feedback
     setJustAdded(item.id);
     setTimeout(() => setJustAdded(null), 600);
   };
@@ -106,6 +109,7 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
           const selected = isSelected(item.id);
           const qty = getQty(item.id);
           const wasJustAdded = justAdded === item.id;
+          const wasJustRemoved = justRemoved === item.id;
 
           return (
             <button
@@ -113,10 +117,11 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
               onClick={() => addItem(item)}
               className={cn(
                 "relative flex items-center justify-between text-left h-auto py-3 px-4 rounded-xl border transition-all duration-300 group overflow-hidden",
-                selected
+                selected && !wasJustRemoved
                   ? "border-primary/50 bg-primary/5 shadow-sm"
                   : "border-border hover:border-primary/30 hover:bg-accent/40",
-                wasJustAdded && "scale-[1.03]"
+                wasJustAdded && "scale-[1.03]",
+                wasJustRemoved && "animate-scale-out opacity-70 border-destructive/30"
               )}
               style={{
                 animation: `fade-in 0.3s ease-out ${index * 0.04}s both`,

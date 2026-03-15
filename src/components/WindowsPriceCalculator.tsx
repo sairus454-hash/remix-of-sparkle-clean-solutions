@@ -26,7 +26,8 @@
  const WindowsPriceCalculator = ({ onSendToForm }: WindowsPriceCalculatorProps) => {
    const { t } = useLanguage();
    const navigate = useNavigate();
-   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
+    const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
+    const [justRemoved, setJustRemoved] = useState<string | null>(null);
  
    const priceItems: PriceItem[] = [
      { 
@@ -76,9 +77,12 @@
   const addItem = (item: PriceItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
-      // Toggle: remove if already selected with qty 1
       if (existing.quantity === 1) {
-        setSelectedItems(selectedItems.filter((s) => s.item.id !== item.id));
+        setJustRemoved(item.id);
+        setTimeout(() => {
+          setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
+          setJustRemoved(null);
+        }, 300);
         return;
       }
       setSelectedItems(

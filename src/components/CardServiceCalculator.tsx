@@ -87,13 +87,18 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [popoverId, setPopoverId] = useState<string | null>(null);
+  const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
       // Toggle: remove if already selected with qty 1
       if (existing.quantity === 1) {
-        setSelectedItems(selectedItems.filter((s) => s.item.id !== item.id));
+        setJustRemoved(item.id);
+        setTimeout(() => {
+          setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
+          setJustRemoved(null);
+        }, 300);
         return;
       }
       setSelectedItems(selectedItems.map((s) =>
@@ -164,6 +169,7 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
           const selected = isSelected(item.id);
           const qty = getQty(item.id);
           const wasJustAdded = justAdded === item.id;
+          const wasJustRemoved = justRemoved === item.id;
 
           return (
             <CascadeCard key={item.id} index={index}>
@@ -180,10 +186,11 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                     className={cn(
                       "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer w-full",
                       "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
-                      selected
+                      selected && !wasJustRemoved
                         ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
                         : "border-border bg-card hover:border-primary/40",
-                      wasJustAdded && "scale-[1.03]"
+                      wasJustAdded && "scale-[1.03]",
+                      wasJustRemoved && "animate-scale-out opacity-70 ring-0 border-destructive/30"
                     )}
                   >
                   {/* Hover glow overlay */}
