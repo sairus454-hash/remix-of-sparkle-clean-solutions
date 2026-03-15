@@ -26,7 +26,8 @@
  const WindowsPriceCalculator = ({ onSendToForm }: WindowsPriceCalculatorProps) => {
    const { t } = useLanguage();
    const navigate = useNavigate();
-   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
+    const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
+    const [justRemoved, setJustRemoved] = useState<string | null>(null);
  
    const priceItems: PriceItem[] = [
      { 
