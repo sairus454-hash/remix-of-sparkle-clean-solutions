@@ -32,12 +32,12 @@ const CookieConsent = () => {
   const t = texts[language as keyof typeof texts] || texts.pl;
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
+    const consent = sessionStorage.getItem('cookie-consent');
     if (!consent) setVisible(true);
   }, []);
 
   const handleChoice = (choice: 'accepted' | 'rejected') => {
-    localStorage.setItem('cookie-consent', choice);
+    sessionStorage.setItem('cookie-consent', choice);
     setVisible(false);
   };
 
