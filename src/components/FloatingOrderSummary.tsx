@@ -89,7 +89,7 @@ const FloatingOrderSummary = () => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 100, opacity: 0 }}
         transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        className="fixed bottom-20 right-4 z-40 sm:bottom-6 sm:right-6"
+        className="fixed bottom-4 right-4 z-40 sm:bottom-6 sm:right-6"
       >
         {/* Expanded view */}
         <AnimatePresence>
