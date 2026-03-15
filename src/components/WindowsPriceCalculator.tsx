@@ -220,7 +220,7 @@
              {selectedItems.map((selected) => (
                <div
                  key={selected.item.id}
-                 className="flex items-center gap-2 p-3 bg-accent/30 rounded-xl"
+                 className={cn("flex items-center gap-2 p-3 bg-accent/30 rounded-xl transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}
                >
                  <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                    {selected.item.icon}

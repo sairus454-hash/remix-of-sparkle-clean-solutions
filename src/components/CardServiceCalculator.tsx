@@ -343,8 +343,10 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
             {selectedItems.map((selected, i) => (
               <div
                 key={selected.item.id}
-                className="flex items-center gap-3 p-3 bg-accent/30 rounded-xl"
-                style={{ animation: `fade-in 0.3s ease-out ${i * 0.05}s both` }}
+                className={cn(
+                  "flex items-center gap-3 p-3 bg-accent/30 rounded-xl transition-all duration-300",
+                  removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4"
+                )}
               >
                 <img
                   src={selected.item.image}

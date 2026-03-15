@@ -310,7 +310,7 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
                 {selectedItems.map((selected) => (
                   <div
                     key={selected.item.id}
-                    className="flex items-center justify-between p-3 bg-card rounded-xl border border-yellow-400/30 shadow-sm"
+                    className={cn("flex items-center justify-between p-3 bg-card rounded-xl border border-yellow-400/30 shadow-sm transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}
                   >
                     <div className="flex-1 min-w-0 mr-2">
                       <span className="font-medium text-foreground block truncate text-sm">

@@ -253,7 +253,7 @@ const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculator
                   {selectedItems.map((selected) => (
                     <div
                       key={selected.item.id}
-                      className="flex items-center justify-between p-3 bg-accent/30 rounded-lg"
+                      className={cn("flex items-center justify-between p-3 bg-accent/30 rounded-lg transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}
                     >
                       <div className="flex-1 min-w-0">
                         <span className="font-medium text-foreground truncate block">

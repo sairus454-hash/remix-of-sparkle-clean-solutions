@@ -254,7 +254,7 @@ const PriceCalculator = () => {
             </div>
 
             <div className="space-y-3">
-              {selectedItems.map(selected => <div key={selected.item.id} className="flex flex-col sm:flex-row sm:items-center gap-3 p-3 sm:p-4 bg-accent/30 rounded-xl">
+              {selectedItems.map(selected => <div key={selected.item.id} className={cn("flex flex-col sm:flex-row sm:items-center gap-3 p-3 sm:p-4 bg-accent/30 rounded-xl transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}>
                   <div className="flex-1 min-w-0">
                     <span className="font-medium text-foreground text-sm sm:text-base block leading-tight">
                       {selected.item.name}

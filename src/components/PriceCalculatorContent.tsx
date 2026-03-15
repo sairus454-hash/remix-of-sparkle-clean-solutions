@@ -605,7 +605,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                 selectedItems.map((selected) => (
                   <div
                     key={selected.item.id}
-                    className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg"
+                    className={cn("flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-accent/30 rounded-md sm:rounded-lg transition-all duration-300", removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4")}
                   >
                     <div className="flex-1 min-w-0">
                       <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">

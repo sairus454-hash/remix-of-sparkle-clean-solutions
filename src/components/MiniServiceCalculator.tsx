@@ -192,8 +192,10 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
             {selectedItems.map((selected, i) => (
               <div
                 key={selected.item.id}
-                className="flex items-center gap-2 p-3 bg-accent/30 rounded-xl"
-                style={{ animation: `fade-in 0.3s ease-out ${i * 0.05}s both` }}
+                className={cn(
+                  "flex items-center gap-2 p-3 bg-accent/30 rounded-xl transition-all duration-300",
+                  removingListItemId === selected.item.id && "opacity-0 scale-95 -translate-x-4"
+                )}
               >
                 <div className="flex-1 min-w-0">
                   <span className="font-medium text-foreground text-sm block truncate">{selected.item.name}</span>
