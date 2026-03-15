@@ -48,9 +48,19 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
     setTimeout(() => setJustAdded(null), 600);
   };
 
+  const [removingListItemId, setRemovingListItemId] = useState<string | null>(null);
+
+  const animatedRemoveFromList = (itemId: string) => {
+    setRemovingListItemId(itemId);
+    setTimeout(() => {
+      setSelectedItems(prev => prev.filter((s) => s.item.id !== itemId));
+      setRemovingListItemId(null);
+    }, 300);
+  };
+
   const updateQuantity = (itemId: string, qty: number) => {
     if (qty <= 0) {
-      setSelectedItems(selectedItems.filter((s) => s.item.id !== itemId));
+      animatedRemoveFromList(itemId);
     } else {
       setSelectedItems(selectedItems.map((s) =>
         s.item.id === itemId ? { ...s, quantity: qty } : s
