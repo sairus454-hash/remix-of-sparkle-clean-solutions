@@ -87,13 +87,18 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [popoverId, setPopoverId] = useState<string | null>(null);
+  const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
       // Toggle: remove if already selected with qty 1
       if (existing.quantity === 1) {
-        setSelectedItems(selectedItems.filter((s) => s.item.id !== item.id));
+        setJustRemoved(item.id);
+        setTimeout(() => {
+          setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
+          setJustRemoved(null);
+        }, 300);
         return;
       }
       setSelectedItems(selectedItems.map((s) =>
