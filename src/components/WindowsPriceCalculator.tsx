@@ -77,9 +77,12 @@
   const addItem = (item: PriceItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
-      // Toggle: remove if already selected with qty 1
       if (existing.quantity === 1) {
-        setSelectedItems(selectedItems.filter((s) => s.item.id !== item.id));
+        setJustRemoved(item.id);
+        setTimeout(() => {
+          setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
+          setJustRemoved(null);
+        }, 300);
         return;
       }
       setSelectedItems(

@@ -166,11 +166,16 @@ const PriceCalculator = () => {
     price: 25,
     unit: 'm²'
   }];
+  const [justRemoved, setJustRemoved] = useState<string | null>(null);
   const addItem = (item: PriceItem) => {
     const existing = selectedItems.find(s => s.item.id === item.id);
     if (existing) {
       if (existing.quantity === 1) {
-        setSelectedItems(selectedItems.filter(s => s.item.id !== item.id));
+        setJustRemoved(item.id);
+        setTimeout(() => {
+          setSelectedItems(prev => prev.filter(s => s.item.id !== item.id));
+          setJustRemoved(null);
+        }, 300);
         return;
       }
       setSelectedItems(selectedItems.map(s => s.item.id === item.id ? {
