@@ -37,7 +37,7 @@ const CookieConsent = () => {
   }, []);
 
   const handleChoice = (choice: 'accepted' | 'rejected') => {
-    localStorage.setItem('cookie-consent', choice);
+    sessionStorage.setItem('cookie-consent', choice);
     setVisible(false);
   };
 
