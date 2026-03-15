@@ -59,6 +59,28 @@ const FloatingOrderSummary = () => {
   // Hide on /contacts
   if (location.pathname === '/contacts') return null;
 
+  const labels = {
+    ru: { title: 'Ваш заказ', items: 'услуг', goToOrder: 'Перейти к заявке', clear: 'Очистить' },
+    pl: { title: 'Twoje zamówienie', items: 'usług', goToOrder: 'Przejdź do zamówienia', clear: 'Wyczyść' },
+    uk: { title: 'Ваше замовлення', items: 'послуг', goToOrder: 'Перейти до замовлення', clear: 'Очистити' },
+    en: { title: 'Your order', items: 'services', goToOrder: 'Go to order', clear: 'Clear' },
+  };
+  const l = labels[language] || labels.en;
+
+  const handleClear = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    sessionStorage.removeItem('mc_calculator_items');
+    sessionStorage.removeItem('mc_calculator_total');
+    setItems([]);
+    setTotal(0);
+    setIsExpanded(false);
+  };
+
+  const handleGoToContacts = () => {
+    setIsExpanded(false);
+    navigate('/contacts');
+  };
+
   const isVisible = items.length > 0 && !dismissed;
 
   return (
