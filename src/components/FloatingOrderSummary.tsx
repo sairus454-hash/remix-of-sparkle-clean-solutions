@@ -58,7 +58,6 @@ const FloatingOrderSummary = () => {
 
   // Hide on /contacts
   if (location.pathname === '/contacts') return null;
-  if (items.length === 0 || dismissed) return null;
 
   const labels = {
     ru: { title: 'Ваш заказ', items: 'услуг', goToOrder: 'Перейти к заявке', clear: 'Очистить' },
@@ -82,13 +81,16 @@ const FloatingOrderSummary = () => {
     navigate('/contacts');
   };
 
+  const isVisible = items.length > 0 && !dismissed;
+
   return (
     <AnimatePresence>
+      {isVisible && (
       <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 100, opacity: 0 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        initial={{ scale: 0, opacity: 0, y: 40 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0, opacity: 0, y: 40 }}
+        transition={{ type: 'spring', damping: 18, stiffness: 400, mass: 0.8 }}
         className="fixed bottom-4 right-4 z-40 sm:bottom-6 sm:right-6"
       >
         {/* Expanded view */}
@@ -166,6 +168,7 @@ const FloatingOrderSummary = () => {
           </span>
         </motion.button>
       </motion.div>
+      )}
     </AnimatePresence>
   );
 };
