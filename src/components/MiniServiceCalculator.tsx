@@ -25,13 +25,17 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
+  const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
   const addItem = (item: ServiceItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
-      // Toggle: remove if already selected with qty 1
       if (existing.quantity === 1) {
-        setSelectedItems(selectedItems.filter((s) => s.item.id !== item.id));
+        setJustRemoved(item.id);
+        setTimeout(() => {
+          setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
+          setJustRemoved(null);
+        }, 300);
         return;
       }
       setSelectedItems(selectedItems.map((s) =>
@@ -40,7 +44,6 @@ const MiniServiceCalculator = ({ items, onSendToForm }: MiniServiceCalculatorPro
     } else {
       setSelectedItems([...selectedItems, { item, quantity: 1 }]);
     }
-    // Flash feedback
     setJustAdded(item.id);
     setTimeout(() => setJustAdded(null), 600);
   };
