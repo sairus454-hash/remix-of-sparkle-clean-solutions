@@ -55,11 +55,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     name: '',
     phone: '',
     time: '',
-    city: '',
-    village: '',
-    address: '',
-    postalCode: '',
-    paymentType: '',
     message: ''
   });
 
