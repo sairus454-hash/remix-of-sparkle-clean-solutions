@@ -169,6 +169,7 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
           const selected = isSelected(item.id);
           const qty = getQty(item.id);
           const wasJustAdded = justAdded === item.id;
+          const wasJustRemoved = justRemoved === item.id;
 
           return (
             <CascadeCard key={item.id} index={index}>
