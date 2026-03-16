@@ -473,3 +473,15 @@ html {
 .animate-page-loader {
   animation: page-loader-pulse 1.2s ease-in-out infinite;
 }
+
+/* Slow scroll for time picker select */
+.select-slow-scroll [data-radix-select-viewport] {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: auto;
+  overscroll-behavior: contain;
+  scroll-snap-type: y mandatory;
+}
+
+.select-slow-scroll [data-radix-select-viewport] [role="option"] {
+  scroll-snap-align: start;
+}
