@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { toast } from '@/hooks/use-toast';
-import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info } from 'lucide-react';
+import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
@@ -580,7 +580,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
         {t.form.submit}
       </Button>
-      <p className="text-center text-sm text-muted-foreground mt-2">
+      <p className="flex items-center justify-center gap-1.5 text-center text-sm text-muted-foreground mt-2">
+        <Phone className="w-4 h-4" />
         {language === 'ru' ? 'Мы свяжемся с Вами в ближайшее время' : language === 'pl' ? 'Skontaktujemy się z Tobą wkrótce' : language === 'uk' ? 'Ми зв\'яжемося з Вами найближчим часом' : 'We will contact you shortly'}
       </p>
     </form>
