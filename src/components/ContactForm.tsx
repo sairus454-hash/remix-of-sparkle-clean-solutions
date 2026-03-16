@@ -580,6 +580,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
         {t.form.submit}
       </Button>
+      <p className="text-center text-sm text-muted-foreground mt-2">
+        {language === 'ru' ? 'Мы свяжемся с Вами в ближайшее время' : language === 'pl' ? 'Skontaktujemy się z Tobą wkrótce' : language === 'uk' ? 'Ми зв\'яжемося з Вами найближчим часом' : 'We will contact you shortly'}
+      </p>
     </form>
   </>;
 });
