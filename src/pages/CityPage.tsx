@@ -332,9 +332,20 @@ const CityPage = () => {
   ];
 
   const isWroclaw = city.slug === 'wroclaw';
+
+  // For non-Wrocław cities: +10% rounded up, except free items (price=0)
+  const applyMarkup = (cats: typeof categories) =>
+    cats.map(cat => ({
+      ...cat,
+      items: cat.items.map(item => ({
+        ...item,
+        price: item.price === 0 ? 0 : Math.ceil(item.price * 1.1),
+      })),
+    }));
+
   const filteredCategories = isWroclaw
     ? categories
-    : categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman');
+    : applyMarkup(categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman'));
 
   return (
     <>
