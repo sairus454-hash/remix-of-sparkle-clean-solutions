@@ -343,6 +343,7 @@ const CityPage = () => {
         description={city.seo.description}
         keywords={city.seo.keywords}
         canonical={`/city/${city.slug}`}
+        image={`https://masterclean1885.pl/og-${city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug}.png`}
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
         jsonLd={{
           '@context': 'https://schema.org',
