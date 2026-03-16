@@ -41,7 +41,7 @@ export const translations = {
       review5: 'Чистили кожаный диван. Мастер объяснил весь процесс, результат отличный. Буду обращаться ещё.',
     },
     hero: {
-      title: 'Профессиональная химчистка мебели, матрасов, ковров и авто',
+      title: 'Профессиональная химчистка мебели, матрасов, ковров и авто во Вроцлаве и окрестностях',
       subtitle: 'Возвращаем чистоту и свежесть вашим вещам с использованием современных технологий',
       cta: 'Оставить заявку',
       secondary: 'Узнать больше',
@@ -749,7 +749,7 @@ export const translations = {
       review5: 'Had our leather sofa cleaned. The technician explained the whole process, excellent result. Will come back again.',
     },
     hero: {
-      title: 'Professional Cleaning of Furniture, Mattresses, Carpets and Cars',
+      title: 'Professional Cleaning of Furniture, Mattresses, Carpets and Cars in Wrocław and Surrounding Areas',
       subtitle: 'Restoring cleanliness and freshness to your items using modern technologies',
       cta: 'Get a Quote',
       secondary: 'Learn More',
@@ -1457,7 +1457,7 @@ export const translations = {
       review5: 'Czyściliśmy skórzaną sofę. Technik wyjaśnił cały proces, doskonały wynik. Będę wracać.',
     },
     hero: {
-      title: 'Profesjonalne czyszczenie mebli, materacy, dywanów i aut',
+      title: 'Profesjonalne czyszczenie mebli, materacy, dywanów i aut we Wrocławiu i okolicach',
       subtitle: 'Przywracamy czystość i świeżość Twoim rzeczom za pomocą nowoczesnych technologii',
       cta: 'Zostaw zapytanie',
       secondary: 'Dowiedz się więcej',
@@ -2165,7 +2165,7 @@ export const translations = {
       review5: 'Чистили шкіряний диван. Майстер пояснив весь процес, результат відмінний. Буду звертатися ще.',
     },
     hero: {
-      title: 'Професійна хімчистка меблів, матраців, килимів та авто',
+      title: 'Професійна хімчистка меблів, матраців, килимів та авто у Вроцлаві та околицях',
       subtitle: 'Повертаємо чистоту та свіжість вашим речам з використанням сучасних технологій',
       cta: 'Залишити заявку',
       secondary: 'Дізнатись більше',
