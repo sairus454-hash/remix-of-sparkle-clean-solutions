@@ -368,6 +368,38 @@ export const cities: CityData[] = [
       },
     },
   },
+  {
+    slug: 'lubin',
+    name: 'Lubin',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki i sprzątanie Lubin — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Lubinie. Dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Lubin, pranie dywanów Lubin, ozonowanie Lubin, sprzątanie Lubin',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Lubinie',
+        subtitle: 'Zagłębie Miedziowe — regularne dojazdy z Wrocławia',
+        description: 'Lubin to ważne miasto Zagłębia Miedziowego na Dolnym Śląsku. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, prania materacy, dywanów, wykładzin oraz ozonowania pomieszczeń. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Obsługujemy również Polkowice, Głogów i okolice. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Любине',
+        subtitle: 'Медный бассейн — регулярные выезды из Вроцлава',
+        description: 'Любин — важный город Медного бассейна в Нижней Силезии. Регулярно выполняем заказы на химчистку мебели, матрасов, ковров и озонирование. Используем профессиональное оборудование Kärcher и SantoEmma. Обслуживаем также Полковице, Глогув и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Lubin',
+        subtitle: 'Copper Basin — regular trips from Wrocław',
+        description: 'Lubin is an important city in the Copper Basin of Lower Silesia. We regularly handle upholstery cleaning, mattress and carpet cleaning, and ozone treatment. We use professional Kärcher and SantoEmma equipment. We also serve Polkowice, Głogów and surrounding areas. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Любіні',
+        subtitle: 'Мідний басейн — регулярні виїзди з Вроцлава',
+        description: 'Любін — важливе місто Мідного басейну в Нижній Сілезії. Регулярно виконуємо замовлення на хімчистку меблів, матраців, килимів та озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
 ];
 
 export const getCityBySlug = (slug: string): CityData | undefined => {
