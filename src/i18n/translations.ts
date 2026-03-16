@@ -749,7 +749,7 @@ export const translations = {
       review5: 'Had our leather sofa cleaned. The technician explained the whole process, excellent result. Will come back again.',
     },
     hero: {
-      title: 'Professional Cleaning of Furniture, Mattresses, Carpets and Cars',
+      title: 'Professional Cleaning of Furniture, Mattresses, Carpets and Cars in Wrocław and Surrounding Areas',
       subtitle: 'Restoring cleanliness and freshness to your items using modern technologies',
       cta: 'Get a Quote',
       secondary: 'Learn More',
