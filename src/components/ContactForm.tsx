@@ -539,7 +539,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
               <SelectValue placeholder={t.form.selectTime} />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="select-slow-scroll">
               {Array.from({ length: 24 }, (_, i) => {
                 const hour = i.toString().padStart(2, '0');
                 return <SelectItem key={hour} value={`${hour}:00`} className="py-3 sm:py-2">{hour}:00</SelectItem>;
