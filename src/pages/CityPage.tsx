@@ -153,7 +153,7 @@ import handyYardHelp from '@/assets/handyman/yard-help.jpg';
 
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
@@ -163,9 +163,8 @@ const CityPage = () => {
   const city = getCityBySlug(slug || '');
   if (!city) return <Navigate to="/prices" replace />;
 
-  const cityServiceTitle = t.city?.servicesIn
-    ? t.city.servicesIn.replace('{city}', city.name)
-    : `Usługi czyszczenia — ${city.name}`;
+  const lang = language as keyof typeof city.content;
+  const cityContent = city.content[lang] || city.content.pl;
 
   const categories = [
     {
@@ -335,11 +334,26 @@ const CityPage = () => {
   return (
     <>
       <SEO
-        title={`Usługi czyszczenia ${city.name} — MasterClean`}
-        description={`Profesjonalne usługi czyszczenia w ${city.name}. Pranie tapicerki, czyszczenie dywanów, ozonowanie, sprzątanie. Cennik online.`}
-        keywords={`czyszczenie ${city.name}, pranie tapicerki ${city.name}, sprzątanie ${city.name}, ozonowanie ${city.name}`}
+        title={city.seo.title}
+        description={city.seo.description}
+        keywords={city.seo.keywords}
         canonical={`/city/${city.slug}`}
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: `MasterClean — ${city.name}`,
+          description: city.seo.description,
+          areaServed: {
+            '@type': 'City',
+            name: city.name,
+          },
+          provider: {
+            '@type': 'LocalBusiness',
+            name: 'MasterClean',
+            url: 'https://masterclean1885.pl',
+          },
+        }}
       />
       <Layout>
         <BackToOrderButton />
@@ -357,11 +371,32 @@ const CityPage = () => {
                 </div>
               </div>
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                {cityServiceTitle}
+                {cityContent.heading}
               </h1>
-              <p className="text-base sm:text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-fade-up px-4" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-                {t.prices.subtitle}
+              <p className="text-base sm:text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-fade-up px-4 font-medium" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+                {cityContent.subtitle}
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* City Description */}
+        <section className="py-8 sm:py-12 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl border border-border bg-background">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0 mt-0.5">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
+                </div>
+                <div>
+                  <h2 className="font-serif text-lg sm:text-xl font-bold text-foreground mb-2">
+                    {city.name} — {city.region}
+                  </h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {cityContent.description}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
