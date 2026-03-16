@@ -153,7 +153,7 @@ import handyYardHelp from '@/assets/handyman/yard-help.jpg';
 
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
@@ -163,9 +163,8 @@ const CityPage = () => {
   const city = getCityBySlug(slug || '');
   if (!city) return <Navigate to="/prices" replace />;
 
-  const cityServiceTitle = t.city?.servicesIn
-    ? t.city.servicesIn.replace('{city}', city.name)
-    : `Usługi czyszczenia — ${city.name}`;
+  const lang = language as keyof typeof city.content;
+  const cityContent = city.content[lang] || city.content.pl;
 
   const categories = [
     {
