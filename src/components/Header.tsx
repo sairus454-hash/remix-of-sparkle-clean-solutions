@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { motion } from 'framer-motion';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import CitySelector from '@/components/CitySelector';
 
 const languages: { code: Language; label: string }[] = [
   { code: 'ru', label: 'RU' },

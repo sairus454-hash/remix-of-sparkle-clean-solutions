@@ -116,6 +116,7 @@ const App = () => {
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/cookies" element={<Cookies />} />
                     <Route path="/sitemap" element={<Sitemap />} />
+                    <Route path="/city/:slug" element={<CityPage />} />
                     <Route path="/admin/login" element={<AdminLogin />} />
                     <Route
                       path="/admin"

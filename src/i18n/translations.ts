@@ -2845,6 +2845,12 @@ export const translations = {
         perHour: '/год',
       },
     },
+    city: {
+      yourCity: 'Твоє місто',
+      selectCity: 'Оберіть місто',
+      selectCityDesc: 'Оберіть місто, щоб побачити доступні послуги та ціни',
+      servicesIn: 'Послуги хімчистки — {city}',
+    },
     pwa: {
       updateAvailable: 'Доступне оновлення',
       updateDescription: 'Натисніть для завантаження нової версії',
