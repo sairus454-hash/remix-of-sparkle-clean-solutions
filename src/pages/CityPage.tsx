@@ -335,7 +335,6 @@ const CityPage = () => {
     },
   ];
 
-  const isWroclaw = city.slug === 'wroclaw';
 
   // For non-Wrocław cities: +10% rounded up, except free items (price=0)
   const applyMarkup = (cats: typeof categories) =>
