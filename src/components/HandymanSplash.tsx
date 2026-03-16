@@ -17,7 +17,7 @@ const HandymanSplash = ({ onComplete }: HandymanSplashProps) => {
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 1050);
+    }, 700);
 
     return () => {
       clearTimeout(fadeTimer);
