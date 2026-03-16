@@ -9,8 +9,8 @@ const SiteSplash = ({ onComplete }: SiteSplashProps) => {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setIsFading(true), 1700);
-    const completeTimer = setTimeout(() => onComplete(), 2000);
+    const fadeTimer = setTimeout(() => setIsFading(true), 1500);
+    const completeTimer = setTimeout(() => onComplete(), 1750);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(completeTimer);
@@ -19,7 +19,7 @@ const SiteSplash = ({ onComplete }: SiteSplashProps) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[200] flex items-center justify-center bg-white transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+      className={`fixed inset-0 z-[200] flex items-center justify-center bg-white transition-opacity duration-200 ${isFading ? 'opacity-0' : 'opacity-100'}`}
     >
       {/* Animated rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">

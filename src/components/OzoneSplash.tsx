@@ -12,12 +12,12 @@ const OzoneSplash = ({ onComplete }: OzoneSplashProps) => {
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 800);
+    }, 500);
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 1050);
+    }, 700);
 
     return () => {
       clearTimeout(fadeTimer);
@@ -29,7 +29,7 @@ const OzoneSplash = ({ onComplete }: OzoneSplashProps) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-fresh via-primary to-fresh transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-fresh via-primary to-fresh transition-opacity duration-200 ${isFading ? 'opacity-0' : 'opacity-100'}`}
     >
       {/* Background animated particles */}
       <div className="absolute inset-0 overflow-hidden">

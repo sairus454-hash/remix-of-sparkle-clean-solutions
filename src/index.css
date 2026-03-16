@@ -452,7 +452,7 @@ html {
 @keyframes page-enter {
   0% {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(4px);
   }
   100% {
     opacity: 1;
@@ -461,7 +461,7 @@ html {
 }
 
 .animate-page-enter {
-  animation: page-enter 0.25s ease-out both;
+  animation: page-enter 0.15s ease-out both;
 }
 
 /* Smooth page loader fade */
