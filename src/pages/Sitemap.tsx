@@ -20,6 +20,17 @@ const sitemapUrls = [
   { loc: '/privacy-policy', label: 'Polityka prywatności', priority: '0.3', changefreq: 'yearly' },
   { loc: '/terms', label: 'Regulamin', priority: '0.3', changefreq: 'yearly' },
   { loc: '/cookies', label: 'Cookies', priority: '0.3', changefreq: 'yearly' },
+  { loc: '/city/wroclaw', label: 'Wrocław', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/city/opole', label: 'Opole', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/city/legnica', label: 'Legnica', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/olawa', label: 'Oława', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/kalisz', label: 'Kalisz', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/leszno', label: 'Leszno', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/swidnica', label: 'Świdnica', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/walbrzych', label: 'Wałbrzych', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/ostrow-wielkopolski', label: 'Ostrów Wielkopolski', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/jelenia-gora', label: 'Jelenia Góra', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/brzeg', label: 'Brzeg', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const DOMAIN = 'https://masterclean1885.pl';
