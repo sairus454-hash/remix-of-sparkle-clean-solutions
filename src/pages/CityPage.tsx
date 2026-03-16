@@ -392,18 +392,47 @@ const CityPage = () => {
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
         jsonLd={{
           '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: `MasterClean — ${city.name}`,
-          description: city.seo.description,
-          areaServed: {
-            '@type': 'City',
-            name: city.name,
-          },
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            url: 'https://masterclean1885.pl',
-          },
+          '@graph': [
+            {
+              '@type': 'Service',
+              name: `MasterClean — ${city.name}`,
+              description: city.seo.description,
+              url: `https://masterclean1885.pl/city/${city.slug}`,
+              areaServed: {
+                '@type': 'City',
+                name: city.name,
+              },
+              provider: {
+                '@type': 'LocalBusiness',
+                name: 'MasterClean',
+                url: 'https://masterclean1885.pl',
+                telephone: '+48575211401',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressCountry: 'PL',
+                  addressRegion: city.region,
+                  addressLocality: city.name,
+                },
+              },
+              offers: {
+                '@type': 'AggregateOffer',
+                priceCurrency: 'PLN',
+                lowPrice: isWroclaw ? '40' : '44',
+                highPrice: isWroclaw ? '750' : '825',
+              },
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: faqData.map(faq => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.a,
+                },
+              })),
+            },
+          ],
         }}
       />
       <Layout>
