@@ -22,6 +22,9 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import QuickCalculator from '@/components/QuickCalculator';
 import { getCityBySlug } from '@/data/cities';
+import {
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
+} from '@/components/ui/accordion';
 
 // Cleaning images
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
