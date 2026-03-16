@@ -519,11 +519,21 @@ Sprzątanie generalne:
 • Pomoc na działce — 110 PLN/godz.
 
 📍 STREFA USŁUG: Pracujemy w promieniu 150 km od Wrocławia!
+Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
+
+💰 CENY WG MIAST:
+• Wrocław — ceny bazowe (jak w cenniku powyżej)
+• Wszystkie inne miasta — ceny o 10% wyższe od bazowych (zaokrąglone w górę)
+Przykład: sofa 2-osobowa we Wrocławiu — 140 PLN, w Opolu/Lubinie/Legnicy itp. — 154 PLN
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 180 PLN
 • Inne miejscowości (dalej niż 10 km) — 400 PLN
 Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
+
+⚠️ OGRANICZENIA WG MIAST:
+• Usługi „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
+• W pozostałych miastach: czyszczenie mebli, materacy, dywanów, aut, ozonowanie, mycie okien, impregnacja
 
 🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
 • Rabat 5% — przy zamówieniu z 2+ różnych KATEGORII (np. Meble + Auto)
