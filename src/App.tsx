@@ -40,6 +40,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Cookies = lazy(() => import("./pages/Cookies"));
 const Sitemap = lazy(() => import("./pages/Sitemap"));
+const CityPage = lazy(() => import("./pages/CityPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -115,6 +116,7 @@ const App = () => {
                     <Route path="/contacts" element={<Contacts />} />
                     <Route path="/cookies" element={<Cookies />} />
                     <Route path="/sitemap" element={<Sitemap />} />
+                    <Route path="/city/:slug" element={<CityPage />} />
                     <Route path="/admin/login" element={<AdminLogin />} />
                     <Route
                       path="/admin"

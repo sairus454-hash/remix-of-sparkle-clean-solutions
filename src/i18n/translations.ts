@@ -703,6 +703,12 @@ export const translations = {
         perHour: '/ч',
       },
     },
+    city: {
+      yourCity: 'Ваш город',
+      selectCity: 'Выберите город',
+      selectCityDesc: 'Выберите город, чтобы увидеть доступные услуги и цены',
+      servicesIn: 'Услуги химчистки — {city}',
+    },
     pwa: {
       updateAvailable: 'Доступно обновление',
       updateDescription: 'Нажмите для загрузки новой версии',
@@ -1410,6 +1416,12 @@ export const translations = {
         moldRemoval: 'Wall mold removal',
         perHour: '/h',
       },
+    },
+    city: {
+      yourCity: 'Your city',
+      selectCity: 'Select city',
+      selectCityDesc: 'Choose your city to see available services and prices',
+      servicesIn: 'Cleaning services — {city}',
     },
     pwa: {
       updateAvailable: 'Update available',
@@ -2119,6 +2131,12 @@ export const translations = {
         perHour: '/godz.',
       },
     },
+    city: {
+      yourCity: 'Twoje miasto',
+      selectCity: 'Wybierz miasto',
+      selectCityDesc: 'Wybierz swoje miasto, aby zobaczyć dostępne usługi i cennik',
+      servicesIn: 'Usługi czyszczenia — {city}',
+    },
     pwa: {
       updateAvailable: 'Dostępna aktualizacja',
       updateDescription: 'Kliknij, aby załadować nową wersję',
@@ -2826,6 +2844,12 @@ export const translations = {
         moldRemoval: 'Усунення грибка зі стіни',
         perHour: '/год',
       },
+    },
+    city: {
+      yourCity: 'Твоє місто',
+      selectCity: 'Оберіть місто',
+      selectCityDesc: 'Оберіть місто, щоб побачити доступні послуги та ціни',
+      servicesIn: 'Послуги хімчистки — {city}',
     },
     pwa: {
       updateAvailable: 'Доступне оновлення',
