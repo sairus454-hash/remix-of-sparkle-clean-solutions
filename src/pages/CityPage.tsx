@@ -491,7 +491,7 @@ const CityPage = () => {
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
-              {categories.map((cat, catIndex) => (
+              {filteredCategories.map((cat, catIndex) => (
                 <CircularRevealCard key={cat.id} index={catIndex}>
                   <div 
                     ref={(el) => { categoryRefs.current[cat.id] = el; }}
