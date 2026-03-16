@@ -400,6 +400,9 @@ const CityPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Calculator Trigger */}
+        <section className="py-6 sm:py-10 bg-card">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <CircularRevealCard index={0}>
