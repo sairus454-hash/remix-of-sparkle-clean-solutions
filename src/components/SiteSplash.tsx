@@ -40,7 +40,7 @@ const SiteSplash = ({ onComplete }: SiteSplashProps) => {
       <img
         src={splashLogo}
         alt="MasterClean"
-        className="relative z-10 w-64 md:w-80 object-contain drop-shadow-xl"
+        className="relative z-10 w-80 md:w-96 object-contain drop-shadow-xl"
         style={{ animation: 'splashLogoIn 0.6s ease-out forwards' }}
       />
 
