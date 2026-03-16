@@ -539,10 +539,10 @@ const CityPage = () => {
                     {language === 'pl' && 'Usługi sprzątania mieszkań oraz złotej rączki dostępne są wyłącznie we Wrocławiu.'}
                     {language === 'en' && 'House cleaning and handyman services are available only in Wrocław.'}
                     {language === 'ru' && 'Услуги уборки квартир и мастера на час доступны только во Вроцлаве.'}
-                    {language === 'ua' && 'Послуги прибирання квартир та майстра на годину доступні лише у Вроцлаві.'}
+                    {language === 'uk' && 'Послуги прибирання квартир та майстра на годину доступні лише у Вроцлаві.'}
                   </p>
                   <a href="/city/wroclaw" className="inline-block text-sm text-primary hover:underline font-semibold">
-                    {language === 'pl' ? 'Zobacz pełną ofertę dla Wrocławia →' : language === 'en' ? 'See full offer for Wrocław →' : language === 'ua' ? 'Переглянути повну пропозицію для Вроцлава →' : 'Смотреть полный прайс для Вроцлава →'}
+                    {language === 'pl' ? 'Zobacz pełną ofertę dla Wrocławia →' : language === 'en' ? 'See full offer for Wrocław →' : language === 'uk' ? 'Переглянути повну пропозицію для Вроцлава →' : 'Смотреть полный прайс для Вроцлава →'}
                   </a>
                 </div>
               )}
