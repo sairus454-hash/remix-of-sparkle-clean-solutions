@@ -98,10 +98,14 @@ const Header = () => {
     >
       <div className="container mx-auto px-2 sm:px-4 lg:px-3 xl:px-4">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
-          {/* Left Section: Mobile Menu Button + Logo */}
+          {/* Left Section: City + Mobile Menu Button + Logo */}
           <div className="flex items-center gap-2">
-            {/* Mobile Menu Button - Larger with green accent */}
+            {/* City Selector */}
             <div style={getHeaderItemStyle(0, headerRevealed)}>
+              <CitySelector />
+            </div>
+            {/* Mobile Menu Button - Larger with green accent */}
+            <div style={getHeaderItemStyle(1, headerRevealed)}>
               <Button
                 variant="ghost"
                 size="icon"
