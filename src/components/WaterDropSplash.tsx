@@ -13,7 +13,7 @@ const WaterDropSplash = ({ onComplete }: WaterDropSplashProps) => {
     // Start fading at 1.2 seconds
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 800);
+    }, 500);
 
     // Complete at 1.05 seconds
     const completeTimer = setTimeout(() => {
