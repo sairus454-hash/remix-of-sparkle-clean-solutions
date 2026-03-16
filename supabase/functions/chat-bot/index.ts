@@ -337,11 +337,21 @@ Deep cleaning:
 • Yard help — 110 PLN/hour
 
 📍 SERVICE AREA: We work within 150 km radius from Wrocław!
+Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
+
+💰 PRICING BY CITY:
+• Wrocław — base prices (as listed above)
+• All other cities — prices are 10% higher than base (rounded up)
+Example: 2-seater sofa in Wrocław — 140 PLN, in Opole/Lubin/Legnica etc. — 154 PLN
 
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 180 PLN
 • Other locations (beyond 10 km) — 400 PLN
 Minimum order applies to ALL service categories.
+
+⚠️ CITY RESTRICTIONS:
+• "Premises cleaning" and "Handyman" services are available ONLY in Wrocław!
+• Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
 🎁 DISCOUNT SYSTEM (AUTOMATIC):
 • 5% discount — when ordering from 2+ different CATEGORIES (e.g., Furniture + Auto)
