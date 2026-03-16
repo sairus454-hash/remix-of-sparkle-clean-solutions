@@ -41,7 +41,7 @@ const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
         playsInline
         preload="auto"
         onCanPlay={() => setIsLoaded(true)}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-200"
         style={{ opacity: isLoaded ? 1 : 0 }}
       >
         <source src={src} type="video/mp4" />

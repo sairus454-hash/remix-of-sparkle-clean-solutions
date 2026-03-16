@@ -19,7 +19,7 @@ const SiteSplash = ({ onComplete }: SiteSplashProps) => {
 
   return (
     <div
-      className={`fixed inset-0 z-[200] flex items-center justify-center bg-white transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+      className={`fixed inset-0 z-[200] flex items-center justify-center bg-white transition-opacity duration-200 ${isFading ? 'opacity-0' : 'opacity-100'}`}
     >
       {/* Animated rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
