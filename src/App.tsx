@@ -57,7 +57,23 @@ const PageLoader = () => (
   </div>
 );
 
-const App = () => (
+const App = () => {
+  const [showSplash, setShowSplash] = useState(() => {
+    try {
+      return !sessionStorage.getItem('site_splash_seen');
+    } catch {
+      return true;
+    }
+  });
+
+  const handleSplashComplete = useCallback(() => {
+    setShowSplash(false);
+    try {
+      sessionStorage.setItem('site_splash_seen', '1');
+    } catch {}
+  }, []);
+
+  return (
   <QueryClientProvider client={queryClient}>
     <LanguageProvider>
       <AuthProvider>
