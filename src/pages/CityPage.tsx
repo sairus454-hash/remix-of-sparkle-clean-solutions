@@ -624,6 +624,29 @@ const CityPage = () => {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <section className="py-12 sm:py-16 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
+                {language === 'pl' ? 'Najczęściej zadawane pytania' : language === 'en' ? 'Frequently Asked Questions' : language === 'uk' ? 'Часті запитання' : 'Часто задаваемые вопросы'}
+              </h2>
+              <Accordion type="single" collapsible className="space-y-3">
+                {faqData.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`} className="border rounded-xl px-4 bg-background">
+                    <AccordionTrigger className="hover:no-underline py-4 text-left text-sm sm:text-base font-medium">
+                      {faq.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-4 text-sm text-muted-foreground leading-relaxed">
+                      {faq.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
       </Layout>
     </>
   );
