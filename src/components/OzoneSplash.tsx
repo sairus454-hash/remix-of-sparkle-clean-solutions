@@ -12,7 +12,7 @@ const OzoneSplash = ({ onComplete }: OzoneSplashProps) => {
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 800);
+    }, 500);
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
