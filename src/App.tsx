@@ -40,6 +40,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Cookies = lazy(() => import("./pages/Cookies"));
 const Sitemap = lazy(() => import("./pages/Sitemap"));
+const CityPage = lazy(() => import("./pages/CityPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
