@@ -527,6 +527,25 @@ const CityPage = () => {
                   </div>
                 </CircularRevealCard>
               ))}
+
+              {/* Notice about Wrocław-only services */}
+              {!isWroclaw && (
+                <div className="rounded-2xl border border-border bg-accent/20 p-5 sm:p-6 text-center space-y-2">
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                    <Home className="w-5 h-5" />
+                    <Wrench className="w-5 h-5" />
+                  </div>
+                  <p className="text-sm sm:text-base text-muted-foreground font-medium">
+                    {language === 'pl' && 'Usługi sprzątania mieszkań oraz złotej rączki dostępne są wyłącznie we Wrocławiu.'}
+                    {language === 'en' && 'House cleaning and handyman services are available only in Wrocław.'}
+                    {language === 'ru' && 'Услуги уборки квартир и мастера на час доступны только во Вроцлаве.'}
+                    {language === 'ua' && 'Послуги прибирання квартир та майстра на годину доступні лише у Вроцлаві.'}
+                  </p>
+                  <a href="/city/wroclaw" className="inline-block text-sm text-primary hover:underline font-semibold">
+                    {language === 'pl' ? 'Zobacz pełną ofertę dla Wrocławia →' : language === 'en' ? 'See full offer for Wrocław →' : language === 'ua' ? 'Переглянути повну пропозицію для Вроцлава →' : 'Смотреть полный прайс для Вроцлава →'}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </section>
