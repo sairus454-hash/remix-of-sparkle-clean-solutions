@@ -2131,6 +2131,12 @@ export const translations = {
         perHour: '/godz.',
       },
     },
+    city: {
+      yourCity: 'Twoje miasto',
+      selectCity: 'Wybierz miasto',
+      selectCityDesc: 'Wybierz swoje miasto, aby zobaczyć dostępne usługi i cennik',
+      servicesIn: 'Usługi czyszczenia — {city}',
+    },
     pwa: {
       updateAvailable: 'Dostępna aktualizacja',
       updateDescription: 'Kliknij, aby załadować nową wersję',
