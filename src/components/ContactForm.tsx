@@ -560,10 +560,20 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         </div>
       </div>
 
-      {/* Hidden message for calculator data */}
-      {calculatorItems.length > 0 && (
-        <input type="hidden" value={formData.message} />
-      )}
+      {/* Comment / Message (optional) */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {language === 'ru' ? 'Комментарий' : language === 'pl' ? 'Komentarz' : language === 'uk' ? 'Коментар' : 'Comment'}
+        </label>
+        <textarea
+          placeholder={language === 'ru' ? 'Дополнительная информация (необязательно)' : language === 'pl' ? 'Dodatkowe informacje (opcjonalnie)' : language === 'uk' ? 'Додаткова інформація (необов\'язково)' : 'Additional info (optional)'}
+          value={calculatorItems.length > 0 ? formData.message : (formData.message || '')}
+          onChange={e => setFormData({ ...formData, message: e.target.value })}
+          className="flex min-h-[80px] w-full rounded-md border border-input bg-card px-3 py-2 text-base sm:text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+          maxLength={2000}
+          readOnly={calculatorItems.length > 0}
+        />
+      </div>
 
       <Button type="submit" disabled={isLoading} className="w-full bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow transition-all h-12 sm:h-11 text-base touch-manipulation active:scale-[0.98]">
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
