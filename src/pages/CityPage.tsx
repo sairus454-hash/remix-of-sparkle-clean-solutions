@@ -165,6 +165,10 @@ const CityPage = () => {
 
   const lang = language as keyof typeof city.content;
   const cityContent = city.content[lang] || city.content.pl;
+  const isWroclaw = city.slug === 'wroclaw';
+
+  // FAQ data for SEO
+  const faqData = getFaqData(language, city.name, isWroclaw);
 
   const categories = [
     {
