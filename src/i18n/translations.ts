@@ -1417,6 +1417,12 @@ export const translations = {
         perHour: '/h',
       },
     },
+    city: {
+      yourCity: 'Your city',
+      selectCity: 'Select city',
+      selectCityDesc: 'Choose your city to see available services and prices',
+      servicesIn: 'Cleaning services — {city}',
+    },
     pwa: {
       updateAvailable: 'Update available',
       updateDescription: 'Tap to load the new version',
