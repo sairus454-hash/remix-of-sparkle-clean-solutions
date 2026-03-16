@@ -19,7 +19,7 @@ const WaterDropSplash = ({ onComplete }: WaterDropSplashProps) => {
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 1050);
+    }, 700);
 
     return () => {
       clearTimeout(fadeTimer);

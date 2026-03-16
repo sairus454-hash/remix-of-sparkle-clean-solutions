@@ -29,7 +29,7 @@ const CleaningSplash = ({ onComplete }: CleaningSplashProps) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-600 transition-opacity duration-200 ${isFading ? 'opacity-0' : 'opacity-100'}`}
     >
       {/* Floating bubbles background */}
       <div className="absolute inset-0 overflow-hidden">

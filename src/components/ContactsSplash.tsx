@@ -38,7 +38,7 @@ const ContactsSplash = ({ onComplete }: ContactsSplashProps) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-primary via-fresh to-primary transition-opacity duration-300 ${isFading ? 'opacity-0' : 'opacity-100'}`}
+      className={`fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-primary via-fresh to-primary transition-opacity duration-200 ${isFading ? 'opacity-0' : 'opacity-100'}`}
     >
       {/* Floating contact icons */}
       {floatingIcons.map(({ Icon, delay, x, y }, index) => (
