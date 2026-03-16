@@ -331,6 +331,11 @@ const CityPage = () => {
     },
   ];
 
+  const isWroclaw = city.slug === 'wroclaw';
+  const filteredCategories = isWroclaw
+    ? categories
+    : categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman');
+
   return (
     <>
       <SEO
