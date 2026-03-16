@@ -1457,7 +1457,7 @@ export const translations = {
       review5: 'Czyściliśmy skórzaną sofę. Technik wyjaśnił cały proces, doskonały wynik. Będę wracać.',
     },
     hero: {
-      title: 'Profesjonalne czyszczenie mebli, materacy, dywanów i aut',
+      title: 'Profesjonalne czyszczenie mebli, materacy, dywanów i aut we Wrocławiu i okolicach',
       subtitle: 'Przywracamy czystość i świeżość Twoim rzeczom za pomocą nowoczesnych technologii',
       cta: 'Zostaw zapytanie',
       secondary: 'Dowiedz się więcej',
