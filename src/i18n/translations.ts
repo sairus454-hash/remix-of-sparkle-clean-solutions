@@ -703,6 +703,12 @@ export const translations = {
         perHour: '/ч',
       },
     },
+    city: {
+      yourCity: 'Ваш город',
+      selectCity: 'Выберите город',
+      selectCityDesc: 'Выберите город, чтобы увидеть доступные услуги и цены',
+      servicesIn: 'Услуги химчистки — {city}',
+    },
     pwa: {
       updateAvailable: 'Доступно обновление',
       updateDescription: 'Нажмите для загрузки новой версии',
