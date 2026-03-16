@@ -22,6 +22,9 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import QuickCalculator from '@/components/QuickCalculator';
 import { getCityBySlug } from '@/data/cities';
+import {
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
+} from '@/components/ui/accordion';
 
 // Cleaning images
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
@@ -151,6 +154,37 @@ import handyLawnMowing from '@/assets/handyman/lawn-mowing.jpg';
 import handyTreeTrimming from '@/assets/handyman/tree-trimming.jpg';
 import handyYardHelp from '@/assets/handyman/yard-help.jpg';
 
+// FAQ data helper for SEO
+function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
+  const faqs = {
+    pl: [
+      { q: `Jakie usługi oferujecie w ${cityName}?`, a: isWroclaw ? `W ${cityName} oferujemy pełen zakres usług: pranie tapicerki meblowej i samochodowej, czyszczenie materacy i dywanów, ozonowanie, mycie okien, sprzątanie mieszkań i domów oraz usługi złotej rączki.` : `W ${cityName} oferujemy: pranie tapicerki meblowej i samochodowej, czyszczenie materacy i dywanów, ozonowanie, mycie okien oraz impregnację. Usługi sprzątania i złotej rączki dostępne są wyłącznie we Wrocławiu.` },
+      { q: `Ile kosztuje pranie tapicerki w ${cityName}?`, a: isWroclaw ? `Ceny zaczynają się od 40 PLN za pufę. Sofa 2-osobowa — 140 PLN, sofa 3-osobowa — 170 PLN, narożnik — od 200 PLN. Minimalne zamówienie: 180 PLN.` : `Ceny w ${cityName} są o 10% wyższe od bazowych cen wrocławskich. Przykładowo: sofa 2-osobowa — 154 PLN, sofa 3-osobowa — 187 PLN. Minimalne zamówienie: 300 PLN.` },
+      { q: `Jak szybko możecie przyjechać do ${cityName}?`, a: `Realizujemy zamówienia w ${cityName} regularnie. Termin ustalamy indywidualnie — często możemy przyjechać tego samego lub następnego dnia. Zadzwoń: +48 575 211 401.` },
+      { q: 'Czy używacie bezpiecznych środków czyszczących?', a: 'Tak! Stosujemy profesjonalną chemię Allegrini, Bissell i Global, która jest bezpieczna dla dzieci, zwierząt i alergików. Używamy sprzętu Kärcher i SantoEmma.' },
+    ],
+    ru: [
+      { q: `Какие услуги доступны в городе ${cityName}?`, a: isWroclaw ? `В ${cityName} доступен полный спектр услуг: химчистка мебели и авто, чистка матрасов и ковров, озонирование, мойка окон, уборка и мастер на час.` : `В ${cityName} доступны: химчистка мебели и авто, чистка матрасов и ковров, озонирование, мойка окон, импрегнация. Уборка и мастер на час — только во Вроцлаве.` },
+      { q: `Сколько стоит химчистка мебели в ${cityName}?`, a: isWroclaw ? `Цены начинаются от 40 PLN за пуф. Диван 2-мест. — 140 PLN, 3-мест. — 170 PLN, угловой — от 200 PLN. Минимальный заказ: 180 PLN.` : `Цены в ${cityName} на 10% выше базовых. Например: диван 2-мест. — 154 PLN, 3-мест. — 187 PLN. Минимальный заказ: 300 PLN.` },
+      { q: `Как быстро вы приедете в ${cityName}?`, a: `Мы регулярно выезжаем в ${cityName}. Срок обговаривается индивидуально — часто в тот же или следующий день. Звоните: +48 575 211 401.` },
+      { q: 'Безопасна ли ваша химия для детей и животных?', a: 'Да! Используем профессиональную химию Allegrini, Bissell и Global — безопасна для детей, животных и аллергиков. Оборудование Kärcher и SantoEmma.' },
+    ],
+    en: [
+      { q: `What services do you offer in ${cityName}?`, a: isWroclaw ? `In ${cityName} we offer the full range: upholstery and car cleaning, mattress and carpet cleaning, ozonation, window cleaning, house cleaning and handyman services.` : `In ${cityName} we offer: upholstery and car cleaning, mattress and carpet cleaning, ozonation, window cleaning and impregnation. House cleaning and handyman services are available only in Wrocław.` },
+      { q: `How much does upholstery cleaning cost in ${cityName}?`, a: isWroclaw ? `Prices start from 40 PLN for an ottoman. 2-seater sofa — 140 PLN, 3-seater — 170 PLN, corner sofa — from 200 PLN. Minimum order: 180 PLN.` : `Prices in ${cityName} are 10% higher than base Wrocław prices. Example: 2-seater sofa — 154 PLN, 3-seater — 187 PLN. Minimum order: 300 PLN.` },
+      { q: `How quickly can you come to ${cityName}?`, a: `We regularly serve ${cityName}. Scheduling is individual — often same or next day. Call: +48 575 211 401.` },
+      { q: 'Are your cleaning products safe for children and pets?', a: 'Yes! We use professional Allegrini, Bissell and Global cleaning products — safe for children, pets and allergy sufferers. Equipment: Kärcher and SantoEmma.' },
+    ],
+    uk: [
+      { q: `Які послуги доступні в ${cityName}?`, a: isWroclaw ? `В ${cityName} доступний повний спектр послуг: хімчистка меблів та авто, чистка матраців і килимів, озонування, миття вікон, прибирання та майстер на годину.` : `В ${cityName} доступні: хімчистка меблів та авто, чистка матраців і килимів, озонування, миття вікон, імпрегнація. Прибирання та майстер — лише у Вроцлаві.` },
+      { q: `Скільки коштує хімчистка меблів у ${cityName}?`, a: isWroclaw ? `Ціни починаються від 40 PLN за пуф. Диван 2-місний — 140 PLN, 3-місний — 170 PLN, кутовий — від 200 PLN. Мінімальне замовлення: 180 PLN.` : `Ціни в ${cityName} на 10% вищі за базові. Наприклад: диван 2-місний — 154 PLN, 3-місний — 187 PLN. Мінімальне замовлення: 300 PLN.` },
+      { q: `Як швидко ви приїдете до ${cityName}?`, a: `Ми регулярно виїжджаємо до ${cityName}. Термін обговорюється індивідуально — часто того ж або наступного дня. Телефонуйте: +48 575 211 401.` },
+      { q: 'Чи безпечна ваша хімія для дітей та тварин?', a: 'Так! Використовуємо професійну хімію Allegrini, Bissell та Global — безпечна для дітей, тварин та алергіків. Обладнання Kärcher та SantoEmma.' },
+    ],
+  };
+  return faqs[language as keyof typeof faqs] || faqs.pl;
+}
+
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t, language } = useLanguage();
@@ -165,6 +199,10 @@ const CityPage = () => {
 
   const lang = language as keyof typeof city.content;
   const cityContent = city.content[lang] || city.content.pl;
+  const isWroclaw = city.slug === 'wroclaw';
+
+  // FAQ data for SEO
+  const faqData = getFaqData(language, city.name, isWroclaw);
 
   const categories = [
     {
@@ -331,7 +369,6 @@ const CityPage = () => {
     },
   ];
 
-  const isWroclaw = city.slug === 'wroclaw';
 
   // For non-Wrocław cities: +10% rounded up, except free items (price=0)
   const applyMarkup = (cats: typeof categories) =>
@@ -358,18 +395,47 @@ const CityPage = () => {
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
         jsonLd={{
           '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: `MasterClean — ${city.name}`,
-          description: city.seo.description,
-          areaServed: {
-            '@type': 'City',
-            name: city.name,
-          },
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            url: 'https://masterclean1885.pl',
-          },
+          '@graph': [
+            {
+              '@type': 'Service',
+              name: `MasterClean — ${city.name}`,
+              description: city.seo.description,
+              url: `https://masterclean1885.pl/city/${city.slug}`,
+              areaServed: {
+                '@type': 'City',
+                name: city.name,
+              },
+              provider: {
+                '@type': 'LocalBusiness',
+                name: 'MasterClean',
+                url: 'https://masterclean1885.pl',
+                telephone: '+48575211401',
+                address: {
+                  '@type': 'PostalAddress',
+                  addressCountry: 'PL',
+                  addressRegion: city.region,
+                  addressLocality: city.name,
+                },
+              },
+              offers: {
+                '@type': 'AggregateOffer',
+                priceCurrency: 'PLN',
+                lowPrice: isWroclaw ? '40' : '44',
+                highPrice: isWroclaw ? '750' : '825',
+              },
+            },
+            {
+              '@type': 'FAQPage',
+              mainEntity: faqData.map(faq => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.a,
+                },
+              })),
+            },
+          ],
         }}
       />
       <Layout>
@@ -558,6 +624,29 @@ const CityPage = () => {
                   </a>
                 </div>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-12 sm:py-16 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
+                {language === 'pl' ? 'Najczęściej zadawane pytania' : language === 'en' ? 'Frequently Asked Questions' : language === 'uk' ? 'Часті запитання' : 'Часто задаваемые вопросы'}
+              </h2>
+              <Accordion type="single" collapsible className="space-y-3">
+                {faqData.map((faq, i) => (
+                  <AccordionItem key={i} value={`faq-${i}`} className="border rounded-xl px-4 bg-background">
+                    <AccordionTrigger className="hover:no-underline py-4 text-left text-sm sm:text-base font-medium">
+                      {faq.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-4 text-sm text-muted-foreground leading-relaxed">
+                      {faq.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>
