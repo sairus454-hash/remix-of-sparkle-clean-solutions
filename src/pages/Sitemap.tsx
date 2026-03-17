@@ -31,6 +31,7 @@ const sitemapUrls = [
   { loc: '/city/ostrow-wielkopolski', label: 'Ostrów Wielkopolski', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/jelenia-gora', label: 'Jelenia Góra', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/brzeg', label: 'Brzeg', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/lubin', label: 'Lubin', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const DOMAIN = 'https://masterclean1885.pl';
