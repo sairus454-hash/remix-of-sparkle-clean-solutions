@@ -66,7 +66,7 @@ const About = () => {
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Hero */}
-        <section className="py-20 bg-gradient-section">
+        <section aria-labelledby="about-heading" className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               {/* Live Sparkles Icon */}
@@ -83,7 +83,7 @@ const About = () => {
                   <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full opacity-60" />
                 </div>
               </div>
-              <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" style={{
+              <h1 id="about-heading" className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" style={{
               animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite'
             }}>
                 {t.about.title}
@@ -133,7 +133,7 @@ const About = () => {
         </section>
 
         {/* Description */}
-        <section className="py-20 bg-card">
+        <section aria-label="O firmie MasterClean" className="py-20 bg-card">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -212,7 +212,7 @@ const About = () => {
         <About3DCarousel />
 
         {/* Values */}
-        <section className="py-20 bg-gradient-section">
+        <section aria-label="Nasze wartości" className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {values.map((value, index) => (

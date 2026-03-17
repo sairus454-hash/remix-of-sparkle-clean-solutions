@@ -93,6 +93,7 @@ const Header = () => {
 
   return (
     <header
+      role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-card/95 backdrop-blur-md shadow-card' : 'bg-card/70 backdrop-blur-sm'
       }`}
@@ -112,11 +113,14 @@ const Header = () => {
                 size="icon"
                 className="lg:hidden w-11 h-11 sm:w-10 sm:h-10 bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 rounded-xl touch-manipulation active:scale-95"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-fresh" />
+                  <X className="w-6 h-6 text-fresh" aria-hidden="true" />
                 ) : (
-                  <Menu className="w-6 h-6 text-fresh" />
+                  <Menu className="w-6 h-6 text-fresh" aria-hidden="true" />
                 )}
               </Button>
             </div>
@@ -156,7 +160,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0">
+          <nav className="hidden lg:flex items-center gap-0" aria-label="Nawigacja główna">
             {navItems.map((item, index) => {
                const getHighlightClass = () => {
                  if (item.highlight === 'ozone') {
@@ -192,6 +196,7 @@ const Header = () => {
                           : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                     }`}
                     title={item.highlight === 'ozone' ? item.label : undefined}
+                    aria-current={location.pathname === item.path ? 'page' : undefined}
                   >
                     {item.path === '/' ? (
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
@@ -414,7 +419,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-border animate-fade-up">
+          <nav id="mobile-navigation" className="lg:hidden py-4 border-t border-border animate-fade-up" aria-label="Menu mobilne">
             {/* Chat Button for Mobile */}
             <button
               onClick={() => {
@@ -453,6 +458,7 @@ const Header = () => {
                         ? mobileHighlight
                         : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                   }`}
+                  aria-current={location.pathname === item.path ? 'page' : undefined}
                 >
                   {item.highlight === 'ozone' ? (
                     <span className="flex items-center gap-1.5">

@@ -8,7 +8,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
 
   return (
-    <footer ref={ref} className="bg-foreground text-background py-8 sm:py-12 pb-safe">
+    <footer ref={ref} role="contentinfo" className="bg-foreground text-background py-8 sm:py-12 pb-safe">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Logo & Description */}
@@ -44,7 +44,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Usługi">
             <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.services}</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li>
@@ -73,7 +73,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Contact Info */}
           <div>

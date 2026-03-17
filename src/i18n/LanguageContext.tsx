@@ -29,6 +29,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   useEffect(() => {
     localStorage.setItem('language', language);
+    // Update html lang attribute for accessibility & SEO
+    const langMap: Record<Language, string> = { pl: 'pl', ru: 'ru', en: 'en', uk: 'uk' };
+    document.documentElement.lang = langMap[language] || 'pl';
   }, [language]);
 
   const t = translations[language];
