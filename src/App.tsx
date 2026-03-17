@@ -136,6 +136,7 @@ const App = () => {
           </AuthProvider>
         </LanguageProvider>
       </QueryClientProvider>
+      </MotionConfig>
     </>
   );
 };
