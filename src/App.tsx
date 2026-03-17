@@ -78,6 +78,7 @@ const App = () => {
   return (
     <>
       {showSplash && <SiteSplash onComplete={handleSplashComplete} />}
+      <MotionConfig reducedMotion="user">
       <QueryClientProvider client={queryClient}>
         <LanguageProvider>
           <AuthProvider>
