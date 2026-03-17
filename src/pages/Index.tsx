@@ -542,7 +542,7 @@ const Index = () => {
       )}
 
       {/* Price Section */}
-      <PriceSection />
+      <Suspense fallback={null}><PriceSection /></Suspense>
 
       {/* Why Choose Us */}
       <section className="py-12 sm:py-20 bg-card">
