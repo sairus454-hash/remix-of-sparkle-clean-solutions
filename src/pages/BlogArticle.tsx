@@ -50,22 +50,30 @@ const BlogArticle = () => {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
     setSending(true);
-    const { error } = await supabase.from('blog_comments').insert({
-      article_id: article.id,
-      name: name.trim().slice(0, 100),
-      text: text.trim().slice(0, 1000),
-    });
-    setSending(false);
-    if (!error) {
-      toast({ title: labels.success });
-      setText('');
-      // Refresh comments
-      const { data } = await supabase
-        .from('blog_comments')
-        .select('*')
-        .eq('article_id', article.id)
-        .order('created_at', { ascending: false });
-      if (data) setComments(data as Comment[]);
+    try {
+      const { data: fnData, error } = await supabase.functions.invoke('submit-comment', {
+        body: {
+          article_id: article.id,
+          name: name.trim().slice(0, 100),
+          text: text.trim().slice(0, 1000),
+        },
+      });
+      setSending(false);
+      if (!error && fnData?.success) {
+        toast({ title: labels.success });
+        setText('');
+        const { data } = await supabase
+          .from('blog_comments')
+          .select('*')
+          .eq('article_id', article.id)
+          .order('created_at', { ascending: false });
+        if (data) setComments(data as Comment[]);
+      } else if (fnData?.error) {
+        toast({ title: fnData.error, variant: 'destructive' });
+      }
+    } catch {
+      setSending(false);
+      toast({ title: 'Error submitting comment', variant: 'destructive' });
     }
   };
 
