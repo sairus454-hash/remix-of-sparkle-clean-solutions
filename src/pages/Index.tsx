@@ -604,7 +604,7 @@ const Index = () => {
             </div>
             
             <div className="bg-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-card">
-              <ContactForm />
+              <Suspense fallback={null}><ContactForm /></Suspense>
             </div>
           </div>
         </div>
