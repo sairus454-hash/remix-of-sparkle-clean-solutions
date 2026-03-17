@@ -44,7 +44,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <nav aria-label="Usługi">
             <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.services}</h4>
             <ul className="space-y-2 sm:space-y-3">
               <li>
