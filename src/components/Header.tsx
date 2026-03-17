@@ -419,7 +419,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <nav className="lg:hidden py-4 border-t border-border animate-fade-up">
+          <nav id="mobile-navigation" className="lg:hidden py-4 border-t border-border animate-fade-up" aria-label="Menu mobilne">
             {/* Chat Button for Mobile */}
             <button
               onClick={() => {
