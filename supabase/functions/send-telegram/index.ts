@@ -8,9 +8,10 @@ const corsHeaders = {
 
 // Persistent rate limiting via Supabase DB
 async function checkRateLimit(req: Request, functionName: string, maxRequests: number, windowMinutes: number): Promise<boolean> {
-  const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-                   req.headers.get('cf-connecting-ip') ||
-                   req.headers.get('x-real-ip') || 'unknown';
+  const clientIP = req.headers.get('cf-connecting-ip') ||
+                   req.headers.get('x-real-ip') ||
+                   req.headers.get('x-forwarded-for')?.split(',').at(-1)?.trim() ||
+                   'unknown';
   try {
     const supabase = createClient(
       Deno.env.get('SUPABASE_URL')!,
