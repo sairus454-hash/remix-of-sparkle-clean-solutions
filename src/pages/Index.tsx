@@ -116,7 +116,7 @@ const Index = () => {
           },
         }}
       />
-      {showSplash && <WaterDropSplash onComplete={handleSplashComplete} />}
+      {showSplash && <Suspense fallback={null}><WaterDropSplash onComplete={handleSplashComplete} /></Suspense>}
       <Layout>
       {/* 🌸 March 8 Banner — auto-expires March 10, 2026 */}
       {Date.now() < new Date('2026-03-10T00:00:00Z').getTime() && (
