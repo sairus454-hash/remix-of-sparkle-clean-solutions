@@ -47,6 +47,15 @@ import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
 
 const Services = () => {
   const { t, language } = useLanguage();
+  const heroSlides = [servicesCleaning, servicesDrying];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const heroImages = [
     { src: heroUpholsteryCleaning, alt: 'Professional upholstery cleaning' },
