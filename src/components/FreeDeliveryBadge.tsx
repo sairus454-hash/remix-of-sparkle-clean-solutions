@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { MapPin, Car, X } from 'lucide-react';
+import { MapPin, Car, X, Phone } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const FreeDeliveryBadge = () => {
