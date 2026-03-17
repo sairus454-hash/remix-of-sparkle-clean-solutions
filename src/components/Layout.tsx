@@ -1,12 +1,12 @@
 import { ReactNode, lazy, Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import CleaningBackground from './CleaningBackground';
-import FloatingOrderSummary from './FloatingOrderSummary';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-// Lazy load ChatBot - it's heavy and not needed on initial render
+// Lazy load non-critical components — not needed for initial paint
+const CleaningBackground = lazy(() => import('./CleaningBackground'));
 const ChatBot = lazy(() => import('./ChatBot'));
+const FloatingOrderSummary = lazy(() => import('./FloatingOrderSummary'));
 
 interface LayoutProps {
   children: ReactNode;
@@ -17,7 +17,9 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
-      <CleaningBackground />
+      <Suspense fallback={null}>
+        <CleaningBackground />
+      </Suspense>
       <Header />
       <main className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10 animate-page-enter">
         {/* Marquee Section */}
@@ -41,7 +43,9 @@ const Layout = ({ children }: LayoutProps) => {
       <Suspense fallback={null}>
         <ChatBot />
       </Suspense>
-      <FloatingOrderSummary />
+      <Suspense fallback={null}>
+        <FloatingOrderSummary />
+      </Suspense>
     </div>
   );
 };
