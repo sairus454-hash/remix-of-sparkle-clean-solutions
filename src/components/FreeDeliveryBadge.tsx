@@ -46,33 +46,47 @@ const FreeDeliveryBadge = () => {
           </div>
         </div>
 
-        {/* Main floating icon */}
-        <button
-          onClick={() => setIsExpanded(!isExpanded)}
-          className={`
-            relative group w-14 h-14 sm:w-16 sm:h-16 
-            bg-gradient-to-br from-fresh via-secondary to-fresh
-            rounded-full shadow-lg hover:shadow-xl
-            flex items-center justify-center
-            transition-all duration-300 ease-out
-            hover:scale-110 active:scale-95
-            animate-pulse-slow
-            ${isExpanded ? 'ring-4 ring-fresh/30' : ''}
-          `}
-          aria-label="Free delivery info"
-        >
-          <span className="absolute inset-0 rounded-full bg-fresh/20 opacity-75" />
-          <span className="absolute inset-2 rounded-full bg-fresh/10 opacity-50" />
-          <div className="relative z-10 flex items-center justify-center">
-            <MapPin className="w-7 h-7 sm:w-8 sm:h-8 text-white drop-shadow-md" />
-            <Car className="absolute -bottom-1 -right-1 w-4 h-4 text-white/90" />
-          </div>
-          <span className="absolute top-1 right-2 w-2 h-2 bg-white rounded-full opacity-80 animate-twinkle" />
-          <span className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-white rounded-full opacity-60 animate-twinkle animation-delay-300" />
-          <span className="absolute -top-1 -left-1 bg-destructive text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-md animate-bounce">
-            FREE
-          </span>
-        </button>
+        {isMobile ? (
+          <a
+            href="tel:+48575211401"
+            onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('floating_badge'))}
+            className="relative group w-14 h-14 bg-gradient-to-br from-fresh via-secondary to-fresh rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 ease-out hover:scale-110 active:scale-95 animate-pulse-slow"
+            aria-label="Zadzwoń"
+          >
+            <span className="absolute inset-0 rounded-full bg-fresh/20 opacity-75" />
+            <span className="absolute inset-2 rounded-full bg-fresh/10 opacity-50" />
+            <Phone className="relative z-10 w-7 h-7 text-white drop-shadow-md" />
+            <span className="absolute top-1 right-2 w-2 h-2 bg-white rounded-full opacity-80 animate-twinkle" />
+            <span className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-white rounded-full opacity-60 animate-twinkle animation-delay-300" />
+          </a>
+        ) : (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className={`
+              relative group w-16 h-16 
+              bg-gradient-to-br from-fresh via-secondary to-fresh
+              rounded-full shadow-lg hover:shadow-xl
+              flex items-center justify-center
+              transition-all duration-300 ease-out
+              hover:scale-110 active:scale-95
+              animate-pulse-slow
+              ${isExpanded ? 'ring-4 ring-fresh/30' : ''}
+            `}
+            aria-label="Free delivery info"
+          >
+            <span className="absolute inset-0 rounded-full bg-fresh/20 opacity-75" />
+            <span className="absolute inset-2 rounded-full bg-fresh/10 opacity-50" />
+            <div className="relative z-10 flex items-center justify-center">
+              <MapPin className="w-8 h-8 text-white drop-shadow-md" />
+              <Car className="absolute -bottom-1 -right-1 w-4 h-4 text-white/90" />
+            </div>
+            <span className="absolute top-1 right-2 w-2 h-2 bg-white rounded-full opacity-80 animate-twinkle" />
+            <span className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-white rounded-full opacity-60 animate-twinkle animation-delay-300" />
+            <span className="absolute -top-1 -left-1 bg-destructive text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full shadow-md animate-bounce">
+              FREE
+            </span>
+          </button>
+        )}
       </div>
 
       {/* Messenger icons below */}
