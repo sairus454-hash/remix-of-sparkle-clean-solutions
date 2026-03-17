@@ -252,9 +252,9 @@ const Handyman = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { img: handyman1, name: 'Marek', specialty: t.handyman.electrical },
-              { img: handyman2, name: 'Piotr', specialty: t.handyman.plumbing },
-              { img: handyman3, name: 'Tomek', specialty: t.handyman.carpentry },
+              { img: img('handyman-1.jpg'), name: 'Marek', specialty: t.handyman.electrical },
+              { img: img('handyman-2.jpg'), name: 'Piotr', specialty: t.handyman.plumbing },
+              { img: img('handyman-3.jpg'), name: 'Tomek', specialty: t.handyman.carpentry },
             ].map((member, index) => (
               <CircularRevealCard key={index} index={index}>
                 <div className="group">
