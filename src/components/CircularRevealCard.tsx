@@ -13,8 +13,16 @@ const CircularRevealCard = forwardRef<HTMLDivElement, CircularRevealCardProps>((
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const prefersReducedMotion = useRef(
+    typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+  );
 
   useEffect(() => {
+    if (prefersReducedMotion.current) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
