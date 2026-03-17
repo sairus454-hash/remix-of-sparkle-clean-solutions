@@ -26,50 +26,6 @@ import { useSplash } from '@/hooks/useSplash';
 
 import { img } from '@/utils/imageMap';
 
-// Handyman images
-import handyFaucet from '@/assets/handyman/faucet.jpg';
-import handySiphon from '@/assets/handyman/siphon.jpg';
-import handySink from '@/assets/handyman/sink.jpg';
-import handyToilet from '@/assets/handyman/toilet.jpg';
-import handySewer from '@/assets/handyman/sewer.jpg';
-import handyWashingMachine from '@/assets/handyman/washing-machine.jpg';
-import handyDishwasher from '@/assets/handyman/dishwasher.jpg';
-import handyBathroomFan from '@/assets/handyman/bathroom-fan.jpg';
-import handyBidet from '@/assets/handyman/bidet.jpg';
-import handyUrinal from '@/assets/handyman/urinal.jpg';
-import handyHose from '@/assets/handyman/hose.jpg';
-import handyDemontage from '@/assets/handyman/demontage.jpg';
-import handySealing from '@/assets/handyman/sealing.jpg';
-import handyShowerCabin from '@/assets/handyman/shower-cabin.jpg';
-import handyShowerTray from '@/assets/handyman/shower-tray.jpg';
-import handyBathtub from '@/assets/handyman/bathtub.jpg';
-import handyBathroomAccessories from '@/assets/handyman/bathroom-accessories.jpg';
-import handyWallShower from '@/assets/handyman/wall-shower.jpg';
-import handyCurtainRod from '@/assets/handyman/curtain-rod.jpg';
-import handyShelf from '@/assets/handyman/shelf.jpg';
-import handyPictures from '@/assets/handyman/pictures.jpg';
-import handyFurnitureAssembly from '@/assets/handyman/furniture-assembly.jpg';
-import handyBedSofaRepair from '@/assets/handyman/bed-sofa-repair.jpg';
-import handyWardrobeRepair from '@/assets/handyman/wardrobe-repair.jpg';
-import handyBulb from '@/assets/handyman/bulb.jpg';
-import handySocket from '@/assets/handyman/socket.jpg';
-import handyLamp from '@/assets/handyman/lamp.jpg';
-import handyStove from '@/assets/handyman/stove.jpg';
-import handyRepair from '@/assets/handyman/repair.jpg';
-import handyDiagnostic from '@/assets/handyman/diagnostic.jpg';
-import handySwitch from '@/assets/handyman/switch.jpg';
-import handyFuse from '@/assets/handyman/fuse.jpg';
-import handyLampRepair from '@/assets/handyman/lamp-repair.jpg';
-import handyChandelier from '@/assets/handyman/chandelier.jpg';
-import handyMailboxLock from '@/assets/handyman/mailbox-lock.jpg';
-import handyDoorHandle from '@/assets/handyman/door-handle.jpg';
-import handyDoorCylinder from '@/assets/handyman/door-cylinder.jpg';
-import handyAluminumDoor from '@/assets/handyman/aluminum-door.jpg';
-import handyWindowAdjustment from '@/assets/handyman/window-adjustment.jpg';
-import handyFridgeHinges from '@/assets/handyman/fridge-hinges.jpg';
-import handyLawnMowing from '@/assets/handyman/lawn-mowing.jpg';
-import handyTreeTrimming from '@/assets/handyman/tree-trimming.jpg';
-import handyYardHelp from '@/assets/handyman/yard-help.jpg';
 
 const Prices = () => {
   const { t } = useLanguage();
