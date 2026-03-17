@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => ({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "og-image.png"],
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,jpg,webp,svg,woff,woff2}"],
+        globPatterns: ["**/*.{js,css,html,ico,svg,woff,woff2}"],
         navigateFallbackDenylist: [/^\/~oauth/],
         runtimeCaching: [
           {
