@@ -400,6 +400,198 @@ export const cities: CityData[] = [
       },
     },
   },
+  {
+    slug: 'jelcz-laskowice',
+    name: 'Jelcz-Laskowice',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Jelcz-Laskowice — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Jelczu-Laskowicach. Blisko Wrocławia i Oławy.',
+      keywords: 'czyszczenie tapicerki Jelcz-Laskowice, pranie dywanów Jelcz-Laskowice, ozonowanie Jelcz-Laskowice',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Jelczu-Laskowicach',
+        subtitle: 'Zaledwie 25 km od Wrocławia — szybki dojazd',
+        description: 'Jelcz-Laskowice to miasto w bezpośrednim sąsiedztwie Wrocławia i Oławy. Regularnie realizujemy zlecenia prania tapicerki meblowej, czyszczenia materacy, dywanów, wykładzin oraz ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Елч-Ласковице',
+        subtitle: 'Всего 25 км от Вроцлава — быстрый выезд',
+        description: 'Елч-Ласковице расположен рядом с Вроцлавом и Олавой. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Используем профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Jelcz-Laskowice',
+        subtitle: 'Just 25 km from Wrocław — fast arrival',
+        description: 'Jelcz-Laskowice is located near Wrocław and Oława. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Єлч-Ласковіце',
+        subtitle: 'Лише 25 км від Вроцлава — швидкий виїзд',
+        description: 'Єлч-Ласковіце розташований поруч з Вроцлавом та Олавою. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'strzegom',
+    name: 'Strzegom',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Strzegom — MasterClean',
+      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Strzegomiu. Profesjonalny serwis z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Strzegom, pranie dywanów Strzegom, ozonowanie Strzegom',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Strzegomiu',
+        subtitle: 'Dolny Śląsk — stolica polskiego granitu',
+        description: 'Strzegom to miasto znane z wydobycia granitu, leżące niedaleko Świdnicy. Oferujemy profesjonalne pranie tapicerki meblowej, czyszczenie materacy, dywanów, wykładzin oraz ozonowanie pomieszczeń. Obsługujemy również Jawor i okolice. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Стшегоме',
+        subtitle: 'Нижняя Силезия — столица польского гранита',
+        description: 'Стшегом — город, известный добычей гранита, расположен недалеко от Швидницы. Химчистка мебели, матрасов, ковров, озонирование. Обслуживаем также Явор и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Strzegom',
+        subtitle: 'Lower Silesia — the capital of Polish granite',
+        description: 'Strzegom is known for granite mining, located near Świdnica. We offer upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Jawor and surroundings. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Стшегомі',
+        subtitle: 'Нижня Сілезія — столиця польського граніту',
+        description: 'Стшегом — місто, відоме видобутком граніту, розташоване неподалік Швидниці. Хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'sobotka',
+    name: 'Sobótka',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Sobótka — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Sobótce. U podnóża Ślęży.',
+      keywords: 'czyszczenie tapicerki Sobótka, pranie dywanów Sobótka, ozonowanie Sobótka',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Sobótce',
+        subtitle: 'U podnóża Ślęży — blisko Wrocławia',
+        description: 'Sobótka leży u podnóża góry Ślęży, zaledwie 35 km od Wrocławia. Oferujemy pranie tapicerki meblowej, czyszczenie materacy, dywanów, ozonowanie pomieszczeń i samochodów. Szybki dojazd z Wrocławia. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Собутке',
+        subtitle: 'У подножия горы Сленжа — рядом с Вроцлавом',
+        description: 'Собутка расположена у подножия горы Сленжа, всего 35 км от Вроцлава. Химчистка мебели, матрасов, ковров, озонирование помещений и авто. Быстрый выезд из Вроцлава. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Sobótka',
+        subtitle: 'At the foot of Mount Ślęża — near Wrocław',
+        description: 'Sobótka lies at the foot of Mount Ślęża, just 35 km from Wrocław. We offer upholstery, mattress and carpet cleaning, ozone treatment. Fast arrival from Wrocław. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Собутці',
+        subtitle: 'Біля підніжжя гори Сленжа — поруч з Вроцлавом',
+        description: 'Собутка розташована біля підніжжя гори Сленжа, лише 35 км від Вроцлава. Хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'klodzko',
+    name: 'Kłodzko',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Kłodzko — MasterClean',
+      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Kłodzku. Profesjonalny serwis w Kotlinie Kłodzkiej.',
+      keywords: 'czyszczenie tapicerki Kłodzko, pranie dywanów Kłodzko, ozonowanie Kłodzko',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Kłodzku',
+        subtitle: 'Stolica Kotliny Kłodzkiej — serwis dla mieszkańców i turystyki',
+        description: 'Kłodzko to stolica Ziemi Kłodzkiej i ważny ośrodek turystyczny. Oferujemy pranie tapicerki meblowej, czyszczenie materacy, dywanów, ozonowanie pomieszczeń. Idealne rozwiązanie dla pensjonatów i apartamentów. Obsługujemy również Polanicę-Zdrój, Kudowę-Zdrój i Bystrzycę Kłodzką. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Клодзко',
+        subtitle: 'Столица Клодзкой котловины — сервис для жителей и туризма',
+        description: 'Клодзко — столица Клодзкой земли и важный туристический центр. Химчистка мебели, матрасов, ковров, озонирование. Отличное решение для пансионатов и апартаментов. Обслуживаем Поланицу-Здруй, Кудову-Здруй и Быстрицу-Клодзку. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Kłodzko',
+        subtitle: 'Capital of Kłodzko Valley — service for residents and tourism',
+        description: 'Kłodzko is the capital of Kłodzko Land and an important tourist center. We offer upholstery, mattress and carpet cleaning, ozone treatment. Perfect for guesthouses and apartments. We also serve Polanica-Zdrój, Kudowa-Zdrój and Bystrzyca Kłodzka. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Клодзко',
+        subtitle: 'Столиця Клодзької котловини — сервіс для мешканців і туризму',
+        description: 'Клодзко — столиця Клодзької землі та важливий туристичний центр. Хімчистка меблів, матраців, килимів, озонування. Обслуговуємо також Поланицю-Здруй та Кудову-Здруй. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'kielczow',
+    name: 'Kiełczów',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Kiełczów — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Kiełczowie. Tuż przy Wrocławiu.',
+      keywords: 'czyszczenie tapicerki Kiełczów, pranie dywanów Kiełczów, ozonowanie Kiełczów',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Kiełczowie',
+        subtitle: 'Tuż przy Wrocławiu — szybki i wygodny dojazd',
+        description: 'Kiełczów to dynamicznie rozwijająca się miejscowość w bezpośrednim sąsiedztwie Wrocławia. Oferujemy pranie tapicerki meblowej, czyszczenie materacy, dywanów, wykładzin, ozonowanie pomieszczeń i samochodów. Dojazd z Wrocławia zajmuje zaledwie kilkanaście minut. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Келчуве',
+        subtitle: 'Рядом с Вроцлавом — быстрый и удобный выезд',
+        description: 'Келчув — динамично развивающийся населённый пункт рядом с Вроцлавом. Химчистка мебели, матрасов, ковров, озонирование помещений и авто. Время в пути из Вроцлава — всего 15 минут. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Kiełczów',
+        subtitle: 'Right next to Wrocław — fast and convenient access',
+        description: 'Kiełczów is a rapidly growing town right next to Wrocław. We offer upholstery, mattress and carpet cleaning, ozone treatment. Travel time from Wrocław — just 15 minutes. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Келчуві',
+        subtitle: 'Поруч з Вроцлавом — швидкий та зручний доїзд',
+        description: 'Келчув — населений пункт, що динамічно розвивається поруч з Вроцлавом. Хімчистка меблів, матраців, килимів, озонування. Час у дорозі з Вроцлава — лише 15 хвилин. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'dzierzoniow',
+    name: 'Dzierżoniów',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Dzierżoniów — MasterClean',
+      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Dzierżoniowie. Profesjonalny sprzęt Kärcher.',
+      keywords: 'czyszczenie tapicerki Dzierżoniów, pranie dywanów Dzierżoniów, ozonowanie Dzierżoniów',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Dzierżoniowie',
+        subtitle: 'Dolny Śląsk — miasto u podnóża Gór Sowich',
+        description: 'Dzierżoniów to urokliwe miasto u podnóża Gór Sowich. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Obsługujemy również Bielawę, Pieszyce i Piławę Górną. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Дзержонюве',
+        subtitle: 'Нижняя Силезия — город у подножия Совиных гор',
+        description: 'Дзержонюв — живописный город у подножия Совиных гор. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Обслуживаем Белаву, Пешице и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Dzierżoniów',
+        subtitle: 'Lower Silesia — city at the foot of the Owl Mountains',
+        description: 'Dzierżoniów is a charming city at the foot of the Owl Mountains. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Bielawa, Pieszyce and surroundings. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Дзержонюві',
+        subtitle: 'Нижня Сілезія — місто біля підніжжя Совиних гір',
+        description: 'Дзержонюв — мальовниче місто біля підніжжя Совиних гір. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
 ];
 
 export const getCityBySlug = (slug: string): CityData | undefined => {

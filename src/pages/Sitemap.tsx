@@ -32,6 +32,12 @@ const sitemapUrls = [
   { loc: '/city/jelenia-gora', label: 'Jelenia Góra', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/brzeg', label: 'Brzeg', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/lubin', label: 'Lubin', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/jelcz-laskowice', label: 'Jelcz-Laskowice', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/strzegom', label: 'Strzegom', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/sobotka', label: 'Sobótka', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/klodzko', label: 'Kłodzko', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/kielczow', label: 'Kiełczów', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/dzierzoniow', label: 'Dzierżoniów', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const DOMAIN = 'https://masterclean1885.pl';
