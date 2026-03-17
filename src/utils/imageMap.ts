@@ -15,6 +15,11 @@ const handymanImages = import.meta.glob<string>('/src/assets/handyman/*.jpg', {
   import: 'default',
 });
 
+const handymanHeroImages = import.meta.glob<string>('/src/assets/handyman-*.jpg', {
+  eager: true,
+  import: 'default',
+});
+
 const ozoneImages = import.meta.glob<string>('/src/assets/ozone-*.jpg', {
   eager: true,
   import: 'default',
