@@ -73,7 +73,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
 
           {/* Contact Info */}
           <div>

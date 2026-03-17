@@ -212,7 +212,7 @@ const About = () => {
         <About3DCarousel />
 
         {/* Values */}
-        <section className="py-20 bg-gradient-section">
+        <section aria-label="Nasze wartości" className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {values.map((value, index) => (
