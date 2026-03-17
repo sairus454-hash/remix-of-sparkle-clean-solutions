@@ -14,9 +14,7 @@ import {
   Wrench, Hammer, Plug, Droplet, Flower2, DoorOpen, 
   Lightbulb, Tv, Frame, ShowerHead, Lock, Fan, Leaf, Calculator
 } from 'lucide-react';
-import handyman1 from '@/assets/handyman-1.jpg';
-import handyman2 from '@/assets/handyman-2.jpg';
-import handyman3 from '@/assets/handyman-3.jpg';
+import { img } from '@/utils/imageMap';
 import { CalculatorItem } from '@/types/calculator';
 
 // Handyman service images
