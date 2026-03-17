@@ -26,7 +26,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 MasterClean
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed">{t.hero.subtitle}</p>
+            <p className="text-background/60 text-sm leading-relaxed">{t.hero.subtitle}</p>
             <div className="flex flex-col gap-2 mt-3">
               <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-fresh transition-colors group">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
