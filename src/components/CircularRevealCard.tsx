@@ -16,7 +16,6 @@ const CircularRevealCard = forwardRef<HTMLDivElement, CircularRevealCardProps>((
   const prefersReducedMotion = useRef(
     typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
   );
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (prefersReducedMotion.current) {
