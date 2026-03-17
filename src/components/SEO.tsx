@@ -91,6 +91,12 @@ const SEO = ({
       { '@type': 'City', name: 'Ostrów Wielkopolski' },
       { '@type': 'City', name: 'Jelenia Góra' },
       { '@type': 'City', name: 'Brzeg' },
+      { '@type': 'City', name: 'Jelcz-Laskowice' },
+      { '@type': 'City', name: 'Strzegom' },
+      { '@type': 'City', name: 'Sobótka' },
+      { '@type': 'City', name: 'Kłodzko' },
+      { '@type': 'City', name: 'Kiełczów' },
+      { '@type': 'City', name: 'Dzierżoniów' },
     ],
     sameAs: [
       'https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z',
