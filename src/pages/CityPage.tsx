@@ -10,7 +10,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
-  Sofa, Sparkles, Calculator, Wrench, ChevronDown, MapPin
+  Sofa, Sparkles, Calculator, Wrench, ChevronDown, MapPin,
+  Gift, Percent, Droplets, Tag
 } from 'lucide-react';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
