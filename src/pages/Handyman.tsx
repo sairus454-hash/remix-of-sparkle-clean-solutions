@@ -14,9 +14,7 @@ import {
   Wrench, Hammer, Plug, Droplet, Flower2, DoorOpen, 
   Lightbulb, Tv, Frame, ShowerHead, Lock, Fan, Leaf, Calculator
 } from 'lucide-react';
-import handyman1 from '@/assets/handyman-1.jpg';
-import handyman2 from '@/assets/handyman-2.jpg';
-import handyman3 from '@/assets/handyman-3.jpg';
+import { img } from '@/utils/imageMap';
 import { CalculatorItem } from '@/types/calculator';
 
 // Handyman service images
@@ -101,57 +99,57 @@ const Handyman = () => {
 
   const categoryItems: Record<string, { id: string; name: string; price: number; image: string }[]> = {
     plumbing: [
-      { id: 'faucet', name: t.handyman.calcItems.faucet, price: 120, image: imgFaucet },
-      { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, image: imgSiphon },
-      { id: 'sink', name: t.handyman.calcItems.sink, price: 180, image: imgSink },
-      { id: 'toilet', name: t.handyman.calcItems.toilet, price: 220, image: imgToilet },
-      { id: 'sewer', name: t.handyman.calcItems.sewer, price: 250, image: imgSewer },
-      { id: 'washingMachine', name: t.handyman.calcItems.washingMachine, price: 140, image: imgWashingMachine },
-      { id: 'dishwasher', name: t.handyman.calcItems.dishwasher, price: 140, image: imgDishwasher },
-      { id: 'bathroomFan', name: t.handyman.calcItems.bathroomFan, price: 80, image: imgBathroomFan },
-      { id: 'bidet', name: t.handyman.calcItems.bidet, price: 220, image: imgBidet },
-      { id: 'urinal', name: t.handyman.calcItems.urinal, price: 200, image: imgUrinal },
-      { id: 'hoseReplacement', name: t.handyman.calcItems.hoseReplacement, price: 50, image: imgHose },
-      { id: 'plumbingDemontage', name: t.handyman.calcItems.plumbingDemontage, price: 80, image: imgDemontage },
-      { id: 'sealingJoints', name: t.handyman.calcItems.sealingJoints, price: 40, image: imgSealing },
-      { id: 'showerCabinInstall', name: t.handyman.calcItems.showerCabinInstall, price: 450, image: imgShowerCabin },
-      { id: 'showerTrayInstall', name: t.handyman.calcItems.showerTrayInstall, price: 200, image: imgShowerTray },
-      { id: 'bathtubInstall', name: t.handyman.calcItems.bathtubInstall, price: 300, image: imgBathtub },
-      { id: 'bathroomAccessories', name: t.handyman.calcItems.bathroomAccessories, price: 30, image: imgBathroomAccessories },
-      { id: 'wallMountedShower', name: t.handyman.calcItems.wallMountedShower, price: 200, image: imgWallShower },
+      { id: 'faucet', name: t.handyman.calcItems.faucet, price: 120, image: img('handyman/faucet.jpg') },
+      { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, image: img('handyman/siphon.jpg') },
+      { id: 'sink', name: t.handyman.calcItems.sink, price: 180, image: img('handyman/sink.jpg') },
+      { id: 'toilet', name: t.handyman.calcItems.toilet, price: 220, image: img('handyman/toilet.jpg') },
+      { id: 'sewer', name: t.handyman.calcItems.sewer, price: 250, image: img('handyman/sewer.jpg') },
+      { id: 'washingMachine', name: t.handyman.calcItems.washingMachine, price: 140, image: img('handyman/washing-machine.jpg') },
+      { id: 'dishwasher', name: t.handyman.calcItems.dishwasher, price: 140, image: img('handyman/dishwasher.jpg') },
+      { id: 'bathroomFan', name: t.handyman.calcItems.bathroomFan, price: 80, image: img('handyman/bathroom-fan.jpg') },
+      { id: 'bidet', name: t.handyman.calcItems.bidet, price: 220, image: img('handyman/bidet.jpg') },
+      { id: 'urinal', name: t.handyman.calcItems.urinal, price: 200, image: img('handyman/urinal.jpg') },
+      { id: 'hoseReplacement', name: t.handyman.calcItems.hoseReplacement, price: 50, image: img('handyman/hose.jpg') },
+      { id: 'plumbingDemontage', name: t.handyman.calcItems.plumbingDemontage, price: 80, image: img('handyman/demontage.jpg') },
+      { id: 'sealingJoints', name: t.handyman.calcItems.sealingJoints, price: 40, image: img('handyman/sealing.jpg') },
+      { id: 'showerCabinInstall', name: t.handyman.calcItems.showerCabinInstall, price: 450, image: img('handyman/shower-cabin.jpg') },
+      { id: 'showerTrayInstall', name: t.handyman.calcItems.showerTrayInstall, price: 200, image: img('handyman/shower-tray.jpg') },
+      { id: 'bathtubInstall', name: t.handyman.calcItems.bathtubInstall, price: 300, image: img('handyman/bathtub.jpg') },
+      { id: 'bathroomAccessories', name: t.handyman.calcItems.bathroomAccessories, price: 30, image: img('handyman/bathroom-accessories.jpg') },
+      { id: 'wallMountedShower', name: t.handyman.calcItems.wallMountedShower, price: 200, image: img('handyman/wall-shower.jpg') },
     ],
     mounting: [
-      { id: 'curtainRod', name: t.handyman.calcItems.curtainRod, price: 120, image: imgCurtainRod },
-      { id: 'shelf', name: t.handyman.calcItems.shelf, price: 100, image: imgShelf },
-      { id: 'pictures', name: t.handyman.calcItems.pictures, price: 80, image: imgPictures },
-      { id: 'furniture', name: t.handyman.calcItems.furnitureAssembly, price: 80, image: imgFurnitureAssembly },
-      { id: 'bedSofaRepair', name: t.handyman.calcItems.bedSofaRepair, price: 130, image: imgBedSofaRepair },
-      { id: 'wardrobeRepair', name: t.handyman.calcItems.wardrobeRepair, price: 240, image: imgWardrobeRepair },
+      { id: 'curtainRod', name: t.handyman.calcItems.curtainRod, price: 120, image: img('handyman/curtain-rod.jpg') },
+      { id: 'shelf', name: t.handyman.calcItems.shelf, price: 100, image: img('handyman/shelf.jpg') },
+      { id: 'pictures', name: t.handyman.calcItems.pictures, price: 80, image: img('handyman/pictures.jpg') },
+      { id: 'furniture', name: t.handyman.calcItems.furnitureAssembly, price: 80, image: img('handyman/furniture-assembly.jpg') },
+      { id: 'bedSofaRepair', name: t.handyman.calcItems.bedSofaRepair, price: 130, image: img('handyman/bed-sofa-repair.jpg') },
+      { id: 'wardrobeRepair', name: t.handyman.calcItems.wardrobeRepair, price: 240, image: img('handyman/wardrobe-repair.jpg') },
     ],
     electrical: [
-      { id: 'bulb', name: t.handyman.calcItems.bulb, price: 50, image: imgBulb },
-      { id: 'socket', name: t.handyman.calcItems.socket, price: 40, image: imgSocket },
-      { id: 'lamp', name: t.handyman.calcItems.lamp, price: 100, image: imgLamp },
-      { id: 'stove', name: t.handyman.calcItems.stove, price: 200, image: imgStove },
-      { id: 'repair', name: t.handyman.calcItems.repair, price: 100, image: imgRepair },
-      { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: 350, image: imgDiagnostic },
-      { id: 'switch', name: t.handyman.calcItems.switch, price: 50, image: imgSwitch },
-      { id: 'fuseReplacement', name: t.handyman.calcItems.fuseReplacement, price: 120, image: imgFuse },
-      { id: 'lampRepair', name: t.handyman.calcItems.lampRepair, price: 130, image: imgLampRepair },
-      { id: 'chandelierInstall', name: t.handyman.calcItems.chandelierInstall, price: 130, image: imgChandelier },
+      { id: 'bulb', name: t.handyman.calcItems.bulb, price: 50, image: img('handyman/bulb.jpg') },
+      { id: 'socket', name: t.handyman.calcItems.socket, price: 40, image: img('handyman/socket.jpg') },
+      { id: 'lamp', name: t.handyman.calcItems.lamp, price: 100, image: img('handyman/lamp.jpg') },
+      { id: 'stove', name: t.handyman.calcItems.stove, price: 200, image: img('handyman/stove.jpg') },
+      { id: 'repair', name: t.handyman.calcItems.repair, price: 100, image: img('handyman/repair.jpg') },
+      { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: 350, image: img('handyman/diagnostic.jpg') },
+      { id: 'switch', name: t.handyman.calcItems.switch, price: 50, image: img('handyman/switch.jpg') },
+      { id: 'fuseReplacement', name: t.handyman.calcItems.fuseReplacement, price: 120, image: img('handyman/fuse.jpg') },
+      { id: 'lampRepair', name: t.handyman.calcItems.lampRepair, price: 130, image: img('handyman/lamp-repair.jpg') },
+      { id: 'chandelierInstall', name: t.handyman.calcItems.chandelierInstall, price: 130, image: img('handyman/chandelier.jpg') },
     ],
     locksmith: [
-      { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: 140, image: imgMailboxLock },
-      { id: 'doorHandle', name: t.handyman.calcItems.doorHandle, price: 60, image: imgDoorHandle },
-      { id: 'doorCylinder', name: t.handyman.calcItems.doorCylinder, price: 100, image: imgDoorCylinder },
-      { id: 'aluminumDoorRepair', name: t.handyman.calcItems.aluminumDoorRepair, price: 200, image: imgAluminumDoor },
-      { id: 'windowDoorAdjustment', name: t.handyman.calcItems.windowDoorAdjustment, price: 200, image: imgWindowAdjustment },
-      { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, image: imgFridgeHinges },
+      { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: 140, image: img('handyman/mailbox-lock.jpg') },
+      { id: 'doorHandle', name: t.handyman.calcItems.doorHandle, price: 60, image: img('handyman/door-handle.jpg') },
+      { id: 'doorCylinder', name: t.handyman.calcItems.doorCylinder, price: 100, image: img('handyman/door-cylinder.jpg') },
+      { id: 'aluminumDoorRepair', name: t.handyman.calcItems.aluminumDoorRepair, price: 200, image: img('handyman/aluminum-door.jpg') },
+      { id: 'windowDoorAdjustment', name: t.handyman.calcItems.windowDoorAdjustment, price: 200, image: img('handyman/window-adjustment.jpg') },
+      { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, image: img('handyman/fridge-hinges.jpg') },
     ],
     gardening: [
-      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 110, image: imgLawnMowing },
-      { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, image: imgTreeTrimming },
-      { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, image: imgYardHelp },
+      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 110, image: img('handyman/lawn-mowing.jpg') },
+      { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, image: img('handyman/tree-trimming.jpg') },
+      { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, image: img('handyman/yard-help.jpg') },
     ],
   };
 
@@ -254,9 +252,9 @@ const Handyman = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { img: handyman1, name: 'Marek', specialty: t.handyman.electrical },
-              { img: handyman2, name: 'Piotr', specialty: t.handyman.plumbing },
-              { img: handyman3, name: 'Tomek', specialty: t.handyman.carpentry },
+              { img: img('handyman-1.jpg'), name: 'Marek', specialty: t.handyman.electrical },
+              { img: img('handyman-2.jpg'), name: 'Piotr', specialty: t.handyman.plumbing },
+              { img: img('handyman-3.jpg'), name: 'Tomek', specialty: t.handyman.carpentry },
             ].map((member, index) => (
               <CircularRevealCard key={index} index={index}>
                 <div className="group">

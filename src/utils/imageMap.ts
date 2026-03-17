@@ -15,6 +15,11 @@ const handymanImages = import.meta.glob<string>('/src/assets/handyman/*.jpg', {
   import: 'default',
 });
 
+const handymanHeroImages = import.meta.glob<string>('/src/assets/handyman-*.jpg', {
+  eager: true,
+  import: 'default',
+});
+
 const ozoneImages = import.meta.glob<string>('/src/assets/ozone-*.jpg', {
   eager: true,
   import: 'default',
@@ -33,6 +38,7 @@ const heroCleaningImages = import.meta.glob<string>('/src/assets/hero-house-clea
 const allImages: Record<string, string> = {
   ...calcImages,
   ...handymanImages,
+  ...handymanHeroImages,
   ...ozoneImages,
   ...windowImages,
   ...heroCleaningImages,
