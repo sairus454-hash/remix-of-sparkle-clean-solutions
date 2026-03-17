@@ -82,6 +82,6 @@ const CircularRevealCard = forwardRef<HTMLDivElement, CircularRevealCardProps>((
   );
 });
 
-CircularRevealCard.displayName = 'CircularRevealCard';
+CircularRevealCard.displayName = "CircularRevealCard";
 
 export default CircularRevealCard;
