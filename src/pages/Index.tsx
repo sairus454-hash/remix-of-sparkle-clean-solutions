@@ -537,7 +537,9 @@ const Index = () => {
               </div>
             </DialogHeader>
             <div className="overflow-y-auto flex-1 py-4">
-              <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+              <Suspense fallback={<div className="flex justify-center py-8"><div className="w-8 h-8 rounded-full bg-gradient-hero opacity-40 animate-pulse" /></div>}>
+                <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+              </Suspense>
             </div>
           </DialogContent>
         </Dialog>
