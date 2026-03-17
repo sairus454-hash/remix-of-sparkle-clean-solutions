@@ -7,25 +7,25 @@ import { Cookie } from 'lucide-react';
 const texts = {
   pl: {
     message: 'Ten serwis używa plików cookies w celach statystycznych i marketingowych.',
-    link: 'Dowiedz się więcej',
+    link: 'Przeczytaj politykę cookies',
     accept: 'Zaakceptuj',
     reject: 'Odrzuć',
   },
   ru: {
     message: 'Этот сайт использует файлы cookie в статистических и маркетинговых целях.',
-    link: 'Подробнее',
+    link: 'Прочитать политику cookie',
     accept: 'Принять',
     reject: 'Отклонить',
   },
   en: {
     message: 'This website uses cookies for statistical and marketing purposes.',
-    link: 'Learn more',
+    link: 'Read our cookie policy',
     accept: 'Accept',
     reject: 'Reject',
   },
   uk: {
     message: 'Цей сайт використовує файли cookie у статистичних та маркетингових цілях.',
-    link: 'Дізнатися більше',
+    link: 'Прочитати політику cookie',
     accept: 'Прийняти',
     reject: 'Відхилити',
   },
