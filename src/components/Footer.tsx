@@ -130,7 +130,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             </div>
             <div className="text-[10px] sm:text-xs leading-tight">
               <p className="font-semibold text-background">Euro Standard</p>
-              <p className="text-muted-foreground">ISO 9001 · Certified Quality</p>
+              <p className="text-background/60">ISO 9001 · Certified Quality</p>
             </div>
           </div>
 
