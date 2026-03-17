@@ -1,10 +1,12 @@
+import { useState, useEffect } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import HeroVideo from '@/components/HeroVideo';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Sparkles, Sofa, Armchair } from 'lucide-react';
+import servicesCleaning from '@/assets/services-cleaning.jpg';
+import servicesDrying from '@/assets/services-drying.jpg';
 
 // Hero images
 import heroUpholsteryCleaning from '@/assets/hero-upholstery-cleaning.jpg';
