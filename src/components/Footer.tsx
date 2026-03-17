@@ -135,16 +135,16 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           </div>
 
            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-             <Link to="/privacy-policy" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+             <Link to="/privacy-policy" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                {t.footer.privacy}
              </Link>
-             <Link to="/terms" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+             <Link to="/terms" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                {t.footer.terms}
              </Link>
-             <Link to="/cookies" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+             <Link to="/cookies" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                 {language === 'ru' ? 'Политика Cookie' : language === 'pl' ? 'Polityka Cookies' : language === 'uk' ? 'Політика Cookie' : 'Cookie Policy'}
               </Link>
-              <Link to="/sitemap" className="text-muted-foreground hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+              <Link to="/sitemap" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                 Sitemap
               </Link>
             </div>
