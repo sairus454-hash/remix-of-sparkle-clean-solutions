@@ -22,29 +22,31 @@ const FreeDeliveryBadge = () => {
     <div className="fixed right-2 sm:right-4 top-[60px] sm:top-[68px] lg:top-[84px] z-40 flex flex-col items-center gap-2">
       {/* Expanded text bubble */}
       <div className="relative">
-        <div
-          className={`
-            absolute right-full mr-3 bg-gradient-to-r from-fresh to-secondary text-white 
-            px-4 py-3 rounded-xl shadow-lg whitespace-nowrap
-            transition-all duration-300 ease-out origin-right
-            ${isExpanded ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'}
-          `}
-        >
-          <button
-            onClick={() => setIsDismissed(true)}
-            className="absolute -top-2 -right-2 w-5 h-5 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-            aria-label="Close"
+        {!isMobile && (
+          <div
+            className={`
+              absolute right-full mr-3 bg-gradient-to-r from-fresh to-secondary text-white 
+              px-4 py-3 rounded-xl shadow-lg whitespace-nowrap
+              transition-all duration-300 ease-out origin-right
+              ${isExpanded ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'}
+            `}
           >
-            <X className="w-3 h-3" />
-          </button>
-          <div className="flex items-center gap-2">
-            <Car className="w-5 h-5 animate-bounce" />
-            <span className="font-semibold text-sm">{texts[language]}</span>
+            <button
+              onClick={() => setIsDismissed(true)}
+              className="absolute -top-2 -right-2 w-5 h-5 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-3 h-3" />
+            </button>
+            <div className="flex items-center gap-2">
+              <Car className="w-5 h-5 animate-bounce" />
+              <span className="font-semibold text-sm">{texts[language]}</span>
+            </div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full">
+              <div className="w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-secondary" />
+            </div>
           </div>
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full">
-            <div className="w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-secondary" />
-          </div>
-        </div>
+        )}
 
         {isMobile ? (
           <a
