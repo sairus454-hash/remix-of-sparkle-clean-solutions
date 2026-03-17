@@ -38,6 +38,7 @@ const heroCleaningImages = import.meta.glob<string>('/src/assets/hero-house-clea
 const allImages: Record<string, string> = {
   ...calcImages,
   ...handymanImages,
+  ...handymanHeroImages,
   ...ozoneImages,
   ...windowImages,
   ...heroCleaningImages,
