@@ -1,10 +1,7 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import ContactForm from '@/components/ContactForm';
-import WaterDropSplash from '@/components/WaterDropSplash';
-import PriceSection from '@/components/PriceSection';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -23,13 +20,18 @@ import {
   DrawerTitle,
 } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import QuickCalculator from '@/components/QuickCalculator';
-import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import { useSplash } from '@/hooks/useSplash';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
+
+// Lazy load heavy below-fold components
+const ContactForm = lazy(() => import('@/components/ContactForm'));
+const WaterDropSplash = lazy(() => import('@/components/WaterDropSplash'));
+const PriceSection = lazy(() => import('@/components/PriceSection'));
+const QuickCalculator = lazy(() => import('@/components/QuickCalculator'));
+const PriceCalculatorContent = lazy(() => import('@/components/PriceCalculatorContent'));
 
 const Index = () => {
   const { showSplash, handleSplashComplete } = useSplash('index');
@@ -114,7 +116,7 @@ const Index = () => {
           },
         }}
       />
-      {showSplash && <WaterDropSplash onComplete={handleSplashComplete} />}
+      {showSplash && <Suspense fallback={null}><WaterDropSplash onComplete={handleSplashComplete} /></Suspense>}
       <Layout>
       {/* 🌸 March 8 Banner — auto-expires March 10, 2026 */}
       {Date.now() < new Date('2026-03-10T00:00:00Z').getTime() && (
@@ -507,14 +509,16 @@ const Index = () => {
               </div>
             </DrawerHeader>
             <div className="overflow-y-auto p-4 pb-8">
-              {isFullCalc ? (
-                <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
-              ) : (
-                <QuickCalculator 
-                  onOpenFull={() => setIsFullCalc(true)} 
-                  onClose={() => setIsCalcOpen(false)} 
-                />
-              )}
+              <Suspense fallback={<div className="flex justify-center py-8"><div className="w-8 h-8 rounded-full bg-gradient-hero opacity-40 animate-pulse" /></div>}>
+                {isFullCalc ? (
+                  <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+                ) : (
+                  <QuickCalculator 
+                    onOpenFull={() => setIsFullCalc(true)} 
+                    onClose={() => setIsCalcOpen(false)} 
+                  />
+                )}
+              </Suspense>
             </div>
           </DrawerContent>
         </Drawer>
@@ -533,14 +537,16 @@ const Index = () => {
               </div>
             </DialogHeader>
             <div className="overflow-y-auto flex-1 py-4">
-              <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+              <Suspense fallback={<div className="flex justify-center py-8"><div className="w-8 h-8 rounded-full bg-gradient-hero opacity-40 animate-pulse" /></div>}>
+                <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+              </Suspense>
             </div>
           </DialogContent>
         </Dialog>
       )}
 
       {/* Price Section */}
-      <PriceSection />
+      <Suspense fallback={null}><PriceSection /></Suspense>
 
       {/* Why Choose Us */}
       <section className="py-12 sm:py-20 bg-card">
@@ -602,7 +608,7 @@ const Index = () => {
             </div>
             
             <div className="bg-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-card">
-              <ContactForm />
+              <Suspense fallback={null}><ContactForm /></Suspense>
             </div>
           </div>
         </div>
