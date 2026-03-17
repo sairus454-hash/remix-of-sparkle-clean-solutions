@@ -66,7 +66,7 @@ const About = () => {
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Hero */}
-        <section className="py-20 bg-gradient-section">
+        <section aria-labelledby="about-heading" className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               {/* Live Sparkles Icon */}
