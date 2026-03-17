@@ -1472,7 +1472,7 @@ export const translations = {
       title: 'Profesjonalne czyszczenie mebli, materacy, dywanów i aut we Wrocławiu i okolicach',
       subtitle: 'Przywracamy czystość i świeżość Twoim rzeczom za pomocą nowoczesnych technologii',
       cta: 'Zostaw zapytanie',
-      secondary: 'Dowiedz się więcej',
+      secondary: 'O naszej firmie',
       marquee: 'Działamy w 4 województwach: Opolskie, Dolnośląskie, Wielkopolskie i Lubuskie',
       aiService: 'Usługi domowe z konsultantem AI',
       aiServiceDesc: 'Inteligentny asystent 24/7 do kalkulacji kosztów i składania zamówień',
