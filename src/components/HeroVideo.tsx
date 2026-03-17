@@ -47,7 +47,7 @@ const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
       )}
 
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/30" />
     </div>
   );
 };
