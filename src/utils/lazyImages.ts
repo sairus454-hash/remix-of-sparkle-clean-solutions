@@ -3,9 +3,9 @@
  * Images are NOT loaded at module init time — they're resolved on demand.
  */
 
-const imageLoaders = import.meta.glob<{ default: string }>(
+const imageLoaders = import.meta.glob<string>(
   '/src/assets/**/*.jpg',
-  { import: 'default' }
+  { import: 'default', query: '?url' }
 );
 
 const resolvedCache = new Map<string, string>();
