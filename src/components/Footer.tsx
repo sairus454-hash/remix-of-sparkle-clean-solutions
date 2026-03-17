@@ -110,7 +110,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         </div>
 
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
+          <div className="text-background/70 text-xs sm:text-sm text-center sm:text-left">
             <p>© {new Date().getFullYear()} MasterClean. {t.footer.rights}</p>
             <p className="mt-1">NIP: 8943280388</p>
           </div>
