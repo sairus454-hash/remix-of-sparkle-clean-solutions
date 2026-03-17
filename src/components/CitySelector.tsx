@@ -29,7 +29,35 @@ const CitySelector = () => {
       >
         {/* Pulsing glow ring */}
         <span className="absolute inset-0 rounded-full animate-pulse border-2 border-primary/20 pointer-events-none" />
-        <MapPin className="w-4 h-4 text-primary drop-shadow-[0_0_4px_hsl(var(--primary)/0.5)]" />
+        {/* Bouncing pin icon */}
+        <motion.span
+          className="relative flex-shrink-0"
+          animate={{
+            y: [0, -4, 0, -2, 0],
+          }}
+          transition={{
+            duration: 1.6,
+            repeat: Infinity,
+            repeatDelay: 2.5,
+            ease: 'easeInOut',
+          }}
+        >
+          <MapPin className="w-4 h-4 text-primary drop-shadow-[0_0_6px_hsl(var(--primary)/0.6)]" />
+          {/* Pin shadow dot */}
+          <motion.span
+            className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-2 h-0.5 rounded-full bg-primary/30"
+            animate={{
+              scaleX: [1, 0.6, 1, 0.8, 1],
+              opacity: [0.3, 0.15, 0.3, 0.2, 0.3],
+            }}
+            transition={{
+              duration: 1.6,
+              repeat: Infinity,
+              repeatDelay: 2.5,
+              ease: 'easeInOut',
+            }}
+          />
+        </motion.span>
         <span className="text-xs font-semibold text-primary whitespace-nowrap">
           {cityLabel}
         </span>
