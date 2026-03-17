@@ -458,6 +458,7 @@ const Header = () => {
                         ? mobileHighlight
                         : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                   }`}
+                  aria-current={location.pathname === item.path ? 'page' : undefined}
                 >
                   {item.highlight === 'ozone' ? (
                     <span className="flex items-center gap-1.5">

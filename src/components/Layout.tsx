@@ -26,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <main id="main-content" role="main" className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10 animate-page-enter">
         {/* Marquee Section */}
-        <section className="py-2 sm:py-2.5 mt-14 sm:mt-16 overflow-hidden shadow-md" style={{ background: 'linear-gradient(90deg, hsl(195 85% 42%) 0%, hsl(170 65% 45%) 25%, hsl(45 70% 55% / 0.5) 50%, hsl(170 65% 45%) 75%, hsl(195 85% 42%) 100%)' }}>
+        <section aria-label="Informacja promocyjna" className="py-2 sm:py-2.5 mt-14 sm:mt-16 overflow-hidden shadow-md" style={{ background: 'linear-gradient(90deg, hsl(195 85% 42%) 0%, hsl(170 65% 45%) 25%, hsl(45 70% 55% / 0.5) 50%, hsl(170 65% 45%) 75%, hsl(195 85% 42%) 100%)' }}>
           <div className="relative">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...Array(4)].map((_, i) => (

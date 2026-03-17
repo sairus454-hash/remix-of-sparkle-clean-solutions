@@ -40,6 +40,7 @@ const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
         loop
         playsInline
         preload="auto"
+        aria-hidden="true"
         onCanPlay={() => setIsLoaded(true)}
         className="absolute inset-0 w-full h-full object-cover transition-opacity duration-200"
         style={{ opacity: isLoaded ? 1 : 0 }}
