@@ -133,8 +133,18 @@ const Services = () => {
          {/* Hero */}
          <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
            <div className="absolute inset-0">
-             <HeroVideo src="/__l5e/assets-v1/01241740-5edd-45c6-b546-33fdbac06c65/hero-services-video.mp4" />
-           </div>
+              {heroSlides.map((slide, index) => (
+                <div
+                  key={index}
+                  className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+                  style={{
+                    backgroundImage: `url(${slide})`,
+                    opacity: currentSlide === index ? 1 : 0,
+                  }}
+                />
+              ))}
+              <div className="absolute inset-0 bg-black/15" />
+            </div>
            <div className="relative z-10 h-full flex items-center">
              <div className="container mx-auto px-4 w-full">
                <div className="max-w-3xl mx-auto text-center">
