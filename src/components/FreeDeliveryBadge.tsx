@@ -7,6 +7,7 @@ const FreeDeliveryBadge = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const { language } = useLanguage();
+  const isMobile = useIsMobile();
 
   const texts: Record<string, string> = {
     ru: 'Доезд до клиента — бесплатно!!!',
