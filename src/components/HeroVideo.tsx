@@ -59,7 +59,7 @@ const HeroVideo = ({ src = '/hero-video.mp4' }: HeroVideoProps) => {
       )}
 
       {/* Overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/55 to-background/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/60 to-background/75" />
     </div>
   );
 };
