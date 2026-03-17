@@ -11,7 +11,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
 
 const CitySelector = () => {
   const [open, setOpen] = useState(false);
@@ -22,15 +21,19 @@ const CitySelector = () => {
 
   return (
     <>
-      <Button
-        variant="ghost"
-        size="sm"
-        className="gap-1.5 text-xs font-medium hover:bg-accent/40 px-2 h-8"
+      <motion.button
+        whileHover={{ scale: 1.06 }}
+        whileTap={{ scale: 0.97 }}
         onClick={() => setOpen(true)}
+        className="relative flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/30 bg-primary/10 hover:bg-primary/20 transition-colors cursor-pointer group"
       >
-        <MapPin className="w-4 h-4 text-primary" />
-        <span className="hidden sm:inline">{cityLabel}</span>
-      </Button>
+        {/* Pulsing glow ring */}
+        <span className="absolute inset-0 rounded-full animate-pulse border-2 border-primary/20 pointer-events-none" />
+        <MapPin className="w-4 h-4 text-primary drop-shadow-[0_0_4px_hsl(var(--primary)/0.5)]" />
+        <span className="text-xs font-semibold text-primary whitespace-nowrap">
+          {cityLabel}
+        </span>
+      </motion.button>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-md">
