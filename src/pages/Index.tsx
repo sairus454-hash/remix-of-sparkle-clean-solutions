@@ -156,7 +156,7 @@ const Index = () => {
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-foreground leading-tight animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
                 {t.hero.title}
               </h1>
-              <p className="text-base sm:text-lg text-primary-foreground drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-6 animate-fade-up leading-relaxed" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
+              <p className="text-base sm:text-lg text-foreground font-medium mb-6 animate-fade-up leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]" style={{ animationDelay: '0.1s' }}>
                 {t.hero.subtitle}
               </p>
               <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
