@@ -113,11 +113,14 @@ const Header = () => {
                 size="icon"
                 className="lg:hidden w-11 h-11 sm:w-10 sm:h-10 bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 rounded-xl touch-manipulation active:scale-95"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-6 h-6 text-fresh" />
+                  <X className="w-6 h-6 text-fresh" aria-hidden="true" />
                 ) : (
-                  <Menu className="w-6 h-6 text-fresh" />
+                  <Menu className="w-6 h-6 text-fresh" aria-hidden="true" />
                 )}
               </Button>
             </div>
