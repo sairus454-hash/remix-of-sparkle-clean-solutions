@@ -17,6 +17,9 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
+      <a href="#main-content" className="skip-to-content">
+        Przejdź do treści
+      </a>
       <Suspense fallback={null}>
         <CleaningBackground />
       </Suspense>
