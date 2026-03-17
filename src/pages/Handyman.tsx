@@ -203,7 +203,7 @@ const Handyman = () => {
                 <Wrench className="w-12 h-12 text-primary-foreground" />
               </div>
             </div>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-up drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-up text-yellow-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
               Złota rączka
             </h1>
             <p className="text-lg md:text-xl text-white max-w-2xl mx-auto animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
