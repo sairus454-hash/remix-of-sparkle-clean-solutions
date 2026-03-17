@@ -509,14 +509,16 @@ const Index = () => {
               </div>
             </DrawerHeader>
             <div className="overflow-y-auto p-4 pb-8">
-              {isFullCalc ? (
-                <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
-              ) : (
-                <QuickCalculator 
-                  onOpenFull={() => setIsFullCalc(true)} 
-                  onClose={() => setIsCalcOpen(false)} 
-                />
-              )}
+              <Suspense fallback={<div className="flex justify-center py-8"><div className="w-8 h-8 rounded-full bg-gradient-hero opacity-40 animate-pulse" /></div>}>
+                {isFullCalc ? (
+                  <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
+                ) : (
+                  <QuickCalculator 
+                    onOpenFull={() => setIsFullCalc(true)} 
+                    onClose={() => setIsCalcOpen(false)} 
+                  />
+                )}
+              </Suspense>
             </div>
           </DrawerContent>
         </Drawer>
