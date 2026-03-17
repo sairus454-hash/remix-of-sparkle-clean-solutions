@@ -1,10 +1,7 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import ContactForm from '@/components/ContactForm';
-import WaterDropSplash from '@/components/WaterDropSplash';
-import PriceSection from '@/components/PriceSection';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -23,13 +20,18 @@ import {
   DrawerTitle,
 } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import QuickCalculator from '@/components/QuickCalculator';
-import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import { useSplash } from '@/hooks/useSplash';
 import heroImage from '@/assets/masterclean-logo-hero.jpg';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
+
+// Lazy load heavy below-fold components
+const ContactForm = lazy(() => import('@/components/ContactForm'));
+const WaterDropSplash = lazy(() => import('@/components/WaterDropSplash'));
+const PriceSection = lazy(() => import('@/components/PriceSection'));
+const QuickCalculator = lazy(() => import('@/components/QuickCalculator'));
+const PriceCalculatorContent = lazy(() => import('@/components/PriceCalculatorContent'));
 
 const Index = () => {
   const { showSplash, handleSplashComplete } = useSplash('index');
