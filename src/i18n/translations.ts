@@ -758,7 +758,7 @@ export const translations = {
       title: 'Professional Cleaning of Furniture, Mattresses, Carpets and Cars in Wrocław and Surrounding Areas',
       subtitle: 'Restoring cleanliness and freshness to your items using modern technologies',
       cta: 'Get a Quote',
-      secondary: 'Learn More',
+      secondary: 'About Our Company',
       marquee: 'We operate in 4 voivodeships: Opole, Wrocław, Poznań and Zielona Góra',
       aiService: 'Home Services with AI Consultant',
       aiServiceDesc: 'Smart assistant 24/7 for cost calculation and order placement',
