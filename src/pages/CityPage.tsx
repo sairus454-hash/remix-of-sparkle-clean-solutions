@@ -447,8 +447,13 @@ const CityPage = () => {
             <div className="max-w-3xl mx-auto text-center">
               <div className="flex justify-center mb-4 sm:mb-6">
                 <div className="relative">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <MapPin className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-background/80 backdrop-blur-sm border border-border/50 flex items-center justify-center shadow-glow p-2" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <img
+                      src={`/coats/${city.slug}.png`}
+                      alt={`Herb ${city.name}`}
+                      className="w-full h-full object-contain drop-shadow-md"
+                      loading="eager"
+                    />
                   </div>
                   <div className="absolute -top-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-fresh opacity-75" />
                   <div className="absolute -bottom-1 -left-1 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-primary opacity-60" />
