@@ -107,7 +107,7 @@ const Auto = () => {
          {/* Hero */}
          <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
            <div className="absolute inset-0">
-             <HeroVideo src="/hero-auto-video.mp4" />
+             <HeroVideo src="/hero-auto-video.mp4" fallbackImage="/src/assets/auto-cleaning-1.jpg" />
            </div>
            <div className="relative z-10 h-full flex items-center">
              <div className="container mx-auto px-4 w-full">

@@ -191,7 +191,7 @@ const Handyman = () => {
       {/* Hero Section with animated title */}
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
         <div className="absolute inset-0">
-          <HeroVideo src="/hero-handyman-video.mp4" />
+          <HeroVideo src="/hero-handyman-video.mp4" fallbackImage="/src/assets/handyman-1.jpg" />
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center">

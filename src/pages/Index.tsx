@@ -148,7 +148,7 @@ const Index = () => {
       )}
       {/* Hero Video Banner */}
       <section className="relative w-full overflow-hidden" style={{ height: '80vh', padding: 0, maxWidth: 'none' }}>
-        <HeroVideo />
+        <HeroVideo fallbackImage={heroBannerImage} />
         
         <div className="absolute inset-0 z-10 flex items-center">
           <div className="container mx-auto px-4">
