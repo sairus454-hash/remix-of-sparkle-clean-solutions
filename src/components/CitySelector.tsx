@@ -82,7 +82,7 @@ const CitySelector = () => {
           </DialogHeader>
           <div className="grid grid-cols-2 gap-2 mt-2">
             <AnimatePresence>
-              {cities.map((city, i) => (
+              {sortedCities.map((city, i) => (
                 <motion.button
                   key={city.slug}
                   initial={{ opacity: 0, y: 8 }}
