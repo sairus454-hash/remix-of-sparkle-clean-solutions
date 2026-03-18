@@ -12,6 +12,7 @@ import Auto3DCarousel from '@/components/Auto3DCarousel';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Car, Armchair, Layers, Sparkles } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
+import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 
 // Auto calculator images
 import calcAutoComplex from '@/assets/calc-auto-complex.jpg';
@@ -107,7 +108,7 @@ const Auto = () => {
          {/* Hero */}
          <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
            <div className="absolute inset-0">
-             <HeroVideo src="/hero-auto-video.mp4" />
+             <HeroVideo src="/hero-auto-video.mp4" fallbackImage={autoCleaning1} />
            </div>
            <div className="relative z-10 h-full flex items-center">
              <div className="container mx-auto px-4 w-full">

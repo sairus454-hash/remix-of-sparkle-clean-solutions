@@ -8,6 +8,7 @@ import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
 import HeroVideo from '@/components/HeroVideo';
 import AnimatedImage from '@/components/AnimatedImage';
+import handyman1 from '@/assets/handyman-1.jpg';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
@@ -191,7 +192,7 @@ const Handyman = () => {
       {/* Hero Section with animated title */}
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
         <div className="absolute inset-0">
-          <HeroVideo src="/hero-handyman-video.mp4" />
+          <HeroVideo src="/hero-handyman-video.mp4" fallbackImage={handyman1} />
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center">
