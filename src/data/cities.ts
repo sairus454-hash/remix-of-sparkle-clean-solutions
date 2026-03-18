@@ -816,6 +816,38 @@ export const cities: CityData[] = [
       },
     },
   },
+  {
+    slug: 'smolec',
+    name: 'Smolec',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Smolec — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Smolcu. Ceny jak we Wrocławiu. Dojazd gratis.',
+      keywords: 'czyszczenie tapicerki Smolec, pranie dywanów Smolec, ozonowanie Smolec, sprzątanie Smolec',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Smolcu',
+        subtitle: 'Tuż przy Wrocławiu — ceny miejskie, dojazd gratis',
+        description: 'Smolec to dynamicznie rozwijająca się miejscowość bezpośrednio przy Wrocławiu. Oferujemy pełen zakres usług: pranie tapicerki meblowej i samochodowej, czyszczenie materacy, dywanów, ozonowanie, mycie okien, sprzątanie i usługi złotej rączki — w cenach wrocławskich. Dojazd gratis przy zamówieniu od 180 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Смольце',
+        subtitle: 'Рядом с Вроцлавом — городские цены, бесплатный выезд',
+        description: 'Смолец — динамично развивающийся пригород Вроцлава. Предлагаем полный спектр услуг: химчистка мебели и авто, чистка матрасов и ковров, озонирование, мойка окон, уборка и мастер на час — по вроцлавским ценам. Бесплатный выезд при заказе от 180 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Smolec',
+        subtitle: 'Right next to Wrocław — city prices, free travel',
+        description: 'Smolec is a dynamically growing suburb right next to Wrocław. We offer the full range of services: upholstery and car cleaning, mattress and carpet cleaning, ozone treatment, window cleaning, house cleaning and handyman — at Wrocław prices. Free travel for orders from 180 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки у Смольці',
+        subtitle: 'Поруч з Вроцлавом — міські ціни, безкоштовний виїзд',
+        description: 'Смолець — динамічно розвинутий передмістя Вроцлава. Пропонуємо повний спектр послуг: хімчистка меблів та авто, чистка матраців і килимів, озонування, миття вікон, прибирання та майстер на годину — за вроцлавськими цінами. Безкоштовний виїзд при замовленні від 180 PLN.',
+      },
+    },
+  },
 ];
 
 export const getCityBySlug = (slug: string): CityData | undefined => {
