@@ -592,6 +592,230 @@ export const cities: CityData[] = [
       },
     },
   },
+  {
+    slug: 'nysa',
+    name: 'Nysa',
+    region: 'opolskie',
+    seo: {
+      title: 'Czyszczenie tapicerki i sprzątanie Nysa — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Nysie. Dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Nysa, pranie dywanów Nysa, ozonowanie Nysa',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Nysie',
+        subtitle: 'Województwo opolskie — perła Śląska nad Nysą Kłodzką',
+        description: 'Nysa to jedno z najstarszych i najpiękniejszych miast Opolszczyzny, nazywane „śląskim Rzymem". Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Нысе',
+        subtitle: 'Опольское воеводство — жемчужина Силезии на реке Ныса-Клодзка',
+        description: 'Ныса — один из старейших и красивейших городов Опольщины, называемый «силезским Римом». Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Nysa',
+        subtitle: 'Opole Voivodeship — the pearl of Silesia on Nysa Kłodzka river',
+        description: 'Nysa is one of the oldest and most beautiful cities in the Opole region, called the "Silesian Rome." We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Нисі',
+        subtitle: 'Опольське воєводство — перлина Сілезії на річці Ниса-Клодзка',
+        description: 'Ниса — одне з найстаріших та найкрасивіших міст Опольщини, зване «сілезьким Римом». Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'brzeg-dolny',
+    name: 'Brzeg Dolny',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Brzeg Dolny — MasterClean',
+      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Brzegu Dolnym. Szybki dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Brzeg Dolny, pranie dywanów Brzeg Dolny, ozonowanie Brzeg Dolny',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Brzegu Dolnym',
+        subtitle: 'Dolny Śląsk — zaledwie 40 km od Wrocławia',
+        description: 'Brzeg Dolny to malownicze miasto nad Odrą, położone w pobliżu Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, prania materacy, dywanów oraz ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Бжег-Дольном',
+        subtitle: 'Нижняя Силезия — всего 40 км от Вроцлава',
+        description: 'Бжег-Дольный — живописный город на Одре вблизи Вроцлава. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Brzeg Dolny',
+        subtitle: 'Lower Silesia — just 40 km from Wrocław',
+        description: 'Brzeg Dolny is a picturesque town on the Oder river near Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Бжег-Дольному',
+        subtitle: 'Нижня Сілезія — лише 40 км від Вроцлава',
+        description: 'Бжег-Дольний — мальовниче місто на Одрі поблизу Вроцлава. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'sroda-slaska',
+    name: 'Środa Śląska',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Środa Śląska — MasterClean',
+      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Środzie Śląskiej. Blisko Wrocławia.',
+      keywords: 'czyszczenie tapicerki Środa Śląska, pranie dywanów Środa Śląska, ozonowanie Środa Śląska',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Środzie Śląskiej',
+        subtitle: 'Dolny Śląsk — miasto słynnego skarbu średzkie',
+        description: 'Środa Śląska to historyczne miasto znane ze słynnego skarbu średzkiego. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Profesjonalny sprzęt Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Сьроде-Слёнской',
+        subtitle: 'Нижняя Силезия — город знаменитого средского клада',
+        description: 'Сьрода-Слёнска — историческое город, известный знаменитым средским кладом. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Środa Śląska',
+        subtitle: 'Lower Silesia — city of the famous Środa Treasure',
+        description: 'Środa Śląska is a historic city known for the famous Środa Treasure. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Сьроді-Сльонській',
+        subtitle: 'Нижня Сілезія — місто знаменитого середського скарбу',
+        description: 'Сьрода-Сльонска — історичне місто, відоме знаменитим середським скарбом. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'glogow',
+    name: 'Głogów',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Głogów — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Głogowie. Dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Głogów, pranie dywanów Głogów, ozonowanie Głogów',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Głogowie',
+        subtitle: 'Dolny Śląsk — historyczne miasto nad Odrą',
+        description: 'Głogów to jedno z najstarszych miast Dolnego Śląska z bogatą historią. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Obsługujemy również Polkowice i okolice. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Глогуве',
+        subtitle: 'Нижняя Силезия — исторический город на Одре',
+        description: 'Глогув — один из старейших городов Нижней Силезии с богатой историей. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Обслуживаем также Полковице и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Głogów',
+        subtitle: 'Lower Silesia — historic city on the Oder river',
+        description: 'Głogów is one of the oldest cities in Lower Silesia with rich history. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Polkowice and surroundings. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Глогуві',
+        subtitle: 'Нижня Сілезія — історичне місто на Одрі',
+        description: 'Глогув — одне з найстаріших міст Нижньої Сілезії з багатою історією. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'olesnica',
+    name: 'Oleśnica',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Oleśnica — MasterClean',
+      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Oleśnicy. Szybki dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Oleśnica, pranie dywanów Oleśnica, ozonowanie Oleśnica',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Oleśnicy',
+        subtitle: 'Dolny Śląsk — miasto z pięknym zamkiem Książąt Oleśnickich',
+        description: 'Oleśnica to urokliwe miasto z pięknym zamkiem i bogatą historią. Położona zaledwie 30 km od Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Олесьнице',
+        subtitle: 'Нижняя Силезия — город с красивым замком Олесьницких князей',
+        description: 'Олесьница — очаровательный город с красивым замком и богатой историей. Расположена всего в 30 км от Вроцлава. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Oleśnica',
+        subtitle: 'Lower Silesia — city with beautiful Oleśnica Castle',
+        description: 'Oleśnica is a charming city with a beautiful castle and rich history, located just 30 km from Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Олесьниці',
+        subtitle: 'Нижня Сілезія — місто з красивим замком Олесьницьких князів',
+        description: 'Олесьниця — чарівне місто з красивим замком і багатою історією. Розташована лише за 30 км від Вроцлава. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'namyslow',
+    name: 'Namysłów',
+    region: 'opolskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Namysłów — MasterClean',
+      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Namysłowie. Profesjonalny sprzęt Kärcher.',
+      keywords: 'czyszczenie tapicerki Namysłów, pranie dywanów Namysłów, ozonowanie Namysłów',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Namysłowie',
+        subtitle: 'Województwo opolskie — miasto znane z browaru i średniowiecznych murów',
+        description: 'Namysłów to historyczne miasto znane z browaru i dobrze zachowanych średniowiecznych murów obronnych. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Намыслуве',
+        subtitle: 'Опольское воеводство — город пивоварни и средневековых стен',
+        description: 'Намыслув — исторический город, известный пивоварней и хорошо сохранившимися средневековыми оборонительными стенами. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Namysłów',
+        subtitle: 'Opole Voivodeship — city known for its brewery and medieval walls',
+        description: 'Namysłów is a historic city known for its brewery and well-preserved medieval defensive walls. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Намислуві',
+        subtitle: 'Опольське воєводство — місто пивоварні та середньовічних мурів',
+        description: 'Намислув — історичне місто, відоме пивоварнею та добре збереженими середньовічними оборонними мурами. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'polkowice',
+    name: 'Polkowice',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Polkowice — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Polkowicach. Dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Polkowice, pranie dywanów Polkowice, ozonowanie Polkowice',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Polkowicach',
+        subtitle: 'Zagłębie Miedziowe — dynamicznie rozwijające się miasto',
+        description: 'Polkowice to nowoczesne i dynamicznie rozwijające się miasto w sercu Zagłębia Miedziowego. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Obsługujemy również Lubin i Głogów. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Полковицах',
+        subtitle: 'Медный бассейн — динамично развивающийся город',
+        description: 'Полковице — современный и динамично развивающийся город в сердце Медного бассейна. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Обслуживаем также Любин и Глогув. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Polkowice',
+        subtitle: 'Copper Basin — a dynamically developing city',
+        description: 'Polkowice is a modern and dynamically developing city in the heart of the Copper Basin. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Lubin and Głogów. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Полковицях',
+        subtitle: 'Мідний басейн — динамічно розвинуте місто',
+        description: 'Полковице — сучасне та динамічно розвинуте місто в серці Мідного басейну. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
 ];
 
 export const getCityBySlug = (slug: string): CityData | undefined => {
