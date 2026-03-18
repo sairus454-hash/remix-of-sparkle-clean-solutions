@@ -17,6 +17,12 @@ const CitySelector = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
 
+  const sortedCities = [...cities].sort((a, b) => {
+    if (a.slug === 'wroclaw') return -1;
+    if (b.slug === 'wroclaw') return 1;
+    return a.name.localeCompare(b.name, 'pl');
+  });
+
   const cityLabel = t.city?.yourCity || 'Twoje miasto';
 
   return (
