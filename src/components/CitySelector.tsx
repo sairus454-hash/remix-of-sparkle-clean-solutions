@@ -80,7 +80,7 @@ const CitySelector = () => {
               {t.city?.selectCityDesc || 'Wybierz swoje miasto, aby zobaczyć dostępne usługi i cennik'}
             </DialogDescription>
           </DialogHeader>
-          <div className="grid grid-cols-2 gap-2 mt-2">
+          <div className="grid grid-cols-2 gap-2 mt-2 max-h-[60vh] overflow-y-auto pr-1">
             <AnimatePresence>
               {sortedCities.map((city, i) => (
                 <motion.button
