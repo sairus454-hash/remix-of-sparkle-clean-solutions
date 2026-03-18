@@ -8,6 +8,7 @@ import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
 import HeroVideo from '@/components/HeroVideo';
 import AnimatedImage from '@/components/AnimatedImage';
+import handyman1 from '@/assets/handyman-1.jpg';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
