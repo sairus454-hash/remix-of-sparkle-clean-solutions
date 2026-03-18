@@ -45,6 +45,7 @@ const sitemapUrls = [
   { loc: '/city/olesnica', label: 'Oleśnica', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/namyslow', label: 'Namysłów', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/polkowice', label: 'Polkowice', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/smolec', label: 'Smolec', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const DOMAIN = 'https://masterclean1885.pl';
