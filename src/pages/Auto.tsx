@@ -12,6 +12,7 @@ import Auto3DCarousel from '@/components/Auto3DCarousel';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Car, Armchair, Layers, Sparkles } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
+import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 
 // Auto calculator images
 import calcAutoComplex from '@/assets/calc-auto-complex.jpg';
