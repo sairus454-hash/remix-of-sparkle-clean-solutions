@@ -38,6 +38,13 @@ const sitemapUrls = [
   { loc: '/city/klodzko', label: 'Kłodzko', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/kielczow', label: 'Kiełczów', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/dzierzoniow', label: 'Dzierżoniów', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/nysa', label: 'Nysa', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/brzeg-dolny', label: 'Brzeg Dolny', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/sroda-slaska', label: 'Środa Śląska', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/glogow', label: 'Głogów', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/olesnica', label: 'Oleśnica', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/namyslow', label: 'Namysłów', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/polkowice', label: 'Polkowice', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const DOMAIN = 'https://masterclean1885.pl';
