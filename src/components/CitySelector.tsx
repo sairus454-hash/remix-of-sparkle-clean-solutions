@@ -17,6 +17,12 @@ const CitySelector = () => {
   const navigate = useNavigate();
   const { t } = useLanguage();
 
+  const sortedCities = [...cities].sort((a, b) => {
+    if (a.slug === 'wroclaw') return -1;
+    if (b.slug === 'wroclaw') return 1;
+    return a.name.localeCompare(b.name, 'pl');
+  });
+
   const cityLabel = t.city?.yourCity || 'Twoje miasto';
 
   return (
@@ -76,7 +82,7 @@ const CitySelector = () => {
           </DialogHeader>
           <div className="grid grid-cols-2 gap-2 mt-2">
             <AnimatePresence>
-              {cities.map((city, i) => (
+              {sortedCities.map((city, i) => (
                 <motion.button
                   key={city.slug}
                   initial={{ opacity: 0, y: 8 }}
