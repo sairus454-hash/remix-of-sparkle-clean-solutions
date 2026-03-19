@@ -915,6 +915,7 @@ export const translations = {
       minOrderOther: 'Minimum order for other locations — 300 zł',
       cleaningTempNote: '⚠️ Cleaning service is temporarily available in the Wrocław area only',
       discountSystem: 'Discount System',
+      clickHere: 'Click here',
     },
     booking: {
       title: 'Available Dates',
