@@ -171,6 +171,7 @@ const CityPage = () => {
       id: 'other', title: t.prices.other, description: t.prices.otherDesc, icon: Package,
       items: [
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 25, image: img('calc-carpet.jpg'), unit: 'm²' },
+        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: img('calc-carpet-pickup.jpg'), unit: 'm²' },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: img('calc-stroller.jpg') },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: img('calc-carseat.jpg') },

@@ -176,6 +176,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       icon: <Sparkles className="w-5 h-5" />,
       items: [
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 25, unit: 'm²' },
+        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100 },
         { id: 'carseat', name: t.prices.items.carseat, price: 80 },
         { id: 'drying', name: t.prices.items.drying, price: 0 },

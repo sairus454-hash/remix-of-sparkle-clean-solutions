@@ -37,6 +37,7 @@ import calcSofa3 from '@/assets/calc-sofa3.jpg';
 import calcSofaCorner from '@/assets/calc-sofa-corner.jpg';
 import calcSofaCornerLarge from '@/assets/calc-sofa-corner-large.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
+import calcCarpetPickup from '@/assets/calc-carpet-pickup.jpg';
 import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
 import calcHeadboard from '@/assets/calc-headboard.jpg';
 import calcBedframe from '@/assets/calc-bedframe.jpg';
@@ -655,6 +656,7 @@ const Cleaning = () => {
                       category="other"
                       items={[
                         { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
+                        { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 35, image: calcCarpetPickup, unit: 'm²' },
                         { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Импрегнация ковра', price: 5, image: calcCarpetImpregnation, unit: 'm²' },
                         { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100, image: calcStroller },
                         { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80, image: calcCarseat },
