@@ -200,6 +200,7 @@ export const translations = {
       minOrderOther: 'Минимальный заказ для других населённых пунктов — 300 zł',
       cleaningTempNote: '⚠️ Услуга уборка действует временно на территории Вроцлава',
       discountSystem: 'Система скидок',
+      clickHere: 'Нажми сюда',
     },
     booking: {
       title: 'График свободных дат',
@@ -914,6 +915,7 @@ export const translations = {
       minOrderOther: 'Minimum order for other locations — 300 zł',
       cleaningTempNote: '⚠️ Cleaning service is temporarily available in the Wrocław area only',
       discountSystem: 'Discount System',
+      clickHere: 'Click here',
     },
     booking: {
       title: 'Available Dates',
@@ -1628,6 +1630,7 @@ export const translations = {
       minOrderOther: 'Minimalne zamówienie dla innych miejscowości — 300 zł',
       cleaningTempNote: '⚠️ Usługa sprzątania działa tymczasowo na terenie Wrocławia',
       discountSystem: 'System rabatowy',
+      clickHere: 'Kliknij tutaj',
     },
     booking: {
       title: 'Dostępne terminy',
@@ -2342,6 +2345,7 @@ export const translations = {
       minOrderOther: 'Мінімальне замовлення для інших населених пунктів — 300 zł',
       cleaningTempNote: '⚠️ Послуга прибирання діє тимчасово на території Вроцлава',
       discountSystem: 'Система знижок',
+      clickHere: 'Натисни тут',
     },
     booking: {
       title: 'Графік вільних дат',

@@ -250,6 +250,20 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                     />
                     {/* Bottom gradient on hover */}
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    {/* Hover hint or quantity overlay */}
+                    <div className={cn(
+                      "absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none z-[3]",
+                      selected ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                    )}>
+                      <span className={cn(
+                        "px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-sm shadow-lg",
+                        selected
+                          ? "bg-primary/85 text-primary-foreground"
+                          : "bg-black/55 text-white"
+                      )}>
+                        {selected ? `× ${qty}` : (t.calculator?.clickHere || 'Kliknij tutaj')}
+                      </span>
+                    </div>
                   </div>
 
                   {/* Promo badge */}
