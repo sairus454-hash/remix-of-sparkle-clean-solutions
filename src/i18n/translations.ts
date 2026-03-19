@@ -1630,6 +1630,7 @@ export const translations = {
       minOrderOther: 'Minimalne zamówienie dla innych miejscowości — 300 zł',
       cleaningTempNote: '⚠️ Usługa sprzątania działa tymczasowo na terenie Wrocławia',
       discountSystem: 'System rabatowy',
+      clickHere: 'Kliknij tutaj',
     },
     booking: {
       title: 'Dostępne terminy',
