@@ -40,6 +40,7 @@ import calcImpregnation from '@/assets/calc-impregnation.jpg';
 import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
+import calcCarpetPickup from '@/assets/calc-carpet-pickup.jpg';
 import calcStroller from '@/assets/calc-stroller.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
