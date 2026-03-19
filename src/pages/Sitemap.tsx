@@ -50,6 +50,7 @@ const sitemapUrls = [
   { loc: '/city/siechnice', label: 'Siechnice', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/tyniec-maly', label: 'Tyniec Mały', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/zmigrod', label: 'Żmigród', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/bielany-wroclawskie', label: 'Bielany Wrocławskie', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const DOMAIN = 'https://masterclean1885.pl';
