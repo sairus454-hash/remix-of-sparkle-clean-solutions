@@ -656,6 +656,7 @@ const Cleaning = () => {
                       category="other"
                       items={[
                         { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
+                        { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 35, image: calcCarpetPickup, unit: 'm²' },
                         { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Импрегнация ковра', price: 5, image: calcCarpetImpregnation, unit: 'm²' },
                         { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100, image: calcStroller },
                         { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80, image: calcCarseat },
