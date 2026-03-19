@@ -2345,6 +2345,7 @@ export const translations = {
       minOrderOther: 'Мінімальне замовлення для інших населених пунктів — 300 zł',
       cleaningTempNote: '⚠️ Послуга прибирання діє тимчасово на території Вроцлава',
       discountSystem: 'Система знижок',
+      clickHere: 'Натисни тут',
     },
     booking: {
       title: 'Графік вільних дат',
