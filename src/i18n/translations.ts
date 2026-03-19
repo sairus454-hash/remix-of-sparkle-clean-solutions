@@ -200,6 +200,7 @@ export const translations = {
       minOrderOther: 'Минимальный заказ для других населённых пунктов — 300 zł',
       cleaningTempNote: '⚠️ Услуга уборка действует временно на территории Вроцлава',
       discountSystem: 'Система скидок',
+      clickHere: 'Нажми сюда',
     },
     booking: {
       title: 'График свободных дат',
