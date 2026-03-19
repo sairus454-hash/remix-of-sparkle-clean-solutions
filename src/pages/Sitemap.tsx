@@ -46,6 +46,10 @@ const sitemapUrls = [
   { loc: '/city/namyslow', label: 'Namysłów', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/polkowice', label: 'Polkowice', priority: '0.7', changefreq: 'weekly' },
   { loc: '/city/smolec', label: 'Smolec', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/katy-wroclawskie', label: 'Kąty Wrocławskie', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/siechnice', label: 'Siechnice', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/tyniec-maly', label: 'Tyniec Mały', priority: '0.7', changefreq: 'weekly' },
+  { loc: '/city/zmigrod', label: 'Żmigród', priority: '0.7', changefreq: 'weekly' },
 ];
 
 const DOMAIN = 'https://masterclean1885.pl';

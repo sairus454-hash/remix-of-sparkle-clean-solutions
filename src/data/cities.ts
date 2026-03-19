@@ -848,6 +848,134 @@ export const cities: CityData[] = [
       },
     },
   },
+  {
+    slug: 'katy-wroclawskie',
+    name: 'Kąty Wrocławskie',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Kąty Wrocławskie — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Kątach Wrocławskich. Dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Kąty Wrocławskie, pranie dywanów Kąty Wrocławskie, ozonowanie Kąty Wrocławskie',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Kątach Wrocławskich',
+        subtitle: 'Blisko Wrocławia — wygodny dojazd i atrakcyjne ceny',
+        description: 'Kąty Wrocławskie to urokliwa gmina w bezpośrednim sąsiedztwie Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Profesjonalny sprzęt Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Контах Вроцлавских',
+        subtitle: 'Рядом с Вроцлавом — удобный выезд и привлекательные цены',
+        description: 'Конты Вроцлавские — живописная гмина рядом с Вроцлавом. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Kąty Wrocławskie',
+        subtitle: 'Near Wrocław — convenient access and attractive prices',
+        description: 'Kąty Wrocławskie is a charming municipality right next to Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Контах Вроцлавських',
+        subtitle: 'Поруч з Вроцлавом — зручний виїзд та привабливі ціни',
+        description: 'Конти Вроцлавські — мальовнича ґміна поруч з Вроцлавом. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'siechnice',
+    name: 'Siechnice',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Siechnice — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Siechnicach. Szybki dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Siechnice, pranie dywanów Siechnice, ozonowanie Siechnice',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Siechnicach',
+        subtitle: 'Tuż za Wrocławiem — szybki dojazd i profesjonalna obsługa',
+        description: 'Siechnice to dynamicznie rozwijająca się gmina na obrzeżach Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, materacy, dywanów i ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Сехницах',
+        subtitle: 'Сразу за Вроцлавом — быстрый выезд и профессиональное обслуживание',
+        description: 'Сехнице — динамично развивающаяся гмина на окраине Вроцлава. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Siechnice',
+        subtitle: 'Just outside Wrocław — fast arrival and professional service',
+        description: 'Siechnice is a dynamically growing municipality on the outskirts of Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Сехницях',
+        subtitle: 'Відразу за Вроцлавом — швидкий виїзд і професійне обслуговування',
+        description: 'Сехнице — динамічно розвинута ґміна на околиці Вроцлава. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'tyniec-maly',
+    name: 'Tyniec Mały',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Tyniec Mały — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Tyńcu Małym. Dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Tyniec Mały, pranie dywanów Tyniec Mały, ozonowanie Tyniec Mały',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Tyńcu Małym',
+        subtitle: 'W sąsiedztwie Wrocławia — profesjonalne czyszczenie na miejscu',
+        description: 'Tyniec Mały to spokojne osiedle w bezpośrednim sąsiedztwie Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Profesjonalny sprzęt i ekologiczne środki czyszczące. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Тыньце Малом',
+        subtitle: 'По соседству с Вроцлавом — профессиональная чистка на месте',
+        description: 'Тынец Малы — тихий район рядом с Вроцлавом. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование и экологичные средства. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Tyniec Mały',
+        subtitle: 'Next to Wrocław — professional cleaning on site',
+        description: 'Tyniec Mały is a quiet residential area right next to Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional equipment and eco-friendly cleaning products. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Тиньці Малому',
+        subtitle: 'Поруч з Вроцлавом — професійне чищення на місці',
+        description: 'Тинець Малий — тихий район поруч з Вроцлавом. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'zmigrod',
+    name: 'Żmigród',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Żmigród — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Żmigrodzie. Dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Żmigród, pranie dywanów Żmigród, ozonowanie Żmigród',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Żmigrodzie',
+        subtitle: 'Dolina Baryczy — profesjonalne usługi czyszczenia',
+        description: 'Żmigród to malownicze miasto w Dolinie Baryczy. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, materacy, dywanów i ozonowania. Profesjonalny sprzęt Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Жмигруде',
+        subtitle: 'Долина Барычи — профессиональные услуги чистки',
+        description: 'Жмигруд — живописный город в Долине Барычи. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Żmigród',
+        subtitle: 'Barycz Valley — professional cleaning services',
+        description: 'Żmigród is a picturesque town in the Barycz Valley. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Жмігруді',
+        subtitle: 'Долина Баричі — професійні послуги чищення',
+        description: 'Жмігруд — мальовниче місто в Долині Баричі. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
 ];
 
 export const getCityBySlug = (slug: string): CityData | undefined => {
