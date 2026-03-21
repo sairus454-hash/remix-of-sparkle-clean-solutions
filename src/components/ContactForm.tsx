@@ -294,7 +294,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           name: formData.name,
           phone: formData.phone,
           time: formData.time,
-          message: formData.message,
+          message: `📍 ${formData.cityAddress}, ${formData.postalCode}\n\n${formData.message}`,
           date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined
         }
       });
