@@ -52,6 +52,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    cityAddress: '',
+    postalCode: '',
     time: '',
     message: ''
   });
