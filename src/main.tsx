@@ -3,6 +3,9 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import "./index.css";
 
+// Force light theme — remove any dark class that browser/OS might add
+document.documentElement.classList.remove('dark');
+
 // Defer non-critical animation CSS — loaded after first paint
 const loadDeferredStyles = () => import("./styles/animations.css");
 if (document.readyState === 'complete') {
