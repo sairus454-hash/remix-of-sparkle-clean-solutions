@@ -278,7 +278,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.phone || (!formData.time && !date)) {
+    if (!formData.name || !formData.phone || !formData.cityAddress || !formData.postalCode || (!formData.time && !date)) {
       toast({
         title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
         description: language === 'ru' ? 'Пожалуйста, заполните все обязательные поля' : language === 'pl' ? 'Proszę wypełnić wszystkie wymagane pola' : language === 'uk' ? 'Будь ласка, заповніть всі обов\'язкові поля' : 'Please fill in all required fields',
