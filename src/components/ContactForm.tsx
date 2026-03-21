@@ -314,6 +314,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       setFormData({
         name: '',
         phone: '',
+        cityAddress: '',
+        postalCode: '',
         time: '',
         message: ''
       });
