@@ -52,6 +52,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    cityAddress: '',
+    postalCode: '',
     time: '',
     message: ''
   });
@@ -276,7 +278,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.phone || (!formData.time && !date)) {
+    if (!formData.name || !formData.phone || !formData.cityAddress || !formData.postalCode || (!formData.time && !date)) {
       toast({
         title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
         description: language === 'ru' ? 'Пожалуйста, заполните все обязательные поля' : language === 'pl' ? 'Proszę wypełnić wszystkie wymagane pola' : language === 'uk' ? 'Будь ласка, заповніть всі обов\'язкові поля' : 'Please fill in all required fields',
@@ -292,7 +294,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           name: formData.name,
           phone: formData.phone,
           time: formData.time,
-          message: formData.message,
+          message: `📍 ${formData.cityAddress}, ${formData.postalCode}\n\n${formData.message}`,
           date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined
         }
       });
@@ -312,6 +314,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       setFormData({
         name: '',
         phone: '',
+        cityAddress: '',
+        postalCode: '',
         time: '',
         message: ''
       });
@@ -526,7 +530,28 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" maxLength={30} />
       </div>
 
-      {/* Desired time & date */}
+      {/* City & Address */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {language === 'ru' ? 'Город и адрес' : language === 'pl' ? 'Miasto i adres' : language === 'uk' ? 'Місто та адреса' : 'City and address'} <span className="text-destructive">*</span>
+        </label>
+        <Input type="text" placeholder={language === 'ru' ? 'Напр. Wrocław, ul. Przykładowa 10/5' : language === 'pl' ? 'Np. Wrocław, ul. Przykładowa 10/5' : language === 'uk' ? 'Напр. Wrocław, ul. Przykładowa 10/5' : 'E.g. Wrocław, ul. Przykładowa 10/5'} value={formData.cityAddress} onChange={e => setFormData({
+          ...formData,
+          cityAddress: e.target.value
+        })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm" maxLength={200} />
+      </div>
+
+      {/* Postal Code */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {language === 'ru' ? 'Почтовый код' : language === 'pl' ? 'Kod pocztowy' : language === 'uk' ? 'Поштовий код' : 'Postal code'} <span className="text-destructive">*</span>
+        </label>
+        <Input type="text" inputMode="numeric" placeholder={language === 'ru' ? 'Напр. 50-123' : language === 'pl' ? 'Np. 50-123' : language === 'uk' ? 'Напр. 50-123' : 'E.g. 50-123'} value={formData.postalCode} onChange={e => setFormData({
+          ...formData,
+          postalCode: e.target.value
+        })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm w-40" maxLength={10} />
+      </div>
+
       <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">
           {language === 'ru' ? 'Желаемое время и дата' : language === 'pl' ? 'Preferowany czas i data' : language === 'uk' ? 'Бажаний час та дата' : 'Preferred time & date'} <span className="text-destructive">*</span>
