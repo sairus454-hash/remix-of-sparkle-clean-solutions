@@ -104,6 +104,29 @@ const PRICE_LIST = {
 • Импрегнация ковра — 5 PLN/м²
 • Чистка ковролина (20-50 м²) — 15 PLN/м²
 • Чистка ковролина (50+ м²) — 10 PLN/м²
+• Стирка ковров с забором и доставкой — 35 PLN/м²
+
+🧹🚐 СТИРКА КОВРОВ С ЗАБОРОМ (подробно):
+Услуга «Стирка ковров с забором» — это профессиональная глубокая стирка ковров в нашей мастерской.
+Как это работает:
+1. Вы оставляете заявку — мы приезжаем к вам домой и забираем ковёр.
+2. Ковёр доставляется в нашу профессиональную мастерскую.
+3. Проводится глубокая стирка: удаление грязи, пыли, пятен, аллергенов, клещей и бактерий.
+4. Ковёр сушится в специальных условиях (без деформации и усадки).
+5. Чистый и свежий ковёр доставляется обратно к вам домой.
+
+Цена: 35 PLN за 1 м² (измеряется длина × ширина ковра).
+Пример: ковёр 2×3 м = 6 м² × 35 PLN = 210 PLN.
+
+Преимущества:
+✅ Глубокая стирка, невозможная в домашних условиях
+✅ Удаление стойких пятен, запахов и аллергенов
+✅ Бережная сушка без повреждения ворса
+✅ Забор и доставка включены в стоимость
+✅ Подходит для любых типов ковров: шерстяных, синтетических, ручной работы
+
+⏳ Срок выполнения: обычно 3-5 рабочих дней.
+📏 Минимальный заказ на стирку ковров: 180 PLN (Вроцлав) / 400 PLN (другие города).
 
 🔧 МАСТЕР НА ЧАС:
 
@@ -286,6 +309,29 @@ Deep cleaning:
 • Carpet impregnation — 5 PLN/m²
 • Carpet floor cleaning (20-50 m²) — 15 PLN/m²
 • Carpet floor cleaning (50+ m²) — 10 PLN/m²
+• Carpet washing with pickup & delivery — 35 PLN/m²
+
+🧹🚐 CARPET WASHING WITH PICKUP (details):
+"Carpet washing with pickup" is a professional deep carpet washing service at our workshop.
+How it works:
+1. You place an order — we come to your home and pick up the carpet.
+2. The carpet is transported to our professional workshop.
+3. Deep washing: removal of dirt, dust, stains, allergens, mites and bacteria.
+4. The carpet is dried under special conditions (no deformation or shrinkage).
+5. The clean, fresh carpet is delivered back to your home.
+
+Price: 35 PLN per 1 m² (measured length × width of carpet).
+Example: a 2×3 m carpet = 6 m² × 35 PLN = 210 PLN.
+
+Benefits:
+✅ Deep washing impossible to achieve at home
+✅ Removal of stubborn stains, odors and allergens
+✅ Gentle drying without fiber damage
+✅ Pickup and delivery included in the price
+✅ Suitable for all carpet types: wool, synthetic, handmade
+
+⏳ Turnaround time: usually 3-5 business days.
+📏 Minimum order for carpet washing: 180 PLN (Wrocław) / 400 PLN (other cities).
 
 🔧 HANDYMAN:
 
@@ -468,6 +514,29 @@ Sprzątanie generalne:
 • Impregnacja dywanu — 5 PLN/m²
 • Czyszczenie wykładziny (20-50 m²) — 15 PLN/m²
 • Czyszczenie wykładziny (50+ m²) — 10 PLN/m²
+• Pranie dywanów z odbiorem i dostawą — 35 PLN/m²
+
+🧹🚐 PRANIE DYWANÓW Z ODBIOREM (szczegóły):
+Usługa „Pranie dywanów z odbiorem" to profesjonalne głębokie pranie dywanów w naszym warsztacie.
+Jak to działa:
+1. Składasz zamówienie — przyjeżdżamy do Ciebie i zabieramy dywan.
+2. Dywan jest transportowany do naszego profesjonalnego warsztatu.
+3. Głębokie pranie: usuwanie brudu, kurzu, plam, alergenów, roztoczy i bakterii.
+4. Dywan jest suszony w specjalnych warunkach (bez deformacji i kurczenia).
+5. Czysty i świeży dywan dostarczamy z powrotem do Twojego domu.
+
+Cena: 35 PLN za 1 m² (mierzone długość × szerokość dywanu).
+Przykład: dywan 2×3 m = 6 m² × 35 PLN = 210 PLN.
+
+Korzyści:
+✅ Głębokie pranie niemożliwe do osiągnięcia w domu
+✅ Usuwanie uporczywych plam, zapachów i alergenów
+✅ Delikatne suszenie bez uszkodzenia włókien
+✅ Odbiór i dostawa w cenie
+✅ Odpowiednie dla wszystkich typów dywanów: wełnianych, syntetycznych, ręcznie robionych
+
+⏳ Czas realizacji: zwykle 3-5 dni roboczych.
+📏 Minimalne zamówienie na pranie dywanów: 180 PLN (Wrocław) / 400 PLN (inne miasta).
 
 🔧 ZŁOTA RĄCZKA:
 
@@ -650,6 +719,29 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Імпрегнація килима — 5 PLN/м²
 • Чистка килимового покриття (20-50 м²) — 15 PLN/м²
 • Чистка килимового покриття (50+ м²) — 10 PLN/м²
+• Прання килимів із забором та доставкою — 35 PLN/м²
+
+🧹🚐 ПРАННЯ КИЛИМІВ ІЗ ЗАБОРОМ (детально):
+Послуга «Прання килимів із забором» — це професійне глибоке прання килимів у нашій майстерні.
+Як це працює:
+1. Ви залишаєте заявку — ми приїжджаємо до вас і забираємо килим.
+2. Килим доставляється до нашої професійної майстерні.
+3. Проводиться глибоке прання: видалення бруду, пилу, плям, алергенів, кліщів та бактерій.
+4. Килим сушиться в спеціальних умовах (без деформації та усадки).
+5. Чистий та свіжий килим доставляється назад до вашого дому.
+
+Ціна: 35 PLN за 1 м² (вимірюється довжина × ширина килима).
+Приклад: килим 2×3 м = 6 м² × 35 PLN = 210 PLN.
+
+Переваги:
+✅ Глибоке прання, неможливе в домашніх умовах
+✅ Видалення стійких плям, запахів та алергенів
+✅ Бережне сушіння без пошкодження ворсу
+✅ Забір та доставка включені у вартість
+✅ Підходить для будь-яких типів килимів: вовняних, синтетичних, ручної роботи
+
+⏳ Термін виконання: зазвичай 3-5 робочих днів.
+📏 Мінімальне замовлення на прання килимів: 180 PLN (Вроцлав) / 400 PLN (інші міста).
 
 🔧 МАЙСТЕР НА ГОДИНУ:
 
