@@ -698,7 +698,7 @@ const ChatBot = () => {
               isMobile && "text-sm"
             )}>
               {t.chatbot.title}
-            </h3>
+            </p>
             <p className={cn(
               "text-primary-foreground/80 truncate",
               isMobile ? "text-[10px]" : "text-xs"
