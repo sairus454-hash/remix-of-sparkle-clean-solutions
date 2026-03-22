@@ -61,6 +61,7 @@ const Sitemap = () => {
       <SEO
         title="Sitemap | MasterClean"
         description="Mapa strony MasterClean — wszystkie podstrony serwisu."
+        keywords="sitemap, mapa strony, MasterClean strony, nawigacja serwisu, struktura serwisu"
         canonical="/sitemap"
       />
       <div className="container mx-auto px-4 py-16 min-h-[60vh]">
