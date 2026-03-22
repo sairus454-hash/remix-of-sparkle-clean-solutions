@@ -121,7 +121,9 @@ const Header = () => {
                 ) : (
                   <Menu className="w-6 h-6 text-fresh" aria-hidden="true" />
                 )}
-                <span className="text-xs font-semibold text-fresh sm:hidden">Меню</span>
+                <span className="text-xs font-semibold text-fresh sm:hidden">
+                  {language === 'en' ? 'Menu' : language === 'uk' ? 'Меню' : language === 'ru' ? 'Меню' : 'Menu'}
+                </span>
               </Button>
             </div>
 
