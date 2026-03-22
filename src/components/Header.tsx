@@ -377,7 +377,7 @@ const Header = () => {
             </div>
 
             {/* Phone */}
-            <div ref={phoneRef} style={getHeaderItemStyle(14, headerRevealed)} className="flex items-center flex-shrink-0 relative">
+            <div ref={phoneRef} style={getHeaderItemStyle(14, headerRevealed)} className="hidden sm:flex items-center flex-shrink-0 relative">
               <motion.button
                 onClick={() => setShowPhone(!showPhone)}
                 className="flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-gradient-to-r from-fresh to-fresh/80 hover:from-fresh/90 hover:to-fresh/70 border-2 border-fresh text-primary-foreground font-bold transition-all touch-manipulation active:scale-95 shadow-glow relative overflow-hidden"
