@@ -57,9 +57,9 @@ const Index = () => {
   }];
   return <>
       <SEO
-        title="MasterClean — Pranie tapicerki, dywanów i czyszczenie aut"
-        description="Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i aut. Ozonowanie, sprzątanie, mycie okien. Pracujemy 24/7. Zadzwoń: +48 575 211 401"
-        keywords="pranie tapicerki, czyszczenie dywanów, czyszczenie materacy, pranie kanap, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, Opole, Wrocław, Poznań, Zielona Góra, usługi sprzątania, cleaning services Poland"
+        title="MasterClean — Pranie tapicerki meblowej, czyszczenie dywanów i aut"
+        description="Profesjonalne pranie tapicerki meblowej, czyszczenie dywanów, materacy i samochodów z dojazdem. Ozonowanie, sprzątanie, mycie okien. Wrocław 24/7."
+        keywords="pranie tapicerki, pranie tapicerki meblowej, czyszczenie dywanów, czyszczenie materacy, pranie kanapy, pranie sofy, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, czyszczenie mebli Wrocław, pranie tapicerki Opole, usługi sprzątania Wrocław, pranie chemiczne, cleaning services Poland, Poznań, Zielona Góra"
         canonical="/"
         image="https://masterclean1885.pl/og-image.png"
         jsonLd={{

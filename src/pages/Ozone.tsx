@@ -55,9 +55,9 @@ const Ozone = () => {
   return (
     <>
       <SEO
-        title="Ozonowanie pomieszczeń i samochodów — Usuwanie zapachów"
-        description="Profesjonalne ozonowanie mieszkań, biur i samochodów. Usuwanie nieprzyjemnych zapachów, dezynfekcja, eliminacja bakterii i wirusów. Opole, Wrocław, Poznań."
-        keywords="ozonowanie pomieszczeń, ozonowanie samochodu, ozonowanie mieszkania, usuwanie zapachów, dezynfekcja ozonem, ozonowanie biura, ozone treatment, Opole, Wrocław, Poznań"
+        title="Ozonowanie pomieszczeń i samochodów — Dezynfekcja ozonem"
+        description="Profesjonalne ozonowanie mieszkań, biur i samochodów. Ozonowanie eliminuje nieprzyjemne zapachy, bakterie i wirusy. Dezynfekcja ozonem Wrocław, Opole, Poznań."
+        keywords="ozonowanie pomieszczeń, ozonowanie samochodu, ozonowanie mieszkania, ozonowanie biura, usuwanie zapachów ozonem, dezynfekcja ozonem, ozonowanie po remoncie, ozonowanie Wrocław, ozonowanie Opole, ozone treatment, eliminacja zapachów"
         canonical="/ozone"
         image="https://masterclean1885.pl/og-ozone.png"
         breadcrumbs={[{ name: t.nav.ozone, path: '/ozone' }]}
