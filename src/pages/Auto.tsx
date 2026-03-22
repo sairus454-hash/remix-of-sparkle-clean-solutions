@@ -73,7 +73,7 @@ const Auto = () => {
     <>
       <SEO
         title="Pranie tapicerki samochodowej — Czyszczenie wnętrza auta"
-        description="Profesjonalne pranie tapicerki samochodowej z dojazdem do klienta. Czyszczenie foteli, podsufitki, dywaników, bagażnika. Usuwanie plam i zapachów z tapicerki. Wrocław, Opole."
+        description="Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, podsufitki, dywaników, bagażnika. Usuwanie plam i zapachów. Wrocław, Opole."
         keywords="pranie tapicerki samochodowej, czyszczenie wnętrza samochodu, czyszczenie tapicerki samochodowej, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników samochodowych, czyszczenie z dojazdem, dojazd do klienta, auto detailing, pranie tapicerki auta Wrocław, Opole, Poznań"
         canonical="/auto"
         image="https://masterclean1885.pl/og-auto.png"

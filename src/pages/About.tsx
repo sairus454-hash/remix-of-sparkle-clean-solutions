@@ -39,7 +39,7 @@ const About = () => {
   return <>
       <SEO
         title="O firmie MasterClean — Profesjonalne czyszczenie mebli"
-        description="Poznaj MasterClean — firmę specjalizującą się w praniu tapicerki meblowej, czyszczeniu dywanów i materacy. Nowoczesny sprzęt Kärcher, ekologiczne środki. Wrocław, Opole."
+        description="Poznaj MasterClean — firmę specjalizującą się w praniu tapicerki meblowej i czyszczeniu dywanów. Profesjonalny sprzęt Kärcher. Wrocław, Opole."
         keywords="o nas MasterClean, firma czyszcząca, profesjonalne pranie tapicerki, firma sprzątająca Wrocław, czyszczenie mebli Wrocław, pranie tapicerki Opole, czyszczenie dywanów, cleaning company Poland"
         canonical="/about"
         image="https://masterclean1885.pl/og-about.png"
