@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import splashLogo from '@/assets/masterclean-splash-logo.jpg';
+import splashLogo from '@/assets/masterclean-splash-logo.webp';
 
 interface SiteSplashProps {
   onComplete: () => void;
