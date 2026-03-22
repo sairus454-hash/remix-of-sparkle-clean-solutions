@@ -1,5 +1,26 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/services", "destination": "/index.html" },
+    { "source": "/prices", "destination": "/index.html" },
+    { "source": "/equipment", "destination": "/index.html" },
+    { "source": "/impregnation", "destination": "/index.html" },
+    { "source": "/auto", "destination": "/index.html" },
+    { "source": "/ozone", "destination": "/index.html" },
+    { "source": "/windows", "destination": "/index.html" },
+    { "source": "/cleaning", "destination": "/index.html" },
+    { "source": "/blog", "destination": "/index.html" },
+    { "source": "/blog/:id", "destination": "/index.html" },
+    { "source": "/handyman", "destination": "/index.html" },
+    { "source": "/reviews", "destination": "/index.html" },
+    { "source": "/privacy-policy", "destination": "/index.html" },
+    { "source": "/terms", "destination": "/index.html" },
+    { "source": "/contacts", "destination": "/index.html" },
+    { "source": "/cookies", "destination": "/index.html" },
+    { "source": "/sitemap", "destination": "/index.html" },
+    { "source": "/city/:slug", "destination": "/index.html" },
+    { "source": "/admin", "destination": "/index.html" },
+    { "source": "/admin/login", "destination": "/index.html" }
   ]
 }
