@@ -64,7 +64,7 @@ const CitySelector = () => {
             }}
           />
         </motion.span>
-        <span className="text-xs font-semibold text-primary whitespace-nowrap">
+        <span className="text-xs font-semibold text-primary whitespace-nowrap hidden sm:inline">
           {cityLabel}
         </span>
       </motion.button>

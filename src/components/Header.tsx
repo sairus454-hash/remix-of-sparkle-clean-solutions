@@ -110,8 +110,7 @@ const Header = () => {
             <div style={getHeaderItemStyle(1, headerRevealed)}>
               <Button
                 variant="ghost"
-                size="icon"
-                className="lg:hidden w-11 h-11 sm:w-10 sm:h-10 bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 rounded-xl touch-manipulation active:scale-95"
+                className="lg:hidden h-11 sm:h-10 px-3 sm:px-2 bg-fresh/20 hover:bg-fresh/30 border border-fresh/40 rounded-xl touch-manipulation active:scale-95 flex items-center gap-1.5"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 aria-label={isMobileMenuOpen ? 'Zamknij menu' : 'Otwórz menu'}
                 aria-expanded={isMobileMenuOpen}
@@ -122,6 +121,7 @@ const Header = () => {
                 ) : (
                   <Menu className="w-6 h-6 text-fresh" aria-hidden="true" />
                 )}
+                <span className="text-xs font-semibold text-fresh sm:hidden">Меню</span>
               </Button>
             </div>
 
