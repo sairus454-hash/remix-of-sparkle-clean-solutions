@@ -38,6 +38,7 @@ import calcLeatherSofa3 from '@/assets/calc-leather-sofa3.jpg';
 import calcLeatherCorner from '@/assets/calc-leather-corner.jpg';
 import calcImpregnation from '@/assets/calc-impregnation.jpg';
 import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
+import calcCarpetCoveringImpregnation from '@/assets/calc-carpet-covering-impregnation.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
 import calcCarpetPickup from '@/assets/calc-carpet-pickup.jpg';
@@ -89,7 +90,7 @@ const Services = () => {
     { id: 'carpet', name: language === 'pl' ? 'Wykładzina dywanowa' : language === 'en' ? 'Carpet cleaning' : 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
     { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 35, image: calcCarpetPickup, unit: 'm²' },
     { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || (language === 'pl' ? 'Impregnacja dywanu' : language === 'en' ? 'Carpet impregnation' : 'Импрегнация ковра'), price: 5, image: calcCarpetImpregnation, unit: 'm²' },
-    { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny dywanowej' : language === 'en' ? 'Carpet covering impregnation' : 'Импрегнация коврового покрытия'), price: 8, image: calcCarpetImpregnation, unit: 'm²' },
+    { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny dywanowej' : language === 'en' ? 'Carpet covering impregnation' : 'Импрегнация коврового покрытия'), price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
     { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
     { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
     { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 15, image: calcCarpetMedium, unit: 'm²' },
