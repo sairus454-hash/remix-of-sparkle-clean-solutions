@@ -104,7 +104,7 @@ const FloatingOrderSummary = () => {
               className="mb-3 bg-card border border-border rounded-2xl shadow-xl overflow-hidden w-72 sm:w-80"
             >
               <div className="p-4 border-b border-border flex items-center justify-between">
-                <h4 className="font-serif font-semibold text-foreground">{l.title}</h4>
+                <p className="font-serif font-semibold text-foreground">{l.title}</p>
                 <div className="flex items-center gap-1">
                   <button
                     onClick={handleClear}
