@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Droplets, Phone, Mail, MapPin, ShieldCheck, BookOpen, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import fixlyBadge from '@/assets/fixly-top-executor-2025.jpg';
+import fixlyBadge from '@/assets/fixly-top-executor-2025.webp';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
