@@ -277,12 +277,12 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
 
                   {/* Info */}
                   <div className="p-3 w-full">
-                    <h3 className={cn(
+                    <p className={cn(
                       "text-xs sm:text-sm font-medium leading-tight mb-1 transition-colors",
                       selected ? "text-foreground" : "text-foreground"
                     )}>
                       {item.name}
-                    </h3>
+                    </p>
                     {item.promoBadge ? (
                       <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
                         <span className="line-through text-muted-foreground mr-1">{item.price} zł</span>
