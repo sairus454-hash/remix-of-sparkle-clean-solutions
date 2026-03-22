@@ -45,7 +45,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           {/* Quick Links */}
           <nav aria-label="Usługi">
-            <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.services}</h4>
+            <p className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.services}</p>
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link to="/handyman" className="text-background/70 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
@@ -77,7 +77,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.contacts}</h4>
+            <p className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.contacts}</p>
             <ul className="space-y-2 sm:space-y-3">
               <li>
                 <a href="https://maps.app.goo.gl/uvzboZg432I31j3ZX" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-background/70 hover:text-background transition-colors touch-manipulation py-1">
@@ -102,7 +102,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
           {/* Working Hours */}
           <div>
-            <h4 className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.contacts.hours}</h4>
+            <p className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.contacts.hours}</p>
             <p className="font-serif text-2xl sm:text-3xl font-bold text-primary">
               {t.contacts.hoursValue}
             </p>

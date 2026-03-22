@@ -411,9 +411,9 @@ const Cleaning = () => {
                   </p>
 
                   <div className="pt-6 border-t border-border">
-                    <h4 className="font-serif text-4xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
+                    <p className="font-serif text-4xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
                       {t.cleaning?.total || 'Итого'}: {totalPrice} PLN
-                    </h4>
+                    </p>
                   </div>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -463,7 +463,7 @@ const Cleaning = () => {
                 
                 {/* Right column - Services included */}
                 <div className="bg-card border border-border rounded-xl p-6">
-                  <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2 text-lg">
+                  <p className="font-semibold text-foreground mb-4 flex items-center gap-2 text-lg">
                     <CheckCircle2 className="w-6 h-6 text-fresh" />
                     {t.cleaning?.includedTitle || 'Что входит в уборку:'}
                   </h4>

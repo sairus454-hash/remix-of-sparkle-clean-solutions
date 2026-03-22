@@ -144,7 +144,7 @@ const Auto = () => {
                       <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
                     <div className="min-w-0">
-                      <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">{service.title}</h3>
+                      <h2 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">{service.title}</h2>
                       <p className="text-sm sm:text-base text-muted-foreground">{service.description}</p>
                     </div>
                   </div>
@@ -164,7 +164,7 @@ const Auto = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-amber-900 dark:text-amber-100 mb-1 sm:mb-2">Чистим только тканевые коврики</h3>
+                <p className="font-semibold text-amber-900 dark:text-amber-100 mb-1 sm:mb-2">Чистим только тканевые коврики</p>
                 <p className="text-sm sm:text-base text-amber-800 dark:text-amber-200">Мы специализируемся на чистке тканевых ковриков и ковровых покрытий. Резиновые коврики мы не чистим — их можно вымыть самостоятельно дома.</p>
               </div>
             </div>
