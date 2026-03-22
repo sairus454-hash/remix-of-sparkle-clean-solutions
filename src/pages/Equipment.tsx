@@ -84,9 +84,9 @@ const Equipment = () => {
   return (
     <>
       <SEO
-        title="Sprzęt i technologie — Profesjonalny sprzęt czyszczący"
-        description="Profesjonalny sprzęt do czyszczenia: ekstraktory Santoemma, generatory pary, ozonatory. Ekologiczne środki i nowoczesne technologie czyszczenia."
-        keywords="sprzęt do czyszczenia, ekstraktor, generator pary, ozonator, profesjonalny sprzęt czyszczący, Santoemma, technologie czyszczenia, cleaning equipment"
+        title="Sprzęt do prania tapicerki — Profesjonalne technologie"
+        description="Profesjonalny sprzęt do prania tapicerki i czyszczenia mebli: ekstraktory Santoemma, Kärcher, generatory pary, ozonatory. Ekologiczne środki czyszczące."
+        keywords="sprzęt do prania tapicerki, sprzęt do czyszczenia mebli, ekstraktor Santoemma, Kärcher, generator pary, ozonator, profesjonalny sprzęt czyszczący, technologie czyszczenia, cleaning equipment"
         canonical="/equipment"
         image="https://masterclean1885.pl/og-equipment.png"
         breadcrumbs={[{ name: t.nav.equipment, path: '/equipment' }]}

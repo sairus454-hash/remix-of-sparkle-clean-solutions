@@ -107,9 +107,9 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Pranie tapicerki meblowej — Cennik i kalkulator"
-        description="Profesjonalne pranie tapicerki meblowej i skórzanej z dojazdem. Kalkulator kosztów online. Kanapy, fotele, materace, krzesła. Opole, Wrocław, Poznań."
-        keywords="pranie tapicerki, czyszczenie mebli, pranie kanapy, czyszczenie fotela, pranie materaca, czyszczenie skóry, pranie tapicerki cennik, Opole, Wrocław, Poznań"
+        title="Pranie tapicerki meblowej i skórzanej — Cennik usług"
+        description="Profesjonalne pranie tapicerki meblowej i skórzanej z dojazdem do klienta. Czyszczenie kanap, foteli, sof, materacy. Kalkulator kosztów online. Wrocław, Opole."
+        keywords="pranie tapicerki meblowej, pranie tapicerki skórzanej, czyszczenie mebli, pranie kanapy, pranie sofy, czyszczenie fotela, pranie materaca, czyszczenie tapicerki, czyszczenie skóry, pranie tapicerki cennik, pranie tapicerki z dojazdem, czyszczenie mebli Wrocław, Opole, Poznań"
         canonical="/services"
         image="https://masterclean1885.pl/og-services.png"
         breadcrumbs={[{ name: t.nav.services, path: '/services' }]}
