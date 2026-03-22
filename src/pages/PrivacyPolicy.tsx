@@ -388,6 +388,7 @@ const PrivacyPolicy = () => {
       <SEO
         title={content.title}
         description={content.seoDesc}
+        keywords="polityka prywatności, RODO, ochrona danych osobowych, przetwarzanie danych, MasterClean prywatność"
         canonical="/privacy-policy"
         breadcrumbs={[{ name: content.title, path: '/privacy-policy' }]}
       />

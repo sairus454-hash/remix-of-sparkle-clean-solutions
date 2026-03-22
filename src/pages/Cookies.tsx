@@ -283,6 +283,7 @@ const Cookies = () => {
       <SEO
         title={`${content.title} | MasterClean`}
         description={content.intro}
+        keywords="cookies, pliki cookie, polityka cookies, RODO, ochrona danych, MasterClean cookies"
         canonical="/cookies"
         breadcrumbs={[{ name: content.title, path: '/cookies' }]}
       />

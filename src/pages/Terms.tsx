@@ -70,6 +70,7 @@ const Terms = () => {
       <SEO
         title={c.title}
         description={`${c.title} — MasterClean 1885`}
+        keywords="regulamin, warunki korzystania, zasady serwisu, MasterClean regulamin, warunki usług"
         canonical="/terms"
         breadcrumbs={[{ name: c.title, path: '/terms' }]}
       />
