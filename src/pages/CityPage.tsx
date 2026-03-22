@@ -173,7 +173,7 @@ const CityPage = () => {
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 25, image: img('calc-carpet.jpg'), unit: 'm²' },
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: img('calc-carpet-pickup.jpg'), unit: 'm²' },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
-        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
+        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: img('calc-carpet-covering-impregnation.jpg'), unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: img('calc-stroller.jpg') },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: img('calc-carseat.jpg') },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: img('calc-drying.jpg'), promoBadge: t.promotions.dryingFreeSpring },
