@@ -114,7 +114,7 @@ const Equipment = () => {
                       <ShieldCheck className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
                     <div>
-                      <h3 className="font-serif text-xl font-semibold text-primary-foreground">{t.impregnation.cardTitle}</h3>
+                      <p className="font-serif text-xl font-semibold text-primary-foreground">{t.impregnation.cardTitle}</p>
                       <p className="text-primary-foreground/80 text-sm">{t.impregnation.cardSubtitle}</p>
                     </div>
                   </div>

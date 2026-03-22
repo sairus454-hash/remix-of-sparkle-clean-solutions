@@ -693,12 +693,12 @@ const ChatBot = () => {
             )} />
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className={cn(
+            <p className={cn(
               "font-semibold text-primary-foreground truncate",
               isMobile && "text-sm"
             )}>
               {t.chatbot.title}
-            </h3>
+            </p>
             <p className={cn(
               "text-primary-foreground/80 truncate",
               isMobile ? "text-[10px]" : "text-xs"

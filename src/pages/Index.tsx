@@ -185,9 +185,9 @@ const Index = () => {
                   <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-fresh opacity-75" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-lg sm:text-xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                  <p className="font-serif text-lg sm:text-xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
                     📝 {language === 'ru' ? 'Блог чистоты' : language === 'pl' ? 'Blog czystości' : language === 'uk' ? 'Блог чистоти' : 'Cleanliness Blog'}
-                  </h3>
+                  </p>
                   <p className="text-xs sm:text-sm text-muted-foreground">
                     {language === 'ru' ? 'Полезные советы и статьи' : language === 'pl' ? 'Przydatne porady i artykuły' : language === 'uk' ? 'Корисні поради та статті' : 'Useful tips & articles'}
                   </p>
@@ -439,9 +439,9 @@ const Index = () => {
                     
                     {/* Text */}
                     <div className="text-center sm:text-left flex-1">
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold mb-2 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                      <p className="font-serif text-xl sm:text-2xl font-bold mb-2 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
                         {t.impregnation.cardTitle}
-                      </h3>
+                      </p>
                       <p className="text-muted-foreground text-sm sm:text-base">
                         {t.impregnation.subtitle}
                       </p>
