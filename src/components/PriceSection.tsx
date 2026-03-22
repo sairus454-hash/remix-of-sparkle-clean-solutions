@@ -261,6 +261,7 @@ const PriceSection = () => {
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 25, image: calcCarpet, unit: 'm²' },
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: calcCarpetPickup, unit: 'm²' },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
+        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: calcCarpetImpregnation, unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: calcStroller },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: calcCarseat },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: calcDrying, promoBadge: t.promotions.dryingFreeSpring },
