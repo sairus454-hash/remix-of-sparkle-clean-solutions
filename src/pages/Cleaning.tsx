@@ -887,9 +887,9 @@ const CleaningCalculatorContent = ({
     </p>
     
     <div className="pt-4 border-t border-border">
-      <h4 className="font-serif text-3xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
+      <p className="font-serif text-3xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
         {t.cleaning?.total || 'Итого'}: {totalPrice} PLN
-      </h4>
+      </p>
     </div>
     
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -929,10 +929,10 @@ const CleaningCalculatorContent = ({
     
     {/* Services included */}
     <div className="mt-4 pt-4 border-t border-border">
-      <h4 className="font-medium text-foreground mb-4 flex items-center gap-2">
+      <p className="font-medium text-foreground mb-4 flex items-center gap-2">
         <CheckCircle2 className="w-5 h-5 text-fresh" />
         {t.cleaning?.includedTitle || 'Что входит в уборку:'}
-      </h4>
+      </p>
       <ul className="space-y-2 text-sm text-muted-foreground max-h-48 overflow-y-auto">
         {(cleaningType === 'standard' ? standardServices : generalServices).map((service, index) => (
           <li key={index} className="flex items-start gap-2">

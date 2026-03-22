@@ -168,7 +168,7 @@ const Equipment = () => {
                     <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 transition-transform" style={{ animation: 'float 3s ease-in-out infinite' }}>
                       <feature.icon className="w-8 h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
-                    <h3 className="font-serif text-xl font-semibold text-foreground mb-4">{feature.title}</h3>
+                    <p className="font-serif text-xl font-semibold text-foreground mb-4">{feature.title}</p>
                     <p className="text-muted-foreground">{feature.description}</p>
                   </div>
                 </CircularRevealCard>
