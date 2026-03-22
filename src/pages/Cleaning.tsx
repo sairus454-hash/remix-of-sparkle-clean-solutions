@@ -466,7 +466,7 @@ const Cleaning = () => {
                   <p className="font-semibold text-foreground mb-4 flex items-center gap-2 text-lg">
                     <CheckCircle2 className="w-6 h-6 text-fresh" />
                     {t.cleaning?.includedTitle || 'Что входит в уборку:'}
-                  </h4>
+                  </p>
                   <ul className="space-y-3 text-sm text-muted-foreground max-h-[400px] overflow-y-auto pr-2">
                     {(cleaningType === 'standard' ? standardServices : generalServices).map((service, index) => (
                       <li key={index} className="flex items-start gap-3 py-1">
