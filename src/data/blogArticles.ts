@@ -8,6 +8,7 @@ import topExecutor2025 from '@/assets/top-executor-2025.jpg';
 import sofaSeatsGuide from '@/assets/sofa-seats-guide.jpg';
 import sofaSeatsGuidePl from '@/assets/sofa-seats-guide-pl.jpg';
 import dryingAfterCleaning from '@/assets/drying-after-cleaning-blog.jpg';
+import windowWashingBlog from '@/assets/window-washing-blog.jpg';
 
 export interface BlogArticle {
   id: number;
