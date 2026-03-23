@@ -116,6 +116,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 мин',
       tag: '🌬️ Сушение',
     },
+    {
+      id: 10,
+      title: 'Как правильно мыть окна в квартире 🪟✨',
+      summary: 'Чистые окна делают квартиру светлее и уютнее. Чтобы хорошо вымыть окна, нужно соблюдать простой порядок и использовать подходящие средства.',
+      content: 'Сначала нужно подготовить всё необходимое: ведро с тёплой водой, тряпку или губку, средство для мытья стёкол и сухую салфетку. Также можно использовать специальный скребок для окон.',
+      fullContent: '🪟 Как правильно мыть окна в квартире?\n\nЧистые окна делают квартиру светлее и уютнее. Чтобы хорошо вымыть окна, нужно соблюдать простой порядок и использовать подходящие средства.\n\n🧹 Подготовка\n\nСначала нужно подготовить всё необходимое:\n• Ведро с тёплой водой\n• Тряпку или губку\n• Средство для мытья стёкол\n• Сухую салфетку или бумажные полотенца\n• Специальный скребок для окон\n\n🧼 Этап 1: Рама и подоконник\n\nПеред мытьём следует убрать пыль с подоконника и рамы. Если этого не сделать, грязь может размазаться по стеклу. Раму и подоконник лучше сначала протереть влажной тряпкой, а потом сухой.\n\n✨ Этап 2: Мытьё стекла\n\nНа стекло наносят немного моющего средства и протирают губкой или тряпкой. После этого стекло вытирают сухой салфеткой или скребком сверху вниз, чтобы не оставалось разводов.\n\n☁️ Совет\n\nМыть окна лучше в пасмурную погоду, потому что на солнце вода быстро высыхает и могут появиться пятна.\n\nЕсли мыть окна регулярно, они всегда будут прозрачными, а в квартире будет больше света и чистоты.',
+      image: windowWashingBlog,
+      date: '2026-03-23',
+      readTime: '3 мин',
+      tag: '🪟 Окна',
+    },
   ],
   en: [
     {
@@ -209,6 +220,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2025-03-06',
       readTime: '3 min',
       tag: '🌬️ Drying',
+    },
+    {
+      id: 10,
+      title: 'How to Properly Wash Windows at Home 🪟✨',
+      summary: 'Clean windows make your apartment brighter and cozier. To wash windows well, follow a simple routine and use the right products.',
+      content: 'First, prepare everything you need: a bucket of warm water, a cloth or sponge, glass cleaner, and a dry towel. You can also use a special window squeegee.',
+      fullContent: '🪟 How to Properly Wash Windows at Home?\n\nClean windows make your apartment brighter and cozier. To wash windows well, follow a simple routine and use the right products.\n\n🧹 Preparation\n\nFirst, prepare everything you need:\n• A bucket of warm water\n• A cloth or sponge\n• Glass cleaner\n• A dry towel or paper towels\n• A window squeegee\n\n🧼 Step 1: Frame and Windowsill\n\nBefore washing, remove dust from the windowsill and frame. Otherwise, dirt may smear across the glass. Wipe the frame and sill first with a damp cloth, then dry.\n\n✨ Step 2: Washing the Glass\n\nApply a small amount of cleaning solution and wipe with a sponge or cloth. Then wipe the glass dry with a towel or squeegee from top to bottom to avoid streaks.\n\n☁️ Tip\n\nIt\'s better to wash windows on a cloudy day — in direct sunlight water dries too fast and can leave spots.\n\nRegular window cleaning keeps them transparent and fills your home with more light and freshness.',
+      image: windowWashingBlog,
+      date: '2026-03-23',
+      readTime: '3 min',
+      tag: '🪟 Windows',
     },
   ],
   pl: [
