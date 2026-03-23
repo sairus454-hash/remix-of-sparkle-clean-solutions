@@ -55,6 +55,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     cityAddress: '',
     postalCode: '',
     time: '',
+    paymentMethod: '',
     message: ''
   });
 
@@ -289,12 +290,13 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
 
     setIsLoading(true);
     try {
+      const paymentLabel = formData.paymentMethod ? `\n💳 ${t.form.paymentType}: ${formData.paymentMethod}` : '';
       const { data, error } = await supabase.functions.invoke('send-telegram', {
         body: {
           name: formData.name,
           phone: formData.phone,
           time: formData.time,
-          message: `📍 ${formData.cityAddress}, ${formData.postalCode}\n\n${formData.message}`,
+          message: `📍 ${formData.cityAddress}, ${formData.postalCode}${paymentLabel}\n\n${formData.message}`,
           date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined
         }
       });
@@ -317,6 +319,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         cityAddress: '',
         postalCode: '',
         time: '',
+        paymentMethod: '',
         message: ''
       });
       setDate(undefined);
@@ -550,6 +553,26 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           ...formData,
           postalCode: e.target.value
         })} required className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm w-40" maxLength={10} />
+      </div>
+
+      {/* Payment Method */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {t.form.paymentType}
+        </label>
+        <Select value={formData.paymentMethod} onValueChange={value => setFormData({
+          ...formData,
+          paymentMethod: value
+        })}>
+          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
+            <SelectValue placeholder={t.form.selectPaymentType} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value={t.form.paymentCash}>{t.form.paymentCash}</SelectItem>
+            <SelectItem value="BLIK">BLIK</SelectItem>
+            <SelectItem value={t.form.paymentInvoice}>{t.form.paymentInvoice}</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-1.5 sm:space-y-2">
