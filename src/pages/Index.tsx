@@ -223,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* Promotions Section */}
-      <section id="promotions" className="py-12 sm:py-20 bg-gradient-section">
+      <section id="promotions" className="py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             {/* Premium animated icon */}
@@ -521,7 +521,7 @@ const Index = () => {
       <Suspense fallback={null}><PriceSection /></Suspense>
 
       {/* Why Choose Us */}
-      <section className="py-12 sm:py-20 bg-card">
+      <section className="py-12 sm:py-20 bg-card content-auto">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left order-2 lg:order-1">
@@ -567,7 +567,7 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-12 sm:py-20 bg-gradient-section">
+      <section className="py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">
