@@ -129,15 +129,6 @@ const FreeDeliveryBadge = () => {
           </span>
         </a>
 
-        {/* 8 March greeting - auto-expires after 48h (March 10, 2026 00:00 UTC) */}
-        {Date.now() < new Date('2026-03-10T00:00:00Z').getTime() && (
-          <div className="relative group w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-rose-200 via-pink-100 to-fuchsia-200 flex items-center justify-center shadow-md animate-pulse-slow cursor-default border border-rose-300/40">
-            <span className="text-lg">🌸</span>
-            <span className="absolute right-full mr-2 px-3 py-1.5 bg-foreground text-background text-xs rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity shadow-md">
-              {language === 'ru' ? 'С 8 Марта! 💐' : language === 'uk' ? 'З 8 Березня! 💐' : language === 'pl' ? 'Szczęśliwego Dnia Kobiet! 💐' : 'Happy Women\'s Day! 💐'}
-            </span>
-          </div>
-        )}
       </div>
     </div>
   );
