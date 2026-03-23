@@ -118,34 +118,6 @@ const Index = () => {
       />
       {showSplash && <Suspense fallback={null}><WaterDropSplash onComplete={handleSplashComplete} /></Suspense>}
       <Layout>
-      {/* 🌸 March 8 Banner — auto-expires March 10, 2026 */}
-      {Date.now() < new Date('2026-03-10T00:00:00Z').getTime() && (
-        <section className="relative overflow-hidden py-4 sm:py-5 bg-gradient-to-r from-rose-100 via-pink-50 to-fuchsia-100 border-b border-rose-200/50">
-          <div className="absolute inset-0 opacity-20">
-            {[...Array(12)].map((_, i) => (
-              <span
-                key={i}
-                className="absolute text-xl sm:text-2xl animate-pulse-slow"
-                style={{
-                  left: `${8 + i * 8}%`,
-                  top: i % 2 === 0 ? '10%' : '55%',
-                  animationDelay: `${i * 0.3}s`,
-                }}
-              >
-                {['🌸', '🌷', '💐', '✿'][i % 4]}
-              </span>
-            ))}
-          </div>
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <p className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-rose-600">
-              🌷 {language === 'ru' ? 'С 8 Марта! Дорогие женщины, поздравляем вас с праздником!' : language === 'uk' ? 'З 8 Березня! Дорогі жінки, вітаємо вас зі святом!' : language === 'pl' ? 'Szczęśliwego Dnia Kobiet! Drogie Panie, składamy najlepsze życzenia!' : 'Happy Women\'s Day! Wishing all women a wonderful day!'} 💐
-            </p>
-            <p className="text-sm sm:text-base text-rose-500/80 mt-1">
-              {language === 'ru' ? 'Красоты, здоровья и чистоты в вашем доме! 🌸' : language === 'uk' ? 'Краси, здоров\'я та чистоти у вашому домі! 🌸' : language === 'pl' ? 'Piękna, zdrowia i czystości w Waszym domu! 🌸' : 'Beauty, health and cleanliness in your home! 🌸'}
-            </p>
-          </div>
-        </section>
-      )}
       {/* Hero Video Banner */}
       <section className="relative w-full overflow-hidden" style={{ height: '80vh', padding: 0, maxWidth: 'none' }}>
         <HeroVideo fallbackImage={heroBannerImage} />
@@ -251,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* Promotions Section */}
-      <section id="promotions" className="py-12 sm:py-20 bg-gradient-section">
+      <section id="promotions" className="py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             {/* Premium animated icon */}
@@ -549,7 +521,7 @@ const Index = () => {
       <Suspense fallback={null}><PriceSection /></Suspense>
 
       {/* Why Choose Us */}
-      <section className="py-12 sm:py-20 bg-card">
+      <section className="py-12 sm:py-20 bg-card content-auto">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left order-2 lg:order-1">
@@ -595,7 +567,7 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-12 sm:py-20 bg-gradient-section">
+      <section className="py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">

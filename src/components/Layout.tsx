@@ -1,10 +1,10 @@
 import { ReactNode, lazy, Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import CleaningBackground from './CleaningBackground';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 // Lazy load non-critical components — not needed for initial paint
-const CleaningBackground = lazy(() => import('./CleaningBackground'));
 const ChatBot = lazy(() => import('./ChatBot'));
 const FloatingOrderSummary = lazy(() => import('./FloatingOrderSummary'));
 
@@ -20,9 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
       <a href="#main-content" className="skip-to-content">
         Przejdź do treści
       </a>
-      <Suspense fallback={null}>
-        <CleaningBackground />
-      </Suspense>
+      <CleaningBackground />
       <Header />
       <main id="main-content" role="main" className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10 animate-page-enter">
         {/* Marquee Section */}

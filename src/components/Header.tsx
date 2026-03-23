@@ -5,7 +5,6 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Language } from '@/i18n/translations';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { motion } from 'framer-motion';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import CitySelector from '@/components/CitySelector';
 
@@ -130,30 +129,18 @@ const Header = () => {
             {/* Logo */}
             <div style={getHeaderItemStyle(1, headerRevealed)}>
               <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
-                <motion.div
-                  className="relative"
-                  whileHover={{ scale: 1.15, rotate: 5 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-                >
+                <div className="relative hover:scale-110 hover:rotate-[5deg] transition-transform duration-300">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <motion.div
-                      animate={{ rotate: [0, 10, -10, 0] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                    >
                       <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
-                    </motion.div>
                   </div>
-                  <motion.div
-                    className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/60 rounded-full"
-                    animate={{ scale: [1, 1.4, 1], opacity: [0.6, 1, 0.6] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                  <div
+                    className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/60 rounded-full animate-pulse"
                   />
-                  <motion.div
-                    className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-primary/50 rounded-full"
-                    animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.9, 0.5] }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                  <div
+                    className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-primary/50 rounded-full animate-pulse"
+                    style={{ animationDelay: '0.5s' }}
                   />
-                </motion.div>
+                </div>
                 <span className="font-serif text-lg sm:text-xl font-semibold hidden sm:block bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
                   MasterClean
                 </span>
@@ -203,48 +190,31 @@ const Header = () => {
                     {item.path === '/' ? (
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
                     ) : item.highlight === 'ozone' ? (
-                      <motion.span
-                        className="relative font-extrabold text-lg leading-none tracking-tight inline-flex items-center"
-                        whileHover={{ scale: 1.15 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
+                      <span
+                        className="relative font-extrabold text-lg leading-none tracking-tight inline-flex items-center hover:scale-110 transition-transform"
                       >
-                        <motion.span
-                          className="absolute -inset-1.5 rounded-full bg-primary/15 blur-md"
-                          animate={{ opacity: [0.3, 0.7, 0.3], scale: [0.9, 1.1, 0.9] }}
-                          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                        />
-                        <motion.span
-                          className="absolute -inset-1 rounded-full border border-primary/20"
-                          animate={{ opacity: [0, 0.5, 0], scale: [0.95, 1.2, 0.95] }}
-                          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                        <span
+                          className="absolute -inset-1.5 rounded-full bg-primary/15 blur-md animate-pulse"
                         />
                         <span className="relative z-10">O₃</span>
-                      </motion.span>
+                      </span>
                     ) : item.path === '/reviews' ? (
-                      <motion.span
-                        className="relative inline-flex items-center gap-1"
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ type: 'spring', stiffness: 300 }}
+                      <span
+                        className="relative inline-flex items-center gap-1 hover:scale-110 transition-transform"
                       >
                         <span className="inline-flex items-center gap-0.5 relative">
-                          <motion.span
-                            className="absolute -inset-1 rounded-full bg-yellow-400/20 blur-sm"
-                            animate={{ opacity: [0.2, 0.6, 0.2], scale: [0.9, 1.15, 0.9] }}
-                            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-                          />
                           {[0, 1, 2].map((i) => (
-                            <motion.span
+                            <span
                               key={i}
-                              className="relative text-yellow-400 text-sm"
-                              animate={{ scale: [1, 1.3, 1], opacity: [0.7, 1, 0.7] }}
-                              transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.2 }}
+                              className="relative text-yellow-400 text-sm animate-pulse"
+                              style={{ animationDelay: `${i * 0.2}s` }}
                             >
                               ★
-                            </motion.span>
+                            </span>
                           ))}
                         </span>
                         <span className="relative z-10">{item.label}</span>
-                      </motion.span>
+                      </span>
                     ) : item.highlight === 'auto' ? (
                       <span className="inline-flex items-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
@@ -301,26 +271,20 @@ const Header = () => {
           <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             {/* 24/7 Badge - Now visible on all screens */}
             <div style={getHeaderItemStyle(12, headerRevealed)}>
-              <motion.div
-                className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow"
-                animate={{ y: [0, -3, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                whileHover={{ scale: 1.12 }}
+              <div
+                className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow hover:scale-110 transition-transform"
+                style={{ animation: 'float 3s ease-in-out infinite' }}
               >
                 <div className="relative">
-                  <motion.div
-                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full absolute"
-                    animate={{ scale: [1, 1.8, 1], opacity: [0.75, 0, 0.75] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeOut' }}
+                  <div
+                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full absolute animate-ping"
                   />
-                  <motion.div
-                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full"
-                    animate={{ scale: [1, 1.15, 1] }}
-                    transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                  <div
+                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full animate-pulse"
                   />
                 </div>
                 <span className="text-primary-foreground font-bold text-[10px] sm:text-xs md:text-sm">24/7</span>
-              </motion.div>
+              </div>
             </div>
 
             {/* Language Switcher - Dropdown on mobile, inline on desktop */}
@@ -380,40 +344,24 @@ const Header = () => {
 
             {/* Phone */}
             <div ref={phoneRef} style={getHeaderItemStyle(14, headerRevealed)} className="hidden sm:flex items-center flex-shrink-0 relative">
-              <motion.button
+              <button
                 onClick={() => setShowPhone(!showPhone)}
-                className="flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-gradient-to-r from-fresh to-fresh/80 hover:from-fresh/90 hover:to-fresh/70 border-2 border-fresh text-primary-foreground font-bold transition-all touch-manipulation active:scale-95 shadow-glow relative overflow-hidden"
+                className="flex items-center justify-center w-10 h-10 sm:w-9 sm:h-9 rounded-full bg-gradient-to-r from-fresh to-fresh/80 hover:from-fresh/90 hover:to-fresh/70 border-2 border-fresh text-primary-foreground font-bold transition-all touch-manipulation active:scale-95 hover:scale-110 shadow-glow relative overflow-hidden"
                 aria-label="Show phone number"
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 300 }}
               >
-                {/* Pulsing background glow */}
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-fresh/30 blur-md"
-                  animate={{ opacity: [0.4, 0.8, 0.4], scale: [0.9, 1.1, 0.9] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                {/* Icon with relative positioning */}
-                <motion.div
-                  className="relative z-10"
-                  animate={{ scale: [1, 1.15, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
-                >
+                <div className="absolute inset-0 rounded-full bg-fresh/30 blur-md animate-pulse" />
+                <div className="relative z-10 animate-pulse">
                   <Phone className="w-5 h-5 sm:w-4 sm:h-4" />
-                </motion.div>
-              </motion.button>
+                </div>
+              </button>
               {showPhone && (
-                <motion.a
+                <a
                   href="tel:+48575211401"
                   onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('header'))}
-                  className="absolute top-full right-0 mt-2 px-4 py-2.5 bg-gradient-hero text-primary-foreground border border-primary rounded-xl shadow-glow font-bold text-sm whitespace-nowrap z-50"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.2 }}
+                  className="absolute top-full right-0 mt-2 px-4 py-2.5 bg-gradient-hero text-primary-foreground border border-primary rounded-xl shadow-glow font-bold text-sm whitespace-nowrap z-50 animate-fade-up"
                 >
                   +48 575 211 401
-                </motion.a>
+                </a>
               )}
             </div>
           </div>
