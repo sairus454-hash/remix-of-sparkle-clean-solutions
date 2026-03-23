@@ -326,6 +326,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 min',
       tag: '🌬️ Suszenie',
     },
+    {
+      id: 10,
+      title: 'Jak prawidłowo myć okna w mieszkaniu? 🪟✨',
+      summary: 'Czyste okna sprawiają, że mieszkanie jest jaśniejsze i przytulniejsze. Aby dobrze umyć okna, trzeba przestrzegać prostej kolejności i używać odpowiednich środków.',
+      content: 'Najpierw przygotuj wszystko, co potrzebne: wiadro z ciepłą wodą, ściereczkę lub gąbkę, płyn do mycia szyb i suchą ściereczkę. Można też użyć specjalnej ściągaczki do okien.',
+      fullContent: '🪟 Jak prawidłowo myć okna w mieszkaniu?\n\nCzyste okna sprawiają, że mieszkanie jest jaśniejsze i przytulniejsze. Aby dobrze umyć okna, trzeba przestrzegać prostej kolejności i używać odpowiednich środków.\n\n🧹 Przygotowanie\n\nNajpierw przygotuj wszystko, co potrzebne:\n• Wiadro z ciepłą wodą\n• Ściereczkę lub gąbkę\n• Płyn do mycia szyb\n• Suchą ściereczkę lub ręczniki papierowe\n• Specjalną ściągaczkę do okien\n\n🧼 Etap 1: Rama i parapet\n\nPrzed myciem należy usunąć kurz z parapetu i ramy. Jeśli tego nie zrobimy, brud może się rozmazać po szybie. Ramę i parapet najlepiej najpierw przetrzeć wilgotną ściereczką, a potem suchą.\n\n✨ Etap 2: Mycie szyby\n\nNa szybę nakładamy trochę płynu do mycia i przecieramy gąbką lub ściereczką. Następnie szybę wycieramy suchą ściereczką lub ściągaczką od góry do dołu, aby nie zostawić smug.\n\n☁️ Wskazówka\n\nOkna lepiej myć w pochmurny dzień, ponieważ na słońcu woda szybko wysycha i mogą pojawić się plamy.\n\nJeśli myć okna regularnie, zawsze będą przezroczyste, a w mieszkaniu będzie więcej światła i czystości.',
+      image: windowWashingBlog,
+      date: '2026-03-23',
+      readTime: '3 min',
+      tag: '🪟 Okna',
+    },
   ],
   uk: [
     {
@@ -419,6 +430,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2025-03-06',
       readTime: '3 хв',
       tag: '🌬️ Сушіння',
+    },
+    {
+      id: 10,
+      title: 'Як правильно мити вікна в квартирі 🪟✨',
+      summary: 'Чисті вікна роблять квартиру світлішою та затишнішою. Щоб добре помити вікна, потрібно дотримуватися простого порядку та використовувати відповідні засоби.',
+      content: 'Спочатку потрібно підготувати все необхідне: відро з теплою водою, ганчірку або губку, засіб для миття скла та суху серветку. Також можна використовувати спеціальний скребок для вікон.',
+      fullContent: '🪟 Як правильно мити вікна в квартирі?\n\nЧисті вікна роблять квартиру світлішою та затишнішою. Щоб добре помити вікна, потрібно дотримуватися простого порядку та використовувати відповідні засоби.\n\n🧹 Підготовка\n\nСпочатку потрібно підготувати все необхідне:\n• Відро з теплою водою\n• Ганчірку або губку\n• Засіб для миття скла\n• Суху серветку або паперові рушники\n• Спеціальний скребок для вікон\n\n🧼 Етап 1: Рама та підвіконня\n\nПеред миттям слід прибрати пил з підвіконня та рами. Якщо цього не зробити, бруд може розмазатися по склу. Раму та підвіконня краще спочатку протерти вологою ганчіркою, а потім сухою.\n\n✨ Етап 2: Миття скла\n\nНа скло наносять трохи миючого засобу і протирають губкою або ганчіркою. Після цього скло витирають сухою серветкою або скребком зверху вниз, щоб не залишалося розводів.\n\n☁️ Порада\n\nМити вікна краще в хмарну погоду, тому що на сонці вода швидко висихає і можуть з\'явитися плями.\n\nЯкщо мити вікна регулярно, вони завжди будуть прозорими, а в квартирі буде більше світла та чистоти.',
+      image: windowWashingBlog,
+      date: '2026-03-23',
+      readTime: '3 хв',
+      tag: '🪟 Вікна',
     },
   ],
 };
