@@ -120,7 +120,7 @@ const Index = () => {
       <Layout>
       {/* Hero Video Banner */}
       <section className="relative w-full overflow-hidden" style={{ height: '80vh', padding: 0, maxWidth: 'none' }}>
-        <HeroVideo fallbackImage={heroBannerImage} />
+        <HeroVideo fallbackImage={heroBannerImage} eager />
         
         <div className="absolute inset-0 z-10 flex items-center">
           <div className="container mx-auto px-4">

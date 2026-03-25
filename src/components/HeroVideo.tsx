@@ -27,6 +27,13 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = fal
     const container = containerRef.current;
     if (!video || !container) return;
 
+    // For above-fold hero, load immediately without waiting for intersection
+    if (eager) {
+      video.src = src;
+      video.load();
+      return;
+    }
+
     // Lazy-load: only start loading when visible
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -41,7 +48,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = fal
     observer.observe(container);
 
     return () => observer.disconnect();
-  }, [src]);
+  }, [src, eager]);
 
   return (
     <div
