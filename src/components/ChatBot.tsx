@@ -554,7 +554,7 @@ const ChatBot = () => {
                   <div className="text-xs font-semibold text-primary-foreground leading-tight">
                     {language === 'ru' ? 'Только в MasterClean' : language === 'pl' ? 'Tylko w MasterClean' : language === 'uk' ? 'Тільки в MasterClean' : 'Only at MasterClean'}
                   </div>
-                  <div className="text-[10px] text-primary-foreground/80">
+                  <div className="text-[10px] text-primary-foreground/90">
                     {language === 'ru' ? 'Твой персональный консультант' : language === 'pl' ? 'Twój osobisty konsultant' : language === 'uk' ? 'Твій особистий консультант' : 'Your personal consultant'}
                   </div>
                 </div>

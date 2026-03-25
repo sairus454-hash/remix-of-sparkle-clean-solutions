@@ -26,7 +26,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 MasterClean
               </span>
             </Link>
-            <p className="text-background/60 text-sm leading-relaxed">{t.hero.subtitle}</p>
+            <p className="text-background/80 text-sm leading-relaxed">{t.hero.subtitle}</p>
             <div className="flex flex-col gap-2 mt-3">
               <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-fresh transition-colors group">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center animate-pulse-slow group-hover:bg-primary/20 transition-colors">
@@ -48,27 +48,27 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <p className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.services}</p>
             <ul className="space-y-2 sm:space-y-3">
               <li>
-                <Link to="/handyman" className="text-background/70 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                <Link to="/handyman" className="text-background/80 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.nav.handyman}
                 </Link>
               </li>
               <li>
-                <Link to="/auto" className="text-background/70 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                <Link to="/auto" className="text-background/80 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.nav.auto}
                 </Link>
               </li>
               <li>
-                <Link to="/ozone" className="text-background/70 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                <Link to="/ozone" className="text-background/80 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.nav.ozone}
                 </Link>
               </li>
               <li>
-                <Link to="/windows" className="text-background/70 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                <Link to="/windows" className="text-background/80 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.nav.windows}
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-background/70 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
+                <Link to="/services" className="text-background/80 hover:text-background text-sm transition-colors touch-manipulation inline-block py-1">
                   {t.services.furniture}
                 </Link>
               </li>
@@ -80,19 +80,19 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <p className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.contacts}</p>
             <ul className="space-y-2 sm:space-y-3">
               <li>
-                <a href="https://maps.app.goo.gl/uvzboZg432I31j3ZX" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-background/70 hover:text-background transition-colors touch-manipulation py-1">
+                <a href="https://maps.app.goo.gl/uvzboZg432I31j3ZX" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-background/80 hover:text-background transition-colors touch-manipulation py-1">
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                   <span className="leading-tight">{t.contacts.addressValue}</span>
                 </a>
               </li>
               <li>
-                <a href="tel:+48575211401" onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('footer'))} className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors touch-manipulation py-1">
+                <a href="tel:+48575211401" onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('footer'))} className="flex items-center gap-2 text-sm text-background/80 hover:text-background transition-colors touch-manipulation py-1">
                   <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                   {t.contacts.phoneValue}
                 </a>
               </li>
               <li>
-                <a href="mailto:sairus454@gmail.com" className="flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors touch-manipulation py-1">
+                <a href="mailto:sairus454@gmail.com" className="flex items-center gap-2 text-sm text-background/80 hover:text-background transition-colors touch-manipulation py-1">
                   <Mail className="w-4 h-4 text-primary flex-shrink-0" />
                   {t.contacts.emailValue}
                 </a>
@@ -110,7 +110,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         </div>
 
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-background/70 text-xs sm:text-sm text-center sm:text-left">
+          <div className="text-background/80 text-xs sm:text-sm text-center sm:text-left">
             <p>© {new Date().getFullYear()} MasterClean. {t.footer.rights}</p>
             <p className="mt-1">NIP: 8943280388</p>
           </div>
@@ -130,21 +130,21 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             </div>
             <div className="text-[10px] sm:text-xs leading-tight">
               <p className="font-semibold text-background">Euro Standard</p>
-              <p className="text-background/60">ISO 9001 · Certified Quality</p>
+              <p className="text-background/80">ISO 9001 · Certified Quality</p>
             </div>
           </div>
 
            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-             <Link to="/privacy-policy" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+             <Link to="/privacy-policy" className="text-background/80 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                {t.footer.privacy}
              </Link>
-             <Link to="/terms" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+             <Link to="/terms" className="text-background/80 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                {t.footer.terms}
              </Link>
-             <Link to="/cookies" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+             <Link to="/cookies" className="text-background/80 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                 {language === 'ru' ? 'Политика Cookie' : language === 'pl' ? 'Polityka Cookies' : language === 'uk' ? 'Політика Cookie' : 'Cookie Policy'}
               </Link>
-              <Link to="/sitemap" className="text-background/60 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
+              <Link to="/sitemap" className="text-background/80 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                 Sitemap
               </Link>
             </div>
