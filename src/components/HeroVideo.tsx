@@ -4,9 +4,11 @@ interface HeroVideoProps {
   src?: string;
   fallbackImage?: string;
   poster?: string;
+  /** Skip lazy-loading for above-fold hero — improves LCP */
+  eager?: boolean;
 }
 
-const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster }: HeroVideoProps) => {
+const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = false }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<'loading' | 'playing' | 'error'>('loading');
@@ -25,6 +27,13 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster }: HeroVideo
     const container = containerRef.current;
     if (!video || !container) return;
 
+    // For above-fold hero, load immediately without waiting for intersection
+    if (eager) {
+      video.src = src;
+      video.load();
+      return;
+    }
+
     // Lazy-load: only start loading when visible
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -39,7 +48,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster }: HeroVideo
     observer.observe(container);
 
     return () => observer.disconnect();
-  }, [src]);
+  }, [src, eager]);
 
   return (
     <div
