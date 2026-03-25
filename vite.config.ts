@@ -90,8 +90,6 @@ export default defineConfig(({ mode }) => ({
           router: ["react-router-dom"],
           ui: ["@radix-ui/react-dialog", "@radix-ui/react-accordion", "@radix-ui/react-tabs", "@radix-ui/react-tooltip", "@radix-ui/react-popover", "@radix-ui/react-select", "@radix-ui/react-checkbox", "@radix-ui/react-slider"],
           icons: ["lucide-react"],
-          motion: ["framer-motion"],
-          supabase: ["@supabase/supabase-js"],
           helmet: ["react-helmet-async"],
           query: ["@tanstack/react-query"],
           charts: ["recharts"],
