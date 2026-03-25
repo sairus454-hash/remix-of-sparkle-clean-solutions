@@ -218,7 +218,7 @@ const Index = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-fresh/20 to-primary/20 animate-pulse rounded-2xl" />
               
               <div className="relative z-10 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'pulse 2s ease-in-out infinite' }}>
+                <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
                   <Sparkles className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h2 className="font-serif text-2xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 2s linear infinite' }}>
@@ -411,7 +411,7 @@ const Index = () => {
                     {/* Pulsing Icon */}
                     <div className="relative">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow animate-pulse-slow group-hover:scale-110 transition-transform duration-500">
-                        <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                        <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" />
                       </div>
                       <div className="absolute -top-1 -right-1 w-4 h-4 bg-fresh rounded-full opacity-75" />
                       <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-primary rounded-full opacity-60" />
