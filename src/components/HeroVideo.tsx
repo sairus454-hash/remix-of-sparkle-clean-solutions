@@ -4,9 +4,11 @@ interface HeroVideoProps {
   src?: string;
   fallbackImage?: string;
   poster?: string;
+  /** Skip lazy-loading for above-fold hero — improves LCP */
+  eager?: boolean;
 }
 
-const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster }: HeroVideoProps) => {
+const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = false }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState<'loading' | 'playing' | 'error'>('loading');
