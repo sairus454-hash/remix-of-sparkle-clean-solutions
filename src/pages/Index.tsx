@@ -189,12 +189,8 @@ const Index = () => {
             {stats.map((stat, index) => <div key={index} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-card shadow-card animate-fade-up" style={{
               animationDelay: `${index * 0.1}s`
             }}>
-                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{
-                animation: 'float 3s ease-in-out infinite'
-              }}>
-                  <stat.icon className="w-5 h-5 sm:w-7 sm:h-7 text-primary-foreground" style={{
-                  animation: 'pulse 2s ease-in-out infinite'
-                }} />
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0">
+                  <stat.icon className="w-5 h-5 sm:w-7 sm:h-7 text-primary-foreground" />
                 </div>
                 <div className="text-center sm:text-left">
                   <p className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-foreground">{stat.value}</p>
