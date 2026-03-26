@@ -43,6 +43,7 @@ export const translations = {
     hero: {
       title: 'Профессиональная химчистка мебели, матрасов, ковров и авто во Вроцлаве и окрестностях',
       subtitle: 'Профессиональная химчистка диванов, ковров, матрасов и авто во Вроцлаве — это лучший способ быстро вернуть мебели и салону автомобиля чистоту, свежесть и ухоженный вид. Мы предлагаем качественную химчистку с использованием современного оборудования и безопасных средств, которые эффективно удаляют пятна, запахи, пыль и аллергены. Наша услуга химчистка диванов, ковров, матрасов и авто во Вроцлаве подходит как для дома, так и для офиса или автомобиля, обеспечивая глубокую очистку без повреждения ткани.',
+      subtitleShort: 'Химчистка диванов, ковров, матрасов и авто во Вроцлаве. Удаляем пятна, запахи и аллергены современным оборудованием.',
       cta: 'Оставить заявку',
       secondary: 'О нашей компании',
       marquee: 'Мы работаем в 4 воеводствах: Опольское, Вроцлавское, Познаньское и Зеленогурское',
@@ -94,6 +95,7 @@ export const translations = {
     services: {
       title: 'Наши услуги',
       subtitle: 'Химчистка мебели — эффективный способ вернуть чистоту и свежесть диванам, креслам и стульям. Профессиональная чистка удаляет пятна, пыль, аллергены и неприятные запахи, продлевая срок службы обивки. Используем безопасные моющие средства и современное оборудование, подходящее для любых типов тканей. Закажите химчистку мебели на дому и получите быстрый результат без лишних хлопот. Чистая мебель — комфорт и здоровье в вашем доме.',
+      subtitleShort: 'Химчистка мебели — удаляем пятна, пыль и запахи. Безопасные средства, быстрый результат на дому.',
       clothing: 'Химчистка одежды',
       clothingDesc: 'Деликатная обработка всех видов тканей',
       carpets: 'Чистка ковров',
@@ -761,6 +763,7 @@ export const translations = {
     hero: {
       title: 'Professional Cleaning of Furniture, Mattresses, Carpets and Cars in Wrocław and Surrounding Areas',
       subtitle: 'Professional sofa, carpet, mattress and car cleaning in Wrocław is the best way to quickly restore cleanliness, freshness and a well-maintained look to your furniture and car interior. We offer high-quality cleaning using modern equipment and safe products that effectively remove stains, odours, dust and allergens. Our sofa, carpet, mattress and car cleaning service in Wrocław is suitable for homes, offices and cars, providing deep cleaning without damaging the fabric.',
+      subtitleShort: 'Sofa, carpet, mattress and car cleaning in Wrocław. We remove stains, odours and allergens with modern equipment.',
       cta: 'Get a Quote',
       secondary: 'About Our Company',
       marquee: 'We operate in 4 voivodeships: Opole, Wrocław, Poznań and Zielona Góra',
@@ -812,6 +815,7 @@ export const translations = {
     services: {
       title: 'Our Services',
       subtitle: 'Upholstery cleaning is an effective way to restore cleanliness and freshness to sofas, armchairs and chairs. Professional cleaning removes stains, dust, allergens and unpleasant odours, extending the life of your upholstery. We use safe detergents and modern equipment suitable for all fabric types. Order upholstery cleaning at home and get fast results without hassle. Clean furniture means comfort and health in your home.',
+      subtitleShort: 'Upholstery cleaning — we remove stains, dust and odours. Safe products, fast results at your home.',
       clothing: 'Clothing Cleaning',
       clothingDesc: 'Delicate treatment of all fabric types',
       carpets: 'Carpet Cleaning',
@@ -1479,6 +1483,7 @@ export const translations = {
     hero: {
       title: 'Profesjonalne pranie tapicerki meblowej, czyszczenie dywanów, materacy i aut we Wrocławiu i okolicach',
       subtitle: 'Profesjonalne pranie kanap, dywanów, materacy i tapicerki samochodowej we Wrocławiu — to najlepszy sposób, by szybko przywrócić meblom i wnętrzu samochodu czystość, świeżość i zadbany wygląd. Oferujemy wysokiej jakości czyszczenie z użyciem nowoczesnego sprzętu i bezpiecznych środków, które skutecznie usuwają plamy, zapachy, kurz i alergeny. Nasza usługa prania kanap, dywanów, materacy i aut we Wrocławiu sprawdza się zarówno w domu, jak i w biurze czy samochodzie, zapewniając głębokie czyszczenie bez uszkodzenia tkaniny.',
+      subtitleShort: 'Pranie kanap, dywanów, materacy i aut we Wrocławiu. Usuwamy plamy, zapachy i alergeny nowoczesnym sprzętem.',
       cta: 'Zamów pranie tapicerki',
       secondary: 'O naszej firmie',
       marquee: 'Profesjonalne pranie tapicerki i czyszczenie mebli z dojazdem — działamy w 4 województwach',
@@ -1530,6 +1535,7 @@ export const translations = {
     services: {
       title: 'Pranie tapicerki meblowej i czyszczenie mebli',
       subtitle: 'Pranie tapicerki meblowej to skuteczny sposób na przywrócenie czystości i świeżości kanapom, fotelem i krzesłom. Profesjonalne czyszczenie usuwa plamy, kurz, alergeny i nieprzyjemne zapachy, wydłużając żywotność obicia. Stosujemy bezpieczne środki czyszczące i nowoczesny sprzęt odpowiedni do każdego rodzaju tkanin. Zamów pranie tapicerki w domu i uzyskaj szybki efekt bez zbędnych kłopotów. Czyste meble to komfort i zdrowie w Twoim domu.',
+      subtitleShort: 'Pranie tapicerki — usuwamy plamy, kurz i zapachy. Bezpieczne środki, szybki efekt w domu.',
       clothing: 'Pranie odzieży',
       clothingDesc: 'Delikatna obróbka wszystkich rodzajów tkanin',
       carpets: 'Czyszczenie dywanów',
@@ -2197,6 +2203,7 @@ export const translations = {
     hero: {
       title: 'Професійна хімчистка меблів, матраців, килимів та авто у Вроцлаві та околицях',
       subtitle: 'Професійна хімчистка диванів, килимів, матраців та авто у Вроцлаві — це найкращий спосіб швидко повернути меблям і салону автомобіля чистоту, свіжість та доглянутий вигляд. Ми пропонуємо якісну хімчистку з використанням сучасного обладнання та безпечних засобів, які ефективно видаляють плями, запахи, пил та алергени. Наша послуга хімчистки диванів, килимів, матраців та авто у Вроцлаві підходить як для дому, так і для офісу чи автомобіля, забезпечуючи глибоке очищення без пошкодження тканини.',
+      subtitleShort: 'Хімчистка диванів, килимів, матраців та авто у Вроцлаві. Видаляємо плями, запахи та алергени сучасним обладнанням.',
       cta: 'Залишити заявку',
       secondary: 'Про нашу компанію',
       marquee: 'Ми працюємо у 4 воєводствах: Опольське, Вроцлавське, Познанське та Зеленогурське',
@@ -2248,6 +2255,7 @@ export const translations = {
     services: {
       title: 'Наші послуги',
       subtitle: 'Хімчистка меблів — ефективний спосіб повернути чистоту та свіжість диванам, кріслам і стільцям. Професійне чищення видаляє плями, пил, алергени та неприємні запахи, подовжуючи термін служби оббивки. Використовуємо безпечні миючі засоби та сучасне обладнання, що підходить для будь-яких типів тканин. Замовте хімчистку меблів вдома та отримайте швидкий результат без зайвих клопотів. Чисті меблі — комфорт і здоров\'я у вашому домі.',
+      subtitleShort: 'Хімчистка меблів — видаляємо плями, пил та запахи. Безпечні засоби, швидкий результат вдома.',
       clothing: 'Хімчистка одягу',
       clothingDesc: 'Делікатна обробка всіх видів тканин',
       carpets: 'Чистка килимів',
