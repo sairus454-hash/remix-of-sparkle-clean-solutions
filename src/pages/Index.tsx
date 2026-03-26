@@ -129,7 +129,8 @@ const Index = () => {
                 {t.hero.title}
               </h1>
               <p className="text-base sm:text-lg text-white font-medium mb-6 animate-fade-up leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s' }}>
-                {t.hero.subtitle}
+                <span className="hidden sm:inline">{t.hero.subtitle}</span>
+                <span className="sm:hidden">{t.hero.subtitleShort}</span>
               </p>
               <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
                 <Link to="/contacts">

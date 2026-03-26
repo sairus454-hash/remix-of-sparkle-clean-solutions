@@ -165,8 +165,9 @@ const Services = () => {
                    {t.nav.services}
                  </h1>
                  <p className="text-lg animate-fade-up text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-                   {t.services.subtitle}
-                 </p>
+                    <span className="hidden sm:inline">{t.services.subtitle}</span>
+                    <span className="sm:hidden">{t.services.subtitleShort}</span>
+                  </p>
                </div>
              </div>
            </div>
