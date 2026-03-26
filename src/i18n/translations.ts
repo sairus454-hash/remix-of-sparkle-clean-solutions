@@ -93,7 +93,7 @@ export const translations = {
     },
     services: {
       title: 'Наши услуги',
-      subtitle: 'Полный спектр услуг химчистки для дома и бизнеса',
+      subtitle: 'Химчистка мебели — эффективный способ вернуть чистоту и свежесть диванам, креслам и стульям. Профессиональная чистка удаляет пятна, пыль, аллергены и неприятные запахи, продлевая срок службы обивки. Используем безопасные моющие средства и современное оборудование, подходящее для любых типов тканей. Закажите химчистку мебели на дому и получите быстрый результат без лишних хлопот. Чистая мебель — комфорт и здоровье в вашем доме.',
       clothing: 'Химчистка одежды',
       clothingDesc: 'Деликатная обработка всех видов тканей',
       carpets: 'Чистка ковров',
@@ -811,7 +811,7 @@ export const translations = {
     },
     services: {
       title: 'Our Services',
-      subtitle: 'Full range of dry cleaning services for home and business',
+      subtitle: 'Upholstery cleaning is an effective way to restore cleanliness and freshness to sofas, armchairs and chairs. Professional cleaning removes stains, dust, allergens and unpleasant odours, extending the life of your upholstery. We use safe detergents and modern equipment suitable for all fabric types. Order upholstery cleaning at home and get fast results without hassle. Clean furniture means comfort and health in your home.',
       clothing: 'Clothing Cleaning',
       clothingDesc: 'Delicate treatment of all fabric types',
       carpets: 'Carpet Cleaning',
@@ -1529,7 +1529,7 @@ export const translations = {
     },
     services: {
       title: 'Pranie tapicerki meblowej i czyszczenie mebli',
-      subtitle: 'Pełen zakres usług prania tapicerki i czyszczenia mebli z dojazdem do klienta',
+      subtitle: 'Pranie tapicerki meblowej to skuteczny sposób na przywrócenie czystości i świeżości kanapom, fotelem i krzesłom. Profesjonalne czyszczenie usuwa plamy, kurz, alergeny i nieprzyjemne zapachy, wydłużając żywotność obicia. Stosujemy bezpieczne środki czyszczące i nowoczesny sprzęt odpowiedni do każdego rodzaju tkanin. Zamów pranie tapicerki w domu i uzyskaj szybki efekt bez zbędnych kłopotów. Czyste meble to komfort i zdrowie w Twoim domu.',
       clothing: 'Pranie odzieży',
       clothingDesc: 'Delikatna obróbka wszystkich rodzajów tkanin',
       carpets: 'Czyszczenie dywanów',
@@ -2247,7 +2247,7 @@ export const translations = {
     },
     services: {
       title: 'Наші послуги',
-      subtitle: 'Повний спектр послуг хімчистки для дому та бізнесу',
+      subtitle: 'Хімчистка меблів — ефективний спосіб повернути чистоту та свіжість диванам, кріслам і стільцям. Професійне чищення видаляє плями, пил, алергени та неприємні запахи, подовжуючи термін служби оббивки. Використовуємо безпечні миючі засоби та сучасне обладнання, що підходить для будь-яких типів тканин. Замовте хімчистку меблів вдома та отримайте швидкий результат без зайвих клопотів. Чисті меблі — комфорт і здоров\'я у вашому домі.',
       clothing: 'Хімчистка одягу',
       clothingDesc: 'Делікатна обробка всіх видів тканин',
       carpets: 'Чистка килимів',
