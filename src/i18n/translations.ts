@@ -42,7 +42,7 @@ export const translations = {
     },
     hero: {
       title: 'Профессиональная химчистка мебели, матрасов, ковров и авто во Вроцлаве и окрестностях',
-      subtitle: 'Возвращаем чистоту и свежесть вашим вещам с использованием современных технологий',
+      subtitle: 'Профессиональная химчистка диванов, ковров, матрасов и авто во Вроцлаве — это лучший способ быстро вернуть мебели и салону автомобиля чистоту, свежесть и ухоженный вид. Мы предлагаем качественную химчистку с использованием современного оборудования и безопасных средств, которые эффективно удаляют пятна, запахи, пыль и аллергены. Наша услуга химчистка диванов, ковров, матрасов и авто во Вроцлаве подходит как для дома, так и для офиса или автомобиля, обеспечивая глубокую очистку без повреждения ткани.',
       cta: 'Оставить заявку',
       secondary: 'О нашей компании',
       marquee: 'Мы работаем в 4 воеводствах: Опольское, Вроцлавское, Познаньское и Зеленогурское',
@@ -760,7 +760,7 @@ export const translations = {
     },
     hero: {
       title: 'Professional Cleaning of Furniture, Mattresses, Carpets and Cars in Wrocław and Surrounding Areas',
-      subtitle: 'Restoring cleanliness and freshness to your items using modern technologies',
+      subtitle: 'Professional sofa, carpet, mattress and car cleaning in Wrocław is the best way to quickly restore cleanliness, freshness and a well-maintained look to your furniture and car interior. We offer high-quality cleaning using modern equipment and safe products that effectively remove stains, odours, dust and allergens. Our sofa, carpet, mattress and car cleaning service in Wrocław is suitable for homes, offices and cars, providing deep cleaning without damaging the fabric.',
       cta: 'Get a Quote',
       secondary: 'About Our Company',
       marquee: 'We operate in 4 voivodeships: Opole, Wrocław, Poznań and Zielona Góra',
@@ -1478,7 +1478,7 @@ export const translations = {
     },
     hero: {
       title: 'Profesjonalne pranie tapicerki meblowej, czyszczenie dywanów, materacy i aut we Wrocławiu i okolicach',
-      subtitle: 'Przywracamy czystość i świeżość Twoim meblom, dywanom i samochodom za pomocą nowoczesnych technologii czyszczenia',
+      subtitle: 'Profesjonalne pranie kanap, dywanów, materacy i tapicerki samochodowej we Wrocławiu — to najlepszy sposób, by szybko przywrócić meblom i wnętrzu samochodu czystość, świeżość i zadbany wygląd. Oferujemy wysokiej jakości czyszczenie z użyciem nowoczesnego sprzętu i bezpiecznych środków, które skutecznie usuwają plamy, zapachy, kurz i alergeny. Nasza usługa prania kanap, dywanów, materacy i aut we Wrocławiu sprawdza się zarówno w domu, jak i w biurze czy samochodzie, zapewniając głębokie czyszczenie bez uszkodzenia tkaniny.',
       cta: 'Zamów pranie tapicerki',
       secondary: 'O naszej firmie',
       marquee: 'Profesjonalne pranie tapicerki i czyszczenie mebli z dojazdem — działamy w 4 województwach',
@@ -2196,7 +2196,7 @@ export const translations = {
     },
     hero: {
       title: 'Професійна хімчистка меблів, матраців, килимів та авто у Вроцлаві та околицях',
-      subtitle: 'Повертаємо чистоту та свіжість вашим речам з використанням сучасних технологій',
+      subtitle: 'Професійна хімчистка диванів, килимів, матраців та авто у Вроцлаві — це найкращий спосіб швидко повернути меблям і салону автомобіля чистоту, свіжість та доглянутий вигляд. Ми пропонуємо якісну хімчистку з використанням сучасного обладнання та безпечних засобів, які ефективно видаляють плями, запахи, пил та алергени. Наша послуга хімчистки диванів, килимів, матраців та авто у Вроцлаві підходить як для дому, так і для офісу чи автомобіля, забезпечуючи глибоке очищення без пошкодження тканини.',
       cta: 'Залишити заявку',
       secondary: 'Про нашу компанію',
       marquee: 'Ми працюємо у 4 воєводствах: Опольське, Вроцлавське, Познанське та Зеленогурське',
