@@ -145,7 +145,7 @@ const About = () => {
         </section>
 
         {/* Description */}
-        <section aria-label="O firmie MasterClean" className="py-20 relative z-10 bg-card/80 backdrop-blur-sm">
+        <section aria-label="O firmie MasterClean" className="py-20 bg-card/80 backdrop-blur-sm">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
