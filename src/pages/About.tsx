@@ -132,13 +132,17 @@ const About = () => {
               </div>
 
               {/* Photo on the right */}
-              <div className="flex justify-center lg:justify-end animate-fade-up" style={{ animationDelay: '0.2s' }}>
-                <img
-                  src="/images/about-bg.jpg"
-                  alt="MasterClean — profesjonalne czyszczenie"
-                  className="rounded-2xl shadow-glow max-h-[500px] w-auto object-contain"
-                  loading="eager"
-                />
+              <div className="flex justify-center lg:justify-end animate-fade-up relative" style={{ animationDelay: '0.2s' }}>
+                {/* Decorative border glow */}
+                <div className="absolute -inset-3 bg-gradient-to-br from-primary via-fresh to-primary rounded-3xl opacity-30 blur-sm" style={{ animation: 'pulse 3s ease-in-out infinite' }} />
+                <div className="relative p-1 bg-gradient-to-br from-primary via-fresh to-primary rounded-2xl shadow-glow">
+                  <img
+                    src="/images/about-bg.jpg"
+                    alt="MasterClean — profesjonalne czyszczenie"
+                    className="rounded-xl max-h-[600px] w-auto object-contain bg-background"
+                    loading="eager"
+                  />
+                </div>
               </div>
             </div>
           </div>
