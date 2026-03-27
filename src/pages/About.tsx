@@ -37,19 +37,6 @@ const About = () => {
     description: t.equipment.modernDesc
   }];
   return <>
-      {/* Fixed background image */}
-      <div
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/images/about-bg.jpg)',
-          backgroundSize: 'contain',
-          backgroundPosition: 'center top',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <div className="absolute inset-0 bg-background/40" />
-      </div>
       <SEO
         title="O firmie MasterClean — Profesjonalne czyszczenie mebli"
         description="Poznaj MasterClean — firmę specjalizującą się w praniu tapicerki meblowej i czyszczeniu dywanów. Profesjonalny sprzęt Kärcher. Wrocław, Opole."
