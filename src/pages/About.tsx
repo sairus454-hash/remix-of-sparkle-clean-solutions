@@ -42,8 +42,9 @@ const About = () => {
         className="fixed inset-0 z-0"
         style={{
           backgroundImage: 'url(/images/about-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center top',
+          backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
         }}
       >
