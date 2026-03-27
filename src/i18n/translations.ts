@@ -71,7 +71,7 @@ export const translations = {
     },
     about: {
       title: 'О нашей компании',
-      subtitle: 'Мы — команда профессионалов с многолетним опытом в сфере химчистки',
+      subtitle: 'MasterClean — профессиональная клининговая компания, предлагающая химчистку мебели и салонов авто, озонирование помещений, мытьё окон и чистку ковров. Используем современное оборудование и безопасные средства, чтобы вернуть чистоту, свежесть и комфорт в ваш дом или автомобиль.',
       description: 'Наша компания специализируется на профессиональной химчистке всех видов текстиля. Мы используем только экологически чистые средства и современное оборудование европейского качества.',
       regions: 'Мы работаем в 4 воеводствах: Опольское, Вроцлавское, Познаньское и Зеленогурское.',
       experience: 'Лет опыта',
@@ -791,7 +791,7 @@ export const translations = {
     },
     about: {
       title: 'About Our Company',
-      subtitle: 'We are a team of professionals with many years of experience in dry cleaning',
+      subtitle: 'MasterClean is a professional cleaning company offering furniture and car interior dry cleaning, ozone treatment, window washing, and carpet cleaning. We use modern equipment and safe products to restore cleanliness, freshness, and comfort to your home or car.',
       description: 'Our company specializes in professional dry cleaning of all types of textiles. We use only eco-friendly products and modern European-quality equipment.',
       regions: 'We operate in 4 voivodeships: Opole, Lower Silesian, Greater Poland, and Lubusz.',
       experience: 'Years of Experience',
@@ -1511,7 +1511,7 @@ export const translations = {
     },
     about: {
       title: 'O firmie MasterClean',
-      subtitle: 'Jesteśmy zespołem profesjonalistów z wieloletnim doświadczeniem w praniu tapicerki i czyszczeniu mebli',
+      subtitle: 'MasterClean to profesjonalna firma sprzątająca oferująca pranie tapicerki meblowej i samochodowej, ozonowanie pomieszczeń, mycie okien i czyszczenie dywanów. Używamy nowoczesnego sprzętu i bezpiecznych środków, aby przywrócić czystość, świeżość i komfort w Twoim domu lub samochodzie.',
       description: 'Nasza firma MasterClean specjalizuje się w profesjonalnym praniu tapicerki meblowej, czyszczeniu dywanów i materacy. Używamy wyłącznie ekologicznych środków i profesjonalnego sprzętu europejskiej jakości — Kärcher, Santoemma, Mytee.',
       regions: 'Świadczymy usługi prania tapicerki z dojazdem w 4 województwach: opolskim, dolnośląskim, wielkopolskim i lubuskim.',
       experience: 'Lat doświadczenia',
@@ -2231,7 +2231,7 @@ export const translations = {
     },
     about: {
       title: 'Про нашу компанію',
-      subtitle: 'Ми — команда професіоналів з багаторічним досвідом у сфері хімчистки',
+      subtitle: 'MasterClean — професійна клінінгова компанія, що пропонує хімчистку меблів і салонів авто, озонування приміщень, миття вікон та чистку килимів. Використовуємо сучасне обладнання та безпечні засоби, щоб повернути чистоту, свіжість і комфорт у ваш дім або автомобіль.',
       description: 'Наша компанія спеціалізується на професійній хімчистці всіх видів текстилю. Ми використовуємо тільки екологічно чисті засоби та сучасне обладнання європейської якості.',
       regions: 'Ми працюємо у 4 воєводствах: Опольське, Вроцлавське, Познанське та Зеленогурське.',
       experience: 'Років досвіду',
