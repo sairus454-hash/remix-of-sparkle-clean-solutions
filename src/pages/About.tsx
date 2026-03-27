@@ -37,6 +37,18 @@ const About = () => {
     description: t.equipment.modernDesc
   }];
   return <>
+      {/* Fixed background image */}
+      <div
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: 'url(/images/about-bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-background/40" />
+      </div>
       <SEO
         title="O firmie MasterClean — Profesjonalne czyszczenie mebli"
         description="Poznaj MasterClean — firmę specjalizującą się w praniu tapicerki meblowej i czyszczeniu dywanów. Profesjonalny sprzęt Kärcher. Wrocław, Opole."
@@ -66,7 +78,7 @@ const About = () => {
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Hero */}
-        <section aria-labelledby="about-heading" className="py-20 bg-gradient-section">
+        <section aria-labelledby="about-heading" className="py-20 relative z-10">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               {/* Live Sparkles Icon */}
@@ -133,7 +145,7 @@ const About = () => {
         </section>
 
         {/* Description */}
-        <section aria-label="O firmie MasterClean" className="py-20 bg-card">
+        <section aria-label="O firmie MasterClean" className="py-20 relative z-10 bg-card/80 backdrop-blur-sm">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
@@ -212,7 +224,7 @@ const About = () => {
         <About3DCarousel />
 
         {/* Values */}
-        <section aria-label="Nasze wartości" className="py-20 bg-gradient-section">
+        <section aria-label="Nasze wartości" className="py-20 relative z-10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {values.map((value, index) => (
