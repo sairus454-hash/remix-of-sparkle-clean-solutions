@@ -224,7 +224,7 @@ const About = () => {
         <About3DCarousel />
 
         {/* Values */}
-        <section aria-label="Nasze wartości" className="py-20 relative z-10">
+        <section aria-label="Nasze wartości" className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {values.map((value, index) => (
