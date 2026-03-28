@@ -244,8 +244,18 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 min',
       tag: '🪟 Windows',
     },
+    {
+      id: 11,
+      title: 'Professional Mattress Cleaning at Home — Stain, Odor & Allergen Removal',
+      summary: 'A mattress absorbs moisture, dust and skin particles daily. Professional home mattress cleaning eliminates deep-seated contaminants.',
+      content: 'Professional mattress cleaning at home removes contaminants at a deep level, not just from the surface. The process includes condition analysis, dry soil removal, spot treatment, deep extraction cleaning, and final drying.',
+      fullContent: '🛏️ Why Mattress Cleaning Is a Necessity, Not a Luxury\n\nA mattress absorbs moisture, dust and skin particles every day. Over time, it becomes a breeding ground for bacteria and dust mites. Even with regular bedding changes, the problem remains inside.\n\nProfessional home mattress cleaning eliminates contaminants at a deep level, not just from the surface.\n\n📸 Deep Mattress Cleaning Process\n\n1. Condition analysis — the specialist evaluates the material, stains and wear level.\n2. Dry soil removal — equipment removes dust, pet hair and fine debris.\n3. Spot treatment — professional solutions for different types of stains.\n4. Deep extraction cleaning — special equipment washes dirt from inner mattress layers.\n5. Final drying — the mattress remains slightly damp and fully dries within hours.\n\n🦠 Problems Solved by Cleaning\n\n• Unpleasant odors (moisture, sweat, pets)\n• Stubborn stains of various origins\n• Dust mites and allergens\n• Bacteria and microflora\n\n📌 Especially important for families with children and allergy sufferers.\n\n🏠 Benefits of Home Mattress Cleaning\n\n• No transportation needed\n• Time savings\n• Safe hypoallergenic products\n• Quick same-day results\n\n💰 Mattress Cleaning Cost\n\nPricing depends on: size, contamination level, and stain complexity.\n\nApproximate cost:\n• Single mattress — from 100 zł\n• Double mattress — from 150–250 zł\n\n⏱️ How Often to Clean\n\n• Preventive cleaning — every 6–12 months\n• Unscheduled — when stains or odors appear\n\n⚠️ Why Home Remedies Aren\'t Enough\n\nHousehold products don\'t penetrate deep, may leave marks, and don\'t fully eliminate microorganisms. Professional cleaning works at the filler level, ensuring complete hygiene.\n\n✔️ Results You\'ll Feel\n\n• Fresh, clean mattress\n• Odors eliminated\n• Better sleep quality\n• Reduced allergy risk\n\n📍 Don\'t delay quality mattress cleaning at home. Timely cleaning extends product life and makes sleep safer.\n\n👉 Leave a request and get expert consultation today.',
+      image: mattressDeepCleaning,
+      date: '2026-03-28',
+      readTime: '5 min',
+      tag: '🛏️ Mattress',
+    },
   ],
-  pl: [
     {
       id: 1,
       title: 'Jak często czyścić sofę?',
