@@ -140,6 +140,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       tag: '🛏️ Матрасы',
     },
   ],
+  en: [
     {
       id: 1,
       title: 'How Often Should You Clean Your Sofa?',
