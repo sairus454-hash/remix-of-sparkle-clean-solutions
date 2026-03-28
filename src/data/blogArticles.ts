@@ -488,6 +488,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       tag: '🛏️ Матраци',
     },
   ],
+};
 
 export const blogTitles: Record<string, { title: string; subtitle: string; back: string; social: string }> = {
   ru: { title: 'Блог чистоты', subtitle: 'Полезные статьи о химчистке, уборке и уходе за вещами', back: 'На главную', social: 'Мы в соцсетях' },
