@@ -256,6 +256,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       tag: '🛏️ Mattress',
     },
   ],
+  pl: [
     {
       id: 1,
       title: 'Jak często czyścić sofę?',
