@@ -9,6 +9,7 @@ import sofaSeatsGuide from '@/assets/sofa-seats-guide.jpg';
 import sofaSeatsGuidePl from '@/assets/sofa-seats-guide-pl.jpg';
 import dryingAfterCleaning from '@/assets/drying-after-cleaning-blog.jpg';
 import windowWashingBlog from '@/assets/window-washing-blog.jpg';
+import mattressDeepCleaning from '@/assets/mattress-deep-cleaning-blog.jpg';
 
 export interface BlogArticle {
   id: number;
@@ -127,6 +128,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 мин',
       tag: '🪟 Окна',
     },
+    {
+      id: 11,
+      title: 'Профессиональная химчистка матрасов на дому — удаление пятен, запахов и аллергенов',
+      summary: 'Матрас ежедневно впитывает влагу, пыль и микрочастицы кожи. Профессиональная химчистка матрасов на дому позволяет устранить загрязнения на глубоком уровне.',
+      content: 'Профессиональная химчистка матрасов на дому позволяет устранить загрязнения на глубоком уровне, а не только с поверхности. Очистка выполняется поэтапно: анализ состояния, удаление сухих загрязнений, локальная обработка пятен, глубокая экстракционная чистка и финальная сушка.',
+      fullContent: '🛏️ Почему химчистка матраса — это необходимость, а не роскошь\n\nМатрас ежедневно впитывает влагу, пыль и микрочастицы кожи. Со временем внутри образуется среда, благоприятная для бактерий и пылевых клещей. Даже при регулярной смене постельного белья проблема остаётся внутри.\n\nПрофессиональная химчистка матрасов на дому позволяет устранить загрязнения на глубоком уровне, а не только с поверхности.\n\n📸 Процесс глубокой чистки матраса\n\nОчистка выполняется поэтапно:\n\n1. Анализ состояния — мастер оценивает материал, пятна и степень износа.\n2. Удаление сухих загрязнений — с помощью оборудования устраняется пыль, шерсть и мелкий мусор.\n3. Локальная обработка пятен — используются профессиональные средства для разных типов загрязнений.\n4. Глубокая экстракционная чистка — специальная техника вымывает грязь из внутренних слоёв матраса.\n5. Финальная сушка — матрас остаётся слегка влажным и полностью высыхает в течение нескольких часов.\n\n🦠 Какие проблемы решает химчистка\n\nПосле процедуры устраняются:\n• Неприятные запахи (влага, пот, животные)\n• Стойкие пятна различного происхождения\n• Пылевые клещи и аллергены\n• Бактерии и микрофлора\n\n📌 Особенно актуально для семей с детьми и людей, склонных к аллергии.\n\n🏠 Преимущества химчистки матраса на дому\n\n• Не требуется транспортировка\n• Экономия времени\n• Безопасные гипоаллергенные средства\n• Быстрый результат в день обращения\n\n💰 Сколько стоит химчистка матраса\n\nЦена формируется индивидуально и зависит от нескольких факторов: размер изделия, степень загрязнения, наличие сложных пятен.\n\nОриентировочная стоимость:\n• Односпальный матрас — от 100 zł\n• Двуспальный — от 150–250 zł\n\n⏱️ Как часто нужно чистить матрас\n\nСпециалисты рекомендуют:\n• Профилактическую чистку — раз в 6–12 месяцев\n• Внеплановую — при появлении пятен или запаха\n\n⚠️ Почему не стоит ограничиваться домашней чисткой\n\nБытовые средства не проникают глубоко, могут оставить разводы и не уничтожают микроорганизмы полностью. Профессиональная чистка работает на уровне наполнителя, обеспечивая полноценную гигиену.\n\n✔️ Результат, который вы почувствуете\n\nПосле химчистки:\n• Матрас становится свежим и чистым\n• Исчезают запахи\n• Улучшается качество сна\n• Снижается риск аллергических реакций\n\n📍 Если вам нужна качественная химчистка матраса на дому, лучше не откладывать. Своевременная чистка продлевает срок службы изделия и делает сон безопаснее.\n\n👉 Оставьте заявку и получите консультацию специалиста уже сегодня.',
+      image: mattressDeepCleaning,
+      date: '2026-03-28',
+      readTime: '5 мин',
+      tag: '🛏️ Матрасы',
+    },
   ],
   en: [
     {
@@ -231,6 +243,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-23',
       readTime: '3 min',
       tag: '🪟 Windows',
+    },
+    {
+      id: 11,
+      title: 'Professional Mattress Cleaning at Home — Stain, Odor & Allergen Removal',
+      summary: 'A mattress absorbs moisture, dust and skin particles daily. Professional home mattress cleaning eliminates deep-seated contaminants.',
+      content: 'Professional mattress cleaning at home removes contaminants at a deep level, not just from the surface. The process includes condition analysis, dry soil removal, spot treatment, deep extraction cleaning, and final drying.',
+      fullContent: '🛏️ Why Mattress Cleaning Is a Necessity, Not a Luxury\n\nA mattress absorbs moisture, dust and skin particles every day. Over time, it becomes a breeding ground for bacteria and dust mites. Even with regular bedding changes, the problem remains inside.\n\nProfessional home mattress cleaning eliminates contaminants at a deep level, not just from the surface.\n\n📸 Deep Mattress Cleaning Process\n\n1. Condition analysis — the specialist evaluates the material, stains and wear level.\n2. Dry soil removal — equipment removes dust, pet hair and fine debris.\n3. Spot treatment — professional solutions for different types of stains.\n4. Deep extraction cleaning — special equipment washes dirt from inner mattress layers.\n5. Final drying — the mattress remains slightly damp and fully dries within hours.\n\n🦠 Problems Solved by Cleaning\n\n• Unpleasant odors (moisture, sweat, pets)\n• Stubborn stains of various origins\n• Dust mites and allergens\n• Bacteria and microflora\n\n📌 Especially important for families with children and allergy sufferers.\n\n🏠 Benefits of Home Mattress Cleaning\n\n• No transportation needed\n• Time savings\n• Safe hypoallergenic products\n• Quick same-day results\n\n💰 Mattress Cleaning Cost\n\nPricing depends on: size, contamination level, and stain complexity.\n\nApproximate cost:\n• Single mattress — from 100 zł\n• Double mattress — from 150–250 zł\n\n⏱️ How Often to Clean\n\n• Preventive cleaning — every 6–12 months\n• Unscheduled — when stains or odors appear\n\n⚠️ Why Home Remedies Aren\'t Enough\n\nHousehold products don\'t penetrate deep, may leave marks, and don\'t fully eliminate microorganisms. Professional cleaning works at the filler level, ensuring complete hygiene.\n\n✔️ Results You\'ll Feel\n\n• Fresh, clean mattress\n• Odors eliminated\n• Better sleep quality\n• Reduced allergy risk\n\n📍 Don\'t delay quality mattress cleaning at home. Timely cleaning extends product life and makes sleep safer.\n\n👉 Leave a request and get expert consultation today.',
+      image: mattressDeepCleaning,
+      date: '2026-03-28',
+      readTime: '5 min',
+      tag: '🛏️ Mattress',
     },
   ],
   pl: [
@@ -337,6 +360,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 min',
       tag: '🪟 Okna',
     },
+    {
+      id: 11,
+      title: 'Profesjonalne czyszczenie materacy w domu — usuwanie plam, zapachów i alergenów',
+      summary: 'Materac codziennie wchłania wilgoć, kurz i cząstki skóry. Profesjonalne czyszczenie materacy w domu eliminuje zanieczyszczenia na głębokim poziomie.',
+      content: 'Profesjonalne czyszczenie materacy w domu usuwa zanieczyszczenia na głębokim poziomie. Proces obejmuje: analizę stanu, usuwanie suchych zabrudzeń, miejscowe czyszczenie plam, głęboką ekstrakcję i suszenie.',
+      fullContent: '🛏️ Dlaczego czyszczenie materaca to konieczność, a nie luksus\n\nMaterac codziennie wchłania wilgoć, kurz i cząstki skóry. Z czasem tworzy się środowisko sprzyjające bakteriom i roztoczom. Nawet przy regularnej zmianie pościeli problem pozostaje wewnątrz.\n\nProfesjonalne czyszczenie materacy w domu pozwala usunąć zanieczyszczenia na głębokim poziomie.\n\n📸 Proces głębokiego czyszczenia materaca\n\n1. Analiza stanu — specjalista ocenia materiał, plamy i stopień zużycia.\n2. Usuwanie suchych zabrudzeń — sprzęt usuwa kurz, sierść i drobne zanieczyszczenia.\n3. Miejscowe czyszczenie plam — profesjonalne środki do różnych rodzajów plam.\n4. Głęboka ekstrakcja — specjalistyczny sprzęt wymywa brud z wewnętrznych warstw materaca.\n5. Końcowe suszenie — materac pozostaje lekko wilgotny i całkowicie wysycha w ciągu kilku godzin.\n\n🦠 Jakie problemy rozwiązuje czyszczenie\n\n• Nieprzyjemne zapachy (wilgoć, pot, zwierzęta)\n• Uporczywe plamy różnego pochodzenia\n• Roztocza i alergeny\n• Bakterie i mikroflora\n\n📌 Szczególnie ważne dla rodzin z dziećmi i osób ze skłonnością do alergii.\n\n🏠 Zalety czyszczenia materaca w domu\n\n• Nie wymaga transportu\n• Oszczędność czasu\n• Bezpieczne, hipoalergiczne środki\n• Szybki efekt w dniu zlecenia\n\n💰 Ile kosztuje czyszczenie materaca\n\nCena zależy od: rozmiaru, stopnia zabrudzenia i złożoności plam.\n\nOrientacyjny koszt:\n• Materac jednoosobowy — od 100 zł\n• Materac dwuosobowy — od 150–250 zł\n\n⏱️ Jak często czyścić materac\n\n• Profilaktycznie — co 6–12 miesięcy\n• Nieplanowo — przy pojawieniu się plam lub zapachu\n\n⚠️ Dlaczego nie warto ograniczać się do domowych środków\n\nDomowe środki nie penetrują głęboko, mogą zostawić smugi i nie eliminują w pełni mikroorganizmów. Profesjonalne czyszczenie działa na poziomie wypełnienia.\n\n✔️ Efekt, który poczujesz\n\n• Materac staje się świeży i czysty\n• Zapachy znikają\n• Poprawia się jakość snu\n• Zmniejsza się ryzyko reakcji alergicznych\n\n📍 Nie odkładaj czyszczenia materaca. Terminowe czyszczenie przedłuża żywotność i sprawia, że sen jest bezpieczniejszy.\n\n👉 Zostaw zapytanie i otrzymaj konsultację specjalisty już dziś.',
+      image: mattressDeepCleaning,
+      date: '2026-03-28',
+      readTime: '5 min',
+      tag: '🛏️ Materace',
+    },
   ],
   uk: [
     {
@@ -441,6 +475,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-23',
       readTime: '3 хв',
       tag: '🪟 Вікна',
+    },
+    {
+      id: 11,
+      title: 'Професійна хімчистка матраців вдома — видалення плям, запахів та алергенів',
+      summary: 'Матрац щодня вбирає вологу, пил та мікрочастинки шкіри. Професійна хімчистка матраців вдома усуває забруднення на глибокому рівні.',
+      content: 'Професійна хімчистка матраців вдома видаляє забруднення на глибокому рівні. Процес включає: аналіз стану, видалення сухих забруднень, локальну обробку плям, глибоку екстракційну чистку та сушіння.',
+      fullContent: '🛏️ Чому хімчистка матраца — це необхідність, а не розкіш\n\nМатрац щодня вбирає вологу, пил та мікрочастинки шкіри. З часом всередині утворюється середовище, сприятливе для бактерій та пилових кліщів. Навіть при регулярній зміні постільної білизни проблема залишається всередині.\n\nПрофесійна хімчистка матраців вдома дозволяє усунути забруднення на глибокому рівні.\n\n📸 Процес глибокого чищення матраца\n\n1. Аналіз стану — майстер оцінює матеріал, плями та ступінь зносу.\n2. Видалення сухих забруднень — обладнання усуває пил, шерсть та дрібне сміття.\n3. Локальна обробка плям — професійні засоби для різних типів забруднень.\n4. Глибока екстракційна чистка — спеціальна техніка вимиває бруд з внутрішніх шарів матраца.\n5. Фінальне сушіння — матрац залишається злегка вологим і повністю висихає протягом кількох годин.\n\n🦠 Які проблеми вирішує хімчистка\n\n• Неприємні запахи (волога, піт, тварини)\n• Стійкі плями різного походження\n• Пилові кліщі та алергени\n• Бактерії та мікрофлора\n\n📌 Особливо актуально для сімей з дітьми та людей, схильних до алергії.\n\n🏠 Переваги хімчистки матраца вдома\n\n• Не потрібне транспортування\n• Економія часу\n• Безпечні гіпоалергенні засоби\n• Швидкий результат у день звернення\n\n💰 Скільки коштує хімчистка матраца\n\nЦіна залежить від: розміру, ступеня забруднення та складності плям.\n\nОрієнтовна вартість:\n• Односпальний матрац — від 100 zł\n• Двоспальний — від 150–250 zł\n\n⏱️ Як часто потрібно чистити матрац\n\n• Профілактичне чищення — раз на 6–12 місяців\n• Позапланове — при появі плям або запаху\n\n⚠️ Чому не варто обмежуватися домашнім чищенням\n\nПобутові засоби не проникають глибоко, можуть залишити розводи і не знищують мікроорганізми повністю. Професійне чищення працює на рівні наповнювача.\n\n✔️ Результат, який ви відчуєте\n\n• Матрац стає свіжим і чистим\n• Зникають запахи\n• Покращується якість сну\n• Знижується ризик алергічних реакцій\n\n📍 Не відкладайте якісну хімчистку матраца вдома. Своєчасне чищення подовжує термін служби виробу та робить сон безпечнішим.\n\n👉 Залиште заявку та отримайте консультацію спеціаліста вже сьогодні.',
+      image: mattressDeepCleaning,
+      date: '2026-03-28',
+      readTime: '5 хв',
+      tag: '🛏️ Матраци',
     },
   ],
 };
