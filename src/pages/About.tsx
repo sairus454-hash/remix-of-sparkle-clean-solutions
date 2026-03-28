@@ -90,7 +90,8 @@ const About = () => {
                   {t.about.title}
                 </h1>
                 <p className="text-lg text-muted-foreground animate-fade-up" style={{ animationDelay: '0.1s' }}>
-                  {t.about.subtitle}
+                  <span className="hidden sm:inline">{t.about.subtitle}</span>
+                  <span className="sm:hidden">{(t.about as any).subtitleShort || t.about.subtitle}</span>
                 </p>
                 
                 {/* Social Media Links */}
