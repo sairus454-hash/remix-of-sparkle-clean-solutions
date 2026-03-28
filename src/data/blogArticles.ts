@@ -360,6 +360,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 min',
       tag: '🪟 Okna',
     },
+    {
+      id: 11,
+      title: 'Profesjonalne czyszczenie materacy w domu — usuwanie plam, zapachów i alergenów',
+      summary: 'Materac codziennie wchłania wilgoć, kurz i cząstki skóry. Profesjonalne czyszczenie materacy w domu eliminuje zanieczyszczenia na głębokim poziomie.',
+      content: 'Profesjonalne czyszczenie materacy w domu usuwa zanieczyszczenia na głębokim poziomie. Proces obejmuje: analizę stanu, usuwanie suchych zabrudzeń, miejscowe czyszczenie plam, głęboką ekstrakcję i suszenie.',
+      fullContent: '🛏️ Dlaczego czyszczenie materaca to konieczność, a nie luksus\n\nMaterac codziennie wchłania wilgoć, kurz i cząstki skóry. Z czasem tworzy się środowisko sprzyjające bakteriom i roztoczom. Nawet przy regularnej zmianie pościeli problem pozostaje wewnątrz.\n\nProfesjonalne czyszczenie materacy w domu pozwala usunąć zanieczyszczenia na głębokim poziomie.\n\n📸 Proces głębokiego czyszczenia materaca\n\n1. Analiza stanu — specjalista ocenia materiał, plamy i stopień zużycia.\n2. Usuwanie suchych zabrudzeń — sprzęt usuwa kurz, sierść i drobne zanieczyszczenia.\n3. Miejscowe czyszczenie plam — profesjonalne środki do różnych rodzajów plam.\n4. Głęboka ekstrakcja — specjalistyczny sprzęt wymywa brud z wewnętrznych warstw materaca.\n5. Końcowe suszenie — materac pozostaje lekko wilgotny i całkowicie wysycha w ciągu kilku godzin.\n\n🦠 Jakie problemy rozwiązuje czyszczenie\n\n• Nieprzyjemne zapachy (wilgoć, pot, zwierzęta)\n• Uporczywe plamy różnego pochodzenia\n• Roztocza i alergeny\n• Bakterie i mikroflora\n\n📌 Szczególnie ważne dla rodzin z dziećmi i osób ze skłonnością do alergii.\n\n🏠 Zalety czyszczenia materaca w domu\n\n• Nie wymaga transportu\n• Oszczędność czasu\n• Bezpieczne, hipoalergiczne środki\n• Szybki efekt w dniu zlecenia\n\n💰 Ile kosztuje czyszczenie materaca\n\nCena zależy od: rozmiaru, stopnia zabrudzenia i złożoności plam.\n\nOrientacyjny koszt:\n• Materac jednoosobowy — od 100 zł\n• Materac dwuosobowy — od 150–250 zł\n\n⏱️ Jak często czyścić materac\n\n• Profilaktycznie — co 6–12 miesięcy\n• Nieplanowo — przy pojawieniu się plam lub zapachu\n\n⚠️ Dlaczego nie warto ograniczać się do domowych środków\n\nDomowe środki nie penetrują głęboko, mogą zostawić smugi i nie eliminują w pełni mikroorganizmów. Profesjonalne czyszczenie działa na poziomie wypełnienia.\n\n✔️ Efekt, który poczujesz\n\n• Materac staje się świeży i czysty\n• Zapachy znikają\n• Poprawia się jakość snu\n• Zmniejsza się ryzyko reakcji alergicznych\n\n📍 Nie odkładaj czyszczenia materaca. Terminowe czyszczenie przedłuża żywotność i sprawia, że sen jest bezpieczniejszy.\n\n👉 Zostaw zapytanie i otrzymaj konsultację specjalisty już dziś.',
+      image: mattressDeepCleaning,
+      date: '2026-03-28',
+      readTime: '5 min',
+      tag: '🛏️ Materace',
+    },
   ],
   uk: [
     {
