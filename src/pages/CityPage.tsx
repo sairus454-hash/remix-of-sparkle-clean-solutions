@@ -404,20 +404,6 @@ const CityPage = () => {
                   </div>
                 </div>
 
-                {/* Single mattress promo */}
-                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-accent/30 bg-accent/10 p-4 sm:p-5">
-                  <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                    <Tag className="w-5 h-5 text-accent-foreground" />
-                  </div>
-                  <div>
-                    <p className="text-sm sm:text-base font-semibold text-foreground">
-                      {language === 'pl' ? 'Czyszczenie 1 materaca — 5% taniej' : language === 'en' ? 'Single mattress cleaning — 5% off' : language === 'uk' ? 'Чищення 1 матраца — знижка 5%' : 'Химчистка 1 матраса — скидка 5%'}
-                    </p>
-                    <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                      {language === 'pl' ? 'Zamów czyszczenie jednego materaca i otrzymaj automatyczny rabat 5%.' : language === 'en' ? 'Order cleaning for one mattress and get an automatic 5% discount.' : language === 'uk' ? 'Замовте чищення одного матраца та отримайте автоматичну знижку 5%.' : 'Закажите химчистку одного матраса и получите автоматическую скидку 5%.'}
-                    </p>
-                  </div>
-                </div>
 
                 {/* Free delivery */}
                 <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card p-4 sm:p-5">

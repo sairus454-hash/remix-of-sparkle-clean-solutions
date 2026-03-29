@@ -8,8 +8,6 @@ export interface DiscountInfo {
   finalTotal: number;
   discountReason: string;
   hasDiscount: boolean;
-  hasMattressDiscount: boolean;
-  mattressDiscountAmount: number;
   hasFirstOrderDiscount: boolean;
   firstOrderDiscountAmount: number;
 }
@@ -33,13 +31,8 @@ function normalizeCategory(item: CalculatorItem): string {
 }
 
 // ID матрасов для определения скидки
-const MATTRESS_IDS = [
-  'mattressDouble', 'mattressSingle', 'mattressSingleDry', 'mattressSingleDry2',
-  'mattressDoubleDry', 'mattressDoubleDry2'
-];
-
 // Категории, подпадающие под акцию «Первый заказ -10%»
-const FIRST_ORDER_CATEGORIES = ['furniture', 'leather', 'mattress'];
+const FIRST_ORDER_CATEGORIES = ['furniture', 'leather'];
 
 // ID позиций, исключённых из скидок
 const EXCLUDED_IDS = ['expressRefresh', 'expressRefreshM'];
@@ -75,8 +68,6 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
     
     let discountPercent = 0;
     let discountReason = '';
-    let hasMattressDiscount = false;
-    let mattressDiscountAmount = 0;
     let hasFirstOrderDiscount = false;
     let firstOrderDiscountAmount = 0;
 
@@ -125,8 +116,6 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
       finalTotal,
       discountReason,
       hasDiscount: discountPercent > 0,
-      hasMattressDiscount,
-      mattressDiscountAmount,
       hasFirstOrderDiscount,
       firstOrderDiscountAmount,
     };
@@ -137,10 +126,10 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
 
 function getFirstOrderDiscountReason(language: string): string {
   const reasons = {
-    ru: 'Акция: -10% на первый заказ (мебель, матрасы, кожа)',
-    en: '10% off first order (furniture, mattresses, leather)',
-    pl: 'Promocja: -10% na pierwsze zamówienie (meble, materace, skóra)',
-    uk: 'Акція: -10% на перше замовлення (меблі, матраци, шкіра)',
+    ru: 'Акция: -10% на первый заказ (мебель, кожа)',
+    en: '10% off first order (furniture, leather)',
+    pl: 'Promocja: -10% na pierwsze zamówienie (meble, skóra)',
+    uk: 'Акція: -10% на перше замовлення (меблі, шкіра)',
   };
   return reasons[language as keyof typeof reasons] || reasons.ru;
 }
@@ -174,25 +163,25 @@ function getDiscountReason(type: 'multi' | 'loyal' | 'vip', language: string): s
 export function getDiscountTiers(language: string) {
   const tiers = {
     ru: [
-      { services: '🪑', discount: '10%', label: 'первый заказ (мебель, матрасы, кожа)' },
+      { services: '🪑', discount: '10%', label: 'первый заказ (мебель, кожа)' },
       { services: '2+', discount: '5%', label: 'категорий' },
       { services: '4+', discount: '10%', label: 'категорий' },
       { services: '6+', discount: '15%', label: 'категорий' },
     ],
     en: [
-      { services: '🪑', discount: '10%', label: 'first order (furniture, mattresses, leather)' },
+      { services: '🪑', discount: '10%', label: 'first order (furniture, leather)' },
       { services: '2+', discount: '5%', label: 'categories' },
       { services: '4+', discount: '10%', label: 'categories' },
       { services: '6+', discount: '15%', label: 'categories' },
     ],
     pl: [
-      { services: '🪑', discount: '10%', label: 'pierwsze zamówienie (meble, materace, skóra)' },
+      { services: '🪑', discount: '10%', label: 'pierwsze zamówienie (meble, skóra)' },
       { services: '2+', discount: '5%', label: 'kategorii' },
       { services: '4+', discount: '10%', label: 'kategorii' },
       { services: '6+', discount: '15%', label: 'kategorii' },
     ],
     uk: [
-      { services: '🪑', discount: '10%', label: 'перше замовлення (меблі, матраци, шкіра)' },
+      { services: '🪑', discount: '10%', label: 'перше замовлення (меблі, шкіра)' },
       { services: '2+', discount: '5%', label: 'категорій' },
       { services: '4+', discount: '10%', label: 'категорій' },
       { services: '6+', discount: '15%', label: 'категорій' },
