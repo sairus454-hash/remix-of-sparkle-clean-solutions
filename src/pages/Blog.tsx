@@ -68,7 +68,7 @@ const Blog = () => {
       <SEO
         title="Blog czystości — Porady czyszczenia | MasterClean"
         description="Przydatne artykuły o praniu tapicerki, sprzątaniu i pielęgnacji mebli. Porady ekspertów, jak dbać o czystość w domu i samochodzie."
-        keywords="blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, jak prać kanapę, porady czystość, cleaning tips blog, czyszczenie mebli porady"
+        keywords="blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, jak prać kanapę, porady czystość, jak usunąć plamy, pranie tapicerki porady, czyszczenie materaca, cleaning tips blog, czyszczenie mebli porady"
         canonical="/blog"
         image="https://masterclean1885.pl/og-blog.png"
         breadcrumbs={[{ name: titles.title, path: '/blog' }]}
