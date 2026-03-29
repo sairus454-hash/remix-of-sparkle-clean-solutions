@@ -103,6 +103,9 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
+  // Apply first-order discount for eligible categories
+  const displayItems = applyFirstOrderDiscount(items, category);
+
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
@@ -189,7 +192,7 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
     <div className="space-y-6">
       {/* Cards grid */}
       <CascadeGrid>
-        {items.map((item, index) => {
+        {displayItems.map((item, index) => {
           const selected = isSelected(item.id);
           const qty = getQty(item.id);
           const wasJustAdded = justAdded === item.id;
@@ -301,6 +304,16 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                       <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
                         <span className="line-through text-muted-foreground mr-1">{item.price} zł</span>
                         <span className="text-green-600 font-bold">0 zł</span>
+                      </p>
+                    ) : item.originalPrice ? (
+                      <p className="text-xs sm:text-sm font-bold">
+                        <span className="line-through text-muted-foreground/70 mr-1 font-normal text-[11px] sm:text-xs">{item.originalPrice} zł</span>
+                        <span className={cn(
+                          "transition-colors",
+                          selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
+                        )}>
+                          {item.price} zł{item.unit ? `/${item.unit}` : ''}
+                        </span>
                       </p>
                     ) : (
                       <p className={cn(
