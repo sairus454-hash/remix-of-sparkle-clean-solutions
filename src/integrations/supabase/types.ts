@@ -233,6 +233,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      hash_ip: { Args: { ip: string }; Returns: string }
     }
     Enums: {
       app_role: "admin" | "user"
