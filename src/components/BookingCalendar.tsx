@@ -31,7 +31,7 @@ const BookingCalendar = ({ selectedDate, onDateSelect }: BookingCalendarProps) =
     const fetchBusyDates = async () => {
       try {
         const { data, error } = await supabase
-          .from('booking_dates')
+          .from('booking_dates_public')
           .select('date')
           .eq('is_busy', true);
 
