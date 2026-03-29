@@ -1,12 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 import { useLocation } from 'react-router-dom';
 import { MessageCircle, X, Send, Bot, User, Loader2, Camera, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff, ImageIcon, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { cn } from '@/lib/utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -536,18 +535,13 @@ const ChatBot = () => {
         !isOpen && !isDismissed && (
           <>
             {/* Expanded text pill - separate fixed element */}
-            <motion.div
-              className="fixed z-50 bottom-24 right-[68px] flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer"
-              animate={{ 
-                opacity: mobileExpanded ? 1 : 0,
-                x: mobileExpanded ? 0 : 40,
-              }}
-              transition={{ type: 'spring', stiffness: 150, damping: 20 }}
+            <div
+              className={cn(
+                "fixed z-50 bottom-24 right-[68px] flex items-center rounded-full bg-gradient-to-r from-primary to-fresh shadow-lg cursor-pointer transition-all duration-300 ease-out",
+                mobileExpanded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10 pointer-events-none"
+              )}
               onClick={() => { setIsOpen(true); setMobileExpanded(false); }}
-              style={{ 
-                height: 56, 
-                pointerEvents: mobileExpanded ? 'auto' : 'none',
-              }}
+              style={{ height: 56 }}
             >
               <div className="flex items-center gap-2 px-4" style={{ whiteSpace: 'nowrap' }}>
                 <div>
@@ -560,14 +554,11 @@ const ChatBot = () => {
                 </div>
                 <ChevronRight className="w-4 h-4 text-primary-foreground flex-shrink-0" />
               </div>
-            </motion.div>
+            </div>
 
             {/* Circle icon button */}
-            <motion.div
-              className="fixed z-50 right-3 bottom-24"
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
+            <div
+              className="fixed z-50 right-3 bottom-24 animate-[chatbotSlideIn_0.6s_ease-out_1.5s_both]"
             >
               <div className="relative">
                 <button
@@ -599,17 +590,14 @@ const ChatBot = () => {
                   <X className="w-3 h-3 text-background" />
                 </button>
               </div>
-            </motion.div>
+            </div>
           </>
         )
       ) : (
         // Desktop: Extended button with girl image, text and "More" arrow
         !isDismissed && (
-        <motion.div 
-          className="fixed z-50 bottom-20 right-4"
-          initial={{ x: 300, opacity: 0, rotate: 90 }}
-          animate={{ x: 0, opacity: 1, rotate: 0 }}
-          transition={{ type: 'spring', stiffness: 60, damping: 12, delay: 1.5 }}
+        <div 
+          className="fixed z-50 bottom-20 right-4 animate-[chatbotSlideIn_0.6s_ease-out_1.5s_both]"
         >
           <div className="relative">
             <button
@@ -661,7 +649,7 @@ const ChatBot = () => {
               <X className="w-3 h-3 text-background" />
             </button>
           </div>
-        </motion.div>
+        </div>
         )
       )}
 
