@@ -46,8 +46,8 @@ const SEO = ({
 }: SEOProps) => {
   const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
-  const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
   const path = canonical || '/';
+  const canonicalUrl = `${SITE_URL}${path}`;
 
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',
