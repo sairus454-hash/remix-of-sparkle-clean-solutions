@@ -127,8 +127,31 @@ const Ozone = () => {
         </div>
       </section>
 
+      <div className="flex flex-col">
+      {/* Pricing - Card Calculator (mobile first) */}
+      <section className="py-20 order-1 sm:order-3">
+        <div className="container mx-auto px-4">
+          <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+            {t.prices.ozonation}
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <CardServiceCalculator
+              category="ozone"
+              items={[
+                { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144, image: ozone1room },
+                { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240, image: ozone2room },
+                { id: 'ozone3room', name: t.prices.items.ozone3room, price: 360, image: ozone3room },
+                { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 300, image: ozoneOfficeSmall },
+                { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 480, image: ozoneOfficeLarge },
+              ]}
+              onSendToForm={handleSendToForm}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* What is Ozonation */}
-      <section className="py-20">
+      <section className="py-20 order-2 sm:order-1">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <CircularRevealCard index={0}>
@@ -165,7 +188,7 @@ const Ozone = () => {
       </section>
 
       {/* Applications */}
-      <section className="py-20">
+      <section className="py-20 order-3 sm:order-2">
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
             {t.ozone.applications}
@@ -186,7 +209,7 @@ const Ozone = () => {
       </section>
 
       {/* What to know before cleaning */}
-      <section className="py-20">
+      <section className="py-20 order-4">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <CircularRevealCard index={0}>
@@ -222,30 +245,8 @@ const Ozone = () => {
         </div>
       </section>
 
-      {/* Pricing - Card Calculator */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-            {t.prices.ozonation}
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <CardServiceCalculator
-              category="ozone"
-              items={[
-                { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144, image: ozone1room },
-                { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240, image: ozone2room },
-                { id: 'ozone3room', name: t.prices.items.ozone3room, price: 360, image: ozone3room },
-                { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 300, image: ozoneOfficeSmall },
-                { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 480, image: ozoneOfficeLarge },
-              ]}
-              onSendToForm={handleSendToForm}
-            />
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form */}
-      <section ref={formSectionRef} className="py-20">
+      <section ref={formSectionRef} className="py-20 order-5">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
@@ -261,6 +262,7 @@ const Ozone = () => {
           </div>
         </div>
       </section>
+      </div>
       </div>
     </Layout>
     </>
