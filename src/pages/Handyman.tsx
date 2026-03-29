@@ -363,7 +363,6 @@ const Handyman = () => {
         </div>
       </section>
 
-      <PromotionsSection />
 
       {/* Contact Form */}
       <section ref={formSectionRef} className="py-20 bg-gradient-section">
