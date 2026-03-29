@@ -146,19 +146,22 @@ const Services = () => {
       <Layout>
          {/* Hero */}
          <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
-           <div className="absolute inset-0">
-              {heroSlides.map((slide, index) => (
-                <div
-                  key={index}
-                  className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
-                  style={{
-                    backgroundImage: `url(${slide})`,
-                    opacity: currentSlide === index ? 1 : 0,
-                  }}
-                />
-              ))}
-              <div className="absolute inset-0 bg-black/15" />
-            </div>
+            <div className="absolute inset-0">
+               {heroSlides.map((slide, index) => (
+                 <img
+                   key={index}
+                   src={slide}
+                   alt={index === 0 ? 'Profesjonalne pranie tapicerki meblowej' : 'Suszenie mebli po praniu'}
+                   width={1920}
+                   height={1080}
+                   loading={index === 0 ? 'eager' : 'lazy'}
+                   fetchPriority={index === 0 ? 'high' : undefined}
+                   className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+                   style={{ opacity: currentSlide === index ? 1 : 0 }}
+                 />
+               ))}
+               <div className="absolute inset-0 bg-black/15" />
+             </div>
            <div className="relative z-10 h-full flex items-center">
              <div className="container mx-auto px-4 w-full">
                <div className="max-w-3xl mx-auto text-center">

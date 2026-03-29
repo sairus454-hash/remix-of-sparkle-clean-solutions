@@ -39,16 +39,10 @@
   to { transform: scale(1.1); }
 }
 
-/* Shimmer text gradient — composited via will-change */
+/* Shimmer text gradient — uses transform for GPU compositing */
 @keyframes shimmer {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  [style*="shimmer"] {
-    will-change: background-position;
-  }
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
 }
 
 /* Marquee scroll */
