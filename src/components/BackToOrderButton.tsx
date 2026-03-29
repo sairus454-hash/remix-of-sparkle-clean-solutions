@@ -1,23 +1,21 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ShoppingCart } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
+import { cn } from '@/lib/utils';
 
-/**
- * Floating button that appears when user navigated from the contact form
- * (via recommendation chips). Clicking it navigates back to /contacts.
- */
 const BackToOrderButton = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
   const [show, setShow] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const state = location.state as { openCategory?: string } | null;
     if (state?.openCategory) {
       setShow(true);
+      requestAnimationFrame(() => setMounted(true));
     }
   }, [location.state]);
 
@@ -31,20 +29,17 @@ const BackToOrderButton = () => {
   if (!show) return null;
 
   return (
-    <AnimatePresence>
-      <motion.button
-        initial={{ opacity: 0, x: -40 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -40 }}
-        transition={{ duration: 0.3, ease: 'easeOut' }}
-        onClick={() => navigate('/contacts')}
-        className="fixed bottom-6 left-4 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-primary text-primary-foreground shadow-glow hover:scale-105 active:scale-95 transition-transform text-sm font-semibold"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        <span className="hidden sm:inline">{label[language] || label.ru}</span>
-        <ShoppingCart className="w-4 h-4 sm:hidden" />
-      </motion.button>
-    </AnimatePresence>
+    <button
+      onClick={() => navigate('/contacts')}
+      className={cn(
+        "fixed bottom-6 left-4 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-primary text-primary-foreground shadow-glow hover:scale-105 active:scale-95 transition-all duration-300 ease-out text-sm font-semibold",
+        mounted ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+      )}
+    >
+      <ArrowLeft className="w-4 h-4" />
+      <span className="hidden sm:inline">{label[language] || label.ru}</span>
+      <ShoppingCart className="w-4 h-4 sm:hidden" />
+    </button>
   );
 };
 
