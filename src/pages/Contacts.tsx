@@ -110,16 +110,19 @@ const Contacts = () => {
                 {contactInfo.map((item, index) => {
                   const isPhone = item.icon === Phone;
                   const isAddress = item.icon === MapPin;
-                  const Wrapper = isPhone || isAddress ? 'a' : 'div';
+                  const isEmail = item.icon === Mail;
+                  const Wrapper = isPhone || isAddress || isEmail ? 'a' : 'div';
                   const wrapperProps = isPhone
                     ? { href: 'tel:+48575211401' }
                     : isAddress
                       ? { href: 'https://maps.app.goo.gl/uvzboZg432I31j3ZX', target: '_blank', rel: 'noopener noreferrer' }
-                      : {};
+                      : isEmail
+                        ? { href: 'mailto:sairus454@gmail.com' }
+                        : {};
 
                   return (
                     <CircularRevealCard key={index} index={index}>
-                      <Wrapper {...wrapperProps} className={`flex gap-4 p-4 rounded-xl bg-gradient-card border border-border ${isPhone || isAddress ? 'hover:border-primary/50 transition-colors cursor-pointer' : ''}`}>
+                      <Wrapper {...wrapperProps} className={`flex gap-4 p-4 rounded-xl bg-gradient-card border border-border ${isPhone || isAddress || isEmail ? 'hover:border-primary/50 transition-colors cursor-pointer' : ''}`}>
                         <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
                           <item.icon className="w-5 h-5 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                         </div>
