@@ -565,6 +565,8 @@ const Cleaning = () => {
         </div>
       </section>
 
+      <PromotionsSection />
+
       {/* Furniture Cleaning Calculator */}
       <section className="py-10 bg-card">
         <div className="container mx-auto px-4">

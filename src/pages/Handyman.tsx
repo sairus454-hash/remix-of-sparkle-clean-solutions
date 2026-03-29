@@ -313,6 +313,8 @@ const Handyman = () => {
         </div>
       </section>
 
+      <PromotionsSection />
+
       {/* Pricing */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">

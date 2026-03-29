@@ -173,6 +173,8 @@ const Auto = () => {
         </section>
         <Auto3DCarousel />
 
+        <PromotionsSection />
+
         {/* Card Calculator */}
         <section className="py-12 sm:py-20 bg-card">
           <div className="container mx-auto px-4">

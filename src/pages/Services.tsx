@@ -174,6 +174,8 @@ const Services = () => {
            </div>
          </section>
 
+        <PromotionsSection />
+
         {/* Furniture Calculator */}
         <section className="py-16 bg-gradient-section">
           <div className="container mx-auto px-4">
