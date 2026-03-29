@@ -94,7 +94,7 @@ const Header = () => {
     <header
       role="banner"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-card/95 backdrop-blur-md shadow-card' : 'bg-card/70 backdrop-blur-sm'
+        isScrolled ? 'bg-card shadow-card' : 'bg-card/95'
       }`}
     >
       <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-2 xl:px-3">

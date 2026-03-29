@@ -50,7 +50,7 @@ const CookieConsent = () => {
 
   return (
     <div className="fixed bottom-4 left-4 z-[9999] max-w-sm animate-in slide-in-from-bottom-4 fade-in duration-300">
-      <div className="bg-card/95 backdrop-blur-md border border-border/60 rounded-xl p-4 shadow-xl">
+      <div className="bg-card border border-border/60 rounded-xl p-4 shadow-xl">
         <div className="flex items-start gap-3">
           <Cookie className="w-5 h-5 text-primary mt-0.5 shrink-0" />
           <p className="text-sm text-foreground/85 leading-relaxed">
