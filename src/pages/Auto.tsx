@@ -79,28 +79,31 @@ const Auto = () => {
         canonical="/auto"
         image="https://masterclean1885.pl/og-auto.png"
         breadcrumbs={[{ name: t.nav.auto, path: '/auto' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Pranie tapicerki samochodowej',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
-          },
-          areaServed: [
-            { '@type': 'City', name: 'Opole' },
-            { '@type': 'City', name: 'Wrocław' },
-            { '@type': 'City', name: 'Poznań' },
-            { '@type': 'City', name: 'Zielona Góra' },
-          ],
-          offers: [
-            { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: '300', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '450', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Czyszczenie skóry w samochodzie', price: '550', priceCurrency: 'PLN' },
-          ],
-        }}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Service',
+           serviceType: 'Pranie tapicerki samochodowej',
+           name: 'Pranie tapicerki samochodowej',
+           description: 'Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, dywaników i wnętrza auta.',
+           url: 'https://masterclean1885.pl/auto',
+           provider: {
+             '@type': 'LocalBusiness',
+             name: 'MasterClean',
+             telephone: '+48575211401',
+             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+           },
+           areaServed: [
+             { '@type': 'City', name: 'Wrocław' },
+             { '@type': 'City', name: 'Opole' },
+             { '@type': 'City', name: 'Legnica' },
+             { '@type': 'City', name: 'Kalisz' },
+           ],
+           offers: [
+             { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: '300', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '450', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Czyszczenie skóry w samochodzie', price: '550', priceCurrency: 'PLN' },
+           ],
+         }}
       />
       <Layout>
         <BackToOrderButton />

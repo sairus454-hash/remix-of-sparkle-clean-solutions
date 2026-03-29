@@ -85,14 +85,29 @@ const Impregnation = () => {
         canonical="/impregnation"
         image="https://masterclean1885.pl/og-impregnation.png"
         breadcrumbs={[{ name: t.impregnation.title, path: '/impregnation' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Импрегнация мебели и тканей',
-          provider: { '@type': 'LocalBusiness', name: 'MasterClean', telephone: '+48575211401' },
-          areaServed: ['Opole', 'Wrocław', 'Poznań', 'Zielona Góra'],
-          offers: { '@type': 'Offer', name: 'Импрегнация (защита на 1 год)', price: '80', priceCurrency: 'PLN' },
-        }}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Service',
+           serviceType: 'Impregnacja mebli i tkanin',
+           name: 'Impregnacja mebli i tkanin',
+           description: 'Profesjonalna impregnacja mebli, dywanów i tkanin. Ochrona przed wodą, brudem i plamami.',
+           url: 'https://masterclean1885.pl/impregnation',
+           provider: {
+             '@type': 'LocalBusiness',
+             name: 'MasterClean',
+             telephone: '+48575211401',
+             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+           },
+           areaServed: [
+             { '@type': 'City', name: 'Wrocław' },
+             { '@type': 'City', name: 'Opole' },
+             { '@type': 'City', name: 'Legnica' },
+             { '@type': 'City', name: 'Kalisz' },
+           ],
+           offers: [
+             { '@type': 'Offer', name: 'Impregnacja (ochrona na 1 rok)', price: '80', priceCurrency: 'PLN' },
+           ],
+         }}
       />
     <Layout>
       <BackToOrderButton />

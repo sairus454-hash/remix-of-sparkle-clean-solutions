@@ -83,17 +83,31 @@ const BlogArticle = () => {
 
   return (
     <>
-      <SEO
-        title={`${article.title} | MasterClean Blog`}
-        description={article.summary}
-        keywords="blog czyszczenie, porady sprzątanie, pranie tapicerki blog, czyszczenie dywanów porady, MasterClean blog, sprzątanie Wrocław porady"
-        canonical={`/blog/${article.id}`}
-        image="https://masterclean1885.pl/og-blog.png"
-        breadcrumbs={[
-          { name: 'Blog', path: '/blog' },
-          { name: article.title, path: `/blog/${article.id}` },
-        ]}
-      />
+       <SEO
+         title={`${article.title} | MasterClean Blog`}
+         description={article.summary}
+         keywords="blog czyszczenie, porady sprzątanie, pranie tapicerki blog, czyszczenie dywanów porady, MasterClean blog, sprzątanie Wrocław porady"
+         canonical={`/blog/${article.id}`}
+         image="https://masterclean1885.pl/og-blog.png"
+         breadcrumbs={[
+           { name: 'Blog', path: '/blog' },
+           { name: article.title, path: `/blog/${article.id}` },
+         ]}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Article',
+           headline: article.title,
+           description: article.summary,
+           datePublished: article.date,
+           author: { '@type': 'Organization', name: 'MasterClean' },
+           publisher: {
+             '@type': 'Organization',
+             name: 'MasterClean',
+             logo: { '@type': 'ImageObject', url: 'https://masterclean1885.pl/og-image.png' },
+           },
+           mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.pl/blog/${article.id}` },
+         }}
+       />
       <Layout>
         <section className="py-10 sm:py-16 bg-gradient-section min-h-screen">
           <div className="container mx-auto px-4 max-w-3xl">

@@ -220,27 +220,30 @@ const Cleaning = () => {
         canonical="/cleaning"
         image="https://masterclean1885.pl/og-cleaning.png"
         breadcrumbs={[{ name: t.nav.cleaning, path: '/cleaning' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Sprzątanie mieszkań i domów',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
-          },
-          areaServed: [
-            { '@type': 'City', name: 'Opole' },
-            { '@type': 'City', name: 'Wrocław' },
-            { '@type': 'City', name: 'Poznań' },
-            { '@type': 'City', name: 'Zielona Góra' },
-          ],
-          offers: [
-            { '@type': 'Offer', name: 'Sprzątanie standardowe', price: '7', priceCurrency: 'PLN', unitText: 'za m²' },
-            { '@type': 'Offer', name: 'Sprzątanie generalne', price: '10', priceCurrency: 'PLN', unitText: 'za m²' },
-          ],
-        }}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Service',
+           serviceType: 'Sprzątanie mieszkań i domów',
+           name: 'Sprzątanie mieszkań i domów',
+           description: 'Profesjonalne sprzątanie mieszkań, domów i biur z dojazdem. Sprzątanie generalne, standardowe i po remoncie.',
+           url: 'https://masterclean1885.pl/cleaning',
+           provider: {
+             '@type': 'LocalBusiness',
+             name: 'MasterClean',
+             telephone: '+48575211401',
+             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+           },
+           areaServed: [
+             { '@type': 'City', name: 'Wrocław' },
+             { '@type': 'City', name: 'Opole' },
+             { '@type': 'City', name: 'Legnica' },
+             { '@type': 'City', name: 'Kalisz' },
+           ],
+           offers: [
+             { '@type': 'Offer', name: 'Sprzątanie standardowe', price: '7', priceCurrency: 'PLN', unitText: 'za m²' },
+             { '@type': 'Offer', name: 'Sprzątanie generalne', price: '10', priceCurrency: 'PLN', unitText: 'za m²' },
+           ],
+         }}
       />
       {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
       <Layout>

@@ -49,28 +49,31 @@ import { useSplash } from '@/hooks/useSplash';
         canonical="/windows"
         image="https://masterclean1885.pl/og-windows.png"
         breadcrumbs={[{ name: t.nav.windows, path: '/windows' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Mycie okien',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
-          },
-          areaServed: [
-            { '@type': 'City', name: 'Opole' },
-            { '@type': 'City', name: 'Wrocław' },
-            { '@type': 'City', name: 'Poznań' },
-            { '@type': 'City', name: 'Zielona Góra' },
-          ],
-          offers: [
-            { '@type': 'Offer', name: 'Okno jednoskrzydłowe', price: '40', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Okno dwuskrzydłowe', price: '50', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Трёхстворчатое окно', price: '80', priceCurrency: 'PLN' },
-          ],
-        }}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Service',
+           serviceType: 'Mycie okien',
+           name: 'Profesjonalne mycie okien',
+           description: 'Profesjonalne mycie okien z dojazdem. Okna bez smug, mycie na wysokości. Wrocław, Opole.',
+           url: 'https://masterclean1885.pl/windows',
+           provider: {
+             '@type': 'LocalBusiness',
+             name: 'MasterClean',
+             telephone: '+48575211401',
+             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+           },
+           areaServed: [
+             { '@type': 'City', name: 'Wrocław' },
+             { '@type': 'City', name: 'Opole' },
+             { '@type': 'City', name: 'Legnica' },
+             { '@type': 'City', name: 'Kalisz' },
+           ],
+           offers: [
+             { '@type': 'Offer', name: 'Okno jednoskrzydłowe', price: '40', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Okno dwuskrzydłowe', price: '50', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Okno trzyskrzydłowe', price: '80', priceCurrency: 'PLN' },
+           ],
+         }}
       />
      <Layout>
        <BackToOrderButton />
