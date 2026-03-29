@@ -11,6 +11,7 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import Auto3DCarousel from '@/components/Auto3DCarousel';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Car, Armchair, Layers, Sparkles } from 'lucide-react';
+import PromotionsSection from '@/components/PromotionsSection';
 import { CalculatorItem } from '@/types/calculator';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 
@@ -193,6 +194,8 @@ const Auto = () => {
             </CircularRevealCard>
           </div>
         </section>
+
+        <PromotionsSection />
 
         {/* Contact Form */}
         <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section">

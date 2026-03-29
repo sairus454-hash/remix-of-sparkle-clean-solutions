@@ -15,6 +15,7 @@ import {
   Wrench, Hammer, Plug, Droplet, Flower2, DoorOpen, 
   Lightbulb, Tv, Frame, ShowerHead, Lock, Fan, Leaf, Calculator
 } from 'lucide-react';
+import PromotionsSection from '@/components/PromotionsSection';
 import { img } from '@/utils/imageMap';
 import { CalculatorItem } from '@/types/calculator';
 
@@ -361,6 +362,8 @@ const Handyman = () => {
           </div>
         </div>
       </section>
+
+      <PromotionsSection />
 
       {/* Contact Form */}
       <section ref={formSectionRef} className="py-20 bg-gradient-section">
