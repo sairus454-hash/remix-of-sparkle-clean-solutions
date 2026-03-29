@@ -38,9 +38,9 @@ const About = () => {
   }];
   return <>
       <SEO
-        title="O firmie MasterClean — Profesjonalne czyszczenie mebli"
-        description="Poznaj MasterClean — firmę specjalizującą się w praniu tapicerki meblowej i czyszczeniu dywanów. Profesjonalny sprzęt Kärcher. Wrocław, Opole."
-        keywords="o nas MasterClean, firma czyszcząca, profesjonalne pranie tapicerki, firma sprzątająca Wrocław, czyszczenie mebli Wrocław, pranie tapicerki Opole, czyszczenie dywanów, cleaning company Poland"
+        title="O firmie MasterClean — Profesjonalna firma czyszcząca Wrocław"
+        description="MasterClean — profesjonalna firma czyszcząca we Wrocławiu. Pranie tapicerki meblowej i samochodowej, czyszczenie dywanów, materacy, ozonowanie, mycie okien. Sprzęt Kärcher i SantoEmma."
+        keywords="o nas MasterClean, firma czyszcząca Wrocław, profesjonalne pranie tapicerki, firma sprzątająca Wrocław, czyszczenie mebli Wrocław, pranie tapicerki Opole, czyszczenie dywanów, chemczystka mebli, cleaning company Poland, usługi czyszczenia Wrocław"
         canonical="/about"
         image="https://masterclean1885.pl/og-about.png"
         breadcrumbs={[{ name: t.nav.about, path: '/about' }]}
@@ -52,7 +52,7 @@ const About = () => {
             name: 'MasterClean',
             description: 'Profesjonalna firma sprzątająca w Polsce. Nowoczesny sprzęt, ekologiczne środki.',
             telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
+            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
             areaServed: [
               { '@type': 'City', name: 'Opole' },
               { '@type': 'City', name: 'Wrocław' },

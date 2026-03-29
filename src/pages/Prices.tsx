@@ -224,7 +224,7 @@ const Prices = () => {
       <SEO
         title="Cennik prania tapicerki i czyszczenia — MasterClean"
         description="Aktualny cennik prania tapicerki meblowej, czyszczenia dywanów, materacy, tapicerki samochodowej, ozonowania i sprzątania. Kalkulator kosztów. Wrocław, Opole."
-        keywords="cennik prania tapicerki, cennik czyszczenia mebli, ceny czyszczenia dywanów, cennik prania kanapy, cennik ozonowania, cennik mycia okien, cennik sprzątania, cennik złota rączka, pranie tapicerki cena Wrocław, cleaning prices Poland"
+        keywords="cennik prania tapicerki, cennik czyszczenia mebli, cennik chemczystki mebli, ceny czyszczenia dywanów, cennik prania kanapy, cennik ozonowania, cennik mycia okien, cennik sprzątania, cennik złota rączka, ile kosztuje pranie tapicerki, pranie tapicerki cena Wrocław, cleaning prices Poland"
         canonical="/prices"
         image="https://masterclean1885.pl/og-prices.png"
         breadcrumbs={[{ name: t.nav.prices, path: '/prices' }]}

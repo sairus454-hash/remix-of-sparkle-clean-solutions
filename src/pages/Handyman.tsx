@@ -160,7 +160,7 @@ const Handyman = () => {
       <SEO
         title="Złota rączka Wrocław — Drobne naprawy i montaż"
         description="Złota rączka Wrocław: hydraulika, elektryka, montaż mebli, drobne naprawy domowe. Fachowiec z dojazdem 24/7. Uczciwe ceny z gwarancją. Wrocław, Opole, Poznań."
-        keywords="złota rączka, złota rączka Wrocław, drobne naprawy, hydraulik Wrocław, elektryk Wrocław, montaż mebli, usługi domowe, fachowiec z dojazdem, handyman, naprawa Wrocław, Opole, Poznań, usługi naprawcze"
+        keywords="złota rączka, złota rączka Wrocław, drobne naprawy, hydraulik Wrocław, elektryk Wrocław, montaż mebli, usługi domowe, fachowiec z dojazdem, handyman, naprawa Wrocław, Opole, Poznań, usługi naprawcze, montaż karniszy, wieszanie obrazów"
         canonical="/handyman"
         image="https://masterclean1885.pl/og-handyman.png"
         breadcrumbs={[{ name: t.nav.handyman, path: '/handyman' }]}
