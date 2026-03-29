@@ -217,8 +217,6 @@ const Services = () => {
             </CircularRevealCard>
           </div>
         </section>
-
-        <PromotionsSection />
       </Layout>
     </>
   );
