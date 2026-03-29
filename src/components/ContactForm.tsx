@@ -1,6 +1,6 @@
 import { useState, useEffect, forwardRef, useImperativeHandle, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -423,7 +423,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           )}
 
           {/* Smart recommendations to increase discount */}
-          <AnimatePresence mode="wait">
           {(() => {
             const existingCats = new Set(calculatorItems.map(item => {
               const cat = item.category || item.id;
@@ -433,7 +432,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             }));
             const catCount = existingCats.size;
             
-            // Define all possible categories with suggestions
             const allCategories: { key: string; label: Record<string, string>; page: string }[] = [
               { key: 'cleaning', label: { ru: '🏠 Уборку квартиры', pl: '🏠 Sprzątanie mieszkania', uk: '🏠 Прибирання квартири', en: '🏠 House cleaning' }, page: '/cleaning' },
               { key: 'furniture', label: { ru: '🛋️ Химчистку мебели', pl: '🛋️ Czyszczenie mebli', uk: '🛋️ Хімчистку меблів', en: '🛋️ Furniture cleaning' }, page: '/prices' },
@@ -447,7 +445,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             
             const missing = allCategories.filter(c => !existingCats.has(c.key));
             
-            // Determine next discount tier
             let nextTier = 0;
             let nextDiscount = '';
             if (catCount < 2) { nextTier = 2 - catCount; nextDiscount = '5%'; }
@@ -463,17 +460,12 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               en: `Add ${nextTier} more ${nextTier === 1 ? 'category' : 'categories'} for ${nextDiscount} off:`,
             };
             
-            // Show up to 4 recommendations
             const recommendations = missing.slice(0, 4);
             
             return (
-              <motion.div
+              <div
                 key={`rec-${catCount}-${nextDiscount}`}
-                initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -8, scale: 0.96 }}
-                transition={{ duration: 0.35, ease: 'easeOut' }}
-                className="mt-2 p-2.5 bg-primary/10 rounded-lg border border-primary/20"
+                className="mt-2 p-2.5 bg-primary/10 rounded-lg border border-primary/20 animate-fade-in"
               >
                 <div className="flex items-start gap-1.5 mb-2">
                   <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
@@ -482,25 +474,20 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
-                  {recommendations.map((rec, i) => (
-                    <motion.button
+                  {recommendations.map((rec) => (
+                    <button
                       key={rec.key}
                       type="button"
                       onClick={() => navigate(rec.page, { state: { openCategory: rec.key } })}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.1 + i * 0.07, duration: 0.25, ease: 'easeOut' }}
-                      whileHover={{ scale: 1.08 }}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 text-primary border border-primary/20 hover:border-primary/40 transition-colors cursor-pointer no-underline"
+                      className="text-xs px-2 py-1 rounded-full bg-primary/15 hover:bg-primary/25 hover:scale-105 text-primary border border-primary/20 hover:border-primary/40 transition-all cursor-pointer no-underline"
                     >
                       {rec.label[language] || rec.label.ru}
-                    </motion.button>
+                    </button>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             );
           })()}
-          </AnimatePresence>
           
           {/* Total */}
           <div className="mt-3 pt-3 border-t border-fresh/30 flex justify-between items-center">
