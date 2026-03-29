@@ -225,6 +225,29 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Mobile compact promo card */}
+      <section className="sm:hidden py-6 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <Link to="/#promotions">
+            <div className="relative overflow-hidden p-4 rounded-2xl shadow-card bg-card/90 border border-border/50">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-orange-500/20 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+              <div className="relative z-10 flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-orange-500 to-teal-500 flex items-center justify-center shadow-glow flex-shrink-0">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-serif text-base font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent truncate">
+                    🔥 {t.promotions.title}
+                  </p>
+                  <p className="text-xs text-muted-foreground truncate">{t.promotions.weeklyDesc}</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Promotions Section — hidden on mobile */}
       <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
