@@ -145,8 +145,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Blog Icon */}
-      <section className="py-6 sm:py-8 bg-card">
+      {/* Blog Icon — hidden on mobile */}
+      <section className="hidden sm:block py-6 sm:py-8 bg-card">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
             <Link to="/blog" className="group">
@@ -184,7 +184,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-10 sm:py-16 bg-card">
+      <section className="hidden sm:block py-10 sm:py-16 bg-card">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => <div key={index} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-card shadow-card animate-fade-up" style={{
@@ -225,8 +225,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Promotions Section */}
-      <section id="promotions" className="py-12 sm:py-20 bg-gradient-section content-auto">
+      {/* Promotions Section — hidden on mobile */}
+      <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             {/* Premium animated icon */}
