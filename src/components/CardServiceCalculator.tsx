@@ -15,9 +15,23 @@ interface ServiceCardItem {
   id: string;
   name: string;
   price: number;
+  originalPrice?: number;
   image: string;
   unit?: string;
   promoBadge?: string;
+}
+
+// Categories eligible for 10% first-order discount display
+const DISCOUNT_CATEGORIES = ['furniture', 'leather', 'mattress'];
+const DISCOUNT_PERCENT = 10;
+
+function applyFirstOrderDiscount(items: ServiceCardItem[], category?: string): ServiceCardItem[] {
+  if (!category || !DISCOUNT_CATEGORIES.includes(category)) return items;
+  return items.map(item => {
+    if (item.price === 0 || item.promoBadge) return item;
+    const discountedPrice = Math.round(item.price * (1 - DISCOUNT_PERCENT / 100));
+    return { ...item, originalPrice: item.price, price: discountedPrice };
+  });
 }
 
 interface CardServiceCalculatorProps {
