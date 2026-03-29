@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState, useCallback } from "react";
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,7 +8,6 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
-import SiteSplash from "@/components/SiteSplash";
 
 import SecurityHeaders from "@/components/SecurityHeaders";
 import PWAUpdatePrompt from "@/components/PWAUpdatePrompt";
@@ -59,24 +58,8 @@ const PageLoader = () => (
 );
 
 const App = () => {
-  const [showSplash, setShowSplash] = useState(() => {
-    try {
-      return !sessionStorage.getItem('site_splash_seen');
-    } catch {
-      return true;
-    }
-  });
-
-  const handleSplashComplete = useCallback(() => {
-    setShowSplash(false);
-    try {
-      sessionStorage.setItem('site_splash_seen', '1');
-    } catch {}
-  }, []);
-
   return (
     <>
-      {showSplash && <SiteSplash onComplete={handleSplashComplete} />}
       <QueryClientProvider client={queryClient}>
         <LanguageProvider>
           <AuthProvider>
