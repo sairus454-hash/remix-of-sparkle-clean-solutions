@@ -2,12 +2,19 @@
 <html lang="pl" class="light" style="color-scheme: light">
   <!-- X-Frame-Options must be set as HTTP header on hosting (Cloudflare/Vercel) for full enforcement -->
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T877SQ75');</script>
+    <!-- Google Tag Manager — deferred to after first paint -->
+    <script>
+    window.addEventListener('load', function() {
+      setTimeout(function(){
+        window.dataLayer=window.dataLayer||[];
+        window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+        var f=document.getElementsByTagName('script')[0],
+        j=document.createElement('script');j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id=GTM-T877SQ75';
+        f.parentNode.insertBefore(j,f);
+      }, 2500);
+    });
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
@@ -49,9 +56,8 @@
     <link rel="apple-touch-icon" sizes="192x192" href="/pwa-192x192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="/pwa-512x512.png" />
 
-    <!-- DNS Prefetch for external resources -->
+    <!-- DNS prefetch deferred since GTM loads late -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     
     <!-- Preconnect to Google Fonts for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

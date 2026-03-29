@@ -324,7 +324,7 @@ html {
   background: hsl(var(--primary) / 0.6);
 }
 
-* {
+html {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--primary) / 0.4) hsl(var(--muted));
 }
@@ -336,7 +336,7 @@ html {
     height: 0;
   }
   
-  * {
+  html {
     scrollbar-width: none;
   }
 }
