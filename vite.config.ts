@@ -95,7 +95,7 @@ export default defineConfig(({ mode }) => ({
           helmet: ["react-helmet-async"],
           query: ["@tanstack/react-query"],
           charts: ["recharts"],
-          motion: ["framer-motion"],
+          
           markdown: ["react-markdown"],
         },
       },
