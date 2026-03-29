@@ -190,7 +190,30 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      booking_dates_public: {
+        Row: {
+          created_at: string | null
+          date: string | null
+          id: string | null
+          is_busy: boolean | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          date?: string | null
+          id?: string | null
+          is_busy?: boolean | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          date?: string | null
+          id?: string | null
+          is_busy?: boolean | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       check_rate_limit: {
