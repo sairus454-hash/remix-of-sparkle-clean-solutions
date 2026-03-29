@@ -195,10 +195,10 @@ const PRICE_LIST = {
 • В остальных городах доступны: химчистка мебели, матрасов, ковров, авто, озонирование, мойка окон, импрегнация
 
 🎁 СИСТЕМА СКИДОК (АВТОМАТИЧЕСКИ):
+• 🪑 АКЦИЯ: -10% на ПЕРВЫЙ ЗАКАЗ на химчистку мебели, матрасов и мебели из кожи!
 • 5% скидка — при заказе услуг из 2+ разных КАТЕГОРИЙ (например, Мебель + Авто)
 • 10% скидка — при заказе услуг из 4+ разных КАТЕГОРИЙ
 • 15% скидка — при заказе услуг из 6+ разных КАТЕГОРИЙ (максимальная экономия!)
-• 5% скидка — специальная акция на химчистку одного матраса
 
 ⛔ ИСКЛЮЧЕНИЯ ИЗ СКИДОК:
 • Экспресс освежение с удалением запаха (150 PLN) — скидка НЕ применяется!
@@ -207,7 +207,9 @@ const PRICE_LIST = {
 
 ВАЖНО: Скидки считаются по КАТЕГОРИЯМ, а не по отдельным позициям! 
 Уборка и дополнительные услуги к уборке (духовка, холодильник, глажка и т.д.) считаются как ОДНА категория!
-Несколько позиций из одной категории (3 стула из "Мебель") = 1 категория = нет скидки.
+Несколько позиций из одной категории (3 стула из "Мебель") = 1 категория.
+Акция «Первый заказ -10%» действует если ВСЕ позиции заказа из категорий Мебель, Матрасы или Кожа.
+Если клиент заказывает мебель + другую категорию (Авто и т.д.), то применяется скидка по количеству категорий (5%/10%/15%).
 Пример: диван (Мебель) + сиденья авто (Авто) = 2 категории = 5% скидка
 Пример: мебель + авто + матрас + озонирование = 4 категории = 10% скидка`,
   en: `
@@ -400,10 +402,10 @@ Minimum order applies to ALL service categories.
 • Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
 🎁 DISCOUNT SYSTEM (AUTOMATIC):
+• 🪑 PROMO: -10% on your FIRST ORDER for furniture, mattress and leather cleaning!
 • 5% discount — when ordering from 2+ different CATEGORIES (e.g., Furniture + Auto)
 • 10% discount — when ordering from 4+ different CATEGORIES
 • 15% discount — when ordering from 6+ different CATEGORIES (maximum savings!)
-• 5% discount — special promotion for single mattress cleaning
 
 ⛔ DISCOUNT EXCEPTIONS:
 • Express freshening with odor removal (150 PLN) — discount does NOT apply!
@@ -412,7 +414,9 @@ CATEGORIES for discounts: Cleaning (including cleaning add-ons), Furniture, Leat
 
 IMPORTANT: Discounts are based on CATEGORIES, not individual items!
 Cleaning and cleaning add-ons (oven, fridge, ironing, etc.) count as ONE category!
-Multiple items from one category (3 chairs from "Furniture") = 1 category = no discount.
+Multiple items from one category (3 chairs from "Furniture") = 1 category.
+"First order -10%" applies when ALL items are from Furniture, Mattresses or Leather categories.
+If client orders furniture + another category (Auto etc.), the category-based discount applies (5%/10%/15%).
 Example: sofa (Furniture) + car seats (Auto) = 2 categories = 5% discount
 Example: furniture + auto + mattress + ozonation = 4 categories = 10% discount`,
   pl: `
@@ -605,10 +609,10 @@ Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
 • W pozostałych miastach: czyszczenie mebli, materacy, dywanów, aut, ozonowanie, mycie okien, impregnacja
 
 🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
+• 🪑 PROMOCJA: -10% na PIERWSZE ZAMÓWIENIE czyszczenia mebli, materacy i skóry!
 • Rabat 5% — przy zamówieniu z 2+ różnych KATEGORII (np. Meble + Auto)
 • Rabat 10% — przy zamówieniu z 4+ różnych KATEGORII
 • Rabat 15% — przy zamówieniu z 6+ różnych KATEGORII (maksymalna oszczędność!)
-• Rabat 5% — specjalna promocja na czyszczenie jednego materaca
 
 ⛔ WYJĄTKI OD RABATÓW:
 • Ekspresowe odświeżenie z usunięciem zapachu (150 PLN) — rabat NIE dotyczy!
@@ -617,7 +621,9 @@ KATEGORIE do rabatów: Sprzątanie (w tym usługi dodatkowe do sprzątania), Meb
 
 WAŻNE: Rabaty są naliczane na podstawie KATEGORII, nie poszczególnych pozycji!
 Sprzątanie i usługi dodatkowe do sprzątania (piekarnik, lodówka, prasowanie itp.) liczą się jako JEDNA kategoria!
-Kilka pozycji z jednej kategorii (3 krzesła z "Meble") = 1 kategoria = brak rabatu.
+Kilka pozycji z jednej kategorii (3 krzesła z "Meble") = 1 kategoria.
+Promocja „Pierwsze zamówienie -10%" obowiązuje gdy WSZYSTKIE pozycje zamówienia to Meble, Materace lub Skóra.
+Jeśli klient zamawia meble + inną kategorię (Auto itp.), stosowany jest rabat za liczbę kategorii (5%/10%/15%).
 Przykład: sofa (Meble) + siedzenia auta (Auto) = 2 kategorie = 5% rabatu
 Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
   uk: `
@@ -810,10 +816,10 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • В інших містах: хімчистка меблів, матраців, килимів, авто, озонування, миття вікон, імпрегнація
 
 🎁 СИСТЕМА ЗНИЖОК (АВТОМАТИЧНО):
+• 🪑 АКЦІЯ: -10% на ПЕРШЕ ЗАМОВЛЕННЯ хімчистки меблів, матраців та шкіряних меблів!
 • 5% знижка — при замовленні з 2+ різних КАТЕГОРІЙ (наприклад, Меблі + Авто)
 • 10% знижка — при замовленні з 4+ різних КАТЕГОРІЙ
 • 15% знижка — при замовленні з 6+ різних КАТЕГОРІЙ (максимальна економія!)
-• 5% знижка — спеціальна акція на хімчистку одного матраца
 
 ⛔ ВИКЛЮЧЕННЯ ЗІ ЗНИЖОК:
 • Експрес освіження з видаленням запаху (150 PLN) — знижка НЕ застосовується!
@@ -822,7 +828,9 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 
 ВАЖЛИВО: Знижки рахуються за КАТЕГОРІЯМИ, а не за окремими позиціями!
 Прибирання і додаткові послуги до прибирання (духовка, холодильник, прасування тощо) вважаються ОДНІЄЮ категорією!
-Кілька позицій з однієї категорії (3 стільці з "Меблі") = 1 категорія = немає знижки.
+Кілька позицій з однієї категорії (3 стільці з "Меблі") = 1 категорія.
+Акція «Перше замовлення -10%» діє якщо ВСІ позиції замовлення з категорій Меблі, Матраци або Шкіра.
+Якщо клієнт замовляє меблі + іншу категорію (Авто тощо), застосовується знижка за кількістю категорій (5%/10%/15%).
 Приклад: диван (Меблі) + сидіння авто (Авто) = 2 категорії = 5% знижка
 Приклад: меблі + авто + матрац + озонування = 4 категорії = 10% знижка`
 };
