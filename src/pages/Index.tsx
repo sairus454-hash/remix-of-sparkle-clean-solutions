@@ -289,7 +289,7 @@ const Index = () => {
                 {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-500 to-teal-500 text-white shadow-glow animate-pulse">
-                    🛏️ {t.promotions.mattressBadge}
+                    🪑 {t.promotions.mattressBadge}
                   </span>
                 </div>
                 
