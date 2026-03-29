@@ -6,6 +6,8 @@ import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import HeroVideo from '@/components/HeroVideo';
 import AnimatedImage from '@/components/AnimatedImage';
 import handyman1 from '@/assets/handyman-1.jpg';
@@ -284,7 +286,7 @@ const Handyman = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-section">
+      <section className="hidden sm:block py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -316,7 +318,33 @@ const Handyman = () => {
         </div>
       </section>
 
-      <PromotionsSection />
+      {/* Mobile compact promo card */}
+      <section className="sm:hidden py-6 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <Link to="/#promotions">
+            <div className="relative overflow-hidden p-4 rounded-2xl shadow-card bg-card/90 border border-border/50">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-orange-500/20 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+              <div className="relative z-10 flex items-center gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-orange-500 to-teal-500 flex items-center justify-center shadow-glow flex-shrink-0">
+                  <Sparkles className="w-6 h-6 text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-serif text-base font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent truncate">
+                    🔥 {t.promotions.title}
+                  </p>
+                  <p className="text-xs text-muted-foreground truncate">{t.promotions.weeklyDesc}</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-primary flex-shrink-0" />
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Desktop promotions */}
+      <div className="hidden sm:block">
+        <PromotionsSection />
+      </div>
 
       {/* Pricing */}
       <section className="py-20 bg-background">
