@@ -46,8 +46,8 @@ const SEO = ({
 }: SEOProps) => {
   const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
-  const canonicalUrl = canonical ? `${SITE_URL}${canonical}` : undefined;
   const path = canonical || '/';
+  const canonicalUrl = `${SITE_URL}${path}`;
 
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',
@@ -115,7 +115,7 @@ const SEO = ({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <link rel="canonical" href={canonicalUrl} />
       <html lang={hreflangMap[language] || 'pl'} />
 
       {/* Hreflang tags for multilingual SEO */}
@@ -134,7 +134,7 @@ const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:image" content={image} />
-      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:locale" content={ogLocaleMap[language] || 'pl_PL'} />
       {Object.entries(ogLocaleMap)
         .filter(([lang]) => lang !== language)
