@@ -110,12 +110,15 @@ const Contacts = () => {
                 {contactInfo.map((item, index) => {
                   const isPhone = item.icon === Phone;
                   const isAddress = item.icon === MapPin;
-                  const Wrapper = isPhone || isAddress ? 'a' : 'div';
+                  const isEmail = item.icon === Mail;
+                  const Wrapper = isPhone || isAddress || isEmail ? 'a' : 'div';
                   const wrapperProps = isPhone
                     ? { href: 'tel:+48575211401' }
                     : isAddress
                       ? { href: 'https://maps.app.goo.gl/uvzboZg432I31j3ZX', target: '_blank', rel: 'noopener noreferrer' }
-                      : {};
+                      : isEmail
+                        ? { href: 'mailto:sairus454@gmail.com' }
+                        : {};
 
                   return (
                     <CircularRevealCard key={index} index={index}>
