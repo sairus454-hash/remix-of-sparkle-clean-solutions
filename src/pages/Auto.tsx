@@ -138,8 +138,31 @@ const Auto = () => {
            </div>
          </section>
 
+        <div className="flex flex-col">
+        {/* Card Calculator (mobile first) */}
+        <section className="py-12 sm:py-20 bg-card order-1 sm:order-4">
+          <div className="container mx-auto px-4">
+            <CircularRevealCard index={0}>
+              <div className="max-w-5xl mx-auto">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Car className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                      {t.prices.autoCleaning}
+                    </h2>
+                    <p className="text-muted-foreground text-sm">{t.auto.subtitle}</p>
+                  </div>
+                </div>
+                <CardServiceCalculator category="auto" items={autoItems} onSendToForm={handleSendToForm} />
+              </div>
+            </CircularRevealCard>
+          </div>
+        </section>
+
         {/* Services */}
-        <section className="py-12 sm:py-20 bg-gradient-section">
+        <section className="py-12 sm:py-20 bg-gradient-section order-2 sm:order-1">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
               {services.map((service, index) => (
@@ -160,7 +183,7 @@ const Auto = () => {
         </section>
 
         {/* Important Note about Floor Mats */}
-        <section className="py-8 sm:py-12 bg-amber-50 dark:bg-amber-900/20 border-t border-b border-amber-200 dark:border-amber-900">
+        <section className="py-8 sm:py-12 bg-amber-50 dark:bg-amber-900/20 border-t border-b border-amber-200 dark:border-amber-900 order-3 sm:order-2">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto flex items-start gap-3 sm:gap-4">
               <div className="flex-shrink-0 mt-1">
@@ -175,10 +198,13 @@ const Auto = () => {
             </div>
           </div>
         </section>
-        <Auto3DCarousel />
+
+        <div className="order-4 sm:order-3">
+          <Auto3DCarousel />
+        </div>
 
         {/* Mobile compact promo card */}
-        <section className="sm:hidden py-6 bg-gradient-section">
+        <section className="sm:hidden py-6 bg-gradient-section order-5">
           <div className="container mx-auto px-4">
             <Link to="/#promotions">
               <div className="relative overflow-hidden p-4 rounded-2xl shadow-card bg-card/90 border border-border/50">
@@ -200,35 +226,12 @@ const Auto = () => {
           </div>
         </section>
 
-        <div className="hidden sm:block">
+        <div className="hidden sm:block order-5 sm:order-3">
           <PromotionsSection />
         </div>
 
-        {/* Card Calculator */}
-        <section className="py-12 sm:py-20 bg-card">
-          <div className="container mx-auto px-4">
-            <CircularRevealCard index={0}>
-              <div className="max-w-5xl mx-auto">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                    <Car className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
-                  </div>
-                  <div>
-                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
-                      {t.prices.autoCleaning}
-                    </h2>
-                    <p className="text-muted-foreground text-sm">{t.auto.subtitle}</p>
-                  </div>
-                </div>
-                <CardServiceCalculator category="auto" items={autoItems} onSendToForm={handleSendToForm} />
-              </div>
-            </CircularRevealCard>
-          </div>
-        </section>
-
-
         {/* Contact Form */}
-        <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section">
+        <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section order-6 sm:order-5">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-8 sm:mb-12">
@@ -244,6 +247,7 @@ const Auto = () => {
             </div>
           </div>
         </section>
+        </div>
       </Layout>
     </>
   );
