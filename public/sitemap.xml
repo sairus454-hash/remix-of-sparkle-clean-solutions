@@ -1,51 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://masterclean1885.pl/</loc><lastmod>2026-03-22</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/services</loc><lastmod>2026-03-22</lastmod><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/prices</loc><lastmod>2026-03-22</lastmod><priority>0.9</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/cleaning</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/auto</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/windows</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/handyman</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/ozone</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/impregnation</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/about</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/equipment</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/reviews</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/blog</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/contacts</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Main pages -->
+  <url><loc>https://masterclean1885.pl/</loc><lastmod>2026-03-29</lastmod><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/services</loc><lastmod>2026-03-29</lastmod><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/prices</loc><lastmod>2026-03-29</lastmod><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/cleaning</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/auto</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/windows</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/handyman</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/ozone</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/impregnation</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/about</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/equipment</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/reviews</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/contacts</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Blog -->
+  <url><loc>https://masterclean1885.pl/blog</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/1</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/2</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/3</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/4</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/5</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/6</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/7</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/8</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/blog/9</loc><lastmod>2026-03-29</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Sitemap page -->
+  <url><loc>https://masterclean1885.pl/sitemap</loc><lastmod>2026-03-29</lastmod><priority>0.4</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Legal pages -->
   <url><loc>https://masterclean1885.pl/privacy-policy</loc><lastmod>2026-01-01</lastmod><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://masterclean1885.pl/terms</loc><lastmod>2026-01-01</lastmod><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://masterclean1885.pl/cookies</loc><lastmod>2026-01-01</lastmod><priority>0.3</priority><changefreq>yearly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/wroclaw</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/opole</loc><lastmod>2026-03-22</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/legnica</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/olawa</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/kalisz</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/leszno</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/swidnica</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/walbrzych</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/ostrow-wielkopolski</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/jelenia-gora</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/brzeg</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/lubin</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/jelcz-laskowice</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/strzegom</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/sobotka</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/klodzko</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/kielczow</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/dzierzoniow</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/nysa</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/brzeg-dolny</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/sroda-slaska</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/glogow</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/olesnica</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/namyslow</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/polkowice</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/smolec</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/katy-wroclawskie</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/siechnice</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/tyniec-maly</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/zmigrod</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://masterclean1885.pl/city/bielany-wroclawskie</loc><lastmod>2026-03-22</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+
+  <!-- City pages -->
+  <url><loc>https://masterclean1885.pl/city/wroclaw</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/opole</loc><lastmod>2026-03-29</lastmod><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/legnica</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/olawa</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/kalisz</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/leszno</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/swidnica</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/walbrzych</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/ostrow-wielkopolski</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/jelenia-gora</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/brzeg</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/lubin</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/jelcz-laskowice</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/strzegom</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/sobotka</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/klodzko</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/kielczow</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/dzierzoniow</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/nysa</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/brzeg-dolny</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/sroda-slaska</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/glogow</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/olesnica</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/namyslow</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/polkowice</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/smolec</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/katy-wroclawskie</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/siechnice</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/tyniec-maly</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/zmigrod</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://masterclean1885.pl/city/bielany-wroclawskie</loc><lastmod>2026-03-29</lastmod><priority>0.7</priority><changefreq>weekly</changefreq></url>
 </urlset>
