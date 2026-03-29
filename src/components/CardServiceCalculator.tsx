@@ -15,9 +15,23 @@ interface ServiceCardItem {
   id: string;
   name: string;
   price: number;
+  originalPrice?: number;
   image: string;
   unit?: string;
   promoBadge?: string;
+}
+
+// Categories eligible for 10% first-order discount display
+const DISCOUNT_CATEGORIES = ['furniture', 'leather', 'mattress'];
+const DISCOUNT_PERCENT = 10;
+
+function applyFirstOrderDiscount(items: ServiceCardItem[], category?: string): ServiceCardItem[] {
+  if (!category || !DISCOUNT_CATEGORIES.includes(category)) return items;
+  return items.map(item => {
+    if (item.price === 0 || item.promoBadge) return item;
+    const discountedPrice = Math.round(item.price * (1 - DISCOUNT_PERCENT / 100));
+    return { ...item, originalPrice: item.price, price: discountedPrice };
+  });
 }
 
 interface CardServiceCalculatorProps {
@@ -88,6 +102,9 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
+
+  // Apply first-order discount for eligible categories
+  const displayItems = applyFirstOrderDiscount(items, category);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
@@ -175,7 +192,7 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
     <div className="space-y-6">
       {/* Cards grid */}
       <CascadeGrid>
-        {items.map((item, index) => {
+        {displayItems.map((item, index) => {
           const selected = isSelected(item.id);
           const qty = getQty(item.id);
           const wasJustAdded = justAdded === item.id;
@@ -288,6 +305,16 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                         <span className="line-through text-muted-foreground mr-1">{item.price} zł</span>
                         <span className="text-green-600 font-bold">0 zł</span>
                       </p>
+                    ) : item.originalPrice ? (
+                      <p className="text-xs sm:text-sm font-bold">
+                        <span className="line-through text-muted-foreground/70 mr-1 font-normal text-[11px] sm:text-xs">{item.originalPrice} zł</span>
+                        <span className={cn(
+                          "transition-colors",
+                          selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
+                        )}>
+                          {item.price} zł{item.unit ? `/${item.unit}` : ''}
+                        </span>
+                      </p>
                     ) : (
                       <p className={cn(
                         "text-sm sm:text-base font-bold transition-colors",
@@ -369,7 +396,12 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                 />
                 <div className="flex-1 min-w-0">
                   <span className="font-medium text-foreground text-sm block truncate">{selected.item.name}</span>
-                  <span className="text-xs text-muted-foreground">{selected.item.price} zł</span>
+                  <span className="text-xs text-muted-foreground">
+                    {selected.item.originalPrice && (
+                      <span className="line-through mr-1">{selected.item.originalPrice} zł</span>
+                    )}
+                    {selected.item.price} zł
+                  </span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(selected.item.id, selected.quantity - 1)}>
