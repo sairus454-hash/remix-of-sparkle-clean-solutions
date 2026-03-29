@@ -386,19 +386,22 @@ const Header = () => {
               <span>{t.chatbot?.menuButton || 'Открыть чат'}</span>
             </button>
             
-            {navItems.map((item) => {
+            {/* Mobile nav items in custom order */}
+            {[
+              '/',           // Главная
+              '/prices',     // Прайс
+              '/services',   // Химчистка мебели
+              '/cleaning',   // Уборка
+              '/auto',       // Химчистка авто
+              '/handyman',   // Мастер на час
+              '/ozone',      // Озонирование
+            ].map((path) => navItems.find(i => i.path === path)!).filter(Boolean).map((item) => {
               const getMobileHighlightClass = () => {
-                if (item.highlight === 'cleaning') {
-                  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
-                }
-                if (item.highlight === 'services' || item.highlight === 'handyman') {
-                  return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
-                }
+                if (item.highlight === 'cleaning') return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                if (item.highlight === 'services' || item.highlight === 'handyman') return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
                 return '';
               };
-              
               const mobileHighlight = getMobileHighlightClass();
-              
               return (
                 <Link
                   key={item.path}
@@ -407,9 +410,7 @@ const Header = () => {
                   className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
                     location.pathname === item.path
                       ? 'text-primary bg-accent'
-                      : mobileHighlight
-                        ? mobileHighlight
-                        : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                      : mobileHighlight ? mobileHighlight : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                   }`}
                   aria-current={location.pathname === item.path ? 'page' : undefined}
                 >
@@ -422,6 +423,23 @@ const Header = () => {
                 </Link>
               );
             })}
+            
+            {/* Remaining nav items */}
+            {navItems.filter(i => !['/', '/prices', '/services', '/cleaning', '/auto', '/handyman', '/ozone'].includes(i.path)).map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
+                  location.pathname === item.path
+                    ? 'text-primary bg-accent'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                }`}
+                aria-current={location.pathname === item.path ? 'page' : undefined}
+              >
+                {item.label}
+              </Link>
+            ))}
           </nav>
         )}
       </div>
