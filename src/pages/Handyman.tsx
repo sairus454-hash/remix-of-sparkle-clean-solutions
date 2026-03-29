@@ -15,7 +15,7 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Wrench, Hammer, Plug, Droplet, Flower2, DoorOpen, 
-  Lightbulb, Tv, Frame, ShowerHead, Lock, Fan, Leaf, Calculator
+  Lightbulb, Tv, Frame, ShowerHead, Lock, Fan, Leaf, Calculator, Sparkles
 } from 'lucide-react';
 import PromotionsSection from '@/components/PromotionsSection';
 import { img } from '@/utils/imageMap';
