@@ -116,23 +116,32 @@ const Services = () => {
         canonical="/services"
         image="https://masterclean1885.pl/og-services.png"
         breadcrumbs={[{ name: t.nav.services, path: '/services' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Pranie tapicerki meblowej',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
-          },
-          areaServed: [
-            { '@type': 'City', name: 'Opole' },
-            { '@type': 'City', name: 'Wrocław' },
-            { '@type': 'City', name: 'Poznań' },
-            { '@type': 'City', name: 'Zielona Góra' },
-          ],
-        }}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Service',
+           serviceType: 'Pranie tapicerki meblowej',
+           name: 'Pranie tapicerki meblowej i skórzanej',
+           description: 'Profesjonalne pranie tapicerki meblowej i skórzanej z dojazdem do klienta. Czyszczenie kanap, foteli, sof, materacy.',
+           url: 'https://masterclean1885.pl/services',
+           provider: {
+             '@type': 'LocalBusiness',
+             name: 'MasterClean',
+             telephone: '+48575211401',
+             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+           },
+           areaServed: [
+             { '@type': 'City', name: 'Wrocław' },
+             { '@type': 'City', name: 'Opole' },
+             { '@type': 'City', name: 'Legnica' },
+             { '@type': 'City', name: 'Kalisz' },
+           ],
+           offers: [
+             { '@type': 'Offer', name: 'Pranie kanapy 2-osobowej', price: '150', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie kanapy 3-osobowej', price: '180', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie narożnika', price: '250', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie materaca', price: '100', priceCurrency: 'PLN' },
+           ],
+         }}
       />
       <Layout>
          {/* Hero */}

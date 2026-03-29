@@ -61,28 +61,31 @@ const Ozone = () => {
         canonical="/ozone"
         image="https://masterclean1885.pl/og-ozone.png"
         breadcrumbs={[{ name: t.nav.ozone, path: '/ozone' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Ozonowanie pomieszczeń i samochodów',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
-          },
-          areaServed: [
-            { '@type': 'City', name: 'Opole' },
-            { '@type': 'City', name: 'Wrocław' },
-            { '@type': 'City', name: 'Poznań' },
-            { '@type': 'City', name: 'Zielona Góra' },
-          ],
-          offers: [
-            { '@type': 'Offer', name: 'Ozonowanie mieszkania 1-pokojowego', price: '120', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Ozonowanie mieszkania 2-pokojowego', price: '200', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Ozonowanie samochodu', price: '100', priceCurrency: 'PLN' },
-          ],
-        }}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Service',
+           serviceType: 'Ozonowanie pomieszczeń i samochodów',
+           name: 'Ozonowanie pomieszczeń i samochodów',
+           description: 'Profesjonalne ozonowanie mieszkań, biur i samochodów. Usuwanie zapachów i dezynfekcja ozonem.',
+           url: 'https://masterclean1885.pl/ozone',
+           provider: {
+             '@type': 'LocalBusiness',
+             name: 'MasterClean',
+             telephone: '+48575211401',
+             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+           },
+           areaServed: [
+             { '@type': 'City', name: 'Wrocław' },
+             { '@type': 'City', name: 'Opole' },
+             { '@type': 'City', name: 'Legnica' },
+             { '@type': 'City', name: 'Kalisz' },
+           ],
+           offers: [
+             { '@type': 'Offer', name: 'Ozonowanie mieszkania 1-pokojowego', price: '120', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Ozonowanie mieszkania 2-pokojowego', price: '200', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Ozonowanie samochodu', price: '100', priceCurrency: 'PLN' },
+           ],
+         }}
       />
     <Layout>
       <BackToOrderButton />

@@ -164,28 +164,31 @@ const Handyman = () => {
         canonical="/handyman"
         image="https://masterclean1885.pl/og-handyman.png"
         breadcrumbs={[{ name: t.nav.handyman, path: '/handyman' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Złota rączka — usługi domowe',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'opolskie' },
-          },
-          areaServed: [
-            { '@type': 'City', name: 'Opole' },
-            { '@type': 'City', name: 'Wrocław' },
-            { '@type': 'City', name: 'Poznań' },
-            { '@type': 'City', name: 'Zielona Góra' },
-          ],
-          offers: [
-            { '@type': 'Offer', name: 'Usługi hydrauliczne', price: '120', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Usługi elektryczne', price: '40', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Udrażnianie kanalizacji', price: '250', priceCurrency: 'PLN' },
-          ],
-        }}
+         jsonLd={{
+           '@context': 'https://schema.org',
+           '@type': 'Service',
+           serviceType: 'Złota rączka — usługi domowe',
+           name: 'Złota rączka — drobne naprawy i montaż',
+           description: 'Złota rączka Wrocław: hydraulika, elektryka, montaż mebli, drobne naprawy domowe z dojazdem.',
+           url: 'https://masterclean1885.pl/handyman',
+           provider: {
+             '@type': 'LocalBusiness',
+             name: 'MasterClean',
+             telephone: '+48575211401',
+             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+           },
+           areaServed: [
+             { '@type': 'City', name: 'Wrocław' },
+             { '@type': 'City', name: 'Opole' },
+             { '@type': 'City', name: 'Legnica' },
+             { '@type': 'City', name: 'Kalisz' },
+           ],
+           offers: [
+             { '@type': 'Offer', name: 'Usługi hydrauliczne', price: '120', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Usługi elektryczne', price: '40', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Udrażnianie kanalizacji', price: '250', priceCurrency: 'PLN' },
+           ],
+         }}
       />
     <Layout>
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
