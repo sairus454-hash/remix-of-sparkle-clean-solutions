@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';

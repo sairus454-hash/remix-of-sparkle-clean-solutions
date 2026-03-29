@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';

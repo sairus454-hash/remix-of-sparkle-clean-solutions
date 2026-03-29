@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useLocation } from 'react-router-dom';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';

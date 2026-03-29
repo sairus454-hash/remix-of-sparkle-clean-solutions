@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { toast } from '@/hooks/use-toast';
 import { useSplash } from '@/hooks/useSplash';
 
