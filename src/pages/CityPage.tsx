@@ -552,7 +552,7 @@ const CityPage = () => {
                     >
                       <div className="overflow-hidden">
                         <div className="p-4 sm:p-5 pt-0">
-                          <CardServiceCalculator category={cat.id} items={cat.items} />
+                          <CardServiceCalculator category={cat.id} items={cat.items} noDiscount={!isWroclaw} />
                         </div>
                       </div>
                     </div>

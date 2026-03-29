@@ -44,6 +44,7 @@ function applyFirstOrderDiscount(items: ServiceCardItem[], category?: string): S
 interface CardServiceCalculatorProps {
   items: ServiceCardItem[];
   category?: string;
+  noDiscount?: boolean;
   onSendToForm?: (items: CalculatorItem[], total: number) => void;
   onQuickOrder?: (items: CalculatorItem[], total: number) => void;
 }
@@ -101,7 +102,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
   );
 };
 
-const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
+const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
@@ -110,8 +111,8 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
-  // Apply first-order discount for eligible categories
-  const displayItems = applyFirstOrderDiscount(items, category);
+  // Apply first-order discount for eligible categories (unless disabled)
+  const displayItems = noDiscount ? items : applyFirstOrderDiscount(items, category);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
