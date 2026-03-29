@@ -22,7 +22,7 @@ interface ServiceCardItem {
 }
 
 // Categories eligible for 10% first-order discount display
-const DISCOUNT_CATEGORIES = ['furniture', 'leather', 'mattress'];
+const DISCOUNT_CATEGORIES = ['furniture', 'leather'];
 const DISCOUNT_PERCENT = 10;
 
 // IDs excluded from the 10% discount (carpets, impregnation, strollers, etc.)
