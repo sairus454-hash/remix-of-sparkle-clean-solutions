@@ -25,10 +25,17 @@ interface ServiceCardItem {
 const DISCOUNT_CATEGORIES = ['furniture', 'leather', 'mattress'];
 const DISCOUNT_PERCENT = 10;
 
+// IDs excluded from the 10% discount (carpets, impregnation, strollers, etc.)
+const DISCOUNT_EXCLUDED_IDS = [
+  'carpet', 'carpetCovering', 'carpetPickup', 'carpetFloorMedium', 'carpetFloorLarge',
+  'carpetImpregnation', 'carpetCoveringImpregnation', 'impregnation',
+  'stroller', 'carseat', 'tileCleaning',
+];
+
 function applyFirstOrderDiscount(items: ServiceCardItem[], category?: string): ServiceCardItem[] {
   if (!category || !DISCOUNT_CATEGORIES.includes(category)) return items;
   return items.map(item => {
-    if (item.price === 0 || item.promoBadge) return item;
+    if (item.price === 0 || item.promoBadge || DISCOUNT_EXCLUDED_IDS.includes(item.id)) return item;
     const discountedPrice = Math.round(item.price * (1 - DISCOUNT_PERCENT / 100));
     return { ...item, originalPrice: item.price, price: discountedPrice };
   });
