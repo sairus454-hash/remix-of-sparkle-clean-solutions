@@ -30,6 +30,8 @@ const DISCOUNT_EXCLUDED_IDS = [
   'carpet', 'carpetCovering', 'carpetPickup', 'carpetFloorMedium', 'carpetFloorLarge',
   'carpetImpregnation', 'carpetCoveringImpregnation', 'impregnation',
   'stroller', 'carseat', 'tileCleaning',
+  'mattressSingle', 'mattressDouble', 'mattressSingleDry2', 'mattressDoubleDry2',
+  'bedHeadboard', 'bedFrame',
 ];
 
 function applyFirstOrderDiscount(items: ServiceCardItem[], category?: string): ServiceCardItem[] {
