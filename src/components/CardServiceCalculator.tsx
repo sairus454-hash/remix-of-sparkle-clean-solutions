@@ -292,6 +292,15 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                     </div>
                   )}
 
+                  {/* Discount badge for furniture/leather/mattress */}
+                  {!item.promoBadge && item.originalPrice && (
+                    <div className="absolute top-2 left-2 z-10">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-md">
+                        -{DISCOUNT_PERCENT}%
+                      </span>
+                    </div>
+                  )}
+
                   {/* Info */}
                   <div className="p-3 w-full">
                     <p className={cn(
