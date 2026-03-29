@@ -967,7 +967,7 @@ ${PRICE_LIST.ru}
 — Если клиент заказывает из одной категории — предложи добавить услугу из ДРУГОЙ категории для скидки 10%
 — При расчёте стоимости ПОКАЗЫВАЙ экономию: "Итого: 310 zł (экономия 34 zł!)"
 — Экспресс освежение (150 PLN) — скидка НЕ применяется, сообщай об этом клиенту
-— ВСЕГДА упоминай минимальный заказ: 180 PLN (Вроцлав), 400 PLN (другие города)
+— ВСЕГДА упоминай минимальный заказ: 180 PLN (Вроцлав), 300 PLN (другие города)
 — Если клиент молчит — предложи помощь и кнопку заявки
 — Если вопрос сложный — предложи "Связаться с менеджером"
 
@@ -1116,7 +1116,7 @@ IMPORTANT:
 — If customer orders from one category — suggest adding a service from ANOTHER category for 10% discount
 — When calculating cost, SHOW savings: "Total: 310 zł (saving 34 zł!)"
 — Express freshening (150 PLN) — discount does NOT apply, inform the customer
-— ALWAYS mention minimum order: 180 PLN (Wrocław), 400 PLN (other cities)
+— ALWAYS mention minimum order: 180 PLN (Wrocław), 300 PLN (other cities)
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"
 
@@ -1238,7 +1238,7 @@ WAŻNE:
 — Jeśli klient zamawia z jednej kategorii — zaproponuj dodanie usługi z INNEJ kategorii dla 10% rabatu
 — Przy obliczaniu kosztu POKAŻ OSZCZĘDNOŚCI: "Razem: 310 zł (oszczędność 34 zł!)"
 — Ekspresowe odświeżenie (150 PLN) — rabat NIE dotyczy, poinformuj klienta
-— ZAWSZE wspominaj o minimalnym zamówieniu: 180 PLN (Wrocław), 400 PLN (inne miasta)
+— ZAWSZE wspominaj o minimalnym zamówieniu: 180 PLN (Wrocław), 300 PLN (inne miasta)
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
 — Jeśli pytanie jest trudne — zaproponuj "Kontakt z menedżerem"
 
