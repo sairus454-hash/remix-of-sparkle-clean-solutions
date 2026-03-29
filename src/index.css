@@ -336,7 +336,7 @@ html {
     height: 0;
   }
   
-  * {
+  html {
     scrollbar-width: none;
   }
 }
