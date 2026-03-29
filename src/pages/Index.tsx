@@ -209,7 +209,6 @@ const Index = () => {
             <div 
               className="relative px-8 py-4 rounded-2xl animate-fade-up overflow-hidden bg-card/90 border border-border/50 shadow-card"
             >
-            >
               {/* Pulsing glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-fresh/20 to-primary/20 animate-pulse rounded-2xl" />
               
