@@ -173,6 +173,8 @@ const Auto = () => {
         </section>
         <Auto3DCarousel />
 
+        <PromotionsSection />
+
         {/* Card Calculator */}
         <section className="py-12 sm:py-20 bg-card">
           <div className="container mx-auto px-4">
@@ -195,7 +197,6 @@ const Auto = () => {
           </div>
         </section>
 
-        <PromotionsSection />
 
         {/* Contact Form */}
         <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section">
