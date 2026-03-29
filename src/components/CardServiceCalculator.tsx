@@ -396,7 +396,12 @@ const CardServiceCalculator = ({ items, category, onSendToForm, onQuickOrder }: 
                 />
                 <div className="flex-1 min-w-0">
                   <span className="font-medium text-foreground text-sm block truncate">{selected.item.name}</span>
-                  <span className="text-xs text-muted-foreground">{selected.item.price} zł</span>
+                  <span className="text-xs text-muted-foreground">
+                    {selected.item.originalPrice && (
+                      <span className="line-through mr-1">{selected.item.originalPrice} zł</span>
+                    )}
+                    {selected.item.price} zł
+                  </span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(selected.item.id, selected.quantity - 1)}>
