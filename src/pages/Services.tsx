@@ -4,6 +4,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import PromotionsSection from '@/components/PromotionsSection';
 import { Sparkles, Sofa, Armchair } from 'lucide-react';
 import servicesCleaning from '@/assets/services-cleaning.jpg';
 import servicesDrying from '@/assets/services-drying.jpg';
@@ -216,6 +217,8 @@ const Services = () => {
             </CircularRevealCard>
           </div>
         </section>
+
+        <PromotionsSection />
       </Layout>
     </>
   );
