@@ -12,6 +12,8 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = fal
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
+  // Skip video entirely on mobile to save ~18MB and fix LCP
+  const [isMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
   const handleCanPlay = useCallback(() => {
     setVideoReady(true);
@@ -23,6 +25,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = fal
   }, []);
 
   useEffect(() => {
+    if (isMobile) return; // No video on mobile
     const video = videoRef.current;
     const container = containerRef.current;
     if (!video || !container) return;
@@ -46,7 +49,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = fal
     observer.observe(container);
 
     return () => observer.disconnect();
-  }, [src, eager]);
+  }, [src, eager, isMobile]);
 
   return (
     <div
@@ -64,26 +67,28 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = fal
           loading={eager ? 'eager' : 'lazy'}
           fetchPriority={eager ? 'high' : undefined}
           decoding={eager ? 'sync' : 'async'}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-          style={{ opacity: videoReady ? 0 : 1 }}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: (!isMobile && videoReady) ? 0 : 1, transition: isMobile ? 'none' : 'opacity 0.7s' }}
         />
       )}
 
-      {/* Video element — fades in on top of fallback image */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        poster={poster}
-        aria-hidden="true"
-        onCanPlay={handleCanPlay}
-        onError={handleError}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-        style={{ opacity: videoReady ? 1 : 0 }}
-      />
+      {/* Video element — only on desktop, fades in on top of fallback image */}
+      {!isMobile && (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster={poster}
+          aria-hidden="true"
+          onCanPlay={handleCanPlay}
+          onError={handleError}
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+          style={{ opacity: videoReady ? 1 : 0 }}
+        />
+      )}
 
       {/* Gradient fallback when no image provided */}
       {!fallbackImage && !videoReady && (
