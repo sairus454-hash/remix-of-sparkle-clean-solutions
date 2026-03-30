@@ -29,6 +29,10 @@ import heroImage from '@/assets/masterclean-logo-hero.webp';
 // Lazy load below-fold non-critical components
 const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCard'));
 const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
+const ContactForm = lazy(() => import('@/components/ContactForm'));
+const PriceSection = lazy(() => import('@/components/PriceSection'));
+const QuickCalculator = lazy(() => import('@/components/QuickCalculator'));
+const PriceCalculatorContent = lazy(() => import('@/components/PriceCalculatorContent'));
 
 const Index = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
