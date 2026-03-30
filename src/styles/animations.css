@@ -39,10 +39,10 @@
   to { transform: scale(1.1); }
 }
 
-/* Shimmer text gradient — uses transform for GPU compositing */
+/* Shimmer text gradient — uses background-position shorthand for compositing */
 @keyframes shimmer {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
+  0% { background-position: 200% 50%; }
+  100% { background-position: -200% 50%; }
 }
 
 /* Marquee scroll */
