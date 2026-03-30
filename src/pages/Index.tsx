@@ -230,8 +230,8 @@ const Index = () => {
 
       <MobilePromotionsCard />
 
-      {/* Promotions Section — hidden on mobile */}
       <LazySection minHeight="400px">
+      <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             {/* Premium animated icon */}
