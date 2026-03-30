@@ -22,14 +22,14 @@ const Layout = ({ children }: LayoutProps) => {
       </a>
       <CleaningBackground />
       <Header />
-      <main id="main-content" role="main" className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10 animate-page-enter">
+      <main id="main-content" role="main" className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10">
         {/* Marquee Section */}
         <section aria-label="Informacja promocyjna" className="py-2 sm:py-2.5 mt-14 sm:mt-16 overflow-hidden shadow-md" style={{ background: 'linear-gradient(90deg, hsl(195 85% 42%) 0%, hsl(170 65% 45%) 25%, hsl(45 70% 55% / 0.5) 50%, hsl(170 65% 45%) 75%, hsl(195 85% 42%) 100%)' }}>
           <div className="relative">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...Array(4)].map((_, i) => (
                 <span key={i} className="mx-4 sm:mx-8 text-primary-foreground font-medium text-xs sm:text-sm md:text-lg flex items-center gap-1.5 sm:gap-2">
-                  <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-foreground/80 rounded-full animate-pulse" />
+                  <span className="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary-foreground/80 rounded-full" />
                   {t.hero.marquee}
                 </span>
               ))}

@@ -129,19 +129,13 @@ const Header = () => {
             {/* Logo */}
             <div style={getHeaderItemStyle(1, headerRevealed)}>
               <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
-                <div className="relative hover:scale-110 hover:rotate-[5deg] transition-transform duration-300">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                <div className="relative">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-hero flex items-center justify-center shadow-glow">
                       <Droplets className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                   </div>
-                  <div
-                    className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/60 rounded-full animate-pulse"
-                  />
-                  <div
-                    className="absolute -bottom-0.5 -left-0.5 w-1.5 h-1.5 bg-primary/50 rounded-full animate-pulse"
-                    style={{ animationDelay: '0.5s' }}
-                  />
+                  <div className="absolute -top-1 -right-1 w-2 h-2 bg-fresh/60 rounded-full" />
                 </div>
-                <span className="font-serif text-lg sm:text-xl font-semibold hidden sm:block bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                <span className="font-serif text-lg sm:text-xl font-semibold hidden sm:block bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
                   MasterClean
                 </span>
               </Link>
@@ -275,16 +269,10 @@ const Header = () => {
             {/* 24/7 Badge - Now visible on all screens */}
             <div style={getHeaderItemStyle(12, headerRevealed)}>
               <div
-                className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow hover:scale-110 transition-transform"
-                style={{ animation: 'float 3s ease-in-out infinite' }}
+                className="flex items-center gap-1 sm:gap-1.5 md:gap-2 bg-gradient-hero px-1.5 sm:px-2 md:px-3 py-1 sm:py-1.5 rounded-full shadow-glow"
               >
                 <div className="relative">
-                  <div
-                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full absolute animate-ping"
-                  />
-                  <div
-                    className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full animate-pulse"
-                  />
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 md:w-2.5 md:h-2.5 bg-fresh rounded-full" />
                 </div>
                 <span className="text-primary-foreground font-bold text-[10px] sm:text-xs md:text-sm">24/7</span>
               </div>

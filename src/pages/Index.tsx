@@ -1,13 +1,11 @@
 import { useState, lazy, Suspense } from 'react';
 import LazySection from '@/components/LazySection';
-import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import CircularRevealCard from '@/components/CircularRevealCard';
 import { Button } from '@/components/ui/button';
+import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Calculator, Shield, BookOpen } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator, Shield, BookOpen } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -22,22 +20,21 @@ import {
   DrawerTitle,
 } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useSplash } from '@/hooks/useSplash';
-import heroImage from '@/assets/masterclean-logo-hero.webp';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
+import heroImage from '@/assets/masterclean-logo-hero.webp';
 
-// Lazy load heavy below-fold components
+// Lazy load below-fold non-critical components
+const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCard'));
+const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
 const ContactForm = lazy(() => import('@/components/ContactForm'));
-const WaterDropSplash = lazy(() => import('@/components/WaterDropSplash'));
 const PriceSection = lazy(() => import('@/components/PriceSection'));
 const QuickCalculator = lazy(() => import('@/components/QuickCalculator'));
 const PriceCalculatorContent = lazy(() => import('@/components/PriceCalculatorContent'));
 
 const Index = () => {
-  const { showSplash, handleSplashComplete } = useSplash('index');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
   const isMobile = useIsMobile();
@@ -119,7 +116,6 @@ const Index = () => {
           },
         }}
       />
-      {showSplash && <Suspense fallback={null}><WaterDropSplash onComplete={handleSplashComplete} /></Suspense>}
       <Layout>
       {/* Hero Video Banner */}
       <section className="relative w-full overflow-hidden" style={{ height: '80vh', padding: 0, maxWidth: 'none' }}>
@@ -128,14 +124,14 @@ const Index = () => {
         <div className="absolute inset-0 z-10 flex items-center">
           <div className="container mx-auto px-4">
             <div className="max-w-xl">
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white leading-tight animate-fade-up" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.4)' }}>
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white leading-tight" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.4)' }}>
                 {t.hero.title}
               </h1>
-              <p className="text-base sm:text-lg text-white font-medium mb-6 animate-fade-up leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s' }}>
+              <p className="text-base sm:text-lg text-white font-medium mb-6 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
                 <span className="hidden sm:inline">{t.hero.subtitle}</span>
                 <span className="sm:hidden">{t.hero.subtitleShort}</span>
               </p>
-              <div className="animate-fade-up" style={{ animationDelay: '0.2s' }}>
+              <div>
                 <Link to="/contacts">
                   <Button className="bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 touch-manipulation active:scale-95 transition-transform">
                     {t.hero.cta}
@@ -228,7 +224,7 @@ const Index = () => {
         </div>
       </section>
 
-      <MobilePromotionsCard />
+      <Suspense fallback={null}><MobilePromotionsCard /></Suspense>
 
       <LazySection minHeight="400px">
       <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">

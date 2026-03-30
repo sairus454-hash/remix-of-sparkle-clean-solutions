@@ -9,8 +9,9 @@ import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 
-import SecurityHeaders from "@/components/SecurityHeaders";
-import PWAUpdatePrompt from "@/components/PWAUpdatePrompt";
+// Defer non-critical global components — they don't affect FCP/LCP
+const SecurityHeaders = lazy(() => import("@/components/SecurityHeaders"));
+const PWAUpdatePrompt = lazy(() => import("@/components/PWAUpdatePrompt"));
 
 // Lazy load non-critical UI
 const FreeDeliveryBadge = lazy(() => import("@/components/FreeDeliveryBadge"));
@@ -67,8 +68,8 @@ const App = () => {
               <Toaster />
               <Sonner />
               <BrowserRouter>
-                <SecurityHeaders />
-                <PWAUpdatePrompt />
+              <Suspense fallback={null}><SecurityHeaders /></Suspense>
+                <Suspense fallback={null}><PWAUpdatePrompt /></Suspense>
                 <ScrollToTop />
                 
                 <Suspense fallback={null}>
