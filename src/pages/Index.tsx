@@ -1,43 +1,50 @@
 import { useState, lazy, Suspense } from 'react';
 import LazySection from '@/components/LazySection';
-import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
-import CircularRevealCard from '@/components/CircularRevealCard';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Droplets, Calculator, Shield, BookOpen } from 'lucide-react';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-} from '@/components/ui/drawer';
+import { ArrowRight, Calculator } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { useSplash } from '@/hooks/useSplash';
-import heroImage from '@/assets/masterclean-logo-hero.webp';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 
+// Lazy load below-fold and non-critical components
+const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCard'));
+const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
+const Card = lazy(() => import('@/components/ui/card').then(m => ({ default: m.Card })));
+const CardContent = lazy(() => import('@/components/ui/card').then(m => ({ default: m.CardContent })));
+const Dialog = lazy(() => import('@/components/ui/dialog').then(m => ({ default: m.Dialog })));
+const DialogContent = lazy(() => import('@/components/ui/dialog').then(m => ({ default: m.DialogContent })));
+const DialogHeader = lazy(() => import('@/components/ui/dialog').then(m => ({ default: m.DialogHeader })));
+const DialogTitle = lazy(() => import('@/components/ui/dialog').then(m => ({ default: m.DialogTitle })));
+const DialogDescription = lazy(() => import('@/components/ui/dialog').then(m => ({ default: m.DialogDescription })));
+const Drawer = lazy(() => import('vaul').then(m => ({ default: m.Drawer.Root })));
+const DrawerContent = lazy(() => import('@/components/ui/drawer').then(m => ({ default: m.DrawerContent })));
+const DrawerHeader = lazy(() => import('@/components/ui/drawer').then(m => ({ default: m.DrawerHeader })));
+const DrawerTitle = lazy(() => import('@/components/ui/drawer').then(m => ({ default: m.DrawerTitle })));
+
+import heroImage from '@/assets/masterclean-logo-hero.webp';
+
 // Lazy load heavy below-fold components
 const ContactForm = lazy(() => import('@/components/ContactForm'));
-const WaterDropSplash = lazy(() => import('@/components/WaterDropSplash'));
 const PriceSection = lazy(() => import('@/components/PriceSection'));
 const QuickCalculator = lazy(() => import('@/components/QuickCalculator'));
 const PriceCalculatorContent = lazy(() => import('@/components/PriceCalculatorContent'));
 
+// Lazy load icons used only below fold
+const Sparkles = lazy(() => import('lucide-react').then(m => ({ default: m.Sparkles })));
+const CheckCircle2 = lazy(() => import('lucide-react').then(m => ({ default: m.CheckCircle2 })));
+const Star = lazy(() => import('lucide-react').then(m => ({ default: m.Star })));
+const Users = lazy(() => import('lucide-react').then(m => ({ default: m.Users })));
+const Award = lazy(() => import('lucide-react').then(m => ({ default: m.Award })));
+const Droplets = lazy(() => import('lucide-react').then(m => ({ default: m.Droplets })));
+const Shield = lazy(() => import('lucide-react').then(m => ({ default: m.Shield })));
+const BookOpen = lazy(() => import('lucide-react').then(m => ({ default: m.BookOpen })));
+
 const Index = () => {
-  const { showSplash, handleSplashComplete } = useSplash('index');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
   const isMobile = useIsMobile();
@@ -119,7 +126,6 @@ const Index = () => {
           },
         }}
       />
-      {showSplash && <Suspense fallback={null}><WaterDropSplash onComplete={handleSplashComplete} /></Suspense>}
       <Layout>
       {/* Hero Video Banner */}
       <section className="relative w-full overflow-hidden" style={{ height: '80vh', padding: 0, maxWidth: 'none' }}>
