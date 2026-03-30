@@ -534,6 +534,7 @@ const Cleaning = () => {
 
 
 
+      <LazySection minHeight="400px">
       <section className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -569,6 +570,7 @@ const Cleaning = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       <MobilePromotionsCard />
 
@@ -577,6 +579,7 @@ const Cleaning = () => {
       </div>
 
       {/* Furniture Cleaning Calculator */}
+      <LazySection minHeight="400px">
       <section className="py-10 bg-card">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
