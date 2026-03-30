@@ -328,6 +328,7 @@ const Handyman = () => {
       </div>
 
       {/* Pricing */}
+      <LazySection minHeight="400px">
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -376,9 +377,11 @@ const Handyman = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
 
       {/* Contact Form */}
+      <LazySection minHeight="300px">
       <section ref={formSectionRef} className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
@@ -394,6 +397,7 @@ const Handyman = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* CSS for highlight animation */}
       <style>{`
