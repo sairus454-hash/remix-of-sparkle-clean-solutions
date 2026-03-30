@@ -10,7 +10,7 @@ interface HeroVideoProps {
   eager?: boolean;
 }
 
-const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = false }: HeroVideoProps) => {
+const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile, poster, eager = false }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
