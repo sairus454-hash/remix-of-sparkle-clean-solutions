@@ -24,6 +24,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useSplash } from '@/hooks/useSplash';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
 import heroBannerImage from '@/assets/hero-banner.jpg';
+import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 
