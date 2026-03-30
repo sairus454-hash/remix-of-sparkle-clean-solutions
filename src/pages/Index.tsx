@@ -224,7 +224,7 @@ const Index = () => {
         </div>
       </section>
 
-      <MobilePromotionsCard />
+      <Suspense fallback={null}><MobilePromotionsCard /></Suspense>
 
       <LazySection minHeight="400px">
       <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">
