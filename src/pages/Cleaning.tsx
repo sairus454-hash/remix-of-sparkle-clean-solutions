@@ -740,6 +740,7 @@ const Cleaning = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* Window Cleaning Link Block */}
       <section className="py-10 bg-card">
