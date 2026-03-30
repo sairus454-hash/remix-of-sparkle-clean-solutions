@@ -414,6 +414,7 @@ const Index = () => {
             </CircularRevealCard>
           </div>
         </div>
+      </section>
       </LazySection>
 
       {/* Calculator Trigger */}
