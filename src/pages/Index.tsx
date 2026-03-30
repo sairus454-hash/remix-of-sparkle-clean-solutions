@@ -575,6 +575,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </LazySection>
     </Layout>
     </>;
 };
