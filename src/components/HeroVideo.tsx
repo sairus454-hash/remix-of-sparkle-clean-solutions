@@ -3,12 +3,14 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 interface HeroVideoProps {
   src?: string;
   fallbackImage?: string;
+  /** Smaller image for mobile screens (< 768px) to reduce LCP */
+  fallbackImageMobile?: string;
   poster?: string;
   /** Skip lazy-loading for above-fold hero — improves LCP */
   eager?: boolean;
 }
 
-const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = false }: HeroVideoProps) => {
+const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile, poster, eager = false }: HeroVideoProps) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
@@ -59,17 +61,22 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, poster, eager = fal
     >
       {/* Fallback image — always rendered as LCP candidate */}
       {fallbackImage && (
-        <img
-          src={fallbackImage}
-          alt="MasterClean — profesjonalne usługi czyszczenia"
-          width={1920}
-          height={1080}
-          loading={eager ? 'eager' : 'lazy'}
-          fetchPriority={eager ? 'high' : undefined}
-          decoding={eager ? 'sync' : 'async'}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: (!isMobile && videoReady) ? 0 : 1, transition: isMobile ? 'none' : 'opacity 0.7s' }}
-        />
+        <picture>
+          {fallbackImageMobile && (
+            <source media="(max-width: 767px)" srcSet={fallbackImageMobile} type={fallbackImageMobile.endsWith('.webp') ? 'image/webp' : 'image/jpeg'} />
+          )}
+          <img
+            src={fallbackImage}
+            alt="MasterClean — profesjonalne usługi czyszczenia"
+            width={isMobile ? 480 : 1920}
+            height={isMobile ? 720 : 1080}
+            loading={eager ? 'eager' : 'lazy'}
+            fetchPriority={eager ? 'high' : undefined}
+            decoding={eager ? 'sync' : 'async'}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ opacity: (!isMobile && videoReady) ? 0 : 1, transition: isMobile ? 'none' : 'opacity 0.7s' }}
+          />
+        </picture>
       )}
 
       {/* Video element — only on desktop, fades in on top of fallback image */}

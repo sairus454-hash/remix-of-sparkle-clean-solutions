@@ -24,6 +24,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useSplash } from '@/hooks/useSplash';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
 import heroBannerImage from '@/assets/hero-banner.jpg';
+import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 
@@ -121,7 +122,7 @@ const Index = () => {
       <Layout>
       {/* Hero Video Banner */}
       <section className="relative w-full overflow-hidden" style={{ height: '80vh', padding: 0, maxWidth: 'none' }}>
-        <HeroVideo fallbackImage={heroBannerImage} eager />
+        <HeroVideo fallbackImage={heroBannerImage} fallbackImageMobile={heroBannerMobile} eager />
         
         <div className="absolute inset-0 z-10 flex items-center">
           <div className="container mx-auto px-4">
