@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, lazy, Suspense } from 'react';
+import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { toast } from '@/hooks/use-toast';
 import { useSplash } from '@/hooks/useSplash';
@@ -533,6 +534,7 @@ const Cleaning = () => {
 
 
 
+      <LazySection minHeight="400px">
       <section className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -568,6 +570,7 @@ const Cleaning = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       <MobilePromotionsCard />
 
@@ -576,6 +579,7 @@ const Cleaning = () => {
       </div>
 
       {/* Furniture Cleaning Calculator */}
+      <LazySection minHeight="400px">
       <section className="py-10 bg-card">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -689,6 +693,8 @@ const Cleaning = () => {
           </div>
         </div>
       </section>
+      </LazySection>
+      <LazySection minHeight="300px">
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -734,6 +740,7 @@ const Cleaning = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* Window Cleaning Link Block */}
       <section className="py-10 bg-card">

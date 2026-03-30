@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useRef, lazy, Suspense } from 'react';
+import LazySection from '@/components/LazySection';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -151,6 +152,7 @@ const Ozone = () => {
       </section>
 
       {/* What is Ozonation */}
+      <LazySection minHeight="300px">
       <section className="py-20 order-2 sm:order-1">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -186,6 +188,7 @@ const Ozone = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* Applications */}
       <section className="py-20 order-3 sm:order-2">
@@ -246,6 +249,7 @@ const Ozone = () => {
       </section>
 
       {/* Contact Form */}
+      <LazySection minHeight="300px">
       <section ref={formSectionRef} className="py-20 order-5">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
@@ -262,6 +266,7 @@ const Ozone = () => {
           </div>
         </div>
       </section>
+      </LazySection>
       </div>
       </div>
     </Layout>

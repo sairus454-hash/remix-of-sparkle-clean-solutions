@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
+import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -229,7 +230,7 @@ const Index = () => {
 
       <MobilePromotionsCard />
 
-      {/* Promotions Section — hidden on mobile */}
+      <LazySection minHeight="400px">
       <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
@@ -414,6 +415,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* Calculator Trigger */}
       <section className="py-6 sm:py-10 bg-card">
@@ -501,9 +503,12 @@ const Index = () => {
       )}
 
       {/* Price Section */}
-      <Suspense fallback={null}><PriceSection /></Suspense>
+      <LazySection minHeight="300px">
+        <Suspense fallback={null}><PriceSection /></Suspense>
+      </LazySection>
 
       {/* Why Choose Us */}
+      <LazySection minHeight="300px">
       <section className="py-12 sm:py-20 bg-card content-auto">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -548,8 +553,10 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </LazySection>
 
       {/* Contact Form Section */}
+      <LazySection minHeight="300px">
       <section className="py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
@@ -568,6 +575,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </LazySection>
     </Layout>
     </>;
 };

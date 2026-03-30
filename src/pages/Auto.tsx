@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useRef, lazy, Suspense } from 'react';
+import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
@@ -163,6 +164,7 @@ const Auto = () => {
         </section>
 
         {/* Services */}
+        <LazySection minHeight="300px">
         <section className="py-12 sm:py-20 bg-gradient-section order-2 sm:order-1">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
@@ -182,6 +184,7 @@ const Auto = () => {
             </div>
           </div>
         </section>
+        </LazySection>
 
         {/* Important Note about Floor Mats */}
         <section className="py-8 sm:py-12 bg-amber-50 dark:bg-amber-900/20 border-t border-b border-amber-200 dark:border-amber-900 order-3 sm:order-2">
@@ -211,6 +214,7 @@ const Auto = () => {
         </div>
 
         {/* Contact Form */}
+        <LazySection minHeight="300px">
         <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section order-6 sm:order-5">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto">
@@ -227,6 +231,7 @@ const Auto = () => {
             </div>
           </div>
         </section>
+        </LazySection>
         </div>
       </Layout>
     </>

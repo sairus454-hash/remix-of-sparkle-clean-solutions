@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -196,6 +197,7 @@ const Services = () => {
         </div>
 
         {/* Furniture Calculator */}
+        <LazySection minHeight="400px">
         <section className="py-16 bg-gradient-section">
           <div className="container mx-auto px-4">
             <CircularRevealCard index={0}>
@@ -216,8 +218,10 @@ const Services = () => {
             </CircularRevealCard>
           </div>
         </section>
+        </LazySection>
 
         {/* Leather Calculator */}
+        <LazySection minHeight="400px">
         <section className="py-16 bg-card">
           <div className="container mx-auto px-4">
             <CircularRevealCard index={1}>
@@ -238,6 +242,7 @@ const Services = () => {
             </CircularRevealCard>
           </div>
         </section>
+        </LazySection>
       </Layout>
     </>
   );
