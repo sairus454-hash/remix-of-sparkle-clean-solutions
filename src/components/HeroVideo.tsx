@@ -3,6 +3,8 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 interface HeroVideoProps {
   src?: string;
   fallbackImage?: string;
+  /** Smaller image for mobile screens (< 768px) to reduce LCP */
+  fallbackImageMobile?: string;
   poster?: string;
   /** Skip lazy-loading for above-fold hero — improves LCP */
   eager?: boolean;
