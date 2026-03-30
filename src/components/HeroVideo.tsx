@@ -61,17 +61,22 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
     >
       {/* Fallback image — always rendered as LCP candidate */}
       {fallbackImage && (
-        <img
-          src={fallbackImage}
-          alt="MasterClean — profesjonalne usługi czyszczenia"
-          width={1920}
-          height={1080}
-          loading={eager ? 'eager' : 'lazy'}
-          fetchPriority={eager ? 'high' : undefined}
-          decoding={eager ? 'sync' : 'async'}
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: (!isMobile && videoReady) ? 0 : 1, transition: isMobile ? 'none' : 'opacity 0.7s' }}
-        />
+        <picture>
+          {fallbackImageMobile && (
+            <source media="(max-width: 767px)" srcSet={fallbackImageMobile} type={fallbackImageMobile.endsWith('.webp') ? 'image/webp' : 'image/jpeg'} />
+          )}
+          <img
+            src={fallbackImage}
+            alt="MasterClean — profesjonalne usługi czyszczenia"
+            width={isMobile ? 480 : 1920}
+            height={isMobile ? 720 : 1080}
+            loading={eager ? 'eager' : 'lazy'}
+            fetchPriority={eager ? 'high' : undefined}
+            decoding={eager ? 'sync' : 'async'}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ opacity: (!isMobile && videoReady) ? 0 : 1, transition: isMobile ? 'none' : 'opacity 0.7s' }}
+          />
+        </picture>
       )}
 
       {/* Video element — only on desktop, fades in on top of fallback image */}
