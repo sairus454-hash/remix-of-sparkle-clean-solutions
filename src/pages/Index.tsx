@@ -1,4 +1,5 @@
 import { useState, lazy, Suspense } from 'react';
+import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';

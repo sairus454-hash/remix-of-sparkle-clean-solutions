@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, lazy, Suspense } from 'react';
+import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';

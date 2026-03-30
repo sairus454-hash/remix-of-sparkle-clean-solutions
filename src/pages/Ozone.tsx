@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useRef, lazy, Suspense } from 'react';
+import LazySection from '@/components/LazySection';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
