@@ -52,14 +52,10 @@ const FreeDeliveryBadge = () => {
           <a
             href="tel:+48575211401"
             onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('floating_badge'))}
-            className="relative group w-14 h-14 bg-gradient-to-br from-fresh via-secondary to-fresh rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-300 ease-out hover:scale-110 active:scale-95 animate-pulse-slow"
+            className="relative group w-14 h-14 bg-gradient-to-br from-fresh via-secondary to-fresh rounded-full shadow-lg flex items-center justify-center active:scale-95"
             aria-label="Zadzwoń"
           >
-            <span className="absolute inset-0 rounded-full bg-fresh/20 opacity-75" />
-            <span className="absolute inset-2 rounded-full bg-fresh/10 opacity-50" />
             <Phone className="relative z-10 w-7 h-7 text-white drop-shadow-md" />
-            <span className="absolute top-1 right-2 w-2 h-2 bg-white rounded-full opacity-80 animate-twinkle" />
-            <span className="absolute bottom-3 left-2 w-1.5 h-1.5 bg-white rounded-full opacity-60 animate-twinkle animation-delay-300" />
           </a>
         ) : (
           <button
