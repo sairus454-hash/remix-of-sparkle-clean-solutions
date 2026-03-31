@@ -105,7 +105,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
 };
 
 const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
@@ -492,6 +492,16 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
           />
         </div>
       )}
+      {/* Disclaimer */}
+      <p className="mt-4 text-xs text-muted-foreground/70 text-center italic px-2">
+        {language === 'ru'
+          ? 'К сожалению, мы не можем гарантировать, что каждое отдельное пятно будет выведено, а также не гарантируем, что каждый неприятный запах исчезнет.'
+          : language === 'uk'
+          ? 'На жаль, ми не можемо гарантувати, що кожна окрема пляма зійде, а також не гарантуємо, що кожен неприємний запах зникне.'
+          : language === 'en'
+          ? 'Unfortunately, we cannot guarantee that every individual stain will be removed, nor do we guarantee that every unpleasant odor will disappear.'
+          : 'Niestety nie możemy gwarantować, że każda poszczególna plama zejdzie, oraz nie gwarantujemy, że każdy nieprzyjemny zapach zniknie.'}
+      </p>
     </div>
   );
 };
