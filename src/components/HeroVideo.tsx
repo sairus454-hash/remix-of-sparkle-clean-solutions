@@ -32,11 +32,10 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
     const container = containerRef.current;
     if (!video || !container) return;
 
-    if (eager) {
-      video.src = src;
-      video.load();
-      return;
-    }
+    // On desktop always load immediately
+    video.src = src;
+    video.load();
+    return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -59,24 +58,18 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
       className="relative w-full overflow-hidden"
       style={{ height: '80vh', maxWidth: 'none', padding: 0 }}
     >
-      {/* Fallback image — always rendered as LCP candidate */}
-      {fallbackImage && (
-        <picture>
-          {fallbackImageMobile && (
-            <source media="(max-width: 767px)" srcSet={fallbackImageMobile} type={fallbackImageMobile.endsWith('.webp') ? 'image/webp' : 'image/jpeg'} />
-          )}
-          <img
-            src={fallbackImage}
-            alt="MasterClean — profesjonalne usługi czyszczenia"
-            width={isMobile ? 480 : 1920}
-            height={isMobile ? 720 : 1080}
-            loading={eager ? 'eager' : 'lazy'}
-            fetchPriority={eager ? 'high' : undefined}
-            decoding={eager ? 'sync' : 'async'}
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ opacity: (!isMobile && videoReady) ? 0 : 1, transition: isMobile ? 'none' : 'opacity 0.7s' }}
-          />
-        </picture>
+      {/* Fallback image — only on mobile (desktop loads video directly) */}
+      {fallbackImage && isMobile && (
+        <img
+          src={fallbackImageMobile || fallbackImage}
+          alt="MasterClean — profesjonalne usługi czyszczenia"
+          width={480}
+          height={720}
+          loading={eager ? 'eager' : 'lazy'}
+          fetchPriority={eager ? 'high' : undefined}
+          decoding={eager ? 'sync' : 'async'}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
       )}
 
       {/* Video element — only on desktop, fades in on top of fallback image */}
