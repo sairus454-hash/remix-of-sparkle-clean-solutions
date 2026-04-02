@@ -32,11 +32,10 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
     const container = containerRef.current;
     if (!video || !container) return;
 
-    if (eager) {
-      video.src = src;
-      video.load();
-      return;
-    }
+    // On desktop always load immediately
+    video.src = src;
+    video.load();
+    return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
