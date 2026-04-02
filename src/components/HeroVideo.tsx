@@ -70,7 +70,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
           decoding={eager ? 'sync' : 'async'}
           className="absolute inset-0 w-full h-full object-cover"
         />
-      )
+      )}
 
       {/* Video element — only on desktop, fades in on top of fallback image */}
       {!isMobile && (
