@@ -46,7 +46,7 @@ const SEO = ({
 }: SEOProps) => {
   const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
-  const path = canonical || '/';
+  const path = (canonical || '/').split('?')[0];
   const canonicalUrl = `${SITE_URL}${path}`;
 
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
