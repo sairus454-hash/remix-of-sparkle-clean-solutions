@@ -10,6 +10,7 @@ import sofaSeatsGuidePl from '@/assets/sofa-seats-guide-pl.jpg';
 import dryingAfterCleaning from '@/assets/drying-after-cleaning-blog.jpg';
 import windowWashingBlog from '@/assets/window-washing-blog.jpg';
 import mattressDeepCleaning from '@/assets/mattress-deep-cleaning-blog.jpg';
+import sabrinaVsKarcher from '@/assets/sabrina-vs-karcher-blog.jpg';
 
 export interface BlogArticle {
   id: number;
@@ -139,6 +140,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '5 мин',
       tag: '🛏️ Матрасы',
     },
+    {
+      id: 12,
+      title: 'Почему одна фирма предлагает чистку обивки за 100 zł, а другая за 200–300 zł?',
+      summary: 'Не каждая услуга означает одно и то же. Разница в оборудовании определяет качество и долговечность результата.',
+      content: 'Многие фирмы используют базовое оборудование, которое лишь поверхностно увлажняет материал, не удаляет загрязнения из глубоких слоёв и может оставлять влагу и неприятный запах. В результате обивка выглядит лучше лишь на короткое время.',
+      fullContent: '🤔 Почему одна фирма предлагает чистку обивки за 100 zł, а другая — за 200–300 zł?\n\nВсё просто — не каждая услуга означает одно и то же.\n\nМногие фирмы используют базовое оборудование, которое:\n\n❌ лишь поверхностно увлажняет материал\n❌ не удаляет загрязнения из глубоких слоёв\n❌ может оставлять влагу и неприятный запах\n\n👉 В результате обивка выглядит лучше лишь на короткое время.\n\nМы ставим на профессиональные решения и работаем на аппарате Santoemma Sabrina Maxi 💪\n\nЧто это означает на практике?\n\n✔️ тщательная чистка, проникающая вглубь материала\n✔️ эффективное удаление загрязнений и бактерий\n✔️ минимальное количество влаги после чистки\n✔️ быстрое время высыхания\n✔️ эффект свежести и вид, близкий к новому\n\n💡 Если для вас важнее всего цена — самое дешёвое предложение может подойти.\n💡 Если важен долговременный эффект — стоит выбрать качество.\n\n📩 Отправьте фото — мы подготовим быструю оценку\n📍 Легница и окрестности\n\n👉 Качество, которое действительно видно',
+      image: sabrinaVsKarcher,
+      date: '2026-04-03',
+      readTime: '3 мин',
+      tag: '🛋️ Химчистка',
+    },
   ],
   en: [
     {
@@ -254,6 +266,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-28',
       readTime: '5 min',
       tag: '🛏️ Mattress',
+    },
+    {
+      id: 12,
+      title: 'Why does one company offer upholstery cleaning for 100 zł and another for 200–300 zł?',
+      summary: 'Not every service means the same thing. The difference in equipment determines the quality and durability of results.',
+      content: 'Many companies use basic equipment that only superficially moistens the material, doesn\'t remove contaminants from deeper layers, and can leave moisture and unpleasant odors. As a result, the upholstery looks better only for a short time.',
+      fullContent: '🤔 Why does one company offer upholstery cleaning for 100 zł and another for 200–300 zł?\n\nIt\'s simple — not every service means the same thing.\n\nMany companies use basic equipment that:\n\n❌ only superficially moistens the material\n❌ doesn\'t remove contaminants from deeper layers\n❌ can leave moisture and unpleasant odors\n\n👉 As a result, the upholstery looks better only for a short time.\n\nWe rely on professional solutions and work with the Santoemma Sabrina Maxi machine 💪\n\nWhat does this mean in practice?\n\n✔️ thorough cleaning reaching deep into the material\n✔️ effective removal of dirt and bacteria\n✔️ minimal moisture after cleaning\n✔️ faster drying time\n✔️ a fresh look close to new\n\n💡 If price is your top priority — the cheapest offer may be enough.\n💡 If you want lasting results — it\'s worth choosing quality.\n\n📩 Send a photo — we\'ll prepare a quick estimate\n📍 Legnica and surrounding areas\n\n👉 Quality you can truly see',
+      image: sabrinaVsKarcher,
+      date: '2026-04-03',
+      readTime: '3 min',
+      tag: '🛋️ Cleaning',
     },
   ],
   pl: [
@@ -371,6 +394,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '5 min',
       tag: '🛏️ Materace',
     },
+    {
+      id: 12,
+      title: 'Dlaczego jedna firma oferuje pranie tapicerki za 100 zł, a inna za 200–300 zł?',
+      summary: 'Nie każda usługa oznacza to samo. Różnica w sprzęcie decyduje o jakości i trwałości efektu.',
+      content: 'Wiele firm korzysta z podstawowego sprzętu, który jedynie powierzchownie nawilża materiał, nie usuwa zanieczyszczeń z głębszych warstw i może pozostawiać wilgoć oraz nieprzyjemny zapach. W rezultacie tapicerka wygląda lepiej tylko przez krótki czas.',
+      fullContent: '🤔 Dlaczego jedna firma oferuje pranie tapicerki za 100 zł, a inna za 200–300 zł?\n\nTo proste — nie każda usługa oznacza to samo.\n\nWiele firm korzysta z podstawowego sprzętu, który:\n\n❌ jedynie powierzchownie nawilża materiał\n❌ nie usuwa zanieczyszczeń z głębszych warstw\n❌ może pozostawiać wilgoć oraz nieprzyjemny zapach\n\n👉 W rezultacie tapicerka wygląda lepiej tylko przez krótki czas.\n\nMy stawiamy na profesjonalne rozwiązania i pracujemy na urządzeniu Santoemma Sabrina Maxi 💪\n\nCo to oznacza w praktyce?\n\n✔️ dokładne czyszczenie sięgające głębi materiału\n✔️ skuteczne usuwanie zabrudzeń i bakterii\n✔️ ograniczoną ilość wilgoci po praniu\n✔️ szybszy czas schnięcia\n✔️ efekt świeżości i wygląd zbliżony do nowego\n\n💡 Jeśli najważniejsza jest dla Ciebie cena — najtańsza oferta może wystarczyć.\n💡 Jeśli liczy się trwały efekt — warto postawić na jakość.\n\n📩 Wyślij zdjęcie — przygotujemy szybką wycenę\n📍 Legnica i okolice\n\n👉 Jakość, którą naprawdę widać',
+      image: sabrinaVsKarcher,
+      date: '2026-04-03',
+      readTime: '3 min',
+      tag: '🛋️ Tapicerka',
+    },
   ],
   uk: [
     {
@@ -486,6 +520,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-28',
       readTime: '5 хв',
       tag: '🛏️ Матраци',
+    },
+    {
+      id: 12,
+      title: 'Чому одна фірма пропонує прання оббивки за 100 zł, а інша — за 200–300 zł?',
+      summary: 'Не кожна послуга означає одне й те саме. Різниця в обладнанні визначає якість і тривалість результату.',
+      content: 'Багато фірм використовують базове обладнання, яке лише поверхнево зволожує матеріал, не видаляє забруднення з глибших шарів і може залишати вологу та неприємний запах. В результаті оббивка виглядає краще лише на короткий час.',
+      fullContent: '🤔 Чому одна фірма пропонує прання оббивки за 100 zł, а інша — за 200–300 zł?\n\nВсе просто — не кожна послуга означає одне й те саме.\n\nБагато фірм використовують базове обладнання, яке:\n\n❌ лише поверхнево зволожує матеріал\n❌ не видаляє забруднення з глибших шарів\n❌ може залишати вологу та неприємний запах\n\n👉 В результаті оббивка виглядає краще лише на короткий час.\n\nМи ставимо на професійні рішення і працюємо на апараті Santoemma Sabrina Maxi 💪\n\nЩо це означає на практиці?\n\n✔️ ретельне чищення, що проникає вглиб матеріалу\n✔️ ефективне видалення забруднень та бактерій\n✔️ мінімальна кількість вологи після чищення\n✔️ швидший час висихання\n✔️ ефект свіжості та вигляд, наближений до нового\n\n💡 Якщо для вас найважливіша ціна — найдешевша пропозиція може підійти.\n💡 Якщо важливий тривалий ефект — варто обрати якість.\n\n📩 Надішліть фото — ми підготуємо швидку оцінку\n📍 Легніца та околиці\n\n👉 Якість, яку дійсно видно',
+      image: sabrinaVsKarcher,
+      date: '2026-04-03',
+      readTime: '3 хв',
+      tag: '🛋️ Хімчистка',
     },
   ],
 };
