@@ -238,7 +238,7 @@ const Reviews = () => {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'MasterClean',
-          aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', bestRating: '5', ratingCount: '100' },
+          aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', bestRating: '5', ratingCount: '135' },
           url: 'https://masterclean1885.com/reviews',
         }}
       />
