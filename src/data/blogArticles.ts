@@ -267,6 +267,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '5 min',
       tag: '🛏️ Mattress',
     },
+    {
+      id: 12,
+      title: 'Why does one company offer upholstery cleaning for 100 zł and another for 200–300 zł?',
+      summary: 'Not every service means the same thing. The difference in equipment determines the quality and durability of results.',
+      content: 'Many companies use basic equipment that only superficially moistens the material, doesn\'t remove contaminants from deeper layers, and can leave moisture and unpleasant odors. As a result, the upholstery looks better only for a short time.',
+      fullContent: '🤔 Why does one company offer upholstery cleaning for 100 zł and another for 200–300 zł?\n\nIt\'s simple — not every service means the same thing.\n\nMany companies use basic equipment that:\n\n❌ only superficially moistens the material\n❌ doesn\'t remove contaminants from deeper layers\n❌ can leave moisture and unpleasant odors\n\n👉 As a result, the upholstery looks better only for a short time.\n\nWe rely on professional solutions and work with the Santoemma Sabrina Maxi machine 💪\n\nWhat does this mean in practice?\n\n✔️ thorough cleaning reaching deep into the material\n✔️ effective removal of dirt and bacteria\n✔️ minimal moisture after cleaning\n✔️ faster drying time\n✔️ a fresh look close to new\n\n💡 If price is your top priority — the cheapest offer may be enough.\n💡 If you want lasting results — it\'s worth choosing quality.\n\n📩 Send a photo — we\'ll prepare a quick estimate\n📍 Legnica and surrounding areas\n\n👉 Quality you can truly see',
+      image: sabrinaVsKarcher,
+      date: '2026-04-03',
+      readTime: '3 min',
+      tag: '🛋️ Cleaning',
+    },
   ],
   pl: [
     {
