@@ -394,6 +394,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '5 min',
       tag: '🛏️ Materace',
     },
+    {
+      id: 12,
+      title: 'Dlaczego jedna firma oferuje pranie tapicerki za 100 zł, a inna za 200–300 zł?',
+      summary: 'Nie każda usługa oznacza to samo. Różnica w sprzęcie decyduje o jakości i trwałości efektu.',
+      content: 'Wiele firm korzysta z podstawowego sprzętu, który jedynie powierzchownie nawilża materiał, nie usuwa zanieczyszczeń z głębszych warstw i może pozostawiać wilgoć oraz nieprzyjemny zapach. W rezultacie tapicerka wygląda lepiej tylko przez krótki czas.',
+      fullContent: '🤔 Dlaczego jedna firma oferuje pranie tapicerki za 100 zł, a inna za 200–300 zł?\n\nTo proste — nie każda usługa oznacza to samo.\n\nWiele firm korzysta z podstawowego sprzętu, który:\n\n❌ jedynie powierzchownie nawilża materiał\n❌ nie usuwa zanieczyszczeń z głębszych warstw\n❌ może pozostawiać wilgoć oraz nieprzyjemny zapach\n\n👉 W rezultacie tapicerka wygląda lepiej tylko przez krótki czas.\n\nMy stawiamy na profesjonalne rozwiązania i pracujemy na urządzeniu Santoemma Sabrina Maxi 💪\n\nCo to oznacza w praktyce?\n\n✔️ dokładne czyszczenie sięgające głębi materiału\n✔️ skuteczne usuwanie zabrudzeń i bakterii\n✔️ ograniczoną ilość wilgoci po praniu\n✔️ szybszy czas schnięcia\n✔️ efekt świeżości i wygląd zbliżony do nowego\n\n💡 Jeśli najważniejsza jest dla Ciebie cena — najtańsza oferta może wystarczyć.\n💡 Jeśli liczy się trwały efekt — warto postawić na jakość.\n\n📩 Wyślij zdjęcie — przygotujemy szybką wycenę\n📍 Legnica i okolice\n\n👉 Jakość, którą naprawdę widać',
+      image: sabrinaVsKarcher,
+      date: '2026-04-03',
+      readTime: '3 min',
+      tag: '🛋️ Tapicerka',
+    },
   ],
   uk: [
     {
