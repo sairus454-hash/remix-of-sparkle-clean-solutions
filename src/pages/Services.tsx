@@ -117,7 +117,7 @@ const Services = () => {
         description="Profesjonalna chemczystka mebli z dojazdem: pranie tapicerki meblowej i skórzanej, czyszczenie kanap, foteli, materacy. Kalkulator kosztów online. Wrocław, Opole, Poznań."
         keywords="chemczystka mebli, pranie tapicerki meblowej, pranie tapicerki skórzanej, czyszczenie mebli, pranie kanapy, pranie sofy, czyszczenie fotela, pranie materaca, czyszczenie tapicerki, czyszczenie skóry, pranie tapicerki cennik, pranie tapicerki z dojazdem, pranie ekstrakcyjne, czyszczenie mebli Wrocław, Opole, Poznań"
         canonical="/services"
-        image="https://masterclean1885.pl/og-services.png"
+        image="https://masterclean1885.com/og-services.png"
         breadcrumbs={[{ name: t.nav.services, path: '/services' }]}
          jsonLd={{
            '@context': 'https://schema.org',
@@ -125,7 +125,7 @@ const Services = () => {
            serviceType: 'Pranie tapicerki meblowej',
            name: 'Pranie tapicerki meblowej i skórzanej',
            description: 'Profesjonalne pranie tapicerki meblowej i skórzanej z dojazdem do klienta. Czyszczenie kanap, foteli, sof, materacy.',
-           url: 'https://masterclean1885.pl/services',
+           url: 'https://masterclean1885.com/services',
            provider: {
              '@type': 'LocalBusiness',
              name: 'MasterClean',

@@ -53,7 +53,7 @@ const sitemapUrls = [
   { loc: '/city/bielany-wroclawskie', label: 'Bielany Wrocławskie', priority: '0.7', changefreq: 'weekly' },
 ];
 
-const DOMAIN = 'https://masterclean1885.pl';
+const DOMAIN = 'https://masterclean1885.com';
 
 const Sitemap = () => {
   return (

@@ -70,15 +70,15 @@ const Blog = () => {
         description="Przydatne artykuły o praniu tapicerki, sprzątaniu i pielęgnacji mebli. Porady ekspertów, jak dbać o czystość w domu i samochodzie."
         keywords="blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, jak prać kanapę, porady czystość, jak usunąć plamy, pranie tapicerki porady, czyszczenie materaca, cleaning tips blog, czyszczenie mebli porady"
         canonical="/blog"
-        image="https://masterclean1885.pl/og-blog.png"
+        image="https://masterclean1885.com/og-blog.png"
         breadcrumbs={[{ name: titles.title, path: '/blog' }]}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Blog',
           name: titles.title,
           description: titles.subtitle,
-          publisher: { '@type': 'Organization', name: 'MasterClean', url: 'https://masterclean1885.pl' },
-          url: 'https://masterclean1885.pl/blog',
+          publisher: { '@type': 'Organization', name: 'MasterClean', url: 'https://masterclean1885.com' },
+          url: 'https://masterclean1885.com/blog',
         }}
       />
       <Layout>

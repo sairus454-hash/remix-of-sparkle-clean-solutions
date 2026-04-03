@@ -17,7 +17,7 @@ interface SEOProps {
   breadcrumbs?: BreadcrumbItem[];
 }
 
-const SITE_URL = 'https://masterclean1885.pl';
+const SITE_URL = 'https://masterclean1885.com';
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
 const hreflangMap: Record<string, string> = {
