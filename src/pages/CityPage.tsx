@@ -268,7 +268,7 @@ const CityPage = () => {
         description={city.seo.description}
         keywords={city.seo.keywords}
         canonical={`/city/${city.slug}`}
-        image={`https://masterclean1885.pl/og-${city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug}.png`}
+        image={`https://masterclean1885.com/og-${city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug}.png`}
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
         jsonLd={{
           '@context': 'https://schema.org',
@@ -277,7 +277,7 @@ const CityPage = () => {
               '@type': 'Service',
               name: `MasterClean — ${city.name}`,
               description: city.seo.description,
-              url: `https://masterclean1885.pl/city/${city.slug}`,
+              url: `https://masterclean1885.com/city/${city.slug}`,
               areaServed: {
                 '@type': 'City',
                 name: city.name,
@@ -285,7 +285,7 @@ const CityPage = () => {
               provider: {
                 '@type': 'LocalBusiness',
                 name: 'MasterClean',
-                url: 'https://masterclean1885.pl',
+                url: 'https://masterclean1885.com',
                 telephone: '+48575211401',
                 address: {
                   '@type': 'PostalAddress',

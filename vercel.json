@@ -2,20 +2,8 @@
   "redirects": [
     {
       "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "www.masterclean1885.pl" }],
-      "destination": "https://masterclean1885.pl/:path",
-      "statusCode": 301
-    },
-    {
-      "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "masterclean1885.com" }],
-      "destination": "https://masterclean1885.pl/:path",
-      "statusCode": 301
-    },
-    {
-      "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "www.masterclean1885.com" }],
-      "destination": "https://masterclean1885.pl/:path",
+      "destination": "https://masterclean1885.com/:path",
       "statusCode": 301
     }
   ],

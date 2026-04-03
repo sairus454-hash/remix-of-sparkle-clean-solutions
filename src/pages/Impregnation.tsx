@@ -83,7 +83,7 @@ const Impregnation = () => {
         description="Profesjonalna impregnacja mebli, dywanów i tkanin. Ochrona przed wodą, brudem i plamami. Powłoka hydrofobowa przedłuża żywotność tapicerki. Opole, Wrocław."
         keywords="impregnacja tkanin, impregnacja mebli, impregnacja dywanów, impregnacja kanapy, ochrona przed plamami, powłoka hydrofobowa, impregnacja tapicerki, impregnacja po praniu, Wrocław, Opole, Poznań"
         canonical="/impregnation"
-        image="https://masterclean1885.pl/og-impregnation.png"
+        image="https://masterclean1885.com/og-impregnation.png"
         breadcrumbs={[{ name: t.impregnation.title, path: '/impregnation' }]}
          jsonLd={{
            '@context': 'https://schema.org',
@@ -91,7 +91,7 @@ const Impregnation = () => {
            serviceType: 'Impregnacja mebli i tkanin',
            name: 'Impregnacja mebli i tkanin',
            description: 'Profesjonalna impregnacja mebli, dywanów i tkanin. Ochrona przed wodą, brudem i plamami.',
-           url: 'https://masterclean1885.pl/impregnation',
+           url: 'https://masterclean1885.com/impregnation',
            provider: {
              '@type': 'LocalBusiness',
              name: 'MasterClean',

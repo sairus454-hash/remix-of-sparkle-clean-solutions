@@ -166,7 +166,7 @@ const Handyman = () => {
         description="Złota rączka Wrocław: hydraulika, elektryka, montaż mebli, drobne naprawy domowe. Fachowiec z dojazdem 24/7. Uczciwe ceny z gwarancją. Wrocław, Opole, Poznań."
         keywords="złota rączka, złota rączka Wrocław, drobne naprawy, hydraulik Wrocław, elektryk Wrocław, montaż mebli, usługi domowe, fachowiec z dojazdem, handyman, naprawa Wrocław, Opole, Poznań, usługi naprawcze, montaż karniszy, wieszanie obrazów"
         canonical="/handyman"
-        image="https://masterclean1885.pl/og-handyman.png"
+        image="https://masterclean1885.com/og-handyman.png"
         breadcrumbs={[{ name: t.nav.handyman, path: '/handyman' }]}
          jsonLd={{
            '@context': 'https://schema.org',
@@ -174,7 +174,7 @@ const Handyman = () => {
            serviceType: 'Złota rączka — usługi domowe',
            name: 'Złota rączka — drobne naprawy i montaż',
            description: 'Złota rączka Wrocław: hydraulika, elektryka, montaż mebli, drobne naprawy domowe z dojazdem.',
-           url: 'https://masterclean1885.pl/handyman',
+           url: 'https://masterclean1885.com/handyman',
            provider: {
              '@type': 'LocalBusiness',
              name: 'MasterClean',

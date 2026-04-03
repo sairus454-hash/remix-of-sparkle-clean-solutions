@@ -220,7 +220,7 @@ const Cleaning = () => {
         description="Profesjonalne sprzątanie mieszkań, domów i biur z dojazdem. Sprzątanie generalne, standardowe i po remoncie. Ekologiczne środki. Wrocław, Opole. Oblicz koszt."
         keywords="sprzątanie mieszkań, sprzątanie domów, sprzątanie biur, sprzątanie generalne, sprzątanie standardowe, sprzątanie po remoncie, firma sprzątająca, usługi sprzątania, sprzątanie z dojazdem, sprzątanie Wrocław, sprzątanie Opole, sprzątanie po budowie, sprzątanie przed wynajmem, house cleaning Poland"
         canonical="/cleaning"
-        image="https://masterclean1885.pl/og-cleaning.png"
+        image="https://masterclean1885.com/og-cleaning.png"
         breadcrumbs={[{ name: t.nav.cleaning, path: '/cleaning' }]}
          jsonLd={{
            '@context': 'https://schema.org',
@@ -228,7 +228,7 @@ const Cleaning = () => {
            serviceType: 'Sprzątanie mieszkań i domów',
            name: 'Sprzątanie mieszkań i domów',
            description: 'Profesjonalne sprzątanie mieszkań, domów i biur z dojazdem. Sprzątanie generalne, standardowe i po remoncie.',
-           url: 'https://masterclean1885.pl/cleaning',
+           url: 'https://masterclean1885.com/cleaning',
            provider: {
              '@type': 'LocalBusiness',
              name: 'MasterClean',

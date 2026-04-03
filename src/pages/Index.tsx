@@ -61,16 +61,16 @@ const Index = () => {
         description="Profesjonalne pranie tapicerki meblowej, czyszczenie dywanów, materacy i samochodów z dojazdem. Ozonowanie, sprzątanie, mycie okien. Wrocław 24/7."
         keywords="pranie tapicerki, chemczystka mebli, pranie tapicerki meblowej, czyszczenie dywanów, czyszczenie materacy, pranie kanapy, pranie sofy, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, czyszczenie mebli Wrocław, pranie tapicerki Opole, usługi sprzątania Wrocław, pranie ekstrakcyjne, cleaning services Poland, Poznań"
         canonical="/"
-        image="https://masterclean1885.pl/og-image.png"
+        image="https://masterclean1885.com/og-image.png"
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'MasterClean',
           description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i wnętrz samochodowych w Polsce. Ozonowanie, sprzątanie, mycie okien.',
-          url: 'https://masterclean1885.pl',
+          url: 'https://masterclean1885.com',
           telephone: '+48575211401',
           email: 'masterclean@email.com',
-          image: 'https://masterclean1885.pl/og-image.png',
+          image: 'https://masterclean1885.com/og-image.png',
           address: {
             '@type': 'PostalAddress',
             addressCountry: 'PL',

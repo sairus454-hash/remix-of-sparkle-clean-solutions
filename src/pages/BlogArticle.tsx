@@ -88,7 +88,7 @@ const BlogArticle = () => {
          description={article.summary}
          keywords="blog czyszczenie, porady sprzątanie, pranie tapicerki blog, czyszczenie dywanów porady, MasterClean blog, sprzątanie Wrocław porady"
          canonical={`/blog/${article.id}`}
-         image="https://masterclean1885.pl/og-blog.png"
+         image="https://masterclean1885.com/og-blog.png"
          breadcrumbs={[
            { name: 'Blog', path: '/blog' },
            { name: article.title, path: `/blog/${article.id}` },
@@ -103,9 +103,9 @@ const BlogArticle = () => {
            publisher: {
              '@type': 'Organization',
              name: 'MasterClean',
-             logo: { '@type': 'ImageObject', url: 'https://masterclean1885.pl/og-image.png' },
+             logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/og-image.png' },
            },
-           mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.pl/blog/${article.id}` },
+           mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.com/blog/${article.id}` },
          }}
        />
       <Layout>

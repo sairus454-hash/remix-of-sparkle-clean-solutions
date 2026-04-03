@@ -80,7 +80,7 @@ const Auto = () => {
         description="Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, podsufitki, dywaników, bagażnika. Usuwanie plam i zapachów. Wrocław, Opole."
         keywords="pranie tapicerki samochodowej, chemczystka auta, czyszczenie wnętrza samochodu, czyszczenie tapicerki samochodowej, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników samochodowych, czyszczenie podsufitki, czyszczenie z dojazdem, dojazd do klienta, auto detailing, pranie tapicerki auta Wrocław, Opole, Poznań"
         canonical="/auto"
-        image="https://masterclean1885.pl/og-auto.png"
+        image="https://masterclean1885.com/og-auto.png"
         breadcrumbs={[{ name: t.nav.auto, path: '/auto' }]}
          jsonLd={{
            '@context': 'https://schema.org',
@@ -88,7 +88,7 @@ const Auto = () => {
            serviceType: 'Pranie tapicerki samochodowej',
            name: 'Pranie tapicerki samochodowej',
            description: 'Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, dywaników i wnętrza auta.',
-           url: 'https://masterclean1885.pl/auto',
+           url: 'https://masterclean1885.com/auto',
            provider: {
              '@type': 'LocalBusiness',
              name: 'MasterClean',

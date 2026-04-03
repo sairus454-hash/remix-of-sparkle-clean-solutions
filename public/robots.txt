@@ -19,4 +19,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/login
 
-Sitemap: https://masterclean1885.pl/sitemap.xml
+Sitemap: https://masterclean1885.com/sitemap.xml
