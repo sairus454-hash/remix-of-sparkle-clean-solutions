@@ -10,6 +10,7 @@ import sofaSeatsGuidePl from '@/assets/sofa-seats-guide-pl.jpg';
 import dryingAfterCleaning from '@/assets/drying-after-cleaning-blog.jpg';
 import windowWashingBlog from '@/assets/window-washing-blog.jpg';
 import mattressDeepCleaning from '@/assets/mattress-deep-cleaning-blog.jpg';
+import sabrinaVsKarcher from '@/assets/sabrina-vs-karcher-blog.jpg';
 
 export interface BlogArticle {
   id: number;
