@@ -171,7 +171,10 @@ const FloatingOrderSummary = () => {
         )}
       >
         <ShoppingBag className="w-5 h-5" />
-        <span className="font-semibold">{total} zł</span>
+        <span className="font-semibold">{discountInfo.finalTotal} zł</span>
+        {discountInfo.hasDiscount && (
+          <span className="text-xs line-through opacity-70">{discountInfo.originalTotal}</span>
+        )}
         <span className="absolute -top-2 -right-2 bg-fresh text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md">
           {items.length}
         </span>
