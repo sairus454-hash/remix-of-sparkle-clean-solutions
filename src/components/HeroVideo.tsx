@@ -1,4 +1,5 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 
 interface HeroVideoProps {
   src?: string;
@@ -23,14 +24,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
     // Video failed — fallback image stays visible
   }, []);
 
-  useEffect(() => {
-    if (isMobile) return;
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.src = src;
-    video.load();
-  }, [src, isMobile]);
+  const effectivePoster = poster || fallbackImage;
 
   return (
     <div
@@ -38,6 +32,12 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
       className="relative w-full overflow-hidden"
       style={{ height: '80vh', maxWidth: 'none', padding: 0 }}
     >
+      {/* Preload video in <head> for faster network fetch on desktop */}
+      {!isMobile && createPortal(
+        <link rel="preload" as="video" href={src} type="video/mp4" />,
+        document.head
+      )}
+
       {/* Fallback image — always on mobile */}
       {fallbackImage && isMobile && (
         <img
@@ -55,9 +55,9 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
       {/* Desktop: poster visible immediately, video fades in when ready */}
       {!isMobile && (
         <>
-          {poster && !videoReady && (
+          {effectivePoster && !videoReady && (
             <img
-              src={poster}
+              src={effectivePoster}
               alt=""
               loading="eager"
               fetchPriority="high"
@@ -67,16 +67,17 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
           )}
           <video
             ref={videoRef}
+            src={src}
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-            poster={poster}
+            poster={effectivePoster}
             aria-hidden="true"
             onCanPlay={handleCanPlay}
             onError={handleError}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
             style={{ opacity: videoReady ? 1 : 0 }}
           />
         </>
