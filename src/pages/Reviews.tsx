@@ -31,33 +31,51 @@ interface Review {
 // Sample reviews for display alongside database reviews
 const sampleReviews = [{
   id: 'sample-1',
-  name: 'Anna K.',
+  name: 'Kamila',
   rating: 5,
-  date: '2025-01-15',
+  date: '2026-03-21',
   source: 'google' as const
 }, {
   id: 'sample-2',
-  name: 'Piotr M.',
+  name: 'ZZ',
   rating: 5,
-  date: '2025-01-10',
+  date: '2026-03-02',
   source: 'google' as const
 }, {
   id: 'sample-3',
-  name: 'Olena S.',
+  name: 'Tomuk',
   rating: 5,
-  date: '2025-01-05',
+  date: '2026-03-02',
   source: 'google' as const
 }, {
   id: 'sample-4',
-  name: 'Michał W.',
+  name: 'Ewa',
   rating: 5,
-  date: '2024-12-28',
+  date: '2026-01-10',
   source: 'google' as const
 }, {
   id: 'sample-5',
-  name: 'Kateryna P.',
+  name: 'Piotr K.',
   rating: 5,
-  date: '2024-12-20',
+  date: '2025-05-27',
+  source: 'google' as const
+}, {
+  id: 'sample-6',
+  name: 'Teresa',
+  rating: 5,
+  date: '2025-07-14',
+  source: 'google' as const
+}, {
+  id: 'sample-7',
+  name: 'Robert',
+  rating: 5,
+  date: '2025-10-11',
+  source: 'google' as const
+}, {
+  id: 'sample-8',
+  name: 'Leszek',
+  rating: 5,
+  date: '2025-07-05',
   source: 'google' as const
 }];
 const GOOGLE_REVIEW_URL = 'https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z/data=!4m8!3m7!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.953761!4d19.1343692!9m1!1b1!16s%2Fg%2F11xm28yrtl?entry=ttu&g_ep=EgoyMDI1MDEyOS4xIKXMDSoASAFQAw%3D%3D';
