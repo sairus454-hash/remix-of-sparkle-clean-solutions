@@ -558,7 +558,7 @@ const ChatBot = () => {
 
             {/* Circle icon button */}
             <div
-              className="fixed z-50 right-3 bottom-24 animate-[chatbotSlideIn_0.6s_ease-out_1.5s_both]"
+              className="fixed z-50 right-3 bottom-32 animate-[chatbotSlideIn_0.6s_ease-out_1.5s_both]"
             >
               <div className="relative">
                 <button
@@ -597,7 +597,7 @@ const ChatBot = () => {
         // Desktop: Extended button with girl image, text and "More" arrow
         !isDismissed && (
         <div 
-          className="fixed z-50 bottom-20 right-4 animate-[chatbotSlideIn_0.6s_ease-out_1.5s_both]"
+          className="fixed z-50 bottom-28 right-4 animate-[chatbotSlideIn_0.6s_ease-out_1.5s_both]"
         >
           <div className="relative">
             <button
