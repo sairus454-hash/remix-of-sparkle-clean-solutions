@@ -16,10 +16,30 @@ const FreeDeliveryBadge = () => {
     en: 'Free travel to client!!!',
   };
 
+  const isEaster = Date.now() < new Date('2026-04-08T00:00:00').getTime();
+
   if (isDismissed) return null;
 
   return (
     <div className="fixed right-2 sm:right-4 top-[60px] sm:top-[68px] lg:top-[84px] z-40 flex flex-col items-center gap-2">
+      {/* Easter badge */}
+      {isEaster && (
+        <div className="relative group mb-1">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-yellow-300 via-pink-200 to-purple-300 shadow-lg flex items-center justify-center transform rotate-6 hover:rotate-0 transition-transform duration-300 hover:scale-110 cursor-default border-2 border-white/50">
+            <span className="text-2xl sm:text-3xl">🐣</span>
+          </div>
+          <span className="absolute -top-1 -right-1 text-lg animate-bounce">🌷</span>
+          <span className="absolute -bottom-1 -left-1 text-sm animate-pulse">🥚</span>
+          {!isMobile && (
+            <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gradient-to-r from-yellow-100 to-pink-100 text-foreground px-3 py-2 rounded-xl shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none border border-yellow-200">
+              <span className="text-sm font-medium">🐰 Wesołego Alleluja!</span>
+              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-full">
+                <div className="w-0 h-0 border-t-[6px] border-b-[6px] border-l-[6px] border-transparent border-l-pink-100" />
+              </div>
+            </div>
+          )}
+        </div>
+      )}
       {/* Expanded text bubble */}
       <div className="relative">
         {!isMobile && (
