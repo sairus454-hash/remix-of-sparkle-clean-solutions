@@ -3,10 +3,8 @@ import { useRef, useEffect, useState, useCallback } from 'react';
 interface HeroVideoProps {
   src?: string;
   fallbackImage?: string;
-  /** Smaller image for mobile screens (< 768px) to reduce LCP */
   fallbackImageMobile?: string;
   poster?: string;
-  /** Skip lazy-loading for above-fold hero — improves LCP */
   eager?: boolean;
 }
 
@@ -14,7 +12,6 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
-  // Skip video entirely on mobile to save ~18MB and fix LCP
   const [isMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
   const handleCanPlay = useCallback(() => {
@@ -27,30 +24,13 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
   }, []);
 
   useEffect(() => {
-    if (isMobile) return; // No video on mobile
+    if (isMobile) return;
     const video = videoRef.current;
-    const container = containerRef.current;
-    if (!video || !container) return;
+    if (!video) return;
 
-    // On desktop always load immediately
     video.src = src;
     video.load();
-    return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          video.src = src;
-          video.load();
-          observer.disconnect();
-        }
-      },
-      { rootMargin: '200px' }
-    );
-    observer.observe(container);
-
-    return () => observer.disconnect();
-  }, [src, eager, isMobile]);
+  }, [src, isMobile]);
 
   return (
     <div
@@ -58,40 +38,52 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
       className="relative w-full overflow-hidden"
       style={{ height: '80vh', maxWidth: 'none', padding: 0 }}
     >
-      {/* Fallback image — only on mobile (desktop loads video directly) */}
+      {/* Fallback image — always on mobile */}
       {fallbackImage && isMobile && (
         <img
           src={fallbackImageMobile || fallbackImage}
           alt="MasterClean — profesjonalne usługi czyszczenia"
           width={480}
           height={720}
-          loading={eager ? 'eager' : 'lazy'}
-          fetchPriority={eager ? 'high' : undefined}
-          decoding={eager ? 'sync' : 'async'}
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
           className="absolute inset-0 w-full h-full object-cover"
         />
       )}
 
-      {/* Video element — only on desktop, fades in on top of fallback image */}
+      {/* Desktop: poster visible immediately, video fades in when ready */}
       {!isMobile && (
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster={poster}
-          aria-hidden="true"
-          onCanPlay={handleCanPlay}
-          onError={handleError}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
-          style={{ opacity: videoReady ? 1 : 0 }}
-        />
+        <>
+          {poster && !videoReady && (
+            <img
+              src={poster}
+              alt=""
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={poster}
+            aria-hidden="true"
+            onCanPlay={handleCanPlay}
+            onError={handleError}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+            style={{ opacity: videoReady ? 1 : 0 }}
+          />
+        </>
       )}
 
       {/* Gradient fallback when no image provided */}
-      {!fallbackImage && !videoReady && (
+      {!fallbackImage && !isMobile && !videoReady && (
         <div
           className="absolute inset-0"
           style={{
