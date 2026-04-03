@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ShoppingBag, X, ArrowRight, Trash2 } from 'lucide-react';
+import { ShoppingBag, X, ArrowRight, Trash2, Tag } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CalculatorItem } from '@/types/calculator';
+import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
 
 const FloatingOrderSummary = () => {
   const { language } = useLanguage();
@@ -11,6 +12,7 @@ const FloatingOrderSummary = () => {
   const location = useLocation();
   const [items, setItems] = useState<CalculatorItem[]>([]);
   const [total, setTotal] = useState(0);
+  const discountInfo = useDiscountCalculator(items);
   const [isExpanded, setIsExpanded] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -134,9 +136,20 @@ const FloatingOrderSummary = () => {
           ))}
         </div>
         <div className="p-4 border-t border-border">
+          {discountInfo.hasDiscount && (
+            <div className="flex items-center gap-1.5 mb-2 text-xs text-fresh">
+              <Tag className="w-3.5 h-3.5" />
+              <span className="font-medium">{discountInfo.discountReason}</span>
+            </div>
+          )}
           <div className="flex justify-between mb-3">
             <span className="font-medium text-foreground">{labels[language]?.title || 'Total'}</span>
-            <span className="font-bold text-primary text-lg">{total} zł</span>
+            <div className="text-right">
+              {discountInfo.hasDiscount && (
+                <span className="text-sm text-muted-foreground line-through mr-2">{discountInfo.originalTotal} zł</span>
+              )}
+              <span className="font-bold text-primary text-lg">{discountInfo.finalTotal} zł</span>
+            </div>
           </div>
           <button
             onClick={handleGoToContacts}
@@ -158,7 +171,10 @@ const FloatingOrderSummary = () => {
         )}
       >
         <ShoppingBag className="w-5 h-5" />
-        <span className="font-semibold">{total} zł</span>
+        <span className="font-semibold">{discountInfo.finalTotal} zł</span>
+        {discountInfo.hasDiscount && (
+          <span className="text-xs line-through opacity-70">{discountInfo.originalTotal}</span>
+        )}
         <span className="absolute -top-2 -right-2 bg-fresh text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md">
           {items.length}
         </span>
