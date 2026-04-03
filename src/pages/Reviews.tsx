@@ -150,7 +150,10 @@ const Reviews = () => {
       'sample-2': t.reviews.review2,
       'sample-3': t.reviews.review3,
       'sample-4': t.reviews.review4,
-      'sample-5': t.reviews.review5
+      'sample-5': t.reviews.review5,
+      'sample-6': t.reviews.review6,
+      'sample-7': t.reviews.review7,
+      'sample-8': t.reviews.review8
     };
     return textMap[id] || '';
   };
