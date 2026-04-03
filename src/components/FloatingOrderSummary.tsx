@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ShoppingBag, X, ArrowRight, Trash2 } from 'lucide-react';
+import { ShoppingBag, X, ArrowRight, Trash2, Tag } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CalculatorItem } from '@/types/calculator';
+import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
 
 const FloatingOrderSummary = () => {
   const { language } = useLanguage();
@@ -11,6 +12,7 @@ const FloatingOrderSummary = () => {
   const location = useLocation();
   const [items, setItems] = useState<CalculatorItem[]>([]);
   const [total, setTotal] = useState(0);
+  const discountInfo = useDiscountCalculator(items);
   const [isExpanded, setIsExpanded] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
