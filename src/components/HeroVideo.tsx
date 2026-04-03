@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 
 interface HeroVideoProps {
   src?: string;
@@ -23,14 +24,8 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
     // Video failed — fallback image stays visible
   }, []);
 
-  useEffect(() => {
-    if (isMobile) return;
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.src = src;
-    video.load();
-  }, [src, isMobile]);
+  // Preload video link in <head> for faster fetch
+  const effectivePoster = poster || fallbackImage;
 
   return (
     <div
