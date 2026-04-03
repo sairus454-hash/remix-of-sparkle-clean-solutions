@@ -136,9 +136,20 @@ const FloatingOrderSummary = () => {
           ))}
         </div>
         <div className="p-4 border-t border-border">
+          {discountInfo.hasDiscount && (
+            <div className="flex items-center gap-1.5 mb-2 text-xs text-fresh">
+              <Tag className="w-3.5 h-3.5" />
+              <span className="font-medium">{discountInfo.discountReason}</span>
+            </div>
+          )}
           <div className="flex justify-between mb-3">
             <span className="font-medium text-foreground">{labels[language]?.title || 'Total'}</span>
-            <span className="font-bold text-primary text-lg">{total} zł</span>
+            <div className="text-right">
+              {discountInfo.hasDiscount && (
+                <span className="text-sm text-muted-foreground line-through mr-2">{discountInfo.originalTotal} zł</span>
+              )}
+              <span className="font-bold text-primary text-lg">{discountInfo.finalTotal} zł</span>
+            </div>
           </div>
           <button
             onClick={handleGoToContacts}
