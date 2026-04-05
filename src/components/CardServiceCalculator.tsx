@@ -93,8 +93,8 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
-  // Apply first-order discount for eligible categories (unless disabled)
-  const displayItems = noDiscount ? items : applyFirstOrderDiscount(items, category);
+  // No first-order discount — items displayed as-is
+  const displayItems = items;
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
@@ -282,14 +282,6 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                     </div>
                   )}
 
-                  {/* Discount badge for furniture/leather/mattress */}
-                  {!item.promoBadge && item.originalPrice && (
-                    <div className="absolute top-2 left-2 z-10">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-md">
-                        -{DISCOUNT_PERCENT}%
-                      </span>
-                    </div>
-                  )}
 
                   {/* Info */}
                   <div className="p-3 w-full">
