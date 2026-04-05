@@ -558,6 +558,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             <SelectItem value={t.form.paymentCash}>{t.form.paymentCash}</SelectItem>
             <SelectItem value="BLIK">BLIK</SelectItem>
             <SelectItem value={t.form.paymentInvoice}>{t.form.paymentInvoice}</SelectItem>
+            <SelectItem value={t.form.paymentInvoiceCash}>{t.form.paymentInvoiceCash}</SelectItem>
+            <SelectItem value={t.form.paymentInvoiceBlik}>{t.form.paymentInvoiceBlik}</SelectItem>
           </SelectContent>
         </Select>
       </div>
