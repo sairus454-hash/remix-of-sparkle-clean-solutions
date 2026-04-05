@@ -7,8 +7,7 @@ import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import PromotionsSection from '@/components/PromotionsSection';
-import { Sparkles, Sofa, Armchair, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Sparkles, Sofa, Armchair } from 'lucide-react';
 import servicesCleaning from '@/assets/services-cleaning.jpg';
 import servicesDrying from '@/assets/services-drying.jpg';
 
