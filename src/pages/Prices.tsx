@@ -536,7 +536,7 @@ const Prices = () => {
                     <div
                       className="grid transition-all duration-500 ease-in-out"
                       style={{
-                        gridTemplateRows: openCategory === cat.id ? '1fr' : '0fr',
+                        gridTemplateRows: isCategoryOpen(cat.id) ? '1fr' : '0fr',
                       }}
                     >
                       <div className="overflow-hidden">
