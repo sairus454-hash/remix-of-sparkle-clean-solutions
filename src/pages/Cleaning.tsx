@@ -276,6 +276,12 @@ const Cleaning = () => {
         </div>
       </section>
 
+      {/* Promotions */}
+      <MobilePromotionsCard />
+      <div className="hidden sm:block">
+        <PromotionsSection />
+      </div>
+
       {/* Compact Calculator Trigger */}
       <section className="py-6 sm:py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
