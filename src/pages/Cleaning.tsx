@@ -578,11 +578,7 @@ const Cleaning = () => {
       </section>
       </LazySection>
 
-      <MobilePromotionsCard />
-
-      <div className="hidden sm:block">
-        <PromotionsSection />
-      </div>
+      {/* (promotions moved to top) */}
 
       {/* Furniture Cleaning Calculator */}
       <LazySection minHeight="400px">
