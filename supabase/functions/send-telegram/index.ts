@@ -120,9 +120,12 @@ serve(async (req) => {
       );
     }
 
-    const paymentTypeLabel = formData.paymentType === 'cash' ? '💵 Наличные' : 
-                             formData.paymentType === 'blik' ? '📱 BLIK' :
-                             formData.paymentType === 'invoice' ? '🧾 Фактура' : '';
+    const pt = (formData.paymentType || '').toLowerCase();
+    const paymentTypeLabel = pt.includes('gotówka') || pt.includes('наличные') || pt.includes('готівка') || pt === 'cash' ? '💵 Наличные' : 
+                             pt === 'blik' ? '📱 BLIK' :
+                             (pt.includes('faktura') && pt.includes('blik')) || (pt.includes('фактура') && pt.includes('blik')) ? '🧾📱 Фактура + BLIK' :
+                             (pt.includes('faktura') && (pt.includes('gotówka') || pt.includes('cash'))) || (pt.includes('фактура') && (pt.includes('наличн') || pt.includes('готівк'))) ? '🧾💵 Фактура + наличные' :
+                             pt.includes('faktura') || pt.includes('фактура') ? '🧾 Фактура с переводом' : formData.paymentType || '';
 
     const message = `
 🔔 *Новая заявка с сайта!*
