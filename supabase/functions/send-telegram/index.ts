@@ -121,11 +121,14 @@ serve(async (req) => {
     }
 
     const pt = (formData.paymentType || '').toLowerCase();
-    const paymentTypeLabel = pt.includes('gotówka') || pt.includes('наличные') || pt.includes('готівка') || pt === 'cash' ? '💵 Наличные' : 
-                             pt === 'blik' ? '📱 BLIK' :
-                             (pt.includes('faktura') && pt.includes('blik')) || (pt.includes('фактура') && pt.includes('blik')) ? '🧾📱 Фактура + BLIK' :
-                             (pt.includes('faktura') && (pt.includes('gotówka') || pt.includes('cash'))) || (pt.includes('фактура') && (pt.includes('наличн') || pt.includes('готівк'))) ? '🧾💵 Фактура + наличные' :
-                             pt.includes('faktura') || pt.includes('фактура') ? '🧾 Фактура с переводом' : formData.paymentType || '';
+    const isFaktura = pt.includes('faktura') || pt.includes('фактура');
+    const isCash = pt.includes('gotówka') || pt.includes('наличн') || pt.includes('готівк') || pt.includes('cash');
+    const isBlik = pt.includes('blik');
+    const paymentTypeLabel = isFaktura && isBlik ? '🧾📱 Фактура + BLIK' :
+                             isFaktura && isCash ? '🧾💵 Фактура + наличные' :
+                             isFaktura ? '🧾 Фактура с переводом' :
+                             isBlik ? '📱 BLIK' :
+                             isCash ? '💵 Наличные' : formData.paymentType || '';
 
     const message = `
 🔔 *Новая заявка с сайта!*
