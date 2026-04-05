@@ -142,7 +142,7 @@ const Auto = () => {
 
         <div className="flex flex-col">
         {/* Card Calculator (mobile first) */}
-        <section className="py-12 sm:py-20 bg-card order-1 sm:order-4">
+        <section className="py-12 sm:py-20 bg-card order-1">
           <div className="container mx-auto px-4">
             <CircularRevealCard index={0}>
               <div className="max-w-5xl mx-auto">
