@@ -532,14 +532,6 @@ const Cleaning = () => {
         </div>
       </section>
 
-      {/* Promotions */}
-      <MobilePromotionsCard />
-      <div className="hidden sm:block">
-        <PromotionsSection />
-      </div>
-
-
-
 
       <LazySection minHeight="400px">
       <section className="py-10 bg-gradient-section">
