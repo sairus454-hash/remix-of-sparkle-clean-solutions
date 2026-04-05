@@ -276,6 +276,12 @@ const Cleaning = () => {
         </div>
       </section>
 
+      {/* Promotions */}
+      <MobilePromotionsCard />
+      <div className="hidden sm:block">
+        <PromotionsSection />
+      </div>
+
       {/* Compact Calculator Trigger */}
       <section className="py-6 sm:py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
@@ -533,7 +539,6 @@ const Cleaning = () => {
       </section>
 
 
-
       <LazySection minHeight="400px">
       <section className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
@@ -572,11 +577,7 @@ const Cleaning = () => {
       </section>
       </LazySection>
 
-      <MobilePromotionsCard />
-
-      <div className="hidden sm:block">
-        <PromotionsSection />
-      </div>
+      {/* (promotions moved to top) */}
 
       {/* Furniture Cleaning Calculator */}
       <LazySection minHeight="400px">
@@ -694,6 +695,25 @@ const Cleaning = () => {
         </div>
       </section>
       </LazySection>
+
+      {/* Contact Form */}
+      <section ref={formSectionRef} className="py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                {t.form.title}
+              </h2>
+            </div>
+            <CircularRevealCard index={0}>
+              <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
+                <ContactForm ref={formRef} />
+              </div>
+            </CircularRevealCard>
+          </div>
+        </div>
+      </section>
+
       <LazySection minHeight="300px">
       <section className="py-20 bg-card">
         <div className="container mx-auto px-4">
@@ -799,23 +819,6 @@ const Cleaning = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section ref={formSectionRef} className="py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                {t.form.title}
-              </h2>
-            </div>
-            <CircularRevealCard index={0}>
-              <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
-                <ContactForm ref={formRef} />
-              </div>
-            </CircularRevealCard>
-          </div>
-        </div>
-      </section>
     </Layout>
     <QuickOrderDialog
       open={quickOrderOpen}

@@ -79,7 +79,6 @@ import { useSplash } from '@/hooks/useSplash';
        <BackToOrderButton />
        {/* Hero */}
         <section className="py-20 bg-gradient-section relative overflow-hidden">
-          {/* Floating water drop decorations */}
           <div className="absolute top-16 left-8 opacity-10 pointer-events-none hidden lg:block">
             <Sparkles className="w-14 h-14 text-primary" style={{ animation: 'float 5s ease-in-out infinite' }} />
           </div>
@@ -91,7 +90,6 @@ import { useSplash } from '@/hooks/useSplash';
           </div>
           <div className="container mx-auto px-4">
            <div className="max-w-3xl mx-auto text-center">
-             {/* Animated window icon */}
              <div className="flex justify-center mb-6">
                <div className="relative">
                  <div className="w-20 h-20 rounded-full bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
@@ -112,7 +110,36 @@ import { useSplash } from '@/hooks/useSplash';
          </div>
        </section>
  
-       {/* Photo Gallery */}
+       {/* 1. Pricing */}
+       <section className="py-20 bg-gradient-section">
+         <div className="container mx-auto px-4">
+           <div className="max-w-3xl mx-auto">
+             <CircularRevealCard index={0}>
+               <WindowsPriceCalculator onSendToForm={handleSendToForm} />
+             </CircularRevealCard>
+           </div>
+         </div>
+       </section>
+ 
+       {/* 2. Contact Form */}
+       <section ref={formSectionRef} className="py-20 bg-gradient-section">
+         <div className="container mx-auto px-4">
+           <div className="max-w-2xl mx-auto">
+             <div className="text-center mb-12">
+               <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                 {t.form.title}
+               </h2>
+             </div>
+             <CircularRevealCard index={0}>
+               <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
+                 <ContactForm ref={formRef} />
+               </div>
+             </CircularRevealCard>
+           </div>
+         </div>
+       </section>
+
+       {/* 3. Photo Gallery */}
        <section className="py-16 bg-card">
          <div className="container mx-auto px-4">
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -139,7 +166,7 @@ import { useSplash } from '@/hooks/useSplash';
          </div>
        </section>
  
-       {/* Why Clean Windows */}
+       {/* 4. Why Clean Windows */}
        <section className="py-20 bg-gradient-section">
          <div className="container mx-auto px-4">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -178,7 +205,7 @@ import { useSplash } from '@/hooks/useSplash';
          </div>
        </section>
  
-       {/* How We Work */}
+       {/* 5. How We Work */}
        <section className="py-20 bg-card">
          <div className="container mx-auto px-4">
            <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
@@ -200,35 +227,6 @@ import { useSplash } from '@/hooks/useSplash';
                  </div>
                </CircularRevealCard>
              ))}
-           </div>
-         </div>
-       </section>
- 
-       {/* Pricing */}
-       <section className="py-20 bg-gradient-section">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto">
-             <CircularRevealCard index={0}>
-               <WindowsPriceCalculator onSendToForm={handleSendToForm} />
-             </CircularRevealCard>
-           </div>
-         </div>
-       </section>
- 
-       {/* Contact Form */}
-       <section ref={formSectionRef} className="py-20 bg-gradient-section">
-         <div className="container mx-auto px-4">
-           <div className="max-w-2xl mx-auto">
-             <div className="text-center mb-12">
-               <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                 {t.form.title}
-               </h2>
-             </div>
-             <CircularRevealCard index={0}>
-               <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
-                 <ContactForm ref={formRef} />
-               </div>
-             </CircularRevealCard>
            </div>
          </div>
        </section>

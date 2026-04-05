@@ -197,14 +197,13 @@ const Handyman = () => {
     <Layout>
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
       
-      {/* Hero Section with animated title */}
+      {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden">
         <div className="absolute inset-0">
           <HeroVideo src="/hero-handyman-video.mp4" fallbackImage={handyman1} />
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="text-center">
-            {/* Center Icon and Title */}
             <div className="flex justify-center mb-6">
               <div className="w-24 h-24 rounded-full bg-gradient-to-r from-primary to-fresh flex items-center justify-center shadow-2xl animate-pulse">
                 <Wrench className="w-12 h-12 text-primary-foreground" />
@@ -220,114 +219,13 @@ const Handyman = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="hidden md:block py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-              <span className="relative z-10">{t.handyman.servicesTitle}</span>
-              <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
-            </h2>
-            <p className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] max-w-xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>{t.handyman.servicesSubtitle}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <CircularRevealCard key={index} index={index}>
-                <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-yellow-400/50 h-full">
-                  <CardContent className="p-6">
-                    <div className="w-14 h-14 rounded-xl bg-yellow-400/20 flex items-center justify-center mb-4 group-hover:bg-yellow-400/40 transition-colors group-hover:scale-110 duration-300">
-                      <service.icon className="w-7 h-7 text-yellow-600 group-hover:text-yellow-700" />
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2 group-hover:text-yellow-600 transition-colors">{service.name}</h3>
-                    <p className="text-sm text-muted-foreground">{service.desc}</p>
-                  </CardContent>
-                </Card>
-              </CircularRevealCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Team Photos */}
-      <section className="hidden md:block py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-              <span className="relative z-10">Nasi Fachowcy</span>
-              <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
-            </h2>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { img: img('handyman-1.jpg'), name: 'Marek', specialty: t.handyman.electrical },
-              { img: img('handyman-2.jpg'), name: 'Piotr', specialty: t.handyman.plumbing },
-              { img: img('handyman-3.jpg'), name: 'Tomek', specialty: t.handyman.carpentry },
-            ].map((member, index) => (
-              <CircularRevealCard key={index} index={index}>
-                <div className="group">
-                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow">
-                    <AnimatedImage 
-                      src={member.img} 
-                      alt={member.name}
-                      delay={index * 150}
-                      duration={800}
-                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
-                      <h3 className="text-white font-bold text-xl">{member.name}</h3>
-                      <p className="text-yellow-400">{member.specialty}</p>
-                    </div>
-                  </div>
-                </div>
-              </CircularRevealCard>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="hidden sm:block py-20 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-                <span className="relative z-10">{t.handyman.whyUs}</span>
-                <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                { icon: '⚡', title: t.handyman.benefit1, desc: t.handyman.benefit1Desc },
-                { icon: '🛠️', title: t.handyman.benefit2, desc: t.handyman.benefit2Desc },
-                { icon: '💰', title: t.handyman.benefit3, desc: t.handyman.benefit3Desc },
-                { icon: '✅', title: t.handyman.benefit4, desc: t.handyman.benefit4Desc },
-              ].map((benefit, index) => (
-                <CircularRevealCard key={index} index={index}>
-                  <div className="flex gap-4 p-6 bg-card rounded-xl shadow-card hover:shadow-lg transition-shadow h-full">
-                    <div className="text-4xl">{benefit.icon}</div>
-                    <div>
-                      <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
-                      <p className="text-muted-foreground">{benefit.desc}</p>
-                    </div>
-                  </div>
-                </CircularRevealCard>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* 1. Promotions */}
       <MobilePromotionsCard />
-
-      {/* Desktop promotions */}
       <div className="hidden sm:block">
         <PromotionsSection />
       </div>
 
-      {/* Pricing */}
+      {/* 2. Pricing */}
       <LazySection minHeight="400px">
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -379,8 +277,7 @@ const Handyman = () => {
       </section>
       </LazySection>
 
-
-      {/* Contact Form */}
+      {/* 3. Contact Form */}
       <LazySection minHeight="300px">
       <section ref={formSectionRef} className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
@@ -398,6 +295,106 @@ const Handyman = () => {
         </div>
       </section>
       </LazySection>
+
+      {/* 4. Services Grid */}
+      <section className="hidden md:block py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+              <span className="relative z-10">{t.handyman.servicesTitle}</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+            </h2>
+            <p className="text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] max-w-xl mx-auto" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>{t.handyman.servicesSubtitle}</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <CircularRevealCard key={index} index={index}>
+                <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 border-transparent hover:border-yellow-400/50 h-full">
+                  <CardContent className="p-6">
+                    <div className="w-14 h-14 rounded-xl bg-yellow-400/20 flex items-center justify-center mb-4 group-hover:bg-yellow-400/40 transition-colors group-hover:scale-110 duration-300">
+                      <service.icon className="w-7 h-7 text-yellow-600 group-hover:text-yellow-700" />
+                    </div>
+                    <h3 className="font-semibold text-lg mb-2 group-hover:text-yellow-600 transition-colors">{service.name}</h3>
+                    <p className="text-sm text-muted-foreground">{service.desc}</p>
+                  </CardContent>
+                </Card>
+              </CircularRevealCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Our Team Photos */}
+      <section className="hidden md:block py-20 bg-card">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+              <span className="relative z-10">Nasi Fachowcy</span>
+              <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { img: img('handyman-1.jpg'), name: 'Marek', specialty: t.handyman.electrical },
+              { img: img('handyman-2.jpg'), name: 'Piotr', specialty: t.handyman.plumbing },
+              { img: img('handyman-3.jpg'), name: 'Tomek', specialty: t.handyman.carpentry },
+            ].map((member, index) => (
+              <CircularRevealCard key={index} index={index}>
+                <div className="group">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow">
+                    <AnimatedImage 
+                      src={member.img} 
+                      alt={member.name}
+                      delay={index * 150}
+                      duration={800}
+                      className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pointer-events-none">
+                      <h3 className="text-white font-bold text-xl">{member.name}</h3>
+                      <p className="text-yellow-400">{member.specialty}</p>
+                    </div>
+                  </div>
+                </div>
+              </CircularRevealCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Why Choose Us */}
+      <section className="hidden sm:block py-20 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+                <span className="relative z-10">{t.handyman.whyUs}</span>
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { icon: '⚡', title: t.handyman.benefit1, desc: t.handyman.benefit1Desc },
+                { icon: '🛠️', title: t.handyman.benefit2, desc: t.handyman.benefit2Desc },
+                { icon: '💰', title: t.handyman.benefit3, desc: t.handyman.benefit3Desc },
+                { icon: '✅', title: t.handyman.benefit4, desc: t.handyman.benefit4Desc },
+              ].map((benefit, index) => (
+                <CircularRevealCard key={index} index={index}>
+                  <div className="flex gap-4 p-6 bg-card rounded-xl shadow-card hover:shadow-lg transition-shadow h-full">
+                    <div className="text-4xl">{benefit.icon}</div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">{benefit.title}</h3>
+                      <p className="text-muted-foreground">{benefit.desc}</p>
+                    </div>
+                  </div>
+                </CircularRevealCard>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* CSS for highlight animation */}
       <style>{`
