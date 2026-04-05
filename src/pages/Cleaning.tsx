@@ -532,11 +532,6 @@ const Cleaning = () => {
         </div>
       </section>
 
-      {/* Promotions */}
-      <MobilePromotionsCard />
-      <div className="hidden sm:block">
-        <PromotionsSection />
-      </div>
 
 
 
