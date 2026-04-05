@@ -86,6 +86,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
 
 const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
   const { t, language } = useLanguage();
+  const isMobile = useIsMobile();
   const navigate = useNavigate();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
