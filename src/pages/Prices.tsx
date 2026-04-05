@@ -531,7 +531,7 @@ const Prices = () => {
                         </h3>
                         <p className="text-muted-foreground text-xs sm:text-sm truncate">{cat.description}</p>
                       </div>
-                      <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${openCategory === cat.id ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${isCategoryOpen(cat.id) ? 'rotate-180' : ''}`} />
                     </button>
                     <div
                       className="grid transition-all duration-500 ease-in-out"
