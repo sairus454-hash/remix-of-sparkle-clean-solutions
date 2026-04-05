@@ -147,7 +147,19 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               <Link to="/sitemap" className="text-background/80 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                 Sitemap
               </Link>
-            </div>
+             </div>
+        </div>
+        {/* Disclaimer */}
+        <div className="mt-8 pt-6 border-t border-background/10">
+          <p className="text-xs text-background/50 text-center italic max-w-3xl mx-auto">
+            {language === 'ru'
+              ? 'К сожалению, мы не можем гарантировать, что каждое отдельное пятно будет выведено, а также не гарантируем, что каждый неприятный запах исчезнет.'
+              : language === 'uk'
+              ? 'На жаль, ми не можемо гарантувати, що кожна окрема пляма зійде, а також не гарантуємо, що кожен неприємний запах зникне.'
+              : language === 'en'
+              ? 'Unfortunately, we cannot guarantee that every individual stain will be removed, nor do we guarantee that every unpleasant odor will disappear.'
+              : 'Niestety nie możemy gwarantować, że każda poszczególna plama zejdzie, oraz nie gwarantujemy, że każdy nieprzyjemny zapach zniknie.'}
+          </p>
         </div>
       </div>
     </footer>
