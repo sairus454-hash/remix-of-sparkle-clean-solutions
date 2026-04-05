@@ -519,7 +519,7 @@ const Prices = () => {
                     className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card"
                   >
                     <button
-                      onClick={() => setOpenCategory(openCategory === cat.id ? null : cat.id)}
+                      onClick={() => toggleCategory(cat.id)}
                       className="flex items-center gap-4 w-full p-4 sm:p-5 cursor-pointer text-left transition-colors hover:bg-accent/30"
                     >
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0">
