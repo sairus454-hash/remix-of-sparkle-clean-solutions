@@ -257,10 +257,22 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                     />
                     {/* Bottom gradient on hover */}
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    {/* Hover hint or quantity overlay */}
+                    
+                    {/* Mobile: always-visible CTA badge */}
+                    {!selected && isMobile && (
+                      <div className="absolute bottom-2 inset-x-2 flex justify-center z-[3] pointer-events-none sm:hidden">
+                        <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-bold bg-primary/90 text-primary-foreground shadow-lg animate-pulse">
+                          <Plus className="w-3 h-3" />
+                          {language === 'pl' ? 'Zamów' : language === 'en' ? 'Order' : 'Заказать'}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Desktop hover hint / quantity overlay */}
                     <div className={cn(
                       "absolute inset-0 flex items-center justify-center transition-opacity duration-300 pointer-events-none z-[3]",
-                      selected ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                      selected ? "opacity-100" : "opacity-0 group-hover:opacity-100",
+                      !selected && isMobile && "!opacity-0"
                     )}>
                       <span className={cn(
                         "px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold backdrop-blur-sm shadow-lg",
