@@ -23,7 +23,7 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
                 <p className="font-serif text-base font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent truncate">
                   🔥 {t.promotions.title}
                 </p>
-                <p className="text-xs text-muted-foreground truncate">{t.promotions.weeklyDesc}</p>
+                <p className="text-xs text-muted-foreground truncate">{t.promotions.saveUpTo}</p>
               </div>
               {expanded ? (
                 <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" />
@@ -36,7 +36,7 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
 
         {expanded && (
           <div className="mt-3 space-y-3 animate-fade-up">
-            {/* Weekly Deal */}
+            {/* 2+ Services */}
             <div className="relative overflow-hidden p-4 rounded-2xl bg-card/90 border border-border/50 shadow-card">
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-orange-500/15 to-transparent rounded-full blur-xl -translate-y-1/2 translate-x-1/2" />
               <div className="relative z-10 flex items-start gap-3">
@@ -46,16 +46,15 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <h4 className="font-serif text-sm font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
-                      {t.promotions.weeklyTitle}
+                      {t.promotions.services2plus}
                     </h4>
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-500 to-teal-500 text-white">
-                      🪑 {t.promotions.mattressBadge}
+                      -5%
                     </span>
                   </div>
-                  <p className="text-sm font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
-                    {t.promotions.services2plus}
+                  <p className="text-xs font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
+                    {t.promotions.springDryingPromo}
                   </p>
-                  <p className="text-xs text-foreground/80 mt-1">{t.promotions.weeklyDesc}</p>
                 </div>
               </div>
             </div>
@@ -76,9 +75,6 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
                       {t.promotions.services4plusBadge}
                     </span>
                   </div>
-                  <p className="text-xs font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
-                    {t.promotions.springDryingPromo}
-                  </p>
                 </div>
               </div>
             </div>

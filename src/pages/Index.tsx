@@ -260,19 +260,17 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Weekly Deal - Mattress 10% */}
+            {/* 2+ Services: 5% */}
             <CircularRevealCard index={0} slow className="h-full">
               <div 
                 className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02] bg-card/90 border border-border/50"
               >
-                {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-orange-500/25 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-teal-500/20 to-transparent rounded-full blur-xl translate-y-1/2 -translate-x-1/2" />
                 
-                {/* Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-500 to-teal-500 text-white shadow-glow animate-pulse">
-                    🪑 {t.promotions.mattressBadge}
+                    {t.promotions.services2plusBadge}
                   </span>
                 </div>
                 
@@ -285,19 +283,18 @@ const Index = () => {
                     }} />
                   </div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
-                    {t.promotions.weeklyTitle}
-                  </h3>
-                  <p className="text-foreground text-center text-lg sm:text-xl font-bold mb-2 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
                     {t.promotions.services2plus}
-                  </p>
-                  <p className="text-foreground text-center text-base sm:text-lg leading-relaxed font-medium">
-                    {t.promotions.weeklyDesc}
-                  </p>
+                  </h3>
+                  <div className="mt-4 pt-4 border-t border-white/20">
+                    <p className="text-foreground text-center text-sm sm:text-base font-semibold leading-relaxed bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent animate-pulse">
+                      {t.promotions.springDryingPromo}
+                    </p>
+                  </div>
                 </div>
               </div>
             </CircularRevealCard>
 
-            {/* Monthly Deal - 4+ услуг: 15% */}
+            {/* 4+ Services: 10% */}
             <CircularRevealCard index={1} slow className="h-full">
               <div 
                 className="relative overflow-hidden p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card group hover:shadow-glow transition-all duration-500 touch-manipulation h-full hover:scale-[1.02] bg-card/90 border border-border/50"

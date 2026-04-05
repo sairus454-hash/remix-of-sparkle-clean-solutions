@@ -21,27 +21,7 @@ interface ServiceCardItem {
   promoBadge?: string;
 }
 
-// Categories eligible for 10% first-order discount display
-const DISCOUNT_CATEGORIES = ['furniture', 'leather'];
-const DISCOUNT_PERCENT = 10;
-
-// IDs excluded from the 10% discount (carpets, impregnation, strollers, etc.)
-const DISCOUNT_EXCLUDED_IDS = [
-  'carpet', 'carpetCovering', 'carpetPickup', 'carpetFloorMedium', 'carpetFloorLarge',
-  'carpetImpregnation', 'carpetCoveringImpregnation', 'impregnation',
-  'stroller', 'carseat', 'tileCleaning',
-  'mattressSingle', 'mattressDouble', 'mattressSingleDry2', 'mattressDoubleDry2',
-  'bedHeadboard', 'bedFrame',
-];
-
-function applyFirstOrderDiscount(items: ServiceCardItem[], category?: string): ServiceCardItem[] {
-  if (!category || !DISCOUNT_CATEGORIES.includes(category)) return items;
-  return items.map(item => {
-    if (item.price === 0 || item.promoBadge || DISCOUNT_EXCLUDED_IDS.includes(item.id)) return item;
-    const discountedPrice = Math.round(item.price * (1 - DISCOUNT_PERCENT / 100));
-    return { ...item, originalPrice: item.price, price: discountedPrice };
-  });
-}
+// No first-order discount — removed
 
 interface CardServiceCalculatorProps {
   items: ServiceCardItem[];
@@ -113,8 +93,8 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
-  // Apply first-order discount for eligible categories (unless disabled)
-  const displayItems = noDiscount ? items : applyFirstOrderDiscount(items, category);
+  // No first-order discount — items displayed as-is
+  const displayItems = items;
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
@@ -302,14 +282,6 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                     </div>
                   )}
 
-                  {/* Discount badge for furniture/leather/mattress */}
-                  {!item.promoBadge && item.originalPrice && (
-                    <div className="absolute top-2 left-2 z-10">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-red-500 to-rose-500 text-white shadow-md">
-                        -{DISCOUNT_PERCENT}%
-                      </span>
-                    </div>
-                  )}
 
                   {/* Info */}
                   <div className="p-3 w-full">
