@@ -140,9 +140,14 @@ const Auto = () => {
            </div>
          </section>
 
-        <div className="flex flex-col">
-        {/* Card Calculator (mobile first) */}
-        <section className="py-12 sm:py-20 bg-card order-1">
+        {/* 1. Promotions */}
+        <MobilePromotionsCard />
+        <div className="hidden sm:block">
+          <PromotionsSection />
+        </div>
+
+        {/* 2. Price Calculator */}
+        <section className="py-12 sm:py-20 bg-card">
           <div className="container mx-auto px-4">
             <CircularRevealCard index={0}>
               <div className="max-w-5xl mx-auto">
@@ -163,9 +168,29 @@ const Auto = () => {
           </div>
         </section>
 
-        {/* Services */}
+        {/* 3. Contact Form */}
         <LazySection minHeight="300px">
-        <section className="py-12 sm:py-20 bg-gradient-section order-2 sm:order-1">
+        <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-8 sm:mb-12">
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                  {t.form.title}
+                </h2>
+              </div>
+              <CircularRevealCard index={0}>
+                <div className="bg-gradient-card p-4 sm:p-8 rounded-xl sm:rounded-2xl shadow-card border border-border">
+                  <ContactForm ref={formRef} />
+                </div>
+              </CircularRevealCard>
+            </div>
+          </div>
+        </section>
+        </LazySection>
+
+        {/* 4. Services */}
+        <LazySection minHeight="300px">
+        <section className="py-12 sm:py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
               {services.map((service, index) => (
@@ -186,8 +211,8 @@ const Auto = () => {
         </section>
         </LazySection>
 
-        {/* Important Note about Floor Mats */}
-        <section className="py-8 sm:py-12 bg-amber-50 dark:bg-amber-900/20 border-t border-b border-amber-200 dark:border-amber-900 order-3 sm:order-2">
+        {/* 5. Important Note */}
+        <section className="py-8 sm:py-12 bg-amber-50 dark:bg-amber-900/20 border-t border-b border-amber-200 dark:border-amber-900">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto flex items-start gap-3 sm:gap-4">
               <div className="flex-shrink-0 mt-1">
@@ -203,36 +228,8 @@ const Auto = () => {
           </div>
         </section>
 
-        <div className="order-4 sm:order-3">
-          <Auto3DCarousel />
-        </div>
-
-        <MobilePromotionsCard className="order-5" />
-
-        <div className="hidden sm:block order-5 sm:order-3">
-          <PromotionsSection />
-        </div>
-
-        {/* Contact Form */}
-        <LazySection minHeight="300px">
-        <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section order-6 sm:order-5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-8 sm:mb-12">
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                  {t.form.title}
-                </h2>
-              </div>
-              <CircularRevealCard index={0}>
-                <div className="bg-gradient-card p-4 sm:p-8 rounded-xl sm:rounded-2xl shadow-card border border-border">
-                  <ContactForm ref={formRef} />
-                </div>
-              </CircularRevealCard>
-            </div>
-          </div>
-        </section>
-        </LazySection>
-        </div>
+        {/* 6. 3D Carousel */}
+        <Auto3DCarousel />
       </Layout>
     </>
   );
