@@ -47,12 +47,6 @@ const Ozone = () => {
     { icon: Wrench, title: t.ozone.app4 },
   ];
 
-  const galleryImages = [
-    { src: ozoneRoom, alt: 'Озонирование квартиры' },
-    { src: ozoneCar, alt: 'Озонирование автомобиля' },
-    { src: ozoneOffice, alt: 'Озонирование офиса' },
-  ];
-
   return (
     <>
       <SEO
@@ -90,7 +84,7 @@ const Ozone = () => {
       />
     <Layout>
       <BackToOrderButton />
-      {/* Fixed ozone molecule background behind everything */}
+      {/* Fixed ozone molecule background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <img src={ozoneBg} alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-background/40" />
@@ -98,7 +92,7 @@ const Ozone = () => {
       <div className="relative z-10">
       {showSplash && <OzoneSplash onComplete={handleSplashComplete} />}
       
-      {/* Hero with Background Photo Slideshow */}
+      {/* Hero */}
       <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
         <HeroSlideshow images={[
           { src: ozoneRoom, alt: 'Озонирование квартиры' },
@@ -128,9 +122,8 @@ const Ozone = () => {
         </div>
       </section>
 
-      <div className="flex flex-col">
-      {/* Pricing - Card Calculator (mobile first) */}
-      <section className="py-20 order-1 sm:order-3">
+      {/* 1. Pricing - Card Calculator */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
             {t.prices.ozonation}
@@ -151,9 +144,29 @@ const Ozone = () => {
         </div>
       </section>
 
-      {/* What is Ozonation */}
+      {/* 2. Contact Form */}
       <LazySection minHeight="300px">
-      <section className="py-20 order-2 sm:order-1">
+      <section ref={formSectionRef} className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+                {t.form.title}
+              </h2>
+            </div>
+            <CircularRevealCard index={0}>
+              <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
+                <ContactForm ref={formRef} />
+              </div>
+            </CircularRevealCard>
+          </div>
+        </div>
+      </section>
+      </LazySection>
+
+      {/* 3. What is Ozonation */}
+      <LazySection minHeight="300px">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <CircularRevealCard index={0}>
@@ -190,8 +203,8 @@ const Ozone = () => {
       </section>
       </LazySection>
 
-      {/* Applications */}
-      <section className="py-20 order-3 sm:order-2">
+      {/* 4. Applications */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
             {t.ozone.applications}
@@ -211,8 +224,8 @@ const Ozone = () => {
         </div>
       </section>
 
-      {/* What to know before cleaning */}
-      <section className="py-20 order-4">
+      {/* 5. What to know before cleaning */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <CircularRevealCard index={0}>
@@ -247,27 +260,6 @@ const Ozone = () => {
           </div>
         </div>
       </section>
-
-      {/* Contact Form */}
-      <LazySection minHeight="300px">
-      <section ref={formSectionRef} className="py-20 order-5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                {t.form.title}
-              </h2>
-            </div>
-            <CircularRevealCard index={0}>
-              <div className="bg-card p-8 rounded-2xl shadow-card border border-border">
-                <ContactForm ref={formRef} />
-              </div>
-            </CircularRevealCard>
-          </div>
-        </div>
-      </section>
-      </LazySection>
-      </div>
       </div>
     </Layout>
     </>
