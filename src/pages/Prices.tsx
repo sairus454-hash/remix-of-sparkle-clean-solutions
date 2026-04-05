@@ -39,17 +39,24 @@ const Prices = () => {
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
+  const isCategoryOpen = (id: string) => !closedCategories.has(id);
+  const toggleCategory = (id: string) => {
+    setClosedCategories(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  };
+
   // Auto-open category from navigation state (e.g., from recommendation chips)
   useEffect(() => {
     const state = location.state as { openCategory?: string } | null;
     if (state?.openCategory) {
       const catId = state.openCategory;
-      setOpenCategory(catId);
-      // Scroll to category after a brief delay for render
+      setClosedCategories(prev => { const next = new Set(prev); next.delete(catId); return next; });
       setTimeout(() => {
         categoryRefs.current[catId]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 300);
-      // Clear the state so it doesn't re-trigger
       window.history.replaceState({}, document.title);
     }
   }, [location.state]);
