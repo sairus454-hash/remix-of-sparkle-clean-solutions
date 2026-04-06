@@ -270,7 +270,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                           </span>
                         </div>
                         {/* Desktop: pulsing badge on hover */}
-                        <div className="absolute bottom-3 inset-x-2 hidden sm:flex justify-center z-[3] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-3 inset-x-2 hidden sm:flex justify-center z-[3] pointer-events-none">
                           <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold bg-primary text-primary-foreground shadow-glow animate-pulse">
                             <Plus className="w-4 h-4" />
                             {language === 'pl' ? 'Zamów' : language === 'en' ? 'Order' : language === 'uk' ? 'Замовити' : 'Заказать'}
