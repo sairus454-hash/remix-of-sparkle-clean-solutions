@@ -67,7 +67,7 @@ export const translations = {
       services4plusBadge: '4+ услуг',
       services4plus: '4+ услуг: 10%',
       springDryingPromo: '🔥 Акция недели: -10% на химчистку мебели и матрасов!',
-      dryingFreeSpring: 'БЕСПЛАТНО до конца весны!',
+      dryingFreeSpring: 'Сушение мебели и матрасов до конца весны — БЕСПЛАТНО!!!',
       services6plus: '6+ услуг (VIP): 15%',
     },
     about: {
@@ -791,7 +791,7 @@ export const translations = {
       services4plusBadge: '4+ services',
       services4plus: '4+ services: 10%',
       springDryingPromo: '🔥 Weekly deal: -10% on furniture & mattress cleaning!',
-      dryingFreeSpring: 'FREE until end of spring!',
+      dryingFreeSpring: 'Furniture & mattress drying until end of spring — FREE!!!',
       services6plus: '6+ services (VIP): 15%',
     },
     about: {
@@ -1515,7 +1515,7 @@ export const translations = {
       services4plusBadge: '4+ usług',
       services4plus: '4+ usług: 10%',
       springDryingPromo: '🔥 Promocja tygodnia: -10% na pranie mebli i materacy!',
-      dryingFreeSpring: 'GRATIS do końca wiosny!',
+      dryingFreeSpring: 'Suszenie mebli i materacy do końca wiosny — GRATIS!!!',
       services6plus: '6+ usług (VIP): 15%',
     },
     about: {
@@ -2239,7 +2239,7 @@ export const translations = {
       services4plusBadge: '4+ послуг',
       services4plus: '4+ послуг: 10%',
       springDryingPromo: '🔥 Акція тижня: -10% на хімчистку меблів та матраців!',
-      dryingFreeSpring: 'БЕЗКОШТОВНО до кінця весни!',
+      dryingFreeSpring: 'Сушіння меблів та матраців до кінця весни — БЕЗКОШТОВНО!!!',
       services6plus: '6+ послуг (VIP): 15%',
     },
     about: {
