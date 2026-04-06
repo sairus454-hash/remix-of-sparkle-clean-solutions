@@ -64,8 +64,8 @@ const PRICE_LIST = {
 • Чистка багажника — 80 PLN
 • Чистка пола — 100 PLN
 • Чистка дверной карты — 40 PLN
-• Комплексная химчистка авто — 450 PLN
-• Комплексная чистка авто (кожа) — 550 PLN
+• Комплексная химчистка авто — 500 PLN
+• Комплексная чистка авто (кожа) — 600 PLN
 • Химчистка кабины тягача — от 650 PLN
 • Химчистка кабины буса — от 400 PLN
 
@@ -269,8 +269,8 @@ Deep cleaning:
 • Trunk cleaning — 80 PLN
 • Floor cleaning — 100 PLN
 • Door panel cleaning — 40 PLN
-• Full car cleaning — 450 PLN
-• Full car cleaning (leather) — 550 PLN
+• Full car cleaning — 500 PLN
+• Full car cleaning (leather) — 600 PLN
 • Truck cabin cleaning — from 650 PLN
 • Van cabin cleaning — from 400 PLN
 
@@ -474,8 +474,8 @@ Sprzątanie generalne:
 • Czyszczenie bagażnika — 80 PLN
 • Czyszczenie podłogi — 100 PLN
 • Czyszczenie panelu drzwi — 40 PLN
-• Kompleksowe czyszczenie auta — 450 PLN
-• Kompleksowe czyszczenie auta (skóra) — 550 PLN
+• Kompleksowe czyszczenie auta — 500 PLN
+• Kompleksowe czyszczenie auta (skóra) — 600 PLN
 • Czyszczenie kabiny ciągnika — od 650 PLN
 • Czyszczenie kabiny busa — od 400 PLN
 
@@ -679,8 +679,8 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Чистка багажника — 80 PLN
 • Чистка підлоги — 100 PLN
 • Чистка дверної панелі — 40 PLN
-• Комплексна хімчистка авто — 450 PLN
-• Комплексна чистка авто (шкіра) — 550 PLN
+• Комплексна хімчистка авто — 500 PLN
+• Комплексна чистка авто (шкіра) — 600 PLN
 • Хімчистка кабіни тягача — від 650 PLN
 • Хімчистка кабіни буса — від 400 PLN
 
