@@ -142,8 +142,8 @@ const CityPage = () => {
       items: [
         { id: 'autoComplex', name: t.prices.items.autoComplex, price: 500, image: img('calc-auto-complex.jpg') },
         { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 600, image: img('calc-auto-leather.jpg') },
-        { id: 'autoVip', name: t.prices.items.autoVip, price: 650, image: img('calc-auto-vip.jpg') },
-        { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 750, image: img('calc-auto-vip-leather.jpg') },
+        { id: 'autoVip', name: t.prices.items.autoVip, price: 700, image: img('calc-auto-vip.jpg') },
+        { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 800, image: img('calc-auto-vip-leather.jpg') },
         { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80, image: img('calc-auto-seat.jpg') },
         { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300, image: img('calc-auto-seats.jpg') },
         { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350, image: img('calc-auto-leather-seats.jpg') },
