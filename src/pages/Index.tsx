@@ -25,6 +25,7 @@ import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
+import promoBannerGirl from '@/assets/promo-banner-girl.png';
 
 // Lazy load below-fold non-critical components
 const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCard'));
@@ -142,6 +143,44 @@ const Index = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Promo Banner — Free Drying */}
+      <section className="relative w-full overflow-hidden bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.15),transparent_60%)]" />
+        <div className="container mx-auto px-4 py-4 sm:py-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-8 relative z-10">
+          <img
+            src={promoBannerGirl}
+            alt="Promocja — darmowe suszenie"
+            loading="eager"
+            width={200}
+            height={200}
+            className="w-28 h-28 sm:w-40 sm:h-40 md:w-48 md:h-48 object-contain flex-shrink-0 drop-shadow-2xl animate-bounce-slow"
+          />
+          <div className="text-center sm:text-left flex-1">
+            <p className="text-white/90 text-sm sm:text-base font-semibold uppercase tracking-wider mb-1 drop-shadow">
+              ⚡ Takiego jeszcze nie było!
+            </p>
+            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-tight drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
+              🎉 Suszenie mebli i materacy
+              <br />
+              do końca wiosny — <span className="text-yellow-300 animate-pulse">BEZPŁATNIE!!!</span>
+            </h2>
+            <p className="text-white/80 text-xs sm:text-sm mt-2 drop-shadow">
+              Skorzystaj z promocji • MasterClean Wrocław
+            </p>
+          </div>
+          <Link to="/contacts" className="flex-shrink-0">
+            <Button className="bg-white text-blue-700 hover:bg-yellow-300 hover:text-blue-800 font-bold text-base sm:text-lg px-6 py-3 sm:py-4 rounded-full shadow-lg transition-all hover:scale-105 active:scale-95">
+              {language === 'ru' ? 'Заказать' : language === 'pl' ? 'Zamów teraz' : language === 'uk' ? 'Замовити' : 'Order now'}
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+        </div>
+        {/* Sparkle decorations */}
+        <div className="absolute top-2 left-[10%] w-2 h-2 bg-yellow-300 rounded-full animate-ping opacity-75" />
+        <div className="absolute bottom-3 right-[15%] w-3 h-3 bg-white rounded-full animate-ping opacity-50" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute top-4 right-[30%] w-2 h-2 bg-yellow-200 rounded-full animate-ping opacity-60" style={{ animationDelay: '1s' }} />
       </section>
 
       {/* Blog Icon — hidden on mobile */}
