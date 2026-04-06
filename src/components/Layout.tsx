@@ -66,7 +66,7 @@ const Layout = ({ children }: LayoutProps) => {
                 Skorzystaj z promocji • MasterClean Wrocław
               </p>
             </div>
-            <Link to="/contacts" className="flex-shrink-0">
+            <Link to="/services" className="flex-shrink-0">
               <Button className="bg-white text-blue-700 hover:bg-yellow-300 hover:text-blue-800 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-lg transition-all hover:scale-105 active:scale-95">
                 {language === 'ru' ? 'Заказать' : language === 'pl' ? 'Zamów teraz' : language === 'uk' ? 'Замовити' : 'Order now'}
                 <ArrowRight className="w-6 h-6 ml-2" />
