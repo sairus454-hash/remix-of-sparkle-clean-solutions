@@ -427,9 +427,12 @@ const Prices = () => {
                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent">
                       {t.promotions.services2plus}
                     </h3>
-                    <div className="mt-4 pt-4 border-t border-white/20">
+                    <div className="mt-4 pt-4 border-t border-white/20 space-y-2">
                       <p className="text-foreground text-center text-sm sm:text-base font-semibold leading-relaxed bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent animate-pulse">
                         {t.promotions.springDryingPromo}
+                      </p>
+                      <p className="text-foreground text-center text-xs sm:text-sm font-bold leading-relaxed bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent animate-pulse">
+                        🎉 {t.promotions.dryingFreeSpring}
                       </p>
                     </div>
                   </div>
@@ -461,9 +464,12 @@ const Prices = () => {
                     <h3 className="font-serif text-xl sm:text-2xl font-bold text-center mb-3 sm:mb-4 bg-gradient-to-r from-orange-400 to-cyan-500 bg-clip-text text-transparent">
                        {t.promotions.services4plus}
                     </h3>
-                    <div className="mt-4 pt-4 border-t border-white/20">
+                    <div className="mt-4 pt-4 border-t border-white/20 space-y-2">
                       <p className="text-foreground text-center text-sm sm:text-base font-semibold leading-relaxed bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent animate-pulse">
                         {t.promotions.springDryingPromo}
+                      </p>
+                      <p className="text-foreground text-center text-xs sm:text-sm font-bold leading-relaxed bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent animate-pulse">
+                        🎉 {t.promotions.dryingFreeSpring}
                       </p>
                     </div>
                   </div>
