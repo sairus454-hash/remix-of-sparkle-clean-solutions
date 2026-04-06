@@ -128,7 +128,7 @@ const Index = () => {
             loading="eager"
             width={260}
             height={260}
-            className="w-36 h-36 sm:w-52 sm:h-52 md:w-64 md:h-64 object-contain flex-shrink-0 drop-shadow-2xl animate-bounce-slow"
+            className="w-44 h-44 sm:w-64 sm:h-64 md:w-[310px] md:h-[310px] object-contain flex-shrink-0 drop-shadow-2xl animate-bounce-slow"
           />
           <div className="text-center sm:text-left flex-1">
             <p className="text-white/90 text-base sm:text-lg font-semibold uppercase tracking-wider mb-1.5 drop-shadow">
