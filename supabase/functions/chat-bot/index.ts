@@ -948,9 +948,9 @@ ${PRICE_LIST.ru}
 — Применяем профессиональную химию: Allegrini, Bissell, Global
 — Если клиент спрашивает про оборудование или химию — подчеркни профессиональный уровень!
 
-🌿 ВЕСЕННЯЯ АКЦИЯ:
-— Сушка мебели (обычно 60 PLN) — БЕСПЛАТНО до конца весны!
-— Активно предлагай эту акцию клиентам при заказе химчистки мебели!
+🛏️ АКЦИЯ НЕДЕЛИ:
+— Химчистка подушек — БЕСПЛАТНО при заказе любой услуги!
+— Активно предлагай эту акцию клиентам!
 
 ВАЖНО:
 — ВСЕГДА называй точные цены
@@ -1097,9 +1097,9 @@ Ozonation is a process of treating spaces or objects with ozone, which effective
 — We use professional cleaning chemicals: Allegrini, Bissell, Global
 — If customer asks about equipment or chemicals — emphasize the professional level!
 
-🌿 SPRING PROMOTION:
-— Furniture drying (normally 60 PLN) — FREE until end of spring!
-— Actively offer this promotion to customers when they order furniture cleaning!
+🛏️ WEEKLY DEAL:
+— Pillow cleaning — FREE with any service order!
+— Actively offer this promotion to customers!
 
 IMPORTANT:
 — ALWAYS give exact prices
@@ -1219,9 +1219,9 @@ Ozonowanie to proces obróbki pomieszczeń lub przedmiotów ozonem, który skute
 — Stosujemy profesjonalną chemię: Allegrini, Bissell, Global
 — Jeśli klient pyta o sprzęt lub chemię — podkreśl profesjonalny poziom!
 
-🌿 PROMOCJA WIOSENNA:
-— Suszenie mebli (zazwyczaj 60 PLN) — GRATIS do końca wiosny!
-— Aktywnie proponuj tę promocję klientom przy zamówieniu czyszczenia mebli!
+🛏️ PROMOCJA TYGODNIA:
+— Pranie poduszek — GRATIS przy zamówieniu dowolnej usługi!
+— Aktywnie proponuj tę promocję klientom!
 
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny
