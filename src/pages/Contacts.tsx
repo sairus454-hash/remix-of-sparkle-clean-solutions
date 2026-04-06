@@ -117,7 +117,7 @@ const Contacts = () => {
                     : isAddress
                       ? { href: 'https://maps.app.goo.gl/uvzboZg432I31j3ZX', target: '_blank', rel: 'noopener noreferrer' }
                       : isEmail
-                        ? { href: 'https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com' }
+                        ? { href: 'https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com', target: '_blank', rel: 'noopener noreferrer' }
                         : {};
 
                   return (
