@@ -307,12 +307,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                     )}>
                       {item.name}
                     </p>
-                    {item.promoBadge ? (
-                      <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
-                        <span className="line-through text-muted-foreground mr-1">{item.price} zł</span>
-                        <span className="text-green-600 font-bold">0 zł</span>
-                      </p>
-                    ) : item.originalPrice ? (
+                    {item.originalPrice ? (
                       <p className="text-xs sm:text-sm font-bold">
                         <span className="line-through text-muted-foreground/70 mr-1 font-normal text-[11px] sm:text-xs">{item.originalPrice} zł</span>
                         <span className={cn(

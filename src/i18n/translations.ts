@@ -66,7 +66,7 @@ export const translations = {
       services2plusBadge: '2+ услуг',
       services4plusBadge: '4+ услуг',
       services4plus: '4+ услуг: 10%',
-      springDryingPromo: '🛏️ Акция недели: Химчистка подушек — БЕСПЛАТНО!',
+      springDryingPromo: '🔥 Акция недели: -10% на химчистку мебели и матрасов!',
       dryingFreeSpring: 'БЕСПЛАТНО до конца весны!',
       services6plus: '6+ услуг (VIP): 15%',
     },
