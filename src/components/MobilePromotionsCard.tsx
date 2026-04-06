@@ -55,6 +55,9 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
                   <p className="text-xs font-semibold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent">
                     {t.promotions.springDryingPromo}
                   </p>
+                  <p className="text-[10px] font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent mt-1">
+                    🎉 {t.promotions.dryingFreeSpring}
+                  </p>
                 </div>
               </div>
             </div>
