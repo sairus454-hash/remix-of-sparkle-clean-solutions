@@ -124,10 +124,10 @@ const SEO = ({
           key={hreflang}
           rel="alternate"
           hrefLang={hreflang}
-          href={`${SITE_URL}${path}?lang=${lang}`}
+          href={canonicalUrl}
         />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${path}`} />
+      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
