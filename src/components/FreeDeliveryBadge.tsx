@@ -16,8 +16,10 @@ const FreeDeliveryBadge = () => {
     en: 'Free travel to client!!!',
   };
 
-
   if (isDismissed) return null;
+
+  return (
+    <div className="fixed right-2 sm:right-4 top-[60px] sm:top-[68px] lg:top-[84px] z-40 flex flex-col items-center gap-2">
       {/* Expanded text bubble */}
       <div className="relative">
         {!isMobile && (
