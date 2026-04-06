@@ -956,10 +956,6 @@ ${PRICE_LIST.ru}
 — Применяем профессиональную химию: Allegrini, Bissell, Global
 — Если клиент спрашивает про оборудование или химию — подчеркни профессиональный уровень!
 
-🛏️ АКЦИЯ НЕДЕЛИ:
-— Химчистка подушек — БЕСПЛАТНО при заказе любой услуги!
-— Активно предлагай эту акцию клиентам!
-
 ВАЖНО:
 — ВСЕГДА называй точные цены
 — АКТИВНО ПРОДВИГАЙ СКИДКИ! При любом заказе говори о возможности получить скидку
@@ -1105,10 +1101,6 @@ Ozonation is a process of treating spaces or objects with ozone, which effective
 — We use professional cleaning chemicals: Allegrini, Bissell, Global
 — If customer asks about equipment or chemicals — emphasize the professional level!
 
-🛏️ WEEKLY DEAL:
-— Pillow cleaning — FREE with any service order!
-— Actively offer this promotion to customers!
-
 IMPORTANT:
 — ALWAYS give exact prices
 — ACTIVELY PROMOTE DISCOUNTS! For any order, mention the possibility of getting a discount
@@ -1226,10 +1218,6 @@ Ozonowanie to proces obróbki pomieszczeń lub przedmiotów ozonem, który skute
 — Używamy profesjonalnego sprzętu: Santoemma i Kärcher
 — Stosujemy profesjonalną chemię: Allegrini, Bissell, Global
 — Jeśli klient pyta o sprzęt lub chemię — podkreśl profesjonalny poziom!
-
-🛏️ PROMOCJA TYGODNIA:
-— Pranie poduszek — GRATIS przy zamówieniu dowolnej usługi!
-— Aktywnie proponuj tę promocję klientom!
 
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny
