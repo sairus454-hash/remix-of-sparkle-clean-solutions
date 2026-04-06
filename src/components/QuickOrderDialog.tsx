@@ -3,9 +3,15 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Send, Loader2, Phone, User } from 'lucide-react';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Send, Loader2, Phone, User, CalendarIcon, MapPin, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { cn } from '@/lib/utils';
+import { format } from 'date-fns';
+import { ru, pl, uk, enUS } from 'date-fns/locale';
 
 import SuccessAnimation from './SuccessAnimation';
 import { CalculatorItem } from '@/types/calculator';
@@ -17,17 +23,27 @@ interface QuickOrderDialogProps {
   total: number;
 }
 
+const timeSlots = Array.from({ length: 25 }, (_, i) => {
+  const hours = Math.floor((i * 30 + 480) / 60);
+  const minutes = (i * 30 + 480) % 60;
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+});
+
 const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialogProps) => {
   const { t, language } = useLanguage();
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [address, setAddress] = useState('');
+  const [postalCode, setPostalCode] = useState('');
+  const [date, setDate] = useState<Date | undefined>();
+  const [time, setTime] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
   const [showSuccess, setShowSuccess] = useState(false);
+
+  const dateLocale = language === 'ru' ? ru : language === 'pl' ? pl : language === 'uk' ? uk : enUS;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
 
     if (!name.trim() || !phone.trim()) {
       toast({
@@ -45,11 +61,18 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
       const message = `⚡ ${t.form.quickOrderTitle || 'Быстрый заказ'}:\n${orderLines.join('\n')}\n\n${totalLabel}: ${total} zł`;
 
       const { error } = await supabase.functions.invoke('send-telegram', {
-        body: { name: name.trim(), phone: phone.trim(), message },
+        body: {
+          name: name.trim(),
+          phone: phone.trim(),
+          message,
+          address: address.trim() || undefined,
+          postalCode: postalCode.trim() || undefined,
+          date: date ? format(date, 'dd.MM.yyyy') : undefined,
+          time: time || undefined,
+        },
       });
       if (error) throw error;
 
-      // GTM event
       (await import('@/lib/gtm')).gtmEvents.formSubmit('quick_order', {
         items_count: items.length,
         total,
@@ -57,7 +80,6 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
 
       setShowSuccess(true);
 
-      // Play success sound
       try {
         const ctx = new (window.AudioContext || (window as any).webkitAudioContext)();
         const playTone = (freq: number, start: number, dur: number) => {
@@ -82,6 +104,10 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
       toast({ title: t.form.success, description: `${name}, ${t.form.success}` });
       setName('');
       setPhone('');
+      setAddress('');
+      setPostalCode('');
+      setDate(undefined);
+      setTime('');
       setTimeout(() => onOpenChange(false), 2000);
     } catch {
       toast({
@@ -100,7 +126,7 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
     <>
       <SuccessAnimation isVisible={showSuccess} onComplete={handleAnimationComplete} />
       <Dialog open={open} onOpenChange={onOpenChange}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2">
               <Phone className="w-5 h-5 text-primary" />
@@ -125,7 +151,8 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3">
+            {/* Name */}
             <div className="relative">
               <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
@@ -137,6 +164,7 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
                 required
               />
             </div>
+            {/* Phone */}
             <div className="relative">
               <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
@@ -149,6 +177,63 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
                 required
               />
             </div>
+            {/* Address + Postal Code */}
+            <div className="grid grid-cols-3 gap-2">
+              <div className="relative col-span-2">
+                <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  placeholder={t.form.addressPlaceholder}
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  className="pl-10"
+                  maxLength={200}
+                />
+              </div>
+              <Input
+                placeholder={t.form.postalCode}
+                value={postalCode}
+                onChange={(e) => setPostalCode(e.target.value)}
+                maxLength={10}
+              />
+            </div>
+            {/* Date + Time */}
+            <div className="grid grid-cols-2 gap-2">
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "justify-start text-left font-normal h-10",
+                      !date && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {date ? format(date, 'dd.MM.yyyy') : (t.form.selectDate || 'Дата')}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate}
+                    locale={dateLocale}
+                    disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0))}
+                    className={cn("p-3 pointer-events-auto")}
+                  />
+                </PopoverContent>
+              </Popover>
+              <Select value={time} onValueChange={setTime}>
+                <SelectTrigger className="h-10">
+                  <SelectValue placeholder={t.form.selectTime || 'Время'} />
+                </SelectTrigger>
+                <SelectContent>
+                  {timeSlots.map((slot) => (
+                    <SelectItem key={slot} value={slot}>{slot}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
             <Button type="submit" disabled={isLoading} className="w-full bg-fresh hover:bg-fresh/90 text-white shadow-glow h-12">
               {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
               {t.form.submit}
