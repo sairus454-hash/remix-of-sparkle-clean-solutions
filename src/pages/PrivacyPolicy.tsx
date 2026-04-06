@@ -13,7 +13,7 @@ const privacyContent = {
         content: [
           'Добро пожаловать в MasterClean 1885.',
           'Мы уважаем вашу конфиденциальность и стремимся защитить ваши персональные данные. Настоящая Политика конфиденциальности объясняет, как мы собираем, используем и защищаем вашу информацию при использовании нашего сайта и услуг.',
-          'Если у вас есть вопросы по данной политике, вы можете связаться с нами по адресу <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+          'Если у вас есть вопросы по данной политике, вы можете связаться с нами по адресу <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
         ],
       },
       {
@@ -70,7 +70,7 @@ const privacyContent = {
         title: '8. Ваши права (GDPR)',
         content: ['Если вы находитесь в Европейской экономической зоне (ЕЭЗ), вы имеете право:'],
         items: ['Получить доступ к своим персональным данным', 'Запросить исправление', 'Запросить удаление', 'Возразить против обработки', 'Запросить переносимость данных'],
-        footer: 'Для реализации этих прав свяжитесь с нами по адресу <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+        footer: 'Для реализации этих прав свяжитесь с нами по адресу <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
       },
       {
         title: '9. Сторонние сервисы',
@@ -89,7 +89,7 @@ const privacyContent = {
         title: '11. Контакты',
         content: ['Если у вас есть вопросы по данной Политике конфиденциальности, свяжитесь с нами:'],
         contacts: [
-          { label: 'Email', value: '<a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
+          { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Компания', value: 'MasterClean 1885' },
           { label: 'Адрес', value: '54-614 Wrocław, ul. Trawowa 14, Польша' },
         ],
@@ -106,7 +106,7 @@ const privacyContent = {
         content: [
           'Welcome to MasterClean 1885.',
           'We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our website and services.',
-          'If you have any questions about this policy, you can contact us at <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+          'If you have any questions about this policy, you can contact us at <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
         ],
       },
       {
@@ -163,7 +163,7 @@ const privacyContent = {
         title: '8. Your Rights (GDPR)',
         content: ['If you are located in the European Economic Area (EEA), you have the right to:'],
         items: ['Access your personal data', 'Request correction', 'Request deletion', 'Object to processing', 'Request data portability'],
-        footer: 'To exercise these rights, contact us at <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+        footer: 'To exercise these rights, contact us at <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
       },
       {
         title: '9. Third-Party Services',
@@ -182,7 +182,7 @@ const privacyContent = {
         title: '11. Contact Us',
         content: ['If you have questions about this Privacy Policy, contact us:'],
         contacts: [
-          { label: 'Email', value: '<a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
+          { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Company', value: 'MasterClean 1885' },
           { label: 'Address', value: '54-614 Wrocław, ul. Trawowa 14, Poland' },
         ],
@@ -199,7 +199,7 @@ const privacyContent = {
         content: [
           'Witamy w MasterClean 1885.',
           'Szanujemy Twoją prywatność i zobowiązujemy się do ochrony Twoich danych osobowych. Niniejsza Polityka prywatności wyjaśnia, w jaki sposób zbieramy, wykorzystujemy i chronimy Twoje informacje podczas korzystania z naszej strony internetowej i usług.',
-          'Jeśli masz pytania dotyczące tej polityki, możesz skontaktować się z nami pod adresem <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+          'Jeśli masz pytania dotyczące tej polityki, możesz skontaktować się z nami pod adresem <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
         ],
       },
       {
@@ -256,7 +256,7 @@ const privacyContent = {
         title: '8. Twoje prawa (RODO)',
         content: ['Jeśli znajdujesz się w Europejskim Obszarze Gospodarczym (EOG), masz prawo do:'],
         items: ['Dostępu do swoich danych osobowych', 'Żądania sprostowania', 'Żądania usunięcia', 'Sprzeciwu wobec przetwarzania', 'Żądania przenoszenia danych'],
-        footer: 'Aby skorzystać z tych praw, skontaktuj się z nami pod adresem <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+        footer: 'Aby skorzystać z tych praw, skontaktuj się z nami pod adresem <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
       },
       {
         title: '9. Usługi stron trzecich',
@@ -275,7 +275,7 @@ const privacyContent = {
         title: '11. Kontakt',
         content: ['Jeśli masz pytania dotyczące niniejszej Polityki prywatności, skontaktuj się z nami:'],
         contacts: [
-          { label: 'Email', value: '<a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
+          { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Firma', value: 'MasterClean 1885' },
           { label: 'Adres', value: '54-614 Wrocław, ul. Trawowa 14, Polska' },
         ],
@@ -292,7 +292,7 @@ const privacyContent = {
         content: [
           'Ласкаво просимо до MasterClean 1885.',
           'Ми поважаємо вашу конфіденційність і прагнемо захистити ваші персональні дані. Ця Політика конфіденційності пояснює, як ми збираємо, використовуємо та захищаємо вашу інформацію при використанні нашого сайту та послуг.',
-          'Якщо у вас є запитання щодо цієї політики, ви можете зв\'язатися з нами за адресою <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+          'Якщо у вас є запитання щодо цієї політики, ви можете зв\'язатися з нами за адресою <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
         ],
       },
       {
@@ -349,7 +349,7 @@ const privacyContent = {
         title: '8. Ваші права (GDPR)',
         content: ['Якщо ви перебуваєте в Європейській економічній зоні (ЄЕЗ), ви маєте право:'],
         items: ['Отримати доступ до своїх персональних даних', 'Вимагати виправлення', 'Вимагати видалення', 'Заперечити проти обробки', 'Вимагати перенесення даних'],
-        footer: 'Для реалізації цих прав зв\'яжіться з нами за адресою <a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
+        footer: 'Для реалізації цих прав зв\'яжіться з нами за адресою <a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>.',
       },
       {
         title: '9. Сторонні сервіси',
@@ -368,7 +368,7 @@ const privacyContent = {
         title: '11. Контакти',
         content: ['Якщо у вас є запитання щодо цієї Політики конфіденційності, зв\'яжіться з нами:'],
         contacts: [
-          { label: 'Email', value: '<a href="mailto:sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
+          { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Компанія', value: 'MasterClean 1885' },
           { label: 'Адреса', value: '54-614 Wrocław, ul. Trawowa 14, Польща' },
         ],

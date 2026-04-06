@@ -133,7 +133,7 @@ const FreeDeliveryBadge = () => {
           </svg>
         </a>
         <a 
-          href="mailto:sairus454@gmail.com" 
+          href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" 
           className="relative group w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#EA4335] flex items-center justify-center hover:scale-110 transition-transform shadow-md"
           aria-label="Email"
         >
