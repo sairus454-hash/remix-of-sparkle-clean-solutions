@@ -317,6 +317,10 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                           {item.price} zł{item.unit ? `/${item.unit}` : ''}
                         </span>
                       </p>
+                    ) : item.promoBadge && item.price === 0 ? (
+                      <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
+                        <span className="text-green-600 font-bold">0 zł</span>
+                      </p>
                     ) : (
                       <p className={cn(
                         "text-sm sm:text-base font-bold transition-colors",
