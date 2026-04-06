@@ -66,6 +66,8 @@ const PRICE_LIST = {
 • Чистка дверной карты — 40 PLN
 • Комплексная химчистка авто — 500 PLN
 • Комплексная чистка авто (кожа) — 600 PLN
+• VIP химчистка авто — 700 PLN
+• VIP химчистка авто (кожа) — 800 PLN
 • Химчистка кабины тягача — от 650 PLN
 • Химчистка кабины буса — от 400 PLN
 
@@ -271,6 +273,8 @@ Deep cleaning:
 • Door panel cleaning — 40 PLN
 • Full car cleaning — 500 PLN
 • Full car cleaning (leather) — 600 PLN
+• VIP car cleaning — 700 PLN
+• VIP car cleaning (leather) — 800 PLN
 • Truck cabin cleaning — from 650 PLN
 • Van cabin cleaning — from 400 PLN
 
@@ -476,6 +480,8 @@ Sprzątanie generalne:
 • Czyszczenie panelu drzwi — 40 PLN
 • Kompleksowe czyszczenie auta — 500 PLN
 • Kompleksowe czyszczenie auta (skóra) — 600 PLN
+• VIP czyszczenie samochodu — 700 PLN
+• VIP czyszczenie samochodu (skóra) — 800 PLN
 • Czyszczenie kabiny ciągnika — od 650 PLN
 • Czyszczenie kabiny busa — od 400 PLN
 
@@ -681,6 +687,8 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Чистка дверної панелі — 40 PLN
 • Комплексна хімчистка авто — 500 PLN
 • Комплексна чистка авто (шкіра) — 600 PLN
+• VIP хімчистка авто — 700 PLN
+• VIP хімчистка авто (шкіра) — 800 PLN
 • Хімчистка кабіни тягача — від 650 PLN
 • Хімчистка кабіни буса — від 400 PLN
 
