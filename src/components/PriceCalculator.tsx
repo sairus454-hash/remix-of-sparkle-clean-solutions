@@ -26,100 +26,100 @@ const PriceCalculator = () => {
   {
     id: 'pouf',
     name: t.prices.items.pouf,
-    price: 40
+    price: 36
   }, {
     id: 'chair',
     name: t.prices.items.chair,
-    price: 40
+    price: 36
   }, {
     id: 'armchair',
     name: t.prices.items.armchair,
-    price: 70
+    price: 63
   }, {
     id: 'pillow',
     name: t.prices.items.pillow,
-    price: 15
+    price: 14
   }, {
     id: 'sofa2',
     name: t.prices.items.sofa2,
-    price: 140
+    price: 126
   }, {
     id: 'sofa3',
     name: t.prices.items.sofa3,
-    price: 170
+    price: 153
   }, {
     id: 'sofaCorner',
     name: t.prices.items.sofaCorner,
-    price: 200
+    price: 180
   }, {
     id: 'sofaCornerLarge',
     name: t.prices.items.sofaCornerLarge,
-    price: 250
+    price: 225
   }, {
     id: 'carpet',
     name: t.prices.items.carpet,
-    price: 25,
+    price: 23,
     unit: 'm²'
   }, {
     id: 'mattressDouble',
     name: t.prices.items.mattressDouble,
-    price: 180
+    price: 162
   }, {
     id: 'mattressSingle',
     name: t.prices.items.mattressSingle,
-    price: 140
+    price: 126
   }, {
     id: 'bedHeadboard',
     name: t.prices.items.bedHeadboard,
-    price: 100
+    price: 90
   }, {
     id: 'bedFrame',
     name: t.prices.items.bedFrame,
-    price: 100
+    price: 90
   },
   // Leather Furniture
   {
     id: 'leatherPouf',
     name: t.prices.items.leatherPouf,
-    price: 55
+    price: 50
   }, {
     id: 'leatherChair',
     name: t.prices.items.leatherChair,
-    price: 50
+    price: 45
   }, {
     id: 'leatherArmchair',
     name: t.prices.items.leatherArmchair,
-    price: 90
+    price: 81
   }, {
     id: 'leatherSofa2',
     name: t.prices.items.leatherSofa2,
-    price: 180
+    price: 162
   }, {
     id: 'leatherSofa3',
     name: t.prices.items.leatherSofa3,
-    price: 220
+    price: 198
   }, {
     id: 'leatherSofaCorner',
     name: t.prices.items.leatherSofaCorner,
-    price: 270
+    price: 243
   },
   // Mattress with Drying
   {
     id: 'mattressSingleDry',
     name: t.prices.items.mattressSingleDry,
-    price: 140
+    price: 126
   }, {
     id: 'mattressSingleDry2',
     name: t.prices.items.mattressSingleDry2,
-    price: 220
+    price: 198
   }, {
     id: 'mattressDoubleDry',
     name: t.prices.items.mattressDoubleDry,
-    price: 180
+    price: 162
   }, {
     id: 'mattressDoubleDry2',
     name: t.prices.items.mattressDoubleDry2,
-    price: 280
+    price: 252
   },
   // Ozonation
   {
