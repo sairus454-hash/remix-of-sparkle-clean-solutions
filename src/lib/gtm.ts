@@ -10,10 +10,22 @@ export const pushEvent = (event: string, params?: Record<string, unknown>) => {
   window.dataLayer.push({ event, ...params });
 };
 
+// Google Ads conversion event
+export const pushConversion = (conversionLabel?: string, value?: number, currency = 'PLN') => {
+  pushEvent('ads_conversion', {
+    send_to: conversionLabel || 'AW-17379470297',
+    value,
+    currency,
+  });
+};
+
 // Pre-defined events
 export const gtmEvents = {
-  formSubmit: (formName: string, extra?: Record<string, unknown>) =>
-    pushEvent('form_submit', { form_name: formName, ...extra }),
+  formSubmit: (formName: string, extra?: Record<string, unknown>) => {
+    pushEvent('form_submit', { form_name: formName, ...extra });
+    // Also fire Google Ads conversion
+    pushConversion(undefined, extra?.total as number | undefined);
+  },
 
   phoneClick: (location: string) =>
     pushEvent('phone_click', { click_location: location }),
@@ -36,8 +48,10 @@ export const gtmEvents = {
   chatbotMessage: () =>
     pushEvent('chatbot_message'),
 
-  chatbotLeadSubmit: () =>
-    pushEvent('chatbot_lead_submit'),
+  chatbotLeadSubmit: () => {
+    pushEvent('chatbot_lead_submit');
+    pushConversion();
+  },
 
   pageView: (pagePath: string, pageTitle: string) =>
     pushEvent('virtual_page_view', { page_path: pagePath, page_title: pageTitle }),
