@@ -139,7 +139,7 @@ interface CategorySection {
   title: string;
   description: string;
   icon: React.ElementType;
-  items: { id: string; name: string; price: number; image: string; unit?: string; promoBadge?: string }[];
+  items: { id: string; name: string; price: number; originalPrice?: number; image: string; unit?: string; promoBadge?: string }[];
 }
 
 const PriceSection = () => {
