@@ -25,6 +25,7 @@ import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
+import promoBannerGirl from '@/assets/promo-banner-girl.png';
 
 // Lazy load below-fold non-critical components
 const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCard'));
