@@ -43,8 +43,8 @@ const Auto = () => {
   const formSectionRef = useRef<HTMLDivElement>(null);
 
   const autoItems = [
-    { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450, image: calcAutoComplex },
-    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 550, image: calcAutoLeather },
+    { id: 'autoComplex', name: t.prices.items.autoComplex, price: 500, image: calcAutoComplex },
+    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 600, image: calcAutoLeather },
     { id: 'autoVip', name: t.prices.items.autoVip, price: 650, image: calcAutoVip },
     { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 750, image: calcAutoVipLeather },
     { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80, image: calcAutoSeat },
@@ -103,8 +103,8 @@ const Auto = () => {
            ],
            offers: [
              { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: '300', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '450', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Czyszczenie skóry w samochodzie', price: '550', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '500', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Czyszczenie skóry w samochodzie', price: '600', priceCurrency: 'PLN' },
            ],
          }}
       />

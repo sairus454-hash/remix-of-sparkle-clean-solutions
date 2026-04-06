@@ -123,8 +123,8 @@ const Prices = () => {
     {
       id: 'auto', title: t.prices.autoCleaning, description: t.prices.autoCleaningDesc, icon: Car,
       items: [
-        { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450, image: img('calc-auto-complex.jpg') },
-        { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 550, image: img('calc-auto-leather.jpg') },
+        { id: 'autoComplex', name: t.prices.items.autoComplex, price: 500, image: img('calc-auto-complex.jpg') },
+        { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 600, image: img('calc-auto-leather.jpg') },
         { id: 'autoVip', name: t.prices.items.autoVip, price: 650, image: img('calc-auto-vip.jpg') },
         { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 750, image: img('calc-auto-vip-leather.jpg') },
         { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80, image: img('calc-auto-seat.jpg') },

@@ -59,9 +59,9 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
 
   const autoOptions = [
     { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300 },
-    { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450 },
+    { id: 'autoComplex', name: t.prices.items.autoComplex, price: 500 },
     { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350 },
-    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 550 },
+    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 600 },
   ];
 
   const getPrice = (): number => {
