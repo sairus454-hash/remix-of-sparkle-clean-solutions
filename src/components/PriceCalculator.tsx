@@ -81,45 +81,45 @@ const PriceCalculator = () => {
   {
     id: 'leatherPouf',
     name: t.prices.items.leatherPouf,
-    price: 55
+    price: 50
   }, {
     id: 'leatherChair',
     name: t.prices.items.leatherChair,
-    price: 50
+    price: 45
   }, {
     id: 'leatherArmchair',
     name: t.prices.items.leatherArmchair,
-    price: 90
+    price: 81
   }, {
     id: 'leatherSofa2',
     name: t.prices.items.leatherSofa2,
-    price: 180
+    price: 162
   }, {
     id: 'leatherSofa3',
     name: t.prices.items.leatherSofa3,
-    price: 220
+    price: 198
   }, {
     id: 'leatherSofaCorner',
     name: t.prices.items.leatherSofaCorner,
-    price: 270
+    price: 243
   },
   // Mattress with Drying
   {
     id: 'mattressSingleDry',
     name: t.prices.items.mattressSingleDry,
-    price: 140
+    price: 126
   }, {
     id: 'mattressSingleDry2',
     name: t.prices.items.mattressSingleDry2,
-    price: 220
+    price: 198
   }, {
     id: 'mattressDoubleDry',
     name: t.prices.items.mattressDoubleDry,
-    price: 180
+    price: 162
   }, {
     id: 'mattressDoubleDry2',
     name: t.prices.items.mattressDoubleDry2,
-    price: 280
+    price: 252
   },
   // Ozonation
   {
