@@ -47,7 +47,7 @@ const PRICE_LIST = {
 • Пуф — 40 PLN
 • Стул — 40 PLN
 • Кресло — 70 PLN
-• Подушка — 15 PLN
+• Подушка — 15 PLN (🛏️ АКЦИЯ НЕДЕЛИ: БЕСПЛАТНО при заказе любой услуги!)
 • Диван двухместный — 140 PLN
 • Диван трёхместный — 170 PLN
 • Диван угловой — 200 PLN
@@ -98,7 +98,7 @@ const PRICE_LIST = {
 ✨ ДОПОЛНИТЕЛЬНО:
 • Детская коляска — 100 PLN
 • Автокресло (детское) — 80 PLN
-• Сушка мебели — 60 PLN (🌿 АКЦИЯ: БЕСПЛАТНО до конца весны!)
+• Сушка мебели — 60 PLN (🌿 БЕСПЛАТНО до конца весны!)
 • Импрегнация (защита на 1 год) — 80 PLN
 • Чистка плитки — 25 PLN/м²
 • Импрегнация ковра — 5 PLN/м²
@@ -252,7 +252,7 @@ Deep cleaning:
 • Ottoman — 40 PLN
 • Chair — 40 PLN
 • Armchair — 70 PLN
-• Pillow — 15 PLN
+• Pillow — 15 PLN (🛏️ WEEKLY DEAL: FREE with any service order!)
 • 2-seater sofa — 140 PLN
 • 3-seater sofa — 170 PLN
 • Corner sofa — 200 PLN
@@ -303,7 +303,7 @@ Deep cleaning:
 ✨ ADDITIONAL:
 • Baby stroller — 100 PLN
 • Child car seat — 80 PLN
-• Furniture drying — 60 PLN (🌿 PROMO: FREE until end of spring!)
+• Furniture drying — 60 PLN (🌿 FREE until end of spring!)
 • Impregnation (1 year protection) — 80 PLN
 • Tile cleaning — 25 PLN/m²
 • Carpet impregnation — 5 PLN/m²
@@ -457,7 +457,7 @@ Sprzątanie generalne:
 • Pufa — 40 PLN
 • Krzesło — 40 PLN
 • Fotel — 70 PLN
-• Poduszka — 15 PLN
+• Poduszka — 15 PLN (🛏️ PROMOCJA TYGODNIA: GRATIS przy zamówieniu dowolnej usługi!)
 • Sofa 2-osobowa — 140 PLN
 • Sofa 3-osobowa — 170 PLN
 • Sofa narożna — 200 PLN
@@ -508,7 +508,7 @@ Sprzątanie generalne:
 ✨ DODATKOWO:
 • Wózek dziecięcy — 100 PLN
 • Fotelik samochodowy (dziecięcy) — 80 PLN
-• Suszenie mebli — 60 PLN (🌿 PROMOCJA: GRATIS do końca wiosny!)
+• Suszenie mebli — 60 PLN (🌿 GRATIS do końca wiosny!)
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 25 PLN/m²
 • Impregnacja dywanu — 5 PLN/m²
@@ -662,7 +662,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Пуф — 40 PLN
 • Стілець — 40 PLN
 • Крісло — 70 PLN
-• Подушка — 15 PLN
+• Подушка — 15 PLN (🛏️ АКЦІЯ ТИЖНЯ: БЕЗКОШТОВНО при замовленні будь-якої послуги!)
 • Диван двомісний — 140 PLN
 • Диван тримісний — 170 PLN
 • Диван кутовий — 200 PLN
@@ -713,7 +713,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 ✨ ДОДАТКОВО:
 • Дитячий візок — 100 PLN
 • Автокрісло (дитяче) — 80 PLN
-• Сушіння меблів — 60 PLN (🌿 АКЦІЯ: БЕЗКОШТОВНО до кінця весни!)
+• Сушіння меблів — 60 PLN (🌿 БЕЗКОШТОВНО до кінця весни!)
 • Імпрегнація (захист на 1 рік) — 80 PLN
 • Чистка плитки — 25 PLN/м²
 • Імпрегнація килима — 5 PLN/м²
@@ -948,9 +948,9 @@ ${PRICE_LIST.ru}
 — Применяем профессиональную химию: Allegrini, Bissell, Global
 — Если клиент спрашивает про оборудование или химию — подчеркни профессиональный уровень!
 
-🌿 ВЕСЕННЯЯ АКЦИЯ:
-— Сушка мебели (обычно 60 PLN) — БЕСПЛАТНО до конца весны!
-— Активно предлагай эту акцию клиентам при заказе химчистки мебели!
+🛏️ АКЦИЯ НЕДЕЛИ:
+— Химчистка подушек — БЕСПЛАТНО при заказе любой услуги!
+— Активно предлагай эту акцию клиентам!
 
 ВАЖНО:
 — ВСЕГДА называй точные цены
@@ -1097,9 +1097,9 @@ Ozonation is a process of treating spaces or objects with ozone, which effective
 — We use professional cleaning chemicals: Allegrini, Bissell, Global
 — If customer asks about equipment or chemicals — emphasize the professional level!
 
-🌿 SPRING PROMOTION:
-— Furniture drying (normally 60 PLN) — FREE until end of spring!
-— Actively offer this promotion to customers when they order furniture cleaning!
+🛏️ WEEKLY DEAL:
+— Pillow cleaning — FREE with any service order!
+— Actively offer this promotion to customers!
 
 IMPORTANT:
 — ALWAYS give exact prices
@@ -1219,9 +1219,9 @@ Ozonowanie to proces obróbki pomieszczeń lub przedmiotów ozonem, który skute
 — Stosujemy profesjonalną chemię: Allegrini, Bissell, Global
 — Jeśli klient pyta o sprzęt lub chemię — podkreśl profesjonalny poziom!
 
-🌿 PROMOCJA WIOSENNA:
-— Suszenie mebli (zazwyczaj 60 PLN) — GRATIS do końca wiosny!
-— Aktywnie proponuj tę promocję klientom przy zamówieniu czyszczenia mebli!
+🛏️ PROMOCJA TYGODNIA:
+— Pranie poduszek — GRATIS przy zamówieniu dowolnej usługi!
+— Aktywnie proponuj tę promocję klientom!
 
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny

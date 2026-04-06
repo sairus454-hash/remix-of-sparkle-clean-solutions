@@ -23,22 +23,8 @@ const Layout = ({ children }: LayoutProps) => {
       <CleaningBackground />
       <Header />
       <main id="main-content" role="main" className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10">
-        {/* Easter Greeting - auto-hide after April 7, 2026 */}
-        {Date.now() < new Date('2026-04-08T00:00:00').getTime() && (
-          <section aria-label="Wielkanoc" className="py-1.5 sm:py-2 mt-14 sm:mt-16 overflow-hidden shadow-sm" style={{ background: 'linear-gradient(90deg, hsl(45 80% 65%) 0%, hsl(120 50% 70%) 25%, hsl(280 60% 75%) 50%, hsl(120 50% 70%) 75%, hsl(45 80% 65%) 100%)' }}>
-            <div className="relative">
-              <div className="flex animate-marquee whitespace-nowrap">
-                {[...Array(4)].map((_, i) => (
-                  <span key={i} className="mx-4 sm:mx-8 text-foreground font-semibold text-xs sm:text-sm md:text-lg flex items-center gap-1.5 sm:gap-2">
-                    🐣 Wesołych Świąt Wielkanocnych! 🐰 Frohe Ostern! 🌷 Happy Easter! 🥚 Христос Воскрес!
-                  </span>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
         {/* Marquee Section */}
-        <section aria-label="Informacja promocyjna" className={`py-2 sm:py-2.5 ${Date.now() < new Date('2026-04-08T00:00:00').getTime() ? '' : 'mt-14 sm:mt-16'} overflow-hidden shadow-md`} style={{ background: 'linear-gradient(90deg, hsl(195 85% 42%) 0%, hsl(170 65% 45%) 25%, hsl(45 70% 55% / 0.5) 50%, hsl(170 65% 45%) 75%, hsl(195 85% 42%) 100%)' }}>
+        <section aria-label="Informacja promocyjna" className="py-2 sm:py-2.5 mt-14 sm:mt-16 overflow-hidden shadow-md" style={{ background: 'linear-gradient(90deg, hsl(195 85% 42%) 0%, hsl(170 65% 45%) 25%, hsl(45 70% 55% / 0.5) 50%, hsl(170 65% 45%) 75%, hsl(195 85% 42%) 100%)' }}>
           <div className="relative">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...Array(4)].map((_, i) => (
