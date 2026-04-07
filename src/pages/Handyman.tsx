@@ -210,10 +210,10 @@ const Handyman = () => {
               </div>
             </div>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-up text-yellow-400 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-              Złota rączka
+              {t.handyman.title}
             </h1>
             <p className="text-lg md:text-xl text-white max-w-2xl mx-auto animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-              Szybkie rozwiązanie problemów domowych. Drobne naprawy, montaż, składanie mebli i wiele więcej.
+              {t.handyman.subtitle}
             </p>
           </div>
         </div>
@@ -330,7 +330,7 @@ const Handyman = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 relative inline-block">
-              <span className="relative z-10">Nasi Fachowcy</span>
+              <span className="relative z-10">{t.handyman.ourTeam}</span>
               <span className="absolute bottom-1 left-0 w-full h-3 bg-yellow-400/40 -z-0 rounded" />
             </h2>
           </div>
