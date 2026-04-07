@@ -63,14 +63,14 @@ const CookieConsent = () => {
             variant="outline"
             size="sm"
             onClick={() => handleChoice('rejected')}
-            className="text-xs h-8"
+            className="text-xs h-10 min-w-[72px] touch-manipulation"
           >
             {t.reject}
           </Button>
           <Button
             size="sm"
             onClick={() => handleChoice('accepted')}
-            className="text-xs h-8"
+            className="text-xs h-10 min-w-[72px] touch-manipulation"
           >
             {t.accept}
           </Button>
