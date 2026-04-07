@@ -49,8 +49,8 @@ const CookieConsent = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 z-[9999] max-w-sm animate-in slide-in-from-bottom-4 fade-in duration-300">
-      <div className="bg-card border border-border/60 rounded-xl p-4 shadow-xl">
+    <div className="fixed bottom-4 left-4 right-16 sm:right-auto z-[9999] max-w-sm animate-in slide-in-from-bottom-4 fade-in duration-300">
+      <div className="bg-card border border-border/60 rounded-xl p-4 shadow-xl relative">
         <div className="flex items-start gap-3">
           <Cookie className="w-5 h-5 text-primary mt-0.5 shrink-0" />
           <p className="text-sm text-foreground/85 leading-relaxed">
@@ -63,14 +63,14 @@ const CookieConsent = () => {
             variant="outline"
             size="sm"
             onClick={() => handleChoice('rejected')}
-            className="text-xs h-8"
+            className="text-xs h-10 min-w-[72px] touch-manipulation"
           >
             {t.reject}
           </Button>
           <Button
             size="sm"
             onClick={() => handleChoice('accepted')}
-            className="text-xs h-8"
+            className="text-xs h-10 min-w-[72px] touch-manipulation"
           >
             {t.accept}
           </Button>
