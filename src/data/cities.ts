@@ -21,7 +21,7 @@ export const cities: CityData[] = [
     name: 'Wrocław',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Wrocław — MasterClean',
+      title: 'Pranie tapicerki Wrocław — Dojazd gratis | MasterClean',
       description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy, ozonowanie i sprzątanie we Wrocławiu. Dojazd gratis. Cennik online.',
       keywords: 'czyszczenie tapicerki Wrocław, pranie dywanów Wrocław, sprzątanie Wrocław, ozonowanie Wrocław',
     },
@@ -53,7 +53,7 @@ export const cities: CityData[] = [
     name: 'Opole',
     region: 'opolskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Opole — MasterClean',
+      title: 'Czyszczenie tapicerki Opole — Dojazd z Wrocławia',
       description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Opolu. Szybki dojazd z Wrocławia.',
       keywords: 'czyszczenie tapicerki Opole, pranie dywanów Opole, sprzątanie Opole, ozonowanie Opole',
     },
@@ -85,7 +85,7 @@ export const cities: CityData[] = [
     name: 'Legnica',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Legnica — MasterClean',
+      title: 'Pranie tapicerki Legnica — Sprzęt Kärcher',
       description: 'Pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Legnicy. Profesjonalny sprzęt Kärcher.',
       keywords: 'czyszczenie tapicerki Legnica, pranie dywanów Legnica, sprzątanie Legnica',
     },
@@ -117,7 +117,7 @@ export const cities: CityData[] = [
     name: 'Oława',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Oława — MasterClean',
+      title: 'Czyszczenie tapicerki Oława — 30 km od Wrocławia',
       description: 'Pranie tapicerki meblowej, czyszczenie dywanów i ozonowanie w Oławie. Blisko Wrocławia — szybki dojazd.',
       keywords: 'czyszczenie tapicerki Oława, pranie dywanów Oława, sprzątanie Oława',
     },
@@ -149,7 +149,7 @@ export const cities: CityData[] = [
     name: 'Kalisz',
     region: 'wielkopolskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Kalisz — MasterClean',
+      title: 'Pranie tapicerki Kalisz — Regularne dojazdy',
       description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Kaliszu. Dojazd z Wrocławia.',
       keywords: 'czyszczenie tapicerki Kalisz, pranie dywanów Kalisz, ozonowanie Kalisz',
     },
@@ -181,7 +181,7 @@ export const cities: CityData[] = [
     name: 'Leszno',
     region: 'wielkopolskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Leszno — MasterClean',
+      title: 'Czyszczenie tapicerki Leszno — Trasa Wrocław–Poznań',
       description: 'Pranie tapicerki, czyszczenie dywanów i materacy w Lesznie. Profesjonalny sprzęt i środki ekologiczne.',
       keywords: 'czyszczenie tapicerki Leszno, pranie dywanów Leszno, sprzątanie Leszno',
     },
@@ -213,7 +213,7 @@ export const cities: CityData[] = [
     name: 'Świdnica',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Świdnica — MasterClean',
+      title: 'Pranie tapicerki Świdnica — Dolny Śląsk',
       description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Świdnicy. Dojazd z Wrocławia.',
       keywords: 'czyszczenie tapicerki Świdnica, pranie dywanów Świdnica, ozonowanie Świdnica',
     },
@@ -245,7 +245,7 @@ export const cities: CityData[] = [
     name: 'Wałbrzych',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Wałbrzych — MasterClean',
+      title: 'Czyszczenie tapicerki Wałbrzych — Zamów online',
       description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Wałbrzychu. Profesjonalny dojazd z Wrocławia.',
       keywords: 'czyszczenie tapicerki Wałbrzych, pranie dywanów Wałbrzych, ozonowanie Wałbrzych',
     },
@@ -277,7 +277,7 @@ export const cities: CityData[] = [
     name: 'Ostrów Wielkopolski',
     region: 'wielkopolskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Ostrów Wielkopolski — MasterClean',
+      title: 'Pranie tapicerki Ostrów Wielkopolski — Wielkopolska',
       description: 'Profesjonalne pranie tapicerki i ozonowanie w Ostrowie Wielkopolskim. Regularne dojazdy.',
       keywords: 'czyszczenie tapicerki Ostrów Wielkopolski, pranie dywanów Ostrów Wielkopolski',
     },
@@ -309,7 +309,7 @@ export const cities: CityData[] = [
     name: 'Jelenia Góra',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Jelenia Góra — MasterClean',
+      title: 'Czyszczenie tapicerki Jelenia Góra — Karkonosze',
       description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Jeleniej Górze. Profesjonalny serwis z Wrocławia.',
       keywords: 'czyszczenie tapicerki Jelenia Góra, pranie dywanów Jelenia Góra, ozonowanie Jelenia Góra',
     },
@@ -341,7 +341,7 @@ export const cities: CityData[] = [
     name: 'Brzeg',
     region: 'opolskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Brzeg — MasterClean',
+      title: 'Pranie tapicerki Brzeg — Trasa Wrocław–Opole',
       description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Brzegu. Na trasie Wrocław–Opole.',
       keywords: 'czyszczenie tapicerki Brzeg, pranie dywanów Brzeg, sprzątanie Brzeg',
     },
@@ -597,7 +597,7 @@ export const cities: CityData[] = [
     name: 'Nysa',
     region: 'opolskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Nysa — MasterClean',
+      title: 'Pranie tapicerki Nysa — Śląski Rzym',
       description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Nysie. Dojazd z Wrocławia.',
       keywords: 'czyszczenie tapicerki Nysa, pranie dywanów Nysa, ozonowanie Nysa',
     },
