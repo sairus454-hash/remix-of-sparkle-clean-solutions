@@ -78,7 +78,7 @@ const Layout = ({ children }: LayoutProps) => {
 
         {/* Google Reviews Badge — fixed bottom-left to avoid overlap with chatbot/cart on right */}
         <a
-          href="https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z"
+          href="https://www.google.com/maps/place/MasterClean+pranie+tapicerki+i+ozonowanie/@51.0984969,16.949163,17z/data=!3m1!4b1!4m6!3m5!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.0984969!4d16.949163!16s%2Fg%2F11xm28yrtl!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-30 flex items-center gap-1.5 sm:gap-2 bg-white/95 backdrop-blur-sm rounded-xl px-2.5 py-1.5 sm:px-3 sm:py-2 shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
