@@ -3,7 +3,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-const SITE_URL = 'https://masterclean1885.pl';
+const SITE_URL = 'https://masterclean1885.com';
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 const PHONE = '+48 575 211 401';
 
