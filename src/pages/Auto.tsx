@@ -221,8 +221,8 @@ const Auto = () => {
                 </svg>
               </div>
               <div>
-                <p className="font-semibold text-amber-900 dark:text-amber-100 mb-1 sm:mb-2">Чистим только тканевые коврики</p>
-                <p className="text-sm sm:text-base text-amber-800 dark:text-amber-200">Мы специализируемся на чистке тканевых ковриков и ковровых покрытий. Резиновые коврики мы не чистим — их можно вымыть самостоятельно дома.</p>
+                <p className="font-semibold text-amber-900 dark:text-amber-100 mb-1 sm:mb-2">{t.auto?.noteTitle || 'Чистим только тканевые коврики'}</p>
+                <p className="text-sm sm:text-base text-amber-800 dark:text-amber-200">{t.auto?.noteDesc || 'Мы специализируемся на чистке тканевых ковриков и ковровых покрытий. Резиновые коврики мы не чистим — их можно вымыть самостоятельно дома.'}</p>
               </div>
             </div>
           </div>
