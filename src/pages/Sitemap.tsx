@@ -60,7 +60,7 @@ const Sitemap = () => {
     <Layout>
       <SEO
         title="Sitemap | MasterClean"
-        description="Mapa strony MasterClean — wszystkie podstrony serwisu."
+        description="Mapa strony MasterClean — pełna lista podstron serwisu: usługi, cennik, kontakt, blog i więcej. Nawigacja po stronie."
         keywords="sitemap, mapa strony, MasterClean strony, nawigacja serwisu, struktura serwisu"
         canonical="/sitemap"
       />

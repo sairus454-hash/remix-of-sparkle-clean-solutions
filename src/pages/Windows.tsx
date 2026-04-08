@@ -43,7 +43,7 @@ import { useSplash } from '@/hooks/useSplash';
      <>
       {showSplash && <WindowsSplash onComplete={handleSplashComplete} />}
       <SEO
-        title="Mycie okien — Profesjonalne mycie okien z dojazdem"
+        title="Mycie okien — Profesjonalne mycie z dojazdem"
         description="Profesjonalne mycie okien w domu i biurze z dojazdem. Mycie okien na wysokości, bez smug. Czyste okna — więcej światła. Mycie okien Wrocław, Opole, Poznań."
         keywords="mycie okien, mycie okien profesjonalne, mycie okien z dojazdem, czyszczenie okien, mycie okien na wysokości, mycie okien bez smug, mycie okien cennik, mycie okien Wrocław, mycie okien Opole, mycie okien Poznań, mycie okien w domu, mycie okien w biurze, usługi mycia okien"
         canonical="/windows"

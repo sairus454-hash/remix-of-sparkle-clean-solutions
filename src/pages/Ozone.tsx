@@ -50,7 +50,7 @@ const Ozone = () => {
   return (
     <>
       <SEO
-        title="Ozonowanie pomieszczeń i samochodów — Dezynfekcja ozonem"
+        title="Ozonowanie pomieszczeń i aut — Dezynfekcja"
         description="Profesjonalne ozonowanie mieszkań, biur i samochodów. Ozonowanie eliminuje nieprzyjemne zapachy, bakterie i wirusy. Dezynfekcja ozonem Wrocław, Opole, Poznań."
         keywords="ozonowanie pomieszczeń, ozonowanie samochodu, ozonowanie mieszkania, ozonowanie biura, usuwanie zapachów ozonem, dezynfekcja ozonem, ozonowanie po remoncie, ozonowanie po zalaniu, ozonowanie Wrocław, ozonowanie Opole, ozone treatment, eliminacja zapachów, usuwanie pleśni"
         canonical="/ozone"
