@@ -358,6 +358,7 @@ export const translations = {
       terms: 'Условия использования',
     },
     admin: {
+      date: 'Дата',
       loginTitle: 'Вход в админ-панель',
       loginSubtitle: 'Введите ваши данные для входа',
       password: 'Пароль',
