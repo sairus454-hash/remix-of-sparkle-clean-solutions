@@ -17,7 +17,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
