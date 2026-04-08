@@ -86,7 +86,7 @@ const BlogArticle = () => {
        <SEO
          title={`${article.title} | MasterClean Blog`}
          description={article.summary}
-         keywords="blog czyszczenie, porady sprzątanie, pranie tapicerki blog, czyszczenie dywanów porady, MasterClean blog, sprzątanie Wrocław porady"
+         keywords={`${article.tag}, ${article.title}, MasterClean blog, porady czyszczenie`}
          canonical={`/blog/${article.id}`}
          image="https://masterclean1885.com/og-blog.png"
          breadcrumbs={[
