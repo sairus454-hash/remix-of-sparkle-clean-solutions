@@ -55,20 +55,20 @@ const Layout = ({ children }: LayoutProps) => {
             />
             <div className="text-center sm:text-left flex-1">
               <p className="text-white/90 text-base sm:text-lg font-semibold uppercase tracking-wider mb-1.5 drop-shadow">
-                ⚡ Takiego jeszcze nie było!
+                {t.hero.bannerTag}
               </p>
               <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-lg" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.3)' }}>
-                🎉 Suszenie mebli i materacy
+                {t.hero.bannerTitle.split('\n')[0]}
                 <br />
-                do końca wiosny — <span className="text-yellow-300 animate-pulse">BEZPŁATNIE!!!</span>
+                {t.hero.bannerTitle.split('\n')[1]} <span className="text-yellow-300 animate-pulse">{t.hero.bannerFree}</span>
               </h2>
               <p className="text-white/80 text-sm sm:text-base mt-2.5 drop-shadow">
-                Skorzystaj z promocji • MasterClean Wrocław
+                {t.hero.bannerSub}
               </p>
             </div>
             <Link to="/services" className="flex-shrink-0">
               <Button className="bg-white text-blue-700 hover:bg-yellow-300 hover:text-blue-800 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-lg transition-all hover:scale-105 active:scale-95">
-                {language === 'ru' ? 'Заказать' : language === 'pl' ? 'Zamów teraz' : language === 'uk' ? 'Замовити' : 'Order now'}
+                {t.hero.bannerCta}
                 <ArrowRight className="w-6 h-6 ml-2" />
               </Button>
             </Link>
