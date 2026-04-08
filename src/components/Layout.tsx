@@ -81,7 +81,7 @@ const Layout = ({ children }: LayoutProps) => {
           href="https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-24 right-4 sm:right-6 z-40 flex items-center gap-2.5 bg-white/95 backdrop-blur-sm rounded-xl px-3.5 py-2.5 shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
+          className="fixed bottom-36 right-4 sm:bottom-24 sm:right-6 z-30 flex items-center gap-2.5 bg-white/95 backdrop-blur-sm rounded-xl px-3.5 py-2.5 shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
           aria-label="Google Reviews — 5.0 stars, 65 reviews"
         >
           <svg viewBox="0 0 24 24" className="w-7 h-7 flex-shrink-0" aria-hidden="true">
