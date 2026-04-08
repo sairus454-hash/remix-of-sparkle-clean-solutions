@@ -213,7 +213,7 @@ const Admin = () => {
                         <TableHead>{t.form.name}</TableHead>
                         <TableHead>{t.reviews.yourRating}</TableHead>
                         <TableHead className="max-w-md">{t.reviews.yourReview}</TableHead>
-                        <TableHead>Дата</TableHead>
+                        <TableHead>{t.admin.date}</TableHead>
                         <TableHead>{t.admin.actions}</TableHead>
                       </TableRow>
                     </TableHeader>
