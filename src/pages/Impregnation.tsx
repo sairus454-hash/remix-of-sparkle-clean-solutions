@@ -79,7 +79,7 @@ const Impregnation = () => {
     <>
       {showSplash && <ImpregnationSplash onComplete={handleSplashComplete} />}
       <SEO
-        title="Impregnacja mebli i tkanin — Ochrona przed plamami"
+        title="Impregnacja mebli i tkanin — Ochrona tkanin"
         description="Profesjonalna impregnacja mebli, dywanów i tkanin. Ochrona przed wodą, brudem i plamami. Powłoka hydrofobowa przedłuża żywotność tapicerki. Opole, Wrocław."
         keywords="impregnacja tkanin, impregnacja mebli, impregnacja dywanów, impregnacja kanapy, ochrona przed plamami, powłoka hydrofobowa, impregnacja tapicerki, impregnacja po praniu, Wrocław, Opole, Poznań"
         canonical="/impregnation"

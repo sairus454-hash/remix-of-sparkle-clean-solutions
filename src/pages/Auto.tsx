@@ -76,7 +76,7 @@ const Auto = () => {
   return (
     <>
       <SEO
-        title="Pranie tapicerki samochodowej — Czyszczenie wnętrza auta"
+        title="Pranie tapicerki samochodowej — Czyszczenie auta"
         description="Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, podsufitki, dywaników, bagażnika. Usuwanie plam i zapachów. Wrocław, Opole."
         keywords="pranie tapicerki samochodowej, chemczystka auta, czyszczenie wnętrza samochodu, czyszczenie tapicerki samochodowej, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników samochodowych, czyszczenie podsufitki, czyszczenie z dojazdem, dojazd do klienta, auto detailing, pranie tapicerki auta Wrocław, Opole, Poznań"
         canonical="/auto"
