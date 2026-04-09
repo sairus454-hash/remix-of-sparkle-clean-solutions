@@ -639,7 +639,7 @@ const Cleaning = () => {
                     <CardServiceCalculator
                       category="leather"
                        items={[
-                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 41, originalPrice: 45, image: calcLeatherPouf, promoBadge: '🔥 -10%' },
+                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 45, originalPrice: 50, image: calcLeatherPouf, promoBadge: '🔥 -10%' },, image: calcLeatherPouf, promoBadge: '🔥 -10%' },
                         { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 41, originalPrice: 45, image: calcLeatherChair, promoBadge: '🔥 -10%' },
                         { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 16, originalPrice: 18, image: calcPillow, promoBadge: '🔥 -10%' },
                         { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 73, originalPrice: 81, image: calcLeatherArmchair, promoBadge: '🔥 -10%' },
