@@ -188,9 +188,9 @@ const PRICE_LIST = {
 Обслуживаемые города: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
 
 💰 ЦЕНЫ ПО ГОРОДАМ:
-• Вроцлав — базовые цены (как в прайсе выше)
-• Все остальные города — цены на 10% выше базовых (округление вверх)
-Например: диван 2-мест. во Вроцлаве — 126 PLN, в Ополе/Любине/Легнице и др. — 139 PLN
+• Вроцлав и Смолец — базовые цены (как в прайсе выше, включая акцию -10% на мебель и матрасы)
+• Все остальные города — цены БЕЗ акции -10% на мебель/матрасы + наценка 10% за выезд (округление вверх)
+Например: диван 2-мест. во Вроцлаве — 113 PLN (акция), в других городах — 139 PLN (без акции + наценка)
 
 ⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
 • Вроцлав и пригород (до 10 км) — 160 PLN
@@ -396,9 +396,9 @@ Benefits:
 Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
 
 💰 PRICING BY CITY:
-• Wrocław — base prices (as listed above)
-• All other cities — prices are 10% higher than base (rounded up)
-Example: 2-seater sofa in Wrocław — 126 PLN, in Opole/Lubin/Legnica etc. — 139 PLN
+• Wrocław and Smolec — base prices (as listed above, including -10% promo on furniture and mattresses)
+• All other cities — prices WITHOUT the -10% furniture/mattress promo + 10% city surcharge (rounded up)
+Example: 2-seater sofa in Wrocław — 113 PLN (promo), in other cities — 139 PLN (no promo + surcharge)
 
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 160 PLN
@@ -603,9 +603,9 @@ Korzyści:
 Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
 
 💰 CENY WG MIAST:
-• Wrocław — ceny bazowe (jak w cenniku powyżej)
-• Wszystkie inne miasta — ceny o 10% wyższe od bazowych (zaokrąglone w górę)
-Przykład: sofa 2-osobowa we Wrocławiu — 126 PLN, w Opolu/Lubinie/Legnicy itp. — 139 PLN
+• Wrocław i Smolec — ceny bazowe (jak w cenniku powyżej, w tym promocja -10% na meble i materace)
+• Wszystkie inne miasta — ceny BEZ promocji -10% na meble/materace + dopłata 10% za dojazd (zaokrąglone w górę)
+Przykład: sofa 2-osobowa we Wrocławiu — 113 PLN (promocja), w innych miastach — 139 PLN (bez promocji + dopłata)
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 160 PLN
