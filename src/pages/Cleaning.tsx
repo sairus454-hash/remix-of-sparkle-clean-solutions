@@ -599,21 +599,21 @@ const Cleaning = () => {
                   <CardServiceCalculator
                     category="furniture"
                     items={[
-                      { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 36, originalPrice: 40, image: calcPouf, promoBadge: '🔥 -10%' },
-                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 30, image: calcChair },
-                      { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 63, originalPrice: 70, image: calcArmchair, promoBadge: '🔥 -10%' },
-                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 9, originalPrice: 10, image: calcPillow, promoBadge: '🔥 -10%' },
-                      { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 126, originalPrice: 140, image: calcSofa2, promoBadge: '🔥 -10%' },
-                      { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 153, originalPrice: 170, image: calcSofa3, promoBadge: '🔥 -10%' },
-                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
-                      { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 225, originalPrice: 250, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
-                      { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 23, originalPrice: 25, image: calcCarpet, unit: 'm²', promoBadge: '🔥 -10%' },
-                      { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 90, originalPrice: 100, image: calcHeadboard, promoBadge: '🔥 -10%' },
-                      { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 90, originalPrice: 100, image: calcBedframe, promoBadge: '🔥 -10%' },
-                      { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 126, originalPrice: 140, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-                      { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 198, originalPrice: 220, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 162, originalPrice: 180, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 252, originalPrice: 280, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+                      { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 32, originalPrice: 36, image: calcPouf, promoBadge: '🔥 -10%' },
+                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 27, image: calcChair },
+                      { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 57, originalPrice: 63, image: calcArmchair, promoBadge: '🔥 -10%' },
+                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 8, originalPrice: 9, image: calcPillow, promoBadge: '🔥 -10%' },
+                      { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 113, originalPrice: 126, image: calcSofa2, promoBadge: '🔥 -10%' },
+                      { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 138, originalPrice: 153, image: calcSofa3, promoBadge: '🔥 -10%' },
+                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 146, originalPrice: 162, image: calcSofaCorner, promoBadge: '🔥 -10%' },
+                      { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 203, originalPrice: 225, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
+                      { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 21, originalPrice: 23, image: calcCarpet, unit: 'm²', promoBadge: '🔥 -10%' },
+                      { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 73, originalPrice: 81, image: calcHeadboard, promoBadge: '🔥 -10%' },
+                      { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 73, originalPrice: 81, image: calcBedframe, promoBadge: '🔥 -10%' },
+                      { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 113, originalPrice: 126, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+                      { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 178, originalPrice: 198, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 146, originalPrice: 162, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 227, originalPrice: 252, image: calcMattressDouble, promoBadge: '🔥 -10%' },
                     ]}
                     onSendToForm={handleCardToForm}
                     onQuickOrder={handleQuickAdd}
@@ -639,13 +639,13 @@ const Cleaning = () => {
                     <CardServiceCalculator
                       category="leather"
                        items={[
-                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 50, originalPrice: 55, image: calcLeatherPouf, promoBadge: '🔥 -10%' },
-                        { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 45, originalPrice: 50, image: calcLeatherChair, promoBadge: '🔥 -10%' },
-                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 18, originalPrice: 20, image: calcPillow, promoBadge: '🔥 -10%' },
-                        { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 81, originalPrice: 90, image: calcLeatherArmchair, promoBadge: '🔥 -10%' },
-                        { id: 'leatherSofa2', name: t.prices?.items?.leatherSofa2 || 'Кожаный диван 2-мест.', price: 162, originalPrice: 180, image: calcLeatherSofa2, promoBadge: '🔥 -10%' },
-                        { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 198, originalPrice: 220, image: calcLeatherSofa3, promoBadge: '🔥 -10%' },
-                        { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 225, originalPrice: 250, image: calcLeatherCorner, promoBadge: '🔥 -10%' },
+                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 45, originalPrice: 50, image: calcLeatherPouf, promoBadge: '🔥 -10%' },
+                        { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 41, originalPrice: 45, image: calcLeatherChair, promoBadge: '🔥 -10%' },
+                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 16, originalPrice: 18, image: calcPillow, promoBadge: '🔥 -10%' },
+                        { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 73, originalPrice: 81, image: calcLeatherArmchair, promoBadge: '🔥 -10%' },
+                        { id: 'leatherSofa2', name: t.prices?.items?.leatherSofa2 || 'Кожаный диван 2-мест.', price: 146, originalPrice: 162, image: calcLeatherSofa2, promoBadge: '🔥 -10%' },
+                        { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 178, originalPrice: 198, image: calcLeatherSofa3, promoBadge: '🔥 -10%' },
+                        { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 203, originalPrice: 225, image: calcLeatherCorner, promoBadge: '🔥 -10%' },
                       ]}
                       onSendToForm={handleCardToForm}
                       onQuickOrder={handleQuickAdd}

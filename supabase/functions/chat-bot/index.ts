@@ -44,21 +44,21 @@ const PRICE_LIST = {
 • Убрать лоток для животных — 12 PLN
 
 🛋 МЕБЕЛЬ (🔥 АКЦИЯ НЕДЕЛИ: -10% на химчистку мебели и матрасов!):
-• Пуф — 36 PLN (вместо 40)
-• Стул (сиденье) — 15 PLN
-• Стул с спинкой — 30 PLN
-• Стул конференционный — 45 PLN
-• Стул вращающийся — 50 PLN
-• Стул — 30 PLN
-• Кресло — 63 PLN (вместо 70)
-• Подушка — 9 PLN (вместо 10)
-• Диван двухместный — 126 PLN (вместо 140)
-• Диван трёхместный — 153 PLN (вместо 170)
-• Диван угловой — 180 PLN (вместо 200)
-• Большой угловой диван — 225 PLN (вместо 250)
-• Ковровое покрытие — 23 PLN/м² (вместо 25)
+• Пуф — 32 PLN (вместо 36)
+• Стул (сиденье) — 14 PLN
+• Стул с спинкой — 27 PLN
+• Стул конференционный — 41 PLN
+• Стул вращающийся — 45 PLN
+• Стул — 27 PLN
+• Кресло — 57 PLN (вместо 63)
+• Подушка — 8 PLN (вместо 9)
+• Диван двухместный — 113 PLN (вместо 126)
+• Диван трёхместный — 138 PLN (вместо 153)
+• Диван угловой — 162 PLN (вместо 180)
+• Большой угловой диван — 203 PLN (вместо 225)
+• Ковровое покрытие — 21 PLN/м² (вместо 23)
 • Мебель из флока — +50% к обычной цене
-• Экспресс освежение с удалением неприятного запаха — 150 PLN (⛔ скидка НЕ применяется!)
+• Экспресс освежение с удалением неприятного запаха — 135 PLN (⛔ скидка НЕ применяется!)
 
 🚗 ХИМЧИСТКА АВТО (приезжаем к вам на адрес):
 • Чистка 1 сидения — 80 PLN
@@ -76,13 +76,13 @@ const PRICE_LIST = {
 • Химчистка кабины буса — от 400 PLN
 
 🛏 МАТРАСЫ (🔥 -10%):
-• Матрас двухспальный — 162 PLN (вместо 180)
-• Матрас односпальный — 126 PLN (вместо 140)
-• Чистка изголовья кровати — 90 PLN (вместо 100)
-• Чистка каркаса кровати — 90 PLN (вместо 100)
-• Матрас односпальный (2 стороны) — 198 PLN (вместо 220)
-• Матрас двухспальный (2 стороны) — 252 PLN (вместо 280)
-• Экспресс освежение с удалением неприятного запаха — 150 PLN (⛔ скидка НЕ применяется!)
+• Матрас двухспальный — 146 PLN (вместо 162)
+• Матрас односпальный — 113 PLN (вместо 126)
+• Чистка изголовья кровати — 81 PLN (вместо 90)
+• Чистка каркаса кровати — 81 PLN (вместо 90)
+• Матрас односпальный (2 стороны) — 178 PLN (вместо 198)
+• Матрас двухспальный (2 стороны) — 227 PLN (вместо 252)
+• Экспресс освежение с удалением неприятного запаха — 135 PLN (⛔ скидка НЕ применяется!)
 
 💨 ОЗОНИРОВАНИЕ:
 • 1-комнатная квартира (20-40 м²) — 144 PLN
@@ -191,7 +191,7 @@ const PRICE_LIST = {
 💰 ЦЕНЫ ПО ГОРОДАМ:
 • Вроцлав — базовые цены (как в прайсе выше)
 • Все остальные города — цены на 10% выше базовых (округление вверх)
-Например: диван 2-мест. во Вроцлаве — 140 PLN, в Ополе/Любине/Легнице и др. — 154 PLN
+Например: диван 2-мест. во Вроцлаве — 126 PLN, в Ополе/Любине/Легнице и др. — 139 PLN
 
 ⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
 • Вроцлав и пригород (до 10 км) — 180 PLN
@@ -257,21 +257,21 @@ Deep cleaning:
 • Pet litter box cleaning — 12 PLN
 
 🛋 FURNITURE (🔥 WEEKLY DEAL: -10% on furniture & mattress cleaning!):
-• Ottoman — 36 PLN (was 40)
-• Chair (seat only) — 15 PLN
-• Chair with backrest — 30 PLN
-• Conference chair — 45 PLN
-• Swivel chair — 50 PLN
-• Chair — 30 PLN
-• Armchair — 63 PLN (was 70)
-• Pillow — 9 PLN (was 10)
-• 2-seater sofa — 126 PLN (was 140)
-• 3-seater sofa — 153 PLN (was 170)
-• Corner sofa — 180 PLN (was 200)
-• Large corner sofa — 225 PLN (was 250)
-• Carpet — 23 PLN/m² (was 25)
+• Ottoman — 32 PLN (was 36)
+• Chair (seat only) — 14 PLN
+• Chair with backrest — 27 PLN
+• Conference chair — 41 PLN
+• Swivel chair — 45 PLN
+• Chair — 27 PLN
+• Armchair — 57 PLN (was 63)
+• Pillow — 8 PLN (was 9)
+• 2-seater sofa — 113 PLN (was 126)
+• 3-seater sofa — 138 PLN (was 153)
+• Corner sofa — 162 PLN (was 180)
+• Large corner sofa — 203 PLN (was 225)
+• Carpet — 21 PLN/m² (was 23)
 • Flock furniture — +50% to regular price
-• Express freshening with odor removal — 150 PLN (⛔ discount does NOT apply!)
+• Express freshening with odor removal — 135 PLN (⛔ discount does NOT apply!)
 
 🚗 CAR CLEANING:
 • Single seat cleaning — 80 PLN
@@ -289,13 +289,13 @@ Deep cleaning:
 • Van cabin cleaning — from 400 PLN
 
 🛏 MATTRESSES (🔥 -10%):
-• Double mattress — 162 PLN (was 180)
-• Single mattress — 126 PLN (was 140)
-• Bed headboard cleaning — 90 PLN (was 100)
-• Bed frame cleaning — 90 PLN (was 100)
-• Single mattress (2 sides) — 198 PLN (was 220)
-• Double mattress (2 sides) — 252 PLN (was 280)
-• Express freshening with odor removal — 150 PLN (⛔ discount does NOT apply!)
+• Double mattress — 146 PLN (was 162)
+• Single mattress — 113 PLN (was 126)
+• Bed headboard cleaning — 81 PLN (was 90)
+• Bed frame cleaning — 81 PLN (was 90)
+• Single mattress (2 sides) — 178 PLN (was 198)
+• Double mattress (2 sides) — 227 PLN (was 252)
+• Express freshening with odor removal — 135 PLN (⛔ discount does NOT apply!)
 
 💨 OZONATION:
 • 1-room apartment (20-40 m²) — 144 PLN
@@ -404,7 +404,7 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 💰 PRICING BY CITY:
 • Wrocław — base prices (as listed above)
 • All other cities — prices are 10% higher than base (rounded up)
-Example: 2-seater sofa in Wrocław — 140 PLN, in Opole/Lubin/Legnica etc. — 154 PLN
+Example: 2-seater sofa in Wrocław — 126 PLN, in Opole/Lubin/Legnica etc. — 139 PLN
 
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 180 PLN
@@ -470,21 +470,21 @@ Sprzątanie generalne:
 • Sprzątanie kuwety — 12 PLN
 
 🛋 MEBLE (🔥 PROMOCJA TYGODNIA: -10% na pranie mebli i materacy!):
-• Pufa — 36 PLN (zamiast 40)
-• Krzesło (siedzenie) — 15 PLN
-• Krzesło z oparciem — 30 PLN
-• Krzesło konferencyjne — 45 PLN
-• Krzesło obrotowe — 50 PLN
-• Krzesło — 30 PLN
-• Fotel — 63 PLN (zamiast 70)
-• Poduszka — 9 PLN (zamiast 10)
-• Sofa 2-osobowa — 126 PLN (zamiast 140)
-• Sofa 3-osobowa — 153 PLN (zamiast 170)
-• Sofa narożna — 180 PLN (zamiast 200)
-• Duża sofa narożna — 225 PLN (zamiast 250)
-• Dywan — 23 PLN/m² (zamiast 25)
+• Pufa — 32 PLN (zamiast 36)
+• Krzesło (siedzenie) — 14 PLN
+• Krzesło z oparciem — 27 PLN
+• Krzesło konferencyjne — 41 PLN
+• Krzesło obrotowe — 45 PLN
+• Krzesło — 27 PLN
+• Fotel — 57 PLN (zamiast 63)
+• Poduszka — 8 PLN (zamiast 9)
+• Sofa 2-osobowa — 113 PLN (zamiast 126)
+• Sofa 3-osobowa — 138 PLN (zamiast 153)
+• Sofa narożna — 162 PLN (zamiast 180)
+• Duża sofa narożna — 203 PLN (zamiast 225)
+• Dywan — 21 PLN/m² (zamiast 23)
 • Meble z floku — +50% do ceny zwykłej
-• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN (⛔ rabat NIE dotyczy!)
+• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 135 PLN (⛔ rabat NIE dotyczy!)
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie 1 siedzenia — 80 PLN
@@ -502,13 +502,13 @@ Sprzątanie generalne:
 • Czyszczenie kabiny busa — od 400 PLN
 
 🛏 MATERACE (🔥 -10%):
-• Materac dwuosobowy — 162 PLN (zamiast 180)
-• Materac jednoosobowy — 126 PLN (zamiast 140)
-• Czyszczenie zagłówka łóżka — 90 PLN (zamiast 100)
-• Czyszczenie ramy łóżka — 90 PLN (zamiast 100)
-• Materac jednoosobowy (2 strony) — 198 PLN (zamiast 220)
-• Materac dwuosobowy (2 strony) — 252 PLN (zamiast 280)
-• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 150 PLN (⛔ rabat NIE dotyczy!)
+• Materac dwuosobowy — 146 PLN (zamiast 162)
+• Materac jednoosobowy — 113 PLN (zamiast 126)
+• Czyszczenie zagłówka łóżka — 81 PLN (zamiast 90)
+• Czyszczenie ramy łóżka — 81 PLN (zamiast 90)
+• Materac jednoosobowy (2 strony) — 178 PLN (zamiast 198)
+• Materac dwuosobowy (2 strony) — 227 PLN (zamiast 252)
+• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 135 PLN (⛔ rabat NIE dotyczy!)
 
 💨 OZONOWANIE:
 • Mieszkanie 1-pokojowe (20-40 m²) — 144 PLN
@@ -617,7 +617,7 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 💰 CENY WG MIAST:
 • Wrocław — ceny bazowe (jak w cenniku powyżej)
 • Wszystkie inne miasta — ceny o 10% wyższe od bazowych (zaokrąglone w górę)
-Przykład: sofa 2-osobowa we Wrocławiu — 140 PLN, w Opolu/Lubinie/Legnicy itp. — 154 PLN
+Przykład: sofa 2-osobowa we Wrocławiu — 126 PLN, w Opolu/Lubinie/Legnicy itp. — 139 PLN
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 180 PLN
@@ -683,21 +683,21 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Прибирання лотка для тварин — 12 PLN
 
 🛋 МЕБЛІ (🔥 АКЦІЯ ТИЖНЯ: -10% на хімчистку меблів та матраців!):
-• Пуф — 36 PLN (замість 40)
-• Стілець (сидіння) — 15 PLN
-• Стілець зі спинкою — 30 PLN
-• Конференц-стілець — 45 PLN
-• Обертовий стілець — 50 PLN
-• Стілець — 30 PLN
-• Крісло — 63 PLN (замість 70)
-• Подушка — 9 PLN (замість 10)
-• Диван двомісний — 126 PLN (замість 140)
-• Диван тримісний — 153 PLN (замість 170)
-• Диван кутовий — 180 PLN (замість 200)
-• Великий кутовий диван — 225 PLN (замість 250)
-• Килимове покриття — 23 PLN/м² (замість 25)
+• Пуф — 32 PLN (замість 36)
+• Стілець (сидіння) — 14 PLN
+• Стілець зі спинкою — 27 PLN
+• Конференц-стілець — 41 PLN
+• Обертовий стілець — 45 PLN
+• Стілець — 27 PLN
+• Крісло — 57 PLN (замість 63)
+• Подушка — 8 PLN (замість 9)
+• Диван двомісний — 113 PLN (замість 126)
+• Диван тримісний — 138 PLN (замість 153)
+• Диван кутовий — 162 PLN (замість 180)
+• Великий кутовий диван — 203 PLN (замість 225)
+• Килимове покриття — 21 PLN/м² (замість 23)
 • Меблі з флоку — +50% до звичайної ціни
-• Експрес освіження з видаленням неприємного запаху — 150 PLN (⛔ знижка НЕ застосовується!)
+• Експрес освіження з видаленням неприємного запаху — 135 PLN (⛔ знижка НЕ застосовується!)
 
 🚗 ХІМЧИСТКА АВТО:
 • Чистка 1 сидіння — 80 PLN
@@ -715,13 +715,13 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Хімчистка кабіни буса — від 400 PLN
 
 🛏 МАТРАЦИ (🔥 -10%):
-• Матрац двоспальний — 162 PLN (замість 180)
-• Матрац односпальний — 126 PLN (замість 140)
-• Чистка узголів'я ліжка — 90 PLN (замість 100)
-• Чистка каркаса ліжка — 90 PLN (замість 100)
-• Матрац односпальний (2 сторони) — 198 PLN (замість 220)
-• Матрац двоспальний (2 сторони) — 252 PLN (замість 280)
-• Експрес освіження з видаленням неприємного запаху — 150 PLN (⛔ знижка НЕ застосовується!)
+• Матрац двоспальний — 146 PLN (замість 162)
+• Матрац односпальний — 113 PLN (замість 126)
+• Чистка узголів'я ліжка — 81 PLN (замість 90)
+• Чистка каркаса ліжка — 81 PLN (замість 90)
+• Матрац односпальний (2 сторони) — 178 PLN (замість 198)
+• Матрац двоспальний (2 сторони) — 227 PLN (замість 252)
+• Експрес освіження з видаленням неприємного запаху — 135 PLN (⛔ знижка НЕ застосовується!)
 
 💨 ОЗОНУВАННЯ:
 • 1-кімнатна квартира (20-40 м²) — 144 PLN
@@ -830,7 +830,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 💰 ЦІНИ ЗА МІСТАМИ:
 • Вроцлав — базові ціни (як у прайсі вище)
 • Усі інші міста — ціни на 10% вищі за базові (округлення вгору)
-Приклад: диван 2-місний у Вроцлаві — 140 PLN, в Ополе/Любіні/Легниці тощо — 154 PLN
+Приклад: диван 2-місний у Вроцлаві — 126 PLN, в Ополе/Любіні/Легниці тощо — 139 PLN
 
 ⚠️ МІНІМАЛЬНЕ ЗАМОВЛЕННЯ:
 • Вроцлав і передмістя (до 10 км) — 180 PLN
