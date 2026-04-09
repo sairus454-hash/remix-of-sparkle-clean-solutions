@@ -268,10 +268,30 @@ const CityPage = () => {
       })),
     }));
 
+  // Categories that have the 10% "Акция недели" promo (only for Wrocław/Smolec)
+  const promoCategories = ['furniture', 'leather', 'mattress'];
+
+  // Strip promo discount from furniture/leather/mattress for non-Wrocław cities:
+  // use originalPrice as price, remove originalPrice & promoBadge
+  const stripFurniturePromo = (cats: typeof categories) =>
+    cats.map(cat => {
+      if (!promoCategories.includes(cat.id)) return cat;
+      return {
+        ...cat,
+        items: cat.items.map(item => {
+          if (!item.originalPrice) return item;
+          const { originalPrice, promoBadge, ...rest } = item;
+          return { ...rest, price: originalPrice };
+        }),
+      };
+    });
+
   const filteredCategories = isWroclaw
     ? categories
     : [
-        ...applyMarkup(categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && c.id !== 'gardening')),
+        ...applyMarkup(
+          stripFurniturePromo(categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && c.id !== 'gardening'))
+        ),
         ...(isNoGardeningSurcharge
           ? categories.filter(c => c.id === 'gardening')
           : applyMarkup(categories.filter(c => c.id === 'gardening'), 1.05)),
