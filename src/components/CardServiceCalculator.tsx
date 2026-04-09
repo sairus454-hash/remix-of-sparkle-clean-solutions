@@ -18,6 +18,7 @@ interface ServiceCardItem {
   originalPrice?: number;
   image: string;
   unit?: string;
+  priceText?: string;
   promoBadge?: string;
 }
 
@@ -326,7 +327,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                         "text-sm sm:text-base font-bold transition-colors",
                         selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
                       )}>
-                        {item.price} zł{item.unit ? `/${item.unit}` : ''}
+                        {item.priceText || `${item.price} zł`}{item.unit ? `/${item.unit}` : ''}
                       </p>
                     )}
                   </div>

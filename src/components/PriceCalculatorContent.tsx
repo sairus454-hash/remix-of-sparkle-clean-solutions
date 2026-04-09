@@ -252,7 +252,9 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
           { id: 'windowDoorAdjustment', name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон и дверей', price: 200, subcategory: t.handyman?.subcategories?.locksmith || '🔑 Слесарные работы' },
           { id: 'fridgeHinges', name: t.handyman?.calcItems?.fridgeHinges || 'Ремонт петель холодильника', price: 200, subcategory: t.handyman?.subcategories?.locksmith || '🔑 Слесарные работы' },
           // Услуги огородника
-          { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 15, unit: 'm²', subcategory: t.handyman?.subcategories?.gardening || '🌿 Услуги огородника' },
+          { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 1, unit: 'm²', subcategory: t.handyman?.subcategories?.gardening || '🌿 Услуги огородника' },
+          { id: 'lawnMowingHard', name: t.handyman?.calcItems?.lawnMowingHard || 'Покос травы (сложный рельеф)', price: 1.3, unit: 'm²', subcategory: t.handyman?.subcategories?.gardening || '🌿 Услуги огородника' },
+          { id: 'grassCleanup', name: t.handyman?.calcItems?.grassCleanup || 'Уборка и вывоз травы', price: 1, unit: 'm²', subcategory: t.handyman?.subcategories?.gardening || '🌿 Услуги огородника' },
           { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 110, subcategory: t.handyman?.subcategories?.gardening || '🌿 Услуги огородника' },
           { id: 'yardHelp', name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 110, subcategory: t.handyman?.subcategories?.gardening || '🌿 Услуги огородника' },
         ],

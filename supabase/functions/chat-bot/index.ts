@@ -175,7 +175,9 @@ const PRICE_LIST = {
 • Ремонт петель холодильника — 200 PLN
 
 🌿 Услуги огородника:
-• Покос травы — 15 PLN/м²
+• Покос травы — 1.00 - 1.20 PLN/м²
+• Покос травы (сложный рельеф) — 1.30 - 1.50 PLN/м²
+• Уборка и вывоз травы — 1.00 - 1.50 PLN/м²
 • Обрезка деревьев — 110 PLN/час
 • Помощь на участке — 110 PLN/час
 
@@ -382,7 +384,9 @@ Benefits:
 • Refrigerator hinge repair — 200 PLN
 
 🌿 Gardening services:
-• Lawn mowing — 15 PLN/m²
+• Lawn mowing — 1.00 - 1.20 PLN/m²
+• Lawn mowing (difficult terrain) — 1.30 - 1.50 PLN/m²
+• Grass cleanup and removal — 1.00 - 1.50 PLN/m²
 • Tree trimming — 110 PLN/hour
 • Yard help — 110 PLN/hour
 
@@ -589,7 +593,9 @@ Korzyści:
 • Naprawa zawiasów lodówki — 200 PLN
 
 🌿 Usługi ogrodnicze:
-• Koszenie trawy — 15 PLN/m²
+• Koszenie trawy — 1.00 - 1.20 PLN/m²
+• Koszenie trawy (trudny teren) — 1.30 - 1.50 PLN/m²
+• Sprzątanie i wywóz trawy — 1.00 - 1.50 PLN/m²
 • Przycinanie drzew — 110 PLN/godz.
 • Pomoc na działce — 110 PLN/godz.
 
@@ -796,7 +802,9 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Ремонт петель холодильника — 200 PLN
 
 🌿 Послуги садівника:
-• Косіння трави — 15 PLN/м²
+• Косіння трави — 1.00 - 1.20 PLN/м²
+• Косіння трави (складний рельєф) — 1.30 - 1.50 PLN/м²
+• Прибирання та вивезення трави — 1.00 - 1.50 PLN/м²
 • Обрізка дерев — 110 PLN/год
 • Допомога на ділянці — 110 PLN/год
 
@@ -928,7 +936,7 @@ ${PRICE_LIST.ru}
 — Мойка окон
 — Уборка помещений
 — Мастер на час (сантехника, электрика, монтаж, слесарные работы, чистка канализации)
-— Услуги огородника (покос травы, обрезка деревьев)
+— Услуги огородника (покос травы, покос сложный рельеф, уборка и вывоз травы, обрезка деревьев)
 
 💨 ОЗОНИРОВАНИЕ — ПОДРОБНАЯ ИНФОРМАЦИЯ:
 Озонирование — это процесс обработки помещений или предметов озоном, который эффективно уничтожает бактерии, вирусы, грибки и неприятные запахи.
@@ -1073,7 +1081,7 @@ SERVICES:
 — Window cleaning
 — Premises cleaning
 — Handyman (plumbing, electrical, mounting, locksmith work, drain/sewer cleaning)
-— Gardening services (lawn mowing, tree trimming)
+— Gardening services (lawn mowing, difficult terrain mowing, grass cleanup, tree trimming)
 
 💨 OZONATION — DETAILED INFORMATION:
 Ozonation is a process of treating spaces or objects with ozone, which effectively destroys bacteria, viruses, fungi, and unpleasant odors.
@@ -1191,7 +1199,7 @@ USŁUGI:
 — Mycie okien
 — Sprzątanie pomieszczeń
 — Złota rączka (hydraulika, elektryka, montaż, prace ślusarskie, czyszczenie kanalizacji)
-— Usługi ogrodnicze (koszenie trawy, przycinanie drzew)
+— Usługi ogrodnicze (koszenie trawy, trudny teren, sprzątanie i wywóz trawy, przycinanie drzew)
 
 💨 OZONOWANIE — SZCZEGÓŁOWE INFORMACJE:
 Ozonowanie to proces obróbki pomieszczeń lub przedmiotów ozonem, który skutecznie niszczy bakterie, wirusy, grzyby i nieprzyjemne zapachy.
