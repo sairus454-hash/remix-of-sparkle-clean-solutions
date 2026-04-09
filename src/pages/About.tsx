@@ -1,4 +1,5 @@
 import { useSplash } from '@/hooks/useSplash';
+import aboutHeroPhoto from '@/assets/about-hero-photo.jpg';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -138,9 +139,9 @@ const About = () => {
                 <div className="absolute -inset-3 bg-gradient-to-br from-primary via-fresh to-primary rounded-3xl opacity-30 blur-sm" style={{ animation: 'pulse 3s ease-in-out infinite' }} />
                 <div className="relative p-1 bg-gradient-to-br from-primary via-fresh to-primary rounded-2xl shadow-glow">
                   <img
-                    src="/images/about-bg.jpg"
-                    alt="MasterClean — profesjonalne czyszczenie"
-                    className="rounded-xl max-h-[600px] w-auto object-contain bg-background"
+                    src={aboutHeroPhoto}
+                    alt="MasterClean — profesjonalne czyszczenie i opinie w Google 5.0"
+                    className="rounded-xl max-h-[600px] w-auto object-cover bg-background"
                     loading="eager"
                   />
                 </div>
