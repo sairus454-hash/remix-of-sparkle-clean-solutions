@@ -105,7 +105,7 @@ const CityPage = () => {
         { id: 'pouf', name: t.prices.items.pouf, price: 32, originalPrice: 36, image: img('calc-pouf.jpg'), promoBadge: '🔥 -10%' },
         { id: 'chairSeat', name: t.prices.items.chairSeat, price: 14, image: img('calc-chair-seat.jpg') },
         { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 27, image: img('calc-chair-back.jpg') },
-        { id: 'chairConference', name: t.prices.items.chairConference, price: 41, image: img('calc-chair-conference.jpg') },
+        { id: 'chairConference', name: t.prices.items.chairConference, price: 30, image: img('calc-chair-conference.jpg') },
         { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 45, image: img('calc-chair-swivel.jpg') },
         { id: 'chair', name: t.prices.items.chair, price: 27, image: img('calc-chair.jpg') },
         { id: 'armchair', name: t.prices.items.armchair, price: 57, originalPrice: 63, image: img('calc-armchair.jpg'), promoBadge: '🔥 -10%' },
