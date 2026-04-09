@@ -89,7 +89,7 @@ function getDiscountReason(type: 'loyal' | 'vip', language: string): string {
     },
   };
   
-  return reasons[type][language as keyof typeof reasons.multi] || reasons[type].ru;
+  return reasons[type][language as keyof typeof reasons.loyal] || reasons[type].ru;
 }
 
 // Получить текст для блока с информацией о скидках
