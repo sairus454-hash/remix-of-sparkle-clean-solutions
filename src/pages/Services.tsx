@@ -74,24 +74,24 @@ const Services = () => {
   ];
 
   const furnitureItems = [
-    { id: 'pouf', name: t.prices.items.pouf, price: 36, originalPrice: 40, image: calcPouf, promoBadge: '🔥 -10%' },
-    { id: 'chairSeat', name: t.prices.items.chairSeat, price: 15, image: calcChairSeat },
-    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 30, image: calcChairBack },
-    { id: 'chairConference', name: t.prices.items.chairConference, price: 45, image: calcChairConference },
-    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 50, image: calcChairSwivel },
-    { id: 'chair', name: t.prices.items.chair, price: 30, image: calcChair },
-    { id: 'armchair', name: t.prices.items.armchair, price: 63, originalPrice: 70, image: calcArmchair, promoBadge: '🔥 -10%' },
-    { id: 'pillow', name: t.prices.items.pillow, price: 9, originalPrice: 10, image: calcPillow, promoBadge: '🔥 -10%' },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 126, originalPrice: 140, image: calcSofa2, promoBadge: '🔥 -10%' },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 153, originalPrice: 170, image: calcSofa3, promoBadge: '🔥 -10%' },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 225, originalPrice: 250, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 126, originalPrice: 140, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+    { id: 'pouf', name: t.prices.items.pouf, price: 32, originalPrice: 36, image: calcPouf, promoBadge: '🔥 -10%' },
+    { id: 'chairSeat', name: t.prices.items.chairSeat, price: 14, image: calcChairSeat },
+    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 27, image: calcChairBack },
+    { id: 'chairConference', name: t.prices.items.chairConference, price: 41, image: calcChairConference },
+    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 45, image: calcChairSwivel },
+    { id: 'chair', name: t.prices.items.chair, price: 27, image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: 57, originalPrice: 63, image: calcArmchair, promoBadge: '🔥 -10%' },
+    { id: 'pillow', name: t.prices.items.pillow, price: 8, originalPrice: 9, image: calcPillow, promoBadge: '🔥 -10%' },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 113, originalPrice: 126, image: calcSofa2, promoBadge: '🔥 -10%' },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 138, originalPrice: 153, image: calcSofa3, promoBadge: '🔥 -10%' },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 162, originalPrice: 180, image: calcSofaCorner, promoBadge: '🔥 -10%' },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 203, originalPrice: 225, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 113, originalPrice: 126, image: calcMattressSingle, promoBadge: '🔥 -10%' },
     { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 162, originalPrice: 180, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 198, originalPrice: 220, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 252, originalPrice: 280, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 90, originalPrice: 100, image: calcHeadboard, promoBadge: '🔥 -10%' },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 90, originalPrice: 100, image: calcBedframe, promoBadge: '🔥 -10%' },
+    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 178, originalPrice: 198, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 227, originalPrice: 252, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 81, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 81, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
   ];
 
   const { t: translations } = useLanguage();
@@ -109,12 +109,12 @@ const Services = () => {
   ];
 
   const leatherItems = [
-    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 55, image: calcLeatherPouf },
-    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 50, image: calcLeatherChair },
-    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 90, image: calcLeatherArmchair },
-    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 180, image: calcLeatherSofa2 },
-    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 220, image: calcLeatherSofa3 },
-    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 270, image: calcLeatherCorner },
+    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 50, image: calcLeatherPouf },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 45, image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 81, image: calcLeatherArmchair },
+    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 162, image: calcLeatherSofa2 },
+    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 198, image: calcLeatherSofa3 },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 243, image: calcLeatherCorner },
   ];
 
   return (
