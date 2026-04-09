@@ -16,6 +16,7 @@ interface PriceItem {
   price: number;
   isFrom?: boolean;
   icon: LucideIcon;
+  unit?: string;
 }
 
 interface SelectedItem {
