@@ -28,7 +28,7 @@ function normalizeCategory(item: CalculatorItem): string {
 }
 
 // ID позиций, исключённых из скидок
-const EXCLUDED_IDS = ['expressRefresh', 'expressRefreshM'];
+const EXCLUDED_IDS: string[] = [];
 
 /**
  * Алгоритм расчёта скидок:
