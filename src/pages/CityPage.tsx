@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
   Sofa, Sparkles, Calculator, Wrench, ChevronDown, MapPin,
-  Gift, Percent, Droplets, Tag
+  Gift, Percent, Droplets, Tag, Leaf
 } from 'lucide-react';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
