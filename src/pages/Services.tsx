@@ -21,6 +21,10 @@ import mattressBeforeAfter from '@/assets/mattress-before-after.jpg';
 // Furniture calculator images
 import calcPouf from '@/assets/calc-pouf.jpg';
 import calcChair from '@/assets/calc-chair.jpg';
+import calcChairSeat from '@/assets/calc-chair-seat.jpg';
+import calcChairBack from '@/assets/calc-chair-back.jpg';
+import calcChairConference from '@/assets/calc-chair-conference.jpg';
+import calcChairSwivel from '@/assets/calc-chair-swivel.jpg';
 import calcArmchair from '@/assets/calc-armchair.jpg';
 import calcPillow from '@/assets/calc-pillow.jpg';
 import calcSofa2 from '@/assets/calc-sofa2.jpg';
