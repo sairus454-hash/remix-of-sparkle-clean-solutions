@@ -1,6 +1,6 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import { Sparkles, Star, Award } from 'lucide-react';
+import { Star, Award } from 'lucide-react';
 
 const PromotionsSection = () => {
   const { t } = useLanguage();
