@@ -51,7 +51,7 @@ const PRICE_LIST = {
 • Стул вращающийся — 50 PLN
 • Стул — 36 PLN (вместо 40)
 • Кресло — 63 PLN (вместо 70)
-• Подушка — 14 PLN (вместо 15)
+• Подушка — 9 PLN (вместо 10)
 • Диван двухместный — 126 PLN (вместо 140)
 • Диван трёхместный — 153 PLN (вместо 170)
 • Диван угловой — 180 PLN (вместо 200)
@@ -264,7 +264,7 @@ Deep cleaning:
 • Swivel chair — 50 PLN
 • Chair — 36 PLN (was 40)
 • Armchair — 63 PLN (was 70)
-• Pillow — 14 PLN (was 15)
+• Pillow — 9 PLN (was 10)
 • 2-seater sofa — 126 PLN (was 140)
 • 3-seater sofa — 153 PLN (was 170)
 • Corner sofa — 180 PLN (was 200)
@@ -477,7 +477,7 @@ Sprzątanie generalne:
 • Krzesło obrotowe — 50 PLN
 • Krzesło — 36 PLN (zamiast 40)
 • Fotel — 63 PLN (zamiast 70)
-• Poduszka — 14 PLN (zamiast 15)
+• Poduszka — 9 PLN (zamiast 10)
 • Sofa 2-osobowa — 126 PLN (zamiast 140)
 • Sofa 3-osobowa — 153 PLN (zamiast 170)
 • Sofa narożna — 180 PLN (zamiast 200)
@@ -690,7 +690,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Обертовий стілець — 50 PLN
 • Стілець — 36 PLN (замість 40)
 • Крісло — 63 PLN (замість 70)
-• Подушка — 14 PLN (замість 15)
+• Подушка — 9 PLN (замість 10)
 • Диван двомісний — 126 PLN (замість 140)
 • Диван тримісний — 153 PLN (замість 170)
 • Диван кутовий — 180 PLN (замість 200)

@@ -81,7 +81,7 @@ const Services = () => {
     { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 50, image: calcChairSwivel },
     { id: 'chair', name: t.prices.items.chair, price: 36, originalPrice: 40, image: calcChair, promoBadge: '🔥 -10%' },
     { id: 'armchair', name: t.prices.items.armchair, price: 63, originalPrice: 70, image: calcArmchair, promoBadge: '🔥 -10%' },
-    { id: 'pillow', name: t.prices.items.pillow, price: 14, originalPrice: 15, image: calcPillow, promoBadge: '🔥 -10%' },
+    { id: 'pillow', name: t.prices.items.pillow, price: 9, originalPrice: 10, image: calcPillow, promoBadge: '🔥 -10%' },
     { id: 'sofa2', name: t.prices.items.sofa2, price: 126, originalPrice: 140, image: calcSofa2, promoBadge: '🔥 -10%' },
     { id: 'sofa3', name: t.prices.items.sofa3, price: 153, originalPrice: 170, image: calcSofa3, promoBadge: '🔥 -10%' },
     { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
