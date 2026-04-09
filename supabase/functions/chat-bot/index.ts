@@ -54,7 +54,7 @@ const PRICE_LIST = {
 • Подушка — 8 PLN (вместо 9)
 • Диван двухместный — 113 PLN (вместо 126)
 • Диван трёхместный — 138 PLN (вместо 153)
-• Диван угловой — 162 PLN (вместо 180)
+• Диван угловой — 146 PLN (вместо 162)
 • Большой угловой диван — 203 PLN (вместо 225)
 • Ковровое покрытие — 21 PLN/м² (вместо 23)
 • Мебель из флока — +50% к обычной цене
@@ -77,8 +77,8 @@ const PRICE_LIST = {
 🛏 МАТРАСЫ (🔥 -10%):
 • Матрас двухспальный — 146 PLN (вместо 162)
 • Матрас односпальный — 113 PLN (вместо 126)
-• Чистка изголовья кровати — 81 PLN (вместо 90)
-• Чистка каркаса кровати — 81 PLN (вместо 90)
+• Чистка изголовья кровати — 73 PLN (вместо 81)
+• Чистка каркаса кровати — 73 PLN (вместо 81)
 • Матрас односпальный (2 стороны) — 178 PLN (вместо 198)
 • Матрас двухспальный (2 стороны) — 227 PLN (вместо 252)
 
@@ -261,11 +261,10 @@ Deep cleaning:
 • Pillow — 8 PLN (was 9)
 • 2-seater sofa — 113 PLN (was 126)
 • 3-seater sofa — 138 PLN (was 153)
-• Corner sofa — 162 PLN (was 180)
+• Corner sofa — 146 PLN (was 162)
 • Large corner sofa — 203 PLN (was 225)
 • Carpet — 21 PLN/m² (was 23)
 • Flock furniture — +50% to regular price
-• Express freshening with odor removal — 135 PLN (⛔ discount does NOT apply!)
 
 🚗 CAR CLEANING:
 • Single seat cleaning — 80 PLN
@@ -285,11 +284,10 @@ Deep cleaning:
 🛏 MATTRESSES (🔥 -10%):
 • Double mattress — 146 PLN (was 162)
 • Single mattress — 113 PLN (was 126)
-• Bed headboard cleaning — 81 PLN (was 90)
-• Bed frame cleaning — 81 PLN (was 90)
+• Bed headboard cleaning — 73 PLN (was 81)
+• Bed frame cleaning — 73 PLN (was 81)
 • Single mattress (2 sides) — 178 PLN (was 198)
 • Double mattress (2 sides) — 227 PLN (was 252)
-• Express freshening with odor removal — 135 PLN (⛔ discount does NOT apply!)
 
 💨 OZONATION:
 • 1-room apartment (20-40 m²) — 144 PLN
@@ -469,7 +467,7 @@ Sprzątanie generalne:
 • Poduszka — 8 PLN (zamiast 9)
 • Sofa 2-osobowa — 113 PLN (zamiast 126)
 • Sofa 3-osobowa — 138 PLN (zamiast 153)
-• Sofa narożna — 162 PLN (zamiast 180)
+• Sofa narożna — 146 PLN (zamiast 162)
 • Duża sofa narożna — 203 PLN (zamiast 225)
 • Dywan — 21 PLN/m² (zamiast 23)
 • Meble z floku — +50% do ceny zwykłej
@@ -492,8 +490,8 @@ Sprzątanie generalne:
 🛏 MATERACE (🔥 -10%):
 • Materac dwuosobowy — 146 PLN (zamiast 162)
 • Materac jednoosobowy — 113 PLN (zamiast 126)
-• Czyszczenie zagłówka łóżka — 81 PLN (zamiast 90)
-• Czyszczenie ramy łóżka — 81 PLN (zamiast 90)
+• Czyszczenie zagłówka łóżka — 73 PLN (zamiast 81)
+• Czyszczenie ramy łóżka — 73 PLN (zamiast 81)
 • Materac jednoosobowy (2 strony) — 178 PLN (zamiast 198)
 • Materac dwuosobowy (2 strony) — 227 PLN (zamiast 252)
 
@@ -676,11 +674,10 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Подушка — 8 PLN (замість 9)
 • Диван двомісний — 113 PLN (замість 126)
 • Диван тримісний — 138 PLN (замість 153)
-• Диван кутовий — 162 PLN (замість 180)
+• Диван кутовий — 146 PLN (замість 162)
 • Великий кутовий диван — 203 PLN (замість 225)
 • Килимове покриття — 21 PLN/м² (замість 23)
 • Меблі з флоку — +50% до звичайної ціни
-• Експрес освіження з видаленням неприємного запаху — 135 PLN (⛔ знижка НЕ застосовується!)
 
 🚗 ХІМЧИСТКА АВТО:
 • Чистка 1 сидіння — 80 PLN
