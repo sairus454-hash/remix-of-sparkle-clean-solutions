@@ -103,7 +103,7 @@ const Handyman = () => {
     { id: 'gardening', name: t.handyman.gardening, icon: Leaf },
   ];
 
-  const categoryItems: Record<string, { id: string; name: string; price: number; image: string; unit?: string }[]> = {
+  const categoryItems: Record<string, { id: string; name: string; price: number; image: string; unit?: string; priceText?: string }[]> = {
     plumbing: [
       { id: 'faucet', name: t.handyman.calcItems.faucet, price: 120, image: img('handyman/faucet.jpg') },
       { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, image: img('handyman/siphon.jpg') },

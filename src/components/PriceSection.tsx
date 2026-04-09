@@ -131,6 +131,8 @@ import handyAluminumDoor from '@/assets/handyman/aluminum-door.jpg';
 import handyWindowAdjustment from '@/assets/handyman/window-adjustment.jpg';
 import handyFridgeHinges from '@/assets/handyman/fridge-hinges.jpg';
 import handyLawnMowing from '@/assets/handyman/lawn-mowing.jpg';
+import handyLawnMowingHard from '@/assets/handyman/lawn-mowing-hard.jpg';
+import handyGrassCleanup from '@/assets/handyman/grass-cleanup.jpg';
 import handyTreeTrimming from '@/assets/handyman/tree-trimming.jpg';
 import handyYardHelp from '@/assets/handyman/yard-help.jpg';
 
@@ -139,7 +141,7 @@ interface CategorySection {
   title: string;
   description: string;
   icon: React.ElementType;
-  items: { id: string; name: string; price: number; originalPrice?: number; image: string; unit?: string; promoBadge?: string }[];
+  items: { id: string; name: string; price: number; originalPrice?: number; image: string; unit?: string; priceText?: string; promoBadge?: string }[];
 }
 
 const PriceSection = () => {
