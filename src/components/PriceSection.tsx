@@ -148,10 +148,15 @@ interface CategorySection {
   items: { id: string; name: string; price: number; originalPrice?: number; image: string; unit?: string; priceText?: string; promoBadge?: string }[];
 }
 
-const PriceSection = () => {
+interface PriceSectionProps {
+  defaultAllOpen?: boolean;
+}
+
+const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
   const { t } = useLanguage();
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
+  const [initialized, setInitialized] = useState(false);
 
   const categories: CategorySection[] = [
     {
