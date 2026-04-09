@@ -1319,8 +1319,8 @@ Deno.serve(async (req) => {
             { role: "system", content: systemPrompt },
             ...messages,
           ],
-          max_tokens: 300,
-          temperature: 0.7,
+          max_tokens: 250,
+          temperature: 0.5,
         }),
       }
     );
