@@ -47,7 +47,7 @@ const PRICE_LIST = {
 • Пуф — 32 PLN (вместо 36)
 • Стул (сиденье) — 14 PLN
 • Стул с спинкой — 27 PLN
-• Стул конференционный — 41 PLN
+• Стул конференционный — 30 PLN
 • Стул вращающийся — 45 PLN
 • Стул — 27 PLN
 • Кресло — 57 PLN (вместо 63)
@@ -254,7 +254,7 @@ Deep cleaning:
 • Ottoman — 32 PLN (was 36)
 • Chair (seat only) — 14 PLN
 • Chair with backrest — 27 PLN
-• Conference chair — 41 PLN
+• Conference chair — 30 PLN
 • Swivel chair — 45 PLN
 • Chair — 27 PLN
 • Armchair — 57 PLN (was 63)
@@ -462,7 +462,7 @@ Sprzątanie generalne:
 • Pufa — 32 PLN (zamiast 36)
 • Krzesło (siedzenie) — 14 PLN
 • Krzesło z oparciem — 27 PLN
-• Krzesło konferencyjne — 41 PLN
+• Krzesło konferencyjne — 30 PLN
 • Krzesło obrotowe — 45 PLN
 • Krzesło — 27 PLN
 • Fotel — 57 PLN (zamiast 63)
@@ -669,7 +669,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Пуф — 32 PLN (замість 36)
 • Стілець (сидіння) — 14 PLN
 • Стілець зі спинкою — 27 PLN
-• Конференц-стілець — 41 PLN
+• Конференц-стілець — 30 PLN
 • Обертовий стілець — 45 PLN
 • Стілець — 27 PLN
 • Крісло — 57 PLN (замість 63)

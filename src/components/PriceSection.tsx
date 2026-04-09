@@ -191,7 +191,7 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
         { id: 'pouf', name: t.prices.items.pouf, price: 32, originalPrice: 36, image: calcPouf, promoBadge: '🔥 -10%' },
         { id: 'chairSeat', name: t.prices.items.chairSeat, price: 14, image: calcChairSeat },
         { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 27, image: calcChairBack },
-        { id: 'chairConference', name: t.prices.items.chairConference, price: 41, image: calcChairConference },
+        { id: 'chairConference', name: t.prices.items.chairConference, price: 30, image: calcChairConference },
         { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 45, image: calcChairSwivel },
         { id: 'chair', name: t.prices.items.chair, price: 27, image: calcChair },
         { id: 'armchair', name: t.prices.items.armchair, price: 57, originalPrice: 63, image: calcArmchair, promoBadge: '🔥 -10%' },
