@@ -153,7 +153,9 @@ const Handyman = () => {
       { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, image: img('handyman/fridge-hinges.jpg') },
     ],
     gardening: [
-      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 15, image: img('handyman/lawn-mowing.jpg'), unit: 'm²' },
+      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 1, image: img('handyman/lawn-mowing.jpg'), unit: 'm²', priceText: '1.00 - 1.20 zł' },
+      { id: 'lawnMowingHard', name: t.handyman.calcItems.lawnMowingHard, price: 1.3, image: img('handyman/lawn-mowing-hard.jpg'), unit: 'm²', priceText: '1.30 - 1.50 zł' },
+      { id: 'grassCleanup', name: t.handyman.calcItems.grassCleanup, price: 1, image: img('handyman/grass-cleanup.jpg'), unit: 'm²', priceText: '1.00 - 1.50 zł' },
       { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, image: img('handyman/tree-trimming.jpg') },
       { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, image: img('handyman/yard-help.jpg') },
     ],
