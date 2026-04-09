@@ -174,8 +174,8 @@ const PRICE_LIST = {
 • Регулировка окон и дверей — 200 PLN
 • Ремонт петель холодильника — 200 PLN
 
-🌿 Услуги огородника (110 PLN/час):
-• Покос травы — 110 PLN/час
+🌿 Услуги огородника:
+• Покос травы — 15 PLN/м²
 • Обрезка деревьев — 110 PLN/час
 • Помощь на участке — 110 PLN/час
 
@@ -381,8 +381,8 @@ Benefits:
 • Window and door adjustment — 200 PLN
 • Refrigerator hinge repair — 200 PLN
 
-🌿 Gardening services (110 PLN/hour):
-• Lawn mowing — 110 PLN/hour
+🌿 Gardening services:
+• Lawn mowing — 15 PLN/m²
 • Tree trimming — 110 PLN/hour
 • Yard help — 110 PLN/hour
 
@@ -588,8 +588,8 @@ Korzyści:
 • Regulacja okien i drzwi — 200 PLN
 • Naprawa zawiasów lodówki — 200 PLN
 
-🌿 Usługi ogrodnicze (110 PLN/godz.):
-• Koszenie trawy — 110 PLN/godz.
+🌿 Usługi ogrodnicze:
+• Koszenie trawy — 15 PLN/m²
 • Przycinanie drzew — 110 PLN/godz.
 • Pomoc na działce — 110 PLN/godz.
 
@@ -795,8 +795,8 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Регулювання вікон і дверей — 200 PLN
 • Ремонт петель холодильника — 200 PLN
 
-🌿 Послуги садівника (110 PLN/год):
-• Косіння трави — 110 PLN/год
+🌿 Послуги садівника:
+• Косіння трави — 15 PLN/м²
 • Обрізка дерев — 110 PLN/год
 • Допомога на ділянці — 110 PLN/год
 

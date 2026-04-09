@@ -16,6 +16,7 @@ interface PriceItem {
   price: number;
   isFrom?: boolean;
   icon: LucideIcon;
+  unit?: string;
 }
 
 interface SelectedItem {
@@ -119,7 +120,7 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
         name: t.handyman.gardening,
         icon: Leaf,
         items: [
-          { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 110, icon: Leaf },
+          { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 15, icon: Leaf, unit: 'm²' },
           { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, icon: Leaf },
           { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, icon: Leaf },
         ],

@@ -103,7 +103,7 @@ const Handyman = () => {
     { id: 'gardening', name: t.handyman.gardening, icon: Leaf },
   ];
 
-  const categoryItems: Record<string, { id: string; name: string; price: number; image: string }[]> = {
+  const categoryItems: Record<string, { id: string; name: string; price: number; image: string; unit?: string }[]> = {
     plumbing: [
       { id: 'faucet', name: t.handyman.calcItems.faucet, price: 120, image: img('handyman/faucet.jpg') },
       { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, image: img('handyman/siphon.jpg') },
@@ -153,7 +153,7 @@ const Handyman = () => {
       { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, image: img('handyman/fridge-hinges.jpg') },
     ],
     gardening: [
-      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 110, image: img('handyman/lawn-mowing.jpg') },
+      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 15, image: img('handyman/lawn-mowing.jpg'), unit: 'm²' },
       { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, image: img('handyman/tree-trimming.jpg') },
       { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, image: img('handyman/yard-help.jpg') },
     ],
