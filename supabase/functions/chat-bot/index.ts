@@ -45,6 +45,10 @@ const PRICE_LIST = {
 
 🛋 МЕБЕЛЬ (🔥 АКЦИЯ НЕДЕЛИ: -10% на химчистку мебели и матрасов!):
 • Пуф — 36 PLN (вместо 40)
+• Стул (сиденье) — 15 PLN
+• Стул с спинкой — 30 PLN
+• Стул конференционный — 45 PLN
+• Стул вращающийся — 50 PLN
 • Стул — 36 PLN (вместо 40)
 • Кресло — 63 PLN (вместо 70)
 • Подушка — 14 PLN (вместо 15)
@@ -254,6 +258,10 @@ Deep cleaning:
 
 🛋 FURNITURE (🔥 WEEKLY DEAL: -10% on furniture & mattress cleaning!):
 • Ottoman — 36 PLN (was 40)
+• Chair (seat only) — 15 PLN
+• Chair with backrest — 30 PLN
+• Conference chair — 45 PLN
+• Swivel chair — 50 PLN
 • Chair — 36 PLN (was 40)
 • Armchair — 63 PLN (was 70)
 • Pillow — 14 PLN (was 15)
@@ -463,6 +471,10 @@ Sprzątanie generalne:
 
 🛋 MEBLE (🔥 PROMOCJA TYGODNIA: -10% na pranie mebli i materacy!):
 • Pufa — 36 PLN (zamiast 40)
+• Krzesło (siedzenie) — 15 PLN
+• Krzesło z oparciem — 30 PLN
+• Krzesło konferencyjne — 45 PLN
+• Krzesło obrotowe — 50 PLN
 • Krzesło — 36 PLN (zamiast 40)
 • Fotel — 63 PLN (zamiast 70)
 • Poduszka — 14 PLN (zamiast 15)
@@ -672,6 +684,10 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 
 🛋 МЕБЛІ (🔥 АКЦІЯ ТИЖНЯ: -10% на хімчистку меблів та матраців!):
 • Пуф — 36 PLN (замість 40)
+• Стілець (сидіння) — 15 PLN
+• Стілець зі спинкою — 30 PLN
+• Конференц-стілець — 45 PLN
+• Обертовий стілець — 50 PLN
 • Стілець — 36 PLN (замість 40)
 • Крісло — 63 PLN (замість 70)
 • Подушка — 14 PLN (замість 15)

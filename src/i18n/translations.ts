@@ -138,6 +138,10 @@ export const translations = {
       currency: 'PLN',
        items: {
          pouf: 'Пуф',
+         chairSeat: 'Стул (сиденье)',
+         chairWithBack: 'Стул с спинкой',
+         chairConference: 'Стул конференционный',
+         chairSwivel: 'Стул вращающийся',
          chair: 'Стул',
          armchair: 'Кресло',
          pillow: 'Подушка',
@@ -875,6 +879,10 @@ export const translations = {
       currency: 'PLN',
       items: {
          pouf: 'Pouf',
+         chairSeat: 'Chair (seat only)',
+         chairWithBack: 'Chair with backrest',
+         chairConference: 'Conference chair',
+         chairSwivel: 'Swivel chair',
          chair: 'Chair',
          armchair: 'Armchair',
          pillow: 'Pillow',
@@ -1612,6 +1620,10 @@ export const translations = {
       currency: 'PLN',
       items: {
         pouf: 'Puf',
+        chairSeat: 'Krzesło (siedzenie)',
+        chairWithBack: 'Krzesło z oparciem',
+        chairConference: 'Krzesło konferencyjne',
+        chairSwivel: 'Krzesło obrotowe',
         chair: 'Krzesło',
         armchair: 'Fotel',
         pillow: 'Poduszka',
@@ -2349,6 +2361,10 @@ export const translations = {
       currency: 'PLN',
        items: {
          pouf: 'Пуф',
+         chairSeat: 'Стілець (сидіння)',
+         chairWithBack: 'Стілець зі спинкою',
+         chairConference: 'Конференц-стілець',
+         chairSwivel: 'Обертовий стілець',
          chair: 'Стілець',
          armchair: 'Крісло',
          pillow: 'Подушка',
