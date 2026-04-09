@@ -242,6 +242,11 @@ const CityPage = () => {
         { id: 'aluminumDoorRepair', name: t.handyman?.calcItems?.aluminumDoorRepair || 'Ремонт алюминиевых дверей', price: 200, image: img('handyman/aluminum-door.jpg') },
         { id: 'windowDoorAdjustment', name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон и дверей', price: 200, image: img('handyman/window-adjustment.jpg') },
         { id: 'fridgeHinges', name: t.handyman?.calcItems?.fridgeHinges || 'Ремонт петель холодильника', price: 200, image: img('handyman/fridge-hinges.jpg') },
+      ],
+    },
+    {
+      id: 'gardening', title: t.handyman?.gardening || 'Услуги огородника', description: '', icon: Leaf,
+      items: [
         { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 1, image: img('handyman/lawn-mowing.jpg'), unit: 'm²', priceText: '1.00 - 1.20 zł' },
         { id: 'lawnMowingHard', name: t.handyman?.calcItems?.lawnMowingHard || 'Покос травы (сложный рельеф)', price: 1.3, image: img('handyman/lawn-mowing-hard.jpg'), unit: 'm²', priceText: '1.30 - 1.50 zł' },
         { id: 'grassCleanup', name: t.handyman?.calcItems?.grassCleanup || 'Уборка и вывоз травы', price: 1, image: img('handyman/grass-cleanup.jpg'), unit: 'm²', priceText: '1.00 - 1.50 zł' },
@@ -251,21 +256,26 @@ const CityPage = () => {
     },
   ];
 
-
+  const isNoGardeningSurcharge = city.slug === 'wroclaw' || city.slug === 'smolec';
 
   // For non-Wrocław cities: +10% rounded up, except free items (price=0)
-  const applyMarkup = (cats: typeof categories) =>
+  const applyMarkup = (cats: typeof categories, multiplier = 1.1) =>
     cats.map(cat => ({
       ...cat,
       items: cat.items.map(item => ({
         ...item,
-        price: item.price === 0 ? 0 : Math.ceil(item.price * 1.1),
+        price: item.price === 0 ? 0 : Math.ceil(item.price * multiplier),
       })),
     }));
 
   const filteredCategories = isWroclaw
     ? categories
-    : applyMarkup(categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman'));
+    : [
+        ...applyMarkup(categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && c.id !== 'gardening')),
+        ...(isNoGardeningSurcharge
+          ? categories.filter(c => c.id === 'gardening')
+          : applyMarkup(categories.filter(c => c.id === 'gardening'), 1.05)),
+      ];
 
   return (
     <>
