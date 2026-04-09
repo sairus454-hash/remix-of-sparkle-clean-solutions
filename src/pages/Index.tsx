@@ -506,7 +506,7 @@ const Index = () => {
 
       {/* Price Section */}
       <LazySection minHeight="300px">
-        <Suspense fallback={null}><PriceSection /></Suspense>
+        <Suspense fallback={null}><PriceSection defaultAllOpen /></Suspense>
       </LazySection>
 
       {/* Why Choose Us */}

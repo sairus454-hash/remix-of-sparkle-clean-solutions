@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -148,10 +148,15 @@ interface CategorySection {
   items: { id: string; name: string; price: number; originalPrice?: number; image: string; unit?: string; priceText?: string; promoBadge?: string }[];
 }
 
-const PriceSection = () => {
+interface PriceSectionProps {
+  defaultAllOpen?: boolean;
+}
+
+const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
   const { t } = useLanguage();
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
+  const [initialized, setInitialized] = useState(false);
 
   const categories: CategorySection[] = [
     {
@@ -352,6 +357,31 @@ const PriceSection = () => {
     },
   ];
 
+  // Initialize all open when defaultAllOpen
+  useEffect(() => {
+    if (defaultAllOpen && !initialized) {
+      const allIds = new Set(categories.map(c => c.id));
+      setOpenCategories(allIds);
+      setLoadedCategories(allIds);
+      setInitialized(true);
+    }
+  }, [defaultAllOpen, initialized, categories]);
+
+  const isOpen = (id: string) => openCategories.has(id);
+
+  const toggleCategory = (id: string) => {
+    setOpenCategories(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+    setLoadedCategories(prev => new Set(prev).add(id));
+  };
+
   return (
     <section className="py-12 sm:py-20 bg-card">
       <div className="container mx-auto px-4">
@@ -378,13 +408,7 @@ const PriceSection = () => {
             <CircularRevealCard key={cat.id} index={catIndex}>
               <div className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card">
                 <button
-                  onClick={() => {
-                    const newOpen = openCategory === cat.id ? null : cat.id;
-                    setOpenCategory(newOpen);
-                    if (newOpen) {
-                      setLoadedCategories(prev => new Set(prev).add(newOpen));
-                    }
-                  }}
+                  onClick={() => toggleCategory(cat.id)}
                   className="flex items-center gap-4 w-full p-4 sm:p-5 cursor-pointer text-left transition-colors hover:bg-accent/30"
                 >
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0">
@@ -396,12 +420,12 @@ const PriceSection = () => {
                     </h3>
                     <p className="text-muted-foreground text-xs sm:text-sm truncate">{cat.description}</p>
                   </div>
-                  <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${openCategory === cat.id ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${isOpen(cat.id) ? 'rotate-180' : ''}`} />
                 </button>
                 <div
                   className="grid transition-all duration-500 ease-in-out"
                   style={{
-                    gridTemplateRows: openCategory === cat.id ? '1fr' : '0fr',
+                    gridTemplateRows: isOpen(cat.id) ? '1fr' : '0fr',
                   }}
                 >
                   <div className="overflow-hidden">
