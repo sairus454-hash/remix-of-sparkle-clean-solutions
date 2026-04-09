@@ -833,8 +833,13 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 Приклад: меблі + авто + матрац + озонування = 4 категорії = 10% знижка`
 };
 
-// Persistent rate limiting via Supabase DB
+// Module-level Supabase client for faster rate limiting (avoids creating client per request)
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+const supabaseAdmin = createClient(
+  Deno.env.get('SUPABASE_URL')!,
+  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+);
 
 async function checkRateLimit(req: Request, functionName: string, maxRequests: number, windowMinutes: number): Promise<boolean> {
   const clientIP = req.headers.get('cf-connecting-ip') ||
@@ -842,11 +847,7 @@ async function checkRateLimit(req: Request, functionName: string, maxRequests: n
                    req.headers.get('x-forwarded-for')?.split(',').at(-1)?.trim() ||
                    'unknown';
   try {
-    const supabase = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-    );
-    const { data, error } = await supabase.rpc('check_rate_limit', {
+    const { data, error } = await supabaseAdmin.rpc('check_rate_limit', {
       p_function_name: functionName,
       p_client_ip: clientIP,
       p_max_requests: maxRequests,
