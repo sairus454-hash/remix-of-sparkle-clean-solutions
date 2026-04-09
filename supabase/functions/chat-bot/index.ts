@@ -175,7 +175,9 @@ const PRICE_LIST = {
 • Ремонт петель холодильника — 200 PLN
 
 🌿 Услуги огородника:
-• Покос травы — 15 PLN/м²
+• Покос травы — 1.00 - 1.20 PLN/м²
+• Покос травы (сложный рельеф) — 1.30 - 1.50 PLN/м²
+• Уборка и вывоз травы — 1.00 - 1.50 PLN/м²
 • Обрезка деревьев — 110 PLN/час
 • Помощь на участке — 110 PLN/час
 
@@ -382,7 +384,9 @@ Benefits:
 • Refrigerator hinge repair — 200 PLN
 
 🌿 Gardening services:
-• Lawn mowing — 15 PLN/m²
+• Lawn mowing — 1.00 - 1.20 PLN/m²
+• Lawn mowing (difficult terrain) — 1.30 - 1.50 PLN/m²
+• Grass cleanup and removal — 1.00 - 1.50 PLN/m²
 • Tree trimming — 110 PLN/hour
 • Yard help — 110 PLN/hour
 
@@ -589,7 +593,9 @@ Korzyści:
 • Naprawa zawiasów lodówki — 200 PLN
 
 🌿 Usługi ogrodnicze:
-• Koszenie trawy — 15 PLN/m²
+• Koszenie trawy — 1.00 - 1.20 PLN/m²
+• Koszenie trawy (trudny teren) — 1.30 - 1.50 PLN/m²
+• Sprzątanie i wywóz trawy — 1.00 - 1.50 PLN/m²
 • Przycinanie drzew — 110 PLN/godz.
 • Pomoc na działce — 110 PLN/godz.
 
