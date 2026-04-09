@@ -132,10 +132,10 @@ const FreeDeliveryBadge = () => {
           href="https://www.google.com/maps/place/MasterClean+pranie+tapicerki+i+ozonowanie/@51.0984969,16.949163,17z/data=!3m1!4b1!4m6!3m5!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.0984969!4d16.949163!16s%2Fg%2F11xm28yrtl!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
           target="_blank"
           rel="noopener noreferrer"
-          className="relative group flex items-center gap-1 bg-white/95 backdrop-blur-sm rounded-lg px-1.5 py-1 sm:px-2 sm:py-1.5 shadow-md hover:shadow-lg transition-all hover:scale-105 cursor-pointer"
+          className="relative group flex items-center gap-0.5 sm:gap-1 bg-white/95 backdrop-blur-sm rounded-md sm:rounded-lg px-1 py-0.5 sm:px-2 sm:py-1.5 shadow-md hover:shadow-lg transition-all hover:scale-105 cursor-pointer"
           aria-label="Google Reviews — 5.0 stars, 65 reviews"
         >
-          <svg viewBox="0 0 24 24" className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true">
+          <svg viewBox="0 0 24 24" className="w-3 h-3 sm:w-5 sm:h-5 flex-shrink-0" aria-hidden="true">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
             <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -144,11 +144,11 @@ const FreeDeliveryBadge = () => {
           <div className="flex flex-col leading-none">
             <div className="flex items-center gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-2 h-2 sm:w-2.5 sm:h-2.5 fill-yellow-400 text-yellow-400" />
+                <Star key={i} className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 fill-yellow-400 text-yellow-400" />
               ))}
-              <span className="text-[9px] sm:text-[10px] font-bold text-gray-800 ml-0.5">5.0</span>
+              <span className="text-[7px] sm:text-[10px] font-bold text-gray-800 ml-0.5">5.0</span>
             </div>
-            <span className="text-[8px] sm:text-[9px] text-gray-500">65 {language === 'pl' ? 'opinii' : language === 'uk' ? 'відгуків' : language === 'ru' ? 'отзывов' : 'reviews'}</span>
+            <span className="text-[6px] sm:text-[9px] text-gray-500">65 {language === 'pl' ? 'opinii' : language === 'uk' ? 'відгуків' : language === 'ru' ? 'отзывов' : 'reviews'}</span>
           </div>
         </a>
 
