@@ -110,7 +110,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         { id: 'carpet', name: t.prices.items.carpet, price: 23, unit: 'm²' },
         { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 81 },
         { id: 'bedFrame', name: t.prices.items.bedFrame, price: 81 },
-        { id: 'expressRefreshFurniture', name: t.prices.items.expressRefresh, price: 135 },
+        
       ],
     },
     {
@@ -159,7 +159,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 178 },
         { id: 'mattressDoubleDry', name: t.prices.items.mattressDoubleDry, price: 146 },
         { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 227 },
-        { id: 'expressRefreshMattress', name: t.prices.items.expressRefresh, price: 135 },
+        
       ],
     },
     {

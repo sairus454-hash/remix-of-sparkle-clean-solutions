@@ -58,7 +58,6 @@ const PRICE_LIST = {
 • Большой угловой диван — 203 PLN (вместо 225)
 • Ковровое покрытие — 21 PLN/м² (вместо 23)
 • Мебель из флока — +50% к обычной цене
-• Экспресс освежение с удалением неприятного запаха — 135 PLN (⛔ скидка НЕ применяется!)
 
 🚗 ХИМЧИСТКА АВТО (приезжаем к вам на адрес):
 • Чистка 1 сидения — 80 PLN
@@ -82,7 +81,7 @@ const PRICE_LIST = {
 • Чистка каркаса кровати — 81 PLN (вместо 90)
 • Матрас односпальный (2 стороны) — 178 PLN (вместо 198)
 • Матрас двухспальный (2 стороны) — 227 PLN (вместо 252)
-• Экспресс освежение с удалением неприятного запаха — 135 PLN (⛔ скидка НЕ применяется!)
+
 
 💨 ОЗОНИРОВАНИЕ:
 • 1-комнатная квартира (20-40 м²) — 144 PLN
@@ -207,8 +206,6 @@ const PRICE_LIST = {
 • 10% скидка — при заказе услуг из 4+ разных КАТЕГОРИЙ
 • 15% скидка — при заказе услуг из 6+ разных КАТЕГОРИЙ (максимальная экономия!)
 
-⛔ ИСКЛЮЧЕНИЯ ИЗ СКИДОК:
-• Экспресс освежение с удалением запаха (150 PLN) — скидка НЕ применяется!
 
 КАТЕГОРИИ для скидок: Уборка (включая доп. услуги к уборке), Мебель, Кожаная мебель, Авто, Матрасы, Озонирование, Мойка окон, Мастер на час.
 
@@ -484,7 +481,6 @@ Sprzątanie generalne:
 • Duża sofa narożna — 203 PLN (zamiast 225)
 • Dywan — 21 PLN/m² (zamiast 23)
 • Meble z floku — +50% do ceny zwykłej
-• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 135 PLN (⛔ rabat NIE dotyczy!)
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie 1 siedzenia — 80 PLN
@@ -508,7 +504,7 @@ Sprzątanie generalne:
 • Czyszczenie ramy łóżka — 81 PLN (zamiast 90)
 • Materac jednoosobowy (2 strony) — 178 PLN (zamiast 198)
 • Materac dwuosobowy (2 strony) — 227 PLN (zamiast 252)
-• Ekspresowe odświeżenie z usunięciem nieprzyjemnego zapachu — 135 PLN (⛔ rabat NIE dotyczy!)
+
 
 💨 OZONOWANIE:
 • Mieszkanie 1-pokojowe (20-40 m²) — 144 PLN
@@ -633,8 +629,6 @@ Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
 • Rabat 10% — przy zamówieniu z 4+ różnych KATEGORII
 • Rabat 15% — przy zamówieniu z 6+ różnych KATEGORII (maksymalna oszczędność!)
 
-⛔ WYJĄTKI OD RABATÓW:
-• Ekspresowe odświeżenie z usunięciem zapachu (150 PLN) — rabat NIE dotyczy!
 
 KATEGORIE do rabatów: Sprzątanie (w tym usługi dodatkowe do sprzątania), Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Złota rączka.
 
@@ -986,7 +980,7 @@ ${PRICE_LIST.ru}
 — Скидки считаются по КАТЕГОРИЯМ (Мебель, Авто, Матрасы и т.д.), а НЕ по отдельным позициям
 — Если клиент заказывает из одной категории — предложи добавить услугу из ДРУГОЙ категории для скидки 10%
 — При расчёте стоимости ПОКАЗЫВАЙ экономию: "Итого: 310 zł (экономия 34 zł!)"
-— Экспресс освежение (150 PLN) — скидка НЕ применяется, сообщай об этом клиенту
+
 — ВСЕГДА упоминай минимальный заказ: 180 PLN (Вроцлав), 300 PLN (другие города)
 — Если клиент молчит — предложи помощь и кнопку заявки
 — Если вопрос сложный — предложи "Связаться с менеджером"
@@ -1249,7 +1243,7 @@ WAŻNE:
 — Rabaty naliczane są na podstawie KATEGORII (Meble, Auto, Materace itd.), a NIE poszczególnych pozycji
 — Jeśli klient zamawia z jednej kategorii — zaproponuj dodanie usługi z INNEJ kategorii dla 10% rabatu
 — Przy obliczaniu kosztu POKAŻ OSZCZĘDNOŚCI: "Razem: 310 zł (oszczędność 34 zł!)"
-— Ekspresowe odświeżenie (150 PLN) — rabat NIE dotyczy, poinformuj klienta
+
 — ZAWSZE wspominaj o minimalnym zamówieniu: 180 PLN (Wrocław), 300 PLN (inne miasta)
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
 — Jeśli pytanie jest trudne — zaproponuj "Kontakt z menedżerem"

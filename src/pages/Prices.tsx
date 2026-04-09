@@ -99,7 +99,7 @@ const Prices = () => {
         { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 203, originalPrice: 225, image: img('calc-sofa-corner-large.jpg'), promoBadge: '🔥 -10%' },
         { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 73, originalPrice: 81, image: img('calc-headboard.jpg'), promoBadge: '🔥 -10%' },
         { id: 'bedFrame', name: t.prices.items.bedFrame, price: 73, originalPrice: 81, image: img('calc-bedframe.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'expressRefresh', name: t.prices.items.expressRefresh, price: 135, image: img('calc-sofa2.jpg') },
+        
       ],
     },
     {
@@ -121,7 +121,7 @@ const Prices = () => {
         { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 178, originalPrice: 198, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
         { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 146, originalPrice: 162, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
         { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 227, originalPrice: 252, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'expressRefreshM', name: t.prices.items.expressRefresh, price: 135, image: img('calc-mattress-single.jpg') },
+        
       ],
     },
     {
