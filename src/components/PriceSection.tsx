@@ -11,6 +11,10 @@ import heroHouseCleaning2 from '@/assets/hero-house-cleaning-2.jpg';
 // Furniture images
 import calcPouf from '@/assets/calc-pouf.jpg';
 import calcChair from '@/assets/calc-chair.jpg';
+import calcChairSeat from '@/assets/calc-chair-seat.jpg';
+import calcChairBack from '@/assets/calc-chair-back.jpg';
+import calcChairConference from '@/assets/calc-chair-conference.jpg';
+import calcChairSwivel from '@/assets/calc-chair-swivel.jpg';
 import calcArmchair from '@/assets/calc-armchair.jpg';
 import calcPillow from '@/assets/calc-pillow.jpg';
 import calcSofa2 from '@/assets/calc-sofa2.jpg';
@@ -180,6 +184,10 @@ const PriceSection = () => {
       icon: Sofa,
       items: [
         { id: 'pouf', name: t.prices.items.pouf, price: 36, originalPrice: 40, image: calcPouf, promoBadge: '🔥 -10%' },
+        { id: 'chairSeat', name: t.prices.items.chairSeat, price: 15, image: calcChairSeat },
+        { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 30, image: calcChairBack },
+        { id: 'chairConference', name: t.prices.items.chairConference, price: 45, image: calcChairConference },
+        { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 50, image: calcChairSwivel },
         { id: 'chair', name: t.prices.items.chair, price: 36, originalPrice: 40, image: calcChair, promoBadge: '🔥 -10%' },
         { id: 'armchair', name: t.prices.items.armchair, price: 63, originalPrice: 70, image: calcArmchair, promoBadge: '🔥 -10%' },
         { id: 'pillow', name: t.prices.items.pillow, price: 9, originalPrice: 10, image: calcPillow, promoBadge: '🔥 -10%' },

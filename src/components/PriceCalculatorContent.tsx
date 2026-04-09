@@ -96,6 +96,10 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       icon: <Sofa className="w-5 h-5" />,
       items: [
         { id: 'pouf', name: t.prices.items.pouf, price: 36 },
+        { id: 'chairSeat', name: t.prices.items.chairSeat, price: 15 },
+        { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 30 },
+        { id: 'chairConference', name: t.prices.items.chairConference, price: 45 },
+        { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 50 },
         { id: 'chair', name: t.prices.items.chair, price: 36 },
         { id: 'armchair', name: t.prices.items.armchair, price: 63 },
         { id: 'pillow', name: t.prices.items.pillow, price: 14 },
