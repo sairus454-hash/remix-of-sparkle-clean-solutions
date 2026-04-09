@@ -134,14 +134,14 @@ const About = () => {
               </div>
 
               {/* Photo on the right */}
-              <div className="flex justify-center lg:justify-end animate-fade-up relative lg:-ml-[20%]" style={{ animationDelay: '0.2s' }}>
+              <div className="flex justify-center lg:justify-end animate-fade-up relative" style={{ animationDelay: '0.2s' }}>
                 {/* Decorative border glow */}
                 <div className="absolute -inset-3 bg-gradient-to-br from-primary via-fresh to-primary rounded-3xl opacity-30 blur-sm" style={{ animation: 'pulse 3s ease-in-out infinite' }} />
                 <div className="relative p-1 bg-gradient-to-br from-primary via-fresh to-primary rounded-2xl shadow-glow">
                   <img
                     src={aboutHeroPhoto}
                     alt="MasterClean — profesjonalne czyszczenie i opinie w Google 5.0"
-                    className="rounded-xl max-h-[600px] w-auto object-cover bg-background"
+                    className="rounded-xl max-h-[600px] w-auto object-cover bg-background scale-[1.2] origin-center"
                     loading="eager"
                   />
                 </div>
