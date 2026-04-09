@@ -131,7 +131,7 @@ const PRICE_LIST = {
 ✅ Подходит для любых типов ковров: шерстяных, синтетических, ручной работы
 
 ⏳ Срок выполнения: обычно 3-5 рабочих дней.
-📏 Минимальный заказ на стирку ковров: 180 PLN (Вроцлав) / 300 PLN (другие города).
+📏 Минимальный заказ на стирку ковров: 160 PLN (Вроцлав) / 220 PLN (другие города).
 
 🔧 МАСТЕР НА ЧАС:
 
@@ -193,8 +193,8 @@ const PRICE_LIST = {
 Например: диван 2-мест. во Вроцлаве — 126 PLN, в Ополе/Любине/Легнице и др. — 139 PLN
 
 ⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
-• Вроцлав и пригород (до 10 км) — 180 PLN
-• Другие населённые пункты (дальше 10 км) — 300 PLN
+• Вроцлав и пригород (до 10 км) — 160 PLN
+• Другие населённые пункты (дальше 10 км) — 220 PLN
 Минимальный заказ действует для ВСЕХ категорий услуг.
 
 ⚠️ ОГРАНИЧЕНИЯ ПО ГОРОДАМ:
@@ -342,7 +342,7 @@ Benefits:
 ✅ Suitable for all carpet types: wool, synthetic, handmade
 
 ⏳ Turnaround time: usually 3-5 business days.
-📏 Minimum order for carpet washing: 180 PLN (Wrocław) / 300 PLN (other cities).
+📏 Minimum order for carpet washing: 160 PLN (Wrocław) / 220 PLN (other cities).
 
 🔧 HANDYMAN:
 
@@ -404,8 +404,8 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 Example: 2-seater sofa in Wrocław — 126 PLN, in Opole/Lubin/Legnica etc. — 139 PLN
 
 ⚠️ MINIMUM ORDER:
-• Wrocław and suburbs (within 10 km) — 180 PLN
-• Other locations (beyond 10 km) — 300 PLN
+• Wrocław and suburbs (within 10 km) — 160 PLN
+• Other locations (beyond 10 km) — 220 PLN
 Minimum order applies to ALL service categories.
 
 ⚠️ CITY RESTRICTIONS:
@@ -554,7 +554,7 @@ Korzyści:
 ✅ Odpowiednie dla wszystkich typów dywanów: wełnianych, syntetycznych, ręcznie robionych
 
 ⏳ Czas realizacji: zwykle 3-5 dni roboczych.
-📏 Minimalne zamówienie na pranie dywanów: 180 PLN (Wrocław) / 300 PLN (inne miasta).
+📏 Minimalne zamówienie na pranie dywanów: 160 PLN (Wrocław) / 220 PLN (inne miasta).
 
 🔧 ZŁOTA RĄCZKA:
 
@@ -616,8 +616,8 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 Przykład: sofa 2-osobowa we Wrocławiu — 126 PLN, w Opolu/Lubinie/Legnicy itp. — 139 PLN
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
-• Wrocław i przedmieścia (do 10 km) — 180 PLN
-• Inne miejscowości (dalej niż 10 km) — 300 PLN
+• Wrocław i przedmieścia (do 10 km) — 160 PLN
+• Inne miejscowości (dalej niż 10 km) — 220 PLN
 Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
 
 ⚠️ OGRANICZENIA WG MIAST:
@@ -765,7 +765,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 ✅ Підходить для будь-яких типів килимів: вовняних, синтетичних, ручної роботи
 
 ⏳ Термін виконання: зазвичай 3-5 робочих днів.
-📏 Мінімальне замовлення на прання килимів: 180 PLN (Вроцлав) / 300 PLN (інші міста).
+📏 Мінімальне замовлення на прання килимів: 160 PLN (Вроцлав) / 220 PLN (інші міста).
 
 🔧 МАЙСТЕР НА ГОДИНУ:
 
@@ -827,8 +827,8 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 Приклад: диван 2-місний у Вроцлаві — 126 PLN, в Ополе/Любіні/Легниці тощо — 139 PLN
 
 ⚠️ МІНІМАЛЬНЕ ЗАМОВЛЕННЯ:
-• Вроцлав і передмістя (до 10 км) — 180 PLN
-• Інші населені пункти (далі 10 км) — 300 PLN
+• Вроцлав і передмістя (до 10 км) — 160 PLN
+• Інші населені пункти (далі 10 км) — 220 PLN
 Мінімальне замовлення діє для ВСІХ категорій послуг.
 
 ⚠️ ОБМЕЖЕННЯ ЗА МІСТАМИ:
@@ -981,7 +981,7 @@ ${PRICE_LIST.ru}
 — Если клиент заказывает из одной категории — предложи добавить услугу из ДРУГОЙ категории для скидки 10%
 — При расчёте стоимости ПОКАЗЫВАЙ экономию: "Итого: 310 zł (экономия 34 zł!)"
 
-— ВСЕГДА упоминай минимальный заказ: 180 PLN (Вроцлав), 300 PLN (другие города)
+— ВСЕГДА упоминай минимальный заказ: 160 PLN (Вроцлав), 220 PLN (другие города)
 — Если клиент молчит — предложи помощь и кнопку заявки
 — Если вопрос сложный — предложи "Связаться с менеджером"
 
@@ -1125,8 +1125,7 @@ IMPORTANT:
 — Discounts are based on CATEGORIES (Furniture, Auto, Mattresses, etc.), NOT individual items
 — If customer orders from one category — suggest adding a service from ANOTHER category for 10% discount
 — When calculating cost, SHOW savings: "Total: 310 zł (saving 34 zł!)"
-— Express freshening (150 PLN) — discount does NOT apply, inform the customer
-— ALWAYS mention minimum order: 180 PLN (Wrocław), 300 PLN (other cities)
+— ALWAYS mention minimum order: 160 PLN (Wrocław), 220 PLN (other cities)
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"
 
@@ -1244,7 +1243,7 @@ WAŻNE:
 — Jeśli klient zamawia z jednej kategorii — zaproponuj dodanie usługi z INNEJ kategorii dla 10% rabatu
 — Przy obliczaniu kosztu POKAŻ OSZCZĘDNOŚCI: "Razem: 310 zł (oszczędność 34 zł!)"
 
-— ZAWSZE wspominaj o minimalnym zamówieniu: 180 PLN (Wrocław), 300 PLN (inne miasta)
+— ZAWSZE wspominaj o minimalnym zamówieniu: 160 PLN (Wrocław), 220 PLN (inne miasta)
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
 — Jeśli pytanie jest trudne — zaproponuj "Kontakt z menedżerem"
 
