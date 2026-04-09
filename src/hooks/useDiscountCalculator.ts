@@ -32,7 +32,6 @@ const EXCLUDED_IDS: string[] = [];
 
 /**
  * Алгоритм расчёта скидок:
- * - 5% при заказе из 2+ разных категорий услуг
  * - 10% при заказе из 4+ разных категорий
  * - 15% при заказе из 6+ разных категорий (VIP программа)
  */
@@ -54,9 +53,6 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
     } else if (uniqueCategoriesCount >= 4) {
       discountPercent = 10;
       discountReason = getDiscountReason('loyal', language);
-    } else if (uniqueCategoriesCount >= 2) {
-      discountPercent = 5;
-      discountReason = getDiscountReason('multi', language);
     }
     
     const discountAmount = Math.round(originalTotal * discountPercent / 100);
@@ -77,14 +73,8 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
   return discountInfo;
 };
 
-function getDiscountReason(type: 'multi' | 'loyal' | 'vip', language: string): string {
+function getDiscountReason(type: 'loyal' | 'vip', language: string): string {
   const reasons = {
-    multi: {
-      ru: 'Скидка 5% за 2+ категории',
-      en: '5% discount for 2+ categories',
-      pl: '5% rabatu za 2+ kategorie',
-      uk: 'Знижка 5% за 2+ категорії',
-    },
     loyal: {
       ru: 'Скидка 10% за 4+ категории',
       en: '10% discount for 4+ categories',
@@ -106,22 +96,18 @@ function getDiscountReason(type: 'multi' | 'loyal' | 'vip', language: string): s
 export function getDiscountTiers(language: string) {
   const tiers = {
     ru: [
-      { services: '2+', discount: '5%', label: 'категорий' },
       { services: '4+', discount: '10%', label: 'категорий' },
       { services: '6+', discount: '15%', label: 'категорий' },
     ],
     en: [
-      { services: '2+', discount: '5%', label: 'categories' },
       { services: '4+', discount: '10%', label: 'categories' },
       { services: '6+', discount: '15%', label: 'categories' },
     ],
     pl: [
-      { services: '2+', discount: '5%', label: 'kategorii' },
       { services: '4+', discount: '10%', label: 'kategorii' },
       { services: '6+', discount: '15%', label: 'kategorii' },
     ],
     uk: [
-      { services: '2+', discount: '5%', label: 'категорій' },
       { services: '4+', discount: '10%', label: 'категорій' },
       { services: '6+', discount: '15%', label: 'категорій' },
     ],
