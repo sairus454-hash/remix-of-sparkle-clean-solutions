@@ -600,7 +600,7 @@ const Cleaning = () => {
                     category="furniture"
                     items={[
                       { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 36, originalPrice: 40, image: calcPouf, promoBadge: '🔥 -10%' },
-                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 36, originalPrice: 40, image: calcChair, promoBadge: '🔥 -10%' },
+                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 30, image: calcChair },
                       { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 63, originalPrice: 70, image: calcArmchair, promoBadge: '🔥 -10%' },
                       { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 9, originalPrice: 10, image: calcPillow, promoBadge: '🔥 -10%' },
                       { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 126, originalPrice: 140, image: calcSofa2, promoBadge: '🔥 -10%' },

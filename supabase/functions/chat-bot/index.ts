@@ -49,7 +49,7 @@ const PRICE_LIST = {
 • Стул с спинкой — 30 PLN
 • Стул конференционный — 45 PLN
 • Стул вращающийся — 50 PLN
-• Стул — 36 PLN (вместо 40)
+• Стул — 30 PLN
 • Кресло — 63 PLN (вместо 70)
 • Подушка — 9 PLN (вместо 10)
 • Диван двухместный — 126 PLN (вместо 140)
@@ -262,7 +262,7 @@ Deep cleaning:
 • Chair with backrest — 30 PLN
 • Conference chair — 45 PLN
 • Swivel chair — 50 PLN
-• Chair — 36 PLN (was 40)
+• Chair — 30 PLN
 • Armchair — 63 PLN (was 70)
 • Pillow — 9 PLN (was 10)
 • 2-seater sofa — 126 PLN (was 140)
@@ -475,7 +475,7 @@ Sprzątanie generalne:
 • Krzesło z oparciem — 30 PLN
 • Krzesło konferencyjne — 45 PLN
 • Krzesło obrotowe — 50 PLN
-• Krzesło — 36 PLN (zamiast 40)
+• Krzesło — 30 PLN
 • Fotel — 63 PLN (zamiast 70)
 • Poduszka — 9 PLN (zamiast 10)
 • Sofa 2-osobowa — 126 PLN (zamiast 140)
@@ -688,7 +688,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Стілець зі спинкою — 30 PLN
 • Конференц-стілець — 45 PLN
 • Обертовий стілець — 50 PLN
-• Стілець — 36 PLN (замість 40)
+• Стілець — 30 PLN
 • Крісло — 63 PLN (замість 70)
 • Подушка — 9 PLN (замість 10)
 • Диван двомісний — 126 PLN (замість 140)
