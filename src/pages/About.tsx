@@ -141,7 +141,7 @@ const About = () => {
                   <img
                     src={aboutHeroPhoto}
                     alt="MasterClean — profesjonalne czyszczenie i opinie w Google 5.0"
-                    className="rounded-xl max-h-[600px] w-auto object-cover bg-background scale-[1.2] origin-center"
+                    className="rounded-xl max-h-[600px] w-auto object-cover bg-background"
                     loading="eager"
                   />
                 </div>
