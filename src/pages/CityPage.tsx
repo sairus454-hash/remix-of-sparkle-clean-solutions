@@ -313,8 +313,8 @@ const CityPage = () => {
               offers: {
                 '@type': 'AggregateOffer',
                 priceCurrency: 'PLN',
-                lowPrice: isWroclaw ? '40' : '44',
-                highPrice: isWroclaw ? '750' : '825',
+                lowPrice: isWroclaw ? '36' : '40',
+                highPrice: isWroclaw ? '675' : '743',
               },
             },
             {

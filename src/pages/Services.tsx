@@ -146,10 +146,10 @@ const Services = () => {
              { '@type': 'City', name: 'Kalisz' },
            ],
            offers: [
-             { '@type': 'Offer', name: 'Pranie kanapy 2-osobowej', price: '150', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie kanapy 3-osobowej', price: '180', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie narożnika', price: '250', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie materaca', price: '100', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie kanapy 2-osobowej', price: '126', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie kanapy 3-osobowej', price: '153', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie narożnika', price: '225', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie materaca', price: '90', priceCurrency: 'PLN' },
            ],
          }}
       />
