@@ -115,7 +115,7 @@ const Services = () => {
     { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 162, image: calcLeatherSofa2 },
     { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 198, image: calcLeatherSofa3 },
     { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 243, image: calcLeatherCorner },
-    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 69, image: img('calc-chair-swivel.jpg') },
+    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 69, image: calcChairSwivel },
   ];
 
   return (
