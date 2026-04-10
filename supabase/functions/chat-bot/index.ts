@@ -189,28 +189,42 @@ const PRICE_LIST = {
 
 💰 ЦЕНЫ ПО ГОРОДАМ:
 • Вроцлав и Смолец — базовые цены (как в прайсе выше, включая акцию -10% на мебель и матрасы)
-• Все остальные города — цены БЕЗ акции -10% на мебель/матрасы + наценка 10% за выезд (округление вверх)
-Например: диван 2-мест. во Вроцлаве — 113 PLN (акция), в других городах — 139 PLN (без акции + наценка)
+• Все остальные города (Opole, Legnica, Lubin и т.д.) — используй ГОТОВУЮ ТАБЛИЦУ ниже, НЕ считай сам!
+
+📊 ГОТОВЫЕ ЦЕНЫ ДЛЯ ДРУГИХ ГОРОДОВ (мебель и матрасы, уже с наценкой 10%, БЕЗ акции -10%):
+• Пуф — 40 PLN | Стул (сиденье) — 16 PLN | Стул с спинкой — 30 PLN
+• Стул конференционный — 33 PLN | Стул вращающийся — 50 PLN | Стул — 30 PLN
+• Кресло — 70 PLN | Подушка — 10 PLN
+• Диван двухместный — 139 PLN | Диван трёхместный — 169 PLN
+• Диван угловой — 179 PLN | Большой угловой диван — 248 PLN
+• Ковровое покрытие — 26 PLN/м²
+• Матрас двухспальный — 179 PLN | Матрас односпальный — 139 PLN
+• Изголовье кровати — 90 PLN | Каркас кровати — 90 PLN
+• Матрас 1-спальный (2 стор.) — 218 PLN | Матрас 2-спальный (2 стор.) — 278 PLN
+
+📊 Прочие услуги для других городов (наценка 10%):
+• Комплексная химчистка авто — 550 PLN | VIP — 770 PLN
+• Озонирование 1-комн. — 159 PLN | 2-комн. — 264 PLN
+• Окно одностворч. — 44 PLN | двустворч. — 55 PLN
+
+⚠️ ПРАВИЛО: Для других городов ВСЕГДА бери цену из ГОТОВОЙ ТАБЛИЦЫ! НЕ считай вручную!
+Формула (если позиции нет в таблице): ПОЛНАЯ_цена (без акции) × 1.1, округлить вверх.
 
 ⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
 • Вроцлав и пригород (до 10 км) — 160 PLN
 • Другие населённые пункты (дальше 10 км) — 220 PLN
-Минимальный заказ действует для ВСЕХ категорий услуг.
 
 ⚠️ ОГРАНИЧЕНИЯ ПО ГОРОДАМ:
-• Услуги «Уборка помещений» и «Мастер на час» доступны ТОЛЬКО во Вроцлаве!
-• В остальных городах доступны: химчистка мебели, матрасов, ковров, авто, озонирование, мойка окон, импрегнация
+• «Уборка помещений» и «Мастер на час» доступны ТОЛЬКО во Вроцлаве!
+• В остальных городах: химчистка мебели, матрасов, ковров, авто, озонирование, мойка окон, импрегнация
 
 🎁 СИСТЕМА СКИДОК (АВТОМАТИЧЕСКИ):
-• 10% скидка — при заказе услуг из 4+ разных КАТЕГОРИЙ
-• 15% скидка — при заказе услуг из 6+ разных КАТЕГОРИЙ (максимальная экономия!)
+• 10% скидка — при заказе из 4+ разных КАТЕГОРИЙ
+• 15% скидка — при заказе из 6+ разных КАТЕГОРИЙ
+⚠️ При 2-3 категориях скидки НЕТ! Минимум 4 категории для скидки!
 
-КАТЕГОРИИ для скидок: Уборка (включая доп. услуги к уборке), Мебель, Кожаная мебель, Авто, Матрасы, Озонирование, Мойка окон, Мастер на час.
-
-ВАЖНО: Скидки считаются по КАТЕГОРИЯМ, а не по отдельным позициям! 
-Уборка и дополнительные услуги к уборке (духовка, холодильник, глажка и т.д.) считаются как ОДНА категория!
-Несколько позиций из одной категории (3 стула из "Мебель") = 1 категория.
-Если клиент заказывает мебель + другую категорию (Авто и т.д.), то применяется скидка по количеству категорий (10%/15%).
+КАТЕГОРИИ: Уборка (вкл. доп. услуги), Мебель, Кожаная мебель, Авто, Матрасы, Озонирование, Мойка окон, Мастер на час.
+Несколько позиций из одной категории = 1 категория.
 Пример: мебель + авто + матрас + озонирование = 4 категории = 10% скидка`,
   en: `
 CURRENT PRICE LIST (prices in PLN):
@@ -395,28 +409,42 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 
 💰 PRICING BY CITY:
 • Wrocław and Smolec — base prices (as listed above, including -10% promo on furniture and mattresses)
-• All other cities — prices WITHOUT the -10% furniture/mattress promo + 10% city surcharge (rounded up)
-Example: 2-seater sofa in Wrocław — 113 PLN (promo), in other cities — 139 PLN (no promo + surcharge)
+• All other cities (Opole, Legnica, Lubin, etc.) — use the READY TABLE below, do NOT calculate manually!
+
+📊 READY PRICES FOR OTHER CITIES (furniture & mattresses, already with +10% surcharge, NO -10% promo):
+• Ottoman — 40 PLN | Chair (seat) — 16 PLN | Chair with backrest — 30 PLN
+• Conference chair — 33 PLN | Swivel chair — 50 PLN | Chair — 30 PLN
+• Armchair — 70 PLN | Pillow — 10 PLN
+• 2-seater sofa — 139 PLN | 3-seater sofa — 169 PLN
+• Corner sofa — 179 PLN | Large corner sofa — 248 PLN
+• Carpet — 26 PLN/m²
+• Double mattress — 179 PLN | Single mattress — 139 PLN
+• Bed headboard — 90 PLN | Bed frame — 90 PLN
+• Single mattress (2 sides) — 218 PLN | Double mattress (2 sides) — 278 PLN
+
+📊 Other services for other cities (+10% surcharge):
+• Full car cleaning — 550 PLN | VIP — 770 PLN
+• Ozonation 1-room — 159 PLN | 2-room — 264 PLN
+• Single-sash window — 44 PLN | Double-sash — 55 PLN
+
+⚠️ RULE: For other cities ALWAYS use the READY TABLE! Do NOT calculate manually!
+Formula (if item not in table): FULL_price (no promo) × 1.1, round up.
 
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 160 PLN
 • Other locations (beyond 10 km) — 220 PLN
-Minimum order applies to ALL service categories.
 
 ⚠️ CITY RESTRICTIONS:
-• "Premises cleaning" and "Handyman" services are available ONLY in Wrocław!
+• "Premises cleaning" and "Handyman" available ONLY in Wrocław!
 • Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
 🎁 DISCOUNT SYSTEM (AUTOMATIC):
 • 10% discount — when ordering from 4+ different CATEGORIES
-• 15% discount — when ordering from 6+ different CATEGORIES (maximum savings!)
+• 15% discount — when ordering from 6+ different CATEGORIES
+⚠️ With 2-3 categories there is NO discount! Minimum 4 categories required!
 
-CATEGORIES for discounts: Cleaning (including cleaning add-ons), Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Handyman.
-
-IMPORTANT: Discounts are based on CATEGORIES, not individual items!
-Cleaning and cleaning add-ons (oven, fridge, ironing, etc.) count as ONE category!
-Multiple items from one category (3 chairs from "Furniture") = 1 category.
-If client orders furniture + another category (Auto etc.), the category-based discount applies (10%/15%).
+CATEGORIES: Cleaning (incl. add-ons), Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Handyman.
+Multiple items from one category = 1 category.
 Example: furniture + auto + mattress + ozonation = 4 categories = 10% discount`,
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
@@ -602,28 +630,42 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 
 💰 CENY WG MIAST:
 • Wrocław i Smolec — ceny bazowe (jak w cenniku powyżej, w tym promocja -10% na meble i materace)
-• Wszystkie inne miasta — ceny BEZ promocji -10% na meble/materace + dopłata 10% za dojazd (zaokrąglone w górę)
-Przykład: sofa 2-osobowa we Wrocławiu — 113 PLN (promocja), w innych miastach — 139 PLN (bez promocji + dopłata)
+• Wszystkie inne miasta (Opole, Legnica, Lubin itp.) — użyj GOTOWEJ TABELI poniżej, NIE licz sam!
+
+📊 GOTOWE CENY DLA INNYCH MIAST (meble i materace, już z dopłatą 10%, BEZ promocji -10%):
+• Pufa — 40 PLN | Krzesło (siedzenie) — 16 PLN | Krzesło z oparciem — 30 PLN
+• Krzesło konferencyjne — 33 PLN | Krzesło obrotowe — 50 PLN | Krzesło — 30 PLN
+• Fotel — 70 PLN | Poduszka — 10 PLN
+• Sofa 2-osobowa — 139 PLN | Sofa 3-osobowa — 169 PLN
+• Sofa narożna — 179 PLN | Duża sofa narożna — 248 PLN
+• Dywan — 26 PLN/m²
+• Materac dwuosobowy — 179 PLN | Materac jednoosobowy — 139 PLN
+• Zagłówek łóżka — 90 PLN | Rama łóżka — 90 PLN
+• Materac 1-os. (2 strony) — 218 PLN | Materac 2-os. (2 strony) — 278 PLN
+
+📊 Inne usługi dla innych miast (dopłata 10%):
+• Kompleksowe czyszczenie auta — 550 PLN | VIP — 770 PLN
+• Ozonowanie 1-pok. — 159 PLN | 2-pok. — 264 PLN
+• Okno jednoskrzydłowe — 44 PLN | dwuskrzydłowe — 55 PLN
+
+⚠️ ZASADA: Dla innych miast ZAWSZE korzystaj z GOTOWEJ TABELI! NIE licz ręcznie!
+Formuła (jeśli pozycji nie ma w tabeli): PEŁNA_cena (bez promocji) × 1.1, zaokrąglij w górę.
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 160 PLN
 • Inne miejscowości (dalej niż 10 km) — 220 PLN
-Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
 
 ⚠️ OGRANICZENIA WG MIAST:
-• Usługi „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
-• W pozostałych miastach: czyszczenie mebli, materacy, dywanów, aut, ozonowanie, mycie okien, impregnacja
+• „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
+• Inne miasta: meble, materace, dywany, auto, ozonowanie, mycie okien, impregnacja
 
 🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
 • Rabat 10% — przy zamówieniu z 4+ różnych KATEGORII
-• Rabat 15% — przy zamówieniu z 6+ różnych KATEGORII (maksymalna oszczędność!)
+• Rabat 15% — przy zamówieniu z 6+ różnych KATEGORII
+⚠️ Przy 2-3 kategoriach rabatu NIE MA! Minimum 4 kategorie!
 
-KATEGORIE do rabatów: Sprzątanie (w tym usługi dodatkowe do sprzątania), Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Złota rączka.
-
-WAŻNE: Rabaty są naliczane na podstawie KATEGORII, nie poszczególnych pozycji!
-Sprzątanie i usługi dodatkowe do sprzątania (piekarnik, lodówka, prasowanie itp.) liczą się jako JEDNA kategoria!
-Kilka pozycji z jednej kategorii (3 krzesła z "Meble") = 1 kategoria.
-Jeśli klient zamawia meble + inną kategorię (Auto itp.), stosowany jest rabat za liczbę kategorii (10%/15%).
+KATEGORIE: Sprzątanie (w tym dodatki), Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Złota rączka.
+Kilka pozycji z jednej kategorii = 1 kategoria.
 Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
@@ -808,28 +850,42 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 
 💰 ЦІНИ ЗА МІСТАМИ:
 • Вроцлав і Смолець — базові ціни (як у прайсі вище, включаючи акцію -10% на меблі та матраци)
-• Усі інші міста — ціни БЕЗ акції -10% на меблі/матраци + надбавка 10% за виїзд (округлення вгору)
-Приклад: диван 2-місний у Вроцлаві — 113 PLN (акція), в інших містах — 139 PLN (без акції + надбавка)
+• Усі інші міста (Opole, Legnica, Lubin тощо) — використовуй ГОТОВУ ТАБЛИЦЮ нижче, НЕ рахуй сам!
+
+📊 ГОТОВІ ЦІНИ ДЛЯ ІНШИХ МІСТ (меблі та матраци, вже з надбавкою 10%, БЕЗ акції -10%):
+• Пуф — 40 PLN | Стілець (сидіння) — 16 PLN | Стілець зі спинкою — 30 PLN
+• Стілець конференційний — 33 PLN | Стілець обертовий — 50 PLN | Стілець — 30 PLN
+• Крісло — 70 PLN | Подушка — 10 PLN
+• Диван двомісний — 139 PLN | Диван тримісний — 169 PLN
+• Диван кутовий — 179 PLN | Великий кутовий диван — 248 PLN
+• Килимове покриття — 26 PLN/м²
+• Матрац двоспальний — 179 PLN | Матрац односпальний — 139 PLN
+• Узголів'я ліжка — 90 PLN | Каркас ліжка — 90 PLN
+• Матрац 1-спальний (2 стор.) — 218 PLN | Матрац 2-спальний (2 стор.) — 278 PLN
+
+📊 Інші послуги для інших міст (надбавка 10%):
+• Комплексна хімчистка авто — 550 PLN | VIP — 770 PLN
+• Озонування 1-кімн. — 159 PLN | 2-кімн. — 264 PLN
+• Вікно одностулкове — 44 PLN | двостулкове — 55 PLN
+
+⚠️ ПРАВИЛО: Для інших міст ЗАВЖДИ бери ціну з ГОТОВОЇ ТАБЛИЦІ! НЕ рахуй вручну!
+Формула (якщо позиції немає в таблиці): ПОВНА_ціна (без акції) × 1.1, округлити вгору.
 
 ⚠️ МІНІМАЛЬНЕ ЗАМОВЛЕННЯ:
 • Вроцлав і передмістя (до 10 км) — 160 PLN
 • Інші населені пункти (далі 10 км) — 220 PLN
-Мінімальне замовлення діє для ВСІХ категорій послуг.
 
 ⚠️ ОБМЕЖЕННЯ ЗА МІСТАМИ:
-• Послуги «Прибирання приміщень» та «Майстер на годину» доступні ТІЛЬКИ у Вроцлаві!
+• «Прибирання приміщень» та «Майстер на годину» доступні ТІЛЬКИ у Вроцлаві!
 • В інших містах: хімчистка меблів, матраців, килимів, авто, озонування, миття вікон, імпрегнація
 
 🎁 СИСТЕМА ЗНИЖОК (АВТОМАТИЧНО):
 • 10% знижка — при замовленні з 4+ різних КАТЕГОРІЙ
-• 15% знижка — при замовленні з 6+ різних КАТЕГОРІЙ (максимальна економія!)
+• 15% знижка — при замовленні з 6+ різних КАТЕГОРІЙ
+⚠️ При 2-3 категоріях знижки НЕМАЄ! Мінімум 4 категорії!
 
-КАТЕГОРІЇ для знижок: Прибирання (включаючи додаткові послуги до прибирання), Меблі, Шкіряні меблі, Авто, Матраци, Озонування, Миття вікон, Майстер на годину.
-
-ВАЖЛИВО: Знижки рахуються за КАТЕГОРІЯМИ, а не за окремими позиціями!
-Прибирання і додаткові послуги до прибирання (духовка, холодильник, прасування тощо) вважаються ОДНІЄЮ категорією!
-Кілька позицій з однієї категорії (3 стільці з "Меблі") = 1 категорія.
-Якщо клієнт замовляє меблі + іншу категорію (Авто тощо), застосовується знижка за кількістю категорій (10%/15%).
+КАТЕГОРІЇ: Прибирання (вкл. додаткові), Меблі, Шкіряні меблі, Авто, Матраци, Озонування, Миття вікон, Майстер на годину.
+Кілька позицій з однієї категорії = 1 категорія.
 Приклад: меблі + авто + матрац + озонування = 4 категорії = 10% знижка`
 };
 
