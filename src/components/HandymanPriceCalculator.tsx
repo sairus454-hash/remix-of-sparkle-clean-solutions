@@ -123,8 +123,8 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
           { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 1, icon: Leaf, unit: 'm²' },
           { id: 'lawnMowingHard', name: t.handyman.calcItems.lawnMowingHard, price: 1.3, icon: Leaf, unit: 'm²' },
           { id: 'grassCleanup', name: t.handyman.calcItems.grassCleanup, price: 1, icon: Leaf, unit: 'm²' },
-          { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 110, icon: Leaf },
-          { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 110, icon: Leaf },
+          { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 100, icon: Leaf },
+          { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 100, icon: Leaf },
         ],
       },
     ];

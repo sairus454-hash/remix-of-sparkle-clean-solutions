@@ -181,8 +181,8 @@ const PRICE_LIST = {
 • Покос травы — 1.00 - 1.20 PLN/м²
 • Покос травы (сложный рельеф) — 1.30 - 1.50 PLN/м²
 • Уборка и вывоз травы — 1.00 - 1.50 PLN/м²
-• Обрезка деревьев — 110 PLN/час
-• Помощь на участке — 110 PLN/час
+• Обрезка деревьев — 100 PLN/час
+• Помощь на участке — 100 PLN/час
 
 📍 ЗОНА ОБСЛУЖИВАНИЯ: Работаем в радиусе 150 км от Вроцлава!
 Обслуживаемые города: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
@@ -401,8 +401,8 @@ Benefits:
 • Lawn mowing — 1.00 - 1.20 PLN/m²
 • Lawn mowing (difficult terrain) — 1.30 - 1.50 PLN/m²
 • Grass cleanup and removal — 1.00 - 1.50 PLN/m²
-• Tree trimming — 110 PLN/hour
-• Yard help — 110 PLN/hour
+• Tree trimming — 100 PLN/hour
+• Yard help — 100 PLN/hour
 
 📍 SERVICE AREA: We work within 150 km radius from Wrocław!
 Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
@@ -622,8 +622,8 @@ Korzyści:
 • Koszenie trawy — 1.00 - 1.20 PLN/m²
 • Koszenie trawy (trudny teren) — 1.30 - 1.50 PLN/m²
 • Sprzątanie i wywóz trawy — 1.00 - 1.50 PLN/m²
-• Przycinanie drzew — 110 PLN/godz.
-• Pomoc na działce — 110 PLN/godz.
+• Przycinanie drzew — 100 PLN/godz.
+• Pomoc na działce — 100 PLN/godz.
 
 📍 STREFA USŁUG: Pracujemy w promieniu 150 km od Wrocławia!
 Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
@@ -842,8 +842,8 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Косіння трави — 1.00 - 1.20 PLN/м²
 • Косіння трави (складний рельєф) — 1.30 - 1.50 PLN/м²
 • Прибирання та вивезення трави — 1.00 - 1.50 PLN/м²
-• Обрізка дерев — 110 PLN/год
-• Допомога на ділянці — 110 PLN/год
+• Обрізка дерев — 100 PLN/год
+• Допомога на ділянці — 100 PLN/год
 
 📍 ЗОНА ОБСЛУГОВУВАННЯ: Працюємо в радіусі 150 км від Вроцлава!
 Міста обслуговування: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
