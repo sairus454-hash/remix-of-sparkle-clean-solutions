@@ -52,9 +52,9 @@ const PRICE_LIST = {
 • Стул — 27 PLN
 • Кресло — 57 PLN (вместо 63)
 • Подушка — 8 PLN (вместо 9)
-• Диван двухместный — 113 PLN (вместо 126)
-• Диван трёхместный — 138 PLN (вместо 153)
-• Диван угловой — 146 PLN (вместо 162)
+• Диван двухместный — 121 PLN (вместо 135)
+• Диван трёхместный — 148 PLN (вместо 164)
+• Диван угловой — 156 PLN (вместо 173)
 • Большой угловой диван — 203 PLN (вместо 225)
 • Ковровое покрытие — 21 PLN/м² (вместо 23)
 • Мебель из флока — +50% к обычной цене
@@ -204,8 +204,8 @@ const PRICE_LIST = {
 • Пуф — 40 PLN | Стул (сиденье) — 16 PLN | Стул с спинкой — 30 PLN
 • Стул конференционный — 33 PLN | Стул вращающийся — 50 PLN | Стул — 30 PLN
 • Кресло — 70 PLN | Подушка — 10 PLN
-• Диван двухместный — 139 PLN | Диван трёхместный — 169 PLN
-• Диван угловой — 179 PLN | Большой угловой диван — 248 PLN
+• Диван двухместный — 149 PLN | Диван трёхместный — 180 PLN
+• Диван угловой — 190 PLN | Большой угловой диван — 248 PLN
 • Ковровое покрытие — 26 PLN/м²
 • Матрас двухспальный — 179 PLN | Матрас односпальный — 139 PLN
 • Изголовье кровати — 90 PLN | Каркас кровати — 90 PLN
@@ -286,9 +286,9 @@ Deep cleaning:
 • Chair — 27 PLN
 • Armchair — 57 PLN (was 63)
 • Pillow — 8 PLN (was 9)
-• 2-seater sofa — 113 PLN (was 126)
-• 3-seater sofa — 138 PLN (was 153)
-• Corner sofa — 146 PLN (was 162)
+• 2-seater sofa — 121 PLN (was 135)
+• 3-seater sofa — 148 PLN (was 164)
+• Corner sofa — 156 PLN (was 173)
 • Large corner sofa — 203 PLN (was 225)
 • Carpet — 21 PLN/m² (was 23)
 • Flock furniture — +50% to regular price
@@ -438,8 +438,8 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 • Ottoman — 40 PLN | Chair (seat) — 16 PLN | Chair with backrest — 30 PLN
 • Conference chair — 33 PLN | Swivel chair — 50 PLN | Chair — 30 PLN
 • Armchair — 70 PLN | Pillow — 10 PLN
-• 2-seater sofa — 139 PLN | 3-seater sofa — 169 PLN
-• Corner sofa — 179 PLN | Large corner sofa — 248 PLN
+• 2-seater sofa — 149 PLN | 3-seater sofa — 180 PLN
+• Corner sofa — 190 PLN | Large corner sofa — 248 PLN
 • Carpet — 26 PLN/m²
 • Double mattress — 179 PLN | Single mattress — 139 PLN
 • Bed headboard — 90 PLN | Bed frame — 90 PLN
@@ -521,9 +521,9 @@ Sprzątanie generalne:
 • Krzesło — 27 PLN
 • Fotel — 57 PLN (zamiast 63)
 • Poduszka — 8 PLN (zamiast 9)
-• Sofa 2-osobowa — 113 PLN (zamiast 126)
-• Sofa 3-osobowa — 138 PLN (zamiast 153)
-• Sofa narożna — 146 PLN (zamiast 162)
+• Sofa 2-osobowa — 121 PLN (zamiast 135)
+• Sofa 3-osobowa — 148 PLN (zamiast 164)
+• Sofa narożna — 156 PLN (zamiast 173)
 • Duża sofa narożna — 203 PLN (zamiast 225)
 • Dywan — 21 PLN/m² (zamiast 23)
 • Meble z floku — +50% do ceny zwykłej
@@ -674,8 +674,8 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 • Pufa — 40 PLN | Krzesło (siedzenie) — 16 PLN | Krzesło z oparciem — 30 PLN
 • Krzesło konferencyjne — 33 PLN | Krzesło obrotowe — 50 PLN | Krzesło — 30 PLN
 • Fotel — 70 PLN | Poduszka — 10 PLN
-• Sofa 2-osobowa — 139 PLN | Sofa 3-osobowa — 169 PLN
-• Sofa narożna — 179 PLN | Duża sofa narożna — 248 PLN
+• Sofa 2-osobowa — 149 PLN | Sofa 3-osobowa — 180 PLN
+• Sofa narożna — 190 PLN | Duża sofa narożna — 248 PLN
 • Dywan — 26 PLN/m²
 • Materac dwuosobowy — 179 PLN | Materac jednoosobowy — 139 PLN
 • Zagłówek łóżka — 90 PLN | Rama łóżka — 90 PLN
@@ -757,9 +757,9 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Стілець — 27 PLN
 • Крісло — 57 PLN (замість 63)
 • Подушка — 8 PLN (замість 9)
-• Диван двомісний — 113 PLN (замість 126)
-• Диван тримісний — 138 PLN (замість 153)
-• Диван кутовий — 146 PLN (замість 162)
+• Диван двомісний — 121 PLN (замість 135)
+• Диван тримісний — 148 PLN (замість 164)
+• Диван кутовий — 156 PLN (замість 173)
 • Великий кутовий диван — 203 PLN (замість 225)
 • Килимове покриття — 21 PLN/м² (замість 23)
 • Меблі з флоку — +50% до звичайної ціни
@@ -909,8 +909,8 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Пуф — 40 PLN | Стілець (сидіння) — 16 PLN | Стілець зі спинкою — 30 PLN
 • Стілець конференційний — 33 PLN | Стілець обертовий — 50 PLN | Стілець — 30 PLN
 • Крісло — 70 PLN | Подушка — 10 PLN
-• Диван двомісний — 139 PLN | Диван тримісний — 169 PLN
-• Диван кутовий — 179 PLN | Великий кутовий диван — 248 PLN
+• Диван двомісний — 149 PLN | Диван тримісний — 180 PLN
+• Диван кутовий — 190 PLN | Великий кутовий диван — 248 PLN
 • Килимове покриття — 26 PLN/м²
 • Матрац двоспальний — 179 PLN | Матрац односпальний — 139 PLN
 • Узголів'я ліжка — 90 PLN | Каркас ліжка — 90 PLN
