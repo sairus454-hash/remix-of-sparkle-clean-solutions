@@ -65,7 +65,7 @@ const CityPage = () => {
   const isMobile = useIsMobile();
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   const city = getCityBySlug(slug || '');
