@@ -409,28 +409,42 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 
 💰 PRICING BY CITY:
 • Wrocław and Smolec — base prices (as listed above, including -10% promo on furniture and mattresses)
-• All other cities — prices WITHOUT the -10% furniture/mattress promo + 10% city surcharge (rounded up)
-Example: 2-seater sofa in Wrocław — 113 PLN (promo), in other cities — 139 PLN (no promo + surcharge)
+• All other cities (Opole, Legnica, Lubin, etc.) — use the READY TABLE below, do NOT calculate manually!
+
+📊 READY PRICES FOR OTHER CITIES (furniture & mattresses, already with +10% surcharge, NO -10% promo):
+• Ottoman — 40 PLN | Chair (seat) — 16 PLN | Chair with backrest — 30 PLN
+• Conference chair — 33 PLN | Swivel chair — 50 PLN | Chair — 30 PLN
+• Armchair — 70 PLN | Pillow — 10 PLN
+• 2-seater sofa — 139 PLN | 3-seater sofa — 169 PLN
+• Corner sofa — 179 PLN | Large corner sofa — 248 PLN
+• Carpet — 26 PLN/m²
+• Double mattress — 179 PLN | Single mattress — 139 PLN
+• Bed headboard — 90 PLN | Bed frame — 90 PLN
+• Single mattress (2 sides) — 218 PLN | Double mattress (2 sides) — 278 PLN
+
+📊 Other services for other cities (+10% surcharge):
+• Full car cleaning — 550 PLN | VIP — 770 PLN
+• Ozonation 1-room — 159 PLN | 2-room — 264 PLN
+• Single-sash window — 44 PLN | Double-sash — 55 PLN
+
+⚠️ RULE: For other cities ALWAYS use the READY TABLE! Do NOT calculate manually!
+Formula (if item not in table): FULL_price (no promo) × 1.1, round up.
 
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 160 PLN
 • Other locations (beyond 10 km) — 220 PLN
-Minimum order applies to ALL service categories.
 
 ⚠️ CITY RESTRICTIONS:
-• "Premises cleaning" and "Handyman" services are available ONLY in Wrocław!
+• "Premises cleaning" and "Handyman" available ONLY in Wrocław!
 • Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
 🎁 DISCOUNT SYSTEM (AUTOMATIC):
 • 10% discount — when ordering from 4+ different CATEGORIES
-• 15% discount — when ordering from 6+ different CATEGORIES (maximum savings!)
+• 15% discount — when ordering from 6+ different CATEGORIES
+⚠️ With 2-3 categories there is NO discount! Minimum 4 categories required!
 
-CATEGORIES for discounts: Cleaning (including cleaning add-ons), Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Handyman.
-
-IMPORTANT: Discounts are based on CATEGORIES, not individual items!
-Cleaning and cleaning add-ons (oven, fridge, ironing, etc.) count as ONE category!
-Multiple items from one category (3 chairs from "Furniture") = 1 category.
-If client orders furniture + another category (Auto etc.), the category-based discount applies (10%/15%).
+CATEGORIES: Cleaning (incl. add-ons), Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Handyman.
+Multiple items from one category = 1 category.
 Example: furniture + auto + mattress + ozonation = 4 categories = 10% discount`,
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
