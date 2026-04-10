@@ -59,7 +59,16 @@ const PRICE_LIST = {
 • Ковровое покрытие — 21 PLN/м² (вместо 23)
 • Мебель из флока — +50% к обычной цене
 
-🚗 ХИМЧИСТКА АВТО (приезжаем к вам на адрес):
+🛋 КОЖАНАЯ МЕБЕЛЬ (🔥 АКЦИЯ НЕДЕЛИ: -10%!):
+• Пуф (кожа) — 41 PLN (вместо 45)
+• Стул (кожа) — 41 PLN (вместо 45)
+• Подушка (кожа) — 16 PLN (вместо 18)
+• Кресло (кожа) — 73 PLN (вместо 81)
+• Стул вращающийся (кожа) — 62 PLN (вместо 69)
+• Диван двухместный (кожа) — 146 PLN (вместо 162)
+• Диван трёхместный (кожа) — 178 PLN (вместо 198)
+• Диван угловой (кожа) — 219 PLN (вместо 243)
+
 • Чистка 1 сидения — 80 PLN
 • Химчистка сидений (спереди и сзади) — 300 PLN
 • Чистка сидений из кожи — 350 PLN
@@ -279,6 +288,16 @@ Deep cleaning:
 • Large corner sofa — 203 PLN (was 225)
 • Carpet — 21 PLN/m² (was 23)
 • Flock furniture — +50% to regular price
+
+🛋 LEATHER FURNITURE (🔥 WEEKLY DEAL: -10%!):
+• Ottoman (leather) — 41 PLN (was 45)
+• Chair (leather) — 41 PLN (was 45)
+• Pillow (leather) — 16 PLN (was 18)
+• Armchair (leather) — 73 PLN (was 81)
+• Swivel chair (leather) — 62 PLN (was 69)
+• 2-seater sofa (leather) — 146 PLN (was 162)
+• 3-seater sofa (leather) — 178 PLN (was 198)
+• Corner sofa (leather) — 219 PLN (was 243)
 
 🚗 CAR CLEANING:
 • Single seat cleaning — 80 PLN
@@ -500,6 +519,16 @@ Sprzątanie generalne:
 • Dywan — 21 PLN/m² (zamiast 23)
 • Meble z floku — +50% do ceny zwykłej
 
+🛋 MEBLE SKÓRZANE (🔥 PROMOCJA TYGODNIA: -10%!):
+• Pufa (skóra) — 41 PLN (zamiast 45)
+• Krzesło (skóra) — 41 PLN (zamiast 45)
+• Poduszka (skóra) — 16 PLN (zamiast 18)
+• Fotel (skóra) — 73 PLN (zamiast 81)
+• Krzesło obrotowe (skóra) — 62 PLN (zamiast 69)
+• Sofa 2-osobowa (skóra) — 146 PLN (zamiast 162)
+• Sofa 3-osobowa (skóra) — 178 PLN (zamiast 198)
+• Sofa narożna (skóra) — 219 PLN (zamiast 243)
+
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie 1 siedzenia — 80 PLN
 • Czyszczenie siedzeń (przód i tył) — 300 PLN
@@ -720,6 +749,16 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Великий кутовий диван — 203 PLN (замість 225)
 • Килимове покриття — 21 PLN/м² (замість 23)
 • Меблі з флоку — +50% до звичайної ціни
+
+🛋 ШКІРЯНІ МЕБЛІ (🔥 АКЦІЯ ТИЖНЯ: -10%!):
+• Пуф (шкіра) — 41 PLN (замість 45)
+• Стілець (шкіра) — 41 PLN (замість 45)
+• Подушка (шкіра) — 16 PLN (замість 18)
+• Крісло (шкіра) — 73 PLN (замість 81)
+• Стілець обертовий (шкіра) — 62 PLN (замість 69)
+• Диван двомісний (шкіра) — 146 PLN (замість 162)
+• Диван тримісний (шкіра) — 178 PLN (замість 198)
+• Диван кутовий (шкіра) — 219 PLN (замість 243)
 
 🚗 ХІМЧИСТКА АВТО:
 • Чистка 1 сидіння — 80 PLN
