@@ -59,7 +59,16 @@ const PRICE_LIST = {
 • Ковровое покрытие — 21 PLN/м² (вместо 23)
 • Мебель из флока — +50% к обычной цене
 
-🚗 ХИМЧИСТКА АВТО (приезжаем к вам на адрес):
+🛋 КОЖАНАЯ МЕБЕЛЬ (🔥 АКЦИЯ НЕДЕЛИ: -10%!):
+• Пуф (кожа) — 41 PLN (вместо 45)
+• Стул (кожа) — 41 PLN (вместо 45)
+• Подушка (кожа) — 16 PLN (вместо 18)
+• Кресло (кожа) — 73 PLN (вместо 81)
+• Стул вращающийся (кожа) — 62 PLN (вместо 69)
+• Диван двухместный (кожа) — 146 PLN (вместо 162)
+• Диван трёхместный (кожа) — 178 PLN (вместо 198)
+• Диван угловой (кожа) — 219 PLN (вместо 243)
+
 • Чистка 1 сидения — 80 PLN
 • Химчистка сидений (спереди и сзади) — 300 PLN
 • Чистка сидений из кожи — 350 PLN
@@ -202,7 +211,11 @@ const PRICE_LIST = {
 • Изголовье кровати — 90 PLN | Каркас кровати — 90 PLN
 • Матрас 1-спальный (2 стор.) — 218 PLN | Матрас 2-спальный (2 стор.) — 278 PLN
 
-📊 Прочие услуги для других городов (наценка 10%):
+📊 Кожаная мебель для других городов (наценка 10%, БЕЗ акции):
+• Пуф (кожа) — 50 PLN | Стул (кожа) — 50 PLN | Подушка (кожа) — 20 PLN
+• Кресло (кожа) — 90 PLN | Стул вращающийся (кожа) — 76 PLN
+• Диван 2-мест. (кожа) — 179 PLN | 3-мест. (кожа) — 218 PLN | Угловой (кожа) — 268 PLN
+
 • Комплексная химчистка авто — 550 PLN | VIP — 770 PLN
 • Озонирование 1-комн. — 159 PLN | 2-комн. — 264 PLN
 • Окно одностворч. — 44 PLN | двустворч. — 55 PLN
@@ -279,6 +292,16 @@ Deep cleaning:
 • Large corner sofa — 203 PLN (was 225)
 • Carpet — 21 PLN/m² (was 23)
 • Flock furniture — +50% to regular price
+
+🛋 LEATHER FURNITURE (🔥 WEEKLY DEAL: -10%!):
+• Ottoman (leather) — 41 PLN (was 45)
+• Chair (leather) — 41 PLN (was 45)
+• Pillow (leather) — 16 PLN (was 18)
+• Armchair (leather) — 73 PLN (was 81)
+• Swivel chair (leather) — 62 PLN (was 69)
+• 2-seater sofa (leather) — 146 PLN (was 162)
+• 3-seater sofa (leather) — 178 PLN (was 198)
+• Corner sofa (leather) — 219 PLN (was 243)
 
 🚗 CAR CLEANING:
 • Single seat cleaning — 80 PLN
@@ -422,6 +445,11 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 • Bed headboard — 90 PLN | Bed frame — 90 PLN
 • Single mattress (2 sides) — 218 PLN | Double mattress (2 sides) — 278 PLN
 
+📊 Leather furniture for other cities (+10%, NO promo):
+• Ottoman (leather) — 50 PLN | Chair (leather) — 50 PLN | Pillow (leather) — 20 PLN
+• Armchair (leather) — 90 PLN | Swivel chair (leather) — 76 PLN
+• 2-seater sofa (leather) — 179 PLN | 3-seater (leather) — 218 PLN | Corner (leather) — 268 PLN
+
 📊 Other services for other cities (+10% surcharge):
 • Full car cleaning — 550 PLN | VIP — 770 PLN
 • Ozonation 1-room — 159 PLN | 2-room — 264 PLN
@@ -499,6 +527,16 @@ Sprzątanie generalne:
 • Duża sofa narożna — 203 PLN (zamiast 225)
 • Dywan — 21 PLN/m² (zamiast 23)
 • Meble z floku — +50% do ceny zwykłej
+
+🛋 MEBLE SKÓRZANE (🔥 PROMOCJA TYGODNIA: -10%!):
+• Pufa (skóra) — 41 PLN (zamiast 45)
+• Krzesło (skóra) — 41 PLN (zamiast 45)
+• Poduszka (skóra) — 16 PLN (zamiast 18)
+• Fotel (skóra) — 73 PLN (zamiast 81)
+• Krzesło obrotowe (skóra) — 62 PLN (zamiast 69)
+• Sofa 2-osobowa (skóra) — 146 PLN (zamiast 162)
+• Sofa 3-osobowa (skóra) — 178 PLN (zamiast 198)
+• Sofa narożna (skóra) — 219 PLN (zamiast 243)
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie 1 siedzenia — 80 PLN
@@ -643,6 +681,11 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 • Zagłówek łóżka — 90 PLN | Rama łóżka — 90 PLN
 • Materac 1-os. (2 strony) — 218 PLN | Materac 2-os. (2 strony) — 278 PLN
 
+📊 Meble skórzane dla innych miast (dopłata 10%, BEZ promocji):
+• Pufa (skóra) — 50 PLN | Krzesło (skóra) — 50 PLN | Poduszka (skóra) — 20 PLN
+• Fotel (skóra) — 90 PLN | Krzesło obrotowe (skóra) — 76 PLN
+• Sofa 2-os. (skóra) — 179 PLN | 3-os. (skóra) — 218 PLN | Narożna (skóra) — 268 PLN
+
 📊 Inne usługi dla innych miast (dopłata 10%):
 • Kompleksowe czyszczenie auta — 550 PLN | VIP — 770 PLN
 • Ozonowanie 1-pok. — 159 PLN | 2-pok. — 264 PLN
@@ -720,6 +763,16 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Великий кутовий диван — 203 PLN (замість 225)
 • Килимове покриття — 21 PLN/м² (замість 23)
 • Меблі з флоку — +50% до звичайної ціни
+
+🛋 ШКІРЯНІ МЕБЛІ (🔥 АКЦІЯ ТИЖНЯ: -10%!):
+• Пуф (шкіра) — 41 PLN (замість 45)
+• Стілець (шкіра) — 41 PLN (замість 45)
+• Подушка (шкіра) — 16 PLN (замість 18)
+• Крісло (шкіра) — 73 PLN (замість 81)
+• Стілець обертовий (шкіра) — 62 PLN (замість 69)
+• Диван двомісний (шкіра) — 146 PLN (замість 162)
+• Диван тримісний (шкіра) — 178 PLN (замість 198)
+• Диван кутовий (шкіра) — 219 PLN (замість 243)
 
 🚗 ХІМЧИСТКА АВТО:
 • Чистка 1 сидіння — 80 PLN
@@ -862,6 +915,11 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Матрац двоспальний — 179 PLN | Матрац односпальний — 139 PLN
 • Узголів'я ліжка — 90 PLN | Каркас ліжка — 90 PLN
 • Матрац 1-спальний (2 стор.) — 218 PLN | Матрац 2-спальний (2 стор.) — 278 PLN
+
+📊 Шкіряні меблі для інших міст (надбавка 10%, БЕЗ акції):
+• Пуф (шкіра) — 50 PLN | Стілець (шкіра) — 50 PLN | Подушка (шкіра) — 20 PLN
+• Крісло (шкіра) — 90 PLN | Стілець обертовий (шкіра) — 76 PLN
+• Диван 2-місний (шкіра) — 179 PLN | 3-місний (шкіра) — 218 PLN | Кутовий (шкіра) — 268 PLN
 
 📊 Інші послуги для інших міст (надбавка 10%):
 • Комплексна хімчистка авто — 550 PLN | VIP — 770 PLN
