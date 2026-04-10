@@ -630,28 +630,42 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 
 💰 CENY WG MIAST:
 • Wrocław i Smolec — ceny bazowe (jak w cenniku powyżej, w tym promocja -10% na meble i materace)
-• Wszystkie inne miasta — ceny BEZ promocji -10% na meble/materace + dopłata 10% za dojazd (zaokrąglone w górę)
-Przykład: sofa 2-osobowa we Wrocławiu — 113 PLN (promocja), w innych miastach — 139 PLN (bez promocji + dopłata)
+• Wszystkie inne miasta (Opole, Legnica, Lubin itp.) — użyj GOTOWEJ TABELI poniżej, NIE licz sam!
+
+📊 GOTOWE CENY DLA INNYCH MIAST (meble i materace, już z dopłatą 10%, BEZ promocji -10%):
+• Pufa — 40 PLN | Krzesło (siedzenie) — 16 PLN | Krzesło z oparciem — 30 PLN
+• Krzesło konferencyjne — 33 PLN | Krzesło obrotowe — 50 PLN | Krzesło — 30 PLN
+• Fotel — 70 PLN | Poduszka — 10 PLN
+• Sofa 2-osobowa — 139 PLN | Sofa 3-osobowa — 169 PLN
+• Sofa narożna — 179 PLN | Duża sofa narożna — 248 PLN
+• Dywan — 26 PLN/m²
+• Materac dwuosobowy — 179 PLN | Materac jednoosobowy — 139 PLN
+• Zagłówek łóżka — 90 PLN | Rama łóżka — 90 PLN
+• Materac 1-os. (2 strony) — 218 PLN | Materac 2-os. (2 strony) — 278 PLN
+
+📊 Inne usługi dla innych miast (dopłata 10%):
+• Kompleksowe czyszczenie auta — 550 PLN | VIP — 770 PLN
+• Ozonowanie 1-pok. — 159 PLN | 2-pok. — 264 PLN
+• Okno jednoskrzydłowe — 44 PLN | dwuskrzydłowe — 55 PLN
+
+⚠️ ZASADA: Dla innych miast ZAWSZE korzystaj z GOTOWEJ TABELI! NIE licz ręcznie!
+Formuła (jeśli pozycji nie ma w tabeli): PEŁNA_cena (bez promocji) × 1.1, zaokrąglij w górę.
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 160 PLN
 • Inne miejscowości (dalej niż 10 km) — 220 PLN
-Minimalne zamówienie dotyczy WSZYSTKICH kategorii usług.
 
 ⚠️ OGRANICZENIA WG MIAST:
-• Usługi „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
-• W pozostałych miastach: czyszczenie mebli, materacy, dywanów, aut, ozonowanie, mycie okien, impregnacja
+• „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
+• Inne miasta: meble, materace, dywany, auto, ozonowanie, mycie okien, impregnacja
 
 🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
 • Rabat 10% — przy zamówieniu z 4+ różnych KATEGORII
-• Rabat 15% — przy zamówieniu z 6+ różnych KATEGORII (maksymalna oszczędność!)
+• Rabat 15% — przy zamówieniu z 6+ różnych KATEGORII
+⚠️ Przy 2-3 kategoriach rabatu NIE MA! Minimum 4 kategorie!
 
-KATEGORIE do rabatów: Sprzątanie (w tym usługi dodatkowe do sprzątania), Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Złota rączka.
-
-WAŻNE: Rabaty są naliczane na podstawie KATEGORII, nie poszczególnych pozycji!
-Sprzątanie i usługi dodatkowe do sprzątania (piekarnik, lodówka, prasowanie itp.) liczą się jako JEDNA kategoria!
-Kilka pozycji z jednej kategorii (3 krzesła z "Meble") = 1 kategoria.
-Jeśli klient zamawia meble + inną kategorię (Auto itp.), stosowany jest rabat za liczbę kategorii (10%/15%).
+KATEGORIE: Sprzątanie (w tym dodatki), Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Złota rączka.
+Kilka pozycji z jednej kategorii = 1 kategoria.
 Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
