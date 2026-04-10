@@ -1021,7 +1021,7 @@ ${PRICE_LIST.ru}
 Что нужно?"
 
 ✅ Цена:
-"🛋 Диван трёхместный — 170 PLN
+"🛋 Диван трёхместный — 182 PLN
 
 Безопасно для детей и животных 🐶
 
@@ -1166,7 +1166,7 @@ I'll help with cleaning services.
 What do you need?"
 
 ✅ Price:
-"🛋 3-seater sofa — 170 PLN
+"🛋 3-seater sofa — 182 PLN
 
 Safe for kids and pets 🐶
 
@@ -1283,7 +1283,7 @@ Pomogę z usługami sprzątania.
 Czego potrzebujesz?"
 
 ✅ Cena:
-"Sofa 3-osobowa — 170 PLN
+"Sofa 3-osobowa — 182 PLN
 
 Bezpieczne dla dzieci i zwierząt 🐶
 
