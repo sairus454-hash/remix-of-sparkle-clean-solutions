@@ -228,8 +228,8 @@ const Prices = () => {
         { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 1, image: img('handyman/lawn-mowing.jpg'), unit: 'm²', priceText: '1.00 - 1.20 zł' },
         { id: 'lawnMowingHard', name: t.handyman?.calcItems?.lawnMowingHard || 'Покос травы (сложный рельеф)', price: 1.3, image: img('handyman/lawn-mowing-hard.jpg'), unit: 'm²', priceText: '1.30 - 1.50 zł' },
         { id: 'grassCleanup', name: t.handyman?.calcItems?.grassCleanup || 'Уборка и вывоз травы', price: 1, image: img('handyman/grass-cleanup.jpg'), unit: 'm²', priceText: '1.00 - 1.50 zł' },
-        { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 110, image: img('handyman/tree-trimming.jpg') },
-        { id: 'yardHelp', name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 110, image: img('handyman/yard-help.jpg') },
+        { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 100, image: img('handyman/tree-trimming.jpg') },
+        { id: 'yardHelp', name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 100, image: img('handyman/yard-help.jpg') },
       ],
     },
   ];
