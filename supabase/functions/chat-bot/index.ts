@@ -211,7 +211,11 @@ const PRICE_LIST = {
 • Изголовье кровати — 90 PLN | Каркас кровати — 90 PLN
 • Матрас 1-спальный (2 стор.) — 218 PLN | Матрас 2-спальный (2 стор.) — 278 PLN
 
-📊 Прочие услуги для других городов (наценка 10%):
+📊 Кожаная мебель для других городов (наценка 10%, БЕЗ акции):
+• Пуф (кожа) — 50 PLN | Стул (кожа) — 50 PLN | Подушка (кожа) — 20 PLN
+• Кресло (кожа) — 90 PLN | Стул вращающийся (кожа) — 76 PLN
+• Диван 2-мест. (кожа) — 179 PLN | 3-мест. (кожа) — 218 PLN | Угловой (кожа) — 268 PLN
+
 • Комплексная химчистка авто — 550 PLN | VIP — 770 PLN
 • Озонирование 1-комн. — 159 PLN | 2-комн. — 264 PLN
 • Окно одностворч. — 44 PLN | двустворч. — 55 PLN
@@ -440,6 +444,11 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 • Double mattress — 179 PLN | Single mattress — 139 PLN
 • Bed headboard — 90 PLN | Bed frame — 90 PLN
 • Single mattress (2 sides) — 218 PLN | Double mattress (2 sides) — 278 PLN
+
+📊 Leather furniture for other cities (+10%, NO promo):
+• Ottoman (leather) — 50 PLN | Chair (leather) — 50 PLN | Pillow (leather) — 20 PLN
+• Armchair (leather) — 90 PLN | Swivel chair (leather) — 76 PLN
+• 2-seater sofa (leather) — 179 PLN | 3-seater (leather) — 218 PLN | Corner (leather) — 268 PLN
 
 📊 Other services for other cities (+10% surcharge):
 • Full car cleaning — 550 PLN | VIP — 770 PLN
@@ -672,6 +681,11 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 • Zagłówek łóżka — 90 PLN | Rama łóżka — 90 PLN
 • Materac 1-os. (2 strony) — 218 PLN | Materac 2-os. (2 strony) — 278 PLN
 
+📊 Meble skórzane dla innych miast (dopłata 10%, BEZ promocji):
+• Pufa (skóra) — 50 PLN | Krzesło (skóra) — 50 PLN | Poduszka (skóra) — 20 PLN
+• Fotel (skóra) — 90 PLN | Krzesło obrotowe (skóra) — 76 PLN
+• Sofa 2-os. (skóra) — 179 PLN | 3-os. (skóra) — 218 PLN | Narożna (skóra) — 268 PLN
+
 📊 Inne usługi dla innych miast (dopłata 10%):
 • Kompleksowe czyszczenie auta — 550 PLN | VIP — 770 PLN
 • Ozonowanie 1-pok. — 159 PLN | 2-pok. — 264 PLN
@@ -901,6 +915,11 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Матрац двоспальний — 179 PLN | Матрац односпальний — 139 PLN
 • Узголів'я ліжка — 90 PLN | Каркас ліжка — 90 PLN
 • Матрац 1-спальний (2 стор.) — 218 PLN | Матрац 2-спальний (2 стор.) — 278 PLN
+
+📊 Шкіряні меблі для інших міст (надбавка 10%, БЕЗ акції):
+• Пуф (шкіра) — 50 PLN | Стілець (шкіра) — 50 PLN | Подушка (шкіра) — 20 PLN
+• Крісло (шкіра) — 90 PLN | Стілець обертовий (шкіра) — 76 PLN
+• Диван 2-місний (шкіра) — 179 PLN | 3-місний (шкіра) — 218 PLN | Кутовий (шкіра) — 268 PLN
 
 📊 Інші послуги для інших міст (надбавка 10%):
 • Комплексна хімчистка авто — 550 PLN | VIP — 770 PLN
