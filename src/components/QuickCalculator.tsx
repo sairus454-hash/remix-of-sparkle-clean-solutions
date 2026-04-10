@@ -45,9 +45,9 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
 
   const furnitureOptions = [
     { id: 'armchair', name: t.prices.items.armchair, price: 70 },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 140 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 170 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200 },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 150 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 182 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 214 },
   ];
 
   const mattressOptions = [
