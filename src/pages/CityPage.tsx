@@ -552,7 +552,12 @@ const CityPage = () => {
                     className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card"
                   >
                     <button
-                      onClick={() => setOpenCategory(openCategory === cat.id ? null : cat.id)}
+                      onClick={() => setClosedCategories(prev => {
+                        const next = new Set(prev);
+                        if (next.has(cat.id)) next.delete(cat.id);
+                        else next.add(cat.id);
+                        return next;
+                      })}
                       className="flex items-center gap-4 w-full p-4 sm:p-5 cursor-pointer text-left transition-colors hover:bg-accent/30"
                     >
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0">
@@ -564,12 +569,12 @@ const CityPage = () => {
                         </h3>
                         <p className="text-muted-foreground text-xs sm:text-sm truncate">{cat.description}</p>
                       </div>
-                      <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${openCategory === cat.id ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 text-muted-foreground transition-transform duration-300 flex-shrink-0 ${!closedCategories.has(cat.id) ? 'rotate-180' : ''}`} />
                     </button>
                     <div
                       className="grid transition-all duration-500 ease-in-out"
                       style={{
-                        gridTemplateRows: openCategory === cat.id ? '1fr' : '0fr',
+                        gridTemplateRows: !closedCategories.has(cat.id) ? '1fr' : '0fr',
                       }}
                     >
                       <div className="overflow-hidden">
