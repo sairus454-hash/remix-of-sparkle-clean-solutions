@@ -125,6 +125,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 146 },
         { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 178 },
         { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 203 },
+        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 62 },
       ],
     },
     {

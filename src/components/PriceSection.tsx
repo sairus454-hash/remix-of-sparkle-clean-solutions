@@ -216,6 +216,7 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
         { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 146, originalPrice: 162, image: calcLeatherSofa2, promoBadge: '🔥 -10%' },
         { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 178, originalPrice: 198, image: calcLeatherSofa3, promoBadge: '🔥 -10%' },
         { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 219, originalPrice: 243, image: calcLeatherCorner, promoBadge: '🔥 -10%' },
+        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 62, originalPrice: 69, image: calcChairSwivel, promoBadge: '🔥 -10%' },
       ],
     },
     {

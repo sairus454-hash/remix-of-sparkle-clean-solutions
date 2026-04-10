@@ -112,6 +112,7 @@ const Prices = () => {
         { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 146, originalPrice: 162, image: img('calc-leather-sofa2.jpg'), promoBadge: '🔥 -10%' },
         { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 178, originalPrice: 198, image: img('calc-leather-sofa3.jpg'), promoBadge: '🔥 -10%' },
         { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 219, originalPrice: 243, image: img('calc-leather-corner.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 62, originalPrice: 69, image: img('calc-chair-swivel.jpg'), promoBadge: '🔥 -10%' },
       ],
     },
     {
