@@ -605,15 +605,15 @@ const Cleaning = () => {
                       { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 8, originalPrice: 9, image: calcPillow, promoBadge: '🔥 -10%' },
                       { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 121, originalPrice: 135, image: calcSofa2, promoBadge: '🔥 -10%' },
                       { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 148, originalPrice: 164, image: calcSofa3, promoBadge: '🔥 -10%' },
-                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 156, originalPrice: 173, image: calcSofaCorner, promoBadge: '🔥 -10%' },
+                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 178, originalPrice: 198, image: calcSofaCorner, promoBadge: '🔥 -10%' },
                       { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 203, originalPrice: 225, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
                       { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 21, originalPrice: 23, image: calcCarpet, unit: 'm²', promoBadge: '🔥 -10%' },
                       { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 73, originalPrice: 81, image: calcHeadboard, promoBadge: '🔥 -10%' },
                       { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 73, originalPrice: 81, image: calcBedframe, promoBadge: '🔥 -10%' },
                       { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 113, originalPrice: 126, image: calcMattressSingle, promoBadge: '🔥 -10%' },
                       { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 178, originalPrice: 198, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 146, originalPrice: 162, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 227, originalPrice: 252, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 175, originalPrice: 194, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 239, originalPrice: 266, image: calcMattressDouble, promoBadge: '🔥 -10%' },
                     ]}
                     onSendToForm={handleCardToForm}
                     onQuickOrder={handleQuickAdd}
