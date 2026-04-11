@@ -100,6 +100,14 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-6px)" },
         },
+        "wiggle": {
+          "0%, 100%": { transform: "rotate(0deg)" },
+          "15%": { transform: "rotate(-14deg)" },
+          "30%": { transform: "rotate(10deg)" },
+          "45%": { transform: "rotate(-8deg)" },
+          "60%": { transform: "rotate(4deg)" },
+          "75%": { transform: "rotate(0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
