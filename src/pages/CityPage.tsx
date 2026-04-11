@@ -112,7 +112,7 @@ const CityPage = () => {
         { id: 'pillow', name: t.prices.items.pillow, price: 8, originalPrice: 9, image: img('calc-pillow.jpg'), promoBadge: '🔥 -10%' },
         { id: 'sofa2', name: t.prices.items.sofa2, price: 121, originalPrice: 135, image: img('calc-sofa2.jpg'), promoBadge: '🔥 -10%' },
         { id: 'sofa3', name: t.prices.items.sofa3, price: 148, originalPrice: 164, image: img('calc-sofa3.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 156, originalPrice: 173, image: img('calc-sofa-corner.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 178, originalPrice: 198, image: img('calc-sofa-corner.jpg'), promoBadge: '🔥 -10%' },
         { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 203, originalPrice: 225, image: img('calc-sofa-corner-large.jpg'), promoBadge: '🔥 -10%' },
         { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 73, originalPrice: 81, image: img('calc-headboard.jpg'), promoBadge: '🔥 -10%' },
         { id: 'bedFrame', name: t.prices.items.bedFrame, price: 73, originalPrice: 81, image: img('calc-bedframe.jpg'), promoBadge: '🔥 -10%' },
@@ -137,8 +137,8 @@ const CityPage = () => {
       items: [
         { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 113, originalPrice: 126, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
         { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 178, originalPrice: 198, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 146, originalPrice: 162, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 227, originalPrice: 252, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, originalPrice: 194, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 239, originalPrice: 266, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
         
       ],
     },
