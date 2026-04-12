@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { useCity } from '@/hooks/useCity';
 import { cn } from '@/lib/utils';
 import { useNavigate } from 'react-router-dom';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
@@ -48,6 +49,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
+  const { applyPrice, isWroclaw } = useCity();
   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
   const [isCartExpanded, setIsCartExpanded] = useState(false);
@@ -56,8 +58,8 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
   const [cleaningArea, setCleaningArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const STANDARD_PRICE_PER_M2 = 7;
-  const GENERAL_PRICE_PER_M2 = 10;
+  const STANDARD_PRICE_PER_M2 = applyPrice(7);
+  const GENERAL_PRICE_PER_M2 = applyPrice(10);
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
   
   const toggleExtra = (id: string) => {
@@ -89,7 +91,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
     }
   };
 
-  const categories: Category[] = [
+  const baseCategories: Category[] = [
     {
       id: 'furniture',
       name: t.prices.furniture,
@@ -265,6 +267,18 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         ],
      },
   ];
+
+  // Apply city pricing to all items
+  const categories = useMemo(() => 
+    baseCategories.map(cat => ({
+      ...cat,
+      items: cat.items.map(item => ({
+        ...item,
+        price: applyPrice(item.price),
+      })),
+    })),
+    [baseCategories, applyPrice]
+  );
 
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
   const addItem = (item: PriceItem) => {

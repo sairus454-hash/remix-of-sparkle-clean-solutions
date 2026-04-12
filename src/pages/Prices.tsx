@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useLocation } from 'react-router-dom';
 import SEO from '@/components/SEO';
@@ -25,6 +25,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import QuickCalculator from '@/components/QuickCalculator';
 import { useSplash } from '@/hooks/useSplash';
+import { useCity } from '@/hooks/useCity';
 
 import { img } from '@/utils/imageMap';
 
@@ -33,6 +34,7 @@ const Prices = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
   const location = useLocation();
+  const { isWroclaw } = useCity();
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
@@ -61,7 +63,7 @@ const Prices = () => {
     }
   }, [location.state]);
 
-  const categories = [
+  const allCategories = [
     {
       id: 'cleaning', title: t.nav?.cleaning || 'Уборка', description: t.cleaning?.subtitle || 'Стандартная и генеральная уборка', icon: Home,
       items: [
@@ -234,6 +236,12 @@ const Prices = () => {
       ],
     },
   ];
+
+  const hiddenForNonWroclaw = ['cleaning', 'handyman'];
+  const categories = useMemo(() => 
+    isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id)),
+    [isWroclaw, allCategories]
+  );
 
   return (
     <>

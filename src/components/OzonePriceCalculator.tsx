@@ -1,4 +1,4 @@
-import { useState, forwardRef, useImperativeHandle } from 'react';
+import { useState, useMemo, forwardRef, useImperativeHandle } from 'react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -13,6 +13,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { CalculatorItem } from '@/types/calculator';
+import { useCity } from '@/hooks/useCity';
 
 interface OzoneItem {
   id: string;
@@ -37,15 +38,16 @@ interface OzonePriceCalculatorProps {
 const OzonePriceCalculator = forwardRef<OzoneCalculatorRef, OzonePriceCalculatorProps>(
   ({ onSendToForm }, ref) => {
     const { t } = useLanguage();
+    const { applyPrice } = useCity();
     const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
 
-    const ozoneItems: OzoneItem[] = [
-      { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144 },
-      { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240 },
-      { id: 'ozone3room', name: t.prices.items.ozone3room, price: 360 },
-      { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 300 },
-      { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 480 },
-    ];
+    const ozoneItems: OzoneItem[] = useMemo(() => [
+      { id: 'ozone1room', name: t.prices.items.ozone1room, price: applyPrice(144) },
+      { id: 'ozone2room', name: t.prices.items.ozone2room, price: applyPrice(240) },
+      { id: 'ozone3room', name: t.prices.items.ozone3room, price: applyPrice(360) },
+      { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: applyPrice(300) },
+      { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: applyPrice(480) },
+    ], [t, applyPrice]);
 
     const [justRemoved, setJustRemoved] = useState<string | null>(null);
     const addItem = (item: OzoneItem) => {

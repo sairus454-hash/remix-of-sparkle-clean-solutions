@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Coins, Home, Armchair, Sofa, BedDouble, Car, Wind, Package, Sparkles, Wrench, ChevronDown } from 'lucide-react';
+import { useCity } from '@/hooks/useCity';
 
 // Cleaning images
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
@@ -154,11 +155,14 @@ interface PriceSectionProps {
 
 const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
   const { t } = useLanguage();
+  const { isWroclaw } = useCity();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
   const [initialized, setInitialized] = useState(false);
 
-  const categories: CategorySection[] = [
+  const hiddenForNonWroclaw = ['cleaning', 'handyman'];
+
+  const allCategories: CategorySection[] = [
     {
       id: 'cleaning',
       title: t.cleaning?.service || 'Уборка',
@@ -358,10 +362,15 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
     },
   ];
 
+  const categories = useMemo(() => 
+    isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id)),
+    [isWroclaw, allCategories]
+  );
+
   // Initialize all open when defaultAllOpen
   useEffect(() => {
     if (defaultAllOpen && !initialized) {
-      const allIds = new Set(categories.map(c => c.id));
+      const allIds = new Set<string>(categories.map(c => c.id));
       setOpenCategories(allIds);
       setLoadedCategories(allIds);
       setInitialized(true);
