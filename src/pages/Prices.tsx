@@ -243,6 +243,7 @@ const Prices = () => {
     [isWroclaw, allCategories]
   );
 
+  return (
     <>
       <SEO
         title="Cennik prania tapicerki i czyszczenia — MasterClean"
