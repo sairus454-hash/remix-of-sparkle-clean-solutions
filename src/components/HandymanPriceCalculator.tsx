@@ -1,4 +1,4 @@
-import { useState, forwardRef, useImperativeHandle } from 'react';
+import { useState, useMemo, forwardRef, useImperativeHandle } from 'react';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,6 +9,7 @@ import { Calculator, Plus, Minus, Trash2, Wrench, Droplet, Lightbulb, Frame, Che
 import { LucideIcon } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { CalculatorItem } from '@/types/calculator';
+import { useCity } from '@/hooks/useCity';
 
 interface PriceItem {
   id: string;
@@ -43,33 +44,34 @@ interface HandymanPriceCalculatorProps {
 const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceCalculatorProps>(
   ({ onSendToForm }, ref) => {
     const { t } = useLanguage();
+    const { applyPrice } = useCity();
     const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
     const [openCategories, setOpenCategories] = useState<string[]>(['plumbing']);
 
-    const categories: Category[] = [
+    const categories: Category[] = useMemo(() => [
       {
         id: 'plumbing',
         name: t.handyman.plumbing,
         icon: Droplet,
         items: [
-          { id: 'faucet', name: t.handyman.calcItems.faucet, price: 120, icon: Droplet },
-          { id: 'siphon', name: t.handyman.calcItems.siphon, price: 120, icon: Droplet },
-          { id: 'sink', name: t.handyman.calcItems.sink, price: 180, icon: Droplet },
-          { id: 'toilet', name: t.handyman.calcItems.toilet, price: 220, icon: Droplet },
-          { id: 'sewer', name: t.handyman.calcItems.sewer, price: 250, icon: Droplet },
-          { id: 'washingMachine', name: t.handyman.calcItems.washingMachine, price: 140, icon: Droplet },
-          { id: 'dishwasher', name: t.handyman.calcItems.dishwasher, price: 140, icon: Droplet },
-          { id: 'bathroomFan', name: t.handyman.calcItems.bathroomFan, price: 80, icon: Droplet },
-          { id: 'bidet', name: t.handyman.calcItems.bidet, price: 220, icon: Droplet },
-          { id: 'urinal', name: t.handyman.calcItems.urinal, price: 200, icon: Droplet },
-          { id: 'hoseReplacement', name: t.handyman.calcItems.hoseReplacement, price: 50, icon: Droplet },
-          { id: 'plumbingDemontage', name: t.handyman.calcItems.plumbingDemontage, price: 80, icon: Droplet },
-          { id: 'sealingJoints', name: t.handyman.calcItems.sealingJoints, price: 40, icon: Droplet },
-          { id: 'showerCabinInstall', name: t.handyman.calcItems.showerCabinInstall, price: 450, icon: Droplet },
-          { id: 'showerTrayInstall', name: t.handyman.calcItems.showerTrayInstall, price: 200, icon: Droplet },
-          { id: 'bathtubInstall', name: t.handyman.calcItems.bathtubInstall, price: 300, icon: Droplet },
-          { id: 'bathroomAccessories', name: t.handyman.calcItems.bathroomAccessories, price: 30, icon: Droplet },
-          { id: 'wallMountedShower', name: t.handyman.calcItems.wallMountedShower, price: 200, icon: Droplet },
+          { id: 'faucet', name: t.handyman.calcItems.faucet, price: applyPrice(120), icon: Droplet },
+          { id: 'siphon', name: t.handyman.calcItems.siphon, price: applyPrice(120), icon: Droplet },
+          { id: 'sink', name: t.handyman.calcItems.sink, price: applyPrice(180), icon: Droplet },
+          { id: 'toilet', name: t.handyman.calcItems.toilet, price: applyPrice(220), icon: Droplet },
+          { id: 'sewer', name: t.handyman.calcItems.sewer, price: applyPrice(250), icon: Droplet },
+          { id: 'washingMachine', name: t.handyman.calcItems.washingMachine, price: applyPrice(140), icon: Droplet },
+          { id: 'dishwasher', name: t.handyman.calcItems.dishwasher, price: applyPrice(140), icon: Droplet },
+          { id: 'bathroomFan', name: t.handyman.calcItems.bathroomFan, price: applyPrice(80), icon: Droplet },
+          { id: 'bidet', name: t.handyman.calcItems.bidet, price: applyPrice(220), icon: Droplet },
+          { id: 'urinal', name: t.handyman.calcItems.urinal, price: applyPrice(200), icon: Droplet },
+          { id: 'hoseReplacement', name: t.handyman.calcItems.hoseReplacement, price: applyPrice(50), icon: Droplet },
+          { id: 'plumbingDemontage', name: t.handyman.calcItems.plumbingDemontage, price: applyPrice(80), icon: Droplet },
+          { id: 'sealingJoints', name: t.handyman.calcItems.sealingJoints, price: applyPrice(40), icon: Droplet },
+          { id: 'showerCabinInstall', name: t.handyman.calcItems.showerCabinInstall, price: applyPrice(450), icon: Droplet },
+          { id: 'showerTrayInstall', name: t.handyman.calcItems.showerTrayInstall, price: applyPrice(200), icon: Droplet },
+          { id: 'bathtubInstall', name: t.handyman.calcItems.bathtubInstall, price: applyPrice(300), icon: Droplet },
+          { id: 'bathroomAccessories', name: t.handyman.calcItems.bathroomAccessories, price: applyPrice(30), icon: Droplet },
+          { id: 'wallMountedShower', name: t.handyman.calcItems.wallMountedShower, price: applyPrice(200), icon: Droplet },
         ],
       },
       {
@@ -77,12 +79,12 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
         name: t.handyman.mounting,
         icon: Frame,
         items: [
-          { id: 'curtainRod', name: t.handyman.calcItems.curtainRod, price: 120, icon: Frame },
-          { id: 'shelf', name: t.handyman.calcItems.shelf, price: 100, icon: Frame },
-          { id: 'pictures', name: t.handyman.calcItems.pictures, price: 80, icon: Frame },
-          { id: 'furniture', name: t.handyman.calcItems.furnitureAssembly, price: 80, isFrom: true, icon: Wrench },
-          { id: 'bedSofaRepair', name: t.handyman.calcItems.bedSofaRepair, price: 130, isFrom: true, icon: Frame },
-          { id: 'wardrobeRepair', name: t.handyman.calcItems.wardrobeRepair, price: 240, icon: Frame },
+          { id: 'curtainRod', name: t.handyman.calcItems.curtainRod, price: applyPrice(120), icon: Frame },
+          { id: 'shelf', name: t.handyman.calcItems.shelf, price: applyPrice(100), icon: Frame },
+          { id: 'pictures', name: t.handyman.calcItems.pictures, price: applyPrice(80), icon: Frame },
+          { id: 'furniture', name: t.handyman.calcItems.furnitureAssembly, price: applyPrice(80), isFrom: true, icon: Wrench },
+          { id: 'bedSofaRepair', name: t.handyman.calcItems.bedSofaRepair, price: applyPrice(130), isFrom: true, icon: Frame },
+          { id: 'wardrobeRepair', name: t.handyman.calcItems.wardrobeRepair, price: applyPrice(240), icon: Frame },
         ],
       },
       {
@@ -90,16 +92,16 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
         name: t.handyman.electrical,
         icon: Lightbulb,
         items: [
-          { id: 'bulb', name: t.handyman.calcItems.bulb, price: 50, icon: Lightbulb },
-          { id: 'socket', name: t.handyman.calcItems.socket, price: 40, icon: Lightbulb },
-          { id: 'lamp', name: t.handyman.calcItems.lamp, price: 100, icon: Lightbulb },
-          { id: 'stove', name: t.handyman.calcItems.stove, price: 200, icon: Lightbulb },
-          { id: 'repair', name: t.handyman.calcItems.repair, price: 100, isFrom: true, icon: Lightbulb },
-          { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: 350, icon: Lightbulb },
-          { id: 'switch', name: t.handyman.calcItems.switch, price: 50, icon: Lightbulb },
-          { id: 'fuseReplacement', name: t.handyman.calcItems.fuseReplacement, price: 120, icon: Lightbulb },
-          { id: 'lampRepair', name: t.handyman.calcItems.lampRepair, price: 130, icon: Lightbulb },
-          { id: 'chandelierInstall', name: t.handyman.calcItems.chandelierInstall, price: 130, icon: Lightbulb },
+          { id: 'bulb', name: t.handyman.calcItems.bulb, price: applyPrice(50), icon: Lightbulb },
+          { id: 'socket', name: t.handyman.calcItems.socket, price: applyPrice(40), icon: Lightbulb },
+          { id: 'lamp', name: t.handyman.calcItems.lamp, price: applyPrice(100), icon: Lightbulb },
+          { id: 'stove', name: t.handyman.calcItems.stove, price: applyPrice(200), icon: Lightbulb },
+          { id: 'repair', name: t.handyman.calcItems.repair, price: applyPrice(100), isFrom: true, icon: Lightbulb },
+          { id: 'diagnostic', name: t.handyman.calcItems.diagnostic, price: applyPrice(350), icon: Lightbulb },
+          { id: 'switch', name: t.handyman.calcItems.switch, price: applyPrice(50), icon: Lightbulb },
+          { id: 'fuseReplacement', name: t.handyman.calcItems.fuseReplacement, price: applyPrice(120), icon: Lightbulb },
+          { id: 'lampRepair', name: t.handyman.calcItems.lampRepair, price: applyPrice(130), icon: Lightbulb },
+          { id: 'chandelierInstall', name: t.handyman.calcItems.chandelierInstall, price: applyPrice(130), icon: Lightbulb },
         ],
       },
       {
@@ -107,12 +109,12 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
         name: t.handyman.other,
         icon: Wrench,
         items: [
-          { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: 140, icon: Wrench },
-          { id: 'doorHandle', name: t.handyman.calcItems.doorHandle, price: 60, icon: Wrench },
-          { id: 'doorCylinder', name: t.handyman.calcItems.doorCylinder, price: 100, icon: Wrench },
-          { id: 'aluminumDoorRepair', name: t.handyman.calcItems.aluminumDoorRepair, price: 200, icon: Wrench },
-          { id: 'windowDoorAdjustment', name: t.handyman.calcItems.windowDoorAdjustment, price: 200, icon: Wrench },
-          { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, icon: Wrench },
+          { id: 'mailboxLock', name: t.handyman.calcItems.mailboxLock, price: applyPrice(140), icon: Wrench },
+          { id: 'doorHandle', name: t.handyman.calcItems.doorHandle, price: applyPrice(60), icon: Wrench },
+          { id: 'doorCylinder', name: t.handyman.calcItems.doorCylinder, price: applyPrice(100), icon: Wrench },
+          { id: 'aluminumDoorRepair', name: t.handyman.calcItems.aluminumDoorRepair, price: applyPrice(200), icon: Wrench },
+          { id: 'windowDoorAdjustment', name: t.handyman.calcItems.windowDoorAdjustment, price: applyPrice(200), icon: Wrench },
+          { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: applyPrice(200), icon: Wrench },
         ],
       },
       {
@@ -120,14 +122,14 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
         name: t.handyman.gardening,
         icon: Leaf,
         items: [
-          { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 1, icon: Leaf, unit: 'm²' },
-          { id: 'lawnMowingHard', name: t.handyman.calcItems.lawnMowingHard, price: 1.3, icon: Leaf, unit: 'm²' },
-          { id: 'grassCleanup', name: t.handyman.calcItems.grassCleanup, price: 1, icon: Leaf, unit: 'm²' },
-          { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 100, icon: Leaf },
-          { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 100, icon: Leaf },
+          { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: applyPrice(1), icon: Leaf, unit: 'm²' },
+          { id: 'lawnMowingHard', name: t.handyman.calcItems.lawnMowingHard, price: applyPrice(1.3), icon: Leaf, unit: 'm²' },
+          { id: 'grassCleanup', name: t.handyman.calcItems.grassCleanup, price: applyPrice(1), icon: Leaf, unit: 'm²' },
+          { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: applyPrice(100), icon: Leaf },
+          { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: applyPrice(100), icon: Leaf },
         ],
       },
-    ];
+    ], [t, applyPrice]);
 
     const toggleCategory = (categoryId: string) => {
       setOpenCategories(prev => 
