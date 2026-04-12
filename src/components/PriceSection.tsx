@@ -155,11 +155,14 @@ interface PriceSectionProps {
 
 const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
   const { t } = useLanguage();
+  const { isWroclaw } = useCity();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
   const [initialized, setInitialized] = useState(false);
 
-  const categories: CategorySection[] = [
+  const hiddenForNonWroclaw = ['cleaning', 'handyman'];
+
+  const allCategories: CategorySection[] = [
     {
       id: 'cleaning',
       title: t.cleaning?.service || 'Уборка',
