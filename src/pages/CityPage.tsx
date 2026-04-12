@@ -547,7 +547,7 @@ const CityPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
               {filteredCategories.map((cat, catIndex) => (
-                <CircularRevealCard key={cat.id} index={catIndex}>
+                <div key={cat.id}>
                   <div 
                     ref={(el) => { categoryRefs.current[cat.id] = el; }}
                     className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card"
@@ -585,7 +585,7 @@ const CityPage = () => {
                       </div>
                     </div>
                   </div>
-                </CircularRevealCard>
+                </div>
               ))}
 
               {/* Notice about Wrocław-only services */}
