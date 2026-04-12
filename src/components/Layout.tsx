@@ -28,7 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <main id="main-content" role="main" className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10">
         {/* Orthodox Easter Banner — auto-hide after Tuesday April 14, 2026 */}
-        {Date.now() < new Date('2026-04-15T00:00:00').getTime() && (
+        {Date.now() < new Date('2026-04-15T00:00:00').getTime() && (language === 'ru' || language === 'uk') && (
           <div className="relative w-full bg-gradient-to-r from-amber-50 via-yellow-50 to-amber-50 border-b border-amber-200/60 py-2.5 sm:py-3 overflow-hidden">
             <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #f59e0b 1px, transparent 1px), radial-gradient(circle at 80% 30%, #f59e0b 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
             <div className="container mx-auto px-4 flex items-center justify-center gap-2 sm:gap-3 relative z-10">
