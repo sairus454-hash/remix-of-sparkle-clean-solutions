@@ -85,7 +85,7 @@ const Services = () => {
     { id: 'sofa2', name: t.prices.items.sofa2, price: 120, originalPrice: 135, image: calcSofa2, promoBadge: '🔥 -10%' },
     { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
     { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 205, originalPrice: 225, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
     { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
     { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
     { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 180, originalPrice: 200, image: calcMattressSingle, promoBadge: '🔥 -10%' },
