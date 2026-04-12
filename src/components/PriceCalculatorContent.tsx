@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
+import { useCity } from '@/hooks/useCity';
 import { cn } from '@/lib/utils';
 import { useNavigate } from 'react-router-dom';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
