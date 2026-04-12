@@ -40,7 +40,8 @@ export function useCity(): CityInfo {
 
     const applyPrice = (price: number): number => {
       if (price === 0 || isWroclaw) return price;
-      return Math.ceil((price * 1.1) / 5) * 5;
+      const marked = Math.round(price * 1.1 * 100) / 100; // avoid float imprecision
+      return Math.ceil(marked / 5) * 5;
     };
 
     return { city, slug: city?.slug || null, isWroclaw, multiplier, hasPromo, applyPrice };
