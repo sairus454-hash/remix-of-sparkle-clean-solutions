@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { useCity } from '@/hooks/useCity';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -21,6 +22,7 @@ type ServiceType = 'cleaning' | 'furniture' | 'mattress' | 'auto' | null;
 const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
+  const { applyPrice } = useCity();
   
   // Step 1: Service type
   const [serviceType, setServiceType] = useState<ServiceType>(null);
@@ -32,8 +34,8 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const [mattressType, setMattressType] = useState<string>('mattressDouble');
   const [autoType, setAutoType] = useState<string>('autoSeats');
 
-  const STANDARD_PRICE_PER_M2 = 7;
-  const GENERAL_PRICE_PER_M2 = 10;
+  const STANDARD_PRICE_PER_M2 = applyPrice(7);
+  const GENERAL_PRICE_PER_M2 = applyPrice(10);
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
 
   const serviceOptions = [
@@ -43,26 +45,26 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
     { id: 'auto', label: t.prices.autoCleaning, icon: Car },
   ];
 
-  const furnitureOptions = [
-    { id: 'armchair', name: t.prices.items.armchair, price: 75 },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 145 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 180 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 220 },
-  ];
+  const furnitureOptions = useMemo(() => [
+    { id: 'armchair', name: t.prices.items.armchair, price: applyPrice(75) },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(145) },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(180) },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(220) },
+  ], [t, applyPrice]);
 
-  const mattressOptions = [
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: 140 },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: 215 },
-    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 220 },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 295 },
-  ];
+  const mattressOptions = useMemo(() => [
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: applyPrice(140) },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: applyPrice(215) },
+    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: applyPrice(220) },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(295) },
+  ], [t, applyPrice]);
 
-  const autoOptions = [
-    { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300 },
-    { id: 'autoComplex', name: t.prices.items.autoComplex, price: 500 },
-    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350 },
-    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 600 },
-  ];
+  const autoOptions = useMemo(() => [
+    { id: 'autoSeats', name: t.prices.items.autoSeats, price: applyPrice(300) },
+    { id: 'autoComplex', name: t.prices.items.autoComplex, price: applyPrice(500) },
+    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: applyPrice(350) },
+    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: applyPrice(600) },
+  ], [t, applyPrice]);
 
   const getPrice = (): number => {
     switch (serviceType) {
