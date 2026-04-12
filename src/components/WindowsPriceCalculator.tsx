@@ -1,6 +1,7 @@
- import { useState } from 'react';
+ import { useState, useMemo } from 'react';
  import { cn } from '@/lib/utils';
  import { useNavigate } from 'react-router-dom';
+ import { useCity } from '@/hooks/useCity';
  import { useLanguage } from '@/i18n/LanguageContext';
  import { Button } from '@/components/ui/button';
  import { Input } from '@/components/ui/input';
@@ -27,10 +28,11 @@
  const WindowsPriceCalculator = ({ onSendToForm }: WindowsPriceCalculatorProps) => {
    const { t } = useLanguage();
    const navigate = useNavigate();
+   const { applyPrice } = useCity();
     const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
     const [justRemoved, setJustRemoved] = useState<string | null>(null);
  
-   const priceItems: PriceItem[] = [
+   const basePriceItems: PriceItem[] = [
      { 
        id: 'windowSingle', 
        name: t.windows?.items?.single || 'Одностворчатое окно', 
@@ -74,6 +76,11 @@
        icon: <Fence className="w-5 h-5 text-primary" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
      },
    ];
+
+   const priceItems = useMemo(() => 
+     basePriceItems.map(item => ({ ...item, price: applyPrice(item.price) })),
+     [applyPrice, t]
+   );
  
   const addItem = (item: PriceItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
