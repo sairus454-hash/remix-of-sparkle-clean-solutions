@@ -34,7 +34,9 @@ const Layout = ({ children }: LayoutProps) => {
             <div className="container mx-auto px-4 flex items-center justify-center gap-2 sm:gap-3 relative z-10">
               <span className="text-2xl sm:text-3xl animate-bounce" style={{ animationDuration: '2s' }}>🥚</span>
               <p className="text-amber-900 font-semibold text-xs sm:text-sm md:text-base text-center">
-                🕊️ С праздником православной Пасхи! Христос Воскресе! ☦️
+                {language === 'uk'
+                  ? '🕊️ З святом православної Пасхи! Христос Воскрес! ☦️'
+                  : '🕊️ С праздником православной Пасхи! Христос Воскресе! ☦️'}
               </p>
               <span className="text-2xl sm:text-3xl animate-bounce" style={{ animationDuration: '2s', animationDelay: '0.3s' }}>🐣</span>
             </div>
