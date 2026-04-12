@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,7 @@ import { CalculatorItem } from '@/types/calculator';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import QuickOrderDialog from './QuickOrderDialog';
+import { useCity } from '@/hooks/useCity';
 
 interface ServiceCardItem {
   id: string;
