@@ -362,10 +362,15 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
     },
   ];
 
+  const categories = useMemo(() => 
+    isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id)),
+    [isWroclaw, allCategories]
+  );
+
   // Initialize all open when defaultAllOpen
   useEffect(() => {
     if (defaultAllOpen && !initialized) {
-      const allIds = new Set(categories.map(c => c.id));
+      const allIds = new Set<string>(categories.map(c => c.id));
       setOpenCategories(allIds);
       setLoadedCategories(allIds);
       setInitialized(true);
