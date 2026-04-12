@@ -42,34 +42,8 @@ const CascadeGrid = ({ children }: { children: React.ReactNode }) => (
 /* Individual card with IntersectionObserver cascade */
 const CascadeCard = ({ children, index }: { children: React.ReactNode; index: number }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const isMobile = useIsMobile();
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    // Immediately check if element is already in viewport
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 200) {
-      const delay = index * (isMobile ? 25 : 35);
-      setTimeout(() => setVisible(true), delay);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const delay = index * (isMobile ? 25 : 35);
-          setTimeout(() => setVisible(true), delay);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.02, rootMargin: '200px' }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [index, isMobile]);
 
   const angle = (index * 55) % 360;
   const radius = isMobile ? 15 : 25;
