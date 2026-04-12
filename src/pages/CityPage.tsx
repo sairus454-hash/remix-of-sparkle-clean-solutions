@@ -265,7 +265,7 @@ const CityPage = () => {
       ...cat,
       items: cat.items.map(item => ({
         ...item,
-        price: item.price === 0 ? 0 : Math.round(item.price * multiplier),
+        price: item.price === 0 ? 0 : Math.ceil((item.price * multiplier) / 5) * 5,
       })),
     }));
 
