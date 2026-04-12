@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { MapPin } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { cities } from '@/data/cities';
+import { cities, getCityBySlug } from '@/data/cities';
 import {
   Dialog,
   DialogContent,
@@ -14,7 +14,12 @@ import {
 const CitySelector = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useLanguage();
+
+  // Detect current city from URL
+  const cityMatch = location.pathname.match(/^\/city\/([^/]+)/);
+  const currentCity = cityMatch ? getCityBySlug(cityMatch[1]) : null;
 
   const sortedCities = [...cities].sort((a, b) => {
     if (a.slug === 'wroclaw') return -1;
@@ -22,7 +27,7 @@ const CitySelector = () => {
     return a.name.localeCompare(b.name, 'pl');
   });
 
-  const cityLabel = t.city?.yourCity || 'Twoje miasto';
+  const cityLabel = currentCity ? currentCity.name : (t.city?.yourCity || 'Twoje miasto');
 
   return (
     <>
