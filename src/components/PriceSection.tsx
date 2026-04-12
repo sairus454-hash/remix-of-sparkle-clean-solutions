@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import { Coins, Home, Armchair, Sofa, BedDouble, Car, Wind, Package, Sparkles, Wrench, ChevronDown } from 'lucide-react';
+import { useCity } from '@/hooks/useCity';
 
 // Cleaning images
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
