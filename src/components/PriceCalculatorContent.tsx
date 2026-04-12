@@ -91,7 +91,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
     }
   };
 
-  const categories: Category[] = [
+  const baseCategories: Category[] = [
     {
       id: 'furniture',
       name: t.prices.furniture,
@@ -267,6 +267,18 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         ],
      },
   ];
+
+  // Apply city pricing to all items
+  const categories = useMemo(() => 
+    baseCategories.map(cat => ({
+      ...cat,
+      items: cat.items.map(item => ({
+        ...item,
+        price: applyPrice(item.price),
+      })),
+    })),
+    [baseCategories, applyPrice]
+  );
 
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
   const addItem = (item: PriceItem) => {
