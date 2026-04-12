@@ -90,14 +90,35 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
+  const { isWroclaw, hasPromo, applyPrice } = useCity();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
 
-  // No first-order discount — items displayed as-is
-  const displayItems = items;
+  // Categories where promo (originalPrice/promoBadge) only applies in Wrocław group
+  const promoCategories = ['furniture', 'leather', 'mattress'];
+  const shouldStripPromo = !hasPromo && promoCategories.includes(category || '');
+
+  // Apply city pricing: for non-Wrocław, use originalPrice as base (strip promo), then apply 10% markup
+  const displayItems = useMemo(() => {
+    if (isWroclaw && !noDiscount) return items;
+    
+    return items.map(item => {
+      let baseItem = item;
+      // Strip promo for non-Wrocław cities on furniture/leather/mattress
+      if (shouldStripPromo && item.originalPrice) {
+        const { originalPrice, promoBadge, ...rest } = item;
+        baseItem = { ...rest, price: originalPrice };
+      }
+      // Apply markup for non-Wrocław
+      if (!isWroclaw) {
+        return { ...baseItem, price: applyPrice(baseItem.price) };
+      }
+      return baseItem;
+    });
+  }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice]);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
