@@ -200,28 +200,28 @@ const PRICE_LIST = {
 • Вроцлав и Смолец — базовые цены (как в прайсе выше, включая акцию -10% на мебель и матрасы)
 • Все остальные города (Opole, Legnica, Lubin и т.д.) — используй ГОТОВУЮ ТАБЛИЦУ ниже, НЕ считай сам!
 
-📊 ГОТОВЫЕ ЦЕНЫ ДЛЯ ДРУГИХ ГОРОДОВ (мебель и матрасы, уже с наценкой 10%, БЕЗ акции -10%):
-• Пуф — 39 PLN | Стул (сиденье) — 17 PLN | Стул с спинкой — 28 PLN
-• Стул конференционный — 33 PLN | Стул вращающийся — 50 PLN | Стул — 28 PLN
-• Кресло — 80 PLN | Подушка — 11 PLN
-• Диван двухместный — 160 PLN | Диван трёхместный — 182 PLN
-• Диван угловой — 220 PLN | Большой угловой диван — 255 PLN
-• Ковровое покрытие — 28 PLN/м²
-• Матрас двухспальный — 215 PLN | Матрас односпальный — 138 PLN
+📊 ГОТОВЫЕ ЦЕНЫ ДЛЯ ДРУГИХ ГОРОДОВ (мебель и матрасы, уже с наценкой 10%, БЕЗ акции -10%, округлены до 5):
+• Пуф — 40 PLN | Стул (сиденье) — 20 PLN | Стул с спинкой — 30 PLN
+• Стул конференционный — 35 PLN | Стул вращающийся — 50 PLN | Стул — 30 PLN
+• Кресло — 85 PLN | Подушка — 15 PLN
+• Диван двухместный — 160 PLN | Диван трёхместный — 185 PLN
+• Диван угловой — 220 PLN | Большой угловой диван — 260 PLN
+• Ковровое покрытие — 30 PLN/м²
+• Матрас двухспальный — 215 PLN | Матрас односпальный — 140 PLN
 • Изголовье кровати — 100 PLN | Каркас кровати — 100 PLN
-• Матрас 1-спальный (2 стор.) — 220 PLN | Матрас 2-спальный (2 стор.) — 292 PLN
+• Матрас 1-спальный (2 стор.) — 220 PLN | Матрас 2-спальный (2 стор.) — 295 PLN
 
-📊 Кожаная мебель для других городов (наценка 10%, БЕЗ акции):
-• Пуф (кожа) — 50 PLN | Стул (кожа) — 50 PLN | Подушка (кожа) — 20 PLN
-• Кресло (кожа) — 88 PLN | Стул вращающийся (кожа) — 77 PLN
-• Диван 2-мест. (кожа) — 176 PLN | 3-мест. (кожа) — 220 PLN | Угловой (кожа) — 270 PLN
+📊 Кожаная мебель для других городов (наценка 10%, БЕЗ акции, округлены до 5):
+• Пуф (кожа) — 50 PLN | Стул (кожа) — 50 PLN | Подушка (кожа) — 25 PLN
+• Кресло (кожа) — 90 PLN | Стул вращающийся (кожа) — 80 PLN
+• Диван 2-мест. (кожа) — 180 PLN | 3-мест. (кожа) — 220 PLN | Угловой (кожа) — 270 PLN
 
 • Комплексная химчистка авто — 550 PLN | VIP — 770 PLN
-• Озонирование 1-комн. — 159 PLN | 2-комн. — 264 PLN
-• Окно одностворч. — 44 PLN | двустворч. — 55 PLN
+• Озонирование 1-комн. — 160 PLN | 2-комн. — 265 PLN
+• Окно одностворч. — 45 PLN | двустворч. — 55 PLN
 
-⚠️ ПРАВИЛО: Для других городов ВСЕГДА бери цену из ГОТОВОЙ ТАБЛИЦЫ! НЕ считай вручную!
-Формула (если позиции нет в таблице): ПОЛНАЯ_цена (без акции) × 1.1, округлить вверх.
+⚠️ ПРАВИЛО: Для других городов ВСЕГДА бери цену из ГОТОВОЙ ТАБЛИЦЫ! НЕ считай сам!
+Формула (если позиции нет в таблице): ПОЛНАЯ_цена (без акции) × 1.1, округлить ВВЕРХ до ближайшей 5.
 
 ⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
 • Вроцлав и пригород (до 10 км) — 160 PLN
@@ -434,29 +434,29 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 • Wrocław and Smolec — base prices (as listed above, including -10% promo on furniture and mattresses)
 • All other cities (Opole, Legnica, Lubin, etc.) — use the READY TABLE below, do NOT calculate manually!
 
-📊 READY PRICES FOR OTHER CITIES (furniture & mattresses, already with +10% surcharge, NO -10% promo):
-• Ottoman — 39 PLN | Chair (seat) — 17 PLN | Chair with backrest — 28 PLN
-• Conference chair — 33 PLN | Swivel chair — 50 PLN | Chair — 28 PLN
-• Armchair — 80 PLN | Pillow — 11 PLN
-• 2-seater sofa — 160 PLN | 3-seater sofa — 182 PLN
-• Corner sofa — 220 PLN | Large corner sofa — 255 PLN
-• Carpet — 28 PLN/m²
-• Double mattress — 215 PLN | Single mattress — 138 PLN
+📊 READY PRICES FOR OTHER CITIES (furniture & mattresses, +10% surcharge, NO -10% promo, rounded to nearest 5):
+• Ottoman — 40 PLN | Chair (seat) — 20 PLN | Chair with backrest — 30 PLN
+• Conference chair — 35 PLN | Swivel chair — 50 PLN | Chair — 30 PLN
+• Armchair — 85 PLN | Pillow — 15 PLN
+• 2-seater sofa — 160 PLN | 3-seater sofa — 185 PLN
+• Corner sofa — 220 PLN | Large corner sofa — 260 PLN
+• Carpet — 30 PLN/m²
+• Double mattress — 215 PLN | Single mattress — 140 PLN
 • Bed headboard — 100 PLN | Bed frame — 100 PLN
-• Single mattress (2 sides) — 220 PLN | Double mattress (2 sides) — 292 PLN
+• Single mattress (2 sides) — 220 PLN | Double mattress (2 sides) — 295 PLN
 
-📊 Leather furniture for other cities (+10%, NO promo):
-• Ottoman (leather) — 50 PLN | Chair (leather) — 50 PLN | Pillow (leather) — 20 PLN
-• Armchair (leather) — 88 PLN | Swivel chair (leather) — 77 PLN
-• 2-seater sofa (leather) — 176 PLN | 3-seater (leather) — 220 PLN | Corner (leather) — 270 PLN
+📊 Leather furniture for other cities (+10%, NO promo, rounded to 5):
+• Ottoman (leather) — 50 PLN | Chair (leather) — 50 PLN | Pillow (leather) — 25 PLN
+• Armchair (leather) — 90 PLN | Swivel chair (leather) — 80 PLN
+• 2-seater sofa (leather) — 180 PLN | 3-seater (leather) — 220 PLN | Corner (leather) — 270 PLN
 
-📊 Other services for other cities (+10% surcharge):
+📊 Other services for other cities (+10% surcharge, rounded to 5):
 • Full car cleaning — 550 PLN | VIP — 770 PLN
-• Ozonation 1-room — 159 PLN | 2-room — 264 PLN
-• Single-sash window — 44 PLN | Double-sash — 55 PLN
+• Ozonation 1-room — 160 PLN | 2-room — 265 PLN
+• Single-sash window — 45 PLN | Double-sash — 55 PLN
 
 ⚠️ RULE: For other cities ALWAYS use the READY TABLE! Do NOT calculate manually!
-Formula (if item not in table): FULL_price (no promo) × 1.1, round up.
+Formula (if item not in table): FULL_price (no promo) × 1.1, round UP to nearest 5.
 
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 160 PLN
@@ -670,29 +670,29 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 • Wrocław i Smolec — ceny bazowe (jak w cenniku powyżej, w tym promocja -10% na meble i materace)
 • Wszystkie inne miasta (Opole, Legnica, Lubin itp.) — użyj GOTOWEJ TABELI poniżej, NIE licz sam!
 
-📊 GOTOWE CENY DLA INNYCH MIAST (meble i materace, już z dopłatą 10%, BEZ promocji -10%):
-• Pufa — 39 PLN | Krzesło (siedzenie) — 17 PLN | Krzesło z oparciem — 28 PLN
-• Krzesło konferencyjne — 33 PLN | Krzesło obrotowe — 50 PLN | Krzesło — 28 PLN
-• Fotel — 80 PLN | Poduszka — 11 PLN
-• Sofa 2-osobowa — 160 PLN | Sofa 3-osobowa — 182 PLN
-• Sofa narożna — 220 PLN | Duża sofa narożna — 255 PLN
-• Dywan — 28 PLN/m²
-• Materac dwuosobowy — 215 PLN | Materac jednoosobowy — 138 PLN
+📊 GOTOWE CENY DLA INNYCH MIAST (meble i materace, już z dopłatą 10%, BEZ promocji -10%, zaokrąglone do 5):
+• Pufa — 40 PLN | Krzesło (siedzenie) — 20 PLN | Krzesło z oparciem — 30 PLN
+• Krzesło konferencyjne — 35 PLN | Krzesło obrotowe — 50 PLN | Krzesło — 30 PLN
+• Fotel — 85 PLN | Poduszka — 15 PLN
+• Sofa 2-osobowa — 160 PLN | Sofa 3-osobowa — 185 PLN
+• Sofa narożna — 220 PLN | Duża sofa narożna — 260 PLN
+• Dywan — 30 PLN/m²
+• Materac dwuosobowy — 215 PLN | Materac jednoosobowy — 140 PLN
 • Zagłówek łóżka — 100 PLN | Rama łóżka — 100 PLN
-• Materac 1-os. (2 strony) — 220 PLN | Materac 2-os. (2 strony) — 292 PLN
+• Materac 1-os. (2 strony) — 220 PLN | Materac 2-os. (2 strony) — 295 PLN
 
-📊 Meble skórzane dla innych miast (dopłata 10%, BEZ promocji):
-• Pufa (skóra) — 50 PLN | Krzesło (skóra) — 50 PLN | Poduszka (skóra) — 20 PLN
-• Fotel (skóra) — 88 PLN | Krzesło obrotowe (skóra) — 77 PLN
-• Sofa 2-os. (skóra) — 176 PLN | 3-os. (skóra) — 220 PLN | Narożna (skóra) — 270 PLN
+📊 Meble skórzane dla innych miast (dopłata 10%, BEZ promocji, zaokrąglone do 5):
+• Pufa (skóra) — 50 PLN | Krzesło (skóra) — 50 PLN | Poduszka (skóra) — 25 PLN
+• Fotel (skóra) — 90 PLN | Krzesło obrotowe (skóra) — 80 PLN
+• Sofa 2-os. (skóra) — 180 PLN | 3-os. (skóra) — 220 PLN | Narożna (skóra) — 270 PLN
 
-📊 Inne usługi dla innych miast (dopłata 10%):
+📊 Inne usługi dla innych miast (dopłata 10%, zaokrąglone do 5):
 • Kompleksowe czyszczenie auta — 550 PLN | VIP — 770 PLN
-• Ozonowanie 1-pok. — 159 PLN | 2-pok. — 264 PLN
-• Okno jednoskrzydłowe — 44 PLN | dwuskrzydłowe — 55 PLN
+• Ozonowanie 1-pok. — 160 PLN | 2-pok. — 265 PLN
+• Okno jednoskrzydłowe — 45 PLN | dwuskrzydłowe — 55 PLN
 
 ⚠️ ZASADA: Dla innych miast ZAWSZE korzystaj z GOTOWEJ TABELI! NIE licz ręcznie!
-Formuła (jeśli pozycji nie ma w tabeli): PEŁNA_cena (bez promocji) × 1.1, zaokrąglij w górę.
+Formuła (jeśli pozycji nie ma w tabeli): PEŁNA_cena (bez promocji) × 1.1, zaokrąglij W GÓRĘ do najbliższej 5.
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 160 PLN
@@ -905,29 +905,29 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Вроцлав і Смолець — базові ціни (як у прайсі вище, включаючи акцію -10% на меблі та матраци)
 • Усі інші міста (Opole, Legnica, Lubin тощо) — використовуй ГОТОВУ ТАБЛИЦЮ нижче, НЕ рахуй сам!
 
-📊 ГОТОВІ ЦІНИ ДЛЯ ІНШИХ МІСТ (меблі та матраци, вже з надбавкою 10%, БЕЗ акції -10%):
-• Пуф — 39 PLN | Стілець (сидіння) — 17 PLN | Стілець зі спинкою — 28 PLN
-• Стілець конференційний — 33 PLN | Стілець обертовий — 50 PLN | Стілець — 28 PLN
-• Крісло — 80 PLN | Подушка — 11 PLN
-• Диван двомісний — 160 PLN | Диван тримісний — 182 PLN
-• Диван кутовий — 220 PLN | Великий кутовий диван — 255 PLN
-• Килимове покриття — 28 PLN/м²
-• Матрац двоспальній — 215 PLN | Матрац односпальний — 138 PLN
+📊 ГОТОВІ ЦІНИ ДЛЯ ІНШИХ МІСТ (меблі та матраци, вже з надбавкою 10%, БЕЗ акції -10%, округлені до 5):
+• Пуф — 40 PLN | Стілець (сидіння) — 20 PLN | Стілець зі спинкою — 30 PLN
+• Стілець конференційний — 35 PLN | Стілець обертовий — 50 PLN | Стілець — 30 PLN
+• Крісло — 85 PLN | Подушка — 15 PLN
+• Диван двомісний — 160 PLN | Диван тримісний — 185 PLN
+• Диван кутовий — 220 PLN | Великий кутовий диван — 260 PLN
+• Килимове покриття — 30 PLN/м²
+• Матрац двоспальній — 215 PLN | Матрац односпальний — 140 PLN
 • Узголів'я ліжка — 100 PLN | Каркас ліжка — 100 PLN
-• Матрац 1-спальний (2 стор.) — 220 PLN | Матрац 2-спальний (2 стор.) — 292 PLN
+• Матрац 1-спальний (2 стор.) — 220 PLN | Матрац 2-спальний (2 стор.) — 295 PLN
 
-📊 Шкіряні меблі для інших міст (надбавка 10%, БЕЗ акції):
-• Пуф (шкіра) — 50 PLN | Стілець (шкіра) — 50 PLN | Подушка (шкіра) — 20 PLN
-• Крісло (шкіра) — 88 PLN | Стілець обертовий (шкіра) — 77 PLN
-• Диван 2-місний (шкіра) — 176 PLN | 3-місний (шкіра) — 220 PLN | Кутовий (шкіра) — 270 PLN
+📊 Шкіряні меблі для інших міст (надбавка 10%, БЕЗ акції, округлені до 5):
+• Пуф (шкіра) — 50 PLN | Стілець (шкіра) — 50 PLN | Подушка (шкіра) — 25 PLN
+• Крісло (шкіра) — 90 PLN | Стілець обертовий (шкіра) — 80 PLN
+• Диван 2-місний (шкіра) — 180 PLN | 3-місний (шкіра) — 220 PLN | Кутовий (шкіра) — 270 PLN
 
-📊 Інші послуги для інших міст (надбавка 10%):
+📊 Інші послуги для інших міст (надбавка 10%, округлені до 5):
 • Комплексна хімчистка авто — 550 PLN | VIP — 770 PLN
-• Озонування 1-кімн. — 159 PLN | 2-кімн. — 264 PLN
-• Вікно одностулкове — 44 PLN | двостулкове — 55 PLN
+• Озонування 1-кімн. — 160 PLN | 2-кімн. — 265 PLN
+• Вікно одностулкове — 45 PLN | двостулкове — 55 PLN
 
 ⚠️ ПРАВИЛО: Для інших міст ЗАВЖДИ бери ціну з ГОТОВОЇ ТАБЛИЦІ! НЕ рахуй вручну!
-Формула (якщо позиції немає в таблиці): ПОВНА_ціна (без акції) × 1.1, округлити вгору.
+Формула (якщо позиції немає в таблиці): ПОВНА_ціна (без акції) × 1.1, округлити ВГОРУ до найближчої 5.
 
 ⚠️ МІНІМАЛЬНЕ ЗАМОВЛЕННЯ:
 • Вроцлав і передмістя (до 10 км) — 160 PLN
