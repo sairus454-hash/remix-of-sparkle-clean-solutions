@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useLocation } from 'react-router-dom';
 import SEO from '@/components/SEO';
@@ -25,6 +25,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import PriceCalculatorContent from '@/components/PriceCalculatorContent';
 import QuickCalculator from '@/components/QuickCalculator';
 import { useSplash } from '@/hooks/useSplash';
+import { useCity } from '@/hooks/useCity';
 
 import { img } from '@/utils/imageMap';
 
