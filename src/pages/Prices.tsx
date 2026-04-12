@@ -63,7 +63,7 @@ const Prices = () => {
     }
   }, [location.state]);
 
-  const categories = [
+  const allCategories = [
     {
       id: 'cleaning', title: t.nav?.cleaning || 'Уборка', description: t.cleaning?.subtitle || 'Стандартная и генеральная уборка', icon: Home,
       items: [
