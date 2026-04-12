@@ -46,15 +46,15 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const furnitureOptions = [
     { id: 'armchair', name: t.prices.items.armchair, price: 70 },
     { id: 'sofa2', name: t.prices.items.sofa2, price: 150 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 182 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 218 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 180 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 220 },
   ];
 
   const mattressOptions = [
     { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: 140 },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: 213 },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: 215 },
     { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 220 },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 293 },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 295 },
   ];
 
   const autoOptions = [
