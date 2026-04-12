@@ -92,7 +92,7 @@ const Prices = () => {
         { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 45, image: img('calc-chair-swivel.jpg') },
         { id: 'chair', name: t.prices.items.chair, price: 25, image: img('calc-chair.jpg') },
         { id: 'armchair', name: t.prices.items.armchair, price: 55, originalPrice: 65, image: img('calc-armchair.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'pillow', name: t.prices.items.pillow, price: 10, originalPrice: 10, image: img('calc-pillow.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'pillow', name: t.prices.items.pillow, price: 10, image: img('calc-pillow.jpg') },
         { id: 'sofa2', name: t.prices.items.sofa2, price: 120, originalPrice: 135, image: img('calc-sofa2.jpg'), promoBadge: '🔥 -10%' },
         { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: img('calc-sofa3.jpg'), promoBadge: '🔥 -10%' },
         { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: img('calc-sofa-corner.jpg'), promoBadge: '🔥 -10%' },

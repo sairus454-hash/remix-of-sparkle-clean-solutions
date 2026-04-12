@@ -602,7 +602,7 @@ const Cleaning = () => {
                       { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 30, originalPrice: 35, image: calcPouf, promoBadge: '🔥 -10%' },
                       { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 25, image: calcChair },
                       { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 55, originalPrice: 65, image: calcArmchair, promoBadge: '🔥 -10%' },
-                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 10, originalPrice: 10, image: calcPillow, promoBadge: '🔥 -10%' },
+                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 10, image: calcPillow },
                       { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 120, originalPrice: 135, image: calcSofa2, promoBadge: '🔥 -10%' },
                       { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
                       { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
