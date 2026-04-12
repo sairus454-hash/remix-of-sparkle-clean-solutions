@@ -34,6 +34,7 @@ const Prices = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
   const location = useLocation();
+  const { isWroclaw } = useCity();
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
