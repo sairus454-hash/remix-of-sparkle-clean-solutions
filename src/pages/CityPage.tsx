@@ -120,6 +120,16 @@ const CityPage = () => {
       ],
     },
     {
+      id: 'mattress', title: t.prices.mattressTitle, description: t.prices.mattressDesc, icon: BedDouble,
+      items: [
+        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, originalPrice: 125, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, originalPrice: 200, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, originalPrice: 195, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 240, originalPrice: 265, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
+        
+      ],
+    },
+    {
       id: 'leather', title: t.prices.leatherFurnitureTitle, description: t.prices.leatherFurnitureDesc, icon: Armchair,
       items: [
         { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 40, originalPrice: 45, image: img('calc-leather-pouf.jpg'), promoBadge: '🔥 -10%' },
@@ -130,16 +140,6 @@ const CityPage = () => {
         { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 180, originalPrice: 200, image: img('calc-leather-sofa3.jpg'), promoBadge: '🔥 -10%' },
         { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 220, originalPrice: 245, image: img('calc-leather-corner.jpg'), promoBadge: '🔥 -10%' },
         { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 60, originalPrice: 70, image: img('calc-chair-swivel.jpg'), promoBadge: '🔥 -10%' },
-      ],
-    },
-    {
-      id: 'mattress', title: t.prices.mattressTitle, description: t.prices.mattressDesc, icon: BedDouble,
-      items: [
-        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, originalPrice: 125, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, originalPrice: 200, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, originalPrice: 195, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 240, originalPrice: 265, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
-        
       ],
     },
     {

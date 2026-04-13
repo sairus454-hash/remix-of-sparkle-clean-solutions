@@ -209,6 +209,20 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
       ],
     },
     {
+      id: 'mattress',
+      title: t.prices.mattressTitle,
+      description: t.prices.mattressDesc,
+      icon: BedDouble,
+      items: [
+        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, originalPrice: 200, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 240, originalPrice: 265, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+        { id: 'bedHeadboardM', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
+        { id: 'bedFrameM', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
+      ],
+    },
+    {
       id: 'leather',
       title: t.prices.leatherFurnitureTitle,
       description: t.prices.leatherFurnitureDesc,
@@ -221,20 +235,6 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
         { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 180, originalPrice: 200, image: calcLeatherSofa3, promoBadge: '🔥 -10%' },
         { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 220, originalPrice: 245, image: calcLeatherCorner, promoBadge: '🔥 -10%' },
         { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 60, originalPrice: 70, image: calcChairSwivel, promoBadge: '🔥 -10%' },
-      ],
-    },
-    {
-      id: 'mattress',
-      title: t.prices.mattressTitle,
-      description: t.prices.mattressDesc,
-      icon: BedDouble,
-      items: [
-        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, originalPrice: 200, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 240, originalPrice: 265, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-        { id: 'bedHeadboardM', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
-        { id: 'bedFrameM', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
       ],
     },
     {

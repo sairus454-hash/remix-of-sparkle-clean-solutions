@@ -116,6 +116,22 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       ],
     },
     {
+      id: 'mattress',
+      name: t.prices.mattressTitle,
+      icon: <BedDouble className="w-5 h-5" />,
+      items: [
+        { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 195 },
+        { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115 },
+        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80 },
+        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80 },
+        { id: 'mattressSingleDry', name: t.prices.items.mattressSingleDry, price: 115 },
+        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180 },
+        { id: 'mattressDoubleDry', name: t.prices.items.mattressDoubleDry, price: 195 },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 265 },
+        
+      ],
+    },
+    {
       id: 'leather',
       name: t.prices.leatherFurnitureTitle,
       icon: <Armchair className="w-5 h-5" />,
@@ -147,22 +163,6 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 800 },
         { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650 },
         { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400 },
-      ],
-    },
-    {
-      id: 'mattress',
-      name: t.prices.mattressTitle,
-      icon: <BedDouble className="w-5 h-5" />,
-      items: [
-        { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 195 },
-        { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115 },
-        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80 },
-        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80 },
-        { id: 'mattressSingleDry', name: t.prices.items.mattressSingleDry, price: 115 },
-        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180 },
-        { id: 'mattressDoubleDry', name: t.prices.items.mattressDoubleDry, price: 195 },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 265 },
-        
       ],
     },
     {
