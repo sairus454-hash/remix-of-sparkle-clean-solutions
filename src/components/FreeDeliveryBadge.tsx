@@ -36,14 +36,31 @@ const FreeDeliveryBadge = () => {
   // Shared messenger/review icons
   const messengerIcons = (
     <>
-      <a
-        href="tel:+48575211401"
-        onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('floating_badge'))}
-        className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-fresh to-secondary flex items-center justify-center hover:scale-110 transition-transform shadow-md"
-        aria-label="Zadzwoń"
-      >
-        <Phone className="w-5 h-5 text-white" />
-      </a>
+      <div className="relative group">
+        <button
+          onClick={() => {
+            if (isMobile) {
+              window.location.href = 'tel:+48575211401';
+              import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('floating_badge'));
+            } else {
+              setShowPhone(!showPhone);
+            }
+          }}
+          className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-fresh to-secondary flex items-center justify-center hover:scale-110 transition-transform shadow-md"
+          aria-label="Zadzwoń"
+        >
+          <Phone className="w-5 h-5 text-white" />
+        </button>
+        {!isMobile && showPhone && (
+          <a
+            href="tel:+48575211401"
+            onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('floating_badge'))}
+            className="absolute right-full mr-2 px-3 py-1.5 bg-foreground text-background text-sm font-semibold rounded-lg whitespace-nowrap shadow-lg animate-fade-in"
+          >
+            575 211 401
+          </a>
+        )}
+      </div>
       <a 
         href="https://t.me/+48575211401" 
         target="_blank" 
