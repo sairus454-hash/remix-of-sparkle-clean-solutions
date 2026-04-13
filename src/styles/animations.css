@@ -229,3 +229,15 @@
 .select-slow-scroll [data-radix-select-viewport] [role="option"] {
   scroll-snap-align: start;
 }
+
+/* Phone number slide in from left */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
