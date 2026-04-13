@@ -22,6 +22,7 @@ import calcSofa2 from '@/assets/calc-sofa2.jpg';
 import calcSofa3 from '@/assets/calc-sofa3.jpg';
 import calcSofaCorner from '@/assets/calc-sofa-corner.jpg';
 import calcSofaCornerLarge from '@/assets/calc-sofa-corner-large.jpg';
+import calcKitchenCorner from '@/assets/calc-kitchen-corner.jpg';
 import calcHeadboard from '@/assets/calc-headboard.jpg';
 import calcBedframe from '@/assets/calc-bedframe.jpg';
 
