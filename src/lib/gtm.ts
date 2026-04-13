@@ -19,6 +19,38 @@ export const pushConversion = (conversionLabel?: string, value?: number, currenc
   });
 };
 
+// Scroll depth tracking
+let scrollTracked = new Set<number>();
+
+const initScrollDepth = () => {
+  if (typeof window === 'undefined') return;
+  const thresholds = [25, 50, 75, 100];
+
+  const handleScroll = () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (docHeight <= 0) return;
+    const percent = Math.round((scrollTop / docHeight) * 100);
+
+    for (const t of thresholds) {
+      if (percent >= t && !scrollTracked.has(t)) {
+        scrollTracked.add(t);
+        pushEvent('scroll_depth', { scroll_threshold: t, page_path: window.location.pathname });
+      }
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+};
+
+// Reset tracked thresholds on route change
+export const resetScrollDepth = () => {
+  scrollTracked = new Set<number>();
+};
+
+// Auto-init
+initScrollDepth();
+
 // Pre-defined events
 export const gtmEvents = {
   formSubmit: (formName: string, extra?: Record<string, unknown>) => {
