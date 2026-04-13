@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { resetScrollDepth } from '@/lib/gtm';
 
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    resetScrollDepth();
+
     if (hash) {
-      // Try immediately, then retry after page renders
       const scrollToHash = () => {
         const el = document.querySelector(hash);
         if (el) {
