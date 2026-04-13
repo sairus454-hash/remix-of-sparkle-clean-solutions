@@ -50,6 +50,7 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
     { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(145) },
     { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(180) },
     { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(220) },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(130) },
   ], [t, applyPrice]);
 
   const mattressOptions = useMemo(() => [

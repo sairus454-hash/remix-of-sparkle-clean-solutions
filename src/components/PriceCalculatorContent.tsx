@@ -109,6 +109,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
         { id: 'sofa3', name: t.prices.items.sofa3, price: 150 },
         { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200 },
         { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210 },
+        { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130 },
         { id: 'carpet', name: t.prices.items.carpet, price: 23, unit: 'm²' },
         { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80 },
         { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80 },

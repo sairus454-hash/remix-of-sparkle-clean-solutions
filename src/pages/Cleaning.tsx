@@ -607,6 +607,7 @@ const Cleaning = () => {
                       { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
                       { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
                       { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
+                      { id: 'kitchenCorner', name: t.prices?.items?.kitchenCorner || 'Кухонный угловой диван', price: 130, image: calcSofaCorner },
                       { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 20, originalPrice: 25, image: calcCarpet, unit: 'm²', promoBadge: '🔥 -10%' },
                       { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
                       { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },

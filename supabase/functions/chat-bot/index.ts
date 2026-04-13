@@ -525,6 +525,7 @@ Sprzątanie generalne:
 • Sofa 3-osobowa — 150 PLN (zamiast 165)
 • Sofa narożna — 180 PLN (zamiast 200)
 • Duża sofa narożna — 210 PLN (zamiast 235)
+• Narożnik kuchenny — 130 PLN
 • Dywan — 20 PLN/m² (zamiast 25)
 • Meble z floku — +50% do ceny zwykłej
 
