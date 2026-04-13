@@ -121,9 +121,9 @@ const Services = () => {
   return (
     <>
       <SEO
-        title="Chemczystka mebli — Pranie tapicerki meblowej"
-        description="Profesjonalna chemczystka mebli z dojazdem: pranie tapicerki meblowej i skórzanej, czyszczenie kanap, foteli, materacy. Kalkulator online. Wrocław, Opole."
-        keywords="chemczystka mebli, pranie tapicerki meblowej, pranie tapicerki skórzanej, czyszczenie mebli, pranie kanapy, pranie sofy, czyszczenie fotela, pranie materaca, czyszczenie tapicerki, czyszczenie skóry, pranie tapicerki cennik, pranie tapicerki z dojazdem, pranie ekstrakcyjne, czyszczenie mebli Wrocław, Opole, Poznań"
+        title="Pranie kanapy, materaca, narożnika — Chemczystka mebli"
+        description="Profesjonalne pranie kanapy, materaca i narożnika z dojazdem. Chemczystka mebli tapicerowanych i skórzanych, czyszczenie kanap, foteli, sof. Kalkulator online. Wrocław, Opole."
+        keywords="pranie kanapy, pranie materaca, pranie narożnika, chemczystka mebli, pranie tapicerki meblowej, pranie tapicerki skórzanej, czyszczenie mebli, pranie sofy, czyszczenie fotela, czyszczenie tapicerki, czyszczenie skóry, pranie tapicerki cennik, pranie tapicerki z dojazdem, pranie ekstrakcyjne, czyszczenie mebli Wrocław, Opole, Poznań"
         canonical="/services"
         image="https://masterclean1885.com/og-services.png"
         breadcrumbs={[{ name: t.nav.services, path: '/services' }]}

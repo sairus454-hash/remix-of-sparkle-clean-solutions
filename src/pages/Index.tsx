@@ -58,9 +58,9 @@ const Index = () => {
   }];
   return <>
       <SEO
-        title="MasterClean — Pranie tapicerki, czyszczenie dywanów i aut"
-        description="Profesjonalne pranie tapicerki meblowej, czyszczenie dywanów, materacy i samochodów z dojazdem. Ozonowanie, sprzątanie, mycie okien. Wrocław 24/7."
-        keywords="pranie tapicerki, chemczystka mebli, pranie tapicerki meblowej, czyszczenie dywanów, czyszczenie materacy, pranie kanapy, pranie sofy, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, czyszczenie mebli Wrocław, pranie tapicerki Opole, usługi sprzątania Wrocław, pranie ekstrakcyjne, cleaning services Poland, Poznań"
+        title="MasterClean — Pranie kanapy, materaca, narożnika, tapicerki i aut"
+        description="Profesjonalne pranie kanapy, materaca i narożnika z dojazdem. Pranie tapicerki meblowej, czyszczenie dywanów i samochodów. Ozonowanie, sprzątanie, mycie okien. Wrocław 24/7."
+        keywords="pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, pranie tapicerki meblowej, czyszczenie dywanów, czyszczenie materacy, pranie sofy, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, czyszczenie mebli Wrocław, pranie tapicerki Opole, usługi sprzątania Wrocław, pranie ekstrakcyjne, cleaning services Poland, Poznań"
         canonical="/"
         image="https://masterclean1885.com/og-image.png"
         jsonLd={{
