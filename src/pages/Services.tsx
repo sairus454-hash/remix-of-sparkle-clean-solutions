@@ -25,6 +25,7 @@ import calcChairSeat from '@/assets/calc-chair-seat.jpg';
 import calcChairBack from '@/assets/calc-chair-back.jpg';
 import calcChairConference from '@/assets/calc-chair-conference.jpg';
 import calcChairSwivel from '@/assets/calc-chair-swivel.jpg';
+import calcLeatherChairSwivel from '@/assets/calc-leather-chair-swivel.jpg';
 import calcArmchair from '@/assets/calc-armchair.jpg';
 import calcPillow from '@/assets/calc-pillow.jpg';
 import calcSofa2 from '@/assets/calc-sofa2.jpg';
@@ -117,7 +118,7 @@ const Services = () => {
     { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 160, image: calcLeatherSofa2 },
     { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 200, image: calcLeatherSofa3 },
     { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 245, image: calcLeatherCorner },
-    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 70, image: calcChairSwivel },
+    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 70, image: calcLeatherChairSwivel },
   ];
 
   return (
