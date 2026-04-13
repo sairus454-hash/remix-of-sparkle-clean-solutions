@@ -55,7 +55,8 @@ const FreeDeliveryBadge = () => {
           <a
             href="tel:+48575211401"
             onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('floating_badge'))}
-            className="absolute right-full mr-2 px-3 py-1.5 bg-foreground text-background text-sm font-semibold rounded-lg whitespace-nowrap shadow-lg animate-fade-in"
+            className="absolute right-full mr-2 px-3 py-1.5 bg-foreground text-background text-sm font-semibold rounded-lg whitespace-nowrap shadow-lg animate-[slideInFromLeft_0.3s_ease-out_forwards]"
+            style={{ animation: 'slideInFromLeft 0.3s ease-out forwards' }}
           >
             575 211 401
           </a>
