@@ -8,6 +8,13 @@ const FreeDeliveryBadge = () => {
   const [isDismissed, setIsDismissed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showPhone, setShowPhone] = useState(false);
+
+  // Auto-hide phone number after 5 seconds
+  useEffect(() => {
+    if (!showPhone) return;
+    const timer = setTimeout(() => setShowPhone(false), 5000);
+    return () => clearTimeout(timer);
+  }, [showPhone]);
   const { language } = useLanguage();
   const isMobile = useIsMobile();
 
