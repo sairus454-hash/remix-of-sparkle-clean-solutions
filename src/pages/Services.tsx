@@ -31,6 +31,7 @@ import calcSofa2 from '@/assets/calc-sofa2.jpg';
 import calcSofa3 from '@/assets/calc-sofa3.jpg';
 import calcSofaCorner from '@/assets/calc-sofa-corner.jpg';
 import calcSofaCornerLarge from '@/assets/calc-sofa-corner-large.jpg';
+import calcKitchenCorner from '@/assets/calc-kitchen-corner.jpg';
 import calcMattressSingle from '@/assets/calc-mattress-single.jpg';
 import calcMattressDouble from '@/assets/calc-mattress-double.jpg';
 import calcHeadboard from '@/assets/calc-headboard.jpg';
@@ -86,7 +87,7 @@ const Services = () => {
     { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
     { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
     { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcSofaCorner },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcKitchenCorner },
     { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
     { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
     { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 180, originalPrice: 200, image: calcMattressSingle, promoBadge: '🔥 -10%' },

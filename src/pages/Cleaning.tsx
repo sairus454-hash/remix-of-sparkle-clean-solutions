@@ -39,6 +39,7 @@ import calcSofa2 from '@/assets/calc-sofa2.jpg';
 import calcSofa3 from '@/assets/calc-sofa3.jpg';
 import calcSofaCorner from '@/assets/calc-sofa-corner.jpg';
 import calcSofaCornerLarge from '@/assets/calc-sofa-corner-large.jpg';
+import calcKitchenCorner from '@/assets/calc-kitchen-corner.jpg';
 import calcCarpet from '@/assets/calc-carpet.jpg';
 import calcCarpetPickup from '@/assets/calc-carpet-pickup.jpg';
 import calcCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
@@ -607,7 +608,7 @@ const Cleaning = () => {
                       { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
                       { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
                       { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
-                      { id: 'kitchenCorner', name: t.prices?.items?.kitchenCorner || 'Кухонный угловой диван', price: 130, image: calcSofaCorner },
+                      { id: 'kitchenCorner', name: t.prices?.items?.kitchenCorner || 'Кухонный угловой диван', price: 130, image: calcKitchenCorner },
                       { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 20, originalPrice: 25, image: calcCarpet, unit: 'm²', promoBadge: '🔥 -10%' },
                       { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
                       { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },

@@ -114,7 +114,7 @@ const CityPage = () => {
         { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: img('calc-sofa3.jpg'), promoBadge: '🔥 -10%' },
         { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: img('calc-sofa-corner.jpg'), promoBadge: '🔥 -10%' },
         { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: img('calc-sofa-corner-large.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: img('calc-sofa-corner.jpg') },
+        { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: img('calc-kitchen-corner.jpg') },
         { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: img('calc-headboard.jpg'), promoBadge: '🔥 -10%' },
         { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: img('calc-bedframe.jpg'), promoBadge: '🔥 -10%' },
         
