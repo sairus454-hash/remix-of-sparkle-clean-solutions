@@ -7,6 +7,7 @@ const FreeDeliveryBadge = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
   const { language } = useLanguage();
   const isMobile = useIsMobile();
 
