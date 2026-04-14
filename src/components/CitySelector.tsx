@@ -64,8 +64,10 @@ const CitySelector = () => {
         <span className="relative flex-shrink-0">
           <MapPin className="w-4 h-4 text-primary" />
         </span>
-        <span className="text-[10px] sm:text-xs font-semibold text-primary text-left leading-tight">
-          {cityLabel?.replace(' ', '\n')}
+        <span className="text-[10px] sm:text-xs font-semibold text-primary text-left leading-tight flex flex-col">
+          {cityNameLines.map((line, idx) => (
+            <span key={idx}>{line}</span>
+          ))}
         </span>
       </button>
 
