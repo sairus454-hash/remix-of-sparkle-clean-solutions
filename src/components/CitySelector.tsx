@@ -44,6 +44,9 @@ const CitySelector = () => {
   });
 
   const cityLabel = currentCity ? currentCity.name : (t.city?.yourCity || 'Twoje miasto');
+  
+  // Split city name into lines for display
+  const cityNameLines = cityLabel ? cityLabel.split(' ') : [t.city?.yourCity || 'Twoje miasto'];
 
   const handleSelectCity = (slug: string) => {
     setSavedSlug(slug);
@@ -61,8 +64,10 @@ const CitySelector = () => {
         <span className="relative flex-shrink-0">
           <MapPin className="w-4 h-4 text-primary" />
         </span>
-        <span className="text-xs font-semibold text-primary whitespace-nowrap truncate max-w-[80px] sm:max-w-none">
-          {cityLabel}
+        <span className="text-[10px] sm:text-xs font-semibold text-primary text-left leading-tight flex flex-col">
+          {cityNameLines.map((line, idx) => (
+            <span key={idx}>{line}</span>
+          ))}
         </span>
       </button>
 
