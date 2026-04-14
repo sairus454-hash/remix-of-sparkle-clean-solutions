@@ -24,7 +24,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [language, setLanguage] = useState<Language>(() => {
     const saved = localStorage.getItem('language');
     if (saved && ['ru', 'en', 'pl', 'uk'].includes(saved)) return saved as Language;
-    return detectBrowserLanguage();
+    return 'pl';
   });
 
   useEffect(() => {
