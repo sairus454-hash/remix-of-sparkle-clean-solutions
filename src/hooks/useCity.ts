@@ -27,11 +27,12 @@ export function useCity(): CityInfo {
     const cityMatch = location.pathname.match(/^\/city\/([^/]+)/);
     const urlSlug = cityMatch ? cityMatch[1] : null;
 
-    // 2. Fallback to localStorage
+    // 2. Fallback to localStorage, then default to Wrocław
     let slug: string | null = urlSlug;
     if (!slug) {
       try { slug = localStorage.getItem(CITY_STORAGE_KEY); } catch { slug = null; }
     }
+    if (!slug) slug = 'wroclaw';
 
     const city = slug ? getCityBySlug(slug) || null : null;
     const isWroclaw = !city || WROCLAW_GROUP.includes(city.slug);

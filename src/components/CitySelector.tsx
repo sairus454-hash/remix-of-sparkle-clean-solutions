@@ -24,7 +24,7 @@ const CitySelector = () => {
   const urlCity = cityMatch ? getCityBySlug(cityMatch[1]) : null;
 
   const [savedSlug, setSavedSlug] = useState<string | null>(() => {
-    try { return localStorage.getItem(CITY_STORAGE_KEY); } catch { return null; }
+    try { return localStorage.getItem(CITY_STORAGE_KEY) || 'wroclaw'; } catch { return 'wroclaw'; }
   });
 
   // When on a city page, persist that city
