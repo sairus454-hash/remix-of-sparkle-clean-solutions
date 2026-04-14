@@ -44,6 +44,9 @@ const CitySelector = () => {
   });
 
   const cityLabel = currentCity ? currentCity.name : (t.city?.yourCity || 'Twoje miasto');
+  
+  // Split city name into lines for display
+  const cityNameLines = cityLabel ? cityLabel.split(' ') : [t.city?.yourCity || 'Twoje miasto'];
 
   const handleSelectCity = (slug: string) => {
     setSavedSlug(slug);
