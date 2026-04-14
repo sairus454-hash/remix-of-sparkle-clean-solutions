@@ -61,7 +61,7 @@ const CitySelector = () => {
         <span className="relative flex-shrink-0">
           <MapPin className="w-4 h-4 text-primary" />
         </span>
-        <span className="text-xs font-semibold text-primary whitespace-nowrap hidden sm:inline">
+        <span className="text-xs font-semibold text-primary whitespace-nowrap">
           {cityLabel}
         </span>
       </button>
