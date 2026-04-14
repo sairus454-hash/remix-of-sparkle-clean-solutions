@@ -1,4 +1,4 @@
-import { ReactNode, lazy, Suspense } from 'react';
+import { ReactNode, lazy, Suspense, useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CleaningBackground from './CleaningBackground';
@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import promoBannerGirl from '@/assets/promo-banner-girl.png';
+import promoBannerImpregnation from '@/assets/promo-banner-impregnation.jpg';
 
 // Lazy load non-critical components — not needed for initial paint
 const ChatBot = lazy(() => import('./ChatBot'));
@@ -18,6 +19,14 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const { t, language } = useLanguage();
+  const [activeBanner, setActiveBanner] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveBanner((prev) => (prev === 0 ? 1 : 0));
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
@@ -57,36 +66,104 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </section>
 
-        {/* Promo Banner — Free Drying (all pages) */}
+        {/* Sliding Promo Banners */}
         <section className="relative w-full overflow-hidden bg-gradient-to-r from-primary to-secondary">
-          <div className="container mx-auto px-4 py-5 sm:py-8 flex flex-col sm:flex-row items-center gap-5 sm:gap-10 relative z-10">
-            <img
-              src={promoBannerGirl}
-              alt="Promocja — darmowe suszenie"
-              loading="eager"
-              width={260}
-              height={260}
-              className="w-44 h-44 sm:w-64 sm:h-64 md:w-[310px] md:h-[310px] object-contain flex-shrink-0 drop-shadow-xl"
-            />
-            <div className="text-center sm:text-left flex-1">
-              <p className="text-primary-foreground/80 text-base sm:text-lg font-semibold uppercase tracking-wider mb-1.5">
-                {t.hero.bannerTag}
-              </p>
-              <h2 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-md">
-                {t.hero.bannerTitle.split('\n')[0]}
-                <br />
-                {t.hero.bannerTitle.split('\n')[1]} <span className="text-yellow-300">{t.hero.bannerFree}</span>
-              </h2>
-              <p className="text-primary-foreground/70 text-sm sm:text-base mt-2.5">
-                {t.hero.bannerSub}
-              </p>
+          <div className="relative">
+            {/* Banner 1 — Free Drying */}
+            <div
+              className="transition-all duration-700 ease-in-out"
+              style={{
+                opacity: activeBanner === 0 ? 1 : 0,
+                position: activeBanner === 0 ? 'relative' : 'absolute',
+                top: 0, left: 0, right: 0,
+                pointerEvents: activeBanner === 0 ? 'auto' : 'none',
+              }}
+            >
+              <div className="container mx-auto px-4 py-5 sm:py-8 flex flex-col sm:flex-row items-center gap-5 sm:gap-10 relative z-10">
+                <img
+                  src={promoBannerGirl}
+                  alt="Promocja — darmowe suszenie"
+                  loading="eager"
+                  width={260}
+                  height={260}
+                  className="w-44 h-44 sm:w-64 sm:h-64 md:w-[310px] md:h-[310px] object-contain flex-shrink-0 drop-shadow-xl"
+                />
+                <div className="text-center sm:text-left flex-1">
+                  <p className="text-primary-foreground/80 text-base sm:text-lg font-semibold uppercase tracking-wider mb-1.5">
+                    {t.hero.bannerTag}
+                  </p>
+                  <h2 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-md">
+                    {t.hero.bannerTitle.split('\n')[0]}
+                    <br />
+                    {t.hero.bannerTitle.split('\n')[1]} <span className="text-yellow-300">{t.hero.bannerFree}</span>
+                  </h2>
+                  <p className="text-primary-foreground/70 text-sm sm:text-base mt-2.5">
+                    {t.hero.bannerSub}
+                  </p>
+                </div>
+                <Link to="/services" className="flex-shrink-0">
+                  <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
+                    {t.hero.bannerCta}
+                    <ArrowRight className="w-6 h-6 ml-2" />
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <Link to="/services" className="flex-shrink-0">
-              <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
-                {t.hero.bannerCta}
-                <ArrowRight className="w-6 h-6 ml-2" />
-              </Button>
-            </Link>
+
+            {/* Banner 2 — Impregnation */}
+            <div
+              className="transition-all duration-700 ease-in-out"
+              style={{
+                opacity: activeBanner === 1 ? 1 : 0,
+                position: activeBanner === 1 ? 'relative' : 'absolute',
+                top: 0, left: 0, right: 0,
+                pointerEvents: activeBanner === 1 ? 'auto' : 'none',
+              }}
+            >
+              <div className="container mx-auto px-4 py-5 sm:py-8 flex flex-col sm:flex-row items-center gap-5 sm:gap-10 relative z-10">
+                <img
+                  src={promoBannerImpregnation}
+                  alt="Impregnacja mebli"
+                  loading="lazy"
+                  width={260}
+                  height={260}
+                  className="w-44 h-44 sm:w-64 sm:h-64 md:w-[310px] md:h-[310px] object-cover rounded-2xl flex-shrink-0 drop-shadow-xl"
+                />
+                <div className="text-center sm:text-left flex-1">
+                  <p className="text-primary-foreground/80 text-base sm:text-lg font-semibold uppercase tracking-wider mb-1.5">
+                    {t.hero.banner2Tag}
+                  </p>
+                  <h2 className="text-primary-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight drop-shadow-md">
+                    {t.hero.banner2Title.split('\n')[0]}
+                    <br />
+                    {t.hero.banner2Title.split('\n')[1]} <span className="text-yellow-300">{t.hero.banner2Highlight}</span>
+                  </h2>
+                  <p className="text-primary-foreground/70 text-sm sm:text-base mt-2.5">
+                    {t.hero.banner2Sub}
+                  </p>
+                </div>
+                <Link to="/impregnation" className="flex-shrink-0">
+                  <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
+                    {t.hero.banner2Cta}
+                    <ArrowRight className="w-6 h-6 ml-2" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Dot indicators */}
+          <div className="flex justify-center gap-2 pb-3">
+            {[0, 1].map((i) => (
+              <button
+                key={i}
+                onClick={() => setActiveBanner(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  activeBanner === i ? 'bg-primary-foreground scale-125' : 'bg-primary-foreground/40'
+                }`}
+                aria-label={`Banner ${i + 1}`}
+              />
+            ))}
           </div>
         </section>
 
