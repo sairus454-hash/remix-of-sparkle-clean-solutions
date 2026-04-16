@@ -1,4 +1,5 @@
 import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
+import fiscalReceiptBlog from '@/assets/fiscal-receipt-blog.jpg';
 import cleaningTeamWork from '@/assets/cleaning-team-work-1.jpg';
 import autoCleaning from '@/assets/auto-cleaning-1.jpg';
 import mattressCleaning from '@/assets/mattress-cleaning.jpg';
