@@ -147,10 +147,24 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               <Link to="/sitemap" className="text-background/80 hover:text-background text-xs sm:text-sm transition-colors touch-manipulation py-1">
                 Sitemap
               </Link>
-             </div>
+          </div>
         </div>
+
+        {/* Warranty Info */}
+        <div className="mt-6 pt-6 border-t border-background/10">
+          <p className="text-sm text-background/70 text-center font-medium">
+            {language === 'ru'
+              ? 'Гарантия на качество выполненных услуг — 7 дней'
+              : language === 'uk'
+              ? 'Гарантія на якість виконаних послуг — 7 днів'
+              : language === 'en'
+              ? '7-day quality guarantee on all services'
+              : 'Gwarancja jakości wykonanych usług — 7 dni'}
+          </p>
+        </div>
+
         {/* Disclaimer */}
-        <div className="mt-8 pt-6 border-t border-background/10">
+        <div className="mt-6 pt-6 border-t border-background/10">
           <p className="text-xs text-background/50 text-center italic max-w-3xl mx-auto">
             {language === 'ru'
               ? 'К сожалению, мы не можем гарантировать, что каждое отдельное пятно будет выведено, а также не гарантируем, что каждый неприятный запах исчезнет.'
