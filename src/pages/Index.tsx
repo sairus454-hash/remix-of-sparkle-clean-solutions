@@ -134,6 +134,15 @@ const Index = () => {
                 <span className="hidden sm:inline">{t.hero.subtitle}</span>
                 <span className="sm:hidden">{t.hero.subtitleShort}</span>
               </p>
+              <p className="text-sm sm:text-base text-white/90 font-bold mb-6 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+                {language === 'ru'
+                  ? 'Гарантия на качество выполненных услуг — 7 дней'
+                  : language === 'uk'
+                  ? 'Гарантія на якість виконаних послуг — 7 днів'
+                  : language === 'en'
+                  ? '7-day quality guarantee on all services'
+                  : 'Gwarancja jakości wykonanych usług — 7 dni'}
+              </p>
               <div>
                 <Link to="/contacts">
                   <Button className="bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 touch-manipulation active:scale-95 transition-transform">
