@@ -1,4 +1,5 @@
 import sofaBeforeAfter from '@/assets/sofa-before-after.jpg';
+import fiscalReceiptBlog from '@/assets/fiscal-receipt-blog.jpg';
 import cleaningTeamWork from '@/assets/cleaning-team-work-1.jpg';
 import autoCleaning from '@/assets/auto-cleaning-1.jpg';
 import mattressCleaning from '@/assets/mattress-cleaning.jpg';
@@ -151,6 +152,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 мин',
       tag: '🛋️ Химчистка',
     },
+    {
+      id: 13,
+      title: 'Почему мастер по химчистке обязан выдавать фискальный чек',
+      summary: 'Фискальный чек — это не просто формальность, а гарантия вашей безопасности, качества услуги и честного рынка.',
+      content: 'При заказе услуг химчистки мебели многие клиенты обращают внимание на цену, сроки и результат. Однако есть ещё один важный момент — официальный расчёт и выдача фискального чека.',
+      fullContent: '🧾 Почему мастер по химчистке обязан выдавать фискальный чек\n\nПри заказе услуг химчистки мебели многие клиенты обращают внимание на цену, сроки и результат. Однако есть ещё один важный момент — официальный расчёт и выдача фискального чека.\n\nСогласно требованиям законодательства в Польше, услуги, оказываемые физическим лицам, должны фиксироваться через кассовый аппарат, а клиенту обязательно выдается чек. Это касается и специалистов по химчистке мебели.\n\n✅ Что это даёт клиенту?\n\nВо-первых, чек — это подтверждение оплаты. В случае спорной ситуации он защищает ваши права как потребителя. Если качество услуги не соответствует заявленному, у вас есть основание обратиться с претензией.\n\nВо-вторых, это показатель того, что вы имеете дело с официально работающим специалистом, а не с «частником без регистрации». Такой мастер несёт ответственность за свою работу и соблюдает стандарты.\n\n📊 Почему это важно для рынка?\n\nРабота «в белую» формирует честную конкуренцию. Компании и мастера, которые платят налоги и работают официально, не демпингуют за счёт ухода от обязательств. В итоге клиент получает более качественный сервис и прозрачные условия.\n\n🔍 На что обратить внимание?\n\nПеред заказом услуги стоит уточнить:\n\n• Будет ли выдан фискальный чек\n• Работает ли мастер официально\n• Есть ли гарантия на выполненные работы\n\nЕсли после выполнения услуги чек не выдают — это серьёзный повод задуматься о надёжности исполнителя.\n\n📌 Вывод: фискальный чек — это не просто формальность, а гарантия вашей безопасности, качества услуги и честного рынка. Выбирая мастера по химчистке, обращайте внимание не только на цену, но и на прозрачность работы.',
+      image: fiscalReceiptBlog,
+      date: '2026-04-16',
+      readTime: '4 мин',
+      tag: '🧾 Закон',
+    },
   ],
   en: [
     {
@@ -277,6 +289,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-03',
       readTime: '3 min',
       tag: '🛋️ Cleaning',
+    },
+    {
+      id: 13,
+      title: 'Why a Cleaning Specialist Must Issue a Fiscal Receipt',
+      summary: 'A fiscal receipt is not just a formality — it guarantees your safety, service quality, and a fair market.',
+      content: 'When ordering upholstery cleaning services, many clients focus on price, timing and results. However, there is another important aspect — official payment and issuing a fiscal receipt.',
+      fullContent: '🧾 Why a Cleaning Specialist Must Issue a Fiscal Receipt\n\nWhen ordering upholstery cleaning services, many clients focus on price, timing and results. However, there is another important aspect — official payment and issuing a fiscal receipt.\n\nAccording to Polish law, services provided to individuals must be registered through a cash register, and a receipt must be issued to the client. This applies to upholstery cleaning specialists as well.\n\n✅ What does this give the client?\n\nFirstly, a receipt is proof of payment. In case of a dispute, it protects your consumer rights. If the service quality doesn\'t match what was promised, you have grounds to file a complaint.\n\nSecondly, it indicates you\'re dealing with an officially registered specialist, not an "unregistered freelancer." Such a professional takes responsibility for their work and follows standards.\n\n📊 Why is this important for the market?\n\nWorking officially creates fair competition. Companies and specialists who pay taxes and work legally don\'t undercut prices by avoiding obligations. As a result, clients get better service and transparent conditions.\n\n🔍 What to pay attention to?\n\nBefore ordering a service, it\'s worth checking:\n\n• Will a fiscal receipt be issued\n• Does the specialist work officially\n• Is there a warranty on the work performed\n\nIf no receipt is provided after the service — it\'s a serious reason to question the reliability of the provider.\n\n📌 Conclusion: a fiscal receipt is not just a formality — it guarantees your safety, service quality, and a fair market. When choosing a cleaning specialist, pay attention not only to price but also to transparency.',
+      image: fiscalReceiptBlog,
+      date: '2026-04-16',
+      readTime: '4 min',
+      tag: '🧾 Law',
     },
   ],
   pl: [
@@ -405,6 +428,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 min',
       tag: '🛋️ Tapicerka',
     },
+    {
+      id: 13,
+      title: 'Dlaczego specjalista od czyszczenia musi wydać paragon fiskalny',
+      summary: 'Paragon fiskalny to nie formalność — to gwarancja Twojego bezpieczeństwa, jakości usługi i uczciwego rynku.',
+      content: 'Zamawiając usługi czyszczenia tapicerki, wielu klientów zwraca uwagę na cenę, termin i efekt. Jest jednak jeszcze jeden ważny aspekt — oficjalne rozliczenie i wydanie paragonu fiskalnego.',
+      fullContent: '🧾 Dlaczego specjalista od czyszczenia musi wydać paragon fiskalny\n\nZamawiając usługi czyszczenia tapicerki, wielu klientów zwraca uwagę na cenę, termin i efekt. Jest jednak jeszcze jeden ważny aspekt — oficjalne rozliczenie i wydanie paragonu fiskalnego.\n\nZgodnie z wymogami prawa w Polsce, usługi świadczone osobom fizycznym muszą być rejestrowane za pomocą kasy fiskalnej, a klient musi otrzymać paragon. Dotyczy to również specjalistów od czyszczenia tapicerki meblowej.\n\n✅ Co to daje klientowi?\n\nPo pierwsze, paragon to potwierdzenie zapłaty. W przypadku sporu chroni Twoje prawa konsumenckie. Jeśli jakość usługi nie odpowiada obiecywanej, masz podstawę do reklamacji.\n\nPo drugie, to wskaźnik, że masz do czynienia z oficjalnie działającym specjalistą, a nie z „wykonawcą bez rejestracji". Taki fachowiec ponosi odpowiedzialność za swoją pracę i przestrzega standardów.\n\n📊 Dlaczego to ważne dla rynku?\n\nPraca „na biało" tworzy uczciwą konkurencję. Firmy i specjaliści, którzy płacą podatki i pracują legalnie, nie zaniżają cen kosztem unikania zobowiązań. W rezultacie klient otrzymuje lepszą jakość usługi i przejrzyste warunki.\n\n🔍 Na co zwrócić uwagę?\n\nPrzed zamówieniem usługi warto sprawdzić:\n\n• Czy zostanie wydany paragon fiskalny\n• Czy specjalista pracuje oficjalnie\n• Czy jest gwarancja na wykonane prace\n\nJeśli po wykonaniu usługi paragon nie zostaje wydany — to poważny powód, by zastanowić się nad wiarygodnością wykonawcy.\n\n📌 Wniosek: paragon fiskalny to nie formalność — to gwarancja Twojego bezpieczeństwa, jakości usługi i uczciwego rynku. Wybierając specjalistę od czyszczenia, zwracaj uwagę nie tylko na cenę, ale i na przejrzystość działania.',
+      image: fiscalReceiptBlog,
+      date: '2026-04-16',
+      readTime: '4 min',
+      tag: '🧾 Prawo',
+    },
   ],
   uk: [
     {
@@ -531,6 +565,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-03',
       readTime: '3 хв',
       tag: '🛋️ Хімчистка',
+    },
+    {
+      id: 13,
+      title: 'Чому майстер з хімчистки зобов\'язаний видавати фіскальний чек',
+      summary: 'Фіскальний чек — це не просто формальність, а гарантія вашої безпеки, якості послуги та чесного ринку.',
+      content: 'При замовленні послуг хімчистки меблів багато клієнтів звертають увагу на ціну, терміни та результат. Однак є ще один важливий момент — офіційний розрахунок і видача фіскального чеку.',
+      fullContent: '🧾 Чому майстер з хімчистки зобов\'язаний видавати фіскальний чек\n\nПри замовленні послуг хімчистки меблів багато клієнтів звертають увагу на ціну, терміни та результат. Однак є ще один важливий момент — офіційний розрахунок і видача фіскального чеку.\n\nЗгідно з вимогами законодавства Польщі, послуги, що надаються фізичним особам, мають фіксуватися через касовий апарат, а клієнту обов\'язково видається чек. Це стосується і спеціалістів з хімчистки меблів.\n\n✅ Що це дає клієнту?\n\nПо-перше, чек — це підтвердження оплати. У разі спірної ситуації він захищає ваші права як споживача. Якщо якість послуги не відповідає заявленій, у вас є підстава звернутися з претензією.\n\nПо-друге, це показник того, що ви маєте справу з офіційно працюючим спеціалістом, а не з «приватником без реєстрації». Такий майстер несе відповідальність за свою роботу і дотримується стандартів.\n\n📊 Чому це важливо для ринку?\n\nРобота «в білу» формує чесну конкуренцію. Компанії та майстри, які сплачують податки і працюють офіційно, не демпінгують за рахунок ухилення від зобов\'язань. У підсумку клієнт отримує якісніший сервіс і прозорі умови.\n\n🔍 На що звернути увагу?\n\nПеред замовленням послуги варто уточнити:\n\n• Чи буде видано фіскальний чек\n• Чи працює майстер офіційно\n• Чи є гарантія на виконані роботи\n\nЯкщо після виконання послуги чек не видають — це серйозний привід замислитися про надійність виконавця.\n\n📌 Висновок: фіскальний чек — це не просто формальність, а гарантія вашої безпеки, якості послуги та чесного ринку. Обираючи майстра з хімчистки, звертайте увагу не тільки на ціну, але й на прозорість роботи.',
+      image: fiscalReceiptBlog,
+      date: '2026-04-16',
+      readTime: '4 хв',
+      tag: '🧾 Закон',
     },
   ],
 };
