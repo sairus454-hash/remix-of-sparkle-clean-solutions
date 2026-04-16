@@ -290,6 +290,17 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '3 min',
       tag: '🛋️ Cleaning',
     },
+    {
+      id: 13,
+      title: 'Why a Cleaning Specialist Must Issue a Fiscal Receipt',
+      summary: 'A fiscal receipt is not just a formality — it guarantees your safety, service quality, and a fair market.',
+      content: 'When ordering upholstery cleaning services, many clients focus on price, timing and results. However, there is another important aspect — official payment and issuing a fiscal receipt.',
+      fullContent: '🧾 Why a Cleaning Specialist Must Issue a Fiscal Receipt\n\nWhen ordering upholstery cleaning services, many clients focus on price, timing and results. However, there is another important aspect — official payment and issuing a fiscal receipt.\n\nAccording to Polish law, services provided to individuals must be registered through a cash register, and a receipt must be issued to the client. This applies to upholstery cleaning specialists as well.\n\n✅ What does this give the client?\n\nFirstly, a receipt is proof of payment. In case of a dispute, it protects your consumer rights. If the service quality doesn\'t match what was promised, you have grounds to file a complaint.\n\nSecondly, it indicates you\'re dealing with an officially registered specialist, not an "unregistered freelancer." Such a professional takes responsibility for their work and follows standards.\n\n📊 Why is this important for the market?\n\nWorking officially creates fair competition. Companies and specialists who pay taxes and work legally don\'t undercut prices by avoiding obligations. As a result, clients get better service and transparent conditions.\n\n🔍 What to pay attention to?\n\nBefore ordering a service, it\'s worth checking:\n\n• Will a fiscal receipt be issued\n• Does the specialist work officially\n• Is there a warranty on the work performed\n\nIf no receipt is provided after the service — it\'s a serious reason to question the reliability of the provider.\n\n📌 Conclusion: a fiscal receipt is not just a formality — it guarantees your safety, service quality, and a fair market. When choosing a cleaning specialist, pay attention not only to price but also to transparency.',
+      image: fiscalReceiptBlog,
+      date: '2026-04-16',
+      readTime: '4 min',
+      tag: '🧾 Law',
+    },
   ],
   pl: [
     {
