@@ -21,7 +21,7 @@ const TikTokIcon = ({
   </svg>;
 const About = () => {
   const {
-    t
+    t, language
   } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('about');
   const values = [{
