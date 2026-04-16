@@ -379,6 +379,15 @@ const CityPage = () => {
               <p className="text-base sm:text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-fade-up px-4 font-medium" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
                 {cityContent.subtitle}
               </p>
+              <p className="text-sm sm:text-base text-white/90 font-bold mt-4 animate-fade-up drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.15s' }}>
+                {language === 'ru'
+                  ? 'Гарантия на качество выполненных услуг — 7 дней'
+                  : language === 'uk'
+                  ? 'Гарантія на якість виконаних послуг — 7 днів'
+                  : language === 'en'
+                  ? '7-day quality guarantee on all services'
+                  : 'Gwarancja jakości wykonanych usług — 7 dni'}
+              </p>
             </div>
           </div>
         </section>
