@@ -94,6 +94,15 @@ const About = () => {
                   <span className="hidden sm:inline">{t.about.subtitle}</span>
                   <span className="sm:hidden">{(t.about as any).subtitleShort || t.about.subtitle}</span>
                 </p>
+                <p className="text-base font-bold text-primary mt-4 animate-fade-up" style={{ animationDelay: '0.15s' }}>
+                  {language === 'ru'
+                    ? 'Гарантия на качество выполненных услуг — 7 дней'
+                    : language === 'uk'
+                    ? 'Гарантія на якість виконаних послуг — 7 днів'
+                    : language === 'en'
+                    ? '7-day quality guarantee on all services'
+                    : 'Gwarancja jakości wykonanych usług — 7 dni'}
+                </p>
                 
                 {/* Social Media Links */}
                 <div className="mt-8">
