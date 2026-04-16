@@ -138,7 +138,6 @@ const FreeDeliveryBadge = () => {
             ))}
             <span className="text-[7px] sm:text-[10px] font-bold text-gray-800 ml-0.5">5.0</span>
           </div>
-          <span className="text-[6px] sm:text-[9px] text-gray-500">65 {language === 'pl' ? 'opinii' : language === 'uk' ? 'відгуків' : language === 'ru' ? 'отзывов' : 'reviews'}</span>
         </div>
       </a>
     </>
@@ -293,7 +292,6 @@ const FreeDeliveryBadge = () => {
                         ))}
                         <span className="text-[9px] font-bold text-gray-800 ml-0.5">5.0</span>
                       </div>
-                      <span className="text-[7px] text-gray-500">65 {language === 'pl' ? 'opinii' : language === 'uk' ? 'відгуків' : language === 'ru' ? 'отзывов' : 'reviews'}</span>
                     </div>
                   </a>
                 </div>
