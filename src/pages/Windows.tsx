@@ -15,7 +15,11 @@ import { useSplash } from '@/hooks/useSplash';
  
  const Windows = () => {
    const { t } = useLanguage();
+   const formRef = useRef<ContactFormRef>(null);
    const formSectionRef = useRef<HTMLDivElement>(null);
+   const { showSplash, handleSplashComplete } = useSplash('windows');
+ 
+   const benefits = [
  
    const benefits = [
      { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
