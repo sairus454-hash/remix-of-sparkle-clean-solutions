@@ -390,24 +390,7 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.otherDesc || 'Ковры, коляски, плитка и дополнительные услуги'}</p>
                       </div>
                     </div>
-                    <CardServiceCalculator
-                      category="other"
-                      items={[
-                        { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие (1-20 м²)', price: 20, image: calcCarpet, unit: 'm²' },
-                        { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 35, image: calcCarpetPickup, unit: 'm²' },
-                        { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Импрегнация ковра', price: 5, image: calcCarpetImpregnation, unit: 'm²' },
-                        { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || 'Импрегнация коврового покрытия', price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
-                        { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100, image: calcStroller },
-                        { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80, image: calcCarseat },
-                        { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно до конца весны' },
-                        { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80, image: calcImpregnation },
-                        { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcTileCleaning, unit: 'm²' },
-                        { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 15, image: calcCarpetMedium, unit: 'm²' },
-                        { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 10, image: calcCarpetLarge, unit: 'm²' },
-                      ]}
-                      onSendToForm={handleCardToForm}
-                      onQuickOrder={handleQuickAdd}
-                    />
+                    {/* Calculator removed - see pricing in Prices page */}
                   </CardContent>
                 </Card>
               </CircularRevealCard>
