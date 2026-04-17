@@ -20,9 +20,8 @@ import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Calculator, Droplets, ArrowRight, Sofa, Armchair, Square, Zap } from 'lucide-react';
+import { Sparkles, CheckCircle2, Home, Clock, Shield, Leaf, Users, Droplets, ArrowRight, Sofa, Armchair, Square, Zap } from 'lucide-react';
 import PromotionsSection from '@/components/PromotionsSection';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import QuickOrderDialog from '@/components/QuickOrderDialog';
 import heroHouseCleaning from '@/assets/hero-house-cleaning.jpg';
 import cleaningTeam1 from '@/assets/cleaning-team-work-1.jpg';
@@ -283,219 +282,6 @@ const Cleaning = () => {
         <PromotionsSection />
       </div>
 
-      {/* Compact Calculator Trigger */}
-      <section className="py-6 sm:py-10 bg-gradient-section">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <CircularRevealCard index={0}>
-              <Card 
-                className="shadow-card cursor-pointer hover:shadow-lg transition-shadow"
-                onClick={() => setIsCalcOpen(true)}
-              >
-                <CardContent className="py-5 sm:py-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                        <Calculator className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <h2 className="font-serif text-lg sm:text-xl font-semibold">{t.cleaning?.calculatorTitle || 'Рассчитайте стоимость уборки'}</h2>
-                        <p className="text-sm text-muted-foreground">{t.cleaning?.selectType || 'Выберите тип уборки'}</p>
-                      </div>
-                    </div>
-                    <Button variant="outline" size="sm" className="hidden sm:flex">
-                      {t.calculator?.title || 'Калькулятор'}
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </CircularRevealCard>
-          </div>
-        </div>
-      </section>
-
-      {/* Calculator Modal/Drawer */}
-      {isMobile ? (
-        <Drawer open={isCalcOpen} onOpenChange={setIsCalcOpen}>
-          <DrawerContent className="max-h-[90vh]">
-            <DrawerHeader className="border-b border-border pb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                  <Calculator className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <DrawerTitle className="font-serif text-lg">
-                  {t.cleaning?.calculatorTitle || 'Рассчитайте стоимость уборки'}
-                </DrawerTitle>
-              </div>
-            </DrawerHeader>
-            <div className="overflow-y-auto p-4 pb-8">
-              <CleaningCalculatorContent 
-                area={area}
-                setArea={setArea}
-                cleaningType={cleaningType}
-                setCleaningType={setCleaningType}
-                pricePerMeter={pricePerMeter}
-                totalPrice={totalPrice}
-                standardServices={standardServices}
-                generalServices={generalServices}
-                onQuickOrder={() => {
-                  setIsCalcOpen(false);
-                  handleCleaningQuickOrder();
-                }}
-                onAddToFullOrder={() => {
-                  setIsCalcOpen(false);
-                  handleCleaningAddToFullOrder();
-                }}
-                onExtrasHint={() => {
-                  setIsCalcOpen(false);
-                  setTimeout(() => extrasSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
-                }}
-                t={t}
-              />
-            </div>
-          </DrawerContent>
-        </Drawer>
-      ) : (
-        <Dialog open={isCalcOpen} onOpenChange={setIsCalcOpen}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
-            <DialogHeader className="border-b border-border pb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                  <Calculator className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <DialogTitle className="font-serif text-2xl">
-                    {t.cleaning?.calculatorTitle || 'Рассчитайте стоимость уборки'}
-                  </DialogTitle>
-                  <DialogDescription className="sr-only">{t.cleaning?.subtitle || 'Профессиональная уборка квартир, домов и офисов'}</DialogDescription>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    {t.cleaning?.subtitle || 'Профессиональная уборка квартир, домов и офисов'}
-                  </p>
-                </div>
-              </div>
-            </DialogHeader>
-            <div className="overflow-y-auto flex-1 py-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Left column - Calculator */}
-                <div className="space-y-6">
-                  {/* Cleaning Type Tabs */}
-                  <div>
-                    <label className="block text-foreground mb-3 font-medium text-lg">
-                      {t.cleaning?.selectType || 'Выберите тип уборки'}:
-                    </label>
-                    <Tabs value={cleaningType} onValueChange={(v) => setCleaningType(v as 'standard' | 'general')} className="w-full">
-                      <TabsList className="grid w-full grid-cols-2 h-auto">
-                        <TabsTrigger value="standard" className="py-4 text-base">
-                          <div className="text-center">
-                            <div className="font-semibold">{t.cleaning?.standardCleaning || 'Стандартная'}</div>
-                            <div className="text-sm text-muted-foreground">7 PLN/м²</div>
-                          </div>
-                        </TabsTrigger>
-                        <TabsTrigger value="general" className="py-4 text-base">
-                          <div className="text-center">
-                            <div className="font-semibold">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
-                            <div className="text-sm text-muted-foreground">10 PLN/м²</div>
-                          </div>
-                        </TabsTrigger>
-                      </TabsList>
-                    </Tabs>
-                  </div>
-                  
-                  {/* Area Slider */}
-                  <div className="bg-muted/30 p-6 rounded-xl">
-                    <label className="block text-foreground mb-4 text-lg">
-                      {t.cleaning?.area || 'Площадь'}: <strong className="text-primary text-2xl">{area} м²</strong>
-                    </label>
-                    <Slider
-                      value={[area]}
-                      onValueChange={(value) => setArea(value[0])}
-                      min={20}
-                      max={300}
-                      step={1}
-                      className="w-full"
-                    />
-                    <div className="flex justify-between text-sm text-muted-foreground mt-2">
-                      <span>20 м²</span>
-                      <span>300 м²</span>
-                    </div>
-                  </div>
-                  
-                  <p className="text-muted-foreground text-lg">
-                    {t.cleaning?.pricePerMeter || 'Цена за м²'}: <strong className="text-foreground">{pricePerMeter} PLN</strong>
-                  </p>
-
-                  <div className="pt-6 border-t border-border">
-                    <p className="font-serif text-4xl font-bold text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent">
-                      {t.cleaning?.total || 'Итого'}: {totalPrice} PLN
-                    </p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <button
-                      onClick={() => {
-                        setIsCalcOpen(false);
-                        handleCleaningQuickOrder();
-                      }}
-                      className="w-full py-4 px-6 bg-fresh text-white font-semibold text-lg rounded-xl hover:bg-fresh/90 transition-opacity shadow-glow flex items-center justify-center gap-2"
-                    >
-                      <Zap className="w-5 h-5" />
-                      {t.form?.quickOrder || 'Быстрый заказ'}
-                    </button>
-                    <button
-                      onClick={() => {
-                        setIsCalcOpen(false);
-                        handleCleaningAddToFullOrder();
-                      }}
-                      className="w-full py-4 px-6 border border-primary/40 text-primary font-semibold text-lg rounded-xl hover:bg-primary/10 transition-colors flex items-center justify-center gap-2"
-                    >
-                      <ArrowRight className="w-5 h-5" />
-                      {t.form?.addToFullOrder || 'В общую заявку'}
-                    </button>
-                  </div>
-                  
-                   <p className="text-xs text-muted-foreground text-center">
-                     {t.calculator?.minOrder}
-                   </p>
-                   <p className="text-xs text-muted-foreground text-center">
-                     {t.calculator?.minOrderOther}
-                   </p>
-                   <p className="text-xs text-yellow-600 dark:text-yellow-400 text-center font-semibold mt-1">
-                     {t.calculator?.cleaningTempNote}
-                   </p>
-                   <button
-                     type="button"
-                     onClick={() => {
-                       setIsCalcOpen(false);
-                       setTimeout(() => extrasSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
-                     }}
-                     className="w-full text-center text-sm text-primary hover:text-primary/80 underline underline-offset-4 transition-colors mt-2 flex items-center justify-center gap-1.5"
-                   >
-                     <Sparkles className="w-3.5 h-3.5" />
-                     {'Смотрите дополнительные услуги ниже ↓'}
-                   </button>
-                </div>
-                
-                {/* Right column - Services included */}
-                <div className="bg-card border border-border rounded-xl p-6">
-                  <p className="font-semibold text-foreground mb-4 flex items-center gap-2 text-lg">
-                    <CheckCircle2 className="w-6 h-6 text-fresh" />
-                    {t.cleaning?.includedTitle || 'Что входит в уборку:'}
-                  </p>
-                  <ul className="space-y-3 text-sm text-muted-foreground max-h-[400px] overflow-y-auto pr-2">
-                    {(cleaningType === 'standard' ? standardServices : generalServices).map((service, index) => (
-                      <li key={index} className="flex items-start gap-3 py-1">
-                        <CheckCircle2 className="w-4 h-4 text-fresh mt-0.5 flex-shrink-0" />
-                        <span>{service}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
-      )}
-
       {/* Cleaning Extras - Additional Services */}
       <section ref={extrasSectionRef} className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
@@ -512,26 +298,7 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{'Дополнительно к уборке'}</p>
                     </div>
                   </div>
-                  <CardServiceCalculator
-                    category="cleaning"
-                    items={[
-                      { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 40, image: calcExtraOven },
-                      { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 40, image: calcExtraHood },
-                      { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 55, image: calcExtraCabinets },
-                      { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 25, image: calcExtraDishes },
-                      { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 40, image: calcExtraFridge },
-                      { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 20, image: calcExtraMicrowave },
-                      { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 30, image: calcExtraBalcony },
-                      { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: 30, image: calcExtraWindowInside },
-                      { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: 50, image: calcExtraIroning, unit: 'ч' },
-                      { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 10, image: calcExtraPetLitter },
-                      { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 50, image: calcExtraHours, unit: 'ч' },
-                      { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 30, image: calcExtraCloset },
-                      
-                    ]}
-                    onSendToForm={handleCardToForm}
-                    onQuickOrder={handleQuickAdd}
-                  />
+                  {/* Calculator removed - see pricing in Prices page */}
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -556,20 +323,7 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.windows?.calcSubtitle || 'Рассчитайте стоимость услуги'}</p>
                     </div>
                   </div>
-                  <CardServiceCalculator
-                    category="windows"
-                    items={[
-                      { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: windowCleaning1 },
-                      { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: windowCleaning2 },
-                      { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, image: windowCleaning3 },
-                      { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60, image: windowCleaning1 },
-                      { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: windowCleaning2 },
-                      { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: windowCleaning3 },
-                      { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: windowCleaning1 },
-                    ]}
-                    onSendToForm={handleCardToForm}
-                    onQuickOrder={handleQuickAdd}
-                  />
+                  {/* Calculator removed - see pricing in Prices page */}
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -597,29 +351,7 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель, ковры и матрасы'}</p>
                     </div>
                   </div>
-                  <CardServiceCalculator
-                    category="furniture"
-                    items={[
-                      { id: 'pouf', name: t.prices?.items?.pouf || 'Пуф', price: 30, originalPrice: 35, image: calcPouf, promoBadge: '🔥 -10%' },
-                      { id: 'chair', name: t.prices?.items?.chair || 'Стул', price: 25, image: calcChair },
-                      { id: 'armchair', name: t.prices?.items?.armchair || 'Кресло', price: 65, originalPrice: 75, image: calcArmchair, promoBadge: '🔥 -10%' },
-                      { id: 'pillow', name: t.prices?.items?.pillow || 'Подушка', price: 10, image: calcPillow },
-                      { id: 'sofa2', name: t.prices?.items?.sofa2 || 'Диван 2-мест.', price: 130, originalPrice: 145, image: calcSofa2, promoBadge: '🔥 -10%' },
-                      { id: 'sofa3', name: t.prices?.items?.sofa3 || 'Диван 3-мест.', price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
-                      { id: 'sofaCorner', name: t.prices?.items?.sofaCorner || 'Угловой диван', price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
-                      { id: 'sofaCornerLarge', name: t.prices?.items?.sofaCornerLarge || 'Большой угловой диван', price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
-                      { id: 'kitchenCorner', name: t.prices?.items?.kitchenCorner || 'Кухонный угловой диван', price: 130, image: calcKitchenCorner },
-                      { id: 'carpet', name: t.prices?.items?.carpet || 'Ковёр', price: 20, originalPrice: 25, image: calcCarpet, unit: 'm²', promoBadge: '🔥 -10%' },
-                      { id: 'bedHeadboard', name: t.prices?.items?.bedHeadboard || 'Изголовье кровати', price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
-                      { id: 'bedFrame', name: t.prices?.items?.bedFrame || 'Каркас кровати', price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
-                      { id: 'mattressSingleDry', name: t.prices?.items?.mattressSingleDry || 'Матрас односп. сухая чистка', price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-                      { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Матрас односп. сухая чистка×2', price: 180, originalPrice: 200, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-                      { id: 'mattressDoubleDry', name: t.prices?.items?.mattressDoubleDry || 'Матрас двусп. сухая чистка', price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-                      { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Матрас двусп. сухая чистка×2', price: 240, originalPrice: 265, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-                    ]}
-                    onSendToForm={handleCardToForm}
-                    onQuickOrder={handleQuickAdd}
-                  />
+                  {/* Calculator removed - see pricing in Prices page */}
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -638,20 +370,7 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.leatherFurnitureTitle || 'Чистка кожаной мебели'}</p>
                       </div>
                     </div>
-                    <CardServiceCalculator
-                      category="leather"
-                       items={[
-                        { id: 'leatherPouf', name: t.prices?.items?.leatherPouf || 'Кожаный пуф', price: 45, originalPrice: 50, image: calcLeatherPouf, promoBadge: '🔥 -10%' },
-                        { id: 'leatherChair', name: t.prices?.items?.leatherChair || 'Кожаный стул', price: 40, originalPrice: 45, image: calcLeatherChair, promoBadge: '🔥 -10%' },
-                        { id: 'leatherPillow', name: t.prices?.items?.leatherPillow || 'Кожаная подушка', price: 15, originalPrice: 20, image: calcPillow, promoBadge: '🔥 -10%' },
-                        { id: 'leatherArmchair', name: t.prices?.items?.leatherArmchair || 'Кожаное кресло', price: 75, originalPrice: 80, image: calcLeatherArmchair, promoBadge: '🔥 -10%' },
-                        { id: 'leatherSofa2', name: t.prices?.items?.leatherSofa2 || 'Кожаный диван 2-мест.', price: 145, originalPrice: 160, image: calcLeatherSofa2, promoBadge: '🔥 -10%' },
-                        { id: 'leatherSofa3', name: t.prices?.items?.leatherSofa3 || 'Кожаный диван 3-мест.', price: 180, originalPrice: 200, image: calcLeatherSofa3, promoBadge: '🔥 -10%' },
-                        { id: 'leatherSofaCorner', name: t.prices?.items?.leatherSofaCorner || 'Кожаный угловой диван', price: 205, originalPrice: 225, image: calcLeatherCorner, promoBadge: '🔥 -10%' },
-                      ]}
-                      onSendToForm={handleCardToForm}
-                      onQuickOrder={handleQuickAdd}
-                    />
+                    {/* Calculator removed - see pricing in Prices page */}
                   </CardContent>
                 </Card>
               </CircularRevealCard>
@@ -671,24 +390,7 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.otherDesc || 'Ковры, коляски, плитка и дополнительные услуги'}</p>
                       </div>
                     </div>
-                    <CardServiceCalculator
-                      category="other"
-                      items={[
-                        { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие (1-20 м²)', price: 20, image: calcCarpet, unit: 'm²' },
-                        { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 35, image: calcCarpetPickup, unit: 'm²' },
-                        { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Импрегнация ковра', price: 5, image: calcCarpetImpregnation, unit: 'm²' },
-                        { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || 'Импрегнация коврового покрытия', price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
-                        { id: 'stroller', name: t.prices?.items?.stroller || 'Коляска', price: 100, image: calcStroller },
-                        { id: 'carseat', name: t.prices?.items?.carseat || 'Автокресло', price: 80, image: calcCarseat },
-                        { id: 'drying', name: t.prices?.items?.drying || 'Сушка', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно до конца весны' },
-                        { id: 'impregnation', name: t.prices?.items?.impregnation || 'Импрегнация', price: 80, image: calcImpregnation },
-                        { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Чистка плитки', price: 25, image: calcTileCleaning, unit: 'm²' },
-                        { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 15, image: calcCarpetMedium, unit: 'm²' },
-                        { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 10, image: calcCarpetLarge, unit: 'm²' },
-                      ]}
-                      onSendToForm={handleCardToForm}
-                      onQuickOrder={handleQuickAdd}
-                    />
+                    {/* Calculator removed - see pricing in Prices page */}
                   </CardContent>
                 </Card>
               </CircularRevealCard>

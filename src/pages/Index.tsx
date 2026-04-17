@@ -4,21 +4,8 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
-import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Calculator, Shield, BookOpen } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Shield, BookOpen } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-} from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
@@ -32,12 +19,8 @@ const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCar
 const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
 const ContactForm = lazy(() => import('@/components/ContactForm'));
 const PriceSection = lazy(() => import('@/components/PriceSection'));
-const QuickCalculator = lazy(() => import('@/components/QuickCalculator'));
-const PriceCalculatorContent = lazy(() => import('@/components/PriceCalculatorContent'));
 
 const Index = () => {
-  const [isCalcOpen, setIsCalcOpen] = useState(false);
-  const [isFullCalc, setIsFullCalc] = useState(false);
   const isMobile = useIsMobile();
   const {
     t, language
@@ -390,91 +373,6 @@ const Index = () => {
         </div>
       </section>
       </LazySection>
-
-      {/* Calculator Trigger */}
-      <section className="py-6 sm:py-10 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <CircularRevealCard index={0}>
-              <Card 
-                className="shadow-card cursor-pointer hover:shadow-lg transition-shadow"
-                onClick={() => setIsCalcOpen(true)}
-              >
-                <CardContent className="py-5 sm:py-6">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                        <Calculator className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <h2 className="font-serif text-lg sm:text-xl font-semibold">{t.calculator.title}</h2>
-                        <p className="text-sm text-muted-foreground">{t.calculator.selectItems}</p>
-                      </div>
-                    </div>
-                    <Button variant="outline" size="sm" className="hidden sm:flex">
-                      {t.calculator.title}
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </CircularRevealCard>
-          </div>
-        </div>
-      </section>
-
-      {/* Calculator Modal/Drawer */}
-      {isMobile ? (
-        <Drawer open={isCalcOpen} onOpenChange={(open) => {
-          setIsCalcOpen(open);
-          if (!open) setIsFullCalc(false);
-        }}>
-          <DrawerContent className="max-h-[90vh]">
-            <DrawerHeader className="border-b border-border pb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                  <Calculator className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <DrawerTitle className="font-serif text-lg">
-                  {isFullCalc ? t.calculator.title : (t.calculator?.quickTitle || 'Быстрый расчёт')}
-                </DrawerTitle>
-              </div>
-            </DrawerHeader>
-            <div className="overflow-y-auto p-4 pb-8">
-              <Suspense fallback={<div className="flex justify-center py-8"><div className="w-8 h-8 rounded-full bg-gradient-hero opacity-40 animate-pulse" /></div>}>
-                {isFullCalc ? (
-                  <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
-                ) : (
-                  <QuickCalculator 
-                    onOpenFull={() => setIsFullCalc(true)} 
-                    onClose={() => setIsCalcOpen(false)} 
-                  />
-                )}
-              </Suspense>
-            </div>
-          </DrawerContent>
-        </Drawer>
-      ) : (
-        <Dialog open={isCalcOpen} onOpenChange={setIsCalcOpen}>
-          <DialogContent className="max-w-4xl max-h-[85vh] overflow-hidden flex flex-col">
-            <DialogHeader className="border-b border-border pb-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                  <Calculator className="w-5 h-5 text-primary-foreground" />
-                </div>
-                <DialogTitle className="font-serif text-xl">
-                  {t.calculator.title}
-                </DialogTitle>
-                <DialogDescription className="sr-only">{t.calculator.selectItems}</DialogDescription>
-              </div>
-            </DialogHeader>
-            <div className="overflow-y-auto flex-1 py-4">
-              <Suspense fallback={<div className="flex justify-center py-8"><div className="w-8 h-8 rounded-full bg-gradient-hero opacity-40 animate-pulse" /></div>}>
-                <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
-              </Suspense>
-            </div>
-          </DialogContent>
-        </Dialog>
-      )}
 
       {/* Price Section */}
       <LazySection minHeight="300px">

@@ -6,24 +6,15 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import PriceSplash from '@/components/PriceSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import BackToOrderButton from '@/components/BackToOrderButton';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
-  Sofa, Sparkles, Calculator, Wrench, ChevronDown, Star, Award, ArrowRight
+  Sofa, Sparkles, Wrench, ChevronDown, Star, Award, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import {
-  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
-} from '@/components/ui/dialog';
-import {
-  Drawer, DrawerContent, DrawerHeader, DrawerTitle,
-} from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import PriceCalculatorContent from '@/components/PriceCalculatorContent';
-import QuickCalculator from '@/components/QuickCalculator';
 import { useSplash } from '@/hooks/useSplash';
 import { useCity } from '@/hooks/useCity';
 
@@ -36,8 +27,6 @@ const Prices = () => {
   const location = useLocation();
   const { isWroclaw } = useCity();
   const { showSplash, handleSplashComplete } = useSplash('prices');
-  const [isCalcOpen, setIsCalcOpen] = useState(false);
-  const [isFullCalc, setIsFullCalc] = useState(false);
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -298,87 +287,6 @@ const Prices = () => {
           </div>
         </section>
 
-        {/* Calculator Trigger */}
-        <section className="py-6 sm:py-10 bg-card">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <CircularRevealCard index={0}>
-                <Card 
-                  className="shadow-card cursor-pointer hover:shadow-lg transition-shadow"
-                  onClick={() => setIsCalcOpen(true)}
-                >
-                  <CardContent className="py-5 sm:py-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 sm:gap-4">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                          <Calculator className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
-                        </div>
-                        <div>
-                          <h2 className="font-serif text-lg sm:text-xl font-semibold">{t.calculator.title}</h2>
-                          <p className="text-sm text-muted-foreground">{t.calculator.selectItems}</p>
-                        </div>
-                      </div>
-                      <Button variant="outline" size="sm" className="hidden sm:flex">
-                        {t.calculator.title}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CircularRevealCard>
-            </div>
-          </div>
-        </section>
-
-        {/* Calculator Modal/Drawer */}
-        {isMobile ? (
-          <Drawer open={isCalcOpen} onOpenChange={(open) => {
-            setIsCalcOpen(open);
-            if (!open) setIsFullCalc(false);
-          }}>
-            <DrawerContent className="max-h-[90vh]">
-              <DrawerHeader className="border-b border-border pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                    <Calculator className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <DrawerTitle className="font-serif text-lg">
-                    {isFullCalc ? t.calculator.title : t.calculator.quickTitle}
-                  </DrawerTitle>
-                </div>
-              </DrawerHeader>
-              <div className="overflow-y-auto p-4 pb-8">
-                {isFullCalc ? (
-                  <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
-                ) : (
-                  <QuickCalculator 
-                    onOpenFull={() => setIsFullCalc(true)} 
-                    onClose={() => setIsCalcOpen(false)} 
-                  />
-                )}
-              </div>
-            </DrawerContent>
-          </Drawer>
-        ) : (
-          <Dialog open={isCalcOpen} onOpenChange={setIsCalcOpen}>
-            <DialogContent className="max-w-4xl max-h-[85vh] overflow-hidden flex flex-col">
-              <DialogHeader className="border-b border-border pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow">
-                    <Calculator className="w-5 h-5 text-primary-foreground" />
-                  </div>
-                  <DialogTitle className="font-serif text-xl">
-                    {t.calculator.title}
-                  </DialogTitle>
-                  <DialogDescription className="sr-only">{t.calculator.selectItems}</DialogDescription>
-                </div>
-              </DialogHeader>
-              <div className="overflow-y-auto flex-1 py-4">
-                <PriceCalculatorContent onClose={() => setIsCalcOpen(false)} />
-              </div>
-            </DialogContent>
-          </Dialog>
-        )}
-
         <MobilePromotionsCard />
 
         {/* Promotions Section — desktop only */}
@@ -525,7 +433,7 @@ const Prices = () => {
                     >
                       <div className="overflow-hidden">
                         <div className="p-4 sm:p-5 pt-0">
-                          <CardServiceCalculator category={cat.id} items={cat.items} />
+                          {/* Calculator removed - prices shown in accordion header */}
                         </div>
                       </div>
                     </div>

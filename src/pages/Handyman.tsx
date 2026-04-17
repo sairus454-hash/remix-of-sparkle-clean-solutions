@@ -6,7 +6,6 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
@@ -268,11 +267,9 @@ const Handyman = () => {
             </div>
 
             <CircularRevealCard index={0}>
-              <CardServiceCalculator
-                category="handyman"
-                items={categoryItems[activeTab] || []}
-                onSendToForm={handleSendToForm}
-              />
+              <div className="p-4 text-center text-muted-foreground">
+                {/* Calculator removed - see pricing in Prices page */}
+              </div>
             </CircularRevealCard>
           </div>
         </div>

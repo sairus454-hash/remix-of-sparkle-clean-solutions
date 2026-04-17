@@ -5,7 +5,6 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import PromotionsSection from '@/components/PromotionsSection';
 import { Sparkles, Sofa, Armchair } from 'lucide-react';
 import servicesCleaning from '@/assets/services-cleaning.jpg';
@@ -224,7 +223,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.furnitureDesc}</p>
                   </div>
                 </div>
-                <CardServiceCalculator category="furniture" items={[...furnitureItems, ...extrasItems]} />
+                {/* Calculator removed - see pricing in Prices page */}
               </div>
             </CircularRevealCard>
           </div>
@@ -248,7 +247,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.leatherDesc}</p>
                   </div>
                 </div>
-                <CardServiceCalculator category="leather" items={leatherItems} />
+                {/* Calculator removed - see pricing in Prices page */}
               </div>
             </CircularRevealCard>
           </div>

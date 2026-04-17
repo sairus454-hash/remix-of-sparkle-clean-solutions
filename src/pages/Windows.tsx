@@ -6,14 +6,12 @@ import BackToOrderButton from '@/components/BackToOrderButton';
 import WindowsSplash from '@/components/WindowsSplash';
 import { useSplash } from '@/hooks/useSplash';
  import ContactForm, { ContactFormRef } from '@/components/ContactForm';
- import WindowsPriceCalculator from '@/components/WindowsPriceCalculator';
  import AnimatedImage from '@/components/AnimatedImage';
  import CircularRevealCard from '@/components/CircularRevealCard';
  import { Sparkles, CheckCircle2, Home, Sun, Eye, ShieldCheck } from 'lucide-react';
  import windowCleaning1 from '@/assets/window-cleaning-1.jpg';
  import windowCleaning2 from '@/assets/window-cleaning-2.jpg';
  import windowCleaning3 from '@/assets/window-cleaning-3.jpg';
- import { CalculatorItem } from '@/types/calculator';
  
  const Windows = () => {
    const { t } = useLanguage();
@@ -21,19 +19,14 @@ import { useSplash } from '@/hooks/useSplash';
    const formSectionRef = useRef<HTMLDivElement>(null);
    const { showSplash, handleSplashComplete } = useSplash('windows');
  
-   const handleSendToForm = (items: CalculatorItem[], total: number) => {
-     formRef.current?.setCalculatorData(items, total);
-     formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-   };
- 
-   const benefits = [
-     { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
-     { icon: Eye, text: t.windows?.benefit2 || 'Чистый и ухоженный вид' },
-     { icon: ShieldCheck, text: t.windows?.benefit3 || 'Продление срока службы окон' },
-     { icon: Home, text: t.windows?.benefit4 || 'Комфортная атмосфера' },
-   ];
- 
-   const galleryImages = [
+    const benefits = [
+      { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
+      { icon: Eye, text: t.windows?.benefit2 || 'Чистый и ухоженный вид' },
+      { icon: ShieldCheck, text: t.windows?.benefit3 || 'Продление срока службы окон' },
+      { icon: Home, text: t.windows?.benefit4 || 'Комфортная атмосфера' },
+    ];
+  
+    const galleryImages = [
      { src: windowCleaning1, alt: t.windows?.gallery1 || 'Мойка окон' },
      { src: windowCleaning2, alt: t.windows?.gallery2 || 'До и после мойки' },
      { src: windowCleaning3, alt: t.windows?.gallery3 || 'Профессиональная мойка' },
@@ -111,15 +104,17 @@ import { useSplash } from '@/hooks/useSplash';
        </section>
  
        {/* 1. Pricing */}
-       <section className="py-20 bg-gradient-section">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto">
-             <CircularRevealCard index={0}>
-               <WindowsPriceCalculator onSendToForm={handleSendToForm} />
-             </CircularRevealCard>
-           </div>
-         </div>
-       </section>
+        <section className="py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <CircularRevealCard index={0}>
+                <div className="p-4 text-center text-muted-foreground">
+                  {/* Calculator removed - see pricing in Prices page */}
+                </div>
+              </CircularRevealCard>
+            </div>
+          </div>
+        </section>
  
        {/* 2. Contact Form */}
        <section ref={formSectionRef} className="py-20 bg-gradient-section">
