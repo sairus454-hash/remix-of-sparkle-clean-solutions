@@ -126,8 +126,12 @@ import { useSplash } from '@/hooks/useSplash';
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <CircularRevealCard index={0}>
-                <div className="p-4 text-center text-muted-foreground">
-                  {/* Calculator removed - see pricing in Prices page */}
+                <div className="bg-card p-6 rounded-2xl shadow-card border border-border">
+                  <CardServiceCalculator
+                    items={windowsItems}
+                    category="windows"
+                    onSendToForm={handleSendToForm}
+                  />
                 </div>
               </CircularRevealCard>
             </div>
