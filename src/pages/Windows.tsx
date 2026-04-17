@@ -25,9 +25,8 @@ import { useSplash } from '@/hooks/useSplash';
       { icon: ShieldCheck, text: t.windows?.benefit3 || 'Продление срока службы окон' },
       { icon: Home, text: t.windows?.benefit4 || 'Комфортная атмосфера' },
     ];
-   ];
- 
-   const galleryImages = [
+  
+    const galleryImages = [
      { src: windowCleaning1, alt: t.windows?.gallery1 || 'Мойка окон' },
      { src: windowCleaning2, alt: t.windows?.gallery2 || 'До и после мойки' },
      { src: windowCleaning3, alt: t.windows?.gallery3 || 'Профессиональная мойка' },
