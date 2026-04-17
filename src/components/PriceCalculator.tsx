@@ -147,7 +147,7 @@ const PriceCalculator = () => {
   {
     id: 'carpetCovering',
     name: t.prices.items.carpetCovering,
-    price: 25,
+    price: 20,
     unit: 'm²'
   }, {
     id: 'stroller',

@@ -674,7 +674,7 @@ const Cleaning = () => {
                     <CardServiceCalculator
                       category="other"
                       items={[
-                        { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
+                        { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Ковровое покрытие (1-20 м²)', price: 20, image: calcCarpet, unit: 'm²' },
                         { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 35, image: calcCarpetPickup, unit: 'm²' },
                         { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Импрегнация ковра', price: 5, image: calcCarpetImpregnation, unit: 'm²' },
                         { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || 'Импрегнация коврового покрытия', price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
