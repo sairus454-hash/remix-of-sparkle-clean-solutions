@@ -518,7 +518,11 @@ const CityPage = () => {
                     >
                       <div className="overflow-hidden">
                         <div className="p-4 sm:p-5 pt-0">
-                          {/* Calculator removed - prices shown in accordion header */}
+                          <CardServiceCalculator
+                            items={cat.items}
+                            category={`city-${city.slug}-${cat.id}`}
+                            onSendToForm={handleSendToForm}
+                          />
                         </div>
                       </div>
                     </div>
