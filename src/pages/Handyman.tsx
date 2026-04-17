@@ -21,6 +21,7 @@ import {
 import PromotionsSection from '@/components/PromotionsSection';
 import { img } from '@/utils/imageMap';
 import { CalculatorItem } from '@/types/calculator';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
 
 // Handyman service images
 import imgFaucet from '@/assets/handyman/faucet.jpg';
@@ -266,11 +267,11 @@ const Handyman = () => {
               <span>{t.handyman.minOrderNoteOther}</span>
             </div>
 
-            <CircularRevealCard index={0}>
-              <div className="p-4 text-center text-muted-foreground">
-                {/* Calculator removed - see pricing in Prices page */}
-              </div>
-            </CircularRevealCard>
+            <CardServiceCalculator
+              items={categoryItems[activeTab]}
+              category={`handyman-${activeTab}`}
+              onSendToForm={handleSendToForm}
+            />
           </div>
         </div>
       </section>
