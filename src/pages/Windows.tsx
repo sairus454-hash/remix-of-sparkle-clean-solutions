@@ -15,14 +15,7 @@ import { useSplash } from '@/hooks/useSplash';
  
  const Windows = () => {
    const { t } = useLanguage();
-   const formRef = useRef<ContactFormRef>(null);
    const formSectionRef = useRef<HTMLDivElement>(null);
-   const { showSplash, handleSplashComplete } = useSplash('windows');
- 
-   const handleSendToForm = (items: CalculatorItem[], total: number) => {
-     formRef.current?.setCalculatorData(items, total);
-     formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-   };
  
    const benefits = [
      { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
