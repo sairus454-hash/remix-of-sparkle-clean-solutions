@@ -8,6 +8,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import OzoneSplash from '@/components/OzoneSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import HeroSlideshow from '@/components/HeroSlideshow';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneBg from '@/assets/ozone-bg.jpg';
@@ -44,6 +45,15 @@ const Ozone = () => {
     { icon: Home, title: t.ozone.app2 },
     { icon: Building2, title: t.ozone.app3 },
     { icon: Wrench, title: t.ozone.app4 },
+  ];
+
+  const ozoneItems = [
+    { id: 'ozone1room', name: t.prices.items.ozone1room, price: 200, image: ozone1room },
+    { id: 'ozone2room', name: t.prices.items.ozone2room, price: 250, image: ozone2room },
+    { id: 'ozone3room', name: t.prices.items.ozone3room, price: 300, image: ozone3room },
+    { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 350, image: ozoneOfficeSmall },
+    { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 450, image: ozoneOfficeLarge },
+    { id: 'autoOzone', name: t.prices.items.autoOzone || 'Озонирование авто', price: 120, image: ozoneCar },
   ];
 
   return (
@@ -128,7 +138,11 @@ const Ozone = () => {
             {t.prices.ozonation}
           </h2>
           <div className="max-w-4xl mx-auto">
-            {/* Calculator removed - see pricing in Prices page */}
+            <CardServiceCalculator
+              items={ozoneItems}
+              category="ozone"
+              onSendToForm={handleSendToForm}
+            />
           </div>
         </div>
       </section>
