@@ -6,14 +6,12 @@ import BackToOrderButton from '@/components/BackToOrderButton';
 import WindowsSplash from '@/components/WindowsSplash';
 import { useSplash } from '@/hooks/useSplash';
  import ContactForm, { ContactFormRef } from '@/components/ContactForm';
- import WindowsPriceCalculator from '@/components/WindowsPriceCalculator';
  import AnimatedImage from '@/components/AnimatedImage';
  import CircularRevealCard from '@/components/CircularRevealCard';
  import { Sparkles, CheckCircle2, Home, Sun, Eye, ShieldCheck } from 'lucide-react';
  import windowCleaning1 from '@/assets/window-cleaning-1.jpg';
  import windowCleaning2 from '@/assets/window-cleaning-2.jpg';
  import windowCleaning3 from '@/assets/window-cleaning-3.jpg';
- import { CalculatorItem } from '@/types/calculator';
  
  const Windows = () => {
    const { t } = useLanguage();

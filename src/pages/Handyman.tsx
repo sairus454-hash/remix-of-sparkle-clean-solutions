@@ -6,7 +6,6 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import HandymanSplash from '@/components/HandymanSplash';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';

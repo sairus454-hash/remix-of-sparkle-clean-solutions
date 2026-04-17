@@ -11,7 +11,6 @@ import AutoSplash from '@/components/AutoSplash';
 import HeroVideo from '@/components/HeroVideo';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import Auto3DCarousel from '@/components/Auto3DCarousel';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Car, Armchair, Layers, Sparkles, ArrowRight, Truck, MapPin, Wind, Wallet } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PromotionsSection from '@/components/PromotionsSection';

@@ -5,7 +5,6 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import PromotionsSection from '@/components/PromotionsSection';
 import { Sparkles, Sofa, Armchair } from 'lucide-react';
 import servicesCleaning from '@/assets/services-cleaning.jpg';
