@@ -18,6 +18,9 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
 import { img } from '@/utils/imageMap';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
+import { CalculatorItem } from '@/types/calculator';
 
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
@@ -58,6 +61,13 @@ const CityPage = () => {
   const [isFullCalc, setIsFullCalc] = useState(false);
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleSendToForm = (items: CalculatorItem[], total: number) => {
+    formRef.current?.setCalculatorData(items, total);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const city = getCityBySlug(slug || '');
   if (!city) return <Navigate to="/prices" replace />;
@@ -508,7 +518,11 @@ const CityPage = () => {
                     >
                       <div className="overflow-hidden">
                         <div className="p-4 sm:p-5 pt-0">
-                          {/* Calculator removed - prices shown in accordion header */}
+                          <CardServiceCalculator
+                            items={cat.items}
+                            category={`city-${city.slug}-${cat.id}`}
+                            onSendToForm={handleSendToForm}
+                          />
                         </div>
                       </div>
                     </div>
@@ -534,6 +548,15 @@ const CityPage = () => {
                   </a>
                 </div>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form */}
+        <section ref={formSectionRef} className="py-12 sm:py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <ContactForm ref={formRef} />
             </div>
           </div>
         </section>
