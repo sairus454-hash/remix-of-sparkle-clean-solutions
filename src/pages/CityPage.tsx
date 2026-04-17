@@ -4,24 +4,15 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import BackToOrderButton from '@/components/BackToOrderButton';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
-  Sofa, Sparkles, Calculator, Wrench, ChevronDown, MapPin,
+  Sofa, Sparkles, Wrench, ChevronDown, MapPin,
   Gift, Percent, Droplets, Tag, Leaf
 } from 'lucide-react';
-import {
-  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
-} from '@/components/ui/dialog';
-import {
-  Drawer, DrawerContent, DrawerHeader, DrawerTitle,
-} from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import PriceCalculatorContent from '@/components/PriceCalculatorContent';
-import QuickCalculator from '@/components/QuickCalculator';
 import { getCityBySlug } from '@/data/cities';
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,

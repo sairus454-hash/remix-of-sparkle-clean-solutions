@@ -4,21 +4,8 @@ import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
-import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Calculator, Shield, BookOpen } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Star, Users, Award, Shield, BookOpen } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from '@/components/ui/dialog';
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-} from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
@@ -32,12 +19,8 @@ const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCar
 const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
 const ContactForm = lazy(() => import('@/components/ContactForm'));
 const PriceSection = lazy(() => import('@/components/PriceSection'));
-const QuickCalculator = lazy(() => import('@/components/QuickCalculator'));
-const PriceCalculatorContent = lazy(() => import('@/components/PriceCalculatorContent'));
 
 const Index = () => {
-  const [isCalcOpen, setIsCalcOpen] = useState(false);
-  const [isFullCalc, setIsFullCalc] = useState(false);
   const isMobile = useIsMobile();
   const {
     t, language

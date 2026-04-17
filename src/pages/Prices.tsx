@@ -6,24 +6,15 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import PriceSplash from '@/components/PriceSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import CardServiceCalculator from '@/components/CardServiceCalculator';
 import BackToOrderButton from '@/components/BackToOrderButton';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
-  Sofa, Sparkles, Calculator, Wrench, ChevronDown, Star, Award, ArrowRight
+  Sofa, Sparkles, Wrench, ChevronDown, Star, Award, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import {
-  Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription,
-} from '@/components/ui/dialog';
-import {
-  Drawer, DrawerContent, DrawerHeader, DrawerTitle,
-} from '@/components/ui/drawer';
 import { useIsMobile } from '@/hooks/use-mobile';
-import PriceCalculatorContent from '@/components/PriceCalculatorContent';
-import QuickCalculator from '@/components/QuickCalculator';
 import { useSplash } from '@/hooks/useSplash';
 import { useCity } from '@/hooks/useCity';
 
@@ -36,8 +27,6 @@ const Prices = () => {
   const location = useLocation();
   const { isWroclaw } = useCity();
   const { showSplash, handleSplashComplete } = useSplash('prices');
-  const [isCalcOpen, setIsCalcOpen] = useState(false);
-  const [isFullCalc, setIsFullCalc] = useState(false);
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
