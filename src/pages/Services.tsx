@@ -296,9 +296,11 @@ const Services = () => {
                   </div>
                   <div>
                     <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
-                      {t.services.other}
+                      {language === 'pl' ? 'Inne usługi' : language === 'en' ? 'Other services' : language === 'uk' ? 'Інше' : 'Другое'}
                     </h2>
-                    <p className="text-muted-foreground text-sm">{t.services.otherDesc}</p>
+                    <p className="text-muted-foreground text-sm">
+                      {language === 'pl' ? 'Impregnacja, suszenie, dywany, wózki, foteliki' : language === 'en' ? 'Impregnation, drying, carpets, strollers, car seats' : language === 'uk' ? 'Імпрегнація, сушіння, килими, коляски, автокрісла' : 'Импрегнация, сушка, ковры, коляски, автокресла'}
+                    </p>
                   </div>
                 </div>
                 <CardServiceCalculator items={extrasItems} category="extras" />
