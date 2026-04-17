@@ -109,37 +109,6 @@ const Auto = () => {
            ],
          }}
       />
-        description="Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, podsufitki, dywaników, bagażnika. Usuwanie plam i zapachów. Wrocław, Opole."
-        keywords="pranie tapicerki samochodowej, chemczystka auta, czyszczenie wnętrza samochodu, czyszczenie tapicerki samochodowej, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników samochodowych, czyszczenie podsufitki, czyszczenie z dojazdem, dojazd do klienta, auto detailing, pranie tapicerki auta Wrocław, Opole, Poznań"
-        canonical="/auto"
-        image="https://masterclean1885.com/og-auto.png"
-        breadcrumbs={[{ name: t.nav.auto, path: '/auto' }]}
-         jsonLd={{
-           '@context': 'https://schema.org',
-           '@type': 'Service',
-           serviceType: 'Pranie tapicerki samochodowej',
-           name: 'Pranie tapicerki samochodowej',
-           description: 'Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, dywaników i wnętrza auta.',
-           url: 'https://masterclean1885.com/auto',
-           provider: {
-             '@type': 'LocalBusiness',
-             name: 'MasterClean',
-             telephone: '+48575211401',
-             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
-           },
-           areaServed: [
-             { '@type': 'City', name: 'Wrocław' },
-             { '@type': 'City', name: 'Opole' },
-             { '@type': 'City', name: 'Legnica' },
-             { '@type': 'City', name: 'Kalisz' },
-           ],
-           offers: [
-             { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: '300', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '500', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Czyszczenie skóry w samochodzie', price: '600', priceCurrency: 'PLN' },
-           ],
-         }}
-      />
       <Layout>
         <BackToOrderButton />
         {showSplash && <AutoSplash onComplete={handleSplashComplete} />}
