@@ -18,6 +18,9 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
 import { img } from '@/utils/imageMap';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
+import { CalculatorItem } from '@/types/calculator';
 
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
