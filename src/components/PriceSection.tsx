@@ -365,10 +365,20 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
     },
   ];
 
-  const categories = useMemo(() => 
-    isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id)),
-    [isWroclaw, allCategories]
-  );
+  const categories = useMemo(() => {
+    const filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
+    // Reorder: move 'cleaning' to be right before 'windows'
+    const cleaning = filtered.find(c => c.id === 'cleaning');
+    const withoutCleaning = filtered.filter(c => c.id !== 'cleaning');
+    if (!cleaning) return withoutCleaning;
+    const windowsIdx = withoutCleaning.findIndex(c => c.id === 'windows');
+    if (windowsIdx === -1) return [...withoutCleaning, cleaning];
+    return [
+      ...withoutCleaning.slice(0, windowsIdx),
+      cleaning,
+      ...withoutCleaning.slice(windowsIdx),
+    ];
+  }, [isWroclaw, allCategories]);
 
   // Initialize all open when defaultAllOpen
   useEffect(() => {
