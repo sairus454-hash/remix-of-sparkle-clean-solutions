@@ -339,7 +339,10 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{'Дополнительно к уборке'}</p>
                     </div>
                   </div>
-                  {/* Calculator removed - see pricing in Prices page */}
+                  <CleaningExtrasCheckboxes
+                    cleaningType={cleaningType}
+                    onSendToForm={handleCardToForm}
+                  />
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -364,7 +367,7 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.windows?.calcSubtitle || 'Рассчитайте стоимость услуги'}</p>
                     </div>
                   </div>
-                  {/* Calculator removed - see pricing in Prices page */}
+                  <WindowsPriceCalculator onSendToForm={handleCardToForm} />
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -392,7 +395,11 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель, ковры и матрасы'}</p>
                     </div>
                   </div>
-                  {/* Calculator removed - see pricing in Prices page */}
+                  <CardServiceCalculator
+                    items={furnitureItems}
+                    category="furniture"
+                    onSendToForm={handleCardToForm}
+                  />
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -411,7 +418,11 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.leatherFurnitureTitle || 'Чистка кожаной мебели'}</p>
                       </div>
                     </div>
-                    {/* Calculator removed - see pricing in Prices page */}
+                    <CardServiceCalculator
+                      items={leatherItems}
+                      category="leather"
+                      onSendToForm={handleCardToForm}
+                    />
                   </CardContent>
                 </Card>
               </CircularRevealCard>
@@ -431,7 +442,11 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.otherDesc || 'Ковры, коляски, плитка и дополнительные услуги'}</p>
                       </div>
                     </div>
-                    {/* Calculator removed - see pricing in Prices page */}
+                    <CardServiceCalculator
+                      items={extrasItems}
+                      category="extras"
+                      onSendToForm={handleCardToForm}
+                    />
                   </CardContent>
                 </Card>
               </CircularRevealCard>
