@@ -270,7 +270,7 @@ const Services = () => {
                   </div>
                   <div>
                     <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
-                      {t.prices?.mattressCleaning || (language === 'pl' ? 'Pranie materacy' : language === 'en' ? 'Mattress cleaning' : language === 'uk' ? 'Хімчистка матраців' : 'Химчистка матрасов')}
+                      {language === 'pl' ? 'Pranie materacy' : language === 'en' ? 'Mattress cleaning' : language === 'uk' ? 'Хімчистка матраців' : 'Химчистка матрасов'}
                     </h2>
                     <p className="text-muted-foreground text-sm">
                       {language === 'pl' ? 'Głębokie czyszczenie i suszenie materacy' : language === 'en' ? 'Deep cleaning and drying of mattresses' : language === 'uk' ? 'Глибока чистка та сушіння матраців' : 'Глубокая чистка и сушка матрасов'}
