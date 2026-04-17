@@ -456,6 +456,22 @@ const Prices = () => {
             </div>
           </div>
         </section>
+        {/* Contact Form */}
+        <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-8 sm:mb-12">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4 relative inline-block">
+                  <span className="relative z-10">{t.contact?.title || 'Заказать'}</span>
+                  <span className="absolute bottom-1 left-0 w-full h-3 bg-primary/30 -z-0 rounded" />
+                </h2>
+              </div>
+              <CircularRevealCard index={0}>
+                <ContactForm ref={formRef} />
+              </CircularRevealCard>
+            </div>
+          </div>
+        </section>
       </Layout>
     </>
   );
