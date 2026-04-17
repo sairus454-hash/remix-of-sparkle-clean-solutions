@@ -257,6 +257,32 @@ const Services = () => {
           </div>
         </section>
         </LazySection>
+
+        {/* Mattress Calculator */}
+        <LazySection minHeight="400px">
+        <section className="py-16 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <CircularRevealCard index={2}>
+              <div className="max-w-5xl mx-auto">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Bed className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                      {t.prices?.mattressCleaning || (language === 'pl' ? 'Pranie materacy' : language === 'en' ? 'Mattress cleaning' : language === 'uk' ? 'Хімчистка матраців' : 'Химчистка матрасов')}
+                    </h2>
+                    <p className="text-muted-foreground text-sm">
+                      {language === 'pl' ? 'Głębokie czyszczenie i suszenie materacy' : language === 'en' ? 'Deep cleaning and drying of mattresses' : language === 'uk' ? 'Глибока чистка та сушіння матраців' : 'Глубокая чистка и сушка матрасов'}
+                    </p>
+                  </div>
+                </div>
+                <CardServiceCalculator items={mattressItems} category="mattress" />
+              </div>
+            </CircularRevealCard>
+          </div>
+        </section>
+        </LazySection>
       </Layout>
     </>
   );
