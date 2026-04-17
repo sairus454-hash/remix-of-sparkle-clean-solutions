@@ -22,6 +22,21 @@ import { useSplash } from '@/hooks/useSplash';
    const formSectionRef = useRef<HTMLDivElement>(null);
    const { showSplash, handleSplashComplete } = useSplash('windows');
  
+    const handleSendToForm = (items: CalculatorItem[], total: number) => {
+      formRef.current?.setCalculatorData(items, total);
+      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const windowsItems = [
+      { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: img('window-cleaning-1.jpg') },
+      { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: img('window-cleaning-2.jpg') },
+      { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, image: img('window-cleaning-3.jpg') },
+      { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60, image: img('window-cleaning-1.jpg') },
+      { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: img('window-cleaning-2.jpg') },
+      { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: img('window-cleaning-3.jpg') },
+      { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: img('window-cleaning-1.jpg') },
+    ];
+
     const benefits = [
       { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
       { icon: Eye, text: t.windows?.benefit2 || 'Чистый и ухоженный вид' },
