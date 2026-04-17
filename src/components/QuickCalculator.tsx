@@ -60,12 +60,13 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
     { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(295) },
   ], [t, applyPrice]);
 
+  // Auto cleaning: no regional markup in any city — base Wrocław prices everywhere
   const autoOptions = useMemo(() => [
-    { id: 'autoSeats', name: t.prices.items.autoSeats, price: applyPrice(300) },
-    { id: 'autoComplex', name: t.prices.items.autoComplex, price: applyPrice(500) },
-    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: applyPrice(350) },
-    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: applyPrice(600) },
-  ], [t, applyPrice]);
+    { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300 },
+    { id: 'autoComplex', name: t.prices.items.autoComplex, price: 500 },
+    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350 },
+    { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 600 },
+  ], [t]);
 
   const getPrice = (): number => {
     switch (serviceType) {

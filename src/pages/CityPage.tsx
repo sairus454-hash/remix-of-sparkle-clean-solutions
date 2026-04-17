@@ -288,15 +288,22 @@ const CityPage = () => {
       };
     });
 
+  // Auto cleaning: no regional markup — keep Wrocław base prices in all cities
+  const noMarkupCategories = ['gardening', 'auto'];
+
   const filteredCategories = isWroclaw
     ? categories
     : [
         ...applyMarkup(
-          stripFurniturePromo(categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && c.id !== 'gardening'))
+          stripFurniturePromo(
+            categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && !noMarkupCategories.includes(c.id))
+          )
         ),
         ...(isNoGardeningSurcharge
           ? categories.filter(c => c.id === 'gardening')
           : applyMarkup(categories.filter(c => c.id === 'gardening'), 1.05)),
+        // Auto: always base Wrocław prices
+        ...categories.filter(c => c.id === 'auto'),
       ];
 
   return (

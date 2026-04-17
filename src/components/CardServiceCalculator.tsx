@@ -112,13 +112,13 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
         const { originalPrice, promoBadge, ...rest } = item;
         baseItem = { ...rest, price: originalPrice };
       }
-      // Apply markup for non-Wrocław
-      if (!isWroclaw) {
+      // Apply markup for non-Wrocław (skip for 'auto' category — keep Wrocław base prices everywhere)
+      if (!isWroclaw && category !== 'auto') {
         return { ...baseItem, price: applyPrice(baseItem.price) };
       }
       return baseItem;
     });
-  }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice]);
+  }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, category]);
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
