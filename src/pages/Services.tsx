@@ -6,7 +6,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import PromotionsSection from '@/components/PromotionsSection';
-import { Sparkles, Sofa, Armchair, Bed } from 'lucide-react';
+import { Sparkles, Sofa, Armchair, Bed, Package } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import servicesCleaning from '@/assets/services-cleaning.jpg';
 import servicesDrying from '@/assets/services-drying.jpg';
@@ -278,6 +278,30 @@ const Services = () => {
                   </div>
                 </div>
                 <CardServiceCalculator items={mattressItems} category="mattress" />
+              </div>
+            </CircularRevealCard>
+          </div>
+        </section>
+        </LazySection>
+
+        {/* Other / Extras Calculator */}
+        <LazySection minHeight="400px">
+        <section className="py-16 bg-card">
+          <div className="container mx-auto px-4">
+            <CircularRevealCard index={3}>
+              <div className="max-w-5xl mx-auto">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Package className="w-7 h-7 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">
+                      {t.services.other}
+                    </h2>
+                    <p className="text-muted-foreground text-sm">{t.services.otherDesc}</p>
+                  </div>
+                </div>
+                <CardServiceCalculator items={extrasItems} category="extras" />
               </div>
             </CircularRevealCard>
           </div>
