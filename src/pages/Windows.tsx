@@ -113,7 +113,9 @@ import { useSplash } from '@/hooks/useSplash';
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <CircularRevealCard index={0}>
-                {/* Calculator removed - see pricing in Prices page */}
+                <div className="p-4 text-center text-muted-foreground">
+                  {/* Calculator removed - see pricing in Prices page */}
+                </div>
               </CircularRevealCard>
             </div>
           </div>
