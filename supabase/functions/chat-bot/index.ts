@@ -216,12 +216,13 @@ const PRICE_LIST = {
 • Кресло (кожа) — 90 PLN | Стул вращающийся (кожа) — 80 PLN
 • Диван 2-мест. (кожа) — 180 PLN | 3-мест. (кожа) — 220 PLN | Угловой (кожа) — 270 PLN
 
-• Комплексная химчистка авто — 550 PLN | VIP — 770 PLN
+• 🚗 Химчистка авто — БЕЗ наценки во всех городах! Цены такие же, как во Вроцлаве (см. раздел "ХИМЧИСТКА АВТОМОБИЛЕЙ" выше: комплексная — 500 PLN, VIP — 700 PLN, кожа — 600/800 PLN, кабина TIR — 650 PLN, бус — 400 PLN и т.д.)
 • Озонирование 1-комн. — 160 PLN | 2-комн. — 265 PLN
 • Окно одностворч. — 45 PLN | двустворч. — 55 PLN
 
 ⚠️ ПРАВИЛО: Для других городов ВСЕГДА бери цену из ГОТОВОЙ ТАБЛИЦЫ! НЕ считай сам!
-Формула (если позиции нет в таблице): ПОЛНАЯ_цена (без акции) × 1.1, округлить ВВЕРХ до ближайшей 5.
+⚠️ ИСКЛЮЧЕНИЕ: На химчистку авто наценка 10% НЕ применяется — цена везде как во Вроцлаве.
+Формула (если позиции нет в таблице, кроме авто): ПОЛНАЯ_цена (без акции) × 1.1, округлить ВВЕРХ до ближайшей 5.
 
 ⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
 • Вроцлав и пригород (до 10 км) — 160 PLN
@@ -451,12 +452,13 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 • 2-seater sofa (leather) — 180 PLN | 3-seater (leather) — 220 PLN | Corner (leather) — 270 PLN
 
 📊 Other services for other cities (+10% surcharge, rounded to 5):
-• Full car cleaning — 550 PLN | VIP — 770 PLN
+• 🚗 Car cleaning — NO surcharge in any city! Same prices as Wrocław (see "CAR CLEANING" section above: full — 500 PLN, VIP — 700 PLN, leather — 600/800 PLN, truck cabin — 650 PLN, van — 400 PLN, etc.)
 • Ozonation 1-room — 160 PLN | 2-room — 265 PLN
 • Single-sash window — 45 PLN | Double-sash — 55 PLN
 
 ⚠️ RULE: For other cities ALWAYS use the READY TABLE! Do NOT calculate manually!
-Formula (if item not in table): FULL_price (no promo) × 1.1, round UP to nearest 5.
+⚠️ EXCEPTION: Car cleaning has NO 10% surcharge — same price in all cities as in Wrocław.
+Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.1, round UP to nearest 5.
 
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 160 PLN
@@ -688,12 +690,13 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 • Sofa 2-os. (skóra) — 180 PLN | 3-os. (skóra) — 220 PLN | Narożna (skóra) — 270 PLN
 
 📊 Inne usługi dla innych miast (dopłata 10%, zaokrąglone do 5):
-• Kompleksowe czyszczenie auta — 550 PLN | VIP — 770 PLN
+• 🚗 Pranie auta — BEZ dopłaty w żadnym mieście! Ceny takie same jak we Wrocławiu (zobacz sekcję "PRANIE TAPICERKI SAMOCHODOWEJ" powyżej: kompleksowe — 500 PLN, VIP — 700 PLN, skóra — 600/800 PLN, kabina TIR — 650 PLN, bus — 400 PLN, itd.)
 • Ozonowanie 1-pok. — 160 PLN | 2-pok. — 265 PLN
 • Okno jednoskrzydłowe — 45 PLN | dwuskrzydłowe — 55 PLN
 
 ⚠️ ZASADA: Dla innych miast ZAWSZE korzystaj z GOTOWEJ TABELI! NIE licz ręcznie!
-Formuła (jeśli pozycji nie ma w tabeli): PEŁNA_cena (bez promocji) × 1.1, zaokrąglij W GÓRĘ do najbliższej 5.
+⚠️ WYJĄTEK: Pranie tapicerki samochodowej NIE ma dopłaty 10% — cena wszędzie taka sama jak we Wrocławiu.
+Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promocji) × 1.1, zaokrąglij W GÓRĘ do najbliższej 5.
 
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 160 PLN
@@ -923,12 +926,13 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Диван 2-місний (шкіра) — 180 PLN | 3-місний (шкіра) — 220 PLN | Кутовий (шкіра) — 270 PLN
 
 📊 Інші послуги для інших міст (надбавка 10%, округлені до 5):
-• Комплексна хімчистка авто — 550 PLN | VIP — 770 PLN
+• 🚗 Хімчистка авто — БЕЗ надбавки в усіх містах! Ціни такі ж, як у Вроцлаві (див. розділ "ХІМЧИСТКА АВТОМОБІЛІВ" вище: комплексна — 500 PLN, VIP — 700 PLN, шкіра — 600/800 PLN, кабіна TIR — 650 PLN, бус — 400 PLN тощо)
 • Озонування 1-кімн. — 160 PLN | 2-кімн. — 265 PLN
 • Вікно одностулкове — 45 PLN | двостулкове — 55 PLN
 
 ⚠️ ПРАВИЛО: Для інших міст ЗАВЖДИ бери ціну з ГОТОВОЇ ТАБЛИЦІ! НЕ рахуй вручну!
-Формула (якщо позиції немає в таблиці): ПОВНА_ціна (без акції) × 1.1, округлити ВГОРУ до найближчої 5.
+⚠️ ВИНЯТОК: На хімчистку авто надбавка 10% НЕ застосовується — ціна скрізь як у Вроцлаві.
+Формула (якщо позиції немає в таблиці, окрім авто): ПОВНА_ціна (без акції) × 1.1, округлити ВГОРУ до найближчої 5.
 
 ⚠️ МІНІМАЛЬНЕ ЗАМОВЛЕННЯ:
 • Вроцлав і передмістя (до 10 км) — 160 PLN
