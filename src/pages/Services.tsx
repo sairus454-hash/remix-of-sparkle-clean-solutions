@@ -6,7 +6,8 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import PromotionsSection from '@/components/PromotionsSection';
-import { Sparkles, Sofa, Armchair } from 'lucide-react';
+import { Sparkles, Sofa, Armchair, Bed } from 'lucide-react';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
 import servicesCleaning from '@/assets/services-cleaning.jpg';
 import servicesDrying from '@/assets/services-drying.jpg';
 
@@ -88,12 +89,15 @@ const Services = () => {
     { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
     { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
     { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcKitchenCorner },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
+  ];
+
+  const mattressItems = [
     { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
     { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
     { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 180, originalPrice: 200, image: calcMattressSingle, promoBadge: '🔥 -10%' },
     { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 240, originalPrice: 265, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
   ];
 
   const { t: translations } = useLanguage();
@@ -223,7 +227,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.furnitureDesc}</p>
                   </div>
                 </div>
-                {/* Calculator removed - see pricing in Prices page */}
+                <CardServiceCalculator items={furnitureItems} category="furniture" />
               </div>
             </CircularRevealCard>
           </div>
@@ -247,7 +251,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.leatherDesc}</p>
                   </div>
                 </div>
-                {/* Calculator removed - see pricing in Prices page */}
+                <CardServiceCalculator items={leatherItems} category="leather" />
               </div>
             </CircularRevealCard>
           </div>
