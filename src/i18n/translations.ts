@@ -253,7 +253,7 @@ export const translations = {
       dryingDesc: 'Профессиональные системы сушки ускоряют высыхание обработанных поверхностей. Это предотвращает появление плесени и позволяет быстро вернуть мебель в эксплуатацию.',
     },
     auto: {
-      title: 'Выездная химчистка авто',
+      title: 'Выездная химчистка легковых и грузовых авто',
       subtitle: 'Приезжаем к вам на адрес! Химчистка салона является важным этапом для любого автомобиля. Во-первых, это повышает комфорт для водителя и пассажиров. Чистый и ухоженный салон создает приятную атмосферу в автомобиле и способствует более комфортной поездке.',
       carouselTitle: 'Примеры работ — До и После',
       carouselSubtitle: 'Реальные результаты нашей химчистки салона',
@@ -999,7 +999,7 @@ export const translations = {
       dryingDesc: 'Professional drying systems speed up the drying of treated surfaces. This prevents mold growth and allows furniture to return to use quickly.',
     },
     auto: {
-      title: 'Mobile Auto Dry Cleaning',
+      title: 'Mobile Dry Cleaning for Cars and Trucks',
       subtitle: 'We come to your address! Interior dry cleaning is an important step for any car. First of all, it increases comfort for the driver and passengers. A clean and well-maintained interior creates a pleasant atmosphere in the car and contributes to a more comfortable ride.',
       carouselTitle: 'Our Work — Before and After',
       carouselSubtitle: 'Real results of our interior dry cleaning',
@@ -1745,7 +1745,7 @@ export const translations = {
       dryingDesc: 'Profesjonalne systemy suszenia przyspieszają schnięcie obrabianych powierzchni. Zapobiega to rozwojowi pleśni i pozwala szybko przywrócić meble do użytku.',
     },
     auto: {
-      title: 'Mobilne pranie tapicerki samochodowej z dojazdem',
+      title: 'Mobilne pranie tapicerki samochodów osobowych i ciężarowych',
       subtitle: 'Przyjeżdżamy pod adres! Profesjonalne pranie tapicerki samochodowej to klucz do komfortu w samochodzie. Czyste i zadbane wnętrze auta tworzy przyjemną atmosferę i przyczynia się do komfortowej jazdy.',
       carouselTitle: 'Efekty prania tapicerki samochodowej — Przed i Po',
       carouselSubtitle: 'Realne wyniki prania tapicerki samochodowej i czyszczenia wnętrza auta',
@@ -2491,7 +2491,7 @@ export const translations = {
       dryingDesc: 'Професійні системи сушіння прискорюють висихання оброблених поверхонь. Це запобігає появі цвілі та дозволяє швидко повернути меблі в експлуатацію.',
     },
     auto: {
-      title: 'Виїзна хімчистка авто',
+      title: 'Виїзна хімчистка легкових та вантажних авто',
       subtitle: 'Приїжджаємо до вас за адресою! Хімчистка салону є важливим етапом для будь-якого автомобіля. По-перше, це підвищує комфорт для водія та пасажирів. Чистий та доглянутий салон створює приємну атмосферу в автомобілі.',
       carouselTitle: 'Приклади робіт — До і Після',
       carouselSubtitle: 'Реальні результати нашої хімчистки салону',
