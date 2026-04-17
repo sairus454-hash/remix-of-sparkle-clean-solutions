@@ -61,6 +61,13 @@ const CityPage = () => {
   const [isFullCalc, setIsFullCalc] = useState(false);
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleSendToForm = (items: CalculatorItem[], total: number) => {
+    formRef.current?.setCalculatorData(items, total);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const city = getCityBySlug(slug || '');
   if (!city) return <Navigate to="/prices" replace />;
