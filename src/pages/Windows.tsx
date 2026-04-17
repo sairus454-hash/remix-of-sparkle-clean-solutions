@@ -19,13 +19,12 @@ import { useSplash } from '@/hooks/useSplash';
    const formSectionRef = useRef<HTMLDivElement>(null);
    const { showSplash, handleSplashComplete } = useSplash('windows');
  
-   const benefits = [
- 
-   const benefits = [
-     { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
-     { icon: Eye, text: t.windows?.benefit2 || 'Чистый и ухоженный вид' },
-     { icon: ShieldCheck, text: t.windows?.benefit3 || 'Продление срока службы окон' },
-     { icon: Home, text: t.windows?.benefit4 || 'Комфортная атмосфера' },
+    const benefits = [
+      { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
+      { icon: Eye, text: t.windows?.benefit2 || 'Чистый и ухоженный вид' },
+      { icon: ShieldCheck, text: t.windows?.benefit3 || 'Продление срока службы окон' },
+      { icon: Home, text: t.windows?.benefit4 || 'Комфортная атмосфера' },
+    ];
    ];
  
    const galleryImages = [
