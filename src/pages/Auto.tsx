@@ -230,7 +230,7 @@ const Auto = () => {
                     <p className="text-muted-foreground text-sm">{t.auto.subtitle}</p>
                   </div>
                 </div>
-                <CardServiceCalculator category="auto" items={autoItems} onSendToForm={handleSendToForm} />
+                {/* Calculator removed - see pricing in Prices page */}
               </div>
             </CircularRevealCard>
           </div>

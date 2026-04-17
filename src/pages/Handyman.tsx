@@ -267,11 +267,7 @@ const Handyman = () => {
             </div>
 
             <CircularRevealCard index={0}>
-              <CardServiceCalculator
-                category="handyman"
-                items={categoryItems[activeTab] || []}
-                onSendToForm={handleSendToForm}
-              />
+              {/* Calculator removed - see pricing in Prices page */}
             </CircularRevealCard>
           </div>
         </div>

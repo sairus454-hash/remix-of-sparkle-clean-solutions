@@ -109,15 +109,15 @@ import { useSplash } from '@/hooks/useSplash';
        </section>
  
        {/* 1. Pricing */}
-       <section className="py-20 bg-gradient-section">
-         <div className="container mx-auto px-4">
-           <div className="max-w-3xl mx-auto">
-             <CircularRevealCard index={0}>
-               <WindowsPriceCalculator onSendToForm={handleSendToForm} />
-             </CircularRevealCard>
-           </div>
-         </div>
-       </section>
+        <section className="py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <CircularRevealCard index={0}>
+                {/* Calculator removed - see pricing in Prices page */}
+              </CircularRevealCard>
+            </div>
+          </div>
+        </section>
  
        {/* 2. Contact Form */}
        <section ref={formSectionRef} className="py-20 bg-gradient-section">

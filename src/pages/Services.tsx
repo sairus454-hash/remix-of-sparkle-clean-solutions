@@ -223,7 +223,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.furnitureDesc}</p>
                   </div>
                 </div>
-                <CardServiceCalculator category="furniture" items={[...furnitureItems, ...extrasItems]} />
+                {/* Calculator removed - see pricing in Prices page */}
               </div>
             </CircularRevealCard>
           </div>
@@ -247,7 +247,7 @@ const Services = () => {
                     <p className="text-muted-foreground text-sm">{t.services.leatherDesc}</p>
                   </div>
                 </div>
-                <CardServiceCalculator category="leather" items={leatherItems} />
+                {/* Calculator removed - see pricing in Prices page */}
               </div>
             </CircularRevealCard>
           </div>
