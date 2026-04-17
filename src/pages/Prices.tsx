@@ -19,7 +19,9 @@ import { useSplash } from '@/hooks/useSplash';
 import { useCity } from '@/hooks/useCity';
 
 import { img } from '@/utils/imageMap';
-
+import CardServiceCalculator from '@/components/CardServiceCalculator';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
+import { CalculatorItem } from '@/types/calculator';
 
 const Prices = () => {
   const { t } = useLanguage();
@@ -29,6 +31,13 @@ const Prices = () => {
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleSendToForm = (items: CalculatorItem[], total: number) => {
+    formRef.current?.setCalculatorData(items, total);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const isCategoryOpen = (id: string) => !closedCategories.has(id);
   const toggleCategory = (id: string) => {
@@ -433,13 +442,33 @@ const Prices = () => {
                     >
                       <div className="overflow-hidden">
                         <div className="p-4 sm:p-5 pt-0">
-                          {/* Calculator removed - prices shown in accordion header */}
+                          <CardServiceCalculator
+                            items={cat.items}
+                            category={`prices-${cat.id}`}
+                            onSendToForm={handleSendToForm}
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </CircularRevealCard>
               ))}
+            </div>
+          </div>
+        </section>
+        {/* Contact Form */}
+        <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <div className="text-center mb-8 sm:mb-12">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4 relative inline-block">
+                  <span className="relative z-10">{t.contacts?.title || 'Заказать'}</span>
+                  <span className="absolute bottom-1 left-0 w-full h-3 bg-primary/30 -z-0 rounded" />
+                </h2>
+              </div>
+              <CircularRevealCard index={0}>
+                <ContactForm ref={formRef} />
+              </CircularRevealCard>
             </div>
           </div>
         </section>
