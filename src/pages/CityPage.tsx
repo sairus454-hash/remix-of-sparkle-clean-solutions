@@ -552,6 +552,15 @@ const CityPage = () => {
           </div>
         </section>
 
+        {/* Contact Form */}
+        <section ref={formSectionRef} className="py-12 sm:py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <ContactForm ref={formRef} />
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
         <section className="py-12 sm:py-16 bg-card">
           <div className="container mx-auto px-4">
