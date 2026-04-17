@@ -164,7 +164,8 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
 
   const hiddenForNonWroclaw = ['cleaning', 'handyman'];
 
-  const cleaningCategory: CategorySection = {
+  const allCategories: CategorySection[] = [
+    {
       id: 'cleaning',
       title: t.cleaning?.service || 'Уборка',
       description: t.cleaning?.subtitle || 'Профессиональная уборка помещений',
