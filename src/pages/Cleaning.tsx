@@ -216,6 +216,44 @@ const Cleaning = () => {
     { src: cleaningTeam3, alt: t.cleaning?.gallery3 || 'Уборка комнат' },
   ];
 
+  const furnitureItems = [
+    { id: 'pouf', name: t.prices.items.pouf, price: 30, originalPrice: 35, image: calcPouf, promoBadge: '🔥 -10%' },
+    { id: 'chair', name: t.prices.items.chair, price: 25, image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: 65, originalPrice: 75, image: calcArmchair, promoBadge: '🔥 -10%' },
+    { id: 'pillow', name: t.prices.items.pillow, price: 10, image: calcPillow },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 130, originalPrice: 145, image: calcSofa2, promoBadge: '🔥 -10%' },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcKitchenCorner },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
+  ];
+
+  const leatherItems = [
+    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 50, image: calcLeatherPouf },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 45, image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 80, image: calcLeatherArmchair },
+    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 160, image: calcLeatherSofa2 },
+    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 200, image: calcLeatherSofa3 },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 245, image: calcLeatherCorner },
+  ];
+
+  const extrasItems = [
+    { id: 'impregnation', name: language === 'pl' ? 'Impregnacja mebli na 1 rok' : language === 'en' ? 'Furniture impregnation 1 year' : 'Импрегнация мебели на 1 год', price: 80, image: calcImpregnation },
+    { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно до конца весны' },
+    { id: 'carpet', name: language === 'pl' ? 'Wykładzina dywanowa' : language === 'en' ? 'Carpet cleaning' : 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
+    { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 35, image: calcCarpetPickup, unit: 'm²' },
+    { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || (language === 'pl' ? 'Impregnacja dywanu' : language === 'en' ? 'Carpet impregnation' : 'Импрегнация ковра'), price: 5, image: calcCarpetImpregnation, unit: 'm²' },
+    { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny' : language === 'en' ? 'Carpet covering impregnation' : 'Импрегнация коврового покрытия'), price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
+    { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
+    { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
+    { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 15, image: calcCarpetMedium, unit: 'm²' },
+    { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 10, image: calcCarpetLarge, unit: 'm²' },
+  ];
+
   return (
     <>
       <SEO
