@@ -8,6 +8,9 @@ import { useSplash } from '@/hooks/useSplash';
  import ContactForm, { ContactFormRef } from '@/components/ContactForm';
  import AnimatedImage from '@/components/AnimatedImage';
  import CircularRevealCard from '@/components/CircularRevealCard';
+ import CardServiceCalculator from '@/components/CardServiceCalculator';
+ import { CalculatorItem } from '@/types/calculator';
+ import { img } from '@/utils/imageMap';
  import { Sparkles, CheckCircle2, Home, Sun, Eye, ShieldCheck } from 'lucide-react';
  import windowCleaning1 from '@/assets/window-cleaning-1.jpg';
  import windowCleaning2 from '@/assets/window-cleaning-2.jpg';
@@ -19,6 +22,21 @@ import { useSplash } from '@/hooks/useSplash';
    const formSectionRef = useRef<HTMLDivElement>(null);
    const { showSplash, handleSplashComplete } = useSplash('windows');
  
+    const handleSendToForm = (items: CalculatorItem[], total: number) => {
+      formRef.current?.setCalculatorData(items, total);
+      formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    const windowsItems = [
+      { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: img('window-cleaning-1.jpg') },
+      { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: img('window-cleaning-2.jpg') },
+      { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, image: img('window-cleaning-3.jpg') },
+      { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60, image: img('window-cleaning-1.jpg') },
+      { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: img('window-cleaning-2.jpg') },
+      { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: img('window-cleaning-3.jpg') },
+      { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: img('window-cleaning-1.jpg') },
+    ];
+
     const benefits = [
       { icon: Sun, text: t.windows?.benefit1 || 'Больше света в доме' },
       { icon: Eye, text: t.windows?.benefit2 || 'Чистый и ухоженный вид' },
@@ -108,8 +126,12 @@ import { useSplash } from '@/hooks/useSplash';
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <CircularRevealCard index={0}>
-                <div className="p-4 text-center text-muted-foreground">
-                  {/* Calculator removed - see pricing in Prices page */}
+                <div className="bg-card p-6 rounded-2xl shadow-card border border-border">
+                  <CardServiceCalculator
+                    items={windowsItems}
+                    category="windows"
+                    onSendToForm={handleSendToForm}
+                  />
                 </div>
               </CircularRevealCard>
             </div>
