@@ -76,18 +76,18 @@ const Auto = () => {
   return (
     <>
       <SEO
-        title="Pranie tapicerki samochodowej — Czyszczenie auta"
-        description="Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, podsufitki, dywaników, bagażnika. Usuwanie plam i zapachów. Wrocław, Opole."
-        keywords="pranie tapicerki samochodowej, chemczystka auta, czyszczenie wnętrza samochodu, czyszczenie tapicerki samochodowej, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników samochodowych, czyszczenie podsufitki, czyszczenie z dojazdem, dojazd do klienta, auto detailing, pranie tapicerki auta Wrocław, Opole, Poznań"
+        title="Pranie tapicerki samochodów osobowych i ciężarowych"
+        description="Mobilne pranie tapicerki samochodów osobowych i ciężarowych z dojazdem. Czyszczenie foteli, podsufitki, kabin TIR, busów. Wrocław, Opole, Poznań."
+        keywords="pranie tapicerki samochodowej, pranie tapicerki ciężarówki, czyszczenie kabiny TIR, pranie tapicerki busa, chemczystka auta, czyszczenie wnętrza samochodu, czyszczenie tapicerki samochodowej, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników samochodowych, czyszczenie podsufitki, czyszczenie z dojazdem, dojazd do klienta, auto detailing, pranie tapicerki auta Wrocław, Opole, Poznań"
         canonical="/auto"
         image="https://masterclean1885.com/og-auto.png"
         breadcrumbs={[{ name: t.nav.auto, path: '/auto' }]}
          jsonLd={{
            '@context': 'https://schema.org',
            '@type': 'Service',
-           serviceType: 'Pranie tapicerki samochodowej',
-           name: 'Pranie tapicerki samochodowej',
-           description: 'Profesjonalne pranie tapicerki samochodowej z dojazdem. Czyszczenie foteli, dywaników i wnętrza auta.',
+           serviceType: 'Pranie tapicerki samochodów osobowych i ciężarowych',
+           name: 'Pranie tapicerki samochodów osobowych i ciężarowych',
+           description: 'Mobilne pranie tapicerki samochodów osobowych i ciężarowych z dojazdem. Czyszczenie foteli, dywaników, kabin TIR i busów.',
            url: 'https://masterclean1885.com/auto',
            provider: {
              '@type': 'LocalBusiness',
@@ -104,7 +104,8 @@ const Auto = () => {
            offers: [
              { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: '300', priceCurrency: 'PLN' },
               { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '500', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Czyszczenie skóry w samochodzie', price: '600', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Czyszczenie kabiny ciężarówki (TIR)', price: '650', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Czyszczenie kabiny busa', price: '400', priceCurrency: 'PLN' },
            ],
          }}
       />
