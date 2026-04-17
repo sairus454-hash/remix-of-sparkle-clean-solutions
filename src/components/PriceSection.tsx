@@ -367,16 +367,18 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
 
   const categories = useMemo(() => {
     const filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
-    // Reorder: move 'cleaning' to be right before 'windows'
+    // Reorder: move 'ozone' right before 'cleaning', and 'cleaning' right before 'windows'
+    // Final order around these: ... -> ozone -> cleaning -> windows -> ...
+    const ozone = filtered.find(c => c.id === 'ozone');
     const cleaning = filtered.find(c => c.id === 'cleaning');
-    const withoutCleaning = filtered.filter(c => c.id !== 'cleaning');
-    if (!cleaning) return withoutCleaning;
-    const windowsIdx = withoutCleaning.findIndex(c => c.id === 'windows');
-    if (windowsIdx === -1) return [...withoutCleaning, cleaning];
+    const rest = filtered.filter(c => c.id !== 'ozone' && c.id !== 'cleaning');
+    const windowsIdx = rest.findIndex(c => c.id === 'windows');
+    const insertion = [ozone, cleaning].filter(Boolean) as CategorySection[];
+    if (windowsIdx === -1) return [...rest, ...insertion];
     return [
-      ...withoutCleaning.slice(0, windowsIdx),
-      cleaning,
-      ...withoutCleaning.slice(windowsIdx),
+      ...rest.slice(0, windowsIdx),
+      ...insertion,
+      ...rest.slice(windowsIdx),
     ];
   }, [isWroclaw, allCategories]);
 
