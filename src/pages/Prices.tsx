@@ -19,7 +19,9 @@ import { useSplash } from '@/hooks/useSplash';
 import { useCity } from '@/hooks/useCity';
 
 import { img } from '@/utils/imageMap';
-
+import CardServiceCalculator from '@/components/CardServiceCalculator';
+import ContactForm, { ContactFormRef } from '@/components/ContactForm';
+import { CalculatorItem } from '@/types/calculator';
 
 const Prices = () => {
   const { t } = useLanguage();
@@ -29,6 +31,13 @@ const Prices = () => {
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleSendToForm = (items: CalculatorItem[], total: number) => {
+    formRef.current?.setCalculatorData(items, total);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   const isCategoryOpen = (id: string) => !closedCategories.has(id);
   const toggleCategory = (id: string) => {
@@ -433,7 +442,11 @@ const Prices = () => {
                     >
                       <div className="overflow-hidden">
                         <div className="p-4 sm:p-5 pt-0">
-                          {/* Calculator removed - prices shown in accordion header */}
+                          <CardServiceCalculator
+                            items={cat.items}
+                            category={`prices-${cat.id}`}
+                            onSendToForm={handleSendToForm}
+                          />
                         </div>
                       </div>
                     </div>
