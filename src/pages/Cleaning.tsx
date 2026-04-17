@@ -13,6 +13,9 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CleaningSplash from '@/components/CleaningSplash';
+import CardServiceCalculator from '@/components/CardServiceCalculator';
+import CleaningExtrasCheckboxes from '@/components/CleaningExtrasCheckboxes';
+import WindowsPriceCalculator from '@/components/WindowsPriceCalculator';
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
@@ -213,6 +216,60 @@ const Cleaning = () => {
     { src: cleaningTeam3, alt: t.cleaning?.gallery3 || 'Уборка комнат' },
   ];
 
+  const cleaningExtrasItems = [
+    { id: 'oven', name: language === 'pl' ? 'Mycie piekarnika' : language === 'en' ? 'Oven cleaning' : 'Помоем духовку', price: cleaningType === 'general' ? 50 : 40, image: calcExtraOven },
+    { id: 'hood', name: language === 'pl' ? 'Mycie okapu' : language === 'en' ? 'Hood cleaning' : 'Помоем вытяжку', price: cleaningType === 'general' ? 50 : 40, image: calcExtraHood },
+    { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : 'Уберем в кухонных шкафчиках', price: cleaningType === 'general' ? 70 : 55, image: calcExtraCabinets },
+    { id: 'dishes', name: language === 'pl' ? 'Mycie naczyń' : language === 'en' ? 'Dishwashing' : 'Помоем посуду', price: cleaningType === 'general' ? 30 : 25, image: calcExtraDishes },
+    { id: 'fridge', name: language === 'pl' ? 'Czyszczenie lodówki' : language === 'en' ? 'Fridge cleaning' : 'Почистим холодильник', price: cleaningType === 'general' ? 50 : 40, image: calcExtraFridge },
+    { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : 'Помоем микроволновку', price: cleaningType === 'general' ? 25 : 20, image: calcExtraMicrowave },
+    { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : 'Уберем на балконе', price: cleaningType === 'general' ? 35 : 30, image: calcExtraBalcony },
+    { id: 'windowInside', name: language === 'pl' ? 'Mycie okien (wewnątrz, szt.)' : language === 'en' ? 'Window cleaning (inside, pc.)' : 'Мытье окон (внутри, шт.)', price: cleaningType === 'general' ? 35 : 30, image: calcExtraWindowInside },
+    { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : 'Глажка', price: cleaningType === 'general' ? 60 : 50, image: calcExtraIroning, unit: 'h' },
+    { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : 'Убрать лоток для животных', price: cleaningType === 'general' ? 15 : 10, image: calcExtraPetLitter },
+    { id: 'extraHours', name: language === 'pl' ? 'Dodatkowe godziny' : language === 'en' ? 'Additional hours' : 'Дополнительные часы', price: cleaningType === 'general' ? 60 : 50, image: calcExtraHours, unit: 'h' },
+    { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : 'Убрать в шкафу', price: cleaningType === 'general' ? 35 : 30, image: calcExtraCloset },
+    { id: 'moldRemoval', name: language === 'pl' ? 'Usuwanie pleśni ze ściany' : language === 'en' ? 'Mold removal' : 'Устранение грибка со стены', price: 80, image: calcExtraMoldRemoval },
+  ];
+
+  const furnitureItems = [
+    { id: 'pouf', name: t.prices.items.pouf, price: 30, originalPrice: 35, image: calcPouf, promoBadge: '🔥 -10%' },
+    { id: 'chair', name: t.prices.items.chair, price: 25, image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: 65, originalPrice: 75, image: calcArmchair, promoBadge: '🔥 -10%' },
+    { id: 'pillow', name: t.prices.items.pillow, price: 10, image: calcPillow },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 130, originalPrice: 145, image: calcSofa2, promoBadge: '🔥 -10%' },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcKitchenCorner },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
+  ];
+
+  const leatherItems = [
+    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 50, image: calcLeatherPouf },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 45, image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 80, image: calcLeatherArmchair },
+    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 160, image: calcLeatherSofa2 },
+    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 200, image: calcLeatherSofa3 },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 245, image: calcLeatherCorner },
+  ];
+
+  const extrasItems = [
+    { id: 'impregnation', name: language === 'pl' ? 'Impregnacja mebli na 1 rok' : language === 'en' ? 'Furniture impregnation 1 year' : 'Импрегнация мебели на 1 год', price: 80, image: calcImpregnation },
+    { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно до конца весны' },
+    { id: 'carpet', name: language === 'pl' ? 'Wykładzina dywanowa' : language === 'en' ? 'Carpet cleaning' : 'Ковровое покрытие', price: 25, image: calcCarpet, unit: 'm²' },
+    { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 35, image: calcCarpetPickup, unit: 'm²' },
+    { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || (language === 'pl' ? 'Impregnacja dywanu' : language === 'en' ? 'Carpet impregnation' : 'Импрегнация ковра'), price: 5, image: calcCarpetImpregnation, unit: 'm²' },
+    { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny' : language === 'en' ? 'Carpet covering impregnation' : 'Импрегнация коврового покрытия'), price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
+    { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
+    { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
+    { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 15, image: calcCarpetMedium, unit: 'm²' },
+    { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 10, image: calcCarpetLarge, unit: 'm²' },
+  ];
+
   return (
     <>
       <SEO
@@ -298,7 +355,11 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{'Дополнительно к уборке'}</p>
                     </div>
                   </div>
-                  {/* Calculator removed - see pricing in Prices page */}
+                  <CardServiceCalculator
+                    items={cleaningExtrasItems}
+                    category="cleaning-extras"
+                    onSendToForm={handleCardToForm}
+                  />
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -323,7 +384,7 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.windows?.calcSubtitle || 'Рассчитайте стоимость услуги'}</p>
                     </div>
                   </div>
-                  {/* Calculator removed - see pricing in Prices page */}
+                  <WindowsPriceCalculator onSendToForm={handleCardToForm} />
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -351,7 +412,11 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель, ковры и матрасы'}</p>
                     </div>
                   </div>
-                  {/* Calculator removed - see pricing in Prices page */}
+                  <CardServiceCalculator
+                    items={furnitureItems}
+                    category="furniture"
+                    onSendToForm={handleCardToForm}
+                  />
                 </CardContent>
               </Card>
             </CircularRevealCard>
@@ -370,7 +435,11 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.leatherFurnitureTitle || 'Чистка кожаной мебели'}</p>
                       </div>
                     </div>
-                    {/* Calculator removed - see pricing in Prices page */}
+                    <CardServiceCalculator
+                      items={leatherItems}
+                      category="leather"
+                      onSendToForm={handleCardToForm}
+                    />
                   </CardContent>
                 </Card>
               </CircularRevealCard>
@@ -390,7 +459,11 @@ const Cleaning = () => {
                         <p className="text-sm text-muted-foreground">{t.prices?.otherDesc || 'Ковры, коляски, плитка и дополнительные услуги'}</p>
                       </div>
                     </div>
-                    {/* Calculator removed - see pricing in Prices page */}
+                    <CardServiceCalculator
+                      items={extrasItems}
+                      category="extras"
+                      onSendToForm={handleCardToForm}
+                    />
                   </CardContent>
                 </Card>
               </CircularRevealCard>
