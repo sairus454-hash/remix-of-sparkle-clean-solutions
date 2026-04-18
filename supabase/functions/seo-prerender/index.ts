@@ -445,11 +445,11 @@ function buildHtml(path: string, meta: PageMeta): string {
   <meta name="twitter:description" content="${escapeHtml(meta.description)}">
   <meta name="twitter:image" content="${image}">
 
-  <!-- Hreflang -->
+  <!-- Hreflang — each language has its own URL with ?lang=XX (Polish is default, no param) -->
   <link rel="alternate" hreflang="pl" href="${canonicalUrl}">
-  <link rel="alternate" hreflang="ru" href="${canonicalUrl}">
-  <link rel="alternate" hreflang="en" href="${canonicalUrl}">
-  <link rel="alternate" hreflang="uk" href="${canonicalUrl}">
+  <link rel="alternate" hreflang="ru" href="${canonicalUrl}?lang=ru">
+  <link rel="alternate" hreflang="en" href="${canonicalUrl}?lang=en">
+  <link rel="alternate" hreflang="uk" href="${canonicalUrl}?lang=uk">
   <link rel="alternate" hreflang="x-default" href="${canonicalUrl}">
 
   <!-- Structured Data -->
