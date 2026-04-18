@@ -85,9 +85,9 @@ export const cities: CityData[] = [
     name: 'Legnica',
     region: 'dolnośląskie',
     seo: {
-      title: 'Pranie tapicerki Legnica — Sprzęt Kärcher',
-      description: 'Pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Legnicy. Profesjonalny sprzęt Kärcher.',
-      keywords: 'czyszczenie tapicerki Legnica, pranie dywanów Legnica, sprzątanie Legnica',
+      title: 'Pranie tapicerki Legnica — Sprzęt Kärcher i SantoEmma',
+      description: 'Czyszczenie kanap, narożników i materacy w Legnicy. Wyjazdy z Wrocławia, sprzęt ekstrakcyjny, środki ekologiczne. Zamów online.',
+      keywords: 'pranie kanapy Legnica, chemczystka mebli Legnica, czyszczenie narożnika Legnica, ozonowanie Legnica, ekstrakcja Legnica',
     },
     content: {
       pl: {
