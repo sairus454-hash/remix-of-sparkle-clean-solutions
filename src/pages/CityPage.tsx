@@ -78,8 +78,11 @@ const CityPage = () => {
   const cityContent = city.content[lang] || city.content.pl;
   const isWroclaw = city.slug === 'wroclaw' || city.slug === 'smolec' || city.slug === 'bielany-wroclawskie';
 
-  // FAQ data for SEO
-  const faqData = getFaqData(language, city.name, isWroclaw);
+  // FAQ data for SEO — base FAQs (shared) + 2 unique per-city FAQs from generator
+  const profile = getCityProfile(city.slug);
+  const generated = generateCityContent(city.name, city.slug, lang as 'pl' | 'ru' | 'en' | 'uk', profile);
+  const baseFaqs = getFaqData(language, city.name, isWroclaw);
+  const faqData = [...generated.faqs, ...baseFaqs];
 
   const categories = [
     {
