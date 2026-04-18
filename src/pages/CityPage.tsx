@@ -21,6 +21,8 @@ import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import { CalculatorItem } from '@/types/calculator';
+import { getCityProfile } from '@/data/cityProfiles';
+import { generateCityContent } from '@/data/cityContentGenerator';
 
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
