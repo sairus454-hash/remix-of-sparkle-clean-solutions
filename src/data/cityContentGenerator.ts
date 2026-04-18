@@ -241,7 +241,7 @@ export function generateCityContent(
   profile: CityProfile,
 ): GeneratedCityContent {
   const seed = hash(slug);
-  const replace = (s: string) => s.replaceAll('{city}', cityName);
+  const replace = (s: string) => s.split('{city}').join(cityName);
 
   const intro = replace(pick(INTROS[lang], seed));
   const emphasisBlock = replace(pick(EMPHASIS_BLOCKS[profile.emphasis][lang], seed >> 3));
