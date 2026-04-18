@@ -85,9 +85,9 @@ export const cities: CityData[] = [
     name: 'Legnica',
     region: 'dolnośląskie',
     seo: {
-      title: 'Pranie tapicerki Legnica — Sprzęt Kärcher',
-      description: 'Pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Legnicy. Profesjonalny sprzęt Kärcher.',
-      keywords: 'czyszczenie tapicerki Legnica, pranie dywanów Legnica, sprzątanie Legnica',
+      title: 'Pranie tapicerki Legnica — Sprzęt Kärcher i SantoEmma',
+      description: 'Czyszczenie kanap, narożników i materacy w Legnicy. Wyjazdy z Wrocławia, sprzęt ekstrakcyjny, środki ekologiczne. Zamów online.',
+      keywords: 'pranie kanapy Legnica, chemczystka mebli Legnica, czyszczenie narożnika Legnica, ozonowanie Legnica, ekstrakcja Legnica',
     },
     content: {
       pl: {
@@ -117,9 +117,9 @@ export const cities: CityData[] = [
     name: 'Oława',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Oława — 30 km od Wrocławia',
-      description: 'Pranie tapicerki meblowej, czyszczenie dywanów i ozonowanie w Oławie. Blisko Wrocławia — szybki dojazd.',
-      keywords: 'czyszczenie tapicerki Oława, pranie dywanów Oława, sprzątanie Oława',
+      title: 'Czyszczenie tapicerki Oława — wyjazd w 30 minut',
+      description: 'Pranie kanap, dywanów i materacy w Oławie. Tylko 30 km od Wrocławia — szybki termin, brak ukrytych opłat dojazdu.',
+      keywords: 'pranie kanapy Oława, chemczystka Oława, czyszczenie materacy Oława, ozonowanie auta Oława',
     },
     content: {
       pl: {
@@ -149,9 +149,9 @@ export const cities: CityData[] = [
     name: 'Kalisz',
     region: 'wielkopolskie',
     seo: {
-      title: 'Pranie tapicerki Kalisz — Regularne dojazdy',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Kaliszu. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Kalisz, pranie dywanów Kalisz, ozonowanie Kalisz',
+      title: 'Pranie kanap Kalisz — chemczystka mebli i materacy',
+      description: 'Profesjonalne czyszczenie tapicerki w Kaliszu i okolicach. Ozonowanie pomieszczeń, mycie okien, ekstrakcja głębokich zabrudzeń.',
+      keywords: 'pranie kanapy Kalisz, ekstrakcja Kalisz, czyszczenie materaca Kalisz, mycie okien Kalisz',
     },
     content: {
       pl: {
@@ -181,9 +181,9 @@ export const cities: CityData[] = [
     name: 'Leszno',
     region: 'wielkopolskie',
     seo: {
-      title: 'Czyszczenie tapicerki Leszno — Trasa Wrocław–Poznań',
-      description: 'Pranie tapicerki, czyszczenie dywanów i materacy w Lesznie. Profesjonalny sprzęt i środki ekologiczne.',
-      keywords: 'czyszczenie tapicerki Leszno, pranie dywanów Leszno, sprzątanie Leszno',
+      title: 'Chemczystka mebli Leszno — kanapy, narożniki, fotele',
+      description: 'Pranie tapicerki w Lesznie: kanapy, fotele, materace i dywany. Eko-środki, sprzęt ekstrakcyjny, faktury VAT dla firm.',
+      keywords: 'chemczystka Leszno, pranie kanapy Leszno, pranie fotela Leszno, ekstrakcja mebli Leszno',
     },
     content: {
       pl: {
@@ -213,9 +213,9 @@ export const cities: CityData[] = [
     name: 'Świdnica',
     region: 'dolnośląskie',
     seo: {
-      title: 'Pranie tapicerki Świdnica — Dolny Śląsk',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Świdnicy. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Świdnica, pranie dywanów Świdnica, ozonowanie Świdnica',
+      title: 'Pranie kanap i materacy Świdnica — MasterClean',
+      description: 'Czyszczenie tapicerki, dywanów i materacy w Świdnicy. Bezpieczne dla dzieci i alergików, sprzęt SantoEmma.',
+      keywords: 'pranie kanapy Świdnica, chemczystka mebli Świdnica, czyszczenie materacy Świdnica, alergicy',
     },
     content: {
       pl: {
@@ -245,9 +245,9 @@ export const cities: CityData[] = [
     name: 'Wałbrzych',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Wałbrzych — Zamów online',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Wałbrzychu. Profesjonalny dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Wałbrzych, pranie dywanów Wałbrzych, ozonowanie Wałbrzych',
+      title: 'Czyszczenie kanap Wałbrzych — chemczystka mebli',
+      description: 'Pranie tapicerki, materacy i dywanów w Wałbrzychu i okolicach. Dla pensjonatów i klientów indywidualnych. Wycena online.',
+      keywords: 'pranie kanapy Wałbrzych, chemczystka Wałbrzych, ozonowanie auta Wałbrzych, pensjonaty Wałbrzych',
     },
     content: {
       pl: {
@@ -277,9 +277,9 @@ export const cities: CityData[] = [
     name: 'Ostrów Wielkopolski',
     region: 'wielkopolskie',
     seo: {
-      title: 'Pranie tapicerki Ostrów Wielkopolski — Wielkopolska',
-      description: 'Profesjonalne pranie tapicerki i ozonowanie w Ostrowie Wielkopolskim. Regularne dojazdy.',
-      keywords: 'czyszczenie tapicerki Ostrów Wielkopolski, pranie dywanów Ostrów Wielkopolski',
+      title: 'Pranie tapicerki Ostrów Wielkopolski — kanapy, materace',
+      description: 'Chemczystka mebli, czyszczenie dywanów i ozonowanie w Ostrowie Wielkopolskim. Łączymy zlecenia z Kaliszem — niższe koszty dojazdu.',
+      keywords: 'pranie kanapy Ostrów Wielkopolski, chemczystka Ostrów Wielkopolski, ozonowanie Ostrów',
     },
     content: {
       pl: {
@@ -309,9 +309,9 @@ export const cities: CityData[] = [
     name: 'Jelenia Góra',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Jelenia Góra — Karkonosze',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Jeleniej Górze. Profesjonalny serwis z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Jelenia Góra, pranie dywanów Jelenia Góra, ozonowanie Jelenia Góra',
+      title: 'Czyszczenie mebli Jelenia Góra — apartamenty Karkonosze',
+      description: 'Pranie tapicerki w Jeleniej Górze i Karkonoszach. Obsługa pensjonatów, apartamentów wakacyjnych i domów prywatnych.',
+      keywords: 'pranie kanapy Jelenia Góra, chemczystka apartamentów Karkonosze, czyszczenie materacy Karpacz',
     },
     content: {
       pl: {
@@ -341,9 +341,9 @@ export const cities: CityData[] = [
     name: 'Brzeg',
     region: 'opolskie',
     seo: {
-      title: 'Pranie tapicerki Brzeg — Trasa Wrocław–Opole',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Brzegu. Na trasie Wrocław–Opole.',
-      keywords: 'czyszczenie tapicerki Brzeg, pranie dywanów Brzeg, sprzątanie Brzeg',
+      title: 'Pranie tapicerki Brzeg — szybki wyjazd Wrocław/Opole',
+      description: 'Czyszczenie kanap, narożników, materacy i dywanów w Brzegu. Łączymy zlecenia na trasie Wrocław–Opole.',
+      keywords: 'pranie kanapy Brzeg, chemczystka mebli Brzeg, ekstrakcja Brzeg, ozonowanie Brzeg',
     },
     content: {
       pl: {
@@ -373,9 +373,9 @@ export const cities: CityData[] = [
     name: 'Lubin',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki i sprzątanie Lubin — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Lubinie. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Lubin, pranie dywanów Lubin, ozonowanie Lubin, sprzątanie Lubin',
+      title: 'Chemczystka mebli Lubin — biura, mieszkania, hotele',
+      description: 'Pranie tapicerki, czyszczenie materacy i ozonowanie w Lubinie. Faktury VAT, obsługa firm Zagłębia Miedziowego.',
+      keywords: 'pranie kanapy Lubin, chemczystka biur Lubin, czyszczenie materaca Lubin, ozonowanie firm Lubin',
     },
     content: {
       pl: {
@@ -405,9 +405,9 @@ export const cities: CityData[] = [
     name: 'Jelcz-Laskowice',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Jelcz-Laskowice — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Jelczu-Laskowicach. Blisko Wrocławia i Oławy.',
-      keywords: 'czyszczenie tapicerki Jelcz-Laskowice, pranie dywanów Jelcz-Laskowice, ozonowanie Jelcz-Laskowice',
+      title: 'Pranie tapicerki Jelcz-Laskowice — wyjazd 25 km',
+      description: 'Czyszczenie kanap i materacy w Jelczu-Laskowicach. Krótkie plecho dojazdu z Wrocławia, terminy w 1–2 dni.',
+      keywords: 'pranie kanapy Jelcz-Laskowice, chemczystka Jelcz, czyszczenie materacy Laskowice',
     },
     content: {
       pl: {
@@ -437,9 +437,9 @@ export const cities: CityData[] = [
     name: 'Strzegom',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Strzegom — MasterClean',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Strzegomiu. Profesjonalny serwis z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Strzegom, pranie dywanów Strzegom, ozonowanie Strzegom',
+      title: 'Pranie kanapy Strzegom — czyszczenie tapicerki',
+      description: 'Chemczystka mebli, czyszczenie dywanów i materacy w Strzegomiu. Także obsługa zakładów przemysłowych w okolicy.',
+      keywords: 'pranie kanapy Strzegom, chemczystka Strzegom, czyszczenie materacy Strzegom',
     },
     content: {
       pl: {
@@ -469,9 +469,9 @@ export const cities: CityData[] = [
     name: 'Sobótka',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Sobótka — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Sobótce. U podnóża Ślęży.',
-      keywords: 'czyszczenie tapicerki Sobótka, pranie dywanów Sobótka, ozonowanie Sobótka',
+      title: 'Czyszczenie mebli Sobótka — u stóp Ślęży',
+      description: 'Pranie kanap, materacy i tapicerki samochodowej w Sobótce. Wyjazd z Wrocławia w niespełna godzinę.',
+      keywords: 'pranie kanapy Sobótka, ozonowanie auta Sobótka, czyszczenie materacy Sobótka, Ślęża',
     },
     content: {
       pl: {
@@ -501,9 +501,9 @@ export const cities: CityData[] = [
     name: 'Kłodzko',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Kłodzko — MasterClean',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Kłodzku. Profesjonalny serwis w Kotlinie Kłodzkiej.',
-      keywords: 'czyszczenie tapicerki Kłodzko, pranie dywanów Kłodzko, ozonowanie Kłodzko',
+      title: 'Pranie tapicerki Kłodzko — pensjonaty Kotliny Kłodzkiej',
+      description: 'Chemczystka mebli, materacy i dywanów w Kłodzku. Specjalizacja: obiekty noclegowe Polanicy, Kudowy i Bystrzycy.',
+      keywords: 'pranie kanapy Kłodzko, czyszczenie pensjonatów Kotlina Kłodzka, ozonowanie Polanica-Zdrój',
     },
     content: {
       pl: {
@@ -533,9 +533,9 @@ export const cities: CityData[] = [
     name: 'Kiełczów',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Kiełczów — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Kiełczowie. Tuż przy Wrocławiu.',
-      keywords: 'czyszczenie tapicerki Kiełczów, pranie dywanów Kiełczów, ozonowanie Kiełczów',
+      title: 'Pranie kanap Kiełczów — wyjazd w 15 minut',
+      description: 'Czyszczenie tapicerki, materacy i dywanów w Kiełczowie. Najszybszy dojazd na obrzeżach Wrocławia.',
+      keywords: 'pranie kanapy Kiełczów, chemczystka Kiełczów, ozonowanie auta Kiełczów',
     },
     content: {
       pl: {
@@ -565,9 +565,9 @@ export const cities: CityData[] = [
     name: 'Dzierżoniów',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Dzierżoniów — MasterClean',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Dzierżoniowie. Profesjonalny sprzęt Kärcher.',
-      keywords: 'czyszczenie tapicerki Dzierżoniów, pranie dywanów Dzierżoniów, ozonowanie Dzierżoniów',
+      title: 'Chemczystka tapicerki Dzierżoniów — Bielawa, Pieszyce',
+      description: 'Pranie kanap i materacy w Dzierżoniowie oraz okolicach Gór Sowich. Bezpieczne środki dla rodzin z dziećmi.',
+      keywords: 'pranie kanapy Dzierżoniów, chemczystka Bielawa, czyszczenie materaca Pieszyce',
     },
     content: {
       pl: {
@@ -597,9 +597,9 @@ export const cities: CityData[] = [
     name: 'Nysa',
     region: 'opolskie',
     seo: {
-      title: 'Pranie tapicerki Nysa — Śląski Rzym',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Nysie. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Nysa, pranie dywanów Nysa, ozonowanie Nysa',
+      title: 'Pranie tapicerki Nysa — Otmuchów, Paczków',
+      description: 'Chemczystka kanap, materacy i dywanów w Nysie. Obsługa Otmuchowa, Paczkowa i mieszkań nad jeziorem nyskim.',
+      keywords: 'pranie kanapy Nysa, czyszczenie materacy Nysa, ozonowanie Otmuchów, chemczystka Paczków',
     },
     content: {
       pl: {
@@ -629,9 +629,9 @@ export const cities: CityData[] = [
     name: 'Brzeg Dolny',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Brzeg Dolny — MasterClean',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Brzegu Dolnym. Szybki dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Brzeg Dolny, pranie dywanów Brzeg Dolny, ozonowanie Brzeg Dolny',
+      title: 'Czyszczenie kanap Brzeg Dolny — szybki wyjazd 40 km',
+      description: 'Pranie tapicerki, materacy i dywanów w Brzegu Dolnym. Łączymy zlecenia ze Środą Śląską i Trzebnicą.',
+      keywords: 'pranie kanapy Brzeg Dolny, chemczystka Brzeg Dolny, ozonowanie auta Brzeg Dolny',
     },
     content: {
       pl: {
@@ -661,9 +661,9 @@ export const cities: CityData[] = [
     name: 'Środa Śląska',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Środa Śląska — MasterClean',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Środzie Śląskiej. Blisko Wrocławia.',
-      keywords: 'czyszczenie tapicerki Środa Śląska, pranie dywanów Środa Śląska, ozonowanie Środa Śląska',
+      title: 'Pranie tapicerki Środa Śląska — domy nad Odrą',
+      description: 'Czyszczenie kanap, materacy i dywanów w Środzie Śląskiej. Dojazd z Wrocławia w 40 minut, bez kosztów ukrytych.',
+      keywords: 'pranie kanapy Środa Śląska, chemczystka Środa Śląska, czyszczenie materacy',
     },
     content: {
       pl: {
@@ -693,9 +693,9 @@ export const cities: CityData[] = [
     name: 'Głogów',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Głogów — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Głogowie. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Głogów, pranie dywanów Głogów, ozonowanie Głogów',
+      title: 'Chemczystka mebli Głogów — pranie kanap i materacy',
+      description: 'Pranie tapicerki, czyszczenie materacy i dywanów w Głogowie. Współpraca z firmami Zagłębia Miedziowego.',
+      keywords: 'pranie kanapy Głogów, chemczystka Głogów, czyszczenie materacy Głogów, ozonowanie biur',
     },
     content: {
       pl: {
@@ -725,9 +725,9 @@ export const cities: CityData[] = [
     name: 'Oleśnica',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Oleśnica — MasterClean',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Oleśnicy. Szybki dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Oleśnica, pranie dywanów Oleśnica, ozonowanie Oleśnica',
+      title: 'Pranie tapicerki Oleśnica — kanapy, narożniki, materace',
+      description: 'Chemczystka mebli i dywanów w Oleśnicy. Tylko 30 km od Wrocławia — terminy w 1–2 dni, eko-środki.',
+      keywords: 'pranie kanapy Oleśnica, chemczystka mebli Oleśnica, czyszczenie materacy Oleśnica',
     },
     content: {
       pl: {
@@ -757,9 +757,9 @@ export const cities: CityData[] = [
     name: 'Namysłów',
     region: 'opolskie',
     seo: {
-      title: 'Czyszczenie tapicerki Namysłów — MasterClean',
-      description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Namysłowie. Profesjonalny sprzęt Kärcher.',
-      keywords: 'czyszczenie tapicerki Namysłów, pranie dywanów Namysłów, ozonowanie Namysłów',
+      title: 'Czyszczenie tapicerki Namysłów — chemczystka mebli',
+      description: 'Pranie kanap, materacy i dywanów w Namysłowie i okolicach. Łączymy wyjazdy z Brzegiem i Kluczborkiem.',
+      keywords: 'pranie kanapy Namysłów, chemczystka Namysłów, czyszczenie materacy Namysłów',
     },
     content: {
       pl: {
@@ -789,9 +789,9 @@ export const cities: CityData[] = [
     name: 'Polkowice',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Polkowice — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów i ozonowanie w Polkowicach. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Polkowice, pranie dywanów Polkowice, ozonowanie Polkowice',
+      title: 'Pranie tapicerki Polkowice — biura i mieszkania',
+      description: 'Chemczystka mebli, czyszczenie materacy i ozonowanie w Polkowicach. Faktury VAT, obsługa firm.',
+      keywords: 'pranie kanapy Polkowice, chemczystka biur Polkowice, ozonowanie Polkowice, faktura VAT',
     },
     content: {
       pl: {
@@ -853,9 +853,9 @@ export const cities: CityData[] = [
     name: 'Kąty Wrocławskie',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Kąty Wrocławskie — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Kątach Wrocławskich. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Kąty Wrocławskie, pranie dywanów Kąty Wrocławskie, ozonowanie Kąty Wrocławskie',
+      title: 'Czyszczenie kanap Kąty Wrocławskie — wyjazd 22 km',
+      description: 'Pranie tapicerki, materacy i dywanów w Kątach Wrocławskich. Krótkie plecho dojazdu, terminy w 1–2 dni.',
+      keywords: 'pranie kanapy Kąty Wrocławskie, chemczystka Kąty Wrocławskie, czyszczenie materacy',
     },
     content: {
       pl: {
@@ -885,9 +885,9 @@ export const cities: CityData[] = [
     name: 'Siechnice',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Siechnice — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Siechnicach. Szybki dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Siechnice, pranie dywanów Siechnice, ozonowanie Siechnice',
+      title: 'Pranie tapicerki Siechnice — tuż za Wrocławiem',
+      description: 'Czyszczenie kanap, materacy i dywanów w Siechnicach. Wyjazd z Wrocławia w 15–20 minut.',
+      keywords: 'pranie kanapy Siechnice, chemczystka mebli Siechnice, czyszczenie materacy',
     },
     content: {
       pl: {
@@ -917,9 +917,9 @@ export const cities: CityData[] = [
     name: 'Tyniec Mały',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Tyniec Mały — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Tyńcu Małym. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Tyniec Mały, pranie dywanów Tyniec Mały, ozonowanie Tyniec Mały',
+      title: 'Czyszczenie tapicerki Tyniec Mały — domy jednorodzinne',
+      description: 'Pranie kanap, materacy i dywanów w Tyńcu Małym. Spokojne osiedle pod Wrocławiem — częste wyjazdy.',
+      keywords: 'pranie kanapy Tyniec Mały, chemczystka Tyniec Mały, czyszczenie materacy',
     },
     content: {
       pl: {
@@ -949,9 +949,9 @@ export const cities: CityData[] = [
     name: 'Żmigród',
     region: 'dolnośląskie',
     seo: {
-      title: 'Czyszczenie tapicerki Żmigród — MasterClean',
-      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Żmigrodzie. Dojazd z Wrocławia.',
-      keywords: 'czyszczenie tapicerki Żmigród, pranie dywanów Żmigród, ozonowanie Żmigród',
+      title: 'Pranie kanap Żmigród — Dolina Baryczy',
+      description: 'Chemczystka mebli i materacy w Żmigrodzie. Obsługa pensjonatów Doliny Baryczy oraz Trzebnicy i Milicza.',
+      keywords: 'pranie kanapy Żmigród, chemczystka Dolina Baryczy, czyszczenie materacy Trzebnica',
     },
     content: {
       pl: {

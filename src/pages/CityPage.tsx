@@ -21,6 +21,8 @@ import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import { CalculatorItem } from '@/types/calculator';
+import { getCityProfile } from '@/data/cityProfiles';
+import { generateCityContent } from '@/data/cityContentGenerator';
 
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
@@ -76,8 +78,11 @@ const CityPage = () => {
   const cityContent = city.content[lang] || city.content.pl;
   const isWroclaw = city.slug === 'wroclaw' || city.slug === 'smolec' || city.slug === 'bielany-wroclawskie';
 
-  // FAQ data for SEO
-  const faqData = getFaqData(language, city.name, isWroclaw);
+  // FAQ data for SEO — base FAQs (shared) + 2 unique per-city FAQs from generator
+  const profile = getCityProfile(city.slug);
+  const generated = generateCityContent(city.name, city.slug, lang as 'pl' | 'ru' | 'en' | 'uk', profile);
+  const baseFaqs = getFaqData(language, city.name, isWroclaw);
+  const faqData = [...generated.faqs, ...baseFaqs];
 
   const categories = [
     {
@@ -400,7 +405,7 @@ const CityPage = () => {
           </div>
         </section>
 
-        {/* City Description */}
+        {/* City Description — unique generated content per city */}
         <section className="py-8 sm:py-12 bg-card">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
@@ -408,13 +413,18 @@ const CityPage = () => {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0 mt-0.5">
                   <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                 </div>
-                <div>
+                <div className="space-y-3">
                   <h2 className="font-serif text-lg sm:text-xl font-bold text-foreground mb-2">
                     {city.name} — {city.region}
                   </h2>
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {cityContent.description}
                   </p>
+                  {generated.paragraphs.map((para, i) => (
+                    <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>
