@@ -123,13 +123,13 @@ const SEO = ({
       <link rel="canonical" href={canonicalUrl} />
       <html lang={hreflangMap[language] || 'pl'} />
 
-      {/* Hreflang tags for multilingual SEO */}
+      {/* Hreflang tags for multilingual SEO — each language has its own URL */}
       {Object.entries(hreflangMap).map(([lang, hreflang]) => (
         <link
           key={hreflang}
           rel="alternate"
           hrefLang={hreflang}
-          href={canonicalUrl}
+          href={buildLangUrl(lang)}
         />
       ))}
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
