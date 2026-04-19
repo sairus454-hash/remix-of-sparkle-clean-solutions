@@ -297,22 +297,28 @@ const CityPage = () => {
   // Auto cleaning: no regional markup — keep Wrocław base prices in all cities
   const noMarkupCategories = ['gardening', 'auto'];
 
-  // For non-Wrocław cities: build a slim "cleaning" category with only Standard + General (with +10% markup)
-  const cleaningSlimForOtherCities = (() => {
+  // Build a slim "cleaning" category with only Standard + General (m² with slider)
+  // For Wrocław/Smolec — base prices; for other cities — +10% markup
+  const buildCleaningSlim = (withMarkup: boolean) => {
     const cleaningCat = categories.find(c => c.id === 'cleaning');
     if (!cleaningCat) return [];
     const slim = {
       ...cleaningCat,
       items: cleaningCat.items.filter(i => i.id === 'cleaning-standard' || i.id === 'cleaning-general'),
     };
-    return applyMarkup([slim]);
-  })();
+    return withMarkup ? applyMarkup([slim]) : [slim];
+  };
 
   const filteredCategories = isWroclaw
-    ? categories
+    ? [
+        // Standard + General cleaning at the top with sliders (base Wrocław prices)
+        ...buildCleaningSlim(false),
+        // Full original categories (cleaning category still contains extras + standard/general)
+        ...categories,
+      ]
     : [
         // Cleaning first: only Standard + General with +10% markup
-        ...cleaningSlimForOtherCities,
+        ...buildCleaningSlim(true),
         ...applyMarkup(
           stripFurniturePromo(
             categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && !noMarkupCategories.includes(c.id))
