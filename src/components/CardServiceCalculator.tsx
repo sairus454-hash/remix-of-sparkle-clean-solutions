@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Plus, Minus, Trash2, Send, CheckCircle2, Zap, ArrowRight, Check } from 'lucide-react';
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover';
+import { Slider } from '@/components/ui/slider';
 import { toast } from 'sonner';
 import { CalculatorItem } from '@/types/calculator';
 import { cn } from '@/lib/utils';
@@ -120,11 +121,14 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
     });
   }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, category]);
 
+  const isAreaItem = (item: ServiceCardItem) => item.unit === 'm²' && (item.id === 'cleaning-standard' || item.id === 'cleaning-general');
+  const DEFAULT_AREA = 50;
+
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
-      // Toggle: remove if already selected with qty 1
-      if (existing.quantity === 1) {
+      // Toggle: remove if already selected with qty 1 (skip toggle for area items)
+      if (!isAreaItem(item) && existing.quantity === 1) {
         setJustRemoved(item.id);
         setTimeout(() => {
           setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
@@ -132,11 +136,14 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
         }, 300);
         return;
       }
-      setSelectedItems(selectedItems.map((s) =>
-        s.item.id === item.id ? { ...s, quantity: s.quantity + 1 } : s
-      ));
+      if (!isAreaItem(item)) {
+        setSelectedItems(selectedItems.map((s) =>
+          s.item.id === item.id ? { ...s, quantity: s.quantity + 1 } : s
+        ));
+      }
     } else {
-      setSelectedItems([...selectedItems, { item, quantity: 1 }]);
+      const initialQty = isAreaItem(item) ? DEFAULT_AREA : 1;
+      setSelectedItems([...selectedItems, { item, quantity: initialQty }]);
     }
     setJustAdded(item.id);
     setTimeout(() => setJustAdded(null), 600);
@@ -216,6 +223,12 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
             <CascadeCard key={item.id} index={index}>
               <Popover open={popoverId === item.id} onOpenChange={(open) => {
                 if (open) {
+                  // Area items: never auto-deselect on click — open slider popover
+                  if (isAreaItem(item)) {
+                    if (!isSelected(item.id)) addItem(item);
+                    setPopoverId(item.id);
+                    return;
+                  }
                   if (isSelected(item.id) && getQty(item.id) === 1) {
                     // Toggle deselect
                     addItem(item);
@@ -306,7 +319,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                     {selected && (
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]">
                         <span className="px-3 py-1.5 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg bg-primary/85 text-primary-foreground">
-                          × {qty}
+                          {isAreaItem(item) ? `${qty} m²` : `× ${qty}`}
                         </span>
                       </div>
                     )}
@@ -355,35 +368,65 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                   </div>
                   </button>
                 </PopoverTrigger>
-                <PopoverContent side="top" align="center" className="w-auto p-3 rounded-xl shadow-lg border-primary/20">
-                  <div className="flex items-center gap-3">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-9 w-9 rounded-full border-primary/30"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        const newQty = qty - 1;
-                        updateQuantity(item.id, newQty);
-                        if (newQty <= 0) setPopoverId(null);
-                      }}
-                    >
-                      <Minus className="w-4 h-4" />
-                    </Button>
-                    <span className="text-lg font-bold text-foreground min-w-[2ch] text-center">{qty}</span>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-9 w-9 rounded-full border-primary/30"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        updateQuantity(item.id, qty + 1);
-                      }}
-                    >
-                      <Plus className="w-4 h-4" />
-                    </Button>
-                  </div>
-                  <p className="text-xs text-muted-foreground text-center mt-1.5">{item.price * qty} zł</p>
+                <PopoverContent side="top" align="center" className={cn("p-3 rounded-xl shadow-lg border-primary/20", isAreaItem(item) ? "w-72" : "w-auto")}>
+                  {isAreaItem(item) ? (
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-sm font-medium text-foreground">
+                          {language === 'pl' ? 'Powierzchnia' : language === 'en' ? 'Area' : language === 'uk' ? 'Площа' : 'Площадь'}
+                        </span>
+                        <span className="text-base font-bold text-primary">{qty} m²</span>
+                      </div>
+                      <Slider
+                        value={[qty]}
+                        min={10}
+                        max={300}
+                        step={5}
+                        onValueChange={(val) => updateQuantity(item.id, val[0])}
+                      />
+                      <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                        <span>10 m²</span>
+                        <span>300 m²</span>
+                      </div>
+                      <div className="flex items-center justify-between pt-2 border-t border-border">
+                        <span className="text-xs text-muted-foreground">
+                          {item.price} zł × {qty} m²
+                        </span>
+                        <span className="text-base font-bold text-primary">{item.price * qty} zł</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-center gap-3">
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-9 w-9 rounded-full border-primary/30"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const newQty = qty - 1;
+                            updateQuantity(item.id, newQty);
+                            if (newQty <= 0) setPopoverId(null);
+                          }}
+                        >
+                          <Minus className="w-4 h-4" />
+                        </Button>
+                        <span className="text-lg font-bold text-foreground min-w-[2ch] text-center">{qty}</span>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-9 w-9 rounded-full border-primary/30"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            updateQuantity(item.id, qty + 1);
+                          }}
+                        >
+                          <Plus className="w-4 h-4" />
+                        </Button>
+                      </div>
+                      <p className="text-xs text-muted-foreground text-center mt-1.5">{item.price * qty} zł</p>
+                    </>
+                  )}
                 </PopoverContent>
               </Popover>
             </CascadeCard>
