@@ -319,7 +319,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                     {selected && (
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]">
                         <span className="px-3 py-1.5 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg bg-primary/85 text-primary-foreground">
-                          × {qty}
+                          {isAreaItem(item) ? `${qty} m²` : `× ${qty}`}
                         </span>
                       </div>
                     )}
