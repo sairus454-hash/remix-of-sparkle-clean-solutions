@@ -368,35 +368,65 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
                   </div>
                   </button>
                 </PopoverTrigger>
-                <PopoverContent side="top" align="center" className="w-auto p-3 rounded-xl shadow-lg border-primary/20">
-                  <div className="flex items-center gap-3">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-9 w-9 rounded-full border-primary/30"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        const newQty = qty - 1;
-                        updateQuantity(item.id, newQty);
-                        if (newQty <= 0) setPopoverId(null);
-                      }}
-                    >
-                      <Minus className="w-4 h-4" />
-                    </Button>
-                    <span className="text-lg font-bold text-foreground min-w-[2ch] text-center">{qty}</span>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-9 w-9 rounded-full border-primary/30"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        updateQuantity(item.id, qty + 1);
-                      }}
-                    >
-                      <Plus className="w-4 h-4" />
-                    </Button>
-                  </div>
-                  <p className="text-xs text-muted-foreground text-center mt-1.5">{item.price * qty} zł</p>
+                <PopoverContent side="top" align="center" className={cn("p-3 rounded-xl shadow-lg border-primary/20", isAreaItem(item) ? "w-72" : "w-auto")}>
+                  {isAreaItem(item) ? (
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-sm font-medium text-foreground">
+                          {language === 'pl' ? 'Powierzchnia' : language === 'en' ? 'Area' : language === 'uk' ? 'Площа' : 'Площадь'}
+                        </span>
+                        <span className="text-base font-bold text-primary">{qty} m²</span>
+                      </div>
+                      <Slider
+                        value={[qty]}
+                        min={10}
+                        max={300}
+                        step={5}
+                        onValueChange={(val) => updateQuantity(item.id, val[0])}
+                      />
+                      <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                        <span>10 m²</span>
+                        <span>300 m²</span>
+                      </div>
+                      <div className="flex items-center justify-between pt-2 border-t border-border">
+                        <span className="text-xs text-muted-foreground">
+                          {item.price} zł × {qty} m²
+                        </span>
+                        <span className="text-base font-bold text-primary">{item.price * qty} zł</span>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div className="flex items-center gap-3">
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-9 w-9 rounded-full border-primary/30"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            const newQty = qty - 1;
+                            updateQuantity(item.id, newQty);
+                            if (newQty <= 0) setPopoverId(null);
+                          }}
+                        >
+                          <Minus className="w-4 h-4" />
+                        </Button>
+                        <span className="text-lg font-bold text-foreground min-w-[2ch] text-center">{qty}</span>
+                        <Button
+                          variant="outline"
+                          size="icon"
+                          className="h-9 w-9 rounded-full border-primary/30"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            updateQuantity(item.id, qty + 1);
+                          }}
+                        >
+                          <Plus className="w-4 h-4" />
+                        </Button>
+                      </div>
+                      <p className="text-xs text-muted-foreground text-center mt-1.5">{item.price * qty} zł</p>
+                    </>
+                  )}
                 </PopoverContent>
               </Popover>
             </CascadeCard>
