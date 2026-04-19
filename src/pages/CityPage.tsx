@@ -304,6 +304,7 @@ const CityPage = () => {
     if (!cleaningCat) return [];
     const slim = {
       ...cleaningCat,
+      id: 'cleaning-area',
       items: cleaningCat.items.filter(i => i.id === 'cleaning-standard' || i.id === 'cleaning-general'),
     };
     return withMarkup ? applyMarkup([slim]) : [slim];
@@ -313,8 +314,12 @@ const CityPage = () => {
     ? [
         // Standard + General cleaning at the top with sliders (base Wrocław prices)
         ...buildCleaningSlim(false),
-        // Full original categories (cleaning category still contains extras + standard/general)
-        ...categories,
+        // Full original categories — cleaning category retains extras (oven, fridge, etc.)
+        ...categories.map(c =>
+          c.id === 'cleaning'
+            ? { ...c, items: c.items.filter(i => i.id !== 'cleaning-standard' && i.id !== 'cleaning-general') }
+            : c
+        ),
       ]
     : [
         // Cleaning first: only Standard + General with +10% markup
