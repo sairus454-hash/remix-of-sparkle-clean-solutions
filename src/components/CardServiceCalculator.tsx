@@ -121,11 +121,14 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
     });
   }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, category]);
 
+  const isAreaItem = (item: ServiceCardItem) => item.unit === 'm²' && (item.id === 'cleaning-standard' || item.id === 'cleaning-general');
+  const DEFAULT_AREA = 50;
+
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
     if (existing) {
-      // Toggle: remove if already selected with qty 1
-      if (existing.quantity === 1) {
+      // Toggle: remove if already selected with qty 1 (skip toggle for area items)
+      if (!isAreaItem(item) && existing.quantity === 1) {
         setJustRemoved(item.id);
         setTimeout(() => {
           setSelectedItems(prev => prev.filter((s) => s.item.id !== item.id));
@@ -133,11 +136,14 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
         }, 300);
         return;
       }
-      setSelectedItems(selectedItems.map((s) =>
-        s.item.id === item.id ? { ...s, quantity: s.quantity + 1 } : s
-      ));
+      if (!isAreaItem(item)) {
+        setSelectedItems(selectedItems.map((s) =>
+          s.item.id === item.id ? { ...s, quantity: s.quantity + 1 } : s
+        ));
+      }
     } else {
-      setSelectedItems([...selectedItems, { item, quantity: 1 }]);
+      const initialQty = isAreaItem(item) ? DEFAULT_AREA : 1;
+      setSelectedItems([...selectedItems, { item, quantity: initialQty }]);
     }
     setJustAdded(item.id);
     setTimeout(() => setJustAdded(null), 600);
