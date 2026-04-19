@@ -297,9 +297,22 @@ const CityPage = () => {
   // Auto cleaning: no regional markup — keep Wrocław base prices in all cities
   const noMarkupCategories = ['gardening', 'auto'];
 
+  // For non-Wrocław cities: build a slim "cleaning" category with only Standard + General (with +10% markup)
+  const cleaningSlimForOtherCities = (() => {
+    const cleaningCat = categories.find(c => c.id === 'cleaning');
+    if (!cleaningCat) return [];
+    const slim = {
+      ...cleaningCat,
+      items: cleaningCat.items.filter(i => i.id === 'cleaning-standard' || i.id === 'cleaning-general'),
+    };
+    return applyMarkup([slim]);
+  })();
+
   const filteredCategories = isWroclaw
     ? categories
     : [
+        // Cleaning first: only Standard + General with +10% markup
+        ...cleaningSlimForOtherCities,
         ...applyMarkup(
           stripFurniturePromo(
             categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && !noMarkupCategories.includes(c.id))
