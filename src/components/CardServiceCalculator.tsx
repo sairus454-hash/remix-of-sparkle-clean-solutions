@@ -223,6 +223,12 @@ const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQu
             <CascadeCard key={item.id} index={index}>
               <Popover open={popoverId === item.id} onOpenChange={(open) => {
                 if (open) {
+                  // Area items: never auto-deselect on click — open slider popover
+                  if (isAreaItem(item)) {
+                    if (!isSelected(item.id)) addItem(item);
+                    setPopoverId(item.id);
+                    return;
+                  }
                   if (isSelected(item.id) && getQty(item.id) === 1) {
                     // Toggle deselect
                     addItem(item);
