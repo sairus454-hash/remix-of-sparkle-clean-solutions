@@ -297,9 +297,22 @@ const CityPage = () => {
   // Auto cleaning: no regional markup — keep Wrocław base prices in all cities
   const noMarkupCategories = ['gardening', 'auto'];
 
+  // For non-Wrocław cities: build a slim "cleaning" category with only Standard + General (with +10% markup)
+  const cleaningSlimForOtherCities = (() => {
+    const cleaningCat = categories.find(c => c.id === 'cleaning');
+    if (!cleaningCat) return [];
+    const slim = {
+      ...cleaningCat,
+      items: cleaningCat.items.filter(i => i.id === 'cleaning-standard' || i.id === 'cleaning-general'),
+    };
+    return applyMarkup([slim]);
+  })();
+
   const filteredCategories = isWroclaw
     ? categories
     : [
+        // Cleaning first: only Standard + General with +10% markup
+        ...cleaningSlimForOtherCities,
         ...applyMarkup(
           stripFurniturePromo(
             categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && !noMarkupCategories.includes(c.id))
@@ -544,14 +557,13 @@ const CityPage = () => {
               {!isWroclaw && (
                 <div className="rounded-2xl border border-border bg-accent/20 p-5 sm:p-6 text-center space-y-2">
                   <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                    <Home className="w-5 h-5" />
                     <Wrench className="w-5 h-5" />
                   </div>
                   <p className="text-sm sm:text-base text-muted-foreground font-medium">
-                    {language === 'pl' && 'Usługi sprzątania mieszkań oraz złotej rączki dostępne są wyłącznie we Wrocławiu.'}
-                    {language === 'en' && 'House cleaning and handyman services are available only in Wrocław.'}
-                    {language === 'ru' && 'Услуги уборки квартир и мастера на час доступны только во Вроцлаве.'}
-                    {language === 'uk' && 'Послуги прибирання квартир та майстра на годину доступні лише у Вроцлаві.'}
+                    {language === 'pl' && 'Usługi złotej rączki oraz dodatkowe opcje sprzątania (mycie piekarnika, lodówki, okien itd.) dostępne są wyłącznie we Wrocławiu.'}
+                    {language === 'en' && 'Handyman services and additional cleaning options (oven, fridge, windows, etc.) are available only in Wrocław.'}
+                    {language === 'ru' && 'Услуги мастера на час и дополнительные опции уборки (духовка, холодильник, окна и т.д.) доступны только во Вроцлаве.'}
+                    {language === 'uk' && 'Послуги майстра на годину та додаткові опції прибирання (духовка, холодильник, вікна тощо) доступні лише у Вроцлаві.'}
                   </p>
                   <a href="/city/wroclaw" className="inline-block text-sm text-primary hover:underline font-semibold">
                     {language === 'pl' ? 'Zobacz pełną ofertę dla Wrocławia →' : language === 'en' ? 'See full offer for Wrocław →' : language === 'uk' ? 'Переглянути повну пропозицію для Вроцлава →' : 'Смотреть полный прайс для Вроцлава →'}
