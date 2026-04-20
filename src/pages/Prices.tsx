@@ -449,7 +449,11 @@ const Prices = () => {
                             category={`prices-${cat.id}`}
                             groupHighlight={cat.id === 'other' ? {
                               count: 3,
-                              label: t.prices?.carpetCleaningGroupTitle || 'Химчистка ковровых покрытий',
+                              label: t.prices?.subcategories?.carpetCleaning ||
+                                (language === 'pl' ? 'Pranie wykładzin dywanowych' :
+                                 language === 'en' ? 'Carpet covering cleaning' :
+                                 language === 'uk' ? 'Хімчистка килимових покриттів' :
+                                 'Химчистка ковровых покрытий'),
                             } : undefined}
                             onSendToForm={handleSendToForm}
                           />
