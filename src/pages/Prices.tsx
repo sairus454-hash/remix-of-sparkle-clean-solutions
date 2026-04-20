@@ -24,7 +24,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import { CalculatorItem } from '@/types/calculator';
 
 const Prices = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const location = useLocation();
   const { isWroclaw } = useCity();
@@ -449,11 +449,10 @@ const Prices = () => {
                             category={`prices-${cat.id}`}
                             groupHighlight={cat.id === 'other' ? {
                               count: 3,
-                              label: t.prices?.subcategories?.carpetCleaning ||
-                                (language === 'pl' ? 'Pranie wykładzin dywanowych' :
-                                 language === 'en' ? 'Carpet covering cleaning' :
-                                 language === 'uk' ? 'Хімчистка килимових покриттів' :
-                                 'Химчистка ковровых покрытий'),
+                              label: language === 'pl' ? 'Pranie wykładzin dywanowych' :
+                                     language === 'en' ? 'Carpet covering cleaning' :
+                                     language === 'uk' ? 'Хімчистка килимових покриттів' :
+                                     'Химчистка ковровых покрытий',
                             } : undefined}
                             onSendToForm={handleSendToForm}
                           />
