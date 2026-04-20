@@ -544,16 +544,21 @@ Deno.serve(async (req: Request) => {
   try {
     const url = new URL(req.url);
     const path = url.searchParams.get('path') || '/';
+    const lang = (url.searchParams.get('lang') || 'pl').toLowerCase();
+    const validLang = ['pl', 'ru', 'en', 'uk'].includes(lang) ? lang : 'pl';
     const userAgent = req.headers.get('user-agent') || '';
     const forcePrerender = url.searchParams.get('_prerender') === '1';
 
     // Only serve to bots or when explicitly requested
     if (!isBot(userAgent) && !forcePrerender) {
+      const redirectTarget = validLang === 'pl'
+        ? `${SITE_URL}${path}`
+        : `${SITE_URL}${path}?lang=${validLang}`;
       return new Response(null, {
         status: 302,
         headers: {
           ...corsHeaders,
-          'Location': `${SITE_URL}${path}`,
+          'Location': redirectTarget,
         },
       });
     }
@@ -566,7 +571,7 @@ Deno.serve(async (req: Request) => {
       });
     }
 
-    const html = buildHtml(path, meta);
+    const html = buildHtml(path, meta, validLang);
 
     return new Response(html, {
       status: 200,
