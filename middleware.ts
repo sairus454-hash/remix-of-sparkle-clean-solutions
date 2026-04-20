@@ -19,6 +19,9 @@ export default async function middleware(request: Request) {
   if (BOT_AGENTS.test(userAgent)) {
     const prerenderUrl = new URL(PRERENDER_URL);
     prerenderUrl.searchParams.set('path', pathname);
+    // Forward language query param so prerender can build language-specific canonical/meta
+    const lang = url.searchParams.get('lang');
+    if (lang) prerenderUrl.searchParams.set('lang', lang);
 
     const response = await fetch(prerenderUrl.toString());
     return new Response(response.body, {

@@ -411,13 +411,22 @@ function getPageMeta(path: string): PageMeta | null {
   return null;
 }
 
-function buildHtml(path: string, meta: PageMeta): string {
-  const canonicalUrl = `${SITE_URL}${path}`;
+function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
+  const basePath = `${SITE_URL}${path}`;
+  // Self-referencing canonical: each language version is its own canonical
+  // so Google indexes RU/EN/UK/PL versions independently instead of consolidating
+  // them into Polish.
+  const canonicalUrl = lang === 'pl' ? basePath : `${basePath}?lang=${lang}`;
   const image = meta.image || DEFAULT_IMAGE;
   const type = meta.type || 'website';
+  const ogLocaleMap: Record<string, string> = {
+    pl: 'pl_PL', ru: 'ru_RU', en: 'en_US', uk: 'uk_UA',
+  };
+  const htmlLang = ['pl', 'ru', 'en', 'uk'].includes(lang) ? lang : 'pl';
+  const ogLocale = ogLocaleMap[htmlLang] || 'pl_PL';
 
   return `<!DOCTYPE html>
-<html lang="pl">
+<html lang="${htmlLang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -433,10 +442,11 @@ function buildHtml(path: string, meta: PageMeta): string {
   <meta property="og:type" content="${type}">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:image" content="${image}">
-  <meta property="og:locale" content="pl_PL">
-  <meta property="og:locale:alternate" content="ru_RU">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:locale:alternate" content="uk_UA">
+  <meta property="og:locale" content="${ogLocale}">
+  ${Object.entries(ogLocaleMap)
+    .filter(([l]) => l !== htmlLang)
+    .map(([, loc]) => `<meta property="og:locale:alternate" content="${loc}">`)
+    .join('\n  ')}
   <meta property="og:site_name" content="MasterClean">
 
   <!-- Twitter -->
@@ -445,12 +455,12 @@ function buildHtml(path: string, meta: PageMeta): string {
   <meta name="twitter:description" content="${escapeHtml(meta.description)}">
   <meta name="twitter:image" content="${image}">
 
-  <!-- Hreflang — each language has its own URL with ?lang=XX (Polish is default, no param) -->
-  <link rel="alternate" hreflang="pl" href="${canonicalUrl}">
-  <link rel="alternate" hreflang="ru" href="${canonicalUrl}?lang=ru">
-  <link rel="alternate" hreflang="en" href="${canonicalUrl}?lang=en">
-  <link rel="alternate" hreflang="uk" href="${canonicalUrl}?lang=uk">
-  <link rel="alternate" hreflang="x-default" href="${canonicalUrl}">
+  <!-- Hreflang — each language has its own URL (Polish is default, no param) -->
+  <link rel="alternate" hreflang="pl" href="${basePath}">
+  <link rel="alternate" hreflang="ru" href="${basePath}?lang=ru">
+  <link rel="alternate" hreflang="en" href="${basePath}?lang=en">
+  <link rel="alternate" hreflang="uk" href="${basePath}?lang=uk">
+  <link rel="alternate" hreflang="x-default" href="${basePath}">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
