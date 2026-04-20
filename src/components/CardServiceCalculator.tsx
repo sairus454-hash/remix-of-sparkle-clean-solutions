@@ -30,13 +30,20 @@ interface CardServiceCalculatorProps {
   items: ServiceCardItem[];
   category?: string;
   noDiscount?: boolean;
+  /** Highlight the first N items in a separate bordered subsection with optional label */
+  groupHighlight?: { count: number; label?: string };
   onSendToForm?: (items: CalculatorItem[], total: number) => void;
   onQuickOrder?: (items: CalculatorItem[], total: number) => void;
 }
 
 /* Cascade scroll-reveal grid */
-const CascadeGrid = ({ children }: { children: React.ReactNode }) => (
-  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+const CascadeGrid = ({ children, cols = 'default' }: { children: React.ReactNode; cols?: 'default' | 'three' }) => (
+  <div className={cn(
+    "grid gap-3 sm:gap-4",
+    cols === 'three'
+      ? "grid-cols-2 sm:grid-cols-3"
+      : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+  )}>
     {children}
   </div>
 );
@@ -87,7 +94,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
   );
 };
 
-const CardServiceCalculator = ({ items, category, noDiscount, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
+const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
