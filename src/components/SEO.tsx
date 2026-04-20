@@ -47,12 +47,15 @@ const SEO = ({
   const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
   const path = (canonical || '/').split('?')[0];
-  // Canonical ALWAYS points to the default (Polish) version without lang param.
-  // This tells Google that ?lang=XX variants are alternates, not duplicates.
-  const canonicalUrl = `${SITE_URL}${path}`;
   // Build per-language alternate URLs. Polish (default) = clean URL, others = ?lang=XX
   const buildLangUrl = (lang: string) =>
     lang === 'pl' ? `${SITE_URL}${path}` : `${SITE_URL}${path}?lang=${lang}`;
+  // Canonical = the current language version of the page (self-referencing).
+  // This allows Google to index each language version (RU/EN/UK/PL) independently
+  // instead of consolidating them all into the Polish version.
+  const canonicalUrl = buildLangUrl(language);
+  // x-default points to the Polish (default) version
+  const xDefaultUrl = `${SITE_URL}${path}`;
 
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',
@@ -132,7 +135,7 @@ const SEO = ({
           href={buildLangUrl(lang)}
         />
       ))}
-      <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="x-default" href={xDefaultUrl} />
 
       {/* Open Graph */}
       <meta property="og:title" content={fullTitle} />
