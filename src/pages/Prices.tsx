@@ -447,6 +447,10 @@ const Prices = () => {
                           <CardServiceCalculator
                             items={cat.items}
                             category={`prices-${cat.id}`}
+                            groupHighlight={cat.id === 'other' ? {
+                              count: 3,
+                              label: t.prices?.carpetCleaningGroupTitle || 'Химчистка ковровых покрытий',
+                            } : undefined}
                             onSendToForm={handleSendToForm}
                           />
                         </div>
