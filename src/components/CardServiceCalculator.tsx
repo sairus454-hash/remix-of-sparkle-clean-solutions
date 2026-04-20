@@ -216,230 +216,243 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, on
     });
   };
 
+  const renderCard = (item: ServiceCardItem, index: number) => {
+    const selected = isSelected(item.id);
+    const qty = getQty(item.id);
+    const wasJustAdded = justAdded === item.id;
+    const wasJustRemoved = justRemoved === item.id;
+
+    return (
+      <CascadeCard key={item.id} index={index}>
+        <Popover open={popoverId === item.id} onOpenChange={(open) => {
+          if (open) {
+            if (isAreaItem(item)) {
+              if (!isSelected(item.id)) addItem(item);
+              setPopoverId(item.id);
+              return;
+            }
+            if (isSelected(item.id) && getQty(item.id) === 1) {
+              addItem(item);
+              setPopoverId(null);
+              return;
+            }
+            if (!isSelected(item.id)) addItem(item);
+            setPopoverId(item.id);
+          } else {
+            setPopoverId(null);
+          }
+        }}>
+          <PopoverTrigger asChild>
+            <button
+              className={cn(
+                "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer w-full",
+                "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
+                selected && !wasJustRemoved
+                  ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
+                  : "border-border bg-card hover:border-primary/40",
+                wasJustAdded && "scale-[1.03]",
+                wasJustRemoved && "animate-scale-out opacity-70 ring-0 border-destructive/30"
+              )}
+            >
+            {/* Hover glow overlay */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[1] rounded-2xl bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
+            
+            {/* Shimmer effect on hover */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-[2] overflow-hidden rounded-2xl">
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+            </div>
+
+            {/* Selection badge */}
+            {selected && (
+              <div className="absolute top-2 right-2 z-10">
+                {qty > 1 ? (
+                  <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold animate-scale-in shadow-glow">
+                    {qty}
+                  </span>
+                ) : (
+                  <CheckCircle2 className="w-6 h-6 text-primary animate-scale-in drop-shadow-md" />
+                )}
+              </div>
+            )}
+
+            {/* Ripple */}
+            {wasJustAdded && (
+              <span className="absolute inset-0 bg-primary/10 animate-scale-in rounded-2xl pointer-events-none z-20" />
+            )}
+
+            {/* Image */}
+            <div className="w-full aspect-square overflow-hidden bg-accent/20 relative">
+              <img
+                src={item.image}
+                alt={item.name}
+                loading="lazy"
+                decoding="async"
+                className={cn(
+                  "w-full h-full object-cover transition-all duration-700 ease-out",
+                  "group-hover:scale-110 group-hover:brightness-105 group-hover:saturate-[1.1]",
+                  selected && "brightness-95"
+                )}
+              />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {!selected && (
+                <>
+                  <div className="absolute bottom-2 inset-x-2 flex justify-center z-[3] pointer-events-none sm:hidden">
+                    <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-bold bg-primary/90 text-primary-foreground shadow-lg animate-pulse">
+                      <Plus className="w-3 h-3" />
+                      {language === 'pl' ? 'Zamów' : language === 'en' ? 'Order' : language === 'uk' ? 'Замовити' : 'Заказать'}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-3 inset-x-2 hidden sm:flex justify-center z-[3] pointer-events-none">
+                    <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold bg-primary text-primary-foreground shadow-glow animate-pulse">
+                      <Plus className="w-4 h-4" />
+                      {language === 'pl' ? 'Zamów' : language === 'en' ? 'Order' : language === 'uk' ? 'Замовити' : 'Заказать'}
+                    </span>
+                  </div>
+                </>
+              )}
+
+              {selected && (
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]">
+                  <span className="px-3 py-1.5 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg bg-primary/85 text-primary-foreground">
+                    {isAreaItem(item) ? `${qty} m²` : `× ${qty}`}
+                  </span>
+                </div>
+              )}
+            </div>
+
+            {item.promoBadge && (
+              <div className="absolute top-2 left-2 z-10">
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md animate-pulse">
+                  {item.promoBadge}
+                </span>
+              </div>
+            )}
+
+
+            <div className="p-3 w-full">
+              <p className={cn(
+                "text-xs sm:text-sm font-medium leading-tight mb-1 transition-colors",
+                selected ? "text-foreground" : "text-foreground"
+              )}>
+                {item.name}
+              </p>
+              {item.originalPrice ? (
+                <p className="text-xs sm:text-sm font-bold">
+                  <span className="line-through text-muted-foreground/70 mr-1 font-normal text-[11px] sm:text-xs">{item.originalPrice} zł</span>
+                  <span className={cn(
+                    "transition-colors",
+                    selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
+                  )}>
+                    {item.price} zł{item.unit ? `/${item.unit}` : ''}
+                  </span>
+                </p>
+              ) : item.promoBadge && item.price === 0 ? (
+                <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
+                  <span className="text-green-600 font-bold">0 zł</span>
+                </p>
+              ) : (
+                <p className={cn(
+                  "text-sm sm:text-base font-bold transition-colors",
+                  selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
+                )}>
+                  {item.priceText || `${item.price} zł`}{item.unit ? `/${item.unit}` : ''}
+                </p>
+              )}
+            </div>
+            </button>
+          </PopoverTrigger>
+          <PopoverContent side="top" align="center" className={cn("p-3 rounded-xl shadow-lg border-primary/20", isAreaItem(item) ? "w-72" : "w-auto")}>
+            {isAreaItem(item) ? (
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-sm font-medium text-foreground">
+                    {language === 'pl' ? 'Powierzchnia' : language === 'en' ? 'Area' : language === 'uk' ? 'Площа' : 'Площадь'}
+                  </span>
+                  <span className="text-base font-bold text-primary">{qty} m²</span>
+                </div>
+                <Slider
+                  value={[qty]}
+                  min={10}
+                  max={300}
+                  step={5}
+                  onValueChange={(val) => updateQuantity(item.id, val[0])}
+                />
+                <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                  <span>10 m²</span>
+                  <span>300 m²</span>
+                </div>
+                <div className="flex items-center justify-between pt-2 border-t border-border">
+                  <span className="text-xs text-muted-foreground">
+                    {item.price} zł × {qty} m²
+                  </span>
+                  <span className="text-base font-bold text-primary">{item.price * qty} zł</span>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="flex items-center gap-3">
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-9 w-9 rounded-full border-primary/30"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const newQty = qty - 1;
+                      updateQuantity(item.id, newQty);
+                      if (newQty <= 0) setPopoverId(null);
+                    }}
+                  >
+                    <Minus className="w-4 h-4" />
+                  </Button>
+                  <span className="text-lg font-bold text-foreground min-w-[2ch] text-center">{qty}</span>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-9 w-9 rounded-full border-primary/30"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      updateQuantity(item.id, qty + 1);
+                    }}
+                  >
+                    <Plus className="w-4 h-4" />
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground text-center mt-1.5">{item.price * qty} zł</p>
+              </>
+            )}
+          </PopoverContent>
+        </Popover>
+      </CascadeCard>
+    );
+  };
+
+  const groupCount = groupHighlight?.count ?? 0;
+  const highlightedItems = groupCount > 0 ? displayItems.slice(0, groupCount) : [];
+  const restItems = groupCount > 0 ? displayItems.slice(groupCount) : displayItems;
+
   return (
     <div className="space-y-6">
-      {/* Cards grid */}
-      <CascadeGrid>
-        {displayItems.map((item, index) => {
-          const selected = isSelected(item.id);
-          const qty = getQty(item.id);
-          const wasJustAdded = justAdded === item.id;
-          const wasJustRemoved = justRemoved === item.id;
+      {/* Highlighted subgroup (e.g. carpet cleaning) */}
+      {highlightedItems.length > 0 && (
+        <div className="rounded-2xl border-2 border-primary/30 bg-primary/5 p-4 sm:p-5 shadow-sm">
+          {groupHighlight?.label && (
+            <p className="text-sm sm:text-base font-semibold text-primary mb-3">
+              {groupHighlight.label}
+            </p>
+          )}
+          <CascadeGrid cols="three">
+            {highlightedItems.map((item, index) => renderCard(item, index))}
+          </CascadeGrid>
+        </div>
+      )}
 
-          return (
-            <CascadeCard key={item.id} index={index}>
-              <Popover open={popoverId === item.id} onOpenChange={(open) => {
-                if (open) {
-                  // Area items: never auto-deselect on click — open slider popover
-                  if (isAreaItem(item)) {
-                    if (!isSelected(item.id)) addItem(item);
-                    setPopoverId(item.id);
-                    return;
-                  }
-                  if (isSelected(item.id) && getQty(item.id) === 1) {
-                    // Toggle deselect
-                    addItem(item);
-                    setPopoverId(null);
-                    return;
-                  }
-                  if (!isSelected(item.id)) addItem(item);
-                  setPopoverId(item.id);
-                } else {
-                  setPopoverId(null);
-                }
-              }}>
-                <PopoverTrigger asChild>
-                  <button
-                    className={cn(
-                      "relative flex flex-col items-center text-center rounded-2xl border overflow-hidden transition-all duration-500 group cursor-pointer w-full",
-                      "hover:shadow-[0_8px_30px_-8px_hsl(var(--primary)/0.35)] hover:-translate-y-2",
-                      selected && !wasJustRemoved
-                        ? "border-primary bg-primary/5 shadow-card ring-2 ring-primary/20"
-                        : "border-border bg-card hover:border-primary/40",
-                      wasJustAdded && "scale-[1.03]",
-                      wasJustRemoved && "animate-scale-out opacity-70 ring-0 border-destructive/30"
-                    )}
-                  >
-                  {/* Hover glow overlay */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-[1] rounded-2xl bg-gradient-to-t from-primary/10 via-transparent to-transparent" />
-                  
-                  {/* Shimmer effect on hover */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-[2] overflow-hidden rounded-2xl">
-                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-                  </div>
-
-                  {/* Selection badge */}
-                  {selected && (
-                    <div className="absolute top-2 right-2 z-10">
-                      {qty > 1 ? (
-                        <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold animate-scale-in shadow-glow">
-                          {qty}
-                        </span>
-                      ) : (
-                        <CheckCircle2 className="w-6 h-6 text-primary animate-scale-in drop-shadow-md" />
-                      )}
-                    </div>
-                  )}
-
-                  {/* Ripple */}
-                  {wasJustAdded && (
-                    <span className="absolute inset-0 bg-primary/10 animate-scale-in rounded-2xl pointer-events-none z-20" />
-                  )}
-
-                  {/* Image */}
-                  <div className="w-full aspect-square overflow-hidden bg-accent/20 relative">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      loading="lazy"
-                      decoding="async"
-                      className={cn(
-                        "w-full h-full object-cover transition-all duration-700 ease-out",
-                        "group-hover:scale-110 group-hover:brightness-105 group-hover:saturate-[1.1]",
-                        selected && "brightness-95"
-                      )}
-                    />
-                    {/* Bottom gradient on hover */}
-                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* CTA badge for unselected items */}
-                    {!selected && (
-                      <>
-                        {/* Mobile: always visible pulsing badge */}
-                        <div className="absolute bottom-2 inset-x-2 flex justify-center z-[3] pointer-events-none sm:hidden">
-                          <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-[11px] font-bold bg-primary/90 text-primary-foreground shadow-lg animate-pulse">
-                            <Plus className="w-3 h-3" />
-                            {language === 'pl' ? 'Zamów' : language === 'en' ? 'Order' : language === 'uk' ? 'Замовити' : 'Заказать'}
-                          </span>
-                        </div>
-                        {/* Desktop: pulsing badge on hover */}
-                        <div className="absolute bottom-3 inset-x-2 hidden sm:flex justify-center z-[3] pointer-events-none">
-                          <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold bg-primary text-primary-foreground shadow-glow animate-pulse">
-                            <Plus className="w-4 h-4" />
-                            {language === 'pl' ? 'Zamów' : language === 'en' ? 'Order' : language === 'uk' ? 'Замовити' : 'Заказать'}
-                          </span>
-                        </div>
-                      </>
-                    )}
-
-                    {/* Selected: quantity overlay */}
-                    {selected && (
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[3]">
-                        <span className="px-3 py-1.5 rounded-full text-sm font-semibold backdrop-blur-sm shadow-lg bg-primary/85 text-primary-foreground">
-                          {isAreaItem(item) ? `${qty} m²` : `× ${qty}`}
-                        </span>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Promo badge */}
-                  {item.promoBadge && (
-                    <div className="absolute top-2 left-2 z-10">
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md animate-pulse">
-                        {item.promoBadge}
-                      </span>
-                    </div>
-                  )}
-
-
-                  {/* Info */}
-                  <div className="p-3 w-full">
-                    <p className={cn(
-                      "text-xs sm:text-sm font-medium leading-tight mb-1 transition-colors",
-                      selected ? "text-foreground" : "text-foreground"
-                    )}>
-                      {item.name}
-                    </p>
-                    {item.originalPrice ? (
-                      <p className="text-xs sm:text-sm font-bold">
-                        <span className="line-through text-muted-foreground/70 mr-1 font-normal text-[11px] sm:text-xs">{item.originalPrice} zł</span>
-                        <span className={cn(
-                          "transition-colors",
-                          selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
-                        )}>
-                          {item.price} zł{item.unit ? `/${item.unit}` : ''}
-                        </span>
-                      </p>
-                    ) : item.promoBadge && item.price === 0 ? (
-                      <p className="text-xs sm:text-sm font-bold text-green-600 line-through-price">
-                        <span className="text-green-600 font-bold">0 zł</span>
-                      </p>
-                    ) : (
-                      <p className={cn(
-                        "text-sm sm:text-base font-bold transition-colors",
-                        selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
-                      )}>
-                        {item.priceText || `${item.price} zł`}{item.unit ? `/${item.unit}` : ''}
-                      </p>
-                    )}
-                  </div>
-                  </button>
-                </PopoverTrigger>
-                <PopoverContent side="top" align="center" className={cn("p-3 rounded-xl shadow-lg border-primary/20", isAreaItem(item) ? "w-72" : "w-auto")}>
-                  {isAreaItem(item) ? (
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-sm font-medium text-foreground">
-                          {language === 'pl' ? 'Powierzchnia' : language === 'en' ? 'Area' : language === 'uk' ? 'Площа' : 'Площадь'}
-                        </span>
-                        <span className="text-base font-bold text-primary">{qty} m²</span>
-                      </div>
-                      <Slider
-                        value={[qty]}
-                        min={10}
-                        max={300}
-                        step={5}
-                        onValueChange={(val) => updateQuantity(item.id, val[0])}
-                      />
-                      <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-                        <span>10 m²</span>
-                        <span>300 m²</span>
-                      </div>
-                      <div className="flex items-center justify-between pt-2 border-t border-border">
-                        <span className="text-xs text-muted-foreground">
-                          {item.price} zł × {qty} m²
-                        </span>
-                        <span className="text-base font-bold text-primary">{item.price * qty} zł</span>
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      <div className="flex items-center gap-3">
-                        <Button
-                          variant="outline"
-                          size="icon"
-                          className="h-9 w-9 rounded-full border-primary/30"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            const newQty = qty - 1;
-                            updateQuantity(item.id, newQty);
-                            if (newQty <= 0) setPopoverId(null);
-                          }}
-                        >
-                          <Minus className="w-4 h-4" />
-                        </Button>
-                        <span className="text-lg font-bold text-foreground min-w-[2ch] text-center">{qty}</span>
-                        <Button
-                          variant="outline"
-                          size="icon"
-                          className="h-9 w-9 rounded-full border-primary/30"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            updateQuantity(item.id, qty + 1);
-                          }}
-                        >
-                          <Plus className="w-4 h-4" />
-                        </Button>
-                      </div>
-                      <p className="text-xs text-muted-foreground text-center mt-1.5">{item.price * qty} zł</p>
-                    </>
-                  )}
-                </PopoverContent>
-              </Popover>
-            </CascadeCard>
-          );
-        })}
-      </CascadeGrid>
+      {/* Main cards grid */}
+      {restItems.length > 0 && (
+        <CascadeGrid>
+          {restItems.map((item, index) => renderCard(item, index + groupCount))}
+        </CascadeGrid>
+      )}
 
       {/* Selected items summary */}
       {selectedItems.length > 0 && (
