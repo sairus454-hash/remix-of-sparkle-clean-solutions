@@ -156,7 +156,7 @@ interface PriceSectionProps {
 }
 
 const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { isWroclaw, slug } = useCity();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
