@@ -156,7 +156,7 @@ interface PriceSectionProps {
 }
 
 const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { isWroclaw, slug } = useCity();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
@@ -284,6 +284,11 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
       description: t.prices.otherDesc,
       icon: Package,
       items: [
+        // Area-based services with slider (visually grouped)
+        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: calcCarpetMedium, unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²' },
+        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
+        // Other services
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: calcCarpet, unit: 'm²' },
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: calcCarpetPickup, unit: 'm²' },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
@@ -292,9 +297,6 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: calcCarseat },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: calcDrying, promoBadge: t.promotions.dryingFreeSpring },
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80, image: calcImpregnation },
-        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
-        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: calcCarpetMedium, unit: 'm²' },
-        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²' },
       ],
     },
     {
@@ -459,7 +461,17 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
                   <div className="overflow-hidden">
                     <div className="p-4 sm:p-5 pt-0">
                       {loadedCategories.has(cat.id) && (
-                        <CardServiceCalculator category={cat.id} items={cat.items} />
+                        <CardServiceCalculator
+                          category={cat.id}
+                          items={cat.items}
+                          groupHighlight={cat.id === 'other' ? {
+                            count: 3,
+                            label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
+                                   language === 'en' ? 'Per m² services (slider)' :
+                                   language === 'uk' ? 'Розрахунок за м² (слайдер)' :
+                                   'Расчёт по м² (слайдер)',
+                          } : undefined}
+                        />
                       )}
                     </div>
                   </div>
