@@ -158,7 +158,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, on
         ));
       }
     } else {
-      const initialQty = isAreaItem(item) ? DEFAULT_AREA : 1;
+      const initialQty = isAreaItem(item) ? getAreaConfig(item.id).default : 1;
       setSelectedItems([...selectedItems, { item, quantity: initialQty }]);
     }
     setJustAdded(item.id);
@@ -380,17 +380,24 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, on
                   </span>
                   <span className="text-base font-bold text-primary">{qty} m²</span>
                 </div>
-                <Slider
-                  value={[qty]}
-                  min={10}
-                  max={300}
-                  step={5}
-                  onValueChange={(val) => updateQuantity(item.id, val[0])}
-                />
-                <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-                  <span>10 m²</span>
-                  <span>300 m²</span>
-                </div>
+                {(() => {
+                  const cfg = getAreaConfig(item.id);
+                  return (
+                    <>
+                      <Slider
+                        value={[qty]}
+                        min={cfg.min}
+                        max={cfg.max}
+                        step={cfg.step}
+                        onValueChange={(val) => updateQuantity(item.id, val[0])}
+                      />
+                      <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                        <span>{cfg.min} m²</span>
+                        <span>{cfg.max} m²</span>
+                      </div>
+                    </>
+                  );
+                })()}
                 <div className="flex items-center justify-between pt-2 border-t border-border">
                   <span className="text-xs text-muted-foreground">
                     {item.price} zł × {qty} m²
