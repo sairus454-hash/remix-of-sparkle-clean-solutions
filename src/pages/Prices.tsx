@@ -449,10 +449,10 @@ const Prices = () => {
                             category={`prices-${cat.id}`}
                             groupHighlight={cat.id === 'other' ? {
                               count: 3,
-                              label: language === 'pl' ? 'Pranie wykładzin dywanowych' :
-                                     language === 'en' ? 'Carpet covering cleaning' :
-                                     language === 'uk' ? 'Хімчистка килимових покриттів' :
-                                     'Химчистка ковровых покрытий',
+                              label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
+                                     language === 'en' ? 'Per m² services (slider)' :
+                                     language === 'uk' ? 'Розрахунок за м² (слайдер)' :
+                                     'Расчёт по м² (слайдер)',
                             } : undefined}
                             onSendToForm={handleSendToForm}
                           />

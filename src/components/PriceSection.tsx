@@ -461,7 +461,17 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
                   <div className="overflow-hidden">
                     <div className="p-4 sm:p-5 pt-0">
                       {loadedCategories.has(cat.id) && (
-                        <CardServiceCalculator category={cat.id} items={cat.items} />
+                        <CardServiceCalculator
+                          category={cat.id}
+                          items={cat.items}
+                          groupHighlight={cat.id === 'other' ? {
+                            count: 3,
+                            label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
+                                   language === 'en' ? 'Per m² services (slider)' :
+                                   language === 'uk' ? 'Розрахунок за м² (слайдер)' :
+                                   'Расчёт по м² (слайдер)',
+                          } : undefined}
+                        />
                       )}
                     </div>
                   </div>
