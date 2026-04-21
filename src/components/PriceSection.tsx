@@ -157,12 +157,14 @@ interface PriceSectionProps {
 
 const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
   const { t } = useLanguage();
-  const { isWroclaw } = useCity();
+  const { isWroclaw, slug } = useCity();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
   const [initialized, setInitialized] = useState(false);
 
-  const hiddenForNonWroclaw = ['cleaning', 'handyman'];
+  // Cleaning category is only available in Wrocław and Smolec
+  const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
+  const hiddenForNonWroclaw = ['handyman'];
 
   const allCategories: CategorySection[] = [
     {
@@ -366,7 +368,8 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
   ];
 
   const categories = useMemo(() => {
-    const filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
+    let filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
+    if (!isCleaningCity) filtered = filtered.filter(c => c.id !== 'cleaning');
     // Reorder: move 'ozone' right before 'cleaning', and 'cleaning' right before 'windows'
     // Final order around these: ... -> ozone -> cleaning -> windows -> ...
     const ozone = filtered.find(c => c.id === 'ozone');
@@ -380,7 +383,7 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
       ...insertion,
       ...rest.slice(windowsIdx),
     ];
-  }, [isWroclaw, allCategories]);
+  }, [isWroclaw, isCleaningCity, allCategories]);
 
   // Initialize all open when defaultAllOpen
   useEffect(() => {
