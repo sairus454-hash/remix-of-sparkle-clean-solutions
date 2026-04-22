@@ -164,7 +164,8 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
 
   // Cleaning category is only available in Wrocław and Smolec
   const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
-  const hiddenForNonWroclaw = ['handyman'];
+  const hiddenForNonWroclaw = ['handyman', 'gardening'];
+  const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
 
   const allCategories: CategorySection[] = [
     {
@@ -371,7 +372,14 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
 
   const categories = useMemo(() => {
     let filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
-    if (!isCleaningCity) filtered = filtered.filter(c => c.id !== 'cleaning');
+    if (!isCleaningCity) {
+      filtered = filtered
+        .filter(c => c.id !== 'cleaning')
+        .map(cat => cat.id === 'other'
+          ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
+          : cat
+        );
+    }
     // Reorder: move 'ozone' right before 'cleaning', and 'cleaning' right before 'windows'
     // Final order around these: ... -> ozone -> cleaning -> windows -> ...
     const ozone = filtered.find(c => c.id === 'ozone');
