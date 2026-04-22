@@ -239,10 +239,17 @@ const Prices = () => {
   ];
 
   const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
-  const hiddenForNonWroclaw = ['handyman'];
+  const hiddenForNonWroclaw = ['handyman', 'gardening'];
+  const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
   const categories = useMemo(() => {
     const filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
-    return isCleaningCity ? filtered : filtered.filter(c => c.id !== 'cleaning');
+    const visible = isCleaningCity ? filtered : filtered.filter(c => c.id !== 'cleaning');
+    return isCleaningCity
+      ? visible
+      : visible.map(cat => cat.id === 'other'
+          ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
+          : cat
+        );
   }, [isWroclaw, isCleaningCity, allCategories]);
 
   return (
