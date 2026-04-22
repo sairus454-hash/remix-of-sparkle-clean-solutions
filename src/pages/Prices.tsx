@@ -27,7 +27,7 @@ const Prices = () => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const location = useLocation();
-  const { isWroclaw } = useCity();
+  const { isWroclaw, slug } = useCity();
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
@@ -238,11 +238,12 @@ const Prices = () => {
     },
   ];
 
-  const hiddenForNonWroclaw = ['cleaning', 'handyman'];
-  const categories = useMemo(() => 
-    isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id)),
-    [isWroclaw, allCategories]
-  );
+  const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
+  const hiddenForNonWroclaw = ['handyman'];
+  const categories = useMemo(() => {
+    const filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
+    return isCleaningCity ? filtered : filtered.filter(c => c.id !== 'cleaning');
+  }, [isWroclaw, isCleaningCity, allCategories]);
 
   return (
     <>
