@@ -77,6 +77,7 @@ const CityPage = () => {
   const lang = language as keyof typeof city.content;
   const cityContent = city.content[lang] || city.content.pl;
   const isWroclaw = city.slug === 'wroclaw' || city.slug === 'smolec' || city.slug === 'bielany-wroclawskie';
+  const isCleaningCity = city.slug === 'wroclaw' || city.slug === 'smolec';
 
   // FAQ data for SEO — base FAQs (shared) + 2 unique per-city FAQs from generator
   const profile = getCityProfile(city.slug);
@@ -312,7 +313,7 @@ const CityPage = () => {
     return withMarkup ? applyMarkup([slim]) : [slim];
   };
 
-  const filteredCategories = isWroclaw
+  const filteredCategories = isCleaningCity
     ? [
         // Standard + General cleaning at the top with sliders (base Wrocław prices)
         ...buildCleaningSlim(false),
@@ -324,8 +325,6 @@ const CityPage = () => {
         ),
       ]
     : [
-        // Cleaning first: only Standard + General with +10% markup
-        ...buildCleaningSlim(true),
         ...applyMarkup(
           stripFurniturePromo(
             categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && !noMarkupCategories.includes(c.id))
