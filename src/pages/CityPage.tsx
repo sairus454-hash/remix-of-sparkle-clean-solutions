@@ -324,18 +324,16 @@ const CityPage = () => {
             : c
         ),
       ]
-    : [
-        ...applyMarkup(
-          stripFurniturePromo(
-            categories.filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && !noMarkupCategories.includes(c.id))
-          )
-        ),
-        ...(isNoGardeningSurcharge
-          ? categories.filter(c => c.id === 'gardening')
-          : applyMarkup(categories.filter(c => c.id === 'gardening'), 1.05)),
-        // Auto: always base Wrocław prices
-        ...categories.filter(c => c.id === 'auto'),
-      ];
+    : categories
+        .filter(c => c.id !== 'cleaning' && c.id !== 'handyman')
+        .map(cat => {
+          // Auto: always base Wrocław prices and stays directly after leather furniture
+          if (cat.id === 'auto') return cat;
+          if (cat.id === 'gardening') {
+            return isNoGardeningSurcharge ? cat : applyMarkup([cat], 1.05)[0];
+          }
+          return applyMarkup(stripFurniturePromo([cat]))[0];
+        });
 
   return (
     <>
