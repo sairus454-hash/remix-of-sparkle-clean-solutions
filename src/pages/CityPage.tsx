@@ -298,7 +298,7 @@ const CityPage = () => {
     });
 
   // Auto cleaning: no regional markup — keep Wrocław base prices in all cities
-  const noMarkupCategories = ['gardening', 'auto'];
+  const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
 
   // Build a slim "cleaning" category with only Standard + General (m² with slider)
   // For Wrocław/Smolec — base prices; for other cities — +10% markup
@@ -325,14 +325,14 @@ const CityPage = () => {
         ),
       ]
     : categories
-        .filter(c => c.id !== 'cleaning' && c.id !== 'handyman')
+        .filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && c.id !== 'gardening')
         .map(cat => {
           // Auto: always base Wrocław prices and stays directly after leather furniture
           if (cat.id === 'auto') return cat;
-          if (cat.id === 'gardening') {
-            return isNoGardeningSurcharge ? cat : applyMarkup([cat], 1.05)[0];
-          }
-          return applyMarkup(stripFurniturePromo([cat]))[0];
+          const visibleCat = cat.id === 'other'
+            ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
+            : cat;
+          return applyMarkup(stripFurniturePromo([visibleCat]))[0];
         });
 
   return (
