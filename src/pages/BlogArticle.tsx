@@ -84,9 +84,9 @@ const BlogArticle = () => {
   return (
     <>
        <SEO
-         title={`${article.title} | MasterClean Blog`}
-         description={article.summary}
-         keywords={`${article.tag}, ${article.title}, MasterClean blog, porady czyszczenie`}
+         title={article.seo?.title || `${article.title} | MasterClean Blog`}
+         description={article.seo?.description || article.summary}
+         keywords={article.seo?.keywords || `${article.tag}, ${article.title}, MasterClean blog, porady czyszczenie`}
          canonical={`/blog/${article.id}`}
          image="https://masterclean1885.com/og-blog.png"
          breadcrumbs={[
@@ -126,7 +126,7 @@ const BlogArticle = () => {
 
             {/* Title */}
             <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
-              {article.title}
+              {article.seo?.h1 || article.title}
             </h1>
 
             {/* Meta */}
@@ -154,6 +154,17 @@ const BlogArticle = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6 italic border-l-4 border-primary pl-4">
               {article.summary}
             </p>
+
+            {article.seo && (
+              <div className="mb-6 space-y-3">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
+                  {article.seo.h2}
+                </h2>
+                <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground">
+                  {article.seo.h3}
+                </h3>
+              </div>
+            )}
 
             {/* Content */}
             <div className="prose prose-lg max-w-none">
