@@ -24,6 +24,14 @@ export interface BlogArticle {
   date: string;
   readTime: string;
   tag: string;
+  seo?: {
+    title: string;
+    description: string;
+    keywords: string;
+    h1: string;
+    h2: string;
+    h3: string;
+  };
 }
 
 export const blogArticles: Record<string, BlogArticle[]> = {
@@ -174,6 +182,14 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-23',
       readTime: '5 мин',
       tag: '🛏️ Озонирование',
+      seo: {
+        title: 'Озонирование матраса от запахов | MasterClean',
+        description: 'Озонирование матраса удаляет запахи, аллергены, бактерии и следы пылевых клещей без химии. Узнайте, когда нужна обработка озоном.',
+        keywords: 'озонирование матраса, озонирование от запаха, удаление аллергенов, пылевые клещи, дезинфекция матраса, озонатор матрас, чистка матраса',
+        h1: 'Озонирование матраса против запахов и аллергенов',
+        h2: 'Как озон очищает матрас изнутри',
+        h3: 'Когда стоит заказать озонирование матраса',
+      },
     },
   ],
   en: [
@@ -323,6 +339,14 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-23',
       readTime: '5 min',
       tag: '🛏️ Ozonation',
+      seo: {
+        title: 'Mattress Ozonation for Odors | MasterClean',
+        description: 'Mattress ozonation removes odors, allergens, bacteria and dust mite residues without harsh chemicals. Learn when ozone treatment is recommended.',
+        keywords: 'mattress ozonation, ozone mattress treatment, odor removal mattress, mattress allergens, dust mites, mattress disinfection, ozone cleaning',
+        h1: 'Mattress Ozonation for Odors and Allergens',
+        h2: 'How ozone cleans the mattress structure',
+        h3: 'When to book mattress ozonation',
+      },
     },
   ],
   pl: [
@@ -472,6 +496,14 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-23',
       readTime: '5 min',
       tag: '🛏️ Ozonowanie',
+      seo: {
+        title: 'Ozonowanie materaca na zapachy | MasterClean',
+        description: 'Ozonowanie materaca usuwa zapachy, alergeny, bakterie i pozostałości roztoczy bez agresywnej chemii. Sprawdź, kiedy warto wykonać zabieg.',
+        keywords: 'ozonowanie materaca, usuwanie zapachów z materaca, alergeny w materacu, roztocza, dezynfekcja materaca, ozonator materac, czyszczenie materaca',
+        h1: 'Ozonowanie materaca na zapachy i alergeny',
+        h2: 'Jak ozon oczyszcza strukturę materaca',
+        h3: 'Kiedy zamówić ozonowanie materaca',
+      },
     },
   ],
   uk: [
@@ -621,6 +653,14 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-23',
       readTime: '5 хв',
       tag: '🛏️ Озонування',
+      seo: {
+        title: 'Озонування матраца від запахів | MasterClean',
+        description: 'Озонування матраца усуває запахи, алергени, бактерії та сліди пилових кліщів без агресивної хімії. Дізнайтеся, коли потрібна обробка.',
+        keywords: 'озонування матраца, озонування від запаху, видалення алергенів, пилові кліщі, дезінфекція матраца, озонатор матрац, чистка матраца',
+        h1: 'Озонування матраца проти запахів та алергенів',
+        h2: 'Як озон очищає структуру матраца',
+        h3: 'Коли варто замовити озонування матраца',
+      },
     },
   ],
 };
