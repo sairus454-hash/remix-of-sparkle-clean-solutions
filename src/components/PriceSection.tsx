@@ -289,10 +289,10 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: calcCarpet, unit: 'm²' },
         { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: calcCarpetMedium, unit: 'm²' },
         { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²' },
+        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
         // Other services
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: calcCarpetPickup, unit: 'm²' },
-        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
         { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: calcStroller },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: calcCarseat },
@@ -473,7 +473,7 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
                           category={cat.id}
                           items={cat.items}
                           groupHighlight={cat.id === 'other' ? {
-                            count: 4,
+                            count: 5,
                             label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
                                    language === 'en' ? 'Per m² services (slider)' :
                                    language === 'uk' ? 'Розрахунок за м² (слайдер)' :
