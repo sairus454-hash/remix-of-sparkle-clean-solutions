@@ -12,6 +12,7 @@ import dryingAfterCleaning from '@/assets/drying-after-cleaning-blog.jpg';
 import windowWashingBlog from '@/assets/window-washing-blog.jpg';
 import mattressDeepCleaning from '@/assets/mattress-deep-cleaning-blog.jpg';
 import sabrinaVsKarcher from '@/assets/sabrina-vs-karcher-blog.jpg';
+import mattressOzonationBlog from '@/assets/mattress-ozonation-blog.jpg';
 
 export interface BlogArticle {
   id: number;
@@ -163,6 +164,58 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '4 мин',
       tag: '🧾 Закон',
     },
+    {
+      id: 14,
+      title: 'Озонирование матраса: эффективное решение против запахов и аллергенов',
+      summary: 'Озонирование помогает устранить неприятные запахи, аллергены, бактерии и микроскопических вредителей внутри матраса без агрессивной химии.',
+      content: 'Озонирование — это современный метод глубокой очистки, который помогает не только устранить неприятные запахи, но и уничтожить аллергены, бактерии и даже микроскопических вредителей.',
+      fullContent: '🛏️ Озонирование матраса: эффективное решение против запахов и аллергенов
+
+Озонирование — это современный метод глубокой очистки, который помогает не только устранить неприятные запахи, но и уничтожить аллергены, бактерии и даже микроскопических вредителей. Особенно актуальна эта процедура для матрасов, где скапливаются пыль, пот, микроорганизмы и продукты жизнедеятельности пылевых клещей.
+
+Что такое озонирование?
+
+Озонирование — это обработка поверхности и внутренней структуры матраса озоном (O₃), активной формой кислорода. Озон обладает мощными окислительными свойствами, благодаря чему разрушает органические соединения, вызывающие запахи, и уничтожает вредные микроорганизмы.
+
+Как проходит процесс?
+
+1. Подготовка — матрас очищается от поверхностной пыли, обычно пылесосом.
+2. Генерация озона — специальный прибор, озонатор, вырабатывает озон.
+3. Обработка — озон проникает глубоко в структуру матраса и воздействует на загрязнения.
+4. Проветривание — после процедуры помещение обязательно проветривается, чтобы удалить остаточный озон.
+
+Устранение запахов
+
+Озон не маскирует запахи, а разрушает их источник. Это особенно эффективно против запаха пота, табачного дыма, запахов домашних животных, плесени и сырости. После обработки матрас приобретает ощущение свежести, похожее на воздух после грозы.
+
+Борьба с аллергенами
+
+Озонирование помогает существенно снизить уровень аллергенов: уничтожает пылевых клещей, разрушает их отходы жизнедеятельности, устраняет споры плесени и снижает количество бактерий. Это особенно важно для людей с астмой, аллергией и чувствительной кожей.
+
+Преимущества метода
+
+• Глубокая дезинфекция без химии
+• Удаление запахов на молекулярном уровне
+• Быстрый результат — обычно 1–2 часа
+• Безопасность при правильном использовании
+• Подходит для большинства типов матрасов
+
+Есть ли недостатки?
+
+Во время обработки нельзя находиться в помещении, после процедуры требуется обязательное проветривание, а при сильных загрязнениях может понадобиться повторная обработка.
+
+Когда стоит делать озонирование?
+
+Рекомендуется проводить обработку 1–2 раза в год для профилактики, после болезни, при появлении неприятного запаха, если есть домашние животные или аллергические симптомы.
+
+Вывод
+
+Озонирование матраса — это мощный и современный способ поддерживать чистоту, свежесть и гигиену спального места. Оно не только устраняет неприятные запахи, но и помогает создать более здоровую среду для сна, особенно для людей, чувствительных к аллергенам.',
+      image: mattressOzonationBlog,
+      date: '2026-04-23',
+      readTime: '5 мин',
+      tag: '🛏️ Озонирование',
+    },
   ],
   en: [
     {
@@ -300,6 +353,33 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-16',
       readTime: '4 min',
       tag: '🧾 Law',
+    },
+    {
+      id: 14,
+      title: 'Mattress Ozonation: Effective Odor and Allergen Removal',
+      summary: 'Ozonation helps remove odors, allergens, bacteria and microscopic pests inside a mattress without harsh chemicals.',
+      content: 'Ozonation is a modern deep-cleaning method that neutralizes unpleasant odors and reduces allergens, bacteria and dust mite residues in mattresses.',
+      fullContent: '🛏️ Mattress Ozonation: Effective Odor and Allergen Removal
+
+Ozonation treats the mattress surface and inner structure with ozone (O₃), an active form of oxygen. It breaks down organic compounds that cause odors and helps reduce harmful microorganisms.
+
+The process includes vacuum preparation, ozone generation, deep treatment and mandatory ventilation after the procedure. Ozone does not mask odors — it targets their source, including sweat, tobacco smoke, pet smells, mold and dampness.
+
+It also helps lower allergen levels by affecting dust mites, their waste particles, mold spores and bacteria. This is especially valuable for people with asthma, allergies and sensitive skin.
+
+Main benefits:
+• Deep disinfection without aggressive chemicals
+• Odor removal at a molecular level
+• Fast result, usually 1–2 hours
+• Suitable for most mattress types
+
+During treatment nobody should stay in the room, and ventilation is required afterward. For strong contamination, repeated treatment may be needed. Preventive ozonation is recommended 1–2 times a year, after illness, when odors appear, with pets at home or during allergy symptoms.
+
+Mattress ozonation is a modern way to keep your sleeping place fresh, hygienic and healthier.',
+      image: mattressOzonationBlog,
+      date: '2026-04-23',
+      readTime: '5 min',
+      tag: '🛏️ Ozonation',
     },
   ],
   pl: [
@@ -439,6 +519,35 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       readTime: '4 min',
       tag: '🧾 Prawo',
     },
+    {
+      id: 14,
+      title: 'Ozonowanie materaca: skuteczne rozwiązanie na zapachy i alergeny',
+      summary: 'Ozonowanie pomaga usuwać nieprzyjemne zapachy, alergeny, bakterie i mikroskopijne zanieczyszczenia z wnętrza materaca bez agresywnej chemii.',
+      content: 'Ozonowanie to nowoczesna metoda głębokiej higienizacji materaca, która neutralizuje zapachy i ogranicza alergeny, bakterie oraz pozostałości roztoczy.',
+      fullContent: '🛏️ Ozonowanie materaca: skuteczne rozwiązanie na zapachy i alergeny
+
+Ozonowanie polega na obróbce powierzchni i struktury materaca ozonem (O₃), aktywną formą tlenu. Ozon ma silne właściwości utleniające, dzięki czemu rozkłada związki organiczne powodujące zapachy i ogranicza szkodliwe mikroorganizmy.
+
+Proces obejmuje przygotowanie materaca, zwykle odkurzanie, generowanie ozonu specjalnym urządzeniem, głęboką obróbkę oraz obowiązkowe wietrzenie pomieszczenia po zakończeniu.
+
+Ozon nie maskuje zapachów, lecz działa na ich źródło. Jest skuteczny przy zapachu potu, dymu tytoniowego, zwierząt, pleśni i wilgoci. Po zabiegu materac daje odczucie świeżości.
+
+Ozonowanie pomaga również ograniczyć alergeny: roztocza, ich produkty przemiany, zarodniki pleśni i bakterie. To szczególnie ważne dla osób z astmą, alergią i wrażliwą skórą.
+
+Zalety metody:
+• Głęboka dezynfekcja bez agresywnej chemii
+• Usuwanie zapachów na poziomie molekularnym
+• Szybki efekt, zwykle 1–2 godziny
+• Odpowiednie dla większości materacy
+
+Podczas zabiegu nie wolno przebywać w pomieszczeniu, a po nim konieczne jest wietrzenie. Przy silnych zabrudzeniach może być potrzebne powtórzenie procedury. Ozonowanie warto wykonywać 1–2 razy w roku, po chorobie, przy nieprzyjemnym zapachu, zwierzętach w domu lub objawach alergii.
+
+To skuteczny sposób na świeższe, czystsze i zdrowsze miejsce snu.',
+      image: mattressOzonationBlog,
+      date: '2026-04-23',
+      readTime: '5 min',
+      tag: '🛏️ Ozonowanie',
+    },
   ],
   uk: [
     {
@@ -576,6 +685,35 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-16',
       readTime: '4 хв',
       tag: '🧾 Закон',
+    },
+    {
+      id: 14,
+      title: 'Озонування матраца: ефективне рішення проти запахів та алергенів',
+      summary: 'Озонування допомагає усунути запахи, алергени, бактерії та мікроскопічних шкідників усередині матраца без агресивної хімії.',
+      content: 'Озонування — сучасний метод глибокої гігієни матраца, що нейтралізує запахи та зменшує кількість алергенів, бактерій і залишків пилових кліщів.',
+      fullContent: '🛏️ Озонування матраца: ефективне рішення проти запахів та алергенів
+
+Озонування — це обробка поверхні та внутрішньої структури матраца озоном (O₃), активною формою кисню. Озон має потужні окислювальні властивості, тому руйнує органічні сполуки, що викликають запахи, і зменшує кількість шкідливих мікроорганізмів.
+
+Процес включає підготовку матраца, зазвичай пилососом, генерацію озону спеціальним приладом, глибоку обробку та обов’язкове провітрювання приміщення після процедури.
+
+Озон не маскує запахи, а руйнує їх джерело. Це ефективно проти запаху поту, тютюнового диму, домашніх тварин, плісняви та сирості. Після обробки матрац стає відчутно свіжішим.
+
+Озонування допомагає знизити рівень алергенів: пилових кліщів, продуктів їх життєдіяльності, спор плісняви та бактерій. Це особливо важливо для людей з астмою, алергією та чутливою шкірою.
+
+Переваги методу:
+• Глибока дезінфекція без агресивної хімії
+• Усунення запахів на молекулярному рівні
+• Швидкий результат, зазвичай 1–2 години
+• Підходить для більшості типів матраців
+
+Під час обробки не можна перебувати в приміщенні, а після неї потрібне провітрювання. При сильних забрудненнях може знадобитися повторна процедура. Озонування варто робити 1–2 рази на рік, після хвороби, при появі запаху, якщо є домашні тварини або симптоми алергії.
+
+Озонування матраца — сучасний спосіб підтримувати чистоту, свіжість і здоровішу атмосферу для сну.',
+      image: mattressOzonationBlog,
+      date: '2026-04-23',
+      readTime: '5 хв',
+      tag: '🛏️ Озонування',
     },
   ],
 };
