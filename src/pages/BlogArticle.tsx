@@ -88,7 +88,8 @@ const BlogArticle = () => {
          description={article.seo?.description || article.summary}
          keywords={article.seo?.keywords || `${article.tag}, ${article.title}, MasterClean blog, porady czyszczenie`}
          canonical={`/blog/${article.id}`}
-         image="https://masterclean1885.com/og-blog.png"
+         type="article"
+         image={article.image}
          breadcrumbs={[
            { name: 'Blog', path: '/blog' },
            { name: article.title, path: `/blog/${article.id}` },
