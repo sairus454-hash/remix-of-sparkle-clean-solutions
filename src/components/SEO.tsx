@@ -54,6 +54,7 @@ const SEO = ({
   // This allows Google to index each language version (RU/EN/UK/PL) independently
   // instead of consolidating them all into the Polish version.
   const canonicalUrl = buildLangUrl(language);
+  const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`;
   // x-default points to the Polish (default) version
   const xDefaultUrl = `${SITE_URL}${path}`;
 
@@ -141,7 +142,9 @@ const SEO = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:secure_url" content={imageUrl} />
+      <meta property="og:image:alt" content={fullTitle} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:locale" content={ogLocaleMap[language] || 'pl_PL'} />
       {Object.entries(ogLocaleMap)
@@ -155,7 +158,8 @@ const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={imageUrl} />
+      <meta name="twitter:image:alt" content={fullTitle} />
 
       {/* JSON-LD */}
       <script type="application/ld+json">
