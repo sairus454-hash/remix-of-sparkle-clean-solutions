@@ -138,18 +138,41 @@ const Contacts = () => {
                 })}
               </div>
               
-              {/* MasterClean Logo */}
+              {/* Google Maps Preview — clickable */}
               <div className="mt-8">
                 <CircularRevealCard index={4}>
-                  <div className="rounded-2xl overflow-hidden shadow-glow bg-gradient-hero p-1">
-                    <AnimatedImage 
-                      src={mastercleanLogo} 
-                      alt="MasterClean" 
-                      delay={400}
-                      duration={800}
-                      className="w-full h-auto rounded-xl object-cover"
-                    />
-                  </div>
+                  <a
+                    href="https://www.google.com/maps/place/MasterClean+1885+Pranie+tapicerki+i+ozonowanie,+zlota+rączka/@51.0984969,16.949163,17z/data=!3m1!4b1!4m6!3m5!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.0984969!4d16.949163!16s%2Fg%2F11xm28yrtl!18m1!1e1?entry=ttu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={language === 'pl' ? 'Otwórz w Google Maps' : language === 'en' ? 'Open in Google Maps' : language === 'uk' ? 'Відкрити в Google Maps' : 'Открыть в Google Maps'}
+                    className="group relative block rounded-2xl overflow-hidden shadow-glow border border-border hover:border-primary/50 transition-all"
+                  >
+                    <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-muted">
+                      <iframe
+                        src="https://maps.google.com/maps?q=51.0984969,16.949163&hl=pl&z=17&output=embed"
+                        title="MasterClean — Google Maps"
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="absolute inset-0 w-full h-full border-0 pointer-events-none"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 flex items-center justify-between gap-2 text-background">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-glow">
+                            <MapPin className="w-5 h-5 text-primary-foreground" />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="font-semibold text-sm sm:text-base truncate">MasterClean 1885</p>
+                            <p className="text-xs sm:text-sm opacity-90 truncate">
+                              {language === 'pl' ? 'Wrocław — kliknij, aby otworzyć trasę' : language === 'en' ? 'Wrocław — tap to open directions' : language === 'uk' ? 'Вроцлав — натисніть, щоб відкрити маршрут' : 'Вроцлав — нажмите для маршрута'}
+                            </p>
+                          </div>
+                        </div>
+                        <ExternalLink className="w-5 h-5 flex-shrink-0 opacity-90 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5" />
+                      </div>
+                    </div>
+                  </a>
                 </CircularRevealCard>
               </div>
             </div>
