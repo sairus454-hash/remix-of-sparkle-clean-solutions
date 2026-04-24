@@ -186,11 +186,11 @@ const CityPage = () => {
         // Area-based services with slider (visually grouped)
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: img('calc-carpet.jpg'), unit: 'm²' },
         { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: img('calc-carpet-medium.jpg'), unit: 'm²' },
-        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: img('calc-carpet-large.jpg'), unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: img('calc-carpet-large.jpg'), unit: 'm²', ...(isWroclaw ? { priceText: '8-10 zł' } : {}) },
+        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: img('calc-tile-cleaning.jpg'), unit: 'm²' },
         // Other services
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: img('calc-carpet-pickup.jpg'), unit: 'm²' },
-        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
         { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: img('calc-carpet-covering-impregnation.jpg'), unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: img('calc-stroller.jpg') },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: img('calc-carseat.jpg') },
@@ -555,7 +555,7 @@ const CityPage = () => {
                             items={cat.items}
                             category={`city-${city.slug}-${cat.id}`}
                             groupHighlight={cat.id === 'other' ? {
-                              count: 4,
+                              count: 5,
                               label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
                                      language === 'en' ? 'Per m² services (slider)' :
                                      language === 'uk' ? 'Розрахунок за м² (слайдер)' :

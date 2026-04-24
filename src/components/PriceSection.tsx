@@ -288,7 +288,7 @@ const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
         // Area-based services with slider (visually grouped)
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: calcCarpet, unit: 'm²' },
         { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: calcCarpetMedium, unit: 'm²' },
-        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²', ...(isWroclaw ? { priceText: '8-10 zł' } : {}) },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
         // Other services
