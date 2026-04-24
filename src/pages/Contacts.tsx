@@ -6,11 +6,9 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import ContactsSplash from '@/components/ContactsSplash';
-import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import mastercleanLogo from '@/assets/masterclean-logo-contacts.jpg';
+import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 
 interface LocationState {
