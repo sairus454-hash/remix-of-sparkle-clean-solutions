@@ -103,7 +103,32 @@ const About = () => {
                     ? '7-day quality guarantee on all services'
                     : 'Gwarancja jakości wykonanych usług — 7 dni'}
                 </p>
-                
+
+                {/* Fixly Top Performer Badge */}
+                <div className="mt-5 animate-fade-up" style={{ animationDelay: '0.18s' }}>
+                  <CircularRevealCard index={0}>
+                    <div className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl bg-gradient-to-r from-primary/10 via-fresh/10 to-primary/10 border-2 border-primary/30 shadow-glow">
+                      <div className="w-11 h-11 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow flex-shrink-0" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                        <Award className="w-6 h-6 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-xs uppercase tracking-wider text-muted-foreground font-semibold">
+                          Fixly 2025
+                        </span>
+                        <span className="font-serif text-base sm:text-lg font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                          {language === 'ru'
+                            ? 'Топ исполнитель Fixly 2025'
+                            : language === 'uk'
+                            ? 'Топ виконавець Fixly 2025'
+                            : language === 'en'
+                            ? 'Top Performer on Fixly 2025'
+                            : 'Top Wykonawca Fixly 2025'}
+                        </span>
+                      </div>
+                    </div>
+                  </CircularRevealCard>
+                </div>
+
                 {/* Social Media Links */}
                 <div className="mt-8">
                   <p className="text-foreground mb-4">{t.about.socialMedia}:</p>
