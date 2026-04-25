@@ -163,7 +163,7 @@ const Contacts = () => {
                 })}
               </div>
               
-              {/* Google Maps Preview — clickable */}
+              {/* Google Maps Preview — clickable image */}
               <div className="mt-8">
                 <CircularRevealCard index={4}>
                   <a
@@ -174,14 +174,25 @@ const Contacts = () => {
                     className="group relative block rounded-2xl overflow-hidden shadow-glow border border-border hover:border-primary/50 transition-all"
                   >
                     <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-muted">
-                      <iframe
-                        src="https://maps.google.com/maps?q=51.0984969,16.949163&hl=pl&z=17&output=embed"
-                        title="MasterClean — Google Maps"
+                      <img
+                        src={contactsMapPreview}
+                        alt="MasterClean 1885 — lokalizacja Wrocław Smolec na mapie"
+                        width={1280}
+                        height={800}
                         loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        className="absolute inset-0 w-full h-full border-0 pointer-events-none"
+                        decoding="async"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
+                      {/* Map pin marker over image */}
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full pointer-events-none">
+                        <div className="relative">
+                          <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-glow ring-4 ring-background" style={{ animation: 'pulse 2s ease-in-out infinite' }}>
+                            <MapPin className="w-6 h-6 text-primary-foreground" />
+                          </div>
+                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rotate-45" />
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
                       <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 flex items-center justify-between gap-2 text-background">
                         <div className="flex items-center gap-2 min-w-0">
                           <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-glow">
@@ -199,6 +210,48 @@ const Contacts = () => {
                     </div>
                   </a>
                 </CircularRevealCard>
+
+                {/* Schema.org LocalBusiness microdata (visible address block) */}
+                <div
+                  itemScope
+                  itemType="https://schema.org/LocalBusiness"
+                  className="mt-4 p-4 rounded-xl bg-gradient-card border border-border text-sm"
+                >
+                  <p className="font-semibold text-foreground mb-2" itemProp="name">
+                    MasterClean 1885
+                  </p>
+                  <p
+                    itemProp="address"
+                    itemScope
+                    itemType="https://schema.org/PostalAddress"
+                    className="text-muted-foreground leading-relaxed"
+                  >
+                    <span itemProp="streetAddress">Smolec</span>,{' '}
+                    <span itemProp="postalCode">55-080</span>{' '}
+                    <span itemProp="addressLocality">Wrocław</span>,{' '}
+                    <span itemProp="addressRegion">dolnośląskie</span>,{' '}
+                    <span itemProp="addressCountry">Polska</span>
+                  </p>
+                  <p className="text-muted-foreground mt-2">
+                    <span className="text-foreground font-medium">
+                      {language === 'pl' ? 'Telefon' : language === 'en' ? 'Phone' : language === 'uk' ? 'Телефон' : 'Телефон'}:
+                    </span>{' '}
+                    <a href="tel:+48575211401" itemProp="telephone" className="text-primary hover:underline">
+                      +48 575 211 401
+                    </a>
+                  </p>
+                  <p className="text-muted-foreground">
+                    <span className="text-foreground font-medium">Email:</span>{' '}
+                    <a href="mailto:sairus454@gmail.com" itemProp="email" className="text-primary hover:underline">
+                      sairus454@gmail.com
+                    </a>
+                  </p>
+                  <meta itemProp="url" content="https://masterclean1885.com/contacts" />
+                  <span itemProp="geo" itemScope itemType="https://schema.org/GeoCoordinates">
+                    <meta itemProp="latitude" content="51.0984969" />
+                    <meta itemProp="longitude" content="16.949163" />
+                  </span>
+                </div>
               </div>
             </div>
 
