@@ -13,7 +13,7 @@ interface SEOProps {
   canonical?: string;
   type?: string;
   image?: string;
-  jsonLd?: Record<string, unknown>;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   breadcrumbs?: BreadcrumbItem[];
 }
 
@@ -162,9 +162,17 @@ const SEO = ({
       <meta name="twitter:image:alt" content={fullTitle} />
 
       {/* JSON-LD */}
-      <script type="application/ld+json">
-        {JSON.stringify(jsonLd || defaultJsonLd)}
-      </script>
+      {Array.isArray(jsonLd) ? (
+        jsonLd.map((entry, idx) => (
+          <script key={idx} type="application/ld+json">
+            {JSON.stringify(entry)}
+          </script>
+        ))
+      ) : (
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd || defaultJsonLd)}
+        </script>
+      )}
       {breadcrumbJsonLd && (
         <script type="application/ld+json">
           {JSON.stringify(breadcrumbJsonLd)}
