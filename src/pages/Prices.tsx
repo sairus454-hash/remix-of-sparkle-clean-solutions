@@ -30,6 +30,7 @@ const Prices = () => {
   const { isWroclaw, slug } = useCity();
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
+  const [activeFilter, setActiveFilter] = useState<string>('all');
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
