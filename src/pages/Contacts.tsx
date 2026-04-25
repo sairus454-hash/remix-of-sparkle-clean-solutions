@@ -176,7 +176,7 @@ const Contacts = () => {
                     <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-muted">
                       <img
                         src={contactsMapPreview}
-                        alt="MasterClean 1885 — lokalizacja Wrocław Smolec na mapie"
+                        alt="MasterClean 1885 — Wrocław, 54-614, ul. Trawowa 14 na mapie"
                         width={1280}
                         height={800}
                         loading="lazy"
