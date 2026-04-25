@@ -66,10 +66,10 @@ const Contacts = () => {
             priceRange: '160-2000 PLN',
             address: {
               '@type': 'PostalAddress',
-              streetAddress: 'Smolec',
+              streetAddress: 'ul. Trawowa 14',
               addressLocality: 'Wrocław',
               addressRegion: 'dolnośląskie',
-              postalCode: '55-080',
+              postalCode: '54-614',
               addressCountry: 'PL',
             },
             geo: {
@@ -226,8 +226,8 @@ const Contacts = () => {
                     itemType="https://schema.org/PostalAddress"
                     className="text-muted-foreground leading-relaxed"
                   >
-                    <span itemProp="streetAddress">Smolec</span>,{' '}
-                    <span itemProp="postalCode">55-080</span>{' '}
+                    <span itemProp="streetAddress">ul. Trawowa 14</span>,{' '}
+                    <span itemProp="postalCode">54-614</span>{' '}
                     <span itemProp="addressLocality">Wrocław</span>,{' '}
                     <span itemProp="addressRegion">dolnośląskie</span>,{' '}
                     <span itemProp="addressCountry">Polska</span>
