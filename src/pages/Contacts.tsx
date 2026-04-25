@@ -57,15 +57,39 @@ const Contacts = () => {
           '@type': 'ContactPage',
           mainEntity: {
             '@type': 'LocalBusiness',
-            name: 'MasterClean',
+            '@id': 'https://masterclean1885.com/#localbusiness',
+            name: 'MasterClean 1885',
+            image: 'https://masterclean1885.com/og-contacts.png',
+            url: 'https://masterclean1885.com/contacts',
             telephone: '+48575211401',
-            email: 'masterclean@email.com',
+            email: 'sairus454@gmail.com',
+            priceRange: '160-2000 PLN',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Smolec',
+              addressLocality: 'Wrocław',
+              addressRegion: 'dolnośląskie',
+              postalCode: '55-080',
+              addressCountry: 'PL',
+            },
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: 51.0984969,
+              longitude: 16.949163,
+            },
+            hasMap: 'https://www.google.com/maps/place/MasterClean+1885+Pranie+tapicerki+i+ozonowanie,+zlota+rączka/@51.0984969,16.949163,17z',
             openingHoursSpecification: {
               '@type': 'OpeningHoursSpecification',
               dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
               opens: '00:00',
               closes: '23:59',
             },
+            areaServed: [
+              { '@type': 'City', name: 'Wrocław' },
+              { '@type': 'City', name: 'Opole' },
+              { '@type': 'City', name: 'Poznań' },
+              { '@type': 'City', name: 'Zielona Góra' },
+            ],
           },
         }}
       />
