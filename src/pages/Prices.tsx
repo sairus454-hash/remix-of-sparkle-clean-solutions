@@ -253,6 +253,14 @@ const Prices = () => {
         );
   }, [isWroclaw, isCleaningCity, allCategories]);
 
+  const visibleCategories = useMemo(
+    () => activeFilter === 'all' ? categories : categories.filter(c => c.id === activeFilter),
+    [categories, activeFilter]
+  );
+
+  const filterAllLabel = language === 'ru' ? 'Все услуги' : language === 'uk' ? 'Усі послуги' : language === 'en' ? 'All services' : 'Wszystkie usługi';
+  const filterTitle = language === 'ru' ? 'Фильтр по услугам' : language === 'uk' ? 'Фільтр за послугами' : language === 'en' ? 'Filter by service' : 'Filtruj według usługi';
+
   return (
     <>
       <SEO
