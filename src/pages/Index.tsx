@@ -468,6 +468,53 @@ const Index = () => {
       </section>
       </LazySection>
 
+      {/* FAQ Section */}
+      <LazySection minHeight="400px">
+      <section id="faq" className="py-12 sm:py-20 bg-card content-auto">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8 sm:mb-12">
+              <div className="flex justify-center mb-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                  <HelpCircle className="w-7 h-7 sm:w-8 sm:h-8 text-primary-foreground" />
+                </div>
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                {faqTitle[lang]}
+              </h2>
+              <p className="text-muted-foreground text-sm sm:text-base">{faqSubtitle[lang]}</p>
+            </div>
+
+            <Accordion type="single" collapsible className="space-y-3">
+              {faqs.map((f, i) => (
+                <AccordionItem
+                  key={i}
+                  value={`faq-${i}`}
+                  className="rounded-xl border border-border/60 bg-background/60 px-4 sm:px-5 shadow-card hover:border-primary/40 transition-colors"
+                >
+                  <AccordionTrigger className="text-left text-sm sm:text-base font-semibold text-foreground hover:text-primary py-4">
+                    {f.q[lang]}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed pb-4">
+                    {f.a[lang]}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+
+            <div className="text-center mt-8">
+              <Link to="/contacts">
+                <Button className="bg-gradient-hero hover:opacity-90 text-primary-foreground shadow-glow touch-manipulation active:scale-95 transition-transform px-6 py-5">
+                  {t.hero.cta}
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      </LazySection>
+
       {/* Contact Form Section */}
       <LazySection minHeight="300px">
       <section className="py-12 sm:py-20 bg-gradient-section content-auto">
