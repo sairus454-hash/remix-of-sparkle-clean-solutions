@@ -10,6 +10,7 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
+import contactsMapPreview from '@/assets/contacts-map-preview.jpg';
 
 interface LocationState {
   calculatorItems?: CalculatorItem[];
