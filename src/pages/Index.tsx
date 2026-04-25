@@ -131,7 +131,15 @@ const Index = () => {
               { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Sprzątanie mieszkań i domów' } },
             ],
           },
-        }}
+        }, {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faqs.map(f => ({
+            '@type': 'Question',
+            name: f.q[lang],
+            acceptedAnswer: { '@type': 'Answer', text: f.a[lang] },
+          })),
+        }]}
       />
       <Layout>
 
