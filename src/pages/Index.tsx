@@ -40,6 +40,38 @@ const Index = () => {
     value: '100%',
     label: t.about.quality
   }];
+
+  const faqs = [
+    {
+      q: { ru: 'Сколько времени занимает химчистка дивана?', en: 'How long does sofa dry cleaning take?', pl: 'Ile trwa pranie kanapy?', uk: 'Скільки часу займає хімчистка дивана?' },
+      a: { ru: 'В среднем 1–2 часа на дом. Сушка занимает 4–8 часов в зависимости от ткани и вентиляции.', en: 'On average 1–2 hours on site. Drying takes 4–8 hours depending on fabric and ventilation.', pl: 'Średnio 1–2 godziny u klienta. Schnięcie trwa 4–8 godzin w zależności od tkaniny i wentylacji.', uk: 'У середньому 1–2 години на місці. Сушіння триває 4–8 годин залежно від тканини та вентиляції.' },
+    },
+    {
+      q: { ru: 'Какие средства вы используете — безопасны ли они для детей и животных?', en: 'What products do you use — are they safe for kids and pets?', pl: 'Jakich środków używacie — czy są bezpieczne dla dzieci i zwierząt?', uk: 'Які засоби ви використовуєте — чи безпечні вони для дітей та тварин?' },
+      a: { ru: 'Мы работаем профессиональной гипоаллергенной химией без агрессивных запахов. Безопасно для детей, аллергиков и домашних животных.', en: 'We use professional hypoallergenic chemistry without harsh odours. Safe for children, allergy sufferers and pets.', pl: 'Stosujemy profesjonalną, hipoalergiczną chemię bez ostrych zapachów. Bezpieczna dla dzieci, alergików i zwierząt.', uk: 'Ми використовуємо професійну гіпоалергенну хімію без різких запахів. Безпечно для дітей, алергіків та тварин.' },
+    },
+    {
+      q: { ru: 'Выводите ли вы пятна и запахи (моча, вино, кофе)?', en: 'Do you remove stains and odours (urine, wine, coffee)?', pl: 'Czy usuwacie plamy i zapachy (mocz, wino, kawa)?', uk: 'Чи виводите ви плями та запахи (сеча, вино, кава)?' },
+      a: { ru: 'В большинстве случаев — да. Свежие пятна удаляются почти всегда, застарелые требуют дополнительной обработки. Полностью гарантировать удаление каждого пятна не можем.', en: 'In most cases — yes. Fresh stains come out almost always, old ones may need extra treatment. We cannot guarantee 100% removal of every stain.', pl: 'W większości przypadków — tak. Świeże plamy schodzą prawie zawsze, stare wymagają dodatkowego zabiegu. Nie gwarantujemy 100% usunięcia każdej plamy.', uk: 'У більшості випадків — так. Свіжі плями зникають майже завжди, старі потребують додаткової обробки. 100% видалення кожної плями не гарантуємо.' },
+    },
+    {
+      q: { ru: 'Сколько стоит выезд мастера?', en: 'How much does the call-out cost?', pl: 'Ile kosztuje dojazd?', uk: 'Скільки коштує виїзд майстра?' },
+      a: { ru: 'Выезд по Вроцлаву и Смольцу — бесплатный при заказе от 160 zł. В другие города минимальный заказ 220 zł, выезд включён.', en: 'Call-out within Wrocław and Smolec is free for orders from 160 PLN. In other cities the minimum order is 220 PLN with travel included.', pl: 'Dojazd we Wrocławiu i Smolcu — bezpłatny przy zamówieniu od 160 zł. W innych miastach minimalne zamówienie 220 zł z dojazdem w cenie.', uk: 'Виїзд по Вроцлаву та Смольцу — безкоштовний при замовленні від 160 zł. В інші міста мінімальне замовлення 220 zł, виїзд включено.' },
+    },
+    {
+      q: { ru: 'Можно ли заказать на выходные или поздно вечером?', en: 'Can I book for weekends or late evening?', pl: 'Czy można zamówić w weekend lub późnym wieczorem?', uk: 'Чи можна замовити на вихідні або пізно ввечері?' },
+      a: { ru: 'Да, мы работаем 24/7 без выходных. Договоримся об удобном времени по телефону или через форму.', en: 'Yes, we work 24/7 with no days off. We will agree on a convenient time by phone or via the form.', pl: 'Tak, pracujemy 24/7 bez dni wolnych. Ustalimy dogodny termin telefonicznie lub przez formularz.', uk: 'Так, ми працюємо 24/7 без вихідних. Узгодимо зручний час телефоном або через форму.' },
+    },
+    {
+      q: { ru: 'Как оплатить и есть ли гарантия?', en: 'How do I pay and is there a warranty?', pl: 'Jak zapłacić i czy jest gwarancja?', uk: 'Як оплатити та чи є гарантія?' },
+      a: { ru: 'Оплата наличными, картой, BLIK, переводом или PayPal — после выполнения работы. Гарантия качества — 7 дней.', en: 'Payment by cash, card, BLIK, transfer or PayPal — after the job is done. 7-day quality warranty.', pl: 'Płatność gotówką, kartą, BLIK, przelewem lub PayPal — po wykonaniu usługi. Gwarancja jakości 7 dni.', uk: 'Оплата готівкою, карткою, BLIK, переказом або PayPal — після виконання роботи. Гарантія якості — 7 днів.' },
+    },
+  ];
+
+  const faqTitle = { ru: 'Частые вопросы о химчистке', en: 'Cleaning FAQ', pl: 'Najczęstsze pytania o pranie i czyszczenie', uk: 'Часті запитання про хімчистку' };
+  const faqSubtitle = { ru: 'Коротко о том, что чаще всего спрашивают перед заказом', en: 'Quick answers to the questions clients ask most often', pl: 'Krótkie odpowiedzi na najczęstsze pytania klientów', uk: 'Короткі відповіді на найчастіші запитання клієнтів' };
+  const lang = (language === 'ru' || language === 'en' || language === 'pl' || language === 'uk') ? language : 'pl';
+
   return <>
       <SEO
         title="MasterClean — Pranie kanapy, materaca, narożnika, tapicerki i aut"
@@ -47,7 +79,7 @@ const Index = () => {
         keywords="pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, pranie tapicerki meblowej, czyszczenie dywanów, czyszczenie materacy, pranie sofy, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, czyszczenie mebli Wrocław, pranie tapicerki Opole, usługi sprzątania Wrocław, pranie ekstrakcyjne, cleaning services Poland, Poznań"
         canonical="/"
         image="https://masterclean1885.com/og-image.png"
-        jsonLd={{
+        jsonLd={[{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
           name: 'MasterClean',
