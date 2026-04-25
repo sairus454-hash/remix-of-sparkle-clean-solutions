@@ -30,6 +30,7 @@ const Prices = () => {
   const { isWroclaw, slug } = useCity();
   const { showSplash, handleSplashComplete } = useSplash('prices');
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
+  const [activeFilter, setActiveFilter] = useState<string>('all');
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
@@ -252,6 +253,14 @@ const Prices = () => {
         );
   }, [isWroclaw, isCleaningCity, allCategories]);
 
+  const visibleCategories = useMemo(
+    () => activeFilter === 'all' ? categories : categories.filter(c => c.id === activeFilter),
+    [categories, activeFilter]
+  );
+
+  const filterAllLabel = language === 'ru' ? 'Все услуги' : language === 'uk' ? 'Усі послуги' : language === 'en' ? 'All services' : 'Wszystkie usługi';
+  const filterTitle = language === 'ru' ? 'Фильтр по услугам' : language === 'uk' ? 'Фільтр за послугами' : language === 'en' ? 'Filter by service' : 'Filtruj według usługi';
+
   return (
     <>
       <SEO
@@ -422,8 +431,48 @@ const Prices = () => {
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto mb-6 sm:mb-8">
+              <p className="text-xs sm:text-sm font-medium text-muted-foreground mb-2 sm:mb-3 text-center sm:text-left">
+                {filterTitle}
+              </p>
+              <div className="flex flex-wrap gap-2 justify-center sm:justify-start">
+                <button
+                  type="button"
+                  onClick={() => setActiveFilter('all')}
+                  aria-pressed={activeFilter === 'all'}
+                  className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium border transition-all touch-manipulation active:scale-95 ${
+                    activeFilter === 'all'
+                      ? 'bg-gradient-hero text-primary-foreground border-transparent shadow-glow'
+                      : 'bg-card text-foreground border-border hover:border-primary/50 hover:bg-accent/40'
+                  }`}
+                >
+                  <Sparkles className="w-3.5 h-3.5" />
+                  {filterAllLabel}
+                </button>
+                {categories.map((cat) => {
+                  const Icon = cat.icon;
+                  const active = activeFilter === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      type="button"
+                      onClick={() => setActiveFilter(cat.id)}
+                      aria-pressed={active}
+                      className={`inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium border transition-all touch-manipulation active:scale-95 ${
+                        active
+                          ? 'bg-gradient-hero text-primary-foreground border-transparent shadow-glow'
+                          : 'bg-card text-foreground border-border hover:border-primary/50 hover:bg-accent/40'
+                      }`}
+                    >
+                      <Icon className="w-3.5 h-3.5" />
+                      {cat.title}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
             <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
-              {categories.map((cat, catIndex) => (
+              {visibleCategories.map((cat, catIndex) => (
                 <CircularRevealCard key={cat.id} index={catIndex}>
                   <div 
                     ref={(el) => { categoryRefs.current[cat.id] = el; }}
