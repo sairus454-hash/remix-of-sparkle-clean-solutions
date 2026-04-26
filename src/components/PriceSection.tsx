@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import CircularRevealCard from '@/components/CircularRevealCard';
-import { Coins, Home, Armchair, Sofa, BedDouble, Car, Wind, Package, Sparkles, Wrench, ChevronDown } from 'lucide-react';
+import { Coins, Home, Armchair, Sofa, BedDouble, Car, Wind, Package, Sparkles, Wrench, ChevronDown, LayoutGrid } from 'lucide-react';
 import { useCity } from '@/hooks/useCity';
 
 // Cleaning images
@@ -153,14 +153,16 @@ interface CategorySection {
 
 interface PriceSectionProps {
   defaultAllOpen?: boolean;
+  showFilters?: boolean;
 }
 
-const PriceSection = ({ defaultAllOpen = false }: PriceSectionProps) => {
+const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSectionProps) => {
   const { t, language } = useLanguage();
   const { isWroclaw, slug } = useCity();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
   const [loadedCategories, setLoadedCategories] = useState<Set<string>>(new Set());
   const [initialized, setInitialized] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<string>('all');
 
   // Cleaning category is only available in Wrocław and Smolec
   const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
