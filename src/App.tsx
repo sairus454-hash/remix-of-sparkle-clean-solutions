@@ -8,12 +8,13 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
+import IdleMount from "@/components/IdleMount";
 
 // Defer non-critical global components — they don't affect FCP/LCP
 const SecurityHeaders = lazy(() => import("@/components/SecurityHeaders"));
 const PWAUpdatePrompt = lazy(() => import("@/components/PWAUpdatePrompt"));
 
-// Lazy load non-critical UI
+// Lazy load non-critical UI (mounted only after browser is idle)
 const FreeDeliveryBadge = lazy(() => import("@/components/FreeDeliveryBadge"));
 const CookieConsent = lazy(() => import("@/components/CookieConsent"));
 
@@ -71,13 +72,17 @@ const App = () => {
               <Suspense fallback={null}><SecurityHeaders /></Suspense>
                 <Suspense fallback={null}><PWAUpdatePrompt /></Suspense>
                 <ScrollToTop />
-                
-                <Suspense fallback={null}>
-                  <FreeDeliveryBadge />
-                </Suspense>
-                <Suspense fallback={null}>
-                  <CookieConsent />
-                </Suspense>
+
+                <IdleMount timeout={2500}>
+                  <Suspense fallback={null}>
+                    <FreeDeliveryBadge />
+                  </Suspense>
+                </IdleMount>
+                <IdleMount timeout={3000}>
+                  <Suspense fallback={null}>
+                    <CookieConsent />
+                  </Suspense>
+                </IdleMount>
                 
                 <Suspense fallback={<PageLoader />}>
                   <Routes>
