@@ -28,20 +28,21 @@ const PRICE_LIST = {
 
 🧹➕ ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ К УБОРКЕ:
 Стандартная уборка:
-• Помоем духовку — 37 PLN
-• Помоем вытяжку — 37 PLN
+• Помоем духовку — 40 PLN
+• Помоем вытяжку — 40 PLN
 • Уберем в кухонных шкафчиках — 55 PLN
-• Помоем посуду — 23 PLN
-• Почистим холодильник — 37 PLN
-• Мытье окон (внутренняя сторона, шт.) — 28 PLN
-• Дополнительные часы — 46 PLN/ч
-• Убрать в шкафу — 28 PLN
+• Помоем посуду — 25 PLN
+• Почистим холодильник — 40 PLN
+• Помоем микроволновку — 20 PLN
+• Мытье окон (внутренняя сторона, шт.) — 30 PLN
+• Дополнительные часы — 50 PLN/ч
+• Убрать в шкафу — 30 PLN
 • Устранение грибка со стены — 80 PLN
 
 Генеральная уборка:
 • Уберем на балконе — 35 PLN
-• Глажка — 58 PLN/ч
-• Убрать лоток для животных — 12 PLN
+• Глажка — 60 PLN/ч
+• Убрать лоток для животных — 15 PLN
 
 🛋 МЕБЕЛЬ (🔥 АКЦИЯ НЕДЕЛИ: -10% на химчистку мебели и матрасов!):
 • Пуф — 30 PLN (вместо 35)
@@ -263,20 +264,21 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 
 🧹➕ CLEANING ADD-ONS:
 Standard cleaning:
-• Oven cleaning — 37 PLN
-• Hood cleaning — 37 PLN
+• Oven cleaning — 40 PLN
+• Hood cleaning — 40 PLN
 • Kitchen cabinet cleaning — 55 PLN
-• Dish washing — 23 PLN
-• Fridge cleaning — 37 PLN
-• Window cleaning (inside, per unit) — 28 PLN
-• Extra hours — 46 PLN/h
-• Wardrobe cleaning — 28 PLN
+• Dish washing — 25 PLN
+• Fridge cleaning — 40 PLN
+• Microwave cleaning — 20 PLN
+• Window cleaning (inside, per unit) — 30 PLN
+• Extra hours — 50 PLN/h
+• Wardrobe cleaning — 30 PLN
 • Wall mold removal — 80 PLN
 
 Deep cleaning:
 • Balcony cleaning — 35 PLN
-• Ironing — 58 PLN/h
-• Pet litter box cleaning — 12 PLN
+• Ironing — 60 PLN/h
+• Pet litter box cleaning — 15 PLN
 
 🛋 FURNITURE (🔥 WEEKLY DEAL: -10% on furniture & mattress cleaning!):
 • Ottoman — 30 PLN (was 35)
@@ -499,20 +501,21 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 
 🧹➕ USŁUGI DODATKOWE DO SPRZĄTANIA:
 Sprzątanie standardowe:
-• Czyszczenie piekarnika — 37 PLN
-• Czyszczenie okapu — 37 PLN
+• Czyszczenie piekarnika — 40 PLN
+• Czyszczenie okapu — 40 PLN
 • Sprzątanie szafek kuchennych — 55 PLN
-• Mycie naczyń — 23 PLN
-• Czyszczenie lodówki — 37 PLN
-• Mycie okien (strona wewnętrzna, szt.) — 28 PLN
-• Dodatkowe godziny — 46 PLN/godz.
-• Sprzątanie szafy — 28 PLN
+• Mycie naczyń — 25 PLN
+• Czyszczenie lodówki — 40 PLN
+• Czyszczenie mikrofalówki — 20 PLN
+• Mycie okien (strona wewnętrzna, szt.) — 30 PLN
+• Dodatkowe godziny — 50 PLN/godz.
+• Sprzątanie szafy — 30 PLN
 • Usuwanie grzyba ze ściany — 80 PLN
 
 Sprzątanie generalne:
 • Sprzątanie balkonu — 35 PLN
-• Prasowanie — 58 PLN/godz.
-• Sprzątanie kuwety — 12 PLN
+• Prasowanie — 60 PLN/godz.
+• Sprzątanie kuwety — 15 PLN
 
 🛋 MEBLE (🔥 PROMOCJA TYGODNIA: -10% na pranie mebli i materacy!):
 • Pufa — 30 PLN (zamiast 35)
