@@ -422,6 +422,20 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSect
     setLoadedCategories(prev => new Set(prev).add(id));
   };
 
+  const visibleCategories = useMemo(
+    () => activeFilter === 'all' ? categories : categories.filter(c => c.id === activeFilter),
+    [categories, activeFilter]
+  );
+
+  const allLabel = language === 'pl' ? 'Wszystkie' : language === 'en' ? 'All' : language === 'uk' ? 'Усі' : 'Все';
+
+  // When user picks a single filter, also expand that category and load its content
+  useEffect(() => {
+    if (!showFilters || activeFilter === 'all') return;
+    setOpenCategories(prev => new Set(prev).add(activeFilter));
+    setLoadedCategories(prev => new Set(prev).add(activeFilter));
+  }, [showFilters, activeFilter]);
+
   return (
     <section className="py-12 sm:py-20 bg-card">
       <div className="container mx-auto px-4">
@@ -443,8 +457,48 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSect
           </p>
         </div>
 
+        {showFilters && (
+          <div className="max-w-5xl mx-auto mb-6 sm:mb-8">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+              <button
+                type="button"
+                onClick={() => setActiveFilter('all')}
+                className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border ${
+                  activeFilter === 'all'
+                    ? 'bg-gradient-hero text-primary-foreground border-transparent shadow-glow scale-105'
+                    : 'bg-card text-foreground border-border hover:border-primary/40 hover:bg-accent/40'
+                }`}
+                aria-pressed={activeFilter === 'all'}
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                {allLabel}
+              </button>
+              {categories.map((cat) => {
+                const Icon = cat.icon;
+                const active = activeFilter === cat.id;
+                return (
+                  <button
+                    key={cat.id}
+                    type="button"
+                    onClick={() => setActiveFilter(cat.id)}
+                    className={`inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 border ${
+                      active
+                        ? 'bg-gradient-hero text-primary-foreground border-transparent shadow-glow scale-105'
+                        : 'bg-card text-foreground border-border hover:border-primary/40 hover:bg-accent/40'
+                    }`}
+                    aria-pressed={active}
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                    <span className="truncate max-w-[160px]">{cat.title}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
-          {categories.map((cat, catIndex) => (
+          {visibleCategories.map((cat, catIndex) => (
             <CircularRevealCard key={cat.id} index={catIndex}>
               <div className="rounded-2xl border border-border bg-card overflow-hidden transition-shadow hover:shadow-card">
                 <button
