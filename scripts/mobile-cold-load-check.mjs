@@ -139,7 +139,10 @@ async function coldLoad(browser, url, attempt) {
   console.log(`   Runs:   ${RUNS} (fresh context each time)`);
   console.log(`   Device: iPhone 13 (390×844, DPR 3)\n`);
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({
+    executablePath: process.env.CHROME_BIN || '/bin/chromium',
+    args: ['--no-sandbox', '--disable-dev-shm-usage'],
+  });
   const results = [];
 
   for (const path of ROUTES) {
