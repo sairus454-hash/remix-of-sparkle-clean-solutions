@@ -106,7 +106,6 @@ const ChatBot = () => {
     try { return !!sessionStorage.getItem('chatbot_auto_opened'); } catch { return false; }
   });
   const [showLeadForm, setShowLeadForm] = useState(false);
-  const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', phone: '', contact: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
