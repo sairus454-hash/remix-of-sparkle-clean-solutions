@@ -51,11 +51,21 @@ interface Message {
   content: string;
 }
 
-interface LeadForm {
-  name: string;
-  phone: string;
-  contact: string;
-}
+// Auto-detect service from chat history (returns service key or empty)
+const detectServiceFromText = (text: string): string => {
+  const t = text.toLowerCase();
+  if (/окн|okie|window|вікон|wind/.test(t)) return 'windows';
+  if (/озон|ozon/.test(t)) return 'ozone';
+  if (/мебел|sof|кана|fote|furnit|меблі|диван/.test(t)) return 'furniture';
+  if (/матра|materac|mattress|матрац/.test(t)) return 'mattress';
+  if (/ковр|dyw|carpet|килим/.test(t)) return 'carpet';
+  if (/авто|car|samochod|auto/.test(t)) return 'auto';
+  if (/мастер|hand|złota|майстер|сантехн|elektry/.test(t)) return 'handyman';
+  if (/импрегн|impregn/.test(t)) return 'impregnation';
+  if (/огород|trawa|garden|сад|косить/.test(t)) return 'gardening';
+  if (/уборк|sprz|clean|прибир/.test(t)) return 'cleaning';
+  return '';
+};
 
 interface QuickReply {
   icon: React.ReactNode;
