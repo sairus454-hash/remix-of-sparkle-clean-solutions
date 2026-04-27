@@ -147,7 +147,7 @@ const FreeDeliveryBadge = () => {
     <div
       className={
         isMobile
-          ? "fixed right-3 bottom-4 z-40 flex flex-col-reverse items-center gap-2"
+          ? "fixed right-3 bottom-4 z-40 flex flex-col items-center gap-2"
           : "fixed right-2 sm:right-4 top-[60px] sm:top-[68px] lg:top-[84px] z-40 flex flex-col items-center gap-2"
       }
       data-fab-menu
