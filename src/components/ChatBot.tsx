@@ -11,6 +11,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ReactMarkdown from 'react-markdown';
 import chatbotGirl from '@/assets/chatbot-girl.webp';
+import ChatBotOrderForm, { ChatBotOrder } from './ChatBotOrderForm';
 
 // Web Speech API types
 interface SpeechRecognitionEvent extends Event {
