@@ -11,6 +11,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ReactMarkdown from 'react-markdown';
 import chatbotGirl from '@/assets/chatbot-girl.webp';
+import ChatBotOrderForm, { ChatBotOrder } from './ChatBotOrderForm';
 
 // Web Speech API types
 interface SpeechRecognitionEvent extends Event {
@@ -50,11 +51,21 @@ interface Message {
   content: string;
 }
 
-interface LeadForm {
-  name: string;
-  phone: string;
-  contact: string;
-}
+// Auto-detect service from chat history (returns service key or empty)
+const detectServiceFromText = (text: string): string => {
+  const t = text.toLowerCase();
+  if (/окн|okie|window|вікон|wind/.test(t)) return 'windows';
+  if (/озон|ozon/.test(t)) return 'ozone';
+  if (/мебел|sof|кана|fote|furnit|меблі|диван/.test(t)) return 'furniture';
+  if (/матра|materac|mattress|матрац/.test(t)) return 'mattress';
+  if (/ковр|dyw|carpet|килим/.test(t)) return 'carpet';
+  if (/авто|car|samochod|auto/.test(t)) return 'auto';
+  if (/мастер|hand|złota|майстер|сантехн|elektry/.test(t)) return 'handyman';
+  if (/импрегн|impregn/.test(t)) return 'impregnation';
+  if (/огород|trawa|garden|сад|косить/.test(t)) return 'gardening';
+  if (/уборк|sprz|clean|прибир/.test(t)) return 'cleaning';
+  return '';
+};
 
 interface QuickReply {
   icon: React.ReactNode;
@@ -95,7 +106,6 @@ const ChatBot = () => {
     try { return !!sessionStorage.getItem('chatbot_auto_opened'); } catch { return false; }
   });
   const [showLeadForm, setShowLeadForm] = useState(false);
-  const [leadForm, setLeadForm] = useState<LeadForm>({ name: '', phone: '', contact: '' });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
@@ -368,44 +378,67 @@ const ChatBot = () => {
     }
   };
 
-  const handleLeadSubmit = async () => {
-    if (!leadForm.name.trim() || !leadForm.phone.trim() || !leadForm.contact.trim()) return;
-    
+  // Auto-detect best service guess from chat history (used to pre-fill the form)
+  const guessedServiceKey = (() => {
+    const allUserText = messages
+      .filter((m) => m.role === 'user')
+      .map((m) => m.content)
+      .join(' ');
+    return detectServiceFromText(allUserText);
+  })();
+
+  const handleOrderSubmit = async (order: ChatBotOrder) => {
     setIsLoading(true);
-    
+
     try {
       const chatSummary = messages
-        .filter(m => m.id !== 'welcome')
-        .slice(-6)
-        .map(m => `${m.role === 'user' ? 'Client' : 'Bot'}: ${m.content}`)
+        .filter((m) => m.id !== 'welcome')
+        .slice(-8)
+        .map((m) => `${m.role === 'user' ? '👤 Client' : '🤖 Bot'}: ${m.content}`)
         .join('\n');
+
+      const detailsParts: string[] = [];
+      if (order.contact) detailsParts.push(`📧 Доп. контакт: ${order.contact}`);
+      if (order.details) detailsParts.push(`📋 Детали: ${order.details}`);
+      if (chatSummary) detailsParts.push(`\n📝 История чата:\n${chatSummary}`);
 
       const { error } = await supabase.functions.invoke('send-telegram', {
         body: {
-          name: leadForm.name.trim(),
-          phone: leadForm.phone.trim(),
-          service: 'Заявка из чат-бота',
-          message: `📞 Телефон: ${leadForm.phone.trim()}\n📧 Контакт: ${leadForm.contact.trim()}${chatSummary ? `\n\n📝 История чата:\n${chatSummary}` : ''}`,
+          name: order.name,
+          phone: order.phone,
+          service: `🤖 Заявка из чат-бота: ${order.serviceLabel}`,
+          city: order.city,
+          address: order.address,
+          date: order.date,
+          time: order.time,
+          message: detailsParts.join('\n\n'),
         },
       });
 
       if (error) {
         console.error('Telegram send error:', error);
+        throw error;
       }
 
-      import('@/lib/gtm').then(m => m.gtmEvents.chatbotLeadSubmit());
+      import('@/lib/gtm').then((m) => m.gtmEvents.chatbotLeadSubmit());
+
+      const summary = [
+        `📝 ${order.serviceLabel}`,
+        order.date ? `📅 ${order.date}${order.time ? ' ' + order.time : ''}` : '',
+        order.city ? `🏙 ${order.city}` : '',
+      ].filter(Boolean).join('\n');
 
       const leadMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
-        content: `${t.chatbot.thankYou}, ${leadForm.name}! 🎉\n\n${t.chatbot.requestAccepted}: ${leadForm.contact}\n\n${t.chatbot.soon}`,
+        content: `${t.chatbot.thankYou}, ${order.name}! 🎉\n\n${t.chatbot.requestAccepted} ${order.phone}\n\n${summary}\n\n${t.chatbot.soon}`,
       };
       setMessages((prev) => [...prev, leadMessage]);
       setLeadSubmitted(true);
       setShowLeadForm(false);
-      setLeadForm({ name: '', phone: '', contact: '' });
+      playNotificationSound();
     } catch (error) {
-      console.error('Lead submit error:', error);
+      console.error('Order submit error:', error);
       const errorMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
@@ -812,58 +845,14 @@ const ChatBot = () => {
           </div>
         </ScrollArea>
 
-        {/* Lead Form */}
+        {/* Lead Form (extended order) */}
         {showLeadForm && !leadSubmitted && (
-          <div className="absolute bottom-16 left-0 right-0 p-3 bg-card border-t border-border">
-            <div className="space-y-2">
-              <div>
-                <Label htmlFor="lead-name" className="text-xs text-muted-foreground">{t.chatbot.name}</Label>
-                <Input
-                  id="lead-name"
-                  value={leadForm.name}
-                  onChange={(e) => setLeadForm(prev => ({ ...prev, name: e.target.value }))}
-                  placeholder={t.chatbot.namePlaceholder}
-                  className={cn("h-10", isMobile && "text-base")}
-                />
-              </div>
-              <div>
-                <Label htmlFor="lead-phone" className="text-xs text-muted-foreground">
-                  {language === 'ru' ? 'Телефон' : language === 'pl' ? 'Telefon' : language === 'uk' ? 'Телефон' : 'Phone'} <span className="text-destructive">*</span>
-                </Label>
-                <Input
-                  id="lead-phone"
-                  type="tel"
-                  inputMode="tel"
-                  value={leadForm.phone}
-                  onChange={(e) => setLeadForm(prev => ({ ...prev, phone: e.target.value }))}
-                  placeholder="+48 ..."
-                  className={cn("h-10", isMobile && "text-base")}
-                />
-              </div>
-              <div>
-                <Label htmlFor="lead-contact" className="text-xs text-muted-foreground">{t.chatbot.contact}</Label>
-                <Input
-                  id="lead-contact"
-                  value={leadForm.contact}
-                  onChange={(e) => setLeadForm(prev => ({ ...prev, contact: e.target.value }))}
-                  placeholder={t.chatbot.contactPlaceholder}
-                  className={cn("h-10", isMobile && "text-base")}
-                />
-              </div>
-              <Button
-                onClick={handleLeadSubmit}
-                disabled={!leadForm.name.trim() || !leadForm.phone.trim() || !leadForm.contact.trim() || isLoading}
-                className={cn(
-                  "w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90",
-                  isMobile && "h-12 text-base"
-                )}
-                size="sm"
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                {t.chatbot.sendRequest}
-              </Button>
-            </div>
-          </div>
+          <ChatBotOrderForm
+            onSubmit={handleOrderSubmit}
+            onCancel={() => setShowLeadForm(false)}
+            isLoading={isLoading}
+            defaultServiceKey={guessedServiceKey}
+          />
         )}
 
         {/* Photo Preview with Caption */}
