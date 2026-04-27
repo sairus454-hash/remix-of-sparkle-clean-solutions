@@ -130,22 +130,27 @@ serve(async (req) => {
                              isBlik ? '📱 BLIK' :
                              isCash ? '💵 Наличные' : formData.paymentType || '';
 
-    const message = `
-🔔 *Новая заявка с сайта!*
+    // Use HTML parse_mode (safer than Markdown — only requires escaping <, >, &)
+    const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-👤 *Имя:* ${formData.name}
-📞 *Телефон:* ${formData.phone}
-${formData.email ? `📧 *Email:* ${formData.email}` : ''}
-${formData.service ? `🛠 *Услуга:* ${formData.service}` : ''}
-${formData.city ? `🏙 *Город:* ${formData.city}` : ''}
-${formData.village ? `🏘 *Село:* ${formData.village}` : ''}
-${formData.address ? `📍 *Адрес:* ${formData.address}` : ''}
-${formData.postalCode ? `📮 *Почтовый код:* ${formData.postalCode}` : ''}
-${formData.date ? `📅 *Дата:* ${formData.date}` : ''}
-${formData.time ? `🕐 *Время:* ${formData.time}` : ''}
-${paymentTypeLabel ? `💳 *Оплата:* ${paymentTypeLabel}` : ''}
-${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
-    `.trim();
+    const lines = [
+      '🔔 <b>Новая заявка с сайта!</b>',
+      '',
+      `👤 <b>Имя:</b> ${esc(formData.name)}`,
+      `📞 <b>Телефон:</b> ${esc(formData.phone)}`,
+    ];
+    if (formData.email) lines.push(`📧 <b>Email:</b> ${esc(formData.email)}`);
+    if (formData.service) lines.push(`🛠 <b>Услуга:</b> ${esc(formData.service)}`);
+    if (formData.city) lines.push(`🏙 <b>Город:</b> ${esc(formData.city)}`);
+    if (formData.village) lines.push(`🏘 <b>Село:</b> ${esc(formData.village)}`);
+    if (formData.address) lines.push(`📍 <b>Адрес:</b> ${esc(formData.address)}`);
+    if (formData.postalCode) lines.push(`📮 <b>Почтовый код:</b> ${esc(formData.postalCode)}`);
+    if (formData.date) lines.push(`📅 <b>Дата:</b> ${esc(formData.date)}`);
+    if (formData.time) lines.push(`🕐 <b>Время:</b> ${esc(formData.time)}`);
+    if (paymentTypeLabel) lines.push(`💳 <b>Оплата:</b> ${esc(paymentTypeLabel)}`);
+    if (formData.message) lines.push(`💬 <b>Сообщение:</b> ${esc(formData.message)}`);
+
+    const message = lines.join('\n');
 
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
@@ -155,7 +160,7 @@ ${formData.message ? `💬 *Сообщение:* ${formData.message}` : ''}
       body: JSON.stringify({
         chat_id: TELEGRAM_CHAT_ID,
         text: message,
-        parse_mode: 'Markdown',
+        parse_mode: 'HTML',
       }),
     });
 
