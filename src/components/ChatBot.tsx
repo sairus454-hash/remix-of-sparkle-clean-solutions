@@ -845,58 +845,14 @@ const ChatBot = () => {
           </div>
         </ScrollArea>
 
-        {/* Lead Form */}
+        {/* Lead Form (extended order) */}
         {showLeadForm && !leadSubmitted && (
-          <div className="absolute bottom-16 left-0 right-0 p-3 bg-card border-t border-border">
-            <div className="space-y-2">
-              <div>
-                <Label htmlFor="lead-name" className="text-xs text-muted-foreground">{t.chatbot.name}</Label>
-                <Input
-                  id="lead-name"
-                  value={leadForm.name}
-                  onChange={(e) => setLeadForm(prev => ({ ...prev, name: e.target.value }))}
-                  placeholder={t.chatbot.namePlaceholder}
-                  className={cn("h-10", isMobile && "text-base")}
-                />
-              </div>
-              <div>
-                <Label htmlFor="lead-phone" className="text-xs text-muted-foreground">
-                  {language === 'ru' ? 'Телефон' : language === 'pl' ? 'Telefon' : language === 'uk' ? 'Телефон' : 'Phone'} <span className="text-destructive">*</span>
-                </Label>
-                <Input
-                  id="lead-phone"
-                  type="tel"
-                  inputMode="tel"
-                  value={leadForm.phone}
-                  onChange={(e) => setLeadForm(prev => ({ ...prev, phone: e.target.value }))}
-                  placeholder="+48 ..."
-                  className={cn("h-10", isMobile && "text-base")}
-                />
-              </div>
-              <div>
-                <Label htmlFor="lead-contact" className="text-xs text-muted-foreground">{t.chatbot.contact}</Label>
-                <Input
-                  id="lead-contact"
-                  value={leadForm.contact}
-                  onChange={(e) => setLeadForm(prev => ({ ...prev, contact: e.target.value }))}
-                  placeholder={t.chatbot.contactPlaceholder}
-                  className={cn("h-10", isMobile && "text-base")}
-                />
-              </div>
-              <Button
-                onClick={handleLeadSubmit}
-                disabled={!leadForm.name.trim() || !leadForm.phone.trim() || !leadForm.contact.trim() || isLoading}
-                className={cn(
-                  "w-full bg-gradient-to-r from-primary to-fresh hover:opacity-90",
-                  isMobile && "h-12 text-base"
-                )}
-                size="sm"
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                {t.chatbot.sendRequest}
-              </Button>
-            </div>
-          </div>
+          <ChatBotOrderForm
+            onSubmit={handleOrderSubmit}
+            onCancel={() => setShowLeadForm(false)}
+            isLoading={isLoading}
+            defaultServiceKey={guessedServiceKey}
+          />
         )}
 
         {/* Photo Preview with Caption */}
