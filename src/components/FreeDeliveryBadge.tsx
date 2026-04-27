@@ -144,7 +144,14 @@ const FreeDeliveryBadge = () => {
   );
 
   return (
-    <div className="fixed right-2 sm:right-4 top-[60px] sm:top-[68px] lg:top-[84px] z-40 flex flex-col items-center gap-2" data-fab-menu>
+    <div
+      className={
+        isMobile
+          ? "fixed right-3 bottom-4 z-40 flex flex-col items-center gap-2"
+          : "fixed right-2 sm:right-4 top-[60px] sm:top-[68px] lg:top-[84px] z-40 flex flex-col items-center gap-2"
+      }
+      data-fab-menu
+    >
       {/* Desktop: original behavior */}
       {!isMobile && (
         <>
@@ -211,7 +218,7 @@ const FreeDeliveryBadge = () => {
       {isMobile && (
         <div className="flex flex-col items-center gap-2">
           {/* Expanded icons with staggered animation */}
-          <div className={`flex flex-col items-center gap-2 transition-all duration-300 ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none h-0 overflow-hidden'}`}>
+          <div className={`flex flex-col items-center gap-2 transition-all duration-300 ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none h-0 overflow-hidden'}`}>
             {mobileOpen && (
               <div className="flex flex-col items-center gap-2">
                 {/* Each icon appears with stagger via inline delay */}
