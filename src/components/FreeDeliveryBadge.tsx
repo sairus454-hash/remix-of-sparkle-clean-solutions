@@ -218,7 +218,7 @@ const FreeDeliveryBadge = () => {
       {isMobile && (
         <div className="flex flex-col items-center gap-2">
           {/* Expanded icons with staggered animation */}
-          <div className={`flex flex-col items-center gap-2 transition-all duration-300 ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none h-0 overflow-hidden'}`}>
+          <div className={`flex flex-col items-center gap-2 transition-all duration-300 ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none h-0 overflow-hidden'}`}>
             {mobileOpen && (
               <div className="flex flex-col items-center gap-2">
                 {/* Each icon appears with stagger via inline delay */}
