@@ -378,44 +378,67 @@ const ChatBot = () => {
     }
   };
 
-  const handleLeadSubmit = async () => {
-    if (!leadForm.name.trim() || !leadForm.phone.trim() || !leadForm.contact.trim()) return;
-    
+  // Auto-detect best service guess from chat history (used to pre-fill the form)
+  const guessedServiceKey = (() => {
+    const allUserText = messages
+      .filter((m) => m.role === 'user')
+      .map((m) => m.content)
+      .join(' ');
+    return detectServiceFromText(allUserText);
+  })();
+
+  const handleOrderSubmit = async (order: ChatBotOrder) => {
     setIsLoading(true);
-    
+
     try {
       const chatSummary = messages
-        .filter(m => m.id !== 'welcome')
-        .slice(-6)
-        .map(m => `${m.role === 'user' ? 'Client' : 'Bot'}: ${m.content}`)
+        .filter((m) => m.id !== 'welcome')
+        .slice(-8)
+        .map((m) => `${m.role === 'user' ? '👤 Client' : '🤖 Bot'}: ${m.content}`)
         .join('\n');
+
+      const detailsParts: string[] = [];
+      if (order.contact) detailsParts.push(`📧 Доп. контакт: ${order.contact}`);
+      if (order.details) detailsParts.push(`📋 Детали: ${order.details}`);
+      if (chatSummary) detailsParts.push(`\n📝 История чата:\n${chatSummary}`);
 
       const { error } = await supabase.functions.invoke('send-telegram', {
         body: {
-          name: leadForm.name.trim(),
-          phone: leadForm.phone.trim(),
-          service: 'Заявка из чат-бота',
-          message: `📞 Телефон: ${leadForm.phone.trim()}\n📧 Контакт: ${leadForm.contact.trim()}${chatSummary ? `\n\n📝 История чата:\n${chatSummary}` : ''}`,
+          name: order.name,
+          phone: order.phone,
+          service: `🤖 Заявка из чат-бота: ${order.serviceLabel}`,
+          city: order.city,
+          address: order.address,
+          date: order.date,
+          time: order.time,
+          message: detailsParts.join('\n\n'),
         },
       });
 
       if (error) {
         console.error('Telegram send error:', error);
+        throw error;
       }
 
-      import('@/lib/gtm').then(m => m.gtmEvents.chatbotLeadSubmit());
+      import('@/lib/gtm').then((m) => m.gtmEvents.chatbotLeadSubmit());
+
+      const summary = [
+        `📝 ${order.serviceLabel}`,
+        order.date ? `📅 ${order.date}${order.time ? ' ' + order.time : ''}` : '',
+        order.city ? `🏙 ${order.city}` : '',
+      ].filter(Boolean).join('\n');
 
       const leadMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
-        content: `${t.chatbot.thankYou}, ${leadForm.name}! 🎉\n\n${t.chatbot.requestAccepted}: ${leadForm.contact}\n\n${t.chatbot.soon}`,
+        content: `${t.chatbot.thankYou}, ${order.name}! 🎉\n\n${t.chatbot.requestAccepted} ${order.phone}\n\n${summary}\n\n${t.chatbot.soon}`,
       };
       setMessages((prev) => [...prev, leadMessage]);
       setLeadSubmitted(true);
       setShowLeadForm(false);
-      setLeadForm({ name: '', phone: '', contact: '' });
+      playNotificationSound();
     } catch (error) {
-      console.error('Lead submit error:', error);
+      console.error('Order submit error:', error);
       const errorMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
