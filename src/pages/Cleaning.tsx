@@ -400,7 +400,22 @@ const Cleaning = () => {
         </div>
       </section>
 
+      {/* Smart filter for service catalogs */}
+      <section className="pt-8 pb-2 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <SmartServiceFilter
+            categories={filterCategories}
+            activeFilter={activeFilter}
+            onFilterChange={setActiveFilter}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            resultsCount={totalFiltered}
+          />
+        </div>
+      </section>
+
       {/* Cleaning Extras - Additional Services */}
+      {showCleaningExtras && (
       <section ref={extrasSectionRef} className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
