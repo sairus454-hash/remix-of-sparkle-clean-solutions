@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSplash } from '@/hooks/useSplash';
 import { useCity } from '@/hooks/useCity';
+import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 
 import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
@@ -62,9 +63,10 @@ const Prices = () => {
     }
   }, [location.state]);
 
+  const META = getServiceCategoryMeta(t);
   const allCategories = [
     {
-      id: 'cleaning', title: t.nav?.cleaning || 'Уборка', description: t.cleaning?.subtitle || 'Стандартная и генеральная уборка', icon: Home,
+      ...META.cleaning,
       items: [
         { id: 'cleaning-standard', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'}`, price: 7, image: img('hero-house-cleaning.jpg'), unit: 'm²' },
         { id: 'cleaning-general', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'}`, price: 10, image: img('hero-house-cleaning-2.jpg'), unit: 'm²' },
@@ -84,7 +86,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'furniture', title: t.prices.furniture, description: t.prices.furnitureDesc, icon: Sofa,
+      ...META.furniture,
       items: [
         { id: 'pouf', name: t.prices.items.pouf, price: 30, originalPrice: 35, image: img('calc-pouf.jpg'), promoBadge: '🔥 -10%' },
         { id: 'chairSeat', name: t.prices.items.chairSeat, price: 15, image: img('calc-chair-seat.jpg') },
@@ -105,7 +107,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'mattress', title: t.prices.mattressTitle, description: t.prices.mattressDesc, icon: BedDouble,
+      ...META.mattress,
       items: [
         { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, originalPrice: 125, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
         { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, originalPrice: 200, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
@@ -115,7 +117,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'leather', title: t.prices.leatherFurnitureTitle, description: t.prices.leatherFurnitureDesc, icon: Armchair,
+      ...META.leather,
       items: [
         { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 40, originalPrice: 45, image: img('calc-leather-pouf.jpg'), promoBadge: '🔥 -10%' },
         { id: 'leatherChair', name: t.prices.items.leatherChair, price: 40, originalPrice: 45, image: img('calc-leather-chair.jpg'), promoBadge: '🔥 -10%' },
@@ -128,7 +130,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'auto', title: t.prices.autoCleaning, description: t.prices.autoCleaningDesc, icon: Car,
+      ...META.auto,
       items: [
         { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450, image: img('calc-auto-complex.jpg') },
         { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 550, image: img('calc-auto-leather.jpg') },
@@ -148,7 +150,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'ozone', title: t.prices.ozonation, description: t.prices.ozonationDesc, icon: Wind,
+      ...META.ozone,
       items: [
         { id: 'ozone1room', name: t.prices.items.ozone1room, price: 144, image: img('ozone-1room.jpg') },
         { id: 'ozone2room', name: t.prices.items.ozone2room, price: 240, image: img('ozone-2room.jpg') },
@@ -158,7 +160,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'other', title: t.prices.other, description: t.prices.otherDesc, icon: Package,
+      ...META.other,
       items: [
         // Area-based services with slider (visually grouped)
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: img('calc-carpet.jpg'), unit: 'm²' },
@@ -176,7 +178,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'windows', title: t.windows?.title || 'Мойка окон', description: t.windows?.subtitle || 'Профессиональная мойка окон', icon: Sparkles,
+      ...META.windows,
       items: [
         { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: img('window-cleaning-1.jpg') },
         { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: img('window-cleaning-2.jpg') },
@@ -188,7 +190,7 @@ const Prices = () => {
       ],
     },
     {
-      id: 'handyman', title: t.handyman?.title || 'Мастер на час', description: t.handyman?.subtitle || 'Быстрое решение бытовых проблем', icon: Wrench,
+      ...META.handyman,
       items: [
         { id: 'faucet', name: t.handyman?.calcItems?.faucet || 'Замена/монтаж крана', price: 120, image: img('handyman/faucet.jpg') },
         { id: 'siphon', name: t.handyman?.calcItems?.siphon || 'Монтаж/замена сифона', price: 120, image: img('handyman/siphon.jpg') },
