@@ -542,7 +542,7 @@ const Cleaning = () => {
                       </div>
                     </div>
                     <CardServiceCalculator
-                      items={extrasItems}
+                      items={filteredExtras}
                       category="extras"
                       groupHighlight={{
                         count: 4,
@@ -557,6 +557,7 @@ const Cleaning = () => {
                 </Card>
               </CircularRevealCard>
             </div>
+            )}
           </div>
         </div>
       </section>
