@@ -489,16 +489,19 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель, ковры и матрасы'}</p>
                     </div>
                   </div>
+                  {showFurniture && (
                   <CardServiceCalculator
-                    items={furnitureItems}
+                    items={filteredFurniture}
                     category="furniture"
                     onSendToForm={handleCardToForm}
                   />
+                  )}
                 </CardContent>
               </Card>
             </CircularRevealCard>
 
             {/* Leather Furniture */}
+            {showLeather && (
             <div className="mt-6">
               <CircularRevealCard index={1}>
                 <Card className="shadow-card">
@@ -513,7 +516,7 @@ const Cleaning = () => {
                       </div>
                     </div>
                     <CardServiceCalculator
-                      items={leatherItems}
+                      items={filteredLeather}
                       category="leather"
                       onSendToForm={handleCardToForm}
                     />
@@ -521,8 +524,10 @@ const Cleaning = () => {
                 </Card>
               </CircularRevealCard>
             </div>
+            )}
 
             {/* Other Services */}
+            {showExtras && (
             <div className="mt-6">
               <CircularRevealCard index={2}>
                 <Card className="shadow-card">
