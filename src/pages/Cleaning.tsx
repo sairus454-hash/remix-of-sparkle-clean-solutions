@@ -275,6 +275,31 @@ const Cleaning = () => {
     { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
   ];
 
+  // Smart filter setup
+  const filterMatch = (name: string) => !searchQuery.trim() || name.toLowerCase().includes(searchQuery.trim().toLowerCase());
+  const filteredCleaningExtras = useMemo(() => cleaningExtrasItems.filter(i => filterMatch(i.name)), [cleaningExtrasItems, searchQuery]);
+  const filteredFurniture = useMemo(() => furnitureItems.filter(i => filterMatch(i.name)), [furnitureItems, searchQuery]);
+  const filteredLeather = useMemo(() => leatherItems.filter(i => filterMatch(i.name)), [leatherItems, searchQuery]);
+  const filteredExtras = useMemo(() => extrasItems.filter(i => filterMatch(i.name)), [extrasItems, searchQuery]);
+
+  const showSection = (id: string, count: number) => (activeFilter === 'all' || activeFilter === id) && count > 0;
+  const showFurniture = showSection('furniture', filteredFurniture.length);
+  const showLeather = showSection('leather', filteredLeather.length);
+  const showExtras = showSection('extras', filteredExtras.length);
+  const showCleaningExtras = showSection('cleaning-extras', filteredCleaningExtras.length);
+
+  const filterCategories = [
+    { id: 'cleaning-extras', title: language === 'pl' ? 'Dodatki sprzątania' : language === 'en' ? 'Cleaning extras' : language === 'uk' ? 'Додатки прибирання' : 'Доп. опции уборки', icon: Sparkles },
+    { id: 'furniture', title: t.prices?.furniture || 'Мебель', icon: Sofa },
+    { id: 'leather', title: t.prices?.leatherFurnitureTitle || 'Кожаная мебель', icon: Armchair },
+    { id: 'extras', title: t.prices?.other || 'Другое', icon: Square },
+  ];
+  const totalFiltered =
+    (showCleaningExtras ? filteredCleaningExtras.length : 0) +
+    (showFurniture ? filteredFurniture.length : 0) +
+    (showLeather ? filteredLeather.length : 0) +
+    (showExtras ? filteredExtras.length : 0);
+
   return (
     <>
       <SEO
