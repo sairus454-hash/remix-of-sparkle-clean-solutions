@@ -21,6 +21,7 @@ import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import { CalculatorItem } from '@/types/calculator';
+import SmartServiceFilter, { useFilteredCategoryItems } from '@/components/SmartServiceFilter';
 import { getCityProfile } from '@/data/cityProfiles';
 import { generateCityContent } from '@/data/cityContentGenerator';
 
@@ -62,6 +63,8 @@ const CityPage = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
+  const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
