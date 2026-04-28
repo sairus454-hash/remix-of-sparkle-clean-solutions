@@ -1,4 +1,4 @@
-import { useRef, useState, lazy, Suspense } from 'react';
+import { useRef, useState, useMemo, lazy, Suspense } from 'react';
 import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useSplash } from '@/hooks/useSplash';
@@ -22,6 +22,7 @@ import PromotionsSection from '@/components/PromotionsSection';
 import { img } from '@/utils/imageMap';
 import { CalculatorItem } from '@/types/calculator';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import SmartServiceFilter from '@/components/SmartServiceFilter';
 
 // Handyman service images
 import imgFaucet from '@/assets/handyman/faucet.jpg';
@@ -73,7 +74,8 @@ const Handyman = () => {
   const { showSplash, handleSplashComplete } = useSplash('handyman');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
-  const [activeTab, setActiveTab] = useState('plumbing');
+  const [activeTab, setActiveTab] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleSendToForm = (items: CalculatorItem[], total: number) => {
     formRef.current?.setCalculatorData(items, total);
