@@ -338,6 +338,8 @@ const CityPage = () => {
           return applyMarkup(stripFurniturePromo([visibleCat]))[0];
         });
 
+  const { categories: displayCategories } = useFilteredCategoryItems(filteredCategories, activeFilter, searchQuery);
+
   return (
     <>
       <SEO
