@@ -92,6 +92,8 @@ const Cleaning = () => {
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [area, setArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
+  const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   
   const pricePerMeter = cleaningType === 'standard' ? 7 : 10;
   const totalPrice = area * pricePerMeter;
