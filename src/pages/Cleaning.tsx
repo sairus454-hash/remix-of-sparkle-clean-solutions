@@ -432,7 +432,7 @@ const Cleaning = () => {
                     </div>
                   </div>
                   <CardServiceCalculator
-                    items={cleaningExtrasItems}
+                    items={filteredCleaningExtras}
                     category="cleaning-extras"
                     onSendToForm={handleCardToForm}
                   />
@@ -442,6 +442,7 @@ const Cleaning = () => {
           </div>
         </div>
       </section>
+      )}
 
 
       <LazySection minHeight="400px">
