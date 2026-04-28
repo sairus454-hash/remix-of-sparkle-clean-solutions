@@ -241,39 +241,41 @@ const Handyman = () => {
               </h2>
             </div>
 
-            {/* Category Tabs */}
-            <div className="flex flex-wrap gap-2 justify-center mb-8">
-              {categoryTabs.map((tab) => {
-                const Icon = tab.icon;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 border ${
-                      activeTab === tab.id
-                        ? 'bg-yellow-400/20 border-yellow-400 text-yellow-700 dark:text-yellow-400 shadow-md'
-                        : 'bg-card border-border text-muted-foreground hover:border-yellow-400/50 hover:bg-yellow-400/10'
-                    }`}
-                  >
-                    <Icon className="w-4 h-4" />
-                    <span className="hidden sm:inline">{tab.name}</span>
-                  </button>
-                );
-              })}
-            </div>
+            {/* Smart Filter (categories + search) */}
+            {(() => {
+              const q = searchQuery.trim().toLowerCase();
+              const allItems = Object.entries(categoryItems).flatMap(([catId, items]) =>
+                items.map(i => ({ ...i, _cat: catId }))
+              );
+              const visibleItems = (activeTab === 'all' ? allItems : categoryItems[activeTab] || [])
+                .filter(i => !q || i.name.toLowerCase().includes(q));
+              return (
+                <>
+                  <SmartServiceFilter
+                    categories={categoryTabs.map(tab => ({ id: tab.id, title: tab.name, icon: tab.icon }))}
+                    activeFilter={activeTab}
+                    onFilterChange={setActiveTab}
+                    searchQuery={searchQuery}
+                    onSearchChange={setSearchQuery}
+                    variant="yellow"
+                    resultsCount={visibleItems.length}
+                  />
 
-            {/* Min order note */}
-            <div className="text-sm text-yellow-600 font-semibold bg-yellow-400/20 rounded-lg p-3 mb-6 text-center">
-              <span>⚠️ {t.handyman.minOrderNote}</span>
-              <br />
-              <span>{t.handyman.minOrderNoteOther}</span>
-            </div>
+                  {/* Min order note */}
+                  <div className="text-sm text-yellow-600 font-semibold bg-yellow-400/20 rounded-lg p-3 mb-6 text-center">
+                    <span>⚠️ {t.handyman.minOrderNote}</span>
+                    <br />
+                    <span>{t.handyman.minOrderNoteOther}</span>
+                  </div>
 
-            <CardServiceCalculator
-              items={categoryItems[activeTab]}
-              category={`handyman-${activeTab}`}
-              onSendToForm={handleSendToForm}
-            />
+                  <CardServiceCalculator
+                    items={visibleItems}
+                    category={`handyman-${activeTab}`}
+                    onSendToForm={handleSendToForm}
+                  />
+                </>
+              );
+            })()}
           </div>
         </div>
       </section>
