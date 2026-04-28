@@ -519,19 +519,14 @@ const CityPage = () => {
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
-            {(() => {
-              const filterCats = filteredCategories.map(c => ({ id: c.id, title: c.title, icon: c.icon }));
-              const { categories: displayCategories, totalItems } = useFilteredCategoryItems(filteredCategories, activeFilter, searchQuery);
-              return (
-                <>
-                  <SmartServiceFilter
-                    categories={filterCats}
-                    activeFilter={activeFilter}
-                    onFilterChange={setActiveFilter}
-                    searchQuery={searchQuery}
-                    onSearchChange={setSearchQuery}
-                    resultsCount={totalItems}
-                  />
+            <SmartServiceFilter
+              categories={filteredCategories.map(c => ({ id: c.id, title: c.title, icon: c.icon }))}
+              activeFilter={activeFilter}
+              onFilterChange={setActiveFilter}
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              resultsCount={displayCategories.reduce((s, c) => s + c.items.length, 0)}
+            />
             <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
               {displayCategories.map((cat, catIndex) => (
                 <div key={cat.id}>
