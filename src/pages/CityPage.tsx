@@ -21,6 +21,7 @@ import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import { CalculatorItem } from '@/types/calculator';
+import SmartServiceFilter, { useFilteredCategoryItems } from '@/components/SmartServiceFilter';
 import { getCityProfile } from '@/data/cityProfiles';
 import { generateCityContent } from '@/data/cityContentGenerator';
 
@@ -62,6 +63,8 @@ const CityPage = () => {
   const [isCalcOpen, setIsCalcOpen] = useState(false);
   const [isFullCalc, setIsFullCalc] = useState(false);
   const [closedCategories, setClosedCategories] = useState<Set<string>>(new Set());
+  const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const categoryRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
@@ -335,6 +338,8 @@ const CityPage = () => {
           return applyMarkup(stripFurniturePromo([visibleCat]))[0];
         });
 
+  const { categories: displayCategories } = useFilteredCategoryItems(filteredCategories, activeFilter, searchQuery);
+
   return (
     <>
       <SEO
@@ -516,8 +521,16 @@ const CityPage = () => {
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
+            <SmartServiceFilter
+              categories={filteredCategories.map(c => ({ id: c.id, title: c.title, icon: c.icon }))}
+              activeFilter={activeFilter}
+              onFilterChange={setActiveFilter}
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              resultsCount={displayCategories.reduce((s, c) => s + c.items.length, 0)}
+            />
             <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4">
-              {filteredCategories.map((cat, catIndex) => (
+              {displayCategories.map((cat, catIndex) => (
                 <div key={cat.id}>
                   <div 
                     ref={(el) => { categoryRefs.current[cat.id] = el; }}

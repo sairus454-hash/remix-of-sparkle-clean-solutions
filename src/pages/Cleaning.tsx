@@ -1,4 +1,4 @@
-import { useState, useRef, lazy, Suspense } from 'react';
+import { useState, useRef, useMemo, lazy, Suspense } from 'react';
 import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { toast } from '@/hooks/use-toast';
@@ -14,6 +14,7 @@ import HeroSlideshow from '@/components/HeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CleaningSplash from '@/components/CleaningSplash';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import SmartServiceFilter from '@/components/SmartServiceFilter';
 import CleaningExtrasCheckboxes from '@/components/CleaningExtrasCheckboxes';
 import WindowsPriceCalculator from '@/components/WindowsPriceCalculator';
 import { Slider } from '@/components/ui/slider';
@@ -91,6 +92,8 @@ const Cleaning = () => {
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [area, setArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
+  const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   
   const pricePerMeter = cleaningType === 'standard' ? 7 : 10;
   const totalPrice = area * pricePerMeter;
@@ -272,6 +275,31 @@ const Cleaning = () => {
     { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
   ];
 
+  // Smart filter setup
+  const filterMatch = (name: string) => !searchQuery.trim() || name.toLowerCase().includes(searchQuery.trim().toLowerCase());
+  const filteredCleaningExtras = useMemo(() => cleaningExtrasItems.filter(i => filterMatch(i.name)), [cleaningExtrasItems, searchQuery]);
+  const filteredFurniture = useMemo(() => furnitureItems.filter(i => filterMatch(i.name)), [furnitureItems, searchQuery]);
+  const filteredLeather = useMemo(() => leatherItems.filter(i => filterMatch(i.name)), [leatherItems, searchQuery]);
+  const filteredExtras = useMemo(() => extrasItems.filter(i => filterMatch(i.name)), [extrasItems, searchQuery]);
+
+  const showSection = (id: string, count: number) => (activeFilter === 'all' || activeFilter === id) && count > 0;
+  const showFurniture = showSection('furniture', filteredFurniture.length);
+  const showLeather = showSection('leather', filteredLeather.length);
+  const showExtras = showSection('extras', filteredExtras.length);
+  const showCleaningExtras = showSection('cleaning-extras', filteredCleaningExtras.length);
+
+  const filterCategories = [
+    { id: 'cleaning-extras', title: language === 'pl' ? 'Dodatki sprzątania' : language === 'en' ? 'Cleaning extras' : language === 'uk' ? 'Додатки прибирання' : 'Доп. опции уборки', icon: Sparkles },
+    { id: 'furniture', title: t.prices?.furniture || 'Мебель', icon: Sofa },
+    { id: 'leather', title: t.prices?.leatherFurnitureTitle || 'Кожаная мебель', icon: Armchair },
+    { id: 'extras', title: t.prices?.other || 'Другое', icon: Square },
+  ];
+  const totalFiltered =
+    (showCleaningExtras ? filteredCleaningExtras.length : 0) +
+    (showFurniture ? filteredFurniture.length : 0) +
+    (showLeather ? filteredLeather.length : 0) +
+    (showExtras ? filteredExtras.length : 0);
+
   return (
     <>
       <SEO
@@ -372,7 +400,22 @@ const Cleaning = () => {
         </div>
       </section>
 
+      {/* Smart filter for service catalogs */}
+      <section className="pt-8 pb-2 bg-gradient-section">
+        <div className="container mx-auto px-4">
+          <SmartServiceFilter
+            categories={filterCategories}
+            activeFilter={activeFilter}
+            onFilterChange={setActiveFilter}
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            resultsCount={totalFiltered}
+          />
+        </div>
+      </section>
+
       {/* Cleaning Extras - Additional Services */}
+      {showCleaningExtras && (
       <section ref={extrasSectionRef} className="py-10 bg-gradient-section">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
@@ -389,7 +432,7 @@ const Cleaning = () => {
                     </div>
                   </div>
                   <CardServiceCalculator
-                    items={cleaningExtrasItems}
+                    items={filteredCleaningExtras}
                     category="cleaning-extras"
                     onSendToForm={handleCardToForm}
                   />
@@ -399,6 +442,7 @@ const Cleaning = () => {
           </div>
         </div>
       </section>
+      )}
 
 
       <LazySection minHeight="400px">
@@ -445,16 +489,19 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.prices?.furnitureDesc || 'Мягкая мебель, ковры и матрасы'}</p>
                     </div>
                   </div>
+                  {showFurniture && (
                   <CardServiceCalculator
-                    items={furnitureItems}
+                    items={filteredFurniture}
                     category="furniture"
                     onSendToForm={handleCardToForm}
                   />
+                  )}
                 </CardContent>
               </Card>
             </CircularRevealCard>
 
             {/* Leather Furniture */}
+            {showLeather && (
             <div className="mt-6">
               <CircularRevealCard index={1}>
                 <Card className="shadow-card">
@@ -469,7 +516,7 @@ const Cleaning = () => {
                       </div>
                     </div>
                     <CardServiceCalculator
-                      items={leatherItems}
+                      items={filteredLeather}
                       category="leather"
                       onSendToForm={handleCardToForm}
                     />
@@ -477,8 +524,10 @@ const Cleaning = () => {
                 </Card>
               </CircularRevealCard>
             </div>
+            )}
 
             {/* Other Services */}
+            {showExtras && (
             <div className="mt-6">
               <CircularRevealCard index={2}>
                 <Card className="shadow-card">
@@ -493,7 +542,7 @@ const Cleaning = () => {
                       </div>
                     </div>
                     <CardServiceCalculator
-                      items={extrasItems}
+                      items={filteredExtras}
                       category="extras"
                       groupHighlight={{
                         count: 4,
@@ -508,6 +557,7 @@ const Cleaning = () => {
                 </Card>
               </CircularRevealCard>
             </div>
+            )}
           </div>
         </div>
       </section>
