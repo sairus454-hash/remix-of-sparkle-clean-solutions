@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Droplets, Phone, Mail, MapPin, ShieldCheck, BookOpen, Sparkles } from 'lucide-react';
 import { useLanguage } from '@/i18n/LanguageContext';
 import fixlyBadge from '@/assets/fixly-top-executor-2025.webp';
+import olawaPartnerBadge from '@/assets/partner-olawa-badge.jpg';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
@@ -143,6 +144,28 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               <img src={fixlyBadge} alt="MasterClean — Top Wykonawca 2025 Fixly.pl" className="w-full h-full object-cover" />
             </div>
           </a>
+
+          {/* Olawa City Cooperation Badge */}
+          <Link to="/city/olawa" className="relative group" aria-label={
+            language === 'pl' ? 'Współpraca z Administracją Miasta Oława' :
+            language === 'ru' ? 'Сотрудничество с администрацией города Олава' :
+            language === 'uk' ? 'Співпраця з адміністрацією міста Олава' :
+            'Cooperation with the City Administration of Oława'
+          }>
+            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/30 hover:scale-105 transition-transform bg-white">
+              <img
+                src={olawaPartnerBadge}
+                alt={
+                  language === 'pl' ? 'Współpraca z Administracją Miasta Oława' :
+                  language === 'ru' ? 'Сотрудничество с администрацией города Олава' :
+                  language === 'uk' ? 'Співпраця з адміністрацією міста Олава' :
+                  'Cooperation with the City Administration of Oława'
+                }
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </Link>
 
           {/* Euro Quality Standard Badge */}
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-primary/30 bg-primary/5">
