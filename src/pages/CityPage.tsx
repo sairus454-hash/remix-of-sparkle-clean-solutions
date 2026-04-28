@@ -24,6 +24,7 @@ import { CalculatorItem } from '@/types/calculator';
 import SmartServiceFilter, { useFilteredCategoryItems } from '@/components/SmartServiceFilter';
 import { getCityProfile } from '@/data/cityProfiles';
 import { generateCityContent } from '@/data/cityContentGenerator';
+import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
