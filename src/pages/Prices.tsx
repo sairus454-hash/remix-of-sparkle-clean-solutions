@@ -17,6 +17,7 @@ import { Link } from 'react-router-dom';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useSplash } from '@/hooks/useSplash';
 import { useCity } from '@/hooks/useCity';
+import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 
 import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
