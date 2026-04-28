@@ -1,4 +1,4 @@
-import { useState, useRef, lazy, Suspense } from 'react';
+import { useState, useRef, useMemo, lazy, Suspense } from 'react';
 import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { toast } from '@/hooks/use-toast';
@@ -14,6 +14,7 @@ import HeroSlideshow from '@/components/HeroSlideshow';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CleaningSplash from '@/components/CleaningSplash';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import SmartServiceFilter from '@/components/SmartServiceFilter';
 import CleaningExtrasCheckboxes from '@/components/CleaningExtrasCheckboxes';
 import WindowsPriceCalculator from '@/components/WindowsPriceCalculator';
 import { Slider } from '@/components/ui/slider';
