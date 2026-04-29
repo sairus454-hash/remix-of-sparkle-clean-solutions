@@ -114,45 +114,45 @@ const CityPage = () => {
     {
       ...META.furniture,
       items: [
-        { id: 'pouf', name: t.prices.items.pouf, price: 30, originalPrice: 35, image: img('calc-pouf.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'pouf', name: t.prices.items.pouf, price: 30, image: img('calc-pouf.jpg') },
         { id: 'chairSeat', name: t.prices.items.chairSeat, price: 15, image: img('calc-chair-seat.jpg') },
         { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 25, image: img('calc-chair-back.jpg') },
         { id: 'chairConference', name: t.prices.items.chairConference, price: 30, image: img('calc-chair-conference.jpg') },
         { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 45, image: img('calc-chair-swivel.jpg') },
         { id: 'chair', name: t.prices.items.chair, price: 25, image: img('calc-chair.jpg') },
-        { id: 'armchair', name: t.prices.items.armchair, price: 65, originalPrice: 75, image: img('calc-armchair.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'armchair', name: t.prices.items.armchair, price: 65, image: img('calc-armchair.jpg') },
         { id: 'pillow', name: t.prices.items.pillow, price: 5, image: img('calc-pillow.jpg') },
-        { id: 'sofa2', name: t.prices.items.sofa2, price: 130, originalPrice: 145, image: img('calc-sofa2.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: img('calc-sofa3.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: img('calc-sofa-corner.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: img('calc-sofa-corner-large.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'sofa2', name: t.prices.items.sofa2, price: 130, image: img('calc-sofa2.jpg') },
+        { id: 'sofa3', name: t.prices.items.sofa3, price: 150, image: img('calc-sofa3.jpg') },
+        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, image: img('calc-sofa-corner.jpg') },
+        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, image: img('calc-sofa-corner-large.jpg') },
         { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: img('calc-kitchen-corner.jpg') },
-        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: img('calc-headboard.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: img('calc-bedframe.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, image: img('calc-headboard.jpg') },
+        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, image: img('calc-bedframe.jpg') },
         
       ],
     },
     {
       ...META.mattress,
       items: [
-        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, originalPrice: 125, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, originalPrice: 200, image: img('calc-mattress-single.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, originalPrice: 195, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 240, originalPrice: 265, image: img('calc-mattress-double.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, image: img('calc-mattress-single.jpg') },
+        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, image: img('calc-mattress-single.jpg') },
+        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, image: img('calc-mattress-double.jpg') },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 240, image: img('calc-mattress-double.jpg') },
         
       ],
     },
     {
       ...META.leather,
       items: [
-        { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 40, originalPrice: 45, image: img('calc-leather-pouf.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'leatherChair', name: t.prices.items.leatherChair, price: 40, originalPrice: 45, image: img('calc-leather-chair.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'leatherPillow', name: t.prices.items.leatherPillow, price: 15, originalPrice: 20, image: img('calc-leather-pouf.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 75, originalPrice: 80, image: img('calc-leather-armchair.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 145, originalPrice: 160, image: img('calc-leather-sofa2.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 180, originalPrice: 200, image: img('calc-leather-sofa3.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 220, originalPrice: 245, image: img('calc-leather-corner.jpg'), promoBadge: '🔥 -10%' },
-        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 60, originalPrice: 70, image: img('calc-leather-chair-swivel.jpg'), promoBadge: '🔥 -10%' },
+        { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 40, image: img('calc-leather-pouf.jpg') },
+        { id: 'leatherChair', name: t.prices.items.leatherChair, price: 40, image: img('calc-leather-chair.jpg') },
+        { id: 'leatherPillow', name: t.prices.items.leatherPillow, price: 15, image: img('calc-leather-pouf.jpg') },
+        { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 75, image: img('calc-leather-armchair.jpg') },
+        { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 145, image: img('calc-leather-sofa2.jpg') },
+        { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 180, image: img('calc-leather-sofa3.jpg') },
+        { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 220, image: img('calc-leather-corner.jpg') },
+        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 60, image: img('calc-leather-chair-swivel.jpg') },
       ],
     },
     {
@@ -274,33 +274,28 @@ const CityPage = () => {
 
   const isNoGardeningSurcharge = city.slug === 'wroclaw' || city.slug === 'smolec';
 
-  // For non-Wrocław cities: +10% rounded up, except free items (price=0)
+  // Carpet items keep base Wrocław prices in every city (no regional markup)
+  const carpetItemIds = new Set([
+    'carpetCovering',
+    'carpetFloorMedium',
+    'carpetFloorLarge',
+    'carpetImpregnation',
+    'carpetPickup',
+    'carpetCoveringImpregnation',
+  ]);
+
+  // For non-Wrocław cities: +10% rounded up, except free items (price=0) and carpet items
   const applyMarkup = (cats: typeof categories, multiplier = 1.1) =>
     cats.map(cat => ({
       ...cat,
       items: cat.items.map(item => ({
         ...item,
-        price: item.price === 0 ? 0 : Math.ceil((item.price * multiplier) / 5) * 5,
+        price:
+          item.price === 0 || carpetItemIds.has(item.id)
+            ? item.price
+            : Math.ceil((item.price * multiplier) / 5) * 5,
       })),
     }));
-
-  // Categories that have the 10% "Акция недели" promo (only for Wrocław/Smolec)
-  const promoCategories = ['furniture', 'leather', 'mattress'];
-
-  // Strip promo discount from furniture/leather/mattress for non-Wrocław cities:
-  // use originalPrice as price, remove originalPrice & promoBadge
-  const stripFurniturePromo = (cats: typeof categories) =>
-    cats.map(cat => {
-      if (!promoCategories.includes(cat.id)) return cat;
-      return {
-        ...cat,
-        items: cat.items.map(item => {
-          if (!item.originalPrice) return item;
-          const { originalPrice, promoBadge, ...rest } = item;
-          return { ...rest, price: originalPrice };
-        }),
-      };
-    });
 
   // Auto cleaning: no regional markup — keep Wrocław base prices in all cities
   const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
@@ -337,7 +332,7 @@ const CityPage = () => {
           const visibleCat = cat.id === 'other'
             ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
             : cat;
-          return applyMarkup(stripFurniturePromo([visibleCat]))[0];
+          return applyMarkup([visibleCat])[0];
         });
 
   const { categories: displayCategories } = useFilteredCategoryItems(filteredCategories, activeFilter, searchQuery);

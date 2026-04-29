@@ -236,19 +236,19 @@ const Cleaning = () => {
   ];
 
   const furnitureItems = [
-    { id: 'pouf', name: t.prices.items.pouf, price: 30, originalPrice: 35, image: calcPouf, promoBadge: '🔥 -10%' },
+    { id: 'pouf', name: t.prices.items.pouf, price: 30, image: calcPouf },
     { id: 'chair', name: t.prices.items.chair, price: 25, image: calcChair },
-    { id: 'armchair', name: t.prices.items.armchair, price: 65, originalPrice: 75, image: calcArmchair, promoBadge: '🔥 -10%' },
+    { id: 'armchair', name: t.prices.items.armchair, price: 65, image: calcArmchair },
     { id: 'pillow', name: t.prices.items.pillow, price: 5, image: calcPillow },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 130, originalPrice: 145, image: calcSofa2, promoBadge: '🔥 -10%' },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 150, originalPrice: 165, image: calcSofa3, promoBadge: '🔥 -10%' },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, originalPrice: 200, image: calcSofaCorner, promoBadge: '🔥 -10%' },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, originalPrice: 235, image: calcSofaCornerLarge, promoBadge: '🔥 -10%' },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 130, image: calcSofa2 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 150, image: calcSofa3 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, image: calcSofaCorner },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, image: calcSofaCornerLarge },
     { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcKitchenCorner },
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, originalPrice: 125, image: calcMattressSingle, promoBadge: '🔥 -10%' },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, originalPrice: 195, image: calcMattressDouble, promoBadge: '🔥 -10%' },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, originalPrice: 90, image: calcHeadboard, promoBadge: '🔥 -10%' },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, originalPrice: 90, image: calcBedframe, promoBadge: '🔥 -10%' },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, image: calcMattressSingle },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, image: calcMattressDouble },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, image: calcBedframe },
   ];
 
   const leatherItems = [
