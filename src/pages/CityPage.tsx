@@ -332,7 +332,7 @@ const CityPage = () => {
           const visibleCat = cat.id === 'other'
             ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
             : cat;
-          return applyMarkup(stripFurniturePromo([visibleCat]))[0];
+          return applyMarkup([visibleCat])[0];
         });
 
   const { categories: displayCategories } = useFilteredCategoryItems(filteredCategories, activeFilter, searchQuery);
