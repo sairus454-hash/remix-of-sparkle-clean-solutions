@@ -274,33 +274,28 @@ const CityPage = () => {
 
   const isNoGardeningSurcharge = city.slug === 'wroclaw' || city.slug === 'smolec';
 
-  // For non-Wrocław cities: +10% rounded up, except free items (price=0)
+  // Carpet items keep base Wrocław prices in every city (no regional markup)
+  const carpetItemIds = new Set([
+    'carpetCovering',
+    'carpetFloorMedium',
+    'carpetFloorLarge',
+    'carpetImpregnation',
+    'carpetPickup',
+    'carpetCoveringImpregnation',
+  ]);
+
+  // For non-Wrocław cities: +10% rounded up, except free items (price=0) and carpet items
   const applyMarkup = (cats: typeof categories, multiplier = 1.1) =>
     cats.map(cat => ({
       ...cat,
       items: cat.items.map(item => ({
         ...item,
-        price: item.price === 0 ? 0 : Math.ceil((item.price * multiplier) / 5) * 5,
+        price:
+          item.price === 0 || carpetItemIds.has(item.id)
+            ? item.price
+            : Math.ceil((item.price * multiplier) / 5) * 5,
       })),
     }));
-
-  // Categories that have the 10% "Акция недели" promo (only for Wrocław/Smolec)
-  const promoCategories = ['furniture', 'leather', 'mattress'];
-
-  // Strip promo discount from furniture/leather/mattress for non-Wrocław cities:
-  // use originalPrice as price, remove originalPrice & promoBadge
-  const stripFurniturePromo = (cats: typeof categories) =>
-    cats.map(cat => {
-      if (!promoCategories.includes(cat.id)) return cat;
-      return {
-        ...cat,
-        items: cat.items.map(item => {
-          if (!item.originalPrice) return item;
-          const { originalPrice, promoBadge, ...rest } = item;
-          return { ...rest, price: originalPrice };
-        }),
-      };
-    });
 
   // Auto cleaning: no regional markup — keep Wrocław base prices in all cities
   const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
