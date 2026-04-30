@@ -164,7 +164,7 @@ const PriceCalculator = () => {
   }, {
     id: 'tileCleaning',
     name: t.prices.items.tileCleaning,
-    price: 25,
+    price: 20,
     unit: 'm²'
   }];
   const [justRemoved, setJustRemoved] = useState<string | null>(null);

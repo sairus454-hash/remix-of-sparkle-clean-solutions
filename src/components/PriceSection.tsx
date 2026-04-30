@@ -289,9 +289,9 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSect
       items: [
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 15, image: calcCarpet, unit: 'm²' },
         { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 10, image: calcCarpetMedium, unit: 'm²' },
-        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 5, image: calcCarpetLarge, unit: 'm²', ...(isWroclaw ? { priceText: '8-10 zł' } : {}) },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 7, image: calcCarpetLarge, unit: 'm²', priceText: '7-10 zł' },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
-        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
+        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 20, image: calcTileCleaning, unit: 'm²' },
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 30, image: calcCarpetPickup, unit: 'm²' },
         { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
       ],
