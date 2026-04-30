@@ -1,5 +1,5 @@
 import {
-  Home, Sofa, BedDouble, Armchair, Car, Wind, Package, Sparkles, Wrench,
+  Home, Sofa, BedDouble, Armchair, Car, Wind, Package, Sparkles, Wrench, Layers,
   type LucideIcon,
 } from 'lucide-react';
 
