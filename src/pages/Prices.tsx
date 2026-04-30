@@ -252,7 +252,7 @@ const Prices = () => {
     const visible = isCleaningCity ? filtered : filtered.filter(c => c.id !== 'cleaning');
     return isCleaningCity
       ? visible
-      : visible.map(cat => cat.id === 'other'
+      : visible.map(cat => (cat.id === 'other' || cat.id === 'floorCleaning')
           ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
           : cat
         );
