@@ -568,7 +568,7 @@ const CityPage = () => {
                           <CardServiceCalculator
                             items={cat.items}
                             category={`city-${city.slug}-${cat.id}`}
-                            groupHighlight={cat.id === 'other' ? {
+                            groupHighlight={cat.id === 'floorCleaning' ? {
                               count: 5,
                               label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
                                      language === 'en' ? 'Per m² services (slider)' :
