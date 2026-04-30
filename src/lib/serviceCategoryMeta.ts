@@ -54,6 +54,12 @@ export function getServiceCategoryMeta(t: any): Record<string, ServiceCategoryMe
       description: t.prices?.ozonationDesc || '',
       icon: Wind,
     },
+    floorCleaning: {
+      id: 'floorCleaning',
+      title: t.prices?.floorCleaning || 'Pranie wykładzin podłogowych',
+      description: t.prices?.floorCleaningDesc || '',
+      icon: Layers,
+    },
     other: {
       id: 'other',
       title: t.prices?.other || 'Inne',
