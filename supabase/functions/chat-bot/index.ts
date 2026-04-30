@@ -115,10 +115,10 @@ const PRICE_LIST = {
 • Автокресло (детское) — 80 PLN
 • Сушка мебели — 60 PLN (🌿 БЕСПЛАТНО до конца весны!)
 • Импрегнация (защита на 1 год) — 80 PLN
-• Чистка плитки — 25 PLN/м²
+• Чистка плитки — 20 PLN/м²
 • Импрегнация ковра — 5 PLN/м²
 • Чистка ковролина (20-50 м²) — 15 PLN/м²
-• Чистка ковролина (50+ м²) — 10 PLN/м²
+• Чистка ковролина (50+ м²) — 7-10 PLN/м²
 • Стирка ковров с забором и доставкой — 35 PLN/м²
 
 🧹🚐 СТИРКА КОВРОВ С ЗАБОРОМ (подробно):
@@ -351,10 +351,10 @@ Deep cleaning:
 • Child car seat — 80 PLN
 • Furniture drying — 60 PLN (🌿 FREE until end of spring!)
 • Impregnation (1 year protection) — 80 PLN
-• Tile cleaning — 25 PLN/m²
+• Tile cleaning — 20 PLN/m²
 • Carpet impregnation — 5 PLN/m²
 • Carpet floor cleaning (20-50 m²) — 15 PLN/m²
-• Carpet floor cleaning (50+ m²) — 10 PLN/m²
+• Carpet floor cleaning (50+ m²) — 7-10 PLN/m²
 • Carpet washing with pickup & delivery — 35 PLN/m²
 
 🧹🚐 CARPET WASHING WITH PICKUP (details):
@@ -590,10 +590,10 @@ Sprzątanie generalne:
 • Fotelik samochodowy (dziecięcy) — 80 PLN
 • Suszenie mebli — 60 PLN (🌿 GRATIS do końca wiosny!)
 • Impregnacja (ochrona na 1 rok) — 80 PLN
-• Czyszczenie płytek — 25 PLN/m²
+• Czyszczenie płytek — 20 PLN/m²
 • Impregnacja dywanu — 5 PLN/m²
 • Czyszczenie wykładziny (20-50 m²) — 15 PLN/m²
-• Czyszczenie wykładziny (50+ m²) — 10 PLN/m²
+• Czyszczenie wykładziny (50+ m²) — 7-10 PLN/m²
 • Pranie dywanów z odbiorem i dostawą — 35 PLN/m²
 
 🧹🚐 PRANIE DYWANÓW Z ODBIOREM (szczegóły):
@@ -827,10 +827,10 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Автокрісло (дитяче) — 80 PLN
 • Сушіння меблів — 60 PLN (🌿 БЕЗКОШТОВНО до кінця весни!)
 • Імпрегнація (захист на 1 рік) — 80 PLN
-• Чистка плитки — 25 PLN/м²
+• Чистка плитки — 20 PLN/м²
 • Імпрегнація килима — 5 PLN/м²
 • Чистка килимового покриття (20-50 м²) — 15 PLN/м²
-• Чистка килимового покриття (50+ м²) — 10 PLN/м²
+• Чистка килимового покриття (50+ м²) — 7-10 PLN/м²
 • Прання килимів із забором та доставкою — 35 PLN/м²
 
 🧹🚐 ПРАННЯ КИЛИМІВ ІЗ ЗАБОРОМ (детально):
