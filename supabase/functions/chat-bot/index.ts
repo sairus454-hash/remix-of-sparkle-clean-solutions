@@ -366,8 +366,8 @@ How it works:
 4. The carpet is dried under special conditions (no deformation or shrinkage).
 5. The clean, fresh carpet is delivered back to your home.
 
-Price: 35 PLN per 1 m² (measured length × width of carpet).
-Example: a 2×3 m carpet = 6 m² × 35 PLN = 210 PLN.
+Price: 30 PLN per 1 m² (measured length × width of carpet).
+Example: a 2×3 m carpet = 6 m² × 30 PLN = 180 PLN.
 
 Benefits:
 ✅ Deep washing impossible to achieve at home
