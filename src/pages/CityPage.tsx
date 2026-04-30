@@ -277,7 +277,7 @@ const CityPage = () => {
 
   const isNoGardeningSurcharge = city.slug === 'wroclaw' || city.slug === 'smolec';
 
-  // Carpet items keep base Wrocław prices in every city (no regional markup)
+  // Floor cleaning items keep base Wrocław prices in every city (no regional markup)
   const carpetItemIds = new Set([
     'carpetCovering',
     'carpetFloorMedium',
@@ -285,6 +285,7 @@ const CityPage = () => {
     'carpetImpregnation',
     'carpetPickup',
     'carpetCoveringImpregnation',
+    'tileCleaning',
   ]);
 
   // For non-Wrocław cities: +10% rounded up, except free items (price=0) and carpet items
