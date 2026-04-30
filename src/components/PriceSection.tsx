@@ -534,7 +534,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSect
                         <CardServiceCalculator
                           category={cat.id}
                           items={cat.items}
-                          groupHighlight={cat.id === 'other' ? {
+                          groupHighlight={cat.id === 'floorCleaning' ? {
                             count: 5,
                             label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
                                    language === 'en' ? 'Per m² services (slider)' :
