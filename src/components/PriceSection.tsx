@@ -383,7 +383,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSect
     if (!isCleaningCity) {
       filtered = filtered
         .filter(c => c.id !== 'cleaning')
-        .map(cat => cat.id === 'other'
+        .map(cat => (cat.id === 'other' || cat.id === 'floorCleaning')
           ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
           : cat
         );
