@@ -1,5 +1,5 @@
 import {
-  Home, Sofa, BedDouble, Armchair, Car, Wind, Package, Sparkles, Wrench,
+  Home, Sofa, BedDouble, Armchair, Car, Wind, Package, Sparkles, Wrench, Layers,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -53,6 +53,12 @@ export function getServiceCategoryMeta(t: any): Record<string, ServiceCategoryMe
       title: t.prices?.ozonation || 'Ozonowanie',
       description: t.prices?.ozonationDesc || '',
       icon: Wind,
+    },
+    floorCleaning: {
+      id: 'floorCleaning',
+      title: t.prices?.floorCleaning || 'Pranie wykładzin podłogowych',
+      description: t.prices?.floorCleaningDesc || '',
+      icon: Layers,
     },
     other: {
       id: 'other',

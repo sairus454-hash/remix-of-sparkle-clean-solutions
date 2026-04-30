@@ -186,17 +186,20 @@ const CityPage = () => {
       ],
     },
     {
-      ...META.other,
+      ...META.floorCleaning,
       items: [
-        // Area-based services with slider (visually grouped)
-        { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: img('calc-carpet.jpg'), unit: 'm²' },
-        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: img('calc-carpet-medium.jpg'), unit: 'm²' },
-        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: img('calc-carpet-large.jpg'), unit: 'm²', ...(isWroclaw ? { priceText: '8-10 zł' } : {}) },
+        { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 15, image: img('calc-carpet.jpg'), unit: 'm²' },
+        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 10, image: img('calc-carpet-medium.jpg'), unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 5, image: img('calc-carpet-large.jpg'), unit: 'm²' },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: img('calc-tile-cleaning.jpg'), unit: 'm²' },
-        // Other services
-        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: img('calc-carpet-pickup.jpg'), unit: 'm²' },
-        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: img('calc-carpet-covering-impregnation.jpg'), unit: 'm²' },
+        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 30, image: img('calc-carpet-pickup.jpg'), unit: 'm²' },
+        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 3, image: img('calc-carpet-covering-impregnation.jpg'), unit: 'm²' },
+      ],
+    },
+    {
+      ...META.other,
+      items: [
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: img('calc-stroller.jpg') },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: img('calc-carseat.jpg') },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: img('calc-drying.jpg'), promoBadge: t.promotions.dryingFreeSpring },
@@ -274,7 +277,7 @@ const CityPage = () => {
 
   const isNoGardeningSurcharge = city.slug === 'wroclaw' || city.slug === 'smolec';
 
-  // Carpet items keep base Wrocław prices in every city (no regional markup)
+  // Floor cleaning items keep base Wrocław prices in every city (no regional markup)
   const carpetItemIds = new Set([
     'carpetCovering',
     'carpetFloorMedium',
@@ -282,6 +285,7 @@ const CityPage = () => {
     'carpetImpregnation',
     'carpetPickup',
     'carpetCoveringImpregnation',
+    'tileCleaning',
   ]);
 
   // For non-Wrocław cities: +10% rounded up, except free items (price=0) and carpet items
@@ -329,7 +333,7 @@ const CityPage = () => {
         .map(cat => {
           // Auto: always base Wrocław prices and stays directly after leather furniture
           if (cat.id === 'auto') return cat;
-          const visibleCat = cat.id === 'other'
+          const visibleCat = (cat.id === 'other' || cat.id === 'floorCleaning')
             ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
             : cat;
           return applyMarkup([visibleCat])[0];
@@ -564,7 +568,7 @@ const CityPage = () => {
                           <CardServiceCalculator
                             items={cat.items}
                             category={`city-${city.slug}-${cat.id}`}
-                            groupHighlight={cat.id === 'other' ? {
+                            groupHighlight={cat.id === 'floorCleaning' ? {
                               count: 5,
                               label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
                                      language === 'en' ? 'Per m² services (slider)' :

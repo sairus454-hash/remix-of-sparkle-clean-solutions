@@ -160,17 +160,20 @@ const Prices = () => {
       ],
     },
     {
+      ...META.floorCleaning,
+      items: [
+        { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 15, image: img('calc-carpet.jpg'), unit: 'm²' },
+        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 10, image: img('calc-carpet-medium.jpg'), unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 5, image: img('calc-carpet-large.jpg'), unit: 'm²' },
+        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: img('calc-tile-cleaning.jpg'), unit: 'm²' },
+        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 30, image: img('calc-carpet-pickup.jpg'), unit: 'm²' },
+        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
+        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 3, image: img('calc-carpet-covering-impregnation.jpg'), unit: 'm²' },
+      ],
+    },
+    {
       ...META.other,
       items: [
-        // Area-based services with slider (visually grouped)
-        { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: img('calc-carpet.jpg'), unit: 'm²' },
-        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: img('calc-carpet-medium.jpg'), unit: 'm²' },
-        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: img('calc-carpet-large.jpg'), unit: 'm²' },
-        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: img('calc-tile-cleaning.jpg'), unit: 'm²' },
-        // Other services
-        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: img('calc-carpet-pickup.jpg'), unit: 'm²' },
-        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: img('calc-carpet-impregnation.jpg'), unit: 'm²' },
-        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: img('calc-carpet-covering-impregnation.jpg'), unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: img('calc-stroller.jpg') },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: img('calc-carseat.jpg') },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: img('calc-drying.jpg'), promoBadge: t.promotions.dryingFreeSpring },
@@ -249,7 +252,7 @@ const Prices = () => {
     const visible = isCleaningCity ? filtered : filtered.filter(c => c.id !== 'cleaning');
     return isCleaningCity
       ? visible
-      : visible.map(cat => cat.id === 'other'
+      : visible.map(cat => (cat.id === 'other' || cat.id === 'floorCleaning')
           ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
           : cat
         );

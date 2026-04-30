@@ -103,15 +103,15 @@ const Services = () => {
   const { t: translations } = useLanguage();
   const extrasItems = [
     // Highlighted (m²) carpet group — comes first
-    { id: 'carpet', name: language === 'pl' ? 'Wykładzina dywanowa' : language === 'en' ? 'Carpet cleaning' : 'Ковровое покрытие', price: 20, image: calcCarpet, unit: 'm²' },
-    { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 15, image: calcCarpetMedium, unit: 'm²' },
-    { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 10, priceText: '8-10 zł', image: calcCarpetLarge, unit: 'm²' },
+    { id: 'carpet', name: language === 'pl' ? 'Wykładzina dywanowa' : language === 'en' ? 'Carpet cleaning' : 'Ковровое покрытие', price: 15, image: calcCarpet, unit: 'm²' },
+    { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 10, image: calcCarpetMedium, unit: 'm²' },
+    { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 5, image: calcCarpetLarge, unit: 'm²' },
     { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || (language === 'pl' ? 'Impregnacja dywanu' : language === 'en' ? 'Carpet impregnation' : 'Импрегнация ковра'), price: 5, image: calcCarpetImpregnation, unit: 'm²' },
     // Other (non-highlighted) services
     { id: 'impregnation', name: language === 'pl' ? 'Impregnacja mebli na 1 rok' : language === 'en' ? 'Furniture impregnation 1 year' : 'Импрегнация мебели на 1 год', price: 80, image: calcImpregnation },
     { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: translations.promotions?.dryingFreeSpring || 'Бесплатно до конца весны' },
-    { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 35, image: calcCarpetPickup, unit: 'm²' },
-    { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny dywanowej z odbiorem' : language === 'en' ? 'Carpet covering impregnation with pickup' : 'Импрегнация коврового покрытия с забором'), price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
+    { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 30, image: calcCarpetPickup, unit: 'm²' },
+    { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny dywanowej z odbiorem' : language === 'en' ? 'Carpet covering impregnation with pickup' : 'Импрегнация коврового покрытия с забором'), price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
     { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
     { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
   ];
