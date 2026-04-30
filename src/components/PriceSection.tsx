@@ -282,20 +282,26 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSect
       ],
     },
     {
+      id: 'floorCleaning',
+      title: t.prices.floorCleaning,
+      description: t.prices.floorCleaningDesc,
+      icon: LayoutGrid,
+      items: [
+        { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 15, image: calcCarpet, unit: 'm²' },
+        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 10, image: calcCarpetMedium, unit: 'm²' },
+        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 5, image: calcCarpetLarge, unit: 'm²', ...(isWroclaw ? { priceText: '8-10 zł' } : {}) },
+        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
+        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
+        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 30, image: calcCarpetPickup, unit: 'm²' },
+        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
+      ],
+    },
+    {
       id: 'other',
       title: t.prices.other,
       description: t.prices.otherDesc,
       icon: Package,
       items: [
-        // Area-based services with slider (visually grouped)
-        { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 20, image: calcCarpet, unit: 'm²' },
-        { id: 'carpetFloorMedium', name: t.prices.items.carpetFloorMedium, price: 15, image: calcCarpetMedium, unit: 'm²' },
-        { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 10, image: calcCarpetLarge, unit: 'm²', ...(isWroclaw ? { priceText: '8-10 zł' } : {}) },
-        { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
-        { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 25, image: calcTileCleaning, unit: 'm²' },
-        // Other services
-        { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 35, image: calcCarpetPickup, unit: 'm²' },
-        { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 8, image: calcCarpetCoveringImpregnation, unit: 'm²' },
         { id: 'stroller', name: t.prices.items.stroller, price: 100, image: calcStroller },
         { id: 'carseat', name: t.prices.items.carseat, price: 80, image: calcCarseat },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: calcDrying, promoBadge: t.promotions.dryingFreeSpring },
