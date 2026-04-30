@@ -333,7 +333,7 @@ const CityPage = () => {
         .map(cat => {
           // Auto: always base Wrocław prices and stays directly after leather furniture
           if (cat.id === 'auto') return cat;
-          const visibleCat = cat.id === 'other'
+          const visibleCat = (cat.id === 'other' || cat.id === 'floorCleaning')
             ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
             : cat;
           return applyMarkup([visibleCat])[0];
