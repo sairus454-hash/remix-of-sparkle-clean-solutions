@@ -81,27 +81,27 @@ const PriceCalculator = () => {
   {
     id: 'leatherPouf',
     name: t.prices.items.leatherPouf,
-    price: 50
+    price: 60
   }, {
     id: 'leatherChair',
     name: t.prices.items.leatherChair,
-    price: 45
+    price: 50
   }, {
     id: 'leatherArmchair',
     name: t.prices.items.leatherArmchair,
-    price: 81
+    price: 90
   }, {
     id: 'leatherSofa2',
     name: t.prices.items.leatherSofa2,
-    price: 162
+    price: 180
   }, {
     id: 'leatherSofa3',
     name: t.prices.items.leatherSofa3,
-    price: 198
+    price: 220
   }, {
     id: 'leatherSofaCorner',
     name: t.prices.items.leatherSofaCorner,
-    price: 243
+    price: 270
   },
   // Mattress with Drying
   {
