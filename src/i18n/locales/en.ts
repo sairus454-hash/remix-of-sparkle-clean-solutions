@@ -6,6 +6,7 @@ const enTranslations = {
       services: 'Upholstery Cleaning',
       prices: 'Prices',
       equipment: 'Modern Technologies',
+      floorCleaning: 'Floor cleaning',
       auto: 'Auto Cleaning',
       ozone: 'Ozonation',
       handyman: 'Handyman',

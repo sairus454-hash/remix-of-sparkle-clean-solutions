@@ -120,8 +120,8 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, on
         const { originalPrice, promoBadge, ...rest } = item;
         baseItem = { ...rest, price: originalPrice };
       }
-      // Apply markup for non-Wrocław (skip for 'auto' category — keep Wrocław base prices everywhere)
-      if (!isWroclaw && category !== 'auto') {
+      // Apply markup for non-Wrocław (skip for 'auto' and 'floorCleaning' — keep base prices everywhere)
+      if (!isWroclaw && category !== 'auto' && category !== 'floorCleaning') {
         return { ...baseItem, price: applyPrice(baseItem.price) };
       }
       return baseItem;

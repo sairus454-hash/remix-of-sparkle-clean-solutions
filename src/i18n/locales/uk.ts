@@ -6,6 +6,7 @@ const ukTranslations = {
       services: 'Хімчистка меблів',
       prices: 'Прайс',
       equipment: 'Сучасні технології',
+      floorCleaning: 'Хімчистка покриттів',
       auto: 'Хімчистка авто',
       ozone: 'Озонування',
       handyman: 'Майстер на годину',

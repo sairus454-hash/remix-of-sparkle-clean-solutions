@@ -6,6 +6,7 @@ const plTranslations = {
       services: 'Pranie tapicerki',
       prices: 'Cennik',
       equipment: 'Nowoczesne technologie',
+      floorCleaning: 'Pranie wykładzin',
       auto: 'Czyszczenie aut',
       ozone: 'Ozonowanie',
       handyman: 'Złota rączka',

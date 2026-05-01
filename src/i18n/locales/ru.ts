@@ -6,6 +6,7 @@ const ruTranslations = {
       services: 'Химчистка мебели',
       prices: 'Прайс',
       equipment: 'Современные технологии',
+      floorCleaning: 'Химчистка покрытий',
       auto: 'Химчистка авто',
       ozone: 'Озонирование',
       handyman: 'Мастер на час',
