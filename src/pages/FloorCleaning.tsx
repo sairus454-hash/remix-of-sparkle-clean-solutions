@@ -381,7 +381,8 @@ const FloorCleaning = () => {
         </section>
 
         {/* Ozonation pricing */}
-        <section className="py-20 bg-card">
+        <section id="ozonation" className="py-20 bg-card scroll-mt-20">
+
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
