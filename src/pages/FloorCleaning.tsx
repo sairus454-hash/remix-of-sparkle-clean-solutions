@@ -445,6 +445,34 @@ const FloorCleaning = () => {
           </div>
         </section>
 
+        {/* FAQ */}
+        <section className="py-20 bg-gradient-section">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-10">
+                <HelpCircle className="w-10 h-10 text-primary mx-auto mb-3" style={{ animation: 'float 3s ease-in-out infinite' }} />
+                <h2 className="font-serif text-3xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                  {c.faqTitle}
+                </h2>
+              </div>
+              <CircularRevealCard index={0}>
+                <Accordion type="single" collapsible className="bg-card rounded-2xl shadow-card border border-border p-2 md:p-4">
+                  {c.faqs.map((f, i) => (
+                    <AccordionItem key={i} value={`faq-${i}`} className="border-border">
+                      <AccordionTrigger className="text-left font-medium text-foreground hover:text-primary px-3">
+                        {f.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-muted-foreground leading-relaxed px-3">
+                        {f.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CircularRevealCard>
+            </div>
+          </div>
+        </section>
+
         {/* SEO Keywords block (visible) */}
         <section className="py-10 bg-gradient-section">
           <div className="container mx-auto px-4">
