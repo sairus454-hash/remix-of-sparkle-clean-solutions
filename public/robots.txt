@@ -1,12 +1,15 @@
 # robots.txt for https://masterclean1885.com
-# Last updated: 2026-04-24
+# Last updated: 2026-05-01
 
-# Default rules — allow all crawlers, disallow admin area
+# Default rules — allow all crawlers, disallow admin & technical paths
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
+# Block legacy ?lang= query URLs (canonical is always clean URL)
+Disallow: /*?lang=
+Disallow: /*&lang=
 
 # Search engines — explicit rules
 User-agent: Googlebot
@@ -14,6 +17,8 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
+Disallow: /*?lang=
+Disallow: /*&lang=
 
 User-agent: Googlebot-Image
 Allow: /
@@ -23,18 +28,38 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
+Disallow: /*?lang=
+Disallow: /*&lang=
 
 User-agent: YandexBot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
+Disallow: /*?lang=
+Disallow: /*&lang=
 
 User-agent: DuckDuckBot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
+
+# AI / LLM crawlers — allow (see /llms.txt)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 # Social media crawlers — full access for OG/Twitter previews
 User-agent: Twitterbot
@@ -54,3 +79,6 @@ Allow: /
 
 # Sitemap
 Sitemap: https://masterclean1885.com/sitemap.xml
+
+# Host (preferred canonical host)
+Host: https://masterclean1885.com
