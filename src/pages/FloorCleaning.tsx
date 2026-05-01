@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -266,6 +267,18 @@ const FloorCleaning = () => {
           },
         ]}
       />
+      {/* Per-page hreflang + canonical override (clean URLs, no query params per project SEO rules).
+          Helmet de-dupes <link rel="canonical"> and <link rel="alternate" hreflang="X"> by attribute,
+          so these tags supersede the global SEO defaults for /floor-cleaning. */}
+      <Helmet>
+        <link rel="canonical" href="https://masterclean1885.com/floor-cleaning" />
+        <link rel="alternate" hrefLang="pl" href="https://masterclean1885.com/floor-cleaning" />
+        <link rel="alternate" hrefLang="ru" href="https://masterclean1885.com/floor-cleaning" />
+        <link rel="alternate" hrefLang="en" href="https://masterclean1885.com/floor-cleaning" />
+        <link rel="alternate" hrefLang="uk" href="https://masterclean1885.com/floor-cleaning" />
+        <link rel="alternate" hrefLang="x-default" href="https://masterclean1885.com/floor-cleaning" />
+        <meta property="og:url" content="https://masterclean1885.com/floor-cleaning" />
+      </Helmet>
       <Layout>
         <BackToOrderButton />
 
