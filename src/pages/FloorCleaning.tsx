@@ -273,8 +273,38 @@ const FloorCleaning = () => {
               acceptedAnswer: { '@type': 'Answer', text: f.a },
             })),
           },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Ozonation',
+            name: language === 'pl' ? 'Ozonowanie pomieszczeń i samochodów'
+                : language === 'ru' ? 'Озонирование помещений и автомобилей'
+                : language === 'uk' ? 'Озонування приміщень та автомобілів'
+                : 'Ozonation of rooms and cars',
+            description: language === 'pl' ? 'Usuwanie nieprzyjemnych zapachów i dezynfekcja powietrza generatorem ozonu w mieszkaniach, biurach i samochodach.'
+                       : language === 'ru' ? 'Удаление неприятных запахов и дезинфекция воздуха генератором озона в квартирах, офисах и автомобилях.'
+                       : language === 'uk' ? 'Усунення неприємних запахів та дезінфекція повітря генератором озону в квартирах, офісах та автомобілях.'
+                       : 'Removing unpleasant odors and air disinfection with an ozone generator in apartments, offices and cars.',
+            areaServed: { '@type': 'City', name: 'Wrocław' },
+            url: 'https://masterclean1885.com/floor-cleaning#ozonation',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'MasterClean',
+              telephone: '+48575211401',
+              address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+            },
+            offers: [
+              { '@type': 'Offer', name: 'Ozonation 1-room apartment (20-40 m²)', price: '200', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation 2-room apartment (40-60 m²)', price: '250', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation 3-room apartment (60+ m²)', price: '300', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation office (up to 100 m²)', price: '350', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation office (100-150 m²)', price: '500', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Car ozonation', price: '150', priceCurrency: 'PLN' },
+            ],
+          },
         ]}
       />
+
       {/* Canonical + hreflang теперь всегда clean URLs через глобальный SEO-компонент,
           поэтому per-page Helmet override больше не нужен. */}
       <Layout>
