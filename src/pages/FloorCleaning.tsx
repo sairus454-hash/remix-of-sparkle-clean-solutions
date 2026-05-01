@@ -9,14 +9,13 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { CalculatorItem } from '@/types/calculator';
 import { Layers, Sparkles, ShieldCheck, Droplets, CheckCircle2, Truck } from 'lucide-react';
-import { useCity } from '@/hooks/useCity';
+
 import carpetBeforeAfter from '@/assets/floor-cleaning-carpet-before-after.jpg';
 import tileBeforeAfter from '@/assets/floor-cleaning-tile-before-after.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
 
 const FloorCleaning = () => {
   const { t, language } = useLanguage();
-  const { applyPrice } = useCity();
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
 
