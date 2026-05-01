@@ -87,17 +87,17 @@ const Services = () => {
     { id: 'sofa2', name: t.prices.items.sofa2, price: 150, image: calcSofa2 },
     { id: 'sofa3', name: t.prices.items.sofa3, price: 170, image: calcSofa3 },
     { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200, image: calcSofaCorner },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 240, image: calcSofaCornerLarge },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 260, image: calcSofaCornerLarge },
     { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 150, image: calcKitchenCorner },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 90, image: calcHeadboard },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 90, image: calcBedframe },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100, image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100, image: calcBedframe },
   ];
 
   const mattressItems = [
     { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 130, image: calcMattressSingle },
     { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 200, image: calcMattressDouble },
     { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 200, image: calcMattressSingle },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 270, image: calcMattressDouble },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 300, image: calcMattressDouble },
   ];
 
   const { t: translations } = useLanguage();

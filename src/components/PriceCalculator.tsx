@@ -54,7 +54,7 @@ const PriceCalculator = () => {
   }, {
     id: 'sofaCornerLarge',
     name: t.prices.items.sofaCornerLarge,
-    price: 250
+    price: 260
   }, {
     id: 'carpet',
     name: t.prices.items.carpet,
@@ -119,7 +119,7 @@ const PriceCalculator = () => {
   }, {
     id: 'mattressDoubleDry2',
     name: t.prices.items.mattressDoubleDry2,
-    price: 252
+    price: 300
   },
   // Ozonation
   {

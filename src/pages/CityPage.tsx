@@ -125,10 +125,10 @@ const CityPage = () => {
         { id: 'sofa2', name: t.prices.items.sofa2, price: 130, image: img('calc-sofa2.jpg') },
         { id: 'sofa3', name: t.prices.items.sofa3, price: 150, image: img('calc-sofa3.jpg') },
         { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, image: img('calc-sofa-corner.jpg') },
-        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, image: img('calc-sofa-corner-large.jpg') },
+        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 260, image: img('calc-sofa-corner-large.jpg') },
         { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: img('calc-kitchen-corner.jpg') },
-        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, image: img('calc-headboard.jpg') },
-        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, image: img('calc-bedframe.jpg') },
+        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100, image: img('calc-headboard.jpg') },
+        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100, image: img('calc-bedframe.jpg') },
         
       ],
     },
@@ -138,7 +138,7 @@ const CityPage = () => {
         { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 115, image: img('calc-mattress-single.jpg') },
         { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 180, image: img('calc-mattress-single.jpg') },
         { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 175, image: img('calc-mattress-double.jpg') },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 240, image: img('calc-mattress-double.jpg') },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 300, image: img('calc-mattress-double.jpg') },
         
       ],
     },

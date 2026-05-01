@@ -529,7 +529,7 @@ Sprzątanie generalne:
 • Sofa 2-osobowa — 130 PLN
 • Sofa 3-osobowa — 150 PLN
 • Sofa narożna — 180 PLN
-• Duża sofa narożna — 210 PLN
+• Duża sofa narożna — 260 PLN
 • Narożnik kuchenny — 130 PLN
 • Dywan — 20 PLN/m²
 • Meble z floku — +50% do ceny zwykłej
@@ -562,10 +562,10 @@ Sprzątanie generalne:
 🛏 MATERACE (🔥 -10%):
 • Materac dwuosobowy — 175 PLN
 • Materac jednoosobowy — 115 PLN
-• Czyszczenie zagłówka łóżka — 80 PLN
-• Czyszczenie ramy łóżka — 80 PLN
+• Czyszczenie zagłówka łóżka — 100 PLN
+• Czyszczenie ramy łóżka — 100 PLN
 • Materac jednoosobowy (2 strony) — 180 PLN
-• Materac dwuosobowy (2 strony) — 240 PLN
+• Materac dwuosobowy (2 strony) — 300 PLN
 
 
 💨 OZONOWANIE:
