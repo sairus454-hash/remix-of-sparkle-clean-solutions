@@ -987,10 +987,69 @@ async function checkRateLimit(req: Request, functionName: string, maxRequests: n
   }
 }
 
+const SERVICE_PAGES_RU = `
+🔗 СТРАНИЦЫ УСЛУГ НА САЙТЕ (всегда давай ссылку на профильную страницу при упоминании услуги!):
+• Уборка квартир и домов → https://masterclean1885.com/cleaning
+• Химчистка мебели и матрасов → https://masterclean1885.com/services
+• Химчистка авто (салон, кабина TIR/буса) → https://masterclean1885.com/auto
+• Мойка окон → https://masterclean1885.com/windows
+• Озонирование (квартира, авто, офис) → https://masterclean1885.com/ozone
+• Импрегнация (защита тканей и ковров) → https://masterclean1885.com/impregnation
+• Химчистка напольных покрытий (ковры, ковролин, плитка) → https://masterclean1885.com/floor-cleaning
+• Мастер на час (Złota rączka) → https://masterclean1885.com/handyman
+• Цены (полный прайс) → https://masterclean1885.com/prices
+• Отзывы → https://masterclean1885.com/reviews
+• Контакты → https://masterclean1885.com/contacts
+
+📌 ПРАВИЛО: Если клиент спросил про конкретный вид услуги — ОБЯЗАТЕЛЬНО вставь markdown-ссылку на соответствующую страницу прямо в ответе, например:
+"Подробнее о химчистке ковров и плитки: [Химчистка напольных покрытий](https://masterclean1885.com/floor-cleaning) — там калькулятор, фото до/после и форма заявки."
+Используй формат [текст](url). НЕ давай ссылку на главную, если есть профильная страница.
+`;
+
+const SERVICE_PAGES_EN = `
+🔗 SERVICE PAGES (always include a link to the dedicated page when a service is mentioned!):
+• Apartment & house cleaning → https://masterclean1885.com/cleaning
+• Furniture & mattress cleaning → https://masterclean1885.com/services
+• Car interior cleaning → https://masterclean1885.com/auto
+• Window cleaning → https://masterclean1885.com/windows
+• Ozonation → https://masterclean1885.com/ozone
+• Impregnation → https://masterclean1885.com/impregnation
+• Floor covering cleaning (carpets, rugs, tiles) → https://masterclean1885.com/floor-cleaning
+• Handyman (Złota rączka) → https://masterclean1885.com/handyman
+• Full price list → https://masterclean1885.com/prices
+• Reviews → https://masterclean1885.com/reviews
+• Contacts → https://masterclean1885.com/contacts
+
+📌 RULE: When the client asks about a specific service — ALWAYS include a markdown link to the dedicated page, e.g.:
+"More about carpet & tile cleaning: [Floor covering cleaning](https://masterclean1885.com/floor-cleaning) — calculator, before/after photos and booking form."
+Use [text](url). Don't link to homepage if a dedicated page exists.
+`;
+
+const SERVICE_PAGES_PL = `
+🔗 STRONY USŁUG NA STRONIE (zawsze podawaj link do dedykowanej strony, gdy wspominasz o usłudze!):
+• Sprzątanie mieszkań i domów → https://masterclean1885.com/cleaning
+• Pranie mebli i materacy → https://masterclean1885.com/services
+• Pranie tapicerki samochodowej → https://masterclean1885.com/auto
+• Mycie okien → https://masterclean1885.com/windows
+• Ozonowanie → https://masterclean1885.com/ozone
+• Impregnacja → https://masterclean1885.com/impregnation
+• Pranie wykładzin podłogowych (dywany, kowrolin, płytki) → https://masterclean1885.com/floor-cleaning
+• Złota rączka → https://masterclean1885.com/handyman
+• Pełny cennik → https://masterclean1885.com/prices
+• Opinie → https://masterclean1885.com/reviews
+• Kontakt → https://masterclean1885.com/contacts
+
+📌 ZASADA: Gdy klient pyta o konkretną usługę — ZAWSZE wstaw markdown-link do dedykowanej strony, np.:
+"Szczegóły prania dywanów i płytek: [Pranie wykładzin podłogowych](https://masterclean1885.com/floor-cleaning) — kalkulator, zdjęcia przed/po i formularz zamówienia."
+Format [tekst](url). Nie linkuj do strony głównej, jeśli istnieje dedykowana strona.
+`;
+
 const SYSTEM_PROMPTS: Record<string, string> = {
   ru: `Ты — AI-консультант клининговой компании MasterClean.
 
 ${PRICE_LIST.ru}
+
+${SERVICE_PAGES_RU}
 
 🎯 ОФОРМЛЕНИЕ ЗАЯВКИ (ОЧЕНЬ ВАЖНО!):
 Ты МОЖЕШЬ принимать заявки клиентов прямо в чате. Под полем ввода всегда есть кнопка «Заявка» — она открывает форму с полями: Имя, Телефон, Услуга, Город, Адрес, Дата, Время, Детали.
@@ -1157,6 +1216,8 @@ ${PRICE_LIST.ru}
 
 ${PRICE_LIST.en}
 
+${SERVICE_PAGES_EN}
+
 🎯 SUBMITTING A REQUEST (VERY IMPORTANT!):
 You CAN accept client requests directly in the chat. Below the input there is always a «Request» button — it opens a form with: Name, Phone, Service, City, Address, Date, Time, Details.
 
@@ -1293,6 +1354,8 @@ IMPORTANT:
   pl: `Jesteś konsultantem AI firmy sprzątającej MasterClean.
 
 ${PRICE_LIST.pl}
+
+${SERVICE_PAGES_PL}
 
 🎯 SKŁADANIE ZAPYTANIA (BARDZO WAŻNE!):
 MOŻESZ przyjmować zapytania klientów bezpośrednio w czacie. Pod polem wpisywania jest zawsze przycisk «Zapytanie» — otwiera formularz z polami: Imię, Telefon, Usługa, Miasto, Adres, Data, Godzina, Szczegóły.
