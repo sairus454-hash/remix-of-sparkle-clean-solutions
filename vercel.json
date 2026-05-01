@@ -52,6 +52,7 @@
     { "source": "/ozone", "destination": "/index.html" },
     { "source": "/windows", "destination": "/index.html" },
     { "source": "/cleaning", "destination": "/index.html" },
+    { "source": "/floor-cleaning", "destination": "/index.html" },
     { "source": "/blog", "destination": "/index.html" },
     { "source": "/blog/:id", "destination": "/index.html" },
     { "source": "/handyman", "destination": "/index.html" },
