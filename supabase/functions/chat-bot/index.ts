@@ -119,7 +119,7 @@ const PRICE_LIST = {
 • Импрегнация ковра — 5 PLN/м²
 • Чистка ковролина (20-50 м²) — 15 PLN/м²
 • Чистка ковролина (50+ м²) — 7-10 PLN/м²
-• Стирка ковров с забором и доставкой — 35 PLN/м²
+• Стирка ковров с забором и доставкой — 30 PLN/м²
 
 🧹🚐 СТИРКА КОВРОВ С ЗАБОРОМ (подробно):
 Услуга «Стирка ковров с забором» — это профессиональная глубокая стирка ковров в нашей мастерской.
@@ -130,8 +130,8 @@ const PRICE_LIST = {
 4. Ковёр сушится в специальных условиях (без деформации и усадки).
 5. Чистый и свежий ковёр доставляется обратно к вам домой.
 
-Цена: 35 PLN за 1 м² (измеряется длина × ширина ковра).
-Пример: ковёр 2×3 м = 6 м² × 35 PLN = 210 PLN.
+Цена: 30 PLN за 1 м² (измеряется длина × ширина ковра).
+Пример: ковёр 2×3 м = 6 м² × 30 PLN = 180 PLN.
 
 Преимущества:
 ✅ Глубокая стирка, невозможная в домашних условиях
@@ -355,7 +355,7 @@ Deep cleaning:
 • Carpet impregnation — 5 PLN/m²
 • Carpet floor cleaning (20-50 m²) — 15 PLN/m²
 • Carpet floor cleaning (50+ m²) — 7-10 PLN/m²
-• Carpet washing with pickup & delivery — 35 PLN/m²
+• Carpet washing with pickup & delivery — 30 PLN/m²
 
 🧹🚐 CARPET WASHING WITH PICKUP (details):
 "Carpet washing with pickup" is a professional deep carpet washing service at our workshop.
@@ -594,7 +594,7 @@ Sprzątanie generalne:
 • Impregnacja dywanu — 5 PLN/m²
 • Czyszczenie wykładziny (20-50 m²) — 15 PLN/m²
 • Czyszczenie wykładziny (50+ m²) — 7-10 PLN/m²
-• Pranie dywanów z odbiorem i dostawą — 35 PLN/m²
+• Pranie dywanów z odbiorem i dostawą — 30 PLN/m²
 
 🧹🚐 PRANIE DYWANÓW Z ODBIOREM (szczegóły):
 Usługa „Pranie dywanów z odbiorem" to profesjonalne głębokie pranie dywanów w naszym warsztacie.
@@ -605,8 +605,8 @@ Jak to działa:
 4. Dywan jest suszony w specjalnych warunkach (bez deformacji i kurczenia).
 5. Czysty i świeży dywan dostarczamy z powrotem do Twojego domu.
 
-Cena: 35 PLN za 1 m² (mierzone długość × szerokość dywanu).
-Przykład: dywan 2×3 m = 6 m² × 35 PLN = 210 PLN.
+Cena: 30 PLN za 1 m² (mierzone długość × szerokość dywanu).
+Przykład: dywan 2×3 m = 6 m² × 30 PLN = 180 PLN.
 
 Korzyści:
 ✅ Głębokie pranie niemożliwe do osiągnięcia w domu
@@ -831,7 +831,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Імпрегнація килима — 5 PLN/м²
 • Чистка килимового покриття (20-50 м²) — 15 PLN/м²
 • Чистка килимового покриття (50+ м²) — 7-10 PLN/м²
-• Прання килимів із забором та доставкою — 35 PLN/м²
+• Прання килимів із забором та доставкою — 30 PLN/м²
 
 🧹🚐 ПРАННЯ КИЛИМІВ ІЗ ЗАБОРОМ (детально):
 Послуга «Прання килимів із забором» — це професійне глибоке прання килимів у нашій майстерні.
@@ -842,8 +842,8 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 4. Килим сушиться в спеціальних умовах (без деформації та усадки).
 5. Чистий та свіжий килим доставляється назад до вашого дому.
 
-Ціна: 35 PLN за 1 м² (вимірюється довжина × ширина килима).
-Приклад: килим 2×3 м = 6 м² × 35 PLN = 210 PLN.
+Ціна: 30 PLN за 1 м² (вимірюється довжина × ширина килима).
+Приклад: килим 2×3 м = 6 м² × 30 PLN = 180 PLN.
 
 Переваги:
 ✅ Глибоке прання, неможливе в домашніх умовах
