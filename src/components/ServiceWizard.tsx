@@ -171,10 +171,7 @@ export const ServiceWizard = ({
             {copy.citySuggestions.map((c) => (
               <button
                 key={c}
-                onClick={() => {
-                  setCity(c);
-                  setStep('qty');
-                }}
+                onClick={() => confirmCity(c)}
                 className="px-3 py-1.5 text-xs rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20"
               >
                 🏙 {c}
@@ -188,13 +185,13 @@ export const ServiceWizard = ({
               placeholder={copy.cityPrompt}
               className={cn('flex-1', isMobile ? 'h-10 text-base' : 'h-9 text-sm')}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && city.trim()) setStep('qty');
+                if (e.key === 'Enter' && city.trim()) confirmCity(city);
               }}
             />
             <Button
               size="sm"
               disabled={!city.trim()}
-              onClick={() => setStep('qty')}
+              onClick={() => confirmCity(city)}
             >
               →
             </Button>
@@ -205,6 +202,18 @@ export const ServiceWizard = ({
       {/* Step: quantity */}
       {step === 'qty' && service && (
         <div className="space-y-2">
+          {city && (
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <MapPin className="w-3 h-3 text-primary" />
+              <span className="flex-1 truncate">{city}</span>
+              <button
+                onClick={changeCity}
+                className="text-primary hover:underline"
+              >
+                {copy.changeCity}
+              </button>
+            </div>
+          )}
           <div className="flex flex-wrap gap-1.5">
             {service.suggestions.map((q) => (
               <button
