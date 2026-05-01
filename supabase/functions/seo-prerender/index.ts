@@ -412,11 +412,17 @@ function getPageMeta(path: string): PageMeta | null {
 }
 
 function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
-  const basePath = `${SITE_URL}${path}`;
-  // Self-referencing canonical: each language version is its own canonical
-  // so Google indexes RU/EN/UK/PL versions independently instead of consolidating
-  // them into Polish.
-  const canonicalUrl = lang === 'pl' ? basePath : `${basePath}?lang=${lang}`;
+  // `path` is the LOGICAL path (already stripped of any /ru, /en, /uk prefix
+  // by the caller). We rebuild the canonical URL by re-adding the prefix
+  // for the active language (PL stays at root).
+  const cleanPath = path === '' ? '/' : path;
+  const buildLangUrl = (l: string) =>
+    l === 'pl'
+      ? `${SITE_URL}${cleanPath}`
+      : `${SITE_URL}/${l}${cleanPath === '/' ? '' : cleanPath}`;
+
+  const canonicalUrl = buildLangUrl(lang);
+  const basePath = buildLangUrl('pl'); // x-default = PL
   const image = meta.image || DEFAULT_IMAGE;
   const type = meta.type || 'website';
   const ogLocaleMap: Record<string, string> = {
@@ -455,12 +461,12 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   <meta name="twitter:description" content="${escapeHtml(meta.description)}">
   <meta name="twitter:image" content="${image}">
 
-  <!-- Hreflang — each language has its own URL (Polish is default, no param) -->
-  <link rel="alternate" hreflang="pl" href="${basePath}">
-  <link rel="alternate" hreflang="ru" href="${basePath}?lang=ru">
-  <link rel="alternate" hreflang="en" href="${basePath}?lang=en">
-  <link rel="alternate" hreflang="uk" href="${basePath}?lang=uk">
-  <link rel="alternate" hreflang="x-default" href="${basePath}">
+  <!-- Hreflang — each language lives at its own URL prefix (PL = root) -->
+  <link rel="alternate" hreflang="pl" href="${buildLangUrl('pl')}">
+  <link rel="alternate" hreflang="ru" href="${buildLangUrl('ru')}">
+  <link rel="alternate" hreflang="en" href="${buildLangUrl('en')}">
+  <link rel="alternate" hreflang="uk" href="${buildLangUrl('uk')}">
+  <link rel="alternate" hreflang="x-default" href="${buildLangUrl('pl')}">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
