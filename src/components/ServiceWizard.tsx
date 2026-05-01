@@ -16,13 +16,37 @@ import {
 
 type Step = 'menu' | 'city' | 'qty' | 'result';
 
+export interface WizardPrefill {
+  serviceKey: string;
+  serviceLabel: string;
+  city: string;
+  qty: number;
+  unit: string;
+  estimate: string;
+}
+
 interface ServiceWizardProps {
   language: string;
   isMobile: boolean;
   onClose: () => void;
   /** Push a markdown summary into the chat history when result is shown */
   onPushSummary: (markdown: string) => void;
+  /** Open the booking form prefilled with the latest estimate */
+  onBookNow?: (prefill: WizardPrefill) => void;
 }
+
+// ChatBotOrderForm uses these service keys; map our wizard keys to them.
+const FORM_SERVICE_KEY: Record<string, string> = {
+  cleaning: 'cleaning',
+  furniture: 'furniture',
+  mattress: 'mattress',
+  auto: 'auto',
+  windows: 'windows',
+  ozone: 'ozone',
+  floor: 'carpet',
+  handyman: 'handyman',
+  gardening: 'gardening',
+};
 
 /**
  * In-chat interactive service menu + quick price estimator.
@@ -34,6 +58,7 @@ export const ServiceWizard = ({
   isMobile,
   onClose,
   onPushSummary,
+  onBookNow,
 }: ServiceWizardProps) => {
   const lang: ChatLang = (['ru', 'en', 'pl', 'uk'].includes(language) ? language : 'ru') as ChatLang;
   const copy = ESTIMATE_COPY[lang];
@@ -46,6 +71,7 @@ export const ServiceWizard = ({
   const [city, setCity] = useState(stored?.name ?? '');
   const [rememberedCity, setRememberedCity] = useState(stored?.name ?? '');
   const [qty, setQty] = useState<number | ''>('');
+  const [lastEstimate, setLastEstimate] = useState<{ qty: number; range: string } | null>(null);
 
   const pickService = (s: ServiceMenuItem) => {
     setService(s);
@@ -88,7 +114,20 @@ export const ServiceWizard = ({
       copy.disclaimer,
     ].join('\n\n');
     onPushSummary(summary);
+    setLastEstimate({ qty: chosenQty, range });
     setStep('result');
+  };
+
+  const handleBookNow = () => {
+    if (!service || !lastEstimate || !onBookNow) return;
+    onBookNow({
+      serviceKey: FORM_SERVICE_KEY[service.key] || service.key,
+      serviceLabel: service.label[lang],
+      city,
+      qty: lastEstimate.qty,
+      unit: service.unit[lang],
+      estimate: lastEstimate.range,
+    });
   };
 
   return (
@@ -256,7 +295,16 @@ export const ServiceWizard = ({
         <div className="space-y-2 text-sm">
           <p className="text-muted-foreground text-xs">{copy.disclaimer.replace(/_/g, '')}</p>
           <div className="flex flex-wrap gap-2">
-            <Button asChild size="sm" className="bg-gradient-to-r from-primary to-fresh">
+            {onBookNow && (
+              <Button
+                size="sm"
+                onClick={handleBookNow}
+                className="bg-gradient-to-r from-primary to-fresh"
+              >
+                {copy.bookNow}
+              </Button>
+            )}
+            <Button asChild size="sm" variant="outline">
               <Link to={service.url} onClick={onClose}>
                 🔗 {copy.seePage}
               </Link>

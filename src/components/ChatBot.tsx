@@ -122,6 +122,7 @@ const ChatBot = () => {
   const [showPhotoPreview, setShowPhotoPreview] = useState(false);
   const [inputReadonly, setInputReadonly] = useState(true);
   const [showWizard, setShowWizard] = useState(false);
+  const [wizardPrefill, setWizardPrefill] = useState<{ serviceKey: string; city: string; details: string } | null>(null);
   
   // Voice input state
   const [isListening, setIsListening] = useState(false);
@@ -861,9 +862,11 @@ const ChatBot = () => {
         {showLeadForm && !leadSubmitted && (
           <ChatBotOrderForm
             onSubmit={handleOrderSubmit}
-            onCancel={() => setShowLeadForm(false)}
+            onCancel={() => { setShowLeadForm(false); setWizardPrefill(null); }}
             isLoading={isLoading}
-            defaultServiceKey={guessedServiceKey}
+            defaultServiceKey={wizardPrefill?.serviceKey || guessedServiceKey}
+            defaultCity={wizardPrefill?.city || ''}
+            defaultDetails={wizardPrefill?.details || ''}
           />
         )}
 
@@ -881,6 +884,16 @@ const ChatBot = () => {
               };
               setMessages((prev) => [...prev, summaryMsg]);
               playNotificationSound();
+            }}
+            onBookNow={(p) => {
+              const detailsLines = [
+                `${p.serviceLabel}: ${p.qty} ${p.unit}`,
+                p.city ? `Город: ${p.city}` : '',
+                `Ориентировочная стоимость: ${p.estimate}`,
+              ].filter(Boolean).join('\n');
+              setWizardPrefill({ serviceKey: p.serviceKey, city: p.city, details: detailsLines });
+              setShowWizard(false);
+              setShowLeadForm(true);
             }}
           />
         )}
