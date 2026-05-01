@@ -8,6 +8,7 @@ const sitemapUrls = [
   { loc: '/prices', label: 'Cennik', priority: '0.9', changefreq: 'weekly' },
   { loc: '/about', label: 'O nas', priority: '0.8', changefreq: 'monthly' },
   { loc: '/cleaning', label: 'Sprzątanie', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/floor-cleaning', label: 'Pranie wykładzin podłogowych', priority: '0.85', changefreq: 'weekly' },
   { loc: '/auto', label: 'Czyszczenie aut', priority: '0.8', changefreq: 'weekly' },
   { loc: '/windows', label: 'Mycie okien', priority: '0.8', changefreq: 'weekly' },
   { loc: '/handyman', label: 'Złota rączka', priority: '0.8', changefreq: 'weekly' },

@@ -13,6 +13,12 @@ import { Layers, Sparkles, ShieldCheck, Droplets, CheckCircle2, Truck } from 'lu
 import carpetBeforeAfter from '@/assets/floor-cleaning-carpet-before-after.jpg';
 import tileBeforeAfter from '@/assets/floor-cleaning-tile-before-after.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
+import imgCarpetCovering from '@/assets/calc-carpet.jpg';
+import imgCarpetMedium from '@/assets/calc-carpet-medium.jpg';
+import imgCarpetLarge from '@/assets/calc-carpet-large.jpg';
+import imgCarpetPickup from '@/assets/calc-carpet-pickup.jpg';
+import imgCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
+import imgTileCleaning from '@/assets/calc-tile-cleaning.jpg';
 
 const FloorCleaning = () => {
   const { t, language } = useLanguage();
@@ -21,12 +27,12 @@ const FloorCleaning = () => {
 
   // Floor-cleaning prices are exempt from city markup (base Wrocław everywhere)
   const items = [
-    { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Wykładzina dywanowa (1-20 m²)', price: 15, unit: 'm²', image: carpetBeforeAfter },
-    { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Czyszczenie wykładziny (20-50 m²)', price: 10, unit: 'm²', image: carpetBeforeAfter },
-    { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Czyszczenie wykładziny (50+ m²)', price: 7, priceText: '7-10 zł', unit: 'm²', image: carpetBeforeAfter },
-    { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 30, unit: 'm²', image: carpetBeforeAfter },
-    { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Impregnacja dywanu', price: 5, unit: 'm²', image: carpetBeforeAfter },
-    { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Czyszczenie płytek', price: 20, unit: 'm²', image: tileBeforeAfter },
+    { id: 'carpetCovering', name: t.prices?.items?.carpetCovering || 'Wykładzina dywanowa (1-20 m²)', price: 15, unit: 'm²', image: imgCarpetCovering },
+    { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Czyszczenie wykładziny (20-50 m²)', price: 10, unit: 'm²', image: imgCarpetMedium },
+    { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Czyszczenie wykładziny (50+ m²)', price: 7, priceText: '7-10 zł', unit: 'm²', image: imgCarpetLarge },
+    { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 30, unit: 'm²', image: imgCarpetPickup },
+    { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Impregnacja dywanu', price: 5, unit: 'm²', image: imgCarpetImpregnation },
+    { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Czyszczenie płytek', price: 20, unit: 'm²', image: imgTileCleaning },
   ];
 
   const handleSendToForm = (calcItems: CalculatorItem[], total: number) => {
@@ -235,7 +241,7 @@ const FloorCleaning = () => {
                     <AnimatedImage
                       src={heroImage}
                       alt={c.title}
-                      className="w-full h-80 object-cover rounded-xl"
+                      className="w-full h-[28rem] md:h-[32rem] object-contain object-center rounded-xl bg-card"
                       duration={800}
                     />
                   </div>
