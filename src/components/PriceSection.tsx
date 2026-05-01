@@ -154,9 +154,10 @@ interface CategorySection {
 interface PriceSectionProps {
   defaultAllOpen?: boolean;
   showFilters?: boolean;
+  excludeCategoryIds?: string[];
 }
 
-const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSectionProps) => {
+const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCategoryIds = [] }: PriceSectionProps) => {
   const { t, language } = useLanguage();
   const { isWroclaw, slug } = useCity();
   const [openCategories, setOpenCategories] = useState<Set<string>>(new Set());
@@ -380,6 +381,9 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false }: PriceSect
 
   const categories = useMemo(() => {
     let filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
+    if (excludeCategoryIds.length > 0) {
+      filtered = filtered.filter(c => !excludeCategoryIds.includes(c.id));
+    }
     if (!isCleaningCity) {
       filtered = filtered
         .filter(c => c.id !== 'cleaning')
