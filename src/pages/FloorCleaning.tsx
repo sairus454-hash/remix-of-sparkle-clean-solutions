@@ -224,28 +224,39 @@ const FloorCleaning = () => {
         canonical="/floor-cleaning"
         image="https://masterclean1885.com/og-image.png"
         breadcrumbs={[{ name: c.title.split('—')[0].trim(), path: '/floor-cleaning' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          serviceType: 'Floor covering cleaning',
-          name: c.title,
-          description: c.desc,
-          url: 'https://masterclean1885.com/floor-cleaning',
-          provider: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Floor covering cleaning',
+            name: c.title,
+            description: c.desc,
+            url: 'https://masterclean1885.com/floor-cleaning',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'MasterClean',
+              telephone: '+48575211401',
+              address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+            },
+            offers: [
+              { '@type': 'Offer', name: 'Carpet covering 1-20 m²', price: '15', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Carpet 20-50 m²', price: '10', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Carpet 50+ m²', price: '7', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Carpet pickup cleaning', price: '30', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Tile cleaning', price: '20', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Carpet impregnation', price: '5', priceCurrency: 'PLN' },
+            ],
           },
-          offers: [
-            { '@type': 'Offer', name: 'Carpet covering 1-20 m²', price: '15', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Carpet 20-50 m²', price: '10', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Carpet 50+ m²', price: '7', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Carpet pickup cleaning', price: '30', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Tile cleaning', price: '20', priceCurrency: 'PLN' },
-            { '@type': 'Offer', name: 'Carpet impregnation', price: '5', priceCurrency: 'PLN' },
-          ],
-        }}
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: c.faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
+        ]}
       />
       <Layout>
         <BackToOrderButton />
