@@ -16,13 +16,37 @@ import {
 
 type Step = 'menu' | 'city' | 'qty' | 'result';
 
+export interface WizardPrefill {
+  serviceKey: string;
+  serviceLabel: string;
+  city: string;
+  qty: number;
+  unit: string;
+  estimate: string;
+}
+
 interface ServiceWizardProps {
   language: string;
   isMobile: boolean;
   onClose: () => void;
   /** Push a markdown summary into the chat history when result is shown */
   onPushSummary: (markdown: string) => void;
+  /** Open the booking form prefilled with the latest estimate */
+  onBookNow?: (prefill: WizardPrefill) => void;
 }
+
+// ChatBotOrderForm uses these service keys; map our wizard keys to them.
+const FORM_SERVICE_KEY: Record<string, string> = {
+  cleaning: 'cleaning',
+  furniture: 'furniture',
+  mattress: 'mattress',
+  auto: 'auto',
+  windows: 'windows',
+  ozone: 'ozone',
+  floor: 'carpet',
+  handyman: 'handyman',
+  gardening: 'gardening',
+};
 
 /**
  * In-chat interactive service menu + quick price estimator.
@@ -34,6 +58,7 @@ export const ServiceWizard = ({
   isMobile,
   onClose,
   onPushSummary,
+  onBookNow,
 }: ServiceWizardProps) => {
   const lang: ChatLang = (['ru', 'en', 'pl', 'uk'].includes(language) ? language : 'ru') as ChatLang;
   const copy = ESTIMATE_COPY[lang];
