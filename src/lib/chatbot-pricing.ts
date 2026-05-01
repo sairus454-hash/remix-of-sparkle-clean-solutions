@@ -225,6 +225,62 @@ export const isBaseCity = (city: string) => {
   return BASE_CITIES.some((b) => normalized.includes(b.replace(/[^a-z]/g, '')));
 };
 
+/**
+ * Shared key with `useCity` hook (src/hooks/useCity.ts) so that a city
+ * picked in the chat wizard auto-populates the global pricing engine
+ * (calculator, cart, etc.) on the next render.
+ */
+export const CITY_STORAGE_KEY = 'masterclean_selected_city';
+
+/** Convert any free-text city name to a normalized slug ("Wrocław" → "wroclaw"). */
+export const cityToSlug = (city: string): string =>
+  city
+    .toLowerCase()
+    .trim()
+    .replace(/[ąćęłńóśźż]/g, (c) => ({ ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' }[c]!))
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z-]/g, '');
+
+/** Reverse lookup: slug → display name (uses cities catalog when available). */
+export const slugToCityName = (slug: string, fallback = ''): string => {
+  if (!slug) return fallback;
+  // Lazy require to avoid circular import at module load
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { getCityBySlug } = require('@/data/cities') as typeof import('@/data/cities');
+    const c = getCityBySlug(slug);
+    if (c) return c.name;
+  } catch {
+    /* ignore */
+  }
+  // Fallback: capitalize slug
+  return slug.charAt(0).toUpperCase() + slug.slice(1);
+};
+
+/** Read the remembered city slug from localStorage (SSR-safe). */
+export const readStoredCity = (): { slug: string; name: string } | null => {
+  if (typeof window === 'undefined') return null;
+  try {
+    const slug = window.localStorage.getItem(CITY_STORAGE_KEY);
+    if (!slug) return null;
+    return { slug, name: slugToCityName(slug, slug) };
+  } catch {
+    return null;
+  }
+};
+
+/** Persist a city to localStorage so it carries over to the calculator. */
+export const writeStoredCity = (city: string): void => {
+  if (typeof window === 'undefined' || !city.trim()) return;
+  try {
+    window.localStorage.setItem(CITY_STORAGE_KEY, cityToSlug(city));
+    // Notify other tabs / hooks listening for storage changes
+    window.dispatchEvent(new StorageEvent('storage', { key: CITY_STORAGE_KEY }));
+  } catch {
+    /* ignore quota / privacy mode */
+  }
+};
+
 export interface EstimateResult {
   min: number;
   max: number;
@@ -276,6 +332,8 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Это ориентир. Финальная цена зависит от типа покрытия, степени загрязнения и доп. услуг. Менеджер уточнит при оформлении._',
     pickAnother: '↩️ Выбрать другую услугу',
+    rememberedCity: (name: string) => `📍 Город: **${name}** (запомнен из прошлого расчёта)`,
+    changeCity: '🏙 Сменить',
   },
   en: {
     menuTitle: '🛠 Our services — pick one:',
@@ -294,6 +352,8 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Estimate only. Final price depends on material type, soiling and add-ons. Manager will confirm._',
     pickAnother: '↩️ Pick another service',
+    rememberedCity: (name: string) => `📍 City: **${name}** (remembered from last quote)`,
+    changeCity: '🏙 Change',
   },
   pl: {
     menuTitle: '🛠 Nasze usługi — wybierz:',
@@ -314,6 +374,8 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Szacunek. Ostateczna cena zależy od materiału, stopnia zabrudzenia i dodatków. Manager potwierdzi._',
     pickAnother: '↩️ Wybierz inną usługę',
+    rememberedCity: (name: string) => `📍 Miasto: **${name}** (zapamiętane z poprzedniej wyceny)`,
+    changeCity: '🏙 Zmień',
   },
   uk: {
     menuTitle: '🛠 Наші послуги — оберіть:',
@@ -334,5 +396,7 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Орієнтир. Фінальна ціна залежить від матеріалу, забруднення та додатків. Менеджер підтвердить._',
     pickAnother: '↩️ Обрати іншу послугу',
+    rememberedCity: (name: string) => `📍 Місто: **${name}** (запам'ятано з попереднього розрахунку)`,
+    changeCity: '🏙 Змінити',
   },
 } as const;

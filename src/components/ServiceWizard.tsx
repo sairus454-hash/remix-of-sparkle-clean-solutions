@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,6 +8,8 @@ import {
   SERVICES_MENU,
   ESTIMATE_COPY,
   computeEstimate,
+  readStoredCity,
+  writeStoredCity,
   type ServiceMenuItem,
   type ChatLang,
 } from '@/lib/chatbot-pricing';
@@ -36,14 +38,39 @@ export const ServiceWizard = ({
   const lang: ChatLang = (['ru', 'en', 'pl', 'uk'].includes(language) ? language : 'ru') as ChatLang;
   const copy = ESTIMATE_COPY[lang];
 
+  // Pre-fill city from previous chat session OR the global useCity store
+  // (same localStorage key — so a city picked in the calculator also lands here).
+  const stored = readStoredCity();
   const [step, setStep] = useState<Step>('menu');
   const [service, setService] = useState<ServiceMenuItem | null>(null);
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState(stored?.name ?? '');
+  const [rememberedCity, setRememberedCity] = useState(stored?.name ?? '');
   const [qty, setQty] = useState<number | ''>('');
+
+  const pickService = (s: ServiceMenuItem) => {
+    setService(s);
+    // If we already remember a city — skip city step, go straight to quantity.
+    setStep(rememberedCity ? 'qty' : 'city');
+  };
+
+  const confirmCity = (chosen: string) => {
+    const trimmed = chosen.trim();
+    if (!trimmed) return;
+    setCity(trimmed);
+    writeStoredCity(trimmed);
+    setRememberedCity(trimmed);
+    setStep('qty');
+  };
+
+  const changeCity = () => {
+    setRememberedCity('');
+    setCity('');
+    setStep('city');
+  };
 
   const back = () => {
     if (step === 'city') setStep('menu');
-    else if (step === 'qty') setStep('city');
+    else if (step === 'qty') setStep(rememberedCity ? 'menu' : 'city');
     else if (step === 'result') setStep('qty');
   };
 
@@ -102,25 +129,38 @@ export const ServiceWizard = ({
 
       {/* Step: service menu */}
       {step === 'menu' && (
-        <div className="grid grid-cols-2 gap-2">
-          {SERVICES_MENU.map((s) => (
-            <button
-              key={s.key}
-              onClick={() => {
-                setService(s);
-                setStep('city');
-              }}
-              className={cn(
-                'flex items-center gap-2 px-2 py-2 rounded-lg border border-primary/20',
-                'bg-primary/5 hover:bg-primary/10 active:scale-95 transition',
-                'text-left text-foreground',
-                isMobile ? 'min-h-[48px] text-xs' : 'text-xs',
-              )}
-            >
-              <span className="text-base">{s.emoji}</span>
-              <span className="flex-1 leading-tight">{s.label[lang]}</span>
-            </button>
-          ))}
+        <div className="space-y-2">
+          {rememberedCity && (
+            <div className="flex items-center gap-2 px-2 py-1.5 rounded-md bg-primary/10 border border-primary/20 text-xs text-foreground">
+              <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+              <span className="flex-1 truncate">
+                {copy.rememberedCity(rememberedCity).replace(/\*\*/g, '')}
+              </span>
+              <button
+                onClick={changeCity}
+                className="text-primary hover:underline whitespace-nowrap"
+              >
+                {copy.changeCity}
+              </button>
+            </div>
+          )}
+          <div className="grid grid-cols-2 gap-2">
+            {SERVICES_MENU.map((s) => (
+              <button
+                key={s.key}
+                onClick={() => pickService(s)}
+                className={cn(
+                  'flex items-center gap-2 px-2 py-2 rounded-lg border border-primary/20',
+                  'bg-primary/5 hover:bg-primary/10 active:scale-95 transition',
+                  'text-left text-foreground',
+                  isMobile ? 'min-h-[48px] text-xs' : 'text-xs',
+                )}
+              >
+                <span className="text-base">{s.emoji}</span>
+                <span className="flex-1 leading-tight">{s.label[lang]}</span>
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
@@ -131,10 +171,7 @@ export const ServiceWizard = ({
             {copy.citySuggestions.map((c) => (
               <button
                 key={c}
-                onClick={() => {
-                  setCity(c);
-                  setStep('qty');
-                }}
+                onClick={() => confirmCity(c)}
                 className="px-3 py-1.5 text-xs rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20"
               >
                 🏙 {c}
@@ -148,13 +185,13 @@ export const ServiceWizard = ({
               placeholder={copy.cityPrompt}
               className={cn('flex-1', isMobile ? 'h-10 text-base' : 'h-9 text-sm')}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && city.trim()) setStep('qty');
+                if (e.key === 'Enter' && city.trim()) confirmCity(city);
               }}
             />
             <Button
               size="sm"
               disabled={!city.trim()}
-              onClick={() => setStep('qty')}
+              onClick={() => confirmCity(city)}
             >
               →
             </Button>
@@ -165,6 +202,18 @@ export const ServiceWizard = ({
       {/* Step: quantity */}
       {step === 'qty' && service && (
         <div className="space-y-2">
+          {city && (
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <MapPin className="w-3 h-3 text-primary" />
+              <span className="flex-1 truncate">{city}</span>
+              <button
+                onClick={changeCity}
+                className="text-primary hover:underline"
+              >
+                {copy.changeCity}
+              </button>
+            </div>
+          )}
           <div className="flex flex-wrap gap-1.5">
             {service.suggestions.map((q) => (
               <button
