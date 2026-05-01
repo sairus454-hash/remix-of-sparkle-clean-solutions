@@ -8,6 +8,7 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
+import LegacyLangRedirect from "@/components/LegacyLangRedirect";
 import IdleMount from "@/components/IdleMount";
 
 // Defer non-critical global components — they don't affect FCP/LCP
@@ -73,6 +74,7 @@ const App = () => {
               <Suspense fallback={null}><SecurityHeaders /></Suspense>
                 <Suspense fallback={null}><PWAUpdatePrompt /></Suspense>
                 <ScrollToTop />
+                <LegacyLangRedirect />
 
                 <IdleMount timeout={2500}>
                   <Suspense fallback={null}>
