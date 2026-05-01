@@ -36,29 +36,31 @@ const cache: Partial<Record<Language, TranslationKeys>> = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(() => {
-    const saved = typeof localStorage !== 'undefined' ? localStorage.getItem('language') : null;
-    if (saved && SUPPORTED.includes(saved as Language)) return saved as Language;
-    return 'pl';
-  });
+  // Source of truth for language is the URL prefix (/ru, /en, /uk → otherwise PL).
+  // localStorage is only used to restore preference on the very first visit
+  // and to redirect users from / → /ru/ if that's what they had last time.
+  const readLangFromUrl = (): Language => {
+    if (typeof window === 'undefined') return 'pl';
+    const m = window.location.pathname.match(/^\/(ru|en|uk)(\/|$)/);
+    return (m ? m[1] : 'pl') as Language;
+  };
+
+  const [language, setLanguageState] = useState<Language>(readLangFromUrl);
 
   // Holds the active translation bundle. Falls back to PL while another
   // language is being fetched so the UI never shows empty strings.
   const [t, setT] = useState<TranslationKeys>(() => cache[language] ?? defaultTranslations);
 
+  // Keep <html lang> + cache in sync whenever language changes.
   useEffect(() => {
-    localStorage.setItem('language', language);
-    const langMap: Record<Language, string> = { pl: 'pl', ru: 'ru', en: 'en', uk: 'uk' };
-    document.documentElement.lang = langMap[language] || 'pl';
+    try { localStorage.setItem('language', language); } catch { /* noop */ }
+    document.documentElement.lang = language;
 
-    // If we already have it cached, swap immediately
     const cached = cache[language];
     if (cached) {
       setT(cached);
       return;
     }
-
-    // Otherwise lazy-load the language chunk
     let cancelled = false;
     loaders[language]()
       .then((mod) => {
@@ -69,11 +71,44 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
       .catch((err) => {
         console.error('Failed to load language chunk:', language, err);
       });
-
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [language]);
+
+  // Listen for SPA route changes — keep `language` in sync with the URL prefix
+  // (e.g. user clicks a localized link or hits Back/Forward).
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onLocation = () => {
+      const fromUrl = readLangFromUrl();
+      setLanguageState((prev) => (prev !== fromUrl ? fromUrl : prev));
+    };
+    window.addEventListener('popstate', onLocation);
+    // react-router calls pushState/replaceState; patch them once to fire an event.
+    const fire = () => window.dispatchEvent(new Event('locationchange'));
+    const origPush = window.history.pushState;
+    const origReplace = window.history.replaceState;
+    window.history.pushState = function (...args) { origPush.apply(this, args); fire(); };
+    window.history.replaceState = function (...args) { origReplace.apply(this, args); fire(); };
+    window.addEventListener('locationchange', onLocation);
+    return () => {
+      window.removeEventListener('popstate', onLocation);
+      window.removeEventListener('locationchange', onLocation);
+      window.history.pushState = origPush;
+      window.history.replaceState = origReplace;
+    };
+  }, []);
+
+  // Switching language now navigates to the localized URL — single source of truth.
+  const setLanguage = (lang: Language) => {
+    if (typeof window === 'undefined') { setLanguageState(lang); return; }
+    const { pathname, search, hash } = window.location;
+    const stripped = pathname.replace(/^\/(ru|en|uk)(?=\/|$)/, '') || '/';
+    const next = lang === 'pl' ? stripped : `/${lang}${stripped === '/' ? '' : stripped}`;
+    if (next + search + hash !== pathname + search + hash) {
+      window.history.pushState({}, '', next + search + hash);
+    }
+    setLanguageState(lang);
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

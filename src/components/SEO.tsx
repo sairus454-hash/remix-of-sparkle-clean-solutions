@@ -46,15 +46,28 @@ const SEO = ({
 }: SEOProps) => {
   const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
-  // Project SEO rule: canonical and hreflang URLs MUST be clean (no `?lang=` query params).
-  // Language is selected client-side via localStorage, so all locales share the same URL.
-  // Each language self-references the same canonical → no duplicate-content conflict.
-  const path = (canonical || '/').split('?')[0];
-  const cleanUrl = `${SITE_URL}${path}`;
-  const buildLangUrl = (_lang: string) => cleanUrl;
-  const canonicalUrl = cleanUrl;
+
+  // Each language now has its OWN canonical URL via path prefix:
+  //   PL → /something      (default, no prefix)
+  //   RU → /ru/something
+  //   EN → /en/something
+  //   UK → /uk/something
+  // This lets Google index every language separately instead of treating
+  // them as duplicates of one canonical (the previous behavior).
+  // `canonical` prop is the LOGICAL path (no language prefix); we add the
+  // prefix here based on the active language. If the prop already includes
+  // a prefix (e.g. computed from window.location), strip it first.
+  const rawPath = (canonical || '/').split('?')[0];
+  const logicalPath = rawPath.replace(/^\/(ru|en|uk)(?=\/|$)/, '') || '/';
+  const buildLangPath = (lang: string): string => {
+    if (lang === 'pl') return logicalPath;
+    return logicalPath === '/' ? `/${lang}` : `/${lang}${logicalPath}`;
+  };
+  const buildLangUrl = (lang: string): string => `${SITE_URL}${buildLangPath(lang)}`;
+  const canonicalUrl = buildLangUrl(language);
   const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`;
-  const xDefaultUrl = cleanUrl;
+  // x-default points to the PL (root) version per project convention
+  const xDefaultUrl = buildLangUrl('pl');
 
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',

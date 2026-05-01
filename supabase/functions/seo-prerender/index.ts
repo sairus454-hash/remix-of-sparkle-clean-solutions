@@ -412,11 +412,17 @@ function getPageMeta(path: string): PageMeta | null {
 }
 
 function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
-  const basePath = `${SITE_URL}${path}`;
-  // Self-referencing canonical: each language version is its own canonical
-  // so Google indexes RU/EN/UK/PL versions independently instead of consolidating
-  // them into Polish.
-  const canonicalUrl = lang === 'pl' ? basePath : `${basePath}?lang=${lang}`;
+  // `path` is the LOGICAL path (already stripped of any /ru, /en, /uk prefix
+  // by the caller). We rebuild the canonical URL by re-adding the prefix
+  // for the active language (PL stays at root).
+  const cleanPath = path === '' ? '/' : path;
+  const buildLangUrl = (l: string) =>
+    l === 'pl'
+      ? `${SITE_URL}${cleanPath}`
+      : `${SITE_URL}/${l}${cleanPath === '/' ? '' : cleanPath}`;
+
+  const canonicalUrl = buildLangUrl(lang);
+  const basePath = buildLangUrl('pl'); // x-default = PL
   const image = meta.image || DEFAULT_IMAGE;
   const type = meta.type || 'website';
   const ogLocaleMap: Record<string, string> = {
@@ -455,12 +461,12 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   <meta name="twitter:description" content="${escapeHtml(meta.description)}">
   <meta name="twitter:image" content="${image}">
 
-  <!-- Hreflang — each language has its own URL (Polish is default, no param) -->
-  <link rel="alternate" hreflang="pl" href="${basePath}">
-  <link rel="alternate" hreflang="ru" href="${basePath}?lang=ru">
-  <link rel="alternate" hreflang="en" href="${basePath}?lang=en">
-  <link rel="alternate" hreflang="uk" href="${basePath}?lang=uk">
-  <link rel="alternate" hreflang="x-default" href="${basePath}">
+  <!-- Hreflang — each language lives at its own URL prefix (PL = root) -->
+  <link rel="alternate" hreflang="pl" href="${buildLangUrl('pl')}">
+  <link rel="alternate" hreflang="ru" href="${buildLangUrl('ru')}">
+  <link rel="alternate" hreflang="en" href="${buildLangUrl('en')}">
+  <link rel="alternate" hreflang="uk" href="${buildLangUrl('uk')}">
+  <link rel="alternate" hreflang="x-default" href="${buildLangUrl('pl')}">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -632,23 +638,32 @@ Deno.serve(async (req: Request) => {
 
   try {
     const url = new URL(req.url);
-    const path = url.searchParams.get('path') || '/';
-    const lang = (url.searchParams.get('lang') || 'pl').toLowerCase();
+    let path = url.searchParams.get('path') || '/';
+
+    // New: language prefix lives IN the path (/ru/..., /en/..., /uk/...).
+    // Strip it to look up the page meta, but remember the language so we can
+    // build the correct canonical/hreflang.
+    const prefixMatch = path.match(/^\/(ru|en|uk)(\/|$)/);
+    const langFromPath = prefixMatch ? prefixMatch[1] : null;
+    if (prefixMatch) {
+      path = path.replace(/^\/(ru|en|uk)/, '') || '/';
+    }
+
+    // Backward-compat: still accept ?lang=xx for old links and 301-style hints.
+    const langQuery = (url.searchParams.get('lang') || '').toLowerCase();
+    const lang = langFromPath || langQuery || 'pl';
     const validLang = ['pl', 'ru', 'en', 'uk'].includes(lang) ? lang : 'pl';
     const userAgent = req.headers.get('user-agent') || '';
     const forcePrerender = url.searchParams.get('_prerender') === '1';
 
     // Only serve to bots or when explicitly requested
     if (!isBot(userAgent) && !forcePrerender) {
-      const redirectTarget = validLang === 'pl'
+      const target = validLang === 'pl'
         ? `${SITE_URL}${path}`
-        : `${SITE_URL}${path}?lang=${validLang}`;
+        : `${SITE_URL}/${validLang}${path === '/' ? '' : path}`;
       return new Response(null, {
         status: 302,
-        headers: {
-          ...corsHeaders,
-          'Location': redirectTarget,
-        },
+        headers: { ...corsHeaders, 'Location': target },
       });
     }
 
