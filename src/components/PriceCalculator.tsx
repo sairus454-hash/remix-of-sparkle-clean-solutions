@@ -26,35 +26,35 @@ const PriceCalculator = () => {
   {
     id: 'pouf',
     name: t.prices.items.pouf,
-    price: 36
+    price: 40
   }, {
     id: 'chair',
     name: t.prices.items.chair,
-    price: 36
+    price: 40
   }, {
     id: 'armchair',
     name: t.prices.items.armchair,
-    price: 63
+    price: 70
   }, {
     id: 'pillow',
     name: t.prices.items.pillow,
-    price: 5
+    price: 10
   }, {
     id: 'sofa2',
     name: t.prices.items.sofa2,
-    price: 126
+    price: 140
   }, {
     id: 'sofa3',
     name: t.prices.items.sofa3,
-    price: 153
+    price: 170
   }, {
     id: 'sofaCorner',
     name: t.prices.items.sofaCorner,
-    price: 180
+    price: 200
   }, {
     id: 'sofaCornerLarge',
     name: t.prices.items.sofaCornerLarge,
-    price: 225
+    price: 250
   }, {
     id: 'carpet',
     name: t.prices.items.carpet,
@@ -71,37 +71,37 @@ const PriceCalculator = () => {
   }, {
     id: 'bedHeadboard',
     name: t.prices.items.bedHeadboard,
-    price: 90
+    price: 100
   }, {
     id: 'bedFrame',
     name: t.prices.items.bedFrame,
-    price: 90
+    price: 100
   },
   // Leather Furniture
   {
     id: 'leatherPouf',
     name: t.prices.items.leatherPouf,
-    price: 50
+    price: 60
   }, {
     id: 'leatherChair',
     name: t.prices.items.leatherChair,
-    price: 45
+    price: 50
   }, {
     id: 'leatherArmchair',
     name: t.prices.items.leatherArmchair,
-    price: 81
+    price: 90
   }, {
     id: 'leatherSofa2',
     name: t.prices.items.leatherSofa2,
-    price: 162
+    price: 180
   }, {
     id: 'leatherSofa3',
     name: t.prices.items.leatherSofa3,
-    price: 198
+    price: 220
   }, {
     id: 'leatherSofaCorner',
     name: t.prices.items.leatherSofaCorner,
-    price: 243
+    price: 270
   },
   // Mattress with Drying
   {
