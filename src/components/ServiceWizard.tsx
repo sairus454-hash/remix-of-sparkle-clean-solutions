@@ -71,6 +71,7 @@ export const ServiceWizard = ({
   const [city, setCity] = useState(stored?.name ?? '');
   const [rememberedCity, setRememberedCity] = useState(stored?.name ?? '');
   const [qty, setQty] = useState<number | ''>('');
+  const [lastEstimate, setLastEstimate] = useState<{ qty: number; range: string } | null>(null);
 
   const pickService = (s: ServiceMenuItem) => {
     setService(s);
@@ -113,7 +114,20 @@ export const ServiceWizard = ({
       copy.disclaimer,
     ].join('\n\n');
     onPushSummary(summary);
+    setLastEstimate({ qty: chosenQty, range });
     setStep('result');
+  };
+
+  const handleBookNow = () => {
+    if (!service || !lastEstimate || !onBookNow) return;
+    onBookNow({
+      serviceKey: FORM_SERVICE_KEY[service.key] || service.key,
+      serviceLabel: service.label[lang],
+      city,
+      qty: lastEstimate.qty,
+      unit: service.unit[lang],
+      estimate: lastEstimate.range,
+    });
   };
 
   return (
