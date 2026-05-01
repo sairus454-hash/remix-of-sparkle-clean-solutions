@@ -865,6 +865,7 @@ const ChatBot = () => {
             isLoading={isLoading}
             defaultServiceKey={guessedServiceKey}
           />
+        )}
 
         {/* Service menu + quick price wizard */}
         {showWizard && !showLeadForm && !showPhotoPreview && (
