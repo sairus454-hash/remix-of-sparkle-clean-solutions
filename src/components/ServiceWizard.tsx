@@ -295,7 +295,16 @@ export const ServiceWizard = ({
         <div className="space-y-2 text-sm">
           <p className="text-muted-foreground text-xs">{copy.disclaimer.replace(/_/g, '')}</p>
           <div className="flex flex-wrap gap-2">
-            <Button asChild size="sm" className="bg-gradient-to-r from-primary to-fresh">
+            {onBookNow && (
+              <Button
+                size="sm"
+                onClick={handleBookNow}
+                className="bg-gradient-to-r from-primary to-fresh"
+              >
+                {copy.bookNow}
+              </Button>
+            )}
+            <Button asChild size="sm" variant="outline">
               <Link to={service.url} onClick={onClose}>
                 🔗 {copy.seePage}
               </Link>
