@@ -46,18 +46,18 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   ];
 
   const furnitureOptions = useMemo(() => [
-    { id: 'armchair', name: t.prices.items.armchair, price: applyPrice(75) },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(145) },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(180) },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(220) },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(130) },
+    { id: 'armchair', name: t.prices.items.armchair, price: applyPrice(80) },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(150) },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(170) },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(200) },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(150) },
   ], [t, applyPrice]);
 
   const mattressOptions = useMemo(() => [
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: applyPrice(140) },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: applyPrice(215) },
-    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: applyPrice(220) },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(295) },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: applyPrice(130) },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: applyPrice(200) },
+    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: applyPrice(200) },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(270) },
   ], [t, applyPrice]);
 
   // Auto cleaning: no regional markup in any city — base Wrocław prices everywhere

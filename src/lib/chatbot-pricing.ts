@@ -72,8 +72,8 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     },
     unit: { ru: 'место', en: 'seat', pl: 'miejsce', uk: 'місце' },
     suggestions: [2, 3, 5, 7],
-    // ~50 PLN per seat, 65 max with leather. Promo -10% applied to lower bound.
-    baseEstimator: (qty) => ({ min: round5(qty * 45), max: round5(qty * 65) }),
+    // ~50 PLN per seat, 70 max (after +10% Wrocław base update).
+    baseEstimator: (qty) => ({ min: round5(qty * 50), max: round5(qty * 70) }),
     markup: 'standard',
   },
   {
@@ -85,12 +85,12 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
       ru: 'Сколько матрасов?',
       en: 'How many mattresses?',
       pl: 'Ile materacy?',
-      uk: 'Скільки матраців?',
+      uk: 'Скільki матраців?',
     },
     unit: { ru: 'шт', en: 'pcs', pl: 'szt', uk: 'шт' },
     suggestions: [1, 2, 3],
-    // 115 single, 175 double (with -10% promo)
-    baseEstimator: (qty) => ({ min: 115 * qty, max: 175 * qty }),
+    // 130 single, 200 double (Wrocław base after +10% mattress-with-drying update, rounded to tens)
+    baseEstimator: (qty) => ({ min: 130 * qty, max: 200 * qty }),
     markup: 'standard',
   },
   {
