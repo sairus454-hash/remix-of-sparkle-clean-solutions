@@ -68,6 +68,16 @@ const FloorCleaning = () => {
         { n: '4', t: 'Suszenie i odbiór', d: 'Wykładzina szybko schnie i wraca jak nowa.' },
       ],
       keywordsBlock: 'Pranie dywanów Wrocław, czyszczenie wykładzin dywanowych Wrocław, pranie wykładziny biurowej, czyszczenie płytek ceramicznych, pranie dywanu z odbiorem, ekstrakcyjne pranie dywanów, impregnacja dywanu, usuwanie plam z dywanu, pranie chodników, czyszczenie tarasu, czyszczenie balkonu.',
+      faqTitle: 'Najczęściej zadawane pytania',
+      faqs: [
+        { q: 'Ile kosztuje pranie dywanu lub wykładziny?', a: 'Cena zależy od metrażu i rodzaju zabrudzeń. Wykładzina dywanowa 1-20 m² — 15 zł/m², 20-50 m² — 10 zł/m², powyżej 50 m² — 7-10 zł/m². Pranie dywanu z odbiorem do pralni — 30 zł/m². Czyszczenie płytek ceramicznych — 20 zł/m². Impregnacja dywanu — 5 zł/m². Cena jest taka sama we wszystkich miastach (bez markupu).' },
+        { q: 'Jak długo schnie wykładzina po praniu ekstrakcyjnym?', a: 'Standardowy czas schnięcia to 2-4 godziny przy dobrej wentylacji. Maszyna Santoemma odsysa większość wilgoci podczas prania, więc dywan po naszej wizycie jest tylko lekko wilgotny. W chłodne lub deszczowe dni schnięcie może potrwać do 6-8 godzin.' },
+        { q: 'Czy używane środki są bezpieczne dla dzieci i zwierząt?', a: 'Tak. Stosujemy wyłącznie profesjonalne, hipoalergiczne preparaty zgodne z normami UE. Po wyschnięciu wykładzina jest całkowicie bezpieczna dla dzieci, alergików i zwierząt domowych. Nie pozostawiamy szkodliwych pozostałości chemicznych.' },
+        { q: 'Czy usuwacie plamy z moczu zwierząt i wina?', a: 'Tak — specjalizujemy się w usuwaniu plam organicznych: mocz zwierząt, kawa, wino, krew, tłuszcz. Używamy preparatów enzymatycznych, które rozkładają zabrudzenia i neutralizują zapachy u źródła, nie tylko maskują je.' },
+        { q: 'Czy odbieracie dywany do pralni?', a: 'Tak. Oferujemy pranie dywanów z odbiorem od klienta — 30 zł/m². Odbieramy dywan, czyścimy w naszej pralni i odwozimy z powrotem w ciągu 3-5 dni roboczych. Usługa dostępna we Wrocławiu i okolicy.' },
+        { q: 'Co to jest impregnacja dywanu i czy warto?', a: 'Impregnacja to nakładanie warstwy ochronnej (Scotchgard / Teflon), która chroni włókna przed wnikaniem brudu i płynów. Dzięki temu plamy łatwiej zetrzeć, a dywan dłużej zachowuje świeżość. Cena — 5 zł/m². Zalecamy po każdym praniu.' },
+        { q: 'Czy czyścicie płytki na balkonie i tarasie?', a: 'Tak — czyścimy płytki ceramiczne i gres na balkonach, tarasach, w kuchniach i łazienkach. Usuwamy zabrudzenia z fug, naloty, tłuste plamy i pozostałości po remontach. Cena — 20 zł/m².' },
+      ],
     },
     ru: {
       title: 'Химчистка напольных покрытий — ковры, ковролин, плитка',
@@ -94,6 +104,16 @@ const FloorCleaning = () => {
         { n: '4', t: 'Сушка и возврат', d: 'Покрытие быстро сохнет и выглядит как новое.' },
       ],
       keywordsBlock: 'Химчистка ковров Вроцлав, чистка ковролина, мойка ковра с забором, экстракторная чистка ковров, чистка плитки и швов, чистка балкона и террасы, импрегнация ковров, удаление пятен с ковра, чистка офисного ковролина.',
+      faqTitle: 'Часто задаваемые вопросы',
+      faqs: [
+        { q: 'Сколько стоит химчистка ковра или ковролина?', a: 'Цена зависит от площади и типа покрытия. Ковролин 1-20 м² — 15 zł/м², 20-50 м² — 10 zł/м², свыше 50 м² — 7-10 zł/м². Стирка ковра с забором в прачечную — 30 zł/м². Чистка керамической плитки — 20 zł/м². Импрегнация ковра — 5 zł/м². Цена одинаковая во всех городах (без наценки).' },
+        { q: 'Сколько сохнет ковёр после экстракторной чистки?', a: 'Стандартное время сушки — 2-4 часа при хорошей вентиляции. Машина Santoemma вытягивает большую часть влаги во время чистки, поэтому ковёр остаётся лишь слегка влажным. В прохладные или дождливые дни сушка может занять 6-8 часов.' },
+        { q: 'Безопасны ли средства для детей и животных?', a: 'Да. Мы используем профессиональные гипоаллергенные препараты, сертифицированные по стандартам ЕС. После высыхания покрытие полностью безопасно для детей, аллергиков и домашних животных. Никаких вредных химических остатков.' },
+        { q: 'Удаляете ли вы пятна от мочи животных и вина?', a: 'Да — мы специализируемся на удалении органических пятен: моча животных, кофе, вино, кровь, жир. Используем энзимные препараты, которые расщепляют загрязнения и нейтрализуют запахи у источника, а не маскируют их.' },
+        { q: 'Забираете ли ковры в прачечную?', a: 'Да. Предлагаем стирку ковров с забором от клиента — 30 zł/м². Забираем ковёр, чистим в нашей прачечной и привозим обратно в течение 3-5 рабочих дней. Услуга доступна во Вроцлаве и пригородах.' },
+        { q: 'Что такое импрегнация ковра и нужна ли она?', a: 'Импрегнация — нанесение защитного слоя (Scotchgard / Teflon), который защищает волокна от проникновения грязи и жидкостей. Благодаря этому пятна легче удаляются, а ковёр дольше сохраняет свежий вид. Цена — 5 zł/м². Рекомендуем после каждой чистки.' },
+        { q: 'Чистите ли плитку на балконе и террасе?', a: 'Да — чистим керамическую плитку и керамогранит на балконах, террасах, кухнях и в ванных. Удаляем загрязнения из швов, налёт, жирные пятна и остатки после ремонта. Цена — 20 zł/м².' },
+      ],
     },
     en: {
       title: 'Floor covering cleaning — carpets, rugs and tile cleaning',
@@ -120,6 +140,16 @@ const FloorCleaning = () => {
         { n: '4', t: 'Drying & return', d: 'Coverings dry quickly and look like new.' },
       ],
       keywordsBlock: 'Carpet cleaning Wrocław, fitted carpet cleaning, rug cleaning with pickup, extraction carpet cleaning, ceramic tile cleaning, balcony and terrace cleaning, carpet impregnation, stain removal.',
+      faqTitle: 'Frequently asked questions',
+      faqs: [
+        { q: 'How much does carpet or fitted-carpet cleaning cost?', a: 'Price depends on area and covering type. Fitted carpet 1-20 m² — 15 zł/m², 20-50 m² — 10 zł/m², over 50 m² — 7-10 zł/m². Rug cleaning with pickup — 30 zł/m². Ceramic tile cleaning — 20 zł/m². Carpet impregnation — 5 zł/m². The price is the same in every city (no surcharge).' },
+        { q: 'How long does a carpet take to dry after extraction cleaning?', a: 'Standard drying time is 2-4 hours with good ventilation. The Santoemma machine extracts most of the moisture during cleaning, so the carpet is only slightly damp. On cool or rainy days drying can take 6-8 hours.' },
+        { q: 'Are the cleaning agents safe for children and pets?', a: 'Yes. We use only professional hypoallergenic detergents that comply with EU standards. Once dry, the carpet is completely safe for children, allergy sufferers and pets. No harmful chemical residues remain.' },
+        { q: 'Do you remove pet urine and wine stains?', a: 'Yes — we specialize in organic stain removal: pet urine, coffee, wine, blood, grease. We use enzymatic agents that break down dirt and neutralize odors at the source, not just mask them.' },
+        { q: 'Do you collect rugs to your laundry?', a: 'Yes. We offer rug cleaning with pickup — 30 zł/m². We collect the rug, clean it in our laundry and return it within 3-5 business days. Service available in Wrocław and surrounding area.' },
+        { q: 'What is carpet impregnation and is it worth it?', a: 'Impregnation is a protective layer (Scotchgard / Teflon) that shields fibres from dirt and liquids. Stains become easier to wipe off and the carpet stays fresh longer. Price — 5 zł/m². We recommend it after every cleaning.' },
+        { q: 'Do you clean balcony and terrace tiles?', a: 'Yes — we clean ceramic tiles and porcelain stoneware on balconies, terraces, in kitchens and bathrooms. We remove dirt from grout, deposits, greasy stains and post-renovation residue. Price — 20 zł/m².' },
+      ],
     },
     uk: {
       title: 'Хімчистка підлогових покриттів — килими, ковроліни, плитка',
@@ -146,6 +176,16 @@ const FloorCleaning = () => {
         { n: '4', t: 'Сушіння та повернення', d: 'Покриття швидко висихає й виглядає як нове.' },
       ],
       keywordsBlock: 'Хімчистка килимів Вроцлав, чистка ковроліну, миття килима із забором, екстракторна чистка килимів, чистка плитки та швів, чистка балкона і тераси, імпрегнація килимів.',
+      faqTitle: 'Часті запитання',
+      faqs: [
+        { q: 'Скільки коштує хімчистка килима або ковроліну?', a: 'Ціна залежить від площі та типу покриття. Ковролін 1-20 м² — 15 zł/м², 20-50 м² — 10 zł/м², понад 50 м² — 7-10 zł/м². Прання килима із забором — 30 zł/м². Чистка керамічної плитки — 20 zł/м². Імпрегнація килима — 5 zł/м². Ціна однакова в усіх містах (без націнки).' },
+        { q: 'Скільки сохне килим після екстракторної чистки?', a: 'Стандартний час сушіння — 2-4 години при добрій вентиляції. Машина Santoemma витягує більшу частину вологи під час чистки, тож килим залишається лише трохи вологим. У холодні або дощові дні сушіння може зайняти 6-8 годин.' },
+        { q: 'Чи безпечні засоби для дітей і тварин?', a: 'Так. Ми використовуємо професійні гіпоалергенні препарати, сертифіковані за стандартами ЄС. Після висихання покриття повністю безпечне для дітей, алергіків і домашніх тварин.' },
+        { q: 'Чи видаляєте плями від сечі тварин і вина?', a: 'Так — ми спеціалізуємося на органічних плямах: сеча тварин, кава, вино, кров, жир. Використовуємо ензимні препарати, які розщеплюють бруд і нейтралізують запахи біля джерела.' },
+        { q: 'Чи забираєте килими до пральні?', a: 'Так. Пропонуємо прання килимів із забором від клієнта — 30 zł/м². Забираємо килим, чистимо в нашій пральні й привозимо назад протягом 3-5 робочих днів.' },
+        { q: 'Що таке імпрегнація килима і чи варта вона?', a: 'Імпрегнація — нанесення захисного шару (Scotchgard / Teflon), що захищає волокна від бруду та рідин. Плями легше видаляти, килим довше зберігає свіжість. Ціна — 5 zł/м².' },
+        { q: 'Чи чистите плитку на балконі та терасі?', a: 'Так — чистимо керамічну плитку та керамограніт на балконах, терасах, кухнях і у ванних. Видаляємо бруд зі швів, наліт, жирні плями та залишки після ремонту. Ціна — 20 zł/м².' },
+      ],
     },
   };
 
