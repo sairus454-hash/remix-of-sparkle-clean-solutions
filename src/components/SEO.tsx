@@ -46,17 +46,15 @@ const SEO = ({
 }: SEOProps) => {
   const { language } = useLanguage();
   const fullTitle = title.includes('MasterClean') ? title : `${title} | MasterClean`;
+  // Project SEO rule: canonical and hreflang URLs MUST be clean (no `?lang=` query params).
+  // Language is selected client-side via localStorage, so all locales share the same URL.
+  // Each language self-references the same canonical → no duplicate-content conflict.
   const path = (canonical || '/').split('?')[0];
-  // Build per-language alternate URLs. Polish (default) = clean URL, others = ?lang=XX
-  const buildLangUrl = (lang: string) =>
-    lang === 'pl' ? `${SITE_URL}${path}` : `${SITE_URL}${path}?lang=${lang}`;
-  // Canonical = the current language version of the page (self-referencing).
-  // This allows Google to index each language version (RU/EN/UK/PL) independently
-  // instead of consolidating them all into the Polish version.
-  const canonicalUrl = buildLangUrl(language);
+  const cleanUrl = `${SITE_URL}${path}`;
+  const buildLangUrl = (_lang: string) => cleanUrl;
+  const canonicalUrl = cleanUrl;
   const imageUrl = image.startsWith('http') ? image : `${SITE_URL}${image.startsWith('/') ? image : `/${image}`}`;
-  // x-default points to the Polish (default) version
-  const xDefaultUrl = `${SITE_URL}${path}`;
+  const xDefaultUrl = cleanUrl;
 
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',
