@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useLocation } from 'react-router-dom';
-import { MessageCircle, X, Send, Bot, User, Loader2, Camera, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff, ImageIcon, ChevronRight } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Camera, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff, ImageIcon, ChevronRight, Layers, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -219,6 +219,11 @@ const ChatBot = () => {
   // Quick reply buttons configuration
   const quickReplies: QuickReply[] = [
     {
+      icon: <Calculator className="w-4 h-4" />,
+      label: language === 'ru' ? '⚡ Расчёт цены' : language === 'pl' ? '⚡ Wycena' : language === 'uk' ? '⚡ Розрахунок' : '⚡ Price quote',
+      message: '__OPEN_WIZARD__',
+    },
+    {
       icon: <Brush className="w-4 h-4" />,
       label: t.chatbot.quickReplies?.cleaning || '🧹 Уборка',
       message: t.chatbot.quickMessages?.cleaning || 'Интересует уборка помещений'
@@ -370,6 +375,11 @@ const ChatBot = () => {
   };
 
   const handleQuickReply = (reply: QuickReply) => {
+    if (reply.message === '__OPEN_WIZARD__') {
+      setShowWizard(true);
+      setShowQuickReplies(false);
+      return;
+    }
     sendMessage(reply.message);
   };
 
