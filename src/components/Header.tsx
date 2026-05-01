@@ -52,7 +52,7 @@ const Header = () => {
     { path: '/about', label: t.nav.about },
     { path: '/services', label: t.nav.services, highlight: 'services' as const },
     { path: '/prices', label: t.nav.prices },
-    { path: '/equipment', label: t.nav.equipment },
+    { path: '/floor-cleaning', label: t.nav.floorCleaning, highlight: 'floorCleaning' as const },
     { path: '/cleaning', label: t.nav.cleaning, highlight: 'cleaning' as const },
     { path: '/ozone', label: t.nav.ozone, highlight: 'ozone' as const },
     { path: '/auto', label: t.nav.auto, highlight: 'auto' as const },
@@ -242,9 +242,9 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                         {item.label}
                       </span>
-                    ) : item.path === '/equipment' ? (
+                    ) : item.path === '/floor-cleaning' ? (
                       <span className="inline-flex items-center gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                         {item.label}
                       </span>
                     ) : item.highlight === 'cleaning' ? (
