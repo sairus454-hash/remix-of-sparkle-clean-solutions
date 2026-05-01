@@ -76,28 +76,28 @@ const Services = () => {
   ];
 
   const furnitureItems = [
-    { id: 'pouf', name: t.prices.items.pouf, price: 30, image: calcPouf },
-    { id: 'chairSeat', name: t.prices.items.chairSeat, price: 15, image: calcChairSeat },
-    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 25, image: calcChairBack },
-    { id: 'chairConference', name: t.prices.items.chairConference, price: 30, image: calcChairConference },
-    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 45, image: calcChairSwivel },
-    { id: 'chair', name: t.prices.items.chair, price: 25, image: calcChair },
-    { id: 'armchair', name: t.prices.items.armchair, price: 65, image: calcArmchair },
-    { id: 'pillow', name: t.prices.items.pillow, price: 5, image: calcPillow },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 130, image: calcSofa2 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 150, image: calcSofa3 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, image: calcSofaCorner },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, image: calcSofaCornerLarge },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcKitchenCorner },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, image: calcHeadboard },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, image: calcBedframe },
+    { id: 'pouf', name: t.prices.items.pouf, price: 40, image: calcPouf },
+    { id: 'chairSeat', name: t.prices.items.chairSeat, price: 20, image: calcChairSeat },
+    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 30, image: calcChairBack },
+    { id: 'chairConference', name: t.prices.items.chairConference, price: 40, image: calcChairConference },
+    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 50, image: calcChairSwivel },
+    { id: 'chair', name: t.prices.items.chair, price: 30, image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: 80, image: calcArmchair },
+    { id: 'pillow', name: t.prices.items.pillow, price: 10, image: calcPillow },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 150, image: calcSofa2 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 170, image: calcSofa3 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 200, image: calcSofaCorner },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 240, image: calcSofaCornerLarge },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 150, image: calcKitchenCorner },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 90, image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 90, image: calcBedframe },
   ];
 
   const mattressItems = [
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, image: calcMattressSingle },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, image: calcMattressDouble },
-    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 180, image: calcMattressSingle },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 240, image: calcMattressDouble },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 130, image: calcMattressSingle },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 200, image: calcMattressDouble },
+    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 200, image: calcMattressSingle },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 270, image: calcMattressDouble },
   ];
 
   const { t: translations } = useLanguage();
@@ -118,11 +118,11 @@ const Services = () => {
 
   const leatherItems = [
     { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 50, image: calcLeatherPouf },
-    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 45, image: calcLeatherChair },
-    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 80, image: calcLeatherArmchair },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 50, image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 90, image: calcLeatherArmchair },
     { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 160, image: calcLeatherSofa2 },
     { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 200, image: calcLeatherSofa3 },
-    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 245, image: calcLeatherCorner },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 250, image: calcLeatherCorner },
     { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 70, image: calcLeatherChairSwivel },
   ];
 
@@ -155,10 +155,10 @@ const Services = () => {
              { '@type': 'City', name: 'Kalisz' },
            ],
            offers: [
-             { '@type': 'Offer', name: 'Pranie kanapy 2-osobowej', price: '126', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie kanapy 3-osobowej', price: '153', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie narożnika', price: '225', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie materaca', price: '90', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie kanapy 2-osobowej', price: '150', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie kanapy 3-osobowej', price: '170', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie narożnika', price: '200', priceCurrency: 'PLN' },
+             { '@type': 'Offer', name: 'Pranie materaca', price: '130', priceCurrency: 'PLN' },
            ],
          }}
       />
