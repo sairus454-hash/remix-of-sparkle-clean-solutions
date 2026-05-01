@@ -7,9 +7,9 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
-# Block legacy ?lang= query URLs (canonical is always clean URL)
-Disallow: /*?lang=
-Disallow: /*&lang=
+# NOTE: legacy ?lang=ru|en|uk URLs are intentionally allowed so search
+# engines can discover the canonical (prefix-based) version via the
+# rel="canonical" tag and transfer link equity. New URLs use /ru, /en, /uk.
 
 # Search engines — explicit rules
 User-agent: Googlebot
@@ -17,8 +17,6 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
-Disallow: /*?lang=
-Disallow: /*&lang=
 
 User-agent: Googlebot-Image
 Allow: /
@@ -28,16 +26,12 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
-Disallow: /*?lang=
-Disallow: /*&lang=
 
 User-agent: YandexBot
 Allow: /
 Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/login
-Disallow: /*?lang=
-Disallow: /*&lang=
 
 User-agent: DuckDuckBot
 Allow: /
