@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useLocation } from 'react-router-dom';
-import { MessageCircle, X, Send, Bot, User, Loader2, Camera, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff, ImageIcon, ChevronRight } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Loader2, Camera, FileText, Sofa, Car, Wind, Wrench, Sparkles, Brush, Mic, MicOff, ImageIcon, ChevronRight, Layers, Calculator } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -12,6 +12,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import ReactMarkdown from 'react-markdown';
 import chatbotGirl from '@/assets/chatbot-girl.webp';
 import ChatBotOrderForm, { ChatBotOrder } from './ChatBotOrderForm';
+import ServiceWizard from './ServiceWizard';
 
 // Web Speech API types
 interface SpeechRecognitionEvent extends Event {
@@ -120,6 +121,7 @@ const ChatBot = () => {
   const [photoPhone, setPhotoPhone] = useState('');
   const [showPhotoPreview, setShowPhotoPreview] = useState(false);
   const [inputReadonly, setInputReadonly] = useState(true);
+  const [showWizard, setShowWizard] = useState(false);
   
   // Voice input state
   const [isListening, setIsListening] = useState(false);
@@ -216,6 +218,11 @@ const ChatBot = () => {
 
   // Quick reply buttons configuration
   const quickReplies: QuickReply[] = [
+    {
+      icon: <Calculator className="w-4 h-4" />,
+      label: language === 'ru' ? '⚡ Расчёт цены' : language === 'pl' ? '⚡ Wycena' : language === 'uk' ? '⚡ Розрахунок' : '⚡ Price quote',
+      message: '__OPEN_WIZARD__',
+    },
     {
       icon: <Brush className="w-4 h-4" />,
       label: t.chatbot.quickReplies?.cleaning || '🧹 Уборка',
@@ -368,6 +375,11 @@ const ChatBot = () => {
   };
 
   const handleQuickReply = (reply: QuickReply) => {
+    if (reply.message === '__OPEN_WIZARD__') {
+      setShowWizard(true);
+      setShowQuickReplies(false);
+      return;
+    }
     sendMessage(reply.message);
   };
 
@@ -855,6 +867,24 @@ const ChatBot = () => {
           />
         )}
 
+        {/* Service menu + quick price wizard */}
+        {showWizard && !showLeadForm && !showPhotoPreview && (
+          <ServiceWizard
+            language={language}
+            isMobile={isMobile}
+            onClose={() => setShowWizard(false)}
+            onPushSummary={(md) => {
+              const summaryMsg: Message = {
+                id: Date.now().toString(),
+                role: 'assistant',
+                content: md,
+              };
+              setMessages((prev) => [...prev, summaryMsg]);
+              playNotificationSound();
+            }}
+          />
+        )}
+
         {/* Photo Preview with Caption */}
         {showPhotoPreview && pendingPhotos.length > 0 && (
           <div className="absolute bottom-16 left-0 right-0 p-3 bg-card border-t border-border">
@@ -905,7 +935,7 @@ const ChatBot = () => {
         )}
 
         {/* Action Buttons */}
-        {!showLeadForm && !showPhotoPreview && (
+        {!showLeadForm && !showPhotoPreview && !showWizard && (
           <div className={cn(
             "absolute bottom-16 left-0 right-0 px-3 py-2 bg-card border-t border-border flex gap-2",
             isMobile && "px-2"
@@ -918,6 +948,21 @@ const ChatBot = () => {
               className="hidden"
               onChange={handlePhotoSelect}
             />
+            <Button
+              onClick={() => setShowWizard(true)}
+              variant="outline"
+              size="sm"
+              className={cn(
+                "flex-1 border-primary/30 text-primary hover:bg-primary/5",
+                isMobile ? "text-xs h-11 px-2" : "text-xs"
+              )}
+              title={language === 'ru' ? 'Виды услуг и быстрый расчёт' : language === 'pl' ? 'Usługi i wycena' : language === 'uk' ? 'Послуги та розрахунок' : 'Services & quote'}
+            >
+              <Calculator className="w-3.5 h-3.5 mr-1" />
+              <span className="truncate">
+                {language === 'ru' ? '⚡ Расчёт' : language === 'pl' ? '⚡ Wycena' : language === 'uk' ? '⚡ Розрахунок' : '⚡ Quote'}
+              </span>
+            </Button>
             <Button
               onClick={() => fileInputRef.current?.click()}
               variant="outline"

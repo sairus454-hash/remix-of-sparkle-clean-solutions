@@ -11,6 +11,7 @@ import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { CalculatorItem } from '@/types/calculator';
 import { Layers, Sparkles, ShieldCheck, Droplets, CheckCircle2, Truck, HelpCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { useSeoSelfCheck } from '@/hooks/useSeoSelfCheck';
 
 import carpetBeforeAfter from '@/assets/floor-cleaning-carpet-before-after.jpg';
 import tileBeforeAfter from '@/assets/floor-cleaning-tile-before-after.jpg';
@@ -26,6 +27,7 @@ const FloorCleaning = () => {
   const { t, language } = useLanguage();
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
+  useSeoSelfCheck('FloorCleaning (/floor-cleaning)');
 
   // Floor-cleaning prices are exempt from city markup (base Wrocław everywhere)
   const items = [
