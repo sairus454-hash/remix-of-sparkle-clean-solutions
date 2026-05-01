@@ -332,6 +332,8 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Это ориентир. Финальная цена зависит от типа покрытия, степени загрязнения и доп. услуг. Менеджер уточнит при оформлении._',
     pickAnother: '↩️ Выбрать другую услугу',
+    rememberedCity: (name: string) => `📍 Город: **${name}** (запомнен из прошлого расчёта)`,
+    changeCity: '🏙 Сменить',
   },
   en: {
     menuTitle: '🛠 Our services — pick one:',
@@ -350,6 +352,8 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Estimate only. Final price depends on material type, soiling and add-ons. Manager will confirm._',
     pickAnother: '↩️ Pick another service',
+    rememberedCity: (name: string) => `📍 City: **${name}** (remembered from last quote)`,
+    changeCity: '🏙 Change',
   },
   pl: {
     menuTitle: '🛠 Nasze usługi — wybierz:',
@@ -370,6 +374,8 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Szacunek. Ostateczna cena zależy od materiału, stopnia zabrudzenia i dodatków. Manager potwierdzi._',
     pickAnother: '↩️ Wybierz inną usługę',
+    rememberedCity: (name: string) => `📍 Miasto: **${name}** (zapamiętane z poprzedniej wyceny)`,
+    changeCity: '🏙 Zmień',
   },
   uk: {
     menuTitle: '🛠 Наші послуги — оберіть:',
@@ -390,5 +396,7 @@ export const ESTIMATE_COPY = {
     disclaimer:
       '_Орієнтир. Фінальна ціна залежить від матеріалу, забруднення та додатків. Менеджер підтвердить._',
     pickAnother: '↩️ Обрати іншу послугу',
+    rememberedCity: (name: string) => `📍 Місто: **${name}** (запам'ятано з попереднього розрахунку)`,
+    changeCity: '🏙 Змінити',
   },
 } as const;
