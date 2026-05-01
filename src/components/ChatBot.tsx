@@ -12,6 +12,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import ReactMarkdown from 'react-markdown';
 import chatbotGirl from '@/assets/chatbot-girl.webp';
 import ChatBotOrderForm, { ChatBotOrder } from './ChatBotOrderForm';
+import ServiceWizard from './ServiceWizard';
 
 // Web Speech API types
 interface SpeechRecognitionEvent extends Event {
@@ -120,6 +121,7 @@ const ChatBot = () => {
   const [photoPhone, setPhotoPhone] = useState('');
   const [showPhotoPreview, setShowPhotoPreview] = useState(false);
   const [inputReadonly, setInputReadonly] = useState(true);
+  const [showWizard, setShowWizard] = useState(false);
   
   // Voice input state
   const [isListening, setIsListening] = useState(false);
