@@ -243,12 +243,12 @@ const Cleaning = () => {
     { id: 'sofa2', name: t.prices.items.sofa2, price: 130, image: calcSofa2 },
     { id: 'sofa3', name: t.prices.items.sofa3, price: 150, image: calcSofa3 },
     { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 180, image: calcSofaCorner },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 210, image: calcSofaCornerLarge },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 260, image: calcSofaCornerLarge },
     { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 130, image: calcKitchenCorner },
     { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 115, image: calcMattressSingle },
     { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 175, image: calcMattressDouble },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 80, image: calcHeadboard },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 80, image: calcBedframe },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100, image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100, image: calcBedframe },
   ];
 
   const leatherItems = [

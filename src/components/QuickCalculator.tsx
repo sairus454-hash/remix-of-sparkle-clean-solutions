@@ -57,7 +57,7 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
     { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: applyPrice(130) },
     { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: applyPrice(200) },
     { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: applyPrice(200) },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(270) },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(300) },
   ], [t, applyPrice]);
 
   // Auto cleaning: no regional markup in any city — base Wrocław prices everywhere
