@@ -865,6 +865,23 @@ const ChatBot = () => {
             isLoading={isLoading}
             defaultServiceKey={guessedServiceKey}
           />
+
+        {/* Service menu + quick price wizard */}
+        {showWizard && !showLeadForm && !showPhotoPreview && (
+          <ServiceWizard
+            language={language}
+            isMobile={isMobile}
+            onClose={() => setShowWizard(false)}
+            onPushSummary={(md) => {
+              const summaryMsg: Message = {
+                id: Date.now().toString(),
+                role: 'assistant',
+                content: md,
+              };
+              setMessages((prev) => [...prev, summaryMsg]);
+              playNotificationSound();
+            }}
+          />
         )}
 
         {/* Photo Preview with Caption */}
