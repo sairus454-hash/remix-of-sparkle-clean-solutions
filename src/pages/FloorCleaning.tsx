@@ -193,24 +193,32 @@ const FloorCleaning = () => {
 
   const seoCopy: Record<string, { title: string; desc: string; kw: string }> = {
     pl: {
-      title: 'Pranie wykładzin Wrocław — dywany, ​ko­wro­lin, płytki | MasterClean',
-      desc: 'Profesjonalne pranie dywanów, wykładzin dywanowych i czyszczenie płytek ceramicznych we Wrocławiu. Ekstrakcyjne pranie, dojazd lub odbiór. Cena bez markupu.',
-      kw: 'pranie dywanów wrocław, pranie wykładzin, czyszczenie wykładziny dywanowej, pranie dywanu z odbiorem, ekstrakcyjne pranie dywanów, czyszczenie płytek wrocław, czyszczenie fug, impregnacja dywanu, czyszczenie balkonu, czyszczenie tarasu',
+      // 56 chars
+      title: 'Pranie wykładzin Wrocław — dywany, kowrolin, płytki',
+      // 156 chars
+      desc: 'Profesjonalne pranie dywanów, wykładzin dywanowych i czyszczenie płytek we Wrocławiu i okolicach. Ekstrakcyjne pranie, dojazd lub odbiór bez markupu.',
+      kw: 'pranie dywanów wrocław, pranie wykładzin wrocław, czyszczenie wykładziny dywanowej, pranie dywanu z odbiorem wrocław, ekstrakcyjne pranie dywanów, czyszczenie płytek wrocław, czyszczenie fug, impregnacja dywanu, czyszczenie balkonu wrocław, czyszczenie tarasu wrocław, pranie dywanów smolec, pranie dywanów kąty wrocławskie, pranie dywanów oława, pranie dywanów opole, pranie dywanów legnica, pranie dywanów lubin',
     },
     ru: {
-      title: 'Химчистка ковров и плитки во Вроцлаве — ковролин, плитка | MasterClean',
-      desc: 'Профессиональная химчистка ковров, ковролина и керамической плитки во Вроцлаве. Экстракторный метод, выезд или забор. Цена без наценки за город.',
-      kw: 'химчистка ковров вроцлав, чистка ковролина, мойка ковра с забором, экстракторная чистка, чистка плитки вроцлав, чистка швов, импрегнация ковра, чистка балкона',
+      // 57 chars
+      title: 'Химчистка ковров и плитки во Вроцлаве — выезд',
+      // 158 chars
+      desc: 'Профессиональная экстракторная химчистка ковров, ковролина и плитки во Вроцлаве и пригородах. Выезд или забор в прачечную. Цена без наценки за город.',
+      kw: 'химчистка ковров вроцлав, чистка ковролина вроцлав, мойка ковра с забором вроцлав, экстракторная чистка ковров, чистка плитки вроцлав, чистка швов плитки, импрегнация ковра, чистка балкона вроцлав, чистка террасы, химчистка ковров олава, химчистка ковров ополе, химчистка ковров легница, химчистка ковров любин, химчистка ковров смолец',
     },
     en: {
-      title: 'Carpet & Tile Cleaning Wrocław — Floor Coverings | MasterClean',
-      desc: 'Professional carpet, fitted carpet and tile cleaning in Wrocław. Extraction method, on-site service or pickup. No city surcharge.',
-      kw: 'carpet cleaning wroclaw, rug cleaning pickup, fitted carpet cleaning, extraction cleaning, tile cleaning wroclaw, grout cleaning, carpet impregnation',
+      // 53 chars
+      title: 'Carpet & Tile Cleaning Wrocław — Floor Coverings',
+      // 154 chars
+      desc: 'Professional carpet, fitted carpet and ceramic tile cleaning in Wrocław and surrounding cities. Extraction method, on-site service or pickup. No surcharge.',
+      kw: 'carpet cleaning wroclaw, rug cleaning pickup wroclaw, fitted carpet cleaning, extraction carpet cleaning, tile cleaning wroclaw, grout cleaning, carpet impregnation, balcony tile cleaning, terrace cleaning, carpet cleaning opole, carpet cleaning legnica, carpet cleaning lubin, carpet cleaning smolec',
     },
     uk: {
-      title: 'Хімчистка килимів і плитки Вроцлав | MasterClean',
-      desc: 'Професійна хімчистка килимів, ковроліну та плитки у Вроцлаві. Екстракторний метод, виїзд або забір. Без націнки за місто.',
-      kw: 'хімчистка килимів вроцлав, чистка ковроліну, миття килима із забором, чистка плитки, імпрегнація килима',
+      // 47 chars
+      title: 'Хімчистка килимів і плитки Вроцлав — виїзд',
+      // 152 chars
+      desc: 'Професійна екстракторна хімчистка килимів, ковроліну та керамічної плитки у Вроцлаві та передмісті. Виїзд або забір. Без націнки за місто, гарантія якості.',
+      kw: 'хімчистка килимів вроцлав, чистка ковроліну вроцлав, миття килима із забором, екстракторна чистка килимів, чистка плитки вроцлав, чистка швів, імпрегнація килима, чистка балкона вроцлав, чистка тераси, хімчистка килимів ополе, хімчистка килимів легниця, хімчистка килимів любин',
     },
   };
   const s = seoCopy[language as keyof typeof seoCopy] || seoCopy.pl;
@@ -218,11 +226,11 @@ const FloorCleaning = () => {
   return (
     <>
       <SEO
-        title={s.title.slice(0, 60)}
+        title={s.title}
         description={s.desc}
         keywords={s.kw}
         canonical="/floor-cleaning"
-        image="https://masterclean1885.com/og-image.png"
+        image="/og-floor-cleaning.jpg"
         breadcrumbs={[{ name: c.title.split('—')[0].trim(), path: '/floor-cleaning' }]}
         jsonLd={[
           {
