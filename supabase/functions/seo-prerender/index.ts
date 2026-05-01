@@ -510,15 +510,104 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
 <body>
   <h1>${escapeHtml(meta.title)}</h1>
   <p>${escapeHtml(meta.description)}</p>
-  <p>Telefon: <a href="tel:${PHONE}">${PHONE}</a></p>
-  <p><a href="${SITE_URL}">MasterClean — Strona główna</a></p>
-  <nav>
-    <a href="${SITE_URL}/services">Usługi</a> |
-    <a href="${SITE_URL}/prices">Cennik</a> |
-    <a href="${SITE_URL}/reviews">Opinie</a> |
-    <a href="${SITE_URL}/contacts">Kontakt</a> |
-    <a href="${SITE_URL}/blog">Blog</a>
-  </nav>
+
+  <section>
+    <h2>O firmie MasterClean</h2>
+    <p>MasterClean to profesjonalna firma czyszcząca działająca od 2021 roku we Wrocławiu i okolicach. Specjalizujemy się w praniu tapicerki meblowej i samochodowej, czyszczeniu dywanów, materacy, foteli, kanap oraz narożników. Wykonujemy również ozonowanie pomieszczeń i samochodów, mycie okien, sprzątanie mieszkań, domów i biur, a także drobne naprawy domowe (złota rączka).</p>
+    <p>Pracujemy 24 godziny na dobę, 7 dni w tygodniu, w tym w weekendy i święta. Stosujemy nowoczesny sprzęt marek Kärcher Puzzi i SantoEmma oraz ekologiczne, bezpieczne dla dzieci i zwierząt środki czyszczące. Każde zlecenie wykonujemy z dojazdem do klienta, a dla zamówień powyżej 180 PLN dojazd jest bezpłatny.</p>
+  </section>
+
+  <section>
+    <h2>Nasze usługi</h2>
+    <ul>
+      <li><strong>Pranie tapicerki meblowej</strong> — kanapy, fotele, narożniki, krzesła, pufy, sofy. Głębokie czyszczenie ekstrakcyjne usuwające kurz, roztocza, alergeny, plamy i zapachy.</li>
+      <li><strong>Pranie tapicerki skórzanej</strong> — czyszczenie i pielęgnacja mebli skórzanych, odżywianie i impregnacja skóry.</li>
+      <li><strong>Pranie materacy</strong> — głębokie czyszczenie materacy jedno- i dwuosobowych, usuwanie roztoczy, bakterii i alergenów.</li>
+      <li><strong>Czyszczenie dywanów i wykładzin</strong> — pranie dywanów u klienta lub z odbiorem do warsztatu, czyszczenie wykładzin dywanowych, impregnacja.</li>
+      <li><strong>Czyszczenie samochodów</strong> — pranie tapicerki samochodowej, foteli, podsufitki, dywaników, bagażnika; ozonowanie wnętrza auta.</li>
+      <li><strong>Ozonowanie</strong> — usuwanie nieprzyjemnych zapachów (papierosy, zwierzęta, pleśń), dezynfekcja powietrza, eliminacja bakterii i wirusów.</li>
+      <li><strong>Mycie okien</strong> — bezsmugowe czyszczenie szyb, ram, parapetów i balustrad w mieszkaniach, domach i biurach.</li>
+      <li><strong>Sprzątanie</strong> — sprzątanie standardowe, generalne i po remoncie mieszkań, domów oraz biur.</li>
+      <li><strong>Złota rączka</strong> — drobne naprawy domowe, hydraulika, elektryka, montaż mebli, prace porządkowe.</li>
+      <li><strong>Impregnacja</strong> — ochrona mebli, dywanów i tapicerki przed wodą, brudem i plamami.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cennik</h2>
+    <ul>
+      <li>Pranie kanapy 2-osobowej — od 130 PLN</li>
+      <li>Pranie kanapy 3-osobowej — od 150 PLN</li>
+      <li>Pranie narożnika — od 180 PLN</li>
+      <li>Pranie materaca jednoosobowego — od 115 PLN</li>
+      <li>Pranie materaca dwuosobowego — od 175 PLN</li>
+      <li>Pranie fotela — od 65 PLN</li>
+      <li>Pranie krzesła — od 25 PLN</li>
+      <li>Czyszczenie dywanu u klienta — 15 PLN/m²</li>
+      <li>Pranie dywanów z odbiorem i dostawą — 30 PLN/m²</li>
+      <li>Czyszczenie wykładziny dywanowej (20–50 m²) — 10 PLN/m²</li>
+      <li>Czyszczenie wykładziny dywanowej (50+ m²) — 7–10 PLN/m²</li>
+      <li>Czyszczenie płytek — 20 PLN/m²</li>
+      <li>Impregnacja dywanu — 5 PLN/m²</li>
+      <li>Ozonowanie samochodu — od 100 PLN</li>
+      <li>Ozonowanie mieszkania — od 200 PLN</li>
+      <li>Mycie okien — od 12 PLN/m²</li>
+    </ul>
+    <p>Minimalna wartość zamówienia: 160 PLN we Wrocławiu i Smolcu, 220 PLN w pozostałych miastach. Dojazd gratis od 180 PLN.</p>
+  </section>
+
+  <section>
+    <h2>Obszar działania</h2>
+    <p>Świadczymy usługi we Wrocławiu, Smolcu, Opolu, Legnicy, Lubinie, Oławie, Kaliszu, Lesznie, Świdnicy, Wałbrzychu, Ostrowie Wielkopolskim, Jeleniej Górze, Brzegu oraz w wielu innych miastach Dolnego Śląska, Wielkopolski i Opolszczyzny. Dojeżdżamy również do mniejszych miejscowości i wsi w promieniu do 100 km od Wrocławia.</p>
+  </section>
+
+  <section>
+    <h2>Dlaczego warto wybrać MasterClean</h2>
+    <ul>
+      <li>Ponad 1500 zadowolonych klientów i średnia ocena 4.9/5 na podstawie opinii w Google, Fixly i na naszej stronie.</li>
+      <li>Profesjonalny sprzęt ekstrakcyjny Kärcher Puzzi 10/1 i SantoEmma SW15 — głębokie czyszczenie tapicerki niemożliwe w warunkach domowych.</li>
+      <li>Ekologiczne środki czyszczące, bezpieczne dla dzieci, alergików i zwierząt domowych.</li>
+      <li>Praca 24/7, w tym w weekendy i święta — dopasujemy się do Twojego harmonogramu.</li>
+      <li>Przejrzysty cennik bez ukrytych opłat — ostateczna cena ustalana przed rozpoczęciem pracy.</li>
+      <li>Gwarancja jakości — jeśli efekt nie spełni oczekiwań, ponownie wykonamy pracę bez dodatkowych kosztów.</li>
+      <li>Krótkie terminy realizacji — często możemy przyjechać już tego samego dnia.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Opinie klientów</h2>
+    <p>„Świetna obsługa, kanapa wygląda jak nowa po praniu. Ekipa profesjonalna, punktualna, w pełni polecam!" — Anna, Wrocław</p>
+    <p>„Bardzo dobra firma. Wyczyścili nam dywan i materace — efekt rewelacyjny. Cena adekwatna do jakości." — Marcin, Opole</p>
+    <p>„Zamówiłam ozonowanie samochodu po poprzednim właścicielu palącym papierosy — zapach całkowicie zniknął. Polecam!" — Katarzyna, Legnica</p>
+  </section>
+
+  <section>
+    <h2>Najczęściej zadawane pytania</h2>
+    <h3>Ile czasu zajmuje pranie kanapy?</h3>
+    <p>Pranie kanapy 3-osobowej trwa zazwyczaj 60–90 minut. Mebel po praniu wymaga 4–8 godzin schnięcia w temperaturze pokojowej.</p>
+    <h3>Czy stosowane środki są bezpieczne dla dzieci i zwierząt?</h3>
+    <p>Tak, używamy wyłącznie ekologicznych, hipoalergicznych preparatów certyfikowanych do stosowania w obecności dzieci, alergików i zwierząt.</p>
+    <h3>Czy dojeżdżacie do klienta?</h3>
+    <p>Tak, wszystkie usługi prania tapicerki, dywanów i materacy wykonujemy z dojazdem do klienta. Dojazd jest bezpłatny dla zamówień powyżej 180 PLN.</p>
+    <h3>Jakie formy płatności akceptujecie?</h3>
+    <p>Akceptujemy płatność gotówką, kartą, BLIK-iem, przelewem oraz fakturą VAT dla firm.</p>
+  </section>
+
+  <section>
+    <h2>Kontakt</h2>
+    <p>Telefon: <a href="tel:${PHONE}">${PHONE}</a> — pracujemy 24/7</p>
+    <p>Adres: Wrocław, Dolnośląskie</p>
+    <p><a href="${SITE_URL}">MasterClean — strona główna</a></p>
+    <nav>
+      <a href="${SITE_URL}/services">Usługi</a> |
+      <a href="${SITE_URL}/prices">Cennik</a> |
+      <a href="${SITE_URL}/about">O firmie</a> |
+      <a href="${SITE_URL}/equipment">Sprzęt</a> |
+      <a href="${SITE_URL}/reviews">Opinie</a> |
+      <a href="${SITE_URL}/contacts">Kontakt</a> |
+      <a href="${SITE_URL}/blog">Blog</a>
+    </nav>
+  </section>
 </body>
 </html>`;
 }
