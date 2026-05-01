@@ -405,7 +405,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
       ...insertion,
       ...rest.slice(windowsIdx),
     ];
-  }, [isWroclaw, isCleaningCity, allCategories]);
+  }, [isWroclaw, isCleaningCity, allCategories, excludeCategoryIds]);
 
   // Initialize all open when defaultAllOpen
   useEffect(() => {
