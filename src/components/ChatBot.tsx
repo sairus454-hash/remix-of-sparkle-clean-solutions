@@ -935,7 +935,7 @@ const ChatBot = () => {
         )}
 
         {/* Action Buttons */}
-        {!showLeadForm && !showPhotoPreview && (
+        {!showLeadForm && !showPhotoPreview && !showWizard && (
           <div className={cn(
             "absolute bottom-16 left-0 right-0 px-3 py-2 bg-card border-t border-border flex gap-2",
             isMobile && "px-2"
@@ -948,6 +948,21 @@ const ChatBot = () => {
               className="hidden"
               onChange={handlePhotoSelect}
             />
+            <Button
+              onClick={() => setShowWizard(true)}
+              variant="outline"
+              size="sm"
+              className={cn(
+                "flex-1 border-primary/30 text-primary hover:bg-primary/5",
+                isMobile ? "text-xs h-11 px-2" : "text-xs"
+              )}
+              title={language === 'ru' ? 'Виды услуг и быстрый расчёт' : language === 'pl' ? 'Usługi i wycena' : language === 'uk' ? 'Послуги та розрахунок' : 'Services & quote'}
+            >
+              <Calculator className="w-3.5 h-3.5 mr-1" />
+              <span className="truncate">
+                {language === 'ru' ? '⚡ Расчёт' : language === 'pl' ? '⚡ Wycena' : language === 'uk' ? '⚡ Розрахунок' : '⚡ Quote'}
+              </span>
+            </Button>
             <Button
               onClick={() => fileInputRef.current?.click()}
               variant="outline"
