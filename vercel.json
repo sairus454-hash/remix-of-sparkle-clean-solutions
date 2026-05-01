@@ -64,6 +64,12 @@
     { "source": "/sitemap", "destination": "/index.html" },
     { "source": "/city/:slug", "destination": "/index.html" },
     { "source": "/admin", "destination": "/index.html" },
-    { "source": "/admin/login", "destination": "/index.html" }
+    { "source": "/admin/login", "destination": "/index.html" },
+    { "source": "/ru", "destination": "/index.html" },
+    { "source": "/en", "destination": "/index.html" },
+    { "source": "/uk", "destination": "/index.html" },
+    { "source": "/ru/:path*", "destination": "/index.html" },
+    { "source": "/en/:path*", "destination": "/index.html" },
+    { "source": "/uk/:path*", "destination": "/index.html" }
   ]
 }
