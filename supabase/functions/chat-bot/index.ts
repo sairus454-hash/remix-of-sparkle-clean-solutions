@@ -281,30 +281,30 @@ Deep cleaning:
 • Pet litter box cleaning — 15 PLN
 
 🛋 FURNITURE (🔥 WEEKLY DEAL: -10% on furniture & mattress cleaning!):
-• Ottoman — 30 PLN (was 35)
+• Ottoman — 30 PLN
 • Chair (seat only) — 15 PLN
 • Chair with backrest — 25 PLN
 • Conference chair — 30 PLN
 • Swivel chair — 45 PLN
 • Chair — 25 PLN
-• Armchair — 65 PLN (was 75)
+• Armchair — 65 PLN
 • Pillow — 10 PLN
-• 2-seater sofa — 130 PLN (was 145)
-• 3-seater sofa — 150 PLN (was 165)
-• Corner sofa — 180 PLN (was 200)
-• Large corner sofa — 210 PLN (was 235)
-• Carpet — 20 PLN/m² (was 25)
+• 2-seater sofa — 130 PLN
+• 3-seater sofa — 150 PLN
+• Corner sofa — 180 PLN
+• Large corner sofa — 210 PLN
+• Carpet — 20 PLN/m²
 • Flock furniture — +50% to regular price
 
 🛋 LEATHER FURNITURE (🔥 WEEKLY DEAL: -10%!):
-• Ottoman (leather) — 40 PLN (was 45)
-• Chair (leather) — 40 PLN (was 45)
-• Pillow (leather) — 15 PLN (was 20)
-• Armchair (leather) — 75 PLN (was 80)
-• Swivel chair (leather) — 60 PLN (was 70)
-• 2-seater sofa (leather) — 145 PLN (was 160)
-• 3-seater sofa (leather) — 180 PLN (was 200)
-• Corner sofa (leather) — 220 PLN (was 245)
+• Ottoman (leather) — 40 PLN
+• Chair (leather) — 40 PLN
+• Pillow (leather) — 15 PLN
+• Armchair (leather) — 75 PLN
+• Swivel chair (leather) — 60 PLN
+• 2-seater sofa (leather) — 145 PLN
+• 3-seater sofa (leather) — 180 PLN
+• Corner sofa (leather) — 220 PLN
 
 🚗 CAR CLEANING:
 • Single seat cleaning — 80 PLN
@@ -322,12 +322,12 @@ Deep cleaning:
 • Van cabin cleaning — from 400 PLN
 
 🛏 MATTRESSES (🔥 -10%):
-• Double mattress — 175 PLN (was 195)
-• Single mattress — 115 PLN (was 125)
-• Bed headboard cleaning — 80 PLN (was 90)
-• Bed frame cleaning — 80 PLN (was 90)
-• Single mattress (2 sides) — 180 PLN (was 200)
-• Double mattress (2 sides) — 240 PLN (was 265)
+• Double mattress — 175 PLN
+• Single mattress — 115 PLN
+• Bed headboard cleaning — 80 PLN
+• Bed frame cleaning — 80 PLN
+• Single mattress (2 sides) — 180 PLN
+• Double mattress (2 sides) — 240 PLN
 
 💨 OZONATION:
 • 1-room apartment (20-40 m²) — 144 PLN
@@ -518,31 +518,31 @@ Sprzątanie generalne:
 • Sprzątanie kuwety — 15 PLN
 
 🛋 MEBLE (🔥 PROMOCJA TYGODNIA: -10% na pranie mebli i materacy!):
-• Pufa — 30 PLN (zamiast 35)
+• Pufa — 30 PLN
 • Krzesło (siedzenie) — 15 PLN
 • Krzesło z oparciem — 25 PLN
 • Krzesło konferencyjne — 30 PLN
 • Krzesło obrotowe — 45 PLN
 • Krzesło — 25 PLN
-• Fotel — 65 PLN (zamiast 75)
+• Fotel — 65 PLN
 • Poduszka — 10 PLN
-• Sofa 2-osobowa — 130 PLN (zamiast 145)
-• Sofa 3-osobowa — 150 PLN (zamiast 165)
-• Sofa narożna — 180 PLN (zamiast 200)
-• Duża sofa narożna — 210 PLN (zamiast 235)
+• Sofa 2-osobowa — 130 PLN
+• Sofa 3-osobowa — 150 PLN
+• Sofa narożna — 180 PLN
+• Duża sofa narożna — 210 PLN
 • Narożnik kuchenny — 130 PLN
-• Dywan — 20 PLN/m² (zamiast 25)
+• Dywan — 20 PLN/m²
 • Meble z floku — +50% do ceny zwykłej
 
 🛋 MEBLE SKÓRZANE (🔥 PROMOCJA TYGODNIA: -10%!):
-• Pufa (skóra) — 40 PLN (zamiast 45)
-• Krzesło (skóra) — 40 PLN (zamiast 45)
-• Poduszka (skóra) — 15 PLN (zamiast 20)
-• Fotel (skóra) — 75 PLN (zamiast 80)
-• Krzesło obrotowe (skóra) — 60 PLN (zamiast 70)
-• Sofa 2-osobowa (skóra) — 145 PLN (zamiast 160)
-• Sofa 3-osobowa (skóra) — 180 PLN (zamiast 200)
-• Sofa narożna (skóra) — 220 PLN (zamiast 245)
+• Pufa (skóra) — 40 PLN
+• Krzesło (skóra) — 40 PLN
+• Poduszka (skóra) — 15 PLN
+• Fotel (skóra) — 75 PLN
+• Krzesło obrotowe (skóra) — 60 PLN
+• Sofa 2-osobowa (skóra) — 145 PLN
+• Sofa 3-osobowa (skóra) — 180 PLN
+• Sofa narożna (skóra) — 220 PLN
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie 1 siedzenia — 80 PLN
@@ -560,12 +560,12 @@ Sprzątanie generalne:
 • Czyszczenie kabiny busa — od 400 PLN
 
 🛏 MATERACE (🔥 -10%):
-• Materac dwuosobowy — 175 PLN (zamiast 195)
-• Materac jednoosobowy — 115 PLN (zamiast 125)
-• Czyszczenie zagłówka łóżka — 80 PLN (zamiast 90)
-• Czyszczenie ramy łóżka — 80 PLN (zamiast 90)
-• Materac jednoosobowy (2 strony) — 180 PLN (zamiast 200)
-• Materac dwuosobowy (2 strony) — 240 PLN (zamiast 265)
+• Materac dwuosobowy — 175 PLN
+• Materac jednoosobowy — 115 PLN
+• Czyszczenie zagłówka łóżka — 80 PLN
+• Czyszczenie ramy łóżka — 80 PLN
+• Materac jednoosobowy (2 strony) — 180 PLN
+• Materac dwuosobowy (2 strony) — 240 PLN
 
 
 💨 OZONOWANIE:
