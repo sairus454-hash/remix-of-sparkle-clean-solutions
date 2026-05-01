@@ -35,6 +35,7 @@ const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
 const Windows = lazy(() => import("./pages/Windows"));
 const Cleaning = lazy(() => import("./pages/Cleaning"));
+const FloorCleaning = lazy(() => import("./pages/FloorCleaning"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -96,6 +97,7 @@ const App = () => {
                     <Route path="/ozone" element={<Ozone />} />
                     <Route path="/windows" element={<Windows />} />
                     <Route path="/cleaning" element={<Cleaning />} />
+                    <Route path="/floor-cleaning" element={<FloorCleaning />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/blog/:id" element={<BlogArticle />} />
                     <Route path="/handyman" element={<Handyman />} />
