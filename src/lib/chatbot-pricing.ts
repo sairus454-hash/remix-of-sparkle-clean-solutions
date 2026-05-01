@@ -85,7 +85,7 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
       ru: 'Сколько матрасов?',
       en: 'How many mattresses?',
       pl: 'Ile materacy?',
-      uk: 'Скільki матраців?',
+      uk: 'Скільки матраців?',
     },
     unit: { ru: 'шт', en: 'pcs', pl: 'szt', uk: 'шт' },
     suggestions: [1, 2, 3],
