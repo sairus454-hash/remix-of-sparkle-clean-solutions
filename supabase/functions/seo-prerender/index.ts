@@ -632,23 +632,32 @@ Deno.serve(async (req: Request) => {
 
   try {
     const url = new URL(req.url);
-    const path = url.searchParams.get('path') || '/';
-    const lang = (url.searchParams.get('lang') || 'pl').toLowerCase();
+    let path = url.searchParams.get('path') || '/';
+
+    // New: language prefix lives IN the path (/ru/..., /en/..., /uk/...).
+    // Strip it to look up the page meta, but remember the language so we can
+    // build the correct canonical/hreflang.
+    const prefixMatch = path.match(/^\/(ru|en|uk)(\/|$)/);
+    const langFromPath = prefixMatch ? prefixMatch[1] : null;
+    if (prefixMatch) {
+      path = path.replace(/^\/(ru|en|uk)/, '') || '/';
+    }
+
+    // Backward-compat: still accept ?lang=xx for old links and 301-style hints.
+    const langQuery = (url.searchParams.get('lang') || '').toLowerCase();
+    const lang = langFromPath || langQuery || 'pl';
     const validLang = ['pl', 'ru', 'en', 'uk'].includes(lang) ? lang : 'pl';
     const userAgent = req.headers.get('user-agent') || '';
     const forcePrerender = url.searchParams.get('_prerender') === '1';
 
     // Only serve to bots or when explicitly requested
     if (!isBot(userAgent) && !forcePrerender) {
-      const redirectTarget = validLang === 'pl'
+      const target = validLang === 'pl'
         ? `${SITE_URL}${path}`
-        : `${SITE_URL}${path}?lang=${validLang}`;
+        : `${SITE_URL}/${validLang}${path === '/' ? '' : path}`;
       return new Response(null, {
         status: 302,
-        headers: {
-          ...corsHeaders,
-          'Location': redirectTarget,
-        },
+        headers: { ...corsHeaders, 'Location': target },
       });
     }
 
