@@ -264,7 +264,7 @@ const FloorCleaning = () => {
               <CircularRevealCard index={0}>
                 <div className="bg-card p-6 rounded-2xl shadow-card border border-border">
                   <CardServiceCalculator
-                    items={items.map(i => ({ ...i, price: applyPrice(i.price, { skipMarkup: true }) ?? i.price }))}
+                    items={items}
                     category="floorCleaning"
                     onSendToForm={handleSendToForm}
                   />
