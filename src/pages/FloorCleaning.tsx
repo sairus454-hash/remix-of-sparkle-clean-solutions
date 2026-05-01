@@ -206,28 +206,28 @@ const FloorCleaning = () => {
       title: 'Pranie wykładzin Wrocław — dywany, kowrolin, płytki',
       // 156 chars
       desc: 'Profesjonalne pranie dywanów, wykładzin dywanowych i czyszczenie płytek we Wrocławiu i okolicach. Ekstrakcyjne pranie, dojazd lub odbiór bez markupu.',
-      kw: 'pranie dywanów wrocław, pranie wykładzin wrocław, czyszczenie wykładziny dywanowej, pranie dywanu z odbiorem wrocław, ekstrakcyjne pranie dywanów, czyszczenie płytek wrocław, czyszczenie fug, impregnacja dywanu, czyszczenie balkonu wrocław, czyszczenie tarasu wrocław, pranie dywanów smolec, pranie dywanów kąty wrocławskie, pranie dywanów oława, pranie dywanów opole, pranie dywanów legnica, pranie dywanów lubin',
+      kw: 'pranie dywanów wrocław, pranie wykładzin wrocław, czyszczenie wykładziny dywanowej, pranie dywanu z odbiorem wrocław, ekstrakcyjne pranie dywanów, czyszczenie płytek wrocław, czyszczenie fug, impregnacja dywanu, czyszczenie balkonu wrocław, czyszczenie tarasu wrocław, ozonowanie wrocław, ozonowanie mieszkania, ozonowanie biura, ozonowanie samochodu, dezynfekcja ozonem, usuwanie zapachów ozonem',
     },
     ru: {
       // 57 chars
       title: 'Химчистка ковров и плитки во Вроцлаве — выезд',
       // 158 chars
       desc: 'Профессиональная экстракторная химчистка ковров, ковролина и плитки во Вроцлаве и пригородах. Выезд или забор в прачечную. Цена без наценки за город.',
-      kw: 'химчистка ковров вроцлав, чистка ковролина вроцлав, мойка ковра с забором вроцлав, экстракторная чистка ковров, чистка плитки вроцлав, чистка швов плитки, импрегнация ковра, чистка балкона вроцлав, чистка террасы, химчистка ковров олава, химчистка ковров ополе, химчистка ковров легница, химчистка ковров любин, химчистка ковров смолец',
+      kw: 'химчистка ковров вроцлав, чистка ковролина вроцлав, мойка ковра с забором вроцлав, экстракторная чистка ковров, чистка плитки вроцлав, чистка швов плитки, импрегнация ковра, чистка балкона вроцлав, чистка террасы, озонирование вроцлав, озонирование квартиры, озонирование офиса, озонирование авто, дезинфекция озоном, удаление запахов озоном',
     },
     en: {
       // 53 chars
       title: 'Carpet & Tile Cleaning Wrocław — Floor Coverings',
       // 154 chars
       desc: 'Professional carpet, fitted carpet and ceramic tile cleaning in Wrocław and surrounding cities. Extraction method, on-site service or pickup. No surcharge.',
-      kw: 'carpet cleaning wroclaw, rug cleaning pickup wroclaw, fitted carpet cleaning, extraction carpet cleaning, tile cleaning wroclaw, grout cleaning, carpet impregnation, balcony tile cleaning, terrace cleaning, carpet cleaning opole, carpet cleaning legnica, carpet cleaning lubin, carpet cleaning smolec',
+      kw: 'carpet cleaning wroclaw, rug cleaning pickup wroclaw, fitted carpet cleaning, extraction carpet cleaning, tile cleaning wroclaw, grout cleaning, carpet impregnation, balcony tile cleaning, terrace cleaning, ozonation wroclaw, apartment ozonation, office ozonation, car ozonation, ozone disinfection, odor removal with ozone',
     },
     uk: {
       // 47 chars
       title: 'Хімчистка килимів і плитки Вроцлав — виїзд',
       // 152 chars
       desc: 'Професійна екстракторна хімчистка килимів, ковроліну та керамічної плитки у Вроцлаві та передмісті. Виїзд або забір. Без націнки за місто, гарантія якості.',
-      kw: 'хімчистка килимів вроцлав, чистка ковроліну вроцлав, миття килима із забором, екстракторна чистка килимів, чистка плитки вроцлав, чистка швів, імпрегнація килима, чистка балкона вроцлав, чистка тераси, хімчистка килимів ополе, хімчистка килимів легниця, хімчистка килимів любин',
+      kw: 'хімчистка килимів вроцлав, чистка ковроліну вроцлав, миття килима із забором, екстракторна чистка килимів, чистка плитки вроцлав, чистка швів, імпрегнація килима, чистка балкона вроцлав, чистка тераси, озонування вроцлав, озонування квартири, озонування офісу, озонування авто, дезінфекція озоном, усунення запахів озоном',
     },
   };
   const s = seoCopy[language as keyof typeof seoCopy] || seoCopy.pl;
@@ -273,8 +273,38 @@ const FloorCleaning = () => {
               acceptedAnswer: { '@type': 'Answer', text: f.a },
             })),
           },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Ozonation',
+            name: language === 'pl' ? 'Ozonowanie pomieszczeń i samochodów'
+                : language === 'ru' ? 'Озонирование помещений и автомобилей'
+                : language === 'uk' ? 'Озонування приміщень та автомобілів'
+                : 'Ozonation of rooms and cars',
+            description: language === 'pl' ? 'Usuwanie nieprzyjemnych zapachów i dezynfekcja powietrza generatorem ozonu w mieszkaniach, biurach i samochodach.'
+                       : language === 'ru' ? 'Удаление неприятных запахов и дезинфекция воздуха генератором озона в квартирах, офисах и автомобилях.'
+                       : language === 'uk' ? 'Усунення неприємних запахів та дезінфекція повітря генератором озону в квартирах, офісах та автомобілях.'
+                       : 'Removing unpleasant odors and air disinfection with an ozone generator in apartments, offices and cars.',
+            areaServed: { '@type': 'City', name: 'Wrocław' },
+            url: 'https://masterclean1885.com/floor-cleaning#ozonation',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'MasterClean',
+              telephone: '+48575211401',
+              address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+            },
+            offers: [
+              { '@type': 'Offer', name: 'Ozonation 1-room apartment (20-40 m²)', price: '200', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation 2-room apartment (40-60 m²)', price: '250', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation 3-room apartment (60+ m²)', price: '300', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation office (up to 100 m²)', price: '350', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonation office (100-150 m²)', price: '500', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Car ozonation', price: '150', priceCurrency: 'PLN' },
+            ],
+          },
         ]}
       />
+
       {/* Canonical + hreflang теперь всегда clean URLs через глобальный SEO-компонент,
           поэтому per-page Helmet override больше не нужен. */}
       <Layout>
@@ -351,7 +381,8 @@ const FloorCleaning = () => {
         </section>
 
         {/* Ozonation pricing */}
-        <section className="py-20 bg-card">
+        <section id="ozonation" className="py-20 bg-card scroll-mt-20">
+
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-8">
