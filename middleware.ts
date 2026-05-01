@@ -22,13 +22,29 @@ export default async function middleware(request: Request) {
     // Forward language query param so prerender can build language-specific canonical/meta
     const lang = url.searchParams.get('lang');
     if (lang) prerenderUrl.searchParams.set('lang', lang);
+    // Force prerender bypass — Vercel edge fetch may strip UA, which would
+    // make the function think the request is from a human and 302-redirect
+    // back to the site, creating an infinite loop and an empty HTML response.
+    prerenderUrl.searchParams.set('_prerender', '1');
 
-    const response = await fetch(prerenderUrl.toString());
+    const response = await fetch(prerenderUrl.toString(), {
+      headers: {
+        'user-agent': userAgent,
+        'accept': 'text/html',
+      },
+      redirect: 'manual',
+    });
+    // Safety net: if the function still redirected, fall through to the SPA
+    // shell instead of serving an empty 302 to Googlebot.
+    if (response.status >= 300 && response.status < 400) {
+      return;
+    }
     return new Response(response.body, {
       status: response.status,
       headers: {
-        'content-type': response.headers.get('content-type') || 'text/html',
+        'content-type': response.headers.get('content-type') || 'text/html; charset=utf-8',
         'cache-control': 'public, max-age=3600',
+        'x-prerendered': '1',
       },
     });
   }
