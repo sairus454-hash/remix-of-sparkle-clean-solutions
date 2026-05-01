@@ -350,7 +350,49 @@ const FloorCleaning = () => {
           </div>
         </section>
 
+        {/* Ozonation pricing */}
+        <section className="py-20 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mx-auto mb-4 shadow-glow">
+                  <Sparkles className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <h2 className="font-serif text-2xl md:text-3xl font-bold mb-3 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                  {language === 'pl' ? 'Ozonowanie pomieszczeń i samochodów' :
+                   language === 'ru' ? 'Озонирование помещений и автомобилей' :
+                   language === 'uk' ? 'Озонування приміщень та автомобілів' :
+                   'Ozonation of rooms and cars'}
+                </h2>
+                <p className="text-muted-foreground">
+                  {language === 'pl' ? 'Usuwanie nieprzyjemnych zapachów, dezynfekcja powietrza' :
+                   language === 'ru' ? 'Удаление неприятных запахов, дезинфекция воздуха' :
+                   language === 'uk' ? 'Усунення неприємних запахів, дезінфекція повітря' :
+                   'Removing unpleasant odors, air disinfection'}
+                </p>
+              </div>
+              <CircularRevealCard index={0}>
+                <div className="bg-card p-6 rounded-2xl shadow-card border border-border">
+                  <CardServiceCalculator
+                    items={[
+                      { id: 'ozone1room', name: t.prices.items.ozone1room, price: 200, image: ozone1room },
+                      { id: 'ozone2room', name: t.prices.items.ozone2room, price: 250, image: ozone2room },
+                      { id: 'ozone3room', name: t.prices.items.ozone3room, price: 300, image: ozone3room },
+                      { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 350, image: ozoneOfficeSmall },
+                      { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 500, image: ozoneOfficeLarge },
+                      { id: 'autoOzone', name: t.prices.items.autoOzone, price: 150, image: ozoneCar },
+                    ]}
+                    category="ozone"
+                    onSendToForm={handleSendToForm}
+                  />
+                </div>
+              </CircularRevealCard>
+            </div>
+          </div>
+        </section>
+
         {/* Before / After Gallery */}
+
         <section className="py-20 bg-card">
           <div className="container mx-auto px-4">
             <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
