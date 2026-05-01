@@ -569,6 +569,31 @@ const Cleaning = () => {
       </section>
       </LazySection>
 
+      {/* Ozone pricing */}
+      <LazySection minHeight="300px">
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
+            {t.prices?.ozonation || 'Озонирование'}
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <CardServiceCalculator
+              items={[
+                { id: 'ozone1room', name: t.prices.items.ozone1room, price: 200, image: ozone1room },
+                { id: 'ozone2room', name: t.prices.items.ozone2room, price: 250, image: ozone2room },
+                { id: 'ozone3room', name: t.prices.items.ozone3room, price: 300, image: ozone3room },
+                { id: 'ozoneOfficeSmall', name: t.prices.items.ozoneOfficeSmall, price: 350, image: ozoneOfficeSmall },
+                { id: 'ozoneOfficeLarge', name: t.prices.items.ozoneOfficeLarge, price: 450, image: ozoneOfficeLarge },
+                { id: 'autoOzone', name: t.prices.items.autoOzone || 'Озонирование авто', price: 120, image: ozoneCar },
+              ]}
+              category="ozone"
+              onSendToForm={handleCardToForm}
+            />
+          </div>
+        </div>
+      </section>
+      </LazySection>
+
       {/* Contact Form */}
       <section ref={formSectionRef} className="py-20 bg-gradient-section">
         <div className="container mx-auto px-4">
