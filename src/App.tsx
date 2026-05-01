@@ -86,39 +86,58 @@ const App = () => {
                 </IdleMount>
                 
                 <Suspense fallback={<PageLoader />}>
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/prices" element={<Prices />} />
-                    <Route path="/equipment" element={<Equipment />} />
-                    <Route path="/impregnation" element={<Impregnation />} />
-                    <Route path="/auto" element={<Auto />} />
-                    <Route path="/ozone" element={<Ozone />} />
-                    <Route path="/windows" element={<Windows />} />
-                    <Route path="/cleaning" element={<Cleaning />} />
-                    <Route path="/floor-cleaning" element={<FloorCleaning />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/blog/:id" element={<BlogArticle />} />
-                    <Route path="/handyman" element={<Handyman />} />
-                    <Route path="/reviews" element={<Reviews />} />
-                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                    <Route path="/terms" element={<Terms />} />
-                    <Route path="/contacts" element={<Contacts />} />
-                    <Route path="/cookies" element={<Cookies />} />
-                    <Route path="/sitemap" element={<Sitemap />} />
-                    <Route path="/city/:slug" element={<CityPage />} />
-                    <Route path="/admin/login" element={<AdminLogin />} />
-                    <Route
-                      path="/admin"
-                      element={
-                        <ProtectedRoute requireAdmin>
-                          <Admin />
-                        </ProtectedRoute>
-                      }
-                    />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
+                  {(() => {
+                    // Define every route once and replicate it under /ru, /en, /uk
+                    // so each language has its own indexable URL.
+                    const ROUTES: Array<{ path: string; element: JSX.Element }> = [
+                      { path: '/', element: <Index /> },
+                      { path: '/about', element: <About /> },
+                      { path: '/services', element: <Services /> },
+                      { path: '/prices', element: <Prices /> },
+                      { path: '/equipment', element: <Equipment /> },
+                      { path: '/impregnation', element: <Impregnation /> },
+                      { path: '/auto', element: <Auto /> },
+                      { path: '/ozone', element: <Ozone /> },
+                      { path: '/windows', element: <Windows /> },
+                      { path: '/cleaning', element: <Cleaning /> },
+                      { path: '/floor-cleaning', element: <FloorCleaning /> },
+                      { path: '/blog', element: <Blog /> },
+                      { path: '/blog/:id', element: <BlogArticle /> },
+                      { path: '/handyman', element: <Handyman /> },
+                      { path: '/reviews', element: <Reviews /> },
+                      { path: '/privacy-policy', element: <PrivacyPolicy /> },
+                      { path: '/terms', element: <Terms /> },
+                      { path: '/contacts', element: <Contacts /> },
+                      { path: '/cookies', element: <Cookies /> },
+                      { path: '/sitemap', element: <Sitemap /> },
+                      { path: '/city/:slug', element: <CityPage /> },
+                    ];
+                    const PREFIXES = ['', '/ru', '/en', '/uk'];
+                    return (
+                      <Routes>
+                        {PREFIXES.flatMap((prefix) =>
+                          ROUTES.map((r) => (
+                            <Route
+                              key={`${prefix}${r.path}`}
+                              path={prefix + (r.path === '/' ? (prefix ? '' : '/') : r.path)}
+                              element={r.element}
+                            />
+                          )),
+                        )}
+                        {/* Admin stays unprefixed */}
+                        <Route path="/admin/login" element={<AdminLogin />} />
+                        <Route
+                          path="/admin"
+                          element={
+                            <ProtectedRoute requireAdmin>
+                              <Admin />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route path="*" element={<NotFound />} />
+                      </Routes>
+                    );
+                  })()}
                 </Suspense>
               </BrowserRouter>
             </TooltipProvider>
