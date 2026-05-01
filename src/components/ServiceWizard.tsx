@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -8,6 +8,8 @@ import {
   SERVICES_MENU,
   ESTIMATE_COPY,
   computeEstimate,
+  readStoredCity,
+  writeStoredCity,
   type ServiceMenuItem,
   type ChatLang,
 } from '@/lib/chatbot-pricing';
@@ -36,14 +38,39 @@ export const ServiceWizard = ({
   const lang: ChatLang = (['ru', 'en', 'pl', 'uk'].includes(language) ? language : 'ru') as ChatLang;
   const copy = ESTIMATE_COPY[lang];
 
+  // Pre-fill city from previous chat session OR the global useCity store
+  // (same localStorage key — so a city picked in the calculator also lands here).
+  const stored = readStoredCity();
   const [step, setStep] = useState<Step>('menu');
   const [service, setService] = useState<ServiceMenuItem | null>(null);
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState(stored?.name ?? '');
+  const [rememberedCity, setRememberedCity] = useState(stored?.name ?? '');
   const [qty, setQty] = useState<number | ''>('');
+
+  const pickService = (s: ServiceMenuItem) => {
+    setService(s);
+    // If we already remember a city — skip city step, go straight to quantity.
+    setStep(rememberedCity ? 'qty' : 'city');
+  };
+
+  const confirmCity = (chosen: string) => {
+    const trimmed = chosen.trim();
+    if (!trimmed) return;
+    setCity(trimmed);
+    writeStoredCity(trimmed);
+    setRememberedCity(trimmed);
+    setStep('qty');
+  };
+
+  const changeCity = () => {
+    setRememberedCity('');
+    setCity('');
+    setStep('city');
+  };
 
   const back = () => {
     if (step === 'city') setStep('menu');
-    else if (step === 'qty') setStep('city');
+    else if (step === 'qty') setStep(rememberedCity ? 'menu' : 'city');
     else if (step === 'result') setStep('qty');
   };
 
