@@ -129,25 +129,38 @@ export const ServiceWizard = ({
 
       {/* Step: service menu */}
       {step === 'menu' && (
-        <div className="grid grid-cols-2 gap-2">
-          {SERVICES_MENU.map((s) => (
-            <button
-              key={s.key}
-              onClick={() => {
-                setService(s);
-                setStep('city');
-              }}
-              className={cn(
-                'flex items-center gap-2 px-2 py-2 rounded-lg border border-primary/20',
-                'bg-primary/5 hover:bg-primary/10 active:scale-95 transition',
-                'text-left text-foreground',
-                isMobile ? 'min-h-[48px] text-xs' : 'text-xs',
-              )}
-            >
-              <span className="text-base">{s.emoji}</span>
-              <span className="flex-1 leading-tight">{s.label[lang]}</span>
-            </button>
-          ))}
+        <div className="space-y-2">
+          {rememberedCity && (
+            <div className="flex items-center gap-2 px-2 py-1.5 rounded-md bg-primary/10 border border-primary/20 text-xs text-foreground">
+              <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+              <span className="flex-1 truncate">
+                {copy.rememberedCity(rememberedCity).replace(/\*\*/g, '')}
+              </span>
+              <button
+                onClick={changeCity}
+                className="text-primary hover:underline whitespace-nowrap"
+              >
+                {copy.changeCity}
+              </button>
+            </div>
+          )}
+          <div className="grid grid-cols-2 gap-2">
+            {SERVICES_MENU.map((s) => (
+              <button
+                key={s.key}
+                onClick={() => pickService(s)}
+                className={cn(
+                  'flex items-center gap-2 px-2 py-2 rounded-lg border border-primary/20',
+                  'bg-primary/5 hover:bg-primary/10 active:scale-95 transition',
+                  'text-left text-foreground',
+                  isMobile ? 'min-h-[48px] text-xs' : 'text-xs',
+                )}
+              >
+                <span className="text-base">{s.emoji}</span>
+                <span className="flex-1 leading-tight">{s.label[lang]}</span>
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
