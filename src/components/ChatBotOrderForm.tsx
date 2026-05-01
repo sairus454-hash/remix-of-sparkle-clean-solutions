@@ -31,6 +31,8 @@ interface ChatBotOrderFormProps {
   onCancel: () => void;
   isLoading: boolean;
   defaultServiceKey?: string;
+  defaultCity?: string;
+  defaultDetails?: string;
 }
 
 const TIME_SLOTS = Array.from({ length: 25 }, (_, i) => {
@@ -39,7 +41,7 @@ const TIME_SLOTS = Array.from({ length: 25 }, (_, i) => {
   return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
 });
 
-const ChatBotOrderForm = ({ onSubmit, onCancel, isLoading, defaultServiceKey = '' }: ChatBotOrderFormProps) => {
+const ChatBotOrderForm = ({ onSubmit, onCancel, isLoading, defaultServiceKey = '', defaultCity = '', defaultDetails = '' }: ChatBotOrderFormProps) => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const dateLocale = language === 'ru' ? ru : language === 'pl' ? pl : language === 'uk' ? uk : enUS;
@@ -48,11 +50,11 @@ const ChatBotOrderForm = ({ onSubmit, onCancel, isLoading, defaultServiceKey = '
   const [phone, setPhone] = useState('');
   const [contact, setContact] = useState('');
   const [serviceKey, setServiceKey] = useState<string>(defaultServiceKey);
-  const [city, setCity] = useState('');
+  const [city, setCity] = useState(defaultCity);
   const [address, setAddress] = useState('');
   const [date, setDate] = useState<Date | undefined>();
   const [time, setTime] = useState('');
-  const [details, setDetails] = useState('');
+  const [details, setDetails] = useState(defaultDetails);
 
   const services = (t.chatbot as any)?.services || {};
   const serviceKeys = ['cleaning','furniture','mattress','carpet','auto','ozone','windows','handyman','impregnation','gardening','other'];
