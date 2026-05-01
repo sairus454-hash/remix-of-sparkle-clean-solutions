@@ -22,6 +22,12 @@ import imgCarpetLarge from '@/assets/calc-carpet-large.jpg';
 import imgCarpetPickup from '@/assets/calc-carpet-pickup.jpg';
 import imgCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
 import imgTileCleaning from '@/assets/calc-tile-cleaning.jpg';
+import ozone1room from '@/assets/ozone-1room.jpg';
+import ozone2room from '@/assets/ozone-2room.jpg';
+import ozone3room from '@/assets/ozone-3room.jpg';
+import ozoneOfficeSmall from '@/assets/ozone-office-small.jpg';
+import ozoneOfficeLarge from '@/assets/ozone-office-large.jpg';
+import ozoneCar from '@/assets/ozone-car.jpg';
 
 const FloorCleaning = () => {
   const { t, language } = useLanguage();
