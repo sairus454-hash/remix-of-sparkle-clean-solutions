@@ -269,13 +269,13 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
      },
   ];
 
-  // Apply city pricing to all items
+  // Apply city pricing to all items, except auto cleaning — base Wrocław prices everywhere
   const categories = useMemo(() => 
     baseCategories.map(cat => ({
       ...cat,
       items: cat.items.map(item => ({
         ...item,
-        price: applyPrice(item.price),
+        price: cat.id === 'auto' ? item.price : applyPrice(item.price),
       })),
     })),
     [baseCategories, applyPrice]
