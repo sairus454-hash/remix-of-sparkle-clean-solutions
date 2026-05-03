@@ -462,7 +462,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
               {groupHighlight.label}
             </p>
           )}
-          <CascadeGrid cols="three">
+          <CascadeGrid cols={largeCards ? 'large' : 'three'}>
             {highlightedItems.map((item, index) => renderCard(item, index))}
           </CascadeGrid>
         </div>
@@ -470,7 +470,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
 
       {/* Main cards grid */}
       {restItems.length > 0 && (
-        <CascadeGrid>
+        <CascadeGrid cols={largeCards ? 'large' : 'default'}>
           {restItems.map((item, index) => renderCard(item, index + groupCount))}
         </CascadeGrid>
       )}
