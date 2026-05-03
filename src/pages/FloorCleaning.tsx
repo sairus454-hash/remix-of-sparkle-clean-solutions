@@ -366,7 +366,7 @@ const FloorCleaning = () => {
         {/* Calculator */}
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <CircularRevealCard index={0}>
                 <div className="bg-card p-6 rounded-2xl shadow-card border border-border">
                   <CardServiceCalculator
