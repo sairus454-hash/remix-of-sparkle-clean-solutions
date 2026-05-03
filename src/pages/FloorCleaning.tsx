@@ -372,6 +372,7 @@ const FloorCleaning = () => {
                   <CardServiceCalculator
                     items={items}
                     category="floorCleaning"
+                    largeCards
                     onSendToForm={handleSendToForm}
                   />
                 </div>
