@@ -99,7 +99,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
   );
 };
 
-const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
+const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, largeCards, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
