@@ -10,6 +10,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import LegacyLangRedirect from "@/components/LegacyLangRedirect";
 import IdleMount from "@/components/IdleMount";
+const GeoCityRedirect = lazy(() => import("@/components/GeoCityRedirect"));
 
 // Defer non-critical global components — they don't affect FCP/LCP
 const SecurityHeaders = lazy(() => import("@/components/SecurityHeaders"));
