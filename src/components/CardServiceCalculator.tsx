@@ -32,21 +32,26 @@ interface CardServiceCalculatorProps {
   noDiscount?: boolean;
   /** Highlight the first N items in a separate bordered subsection with optional label */
   groupHighlight?: { count: number; label?: string };
+  /** Render larger cards with fewer columns per row */
+  largeCards?: boolean;
   onSendToForm?: (items: CalculatorItem[], total: number) => void;
   onQuickOrder?: (items: CalculatorItem[], total: number) => void;
 }
 
 /* Cascade scroll-reveal grid */
-const CascadeGrid = ({ children, cols = 'default' }: { children: React.ReactNode; cols?: 'default' | 'three' }) => (
+const CascadeGrid = ({ children, cols = 'default' }: { children: React.ReactNode; cols?: 'default' | 'three' | 'large' }) => (
   <div className={cn(
     "grid gap-3 sm:gap-4",
     cols === 'three'
       ? "grid-cols-2 sm:grid-cols-3"
-      : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+      : cols === 'large'
+        ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
   )}>
     {children}
   </div>
 );
+
 
 /* Individual card with IntersectionObserver cascade */
 const CascadeCard = ({ children, index }: { children: React.ReactNode; index: number }) => {
@@ -94,7 +99,7 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
   );
 };
 
-const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
+const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, largeCards, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
@@ -457,7 +462,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, on
               {groupHighlight.label}
             </p>
           )}
-          <CascadeGrid cols="three">
+          <CascadeGrid cols={largeCards ? 'large' : 'three'}>
             {highlightedItems.map((item, index) => renderCard(item, index))}
           </CascadeGrid>
         </div>
@@ -465,7 +470,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, on
 
       {/* Main cards grid */}
       {restItems.length > 0 && (
-        <CascadeGrid>
+        <CascadeGrid cols={largeCards ? 'large' : 'default'}>
           {restItems.map((item, index) => renderCard(item, index + groupCount))}
         </CascadeGrid>
       )}
