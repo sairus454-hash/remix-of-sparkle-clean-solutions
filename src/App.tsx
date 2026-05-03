@@ -76,6 +76,7 @@ const App = () => {
                 <Suspense fallback={null}><PWAUpdatePrompt /></Suspense>
                 <ScrollToTop />
                 <LegacyLangRedirect />
+                <Suspense fallback={null}><GeoCityRedirect /></Suspense>
 
                 <IdleMount timeout={2500}>
                   <Suspense fallback={null}>
