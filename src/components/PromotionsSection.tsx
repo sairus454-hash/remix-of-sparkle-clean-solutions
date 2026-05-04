@@ -61,7 +61,7 @@ const PromotionsSection = () => {
               <div className="absolute top-1/2 left-1/2 w-40 h-40 bg-gradient-to-r from-orange-600/20 to-teal-600/15 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
               <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-600 to-teal-600 text-white shadow-glow animate-pulse">
-                  VIP
+                  -20%
                 </span>
               </div>
               <div className="relative z-10">
@@ -75,7 +75,7 @@ const PromotionsSection = () => {
                   {t.promotions.loyaltyDesc}
                 </p>
                 <p className="text-orange-600 text-center text-2xl sm:text-3xl font-bold mt-2">
-                  -15%
+                  -20%
                 </p>
               </div>
             </div>
