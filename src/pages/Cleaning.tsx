@@ -485,7 +485,11 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.windows?.calcSubtitle || 'Рассчитайте стоимость услуги'}</p>
                     </div>
                   </div>
-                  <WindowsPriceCalculator onSendToForm={handleCardToForm} />
+                  <CardServiceCalculator
+                    items={filteredWindows}
+                    category="windows"
+                    onSendToForm={handleCardToForm}
+                  />
                 </CardContent>
               </Card>
             </CircularRevealCard>
