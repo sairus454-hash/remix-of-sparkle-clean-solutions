@@ -16,7 +16,7 @@ import CleaningSplash from '@/components/CleaningSplash';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import SmartServiceFilter from '@/components/SmartServiceFilter';
 import CleaningExtrasCheckboxes from '@/components/CleaningExtrasCheckboxes';
-import WindowsPriceCalculator from '@/components/WindowsPriceCalculator';
+
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
@@ -83,6 +83,13 @@ import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
 import calcExtraMoldRemoval from '@/assets/calc-mold-removal.jpg';
 import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
 import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
+import calcWindowSingle from '@/assets/calc-window-single.jpg';
+import calcWindowDouble from '@/assets/calc-window-double.jpg';
+import calcWindowTriple from '@/assets/calc-window-triple.jpg';
+import calcWindowBalcony from '@/assets/calc-window-balcony.jpg';
+import calcWindowTerrace from '@/assets/calc-window-terrace.jpg';
+import calcWindowAttic from '@/assets/calc-window-attic.jpg';
+import calcWindowBalustrade from '@/assets/calc-window-balustrade.jpg';
 
 const Cleaning = () => {
   const { t, language } = useLanguage();
@@ -281,12 +288,23 @@ const Cleaning = () => {
     { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
   ];
 
+  const windowItems = [
+    { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: calcWindowSingle },
+    { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: calcWindowDouble },
+    { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, image: calcWindowTriple },
+    { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60, image: calcWindowBalcony },
+    { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: calcWindowTerrace },
+    { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: calcWindowAttic },
+    { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: calcWindowBalustrade },
+  ];
+
   // Smart filter setup
   const filterMatch = (name: string) => !searchQuery.trim() || name.toLowerCase().includes(searchQuery.trim().toLowerCase());
   const filteredCleaningExtras = useMemo(() => cleaningExtrasItems.filter(i => filterMatch(i.name)), [cleaningExtrasItems, searchQuery]);
   const filteredFurniture = useMemo(() => furnitureItems.filter(i => filterMatch(i.name)), [furnitureItems, searchQuery]);
   const filteredLeather = useMemo(() => leatherItems.filter(i => filterMatch(i.name)), [leatherItems, searchQuery]);
   const filteredExtras = useMemo(() => extrasItems.filter(i => filterMatch(i.name)), [extrasItems, searchQuery]);
+  const filteredWindows = useMemo(() => windowItems.filter(i => filterMatch(i.name)), [windowItems, searchQuery]);
 
   const showSection = (id: string, count: number) => (activeFilter === 'all' || activeFilter === id) && count > 0;
   const showFurniture = showSection('furniture', filteredFurniture.length);
@@ -467,7 +485,11 @@ const Cleaning = () => {
                       <p className="text-sm text-muted-foreground">{t.windows?.calcSubtitle || 'Рассчитайте стоимость услуги'}</p>
                     </div>
                   </div>
-                  <WindowsPriceCalculator onSendToForm={handleCardToForm} />
+                  <CardServiceCalculator
+                    items={filteredWindows}
+                    category="windows"
+                    onSendToForm={handleCardToForm}
+                  />
                 </CardContent>
               </Card>
             </CircularRevealCard>
