@@ -83,6 +83,13 @@ import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
 import calcExtraMoldRemoval from '@/assets/calc-mold-removal.jpg';
 import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
 import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
+import calcWindowSingle from '@/assets/calc-window-single.jpg';
+import calcWindowDouble from '@/assets/calc-window-double.jpg';
+import calcWindowTriple from '@/assets/calc-window-triple.jpg';
+import calcWindowBalcony from '@/assets/calc-window-balcony.jpg';
+import calcWindowTerrace from '@/assets/calc-window-terrace.jpg';
+import calcWindowAttic from '@/assets/calc-window-attic.jpg';
+import calcWindowBalustrade from '@/assets/calc-window-balustrade.jpg';
 
 const Cleaning = () => {
   const { t, language } = useLanguage();
