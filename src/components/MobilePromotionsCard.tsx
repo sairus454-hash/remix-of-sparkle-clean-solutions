@@ -69,11 +69,11 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
                       {t.promotions.services6plus}
                     </h4>
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-600 to-teal-600 text-white">
-                      VIP
+                      -20%
                     </span>
                   </div>
                   <p className="text-xs text-foreground/80">{t.promotions.loyaltyDesc}</p>
-                  <p className="text-lg font-bold text-orange-600 mt-1">-15%</p>
+                  <p className="text-lg font-bold text-orange-600 mt-1">-20%</p>
                 </div>
               </div>
             </div>
