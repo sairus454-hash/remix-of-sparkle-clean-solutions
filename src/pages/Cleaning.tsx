@@ -288,12 +288,23 @@ const Cleaning = () => {
     { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
   ];
 
+  const windowItems = [
+    { id: 'windowSingle', name: t.windows?.items?.single || 'Одностворчатое окно', price: 40, image: calcWindowSingle },
+    { id: 'windowDouble', name: t.windows?.items?.double || 'Двухстворчатое окно', price: 50, image: calcWindowDouble },
+    { id: 'windowTriple', name: t.windows?.items?.triple || 'Трёхстворчатое окно', price: 80, image: calcWindowTriple },
+    { id: 'windowBalcony', name: t.windows?.items?.balcony || 'Балконное окно', price: 60, image: calcWindowBalcony },
+    { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: calcWindowTerrace },
+    { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: calcWindowAttic },
+    { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: calcWindowBalustrade },
+  ];
+
   // Smart filter setup
   const filterMatch = (name: string) => !searchQuery.trim() || name.toLowerCase().includes(searchQuery.trim().toLowerCase());
   const filteredCleaningExtras = useMemo(() => cleaningExtrasItems.filter(i => filterMatch(i.name)), [cleaningExtrasItems, searchQuery]);
   const filteredFurniture = useMemo(() => furnitureItems.filter(i => filterMatch(i.name)), [furnitureItems, searchQuery]);
   const filteredLeather = useMemo(() => leatherItems.filter(i => filterMatch(i.name)), [leatherItems, searchQuery]);
   const filteredExtras = useMemo(() => extrasItems.filter(i => filterMatch(i.name)), [extrasItems, searchQuery]);
+  const filteredWindows = useMemo(() => windowItems.filter(i => filterMatch(i.name)), [windowItems, searchQuery]);
 
   const showSection = (id: string, count: number) => (activeFilter === 'all' || activeFilter === id) && count > 0;
   const showFurniture = showSection('furniture', filteredFurniture.length);
