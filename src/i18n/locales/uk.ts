@@ -640,7 +640,8 @@ const ukTranslations = {
          balcony: 'Балконне вікно',
          terrace: 'Терасне вікно',
          attic: 'Мансардне вікно',
-          balustrade: 'Балюстрада',
+           balustrade: 'Балюстрада',
+           glassPanels: 'Миття скляних панелей (балюстради, скляні перегородки)',
         },
       },
     impregnation: {

@@ -640,7 +640,8 @@ const enTranslations = {
          balcony: 'Balcony window',
          terrace: 'Terrace window',
          attic: 'Attic window',
-          balustrade: 'Balustrade',
+           balustrade: 'Balustrade',
+           glassPanels: 'Glass panel cleaning (balustrades, glass partitions)',
         },
       },
     impregnation: {
