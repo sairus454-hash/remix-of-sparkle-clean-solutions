@@ -113,7 +113,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         return mergedItems;
       });
       
-      // Recalculate total based on merged items
+      // Recalculate original total based on merged items; discounts are derived automatically.
       setCalculatorTotal(prevTotal => prevTotal + newTotal);
     },
     setPromotion: (promotion: string) => {
@@ -419,7 +419,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
                 // Count unique categories for tier highlighting
                 const uniqueCats = new Set(calculatorItems.map(item => {
                   const cat = item.category || item.id;
-                  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-')) return 'cleaning';
+                  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('cleaning-') || cat.startsWith('extra-')) return 'cleaning';
                   return cat;
                 }));
                 const catCount = uniqueCats.size;
@@ -459,7 +459,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           {(() => {
             const existingCats = new Set(calculatorItems.map(item => {
               const cat = item.category || item.id;
-              if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-')) return 'cleaning';
+              if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('cleaning-') || cat.startsWith('extra-')) return 'cleaning';
               if (cat === 'other') return 'furniture';
               return cat;
             }));
