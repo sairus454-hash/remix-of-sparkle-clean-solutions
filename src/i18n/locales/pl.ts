@@ -763,6 +763,7 @@ const plTranslations = {
         cabinets: 'Sprzątanie szafek kuchennych',
         dishes: 'Zmywanie naczyń',
         fridge: 'Czyszczenie lodówki',
+        fridgeSmall: 'Mała lodówka',
         microwave: 'Czyszczenie mikrofalówki',
         balcony: 'Sprzątanie balkonu',
         windowInside: 'Mycie okien (strona wewnętrzna, szt.)',
