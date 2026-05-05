@@ -188,6 +188,7 @@ const Prices = () => {
         { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: img('window-cleaning-2.jpg') },
         { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: img('window-cleaning-3.jpg') },
         { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: img('window-cleaning-1.jpg') },
+        { id: 'glassPanels', name: t.windows?.items?.glassPanels || 'Mycie paneli szklanych', price: 10, unit: 'm²', image: img('window-cleaning-2.jpg') },
       ],
     },
     {

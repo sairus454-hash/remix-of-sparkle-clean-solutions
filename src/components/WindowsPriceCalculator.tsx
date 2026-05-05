@@ -69,12 +69,19 @@
        price: 40,
        icon: <Sun className="w-5 h-5 text-primary" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
      },
-     { 
-       id: 'balustrade', 
-       name: t.windows?.items?.balustrade || 'Балюстрада', 
-       price: 40,
-       icon: <Fence className="w-5 h-5 text-primary" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
-     },
+      { 
+        id: 'balustrade', 
+        name: t.windows?.items?.balustrade || 'Балюстрада', 
+        price: 40,
+        icon: <Fence className="w-5 h-5 text-primary" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+      },
+      { 
+        id: 'glassPanels', 
+        name: t.windows?.items?.glassPanels || 'Mycie paneli szklanych', 
+        price: 10,
+        unit: 'm²',
+        icon: <Square className="w-5 h-5 text-primary" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
+      },
    ];
 
    const priceItems = useMemo(() => 
