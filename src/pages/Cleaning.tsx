@@ -16,6 +16,7 @@ import CleaningSplash from '@/components/CleaningSplash';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import SmartServiceFilter from '@/components/SmartServiceFilter';
 import CleaningExtrasCheckboxes from '@/components/CleaningExtrasCheckboxes';
+import ApartmentCleaningPricing from '@/components/ApartmentCleaningPricing';
 
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
