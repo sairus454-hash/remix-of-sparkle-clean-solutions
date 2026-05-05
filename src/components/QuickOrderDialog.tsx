@@ -6,7 +6,8 @@ import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Send, Loader2, Phone, User, CalendarIcon, MapPin, Mail } from 'lucide-react';
+import { Send, Loader2, Phone, User, CalendarIcon, MapPin, Mail, Gift } from 'lucide-react';
+import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
@@ -31,6 +32,7 @@ const timeSlots = Array.from({ length: 25 }, (_, i) => {
 
 const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialogProps) => {
   const { t, language } = useLanguage();
+  const discountInfo = useDiscountCalculator(items.map(i => ({ id: i.id, price: i.price, quantity: i.quantity, category: (i as any).category })));
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
@@ -150,6 +152,19 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
               <span className="text-primary">{total} zł</span>
             </div>
           </div>
+
+          {/* Subtle promo hint */}
+          {discountInfo.hasDiscount ? (
+            <div className="flex items-start gap-2 text-xs text-fresh bg-fresh/5 border border-fresh/20 rounded-lg px-3 py-2 animate-fade-in">
+              <Gift className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+              <span>{discountInfo.discountReason} · −{discountInfo.discountAmount} zł</span>
+            </div>
+          ) : discountInfo.discountHint ? (
+            <div className="flex items-start gap-2 text-xs text-muted-foreground bg-muted/40 rounded-lg px-3 py-2">
+              <Gift className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/60" />
+              <span>{discountInfo.discountHint}</span>
+            </div>
+          ) : null}
 
           <form onSubmit={handleSubmit} className="space-y-3">
             {/* Name */}
