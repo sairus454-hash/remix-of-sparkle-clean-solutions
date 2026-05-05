@@ -413,6 +413,28 @@ const Index = () => {
       </section>
       </LazySection>
 
+      {/* Cleaning pricing + extras (after promotions) */}
+      <Suspense fallback={null}>
+        <CleaningPricingTopBlock onSendToForm={(items, total) => {
+          try {
+            const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+            const merged = [...existing];
+            items.forEach(item => {
+              const idx = merged.findIndex((e: any) => e.id === item.id);
+              if (idx >= 0) merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
+              else merged.push(item);
+            });
+            const newTotal = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
+            sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+            sessionStorage.setItem('mc_calculator_total', String(newTotal));
+          } catch {}
+          window.location.hash = '';
+          setTimeout(() => {
+            document.querySelector('form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 50);
+        }} />
+      </Suspense>
+
       {/* Price Section */}
       <LazySection minHeight="300px">
         <Suspense fallback={null}><PriceSection defaultAllOpen showFilters excludeCategoryIds={['cleaning']} /></Suspense>
