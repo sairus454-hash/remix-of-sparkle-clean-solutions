@@ -87,9 +87,22 @@ function getDiscountReason(type: 'cleaningPlus', language: string): string {
   return reasons[type][language as keyof typeof reasons.cleaningPlus] || reasons[type].ru;
 }
 
-function getDiscountHint(hasCleaning: boolean, hasOther: boolean, language: string): string {
-  if (hasCleaning && hasOther) return '';
+function getDiscountHint(hasCleaning: boolean, hasOther: boolean, meetsMinimum: boolean, currentTotal: number, language: string): string {
+  if (hasCleaning && hasOther && meetsMinimum) return '';
   const cats = getDiscountEligibleCategories(language).join(', ');
+  const remaining = Math.max(0, MIN_ORDER_FOR_DISCOUNT - currentTotal);
+  const minNote = {
+    ru: ` Минимальная сумма заказа для скидки — ${MIN_ORDER_FOR_DISCOUNT} zł.`,
+    en: ` Minimum order for the discount — ${MIN_ORDER_FOR_DISCOUNT} zł.`,
+    pl: ` Minimalna kwota zamówienia dla rabatu — ${MIN_ORDER_FOR_DISCOUNT} zł.`,
+    uk: ` Мінімальна сума замовлення для знижки — ${MIN_ORDER_FOR_DISCOUNT} zł.`,
+  };
+  const needMore = {
+    ru: ` Добавьте ещё на ${remaining} zł до минимума ${MIN_ORDER_FOR_DISCOUNT} zł — и скидка применится автоматически.`,
+    en: ` Add ${remaining} zł more to reach the ${MIN_ORDER_FOR_DISCOUNT} zł minimum — and the discount will apply automatically.`,
+    pl: ` Dodaj jeszcze ${remaining} zł do minimum ${MIN_ORDER_FOR_DISCOUNT} zł — rabat naliczy się automatycznie.`,
+    uk: ` Додайте ще ${remaining} zł до мінімуму ${MIN_ORDER_FOR_DISCOUNT} zł — і знижка застосується автоматично.`,
+  };
   const hints = {
     ru: {
       empty: `Добавьте уборку + любую вторую услугу и получите −22% на весь заказ. Подходит любая из категорий: ${cats}.`,
@@ -113,9 +126,15 @@ function getDiscountHint(hasCleaning: boolean, hasOther: boolean, language: stri
     },
   };
   const l = hints[language as keyof typeof hints] || hints.ru;
-  if (!hasCleaning && !hasOther) return l.empty;
-  if (hasCleaning && !hasOther) return l.needOther;
-  return l.needCleaning;
+  const n = minNote[language as keyof typeof minNote] || minNote.ru;
+  const m = needMore[language as keyof typeof needMore] || needMore.ru;
+  let base: string;
+  if (!hasCleaning && !hasOther) base = l.empty;
+  else if (hasCleaning && !hasOther) base = l.needOther;
+  else base = l.needCleaning;
+  // Если уже есть уборка + вторая услуга, но не хватает суммы — показываем сколько добить
+  if (hasCleaning && hasOther && !meetsMinimum) return `${base}${m}`;
+  return `${base}${n}`;
 }
 
 // Категории, которые засчитываются как «вторая услуга» для скидки −22%
