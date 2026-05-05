@@ -6,7 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { toast } from '@/hooks/use-toast';
-import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone } from 'lucide-react';
+import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone, Plus, Minus } from 'lucide-react';
+import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
@@ -213,8 +214,85 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       // Ignore unavailable sessionStorage.
     }
   };
+  const showDiscountToast = (items: CalculatorItem[], action: 'updated' | 'removed', itemName?: string) => {
+    const total = items.reduce((s, i) => s + i.price * i.quantity, 0);
+    const hasCleaning = items.some(i => {
+      const c = i.category || i.id;
+      return c === 'cleaning' || c.startsWith('cleaning-') || c.startsWith('cleaning_') || c.startsWith('extra-') || c === 'extras';
+    });
+    const hasOther = items.some(i => {
+      const c = i.category || i.id;
+      return !(c === 'cleaning' || c.startsWith('cleaning-') || c.startsWith('cleaning_') || c.startsWith('extra-') || c === 'extras');
+    });
+    const titleMap = {
+      ru: { updated: 'Количество обновлено', removed: 'Услуга удалена' },
+      pl: { updated: 'Ilość zaktualizowana', removed: 'Usługa usunięta' },
+      uk: { updated: 'Кількість оновлено', removed: 'Послугу видалено' },
+      en: { updated: 'Quantity updated', removed: 'Service removed' },
+    };
+    const ready = {
+      ru: 'Скидка 22% активна.', pl: 'Rabat 22% aktywny.', uk: 'Знижка 22% активна.', en: '22% discount active.',
+    };
+    const needMore = (zl: number) => ({
+      ru: `Добавьте ещё на ${zl} zł, чтобы получить −22%.`,
+      pl: `Dodaj jeszcze ${zl} zł, aby otrzymać −22%.`,
+      uk: `Додайте ще ${zl} zł, щоб отримати −22%.`,
+      en: `Add ${zl} zł more to get −22%.`,
+    });
+    const needOther = {
+      ru: 'Добавьте вторую услугу из другой категории, чтобы получить −22%.',
+      pl: 'Dodaj drugą usługę z innej kategorii, aby otrzymać −22%.',
+      uk: 'Додайте другу послугу з іншої категорії, щоб отримати −22%.',
+      en: 'Add a second service from another category to get −22%.',
+    };
+    const needCleaning = {
+      ru: 'Добавьте уборку, чтобы получить −22%.',
+      pl: 'Dodaj sprzątanie, aby otrzymać −22%.',
+      uk: 'Додайте прибирання, щоб отримати −22%.',
+      en: 'Add cleaning to get −22%.',
+    };
+    const totalLabel = { ru: 'Итого', pl: 'Razem', uk: 'Разом', en: 'Total' };
+    const lang = (language as 'ru' | 'pl' | 'uk' | 'en');
+    let status: string;
+    if (hasCleaning && hasOther && total >= MIN_ORDER_FOR_DISCOUNT) {
+      const discounted = Math.round(total * 0.78);
+      status = `${ready[lang]} ${totalLabel[lang]}: ${discounted} zł (−${total - discounted} zł)`;
+    } else if (hasCleaning && hasOther) {
+      status = `${needMore(MIN_ORDER_FOR_DISCOUNT - total)[lang]} ${totalLabel[lang]}: ${total} zł`;
+    } else if (hasCleaning) {
+      status = `${needOther[lang]} ${totalLabel[lang]}: ${total} zł`;
+    } else if (hasOther) {
+      status = `${needCleaning[lang]} ${totalLabel[lang]}: ${total} zł`;
+    } else {
+      return;
+    }
+    toast({
+      title: titleMap[lang]?.[action] || titleMap.ru[action],
+      description: itemName ? `${itemName} · ${status}` : status,
+      duration: 4000,
+    });
+  };
+
+  const updateCalculatorItemQuantity = (itemId: string, delta: number) => {
+    setCalculatorItems(prev => {
+      const updated = prev
+        .map(item => item.id === itemId ? { ...item, quantity: Math.max(0, item.quantity + delta) } : item)
+        .filter(item => item.quantity > 0);
+      const newTotal = updated.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      setCalculatorTotal(newTotal);
+      const changed = prev.find(i => i.id === itemId);
+      const stillExists = updated.find(i => i.id === itemId);
+      showDiscountToast(updated, stillExists ? 'updated' : 'removed', changed?.name);
+      if (updated.length === 0) {
+        setFormData(prevForm => ({ ...prevForm, message: '' }));
+      }
+      return updated;
+    });
+  };
+
   const removeCalculatorItem = (itemId: string) => {
     setCalculatorItems(prev => {
+      const removed = prev.find(item => item.id === itemId);
       const updated = prev.filter(item => item.id !== itemId);
       if (updated.length === 0) {
         setCalculatorTotal(0);
@@ -226,6 +304,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         const newTotal = updated.reduce((sum, item) => sum + item.price * item.quantity, 0);
         setCalculatorTotal(newTotal);
       }
+      showDiscountToast(updated, 'removed', removed?.name);
       return updated;
     });
   };
@@ -398,11 +477,20 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           </div>
           
           <div className="space-y-2 max-h-40 overflow-y-auto">
-            {calculatorItems.map((item, index) => <div key={index} className="flex justify-between items-center text-sm group">
-                <span className="text-muted-foreground flex-1">
-                  {item.name} {item.unit && `(${item.unit})`} × {item.quantity}
+            {calculatorItems.map((item, index) => <div key={index} className="flex justify-between items-center text-sm group gap-2">
+                <span className="text-muted-foreground flex-1 min-w-0 truncate">
+                  {item.name} {item.unit && `(${item.unit})`}
                 </span>
-                <span className="font-medium text-foreground mr-2">
+                <div className="flex items-center gap-1 bg-background/60 rounded-md border border-border">
+                  <Button type="button" variant="ghost" size="sm" onClick={() => updateCalculatorItemQuantity(item.id, -1)} className="h-6 w-6 p-0" aria-label="−">
+                    <Minus className="w-3 h-3" />
+                  </Button>
+                  <span className="text-xs font-semibold w-5 text-center">{item.quantity}</span>
+                  <Button type="button" variant="ghost" size="sm" onClick={() => updateCalculatorItemQuantity(item.id, 1)} className="h-6 w-6 p-0" aria-label="+">
+                    <Plus className="w-3 h-3" />
+                  </Button>
+                </div>
+                <span className="font-medium text-foreground tabular-nums w-16 text-right">
                   {item.price * item.quantity} {t.prices.currency}
                 </span>
                 <Button type="button" variant="ghost" size="sm" onClick={() => removeCalculatorItem(item.id)} className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive opacity-60 hover:opacity-100 transition-opacity">
