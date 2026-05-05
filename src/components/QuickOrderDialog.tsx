@@ -153,6 +153,19 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
             </div>
           </div>
 
+          {/* Subtle promo hint */}
+          {discountInfo.hasDiscount ? (
+            <div className="flex items-start gap-2 text-xs text-fresh bg-fresh/5 border border-fresh/20 rounded-lg px-3 py-2 animate-fade-in">
+              <Gift className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+              <span>{discountInfo.discountReason} · −{discountInfo.discountAmount} zł</span>
+            </div>
+          ) : discountInfo.discountHint ? (
+            <div className="flex items-start gap-2 text-xs text-muted-foreground bg-muted/40 rounded-lg px-3 py-2">
+              <Gift className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/60" />
+              <span>{discountInfo.discountHint}</span>
+            </div>
+          ) : null}
+
           <form onSubmit={handleSubmit} className="space-y-3">
             {/* Name */}
             <div className="relative">
