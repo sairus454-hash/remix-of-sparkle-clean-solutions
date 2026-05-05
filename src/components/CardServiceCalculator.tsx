@@ -208,8 +208,27 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
 
   const total = selectedItems.reduce((sum, s) => sum + s.item.price * s.quantity, 0);
 
+  const areaConfirmWarning = () => {
+    const item = unconfirmedSelected?.item;
+    const name = item?.name || '';
+    toast.error(
+      language === 'pl' ? 'Potwierdź powierzchnię' : language === 'en' ? 'Confirm area' : language === 'uk' ? 'Підтвердіть площу' : 'Подтвердите площадь',
+      {
+        description: language === 'pl'
+          ? `Wybierz powierzchnię w m² dla: ${name}`
+          : language === 'en'
+            ? `Please specify area in m² for: ${name}`
+            : language === 'uk'
+              ? `Вкажіть площу в м² для: ${name}`
+              : `Укажите площадь в м² для: ${name}`,
+      }
+    );
+    if (item) setPopoverId(item.id);
+  };
+
   const handleSendToContacts = () => {
     if (selectedItems.length === 0) return;
+    if (unconfirmedSelected) { areaConfirmWarning(); return; }
     const calcItems: CalculatorItem[] = selectedItems.map(s => ({
       id: s.item.id,
       name: s.item.name,
