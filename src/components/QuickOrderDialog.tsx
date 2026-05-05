@@ -60,7 +60,12 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
     try {
       const orderLines = items.map(item => `• ${item.name} × ${item.quantity} = ${item.price * item.quantity} zł`);
       const totalLabel = language === 'ru' ? 'Итого' : language === 'pl' ? 'Razem' : language === 'uk' ? 'Разом' : 'Total';
-      const message = `⚡ ${t.form.quickOrderTitle || 'Быстрый заказ'}:\n${orderLines.join('\n')}\n\n${totalLabel}: ${total} zł`;
+      const discountLabel = language === 'ru' ? 'Скидка' : language === 'pl' ? 'Rabat' : language === 'uk' ? 'Знижка' : 'Discount';
+      let message = `⚡ ${t.form.quickOrderTitle || 'Быстрый заказ'}:\n${orderLines.join('\n')}`;
+      if (discountInfo.hasDiscount) {
+        message += `\n\n${discountLabel}: -${discountInfo.discountPercent}% (-${discountInfo.discountAmount} zł)`;
+      }
+      message += `\n\n${totalLabel}: ${discountInfo.finalTotal} zł`;
 
       const { error } = await supabase.functions.invoke('send-telegram', {
         body: {
@@ -147,9 +152,18 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
                 <span className="font-medium">{item.price * item.quantity} zł</span>
               </div>
             ))}
-            <div className="flex justify-between pt-2 border-t border-border font-bold">
+            {discountInfo.hasDiscount && (
+              <div className="flex justify-between pt-2 border-t border-border text-sm">
+                <span className="text-fresh font-medium">−{discountInfo.discountPercent}%</span>
+                <div className="flex gap-2 items-center">
+                  <span className="text-muted-foreground line-through">{discountInfo.originalTotal} zł</span>
+                  <span className="text-fresh font-medium">−{discountInfo.discountAmount} zł</span>
+                </div>
+              </div>
+            )}
+            <div className={cn("flex justify-between font-bold", !discountInfo.hasDiscount && "pt-2 border-t border-border")}>
               <span>{t.calculator?.total || 'Итого'}</span>
-              <span className="text-primary">{total} zł</span>
+              <span className="text-primary">{discountInfo.finalTotal} zł</span>
             </div>
           </div>
 
