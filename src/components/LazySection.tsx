@@ -36,7 +36,20 @@ const LazySection = ({ children, minHeight = '200px', rootMargin = '300px', clas
   }, [rootMargin]);
 
   return (
-    <div ref={ref} className={className} style={visible ? undefined : { minHeight }}>
+    <div
+      ref={ref}
+      className={className}
+      style={
+        visible
+          ? undefined
+          : {
+              minHeight,
+              // Reserve space + skip rendering work off-screen → reduces CLS and INP
+              contentVisibility: 'auto' as const,
+              containIntrinsicSize: `1px ${minHeight}`,
+            }
+      }
+    >
       {visible ? children : null}
     </div>
   );
