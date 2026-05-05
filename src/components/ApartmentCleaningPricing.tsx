@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Home, Sparkles } from 'lucide-react';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import ManagerEstimateDialog from '@/components/ManagerEstimateDialog';
+import { toast } from '@/hooks/use-toast';
+import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
 
 type Lang = 'pl' | 'en' | 'ru' | 'uk';
 
