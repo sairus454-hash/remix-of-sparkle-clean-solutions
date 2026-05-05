@@ -47,10 +47,10 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
 
   const furnitureOptions = useMemo(() => [
     { id: 'armchair', name: t.prices.items.armchair, price: applyPrice(80) },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(150) },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(170) },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(200) },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(150) },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(160) },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(180) },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(230) },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(180) },
   ], [t, applyPrice]);
 
   const mattressOptions = useMemo(() => [
