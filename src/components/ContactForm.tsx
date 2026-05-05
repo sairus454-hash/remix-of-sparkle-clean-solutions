@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
+import { Progress } from '@/components/ui/progress';
 import { toast } from '@/hooks/use-toast';
 import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone, Plus, Minus } from 'lucide-react';
 import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
