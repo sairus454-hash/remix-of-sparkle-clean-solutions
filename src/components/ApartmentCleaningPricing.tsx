@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Home, Sparkles } from 'lucide-react';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import ManagerEstimateDialog from '@/components/ManagerEstimateDialog';
 
 type Lang = 'pl' | 'en' | 'ru' | 'uk';
 
