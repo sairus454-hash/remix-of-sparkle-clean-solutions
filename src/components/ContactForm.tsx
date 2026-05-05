@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
+import { Progress } from '@/components/ui/progress';
 import { toast } from '@/hooks/use-toast';
 import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone, Plus, Minus } from 'lucide-react';
 import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
@@ -545,6 +546,32 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               </div>
             </div>
           )}
+
+          {/* Progress to 22% discount minimum order */}
+          {!discountInfo.hasDiscount && discountInfo.originalTotal > 0 && (() => {
+            const total = discountInfo.originalTotal;
+            const remaining = Math.max(0, MIN_ORDER_FOR_DISCOUNT - total);
+            const pct = Math.min(100, Math.round((total / MIN_ORDER_FOR_DISCOUNT) * 100));
+            const labels: Record<string, { title: string; left: (n: number) => string; reached: string }> = {
+              ru: { title: 'Прогресс до скидки 22%', left: (n) => `Не хватает ${n} zł до минимума ${MIN_ORDER_FOR_DISCOUNT} zł`, reached: `Минимум ${MIN_ORDER_FOR_DISCOUNT} zł достигнут — добавьте вторую услугу для −22%` },
+              pl: { title: 'Postęp do rabatu 22%', left: (n) => `Brakuje ${n} zł do minimum ${MIN_ORDER_FOR_DISCOUNT} zł`, reached: `Minimum ${MIN_ORDER_FOR_DISCOUNT} zł osiągnięte — dodaj drugą usługę, aby otrzymać −22%` },
+              en: { title: 'Progress to 22% discount', left: (n) => `${n} zł left to reach the ${MIN_ORDER_FOR_DISCOUNT} zł minimum`, reached: `${MIN_ORDER_FOR_DISCOUNT} zł minimum reached — add a second service to get −22%` },
+              uk: { title: 'Прогрес до знижки 22%', left: (n) => `Не вистачає ${n} zł до мінімуму ${MIN_ORDER_FOR_DISCOUNT} zł`, reached: `Мінімум ${MIN_ORDER_FOR_DISCOUNT} zł досягнуто — додайте другу послугу для −22%` },
+            };
+            const l = labels[language] || labels.ru;
+            return (
+              <div className="mt-3 p-3 bg-primary/5 rounded-lg border border-primary/20 animate-fade-in">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-semibold text-primary">{l.title}</span>
+                  <span className="text-xs font-bold text-primary">{total} / {MIN_ORDER_FOR_DISCOUNT} zł</span>
+                </div>
+                <Progress value={pct} className="h-2" />
+                <p className="text-xs text-muted-foreground mt-2">
+                  {remaining > 0 ? l.left(remaining) : l.reached}
+                </p>
+              </div>
+            );
+          })()}
 
           {/* Smart hint for the active 22% promotion */}
           {!discountInfo.hasDiscount && discountInfo.discountHint && (
