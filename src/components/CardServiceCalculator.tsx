@@ -599,6 +599,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Button onClick={() => {
+                if (unconfirmedSelected) { areaConfirmWarning(); return; }
                 const calcItems: CalculatorItem[] = selectedItems.map(s => ({
                   id: s.item.id, name: s.item.name, price: s.item.price, quantity: s.quantity, category,
                 }));
