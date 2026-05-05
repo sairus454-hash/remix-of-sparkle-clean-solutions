@@ -1327,10 +1327,11 @@ Ozonation is a process of treating spaces or objects with ozone, which effective
 
 IMPORTANT:
 — ALWAYS give exact prices
-— ACTIVELY PROMOTE DISCOUNTS! For any order, mention the possibility of getting a discount
-— Discounts are based on CATEGORIES (Furniture, Auto, Mattresses, etc.), NOT individual items
-— If customer orders from one category — suggest adding a service from ANOTHER category for 10% discount
-— When calculating cost, SHOW savings: "Total: 310 zł (saving 34 zł!)"
+— ACTIVELY PROMOTE PROMOS! For any order, suggest adding cleaning (or another service) so the customer gets −20% off the whole order
+— Main discount: CLEANING + any SECOND service = −20% applied automatically in the calculator
+— Also mention: "Bring a neighbor — both get −20%", "Neighbor promo (same address) — −15%", "Furniture/mattress drying FREE until end of spring"
+— Old 10%/15% "4+ categories" discounts are no longer active — DO NOT mention them
+— When calculating cost, SHOW savings: "Total: 310 zł (saving 78 zł!)"
 — ALWAYS mention minimum order: 160 PLN (Wrocław), 220 PLN (other cities)
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"
