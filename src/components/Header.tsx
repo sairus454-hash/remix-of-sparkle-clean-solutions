@@ -387,23 +387,30 @@ const Header = () => {
               '/handyman',   // Мастер на час
               '/ozone',      // Озонирование
             ].map((path) => navItems.find(i => i.path === path)!).filter(Boolean).map((item) => {
-              const getMobileHighlightClass = () => {
-                if (item.highlight === 'cleaning') return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
-                if (item.highlight === 'services' || item.highlight === 'handyman' || item.highlight === 'floorCleaning') return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
-                return '';
+              const isActive = location.pathname === item.path;
+              const getMobileHighlightClasses = (): [string, string] => {
+                if (item.highlight === 'cleaning') return [
+                  'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300',
+                  'bg-emerald-200 text-emerald-900 ring-2 ring-emerald-500 dark:bg-emerald-800/50 dark:text-emerald-100',
+                ];
+                if (item.highlight === 'services' || item.highlight === 'handyman' || item.highlight === 'floorCleaning') return [
+                  'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300',
+                  'bg-yellow-200 text-yellow-900 ring-2 ring-yellow-500 dark:bg-yellow-800/50 dark:text-yellow-100',
+                ];
+                return ['', ''];
               };
-              const mobileHighlight = getMobileHighlightClass();
+              const [mobileHl, mobileActiveHl] = getMobileHighlightClasses();
               return (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                    location.pathname === item.path
-                      ? 'text-primary bg-accent'
-                      : mobileHighlight ? mobileHighlight : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                    isActive
+                      ? (mobileActiveHl || 'text-primary bg-accent ring-2 ring-primary/40')
+                      : mobileHl ? mobileHl : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                   }`}
-                  aria-current={location.pathname === item.path ? 'page' : undefined}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   {item.highlight === 'ozone' ? (
                     <span className="flex items-center gap-1.5">
@@ -417,8 +424,13 @@ const Header = () => {
             
             {/* Remaining nav items */}
             {navItems.filter(i => !['/', '/prices', '/services', '/cleaning', '/auto', '/handyman', '/ozone'].includes(i.path)).map((item) => {
-              const remainingHighlight = item.highlight === 'floorCleaning'
+              const isActive = location.pathname === item.path;
+              const isFloor = item.highlight === 'floorCleaning';
+              const remainingHighlight = isFloor
                 ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300'
+                : '';
+              const remainingActive = isFloor
+                ? 'bg-yellow-200 text-yellow-900 ring-2 ring-yellow-500 dark:bg-yellow-800/50 dark:text-yellow-100'
                 : '';
               return (
                 <Link
@@ -426,11 +438,11 @@ const Header = () => {
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                    location.pathname === item.path
-                      ? 'text-primary bg-accent'
+                    isActive
+                      ? (remainingActive || 'text-primary bg-accent ring-2 ring-primary/40')
                       : remainingHighlight ? remainingHighlight : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                   }`}
-                  aria-current={location.pathname === item.path ? 'page' : undefined}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   {item.label}
                 </Link>
