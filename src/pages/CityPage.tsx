@@ -22,6 +22,8 @@ import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import { CalculatorItem } from '@/types/calculator';
 import SmartServiceFilter, { useFilteredCategoryItems } from '@/components/SmartServiceFilter';
+import MobilePromotionsCard from '@/components/MobilePromotionsCard';
+import PromotionsSection from '@/components/PromotionsSection';
 import { getCityProfile } from '@/data/cityProfiles';
 import { generateCityContent } from '@/data/cityContentGenerator';
 import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
