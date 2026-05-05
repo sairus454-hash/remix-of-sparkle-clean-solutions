@@ -182,18 +182,17 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                 <div className="mt-3 flex justify-center">
                   <Button
                     variant="default"
-                    onClick={() =>
-                      onOrder({
-                        id: 'general-cleaning-estimate',
-                        name: t.generalItemName,
-                        price: 0,
-                        quantity: 1,
-                      })
-                    }
+                    onClick={() => setEstimateOpen(true)}
                   >
                     {t.requestEstimate}
                   </Button>
                 </div>
+                <ManagerEstimateDialog
+                  open={estimateOpen}
+                  onOpenChange={setEstimateOpen}
+                  language={language}
+                  service={t.generalItemName}
+                />
               </CardContent>
             </Card>
           </CircularRevealCard>
