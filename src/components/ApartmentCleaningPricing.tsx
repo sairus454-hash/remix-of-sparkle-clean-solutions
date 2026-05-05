@@ -87,6 +87,7 @@ const apartments = [
 const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
   const t = T[language as Lang] || T.pl;
   const [freq, setFreq] = useState<typeof frequencies[number]['id']>('once');
+  const [estimateOpen, setEstimateOpen] = useState(false);
   const activeFreq = frequencies.find(f => f.id === freq)!;
 
   return (
