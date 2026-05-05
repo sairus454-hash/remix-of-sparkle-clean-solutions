@@ -709,14 +709,14 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 • „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
 • Inne miasta: meble, materace, dywany, auto, ozonowanie, mycie okien, impregnacja
 
-🎁 SYSTEM RABATOWY (AUTOMATYCZNY):
-• Rabat 10% — przy zamówieniu z 4+ różnych KATEGORII
-• Rabat 15% — przy zamówieniu z 6+ różnych KATEGORII
-⚠️ Przy 2-3 kategoriach rabatu NIE MA! Minimum 4 kategorie!
+🎁 PROMOCJE I RABATY:
+• 🧹 Zamów SPRZĄTANIE + dowolną drugą usługę (pranie tapicerki, okna, ozon itp.) → −20% na całe zamówienie (naliczane automatycznie w kalkulatorze)
+• 👥 Przyprowadź sąsiada — oboje dostajecie −20% na całe zamówienie
+• 🏘 Promocja sąsiedzka — wspólne zamówienie z sąsiadem pod tym samym adresem → −15%
+• 🌿 Suszenie mebli i materacy — GRATIS do końca wiosny (zwykle 60 PLN)
 
-KATEGORIE: Sprzątanie (w tym dodatki), Meble, Meble skórzane, Auto, Materace, Ozonowanie, Mycie okien, Złota rączka.
-Kilka pozycji z jednej kategorii = 1 kategoria.
-Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
+⚠️ Stare rabaty 10%/15% za "4+ kategorie" JUŻ NIE OBOWIĄZUJĄ — nie wspominaj o nich.
+Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%.`,
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
 
