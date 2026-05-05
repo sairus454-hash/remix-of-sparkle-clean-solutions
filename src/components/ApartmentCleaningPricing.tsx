@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Home, Sparkles } from 'lucide-react';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import ManagerEstimateDialog from '@/components/ManagerEstimateDialog';
+import { toast } from '@/hooks/use-toast';
+import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
 
 type Lang = 'pl' | 'en' | 'ru' | 'uk';
 
@@ -12,7 +14,7 @@ interface Props {
   onOrder: (item: { id: string; name: string; price: number; quantity: number; category?: string }) => void;
 }
 
-const T: Record<string, Record<string, string>> = {
+const T: Record<string, any> = {
   pl: {
     title: 'Cennik sprzątania mieszkania',
     subtitle: 'Sprawdź cenę w zależności od częstotliwości sprzątania',
@@ -26,6 +28,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'Sprzątanie generalne zależy od stopnia zabrudzenia i wymaga przyjazdu menedżera w celu wyceny.',
     requestEstimate: 'Poproś o wycenę menedżera',
     generalItemName: 'Sprzątanie generalne — wycena menedżera',
+    addedTitle: 'Dodano do zamówienia ✓',
+    discountApplied: 'Rabat 22% naliczony — dodaj drugą usługę z innej kategorii.',
+    discountReady: 'Świetnie! Rabat 22% już aktywny.',
+    needMore: (zl: number) => `Dodaj jeszcze ${zl} zł i drugą usługę, aby otrzymać −22%.`,
   },
   en: {
     title: 'Apartment cleaning price list',
@@ -40,6 +46,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'General cleaning depends on the level of dirt and requires a manager visit to assess the cost.',
     requestEstimate: 'Request manager estimate',
     generalItemName: 'General cleaning — manager estimate',
+    addedTitle: 'Added to order ✓',
+    discountApplied: '22% discount calculated — add a second service from another category.',
+    discountReady: 'Great! 22% discount is active.',
+    needMore: (zl: number) => `Add ${zl} zł more and a second service to get −22%.`,
   },
   ru: {
     title: 'Прайс-лист уборки квартиры',
@@ -54,6 +64,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'Генеральная уборка зависит от степени загрязнённости и требует приезда менеджера для оценки стоимости.',
     requestEstimate: 'Запросить оценку менеджера',
     generalItemName: 'Генеральная уборка — оценка менеджера',
+    addedTitle: 'Добавлено в заявку ✓',
+    discountApplied: 'Скидка 22% рассчитана — добавьте вторую услугу из другой категории.',
+    discountReady: 'Отлично! Скидка 22% уже активна.',
+    needMore: (zl: number) => `Добавьте ещё на ${zl} zł и вторую услугу, чтобы получить −22%.`,
   },
   uk: {
     title: 'Прайс прибирання квартири',
@@ -68,6 +82,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'Генеральне прибирання залежить від ступеня забруднення і потребує приїзду менеджера для оцінки вартості.',
     requestEstimate: 'Запросити оцінку менеджера',
     generalItemName: 'Генеральне прибирання — оцінка менеджера',
+    addedTitle: 'Додано до замовлення ✓',
+    discountApplied: 'Знижка 22% розрахована — додайте другу послугу з іншої категорії.',
+    discountReady: 'Чудово! Знижка 22% вже активна.',
+    needMore: (zl: number) => `Додайте ще на ${zl} zł і другу послугу, щоб отримати −22%.`,
   },
 };
 
@@ -157,15 +175,39 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                         </div>
                         <p className="text-sm text-muted-foreground flex-1">{t.desc}</p>
                         <Button
-                          onClick={() =>
+                          onClick={() => {
                             onOrder({
                               id: `cleaning-${apt.id}-${freq}`,
                               name,
                               price,
                               quantity: 1,
                               category: 'cleaning',
-                            })
-                          }
+                            });
+                            // Compute discount status across saved cart + this item
+                            try {
+                              const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+                              const merged = [...existing];
+                              const idx = merged.findIndex((e: any) => e.id === `cleaning-${apt.id}-${freq}`);
+                              if (idx >= 0) merged[idx].quantity = (merged[idx].quantity || 1) + 1;
+                              else merged.push({ id: `cleaning-${apt.id}-${freq}`, name, price, quantity: 1, category: 'cleaning' });
+                              const total = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
+                              const hasOther = merged.some((i: any) => {
+                                const c = i.category || i.id;
+                                return !(c === 'cleaning' || c.startsWith('cleaning-') || c.startsWith('cleaning_') || c.startsWith('extra-') || c === 'extras');
+                              });
+                              let description = `${name} · ${price} zł`;
+                              if (hasOther && total >= MIN_ORDER_FOR_DISCOUNT) {
+                                description += ` · ${t.discountReady}`;
+                              } else if (hasOther && total < MIN_ORDER_FOR_DISCOUNT) {
+                                description += ` · ${t.needMore(MIN_ORDER_FOR_DISCOUNT - total)}`;
+                              } else {
+                                description += ` · ${t.discountApplied}`;
+                              }
+                              toast({ title: t.addedTitle, description, duration: 5000 });
+                            } catch {
+                              toast({ title: t.addedTitle, description: `${name} · ${price} zł · ${t.discountApplied}`, duration: 5000 });
+                            }
+                          }}
                           className="w-full"
                         >
                           {t.order}
