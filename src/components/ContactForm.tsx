@@ -19,6 +19,7 @@ import { CalculatorItem } from '@/types/calculator';
 import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
 export interface ContactFormRef {
   setCalculatorData: (items: CalculatorItem[], total: number) => void;
+  setPromotion: (promotion: string) => void;
 }
 interface ContactFormProps {
   selectedDate?: Date;
