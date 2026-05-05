@@ -640,7 +640,8 @@ const ruTranslations = {
          balcony: 'Балконное окно',
          terrace: 'Террасное окно',
          attic: 'Мансардное окно',
-         balustrade: 'Балюстрада',
+          balustrade: 'Балюстрада',
+          glassPanels: 'Мойка стеклянных панелей (балюстрады, стеклянные перегородки)',
         },
       },
     impregnation: {

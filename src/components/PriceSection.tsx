@@ -324,6 +324,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
         { id: 'windowTerrace', name: t.windows?.items?.terrace || 'Террасное окно', price: 85, image: windowCleaning2 },
         { id: 'windowAttic', name: t.windows?.items?.attic || 'Мансардное окно', price: 40, image: windowCleaning3 },
         { id: 'balustrade', name: t.windows?.items?.balustrade || 'Балюстрада', price: 40, image: windowCleaning1 },
+        { id: 'glassPanels', name: t.windows?.items?.glassPanels || 'Mycie paneli szklanych', price: 10, unit: 'm²', image: windowCleaning2 },
       ],
     },
     {

@@ -640,7 +640,8 @@ const plTranslations = {
          balcony: 'Okno balkonowe',
          terrace: 'Okno tarasowe',
          attic: 'Okno dachowe',
-          balustrade: 'Balustrada',
+           balustrade: 'Balustrada',
+           glassPanels: 'Mycie paneli szklanych (balustrady, ścianki szklane)',
         },
       },
     impregnation: {
