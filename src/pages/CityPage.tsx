@@ -520,6 +520,15 @@ const CityPage = () => {
           </div>
         </section>
 
+        {/* Полные блоки акций (как на главной) — только для Wrocław-группы */}
+        {isWroclaw && (
+          <>
+            <MobilePromotionsCard />
+            <div className="hidden md:block">
+              <PromotionsSection />
+            </div>
+          </>
+        )}
 
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
