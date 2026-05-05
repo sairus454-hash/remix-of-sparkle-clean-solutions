@@ -109,6 +109,11 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
+  // Items that must have area explicitly confirmed by user (e.g. balcony cleaning)
+  const REQUIRES_AREA_CONFIRM = new Set(['balcony', 'extra-balcony']);
+  const [confirmedAreaIds, setConfirmedAreaIds] = useState<Set<string>>(new Set());
+  const needsConfirmation = (id: string) => REQUIRES_AREA_CONFIRM.has(id) && !confirmedAreaIds.has(id);
+  const unconfirmedSelected = selectedItems.find(s => needsConfirmation(s.item.id));
 
   // Categories where promo (originalPrice/promoBadge) only applies in Wrocław group
   const promoCategories = ['furniture', 'leather', 'mattress'];
