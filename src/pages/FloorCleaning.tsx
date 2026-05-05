@@ -15,6 +15,8 @@ import { useSeoSelfCheck } from '@/hooks/useSeoSelfCheck';
 
 import carpetBeforeAfter from '@/assets/floor-cleaning-carpet-before-after.jpg';
 import tileBeforeAfter from '@/assets/floor-cleaning-tile-before-after.jpg';
+import floorBa3 from '@/assets/floor-cleaning-ba-3.jpg';
+import floorBa4 from '@/assets/floor-cleaning-ba-4.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
 import imgCarpetCovering from '@/assets/calc-carpet.jpg';
 import imgCarpetMedium from '@/assets/calc-carpet-medium.jpg';
