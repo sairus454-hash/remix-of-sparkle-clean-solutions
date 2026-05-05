@@ -145,44 +145,44 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-0" aria-label="Nawigacja główna">
             {navItems.map((item, index) => {
-               const getHighlightClass = () => {
+               const isActive = location.pathname === item.path;
+               // Returns [base highlight class, active highlight class]
+               const getHighlightClasses = (): [string, string] => {
                  if (item.highlight === 'ozone') {
-                   return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300';
+                   return [
+                     'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300',
+                     'bg-sky-200 text-sky-900 ring-2 ring-sky-500 dark:bg-sky-800/50 dark:text-sky-100',
+                   ];
                  }
                  if (item.highlight === 'cleaning') {
-                   return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
+                   return [
+                     'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300',
+                     'bg-emerald-200 text-emerald-900 ring-2 ring-emerald-500 dark:bg-emerald-800/50 dark:text-emerald-100',
+                   ];
                  }
-                 if (item.highlight === 'services') {
-                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                 if (item.highlight === 'services' || item.highlight === 'handyman' || item.highlight === 'floorCleaning') {
+                   return [
+                     'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300',
+                     'bg-yellow-200 text-yellow-900 ring-2 ring-yellow-500 dark:bg-yellow-800/50 dark:text-yellow-100',
+                   ];
                  }
-                 if (item.highlight === 'auto') {
-                   return '';
-                 }
-                 if (item.highlight === 'handyman') {
-                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
-                 }
-                 if (item.highlight === 'blog') {
-                   return '';
-                 }
-                 if (item.highlight === 'floorCleaning') {
-                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
-                 }
-                 return '';
+                 return ['', ''];
                };
-              
+               const [baseHl, activeHl] = getHighlightClasses();
+
               return (
                 <div key={item.path} style={getHeaderItemStyle(index + 2, headerRevealed)}>
                   <Link
                     to={item.path}
                     className={`px-1.5 py-1.5 rounded-md text-[13px] font-medium transition-colors ${
-                      location.pathname === item.path
-                        ? 'text-primary bg-accent'
-                        : item.highlight
-                          ? getHighlightClass()
+                      isActive
+                        ? (activeHl || 'text-primary bg-accent ring-2 ring-primary/40')
+                        : baseHl
+                          ? baseHl + ' hover:brightness-95'
                           : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
                     }`}
                     title={item.highlight === 'ozone' ? item.label : undefined}
-                    aria-current={location.pathname === item.path ? 'page' : undefined}
+                    aria-current={isActive ? 'page' : undefined}
                   >
                     {item.path === '/' ? (
                       <>
