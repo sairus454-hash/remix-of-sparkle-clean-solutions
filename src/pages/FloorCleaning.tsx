@@ -8,6 +8,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import FloorWorksCarousel from '@/components/FloorWorksCarousel';
 import { CalculatorItem } from '@/types/calculator';
 import { Layers, Sparkles, ShieldCheck, Droplets, CheckCircle2, Truck, HelpCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -15,6 +16,8 @@ import { useSeoSelfCheck } from '@/hooks/useSeoSelfCheck';
 
 import carpetBeforeAfter from '@/assets/floor-cleaning-carpet-before-after.jpg';
 import tileBeforeAfter from '@/assets/floor-cleaning-tile-before-after.jpg';
+import floorBa3 from '@/assets/floor-cleaning-ba-3.jpg';
+import floorBa4 from '@/assets/floor-cleaning-ba-4.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
 import imgCarpetCovering from '@/assets/calc-carpet.jpg';
 import imgCarpetMedium from '@/assets/calc-carpet-medium.jpg';
@@ -430,36 +433,14 @@ const FloorCleaning = () => {
             <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
               {c.gallery}
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              <CircularRevealCard index={0}>
-                <div className="rounded-2xl overflow-hidden shadow-card border border-border bg-gradient-hero p-1">
-                  <div className="relative rounded-xl overflow-hidden">
-                    <AnimatedImage
-                      src={carpetBeforeAfter}
-                      alt="Pranie dywanu — przed i po (Wrocław)"
-                      className="w-full h-72 object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-sm text-muted-foreground bg-card py-3 rounded-b-xl">
-                    {language === 'pl' ? 'Pranie dywanu — efekt przed/po' : language === 'ru' ? 'Химчистка ковра — до/после' : language === 'uk' ? 'Хімчистка килима — до/після' : 'Carpet cleaning — before/after'}
-                  </p>
-                </div>
-              </CircularRevealCard>
-              <CircularRevealCard index={1}>
-                <div className="rounded-2xl overflow-hidden shadow-card border border-border bg-gradient-hero p-1">
-                  <div className="relative rounded-xl overflow-hidden">
-                    <AnimatedImage
-                      src={tileBeforeAfter}
-                      alt="Czyszczenie płytek balkonowych — przed i po"
-                      className="w-full h-72 object-cover"
-                    />
-                  </div>
-                  <p className="text-center text-sm text-muted-foreground bg-card py-3 rounded-b-xl">
-                    {language === 'pl' ? 'Czyszczenie płytek — efekt przed/po' : language === 'ru' ? 'Чистка плитки — до/после' : language === 'uk' ? 'Чистка плитки — до/після' : 'Tile cleaning — before/after'}
-                  </p>
-                </div>
-              </CircularRevealCard>
-            </div>
+            <FloorWorksCarousel
+              slides={[
+                { src: carpetBeforeAfter, label: language === 'pl' ? 'Pranie dywanu — efekt przed/po' : language === 'ru' ? 'Химчистка ковра — до/после' : language === 'uk' ? 'Хімчистка килима — до/після' : 'Carpet cleaning — before/after' },
+                { src: tileBeforeAfter, label: language === 'pl' ? 'Czyszczenie płytek — efekt przed/po' : language === 'ru' ? 'Чистка плитки — до/после' : language === 'uk' ? 'Чистка плитки — до/після' : 'Tile cleaning — before/after' },
+                { src: floorBa3, label: language === 'pl' ? 'Pranie wykładziny biurowej — przed/po' : language === 'ru' ? 'Чистка офисного покрытия — до/после' : language === 'uk' ? 'Чистка офісного покриття — до/після' : 'Office carpet cleaning — before/after' },
+                { src: floorBa4, label: language === 'pl' ? 'Pranie wykładziny w biurze — przed/po' : language === 'ru' ? 'Чистка коврового покрытия в офисе — до/после' : language === 'uk' ? 'Чистка килимового покриття в офісі — до/після' : 'Office carpet — before/after' },
+              ]}
+            />
           </div>
         </section>
 
