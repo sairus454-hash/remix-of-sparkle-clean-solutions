@@ -28,6 +28,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'Sprzątanie generalne zależy od stopnia zabrudzenia i wymaga przyjazdu menedżera w celu wyceny.',
     requestEstimate: 'Poproś o wycenę menedżera',
     generalItemName: 'Sprzątanie generalne — wycena menedżera',
+    addedTitle: 'Dodano do zamówienia ✓',
+    discountApplied: 'Rabat 22% naliczony — dodaj drugą usługę z innej kategorii.',
+    discountReady: 'Świetnie! Rabat 22% już aktywny.',
+    needMore: (zl: number) => `Dodaj jeszcze ${zl} zł i drugą usługę, aby otrzymać −22%.`,
   },
   en: {
     title: 'Apartment cleaning price list',
@@ -42,6 +46,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'General cleaning depends on the level of dirt and requires a manager visit to assess the cost.',
     requestEstimate: 'Request manager estimate',
     generalItemName: 'General cleaning — manager estimate',
+    addedTitle: 'Added to order ✓',
+    discountApplied: '22% discount calculated — add a second service from another category.',
+    discountReady: 'Great! 22% discount is active.',
+    needMore: (zl: number) => `Add ${zl} zł more and a second service to get −22%.`,
   },
   ru: {
     title: 'Прайс-лист уборки квартиры',
@@ -56,6 +64,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'Генеральная уборка зависит от степени загрязнённости и требует приезда менеджера для оценки стоимости.',
     requestEstimate: 'Запросить оценку менеджера',
     generalItemName: 'Генеральная уборка — оценка менеджера',
+    addedTitle: 'Добавлено в заявку ✓',
+    discountApplied: 'Скидка 22% рассчитана — добавьте вторую услугу из другой категории.',
+    discountReady: 'Отлично! Скидка 22% уже активна.',
+    needMore: (zl: number) => `Добавьте ещё на ${zl} zł и вторую услугу, чтобы получить −22%.`,
   },
   uk: {
     title: 'Прайс прибирання квартири',
@@ -70,6 +82,10 @@ const T: Record<string, Record<string, string>> = {
     generalNote: 'Генеральне прибирання залежить від ступеня забруднення і потребує приїзду менеджера для оцінки вартості.',
     requestEstimate: 'Запросити оцінку менеджера',
     generalItemName: 'Генеральне прибирання — оцінка менеджера',
+    addedTitle: 'Додано до замовлення ✓',
+    discountApplied: 'Знижка 22% розрахована — додайте другу послугу з іншої категорії.',
+    discountReady: 'Чудово! Знижка 22% вже активна.',
+    needMore: (zl: number) => `Додайте ще на ${zl} zł і другу послугу, щоб отримати −22%.`,
   },
 };
 
