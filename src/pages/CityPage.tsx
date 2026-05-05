@@ -22,6 +22,8 @@ import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import { CalculatorItem } from '@/types/calculator';
 import SmartServiceFilter, { useFilteredCategoryItems } from '@/components/SmartServiceFilter';
+import MobilePromotionsCard from '@/components/MobilePromotionsCard';
+import PromotionsSection from '@/components/PromotionsSection';
 import { getCityProfile } from '@/data/cityProfiles';
 import { generateCityContent } from '@/data/cityContentGenerator';
 import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
@@ -518,6 +520,15 @@ const CityPage = () => {
           </div>
         </section>
 
+        {/* Полные блоки акций (как на главной) — только для Wrocław-группы */}
+        {isWroclaw && (
+          <>
+            <MobilePromotionsCard />
+            <div className="hidden md:block">
+              <PromotionsSection />
+            </div>
+          </>
+        )}
 
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
