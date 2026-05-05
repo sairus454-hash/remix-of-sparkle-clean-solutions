@@ -763,6 +763,7 @@ const enTranslations = {
         cabinets: 'Kitchen cabinet cleaning',
         dishes: 'Dish washing',
         fridge: 'Fridge cleaning',
+        fridgeSmall: 'Small fridge',
         microwave: 'Microwave cleaning',
         balcony: 'Balcony cleaning',
         windowInside: 'Window cleaning (inside, per unit)',

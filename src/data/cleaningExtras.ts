@@ -12,6 +12,7 @@ export const cleaningExtras: CleaningExtra[] = [
   { id: 'cabinets', name: 'Уберем в кухонных шкафчиках', standardPrice: 40, generalPrice: 40 },
   { id: 'dishes', name: 'Помоем посуду', standardPrice: 25, generalPrice: 30 },
   { id: 'fridge', name: 'Почистим холодильник', standardPrice: 40, generalPrice: 50 },
+  { id: 'fridgeSmall', name: 'Холодильник малый', standardPrice: 20, generalPrice: 20 },
   { id: 'microwave', name: 'Помоем микроволновку', standardPrice: 10, generalPrice: 10 },
   { id: 'balcony', name: 'Уберем на балконе', standardPrice: 8, generalPrice: 8, unit: '/m²' },
   { id: 'ironing', name: 'Глажка', standardPrice: 50, generalPrice: 60, unit: '/ч' },
