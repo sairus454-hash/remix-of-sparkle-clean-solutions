@@ -728,6 +728,12 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                 </div>
               </div>
             )}
+            {!discountInfo.hasDiscount && discountInfo.discountHint && selectedItems.length > 0 && (
+              <div className="mb-2 sm:mb-3 p-2 sm:p-3 bg-primary/5 rounded-lg border border-primary/30 flex items-start gap-2">
+                <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-xs sm:text-sm text-foreground">{discountInfo.discountHint}</span>
+              </div>
+            )}
 
             <div className="flex items-center justify-between">
               <span className="text-sm sm:text-base font-medium">{t.calculator.total}</span>
