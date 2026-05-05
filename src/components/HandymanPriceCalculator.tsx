@@ -117,19 +117,6 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
           { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: applyPrice(200), icon: Wrench },
         ],
       },
-      {
-        id: 'gardening',
-        name: t.handyman.gardening,
-        icon: Leaf,
-        items: [
-          { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: applyPrice(1), icon: Leaf, unit: 'm²' },
-          { id: 'lawnMowingHard', name: t.handyman.calcItems.lawnMowingHard, price: applyPrice(1.3), icon: Leaf, unit: 'm²' },
-          { id: 'grassCleanup', name: t.handyman.calcItems.grassCleanup, price: applyPrice(1), icon: Leaf, unit: 'm²' },
-          { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: applyPrice(100), icon: Leaf },
-          { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: applyPrice(100), icon: Leaf },
-        ],
-      },
-    ], [t, applyPrice]);
 
     const toggleCategory = (categoryId: string) => {
       setOpenCategories(prev => 
