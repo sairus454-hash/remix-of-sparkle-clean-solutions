@@ -14,7 +14,7 @@ interface Props {
   onOrder: (item: { id: string; name: string; price: number; quantity: number; category?: string }) => void;
 }
 
-const T: Record<string, Record<string, string>> = {
+const T: Record<string, any> = {
   pl: {
     title: 'Cennik sprzątania mieszkania',
     subtitle: 'Sprawdź cenę w zależności od częstotliwości sprzątania',
