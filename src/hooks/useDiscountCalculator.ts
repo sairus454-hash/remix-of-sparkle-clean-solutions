@@ -41,12 +41,13 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
     const categories = new Set(items.map(normalizeCategory));
     const hasCleaning = categories.has('cleaning');
     const hasOther = Array.from(categories).some((c) => c !== 'cleaning');
+    const meetsMinimum = originalTotal >= MIN_ORDER_FOR_DISCOUNT;
 
     let discountPercent = 0;
     let discountReason = '';
-    let discountHint = getDiscountHint(hasCleaning, hasOther, language);
+    let discountHint = getDiscountHint(hasCleaning, hasOther, meetsMinimum, originalTotal, language);
 
-    if (hasCleaning && hasOther) {
+    if (hasCleaning && hasOther && meetsMinimum) {
       discountPercent = 22;
       discountReason = getDiscountReason('cleaningPlus', language);
       discountHint = '';
