@@ -544,8 +544,26 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h3: 'Kiedy zamówić ozonowanie materaca',
       },
     },
+    {
+      id: 15,
+      title: 'Jak często prać tapicerkę meblową: praktyczny poradnik',
+      summary: 'Kanapa może wyglądać dobrze i mimo to gromadzić kurz, pot, alergeny i zapachy. Sprawdź, jak często prać tapicerkę przy dzieciach, zwierzętach i alergiach.',
+      content: 'Częstotliwość prania zależy od tego, kto korzysta z mebli, jak intensywnie i czy w domu są dzieci, zwierzęta albo osoby z alergiami. Liczy się nie tylko kalendarz, ale też stan tapicerki.',
+      fullContent: 'Kanapa może wyglądać dobrze, a mimo to gromadzić kurz, pot, alergeny i zapachy. Dlatego pytanie, jak często prać tapicerkę meblową, nie dotyczy tylko estetyki. Chodzi też o higienę, komfort codziennego użytkowania i trwałość mebli.\n\nNie ma jednego terminu dla każdego domu. Częstotliwość prania zależy od tego, kto korzysta z mebli, jak intensywnie są używane i czy w domu są dzieci, zwierzęta albo osoby z alergiami. W praktyce liczy się nie tylko kalendarz, ale też stan tapicerki.\n\nJak często prać tapicerkę meblową przy normalnym użytkowaniu\n\nW standardowych warunkach tapicerkę meblową warto prać co 12 do 18 miesięcy. Taki odstęp zwykle wystarcza, jeśli sofa lub fotele są używane regularnie, ale bez dużych obciążeń. Dotyczy to mieszkań, w których nie ma zwierząt, intensywnych zabrudzeń ani częstych plam po jedzeniu i napojach.\n\nTo rozsądny rytm pielęgnacji, który pozwala usuwać nagromadzony brud, zanim zacznie wnikać głębiej w tkaninę i wypełnienie. Zbyt długie odkładanie czyszczenia często kończy się tym, że materiał szarzeje, traci świeżość i trudniej odzyskać jego pierwotny wygląd.\n\nKiedy prać częściej niż raz w roku\n\nDom z dziećmi: jeśli na kanapie dzieci jedzą, piją, bawią się i odpoczywają każdego dnia, tapicerka szybciej chłonie zabrudzenia. Bezpieczny przedział to co 6 do 9 miesięcy.\n\nZwierzęta w domu: pies lub kot oznacza sierść, zapach, ślinę i czasem zabrudzenia po spacerze. Pranie co 6 miesięcy jest rozsądnym standardem.\n\nAlergie i wrażliwość na kurz: dla alergików regularność ma większe znaczenie niż sama estetyka. Warto rozważyć pranie co 4 do 6 miesięcy.\n\nIntensywne użytkowanie: jeśli kanapa jest miejscem do siedzenia, pracy, drzemki i codziennego spędzania wieczorów, sprawdza się pranie 2 razy w roku.\n\nObjawy, że nie warto już czekać\n\n• lekko stęchły zapach w pomieszczeniu\n• przyciemniona tkanina w miejscach, gdzie najczęściej się siada\n• drobne plamy, które z czasem przestają być pojedyncze\n• tapicerka po prostu przestaje dawać poczucie czystości\n\nCzy można prać za często\n\nTak, zwłaszcza przy nieodpowiednich środkach lub zbyt dużej ilości wilgoci. Regularne odkurzanie i szybka reakcja na świeże plamy wydłużają czas między pełnymi praniami.\n\nDomowe odświeżanie a pranie profesjonalne\n\nDomowe środki często maskują zapach albo rozjaśniają tylko fragment tkaniny. Profesjonalne pranie dobiera metodę do rodzaju tapicerki i stopnia zabrudzenia, co ma znaczenie zwłaszcza przy jasnych meblach i delikatnych tkaninach.\n\nRozsądny harmonogram\n\n• spokojne użytkowanie — co 12–18 miesięcy\n• dzieci, zwierzęta, intensywne korzystanie — co 6–9 miesięcy\n• alergie, uporczywe zapachy — co 4–6 miesięcy\n\nJeśli tapicerka jest już wyraźnie zabrudzona albo ma zapach, nie warto odkładać decyzji. MasterClean realizuje pranie tapicerki, materacy, dywanów i wnętrz aut, więc kilka potrzeb porządkowych można załatwić w jednym terminie.',
+      image: upholsteryFrequencyBlog,
+      date: '2026-05-05',
+      readTime: '6 min',
+      tag: '🛋️ Pranie',
+      seo: {
+        title: 'Jak często prać tapicerkę meblową | MasterClean',
+        description: 'Sprawdź, jak często prać tapicerkę meblową: optymalne odstępy dla rodzin z dziećmi, zwierzętami i alergikami.',
+        keywords: 'jak często prać tapicerkę, pranie kanapy, częstotliwość prania mebli, pranie tapicerki meblowej, czyszczenie sofy',
+        h1: 'Jak często prać tapicerkę meblową',
+        h2: 'Kiedy prać częściej niż zwykle',
+        h3: 'Rozsądny harmonogram prania tapicerki',
+      },
+    },
   ],
-  uk: [
     {
       id: 1,
       title: 'Як часто потрібно чистити диван?',
