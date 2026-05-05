@@ -477,11 +477,20 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           </div>
           
           <div className="space-y-2 max-h-40 overflow-y-auto">
-            {calculatorItems.map((item, index) => <div key={index} className="flex justify-between items-center text-sm group">
-                <span className="text-muted-foreground flex-1">
-                  {item.name} {item.unit && `(${item.unit})`} × {item.quantity}
+            {calculatorItems.map((item, index) => <div key={index} className="flex justify-between items-center text-sm group gap-2">
+                <span className="text-muted-foreground flex-1 min-w-0 truncate">
+                  {item.name} {item.unit && `(${item.unit})`}
                 </span>
-                <span className="font-medium text-foreground mr-2">
+                <div className="flex items-center gap-1 bg-background/60 rounded-md border border-border">
+                  <Button type="button" variant="ghost" size="sm" onClick={() => updateCalculatorItemQuantity(item.id, -1)} className="h-6 w-6 p-0" aria-label="−">
+                    <Minus className="w-3 h-3" />
+                  </Button>
+                  <span className="text-xs font-semibold w-5 text-center">{item.quantity}</span>
+                  <Button type="button" variant="ghost" size="sm" onClick={() => updateCalculatorItemQuantity(item.id, 1)} className="h-6 w-6 p-0" aria-label="+">
+                    <Plus className="w-3 h-3" />
+                  </Button>
+                </div>
+                <span className="font-medium text-foreground tabular-nums w-16 text-right">
                   {item.price * item.quantity} {t.prices.currency}
                 </span>
                 <Button type="button" variant="ghost" size="sm" onClick={() => removeCalculatorItem(item.id)} className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive opacity-60 hover:opacity-100 transition-opacity">
