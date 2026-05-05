@@ -22,6 +22,7 @@ const T: Record<string, Record<string, string>> = {
     apartment: 'Mieszkanie',
     desc: 'Utrzymanie czystości w całym mieszkaniu: odkurzanie, mycie podłóg, łazienka, kuchnia i ścieranie kurzu.',
     order: 'Zamów sprzątanie',
+    generalNote: 'Sprzątanie generalne zależy od stopnia zabrudzenia i wymaga przyjazdu menedżera w celu wyceny.',
   },
   en: {
     title: 'Apartment cleaning price list',
@@ -33,6 +34,7 @@ const T: Record<string, Record<string, string>> = {
     apartment: 'Apartment',
     desc: 'Maintaining cleanliness throughout the apartment: vacuuming, mopping floors, bathroom, kitchen and dusting.',
     order: 'Order cleaning',
+    generalNote: 'General cleaning depends on the level of dirt and requires a manager visit to assess the cost.',
   },
   ru: {
     title: 'Прайс-лист уборки квартиры',
@@ -44,6 +46,7 @@ const T: Record<string, Record<string, string>> = {
     apartment: 'Квартира',
     desc: 'Поддержание чистоты во всей квартире: пылесос, мытьё полов, ванная, кухня и удаление пыли.',
     order: 'Заказать уборку',
+    generalNote: 'Генеральная уборка зависит от степени загрязнённости и требует приезда менеджера для оценки стоимости.',
   },
   uk: {
     title: 'Прайс прибирання квартири',
@@ -55,6 +58,7 @@ const T: Record<string, Record<string, string>> = {
     apartment: 'Квартира',
     desc: 'Підтримка чистоти у всій квартирі: пилосос, миття підлоги, ванна, кухня та витирання пилу.',
     order: 'Замовити прибирання',
+    generalNote: 'Генеральне прибирання залежить від ступеня забруднення і потребує приїзду менеджера для оцінки вартості.',
   },
 };
 
@@ -158,6 +162,12 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                       </div>
                     );
                   })}
+                </div>
+
+                {/* General cleaning note */}
+                <div className="mt-6 rounded-lg border border-yellow-400/40 bg-yellow-400/10 p-4 flex items-start gap-2">
+                  <span className="flex-shrink-0">⚠️</span>
+                  <p className="text-sm font-medium text-yellow-700">{t.generalNote}</p>
                 </div>
               </CardContent>
             </Card>
