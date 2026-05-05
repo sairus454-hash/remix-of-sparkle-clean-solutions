@@ -18,6 +18,7 @@ import carpetBeforeAfter from '@/assets/floor-cleaning-carpet-before-after.jpg';
 import tileBeforeAfter from '@/assets/floor-cleaning-tile-before-after.jpg';
 import floorBa3 from '@/assets/floor-cleaning-ba-3.jpg';
 import floorBa4 from '@/assets/floor-cleaning-ba-4.jpg';
+import floorBa5 from '@/assets/floor-cleaning-ba-5.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
 import imgCarpetCovering from '@/assets/calc-carpet.jpg';
 import imgCarpetMedium from '@/assets/calc-carpet-medium.jpg';
@@ -439,6 +440,7 @@ const FloorCleaning = () => {
                 { src: tileBeforeAfter, label: language === 'pl' ? 'Czyszczenie płytek — efekt przed/po' : language === 'ru' ? 'Чистка плитки — до/после' : language === 'uk' ? 'Чистка плитки — до/після' : 'Tile cleaning — before/after' },
                 { src: floorBa3, label: language === 'pl' ? 'Pranie wykładziny biurowej — przed/po' : language === 'ru' ? 'Чистка офисного покрытия — до/после' : language === 'uk' ? 'Чистка офісного покриття — до/після' : 'Office carpet cleaning — before/after' },
                 { src: floorBa4, label: language === 'pl' ? 'Pranie wykładziny w biurze — przed/po' : language === 'ru' ? 'Чистка коврового покрытия в офисе — до/после' : language === 'uk' ? 'Чистка килимового покриття в офісі — до/після' : 'Office carpet — before/after' },
+                { src: floorBa5, label: language === 'pl' ? 'Sprzęt do prania wykładzin — Santoemma' : language === 'ru' ? 'Профессиональное оборудование Santoemma' : language === 'uk' ? 'Професійне обладнання Santoemma' : 'Professional Santoemma equipment' },
               ]}
             />
           </div>
