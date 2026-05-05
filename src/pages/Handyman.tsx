@@ -102,7 +102,6 @@ const Handyman = () => {
     { id: 'mounting', name: t.handyman.mounting, icon: Frame },
     { id: 'electrical', name: t.handyman.electrical, icon: Lightbulb },
     { id: 'locksmith', name: t.handyman.other, icon: Wrench },
-    { id: 'gardening', name: t.handyman.gardening, icon: Leaf },
   ];
 
   const categoryItems: Record<string, { id: string; name: string; price: number; image: string; unit?: string; priceText?: string }[]> = {
