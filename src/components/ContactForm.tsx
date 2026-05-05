@@ -6,7 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { toast } from '@/hooks/use-toast';
-import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone } from 'lucide-react';
+import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone, Plus, Minus } from 'lucide-react';
+import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
