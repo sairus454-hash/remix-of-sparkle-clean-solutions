@@ -128,7 +128,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         sessionStorage.removeItem('mc_calculator_items');
         sessionStorage.removeItem('mc_calculator_total');
       }
-    } catch {}
+      } catch {
+        // Ignore unavailable sessionStorage.
+      }
   }, [calculatorItems, calculatorTotal]);
 
   // Sync with external selectedDate prop
@@ -207,7 +209,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     try {
       sessionStorage.removeItem('mc_calculator_items');
       sessionStorage.removeItem('mc_calculator_total');
-    } catch {}
+    } catch {
+      // Ignore unavailable sessionStorage.
+    }
   };
   const removeCalculatorItem = (itemId: string) => {
     setCalculatorItems(prev => {
@@ -229,7 +233,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   // Sound notification function - plays a pleasant success beep
   const playSuccessSound = () => {
     try {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      const AudioContextCtor = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+      if (!AudioContextCtor) return;
+      const audioContext = new AudioContextCtor();
       
       // Create a pleasant two-tone success sound
       const playTone = (frequency: number, startTime: number, duration: number) => {
