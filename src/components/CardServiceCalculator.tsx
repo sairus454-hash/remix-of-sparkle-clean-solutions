@@ -580,6 +580,11 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                 </div>
                 <span className="w-16 text-right font-semibold text-primary text-sm">
                   {selected.item.price * selected.quantity} zł
+                  {needsConfirmation(selected.item.id) && (
+                    <span className="block text-[10px] font-normal text-destructive mt-0.5">
+                      {language === 'pl' ? 'Wymagane m²' : language === 'en' ? 'Area required' : language === 'uk' ? 'Потрібна площа' : 'Укажите м²'}
+                    </span>
+                  )}
                 </span>
               </div>
             ))}
