@@ -66,9 +66,9 @@ const frequencies = [
 ] as const;
 
 const apartments = [
-  { id: 'a40', label: '<40m²', basePrice: 199.12 },
-  { id: 'a60', label: '<60m²', basePrice: 239.12 },
-  { id: 'a80', label: '<80m²', basePrice: 279.12 },
+  { id: 'a40', label: '<40m²', basePrice: 199 },
+  { id: 'a60', label: '<60m²', basePrice: 239 },
+  { id: 'a80', label: '<80m²', basePrice: 279 },
 ];
 
 const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
