@@ -117,7 +117,7 @@ const HandymanPriceCalculator = forwardRef<HandymanCalculatorRef, HandymanPriceC
           { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: applyPrice(200), icon: Wrench },
         ],
       },
-
+    ], [t, applyPrice]);
     const toggleCategory = (categoryId: string) => {
       setOpenCategories(prev => 
         prev.includes(categoryId) 
