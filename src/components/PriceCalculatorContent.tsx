@@ -17,7 +17,7 @@ import {
 import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home, Armchair } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
+import { useDiscountCalculator, getDiscountTiers, getItemDiscountRole, getDiscountRoleLabel } from '@/hooks/useDiscountCalculator';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PriceItem {
