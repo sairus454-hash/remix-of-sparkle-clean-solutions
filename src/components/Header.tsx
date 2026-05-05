@@ -164,6 +164,9 @@ const Header = () => {
                  if (item.highlight === 'blog') {
                    return '';
                  }
+                 if (item.highlight === 'floorCleaning') {
+                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                 }
                  return '';
                };
               
