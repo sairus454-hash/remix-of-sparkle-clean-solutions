@@ -147,7 +147,7 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                             onOrder({
                               id: `cleaning-${apt.id}-${freq}`,
                               name,
-                              price: Math.round(price * 100) / 100,
+                              price,
                               quantity: 1,
                             })
                           }
