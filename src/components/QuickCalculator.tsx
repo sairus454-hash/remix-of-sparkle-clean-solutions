@@ -305,11 +305,18 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
             </div>
           </div>
           
-          {discountInfo.discountPercent > 0 && (
+          {discountInfo.discountPercent > 0 ? (
             <div className="flex items-center gap-2 text-sm text-fresh">
               <Sparkles className="w-4 h-4" />
               <span>{discountInfo.discountReason}</span>
             </div>
+          ) : (
+            discountInfo.discountHint && (
+              <div className="flex items-start gap-2 text-xs text-muted-foreground bg-primary/5 border border-primary/20 rounded-lg p-2">
+                <Sparkles className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <span>{discountInfo.discountHint}</span>
+              </div>
+            )
           )}
 
           {/* Submit button */}
