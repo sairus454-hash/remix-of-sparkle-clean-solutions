@@ -139,7 +139,17 @@
       <p style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i wnętrz samochodowych. Ozonowanie, sprzątanie, mycie okien. Pracujemy 24/7. Zadzwoń: +48 575 211 401</p>
     </div>
     <div id="соро-блог"></div>
-    <script src="https://app.trysoro.com/api/embed/8ba8f8c9-fed9-4b19-8639-bd74fd8dd49c" defer></script>
+    <script>
+      // Defer Soro embed until after page becomes interactive to protect LCP/INP
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var s = document.createElement('script');
+          s.src = 'https://app.trysoro.com/api/embed/8ba8f8c9-fed9-4b19-8639-bd74fd8dd49c';
+          s.defer = true;
+          document.body.appendChild(s);
+        }, 3000);
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
