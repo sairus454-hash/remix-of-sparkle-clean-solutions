@@ -55,7 +55,7 @@ const FloorWorksCarousel = ({ slides }: Props) => {
   return (
     <div
       className="relative mx-auto"
-      style={{ perspective: '1200px', height: isMobile ? '260px' : '380px', maxWidth: '900px' }}
+      style={{ perspective: '1200px', height: isMobile ? '320px' : '380px', maxWidth: '900px' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
@@ -70,16 +70,16 @@ const FloorWorksCarousel = ({ slides }: Props) => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="absolute transition-all duration-500 ease-out rounded-xl sm:rounded-2xl overflow-hidden shadow-card-hover border-2 border-border"
+            className="absolute transition-all duration-500 ease-out rounded-xl sm:rounded-2xl overflow-hidden shadow-card-hover border-2 border-border bg-muted"
             style={{
-              width: isMobile ? '75%' : '55%',
+              width: isMobile ? '85%' : '55%',
               height: '100%',
               left: '50%',
-              marginLeft: isMobile ? '-37.5%' : '-27.5%',
+              marginLeft: isMobile ? '-42.5%' : '-27.5%',
               ...getCardStyle(index),
             }}
           >
-            <img src={slide.src} alt={slide.label} className="w-full h-full object-cover" loading="lazy" />
+            <img src={slide.src} alt={slide.label} className={`w-full h-full ${isMobile ? 'object-contain' : 'object-cover'}`} loading="lazy" />
             {((index - current) % total + total) % total === 0 && (
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4">
                 <p className="text-white text-xs sm:text-sm font-medium text-center">{slide.label}</p>
