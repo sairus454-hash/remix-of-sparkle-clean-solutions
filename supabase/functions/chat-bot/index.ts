@@ -44,7 +44,7 @@ const PRICE_LIST = {
 • Глажка — 60 PLN/ч
 • Убрать лоток для животных — 15 PLN
 
-🛋 МЕБЕЛЬ (🔥 АКЦИЯ НЕДЕЛИ: -10% на химчистку мебели и матрасов!):
+🛋 МЕБЕЛЬ:
 • Пуф — 30 PLN (вместо 35)
 • Стул (сиденье) — 15 PLN
 • Стул с спинкой — 25 PLN
@@ -60,7 +60,7 @@ const PRICE_LIST = {
 • Ковровое покрытие — 20 PLN/м² (вместо 25)
 • Мебель из флока — +50% к обычной цене
 
-🛋 КОЖАНАЯ МЕБЕЛЬ (🔥 АКЦИЯ НЕДЕЛИ: -10%!):
+🛋 КОЖАНАЯ МЕБЕЛЬ:
 • Пуф (кожа) — 40 PLN (вместо 45)
 • Стул (кожа) — 40 PLN (вместо 45)
 • Подушка (кожа) — 15 PLN (вместо 20)
@@ -84,7 +84,7 @@ const PRICE_LIST = {
 • Химчистка кабины тягача — от 650 PLN
 • Химчистка кабины буса — от 400 PLN
 
-🛏 МАТРАСЫ (🔥 -10%):
+🛏 МАТРАСЫ:
 • Матрас двухспальный — 175 PLN (вместо 195)
 • Матрас односпальный — 115 PLN (вместо 125)
 • Чистка изголовья кровати — 80 PLN (вместо 90)
@@ -198,10 +198,10 @@ const PRICE_LIST = {
 Обслуживаемые города: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
 
 💰 ЦЕНЫ ПО ГОРОДАМ:
-• Вроцлав и Смолец — базовые цены (как в прайсе выше, включая акцию -10% на мебель и матрасы)
+• Вроцлав и Смолец — базовые цены (как в прайсе выше)
 • Все остальные города (Opole, Legnica, Lubin и т.д.) — используй ГОТОВУЮ ТАБЛИЦУ ниже, НЕ считай сам!
 
-📊 ГОТОВЫЕ ЦЕНЫ ДЛЯ ДРУГИХ ГОРОДОВ (мебель и матрасы, уже с наценкой 10%, БЕЗ акции -10%, округлены до 5):
+📊 ГОТОВЫЕ ЦЕНЫ ДЛЯ ДРУГИХ ГОРОДОВ (мебель и матрасы, уже с наценкой 10%, округлены до 5):
 • Пуф — 40 PLN | Стул (сиденье) — 20 PLN | Стул с спинкой — 30 PLN
 • Стул конференционный — 35 PLN | Стул вращающийся — 50 PLN | Стул — 30 PLN
 • Кресло — 85 PLN | Подушка — 15 PLN
@@ -280,7 +280,7 @@ Deep cleaning:
 • Ironing — 60 PLN/h
 • Pet litter box cleaning — 15 PLN
 
-🛋 FURNITURE (🔥 WEEKLY DEAL: -10% on furniture & mattress cleaning!):
+🛋 FURNITURE:
 • Ottoman — 30 PLN
 • Chair (seat only) — 15 PLN
 • Chair with backrest — 25 PLN
@@ -296,7 +296,7 @@ Deep cleaning:
 • Carpet — 20 PLN/m²
 • Flock furniture — +50% to regular price
 
-🛋 LEATHER FURNITURE (🔥 WEEKLY DEAL: -10%!):
+🛋 LEATHER FURNITURE:
 • Ottoman (leather) — 40 PLN
 • Chair (leather) — 40 PLN
 • Pillow (leather) — 15 PLN
@@ -321,7 +321,7 @@ Deep cleaning:
 • Truck cabin cleaning — from 650 PLN
 • Van cabin cleaning — from 400 PLN
 
-🛏 MATTRESSES (🔥 -10%):
+🛏 MATTRESSES:
 • Double mattress — 175 PLN
 • Single mattress — 115 PLN
 • Bed headboard cleaning — 80 PLN
@@ -434,10 +434,10 @@ Benefits:
 Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
 
 💰 PRICING BY CITY:
-• Wrocław and Smolec — base prices (as listed above, including -10% promo on furniture and mattresses)
+• Wrocław and Smolec — base prices (as listed above)
 • All other cities (Opole, Legnica, Lubin, etc.) — use the READY TABLE below, do NOT calculate manually!
 
-📊 READY PRICES FOR OTHER CITIES (furniture & mattresses, +10% surcharge, NO -10% promo, rounded to nearest 5):
+📊 READY PRICES FOR OTHER CITIES (furniture & mattresses, +10% surcharge, rounded to nearest 5):
 • Ottoman — 40 PLN | Chair (seat) — 20 PLN | Chair with backrest — 30 PLN
 • Conference chair — 35 PLN | Swivel chair — 50 PLN | Chair — 30 PLN
 • Armchair — 85 PLN | Pillow — 15 PLN
@@ -517,7 +517,7 @@ Sprzątanie generalne:
 • Prasowanie — 60 PLN/godz.
 • Sprzątanie kuwety — 15 PLN
 
-🛋 MEBLE (🔥 PROMOCJA TYGODNIA: -10% na pranie mebli i materacy!):
+🛋 MEBLE:
 • Pufa — 30 PLN
 • Krzesło (siedzenie) — 15 PLN
 • Krzesło z oparciem — 25 PLN
@@ -534,7 +534,7 @@ Sprzątanie generalne:
 • Dywan — 20 PLN/m²
 • Meble z floku — +50% do ceny zwykłej
 
-🛋 MEBLE SKÓRZANE (🔥 PROMOCJA TYGODNIA: -10%!):
+🛋 MEBLE SKÓRZANE:
 • Pufa (skóra) — 40 PLN
 • Krzesło (skóra) — 40 PLN
 • Poduszka (skóra) — 15 PLN
@@ -559,7 +559,7 @@ Sprzątanie generalne:
 • Czyszczenie kabiny ciągnika — od 650 PLN
 • Czyszczenie kabiny busa — od 400 PLN
 
-🛏 MATERACE (🔥 -10%):
+🛏 MATERACE:
 • Materac dwuosobowy — 175 PLN
 • Materac jednoosobowy — 115 PLN
 • Czyszczenie zagłówka łóżka — 100 PLN
@@ -673,10 +673,10 @@ Korzyści:
 Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
 
 💰 CENY WG MIAST:
-• Wrocław i Smolec — ceny bazowe (jak w cenniku powyżej, w tym promocja -10% na meble i materace)
+• Wrocław i Smolec — ceny bazowe (jak w cenniku powyżej)
 • Wszystkie inne miasta (Opole, Legnica, Lubin itp.) — użyj GOTOWEJ TABELI poniżej, NIE licz sam!
 
-📊 GOTOWE CENY DLA INNYCH MIAST (meble i materace, już z dopłatą 10%, BEZ promocji -10%, zaokrąglone do 5):
+📊 GOTOWE CENY DLA INNYCH MIAST (meble i materace, już z dopłatą 10%, zaokrąglone do 5):
 • Pufa — 40 PLN | Krzesło (siedzenie) — 20 PLN | Krzesło z oparciem — 30 PLN
 • Krzesło konferencyjne — 35 PLN | Krzesło obrotowe — 50 PLN | Krzesło — 30 PLN
 • Fotel — 85 PLN | Poduszka — 15 PLN
@@ -756,7 +756,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Прасування — 60 PLN/год
 • Прибирання лотка для тварин — 15 PLN
 
-🛋 МЕБЛІ (🔥 АКЦІЯ ТИЖНЯ: -10% на хімчистку меблів та матраців!):
+🛋 МЕБЛІ:
 • Пуф — 30 PLN (замість 35)
 • Стілець (сидіння) — 15 PLN
 • Стілець зі спинкою — 25 PLN
@@ -772,7 +772,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Килимове покриття — 20 PLN/м² (замість 25)
 • Меблі з флоку — +50% до звичайної ціни
 
-🛋 ШКІРЯНІ МЕБЛІ (🔥 АКЦІЯ ТИЖНЯ: -10%!):
+🛋 ШКІРЯНІ МЕБЛІ:
 • Пуф (шкіра) — 40 PLN (замість 45)
 • Стілець (шкіра) — 40 PLN (замість 45)
 • Подушка (шкіра) — 15 PLN (замість 20)
@@ -797,7 +797,7 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 • Хімчистка кабіни тягача — від 650 PLN
 • Хімчистка кабіни буса — від 400 PLN
 
-🛏 МАТРАЦИ (🔥 -10%):
+🛏 МАТРАЦИ:
 • Матрац двоспальній — 175 PLN (замість 195)
 • Матрац односпальний — 115 PLN (замість 125)
 • Чистка узголів'я ліжка — 80 PLN (замість 90)
@@ -910,10 +910,10 @@ Przykład: meble + auto + materac + ozonowanie = 4 kategorie = 10% rabatu`,
 Міста обслуговування: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnica, Wałbrzych, Ostrów Wielkopolski, Jelenia Góra, Brzeg.
 
 💰 ЦІНИ ЗА МІСТАМИ:
-• Вроцлав і Смолець — базові ціни (як у прайсі вище, включаючи акцію -10% на меблі та матраци)
+• Вроцлав і Смолець — базові ціни (як у прайсі вище)
 • Усі інші міста (Opole, Legnica, Lubin тощо) — використовуй ГОТОВУ ТАБЛИЦЮ нижче, НЕ рахуй сам!
 
-📊 ГОТОВІ ЦІНИ ДЛЯ ІНШИХ МІСТ (меблі та матраци, вже з надбавкою 10%, БЕЗ акції -10%, округлені до 5):
+📊 ГОТОВІ ЦІНИ ДЛЯ ІНШИХ МІСТ (меблі та матраци, вже з надбавкою 10%, округлені до 5):
 • Пуф — 40 PLN | Стілець (сидіння) — 20 PLN | Стілець зі спинкою — 30 PLN
 • Стілець конференційний — 35 PLN | Стілець обертовий — 50 PLN | Стілець — 30 PLN
 • Крісло — 85 PLN | Подушка — 15 PLN
