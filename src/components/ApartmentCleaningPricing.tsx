@@ -1,0 +1,171 @@
+import { useState } from 'react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Home, Sparkles } from 'lucide-react';
+import CircularRevealCard from '@/components/CircularRevealCard';
+
+type Lang = 'pl' | 'en' | 'ru' | 'uk';
+
+interface Props {
+  language: Lang | string;
+  onOrder: (item: { id: string; name: string; price: number; quantity: number }) => void;
+}
+
+const T: Record<string, Record<string, string>> = {
+  pl: {
+    title: 'Cennik sprzątania mieszkania',
+    subtitle: 'Sprawdź cenę w zależności od częstotliwości sprzątania',
+    weekly: 'Raz w tygodniu',
+    biweekly: 'Raz na dwa tygodnie',
+    monthly: 'Raz na miesiąc',
+    once: 'Jednorazowo',
+    apartment: 'Mieszkanie',
+    desc: 'Utrzymanie czystości w całym mieszkaniu: odkurzanie, mycie podłóg, łazienka, kuchnia i ścieranie kurzu.',
+    order: 'Zamów sprzątanie',
+  },
+  en: {
+    title: 'Apartment cleaning price list',
+    subtitle: 'Check the price depending on cleaning frequency',
+    weekly: 'Once a week',
+    biweekly: 'Every two weeks',
+    monthly: 'Once a month',
+    once: 'One-time',
+    apartment: 'Apartment',
+    desc: 'Maintaining cleanliness throughout the apartment: vacuuming, mopping floors, bathroom, kitchen and dusting.',
+    order: 'Order cleaning',
+  },
+  ru: {
+    title: 'Прайс-лист уборки квартиры',
+    subtitle: 'Узнайте цену в зависимости от частоты уборки',
+    weekly: 'Раз в неделю',
+    biweekly: 'Раз в две недели',
+    monthly: 'Раз в месяц',
+    once: 'Разовая',
+    apartment: 'Квартира',
+    desc: 'Поддержание чистоты во всей квартире: пылесос, мытьё полов, ванная, кухня и удаление пыли.',
+    order: 'Заказать уборку',
+  },
+  uk: {
+    title: 'Прайс прибирання квартири',
+    subtitle: 'Дізнайтесь ціну залежно від частоти прибирання',
+    weekly: 'Раз на тиждень',
+    biweekly: 'Раз на два тижні',
+    monthly: 'Раз на місяць',
+    once: 'Разово',
+    apartment: 'Квартира',
+    desc: 'Підтримка чистоти у всій квартирі: пилосос, миття підлоги, ванна, кухня та витирання пилу.',
+    order: 'Замовити прибирання',
+  },
+};
+
+const frequencies = [
+  { id: 'weekly', discount: 0.20 },
+  { id: 'biweekly', discount: 0.15 },
+  { id: 'monthly', discount: 0.10 },
+  { id: 'once', discount: 0 },
+] as const;
+
+const apartments = [
+  { id: 'a40', label: '<40m²', basePrice: 199.12 },
+  { id: 'a60', label: '<60m²', basePrice: 239.12 },
+  { id: 'a80', label: '<80m²', basePrice: 279.12 },
+];
+
+const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
+  const t = T[language as Lang] || T.pl;
+  const [freq, setFreq] = useState<typeof frequencies[number]['id']>('once');
+  const activeFreq = frequencies.find(f => f.id === freq)!;
+
+  return (
+    <section className="py-10 bg-card">
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto">
+          <CircularRevealCard index={0}>
+            <Card className="shadow-card">
+              <CardContent className="py-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                    <Home className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h2 className="font-serif text-xl md:text-2xl font-semibold">{t.title}</h2>
+                    <p className="text-sm text-muted-foreground">{t.subtitle}</p>
+                  </div>
+                </div>
+
+                {/* Frequency tabs */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8">
+                  {frequencies.map((f) => {
+                    const active = freq === f.id;
+                    return (
+                      <button
+                        key={f.id}
+                        type="button"
+                        onClick={() => setFreq(f.id)}
+                        className={`relative rounded-lg border-2 px-3 py-3 text-sm font-medium transition-all ${
+                          active
+                            ? 'border-primary bg-primary/5 text-foreground shadow-md'
+                            : 'border-border bg-background text-muted-foreground hover:border-primary/40'
+                        }`}
+                      >
+                        {f.discount > 0 && (
+                          <span className="absolute -top-2 -right-2 bg-destructive text-destructive-foreground text-xs font-bold px-2 py-0.5 rounded-full shadow-md animate-pulse">
+                            -{Math.round(f.discount * 100)}%
+                          </span>
+                        )}
+                        {t[f.id]}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Apartment cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {apartments.map((apt) => {
+                    const price = apt.basePrice * (1 - activeFreq.discount);
+                    const priceLabel = price.toFixed(2).replace('.', ',');
+                    const oldLabel = activeFreq.discount > 0 ? apt.basePrice.toFixed(2).replace('.', ',') : null;
+                    const name = `${t.apartment} ${apt.label} — ${t[activeFreq.id]}`;
+                    return (
+                      <div
+                        key={apt.id}
+                        className="relative rounded-xl border border-border bg-background p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow"
+                      >
+                        <div className="flex items-center gap-2">
+                          <Sparkles className="w-4 h-4 text-primary" />
+                          <h3 className="font-semibold text-lg">{t.apartment} {apt.label}</h3>
+                        </div>
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-2xl font-bold text-primary">{priceLabel} zł</span>
+                          {oldLabel && (
+                            <span className="text-sm text-muted-foreground line-through">{oldLabel} zł</span>
+                          )}
+                        </div>
+                        <p className="text-sm text-muted-foreground flex-1">{t.desc}</p>
+                        <Button
+                          onClick={() =>
+                            onOrder({
+                              id: `cleaning-${apt.id}-${freq}`,
+                              name,
+                              price: Math.round(price * 100) / 100,
+                              quantity: 1,
+                            })
+                          }
+                          className="w-full"
+                        >
+                          {t.order}
+                        </Button>
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+          </CircularRevealCard>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ApartmentCleaningPricing;
