@@ -22,7 +22,7 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
           </div>
         </div>
 
-        <div className="mt-3 space-y-3">
+        <div className="mt-3 space-y-3 animate-fade-in [animation-delay:120ms] [animation-fill-mode:both]">
           {/* 4+ Services */}
           <div className="relative overflow-hidden p-4 rounded-2xl bg-card/90 border border-border/50 shadow-card">
             <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-xl -translate-y-1/2 -translate-x-1/2" />
