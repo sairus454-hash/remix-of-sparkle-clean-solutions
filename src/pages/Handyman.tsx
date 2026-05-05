@@ -102,7 +102,6 @@ const Handyman = () => {
     { id: 'mounting', name: t.handyman.mounting, icon: Frame },
     { id: 'electrical', name: t.handyman.electrical, icon: Lightbulb },
     { id: 'locksmith', name: t.handyman.other, icon: Wrench },
-    { id: 'gardening', name: t.handyman.gardening, icon: Leaf },
   ];
 
   const categoryItems: Record<string, { id: string; name: string; price: number; image: string; unit?: string; priceText?: string }[]> = {
@@ -153,13 +152,6 @@ const Handyman = () => {
       { id: 'aluminumDoorRepair', name: t.handyman.calcItems.aluminumDoorRepair, price: 200, image: img('handyman/aluminum-door.jpg') },
       { id: 'windowDoorAdjustment', name: t.handyman.calcItems.windowDoorAdjustment, price: 200, image: img('handyman/window-adjustment.jpg') },
       { id: 'fridgeHinges', name: t.handyman.calcItems.fridgeHinges, price: 200, image: img('handyman/fridge-hinges.jpg') },
-    ],
-    gardening: [
-      { id: 'lawnMowing', name: t.handyman.calcItems.lawnMowing, price: 1, image: img('handyman/lawn-mowing.jpg'), unit: 'm²', priceText: '1.00 - 1.20 zł' },
-      { id: 'lawnMowingHard', name: t.handyman.calcItems.lawnMowingHard, price: 1.3, image: img('handyman/lawn-mowing-hard.jpg'), unit: 'm²', priceText: '1.30 - 1.50 zł' },
-      { id: 'grassCleanup', name: t.handyman.calcItems.grassCleanup, price: 1, image: img('handyman/grass-cleanup.jpg'), unit: 'm²', priceText: '1.00 - 1.50 zł' },
-      { id: 'treeTrimming', name: t.handyman.calcItems.treeTrimming, price: 100, image: img('handyman/tree-trimming.jpg') },
-      { id: 'yardHelp', name: t.handyman.calcItems.yardHelp, price: 100, image: img('handyman/yard-help.jpg') },
     ],
   };
 
