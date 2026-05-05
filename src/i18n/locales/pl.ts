@@ -72,7 +72,7 @@ const plTranslations = {
       upTo: 'do',
       saveUpTo: 'Oszczędź do 22% na naszych usługach!',
       services4plusBadge: 'PROMOCJA',
-      services4plus: 'Zamów sprzątanie + dowolną drugą usługę i otrzymaj 22% rabatu',
+      services4plus: 'Zamów sprzątanie + dowolną drugą usługę i otrzymaj 22% rabatu (minimalne zamówienie — 350 zł)',
       dryingFreeSpring: 'Suszenie mebli i materacy do końca wiosny — GRATIS!!!',
       services6plus: 'Przyprowadź sąsiada — oboje otrzymujecie 20% rabatu na całe zamówienie',
     },
