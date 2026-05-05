@@ -56,8 +56,35 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     postalCode: '',
     time: '',
     paymentMethod: '',
+    promotion: '',
     message: ''
   });
+
+  const promotionOptions = useMemo(() => {
+    const labels: Record<string, { none: string; neighbor: string; second: string }> = {
+      ru: {
+        none: 'Без акции',
+        neighbor: '🏘️ Соседская акция — 20% (приведи соседа, оба получают -20%)',
+        second: '➕ Уборка + 2-я услуга — 20% скидки',
+      },
+      pl: {
+        none: 'Bez promocji',
+        neighbor: '🏘️ Promocja sąsiedzka — 20% (przyprowadź sąsiada, oboje -20%)',
+        second: '➕ Sprzątanie + 2. usługa — 20% rabatu',
+      },
+      uk: {
+        none: 'Без акції',
+        neighbor: '🏘️ Сусідська акція — 20% (приведи сусіда, обидва -20%)',
+        second: '➕ Прибирання + 2-га послуга — 20% знижки',
+      },
+      en: {
+        none: 'No promotion',
+        neighbor: '🏘️ Neighbor promo — 20% (bring a neighbor, both get -20%)',
+        second: '➕ Cleaning + 2nd service — 20% off',
+      },
+    };
+    return labels[language] || labels.ru;
+  }, [language]);
 
 
 
