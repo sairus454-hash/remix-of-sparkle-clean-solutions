@@ -530,6 +530,49 @@ const CityPage = () => {
           </>
         )}
 
+        {/* Соседская акция — для остальных городов */}
+        {!isWroclaw && (
+          <section className="py-10 sm:py-16 bg-gradient-section">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto">
+                <div className="relative overflow-hidden p-6 sm:p-10 rounded-2xl sm:rounded-3xl shadow-card bg-card/90 border border-border/50 hover:shadow-glow transition-all duration-500">
+                  <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-orange-400/25 to-transparent rounded-full blur-2xl -translate-y-1/2 -translate-x-1/2" />
+                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-teal-500/20 to-transparent rounded-full blur-xl translate-y-1/2 translate-x-1/2" />
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-600 to-teal-600 text-primary-foreground shadow-glow animate-pulse">
+                      -20%
+                    </span>
+                  </div>
+                  <div className="relative z-10 text-center">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 rounded-2xl bg-gradient-to-r from-orange-500 to-teal-500 flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
+                      <Gift className="w-8 h-8 sm:w-10 sm:h-10 text-primary-foreground" />
+                    </div>
+                    <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">
+                      {language === 'pl'
+                        ? 'Promocja sąsiedzka — oboje oszczędzacie'
+                        : language === 'en'
+                        ? 'Neighbour promo — both of you save'
+                        : language === 'uk'
+                        ? 'Сусідська акція — обидва економите'
+                        : 'Соседская акция — экономите оба'}
+                    </h2>
+                    <p className="text-foreground text-base sm:text-lg leading-relaxed font-medium">
+                      {language === 'pl'
+                        ? 'Przyprowadź sąsiada — oboje otrzymujecie 20% rabatu na całe zamówienie.'
+                        : language === 'en'
+                        ? 'Bring a neighbour — both of you get 20% off the entire order.'
+                        : language === 'uk'
+                        ? 'Приведіть сусіда — обидва отримуєте 20% знижки на все замовлення.'
+                        : 'Приведите соседа — оба получаете 20% скидки на весь заказ.'}
+                    </p>
+                    <p className="text-orange-600 text-3xl sm:text-4xl font-bold mt-3">-20%</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
