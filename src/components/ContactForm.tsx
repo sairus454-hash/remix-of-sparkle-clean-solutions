@@ -115,6 +115,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       
       // Recalculate total based on merged items
       setCalculatorTotal(prevTotal => prevTotal + newTotal);
+    },
+    setPromotion: (promotion: string) => {
+      setFormData(prev => ({ ...prev, promotion }));
     }
   }));
 
