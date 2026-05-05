@@ -17,7 +17,7 @@ import {
 import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home, Armchair } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
+import { useDiscountCalculator, getDiscountTiers, getItemDiscountRole, getDiscountRoleLabel } from '@/hooks/useDiscountCalculator';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 interface PriceItem {
@@ -636,6 +636,22 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                       <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">
                         {selected.item.name}
                       </span>
+                      {(() => {
+                        const role = getItemDiscountRole(getCategoryForItem(selected.item.id));
+                        const label = getDiscountRoleLabel(role, language);
+                        return (
+                          <span
+                            className={cn(
+                              'inline-block mt-0.5 px-1 sm:px-1.5 py-[1px] rounded text-[8px] sm:text-[9px] font-semibold leading-tight',
+                              role === 'cleaning'
+                                ? 'bg-emerald-100 text-emerald-700'
+                                : 'bg-primary/10 text-primary'
+                            )}
+                          >
+                            {label}
+                          </span>
+                        );
+                      })()}
                     </div>
 
                     <div className="flex items-center gap-0.5">

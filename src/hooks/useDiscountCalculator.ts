@@ -85,26 +85,27 @@ function getDiscountReason(type: 'cleaningPlus', language: string): string {
 
 function getDiscountHint(hasCleaning: boolean, hasOther: boolean, language: string): string {
   if (hasCleaning && hasOther) return '';
+  const cats = getDiscountEligibleCategories(language).join(', ');
   const hints = {
     ru: {
-      empty: 'Добавьте уборку + любую другую услугу и получите −20% на весь заказ',
-      needOther: 'Добавьте к уборке любую химчистку (мебель, ковры, матрас, авто) — получите −20%',
-      needCleaning: 'Добавьте уборку к заказу — и получите −20% на весь заказ',
+      empty: `Добавьте уборку + любую вторую услугу и получите −20% на весь заказ. Подходит любая из категорий: ${cats}.`,
+      needOther: `Добавьте к уборке любую услугу из: ${cats} — получите −20%.`,
+      needCleaning: 'Добавьте уборку к заказу — и получите −20% на всё.',
     },
     en: {
-      empty: 'Add cleaning + any other service and get −20% off the whole order',
-      needOther: 'Add any cleaning service (sofa, carpet, mattress, car) to your cleaning — get −20%',
-      needCleaning: 'Add cleaning to your order — and get −20% off the whole order',
+      empty: `Add cleaning + any second service and get −20% off the whole order. Eligible categories: ${cats}.`,
+      needOther: `Add any service from: ${cats} to your cleaning — get −20%.`,
+      needCleaning: 'Add cleaning to your order — and get −20% off the whole order.',
     },
     pl: {
-      empty: 'Dodaj sprzątanie + dowolną drugą usługę i otrzymaj −20% na całe zamówienie',
-      needOther: 'Dodaj do sprzątania dowolną usługę pralni chemicznej — otrzymasz −20%',
-      needCleaning: 'Dodaj sprzątanie do zamówienia — i otrzymaj −20% na całość',
+      empty: `Dodaj sprzątanie + dowolną drugą usługę i otrzymaj −20% na całe zamówienie. Pasuje dowolna z kategorii: ${cats}.`,
+      needOther: `Dodaj do sprzątania dowolną usługę z: ${cats} — otrzymasz −20%.`,
+      needCleaning: 'Dodaj sprzątanie do zamówienia — i otrzymaj −20% na całość.',
     },
     uk: {
-      empty: 'Додайте прибирання + будь-яку іншу послугу й отримайте −20% на все замовлення',
-      needOther: 'Додайте до прибирання будь-яку хімчистку — отримаєте −20%',
-      needCleaning: 'Додайте прибирання до замовлення — й отримайте −20% на все',
+      empty: `Додайте прибирання + будь-яку другу послугу й отримайте −20% на все замовлення. Підходить будь-яка з категорій: ${cats}.`,
+      needOther: `Додайте до прибирання будь-яку послугу з: ${cats} — отримаєте −20%.`,
+      needCleaning: 'Додайте прибирання до замовлення — й отримайте −20% на все.',
     },
   };
   const l = hints[language as keyof typeof hints] || hints.ru;
@@ -112,6 +113,33 @@ function getDiscountHint(hasCleaning: boolean, hasOther: boolean, language: stri
   if (hasCleaning && !hasOther) return l.needOther;
   return l.needCleaning;
 }
+
+// Категории, которые засчитываются как «вторая услуга» для скидки −20%
+export function getDiscountEligibleCategories(language: string): string[] {
+  const map = {
+    ru: ['Химчистка мебели', 'Матрасы', 'Кожаная мебель', 'Химчистка авто', 'Озонирование', 'Ковры и полы', 'Мойка окон', 'Мастер на час'],
+    en: ['Furniture cleaning', 'Mattresses', 'Leather furniture', 'Auto cleaning', 'Ozonation', 'Carpets & floors', 'Window cleaning', 'Handyman'],
+    pl: ['Pranie mebli', 'Materace', 'Meble skórzane', 'Pranie auta', 'Ozonowanie', 'Dywany i podłogi', 'Mycie okien', 'Złota rączka'],
+    uk: ['Хімчистка меблів', 'Матраци', 'Шкіряні меблі', 'Хімчистка авто', 'Озонування', 'Килими та підлоги', 'Миття вікон', 'Майстер на годину'],
+  };
+  return map[language as keyof typeof map] || map.ru;
+}
+
+// Тип роли позиции в скидке: 'cleaning' (уборка), 'service' (любая другая услуга)
+export function getItemDiscountRole(category: string | undefined): 'cleaning' | 'service' {
+  if (!category) return 'service';
+  if (category === 'cleaning' || category.startsWith('cleaning_') || category.startsWith('extra-') || category === 'extras') return 'cleaning';
+  return 'service';
+}
+
+export function getDiscountRoleLabel(role: 'cleaning' | 'service', language: string): string {
+  const labels = {
+    cleaning: { ru: 'Уборка', en: 'Cleaning', pl: 'Sprzątanie', uk: 'Прибирання' },
+    service: { ru: 'Услуга для −20%', en: 'Service for −20%', pl: 'Usługa do −20%', uk: 'Послуга для −20%' },
+  };
+  return labels[role][language as keyof typeof labels.cleaning] || labels[role].ru;
+}
+
 
 // Информация о доступных скидках для UI-блоков
 export function getDiscountTiers(language: string) {
