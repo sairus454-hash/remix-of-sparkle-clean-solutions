@@ -263,28 +263,6 @@ const Index = () => {
 
       <Suspense fallback={null}><MobilePromotionsCard /></Suspense>
 
-      {/* Cleaning pricing + extras (top block) */}
-      <Suspense fallback={null}>
-        <CleaningPricingTopBlock onSendToForm={(items, total) => {
-          try {
-            const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
-            const merged = [...existing];
-            items.forEach(item => {
-              const idx = merged.findIndex((e: any) => e.id === item.id);
-              if (idx >= 0) merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
-              else merged.push(item);
-            });
-            const newTotal = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
-            sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
-            sessionStorage.setItem('mc_calculator_total', String(newTotal));
-          } catch {}
-          window.location.hash = '';
-          setTimeout(() => {
-            document.querySelector('form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 50);
-        }} />
-      </Suspense>
-
       <LazySection minHeight="400px">
       <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
@@ -434,6 +412,28 @@ const Index = () => {
         </div>
       </section>
       </LazySection>
+
+      {/* Cleaning pricing + extras (after promotions) */}
+      <Suspense fallback={null}>
+        <CleaningPricingTopBlock onSendToForm={(items, total) => {
+          try {
+            const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+            const merged = [...existing];
+            items.forEach(item => {
+              const idx = merged.findIndex((e: any) => e.id === item.id);
+              if (idx >= 0) merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
+              else merged.push(item);
+            });
+            const newTotal = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
+            sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+            sessionStorage.setItem('mc_calculator_total', String(newTotal));
+          } catch {}
+          window.location.hash = '';
+          setTimeout(() => {
+            document.querySelector('form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 50);
+        }} />
+      </Suspense>
 
       {/* Price Section */}
       <LazySection minHeight="300px">
