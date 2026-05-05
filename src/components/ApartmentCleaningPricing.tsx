@@ -175,15 +175,39 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                         </div>
                         <p className="text-sm text-muted-foreground flex-1">{t.desc}</p>
                         <Button
-                          onClick={() =>
+                          onClick={() => {
                             onOrder({
                               id: `cleaning-${apt.id}-${freq}`,
                               name,
                               price,
                               quantity: 1,
                               category: 'cleaning',
-                            })
-                          }
+                            });
+                            // Compute discount status across saved cart + this item
+                            try {
+                              const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+                              const merged = [...existing];
+                              const idx = merged.findIndex((e: any) => e.id === `cleaning-${apt.id}-${freq}`);
+                              if (idx >= 0) merged[idx].quantity = (merged[idx].quantity || 1) + 1;
+                              else merged.push({ id: `cleaning-${apt.id}-${freq}`, name, price, quantity: 1, category: 'cleaning' });
+                              const total = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
+                              const hasOther = merged.some((i: any) => {
+                                const c = i.category || i.id;
+                                return !(c === 'cleaning' || c.startsWith('cleaning-') || c.startsWith('cleaning_') || c.startsWith('extra-') || c === 'extras');
+                              });
+                              let description = `${name} · ${price} zł`;
+                              if (hasOther && total >= MIN_ORDER_FOR_DISCOUNT) {
+                                description += ` · ${t.discountReady}`;
+                              } else if (hasOther && total < MIN_ORDER_FOR_DISCOUNT) {
+                                description += ` · ${t.needMore(MIN_ORDER_FOR_DISCOUNT - total)}`;
+                              } else {
+                                description += ` · ${t.discountApplied}`;
+                              }
+                              toast({ title: t.addedTitle, description, duration: 5000 });
+                            } catch {
+                              toast({ title: t.addedTitle, description: `${name} · ${price} zł · ${t.discountApplied}`, duration: 5000 });
+                            }
+                          }}
                           className="w-full"
                         >
                           {t.order}
