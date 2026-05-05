@@ -44,7 +44,7 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
           </div>
 
           {/* VIP Deal */}
-          <div className="relative overflow-hidden p-4 rounded-2xl bg-card/90 border border-border/50 shadow-card">
+          <div className="relative overflow-hidden p-4 rounded-2xl bg-card/90 border border-border/50 shadow-card animate-fade-in [animation-delay:320ms] [animation-fill-mode:both]">
             <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-orange-600/15 to-teal-600/10 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
             <div className="relative z-10 flex items-start gap-3">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-orange-600 to-teal-600 flex items-center justify-center flex-shrink-0">
