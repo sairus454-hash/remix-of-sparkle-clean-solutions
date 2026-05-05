@@ -13,6 +13,7 @@ import windowWashingBlog from '@/assets/window-washing-blog.jpg';
 import mattressDeepCleaning from '@/assets/mattress-deep-cleaning-blog.jpg';
 import sabrinaVsKarcher from '@/assets/sabrina-vs-karcher-blog.jpg';
 import mattressOzonationBlog from '@/assets/mattress-ozonation-blog.jpg';
+import upholsteryFrequencyBlog from '@/assets/upholstery-cleaning-frequency-blog.webp';
 
 export interface BlogArticle {
   id: number;
@@ -191,6 +192,25 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h3: 'Когда стоит заказать озонирование матраса',
       },
     },
+    {
+      id: 15,
+      title: 'Как часто стирать мебельную обивку: практический гид',
+      summary: 'Диван может выглядеть чистым, но накапливать пыль, пот, аллергены и запахи. Разбираем, как часто стирать обивку — с учётом детей, животных и аллергии.',
+      content: 'Частота стирки обивки зависит от того, кто пользуется мебелью, насколько интенсивно и есть ли в доме дети, животные или аллергики. Календарь важен, но состояние ткани — важнее.',
+      fullContent: 'Диван может выглядеть нормально, но накапливать пыль, пот, аллергены и запахи. Поэтому вопрос, как часто стирать мебельную обивку, касается не только эстетики. Это ещё и гигиена, комфорт повседневного использования и долговечность мебели.\n\nЕдиного срока для каждого дома нет. Частота зависит от того, кто пользуется мебелью, насколько интенсивно, и есть ли в доме дети, животные или аллергики. На практике важен не только календарь, но и состояние обивки.\n\nКак часто стирать обивку при обычной эксплуатации\n\nВ стандартных условиях обивку стоит стирать раз в 12–18 месяцев. Этого обычно достаточно, если диван или кресла используются регулярно, но без больших нагрузок: нет животных, интенсивных загрязнений, частых пятен от еды и напитков.\n\nЭто разумный ритм ухода: грязь удаляется до того, как проникнет глубоко в ткань и наполнитель. Если откладывать чистку, ткань сереет, теряет свежесть, и вернуть исходный вид сложнее.\n\nКогда стирать чаще\n\nДом с детьми: на диване ежедневно едят, пьют и играют — обивка быстрее впитывает загрязнения. Безопасный интервал — каждые 6–9 месяцев.\n\nЖивотные: шерсть, запах, слюна. Стирка раз в 6 месяцев — разумный стандарт.\n\nАллергии и пыль: пыль, клещи и пыльца оседают в ткани. Стоит рассматривать стирку каждые 4–6 месяцев.\n\nИнтенсивное использование: если диван — место работы, отдыха и сна, чистка 2 раза в год оправдана.\n\nСигналы, что пора\n\n• лёгкий затхлый запах в комнате\n• потемнение ткани в местах сидения\n• мелкие пятна, которые накапливаются\n• ощущение, что мебель просто перестала быть «свежей»\n\nМожно ли стирать слишком часто\n\nДа, особенно при неправильных средствах или избытке влаги. Регулярное пылесошение и быстрая реакция на свежие пятна продлевают интервалы между полными чистками.\n\nДомашняя чистка vs профессиональная\n\nДомашние средства часто маскируют запах или осветляют только участок ткани. Профессиональная стирка подбирает метод под тип обивки и степень загрязнения, что особенно важно для светлой мебели и деликатных тканей.\n\nРазумный график\n\n• обычное использование — 12–18 месяцев\n• дети, животные, активная эксплуатация — 6–9 месяцев\n• аллергии, сильные запахи — 4–6 месяцев\n\nЕсли обивка уже заметно загрязнена или пахнет, не откладывайте. MasterClean выполняет стирку обивки, матрасов, ковров и салонов авто — несколько задач можно решить за один визит.',
+      image: upholsteryFrequencyBlog,
+      date: '2026-05-05',
+      readTime: '6 мин',
+      tag: '🛋️ Химчистка',
+      seo: {
+        title: 'Как часто стирать обивку дивана | MasterClean',
+        description: 'Разбираем, как часто стирать мебельную обивку: оптимальные интервалы для семей с детьми, животными и аллергиями.',
+        keywords: 'как часто стирать обивку, химчистка дивана, частота чистки мебели, чистка обивки, химчистка мебели',
+        h1: 'Как часто стирать мебельную обивку',
+        h2: 'Когда стирать чаще обычного',
+        h3: 'Разумный график стирки обивки',
+      },
+    },
   ],
   en: [
     {
@@ -346,6 +366,25 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h1: 'Mattress Ozonation for Odors and Allergens',
         h2: 'How ozone cleans the mattress structure',
         h3: 'When to book mattress ozonation',
+      },
+    },
+    {
+      id: 15,
+      title: 'How Often to Clean Upholstery: A Practical Guide',
+      summary: 'A sofa can look fine while collecting dust, sweat, allergens and odors. Here is how often to clean upholstery based on kids, pets and allergies.',
+      content: 'Cleaning frequency depends on who uses the furniture, how intensively, and whether there are children, pets or allergy sufferers at home. The calendar matters, but the actual condition matters more.',
+      fullContent: 'A sofa can look fine and still collect dust, sweat, allergens and odors. So the question of how often to clean upholstery is not only about looks. It also affects hygiene, daily comfort and the lifespan of your furniture.\n\nThere is no single timeline that fits every home. Frequency depends on who uses the furniture, how heavily, and whether there are children, pets or allergy sufferers around. In practice, condition matters at least as much as the calendar.\n\nNormal use\n\nUnder typical conditions, upholstery should be cleaned every 12 to 18 months. That interval is usually enough if the sofa or armchairs are used regularly but without heavy load: no pets, no intense soiling, no frequent food and drink stains.\n\nThis is a sensible care rhythm — dirt is removed before it works deep into fabric and padding. Postponing cleaning often leaves the material gray, dull and harder to restore.\n\nWhen to clean more often\n\nHomes with children: kids eat, drink and play on the sofa daily. A safe interval is every 6 to 9 months.\n\nPets: hair, smell, saliva. Cleaning every 6 months is a reasonable standard.\n\nAllergies and dust: dust, mites and pollen settle in the fabric. Consider cleaning every 4 to 6 months.\n\nIntense use: if the sofa is also a workplace, nap spot and evening base, twice a year is justified.\n\nSigns it is time\n\n• a faintly stale smell in the room\n• darker patches where people sit or rest hands\n• small stains that keep accumulating\n• the furniture simply no longer feels fresh\n\nCan you clean too often\n\nYes, especially with the wrong products or too much moisture. Regular vacuuming and a quick reaction to fresh stains stretch the time between full cleanings.\n\nDIY vs professional\n\nHome remedies often mask odor or lighten only one patch of fabric. Professional cleaning matches the method to the upholstery type and soiling level — important for light furniture and delicate fabrics.\n\nReasonable schedule\n\n• calm use — every 12–18 months\n• kids, pets, intense use — every 6–9 months\n• allergies, persistent odors — every 4–6 months\n\nIf the upholstery is already visibly dirty or smells, do not delay. MasterClean handles upholstery, mattress, carpet and car interior cleaning, so several tasks can be done in one visit.',
+      image: upholsteryFrequencyBlog,
+      date: '2026-05-05',
+      readTime: '6 min',
+      tag: '🛋️ Cleaning',
+      seo: {
+        title: 'How Often to Clean Sofa Upholstery | MasterClean',
+        description: 'Learn how often to clean upholstered furniture: optimal intervals for families with kids, pets and allergies.',
+        keywords: 'how often clean upholstery, sofa cleaning frequency, furniture cleaning schedule, upholstery cleaning, professional sofa cleaning',
+        h1: 'How Often to Clean Upholstery',
+        h2: 'When to clean more often than usual',
+        h3: 'A reasonable upholstery cleaning schedule',
       },
     },
   ],
@@ -505,6 +544,25 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h3: 'Kiedy zamówić ozonowanie materaca',
       },
     },
+    {
+      id: 15,
+      title: 'Jak często prać tapicerkę meblową: praktyczny poradnik',
+      summary: 'Kanapa może wyglądać dobrze i mimo to gromadzić kurz, pot, alergeny i zapachy. Sprawdź, jak często prać tapicerkę przy dzieciach, zwierzętach i alergiach.',
+      content: 'Częstotliwość prania zależy od tego, kto korzysta z mebli, jak intensywnie i czy w domu są dzieci, zwierzęta albo osoby z alergiami. Liczy się nie tylko kalendarz, ale też stan tapicerki.',
+      fullContent: 'Kanapa może wyglądać dobrze, a mimo to gromadzić kurz, pot, alergeny i zapachy. Dlatego pytanie, jak często prać tapicerkę meblową, nie dotyczy tylko estetyki. Chodzi też o higienę, komfort codziennego użytkowania i trwałość mebli.\n\nNie ma jednego terminu dla każdego domu. Częstotliwość prania zależy od tego, kto korzysta z mebli, jak intensywnie są używane i czy w domu są dzieci, zwierzęta albo osoby z alergiami. W praktyce liczy się nie tylko kalendarz, ale też stan tapicerki.\n\nJak często prać tapicerkę meblową przy normalnym użytkowaniu\n\nW standardowych warunkach tapicerkę meblową warto prać co 12 do 18 miesięcy. Taki odstęp zwykle wystarcza, jeśli sofa lub fotele są używane regularnie, ale bez dużych obciążeń. Dotyczy to mieszkań, w których nie ma zwierząt, intensywnych zabrudzeń ani częstych plam po jedzeniu i napojach.\n\nTo rozsądny rytm pielęgnacji, który pozwala usuwać nagromadzony brud, zanim zacznie wnikać głębiej w tkaninę i wypełnienie. Zbyt długie odkładanie czyszczenia często kończy się tym, że materiał szarzeje, traci świeżość i trudniej odzyskać jego pierwotny wygląd.\n\nKiedy prać częściej niż raz w roku\n\nDom z dziećmi: jeśli na kanapie dzieci jedzą, piją, bawią się i odpoczywają każdego dnia, tapicerka szybciej chłonie zabrudzenia. Bezpieczny przedział to co 6 do 9 miesięcy.\n\nZwierzęta w domu: pies lub kot oznacza sierść, zapach, ślinę i czasem zabrudzenia po spacerze. Pranie co 6 miesięcy jest rozsądnym standardem.\n\nAlergie i wrażliwość na kurz: dla alergików regularność ma większe znaczenie niż sama estetyka. Warto rozważyć pranie co 4 do 6 miesięcy.\n\nIntensywne użytkowanie: jeśli kanapa jest miejscem do siedzenia, pracy, drzemki i codziennego spędzania wieczorów, sprawdza się pranie 2 razy w roku.\n\nObjawy, że nie warto już czekać\n\n• lekko stęchły zapach w pomieszczeniu\n• przyciemniona tkanina w miejscach, gdzie najczęściej się siada\n• drobne plamy, które z czasem przestają być pojedyncze\n• tapicerka po prostu przestaje dawać poczucie czystości\n\nCzy można prać za często\n\nTak, zwłaszcza przy nieodpowiednich środkach lub zbyt dużej ilości wilgoci. Regularne odkurzanie i szybka reakcja na świeże plamy wydłużają czas między pełnymi praniami.\n\nDomowe odświeżanie a pranie profesjonalne\n\nDomowe środki często maskują zapach albo rozjaśniają tylko fragment tkaniny. Profesjonalne pranie dobiera metodę do rodzaju tapicerki i stopnia zabrudzenia, co ma znaczenie zwłaszcza przy jasnych meblach i delikatnych tkaninach.\n\nRozsądny harmonogram\n\n• spokojne użytkowanie — co 12–18 miesięcy\n• dzieci, zwierzęta, intensywne korzystanie — co 6–9 miesięcy\n• alergie, uporczywe zapachy — co 4–6 miesięcy\n\nJeśli tapicerka jest już wyraźnie zabrudzona albo ma zapach, nie warto odkładać decyzji. MasterClean realizuje pranie tapicerki, materacy, dywanów i wnętrz aut, więc kilka potrzeb porządkowych można załatwić w jednym terminie.',
+      image: upholsteryFrequencyBlog,
+      date: '2026-05-05',
+      readTime: '6 min',
+      tag: '🛋️ Pranie',
+      seo: {
+        title: 'Jak często prać tapicerkę meblową | MasterClean',
+        description: 'Sprawdź, jak często prać tapicerkę meblową: optymalne odstępy dla rodzin z dziećmi, zwierzętami i alergikami.',
+        keywords: 'jak często prać tapicerkę, pranie kanapy, częstotliwość prania mebli, pranie tapicerki meblowej, czyszczenie sofy',
+        h1: 'Jak często prać tapicerkę meblową',
+        h2: 'Kiedy prać częściej niż zwykle',
+        h3: 'Rozsądny harmonogram prania tapicerki',
+      },
+    },
   ],
   uk: [
     {
@@ -660,6 +718,25 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h1: 'Озонування матраца проти запахів та алергенів',
         h2: 'Як озон очищає структуру матраца',
         h3: 'Коли варто замовити озонування матраца',
+      },
+    },
+    {
+      id: 15,
+      title: 'Як часто прати оббивку меблів: практичний гід',
+      summary: 'Диван може виглядати добре, але збирати пил, піт, алергени і запахи. Розбираємо, як часто прати оббивку — з урахуванням дітей, тварин і алергії.',
+      content: 'Частота прання залежить від того, хто користується меблями, наскільки інтенсивно і чи є в домі діти, тварини або алергіки. Календар важливий, але стан тканини — важливіший.',
+      fullContent: 'Диван може виглядати нормально і водночас збирати пил, піт, алергени та запахи. Тому питання, як часто прати оббивку меблів, стосується не лише естетики. Це також гігієна, комфорт щоденного використання і довговічність меблів.\n\nЄдиного терміну для кожного дому немає. Частота залежить від того, хто користується меблями, наскільки інтенсивно і чи є в домі діти, тварини або алергіки. На практиці важливий не лише календар, а й стан оббивки.\n\nЗвичайне використання\n\nУ стандартних умовах оббивку варто прати раз на 12–18 місяців. Цього зазвичай достатньо, якщо диван або крісла використовуються регулярно, але без великих навантажень: немає тварин, інтенсивних забруднень, частих плям.\n\nЦе розумний ритм догляду — бруд видаляється до того, як проникне глибоко в тканину та наповнювач. Якщо відкладати чищення, тканина сіріє, втрачає свіжість, і повернути початковий вигляд складніше.\n\nКоли прати частіше\n\nДім з дітьми: на дивані щодня їдять, п’ють і граються. Безпечний інтервал — кожні 6–9 місяців.\n\nТварини: шерсть, запах, слина. Прання раз на 6 місяців — розумний стандарт.\n\nАлергії та пил: пил, кліщі та пилок осідають у тканині. Варто розглянути прання кожні 4–6 місяців.\n\nІнтенсивне використання: якщо диван — місце роботи, відпочинку і сну, чищення 2 рази на рік виправдане.\n\nСигнали, що час\n\n• легкий затхлий запах у кімнаті\n• потемніння тканини в місцях сидіння\n• дрібні плями, які накопичуються\n• відчуття, що меблі просто перестали бути «свіжими»\n\nЧи можна прати занадто часто\n\nТак, особливо з невідповідними засобами або надлишком вологи. Регулярне пилососення і швидка реакція на свіжі плями подовжують інтервали між повними чищеннями.\n\nДомашнє чищення проти професійного\n\nДомашні засоби часто маскують запах або освітлюють лише ділянку тканини. Професійне прання підбирає метод під тип оббивки і ступінь забруднення — це особливо важливо для світлих меблів і делікатних тканин.\n\nРозумний графік\n\n• спокійне використання — раз на 12–18 місяців\n• діти, тварини, активне користування — раз на 6–9 місяців\n• алергії, стійкі запахи — раз на 4–6 місяців\n\nЯкщо оббивка вже помітно забруднена або має запах, не відкладайте. MasterClean виконує прання оббивки, матраців, килимів і салонів авто — кілька задач можна вирішити за один візит.',
+      image: upholsteryFrequencyBlog,
+      date: '2026-05-05',
+      readTime: '6 хв',
+      tag: '🛋️ Хімчистка',
+      seo: {
+        title: 'Як часто прати оббивку дивана | MasterClean',
+        description: 'Дізнайтеся, як часто прати оббивку меблів: оптимальні інтервали для родин з дітьми, тваринами та алергіями.',
+        keywords: 'як часто прати оббивку, хімчистка дивана, частота чищення меблів, прання оббивки, чищення м\'яких меблів',
+        h1: 'Як часто прати оббивку меблів',
+        h2: 'Коли прати частіше за звичайне',
+        h3: 'Розумний графік прання оббивки',
       },
     },
   ],
