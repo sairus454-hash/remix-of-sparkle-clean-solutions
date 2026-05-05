@@ -20,6 +20,9 @@ interface CalculatorItem {
   category?: string;
 }
 
+// Минимальная сумма заказа для активации скидки 22%
+export const MIN_ORDER_FOR_DISCOUNT = 350;
+
 // Нормализация категории
 function normalizeCategory(item: CalculatorItem): string {
   const cat = item.category || item.id;
