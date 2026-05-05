@@ -318,12 +318,13 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     setIsLoading(true);
     try {
       const paymentLabel = formData.paymentMethod ? `\n💳 ${t.form.paymentType}: ${formData.paymentMethod}` : '';
+      const promotionLabel = formData.promotion ? `\n🎁 ${language === 'ru' ? 'Акция' : language === 'pl' ? 'Promocja' : language === 'uk' ? 'Акція' : 'Promotion'}: ${formData.promotion}` : '';
       const { data, error } = await supabase.functions.invoke('send-telegram', {
         body: {
           name: formData.name,
           phone: formData.phone,
           time: formData.time,
-          message: `📍 ${formData.cityAddress}, ${formData.postalCode}${paymentLabel}\n\n${formData.message}`,
+          message: `📍 ${formData.cityAddress}, ${formData.postalCode}${paymentLabel}${promotionLabel}\n\n${formData.message}`,
           date: date ? format(date, 'PPP', { locale: currentLocale }) : undefined
         }
       });
