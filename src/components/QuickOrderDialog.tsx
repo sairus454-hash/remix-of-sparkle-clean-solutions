@@ -32,6 +32,7 @@ const timeSlots = Array.from({ length: 25 }, (_, i) => {
 
 const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialogProps) => {
   const { t, language } = useLanguage();
+  const discountInfo = useDiscountCalculator(items.map(i => ({ id: i.id, price: i.price, quantity: i.quantity, category: (i as any).category })));
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
