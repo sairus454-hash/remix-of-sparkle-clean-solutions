@@ -368,6 +368,25 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h3: 'When to book mattress ozonation',
       },
     },
+    {
+      id: 15,
+      title: 'How Often to Clean Upholstery: A Practical Guide',
+      summary: 'A sofa can look fine while collecting dust, sweat, allergens and odors. Here is how often to clean upholstery based on kids, pets and allergies.',
+      content: 'Cleaning frequency depends on who uses the furniture, how intensively, and whether there are children, pets or allergy sufferers at home. The calendar matters, but the actual condition matters more.',
+      fullContent: 'A sofa can look fine and still collect dust, sweat, allergens and odors. So the question of how often to clean upholstery is not only about looks. It also affects hygiene, daily comfort and the lifespan of your furniture.\n\nThere is no single timeline that fits every home. Frequency depends on who uses the furniture, how heavily, and whether there are children, pets or allergy sufferers around. In practice, condition matters at least as much as the calendar.\n\nNormal use\n\nUnder typical conditions, upholstery should be cleaned every 12 to 18 months. That interval is usually enough if the sofa or armchairs are used regularly but without heavy load: no pets, no intense soiling, no frequent food and drink stains.\n\nThis is a sensible care rhythm — dirt is removed before it works deep into fabric and padding. Postponing cleaning often leaves the material gray, dull and harder to restore.\n\nWhen to clean more often\n\nHomes with children: kids eat, drink and play on the sofa daily. A safe interval is every 6 to 9 months.\n\nPets: hair, smell, saliva. Cleaning every 6 months is a reasonable standard.\n\nAllergies and dust: dust, mites and pollen settle in the fabric. Consider cleaning every 4 to 6 months.\n\nIntense use: if the sofa is also a workplace, nap spot and evening base, twice a year is justified.\n\nSigns it is time\n\n• a faintly stale smell in the room\n• darker patches where people sit or rest hands\n• small stains that keep accumulating\n• the furniture simply no longer feels fresh\n\nCan you clean too often\n\nYes, especially with the wrong products or too much moisture. Regular vacuuming and a quick reaction to fresh stains stretch the time between full cleanings.\n\nDIY vs professional\n\nHome remedies often mask odor or lighten only one patch of fabric. Professional cleaning matches the method to the upholstery type and soiling level — important for light furniture and delicate fabrics.\n\nReasonable schedule\n\n• calm use — every 12–18 months\n• kids, pets, intense use — every 6–9 months\n• allergies, persistent odors — every 4–6 months\n\nIf the upholstery is already visibly dirty or smells, do not delay. MasterClean handles upholstery, mattress, carpet and car interior cleaning, so several tasks can be done in one visit.',
+      image: upholsteryFrequencyBlog,
+      date: '2026-05-05',
+      readTime: '6 min',
+      tag: '🛋️ Cleaning',
+      seo: {
+        title: 'How Often to Clean Sofa Upholstery | MasterClean',
+        description: 'Learn how often to clean upholstered furniture: optimal intervals for families with kids, pets and allergies.',
+        keywords: 'how often clean upholstery, sofa cleaning frequency, furniture cleaning schedule, upholstery cleaning, professional sofa cleaning',
+        h1: 'How Often to Clean Upholstery',
+        h2: 'When to clean more often than usual',
+        h3: 'A reasonable upholstery cleaning schedule',
+      },
+    },
   ],
   pl: [
     {
