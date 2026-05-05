@@ -16,6 +16,7 @@ import CleaningSplash from '@/components/CleaningSplash';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import SmartServiceFilter from '@/components/SmartServiceFilter';
 import CleaningExtrasCheckboxes from '@/components/CleaningExtrasCheckboxes';
+import ApartmentCleaningPricing from '@/components/ApartmentCleaningPricing';
 
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -393,36 +394,15 @@ const Cleaning = () => {
         <PromotionsSection />
       </div>
 
-      {/* Standard & General Cleaning — m² with slider */}
-      <section className="py-10 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <CircularRevealCard index={0}>
-              <Card className="shadow-card">
-                <CardContent className="py-6">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-hero flex items-center justify-center shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                      <Home className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div>
-                      <h2 className="font-serif text-xl font-semibold">{t.cleaning?.title || 'Уборка'}</h2>
-                      <p className="text-sm text-muted-foreground">{t.cleaning?.subtitle || 'Стандартная и генеральная уборка'}</p>
-                    </div>
-                  </div>
-                  <CardServiceCalculator
-                    items={[
-                      { id: 'cleaning-standard', name: t.cleaning?.standardCleaning || 'Стандартная уборка', price: 7, image: heroHouseCleaning, unit: 'm²' },
-                      { id: 'cleaning-general', name: t.cleaning?.generalCleaning || 'Генеральная уборка', price: 10, image: heroHouseCleaning2, unit: 'm²' },
-                    ]}
-                    category="cleaning-area"
-                    onSendToForm={handleCardToForm}
-                  />
-                </CardContent>
-              </Card>
-            </CircularRevealCard>
-          </div>
-        </div>
-      </section>
+      {/* Apartment Cleaning Pricing by frequency */}
+      <ApartmentCleaningPricing
+        language={language}
+        onOrder={(item) => {
+          formRef.current?.setCalculatorData([item], item.price);
+          formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }}
+      />
+
 
       {/* Smart filter for service catalogs */}
       <section className="pt-8 pb-2 bg-gradient-section">
