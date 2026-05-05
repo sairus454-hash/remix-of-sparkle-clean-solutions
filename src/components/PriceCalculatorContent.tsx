@@ -744,12 +744,45 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                 </div>
               </div>
             )}
-            {!discountInfo.hasDiscount && discountInfo.discountHint && selectedItems.length > 0 && (
-              <div className="mb-2 sm:mb-3 p-2 sm:p-3 bg-primary/5 rounded-lg border border-primary/30 flex items-start gap-2">
-                <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-xs sm:text-sm text-foreground">{discountInfo.discountHint}</span>
-              </div>
-            )}
+            {!discountInfo.hasDiscount && discountInfo.discountHint && selectedItems.length > 0 && (() => {
+              const cartCats = new Set(selectedItems.map(s => getCategoryForItem(s.item.id)));
+              const hasCleaningInCart = Array.from(cartCats).some(c => c === 'cleaning' || c.startsWith('cleaning_'));
+              // Recommended "second service": ozonation of 1 room (works in all cities).
+              const recommendedCat = categories.find(c => c.id === 'ozone');
+              const recommendedItem = recommendedCat?.items.find(i => i.id === 'ozone1room') || recommendedCat?.items[0];
+              const recLabels = {
+                addCleaning: { ru: 'Добавить уборку', en: 'Add cleaning', pl: 'Dodaj sprzątanie', uk: 'Додати прибирання' },
+                addRecommended: { ru: 'Добавить', en: 'Add', pl: 'Dodaj', uk: 'Додати' },
+              };
+              const lang = language as 'ru' | 'en' | 'pl' | 'uk';
+              return (
+                <div className="mb-2 sm:mb-3 p-2 sm:p-3 bg-primary/5 rounded-lg border border-primary/30 flex flex-col sm:flex-row sm:items-center gap-2">
+                  <div className="flex items-start gap-2 flex-1">
+                    <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-xs sm:text-sm text-foreground">{discountInfo.discountHint}</span>
+                  </div>
+                  {!hasCleaningInCart ? (
+                    <Button
+                      size="sm"
+                      onClick={addCleaningToCart}
+                      className="self-start sm:self-auto whitespace-nowrap"
+                    >
+                      <Plus className="w-3.5 h-3.5 mr-1" />
+                      {recLabels.addCleaning[lang] || recLabels.addCleaning.ru}
+                    </Button>
+                  ) : recommendedItem ? (
+                    <Button
+                      size="sm"
+                      onClick={() => addItem(recommendedItem)}
+                      className="self-start sm:self-auto whitespace-nowrap"
+                    >
+                      <Plus className="w-3.5 h-3.5 mr-1" />
+                      {(recLabels.addRecommended[lang] || recLabels.addRecommended.ru)}: {recommendedItem.name} ({recommendedItem.price} {t.prices.currency})
+                    </Button>
+                  ) : null}
+                </div>
+              );
+            })()}
 
             <div className="flex items-center justify-between">
               <span className="text-sm sm:text-base font-medium">{t.calculator.total}</span>
