@@ -109,6 +109,11 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
   const [popoverId, setPopoverId] = useState<string | null>(null);
   const [justRemoved, setJustRemoved] = useState<string | null>(null);
+  // Items that must have area explicitly confirmed by user (e.g. balcony cleaning)
+  const REQUIRES_AREA_CONFIRM = new Set(['balcony', 'extra-balcony']);
+  const [confirmedAreaIds, setConfirmedAreaIds] = useState<Set<string>>(new Set());
+  const needsConfirmation = (id: string) => REQUIRES_AREA_CONFIRM.has(id) && !confirmedAreaIds.has(id);
+  const unconfirmedSelected = selectedItems.find(s => needsConfirmation(s.item.id));
 
   // Categories where promo (originalPrice/promoBadge) only applies in Wrocław group
   const promoCategories = ['furniture', 'leather', 'mattress'];
@@ -178,6 +183,12 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
     setRemovingListItemId(itemId);
     setTimeout(() => {
       setSelectedItems(prev => prev.filter((s) => s.item.id !== itemId));
+      setConfirmedAreaIds(prev => {
+        if (!prev.has(itemId)) return prev;
+        const next = new Set(prev);
+        next.delete(itemId);
+        return next;
+      });
       setRemovingListItemId(null);
     }, 300);
   };
@@ -197,8 +208,27 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
 
   const total = selectedItems.reduce((sum, s) => sum + s.item.price * s.quantity, 0);
 
+  const areaConfirmWarning = () => {
+    const item = unconfirmedSelected?.item;
+    const name = item?.name || '';
+    toast.error(
+      language === 'pl' ? 'Potwierdź powierzchnię' : language === 'en' ? 'Confirm area' : language === 'uk' ? 'Підтвердіть площу' : 'Подтвердите площадь',
+      {
+        description: language === 'pl'
+          ? `Wybierz powierzchnię w m² dla: ${name}`
+          : language === 'en'
+            ? `Please specify area in m² for: ${name}`
+            : language === 'uk'
+              ? `Вкажіть площу в м² для: ${name}`
+              : `Укажите площадь в м² для: ${name}`,
+      }
+    );
+    if (item) setPopoverId(item.id);
+  };
+
   const handleSendToContacts = () => {
     if (selectedItems.length === 0) return;
+    if (unconfirmedSelected) { areaConfirmWarning(); return; }
     const calcItems: CalculatorItem[] = selectedItems.map(s => ({
       id: s.item.id,
       name: s.item.name,
@@ -411,6 +441,20 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                   </span>
                   <span className="text-base font-bold text-primary">{item.price * qty} zł</span>
                 </div>
+                {REQUIRES_AREA_CONFIRM.has(item.id) && (
+                  <Button
+                    size="sm"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setConfirmedAreaIds(prev => new Set(prev).add(item.id));
+                      setPopoverId(null);
+                    }}
+                  >
+                    <Check className="w-4 h-4 mr-1" />
+                    {language === 'pl' ? 'Potwierdź powierzchnię' : language === 'en' ? 'Confirm area' : language === 'uk' ? 'Підтвердити площу' : 'Подтвердить площадь'}
+                  </Button>
+                )}
               </div>
             ) : (
               <>
@@ -536,6 +580,11 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                 </div>
                 <span className="w-16 text-right font-semibold text-primary text-sm">
                   {selected.item.price * selected.quantity} zł
+                  {needsConfirmation(selected.item.id) && (
+                    <span className="block text-[10px] font-normal text-destructive mt-0.5">
+                      {language === 'pl' ? 'Wymagane m²' : language === 'en' ? 'Area required' : language === 'uk' ? 'Потрібна площа' : 'Укажите м²'}
+                    </span>
+                  )}
                 </span>
               </div>
             ))}
@@ -555,6 +604,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <Button onClick={() => {
+                if (unconfirmedSelected) { areaConfirmWarning(); return; }
                 const calcItems: CalculatorItem[] = selectedItems.map(s => ({
                   id: s.item.id, name: s.item.name, price: s.item.price, quantity: s.quantity, category,
                 }));
