@@ -1,4 +1,5 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useRef } from 'react';
+import type { ContactFormRef } from '@/components/ContactForm';
 import LazySection from '@/components/LazySection';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -27,6 +28,8 @@ const Index = () => {
   const {
     t, language
   } = useLanguage();
+  const formRef = useRef<ContactFormRef>(null);
+  const formSectionRef = useRef<HTMLDivElement>(null);
   
   const stats = [{
     icon: Star,
@@ -428,9 +431,9 @@ const Index = () => {
             sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
             sessionStorage.setItem('mc_calculator_total', String(newTotal));
           } catch {}
-          window.location.hash = '';
+          formRef.current?.setCalculatorData(items as any, total);
           setTimeout(() => {
-            document.querySelector('form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }, 50);
         }} />
       </Suspense>
@@ -537,7 +540,7 @@ const Index = () => {
 
       {/* Contact Form Section */}
       <LazySection minHeight="300px">
-      <section className="py-12 sm:py-20 bg-gradient-section content-auto">
+      <section ref={formSectionRef} className="py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8 sm:mb-12">
@@ -550,7 +553,7 @@ const Index = () => {
             </div>
             
             <div className="bg-card p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-card">
-              <Suspense fallback={null}><ContactForm /></Suspense>
+              <Suspense fallback={null}><ContactForm ref={formRef} /></Suspense>
             </div>
           </div>
         </div>
