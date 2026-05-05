@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Home, Sparkles } from 'lucide-react';
 import CircularRevealCard from '@/components/CircularRevealCard';
+import ManagerEstimateDialog from '@/components/ManagerEstimateDialog';
 
 type Lang = 'pl' | 'en' | 'ru' | 'uk';
 
@@ -86,6 +87,7 @@ const apartments = [
 const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
   const t = T[language as Lang] || T.pl;
   const [freq, setFreq] = useState<typeof frequencies[number]['id']>('once');
+  const [estimateOpen, setEstimateOpen] = useState(false);
   const activeFreq = frequencies.find(f => f.id === freq)!;
 
   return (
@@ -180,18 +182,17 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                 <div className="mt-3 flex justify-center">
                   <Button
                     variant="default"
-                    onClick={() =>
-                      onOrder({
-                        id: 'general-cleaning-estimate',
-                        name: t.generalItemName,
-                        price: 0,
-                        quantity: 1,
-                      })
-                    }
+                    onClick={() => setEstimateOpen(true)}
                   >
                     {t.requestEstimate}
                   </Button>
                 </div>
+                <ManagerEstimateDialog
+                  open={estimateOpen}
+                  onOpenChange={setEstimateOpen}
+                  language={language}
+                  service={t.generalItemName}
+                />
               </CardContent>
             </Card>
           </CircularRevealCard>
