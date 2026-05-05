@@ -422,6 +422,20 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                   </span>
                   <span className="text-base font-bold text-primary">{item.price * qty} zł</span>
                 </div>
+                {REQUIRES_AREA_CONFIRM.has(item.id) && (
+                  <Button
+                    size="sm"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setConfirmedAreaIds(prev => new Set(prev).add(item.id));
+                      setPopoverId(null);
+                    }}
+                  >
+                    <Check className="w-4 h-4 mr-1" />
+                    {language === 'pl' ? 'Potwierdź powierzchnię' : language === 'en' ? 'Confirm area' : language === 'uk' ? 'Підтвердити площу' : 'Подтвердить площадь'}
+                  </Button>
+                )}
               </div>
             ) : (
               <>
