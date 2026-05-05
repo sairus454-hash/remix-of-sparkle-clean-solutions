@@ -7,6 +7,7 @@ export interface DiscountInfo {
   discountAmount: number;
   finalTotal: number;
   discountReason: string;
+  discountHint: string;
   hasDiscount: boolean;
   hasFirstOrderDiscount: boolean;
   firstOrderDiscountAmount: number;
