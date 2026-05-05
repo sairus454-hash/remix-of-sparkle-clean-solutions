@@ -19,7 +19,7 @@ interface CalculatorItem {
   category?: string;
 }
 
-// Нормализация категории: уборка и доп. услуги считаются как одна категория; химчистка мебели и «другое» — тоже одна
+// Нормализация категории
 function normalizeCategory(item: CalculatorItem): string {
   const cat = item.category || item.id;
   if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-') || cat === 'extras') return 'cleaning';
@@ -27,37 +27,31 @@ function normalizeCategory(item: CalculatorItem): string {
   return cat;
 }
 
-// ID позиций, исключённых из скидок
-const EXCLUDED_IDS: string[] = [];
-
 /**
- * Алгоритм расчёта скидок:
- * - 10% при заказе из 4+ разных категорий
- * - 15% при заказе из 6+ разных категорий (VIP программа)
+ * Скидка 20% — когда в заказе есть «Уборка» + минимум 1 другая категория услуг.
+ * Иначе скидки нет.
  */
 export const useDiscountCalculator = (items: CalculatorItem[]) => {
   const { language } = useLanguage();
 
   const discountInfo = useMemo((): DiscountInfo => {
     const originalTotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    
-    const uniqueCategories = new Set(items.map(normalizeCategory));
-    const uniqueCategoriesCount = uniqueCategories.size;
-    
+
+    const categories = new Set(items.map(normalizeCategory));
+    const hasCleaning = categories.has('cleaning');
+    const hasOther = Array.from(categories).some((c) => c !== 'cleaning');
+
     let discountPercent = 0;
     let discountReason = '';
 
-    if (uniqueCategoriesCount >= 6) {
-      discountPercent = 15;
-      discountReason = getDiscountReason('vip', language);
-    } else if (uniqueCategoriesCount >= 4) {
-      discountPercent = 10;
-      discountReason = getDiscountReason('loyal', language);
+    if (hasCleaning && hasOther) {
+      discountPercent = 20;
+      discountReason = getDiscountReason('cleaningPlus', language);
     }
-    
-    const discountAmount = Math.round(originalTotal * discountPercent / 100);
+
+    const discountAmount = Math.round((originalTotal * discountPercent) / 100);
     const finalTotal = originalTotal - discountAmount;
-    
+
     return {
       originalTotal,
       discountPercent,
@@ -73,45 +67,25 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
   return discountInfo;
 };
 
-function getDiscountReason(type: 'loyal' | 'vip', language: string): string {
+function getDiscountReason(type: 'cleaningPlus', language: string): string {
   const reasons = {
-    loyal: {
-      ru: 'Скидка 10% за 4+ категории',
-      en: '10% discount for 4+ categories',
-      pl: '10% rabatu za 4+ kategorie',
-      uk: 'Знижка 10% за 4+ категорії',
-    },
-    vip: {
-      ru: 'Скидка 15% за 6+ категорий',
-      en: '15% discount for 6+ categories',
-      pl: '15% rabatu za 6+ kategorii',
-      uk: 'Знижка 15% за 6+ категорій',
+    cleaningPlus: {
+      ru: 'Скидка 20% — уборка + ещё одна услуга',
+      en: '20% off — cleaning + any other service',
+      pl: 'Rabat 20% — sprzątanie + dowolna druga usługa',
+      uk: 'Знижка 20% — прибирання + будь-яка інша послуга',
     },
   };
-  
-  return reasons[type][language as keyof typeof reasons.loyal] || reasons[type].ru;
+  return reasons[type][language as keyof typeof reasons.cleaningPlus] || reasons[type].ru;
 }
 
-// Получить текст для блока с информацией о скидках
+// Информация о доступных скидках для UI-блоков
 export function getDiscountTiers(language: string) {
   const tiers = {
-    ru: [
-      { services: '4+', discount: '10%', label: 'категорий' },
-      { services: '6+', discount: '15%', label: 'категорий' },
-    ],
-    en: [
-      { services: '4+', discount: '10%', label: 'categories' },
-      { services: '6+', discount: '15%', label: 'categories' },
-    ],
-    pl: [
-      { services: '4+', discount: '10%', label: 'kategorii' },
-      { services: '6+', discount: '15%', label: 'kategorii' },
-    ],
-    uk: [
-      { services: '4+', discount: '10%', label: 'категорій' },
-      { services: '6+', discount: '15%', label: 'категорій' },
-    ],
+    ru: [{ services: 'Уборка + услуга', discount: '20%', label: '' }],
+    en: [{ services: 'Cleaning + service', discount: '20%', label: '' }],
+    pl: [{ services: 'Sprzątanie + usługa', discount: '20%', label: '' }],
+    uk: [{ services: 'Прибирання + послуга', discount: '20%', label: '' }],
   };
-  
   return tiers[language as keyof typeof tiers] || tiers.ru;
 }

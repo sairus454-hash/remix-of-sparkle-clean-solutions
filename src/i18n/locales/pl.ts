@@ -73,7 +73,6 @@ const plTranslations = {
       saveUpTo: 'Oszczędź do 20% na naszych usługach!',
       services4plusBadge: 'PROMOCJA',
       services4plus: 'Zamów sprzątanie + dowolną drugą usługę i otrzymaj 20% rabatu',
-      springDryingPromo: '🔥 Promocja tygodnia: -10% na pranie mebli i materacy!',
       dryingFreeSpring: 'Suszenie mebli i materacy do końca wiosny — GRATIS!!!',
       services6plus: 'Przyprowadź sąsiada — oboje otrzymujecie 20% rabatu na całe zamówienie',
     },
