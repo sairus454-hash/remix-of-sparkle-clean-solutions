@@ -236,17 +236,14 @@ const Cleaning = () => {
   const cleaningExtrasItems = [
     { id: 'oven', name: language === 'pl' ? 'Mycie piekarnika' : language === 'en' ? 'Oven cleaning' : 'Помоем духовку', price: cleaningType === 'general' ? 50 : 40, image: calcExtraOven },
     { id: 'hood', name: language === 'pl' ? 'Mycie okapu' : language === 'en' ? 'Hood cleaning' : 'Помоем вытяжку', price: cleaningType === 'general' ? 50 : 40, image: calcExtraHood },
-    { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : 'Уберем в кухонных шкафчиках', price: cleaningType === 'general' ? 70 : 55, image: calcExtraCabinets },
+    { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : 'Уберем в кухонных шкафчиках', price: 40, image: calcExtraCabinets },
     { id: 'dishes', name: language === 'pl' ? 'Mycie naczyń' : language === 'en' ? 'Dishwashing' : 'Помоем посуду', price: cleaningType === 'general' ? 30 : 25, image: calcExtraDishes },
     { id: 'fridge', name: language === 'pl' ? 'Czyszczenie lodówki' : language === 'en' ? 'Fridge cleaning' : 'Почистим холодильник', price: cleaningType === 'general' ? 50 : 40, image: calcExtraFridge },
-    { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : 'Помоем микроволновку', price: cleaningType === 'general' ? 25 : 20, image: calcExtraMicrowave },
-    { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : 'Уберем на балконе', price: cleaningType === 'general' ? 35 : 30, image: calcExtraBalcony },
-    { id: 'windowInside', name: language === 'pl' ? 'Mycie okien (wewnątrz, szt.)' : language === 'en' ? 'Window cleaning (inside, pc.)' : 'Мытье окон (внутри, шт.)', price: cleaningType === 'general' ? 35 : 30, image: calcExtraWindowInside },
+    { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : 'Помоем микроволновку', price: 10, image: calcExtraMicrowave },
+    { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : 'Уберем на балконе', price: 8, image: calcExtraBalcony, unit: 'm²' },
     { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : 'Глажка', price: cleaningType === 'general' ? 60 : 50, image: calcExtraIroning, unit: 'h' },
     { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : 'Убрать лоток для животных', price: cleaningType === 'general' ? 15 : 10, image: calcExtraPetLitter },
-    { id: 'extraHours', name: language === 'pl' ? 'Dodatkowe godziny' : language === 'en' ? 'Additional hours' : 'Дополнительные часы', price: cleaningType === 'general' ? 60 : 50, image: calcExtraHours, unit: 'h' },
     { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : 'Убрать в шкафу', price: cleaningType === 'general' ? 35 : 30, image: calcExtraCloset },
-    { id: 'moldRemoval', name: language === 'pl' ? 'Usuwanie pleśni ze ściany' : language === 'en' ? 'Mold removal' : 'Устранение грибка со стены', price: 80, image: calcExtraMoldRemoval },
   ];
 
   const furnitureItems = [
