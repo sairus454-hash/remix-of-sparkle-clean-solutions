@@ -66,9 +66,9 @@ const frequencies = [
 ] as const;
 
 const apartments = [
-  { id: 'a40', label: '<40m²', basePrice: 199.12 },
-  { id: 'a60', label: '<60m²', basePrice: 239.12 },
-  { id: 'a80', label: '<80m²', basePrice: 279.12 },
+  { id: 'a40', label: '<40m²', basePrice: 199 },
+  { id: 'a60', label: '<60m²', basePrice: 239 },
+  { id: 'a80', label: '<80m²', basePrice: 279 },
 ];
 
 const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
@@ -122,9 +122,9 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                 {/* Apartment cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {apartments.map((apt) => {
-                    const price = apt.basePrice * (1 - activeFreq.discount);
-                    const priceLabel = price.toFixed(2).replace('.', ',');
-                    const oldLabel = activeFreq.discount > 0 ? apt.basePrice.toFixed(2).replace('.', ',') : null;
+                    const price = Math.round(apt.basePrice * (1 - activeFreq.discount));
+                    const priceLabel = String(price);
+                    const oldLabel = activeFreq.discount > 0 ? String(apt.basePrice) : null;
                     const name = `${t.apartment} ${apt.label} — ${t[activeFreq.id]}`;
                     return (
                       <div
@@ -147,7 +147,7 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                             onOrder({
                               id: `cleaning-${apt.id}-${freq}`,
                               name,
-                              price: Math.round(price * 100) / 100,
+                              price,
                               quantity: 1,
                             })
                           }
