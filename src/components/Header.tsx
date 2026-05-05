@@ -164,6 +164,9 @@ const Header = () => {
                  if (item.highlight === 'blog') {
                    return '';
                  }
+                 if (item.highlight === 'floorCleaning') {
+                   return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                 }
                  return '';
                };
               
@@ -386,7 +389,7 @@ const Header = () => {
             ].map((path) => navItems.find(i => i.path === path)!).filter(Boolean).map((item) => {
               const getMobileHighlightClass = () => {
                 if (item.highlight === 'cleaning') return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300';
-                if (item.highlight === 'services' || item.highlight === 'handyman') return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
+                if (item.highlight === 'services' || item.highlight === 'handyman' || item.highlight === 'floorCleaning') return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300';
                 return '';
               };
               const mobileHighlight = getMobileHighlightClass();
