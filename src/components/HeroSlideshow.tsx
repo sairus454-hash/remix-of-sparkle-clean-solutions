@@ -8,26 +8,35 @@ interface HeroSlideshowProps {
 
 const HeroSlideshow = ({ images, interval = 5000, objectFit = 'cover' }: HeroSlideshowProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  // First image is considered loaded immediately so it paints without blur
+  // → improves LCP (no expensive filter:blur(20px) on the largest image).
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(() => new Set([0]));
 
   useEffect(() => {
+    if (images.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, interval);
     return () => clearInterval(timer);
   }, [images.length, interval]);
 
-  // Preload next image
+  // Preload next image when current changes (idle, low priority)
   useEffect(() => {
     const nextIndex = (currentIndex + 1) % images.length;
     if (!loadedImages.has(nextIndex)) {
       const img = new Image();
+      img.decoding = 'async';
       img.src = images[nextIndex].src;
     }
   }, [currentIndex, images, loadedImages]);
 
   const handleImageLoad = useCallback((index: number) => {
-    setLoadedImages((prev) => new Set(prev).add(index));
+    setLoadedImages((prev) => {
+      if (prev.has(index)) return prev;
+      const next = new Set(prev);
+      next.add(index);
+      return next;
+    });
   }, []);
 
   return (
@@ -36,11 +45,13 @@ const HeroSlideshow = ({ images, interval = 5000, objectFit = 'cover' }: HeroSli
       style={{
         background:
           'linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 40% 96%) 50%, hsl(var(--background)) 100%)',
+        contain: 'layout paint',
       }}
     >
       {images.map((img, index) => {
         const isLoaded = loadedImages.has(index);
         const isActive = index === currentIndex;
+        const isFirst = index === 0;
 
         return (
           <div
@@ -51,17 +62,22 @@ const HeroSlideshow = ({ images, interval = 5000, objectFit = 'cover' }: HeroSli
             <img
               src={img.src}
               alt={img.alt}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              decoding={index === 0 ? 'sync' : 'async'}
-              fetchPriority={index === 0 ? 'high' : 'low'}
+              loading={isFirst ? 'eager' : 'lazy'}
+              decoding={isFirst ? 'sync' : 'async'}
+              fetchPriority={isFirst ? 'high' : 'low'}
               onLoad={() => handleImageLoad(index)}
-              className={`absolute inset-0 w-full h-full transition-all duration-200 ease-out ${
+              className={`absolute inset-0 w-full h-full ${
                 objectFit === 'contain' ? 'object-contain' : 'object-cover'
               }`}
-              style={{
-                filter: isLoaded ? 'blur(0px)' : 'blur(20px)',
-                transform: isLoaded ? 'scale(1)' : 'scale(1.05)',
-              }}
+              style={
+                isFirst
+                  ? undefined
+                  : {
+                      transition: 'filter 200ms ease-out, transform 200ms ease-out',
+                      filter: isLoaded ? 'blur(0px)' : 'blur(12px)',
+                      transform: isLoaded ? 'scale(1)' : 'scale(1.03)',
+                    }
+              }
             />
           </div>
         );
