@@ -416,21 +416,26 @@ const Header = () => {
             })}
             
             {/* Remaining nav items */}
-            {navItems.filter(i => !['/', '/prices', '/services', '/cleaning', '/auto', '/handyman', '/ozone'].includes(i.path)).map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
-                  location.pathname === item.path
-                    ? 'text-primary bg-accent'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
-                }`}
-                aria-current={location.pathname === item.path ? 'page' : undefined}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.filter(i => !['/', '/prices', '/services', '/cleaning', '/auto', '/handyman', '/ozone'].includes(i.path)).map((item) => {
+              const remainingHighlight = item.highlight === 'floorCleaning'
+                ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300'
+                : '';
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-md text-sm font-medium transition-colors ${
+                    location.pathname === item.path
+                      ? 'text-primary bg-accent'
+                      : remainingHighlight ? remainingHighlight : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'
+                  }`}
+                  aria-current={location.pathname === item.path ? 'page' : undefined}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
         )}
       </div>
