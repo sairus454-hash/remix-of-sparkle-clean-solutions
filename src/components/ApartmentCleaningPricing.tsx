@@ -23,6 +23,8 @@ const T: Record<string, Record<string, string>> = {
     desc: 'Utrzymanie czystości w całym mieszkaniu: odkurzanie, mycie podłóg, łazienka, kuchnia i ścieranie kurzu.',
     order: 'Zamów sprzątanie',
     generalNote: 'Sprzątanie generalne zależy od stopnia zabrudzenia i wymaga przyjazdu menedżera w celu wyceny.',
+    requestEstimate: 'Poproś o wycenę menedżera',
+    generalItemName: 'Sprzątanie generalne — wycena menedżera',
   },
   en: {
     title: 'Apartment cleaning price list',
@@ -35,6 +37,8 @@ const T: Record<string, Record<string, string>> = {
     desc: 'Maintaining cleanliness throughout the apartment: vacuuming, mopping floors, bathroom, kitchen and dusting.',
     order: 'Order cleaning',
     generalNote: 'General cleaning depends on the level of dirt and requires a manager visit to assess the cost.',
+    requestEstimate: 'Request manager estimate',
+    generalItemName: 'General cleaning — manager estimate',
   },
   ru: {
     title: 'Прайс-лист уборки квартиры',
@@ -47,6 +51,8 @@ const T: Record<string, Record<string, string>> = {
     desc: 'Поддержание чистоты во всей квартире: пылесос, мытьё полов, ванная, кухня и удаление пыли.',
     order: 'Заказать уборку',
     generalNote: 'Генеральная уборка зависит от степени загрязнённости и требует приезда менеджера для оценки стоимости.',
+    requestEstimate: 'Запросить оценку менеджера',
+    generalItemName: 'Генеральная уборка — оценка менеджера',
   },
   uk: {
     title: 'Прайс прибирання квартири',
@@ -59,6 +65,8 @@ const T: Record<string, Record<string, string>> = {
     desc: 'Підтримка чистоти у всій квартирі: пилосос, миття підлоги, ванна, кухня та витирання пилу.',
     order: 'Замовити прибирання',
     generalNote: 'Генеральне прибирання залежить від ступеня забруднення і потребує приїзду менеджера для оцінки вартості.',
+    requestEstimate: 'Запросити оцінку менеджера',
+    generalItemName: 'Генеральне прибирання — оцінка менеджера',
   },
 };
 
@@ -168,6 +176,21 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                 <div className="mt-6 rounded-lg border border-yellow-400/40 bg-yellow-400/10 p-4 flex items-start gap-2">
                   <span className="flex-shrink-0">⚠️</span>
                   <p className="text-sm font-medium text-yellow-700">{t.generalNote}</p>
+                </div>
+                <div className="mt-3 flex justify-center">
+                  <Button
+                    variant="default"
+                    onClick={() =>
+                      onOrder({
+                        id: 'general-cleaning-estimate',
+                        name: t.generalItemName,
+                        price: 0,
+                        quantity: 1,
+                      })
+                    }
+                  >
+                    {t.requestEstimate}
+                  </Button>
                 </div>
               </CardContent>
             </Card>
