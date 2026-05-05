@@ -66,22 +66,22 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       ru: {
         none: 'Без акции',
         neighbor: '🏘️ Соседская акция — 20% (приведи соседа, оба получают -20%)',
-        second: '➕ Уборка + 2-я услуга — 20% скидки',
+        second: '➕ Уборка + 2-я услуга — 22% скидки',
       },
       pl: {
         none: 'Bez promocji',
         neighbor: '🏘️ Promocja sąsiedzka — 20% (przyprowadź sąsiada, oboje -20%)',
-        second: '➕ Sprzątanie + 2. usługa — 20% rabatu',
+        second: '➕ Sprzątanie + 2. usługa — 22% rabatu',
       },
       uk: {
         none: 'Без акції',
         neighbor: '🏘️ Сусідська акція — 20% (приведи сусіда, обидва -20%)',
-        second: '➕ Прибирання + 2-га послуга — 20% знижки',
+        second: '➕ Прибирання + 2-га послуга — 22% знижки',
       },
       en: {
         none: 'No promotion',
         neighbor: '🏘️ Neighbor promo — 20% (bring a neighbor, both get -20%)',
-        second: '➕ Cleaning + 2nd service — 20% off',
+        second: '➕ Cleaning + 2nd service — 22% off',
       },
     };
     return labels[language] || labels.ru;
