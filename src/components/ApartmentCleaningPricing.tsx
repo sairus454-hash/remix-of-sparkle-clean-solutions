@@ -9,7 +9,7 @@ type Lang = 'pl' | 'en' | 'ru' | 'uk';
 
 interface Props {
   language: Lang | string;
-  onOrder: (item: { id: string; name: string; price: number; quantity: number }) => void;
+  onOrder: (item: { id: string; name: string; price: number; quantity: number; category?: string }) => void;
 }
 
 const T: Record<string, Record<string, string>> = {
@@ -163,6 +163,7 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                               name,
                               price,
                               quantity: 1,
+                              category: 'cleaning',
                             })
                           }
                           className="w-full"

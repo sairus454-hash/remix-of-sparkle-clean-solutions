@@ -23,7 +23,7 @@ interface CalculatorItem {
 // Нормализация категории
 function normalizeCategory(item: CalculatorItem): string {
   const cat = item.category || item.id;
-  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('extra-') || cat === 'extras') return 'cleaning';
+  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('cleaning-') || cat.startsWith('extra-') || cat === 'extras') return 'cleaning';
   if (cat === 'other') return 'furniture';
   return cat;
 }
@@ -128,7 +128,7 @@ export function getDiscountEligibleCategories(language: string): string[] {
 // Тип роли позиции в скидке: 'cleaning' (уборка), 'service' (любая другая услуга)
 export function getItemDiscountRole(category: string | undefined): 'cleaning' | 'service' {
   if (!category) return 'service';
-  if (category === 'cleaning' || category.startsWith('cleaning_') || category.startsWith('extra-') || category === 'extras') return 'cleaning';
+  if (category === 'cleaning' || category.startsWith('cleaning_') || category.startsWith('cleaning-') || category.startsWith('extra-') || category === 'extras') return 'cleaning';
   return 'service';
 }
 
