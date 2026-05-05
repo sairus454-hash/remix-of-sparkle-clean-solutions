@@ -593,6 +593,23 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         </Select>
       </div>
 
+      {/* Promotion */}
+      <div className="space-y-1.5 sm:space-y-2">
+        <label className="text-sm font-medium text-foreground">
+          {language === 'ru' ? 'Акция' : language === 'pl' ? 'Promocja' : language === 'uk' ? 'Акція' : 'Promotion'}
+        </label>
+        <Select value={formData.promotion} onValueChange={value => setFormData({ ...formData, promotion: value === '__none__' ? '' : value })}>
+          <SelectTrigger className="bg-card border-border h-11 sm:h-10 text-base sm:text-sm">
+            <SelectValue placeholder={promotionOptions.none} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="__none__">{promotionOptions.none}</SelectItem>
+            <SelectItem value={promotionOptions.neighbor}>{promotionOptions.neighbor}</SelectItem>
+            <SelectItem value={promotionOptions.second}>{promotionOptions.second}</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
       <div className="space-y-1.5 sm:space-y-2">
         <label className="text-sm font-medium text-foreground">
           {language === 'ru' ? 'Желаемое время и дата' : language === 'pl' ? 'Preferowany czas i data' : language === 'uk' ? 'Бажаний час та дата' : 'Preferred time & date'} <span className="text-destructive">*</span>
