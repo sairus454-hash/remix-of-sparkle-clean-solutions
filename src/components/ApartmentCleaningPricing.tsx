@@ -122,9 +122,9 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                 {/* Apartment cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {apartments.map((apt) => {
-                    const price = apt.basePrice * (1 - activeFreq.discount);
-                    const priceLabel = price.toFixed(2).replace('.', ',');
-                    const oldLabel = activeFreq.discount > 0 ? apt.basePrice.toFixed(2).replace('.', ',') : null;
+                    const price = Math.round(apt.basePrice * (1 - activeFreq.discount));
+                    const priceLabel = String(price);
+                    const oldLabel = activeFreq.discount > 0 ? String(apt.basePrice) : null;
                     const name = `${t.apartment} ${apt.label} — ${t[activeFreq.id]}`;
                     return (
                       <div
