@@ -348,6 +348,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         postalCode: '',
         time: '',
         paymentMethod: '',
+        promotion: '',
         message: ''
       });
       setDate(undefined);
