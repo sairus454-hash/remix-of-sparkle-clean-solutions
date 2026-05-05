@@ -440,9 +440,21 @@ const FloorCleaning = () => {
                 { src: tileBeforeAfter, label: language === 'pl' ? 'Czyszczenie płytek — efekt przed/po' : language === 'ru' ? 'Чистка плитки — до/после' : language === 'uk' ? 'Чистка плитки — до/після' : 'Tile cleaning — before/after' },
                 { src: floorBa3, label: language === 'pl' ? 'Pranie wykładziny biurowej — przed/po' : language === 'ru' ? 'Чистка офисного покрытия — до/после' : language === 'uk' ? 'Чистка офісного покриття — до/після' : 'Office carpet cleaning — before/after' },
                 { src: floorBa4, label: language === 'pl' ? 'Pranie wykładziny w biurze — przed/po' : language === 'ru' ? 'Чистка коврового покрытия в офисе — до/после' : language === 'uk' ? 'Чистка килимового покриття в офісі — до/після' : 'Office carpet — before/after' },
-                { src: floorBa5, label: language === 'pl' ? 'Sprzęt do prania wykładzin — Santoemma' : language === 'ru' ? 'Профессиональное оборудование Santoemma' : language === 'uk' ? 'Професійне обладнання Santoemma' : 'Professional Santoemma equipment' },
               ]}
             />
+            <div className="mt-10 max-w-3xl mx-auto">
+              <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-card-hover border-2 border-border bg-muted">
+                <img
+                  src={floorBa5}
+                  alt={language === 'pl' ? 'Profesjonalny sprzęt Santoemma do prania wykładzin' : language === 'ru' ? 'Профессиональное оборудование Santoemma для химчистки' : language === 'uk' ? 'Професійне обладнання Santoemma' : 'Professional Santoemma cleaning equipment'}
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-3">
+                {language === 'pl' ? 'Profesjonalny sprzęt Santoemma — głębokie pranie ekstrakcyjne' : language === 'ru' ? 'Профессиональное оборудование Santoemma — глубокая экстракторная чистка' : language === 'uk' ? 'Професійне обладнання Santoemma — глибока екстракторна чистка' : 'Professional Santoemma equipment — deep extraction cleaning'}
+              </p>
+            </div>
           </div>
         </section>
 
