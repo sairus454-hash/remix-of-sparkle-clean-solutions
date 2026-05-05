@@ -74,6 +74,7 @@ import calcExtraHood from '@/assets/calc-extra-hood.jpg';
 import calcExtraCabinets from '@/assets/calc-extra-cabinets.jpg';
 import calcExtraDishes from '@/assets/calc-extra-dishes.jpg';
 import calcExtraFridge from '@/assets/calc-extra-fridge.jpg';
+import calcExtraFridgeSmall from '@/assets/calc-extra-fridge-small.jpg';
 import calcExtraMicrowave from '@/assets/calc-extra-microwave.jpg';
 import calcExtraBalcony from '@/assets/calc-extra-balcony.jpg';
 import calcExtraWindowInside from '@/assets/calc-extra-window-inside.jpg';
@@ -239,6 +240,7 @@ const Cleaning = () => {
     { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : 'Уберем в кухонных шкафчиках', price: 40, image: calcExtraCabinets },
     { id: 'dishes', name: language === 'pl' ? 'Mycie naczyń' : language === 'en' ? 'Dishwashing' : 'Помоем посуду', price: cleaningType === 'general' ? 30 : 25, image: calcExtraDishes },
     { id: 'fridge', name: language === 'pl' ? 'Czyszczenie lodówki' : language === 'en' ? 'Fridge cleaning' : 'Почистим холодильник', price: cleaningType === 'general' ? 50 : 40, image: calcExtraFridge },
+    { id: 'fridgeSmall', name: language === 'pl' ? 'Mała lodówka' : language === 'en' ? 'Small fridge' : language === 'uk' ? 'Малий холодильник' : 'Холодильник малый', price: 20, image: calcExtraFridgeSmall },
     { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : 'Помоем микроволновку', price: 10, image: calcExtraMicrowave },
     { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : 'Уберем на балконе', price: 8, image: calcExtraBalcony, unit: 'm²' },
     { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : 'Глажка', price: cleaningType === 'general' ? 60 : 50, image: calcExtraIroning, unit: 'h' },

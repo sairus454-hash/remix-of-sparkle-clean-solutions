@@ -69,6 +69,7 @@ import calcExtraHood from '@/assets/calc-extra-hood.jpg';
 import calcExtraCabinets from '@/assets/calc-extra-cabinets.jpg';
 import calcExtraDishes from '@/assets/calc-extra-dishes.jpg';
 import calcExtraFridge from '@/assets/calc-extra-fridge.jpg';
+import calcExtraFridgeSmall from '@/assets/calc-extra-fridge-small.jpg';
 import calcExtraMicrowave from '@/assets/calc-extra-microwave.jpg';
 import calcExtraBalcony from '@/assets/calc-extra-balcony.jpg';
 import calcExtraWindowInside from '@/assets/calc-extra-window-inside.jpg';
@@ -184,6 +185,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
         { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 55, image: calcExtraCabinets },
         { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 25, image: calcExtraDishes },
         { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 40, image: calcExtraFridge },
+        { id: 'extra-fridgeSmall', name: t.cleaning?.extras?.fridgeSmall || 'Холодильник малый', price: 20, image: calcExtraFridgeSmall },
         { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 20, image: calcExtraMicrowave },
         { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 30, image: calcExtraBalcony },
         { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: 30, image: calcExtraWindowInside },

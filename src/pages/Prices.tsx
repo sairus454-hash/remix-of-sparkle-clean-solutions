@@ -75,6 +75,7 @@ const Prices = () => {
         { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 40, image: img('calc-extra-cabinets.jpg') },
         { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 25, image: img('calc-extra-dishes.jpg') },
         { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 40, image: img('calc-extra-fridge.jpg') },
+        { id: 'extra-fridgeSmall', name: t.cleaning?.extras?.fridgeSmall || 'Холодильник малый', price: 20, image: img('calc-extra-fridge-small.jpg') },
         { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 10, image: img('calc-extra-microwave.jpg') },
         { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 8, image: img('calc-extra-balcony.jpg'), unit: 'm²' },
         { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: 50, image: img('calc-extra-ironing.jpg'), unit: 'ч' },
