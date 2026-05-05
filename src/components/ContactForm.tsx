@@ -19,6 +19,7 @@ import { CalculatorItem } from '@/types/calculator';
 import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
 export interface ContactFormRef {
   setCalculatorData: (items: CalculatorItem[], total: number) => void;
+  setPromotion: (promotion: string) => void;
 }
 interface ContactFormProps {
   selectedDate?: Date;
@@ -114,6 +115,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       
       // Recalculate total based on merged items
       setCalculatorTotal(prevTotal => prevTotal + newTotal);
+    },
+    setPromotion: (promotion: string) => {
+      setFormData(prev => ({ ...prev, promotion }));
     }
   }));
 

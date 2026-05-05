@@ -566,7 +566,24 @@ const CityPage = () => {
                         : 'Приведите соседа — оба получаете 20% скидки на весь заказ.'}
                     </p>
                     <p className="text-orange-600 text-3xl sm:text-4xl font-bold mt-3">-20%</p>
+                    <Button
+                      onClick={() => {
+                        const neighborLabels: Record<string, string> = {
+                          ru: '🏘️ Соседская акция — 20% (приведи соседа, оба получают -20%)',
+                          pl: '🏘️ Promocja sąsiedzka — 20% (przyprowadź sąsiada, oboje -20%)',
+                          uk: '🏘️ Сусідська акція — 20% (приведи сусіда, обидва -20%)',
+                          en: '🏘️ Neighbor promo — 20% (bring a neighbor, both get -20%)',
+                        };
+                        formRef.current?.setPromotion(neighborLabels[language] || neighborLabels.ru);
+                        formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                      className="mt-5 bg-gradient-to-r from-orange-600 to-teal-600 text-primary-foreground hover:opacity-90 font-bold rounded-full px-6 py-5 shadow-glow"
+                    >
+                      <Gift className="w-5 h-5 mr-2" />
+                      {language === 'pl' ? 'Odbierz rabat' : language === 'en' ? 'Get the discount' : language === 'uk' ? 'Отримати знижку' : 'Получить скидку'}
+                    </Button>
                   </div>
+
                 </div>
               </div>
             </div>
