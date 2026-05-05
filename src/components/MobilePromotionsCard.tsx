@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Sparkles, Star, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import { Sparkles, Star, Award } from 'lucide-react';
 
 const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
   const { t } = useLanguage();
-  const [expanded, setExpanded] = useState(false);
 
   return (
     <section className={`sm:hidden py-6 bg-gradient-section ${className}`}>
