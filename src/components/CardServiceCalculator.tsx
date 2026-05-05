@@ -133,13 +133,15 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
     });
   }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, category]);
 
-  const AREA_ITEM_IDS = new Set(['cleaning-standard', 'cleaning-general', 'carpetFloorMedium', 'carpetFloorLarge', 'tileCleaning']);
+  const AREA_ITEM_IDS = new Set(['cleaning-standard', 'cleaning-general', 'carpetFloorMedium', 'carpetFloorLarge', 'tileCleaning', 'balcony', 'extra-balcony']);
   const isAreaItem = (item: ServiceCardItem) => item.unit === 'm²' && AREA_ITEM_IDS.has(item.id);
   const getAreaConfig = (id: string): { default: number; min: number; max: number; step: number } => {
     switch (id) {
       case 'carpetFloorMedium': return { default: 30, min: 20, max: 50, step: 1 };
       case 'carpetFloorLarge': return { default: 80, min: 50, max: 300, step: 5 };
       case 'tileCleaning': return { default: 20, min: 5, max: 200, step: 1 };
+      case 'balcony':
+      case 'extra-balcony': return { default: 5, min: 2, max: 30, step: 1 };
       default: return { default: 50, min: 10, max: 300, step: 5 };
     }
   };
