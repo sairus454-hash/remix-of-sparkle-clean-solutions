@@ -20,6 +20,7 @@ const MobilePromotionsCard = lazy(() => import('@/components/MobilePromotionsCar
 const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
 const ContactForm = lazy(() => import('@/components/ContactForm'));
 const PriceSection = lazy(() => import('@/components/PriceSection'));
+const CleaningPricingTopBlock = lazy(() => import('@/components/CleaningPricingTopBlock'));
 
 const Index = () => {
   const isMobile = useIsMobile();
