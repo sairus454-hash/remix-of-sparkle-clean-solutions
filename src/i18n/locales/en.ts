@@ -72,7 +72,7 @@ const enTranslations = {
       upTo: 'up to',
       saveUpTo: 'Save up to 22% on our services!',
       services4plusBadge: 'PROMO',
-      services4plus: 'Order cleaning + any second service and get 22% off',
+      services4plus: 'Order cleaning + any second service and get 22% off (minimum order — 350 zł)',
       dryingFreeSpring: 'Furniture & mattress drying until end of spring — FREE!!!',
       services6plus: 'Bring a neighbor — both get 20% off the entire order',
     },
