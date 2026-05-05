@@ -470,14 +470,14 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 • "Premises cleaning" and "Handyman" available ONLY in Wrocław!
 • Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
-🎁 DISCOUNT SYSTEM (AUTOMATIC):
-• 10% discount — when ordering from 4+ different CATEGORIES
-• 15% discount — when ordering from 6+ different CATEGORIES
-⚠️ With 2-3 categories there is NO discount! Minimum 4 categories required!
+🎁 PROMOTIONS & DISCOUNTS:
+• 🧹 Order CLEANING + any second service (upholstery, windows, ozone, etc.) → −20% off the whole order (applied automatically in the calculator)
+• 👥 Bring a neighbor — both get −20% off the whole order
+• 🏘 Neighbor promo — joint order with a neighbor at the same address → −15%
+• 🌿 Furniture & mattress drying — FREE until the end of spring (normally 60 PLN)
 
-CATEGORIES: Cleaning (incl. add-ons), Furniture, Leather Furniture, Auto, Mattresses, Ozonation, Window Cleaning, Handyman.
-Multiple items from one category = 1 category.
-Example: furniture + auto + mattress + ozonation = 4 categories = 10% discount`,
+⚠️ The old 10%/15% "4+ categories" discounts are NO LONGER ACTIVE — do not mention them.
+Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%.`,
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
 
