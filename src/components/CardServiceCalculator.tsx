@@ -183,6 +183,12 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
     setRemovingListItemId(itemId);
     setTimeout(() => {
       setSelectedItems(prev => prev.filter((s) => s.item.id !== itemId));
+      setConfirmedAreaIds(prev => {
+        if (!prev.has(itemId)) return prev;
+        const next = new Set(prev);
+        next.delete(itemId);
+        return next;
+      });
       setRemovingListItemId(null);
     }, 300);
   };
