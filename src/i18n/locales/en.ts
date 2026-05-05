@@ -73,7 +73,6 @@ const enTranslations = {
       saveUpTo: 'Save up to 20% on our services!',
       services4plusBadge: 'PROMO',
       services4plus: 'Order cleaning + any second service and get 20% off',
-      springDryingPromo: '🔥 Weekly deal: -10% on furniture & mattress cleaning!',
       dryingFreeSpring: 'Furniture & mattress drying until end of spring — FREE!!!',
       services6plus: 'Bring a neighbor — both get 20% off the entire order',
     },
