@@ -11,7 +11,7 @@ import aboutBa5 from '@/assets/about-ba-5.jpg';
 import aboutBa9 from '@/assets/about-ba-9.jpg';
 
 const slideImages = [aboutBa9, aboutBa1, aboutBa2, aboutBa3, aboutBa4, aboutBa5];
-const slideKeys = ['slide6', 'slide1', 'slide2', 'slide3', 'slide4', 'slide5'] as const;
+const slideKeys = ['slide1', 'slide1', 'slide2', 'slide3', 'slide4', 'slide5'] as const;
 
 const About3DCarousel = forwardRef<HTMLElement>((_, _ref) => {
   const { t } = useLanguage();
