@@ -324,6 +324,9 @@ const Prices = () => {
         </section>
 
 
+        {/* Cleaning pricing + extras (first) */}
+        <CleaningPricingTopBlock onSendToForm={handleSendToForm} />
+
         <MobilePromotionsCard />
 
         {/* Promotions Section — desktop only */}
