@@ -54,9 +54,14 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
       uk: 'Яка площа в м²?',
     },
     unit: { ru: 'м²', en: 'm²', pl: 'm²', uk: 'м²' },
-    suggestions: [30, 50, 70, 100],
-    // Standard 7 PLN/m², deep 10 PLN/m². Show range.
-    baseEstimator: (qty) => ({ min: 7 * qty, max: 10 * qty }),
+    suggestions: [80, 120, 180],
+    // Flat-rate tiers for standard house cleaning:
+    // up to 100 m² → 350 zł, 100–150 m² → 400 zł, over 150 m² → 500 zł.
+    baseEstimator: (qty) => {
+      if (qty <= 100) return { min: 350, max: 350 };
+      if (qty <= 150) return { min: 400, max: 400 };
+      return { min: 500, max: 500 };
+    },
     markup: 'standard',
   },
   {
