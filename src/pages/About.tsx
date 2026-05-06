@@ -1,14 +1,17 @@
+import { lazy, Suspense } from 'react';
 import { useSplash } from '@/hooks/useSplash';
 import aboutHeroPhoto from '@/assets/about-hero-photo.jpg';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CleanSplash from '@/components/CleanSplash';
-import CircularRevealCard from '@/components/CircularRevealCard';
+import LazySection from '@/components/LazySection';
 import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
-import About3DCarousel from '@/components/About3DCarousel';
-import PolandRegionsMap from '@/components/PolandRegionsMap';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
+const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
+const About3DCarousel = lazy(() => import('@/components/About3DCarousel'));
+const PolandRegionsMap = lazy(() => import('@/components/PolandRegionsMap'));
 
 
 
