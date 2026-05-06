@@ -93,24 +93,35 @@ const About = () => {
         canonical="/about"
         image="https://masterclean1885.com/og-about.jpg"
         breadcrumbs={[{ name: t.nav.about, path: '/about' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'AboutPage',
-          mainEntity: {
-            '@type': 'LocalBusiness',
-            name: 'MasterClean',
-            description: 'Profesjonalna firma sprzątająca w Polsce. Nowoczesny sprzęt, ekologiczne środki.',
-            telephone: '+48575211401',
-            address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
-            areaServed: [
-              { '@type': 'City', name: 'Opole' },
-              { '@type': 'City', name: 'Wrocław' },
-              { '@type': 'City', name: 'Poznań' },
-              { '@type': 'City', name: 'Zielona Góra' },
-            ],
-            foundingDate: '2022',
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            mainEntity: {
+              '@type': 'LocalBusiness',
+              name: 'MasterClean',
+              description: 'Profesjonalna firma sprzątająca w Polsce. Nowoczesny sprzęt, ekologiczne środki.',
+              telephone: '+48575211401',
+              address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+              areaServed: [
+                { '@type': 'City', name: 'Opole' },
+                { '@type': 'City', name: 'Wrocław' },
+                { '@type': 'City', name: 'Poznań' },
+                { '@type': 'City', name: 'Zielona Góra' },
+              ],
+              foundingDate: '2022',
+            },
           },
-        }}
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          },
+        ]}
       />
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
       <Layout>
