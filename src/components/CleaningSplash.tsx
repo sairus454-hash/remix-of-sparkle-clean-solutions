@@ -10,14 +10,15 @@ const CleaningSplash = ({ onComplete }: CleaningSplashProps) => {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
+    // Reduced from 700ms → 350ms total to improve FCP/LCP on Cleaning page
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 500);
+    }, 200);
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 700);
+    }, 350);
 
     return () => {
       clearTimeout(fadeTimer);
