@@ -376,13 +376,6 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
       ],
     },
   ];
-  // Note: gardening items removed sitewide.
-  void [];
-  const _unused = (
-
-      ],
-    },
-  ];
 
   const categories = useMemo(() => {
     let filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
