@@ -244,19 +244,21 @@ const Prices = () => {
     },
   ];
 
-  const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
   const hiddenForNonWroclaw = ['handyman', 'gardening'];
   const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
   const categories = useMemo(() => {
     const filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
-    const visible = isCleaningCity ? filtered : filtered.filter(c => c.id !== 'cleaning');
-    return isCleaningCity
-      ? visible
+    const visible = filtered.filter(c => c.id !== 'cleaning');
+    return isWroclaw
+      ? visible.map(cat => (cat.id === 'other' || cat.id === 'floorCleaning')
+          ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
+          : cat
+        )
       : visible.map(cat => (cat.id === 'other' || cat.id === 'floorCleaning')
           ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
           : cat
         );
-  }, [isWroclaw, isCleaningCity, allCategories]);
+  }, [isWroclaw, allCategories]);
 
   const visibleCategories = useMemo(
     () => activeFilter === 'all' ? categories : categories.filter(c => c.id === activeFilter),
