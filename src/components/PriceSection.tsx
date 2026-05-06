@@ -168,7 +168,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
 
   // Cleaning category is only available in Wrocław and Smolec
   const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
-  const hiddenForNonWroclaw = ['handyman', 'gardening'];
+  const hiddenForNonWroclaw = ['handyman'];
   const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
 
   const allCategories: CategorySection[] = [
