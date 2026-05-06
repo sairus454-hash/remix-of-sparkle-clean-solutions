@@ -63,7 +63,6 @@ const detectServiceFromText = (text: string): string => {
   if (/авто|car|samochod|auto/.test(t)) return 'auto';
   if (/мастер|hand|złota|майстер|сантехн|elektry/.test(t)) return 'handyman';
   if (/импрегн|impregn/.test(t)) return 'impregnation';
-  if (/огород|trawa|garden|сад|косить/.test(t)) return 'gardening';
   if (/уборк|sprz|clean|прибир/.test(t)) return 'cleaning';
   return '';
 };
