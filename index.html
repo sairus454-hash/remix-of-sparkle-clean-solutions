@@ -64,17 +64,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Preload critical font subsets (Google Fonts v20).
-         Inter on GF currently serves a single woff2 per subset across weights 400/500/600/700,
-         so one preload per subset covers all weights actually used in the UI.
-         Site languages: PL (latin-ext) + RU/UK (cyrillic) → preload both subsets.
-         Playfair Display 700 latin-ext used for headings (H1/H2). 600 omitted (rarely above the fold). -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiukDQ.woff2" />
+    <!-- NOTE: We intentionally do NOT preload individual woff2 files from Google Fonts.
+         Google rotates the file hashes per browser/UA and over time, so any hard-coded
+         <link rel="preload" as="font"> would download a file the CSS never references,
+         producing wasted requests without preventing FOUT. Instead we:
+           1. preconnect to fonts.gstatic.com (above)
+           2. preload the Google Fonts stylesheet (below) so @font-face declarations
+              are parsed ASAP and the browser can fetch the exact subset+weight it needs
+           3. rely on font-display: swap (already in the URL) to avoid FOIT
+         The CSS request asks only for the weights actually used in the UI:
+           Inter 400/500/600/700, Playfair Display 600/700.
+         Subsets latin + latin-ext + cyrillic are auto-served based on document language. -->
 
     <!-- Preload the Google Fonts CSS so the browser fetches it ASAP, then swap to stylesheet -->
     <link rel="preload" as="style"
