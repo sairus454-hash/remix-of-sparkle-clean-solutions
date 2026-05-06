@@ -75,23 +75,25 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
               className="absolute inset-0 w-full h-full object-cover"
             />
           )}
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster={effectivePoster}
-            aria-hidden="true"
-            onCanPlay={handleCanPlay}
-            onError={handleError}
-            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-            style={{ opacity: videoReady ? 1 : 0 }}
-          >
-            <source src={webmSrc} type="video/webm" />
-            <source src={src} type="video/mp4" />
-          </video>
+          {shouldLoadVideo && (
+            <video
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster={effectivePoster}
+              aria-hidden="true"
+              onCanPlay={handleCanPlay}
+              onError={handleError}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              style={{ opacity: videoReady ? 1 : 0 }}
+            >
+              <source src={webmSrc} type="video/webm" />
+              <source src={src} type="video/mp4" />
+            </video>
+          )}
         </>
       )}
 
