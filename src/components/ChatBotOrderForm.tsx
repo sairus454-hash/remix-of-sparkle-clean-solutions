@@ -57,7 +57,7 @@ const ChatBotOrderForm = ({ onSubmit, onCancel, isLoading, defaultServiceKey = '
   const [details, setDetails] = useState(defaultDetails);
 
   const services = (t.chatbot as any)?.services || {};
-  const serviceKeys = ['cleaning','furniture','mattress','carpet','auto','ozone','windows','handyman','impregnation','gardening','other'];
+  const serviceKeys = ['cleaning','furniture','mattress','carpet','auto','ozone','windows','handyman','impregnation','other'];
 
   const isValid = name.trim().length > 1 && phone.trim().length > 5 && serviceKey;
 
