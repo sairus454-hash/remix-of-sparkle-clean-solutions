@@ -9,8 +9,8 @@ const SiteSplash = ({ onComplete }: SiteSplashProps) => {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    const fadeTimer = setTimeout(() => setIsFading(true), 500);
-    const completeTimer = setTimeout(() => onComplete(), 700);
+    const fadeTimer = setTimeout(() => setIsFading(true), 200);
+    const completeTimer = setTimeout(() => onComplete(), 350);
     return () => {
       clearTimeout(fadeTimer);
       clearTimeout(completeTimer);
