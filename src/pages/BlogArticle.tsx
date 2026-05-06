@@ -187,6 +187,34 @@ const BlogArticle = () => {
               </div>
             </div>
 
+            {/* FAQ */}
+            {article.faq && article.faq.length > 0 && (
+              <div className="mt-10">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-4">
+                  {language === 'pl' ? 'Najczęściej zadawane pytania'
+                    : language === 'en' ? 'Frequently Asked Questions'
+                    : language === 'uk' ? 'Часті запитання'
+                    : 'Часто задаваемые вопросы'}
+                </h2>
+                <div className="space-y-3">
+                  {article.faq.map((item, idx) => (
+                    <details
+                      key={idx}
+                      className="group bg-card border border-border rounded-xl p-4 shadow-sm open:shadow-md transition-shadow"
+                    >
+                      <summary className="cursor-pointer list-none flex items-start justify-between gap-3 font-semibold text-foreground">
+                        <span>{item.q}</span>
+                        <span className="text-primary text-xl leading-none transition-transform group-open:rotate-45">+</span>
+                      </summary>
+                      <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
+                        {item.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Comments Section */}
             <div className="mt-12 pt-8 border-t border-border">
               <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
