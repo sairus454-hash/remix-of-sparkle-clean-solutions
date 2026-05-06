@@ -96,6 +96,7 @@ const enTranslations = {
       slide6: 'Rug restoration — before and after',
       slide7: 'Leather sofa cleaning — before and after',
       slide8: 'Child car seat cleaning — before and after',
+      slide9: 'On-site sofa deep cleaning — before and after',
       before: 'Before',
       after: 'After',
       socialMedia: 'Follow us on social media',
