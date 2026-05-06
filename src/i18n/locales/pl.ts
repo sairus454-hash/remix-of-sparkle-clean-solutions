@@ -96,6 +96,7 @@ const plTranslations = {
       slide6: 'Renowacja dywanu — przed i po',
       slide7: 'Czyszczenie skórzanej kanapy — przed i po',
       slide8: 'Czyszczenie fotelika dziecięcego — przed i po',
+      slide9: 'Pranie kanapy u klienta — przed i po',
       before: 'Przed',
       after: 'Po',
       socialMedia: 'Śledź nas w mediach społecznościowych',
