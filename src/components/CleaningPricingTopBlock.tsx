@@ -4,6 +4,7 @@ import { Sparkles } from 'lucide-react';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ApartmentCleaningPricing from '@/components/ApartmentCleaningPricing';
+import HouseCleaningPricing from '@/components/HouseCleaningPricing';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { CalculatorItem } from '@/types/calculator';
 import { img } from '@/utils/imageMap';
@@ -44,6 +45,11 @@ const CleaningPricingTopBlock = ({ onSendToForm }: Props) => {
   return (
     <>
       <ApartmentCleaningPricing
+        language={language}
+        onOrder={(item) => onSendToForm([item as CalculatorItem], item.price)}
+      />
+
+      <HouseCleaningPricing
         language={language}
         onOrder={(item) => onSendToForm([item as CalculatorItem], item.price)}
       />
