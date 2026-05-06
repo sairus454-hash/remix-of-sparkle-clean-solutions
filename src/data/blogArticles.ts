@@ -407,7 +407,6 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h3: 'A reasonable upholstery cleaning schedule',
       },
     },
-    },
     {
       id: 16,
       title: 'How Much Does Sofa Cleaning Cost? What Affects the Price',
