@@ -34,6 +34,7 @@ export interface BlogArticle {
     h2: string;
     h3: string;
   };
+  faq?: { q: string; a: string }[];
 }
 
 export const blogArticles: Record<string, BlogArticle[]> = {
