@@ -9,7 +9,8 @@ import LazySection from '@/components/LazySection';
 import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
-const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'));
+import CircularRevealCard from '@/components/CircularRevealCard';
+
 const About3DCarousel = lazy(() => import('@/components/About3DCarousel'));
 const PolandRegionsMap = lazy(() => import('@/components/PolandRegionsMap'));
 
@@ -342,10 +343,18 @@ const About = () => {
         </section>
 
         {/* Poland Regions Map */}
-        <PolandRegionsMap />
+        <LazySection minHeight="400px">
+          <Suspense fallback={null}>
+            <PolandRegionsMap />
+          </Suspense>
+        </LazySection>
 
         {/* Before/After 3D Carousel */}
-        <About3DCarousel />
+        <LazySection minHeight="400px">
+          <Suspense fallback={null}>
+            <About3DCarousel />
+          </Suspense>
+        </LazySection>
 
         {/* Values */}
         <section aria-label="Nasze wartości" className="py-20">
