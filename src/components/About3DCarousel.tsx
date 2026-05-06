@@ -19,7 +19,12 @@ const About3DCarousel = forwardRef<HTMLElement>((_, _ref) => {
   const [isHovered, setIsHovered] = useState(false);
   const isMobile = useIsMobile();
   const total = slideImages.length;
-  const slides = slideImages.map((src, i) => ({ src, alt: (t.about as any)[slideKeys[i]] || slideKeys[i] }));
+  const slides = slideImages.map((src, i) => {
+    const key = slideKeys[i];
+    const caption = (t.about as any)[key] || key;
+    const alt = (t.about as any)[`${key}Alt`] || caption;
+    return { src, caption, alt };
+  });
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev + 1) % total);
@@ -112,13 +117,14 @@ const About3DCarousel = forwardRef<HTMLElement>((_, _ref) => {
                 <img
                   src={slide.src}
                   alt={slide.alt}
+                  title={slide.caption}
                   className={`w-full h-full ${isMobile ? 'object-contain' : 'object-cover'}`}
                   loading="lazy"
                 />
                 {((index - current) % total + total) % total === 0 && (
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3 sm:p-4">
                     <p className="text-white text-xs sm:text-sm font-medium text-center">
-                      {slide.alt}
+                      {slide.caption}
                     </p>
                   </div>
                 )}
