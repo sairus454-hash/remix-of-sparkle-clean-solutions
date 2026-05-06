@@ -34,7 +34,7 @@ const CleaningSplash = ({ onComplete }: CleaningSplashProps) => {
     >
       {/* Floating bubbles background */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(30)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full bg-white/20"
@@ -52,7 +52,7 @@ const CleaningSplash = ({ onComplete }: CleaningSplashProps) => {
 
       {/* Sparkle particles */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(6)].map((_, i) => (
           <div
             key={i}
             className="absolute"
