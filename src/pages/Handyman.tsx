@@ -86,7 +86,7 @@ const Handyman = () => {
     { icon: Plug, name: t.handyman.electrical, desc: t.handyman.electricalDesc },
     { icon: Droplet, name: t.handyman.plumbing, desc: t.handyman.plumbingDesc },
     { icon: Hammer, name: t.handyman.carpentry, desc: t.handyman.carpentryDesc },
-    { icon: Flower2, name: t.handyman.painting, desc: t.handyman.paintingDesc },
+    
     { icon: DoorOpen, name: t.handyman.doors, desc: t.handyman.doorsDesc },
     { icon: Lightbulb, name: t.handyman.lighting, desc: t.handyman.lightingDesc },
     { icon: Tv, name: t.handyman.mounting, desc: t.handyman.mountingDesc },
