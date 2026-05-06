@@ -64,13 +64,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Preload critical font files (Inter 400/600 + Playfair 700) for faster LCP -->
+    <!-- Preload critical font subsets (Google Fonts v20).
+         Inter on GF currently serves a single woff2 per subset across weights 400/500/600/700,
+         so one preload per subset covers all weights actually used in the UI.
+         Site languages: PL (latin-ext) + RU/UK (cyrillic) → preload both subsets.
+         Playfair Display 700 latin-ext used for headings (H1/H2). 600 omitted (rarely above the fold). -->
     <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" />
+      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7.woff2" />
+      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtY.woff2" />
+      href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKeiukDQ.woff2" />
 
     <!-- Preload the Google Fonts CSS so the browser fetches it ASAP, then swap to stylesheet -->
     <link rel="preload" as="style"
