@@ -167,6 +167,23 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             </div>
           </Link>
 
+          {/* Oferteo Best 2026 Badge */}
+          <a
+            href="https://www.oferteo.pl/pranie-kanap"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Oferteo — Najlepsi 2026 — pranie kanap"
+            className="hover:scale-105 transition-transform"
+          >
+            <img
+              src="https://www.oferteo.pl/images/buttons/badge-best-current-2026.png"
+              alt="Oferteo — Najlepsi 2026 — pranie kanap"
+              loading="lazy"
+              style={{ width: 192 }}
+              className="h-auto drop-shadow-md"
+            />
+          </a>
+
           {/* Euro Quality Standard Badge */}
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-primary/30 bg-primary/5">
             <div className="relative w-10 h-10 flex items-center justify-center">
