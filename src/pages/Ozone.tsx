@@ -63,7 +63,7 @@ const Ozone = () => {
         description="Profesjonalne ozonowanie mieszkań, biur i samochodów. Ozonowanie eliminuje nieprzyjemne zapachy, bakterie i wirusy. Dezynfekcja ozonem Wrocław, Opole, Poznań."
         keywords="ozonowanie pomieszczeń, ozonowanie samochodu, ozonowanie mieszkania, ozonowanie biura, usuwanie zapachów ozonem, dezynfekcja ozonem, ozonowanie po remoncie, ozonowanie po zalaniu, ozonowanie Wrocław, ozonowanie Opole, ozone treatment, eliminacja zapachów, usuwanie pleśni"
         canonical="/ozone"
-        image="https://masterclean1885.com/og-ozone.png"
+        image="https://masterclean1885.com/og-ozone.jpg"
         breadcrumbs={[{ name: t.nav.ozone, path: '/ozone' }]}
          jsonLd={{
            '@context': 'https://schema.org',

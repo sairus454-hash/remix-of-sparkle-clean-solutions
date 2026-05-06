@@ -273,7 +273,7 @@ const Prices = () => {
         description="Aktualny cennik prania tapicerki meblowej, czyszczenia dywanów, materacy, tapicerki samochodowej, ozonowania i sprzątania. Kalkulator kosztów. Wrocław, Opole."
         keywords="cennik prania tapicerki, cennik czyszczenia mebli, cennik chemczystki mebli, ceny czyszczenia dywanów, cennik prania kanapy, cennik ozonowania, cennik mycia okien, cennik sprzątania, cennik złota rączka, ile kosztuje pranie tapicerki, pranie tapicerki cena Wrocław, cleaning prices Poland"
         canonical="/prices"
-        image="https://masterclean1885.com/og-prices.png"
+        image="https://masterclean1885.com/og-prices.jpg"
         breadcrumbs={[{ name: t.nav.prices, path: '/prices' }]}
         jsonLd={{
           '@context': 'https://schema.org',

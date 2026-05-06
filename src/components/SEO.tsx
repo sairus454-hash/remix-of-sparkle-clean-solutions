@@ -18,7 +18,7 @@ interface SEOProps {
 }
 
 const SITE_URL = 'https://masterclean1885.com';
-const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 const hreflangMap: Record<string, string> = {
   ru: 'ru',

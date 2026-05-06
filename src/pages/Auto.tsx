@@ -81,7 +81,7 @@ const Auto = () => {
         description="Mobilne pranie tapicerki samochodów osobowych i ciężarowych z dojazdem. Czyszczenie foteli, podsufitki, kabin TIR, busów. Wrocław, Opole, Poznań."
         keywords="pranie tapicerki samochodowej, pranie tapicerki ciężarówki, czyszczenie kabiny TIR, pranie tapicerki busa, chemczystka auta, czyszczenie wnętrza samochodu, czyszczenie tapicerki samochodowej, detailing wnętrza, pranie foteli samochodowych, czyszczenie dywaników samochodowych, czyszczenie podsufitki, czyszczenie z dojazdem, dojazd do klienta, auto detailing, pranie tapicerki auta Wrocław, Opole, Poznań"
         canonical="/auto"
-        image="https://masterclean1885.com/og-auto.png"
+        image="https://masterclean1885.com/og-auto.jpg"
         breadcrumbs={[{ name: t.nav.auto, path: '/auto' }]}
          jsonLd={{
            '@context': 'https://schema.org',

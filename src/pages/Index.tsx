@@ -82,7 +82,7 @@ const Index = () => {
         description="Profesjonalne pranie kanapy, materaca i narożnika z dojazdem. Pranie tapicerki meblowej, czyszczenie dywanów i samochodów. Ozonowanie, sprzątanie, mycie okien. Wrocław 24/7."
         keywords="pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, pranie tapicerki meblowej, czyszczenie dywanów, czyszczenie materacy, pranie sofy, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, czyszczenie mebli Wrocław, pranie tapicerki Opole, usługi sprzątania Wrocław, pranie ekstrakcyjne, cleaning services Poland, Poznań"
         canonical="/"
-        image="https://masterclean1885.com/og-image.png"
+        image="https://masterclean1885.com/og-image.jpg"
         jsonLd={[{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
@@ -91,7 +91,7 @@ const Index = () => {
           url: 'https://masterclean1885.com',
           telephone: '+48575211401',
           email: 'masterclean@email.com',
-          image: 'https://masterclean1885.com/og-image.png',
+          image: 'https://masterclean1885.com/og-image.jpg',
           address: {
             '@type': 'PostalAddress',
             addressCountry: 'PL',

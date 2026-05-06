@@ -133,7 +133,7 @@ const Services = () => {
         description="Profesjonalne pranie kanapy, materaca i narożnika z dojazdem. Chemczystka mebli tapicerowanych i skórzanych, czyszczenie kanap, foteli, sof. Kalkulator online. Wrocław, Opole."
         keywords="pranie kanapy, pranie materaca, pranie narożnika, chemczystka mebli, pranie tapicerki meblowej, pranie tapicerki skórzanej, czyszczenie mebli, pranie sofy, czyszczenie fotela, czyszczenie tapicerki, czyszczenie skóry, pranie tapicerki cennik, pranie tapicerki z dojazdem, pranie ekstrakcyjne, czyszczenie mebli Wrocław, Opole, Poznań"
         canonical="/services"
-        image="https://masterclean1885.com/og-services.png"
+        image="https://masterclean1885.com/og-services.jpg"
         breadcrumbs={[{ name: t.nav.services, path: '/services' }]}
          jsonLd={{
            '@context': 'https://schema.org',

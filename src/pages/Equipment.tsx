@@ -88,7 +88,7 @@ const Equipment = () => {
         description="Profesjonalny sprzęt do prania tapicerki i czyszczenia mebli: ekstraktory Santoemma, Kärcher, generatory pary, ozonatory. Ekologiczne środki czyszczące."
         keywords="sprzęt do prania tapicerki, sprzęt do czyszczenia mebli, ekstraktor Santoemma, Kärcher, generator pary, ozonator, profesjonalny sprzęt czyszczący, pranie ekstrakcyjne, technologie czyszczenia, cleaning equipment"
         canonical="/equipment"
-        image="https://masterclean1885.com/og-equipment.png"
+        image="https://masterclean1885.com/og-equipment.jpg"
         breadcrumbs={[{ name: t.nav.equipment, path: '/equipment' }]}
         jsonLd={{
           '@context': 'https://schema.org',
