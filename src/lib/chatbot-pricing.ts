@@ -191,28 +191,6 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     baseEstimator: (qty) => ({ min: 100 * qty, max: 130 * qty }),
     markup: 'none',
   },
-  {
-    key: 'gardening',
-    emoji: '🌿',
-    url: '/handyman',
-    label: {
-      ru: 'Покос/огородник',
-      en: 'Gardening',
-      pl: 'Koszenie / ogród',
-      uk: 'Косіння / сад',
-    },
-    quantityPrompt: {
-      ru: 'Площадь участка, м²?',
-      en: 'Plot area in m²?',
-      pl: 'Powierzchnia działki w m²?',
-      uk: 'Площа ділянки в м²?',
-    },
-    unit: { ru: 'м²', en: 'm²', pl: 'm²', uk: 'м²' },
-    suggestions: [100, 300, 500, 1000],
-    // 1.0-1.5 PLN/m²
-    baseEstimator: (qty) => ({ min: Math.round(qty * 1.0), max: Math.round(qty * 1.5) }),
-    markup: 'gardening',
-  },
 ];
 
 export const isBaseCity = (city: string) => {

@@ -168,7 +168,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
 
   // Cleaning category is only available in Wrocław and Smolec
   const isCleaningCity = slug === 'wroclaw' || slug === 'smolec';
-  const hiddenForNonWroclaw = ['handyman', 'gardening'];
+  const hiddenForNonWroclaw = ['handyman'];
   const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
 
   const allCategories: CategorySection[] = [
@@ -373,11 +373,6 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
         { id: 'aluminumDoorRepair', name: t.handyman?.calcItems?.aluminumDoorRepair || 'Ремонт алюминиевых дверей', price: 200, image: handyAluminumDoor },
         { id: 'windowDoorAdjustment', name: t.handyman?.calcItems?.windowDoorAdjustment || 'Регулировка окон и дверей', price: 200, image: handyWindowAdjustment },
         { id: 'fridgeHinges', name: t.handyman?.calcItems?.fridgeHinges || 'Ремонт петель холодильника', price: 200, image: handyFridgeHinges },
-        { id: 'lawnMowing', name: t.handyman?.calcItems?.lawnMowing || 'Покос травы', price: 1, image: handyLawnMowing, unit: 'm²', priceText: '1.00 - 1.20 zł' },
-        { id: 'lawnMowingHard', name: t.handyman?.calcItems?.lawnMowingHard || 'Покос травы (сложный рельеф)', price: 1.3, image: handyLawnMowingHard, unit: 'm²', priceText: '1.30 - 1.50 zł' },
-        { id: 'grassCleanup', name: t.handyman?.calcItems?.grassCleanup || 'Уборка и вывоз травы', price: 1, image: handyGrassCleanup, unit: 'm²', priceText: '1.00 - 1.50 zł' },
-        { id: 'treeTrimming', name: t.handyman?.calcItems?.treeTrimming || 'Обрезка деревьев', price: 100, image: handyTreeTrimming },
-        { id: 'yardHelp', name: t.handyman?.calcItems?.yardHelp || 'Помощь на участке', price: 100, image: handyYardHelp },
       ],
     },
   ];
