@@ -27,6 +27,7 @@ import PromotionsSection from '@/components/PromotionsSection';
 import { getCityProfile } from '@/data/cityProfiles';
 import { generateCityContent } from '@/data/cityContentGenerator';
 import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
+import CleaningPricingTopBlock from '@/components/CleaningPricingTopBlock';
 
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
@@ -587,6 +588,11 @@ const CityPage = () => {
               </div>
             </div>
           </section>
+        )}
+
+        {/* Cleaning pricing top block (apartment cleaning + extras) — only for Wrocław/Smolec */}
+        {isCleaningCity && (
+          <CleaningPricingTopBlock onSendToForm={handleSendToForm} />
         )}
 
         {/* Price Cards by Category */}
