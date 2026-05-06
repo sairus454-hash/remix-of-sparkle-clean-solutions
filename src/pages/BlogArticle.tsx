@@ -94,20 +94,31 @@ const BlogArticle = () => {
            { name: 'Blog', path: '/blog' },
            { name: article.title, path: `/blog/${article.id}` },
          ]}
-         jsonLd={{
-           '@context': 'https://schema.org',
-           '@type': 'Article',
-           headline: article.title,
-           description: article.summary,
-           datePublished: article.date,
-           author: { '@type': 'Organization', name: 'MasterClean' },
-           publisher: {
-             '@type': 'Organization',
-             name: 'MasterClean',
-             logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/og-image.jpg' },
+         jsonLd={[
+           {
+             '@context': 'https://schema.org',
+             '@type': 'Article',
+             headline: article.title,
+             description: article.summary,
+             datePublished: article.date,
+             author: { '@type': 'Organization', name: 'MasterClean' },
+             publisher: {
+               '@type': 'Organization',
+               name: 'MasterClean',
+               logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/og-image.jpg' },
+             },
+             mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.com/blog/${article.id}` },
            },
-           mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.com/blog/${article.id}` },
-         }}
+           ...(article.faq && article.faq.length > 0 ? [{
+             '@context': 'https://schema.org',
+             '@type': 'FAQPage',
+             mainEntity: article.faq.map(item => ({
+               '@type': 'Question',
+               name: item.q,
+               acceptedAnswer: { '@type': 'Answer', text: item.a },
+             })),
+           }] : []),
+         ]}
        />
       <Layout>
         <section className="py-10 sm:py-16 bg-gradient-section min-h-screen">
