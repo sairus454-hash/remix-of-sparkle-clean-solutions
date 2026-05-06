@@ -34,6 +34,7 @@ export interface BlogArticle {
     h2: string;
     h3: string;
   };
+  faq?: { q: string; a: string }[];
 }
 
 export const blogArticles: Record<string, BlogArticle[]> = {
@@ -230,6 +231,16 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h2: 'От чего зависит цена химчистки дивана',
         h3: 'Как оценить предложение перед заказом',
       },
+      faq: [
+        { q: 'Сколько стоит химчистка дивана в среднем?', a: 'Стандартный двухместный диван — от 150–200 zł, трёхместный — от 180–250 zł, угловой — от 220 до 350 zł и выше при крупном формате или сильных загрязнениях.' },
+        { q: 'От чего зависит цена химчистки дивана?', a: 'От количества посадочных мест, типа ткани, степени загрязнения, наличия функции сна, подушек, шерсти животных и стойких пятен или запахов.' },
+        { q: 'Сколько стоит химчистка углового дивана?', a: 'Чаще всего 220–350 zł. На цену влияют длина углового модуля, наличие функции сна, дополнительные подушки и состояние обивки.' },
+        { q: 'Что входит в стоимость химчистки дивана?', a: 'Оценка материала, подбор средства, предварительное пылесошение, расщепление загрязнений, экстракционная чистка, удаление загрязнений и базовое выведение типовых пятен.' },
+        { q: 'Доплачивают ли за выведение пятен и запахов?', a: 'Да, если пятна сложные (краска, тушь, моча, жир, старый осадок) или нужна нейтрализация запахов от животных, дыма и сырости — это считается дополнительной работой.' },
+        { q: 'Почему цены у разных компаний так отличаются?', a: 'Разница в оборудовании, химии, времени работы и тщательности экстракции. Подозрительно низкая цена часто означает поверхностную чистку без глубокого вымывания загрязнений.' },
+        { q: 'Можно ли удешевить заказ, объединив услуги?', a: 'Да. Совмещение чистки дивана с ковром, матрасом или салоном авто в одну поездку обычно выгоднее, чем заказывать каждую услугу отдельно.' },
+        { q: 'Сколько сохнет диван после химчистки?', a: 'Обычно от нескольких до 12 часов в зависимости от ткани, толщины наполнителя, температуры и вентиляции в помещении.' },
+      ],
     },
   ],
   en: [
@@ -425,6 +436,16 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h2: 'What affects the price of sofa cleaning',
         h3: 'How to evaluate an offer before booking',
       },
+      faq: [
+        { q: 'How much does sofa cleaning cost on average?', a: 'A standard two-seater starts around 150–200 PLN, a three-seater around 180–250 PLN, and a corner sofa typically 220–350 PLN — more for large or heavily soiled units.' },
+        { q: 'What affects the price of sofa cleaning?', a: 'Number of seats, fabric type, level of soiling, sofa-bed function, extra cushions, pet hair and stubborn stains or odors all influence the final price.' },
+        { q: 'How much does corner sofa cleaning cost?', a: 'Most often 220–350 PLN. The price depends on the length of the corner module, sofa-bed function, extra cushions and overall condition of the upholstery.' },
+        { q: 'What is included in the price of sofa cleaning?', a: 'Material assessment, product selection, pre-vacuuming, soil dissolution, extraction cleaning, dirt removal and basic spot stain treatment.' },
+        { q: 'Are stain and odor removal extra?', a: 'Yes, when stains are difficult (paint, ink, urine, grease, old residue) or when pet, smoke or damp odors require dedicated neutralization, this counts as additional work.' },
+        { q: 'Why do prices vary so much between companies?', a: 'Differences come from equipment, chemistry, working time and how thorough the extraction is. A suspiciously low price often hides surface-only cleaning.' },
+        { q: 'Can I save by combining services?', a: 'Yes. Cleaning a sofa together with a carpet, mattress or car interior in one visit is usually more cost-effective than booking each service separately.' },
+        { q: 'How long does a sofa take to dry after cleaning?', a: 'Usually a few to about 12 hours, depending on fabric, padding thickness, room temperature and ventilation.' },
+      ],
     },
   ],
   pl: [
@@ -620,6 +641,16 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h2: 'Od czego zależy cena prania kanapy',
         h3: 'Jak ocenić ofertę przed zamówieniem',
       },
+      faq: [
+        { q: 'Ile kosztuje pranie kanapy średnio?', a: 'Standardowa kanapa dwuosobowa to zwykle 150–200 zł, trzyosobowa 180–250 zł, a narożnik najczęściej 220–350 zł — więcej przy dużych formatach lub silnych zabrudzeniach.' },
+        { q: 'Od czego zależy cena prania kanapy?', a: 'Od liczby miejsc siedzących, rodzaju tkaniny, stopnia zabrudzenia, funkcji spania, liczby poduch, obecności sierści oraz trudnych plam i zapachów.' },
+        { q: 'Ile kosztuje pranie narożnika?', a: 'Najczęściej 220–350 zł. Wpływ ma długość narożnika, funkcja spania, dodatkowe poduchy i ogólny stan tapicerki.' },
+        { q: 'Co obejmuje cena prania kanapy?', a: 'Ocenę materiału, dobór środka, wstępne odkurzanie, rozpuszczenie zabrudzeń, pranie ekstrakcyjne, odessanie brudu oraz podstawowe usuwanie typowych plam.' },
+        { q: 'Czy usuwanie plam i zapachów jest dodatkowo płatne?', a: 'Tak, jeśli plamy są trudne (farba, tusz, mocz, tłuszcz, stary osad) albo potrzebna jest neutralizacja zapachów po zwierzętach, dymie czy wilgoci — to dodatkowy zakres pracy.' },
+        { q: 'Dlaczego ceny różnych firm tak się różnią?', a: 'Różnica wynika ze sprzętu, chemii, czasu pracy i dokładności ekstrakcji. Bardzo niska cena często oznacza powierzchowne czyszczenie bez dokładnego wypłukania brudu.' },
+        { q: 'Czy można zaoszczędzić, łącząc usługi?', a: 'Tak. Pranie kanapy razem z dywanem, materacem lub wnętrzem auta podczas jednej wizyty jest zwykle bardziej opłacalne niż osobne zlecenia.' },
+        { q: 'Ile schnie kanapa po praniu?', a: 'Zwykle od kilku do około 12 godzin — zależnie od tkaniny, grubości wypełnienia, temperatury i wentylacji w pomieszczeniu.' },
+      ],
     },
   ],
   uk: [
@@ -815,6 +846,16 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h2: 'Від чого залежить ціна хімчистки дивана',
         h3: 'Як оцінити пропозицію перед замовленням',
       },
+      faq: [
+        { q: 'Скільки коштує хімчистка дивана в середньому?', a: 'Стандартний двомісний диван — від 150–200 zł, тримісний — від 180–250 zł, кутовий — від 220 до 350 zł і більше для великих форматів чи сильних забруднень.' },
+        { q: 'Від чого залежить ціна хімчистки дивана?', a: 'Від кількості посадкових місць, типу тканини, ступеня забруднення, функції сну, додаткових подушок, наявності шерсті та стійких плям чи запахів.' },
+        { q: 'Скільки коштує хімчистка кутового дивана?', a: 'Найчастіше 220–350 zł. На ціну впливає довжина кутового модуля, функція сну, додаткові подушки та стан оббивки.' },
+        { q: 'Що входить у вартість хімчистки дивана?', a: 'Оцінка матеріалу, підбір засобу, попереднє пилосмочення, розщеплення забруднень, екстракційне чищення, видалення бруду та базове виведення типових плям.' },
+        { q: 'Чи доплачують за виведення плям і запахів?', a: 'Так, якщо плями складні (фарба, туш, сеча, жир, старий осад) або потрібна нейтралізація запахів від тварин, диму чи вологи — це додаткова робота.' },
+        { q: 'Чому ціни в різних компаній так відрізняються?', a: 'Різниця в обладнанні, хімії, часі роботи та ретельності екстракції. Підозріло низька ціна часто означає поверхневе чищення без глибокого вимивання бруду.' },
+        { q: 'Чи можна заощадити, поєднуючи послуги?', a: 'Так. Чищення дивана разом із килимом, матрацом або салоном авто за один візит зазвичай вигідніше, ніж окремі замовлення.' },
+        { q: 'Скільки сохне диван після хімчистки?', a: 'Зазвичай від кількох до близько 12 годин — залежно від тканини, товщини наповнювача, температури та вентиляції в приміщенні.' },
+      ],
     },
   ],
 };

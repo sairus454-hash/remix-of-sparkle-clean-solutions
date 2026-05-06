@@ -94,20 +94,31 @@ const BlogArticle = () => {
            { name: 'Blog', path: '/blog' },
            { name: article.title, path: `/blog/${article.id}` },
          ]}
-         jsonLd={{
-           '@context': 'https://schema.org',
-           '@type': 'Article',
-           headline: article.title,
-           description: article.summary,
-           datePublished: article.date,
-           author: { '@type': 'Organization', name: 'MasterClean' },
-           publisher: {
-             '@type': 'Organization',
-             name: 'MasterClean',
-             logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/og-image.jpg' },
+         jsonLd={[
+           {
+             '@context': 'https://schema.org',
+             '@type': 'Article',
+             headline: article.title,
+             description: article.summary,
+             datePublished: article.date,
+             author: { '@type': 'Organization', name: 'MasterClean' },
+             publisher: {
+               '@type': 'Organization',
+               name: 'MasterClean',
+               logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/og-image.jpg' },
+             },
+             mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.com/blog/${article.id}` },
            },
-           mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.com/blog/${article.id}` },
-         }}
+           ...(article.faq && article.faq.length > 0 ? [{
+             '@context': 'https://schema.org',
+             '@type': 'FAQPage',
+             mainEntity: article.faq.map(item => ({
+               '@type': 'Question',
+               name: item.q,
+               acceptedAnswer: { '@type': 'Answer', text: item.a },
+             })),
+           }] : []),
+         ]}
        />
       <Layout>
         <section className="py-10 sm:py-16 bg-gradient-section min-h-screen">
@@ -175,6 +186,34 @@ const BlogArticle = () => {
                 </p>
               </div>
             </div>
+
+            {/* FAQ */}
+            {article.faq && article.faq.length > 0 && (
+              <div className="mt-10">
+                <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-4">
+                  {language === 'pl' ? 'Najczęściej zadawane pytania'
+                    : language === 'en' ? 'Frequently Asked Questions'
+                    : language === 'uk' ? 'Часті запитання'
+                    : 'Часто задаваемые вопросы'}
+                </h2>
+                <div className="space-y-3">
+                  {article.faq.map((item, idx) => (
+                    <details
+                      key={idx}
+                      className="group bg-card border border-border rounded-xl p-4 shadow-sm open:shadow-md transition-shadow"
+                    >
+                      <summary className="cursor-pointer list-none flex items-start justify-between gap-3 font-semibold text-foreground">
+                        <span>{item.q}</span>
+                        <span className="text-primary text-xl leading-none transition-transform group-open:rotate-45">+</span>
+                      </summary>
+                      <p className="mt-3 text-muted-foreground text-sm leading-relaxed">
+                        {item.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Comments Section */}
             <div className="mt-12 pt-8 border-t border-border">
