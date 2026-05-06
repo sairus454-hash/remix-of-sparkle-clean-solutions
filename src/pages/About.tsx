@@ -19,11 +19,59 @@ const TikTokIcon = ({
 }) => <svg className={className} viewBox="0 0 24 24" fill="currentColor">
     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
   </svg>;
+const FAQS: Record<string, { q: string; a: string }[]> = {
+  pl: [
+    { q: 'Jak długo MasterClean działa na rynku?', a: 'Działamy od 2022 roku, mamy ponad 1000 zadowolonych klientów we Wrocławiu, Opolu, Poznaniu i Zielonej Górze.' },
+    { q: 'Czy świadczycie usługi u klienta w domu?', a: 'Tak, większość usług — pranie kanap, dywanów, materacy, foteli i czyszczenie samochodów — wykonujemy bezpośrednio u klienta.' },
+    { q: 'Jakich środków używacie do czyszczenia?', a: 'Stosujemy profesjonalną chemię ekologiczną, bezpieczną dla dzieci, alergików i zwierząt. Posiadamy atesty producentów.' },
+    { q: 'Ile trwa schnięcie kanapy lub dywanu po praniu?', a: 'Średnio 4–8 godzin. Dzięki ekstrakcji i mocnej turbinie wilgoć jest odciągana, więc materiał szybko wraca do użytku.' },
+    { q: 'Czy dajecie gwarancję na wykonaną usługę?', a: 'Tak, udzielamy 7-dniowej gwarancji jakości — w razie zastrzeżeń wracamy i poprawiamy bezpłatnie.' },
+    { q: 'W jakich miastach pracujecie?', a: 'Wrocław i Smolec — bez dopłat. Obsługujemy też Opole, Poznań, Zieloną Górę i 30+ miejscowości w okolicy.' },
+    { q: 'Jak mogę zamówić usługę?', a: 'Przez formularz na stronie, czat na żywo, telefonicznie pod +48 575 211 401 lub WhatsApp. Termin potwierdzamy w ciągu kilku minut.' },
+  ],
+  ru: [
+    { q: 'Как давно работает MasterClean?', a: 'Мы работаем с 2022 года, выполнили более 1000 заказов во Вроцлаве, Ополе, Познани и Зелёной Гуре.' },
+    { q: 'Вы выезжаете на дом к клиенту?', a: 'Да, большинство услуг — чистку диванов, ковров, матрасов, кресел и автомобилей — выполняем прямо у клиента.' },
+    { q: 'Какие средства используете для чистки?', a: 'Профессиональную экологичную химию, безопасную для детей, аллергиков и животных. Все средства сертифицированы.' },
+    { q: 'Сколько сохнет диван или ковёр после чистки?', a: 'В среднем 4–8 часов. Экстрактор с мощной турбиной вытягивает влагу, и мебель быстро возвращается в эксплуатацию.' },
+    { q: 'Даёте ли гарантию на услугу?', a: 'Да, 7 дней гарантии качества — если что-то не устроит, бесплатно приедем и переделаем.' },
+    { q: 'В каких городах вы работаете?', a: 'Вроцлав и Смолец — без доплат. Также Ополе, Познань, Зелёная Гура и более 30 населённых пунктов рядом.' },
+    { q: 'Как заказать услугу?', a: 'Через форму на сайте, онлайн-чат, по телефону +48 575 211 401 или WhatsApp. Подтверждаем заявку в течение нескольких минут.' },
+  ],
+  uk: [
+    { q: 'Як давно працює MasterClean?', a: 'Ми працюємо з 2022 року, виконали понад 1000 замовлень у Вроцлаві, Ополе, Познані та Зеленій Гурі.' },
+    { q: 'Ви виїжджаєте до клієнта додому?', a: 'Так, більшість послуг — чистку диванів, килимів, матраців, крісел та авто — виконуємо безпосередньо у клієнта.' },
+    { q: 'Які засоби ви використовуєте?', a: 'Професійну екологічну хімію, безпечну для дітей, алергіків і тварин. Усі засоби сертифіковані.' },
+    { q: 'Скільки сохне диван або килим після чистки?', a: 'У середньому 4–8 годин. Екстрактор з потужною турбіною витягує вологу, і меблі швидко повертаються в експлуатацію.' },
+    { q: 'Чи даєте гарантію на послугу?', a: 'Так, 7 днів гарантії якості — якщо щось не влаштує, безкоштовно приїдемо і переробимо.' },
+    { q: 'У яких містах ви працюєте?', a: 'Вроцлав і Смолец — без доплат. Також Ополе, Познань, Зелена Гура і понад 30 населених пунктів поруч.' },
+    { q: 'Як замовити послугу?', a: 'Через форму на сайті, онлайн-чат, телефоном +48 575 211 401 або WhatsApp. Підтверджуємо замовлення за кілька хвилин.' },
+  ],
+  en: [
+    { q: 'How long has MasterClean been operating?', a: 'We have been operating since 2022 and completed over 1000 orders in Wrocław, Opole, Poznań and Zielona Góra.' },
+    { q: 'Do you provide on-site cleaning?', a: 'Yes, most services — sofa, carpet, mattress, armchair and car interior cleaning — are performed at the client\'s location.' },
+    { q: 'What products do you use?', a: 'Professional eco-friendly chemistry, safe for children, allergy sufferers and pets. All products are certified.' },
+    { q: 'How long does a sofa or carpet take to dry?', a: 'On average 4–8 hours. A powerful extractor pulls out moisture, so the furniture is quickly ready for use again.' },
+    { q: 'Do you offer a service guarantee?', a: 'Yes, a 7-day quality guarantee — if anything is not right, we come back and redo the work for free.' },
+    { q: 'Which cities do you cover?', a: 'Wrocław and Smolec with no extra charge. We also serve Opole, Poznań, Zielona Góra and 30+ nearby locations.' },
+    { q: 'How can I book a service?', a: 'Via the website form, live chat, phone +48 575 211 401 or WhatsApp. We confirm bookings within minutes.' },
+  ],
+};
+
+const FAQ_TITLE: Record<string, string> = {
+  pl: 'Najczęściej zadawane pytania',
+  ru: 'Часто задаваемые вопросы',
+  uk: 'Часті запитання',
+  en: 'Frequently Asked Questions',
+};
+
 const About = () => {
   const {
     t, language
   } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('about');
+  const faqs = FAQS[language] || FAQS.pl;
+  const faqTitle = FAQ_TITLE[language] || FAQ_TITLE.pl;
   const values = [{
     icon: Award,
     title: t.equipment.quality,
