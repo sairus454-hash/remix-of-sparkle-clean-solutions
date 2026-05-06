@@ -12,12 +12,12 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setIsFading(true);
-    }, 500);
+    }, 200);
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
       onComplete();
-    }, 700);
+    }, 350);
 
     return () => {
       clearTimeout(fadeTimer);
