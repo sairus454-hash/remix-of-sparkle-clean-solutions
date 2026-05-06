@@ -64,13 +64,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Preload critical font files (Inter 400/600 + Playfair 700) for faster LCP -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/inter/v19/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDXbtY.woff2" />
+    <!-- NOTE: We intentionally do NOT preload individual woff2 files from Google Fonts.
+         Google rotates the file hashes per browser/UA and over time, so any hard-coded
+         <link rel="preload" as="font"> would download a file the CSS never references,
+         producing wasted requests without preventing FOUT. Instead we:
+           1. preconnect to fonts.gstatic.com (above)
+           2. preload the Google Fonts stylesheet (below) so @font-face declarations
+              are parsed ASAP and the browser can fetch the exact subset+weight it needs
+           3. rely on font-display: swap (already in the URL) to avoid FOIT
+         The CSS request asks only for the weights actually used in the UI:
+           Inter 400/500/600/700, Playfair Display 600/700.
+         Subsets latin + latin-ext + cyrillic are auto-served based on document language. -->
 
     <!-- Preload the Google Fonts CSS so the browser fetches it ASAP, then swap to stylesheet -->
     <link rel="preload" as="style"
