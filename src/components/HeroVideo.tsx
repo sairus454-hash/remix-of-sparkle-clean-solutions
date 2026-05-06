@@ -25,6 +25,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
   }, []);
 
   const effectivePoster = poster || fallbackImage;
+  const webmSrc = src.replace(/\.mp4(\?.*)?$/i, '.webm$1');
 
   return (
     <div
