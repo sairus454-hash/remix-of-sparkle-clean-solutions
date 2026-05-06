@@ -132,7 +132,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
           </div>
         </div>
 
-        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row sm:flex-wrap justify-between items-center gap-4 min-w-0">
           <div className="text-background/80 text-xs sm:text-sm text-center sm:text-left">
             <p>© {new Date().getFullYear()} MasterClean. {t.footer.rights}</p>
             <p className="mt-1">NIP: 8943280388</p>
@@ -180,7 +180,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={oferteoLabel}
-                className="hover:scale-105 transition-transform shrink-0"
+                className="hover:scale-105 transition-transform shrink-0 max-w-full inline-block"
               >
                 <img
                   src="https://www.oferteo.pl/images/buttons/badge-best-current-2026.png"
@@ -188,7 +188,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                   loading="lazy"
                   width={192}
                   height={70}
-                  className="w-28 sm:w-40 md:w-48 h-auto drop-shadow-md"
+                  className="w-24 sm:w-36 md:w-44 max-w-full h-auto drop-shadow-md"
                 />
               </a>
             );
