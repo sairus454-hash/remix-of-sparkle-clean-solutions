@@ -18,6 +18,7 @@ import SmartServiceFilter from '@/components/SmartServiceFilter';
 import CleaningExtrasCheckboxes from '@/components/CleaningExtrasCheckboxes';
 import ApartmentCleaningPricing from '@/components/ApartmentCleaningPricing';
 import HouseCleaningPricing from '@/components/HouseCleaningPricing';
+import OferteoBadge from '@/components/OferteoBadge';
 
 import { Slider } from '@/components/ui/slider';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -729,6 +730,7 @@ const Cleaning = () => {
         </div>
       </section>
 
+      <OferteoBadge />
     </Layout>
     <QuickOrderDialog
       open={quickOrderOpen}

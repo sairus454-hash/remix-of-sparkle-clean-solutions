@@ -10,6 +10,7 @@ import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'l
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 import CircularRevealCard from '@/components/CircularRevealCard';
+import OferteoBadge from '@/components/OferteoBadge';
 
 const About3DCarousel = lazy(() => import('@/components/About3DCarousel'));
 const PolandRegionsMap = lazy(() => import('@/components/PolandRegionsMap'));
@@ -378,6 +379,7 @@ const About = () => {
             </div>
           </div>
         </section>
+        <OferteoBadge />
       </Layout>
     </>;
 };
