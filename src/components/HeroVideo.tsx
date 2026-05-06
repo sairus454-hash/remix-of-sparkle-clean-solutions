@@ -1,5 +1,4 @@
-import { useRef, useState, useCallback } from 'react';
-import { createPortal } from 'react-dom';
+import { useRef, useState, useCallback, useEffect } from 'react';
 
 interface HeroVideoProps {
   src?: string;
@@ -14,6 +13,20 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
   const containerRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
   const [isMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
+  // Defer video loading until after LCP — avoids competing with hero image bandwidth.
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    if (isMobile) return;
+    const start = () => setShouldLoadVideo(true);
+    // Wait for browser to be idle (after LCP) before loading video
+    if ('requestIdleCallback' in window) {
+      const id = (window as any).requestIdleCallback(start, { timeout: 3000 });
+      return () => (window as any).cancelIdleCallback?.(id);
+    }
+    const t = setTimeout(start, 2500);
+    return () => clearTimeout(t);
+  }, [isMobile]);
 
   const handleCanPlay = useCallback(() => {
     setVideoReady(true);
@@ -33,11 +46,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
       className="relative w-full overflow-hidden"
       style={{ height: '80vh', maxWidth: 'none', padding: 0 }}
     >
-      {/* WebM source (smaller; supported by Chrome/Firefox/Edge/Android) — preload only on desktop */}
-      {!isMobile && createPortal(
-        <link rel="preload" as="video" href={webmSrc} type="video/webm" />,
-        document.head
-      )}
+
 
       {/* Fallback image — always on mobile */}
       {fallbackImage && isMobile && (
