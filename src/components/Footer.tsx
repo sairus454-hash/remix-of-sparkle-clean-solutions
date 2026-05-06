@@ -180,7 +180,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={oferteoLabel}
-                className="hover:scale-105 transition-transform shrink-0"
+                className="hover:scale-105 transition-transform shrink-0 max-w-full inline-block"
               >
                 <img
                   src="https://www.oferteo.pl/images/buttons/badge-best-current-2026.png"
@@ -188,7 +188,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                   loading="lazy"
                   width={192}
                   height={70}
-                  className="w-28 sm:w-40 md:w-48 h-auto drop-shadow-md"
+                  className="w-24 sm:w-36 md:w-44 max-w-full h-auto drop-shadow-md"
                 />
               </a>
             );
