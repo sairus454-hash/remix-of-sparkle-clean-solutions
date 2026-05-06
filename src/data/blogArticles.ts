@@ -641,6 +641,16 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h2: 'Od czego zależy cena prania kanapy',
         h3: 'Jak ocenić ofertę przed zamówieniem',
       },
+      faq: [
+        { q: 'Ile kosztuje pranie kanapy średnio?', a: 'Standardowa kanapa dwuosobowa to zwykle 150–200 zł, trzyosobowa 180–250 zł, a narożnik najczęściej 220–350 zł — więcej przy dużych formatach lub silnych zabrudzeniach.' },
+        { q: 'Od czego zależy cena prania kanapy?', a: 'Od liczby miejsc siedzących, rodzaju tkaniny, stopnia zabrudzenia, funkcji spania, liczby poduch, obecności sierści oraz trudnych plam i zapachów.' },
+        { q: 'Ile kosztuje pranie narożnika?', a: 'Najczęściej 220–350 zł. Wpływ ma długość narożnika, funkcja spania, dodatkowe poduchy i ogólny stan tapicerki.' },
+        { q: 'Co obejmuje cena prania kanapy?', a: 'Ocenę materiału, dobór środka, wstępne odkurzanie, rozpuszczenie zabrudzeń, pranie ekstrakcyjne, odessanie brudu oraz podstawowe usuwanie typowych plam.' },
+        { q: 'Czy usuwanie plam i zapachów jest dodatkowo płatne?', a: 'Tak, jeśli plamy są trudne (farba, tusz, mocz, tłuszcz, stary osad) albo potrzebna jest neutralizacja zapachów po zwierzętach, dymie czy wilgoci — to dodatkowy zakres pracy.' },
+        { q: 'Dlaczego ceny różnych firm tak się różnią?', a: 'Różnica wynika ze sprzętu, chemii, czasu pracy i dokładności ekstrakcji. Bardzo niska cena często oznacza powierzchowne czyszczenie bez dokładnego wypłukania brudu.' },
+        { q: 'Czy można zaoszczędzić, łącząc usługi?', a: 'Tak. Pranie kanapy razem z dywanem, materacem lub wnętrzem auta podczas jednej wizyty jest zwykle bardziej opłacalne niż osobne zlecenia.' },
+        { q: 'Ile schnie kanapa po praniu?', a: 'Zwykle od kilku do około 12 godzin — zależnie od tkaniny, grubości wypełnienia, temperatury i wentylacji w pomieszczeniu.' },
+      ],
     },
   ],
   uk: [
