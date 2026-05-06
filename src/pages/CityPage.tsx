@@ -590,6 +590,11 @@ const CityPage = () => {
           </section>
         )}
 
+        {/* Cleaning pricing top block (apartment cleaning + extras) — only for Wrocław/Smolec */}
+        {isCleaningCity && (
+          <CleaningPricingTopBlock onSendToForm={handleSendToForm} />
+        )}
+
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
