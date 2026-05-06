@@ -50,7 +50,7 @@ const Contacts = () => {
         description="Skontaktuj się z MasterClean: tel. +48 575 211 401. Zamów pranie tapicerki, czyszczenie mebli, dywanów lub sprzątanie. Pracujemy 24/7. Wrocław, Opole, Poznań."
         keywords="kontakt MasterClean, zamów pranie tapicerki, kontakt firma sprzątająca, zamów czyszczenie mebli, zamów chemczystkę mebli, zamów sprzątanie Wrocław, telefon MasterClean, czyszczenie tapicerki kontakt, Opole"
         canonical="/contacts"
-        image="https://masterclean1885.com/og-contacts.png"
+        image="https://masterclean1885.com/og-contacts.jpg"
         breadcrumbs={[{ name: t.nav.contacts, path: '/contacts' }]}
         jsonLd={{
           '@context': 'https://schema.org',
@@ -59,7 +59,7 @@ const Contacts = () => {
             '@type': 'LocalBusiness',
             '@id': 'https://masterclean1885.com/#localbusiness',
             name: 'MasterClean 1885',
-            image: 'https://masterclean1885.com/og-contacts.png',
+            image: 'https://masterclean1885.com/og-contacts.jpg',
             url: 'https://masterclean1885.com/contacts',
             telephone: '+48575211401',
             email: 'sairus454@gmail.com',

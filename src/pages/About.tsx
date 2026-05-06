@@ -43,7 +43,7 @@ const About = () => {
         description="MasterClean — profesjonalna firma czyszcząca we Wrocławiu. Pranie tapicerki meblowej i samochodowej, czyszczenie dywanów, materacy, ozonowanie, mycie okien."
         keywords="o nas MasterClean, firma czyszcząca Wrocław, profesjonalne pranie tapicerki, firma sprzątająca Wrocław, czyszczenie mebli Wrocław, pranie tapicerki Opole, czyszczenie dywanów, chemczystka mebli, cleaning company Poland, usługi czyszczenia Wrocław"
         canonical="/about"
-        image="https://masterclean1885.com/og-about.png"
+        image="https://masterclean1885.com/og-about.jpg"
         breadcrumbs={[{ name: t.nav.about, path: '/about' }]}
         jsonLd={{
           '@context': 'https://schema.org',

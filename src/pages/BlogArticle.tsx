@@ -104,7 +104,7 @@ const BlogArticle = () => {
            publisher: {
              '@type': 'Organization',
              name: 'MasterClean',
-             logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/og-image.png' },
+             logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/og-image.jpg' },
            },
            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.com/blog/${article.id}` },
          }}
