@@ -22,7 +22,7 @@ import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
-import CleaningPricingTopBlock from '@/components/CleaningPricingTopBlock';
+
 import { CalculatorItem } from '@/types/calculator';
 
 const Prices = () => {
@@ -320,8 +320,6 @@ const Prices = () => {
           </div>
         </section>
 
-        {/* Cleaning pricing + extras (top of page) */}
-        <CleaningPricingTopBlock onSendToForm={handleSendToForm} />
 
         <MobilePromotionsCard />
 
