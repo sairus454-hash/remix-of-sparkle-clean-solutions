@@ -32,9 +32,9 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
       className="relative w-full overflow-hidden"
       style={{ height: '80vh', maxWidth: 'none', padding: 0 }}
     >
-      {/* Preload video in <head> for faster network fetch on desktop */}
+      {/* WebM source (smaller; supported by Chrome/Firefox/Edge/Android) — preload only on desktop */}
       {!isMobile && createPortal(
-        <link rel="preload" as="video" href={src} type="video/mp4" />,
+        <link rel="preload" as="video" href={webmSrc} type="video/webm" />,
         document.head
       )}
 
@@ -67,7 +67,6 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
           )}
           <video
             ref={videoRef}
-            src={src}
             autoPlay
             muted
             loop
@@ -79,7 +78,10 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
             onError={handleError}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
             style={{ opacity: videoReady ? 1 : 0 }}
-          />
+          >
+            <source src={webmSrc} type="video/webm" />
+            <source src={src} type="video/mp4" />
+          </video>
         </>
       )}
 
