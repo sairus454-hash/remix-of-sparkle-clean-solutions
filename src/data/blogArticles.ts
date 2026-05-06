@@ -436,6 +436,16 @@ export const blogArticles: Record<string, BlogArticle[]> = {
         h2: 'What affects the price of sofa cleaning',
         h3: 'How to evaluate an offer before booking',
       },
+      faq: [
+        { q: 'How much does sofa cleaning cost on average?', a: 'A standard two-seater starts around 150–200 PLN, a three-seater around 180–250 PLN, and a corner sofa typically 220–350 PLN — more for large or heavily soiled units.' },
+        { q: 'What affects the price of sofa cleaning?', a: 'Number of seats, fabric type, level of soiling, sofa-bed function, extra cushions, pet hair and stubborn stains or odors all influence the final price.' },
+        { q: 'How much does corner sofa cleaning cost?', a: 'Most often 220–350 PLN. The price depends on the length of the corner module, sofa-bed function, extra cushions and overall condition of the upholstery.' },
+        { q: 'What is included in the price of sofa cleaning?', a: 'Material assessment, product selection, pre-vacuuming, soil dissolution, extraction cleaning, dirt removal and basic spot stain treatment.' },
+        { q: 'Are stain and odor removal extra?', a: 'Yes, when stains are difficult (paint, ink, urine, grease, old residue) or when pet, smoke or damp odors require dedicated neutralization, this counts as additional work.' },
+        { q: 'Why do prices vary so much between companies?', a: 'Differences come from equipment, chemistry, working time and how thorough the extraction is. A suspiciously low price often hides surface-only cleaning.' },
+        { q: 'Can I save by combining services?', a: 'Yes. Cleaning a sofa together with a carpet, mattress or car interior in one visit is usually more cost-effective than booking each service separately.' },
+        { q: 'How long does a sofa take to dry after cleaning?', a: 'Usually a few to about 12 hours, depending on fabric, padding thickness, room temperature and ventilation.' },
+      ],
     },
   ],
   pl: [
