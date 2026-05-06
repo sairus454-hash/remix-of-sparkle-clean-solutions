@@ -240,11 +240,7 @@ const Prices = () => {
     },
   ];
 
-      ],
-    },
-  ];
-
-  const hiddenForNonWroclaw = ['handyman', 'gardening'];
+  const hiddenForNonWroclaw = ['handyman'];
   const hiddenOtherServicesOutsideBase = ['carpetPickup', 'carpetCoveringImpregnation'];
   const categories = useMemo(() => {
     const filtered = isWroclaw ? allCategories : allCategories.filter(c => !hiddenForNonWroclaw.includes(c.id));
