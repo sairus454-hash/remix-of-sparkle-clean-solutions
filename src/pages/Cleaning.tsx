@@ -157,6 +157,7 @@ const Cleaning = () => {
 
   const handleCardToForm = (calcItems: any[], calcTotal: number) => {
     formRef.current?.setCalculatorData(calcItems, calcTotal);
+    formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const handleQuickAdd = (calcItems: any[], calcTotal: number) => {
