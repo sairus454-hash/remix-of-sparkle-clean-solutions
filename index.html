@@ -64,23 +64,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- NOTE: We intentionally do NOT preload individual woff2 files from Google Fonts.
-         Google rotates the file hashes per browser/UA and over time, so any hard-coded
-         <link rel="preload" as="font"> would download a file the CSS never references,
-         producing wasted requests without preventing FOUT. Instead we:
-           1. preconnect to fonts.gstatic.com (above)
-           2. preload the Google Fonts stylesheet (below) so @font-face declarations
-              are parsed ASAP and the browser can fetch the exact subset+weight it needs
-           3. rely on font-display: swap (already in the URL) to avoid FOIT
-         The CSS request asks only for the weights actually used in the UI:
-           Inter 400/500/600/700, Playfair Display 600/700.
-         Subsets latin + latin-ext + cyrillic are auto-served based on document language. -->
-
-    <!-- Preload the Google Fonts CSS so the browser fetches it ASAP, then swap to stylesheet -->
+    <!-- Fonts: only the weights actually used in UI.
+         Inter: 400 (body), 600 (semibold), 700 (bold). 500 dropped — Tailwind font-medium falls back to 600.
+         Playfair Display: 700 only — used for hero/section headings.
+         font-display=swap avoids FOIT; preload+onload swaps the stylesheet without blocking render. -->
     <link rel="preload" as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
       onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" /></noscript>
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" /></noscript>
 
     <!-- Video loads on-demand via HeroVideo component -->
     
