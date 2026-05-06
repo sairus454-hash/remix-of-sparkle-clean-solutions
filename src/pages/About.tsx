@@ -8,6 +8,7 @@ import CircularRevealCard from '@/components/CircularRevealCard';
 import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
 import About3DCarousel from '@/components/About3DCarousel';
 import PolandRegionsMap from '@/components/PolandRegionsMap';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 
 
@@ -313,6 +314,27 @@ const About = () => {
                 </CircularRevealCard>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section aria-labelledby="about-faq-heading" className="py-16 sm:py-20 bg-card/80 backdrop-blur-sm">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 id="about-faq-heading" className="font-serif text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+              {faqTitle}
+            </h2>
+            <Accordion type="single" collapsible className="w-full space-y-3">
+              {faqs.map((f, i) => (
+                <AccordionItem key={i} value={`faq-${i}`} className="bg-card border border-border rounded-xl px-4 shadow-card">
+                  <AccordionTrigger className="text-left font-semibold text-foreground hover:no-underline">
+                    {f.q}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground leading-relaxed">
+                    {f.a}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
 
