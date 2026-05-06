@@ -320,16 +320,7 @@ const CityPage = () => {
   };
 
   const filteredCategories = isCleaningCity
-    ? [
-        // Standard + General cleaning at the top with sliders (base Wrocław prices)
-        ...buildCleaningSlim(false),
-        // Full original categories — cleaning category retains extras (oven, fridge, etc.)
-        ...categories.map(c =>
-          c.id === 'cleaning'
-            ? { ...c, items: c.items.filter(i => i.id !== 'cleaning-standard' && i.id !== 'cleaning-general') }
-            : c
-        ),
-      ]
+    ? categories.filter(c => c.id !== 'cleaning')
     : categories
         .filter(c => c.id !== 'cleaning' && c.id !== 'handyman' && c.id !== 'gardening')
         .map(cat => {
