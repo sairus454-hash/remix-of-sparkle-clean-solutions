@@ -21,6 +21,7 @@ import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 
 import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
+import CleaningPricingTopBlock from '@/components/CleaningPricingTopBlock';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 
 import { CalculatorItem } from '@/types/calculator';
