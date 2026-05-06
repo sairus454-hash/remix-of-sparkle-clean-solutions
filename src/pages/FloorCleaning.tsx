@@ -9,6 +9,7 @@ import AnimatedImage from '@/components/AnimatedImage';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import FloorWorksCarousel from '@/components/FloorWorksCarousel';
+import OferteoBadge from '@/components/OferteoBadge';
 import { CalculatorItem } from '@/types/calculator';
 import { Layers, Sparkles, ShieldCheck, Droplets, CheckCircle2, Truck, HelpCircle } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -569,6 +570,7 @@ const FloorCleaning = () => {
             </p>
           </div>
         </section>
+        <OferteoBadge />
       </Layout>
     </>
   );
