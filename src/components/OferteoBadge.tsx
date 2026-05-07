@@ -15,6 +15,11 @@ const OferteoBadge = () => {
     : language === 'uk' ? 'Fixly — Топ виконавець 2025 — MasterClean'
     : language === 'en' ? 'Fixly — Top contractor 2025 — MasterClean'
     : 'Fixly — Top wykonawca 2025 — MasterClean';
+  const olawaLabel =
+    language === 'ru' ? 'Сотрудничество с администрацией города Олава'
+    : language === 'uk' ? 'Співпраця з адміністрацією міста Олава'
+    : language === 'en' ? 'Cooperation with the City Administration of Oława'
+    : 'Współpraca z Administracją Miasta Oława';
 
   return (
     <section className="py-8 bg-gradient-section">
