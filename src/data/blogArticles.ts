@@ -15,6 +15,7 @@ import sabrinaVsKarcher from '@/assets/sabrina-vs-karcher-blog.jpg';
 import mattressOzonationBlog from '@/assets/mattress-ozonation-blog.jpg';
 import upholsteryFrequencyBlog from '@/assets/upholstery-cleaning-frequency-blog.webp';
 import sofaCleaningPriceBlog from '@/assets/sofa-cleaning-price-blog.webp';
+import mattressOdorBlog from '@/assets/mattress-odor-removal-blog.webp';
 
 export interface BlogArticle {
   id: number;
