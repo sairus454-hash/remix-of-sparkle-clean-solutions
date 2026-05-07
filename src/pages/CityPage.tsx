@@ -28,6 +28,7 @@ import { getCityProfile } from '@/data/cityProfiles';
 import { generateCityContent } from '@/data/cityContentGenerator';
 import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 import CleaningPricingTopBlock from '@/components/CleaningPricingTopBlock';
+import olawaPartnerBadge from '@/assets/partner-olawa-badge-3.jpg';
 
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
@@ -443,6 +444,55 @@ const CityPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Oława partnership block */}
+        {city.slug === 'olawa' && (
+          <section className="py-8 sm:py-12 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto rounded-2xl border border-primary/30 bg-card shadow-elegant p-5 sm:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                <img
+                  src={olawaPartnerBadge}
+                  alt={
+                    language === 'pl' ? 'Współpraca z Administracją Miasta Oława' :
+                    language === 'ru' ? 'Сотрудничество с администрацией города Олава' :
+                    language === 'uk' ? 'Співпраця з адміністрацією міста Олава' :
+                    'Cooperation with the City Administration of Oława'
+                  }
+                  loading="lazy"
+                  width={320}
+                  height={320}
+                  className="w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 object-contain rounded-full shadow-lg flex-shrink-0"
+                />
+                <div className="space-y-3 text-center md:text-left">
+                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
+                    {language === 'pl' ? 'Współpraca z Administracją Miasta Oława' :
+                     language === 'ru' ? 'Сотрудничество с администрацией города Олава' :
+                     language === 'uk' ? 'Співпраця з адміністрацією міста Олава' :
+                     'Cooperation with the City Administration of Oława'}
+                  </h2>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {language === 'pl'
+                      ? 'MasterClean jest oficjalnym partnerem Administracji Miasta Oława w zakresie profesjonalnego prania tapicerki, materacy, dywanów oraz czyszczenia wnętrz pojazdów. Współpracujemy z lokalnymi instytucjami, szkołami i obiektami komunalnymi, dbając o czystość i higienę miejskich przestrzeni.'
+                      : language === 'ru'
+                      ? 'MasterClean — официальный партнёр администрации города Олава по профессиональной химчистке мягкой мебели, матрасов, ковров и уборке салонов автомобилей. Мы сотрудничаем с местными учреждениями, школами и коммунальными объектами, заботясь о чистоте и гигиене городских пространств.'
+                      : language === 'uk'
+                      ? 'MasterClean — офіційний партнер адміністрації міста Олава у сфері професійної хімчистки м’яких меблів, матраців, килимів та чищення салонів автомобілів. Ми співпрацюємо з місцевими установами, школами та комунальними об’єктами, дбаючи про чистоту й гігієну міських просторів.'
+                      : 'MasterClean is an official partner of the City Administration of Oława for professional upholstery, mattress and carpet cleaning, as well as car interior care. We cooperate with local institutions, schools and municipal facilities to keep the city clean and hygienic.'}
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    {language === 'pl'
+                      ? 'Dla mieszkańców Oławy oznacza to gwarancję sprawdzonego wykonawcy, profesjonalny sprzęt Santoemma oraz bezpieczne, hipoalergiczne środki czyszczące — w domach, biurach i obiektach publicznych.'
+                      : language === 'ru'
+                      ? 'Для жителей Олавы это гарантия проверенного исполнителя, профессиональное оборудование Santoemma и безопасные гипоаллергенные средства — в квартирах, офисах и общественных учреждениях.'
+                      : language === 'uk'
+                      ? 'Для мешканців Олави це гарантія перевіреного виконавця, професійне обладнання Santoemma та безпечні гіпоалергенні засоби — у квартирах, офісах і громадських установах.'
+                      : 'For Oława residents this means a verified contractor, professional Santoemma equipment and safe hypoallergenic products — at home, in offices and in public facilities.'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Promotions */}
         <section className="py-8 sm:py-12 bg-background">
