@@ -400,7 +400,7 @@ const CityPage = () => {
             {
               '@type': 'Service',
               name: `MasterClean — ${city.name}`,
-              description: city.seo.description,
+              description: seoDescription,
               url: `https://masterclean1885.com/city/${city.slug}`,
               areaServed: {
                 '@type': 'City',
