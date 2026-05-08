@@ -143,7 +143,14 @@ const CityPage = () => {
   const profile = getCityProfile(city.slug);
   const generated = generateCityContent(city.name, city.slug, lang as 'pl' | 'ru' | 'en' | 'uk', profile);
   const baseFaqs = getFaqData(language, city.name, isWroclaw);
-  const faqData = [...generated.faqs, ...baseFaqs];
+  const extraFaqs = CITY_EXTRA_FAQS[city.slug]?.[language] || [];
+  const faqData = [...extraFaqs, ...generated.faqs, ...baseFaqs];
+
+  // Per-city SEO overrides (title/description/keywords)
+  const seoOverride = CITY_SEO_OVERRIDES[city.slug]?.[language];
+  const seoTitle = seoOverride?.title || city.seo.title;
+  const seoDescription = seoOverride?.description || city.seo.description;
+  const seoKeywords = seoOverride?.keywords || city.seo.keywords;
 
   const META = getServiceCategoryMeta(t);
   const categories = [
