@@ -388,9 +388,9 @@ const CityPage = () => {
   return (
     <>
       <SEO
-        title={city.seo.title}
-        description={city.seo.description}
-        keywords={city.seo.keywords}
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
         canonical={`/city/${city.slug}`}
         image={`https://masterclean1885.com/og-${city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug}.png`}
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
