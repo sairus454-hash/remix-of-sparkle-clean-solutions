@@ -817,6 +817,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       ],
     },
   ],
+  uk: [
     {
       id: 1,
       title: 'Як часто потрібно чистити диван?',
