@@ -30,6 +30,58 @@ import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 import CleaningPricingTopBlock from '@/components/CleaningPricingTopBlock';
 import olawaPartnerBadge from '@/assets/partner-olawa-badge-3.jpg';
 
+// Per-city, per-language SEO overrides for cities that need extra optimization
+const CITY_SEO_OVERRIDES: Record<string, Record<string, { title: string; description: string; keywords: string }>> = {
+  olawa: {
+    pl: {
+      title: 'Pranie tapicerki Oława — partner Miasta Oława',
+      description: 'Pranie kanap, dywanów, materacy i ozonowanie w Oławie. Oficjalny partner Administracji Miasta Oława. Dojazd 30 min z Wrocławia, ceny od 36 PLN.',
+      keywords: 'pranie kanapy Oława, czyszczenie tapicerki Oława, czyszczenie materaca Oława, ozonowanie Oława, pranie dywanu Oława, mycie okien Oława',
+    },
+    ru: {
+      title: 'Химчистка мебели Олава — партнёр администрации',
+      description: 'Химчистка диванов, матрасов, ковров и озонирование в Олаве. Партнёр Администрации города Олава. Выезд за 30 минут из Вроцлава, цены от 36 PLN.',
+      keywords: 'химчистка мебели Олава, химчистка дивана Олава, чистка матраса Олава, озонирование Олава, мойка окон Олава',
+    },
+    en: {
+      title: 'Upholstery Cleaning Oława — City Partner',
+      description: 'Sofa, mattress, carpet cleaning and ozonation in Oława. Official partner of the Oława City Administration. 30 min from Wrocław, prices from 36 PLN.',
+      keywords: 'upholstery cleaning Oława, sofa cleaning Oława, mattress cleaning Oława, ozone treatment Oława, window cleaning Oława',
+    },
+    uk: {
+      title: 'Хімчистка меблів Олава — партнер міста',
+      description: 'Хімчистка диванів, матраців, килимів та озонування в Олаві. Партнер Адміністрації міста Олава. Виїзд за 30 хвилин з Вроцлава, ціни від 36 PLN.',
+      keywords: 'хімчистка меблів Олава, чистка дивана Олава, чистка матраца Олава, озонування Олава, миття вікон Олава',
+    },
+  },
+};
+
+// Per-city extra FAQs (in addition to base + generated)
+const CITY_EXTRA_FAQS: Record<string, Record<string, Array<{ q: string; a: string }>>> = {
+  olawa: {
+    pl: [
+      { q: 'Czy MasterClean współpracuje z Administracją Miasta Oława?', a: 'Tak. Jesteśmy zaufanym partnerem Administracji Miasta Oława w zakresie profesjonalnego prania tapicerki, czyszczenia materacy, dywanów oraz ozonowania pomieszczeń biurowych i komunalnych.' },
+      { q: 'Jak długo trwa dojazd do Oławy z Wrocławia?', a: 'Oława leży tylko 30 km od Wrocławia, dlatego zwykle docieramy w 30–40 minut. Nie pobieramy ukrytych opłat za dojazd w granicach miasta.' },
+      { q: 'Czy obsługujecie też Jelcz-Laskowice i okoliczne miejscowości?', a: 'Tak, obsługujemy całą gminę Oława oraz Jelcz-Laskowice, Stanowice, Marcinkowice i okoliczne wsie powiatu oławskiego.' },
+    ],
+    ru: [
+      { q: 'Сотрудничает ли MasterClean с администрацией города Олава?', a: 'Да. Мы являемся доверенным партнёром Администрации города Олава по профессиональной химчистке мебели, матрасов, ковров и озонированию офисных и муниципальных помещений.' },
+      { q: 'Сколько времени занимает выезд в Олаву из Вроцлава?', a: 'Олава находится всего в 30 км от Вроцлава — обычно мы доезжаем за 30–40 минут. Скрытых доплат за выезд в пределах города нет.' },
+      { q: 'Обслуживаете ли вы Елч-Ласковице и соседние населённые пункты?', a: 'Да, мы обслуживаем всю гмину Олава, а также Елч-Ласковице, Становице, Марцинковице и окрестные сёла Олавского повята.' },
+    ],
+    en: [
+      { q: 'Does MasterClean cooperate with the Oława City Administration?', a: 'Yes. We are a trusted partner of the Oława City Administration for professional upholstery, mattress and carpet cleaning, as well as ozonation of office and municipal premises.' },
+      { q: 'How long does it take to reach Oława from Wrocław?', a: 'Oława is only 30 km from Wrocław, so we typically arrive within 30–40 minutes. There are no hidden travel fees within city limits.' },
+      { q: 'Do you also serve Jelcz-Laskowice and nearby towns?', a: 'Yes, we cover the entire Oława municipality including Jelcz-Laskowice, Stanowice, Marcinkowice and surrounding villages of Oława County.' },
+    ],
+    uk: [
+      { q: 'Чи співпрацює MasterClean з адміністрацією міста Олава?', a: 'Так. Ми є довіреним партнером Адміністрації міста Олава з професійної хімчистки меблів, матраців, килимів та озонування офісних і муніципальних приміщень.' },
+      { q: 'Скільки часу займає виїзд до Олави з Вроцлава?', a: 'Олава знаходиться лише за 30 км від Вроцлава — зазвичай ми доїжджаємо за 30–40 хвилин. Прихованих доплат за виїзд у межах міста немає.' },
+      { q: 'Чи обслуговуєте ви Єльч-Лясковіце та сусідні населені пункти?', a: 'Так, ми обслуговуємо всю ґміну Олава, а також Єльч-Лясковіце, Становіце, Марцинковіце і навколишні села Олавського повіту.' },
+    ],
+  },
+};
+
 // FAQ data helper for SEO
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
   const faqs = {
@@ -91,7 +143,14 @@ const CityPage = () => {
   const profile = getCityProfile(city.slug);
   const generated = generateCityContent(city.name, city.slug, lang as 'pl' | 'ru' | 'en' | 'uk', profile);
   const baseFaqs = getFaqData(language, city.name, isWroclaw);
-  const faqData = [...generated.faqs, ...baseFaqs];
+  const extraFaqs = CITY_EXTRA_FAQS[city.slug]?.[language] || [];
+  const faqData = [...extraFaqs, ...generated.faqs, ...baseFaqs];
+
+  // Per-city SEO overrides (title/description/keywords)
+  const seoOverride = CITY_SEO_OVERRIDES[city.slug]?.[language];
+  const seoTitle = seoOverride?.title || city.seo.title;
+  const seoDescription = seoOverride?.description || city.seo.description;
+  const seoKeywords = seoOverride?.keywords || city.seo.keywords;
 
   const META = getServiceCategoryMeta(t);
   const categories = [
@@ -329,9 +388,9 @@ const CityPage = () => {
   return (
     <>
       <SEO
-        title={city.seo.title}
-        description={city.seo.description}
-        keywords={city.seo.keywords}
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
         canonical={`/city/${city.slug}`}
         image={`https://masterclean1885.com/og-${city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug}.png`}
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
@@ -341,7 +400,7 @@ const CityPage = () => {
             {
               '@type': 'Service',
               name: `MasterClean — ${city.name}`,
-              description: city.seo.description,
+              description: seoDescription,
               url: `https://masterclean1885.com/city/${city.slug}`,
               areaServed: {
                 '@type': 'City',
