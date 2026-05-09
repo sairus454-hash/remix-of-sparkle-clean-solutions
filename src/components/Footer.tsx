@@ -4,6 +4,7 @@ import { Droplets, Phone, Mail, MapPin, ShieldCheck, BookOpen, Sparkles } from '
 import { useLanguage } from '@/i18n/LanguageContext';
 import fixlyBadge from '@/assets/fixly-top-executor-2025.webp';
 import olawaPartnerBadge from '@/assets/partner-olawa-badge.jpg';
+import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
@@ -190,6 +191,33 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                   height={70}
                   className="w-24 sm:w-36 md:w-44 max-w-full h-auto drop-shadow-md"
                 />
+              </a>
+            );
+          })()}
+
+          {/* Media Expert Cooperation Badge */}
+          {(() => {
+            const mediaexpertLabel =
+              language === 'ru' ? 'Сотрудничество с Media Expert'
+              : language === 'uk' ? 'Співпраця з Media Expert'
+              : language === 'en' ? 'Cooperation with Media Expert'
+              : 'Współpraca z Media Expert';
+            return (
+              <a
+                href="https://www.mediaexpert.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={mediaexpertLabel}
+                className="relative group"
+              >
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/30 hover:scale-105 transition-transform bg-black">
+                  <img
+                    src={mediaexpertBadge}
+                    alt={mediaexpertLabel}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </a>
             );
           })()}

@@ -2,6 +2,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import oferteoBadge from '@/assets/oferteo-najlepsi-2026.png';
 import fixlyBadge from '@/assets/fixly-top-2025.png';
 import olawaBadge from '@/assets/partner-olawa-badge-2.jpg';
+import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 
 const OferteoBadge = () => {
   const { language } = useLanguage();
@@ -20,6 +21,11 @@ const OferteoBadge = () => {
     : language === 'uk' ? 'Співпраця з адміністрацією міста Олава'
     : language === 'en' ? 'Cooperation with the City Administration of Oława'
     : 'Współpraca z Administracją Miasta Oława';
+  const mediaexpertLabel =
+    language === 'ru' ? 'Сотрудничество с Media Expert'
+    : language === 'uk' ? 'Співпраця з Media Expert'
+    : language === 'en' ? 'Cooperation with Media Expert'
+    : 'Współpraca z Media Expert';
 
   return (
     <section className="py-8 bg-gradient-section">
@@ -68,6 +74,22 @@ const OferteoBadge = () => {
             height={180}
             loading="lazy"
             className="w-32 sm:w-40 md:w-48 h-auto rounded-full drop-shadow-lg"
+          />
+        </a>
+        <a
+          href="https://www.mediaexpert.pl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={mediaexpertLabel}
+          className="hover:scale-105 transition-transform inline-block"
+        >
+          <img
+            src={mediaexpertBadge}
+            alt={mediaexpertLabel}
+            width={180}
+            height={180}
+            loading="lazy"
+            className="w-32 sm:w-40 md:w-48 h-auto rounded-lg drop-shadow-lg"
           />
         </a>
       </div>
