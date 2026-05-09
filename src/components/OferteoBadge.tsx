@@ -76,6 +76,22 @@ const OferteoBadge = () => {
             className="w-32 sm:w-40 md:w-48 h-auto rounded-full drop-shadow-lg"
           />
         </a>
+        <a
+          href="https://www.mediaexpert.pl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={mediaexpertLabel}
+          className="hover:scale-105 transition-transform inline-block"
+        >
+          <img
+            src={mediaexpertBadge}
+            alt={mediaexpertLabel}
+            width={180}
+            height={180}
+            loading="lazy"
+            className="w-32 sm:w-40 md:w-48 h-auto rounded-lg drop-shadow-lg"
+          />
+        </a>
       </div>
     </section>
   );
