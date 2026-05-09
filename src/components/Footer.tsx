@@ -195,6 +195,33 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             );
           })()}
 
+          {/* Media Expert Cooperation Badge */}
+          {(() => {
+            const mediaexpertLabel =
+              language === 'ru' ? 'Сотрудничество с Media Expert'
+              : language === 'uk' ? 'Співпраця з Media Expert'
+              : language === 'en' ? 'Cooperation with Media Expert'
+              : 'Współpraca z Media Expert';
+            return (
+              <a
+                href="https://www.mediaexpert.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={mediaexpertLabel}
+                className="relative group"
+              >
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/30 hover:scale-105 transition-transform bg-black">
+                  <img
+                    src={mediaexpertBadge}
+                    alt={mediaexpertLabel}
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </a>
+            );
+          })()}
+
           {/* Euro Quality Standard Badge */}
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-primary/30 bg-primary/5">
             <div className="relative w-10 h-10 flex items-center justify-center">
