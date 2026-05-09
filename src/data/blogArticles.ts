@@ -17,6 +17,7 @@ import upholsteryFrequencyBlog from '@/assets/upholstery-cleaning-frequency-blog
 import sofaCleaningPriceBlog from '@/assets/sofa-cleaning-price-blog.webp';
 import mattressOdorBlog from '@/assets/mattress-odor-removal-blog.webp';
 import mattressMitesBlog from '@/assets/mattress-mites-cleaning-blog.webp';
+import carUpholsteryBlog from '@/assets/car-upholstery-cleaning-blog.webp';
 
 export interface BlogArticle {
   id: number;
