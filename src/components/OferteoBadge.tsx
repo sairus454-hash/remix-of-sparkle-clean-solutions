@@ -2,6 +2,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import oferteoBadge from '@/assets/oferteo-najlepsi-2026.png';
 import fixlyBadge from '@/assets/fixly-top-2025.png';
 import olawaBadge from '@/assets/partner-olawa-badge-2.jpg';
+import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 
 const OferteoBadge = () => {
   const { language } = useLanguage();
