@@ -20,6 +20,7 @@ import tileBeforeAfter from '@/assets/floor-cleaning-tile-before-after.jpg';
 import floorBa3 from '@/assets/floor-cleaning-ba-3.jpg';
 import floorBa4 from '@/assets/floor-cleaning-ba-4.jpg';
 import floorBa5 from '@/assets/floor-cleaning-ba-5.jpg';
+import mediaexpertCarpetBa from '@/assets/mediaexpert-carpet-ba.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
 import imgCarpetCovering from '@/assets/calc-carpet.jpg';
 import imgCarpetMedium from '@/assets/calc-carpet-medium.jpg';
@@ -441,6 +442,7 @@ const FloorCleaning = () => {
                 { src: tileBeforeAfter, label: language === 'pl' ? 'Czyszczenie płytek — efekt przed/po' : language === 'ru' ? 'Чистка плитки — до/после' : language === 'uk' ? 'Чистка плитки — до/після' : 'Tile cleaning — before/after' },
                 { src: floorBa3, label: language === 'pl' ? 'Pranie wykładziny biurowej — przed/po' : language === 'ru' ? 'Чистка офисного покрытия — до/после' : language === 'uk' ? 'Чистка офісного покриття — до/після' : 'Office carpet cleaning — before/after' },
                 { src: floorBa4, label: language === 'pl' ? 'Pranie wykładziny w biurze — przed/po' : language === 'ru' ? 'Чистка коврового покрытия в офисе — до/после' : language === 'uk' ? 'Чистка килимового покриття в офісі — до/після' : 'Office carpet — before/after' },
+                { src: mediaexpertCarpetBa, label: language === 'pl' ? 'Pranie wykładziny w sklepie Media Expert — przed/po' : language === 'ru' ? 'Чистка коврового покрытия в магазине Media Expert — до/после' : language === 'uk' ? 'Чистка килимового покриття в магазині Media Expert — до/після' : 'Media Expert store carpet cleaning — before/after' },
               ]}
             />
             <div className="mt-10 max-w-3xl mx-auto">

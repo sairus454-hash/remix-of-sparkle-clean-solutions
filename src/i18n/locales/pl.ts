@@ -97,6 +97,7 @@ const plTranslations = {
       slide7: 'Czyszczenie skórzanej kanapy — przed i po',
       slide8: 'Czyszczenie fotelika dziecięcego — przed i po',
       slide9: 'Pranie kanapy u klienta — przed i po',
+      slideMediaexpert: 'Pranie wykładziny w sklepie Media Expert — przed i po',
       slide9Alt: 'Profesjonalne pranie kanapy u klienta we Wrocławiu — zdjęcie przed i po usunięciu plam i zabrudzeń',
       slide1Alt: 'Głębokie pranie kanapy ekstraktorem — efekt przed i po usunięciu trudnych plam i zapachów',
       slide2Alt: 'Pranie dywanu metodą ekstrakcji i pary — zdjęcie przed i po przywróceniu koloru i usunięciu kurzu',
