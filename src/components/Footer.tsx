@@ -4,6 +4,7 @@ import { Droplets, Phone, Mail, MapPin, ShieldCheck, BookOpen, Sparkles } from '
 import { useLanguage } from '@/i18n/LanguageContext';
 import fixlyBadge from '@/assets/fixly-top-executor-2025.webp';
 import olawaPartnerBadge from '@/assets/partner-olawa-badge.jpg';
+import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
