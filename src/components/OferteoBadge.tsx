@@ -21,6 +21,11 @@ const OferteoBadge = () => {
     : language === 'uk' ? 'Співпраця з адміністрацією міста Олава'
     : language === 'en' ? 'Cooperation with the City Administration of Oława'
     : 'Współpraca z Administracją Miasta Oława';
+  const mediaexpertLabel =
+    language === 'ru' ? 'Сотрудничество с Media Expert'
+    : language === 'uk' ? 'Співпраця з Media Expert'
+    : language === 'en' ? 'Cooperation with Media Expert'
+    : 'Współpraca z Media Expert';
 
   return (
     <section className="py-8 bg-gradient-section">
