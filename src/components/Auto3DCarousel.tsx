@@ -3,17 +3,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useLanguage } from '@/i18n/LanguageContext';
 
-import autoBa1 from '@/assets/auto-ba-1.jpg';
-import autoBa2 from '@/assets/auto-ba-2.jpg';
-import autoBa3 from '@/assets/auto-ba-3.jpg';
-import autoBa4 from '@/assets/auto-ba-4.jpg';
-import autoBa5 from '@/assets/auto-ba-5.jpg';
-import autoBa6 from '@/assets/auto-ba-6.jpg';
-import autoBa7 from '@/assets/auto-ba-7.jpg';
-import autoBa8 from '@/assets/auto-ba-8.jpg';
+import autoBaNew1 from '@/assets/auto-ba-new-1.jpg';
+import autoBaNew2 from '@/assets/auto-ba-new-2.jpg';
+import autoBaNew3 from '@/assets/auto-ba-new-3.jpg';
 
-const slideImages = [autoBa1, autoBa2, autoBa3, autoBa4, autoBa5, autoBa6, autoBa7, autoBa8];
-const slideKeys = ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'slide6', 'slide7', 'slide8'] as const;
+const slideImages = [autoBaNew1, autoBaNew2, autoBaNew3];
+const slideKeys = ['slide1', 'slide2', 'slide3'] as const;
 
 const Auto3DCarousel = () => {
   const { t } = useLanguage();
