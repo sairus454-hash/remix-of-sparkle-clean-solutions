@@ -664,6 +664,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       ],
     },
   ],
+  pl: [
     {
       id: 1,
       title: 'Jak często czyścić sofę?',
