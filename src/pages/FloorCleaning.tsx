@@ -23,6 +23,7 @@ import floorBa5 from '@/assets/floor-cleaning-ba-5.jpg';
 import mediaexpertCarpetBa from '@/assets/mediaexpert-carpet-ba.jpg';
 import mediaexpertStoreBa from '@/assets/mediaexpert-store-ba.jpg';
 import mediaexpertEquipment from '@/assets/mediaexpert-equipment.jpg';
+import mediaexpertExtractor from '@/assets/mediaexpert-extractor.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
 import imgCarpetCovering from '@/assets/calc-carpet.jpg';
 import imgCarpetMedium from '@/assets/calc-carpet-medium.jpg';
