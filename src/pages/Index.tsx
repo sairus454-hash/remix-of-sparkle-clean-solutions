@@ -270,12 +270,15 @@ const Index = () => {
 
       <section className="py-8 sm:py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-2xl overflow-hidden shadow-elegant bg-muted">
+          <div
+            className="mx-auto rounded-2xl overflow-hidden shadow-elegant bg-muted"
+            style={{ width: 'min(85vw, 28rem)', aspectRatio: '3 / 4' }}
+          >
             <picture>
               <source
                 type="image/webp"
                 srcSet={`${mediaexpertTeam480} 480w, ${mediaexpertTeam768} 768w, ${mediaexpertTeam960} 960w`}
-                sizes="(max-width: 640px) 80vw, (max-width: 768px) 384px, 448px"
+                sizes="(max-width: 768px) 85vw, 28rem"
               />
               <img
                 src={mediaexpertTeamEquipment}
@@ -289,7 +292,7 @@ const Index = () => {
                 decoding="async"
                 width={960}
                 height={1280}
-                className="w-full h-auto block"
+                className="w-full h-full object-cover block"
               />
             </picture>
           </div>
