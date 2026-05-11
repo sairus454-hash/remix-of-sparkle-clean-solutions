@@ -445,6 +445,8 @@ const FloorCleaning = () => {
                 { src: floorBa3, label: language === 'pl' ? 'Pranie wykładziny biurowej — przed/po' : language === 'ru' ? 'Чистка офисного покрытия — до/после' : language === 'uk' ? 'Чистка офісного покриття — до/після' : 'Office carpet cleaning — before/after' },
                 { src: floorBa4, label: language === 'pl' ? 'Pranie wykładziny w biurze — przed/po' : language === 'ru' ? 'Чистка коврового покрытия в офисе — до/после' : language === 'uk' ? 'Чистка килимового покриття в офісі — до/після' : 'Office carpet — before/after' },
                 { src: mediaexpertCarpetBa, label: language === 'pl' ? 'Pranie wykładziny w sklepie Media Expert — przed/po' : language === 'ru' ? 'Чистка коврового покрытия в магазине Media Expert — до/после' : language === 'uk' ? 'Чистка килимового покриття в магазині Media Expert — до/після' : 'Media Expert store carpet cleaning — before/after' },
+                { src: mediaexpertStoreBa, label: language === 'pl' ? 'Pranie wykładziny w hali Media Expert — przed/po' : language === 'ru' ? 'Чистка покрытия в зале Media Expert — до/после' : language === 'uk' ? 'Чистка покриття в залі Media Expert — до/після' : 'Media Expert sales floor — before/after' },
+                { src: mediaexpertEquipment, label: language === 'pl' ? 'Profesjonalny sprzęt na realizacji w Media Expert' : language === 'ru' ? 'Профессиональное оборудование на объекте Media Expert' : language === 'uk' ? 'Професійне обладнання на об’єкті Media Expert' : 'Professional equipment on-site at Media Expert' },
               ]}
             />
             <div className="mt-10 max-w-3xl mx-auto">
