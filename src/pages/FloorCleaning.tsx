@@ -23,6 +23,7 @@ import floorBa5 from '@/assets/floor-cleaning-ba-5.jpg';
 import mediaexpertCarpetBa from '@/assets/mediaexpert-carpet-ba.jpg';
 import mediaexpertStoreBa from '@/assets/mediaexpert-store-ba.jpg';
 import mediaexpertEquipment from '@/assets/mediaexpert-equipment.jpg';
+import mediaexpertExtractor from '@/assets/mediaexpert-extractor.jpg';
 import heroImage from '@/assets/floor-cleaning-hero.jpg';
 import imgCarpetCovering from '@/assets/calc-carpet.jpg';
 import imgCarpetMedium from '@/assets/calc-carpet-medium.jpg';
@@ -367,6 +368,30 @@ const FloorCleaning = () => {
               <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
                 {c.desc}
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* On-site equipment photos */}
+        <section className="py-12 bg-card">
+          <div className="container mx-auto px-4">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-card-hover border-2 border-border bg-muted">
+                <img
+                  src={mediaexpertExtractor}
+                  alt={language === 'pl' ? 'Profesjonalny ekstraktor podczas pracy w sklepie Media Expert' : language === 'ru' ? 'Профессиональный экстрактор во время работы в магазине Media Expert' : language === 'uk' ? 'Професійний екстрактор під час роботи в магазині Media Expert' : 'Professional extractor at work in Media Expert store'}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-card-hover border-2 border-border bg-muted">
+                <img
+                  src={mediaexpertEquipment}
+                  alt={language === 'pl' ? 'Sprzęt MasterClean przed realizacją w Media Expert' : language === 'ru' ? 'Оборудование MasterClean перед работой в Media Expert' : language === 'uk' ? 'Обладнання MasterClean перед роботою в Media Expert' : 'MasterClean equipment ready for Media Expert job'}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </section>
