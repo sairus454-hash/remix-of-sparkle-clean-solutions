@@ -265,9 +265,9 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-10 sm:py-14 bg-background">
+      <section className="py-8 sm:py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-elegant">
+          <div className="max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-2xl overflow-hidden shadow-elegant bg-muted">
             <img
               src={mediaexpertTeamEquipment}
               alt={
@@ -277,7 +277,9 @@ const Index = () => {
                 'MasterClean team with equipment before a Media Expert job'
               }
               loading="lazy"
-              className="w-full h-auto object-cover"
+              width={960}
+              height={1280}
+              className="w-full h-auto block"
             />
           </div>
         </div>
