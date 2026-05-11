@@ -14,6 +14,7 @@ import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
+import mediaexpertTeamEquipment from '@/assets/mediaexpert-team-equipment.jpg';
 
 
 // Lazy load below-fold non-critical components
@@ -260,6 +261,24 @@ const Index = () => {
                 </h2>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 sm:py-14 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-elegant">
+            <img
+              src={mediaexpertTeamEquipment}
+              alt={
+                language === 'pl' ? 'Zespół MasterClean ze sprzętem przed realizacją w Media Expert' :
+                language === 'ru' ? 'Команда MasterClean с оборудованием перед работой в Media Expert' :
+                language === 'uk' ? 'Команда MasterClean з обладнанням перед роботою в Media Expert' :
+                'MasterClean team with equipment before a Media Expert job'
+              }
+              loading="lazy"
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>
