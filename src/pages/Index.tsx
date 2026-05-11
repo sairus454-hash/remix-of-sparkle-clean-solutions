@@ -15,6 +15,9 @@ import HeroVideo from '@/components/HeroVideo';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
 import mediaexpertTeamEquipment from '@/assets/mediaexpert-team-equipment.jpg';
+import mediaexpertTeam480 from '@/assets/mediaexpert-team-equipment-480.webp';
+import mediaexpertTeam768 from '@/assets/mediaexpert-team-equipment-768.webp';
+import mediaexpertTeam960 from '@/assets/mediaexpert-team-equipment-960.webp';
 
 
 // Lazy load below-fold non-critical components
