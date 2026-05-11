@@ -406,7 +406,18 @@ function getPageMeta(path: string): PageMeta | null {
   if (cityMatch && cityPages[cityMatch[1]]) return cityPages[cityMatch[1]];
 
   const blogMatch = path.match(/^\/blog\/(\d+)$/);
-  if (blogMatch && blogPages[blogMatch[1]]) return blogPages[blogMatch[1]];
+  if (blogMatch) {
+    if (blogPages[blogMatch[1]]) return blogPages[blogMatch[1]];
+    // Fallback for blog articles not yet listed in blogPages — avoids 404
+    // for valid SPA routes that the prerender doesn't have hardcoded.
+    return {
+      title: 'Blog MasterClean — porady czyszczenia, prania tapicerki i pielęgnacji',
+      description: 'Artykuł z bloga MasterClean: praktyczne porady o czyszczeniu tapicerki, materacy, dywanów, samochodu i więcej.',
+      keywords: 'blog czyszczenie, porady pranie tapicerki, czyszczenie sofy, czyszczenie materaca, ozonowanie',
+      image: `${SITE_URL}/og-blog.jpg`,
+      type: 'article',
+    };
+  }
 
   return null;
 }
