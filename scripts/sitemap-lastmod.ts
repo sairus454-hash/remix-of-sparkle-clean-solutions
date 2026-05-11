@@ -24,6 +24,47 @@ export function sitemapLastmodPlugin(): Plugin {
       const today = new Date().toISOString().slice(0, 10);
       let xml = readFileSync(sitemapPath, 'utf8');
       const before = xml;
+      const SITE = 'https://masterclean1885.com';
+
+      // 0) Auto-discover blog articles from src/data/blogArticles.ts so new
+      //    posts always appear in the sitemap. Hreflang alternates for
+      //    /ru, /en, /uk are added by step (3) below.
+      const articlesPath = resolve(process.cwd(), 'src/data/blogArticles.ts');
+      if (existsSync(articlesPath)) {
+        const src = readFileSync(articlesPath, 'utf8');
+        const articles = new Map<number, string>();
+        const entryRe = /id:\s*(\d+)[\s\S]*?date:\s*['"](\d{4}-\d{2}-\d{2})['"]/g;
+        let m: RegExpExecArray | null;
+        while ((m = entryRe.exec(src)) !== null) {
+          const id = Number(m[1]);
+          const date = m[2];
+          const prev = articles.get(id);
+          if (!prev || date > prev) articles.set(id, date);
+        }
+
+        const existingIds = new Set<number>();
+        const blogUrlRe = /<loc>https:\/\/masterclean1885\.com\/blog\/(\d+)<\/loc>/g;
+        let mm: RegExpExecArray | null;
+        while ((mm = blogUrlRe.exec(xml)) !== null) existingIds.add(Number(mm[1]));
+
+        const missing = [...articles.entries()]
+          .filter(([id]) => !existingIds.has(id))
+          .sort((a, b) => a[0] - b[0]);
+
+        if (missing.length > 0) {
+          const newEntries = missing
+            .map(
+              ([id, date]) =>
+                `  <url><loc>${SITE}/blog/${id}</loc><lastmod>${date}</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>`,
+            )
+            .join('\n');
+          xml = xml.replace('</urlset>', `${newEntries}\n</urlset>`);
+          // eslint-disable-next-line no-console
+          console.log(
+            `[sitemap-lastmod] Auto-added ${missing.length} blog URL(s): ${missing.map(([id]) => id).join(', ')}`,
+          );
+        }
+      }
 
       // 1) Refresh lastmod for every URL
       xml = xml.replace(
@@ -40,9 +81,6 @@ export function sitemapLastmodPlugin(): Plugin {
       }
 
       // 3) Inject hreflang alternates into every <url> that doesn't already have them.
-      //    Skip URLs that already include a /ru, /en, /uk prefix (those should
-      //    not appear in sitemap; the prefix is added per alternate here).
-      const SITE = 'https://masterclean1885.com';
       const buildAlternates = (logicalPath: string): string => {
         const langs: Array<{ code: string; href: string }> = [
           { code: 'pl', href: `${SITE}${logicalPath}` },
@@ -67,14 +105,13 @@ export function sitemapLastmodPlugin(): Plugin {
         /<url>(?<inner>[\s\S]*?)<\/url>/g,
         (match, _inner: string, _offset: number, _full: string, groups?: { inner: string }) => {
           const inner = groups?.inner ?? '';
-          if (inner.includes('xhtml:link')) return match; // already has alternates
+          if (inner.includes('xhtml:link')) return match;
           const locMatch = inner.match(/<loc>([^<]+)<\/loc>/);
           if (!locMatch) return match;
           const loc = locMatch[1];
-          // Only treat root-domain, non-prefixed URLs as logical pages.
           if (!loc.startsWith(SITE)) return match;
           const path = loc.slice(SITE.length) || '/';
-          if (/^\/(ru|en|uk)(\/|$)/.test(path)) return match; // skip prefixed URLs
+          if (/^\/(ru|en|uk)(\/|$)/.test(path)) return match;
           injected += 1;
           return `<url>${inner}${buildAlternates(path)}</url>`;
         },
