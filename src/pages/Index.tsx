@@ -271,19 +271,27 @@ const Index = () => {
       <section className="py-8 sm:py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-xs sm:max-w-sm md:max-w-md mx-auto rounded-2xl overflow-hidden shadow-elegant bg-muted">
-            <img
-              src={mediaexpertTeamEquipment}
-              alt={
-                language === 'pl' ? 'Zespół MasterClean ze sprzętem przed realizacją w Media Expert' :
-                language === 'ru' ? 'Команда MasterClean с оборудованием перед работой в Media Expert' :
-                language === 'uk' ? 'Команда MasterClean з обладнанням перед роботою в Media Expert' :
-                'MasterClean team with equipment before a Media Expert job'
-              }
-              loading="lazy"
-              width={960}
-              height={1280}
-              className="w-full h-auto block"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`${mediaexpertTeam480} 480w, ${mediaexpertTeam768} 768w, ${mediaexpertTeam960} 960w`}
+                sizes="(max-width: 640px) 80vw, (max-width: 768px) 384px, 448px"
+              />
+              <img
+                src={mediaexpertTeamEquipment}
+                alt={
+                  language === 'pl' ? 'Zespół MasterClean ze sprzętem przed realizacją w Media Expert' :
+                  language === 'ru' ? 'Команда MasterClean с оборудованием перед работой в Media Expert' :
+                  language === 'uk' ? 'Команда MasterClean з обладнанням перед роботою в Media Expert' :
+                  'MasterClean team with equipment before a Media Expert job'
+                }
+                loading="lazy"
+                decoding="async"
+                width={960}
+                height={1280}
+                className="w-full h-auto block"
+              />
+            </picture>
           </div>
         </div>
       </section>
