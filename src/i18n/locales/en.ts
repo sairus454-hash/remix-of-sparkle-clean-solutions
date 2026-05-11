@@ -98,6 +98,7 @@ const enTranslations = {
       slide8: 'Child car seat cleaning — before and after',
       slide9: 'On-site sofa deep cleaning — before and after',
       slideMediaexpert: 'Carpet cleaning in Media Expert store — before and after',
+      slideMediaexpertAisle: 'Carpet cleaning in Media Expert store aisle — before and after',
       slide9Alt: 'Professional on-site fabric sofa deep cleaning in Wrocław — before and after photo of stain and dirt removal',
       slide1Alt: 'Deep sofa cleaning with hot-water extractor — before and after result of removing stubborn stains and odors',
       slide2Alt: 'Carpet steam and extraction cleaning — before and after color restoration and dust removal',
