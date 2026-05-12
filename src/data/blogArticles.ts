@@ -20,6 +20,7 @@ import mattressMitesBlog from '@/assets/mattress-mites-cleaning-blog.webp';
 import carUpholsteryBlog from '@/assets/car-upholstery-cleaning-blog.webp';
 import carSeatPriceBlog from '@/assets/car-seat-cleaning-price-blog.webp';
 import ozoneCarSmellBlog from '@/assets/ozone-car-smell-blog.webp';
+import ozonowanieMieszkaniaBlog from '@/assets/ozonowanie-mieszkania-blog.webp';
 
 export interface BlogArticle {
   id: number;
