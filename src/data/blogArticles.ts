@@ -434,6 +434,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       ],
     },
   ],
+  en: [
     {
       id: 1,
       title: 'How Often Should You Clean Your Sofa?',
