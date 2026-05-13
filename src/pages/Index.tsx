@@ -26,6 +26,7 @@ const CircularRevealCard = lazy(() => import('@/components/CircularRevealCard'))
 const ContactForm = lazy(() => import('@/components/ContactForm'));
 const PriceSection = lazy(() => import('@/components/PriceSection'));
 const CleaningPricingTopBlock = lazy(() => import('@/components/CleaningPricingTopBlock'));
+const SeoLongText = lazy(() => import('@/components/SeoLongText'));
 
 const Index = () => {
   const isMobile = useIsMobile();
@@ -593,6 +594,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+      </LazySection>
+      <LazySection rootMargin="300px">
+        <Suspense fallback={null}><SeoLongText /></Suspense>
       </LazySection>
     </Layout>
     </>;
