@@ -1,4 +1,5 @@
 import { useRef, lazy, Suspense } from 'react';
+import SeoPageLongText from '@/components/SeoPageLongText';
 import LazySection from '@/components/LazySection';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
@@ -264,6 +265,7 @@ const Ozone = () => {
         </div>
       </section>
       </div>
+      <SeoPageLongText variant="ozone" />
     </Layout>
     </>
   );

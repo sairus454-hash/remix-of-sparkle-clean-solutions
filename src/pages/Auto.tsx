@@ -1,4 +1,5 @@
 import { useRef, lazy, Suspense } from 'react';
+import SeoPageLongText from '@/components/SeoPageLongText';
 import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useSplash } from '@/hooks/useSplash';
@@ -304,6 +305,7 @@ const Auto = () => {
 
         {/* 7. 3D Carousel */}
         <Auto3DCarousel />
+      <SeoPageLongText variant="auto" />
       </Layout>
     </>
   );
