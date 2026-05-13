@@ -1,4 +1,5 @@
 import { lazy, Suspense } from 'react';
+import SeoPageLongText from '@/components/SeoPageLongText';
 import { useSplash } from '@/hooks/useSplash';
 import aboutHeroPhoto from '@/assets/about-hero-photo.jpg';
 import SEO from '@/components/SEO';
@@ -380,6 +381,7 @@ const About = () => {
           </div>
         </section>
         <OferteoBadge />
+      <SeoPageLongText variant="about" />
       </Layout>
     </>;
 };

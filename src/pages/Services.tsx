@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import SeoPageLongText from '@/components/SeoPageLongText';
 import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import SEO from '@/components/SEO';
@@ -321,6 +322,7 @@ const Services = () => {
           </div>
         </section>
         </LazySection>
+      <SeoPageLongText variant="services" />
       </Layout>
     </>
   );

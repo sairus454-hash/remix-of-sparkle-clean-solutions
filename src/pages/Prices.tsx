@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
+import SeoPageLongText from '@/components/SeoPageLongText';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useLocation } from 'react-router-dom';
 import SEO from '@/components/SEO';
@@ -542,6 +543,7 @@ const Prices = () => {
             </div>
           </div>
         </section>
+      <SeoPageLongText variant="prices" />
       </Layout>
     </>
   );

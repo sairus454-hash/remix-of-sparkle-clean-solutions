@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import SeoPageLongText from '@/components/SeoPageLongText';
 import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
 import { useLocation } from 'react-router-dom';
@@ -271,6 +272,7 @@ const Contacts = () => {
           </div>
         </div>
       </section>
+      <SeoPageLongText variant="contacts" />
       </Layout>
     </>
   );
