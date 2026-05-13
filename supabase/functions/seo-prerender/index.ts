@@ -651,6 +651,17 @@ Deno.serve(async (req: Request) => {
     const url = new URL(req.url);
     let path = url.searchParams.get('path') || '/';
 
+    // Validate path to prevent open redirect via userinfo (e.g. "@evil.com"),
+    // protocol-relative URLs ("//evil.com"), or backslash tricks.
+    if (
+      !path.startsWith('/') ||
+      path.startsWith('//') ||
+      path.startsWith('/\\') ||
+      /[@\\]/.test(path)
+    ) {
+      path = '/';
+    }
+
     // New: language prefix lives IN the path (/ru/..., /en/..., /uk/...).
     // Strip it to look up the page meta, but remember the language so we can
     // build the correct canonical/hreflang.
