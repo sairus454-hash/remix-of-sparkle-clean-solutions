@@ -595,6 +595,9 @@ const Index = () => {
         </div>
       </section>
       </LazySection>
+      <LazySection rootMargin="300px">
+        <Suspense fallback={null}><SeoLongText /></Suspense>
+      </LazySection>
     </Layout>
     </>;
 };
