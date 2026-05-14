@@ -267,33 +267,38 @@ const Prices = () => {
   const filterAllLabel = language === 'ru' ? 'Все услуги' : language === 'uk' ? 'Усі послуги' : language === 'en' ? 'All services' : 'Wszystkie usługi';
   const filterTitle = language === 'ru' ? 'Фильтр по услугам' : language === 'uk' ? 'Фільтр за послугами' : language === 'en' ? 'Filter by service' : 'Filtruj według usługi';
 
+  const seoMeta = getSeoMeta('prices', language);
+
   return (
     <>
       <SEO
-        title="Cennik prania tapicerki i czyszczenia — MasterClean"
-        description="Aktualny cennik prania tapicerki meblowej, czyszczenia dywanów, materacy, tapicerki samochodowej, ozonowania i sprzątania. Kalkulator kosztów. Wrocław, Opole."
-        keywords="cennik prania tapicerki, cennik czyszczenia mebli, cennik chemczystki mebli, ceny czyszczenia dywanów, cennik prania kanapy, cennik ozonowania, cennik mycia okien, cennik sprzątania, cennik złota rączka, ile kosztuje pranie tapicerki, pranie tapicerki cena Wrocław, cleaning prices Poland"
+        title={seoMeta.title}
+        description={seoMeta.description}
+        keywords={seoMeta.keywords}
         canonical="/prices"
         image="https://masterclean1885.com/og-prices.jpg"
         breadcrumbs={[{ name: t.nav.prices, path: '/prices' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'WebPage',
-          name: 'Cennik usług MasterClean',
-          description: 'Aktualne ceny wszystkich usług czyszczenia i sprzątania',
-          isPartOf: { '@type': 'WebSite', name: 'MasterClean', url: 'https://masterclean1885.com' },
-          mainEntity: {
-            '@type': 'OfferCatalog',
-            name: 'Usługi MasterClean',
-            itemListElement: [
-              { '@type': 'Offer', name: 'Pranie tapicerki meblowej', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Ozonowanie', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Sprzątanie', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Mycie okien', priceCurrency: 'PLN' },
-              { '@type': 'Offer', name: 'Złota rączka', priceCurrency: 'PLN' },
-            ],
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Cennik usług MasterClean',
+            description: 'Aktualne ceny wszystkich usług czyszczenia i sprzątania',
+            isPartOf: { '@type': 'WebSite', name: 'MasterClean', url: 'https://masterclean1885.com' },
+            mainEntity: {
+              '@type': 'OfferCatalog',
+              name: 'Usługi MasterClean',
+              itemListElement: [
+                { '@type': 'Offer', name: 'Pranie tapicerki meblowej', priceCurrency: 'PLN' },
+                { '@type': 'Offer', name: 'Ozonowanie', priceCurrency: 'PLN' },
+                { '@type': 'Offer', name: 'Sprzątanie', priceCurrency: 'PLN' },
+                { '@type': 'Offer', name: 'Mycie okien', priceCurrency: 'PLN' },
+                { '@type': 'Offer', name: 'Złota rączka', priceCurrency: 'PLN' },
+              ],
+            },
           },
-        }}
+          buildFaqJsonLd('prices', language),
+        ]}
       />
       {showSplash && <PriceSplash onComplete={handleSplashComplete} />}
       <Layout>
