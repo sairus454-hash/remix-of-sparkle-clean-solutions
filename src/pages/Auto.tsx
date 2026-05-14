@@ -312,6 +312,7 @@ const Auto = () => {
 
         {/* 7. 3D Carousel */}
         <Auto3DCarousel />
+      <PageFaqSection page="auto" />
       <SeoPageLongText variant="auto" />
       </Layout>
     </>
