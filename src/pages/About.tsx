@@ -72,6 +72,29 @@ const FAQ_TITLE: Record<string, string> = {
   en: 'Frequently Asked Questions',
 };
 
+const SEO_META: Record<string, { title: string; description: string; keywords: string }> = {
+  pl: {
+    title: 'O nas — MasterClean Wrocław | Pranie tapicerki i dywanów',
+    description: 'MasterClean Wrocław: od 2022 r., 1000+ klientów, gwarancja 7 dni. Pranie tapicerki, dywanów, materacy, ozonowanie, mycie okien u klienta.',
+    keywords: 'o nas MasterClean, firma czyszcząca Wrocław, pranie tapicerki Wrocław, czyszczenie dywanów Wrocław, pranie materacy, ozonowanie, firma sprzątająca Wrocław',
+  },
+  ru: {
+    title: 'О нас — MasterClean Вроцлав | Химчистка мебели и ковров',
+    description: 'MasterClean Вроцлав: с 2022 года, 1000+ клиентов, гарантия 7 дней. Химчистка диванов, ковров, матрасов, озонирование, мойка окон у клиента.',
+    keywords: 'о нас MasterClean, химчистка мебели Вроцлав, чистка диванов Вроцлав, чистка ковров Вроцлав, чистка матрасов, озонирование Вроцлав',
+  },
+  uk: {
+    title: 'Про нас — MasterClean Вроцлав | Хімчистка меблів і килимів',
+    description: 'MasterClean Вроцлав: з 2022 року, 1000+ клієнтів, гарантія 7 днів. Чистка диванів, килимів, матраців, озонування, миття вікон у клієнта.',
+    keywords: 'про нас MasterClean, хімчистка меблів Вроцлав, чистка диванів Вроцлав, чистка килимів Вроцлав, чистка матраців, озонування',
+  },
+  en: {
+    title: 'About MasterClean Wrocław | Upholstery & Carpet Cleaning',
+    description: 'MasterClean Wrocław: since 2022, 1000+ clients, 7-day guarantee. On-site sofa, carpet and mattress cleaning, ozone treatment and window washing.',
+    keywords: 'about MasterClean, cleaning company Wrocław, sofa cleaning Wrocław, carpet cleaning Wrocław, mattress cleaning, ozone treatment Poland',
+  },
+};
+
 const About = () => {
   const {
     t, language
@@ -79,6 +102,7 @@ const About = () => {
   const { showSplash, handleSplashComplete } = useSplash('about');
   const faqs = FAQS[language] || FAQS.pl;
   const faqTitle = FAQ_TITLE[language] || FAQ_TITLE.pl;
+  const seoMeta = SEO_META[language] || SEO_META.pl;
   const values = [{
     icon: Award,
     title: t.equipment.quality,
@@ -94,9 +118,9 @@ const About = () => {
   }];
   return <>
       <SEO
-        title="O firmie MasterClean — Firma czyszcząca Wrocław"
-        description="MasterClean — profesjonalna firma czyszcząca we Wrocławiu. Pranie tapicerki meblowej i samochodowej, czyszczenie dywanów, materacy, ozonowanie, mycie okien."
-        keywords="o nas MasterClean, firma czyszcząca Wrocław, profesjonalne pranie tapicerki, firma sprzątająca Wrocław, czyszczenie mebli Wrocław, pranie tapicerki Opole, czyszczenie dywanów, chemczystka mebli, cleaning company Poland, usługi czyszczenia Wrocław"
+        title={seoMeta.title}
+        description={seoMeta.description}
+        keywords={seoMeta.keywords}
         canonical="/about"
         image="https://masterclean1885.com/og-about.jpg"
         breadcrumbs={[{ name: t.nav.about, path: '/about' }]}
