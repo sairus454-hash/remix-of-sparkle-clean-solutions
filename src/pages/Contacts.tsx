@@ -12,6 +12,8 @@ import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import contactsMapPreview from '@/assets/contacts-map-preview.jpg';
+import PageFaqSection from '@/components/PageFaqSection';
+import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
 interface LocationState {
   calculatorItems?: CalculatorItem[];
@@ -44,55 +46,60 @@ const Contacts = () => {
     { icon: Clock, label: t.contacts.hours, value: t.contacts.hoursValue, isHours: true },
   ];
 
+  const seoMeta = getSeoMeta('contacts', language);
+
   return (
     <>
       <SEO
-        title="Kontakt MasterClean — Zamów pranie tapicerki"
-        description="Skontaktuj się z MasterClean: tel. +48 575 211 401. Zamów pranie tapicerki, czyszczenie mebli, dywanów lub sprzątanie. Pracujemy 24/7. Wrocław, Opole, Poznań."
-        keywords="kontakt MasterClean, zamów pranie tapicerki, kontakt firma sprzątająca, zamów czyszczenie mebli, zamów chemczystkę mebli, zamów sprzątanie Wrocław, telefon MasterClean, czyszczenie tapicerki kontakt, Opole"
+        title={seoMeta.title}
+        description={seoMeta.description}
+        keywords={seoMeta.keywords}
         canonical="/contacts"
         image="https://masterclean1885.com/og-contacts.jpg"
         breadcrumbs={[{ name: t.nav.contacts, path: '/contacts' }]}
-        jsonLd={{
-          '@context': 'https://schema.org',
-          '@type': 'ContactPage',
-          mainEntity: {
-            '@type': 'LocalBusiness',
-            '@id': 'https://masterclean1885.com/#localbusiness',
-            name: 'MasterClean 1885',
-            image: 'https://masterclean1885.com/og-contacts.jpg',
-            url: 'https://masterclean1885.com/contacts',
-            telephone: '+48575211401',
-            email: 'sairus454@gmail.com',
-            priceRange: '160-2000 PLN',
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'ul. Trawowa 14',
-              addressLocality: 'Wrocław',
-              addressRegion: 'dolnośląskie',
-              postalCode: '54-614',
-              addressCountry: 'PL',
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ContactPage',
+            mainEntity: {
+              '@type': 'LocalBusiness',
+              '@id': 'https://masterclean1885.com/#localbusiness',
+              name: 'MasterClean 1885',
+              image: 'https://masterclean1885.com/og-contacts.jpg',
+              url: 'https://masterclean1885.com/contacts',
+              telephone: '+48575211401',
+              email: 'sairus454@gmail.com',
+              priceRange: '160-2000 PLN',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'ul. Trawowa 14',
+                addressLocality: 'Wrocław',
+                addressRegion: 'dolnośląskie',
+                postalCode: '54-614',
+                addressCountry: 'PL',
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 51.0984969,
+                longitude: 16.949163,
+              },
+              hasMap: 'https://www.google.com/maps/place/MasterClean+1885+Pranie+tapicerki+i+ozonowanie,+zlota+rączka/@51.0984969,16.949163,17z',
+              openingHoursSpecification: {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                opens: '00:00',
+                closes: '23:59',
+              },
+              areaServed: [
+                { '@type': 'City', name: 'Wrocław' },
+                { '@type': 'City', name: 'Opole' },
+                { '@type': 'City', name: 'Poznań' },
+                { '@type': 'City', name: 'Zielona Góra' },
+              ],
             },
-            geo: {
-              '@type': 'GeoCoordinates',
-              latitude: 51.0984969,
-              longitude: 16.949163,
-            },
-            hasMap: 'https://www.google.com/maps/place/MasterClean+1885+Pranie+tapicerki+i+ozonowanie,+zlota+rączka/@51.0984969,16.949163,17z',
-            openingHoursSpecification: {
-              '@type': 'OpeningHoursSpecification',
-              dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-              opens: '00:00',
-              closes: '23:59',
-            },
-            areaServed: [
-              { '@type': 'City', name: 'Wrocław' },
-              { '@type': 'City', name: 'Opole' },
-              { '@type': 'City', name: 'Poznań' },
-              { '@type': 'City', name: 'Zielona Góra' },
-            ],
           },
-        }}
+          buildFaqJsonLd('contacts', language),
+        ]}
       />
       {showSplash && <ContactsSplash onComplete={handleSplashComplete} />}
       <Layout>
@@ -272,6 +279,7 @@ const Contacts = () => {
           </div>
         </div>
       </section>
+      <PageFaqSection page="contacts" />
       <SeoPageLongText variant="contacts" />
       </Layout>
     </>

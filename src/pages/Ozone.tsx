@@ -22,9 +22,11 @@ import ozoneOfficeSmall from '@/assets/ozone-office-small.jpg';
 import ozoneOfficeLarge from '@/assets/ozone-office-large.jpg';
 import { CalculatorItem } from '@/types/calculator';
 import { useSplash } from '@/hooks/useSplash';
+import PageFaqSection from '@/components/PageFaqSection';
+import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
 const Ozone = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('ozone');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
@@ -57,40 +59,45 @@ const Ozone = () => {
     { id: 'autoOzone', name: t.prices.items.autoOzone || 'Озонирование авто', price: 120, image: ozoneCar },
   ];
 
+  const seoMeta = getSeoMeta('ozone', language);
+
   return (
     <>
       <SEO
-        title="Ozonowanie pomieszczeń i aut — Dezynfekcja"
-        description="Profesjonalne ozonowanie mieszkań, biur i samochodów. Ozonowanie eliminuje nieprzyjemne zapachy, bakterie i wirusy. Dezynfekcja ozonem Wrocław, Opole, Poznań."
-        keywords="ozonowanie pomieszczeń, ozonowanie samochodu, ozonowanie mieszkania, ozonowanie biura, usuwanie zapachów ozonem, dezynfekcja ozonem, ozonowanie po remoncie, ozonowanie po zalaniu, ozonowanie Wrocław, ozonowanie Opole, ozone treatment, eliminacja zapachów, usuwanie pleśni"
+        title={seoMeta.title}
+        description={seoMeta.description}
+        keywords={seoMeta.keywords}
         canonical="/ozone"
         image="https://masterclean1885.com/og-ozone.jpg"
         breadcrumbs={[{ name: t.nav.ozone, path: '/ozone' }]}
-         jsonLd={{
-           '@context': 'https://schema.org',
-           '@type': 'Service',
-           serviceType: 'Ozonowanie pomieszczeń i samochodów',
-           name: 'Ozonowanie pomieszczeń i samochodów',
-           description: 'Profesjonalne ozonowanie mieszkań, biur i samochodów. Usuwanie zapachów i dezynfekcja ozonem.',
-           url: 'https://masterclean1885.com/ozone',
-           provider: {
-             '@type': 'LocalBusiness',
-             name: 'MasterClean',
-             telephone: '+48575211401',
-             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
-           },
-           areaServed: [
-             { '@type': 'City', name: 'Wrocław' },
-             { '@type': 'City', name: 'Opole' },
-             { '@type': 'City', name: 'Legnica' },
-             { '@type': 'City', name: 'Kalisz' },
-           ],
-           offers: [
-             { '@type': 'Offer', name: 'Ozonowanie mieszkania 1-pokojowego', price: '120', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Ozonowanie mieszkania 2-pokojowego', price: '200', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Ozonowanie samochodu', price: '100', priceCurrency: 'PLN' },
-           ],
-         }}
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Ozonowanie pomieszczeń i samochodów',
+            name: 'Ozonowanie pomieszczeń i samochodów',
+            description: 'Profesjonalne ozonowanie mieszkań, biur i samochodów. Usuwanie zapachów i dezynfekcja ozonem.',
+            url: 'https://masterclean1885.com/ozone',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'MasterClean',
+              telephone: '+48575211401',
+              address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+            },
+            areaServed: [
+              { '@type': 'City', name: 'Wrocław' },
+              { '@type': 'City', name: 'Opole' },
+              { '@type': 'City', name: 'Legnica' },
+              { '@type': 'City', name: 'Kalisz' },
+            ],
+            offers: [
+              { '@type': 'Offer', name: 'Ozonowanie mieszkania 1-pokojowego', price: '120', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonowanie mieszkania 2-pokojowego', price: '200', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Ozonowanie samochodu', price: '100', priceCurrency: 'PLN' },
+            ],
+          },
+          buildFaqJsonLd('ozone', language),
+        ]}
       />
     <Layout>
       <BackToOrderButton />
@@ -265,6 +272,7 @@ const Ozone = () => {
         </div>
       </section>
       </div>
+      <PageFaqSection page="ozone" />
       <SeoPageLongText variant="ozone" />
     </Layout>
     </>
