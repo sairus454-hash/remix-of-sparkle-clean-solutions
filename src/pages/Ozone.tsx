@@ -22,6 +22,8 @@ import ozoneOfficeSmall from '@/assets/ozone-office-small.jpg';
 import ozoneOfficeLarge from '@/assets/ozone-office-large.jpg';
 import { CalculatorItem } from '@/types/calculator';
 import { useSplash } from '@/hooks/useSplash';
+import PageFaqSection from '@/components/PageFaqSection';
+import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
 const Ozone = () => {
   const { t } = useLanguage();
