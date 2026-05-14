@@ -279,6 +279,7 @@ const Contacts = () => {
           </div>
         </div>
       </section>
+      <PageFaqSection page="contacts" />
       <SeoPageLongText variant="contacts" />
       </Layout>
     </>
