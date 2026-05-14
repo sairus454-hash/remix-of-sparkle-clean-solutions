@@ -27,23 +27,23 @@ export const FAQ_TITLE: Record<Lang, string> = {
 export const SEO_META: Record<PageKey, Record<Lang, SeoMeta>> = {
   services: {
     pl: {
-      title: 'Pranie tapicerki i mebli — Kalkulator | MasterClean',
-      description: 'Pranie kanapy, narożnika, materaca, fotela u klienta. Ekstrakcja, ekologiczna chemia, gwarancja 7 dni. Kalkulator online — Wrocław, Opole, Poznań.',
+      title: 'Pranie tapicerki i mebli | MasterClean',
+      description: 'Pranie kanapy, narożnika, materaca i fotela u klienta. Ekstrakcja, eko chemia, gwarancja 7 dni. Wrocław, Opole, Poznań.',
       keywords: 'pranie tapicerki, pranie kanapy, pranie narożnika, czyszczenie mebli, chemczystka mebli, pranie sofy, czyszczenie tapicerki Wrocław, Opole, Poznań',
     },
     ru: {
-      title: 'Химчистка мебели и диванов — Калькулятор | MasterClean',
-      description: 'Химчистка диванов, угловых, матрасов и кресел у клиента. Экстракция, эко-химия, гарантия 7 дней. Калькулятор онлайн — Вроцлав, Ополе, Познань.',
+      title: 'Химчистка мебели и диванов | MasterClean',
+      description: 'Химчистка диванов, угловых, матрасов и кресел у клиента. Экстракция, эко-химия, гарантия 7 дней. Вроцлав, Ополе, Познань.',
       keywords: 'химчистка мебели, чистка диванов, чистка угловых диванов, чистка матрасов, химчистка кресел, химчистка на дому Вроцлав, Ополе, Познань',
     },
     uk: {
-      title: 'Хімчистка меблів та диванів — Калькулятор | MasterClean',
-      description: 'Хімчистка диванів, кутових, матраців та крісел у клієнта. Екстракція, еко-хімія, гарантія 7 днів. Калькулятор онлайн — Вроцлав, Ополе, Познань.',
+      title: 'Хімчистка меблів та диванів | MasterClean',
+      description: 'Хімчистка диванів, кутових, матраців та крісел у клієнта. Екстракція, еко-хімія, гарантія 7 днів. Вроцлав, Ополе, Познань.',
       keywords: 'хімчистка меблів, чистка диванів, чистка кутових диванів, чистка матраців, хімчистка крісел, хімчистка вдома Вроцлав, Ополе',
     },
     en: {
-      title: 'Upholstery & Furniture Cleaning — Calculator | MasterClean',
-      description: 'On-site sofa, corner, mattress and armchair cleaning. Hot-water extraction, eco chemistry, 7-day guarantee. Online calculator — Wrocław, Opole, Poznań.',
+      title: 'Upholstery & Furniture Cleaning | MasterClean',
+      description: 'On-site sofa, corner, mattress and armchair cleaning. Hot-water extraction, eco chemistry, 7-day guarantee. Wrocław, Opole, Poznań.',
       keywords: 'upholstery cleaning, sofa cleaning, corner sofa cleaning, mattress cleaning, armchair cleaning, on-site cleaning Wrocław, Opole, Poznań',
     },
   },
