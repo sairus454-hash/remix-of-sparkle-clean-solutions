@@ -24,6 +24,8 @@ import { img } from '@/utils/imageMap';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import CleaningPricingTopBlock from '@/components/CleaningPricingTopBlock';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
+import PageFaqSection from '@/components/PageFaqSection';
+import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
 import { CalculatorItem } from '@/types/calculator';
 
