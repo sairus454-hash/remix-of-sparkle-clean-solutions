@@ -11,6 +11,8 @@ import { Sparkles, Sofa, Armchair, Bed, Package } from 'lucide-react';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import servicesCleaning from '@/assets/services-cleaning.jpg';
 import servicesDrying from '@/assets/services-drying.jpg';
+import PageFaqSection from '@/components/PageFaqSection';
+import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
 // Hero images
 import heroUpholsteryCleaning from '@/assets/hero-upholstery-cleaning.jpg';
