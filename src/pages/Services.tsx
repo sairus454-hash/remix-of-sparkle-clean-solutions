@@ -129,41 +129,46 @@ const Services = () => {
     { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 70, image: calcLeatherChairSwivel },
   ];
 
+  const seoMeta = getSeoMeta('services', language);
+
   return (
     <>
       <SEO
-        title="Pranie kanapy, materaca, narożnika — Chemczystka mebli"
-        description="Profesjonalne pranie kanapy, materaca i narożnika z dojazdem. Chemczystka mebli tapicerowanych i skórzanych, czyszczenie kanap, foteli, sof. Kalkulator online. Wrocław, Opole."
-        keywords="pranie kanapy, pranie materaca, pranie narożnika, chemczystka mebli, pranie tapicerki meblowej, pranie tapicerki skórzanej, czyszczenie mebli, pranie sofy, czyszczenie fotela, czyszczenie tapicerki, czyszczenie skóry, pranie tapicerki cennik, pranie tapicerki z dojazdem, pranie ekstrakcyjne, czyszczenie mebli Wrocław, Opole, Poznań"
+        title={seoMeta.title}
+        description={seoMeta.description}
+        keywords={seoMeta.keywords}
         canonical="/services"
         image="https://masterclean1885.com/og-services.jpg"
         breadcrumbs={[{ name: t.nav.services, path: '/services' }]}
-         jsonLd={{
-           '@context': 'https://schema.org',
-           '@type': 'Service',
-           serviceType: 'Pranie tapicerki meblowej',
-           name: 'Pranie tapicerki meblowej i skórzanej',
-           description: 'Profesjonalne pranie tapicerki meblowej i skórzanej z dojazdem do klienta. Czyszczenie kanap, foteli, sof, materacy.',
-           url: 'https://masterclean1885.com/services',
-           provider: {
-             '@type': 'LocalBusiness',
-             name: 'MasterClean',
-             telephone: '+48575211401',
-             address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
-           },
-           areaServed: [
-             { '@type': 'City', name: 'Wrocław' },
-             { '@type': 'City', name: 'Opole' },
-             { '@type': 'City', name: 'Legnica' },
-             { '@type': 'City', name: 'Kalisz' },
-           ],
-           offers: [
-             { '@type': 'Offer', name: 'Pranie kanapy 2-osobowej', price: '160', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie kanapy 3-osobowej', price: '180', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie narożnika', price: '230', priceCurrency: 'PLN' },
-             { '@type': 'Offer', name: 'Pranie materaca', price: '130', priceCurrency: 'PLN' },
-           ],
-         }}
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Pranie tapicerki meblowej',
+            name: 'Pranie tapicerki meblowej i skórzanej',
+            description: 'Profesjonalne pranie tapicerki meblowej i skórzanej z dojazdem do klienta. Czyszczenie kanap, foteli, sof, materacy.',
+            url: 'https://masterclean1885.com/services',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'MasterClean',
+              telephone: '+48575211401',
+              address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+            },
+            areaServed: [
+              { '@type': 'City', name: 'Wrocław' },
+              { '@type': 'City', name: 'Opole' },
+              { '@type': 'City', name: 'Legnica' },
+              { '@type': 'City', name: 'Kalisz' },
+            ],
+            offers: [
+              { '@type': 'Offer', name: 'Pranie kanapy 2-osobowej', price: '160', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Pranie kanapy 3-osobowej', price: '180', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Pranie narożnika', price: '230', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Pranie materaca', price: '130', priceCurrency: 'PLN' },
+            ],
+          },
+          buildFaqJsonLd('services', language),
+        ]}
       />
       <Layout>
          {/* Hero */}
