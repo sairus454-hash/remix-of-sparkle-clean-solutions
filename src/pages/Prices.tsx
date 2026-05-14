@@ -550,6 +550,7 @@ const Prices = () => {
             </div>
           </div>
         </section>
+      <PageFaqSection page="prices" />
       <SeoPageLongText variant="prices" />
       </Layout>
     </>
