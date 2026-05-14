@@ -102,6 +102,7 @@ const About = () => {
   const { showSplash, handleSplashComplete } = useSplash('about');
   const faqs = FAQS[language] || FAQS.pl;
   const faqTitle = FAQ_TITLE[language] || FAQ_TITLE.pl;
+  const seoMeta = SEO_META[language] || SEO_META.pl;
   const values = [{
     icon: Award,
     title: t.equipment.quality,
