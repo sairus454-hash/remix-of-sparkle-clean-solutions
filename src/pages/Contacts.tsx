@@ -46,8 +46,6 @@ const Contacts = () => {
     { icon: Clock, label: t.contacts.hours, value: t.contacts.hoursValue, isHours: true },
   ];
 
-  return (
-    <>
   const seoMeta = getSeoMeta('contacts', language);
 
   return (
