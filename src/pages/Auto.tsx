@@ -19,6 +19,8 @@ import PromotionsSection from '@/components/PromotionsSection';
 import { CalculatorItem } from '@/types/calculator';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 import autoTruckVanBanner from '@/assets/auto-truck-van-banner.jpg';
+import PageFaqSection from '@/components/PageFaqSection';
+import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
 // Auto calculator images
 import calcAutoComplex from '@/assets/calc-auto-complex.jpg';
