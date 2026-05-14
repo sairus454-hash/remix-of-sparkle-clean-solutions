@@ -41,7 +41,7 @@ import calcAutoVipLeather from '@/assets/calc-auto-vip-leather.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
 
 const Auto = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('auto');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
