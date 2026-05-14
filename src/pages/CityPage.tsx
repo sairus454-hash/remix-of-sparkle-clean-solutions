@@ -392,7 +392,14 @@ const CityPage = () => {
         description={seoDescription}
         keywords={seoKeywords}
         canonical={`/city/${city.slug}`}
-        image={`https://masterclean1885.com/og-${city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug}.png`}
+        image={(() => {
+          // Map city slug → existing OG image filename. Fallback to default OG when no city-specific image exists.
+          const ogCities = new Set(['wroclaw','opole','legnica','lubin','olawa','kalisz','leszno','swidnica','walbrzych','jelenia-gora','brzeg']);
+          const slug = city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug;
+          return ogCities.has(slug)
+            ? `https://masterclean1885.com/og-${slug}.jpg`
+            : 'https://masterclean1885.com/og-image.jpg';
+        })()}
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
         jsonLd={{
           '@context': 'https://schema.org',
