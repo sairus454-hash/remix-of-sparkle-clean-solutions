@@ -329,6 +329,7 @@ const Services = () => {
           </div>
         </section>
         </LazySection>
+      <PageFaqSection page="services" />
       <SeoPageLongText variant="services" />
       </Layout>
     </>
