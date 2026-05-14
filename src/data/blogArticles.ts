@@ -22,6 +22,7 @@ import carSeatPriceBlog from '@/assets/car-seat-cleaning-price-blog.webp';
 import ozoneCarSmellBlog from '@/assets/ozone-car-smell-blog.webp';
 import ozonowanieMieszkaniaBlog from '@/assets/ozonowanie-mieszkania-blog.webp';
 import carpetPetHairBlog from '@/assets/carpet-pet-hair-cleaning-blog.webp';
+import carpetStainRemovalBlog from '@/assets/carpet-stain-removal-blog.webp';
 
 export interface BlogArticle {
   id: number;
