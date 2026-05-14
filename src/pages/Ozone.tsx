@@ -272,6 +272,7 @@ const Ozone = () => {
         </div>
       </section>
       </div>
+      <PageFaqSection page="ozone" />
       <SeoPageLongText variant="ozone" />
     </Layout>
     </>
