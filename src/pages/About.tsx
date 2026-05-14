@@ -118,9 +118,9 @@ const About = () => {
   }];
   return <>
       <SEO
-        title="O firmie MasterClean — Firma czyszcząca Wrocław"
-        description="MasterClean — profesjonalna firma czyszcząca we Wrocławiu. Pranie tapicerki meblowej i samochodowej, czyszczenie dywanów, materacy, ozonowanie, mycie okien."
-        keywords="o nas MasterClean, firma czyszcząca Wrocław, profesjonalne pranie tapicerki, firma sprzątająca Wrocław, czyszczenie mebli Wrocław, pranie tapicerki Opole, czyszczenie dywanów, chemczystka mebli, cleaning company Poland, usługi czyszczenia Wrocław"
+        title={seoMeta.title}
+        description={seoMeta.description}
+        keywords={seoMeta.keywords}
         canonical="/about"
         image="https://masterclean1885.com/og-about.jpg"
         breadcrumbs={[{ name: t.nav.about, path: '/about' }]}
