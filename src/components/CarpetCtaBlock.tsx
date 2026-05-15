@@ -73,6 +73,7 @@ const T: Record<Lang, {
     honeypotErr: 'Заповніть ім\'я та телефон',
     ok: 'Заявку надіслано!', okDesc: 'Зв\'яжемося з вами протягом кількох хвилин.',
     err: 'Помилка', errDesc: 'Не вдалося надіслати. Спробуйте пізніше.',
+    summaryTitle: 'Ваша заявка', notSpecified: 'не вказано', newRequest: 'Нова заявка',
   },
   en: {
     badge: 'Carpet cleaning',
