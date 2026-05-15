@@ -129,10 +129,12 @@ const CarpetCtaBlock = () => {
     }
     setLoading(true);
     try {
+      const prioritySameDay = hasArea && areaNum >= 50;
       const lines = [
         `🧼 ${tt.badge}`,
         area ? `${tt.area}: ${area}` : null,
         hasArea ? `${tt.estimate}: ${estimateLabel}` : null,
+        prioritySameDay ? `⚡ priority_same_day: true (${tt.bonusNote})` : null,
       ].filter(Boolean).join('\n');
 
       const { error } = await supabase.functions.invoke('send-telegram', {
@@ -142,6 +144,7 @@ const CarpetCtaBlock = () => {
           message: lines,
           date: date ? format(date, 'dd.MM.yyyy') : undefined,
           time: time || undefined,
+          priority_same_day: prioritySameDay,
         },
       });
       if (error) throw error;

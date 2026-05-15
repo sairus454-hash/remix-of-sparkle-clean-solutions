@@ -59,6 +59,7 @@ interface FormData {
   address?: string;
   postalCode?: string;
   paymentType?: string;
+  prioritySameDay?: boolean;
 }
 
 serve(async (req) => {
@@ -111,6 +112,7 @@ serve(async (req) => {
       address: sanitize(raw.address, MAX_SHORT),
       postalCode: sanitize(raw.postalCode, 20),
       paymentType: sanitize(raw.paymentType, 20),
+      prioritySameDay: raw.priority_same_day === true || raw.prioritySameDay === true,
     };
 
     if (!formData.name || !formData.phone) {
@@ -136,9 +138,10 @@ serve(async (req) => {
     const lines = [
       '🔔 <b>Новая заявка с сайта!</b>',
       '',
+      formData.prioritySameDay ? '⚡ <b>ПРИОРИТЕТ:</b> выезд в день обращения (≥50 м²)' : null,
       `👤 <b>Имя:</b> ${esc(formData.name)}`,
       `📞 <b>Телефон:</b> ${esc(formData.phone)}`,
-    ];
+    ].filter(Boolean) as string[];
     if (formData.email) lines.push(`📧 <b>Email:</b> ${esc(formData.email)}`);
     if (formData.service) lines.push(`🛠 <b>Услуга:</b> ${esc(formData.service)}`);
     if (formData.city) lines.push(`🏙 <b>Город:</b> ${esc(formData.city)}`);
