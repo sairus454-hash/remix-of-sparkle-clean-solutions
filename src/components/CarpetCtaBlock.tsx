@@ -92,6 +92,7 @@ const T: Record<Lang, {
     ok: 'Request sent!', okDesc: 'We will contact you within minutes.',
     err: 'Error', errDesc: 'Failed to send. Please try again later.',
     summaryTitle: 'Your request', notSpecified: 'not specified', newRequest: 'New request',
+    bonusNote: 'For carpet cleaning orders from 50 m² — priority same-day visit.',
   },
 };
 
