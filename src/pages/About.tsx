@@ -12,6 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 import CircularRevealCard from '@/components/CircularRevealCard';
 import OferteoBadge from '@/components/OferteoBadge';
+import CarpetCtaBlock from '@/components/CarpetCtaBlock';
 
 const About3DCarousel = lazy(() => import('@/components/About3DCarousel'));
 const PolandRegionsMap = lazy(() => import('@/components/PolandRegionsMap'));
@@ -475,6 +476,9 @@ const About = () => {
           </div>
         </section>
         <OferteoBadge />
+
+        {/* CTA: Order carpet cleaning */}
+        <CarpetCtaBlock />
 
         {/* SEO: carpet cleaning with express drying */}
         <section aria-labelledby="carpet-express-heading" className="py-16 bg-card/60">
