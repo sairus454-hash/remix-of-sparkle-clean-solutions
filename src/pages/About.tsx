@@ -477,6 +477,9 @@ const About = () => {
         </section>
         <OferteoBadge />
 
+        {/* CTA: Order carpet cleaning */}
+        <CarpetCtaBlock />
+
         {/* SEO: carpet cleaning with express drying */}
         <section aria-labelledby="carpet-express-heading" className="py-16 bg-card/60">
           <div className="container mx-auto px-4 max-w-4xl">
