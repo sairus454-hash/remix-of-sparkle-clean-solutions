@@ -47,6 +47,7 @@ const T: Record<Lang, {
     ok: 'Wysłano!', okDesc: 'Skontaktujemy się w ciągu kilku minut.',
     err: 'Błąd', errDesc: 'Nie udało się wysłać. Spróbuj później.',
     summaryTitle: 'Twoje zgłoszenie', notSpecified: 'nie podano', newRequest: 'Nowe zgłoszenie',
+    bonusNote: 'Przy zamówieniu pranie wykładziny od 50 m² — priorytetowy przyjazd w dniu zgłoszenia.',
   },
   ru: {
     badge: 'Химчистка ковролина',
