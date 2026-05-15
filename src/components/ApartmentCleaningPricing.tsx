@@ -152,8 +152,8 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                 </div>
 
                 {/* Apartment cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {apartments.map((apt) => {
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 [perspective:1200px]">
+                  {apartments.map((apt, aptIndex) => {
                     const price = Math.round(apt.basePrice * (1 - activeFreq.discount));
                     const priceLabel = String(price);
                     const oldLabel = activeFreq.discount > 0 ? String(apt.basePrice) : null;
@@ -161,7 +161,8 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                     return (
                       <div
                         key={apt.id}
-                        className="relative rounded-xl border border-border bg-background p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow"
+                        className="relative rounded-xl border border-border bg-background p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow animate-spin-reveal"
+                        style={{ animationDelay: `${aptIndex * 180}ms` }}
                       >
                         <div className="flex items-center gap-2">
                           <Sparkles className="w-4 h-4 text-primary" />
