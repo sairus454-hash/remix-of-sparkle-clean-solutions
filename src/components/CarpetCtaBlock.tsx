@@ -119,7 +119,7 @@ const CarpetCtaBlock = () => {
       const lines = [
         `🧼 ${tt.badge}`,
         area ? `${tt.area}: ${area}` : null,
-        estimate ? `${tt.estimate}: ~${estimate} zł` : null,
+        hasArea ? `${tt.estimate}: ${estimateLabel}` : null,
       ].filter(Boolean).join('\n');
 
       const { error } = await supabase.functions.invoke('send-telegram', {
