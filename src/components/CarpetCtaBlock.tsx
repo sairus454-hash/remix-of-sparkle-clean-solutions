@@ -354,6 +354,7 @@ const CarpetCtaBlock = () => {
                 </Button>
               </div>
             </form>
+            )}
           </div>
         </div>
       </section>
