@@ -112,6 +112,7 @@ serve(async (req) => {
       address: sanitize(raw.address, MAX_SHORT),
       postalCode: sanitize(raw.postalCode, 20),
       paymentType: sanitize(raw.paymentType, 20),
+      prioritySameDay: raw.priority_same_day === true || raw.prioritySameDay === true,
     };
 
     if (!formData.name || !formData.phone) {
