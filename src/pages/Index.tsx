@@ -18,6 +18,8 @@ import mediaexpertTeamEquipment from '@/assets/mediaexpert-team-equipment.jpg';
 import mediaexpertTeam480 from '@/assets/mediaexpert-team-equipment-480.webp';
 import mediaexpertTeam768 from '@/assets/mediaexpert-team-equipment-768.webp';
 import mediaexpertTeam960 from '@/assets/mediaexpert-team-equipment-960.webp';
+import mediaexpertTeamEquipment2 from '@/assets/mediaexpert-team-equipment-2.jpg';
+import mediaexpertTeamEquipment3 from '@/assets/mediaexpert-team-equipment-3.jpg';
 
 
 // Lazy load below-fold non-critical components
@@ -271,8 +273,9 @@ const Index = () => {
 
       <section className="py-8 sm:py-12 bg-background">
         <div className="container mx-auto px-4">
+          {/* Mobile: single image */}
           <div
-            className="mx-auto rounded-2xl overflow-hidden shadow-elegant bg-muted"
+            className="lg:hidden mx-auto rounded-2xl overflow-hidden shadow-elegant bg-muted"
             style={{ width: 'min(85vw, 28rem)', aspectRatio: '3 / 4' }}
           >
             <picture>
@@ -296,6 +299,43 @@ const Index = () => {
                 className="w-full h-full object-cover block"
               />
             </picture>
+          </div>
+
+          {/* Desktop: 3 photos in a row */}
+          <div className="hidden lg:grid grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              { src: mediaexpertTeamEquipment, webp: true },
+              { src: mediaexpertTeamEquipment2, webp: false },
+              { src: mediaexpertTeamEquipment3, webp: false },
+            ].map((img, i) => (
+              <div
+                key={i}
+                className="rounded-2xl overflow-hidden shadow-elegant bg-muted"
+                style={{ aspectRatio: '3 / 4' }}
+              >
+                <picture>
+                  {img.webp && (
+                    <source
+                      type="image/webp"
+                      srcSet={`${mediaexpertTeam480} 480w, ${mediaexpertTeam768} 768w, ${mediaexpertTeam960} 960w`}
+                      sizes="33vw"
+                    />
+                  )}
+                  <img
+                    src={img.src}
+                    alt={
+                      language === 'pl' ? 'Zespół MasterClean ze sprzętem podczas realizacji w Media Expert' :
+                      language === 'ru' ? 'Команда MasterClean с оборудованием во время работы в Media Expert' :
+                      language === 'uk' ? 'Команда MasterClean з обладнанням під час роботи в Media Expert' :
+                      'MasterClean team with equipment during a Media Expert job'
+                    }
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover block"
+                  />
+                </picture>
+              </div>
+            ))}
           </div>
         </div>
       </section>
