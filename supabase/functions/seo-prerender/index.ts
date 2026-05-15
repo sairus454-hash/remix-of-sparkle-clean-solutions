@@ -1140,7 +1140,7 @@ Deno.serve(async (req: Request) => {
       });
     }
 
-    const meta = getPageMeta(path);
+    const meta = getPageMeta(path, validLang as Lang);
     if (!meta) {
       return new Response('Not found', {
         status: 404,
