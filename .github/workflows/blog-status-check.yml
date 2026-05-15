@@ -1,0 +1,35 @@
+name: Blog status check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/blogArticles.ts'
+      - 'supabase/functions/seo-prerender/**'
+      - 'scripts/check-blog-status.mjs'
+      - '.github/workflows/blog-status-check.yml'
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Base URL to check (defaults to production)'
+        required: false
+        default: 'https://masterclean1885.com'
+  schedule:
+    # Daily at 06:00 UTC — catches regressions on already-published content
+    - cron: '0 6 * * *'
+
+jobs:
+  check-blog-status:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Wait for deploy to settle (push events only)
+        if: github.event_name == 'push'
+        run: sleep 60
+      - name: Check /blog/{id} status across PL/RU/EN/UK
+        env:
+          BASE_URL: ${{ github.event.inputs.base_url || 'https://masterclean1885.com' }}
+        run: node scripts/check-blog-status.mjs
