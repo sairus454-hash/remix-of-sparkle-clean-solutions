@@ -37,11 +37,11 @@ export interface BlogArticle {
   tag: string;
   seo?: {
     title: string;
-    description: string;
-    keywords: string;
-    h1: string;
-    h2: string;
-    h3: string;
+    description?: string;
+    keywords?: string;
+    h1?: string;
+    h2?: string;
+    h3?: string;
   };
   faq?: { q: string; a: string }[];
 }
