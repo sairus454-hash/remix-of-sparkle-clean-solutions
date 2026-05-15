@@ -147,6 +147,13 @@ const CarpetCtaBlock = () => {
 
       setShowSuccess(true);
       toast({ title: tt.ok, description: tt.okDesc });
+      setSubmitted({
+        area: hasArea ? `${areaNum} m²` : tt.notSpecified,
+        date: date ? format(date, 'dd.MM.yyyy') : undefined,
+        time: time || undefined,
+        estimateLabel: hasArea ? estimateLabel : undefined,
+        name: name.trim(),
+      });
       setName(''); setPhone(''); setArea(''); setDate(undefined); setTime('');
     } catch {
       toast({ title: tt.err, description: tt.errDesc, variant: 'destructive' });
