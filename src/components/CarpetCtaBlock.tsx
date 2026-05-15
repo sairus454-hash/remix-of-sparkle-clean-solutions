@@ -134,7 +134,7 @@ const CarpetCtaBlock = () => {
       if (error) throw error;
 
       try {
-        (await import('@/lib/gtm')).gtmEvents.formSubmit('about_carpet_cta', { area: areaNum || 0, estimate });
+        (await import('@/lib/gtm')).gtmEvents.formSubmit('about_carpet_cta', { area: areaNum || 0, estimate_min: estimateMin, estimate_max: estimateMax });
       } catch {}
 
       setShowSuccess(true);
