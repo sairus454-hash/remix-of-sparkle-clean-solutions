@@ -102,7 +102,10 @@ const CarpetCtaBlock = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const areaNum = parseInt(area, 10);
-  const estimate = !isNaN(areaNum) && areaNum > 0 ? Math.max(160, areaNum * PRICE_PER_M2) : 0;
+  const hasArea = !isNaN(areaNum) && areaNum > 0;
+  const estimateMin = hasArea ? Math.max(160, areaNum * PRICE_MIN) : 0;
+  const estimateMax = hasArea ? Math.max(160, areaNum * PRICE_MAX) : 0;
+  const estimateLabel = hasArea ? `~${estimateMin}–${estimateMax} zł` : '';
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
