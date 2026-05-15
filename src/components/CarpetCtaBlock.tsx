@@ -13,7 +13,9 @@ import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
 import SuccessAnimation from './SuccessAnimation';
 
-const PRICE_PER_M2 = 12;
+const PRICE_MIN = 7;
+const PRICE_MAX = 10;
+const PRICE_LABEL = `${PRICE_MIN}–${PRICE_MAX} zł/m²`;
 
 const timeSlots = Array.from({ length: 25 }, (_, i) => {
   const h = Math.floor((i * 30 + 480) / 60);
