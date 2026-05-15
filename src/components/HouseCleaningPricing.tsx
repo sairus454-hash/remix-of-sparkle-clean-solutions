@@ -73,14 +73,15 @@ const HouseCleaningPricing = ({ language, onOrder }: Props) => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {tiers.map((tier) => {
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 [perspective:1200px]">
+                  {tiers.map((tier, tierIndex) => {
                     const tierLabel = tier.labels[lang];
                     const name = `${t.house} ${tierLabel}`;
                     return (
                       <div
                         key={tier.id}
-                        className="relative rounded-xl border border-border bg-background p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow"
+                        className="relative rounded-xl border border-border bg-background p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow animate-spin-reveal"
+                        style={{ animationDelay: `${tierIndex * 180}ms` }}
                       >
                         <div className="flex items-center gap-2">
                           <Sparkles className="w-4 h-4 text-primary" />
