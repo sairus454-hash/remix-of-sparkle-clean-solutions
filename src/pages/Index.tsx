@@ -83,11 +83,35 @@ const Index = () => {
   const faqSubtitle = { ru: 'Коротко о том, что чаще всего спрашивают перед заказом', en: 'Quick answers to the questions clients ask most often', pl: 'Krótkie odpowiedzi na najczęstsze pytania klientów', uk: 'Короткі відповіді на найчастіші запитання клієнтів' };
   const lang = (language === 'ru' || language === 'en' || language === 'pl' || language === 'uk') ? language : 'pl';
 
+  const seoMeta = {
+    pl: {
+      title: 'MasterClean — Pranie tapicerki, dywanów i aut z dojazdem',
+      description: 'Pranie kanapy, materaca, narożnika i tapicerki samochodowej z dojazdem. Czyszczenie dywanów, ozonowanie, mycie okien. Wrocław i okolice 24/7.',
+      keywords: 'pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, czyszczenie dywanów, ozonowanie, sprzątanie mieszkań, mycie okien, czyszczenie z dojazdem, Wrocław, Opole, Poznań',
+    },
+    ru: {
+      title: 'MasterClean — Химчистка мебели, ковров и авто с выездом',
+      description: 'Химчистка дивана, матраса, углового дивана и салона авто с выездом. Чистка ковров, озонирование, мытьё окон. Вроцлав и окрестности 24/7.',
+      keywords: 'химчистка дивана, химчистка матраса, химчистка мебели, чистка ковров, озонирование, уборка квартир, мытьё окон, выезд на дом, Вроцлав, Ополе, Познань',
+    },
+    en: {
+      title: 'MasterClean — Upholstery, carpet & car cleaning at home',
+      description: 'On-site sofa, mattress, corner couch and car upholstery cleaning. Carpet cleaning, ozone treatment, window washing. Wrocław and area, 24/7.',
+      keywords: 'sofa cleaning, mattress cleaning, upholstery cleaning, carpet cleaning, ozone treatment, apartment cleaning, window washing, on-site service, Wrocław, Opole, Poznań',
+    },
+    uk: {
+      title: 'MasterClean — Хімчистка меблів, килимів та авто з виїздом',
+      description: 'Хімчистка дивана, матраца, кутового дивана та салону авто з виїздом. Чищення килимів, озонування, миття вікон. Вроцлав і околиці 24/7.',
+      keywords: 'хімчистка дивана, хімчистка матраца, хімчистка меблів, чищення килимів, озонування, прибирання квартир, миття вікон, виїзд додому, Вроцлав, Ополе, Познань',
+    },
+  } as const;
+  const meta = seoMeta[lang];
+
   return <>
       <SEO
-        title="MasterClean — Pranie tapicerki, dywanów i aut z dojazdem"
-        description="Pranie kanapy, materaca, narożnika i tapicerki samochodowej z dojazdem. Czyszczenie dywanów, ozonowanie, mycie okien. Wrocław i okolice 24/7."
-        keywords="pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, pranie tapicerki meblowej, czyszczenie dywanów, czyszczenie materacy, pranie sofy, ozonowanie, sprzątanie mieszkań, mycie okien, złota rączka, czyszczenie z dojazdem, dojazd do klienta, czyszczenie mebli Wrocław, pranie tapicerki Opole, usługi sprzątania Wrocław, pranie ekstrakcyjne, cleaning services Poland, Poznań"
+        title={meta.title}
+        description={meta.description}
+        keywords={meta.keywords}
         canonical="/"
         image="https://masterclean1885.com/og-image.jpg"
         jsonLd={[{
