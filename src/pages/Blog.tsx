@@ -62,13 +62,38 @@ const Blog = () => {
   const labels = commentLabels[language] || commentLabels.ru;
   const { showSplash, handleSplashComplete } = useSplash('blog');
 
+  const lang = (language === 'ru' || language === 'en' || language === 'pl' || language === 'uk') ? language : 'pl';
+  const blogSeo = {
+    pl: {
+      title: 'Blog czystości — porady czyszczenia | MasterClean',
+      description: 'Praktyczne artykuły o praniu tapicerki, sprzątaniu mieszkań po remoncie i pielęgnacji mebli. Porady ekspertów MasterClean dla domu i auta.',
+      keywords: 'blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, jak prać kanapę, czyszczenie materaca, pranie tapicerki porady',
+    },
+    ru: {
+      title: 'Блог чистоты — советы по химчистке | MasterClean',
+      description: 'Практические статьи о химчистке мебели, уборке после ремонта и уходе за тканями. Советы экспертов MasterClean для дома и авто.',
+      keywords: 'блог уборка, советы по химчистке, как чистить диван, как стирать матрас, уход за мебелью, химчистка дома',
+    },
+    en: {
+      title: 'Cleaning Blog — Expert Tips & Guides | MasterClean',
+      description: 'Practical articles on upholstery cleaning, post-renovation cleanup and fabric care. Expert MasterClean tips for your home and car.',
+      keywords: 'cleaning blog, upholstery cleaning tips, how to clean a sofa, mattress cleaning, fabric care, post-renovation cleaning',
+    },
+    uk: {
+      title: 'Блог чистоти — поради з хімчистки | MasterClean',
+      description: 'Практичні статті про хімчистку меблів, прибирання після ремонту та догляд за тканинами. Поради експертів MasterClean для дому та авто.',
+      keywords: 'блог прибирання, поради з хімчистки, як чистити диван, чищення матраца, догляд за меблями',
+    },
+  } as const;
+  const bMeta = blogSeo[lang];
+
   return (
     <>
       {showSplash && <BlogSplash onComplete={handleSplashComplete} />}
       <SEO
-        title="Blog czystości — Porady czyszczenia | MasterClean"
-        description="Przydatne artykuły o praniu tapicerki, sprzątaniu i pielęgnacji mebli. Porady ekspertów, jak dbać o czystość w domu i samochodzie."
-        keywords="blog sprzątanie, porady czyszczenia, jak czyścić tapicerkę, jak prać kanapę, porady czystość, jak usunąć plamy, pranie tapicerki porady, czyszczenie materaca, cleaning tips blog, czyszczenie mebli porady"
+        title={bMeta.title}
+        description={bMeta.description}
+        keywords={bMeta.keywords}
         canonical="/blog"
         image="https://masterclean1885.com/og-blog.jpg"
         breadcrumbs={[{ name: titles.title, path: '/blog' }]}
