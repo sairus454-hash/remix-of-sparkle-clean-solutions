@@ -31,6 +31,7 @@ const T: Record<Lang, {
   badge: string; title: string; subtitle: string; area: string; areaPh: string;
   date: string; time: string; name: string; phone: string; submit: string;
   estimate: string; honeypotErr: string; ok: string; okDesc: string; err: string; errDesc: string;
+  summaryTitle: string; notSpecified: string; newRequest: string;
 }> = {
   pl: {
     badge: 'Pranie wykładziny dywanowej',
