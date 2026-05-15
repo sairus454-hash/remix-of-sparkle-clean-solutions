@@ -481,6 +481,13 @@ const blogPages: Record<string, PageMeta> = {
     image: `${SITE_URL}/og-blog.jpg`,
     type: 'article',
   },
+  '25': {
+    title: 'Sprzątanie mieszkania po remoncie krok po kroku | MasterClean',
+    description: 'Sprzątanie mieszkania po remoncie: właściwa kolejność prac, usuwanie pyłu budowlanego bez smug i kiedy zlecić sprzątanie profesjonalistom.',
+    keywords: 'sprzątanie mieszkania po remoncie, sprzątanie po remoncie, pył budowlany, mycie okien po remoncie, generalne sprzątanie',
+    image: `${SITE_URL}/og-blog.jpg`,
+    type: 'article',
+  },
 };
 
 function getPageMeta(path: string): PageMeta | null {
