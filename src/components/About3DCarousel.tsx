@@ -12,9 +12,10 @@ import aboutBa9 from '@/assets/about-ba-9.jpg';
 import aboutBaMediaexpert from '@/assets/mediaexpert-carpet-ba.jpg';
 import aboutBaMediaexpertAisle from '@/assets/about-ba-mediaexpert-aisle.jpg';
 import aboutBaAttic from '@/assets/about-ba-corner-sofa-attic.jpg';
+import aboutBaBalcony from '@/assets/about-ba-balcony-deck.jpg';
 
-const slideImages = [aboutBaAttic, aboutBa9, aboutBaMediaexpert, aboutBaMediaexpertAisle, aboutBa1, aboutBa2, aboutBa3, aboutBa4, aboutBa5];
-const slideKeys = ['slideAttic', 'slide9', 'slideMediaexpert', 'slideMediaexpertAisle', 'slide1', 'slide2', 'slide3', 'slide4', 'slide5'] as const;
+const slideImages = [aboutBaBalcony, aboutBaAttic, aboutBa9, aboutBaMediaexpert, aboutBaMediaexpertAisle, aboutBa1, aboutBa2, aboutBa3, aboutBa4, aboutBa5];
+const slideKeys = ['slideBalcony', 'slideAttic', 'slide9', 'slideMediaexpert', 'slideMediaexpertAisle', 'slide1', 'slide2', 'slide3', 'slide4', 'slide5'] as const;
 
 const About3DCarousel = forwardRef<HTMLElement>((_, _ref) => {
   const { t } = useLanguage();
