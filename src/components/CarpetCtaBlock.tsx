@@ -13,7 +13,9 @@ import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
 import SuccessAnimation from './SuccessAnimation';
 
-const PRICE_PER_M2 = 12;
+const PRICE_MIN = 7;
+const PRICE_MAX = 10;
+const PRICE_LABEL = `${PRICE_MIN}–${PRICE_MAX} zł/m²`;
 
 const timeSlots = Array.from({ length: 25 }, (_, i) => {
   const h = Math.floor((i * 30 + 480) / 60);
@@ -100,7 +102,10 @@ const CarpetCtaBlock = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const areaNum = parseInt(area, 10);
-  const estimate = !isNaN(areaNum) && areaNum > 0 ? Math.max(160, areaNum * PRICE_PER_M2) : 0;
+  const hasArea = !isNaN(areaNum) && areaNum > 0;
+  const estimateMin = hasArea ? Math.max(160, areaNum * PRICE_MIN) : 0;
+  const estimateMax = hasArea ? Math.max(160, areaNum * PRICE_MAX) : 0;
+  const estimateLabel = hasArea ? `~${estimateMin}–${estimateMax} zł` : '';
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -114,7 +119,7 @@ const CarpetCtaBlock = () => {
       const lines = [
         `🧼 ${tt.badge}`,
         area ? `${tt.area}: ${area}` : null,
-        estimate ? `${tt.estimate}: ~${estimate} zł` : null,
+        hasArea ? `${tt.estimate}: ${estimateLabel}` : null,
       ].filter(Boolean).join('\n');
 
       const { error } = await supabase.functions.invoke('send-telegram', {
@@ -129,7 +134,7 @@ const CarpetCtaBlock = () => {
       if (error) throw error;
 
       try {
-        (await import('@/lib/gtm')).gtmEvents.formSubmit('about_carpet_cta', { area: areaNum || 0, estimate });
+        (await import('@/lib/gtm')).gtmEvents.formSubmit('about_carpet_cta', { area: areaNum || 0, estimate_min: estimateMin, estimate_max: estimateMax });
       } catch {}
 
       setShowSuccess(true);
@@ -272,13 +277,13 @@ const CarpetCtaBlock = () => {
               {/* Estimate + CTA */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
                 <p className="text-sm text-muted-foreground">
-                  {estimate > 0 ? (
+                  {hasArea ? (
                     <>
-                      {tt.estimate}: <span className="font-bold text-primary text-base">~{estimate} zł</span>
-                      <span className="text-xs"> ({PRICE_PER_M2} zł/m²)</span>
+                      {tt.estimate}: <span className="font-bold text-primary text-base">{estimateLabel}</span>
+                      <span className="text-xs"> ({PRICE_LABEL})</span>
                     </>
                   ) : (
-                    <span className="text-xs">{PRICE_PER_M2} zł/m²</span>
+                    <span className="text-xs">{PRICE_LABEL}</span>
                   )}
                 </p>
                 <Button
