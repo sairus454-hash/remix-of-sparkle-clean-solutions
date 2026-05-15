@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Send, Loader2, Phone, User, CalendarIcon, Ruler, Sparkles, Clock, Check } from 'lucide-react';
+import { Send, Loader2, Phone, User, CalendarIcon, Ruler, Sparkles, Clock, Check, Zap } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
@@ -32,6 +32,7 @@ const T: Record<Lang, {
   date: string; time: string; name: string; phone: string; submit: string;
   estimate: string; honeypotErr: string; ok: string; okDesc: string; err: string; errDesc: string;
   summaryTitle: string; notSpecified: string; newRequest: string;
+  bonusNote: string;
 }> = {
   pl: {
     badge: 'Pranie wykładziny dywanowej',
@@ -46,6 +47,7 @@ const T: Record<Lang, {
     ok: 'Wysłano!', okDesc: 'Skontaktujemy się w ciągu kilku minut.',
     err: 'Błąd', errDesc: 'Nie udało się wysłać. Spróbuj później.',
     summaryTitle: 'Twoje zgłoszenie', notSpecified: 'nie podano', newRequest: 'Nowe zgłoszenie',
+    bonusNote: 'Przy zamówieniu pranie wykładziny od 50 m² — priorytetowy przyjazd w dniu zgłoszenia.',
   },
   ru: {
     badge: 'Химчистка ковролина',
@@ -60,6 +62,7 @@ const T: Record<Lang, {
     ok: 'Заявка отправлена!', okDesc: 'Свяжемся с вами в течение нескольких минут.',
     err: 'Ошибка', errDesc: 'Не удалось отправить. Попробуйте позже.',
     summaryTitle: 'Ваша заявка', notSpecified: 'не указано', newRequest: 'Новая заявка',
+    bonusNote: 'При заказе химчистки ковролина от 50 м² — приоритетный выезд в день обращения.',
   },
   uk: {
     badge: 'Хімчистка килимового покриття',
@@ -74,6 +77,7 @@ const T: Record<Lang, {
     ok: 'Заявку надіслано!', okDesc: 'Зв\'яжемося з вами протягом кількох хвилин.',
     err: 'Помилка', errDesc: 'Не вдалося надіслати. Спробуйте пізніше.',
     summaryTitle: 'Ваша заявка', notSpecified: 'не вказано', newRequest: 'Нова заявка',
+    bonusNote: 'При замовленні хімчистки килимового покриття від 50 м² — пріоритетний виїзд у день звернення.',
   },
   en: {
     badge: 'Carpet cleaning',
@@ -88,6 +92,7 @@ const T: Record<Lang, {
     ok: 'Request sent!', okDesc: 'We will contact you within minutes.',
     err: 'Error', errDesc: 'Failed to send. Please try again later.',
     summaryTitle: 'Your request', notSpecified: 'not specified', newRequest: 'New request',
+    bonusNote: 'For carpet cleaning orders from 50 m² — priority same-day visit.',
   },
 };
 
@@ -177,7 +182,18 @@ const CarpetCtaBlock = () => {
             <h2 id="carpet-cta-heading" className="font-serif text-2xl md:text-3xl font-bold mb-2 text-foreground">
               {tt.title}
             </h2>
-            <p className="text-muted-foreground mb-6">{tt.subtitle}</p>
+            <p className="text-muted-foreground mb-4">{tt.subtitle}</p>
+
+            {/* Bonus note: priority same-day visit for orders ≥ 50 m² */}
+            <div className={cn(
+              "flex items-start gap-2 rounded-xl px-3 py-2.5 mb-6 text-sm border transition-colors",
+              hasArea && areaNum >= 50
+                ? "bg-fresh/10 border-fresh/40 text-fresh-foreground"
+                : "bg-primary/5 border-primary/20 text-foreground"
+            )}>
+              <Zap className={cn("w-4 h-4 mt-0.5 flex-shrink-0", hasArea && areaNum >= 50 ? "text-fresh" : "text-primary")} />
+              <span>{tt.bonusNote}</span>
+            </div>
 
             {submitted ? (
               <div className="rounded-2xl bg-background/80 border-2 border-fresh/40 p-5 md:p-6 animate-fade-in">
