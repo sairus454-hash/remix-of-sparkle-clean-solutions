@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Send, Loader2, Phone, User, CalendarIcon, Ruler, Sparkles, Clock } from 'lucide-react';
+import { Send, Loader2, Phone, User, CalendarIcon, Ruler, Sparkles, Clock, Check } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { cn } from '@/lib/utils';
@@ -31,6 +31,7 @@ const T: Record<Lang, {
   badge: string; title: string; subtitle: string; area: string; areaPh: string;
   date: string; time: string; name: string; phone: string; submit: string;
   estimate: string; honeypotErr: string; ok: string; okDesc: string; err: string; errDesc: string;
+  summaryTitle: string; notSpecified: string; newRequest: string;
 }> = {
   pl: {
     badge: 'Pranie wykładziny dywanowej',
@@ -44,6 +45,7 @@ const T: Record<Lang, {
     honeypotErr: 'Wypełnij imię i telefon',
     ok: 'Wysłano!', okDesc: 'Skontaktujemy się w ciągu kilku minut.',
     err: 'Błąd', errDesc: 'Nie udało się wysłać. Spróbuj później.',
+    summaryTitle: 'Twoje zgłoszenie', notSpecified: 'nie podano', newRequest: 'Nowe zgłoszenie',
   },
   ru: {
     badge: 'Химчистка ковролина',
@@ -57,6 +59,7 @@ const T: Record<Lang, {
     honeypotErr: 'Заполните имя и телефон',
     ok: 'Заявка отправлена!', okDesc: 'Свяжемся с вами в течение нескольких минут.',
     err: 'Ошибка', errDesc: 'Не удалось отправить. Попробуйте позже.',
+    summaryTitle: 'Ваша заявка', notSpecified: 'не указано', newRequest: 'Новая заявка',
   },
   uk: {
     badge: 'Хімчистка килимового покриття',
@@ -70,6 +73,7 @@ const T: Record<Lang, {
     honeypotErr: 'Заповніть ім\'я та телефон',
     ok: 'Заявку надіслано!', okDesc: 'Зв\'яжемося з вами протягом кількох хвилин.',
     err: 'Помилка', errDesc: 'Не вдалося надіслати. Спробуйте пізніше.',
+    summaryTitle: 'Ваша заявка', notSpecified: 'не вказано', newRequest: 'Нова заявка',
   },
   en: {
     badge: 'Carpet cleaning',
@@ -83,6 +87,7 @@ const T: Record<Lang, {
     honeypotErr: 'Fill in name and phone',
     ok: 'Request sent!', okDesc: 'We will contact you within minutes.',
     err: 'Error', errDesc: 'Failed to send. Please try again later.',
+    summaryTitle: 'Your request', notSpecified: 'not specified', newRequest: 'New request',
   },
 };
 
@@ -100,6 +105,9 @@ const CarpetCtaBlock = () => {
   const [website, setWebsite] = useState(''); // honeypot
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [submitted, setSubmitted] = useState<null | {
+    area: string; date?: string; time?: string; estimateLabel?: string; name: string;
+  }>(null);
 
   const areaNum = parseInt(area, 10);
   const hasArea = !isNaN(areaNum) && areaNum > 0;
@@ -139,6 +147,13 @@ const CarpetCtaBlock = () => {
 
       setShowSuccess(true);
       toast({ title: tt.ok, description: tt.okDesc });
+      setSubmitted({
+        area: hasArea ? `${areaNum} m²` : tt.notSpecified,
+        date: date ? format(date, 'dd.MM.yyyy') : undefined,
+        time: time || undefined,
+        estimateLabel: hasArea ? estimateLabel : undefined,
+        name: name.trim(),
+      });
       setName(''); setPhone(''); setArea(''); setDate(undefined); setTime('');
     } catch {
       toast({ title: tt.err, description: tt.errDesc, variant: 'destructive' });
@@ -164,6 +179,49 @@ const CarpetCtaBlock = () => {
             </h2>
             <p className="text-muted-foreground mb-6">{tt.subtitle}</p>
 
+            {submitted ? (
+              <div className="rounded-2xl bg-background/80 border-2 border-fresh/40 p-5 md:p-6 animate-fade-in">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-11 h-11 rounded-full bg-fresh/15 flex items-center justify-center">
+                    <Check className="w-6 h-6 text-fresh" />
+                  </div>
+                  <div>
+                    <p className="font-serif text-lg font-bold text-foreground">{tt.ok}</p>
+                    <p className="text-sm text-muted-foreground">{tt.okDesc}</p>
+                  </div>
+                </div>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">
+                  {tt.summaryTitle}
+                </p>
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <Ruler className="w-4 h-4 text-primary flex-shrink-0" />
+                    <dt className="text-muted-foreground">{tt.area}:</dt>
+                    <dd className="font-semibold text-foreground">{submitted.area}</dd>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CalendarIcon className="w-4 h-4 text-primary flex-shrink-0" />
+                    <dt className="text-muted-foreground">{tt.date}:</dt>
+                    <dd className="font-semibold text-foreground">{submitted.date || tt.notSpecified}</dd>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Clock className="w-4 h-4 text-primary flex-shrink-0" />
+                    <dt className="text-muted-foreground">{tt.time}:</dt>
+                    <dd className="font-semibold text-foreground">{submitted.time || tt.notSpecified}</dd>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-primary flex-shrink-0" />
+                    <dt className="text-muted-foreground">{tt.estimate}:</dt>
+                    <dd className="font-bold text-primary">{submitted.estimateLabel || tt.notSpecified}</dd>
+                  </div>
+                </dl>
+                <div className="mt-5 flex justify-end">
+                  <Button type="button" variant="outline" onClick={() => setSubmitted(null)}>
+                    {tt.newRequest}
+                  </Button>
+                </div>
+              </div>
+            ) : (
             <form onSubmit={onSubmit} className="space-y-3">
               {/* Honeypot */}
               <input
@@ -296,6 +354,7 @@ const CarpetCtaBlock = () => {
                 </Button>
               </div>
             </form>
+            )}
           </div>
         </div>
       </section>
