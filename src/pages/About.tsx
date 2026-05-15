@@ -143,15 +143,85 @@ const About = () => {
               foundingDate: '2022',
             },
           },
-          {
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.q,
-              acceptedAnswer: { '@type': 'Answer', text: f.a },
-            })),
-          },
+          ...(() => {
+            const carpetFaqs: Record<string, { q: string; a: string }[]> = {
+              pl: [
+                { q: 'Ile schnie wykładzina dywanowa po praniu z ekspresowym suszeniem?', a: 'Dzięki ekstrakcji Karcher Puzzi i turbinom osuszającym pomieszczenie wraca do użytku w 1–2 godziny zamiast standardowych 8–12.' },
+                { q: 'Ile kosztuje pranie wykładziny dywanowej?', a: 'Od 12 zł/m² we Wrocławiu i Smolcu, w pozostałych miastach +10%. Standardowe biuro 50 m² czyścimy w 60–90 minut.' },
+                { q: 'Czy środki są bezpieczne dla dzieci i alergików?', a: 'Tak, używamy biodegradowalnej chemii z certyfikatami, bez chloru i agresywnych rozpuszczalników. Bezpieczne dla dzieci, alergików i zwierząt.' },
+              ],
+              ru: [
+                { q: 'Сколько сохнет ковролин после химчистки с экспресс-сушением?', a: 'Благодаря экстрактору Karcher Puzzi и сушильным турбинам помещение готово через 1–2 часа вместо стандартных 8–12.' },
+                { q: 'Сколько стоит химчистка ковролина?', a: 'От 12 zł/м² во Вроцлаве и Смолце, в других городах +10%. Стандартный офис 50 м² чистим за 60–90 минут.' },
+                { q: 'Безопасны ли средства для детей и аллергиков?', a: 'Да, используем сертифицированную биоразлагаемую химию без хлора и агрессивных растворителей. Безопасно для детей, аллергиков и животных.' },
+              ],
+              uk: [
+                { q: 'Скільки сохне килимове покриття після хімчистки з експрес-сушінням?', a: 'Завдяки екстрактору Karcher Puzzi і сушильним турбінам приміщення готове за 1–2 години замість 8–12.' },
+                { q: 'Скільки коштує хімчистка килимового покриття?', a: 'Від 12 zł/м² у Вроцлаві та Смольці, в інших містах +10%. Стандартний офіс 50 м² чистимо за 60–90 хвилин.' },
+                { q: 'Чи безпечні засоби для дітей і алергіків?', a: 'Так, використовуємо сертифіковану біорозкладну хімію без хлору та агресивних розчинників. Безпечно для дітей, алергіків і тварин.' },
+              ],
+              en: [
+                { q: 'How long does wall-to-wall carpet take to dry with express drying?', a: 'Thanks to the Karcher Puzzi extractor and drying turbines the room is ready in 1–2 hours instead of the usual 8–12.' },
+                { q: 'How much does carpet cleaning cost?', a: 'From 12 PLN/m² in Wrocław and Smolec, +10% in other cities. A standard 50 m² office is cleaned in 60–90 minutes.' },
+                { q: 'Are the products safe for kids and allergy sufferers?', a: 'Yes, we use certified biodegradable chemistry without chlorine or aggressive solvents. Safe for children, allergy sufferers and pets.' },
+              ],
+            };
+            const cf = carpetFaqs[language] || carpetFaqs.pl;
+            const sName: Record<string, string> = {
+              pl: 'Pranie wykładziny dywanowej z ekspresowym suszeniem',
+              ru: 'Химчистка ковролина с экспресс-сушением',
+              uk: 'Хімчистка килимового покриття з експрес-сушінням',
+              en: 'Carpet cleaning with express drying',
+            };
+            const sDesc: Record<string, string> = {
+              pl: 'Profesjonalne pranie ekstrakcyjne wykładziny dywanowej Karcher Puzzi z ekspresowym suszeniem (1–2 h). Biura, hotele, mieszkania. Ekologiczne środki, gwarancja 7 dni.',
+              ru: 'Профессиональная экстракторная химчистка ковролина Karcher Puzzi с экспресс-сушением (1–2 ч). Офисы, отели, квартиры. Эко-средства, гарантия 7 дней.',
+              uk: 'Професійна екстракторна хімчистка килимового покриття Karcher Puzzi з експрес-сушінням (1–2 год). Офіси, готелі, квартири. Еко-засоби, гарантія 7 днів.',
+              en: 'Professional Karcher Puzzi extraction cleaning of wall-to-wall carpet with express drying (1–2 h). Offices, hotels, apartments. Eco chemistry, 7-day guarantee.',
+            };
+            return [
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Service',
+                serviceType: sName[language] || sName.pl,
+                name: sName[language] || sName.pl,
+                description: sDesc[language] || sDesc.pl,
+                url: 'https://masterclean1885.com/about',
+                provider: {
+                  '@type': 'LocalBusiness',
+                  name: 'MasterClean',
+                  telephone: '+48575211401',
+                  url: 'https://masterclean1885.com/about',
+                  address: { '@type': 'PostalAddress', addressCountry: 'PL', addressRegion: 'dolnośląskie', addressLocality: 'Wrocław' },
+                },
+                areaServed: [
+                  { '@type': 'City', name: 'Wrocław' },
+                  { '@type': 'City', name: 'Smolec' },
+                  { '@type': 'City', name: 'Opole' },
+                  { '@type': 'City', name: 'Poznań' },
+                  { '@type': 'City', name: 'Zielona Góra' },
+                ],
+                category: 'Carpet cleaning',
+                offers: {
+                  '@type': 'Offer',
+                  price: '12',
+                  priceCurrency: 'PLN',
+                  unitText: 'm²',
+                  availability: 'https://schema.org/InStock',
+                  url: 'https://masterclean1885.com/about',
+                },
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: [...faqs, ...cf].map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              },
+            ];
+          })(),
         ]}
       />
       {showSplash && <CleanSplash onComplete={handleSplashComplete} />}
