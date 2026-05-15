@@ -490,24 +490,384 @@ const blogPages: Record<string, PageMeta> = {
   },
 };
 
-function getPageMeta(path: string): PageMeta | null {
+// =====================================================================
+// Localized metadata (RU / EN / UK). PL lives in the maps above and acts
+// as the fallback when a localized override is missing.
+// =====================================================================
+
+type Lang = 'pl' | 'ru' | 'en' | 'uk';
+
+const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
+  ru: {
+    '/': {
+      title: 'MasterClean — Химчистка мебли, чистка и уборка 24/7',
+      description: 'Профессиональная химчистка мягкой мебели и автомобилей, чистка ковров, матрасов, озонирование. Уборка, мытьё окон, муж на час. Вроцлав и окрестности.',
+      keywords: 'химчистка мебели, чистка дивана, чистка ковров, матрасов, озонирование, уборка, мытьё окон, Вроцлав',
+      image: `${SITE_URL}/og-image.jpg`,
+    },
+    '/about': {
+      title: 'О компании MasterClean — Профессиональная команда Вроцлав',
+      description: 'MasterClean: опытная команда, современное оборудование Kärcher и SantoEmma, экологичные средства. Профессиональная чистка с 2021 года.',
+      keywords: 'о нас MasterClean, команда, опыт, профессиональная чистка Вроцлав',
+      image: `${SITE_URL}/og-about.jpg`,
+    },
+    '/services': {
+      title: 'Химчистка мебели — Чистка диванов и кресел',
+      description: 'Профессиональная химчистка мебели с выездом: чистка тканевой и кожаной обивки, диванов, кресел, матрасов. Онлайн-калькулятор. Вроцлав, Ополе.',
+      keywords: 'химчистка мебели, чистка дивана, чистка кресла, чистка матраса',
+      image: `${SITE_URL}/og-services.jpg`,
+    },
+    '/prices': {
+      title: 'Цены на химчистку мебели и уборку — MasterClean',
+      description: 'Актуальные цены на химчистку мебели, чистку ковров, матрасов, озонирование и уборку. Онлайн-калькулятор. Бесплатный выезд от 180 PLN.',
+      keywords: 'цены химчистка мебели, сколько стоит чистка дивана, цена озонирования',
+      image: `${SITE_URL}/og-prices.jpg`,
+    },
+    '/equipment': {
+      title: 'Оборудование для химчистки — Kärcher, SantoEmma',
+      description: 'Профессиональное оборудование для химчистки: экстракторы Santoemma, Kärcher Puzzi, парогенераторы, озонаторы. Экологичные средства.',
+      keywords: 'оборудование Kärcher, SantoEmma, экстракция, профессиональная чистка',
+      image: `${SITE_URL}/og-equipment.jpg`,
+    },
+    '/impregnation': {
+      title: 'Импрегнация мебели и тканей — Защита обивки',
+      description: 'Профессиональная импрегнация мебели, ковров и тканей. Защита от воды, грязи и пятен. Гидрофобное покрытие. Вроцлав, Ополе.',
+      keywords: 'импрегнация тканей, импрегнация мебели, защита от пятен, гидрофобное покрытие',
+      image: `${SITE_URL}/og-impregnation.jpg`,
+    },
+    '/auto': {
+      title: 'Химчистка салона авто — Чистка автомобиля',
+      description: 'Профессиональная химчистка салона автомобиля с выездом. Чистка сидений, потолка, ковриков, багажника. Удаление пятен и запахов.',
+      keywords: 'химчистка авто, чистка сидений, озонирование авто, детейлинг',
+      image: `${SITE_URL}/og-auto.jpg`,
+    },
+    '/ozone': {
+      title: 'Озонирование помещений и автомобилей — MasterClean',
+      description: 'Профессиональное озонирование квартир, офисов и автомобилей. Удаление неприятных запахов, бактерий, грибков и аллергенов. Вроцлав.',
+      keywords: 'озонирование квартиры, озонирование автомобиля, удаление запахов, дезинфекция',
+      image: `${SITE_URL}/og-ozone.jpg`,
+    },
+    '/windows': {
+      title: 'Мытьё окон Вроцлав — Профессиональная чистка стёкол',
+      description: 'Профессиональное мытьё окон в домах, квартирах и офисах. Без разводов, чистка рам и подоконников. Вроцлав и окрестности.',
+      keywords: 'мытьё окон Вроцлав, чистка стёкол, мытьё окон цена',
+      image: `${SITE_URL}/og-windows.jpg`,
+    },
+    '/cleaning': {
+      title: 'Уборка квартир и домов — Клининговые услуги',
+      description: 'Профессиональная уборка квартир, домов и офисов с выездом. Генеральная, поддерживающая и после ремонта. Экосредства. Вроцлав.',
+      keywords: 'уборка квартир, уборка домов, уборка офисов, генеральная уборка',
+      image: `${SITE_URL}/og-cleaning.jpg`,
+    },
+    '/handyman': {
+      title: 'Муж на час Вроцлав — Мелкий ремонт и монтаж',
+      description: 'Муж на час Вроцлав: сантехника, электрика, сборка мебели, мелкий ремонт. Мастер с выездом 24/7. Честные цены с гарантией.',
+      keywords: 'муж на час Вроцлав, сборка мебели, мелкий ремонт, сантехник, электрик',
+      image: `${SITE_URL}/og-handyman.jpg`,
+    },
+    '/reviews': {
+      title: 'Отзывы клиентов — MasterClean | 5-звёздочные отзывы',
+      description: 'Отзывы клиентов о MasterClean. Химчистка мебели, чистка ковров, озонирование — сотни 5-звёздочных отзывов.',
+      keywords: 'отзывы MasterClean, отзывы химчистка, отзывы Fixly',
+      image: `${SITE_URL}/og-reviews.jpg`,
+    },
+    '/contacts': {
+      title: 'Контакты — MasterClean | Звоните 24/7',
+      description: 'Свяжитесь с MasterClean. Телефон: +48 575 211 401. Работаем 24/7. Вроцлав, Ополе, Легница и другие города.',
+      keywords: 'контакты MasterClean, телефон, адрес, форма связи, Вроцлав',
+      image: `${SITE_URL}/og-contacts.jpg`,
+    },
+    '/blog': {
+      title: 'Блог о чистке и уходе за мебелью — MasterClean',
+      description: 'Советы экспертов: как чистить обивку, ухаживать за кожаной мебелью, удалять пятна. Профессиональные подсказки от MasterClean.',
+      keywords: 'блог чистка, советы химчистка, удаление пятен, уход за мебелью',
+      image: `${SITE_URL}/og-blog.jpg`,
+    },
+    '/sitemap': { title: 'Карта сайта — MasterClean', description: 'Карта сайта MasterClean — полный список разделов: услуги, цены, контакты, блог.' },
+    '/privacy-policy': { title: 'Политика конфиденциальности — MasterClean', description: 'Политика конфиденциальности MasterClean. Обработка персональных данных согласно GDPR.' },
+    '/terms': { title: 'Условия использования — MasterClean', description: 'Условия предоставления услуг MasterClean. Условия заказа, оплаты и претензий.' },
+    '/cookies': { title: 'Политика cookies — MasterClean', description: 'Информация о файлах cookies на сайте MasterClean. Соответствие GDPR.' },
+  },
+  en: {
+    '/': {
+      title: 'MasterClean — Upholstery, carpet cleaning & home cleaning 24/7',
+      description: 'Professional upholstery and car interior cleaning, carpets, mattresses, ozone treatment. House cleaning, window washing, handyman. Wroclaw and surroundings.',
+      keywords: 'upholstery cleaning, sofa cleaning, carpet cleaning, mattress cleaning, ozone, cleaning service, window washing, Wroclaw',
+      image: `${SITE_URL}/og-image.jpg`,
+    },
+    '/about': {
+      title: 'About MasterClean — Professional cleaning team in Wroclaw',
+      description: 'Meet MasterClean: experienced team, modern Kärcher and SantoEmma equipment, eco-friendly products. Professional cleaning since 2021.',
+      keywords: 'about MasterClean, team, experience, professional cleaning Wroclaw',
+      image: `${SITE_URL}/og-about.jpg`,
+    },
+    '/services': {
+      title: 'Upholstery cleaning — Sofa & furniture deep clean',
+      description: 'Professional on-site upholstery cleaning: fabric and leather sofas, armchairs, mattresses. Online price calculator. Wroclaw, Opole.',
+      keywords: 'upholstery cleaning, sofa cleaning, armchair cleaning, mattress cleaning',
+      image: `${SITE_URL}/og-services.jpg`,
+    },
+    '/prices': {
+      title: 'Cleaning prices — Upholstery, carpets, ozone | MasterClean',
+      description: 'Up-to-date prices for upholstery cleaning, carpets, mattresses, ozone and home cleaning. Online calculator. Free travel from 180 PLN.',
+      keywords: 'upholstery cleaning price, carpet cleaning cost, ozone treatment price',
+      image: `${SITE_URL}/og-prices.jpg`,
+    },
+    '/equipment': {
+      title: 'Cleaning equipment — Kärcher, SantoEmma | MasterClean',
+      description: 'Professional cleaning equipment: Santoemma extractors, Kärcher Puzzi, steam generators, ozone units. Eco-friendly chemistry.',
+      keywords: 'Kärcher equipment, SantoEmma, extraction, professional cleaning',
+      image: `${SITE_URL}/og-equipment.jpg`,
+    },
+    '/impregnation': {
+      title: 'Fabric & furniture impregnation — Stain protection',
+      description: 'Professional impregnation of furniture, carpets and fabrics. Protection from water, dirt and stains. Hydrophobic coating. Wroclaw, Opole.',
+      keywords: 'fabric impregnation, furniture protection, stain protection, hydrophobic coating',
+      image: `${SITE_URL}/og-impregnation.jpg`,
+    },
+    '/auto': {
+      title: 'Car interior cleaning — Auto detailing | MasterClean',
+      description: 'Professional car interior cleaning on-site. Seats, headliner, mats, trunk. Stain and odour removal. Wroclaw, Opole.',
+      keywords: 'car interior cleaning, seat cleaning, car ozone, auto detailing',
+      image: `${SITE_URL}/og-auto.jpg`,
+    },
+    '/ozone': {
+      title: 'Ozone treatment for homes and cars — MasterClean',
+      description: 'Professional ozone treatment for apartments, offices and cars. Removes odours, bacteria, mould and allergens. Wroclaw and surroundings.',
+      keywords: 'apartment ozone, car ozone, odour removal, disinfection',
+      image: `${SITE_URL}/og-ozone.jpg`,
+    },
+    '/windows': {
+      title: 'Window cleaning Wroclaw — Streak-free service',
+      description: 'Professional window cleaning for homes, apartments and offices. Streak-free glass, frames and sills. Wroclaw and surroundings.',
+      keywords: 'window cleaning Wroclaw, streak-free windows, window washing price',
+      image: `${SITE_URL}/og-windows.jpg`,
+    },
+    '/cleaning': {
+      title: 'Apartment & house cleaning — Cleaning services',
+      description: 'Professional cleaning of apartments, houses and offices on-site. Standard, deep and post-renovation. Eco-friendly products. Wroclaw.',
+      keywords: 'apartment cleaning, house cleaning, office cleaning, deep cleaning',
+      image: `${SITE_URL}/og-cleaning.jpg`,
+    },
+    '/handyman': {
+      title: 'Handyman Wroclaw — Repairs & furniture assembly',
+      description: 'Handyman in Wroclaw: plumbing, electrics, furniture assembly, small home repairs. On-site service 24/7. Fair prices with warranty.',
+      keywords: 'handyman Wroclaw, furniture assembly, home repairs, plumber, electrician',
+      image: `${SITE_URL}/og-handyman.jpg`,
+    },
+    '/reviews': {
+      title: 'Customer reviews — MasterClean | 5-star ratings',
+      description: 'Read MasterClean customer reviews. Upholstery, carpets, ozone treatment — hundreds of 5-star reviews.',
+      keywords: 'MasterClean reviews, upholstery cleaning reviews, Fixly reviews',
+      image: `${SITE_URL}/og-reviews.jpg`,
+    },
+    '/contacts': {
+      title: 'Contact MasterClean — Call 24/7',
+      description: 'Get in touch with MasterClean. Phone: +48 575 211 401. We work 24/7. Wroclaw, Opole, Legnica and more.',
+      keywords: 'MasterClean contact, phone, address, contact form, Wroclaw',
+      image: `${SITE_URL}/og-contacts.jpg`,
+    },
+    '/blog': {
+      title: 'Cleaning & furniture care blog — MasterClean',
+      description: 'Expert advice: how to clean upholstery, care for leather furniture, remove stains. Professional tips from MasterClean.',
+      keywords: 'cleaning blog, upholstery tips, stain removal, furniture care',
+      image: `${SITE_URL}/og-blog.jpg`,
+    },
+    '/sitemap': { title: 'Sitemap — MasterClean', description: 'MasterClean sitemap — full list of pages: services, prices, contact, blog.' },
+    '/privacy-policy': { title: 'Privacy policy — MasterClean', description: 'MasterClean privacy policy. Personal data processing in compliance with GDPR.' },
+    '/terms': { title: 'Terms of service — MasterClean', description: 'MasterClean terms of service. Order, payment and complaint conditions.' },
+    '/cookies': { title: 'Cookie policy — MasterClean', description: 'Information on cookies used on MasterClean website. GDPR compliant.' },
+  },
+  uk: {
+    '/': {
+      title: 'MasterClean — Хімчистка меблів, чищення та прибирання 24/7',
+      description: 'Професійна хімчистка м\'яких меблів і авто, чищення килимів, матраців, озонування. Прибирання, миття вікон, майстер на годину. Вроцлав і околиці.',
+      keywords: 'хімчистка меблів, чищення дивана, чищення килимів, матраців, озонування, прибирання, миття вікон, Вроцлав',
+      image: `${SITE_URL}/og-image.jpg`,
+    },
+    '/about': {
+      title: 'Про компанію MasterClean — Професійна команда Вроцлав',
+      description: 'MasterClean: досвідчена команда, сучасне обладнання Kärcher і SantoEmma, екологічні засоби. Професійне чищення з 2021 року.',
+      keywords: 'про нас MasterClean, команда, досвід, професійне чищення Вроцлав',
+      image: `${SITE_URL}/og-about.jpg`,
+    },
+    '/services': {
+      title: 'Хімчистка меблів — Чищення диванів і крісел',
+      description: 'Професійна хімчистка меблів з виїздом: чищення тканинної і шкіряної оббивки, диванів, крісел, матраців. Онлайн-калькулятор. Вроцлав, Ополе.',
+      keywords: 'хімчистка меблів, чищення дивана, чищення крісла, чищення матраца',
+      image: `${SITE_URL}/og-services.jpg`,
+    },
+    '/prices': {
+      title: 'Ціни на хімчистку меблів і прибирання — MasterClean',
+      description: 'Актуальні ціни на хімчистку меблів, чищення килимів, матраців, озонування та прибирання. Онлайн-калькулятор. Безкоштовний виїзд від 180 PLN.',
+      keywords: 'ціни хімчистка меблів, скільки коштує чищення дивана, ціна озонування',
+      image: `${SITE_URL}/og-prices.jpg`,
+    },
+    '/equipment': {
+      title: 'Обладнання для хімчистки — Kärcher, SantoEmma',
+      description: 'Професійне обладнання для хімчистки: екстрактори Santoemma, Kärcher Puzzi, парогенератори, озонатори. Екологічні засоби.',
+      keywords: 'обладнання Kärcher, SantoEmma, екстракція, професійне чищення',
+      image: `${SITE_URL}/og-equipment.jpg`,
+    },
+    '/impregnation': {
+      title: 'Імпрегнація меблів і тканин — Захист оббивки',
+      description: 'Професійна імпрегнація меблів, килимів і тканин. Захист від води, бруду і плям. Гідрофобне покриття. Вроцлав, Ополе.',
+      keywords: 'імпрегнація тканин, імпрегнація меблів, захист від плям, гідрофобне покриття',
+      image: `${SITE_URL}/og-impregnation.jpg`,
+    },
+    '/auto': {
+      title: 'Хімчистка салону авто — Чищення автомобіля',
+      description: 'Професійна хімчистка салону автомобіля з виїздом. Чищення сидінь, стелі, килимків, багажника. Видалення плям і запахів.',
+      keywords: 'хімчистка авто, чищення сидінь, озонування авто, детейлінг',
+      image: `${SITE_URL}/og-auto.jpg`,
+    },
+    '/ozone': {
+      title: 'Озонування приміщень і автомобілів — MasterClean',
+      description: 'Професійне озонування квартир, офісів і автомобілів. Видалення неприємних запахів, бактерій, грибків і алергенів. Вроцлав.',
+      keywords: 'озонування квартири, озонування автомобіля, видалення запахів, дезінфекція',
+      image: `${SITE_URL}/og-ozone.jpg`,
+    },
+    '/windows': {
+      title: 'Миття вікон Вроцлав — Професійне чищення скла',
+      description: 'Професійне миття вікон у будинках, квартирах і офісах. Без розводів, чищення рам і підвіконь. Вроцлав і околиці.',
+      keywords: 'миття вікон Вроцлав, чищення скла, миття вікон ціна',
+      image: `${SITE_URL}/og-windows.jpg`,
+    },
+    '/cleaning': {
+      title: 'Прибирання квартир і будинків — Клінінгові послуги',
+      description: 'Професійне прибирання квартир, будинків і офісів з виїздом. Генеральне, підтримуюче і після ремонту. Еко-засоби. Вроцлав.',
+      keywords: 'прибирання квартир, прибирання будинків, прибирання офісів, генеральне прибирання',
+      image: `${SITE_URL}/og-cleaning.jpg`,
+    },
+    '/handyman': {
+      title: 'Майстер на годину Вроцлав — Дрібний ремонт',
+      description: 'Майстер на годину Вроцлав: сантехніка, електрика, збірка меблів, дрібний ремонт. Виїзд 24/7. Чесні ціни з гарантією.',
+      keywords: 'майстер на годину Вроцлав, збірка меблів, дрібний ремонт, сантехнік, електрик',
+      image: `${SITE_URL}/og-handyman.jpg`,
+    },
+    '/reviews': {
+      title: 'Відгуки клієнтів — MasterClean | 5-зіркові оцінки',
+      description: 'Відгуки клієнтів про MasterClean. Хімчистка меблів, чищення килимів, озонування — сотні 5-зіркових відгуків.',
+      keywords: 'відгуки MasterClean, відгуки хімчистка, відгуки Fixly',
+      image: `${SITE_URL}/og-reviews.jpg`,
+    },
+    '/contacts': {
+      title: 'Контакти — MasterClean | Телефонуйте 24/7',
+      description: 'Зв\'яжіться з MasterClean. Телефон: +48 575 211 401. Працюємо 24/7. Вроцлав, Ополе, Легниця та інші міста.',
+      keywords: 'контакти MasterClean, телефон, адреса, форма зв\'язку, Вроцлав',
+      image: `${SITE_URL}/og-contacts.jpg`,
+    },
+    '/blog': {
+      title: 'Блог про чищення та догляд за меблями — MasterClean',
+      description: 'Поради експертів: як чистити оббивку, доглядати за шкіряними меблями, видаляти плями. Професійні поради від MasterClean.',
+      keywords: 'блог чищення, поради хімчистка, видалення плям, догляд за меблями',
+      image: `${SITE_URL}/og-blog.jpg`,
+    },
+    '/sitemap': { title: 'Карта сайту — MasterClean', description: 'Карта сайту MasterClean — повний список розділів: послуги, ціни, контакти, блог.' },
+    '/privacy-policy': { title: 'Політика конфіденційності — MasterClean', description: 'Політика конфіденційності MasterClean. Обробка персональних даних відповідно до GDPR.' },
+    '/terms': { title: 'Умови використання — MasterClean', description: 'Умови надання послуг MasterClean. Умови замовлення, оплати і претензій.' },
+    '/cookies': { title: 'Політика cookies — MasterClean', description: 'Інформація про файли cookies на сайті MasterClean. Відповідність GDPR.' },
+  },
+};
+
+// City display names (used for localized city page templates)
+const cityDisplayNames: Record<string, string> = {
+  wroclaw: 'Wrocław', opole: 'Opole', legnica: 'Legnica', olawa: 'Oława',
+  kalisz: 'Kalisz', leszno: 'Leszno', swidnica: 'Świdnica', walbrzych: 'Wałbrzych',
+  'ostrow-wielkopolski': 'Ostrów Wielkopolski', 'jelenia-gora': 'Jelenia Góra',
+  brzeg: 'Brzeg', lubin: 'Lubin', 'jelcz-laskowice': 'Jelcz-Laskowice',
+  strzegom: 'Strzegom', sobotka: 'Sobótka', klodzko: 'Kłodzko',
+  kielczow: 'Kiełczów', dzierzoniow: 'Dzierżoniów', nysa: 'Nysa',
+  'brzeg-dolny': 'Brzeg Dolny', 'sroda-slaska': 'Środa Śląska', glogow: 'Głogów',
+  olesnica: 'Oleśnica', namyslow: 'Namysłów', polkowice: 'Polkowice',
+  smolec: 'Smolec', 'katy-wroclawskie': 'Kąty Wrocławskie', siechnice: 'Siechnice',
+  'tyniec-maly': 'Tyniec Mały', zmigrod: 'Żmigród', 'bielany-wroclawskie': 'Bielany Wrocławskie',
+};
+
+function buildCityMeta(slug: string, lang: Lang): PageMeta {
+  const name = cityDisplayNames[slug] || slug;
+  const image = `${SITE_URL}/og-${slug}.jpg`;
+  switch (lang) {
+    case 'ru':
+      return {
+        title: `Химчистка мебели ${name} — MasterClean`,
+        description: `Профессиональная химчистка мебели, чистка ковров, матрасов, озонирование и уборка в городе ${name}. Современное оборудование Kärcher и SantoEmma.`,
+        keywords: `химчистка мебели ${name}, чистка ковров ${name}, озонирование ${name}, уборка ${name}`,
+        image,
+      };
+    case 'en':
+      return {
+        title: `Upholstery cleaning in ${name} — MasterClean`,
+        description: `Professional upholstery cleaning, carpets, mattresses, ozone treatment and home cleaning in ${name}. Kärcher and SantoEmma equipment.`,
+        keywords: `upholstery cleaning ${name}, carpet cleaning ${name}, ozone ${name}, cleaning service ${name}`,
+        image,
+      };
+    case 'uk':
+      return {
+        title: `Хімчистка меблів ${name} — MasterClean`,
+        description: `Професійна хімчистка меблів, чищення килимів, матраців, озонування та прибирання у місті ${name}. Сучасне обладнання Kärcher і SantoEmma.`,
+        keywords: `хімчистка меблів ${name}, чищення килимів ${name}, озонування ${name}, прибирання ${name}`,
+        image,
+      };
+    default:
+      return cityPages[slug] || {
+        title: `Pranie tapicerki ${name} — MasterClean`,
+        description: `Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w mieście ${name}.`,
+        keywords: `pranie tapicerki ${name}, czyszczenie dywanów ${name}`,
+        image,
+      };
+  }
+}
+
+const blogFallbackByLang: Record<Lang, PageMeta> = {
+  pl: {
+    title: 'Blog MasterClean — porady czyszczenia, prania tapicerki i pielęgnacji',
+    description: 'Artykuł z bloga MasterClean: praktyczne porady o czyszczeniu tapicerki, materacy, dywanów, samochodu i więcej.',
+    keywords: 'blog czyszczenie, porady pranie tapicerki, czyszczenie sofy, czyszczenie materaca, ozonowanie',
+    image: `${SITE_URL}/og-blog.jpg`,
+    type: 'article',
+  },
+  ru: {
+    title: 'Блог MasterClean — советы по чистке мебели, ковров и уходу',
+    description: 'Статья из блога MasterClean: практические советы по чистке мебели, матрасов, ковров, авто и многое другое.',
+    keywords: 'блог чистка, советы химчистка, чистка дивана, чистка матраса, озонирование',
+    image: `${SITE_URL}/og-blog.jpg`,
+    type: 'article',
+  },
+  en: {
+    title: 'MasterClean blog — cleaning tips for upholstery, carpets and care',
+    description: 'A MasterClean blog article: practical advice on cleaning upholstery, mattresses, carpets, car interiors and more.',
+    keywords: 'cleaning blog, upholstery tips, sofa cleaning, mattress cleaning, ozone',
+    image: `${SITE_URL}/og-blog.jpg`,
+    type: 'article',
+  },
+  uk: {
+    title: 'Блог MasterClean — поради з чищення меблів, килимів та догляду',
+    description: 'Стаття з блогу MasterClean: практичні поради з чищення меблів, матраців, килимів, авто і не тільки.',
+    keywords: 'блог чищення, поради хімчистка, чищення дивана, чищення матраца, озонування',
+    image: `${SITE_URL}/og-blog.jpg`,
+    type: 'article',
+  },
+};
+
+function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
+  // Static pages: try localized override, fallback to PL
+  if (lang !== 'pl' && staticPagesI18n[lang]?.[path]) {
+    return { ...staticPages[path], ...staticPagesI18n[lang][path] };
+  }
   if (staticPages[path]) return staticPages[path];
 
   const cityMatch = path.match(/^\/city\/([a-z-]+)$/);
-  if (cityMatch && cityPages[cityMatch[1]]) return cityPages[cityMatch[1]];
+  if (cityMatch && cityDisplayNames[cityMatch[1]]) {
+    return buildCityMeta(cityMatch[1], lang);
+  }
 
   const blogMatch = path.match(/^\/blog\/(\d+)$/);
   if (blogMatch) {
-    if (blogPages[blogMatch[1]]) return blogPages[blogMatch[1]];
-    // Fallback for blog articles not yet listed in blogPages — avoids 404
-    // for valid SPA routes that the prerender doesn't have hardcoded.
-    return {
-      title: 'Blog MasterClean — porady czyszczenia, prania tapicerki i pielęgnacji',
-      description: 'Artykuł z bloga MasterClean: praktyczne porady o czyszczeniu tapicerki, materacy, dywanów, samochodu i więcej.',
-      keywords: 'blog czyszczenie, porady pranie tapicerki, czyszczenie sofy, czyszczenie materaca, ozonowanie',
-      image: `${SITE_URL}/og-blog.jpg`,
-      type: 'article',
-    };
+    // Per-article PL meta exists; for non-PL we currently serve a generic
+    // localized blog fallback (per-article translations live in the SPA).
+    if (lang === 'pl' && blogPages[blogMatch[1]]) return blogPages[blogMatch[1]];
+    return blogFallbackByLang[lang] || blogFallbackByLang.pl;
   }
 
   return null;
