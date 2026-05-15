@@ -138,9 +138,10 @@ serve(async (req) => {
     const lines = [
       '🔔 <b>Новая заявка с сайта!</b>',
       '',
+      formData.prioritySameDay ? '⚡ <b>ПРИОРИТЕТ:</b> выезд в день обращения (≥50 м²)' : null,
       `👤 <b>Имя:</b> ${esc(formData.name)}`,
       `📞 <b>Телефон:</b> ${esc(formData.phone)}`,
-    ];
+    ].filter(Boolean) as string[];
     if (formData.email) lines.push(`📧 <b>Email:</b> ${esc(formData.email)}`);
     if (formData.service) lines.push(`🛠 <b>Услуга:</b> ${esc(formData.service)}`);
     if (formData.city) lines.push(`🏙 <b>Город:</b> ${esc(formData.city)}`);
