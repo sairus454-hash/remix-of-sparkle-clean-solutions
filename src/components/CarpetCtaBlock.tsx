@@ -87,6 +87,7 @@ const T: Record<Lang, {
     honeypotErr: 'Fill in name and phone',
     ok: 'Request sent!', okDesc: 'We will contact you within minutes.',
     err: 'Error', errDesc: 'Failed to send. Please try again later.',
+    summaryTitle: 'Your request', notSpecified: 'not specified', newRequest: 'New request',
   },
 };
 
