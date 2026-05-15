@@ -105,6 +105,9 @@ const CarpetCtaBlock = () => {
   const [website, setWebsite] = useState(''); // honeypot
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [submitted, setSubmitted] = useState<null | {
+    area: string; date?: string; time?: string; estimateLabel?: string; name: string;
+  }>(null);
 
   const areaNum = parseInt(area, 10);
   const hasArea = !isNaN(areaNum) && areaNum > 0;
