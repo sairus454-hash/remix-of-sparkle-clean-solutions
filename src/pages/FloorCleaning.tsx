@@ -378,6 +378,80 @@ const FloorCleaning = () => {
           </div>
         </section>
 
+        {/* 3 Media Expert photos with captions and 3D entrance */}
+        <section className="py-12 bg-card overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto [perspective:1200px]">
+              {[
+                {
+                  src: mediaexpertTeamEquipment,
+                  webp: true,
+                  caption: {
+                    pl: 'Przygotowanie sprzętu przed realizacją w Media Expert',
+                    ru: 'Подготовка оборудования перед работой в Media Expert',
+                    uk: 'Підготовка обладнання перед роботою в Media Expert',
+                    en: 'Preparing equipment before the Media Expert job',
+                  },
+                },
+                {
+                  src: mediaexpertTeamEquipment2,
+                  webp: false,
+                  caption: {
+                    pl: 'Pranie wykładziny na hali sprzedaży Media Expert',
+                    ru: 'Химчистка ковролина в торговом зале Media Expert',
+                    uk: 'Хімчистка килимового покриття в торговому залі Media Expert',
+                    en: 'Cleaning the sales floor carpet at Media Expert',
+                  },
+                },
+                {
+                  src: mediaexpertTeamEquipment3,
+                  webp: false,
+                  caption: {
+                    pl: 'Profesjonalna ekstrakcja brudu między regałami',
+                    ru: 'Профессиональная экстракционная чистка между стеллажами',
+                    uk: 'Професійна екстракційна чистка між стелажами',
+                    en: 'Professional extraction cleaning between aisles',
+                  },
+                },
+              ].map((img, i) => {
+                const lang = (language === 'pl' || language === 'ru' || language === 'uk' || language === 'en') ? language : 'pl';
+                return (
+                  <figure
+                    key={i}
+                    className="flex flex-col animate-spin-reveal"
+                    style={{ animationDelay: `${i * 220}ms` }}
+                  >
+                    <div
+                      className="rounded-2xl overflow-hidden shadow-elegant bg-muted"
+                      style={{ aspectRatio: '3 / 4' }}
+                    >
+                      <picture>
+                        {img.webp && (
+                          <source
+                            type="image/webp"
+                            srcSet={`${mediaexpertTeam480} 480w, ${mediaexpertTeam768} 768w, ${mediaexpertTeam960} 960w`}
+                            sizes="(min-width: 1024px) 33vw, 100vw"
+                          />
+                        )}
+                        <img
+                          src={img.src}
+                          alt={img.caption[lang]}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover block"
+                        />
+                      </picture>
+                    </div>
+                    <figcaption className="mt-3 text-center text-sm font-medium text-foreground/80 leading-snug px-2">
+                      {img.caption[lang]}
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         {/* On-site equipment photos */}
         <section className="py-12 bg-card">
           <div className="container mx-auto px-4">
