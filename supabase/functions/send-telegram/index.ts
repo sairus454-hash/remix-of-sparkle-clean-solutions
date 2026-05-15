@@ -59,6 +59,7 @@ interface FormData {
   address?: string;
   postalCode?: string;
   paymentType?: string;
+  prioritySameDay?: boolean;
 }
 
 serve(async (req) => {
