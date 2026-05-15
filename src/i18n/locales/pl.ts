@@ -101,6 +101,8 @@ const plTranslations = {
       slideMediaexpertAisle: 'Pranie wykładziny w przejściu sklepu Media Expert — przed i po',
       slideAttic: 'Pranie narożnika na poddaszu — przed i po',
       slideAtticAlt: 'Pranie szarego narożnika w mieszkaniu na poddaszu we Wrocławiu — efekt przed i po usunięciu plam i odświeżeniu tapicerki',
+      slideBalcony: 'Mycie deski tarasowej na balkonie — przed i po',
+      slideBalconyAlt: 'Profesjonalne mycie kompozytowej deski balkonowej we Wrocławiu — usuwanie mchu, brudu i nalotu, zdjęcie przed i po',
       slide9Alt: 'Profesjonalne pranie kanapy u klienta we Wrocławiu — zdjęcie przed i po usunięciu plam i zabrudzeń',
       slide1Alt: 'Głębokie pranie kanapy ekstraktorem — efekt przed i po usunięciu trudnych plam i zapachów',
       slide2Alt: 'Pranie dywanu metodą ekstrakcji i pary — zdjęcie przed i po przywróceniu koloru i usunięciu kurzu',
