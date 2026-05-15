@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check:og": "node scripts/check-og-meta.mjs"
+    "check:og": "node scripts/check-og-meta.mjs",
+    "check:blog": "node scripts/check-blog-status.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
