@@ -161,6 +161,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-28',
       readTime: '5 мин',
       tag: '🛏️ Матрасы',
+      seo: { title: "Химчистка матраса на дому | MasterClean" },
     },
     {
       id: 12,
@@ -172,6 +173,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-03',
       readTime: '3 мин',
       tag: '🛋️ Химчистка',
+      seo: { title: "Цена химчистки обивки: 100 vs 300 zł | MasterClean" },
     },
     {
       id: 13,
@@ -183,6 +185,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-16',
       readTime: '4 мин',
       tag: '🧾 Закон',
+      seo: { title: "Фискальный чек за химчистку | MasterClean" },
     },
     {
       id: 14,
@@ -602,6 +605,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-28',
       readTime: '5 min',
       tag: '🛏️ Mattress',
+      seo: { title: "Mattress Cleaning at Home | MasterClean" },
     },
     {
       id: 12,
@@ -613,6 +617,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-03',
       readTime: '3 min',
       tag: '🛋️ Cleaning',
+      seo: { title: "Upholstery Cleaning Price: 100 vs 300 zł | MasterClean" },
     },
     {
       id: 13,
@@ -624,6 +629,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-16',
       readTime: '4 min',
       tag: '🧾 Law',
+      seo: { title: "Fiscal Receipt for Cleaning | MasterClean" },
     },
     {
       id: 14,
@@ -1021,6 +1027,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2025-03-06',
       readTime: '3 min',
       tag: '🌬️ Suszenie',
+      seo: { title: "Suszenie mebli po czyszczeniu | MasterClean" },
     },
     {
       id: 10,
@@ -1043,6 +1050,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-28',
       readTime: '5 min',
       tag: '🛏️ Materace',
+      seo: { title: "Czyszczenie materacy w domu | MasterClean" },
     },
     {
       id: 12,
@@ -1054,6 +1062,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-03',
       readTime: '3 min',
       tag: '🛋️ Tapicerka',
+      seo: { title: "Cena prania tapicerki: 100 vs 300 zł | MasterClean" },
     },
     {
       id: 13,
@@ -1065,6 +1074,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-16',
       readTime: '4 min',
       tag: '🧾 Prawo',
+      seo: { title: "Paragon fiskalny za czyszczenie | MasterClean" },
     },
     {
       id: 14,
@@ -1484,6 +1494,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-03-28',
       readTime: '5 хв',
       tag: '🛏️ Матраци',
+      seo: { title: "Хімчистка матраца вдома | MasterClean" },
     },
     {
       id: 12,
@@ -1495,6 +1506,7 @@ export const blogArticles: Record<string, BlogArticle[]> = {
       date: '2026-04-03',
       readTime: '3 хв',
       tag: '🛋️ Хімчистка',
+      seo: { title: "Ціна прання оббивки: 100 vs 300 zł | MasterClean" },
     },
     {
       id: 13,
