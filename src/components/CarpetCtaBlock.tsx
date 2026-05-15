@@ -182,7 +182,18 @@ const CarpetCtaBlock = () => {
             <h2 id="carpet-cta-heading" className="font-serif text-2xl md:text-3xl font-bold mb-2 text-foreground">
               {tt.title}
             </h2>
-            <p className="text-muted-foreground mb-6">{tt.subtitle}</p>
+            <p className="text-muted-foreground mb-4">{tt.subtitle}</p>
+
+            {/* Bonus note: priority same-day visit for orders ≥ 50 m² */}
+            <div className={cn(
+              "flex items-start gap-2 rounded-xl px-3 py-2.5 mb-6 text-sm border transition-colors",
+              hasArea && areaNum >= 50
+                ? "bg-fresh/10 border-fresh/40 text-fresh-foreground"
+                : "bg-primary/5 border-primary/20 text-foreground"
+            )}>
+              <Zap className={cn("w-4 h-4 mt-0.5 flex-shrink-0", hasArea && areaNum >= 50 ? "text-fresh" : "text-primary")} />
+              <span>{tt.bonusNote}</span>
+            </div>
 
             {submitted ? (
               <div className="rounded-2xl bg-background/80 border-2 border-fresh/40 p-5 md:p-6 animate-fade-in">
