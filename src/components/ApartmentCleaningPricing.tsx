@@ -161,7 +161,8 @@ const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
                     return (
                       <div
                         key={apt.id}
-                        className="relative rounded-xl border border-border bg-background p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow"
+                        className="relative rounded-xl border border-border bg-background p-5 flex flex-col gap-3 hover:shadow-lg transition-shadow animate-spin-reveal"
+                        style={{ animationDelay: `${aptIndex * 180}ms` }}
                       >
                         <div className="flex items-center gap-2">
                           <Sparkles className="w-4 h-4 text-primary" />
