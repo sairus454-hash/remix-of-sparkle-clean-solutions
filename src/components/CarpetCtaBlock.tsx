@@ -277,13 +277,13 @@ const CarpetCtaBlock = () => {
               {/* Estimate + CTA */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-2">
                 <p className="text-sm text-muted-foreground">
-                  {estimate > 0 ? (
+                  {hasArea ? (
                     <>
-                      {tt.estimate}: <span className="font-bold text-primary text-base">~{estimate} zł</span>
-                      <span className="text-xs"> ({PRICE_PER_M2} zł/m²)</span>
+                      {tt.estimate}: <span className="font-bold text-primary text-base">{estimateLabel}</span>
+                      <span className="text-xs"> ({PRICE_LABEL})</span>
                     </>
                   ) : (
-                    <span className="text-xs">{PRICE_PER_M2} zł/m²</span>
+                    <span className="text-xs">{PRICE_LABEL}</span>
                   )}
                 </p>
                 <Button
