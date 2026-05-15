@@ -45,6 +45,7 @@ const T: Record<Lang, {
     honeypotErr: 'Wypełnij imię i telefon',
     ok: 'Wysłano!', okDesc: 'Skontaktujemy się w ciągu kilku minut.',
     err: 'Błąd', errDesc: 'Nie udało się wysłać. Spróbuj później.',
+    summaryTitle: 'Twoje zgłoszenie', notSpecified: 'nie podano', newRequest: 'Nowe zgłoszenie',
   },
   ru: {
     badge: 'Химчистка ковролина',
