@@ -405,6 +405,82 @@ const About = () => {
           </div>
         </section>
         <OferteoBadge />
+
+        {/* SEO: carpet cleaning with express drying */}
+        <section aria-labelledby="carpet-express-heading" className="py-16 bg-card/60">
+          <div className="container mx-auto px-4 max-w-4xl">
+            {(() => {
+              const C: Record<string, { h2: string; lead: string; h3a: string; pa: string; h3b: string; pb: string; h3c: string; pc: string; h3d: string; pd: string }> = {
+                pl: {
+                  h2: 'Pranie wykładziny dywanowej z ekspresowym suszeniem',
+                  lead: 'Specjalizujemy się w głębokim praniu wykładziny dywanowej (kompletów, biur, hoteli, schodów) metodą ekstrakcyjną z ekspresowym suszeniem — pomieszczenie wraca do użytku już po 1–2 godzinach, a nie po dobie.',
+                  h3a: 'Jak działa ekspresowe suszenie',
+                  pa: 'Profesjonalny ekstraktor Karcher Puzzi z turbiną o podciśnieniu ponad 250 mbar wyciąga z wykładziny do 95% wilgoci od razu podczas prania. Następnie uruchamiamy turbiny osuszające oraz oczyszczacz powietrza, dzięki czemu włókna schną w temperaturze pokojowej bez ryzyka pleśni i nieprzyjemnego zapachu.',
+                  h3b: 'Co usuwamy z wykładziny',
+                  pb: 'Plamy z kawy, wina, tłuszczu, atramentu, krwi i moczu zwierząt, kurz roztoczy, sierść, alergeny, nikotynę i odór wilgoci. Stosujemy biodegradowalne preparaty z certyfikatem dla dzieci i alergików — bez chloru i agresywnych rozpuszczalników.',
+                  h3c: 'Dla kogo to rozwiązanie',
+                  pc: 'Biura, gabinety lekarskie, hotele, sale konferencyjne, mieszkania pod wynajem krótkoterminowy oraz domy z dziećmi i zwierzętami — wszędzie tam, gdzie nie można pozwolić sobie na zamknięcie pomieszczenia na wiele godzin. Pracujemy także w weekendy i nocami.',
+                  h3d: 'Cena i czas realizacji',
+                  pd: 'Pranie wykładziny dywanowej z ekspresowym suszeniem od 12 zł/m² we Wrocławiu i Smolcu, w innych miastach +10%. Standardowe biuro 50 m² czyścimy w 60–90 minut, pełne osuszenie zajmuje kolejną godzinę. Każda usługa objęta jest 7-dniową gwarancją jakości.',
+                },
+                ru: {
+                  h2: 'Химчистка ковролина с экспресс-сушением',
+                  lead: 'Мы специализируемся на глубокой химчистке ковролина (в офисах, отелях, на лестницах и в квартирах) методом экстракции с экспресс-сушением — помещение можно использовать уже через 1–2 часа, а не на следующий день.',
+                  h3a: 'Как работает экспресс-сушение',
+                  pa: 'Профессиональный экстрактор Karcher Puzzi с турбиной разрежения более 250 мбар вытягивает до 95% влаги прямо во время чистки. После этого мы включаем сушильные турбины и очиститель воздуха — ворс высыхает при комнатной температуре без риска появления плесени и затхлого запаха.',
+                  h3b: 'Что удаляем с ковролина',
+                  pb: 'Пятна от кофе, вина, жира, чернил, крови и мочи животных, пылевых клещей, шерсть, аллергены, никотин и запах сырости. Используем биоразлагаемую химию с сертификатами для детей и аллергиков — без хлора и агрессивных растворителей.',
+                  h3c: 'Кому подходит услуга',
+                  pc: 'Офисы, медицинские кабинеты, отели, конференц-залы, квартиры посуточно, дома с детьми и животными — везде, где нельзя закрыть помещение на сутки. Работаем также по выходным и ночью.',
+                  h3d: 'Цена и сроки',
+                  pd: 'Химчистка ковролина с экспресс-сушением — от 12 zł/м² во Вроцлаве и Смолце, в других городах +10%. Стандартный офис 50 м² мы чистим за 60–90 минут, полное досыхание — ещё около часа. На каждую услугу даём гарантию качества 7 дней.',
+                },
+                uk: {
+                  h2: 'Хімчистка килимового покриття з експрес-сушінням',
+                  lead: 'Ми спеціалізуємося на глибокій хімчистці килимового покриття (в офісах, готелях, на сходах і у квартирах) методом екстракції з експрес-сушінням — приміщення готове до використання вже через 1–2 години, а не наступного дня.',
+                  h3a: 'Як працює експрес-сушіння',
+                  pa: 'Професійний екстрактор Karcher Puzzi з турбіною розрідження понад 250 мбар витягує до 95% вологи прямо під час чистки. Далі вмикаємо сушильні турбіни і очищувач повітря — ворс висихає за кімнатної температури без ризику плісняви та затхлого запаху.',
+                  h3b: 'Що видаляємо з покриття',
+                  pb: 'Плями від кави, вина, жиру, чорнила, крові та сечі тварин, пилових кліщів, шерсть, алергени, нікотин і запах вогкості. Використовуємо біорозкладну хімію з сертифікатами для дітей і алергіків — без хлору та агресивних розчинників.',
+                  h3c: 'Кому підходить послуга',
+                  pc: 'Офіси, медичні кабінети, готелі, конференц-зали, квартири подобово, домівки з дітьми та тваринами — скрізь, де не можна закрити приміщення на добу. Працюємо також у вихідні та вночі.',
+                  h3d: 'Ціна та терміни',
+                  pd: 'Хімчистка килимового покриття з експрес-сушінням — від 12 zł/м² у Вроцлаві та Смольці, в інших містах +10%. Стандартний офіс 50 м² чистимо за 60–90 хвилин, повне висихання — ще близько години. На кожну послугу даємо гарантію якості 7 днів.',
+                },
+                en: {
+                  h2: 'Carpet (wall-to-wall) cleaning with express drying',
+                  lead: 'We specialise in deep extraction cleaning of wall-to-wall carpeting (offices, hotels, staircases, apartments) with express drying — the room is ready to use within 1–2 hours instead of a full day.',
+                  h3a: 'How express drying works',
+                  pa: 'A professional Karcher Puzzi extractor with a 250+ mbar vacuum turbine pulls out up to 95% of the moisture during the wash itself. We then run drying turbines and an air purifier so the fibres dry at room temperature without any risk of mould or musty smell.',
+                  h3b: 'What we remove from the carpet',
+                  pb: 'Coffee, wine, grease, ink, blood and pet-urine stains, dust mites, hair, allergens, nicotine and damp odours. We use biodegradable chemistry certified safe for children and allergy sufferers — no chlorine, no aggressive solvents.',
+                  h3c: 'Who it is for',
+                  pc: 'Offices, medical clinics, hotels, conference rooms, short-term rental flats and homes with kids or pets — anywhere you cannot afford to close the room for a full day. We also work weekends and nights.',
+                  h3d: 'Price and turnaround',
+                  pd: 'Carpet cleaning with express drying from 12 PLN/m² in Wrocław and Smolec, +10% in other cities. A standard 50 m² office takes 60–90 minutes plus another hour for full drying. Every service is backed by our 7-day quality guarantee.',
+                },
+              };
+              const c = C[language] || C.pl;
+              return (
+                <article className="prose prose-neutral max-w-none">
+                  <h2 id="carpet-express-heading" className="font-serif text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                    {c.h2}
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-6">{c.lead}</p>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-2">{c.h3a}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{c.pa}</p>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-2">{c.h3b}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{c.pb}</p>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-2">{c.h3c}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-4">{c.pc}</p>
+                  <h3 className="font-serif text-xl font-semibold text-foreground mt-6 mb-2">{c.h3d}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{c.pd}</p>
+                </article>
+              );
+            })()}
+          </div>
+        </section>
+
       <SeoPageLongText variant="about" />
       </Layout>
     </>;
