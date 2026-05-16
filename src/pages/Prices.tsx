@@ -135,13 +135,13 @@ const Prices = () => {
     {
       ...META.auto,
       items: [
-        { id: 'autoComplex', name: t.prices.items.autoComplex, price: 450, image: img('calc-auto-complex.jpg') },
-        { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 550, image: img('calc-auto-leather.jpg') },
+        { id: 'autoComplex', name: t.prices.items.autoComplex, price: 400, image: img('calc-auto-complex.jpg') },
+        { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 500, image: img('calc-auto-leather.jpg') },
         { id: 'autoVip', name: t.prices.items.autoVip, price: 700, image: img('calc-auto-vip.jpg') },
         { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 800, image: img('calc-auto-vip-leather.jpg') },
         { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80, image: img('calc-auto-seat.jpg') },
-        { id: 'autoSeats', name: t.prices.items.autoSeats, price: 250, image: img('calc-auto-seats.jpg') },
-        { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 300, image: img('calc-auto-leather-seats.jpg') },
+        { id: 'autoSeats', name: t.prices.items.autoSeats, price: 200, image: img('calc-auto-seats.jpg') },
+        { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 250, image: img('calc-auto-leather-seats.jpg') },
         { id: 'autoDoorCard', name: t.prices.items.autoDoorCard, price: 40, image: img('calc-auto-door.jpg') },
         { id: 'autoPlastics', name: t.prices.items.autoPlastics, price: 70, image: img('calc-auto-plastics.jpg') },
         { id: 'autoCeiling', name: t.prices.items.autoCeiling, price: 100, image: img('calc-auto-ceiling.jpg') },
