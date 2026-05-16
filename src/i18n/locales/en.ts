@@ -186,6 +186,7 @@ const enTranslations = {
          autoOzone: 'Auto Ozonation',
          autoTruckCabin: 'Truck Cabin Cleaning',
          autoVanCabin: 'Van Cabin Cleaning',
+         camperCleaning: 'Camper / RV Cleaning',
          autoVip: 'VIP Auto Cleaning',
          autoVipLeather: 'VIP Auto Cleaning (leather)',
          autoComplexLeather: 'Complete Auto Cleaning (leather)',

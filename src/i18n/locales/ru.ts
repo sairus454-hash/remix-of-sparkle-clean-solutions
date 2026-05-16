@@ -186,6 +186,7 @@ const ruTranslations = {
          autoOzone: 'Озонирование авто',
          autoTruckCabin: 'Химчистка кабины тягача',
          autoVanCabin: 'Химчистка кабины буса',
+         camperCleaning: 'Химчистка кемпинга',
          autoVip: 'VIP химчистка авто',
          autoVipLeather: 'VIP химчистка авто (кожа)',
          autoComplexLeather: 'Комплексная чистка авто (кожа)',

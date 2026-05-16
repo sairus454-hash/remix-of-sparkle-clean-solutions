@@ -186,6 +186,7 @@ const plTranslations = {
          autoOzone: 'Ozonowanie samochodu',
          autoTruckCabin: 'Czyszczenie kabiny ciągnika',
          autoVanCabin: 'Czyszczenie kabiny busa',
+         camperCleaning: 'Pranie kampera',
          autoVip: 'VIP czyszczenie samochodu',
          autoVipLeather: 'VIP czyszczenie samochodu (skóra)',
          autoComplexLeather: 'Kompleksowe czyszczenie auta (skóra)',
