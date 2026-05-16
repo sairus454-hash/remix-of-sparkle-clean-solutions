@@ -150,6 +150,7 @@ const Prices = () => {
         { id: 'autoOzone', name: t.prices.items.autoOzone, price: 120, image: img('calc-auto-ozone.jpg') },
         { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650, image: img('calc-auto-truck.jpg') },
         { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400, image: img('calc-auto-van.jpg') },
+        { id: 'camperCleaning', name: t.prices.items.camperCleaning, price: 400, image: img('calc-camper-cleaning.jpg'), priceText: '400–1000 zł' },
       ],
     },
     {
