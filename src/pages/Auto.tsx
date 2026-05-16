@@ -39,6 +39,7 @@ import calcAutoVan from '@/assets/calc-auto-van.jpg';
 import calcAutoVip from '@/assets/calc-auto-vip.jpg';
 import calcAutoVipLeather from '@/assets/calc-auto-vip-leather.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
+import calcCamperCleaning from '@/assets/calc-camper-cleaning.jpg';
 
 const Auto = () => {
   const { t, language } = useLanguage();
