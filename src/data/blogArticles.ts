@@ -24,6 +24,7 @@ import ozonowanieMieszkaniaBlog from '@/assets/ozonowanie-mieszkania-blog.webp';
 import carpetPetHairBlog from '@/assets/carpet-pet-hair-cleaning-blog.webp';
 import carpetStainRemovalBlog from '@/assets/carpet-stain-removal-blog.webp';
 import postRenovationCleaningBlog from '@/assets/post-renovation-cleaning-blog.webp';
+import windowCleaningPriceBlog from '@/assets/ile-kosztuje-mycie-okien-blog.webp';
 
 export interface BlogArticle {
   id: number;
