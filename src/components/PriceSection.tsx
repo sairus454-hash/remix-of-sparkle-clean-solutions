@@ -48,6 +48,7 @@ import calcAutoLeatherSeats from '@/assets/calc-auto-leather-seats.jpg';
 import calcAutoDoor from '@/assets/calc-auto-door.jpg';
 import calcAutoPlastics from '@/assets/calc-auto-plastics.jpg';
 import calcAutoCeiling from '@/assets/calc-auto-ceiling.jpg';
+import calcCamperCleaning from '@/assets/calc-camper-cleaning.jpg';
 import calcAutoFloor from '@/assets/calc-auto-floor.jpg';
 import calcAutoTrunk from '@/assets/calc-auto-trunk.jpg';
 import calcAutoOzone from '@/assets/calc-auto-ozone.jpg';
@@ -269,6 +270,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
         { id: 'autoOzone', name: t.prices.items.autoOzone, price: 120, image: calcAutoOzone },
         { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650, image: calcAutoTruck },
         { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400, image: calcAutoVan },
+        { id: 'camperCleaning', name: t.prices.items.camperCleaning, price: 400, image: calcCamperCleaning, priceText: '400–1000 zł' },
       ],
     },
     {

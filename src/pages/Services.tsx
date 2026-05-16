@@ -58,6 +58,7 @@ import calcStroller from '@/assets/calc-stroller.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
 import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
+import calcCamperCleaning from '@/assets/calc-camper-cleaning.jpg';
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -117,6 +118,7 @@ const Services = () => {
     { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny dywanowej z odbiorem' : language === 'en' ? 'Carpet covering impregnation with pickup' : 'Импрегнация коврового покрытия с забором'), price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
     { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
     { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
+    { id: 'camperCleaning', name: t.prices.items.camperCleaning, price: 400, image: calcCamperCleaning, priceText: '400–1000 zł' },
   ];
 
   const leatherItems = [

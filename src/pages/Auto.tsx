@@ -39,6 +39,7 @@ import calcAutoVan from '@/assets/calc-auto-van.jpg';
 import calcAutoVip from '@/assets/calc-auto-vip.jpg';
 import calcAutoVipLeather from '@/assets/calc-auto-vip-leather.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
+import calcCamperCleaning from '@/assets/calc-camper-cleaning.jpg';
 
 const Auto = () => {
   const { t, language } = useLanguage();
@@ -62,6 +63,7 @@ const Auto = () => {
     { id: 'autoOzone', name: t.prices.items.autoOzone, price: 120, image: calcAutoOzone },
     { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650, image: calcAutoTruck },
     { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400, image: calcAutoVan },
+    { id: 'camperCleaning', name: t.prices.items.camperCleaning, price: 400, image: calcCamperCleaning, priceText: '400–1000 zł' },
     { id: 'carseat', name: t.prices.items.carseat, price: 80, image: calcCarseat },
   ];
 
