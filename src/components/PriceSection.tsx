@@ -270,6 +270,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
         { id: 'autoOzone', name: t.prices.items.autoOzone, price: 120, image: calcAutoOzone },
         { id: 'autoTruckCabin', name: t.prices.items.autoTruckCabin, price: 650, image: calcAutoTruck },
         { id: 'autoVanCabin', name: t.prices.items.autoVanCabin, price: 400, image: calcAutoVan },
+        { id: 'camperCleaning', name: t.prices.items.camperCleaning, price: 400, image: calcCamperCleaning, priceText: '400–1000 zł' },
       ],
     },
     {
