@@ -152,6 +152,38 @@ const Auto = () => {
            </div>
          </section>
 
+        {/* 0. Camper Cleaning SEO intro */}
+        <section className="py-10 sm:py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10 items-center">
+              <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-card border border-border order-1 lg:order-2">
+                <img
+                  src={calcCamperCleaning}
+                  alt={t.auto?.camperSeoImageAlt || 'Химчистка кемпера'}
+                  loading="lazy"
+                  width={768}
+                  height={768}
+                  className="w-full h-full object-cover aspect-square"
+                />
+                <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold shadow-glow">
+                  400–1000 zł
+                </div>
+              </div>
+              <div className="order-2 lg:order-1">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  {t.auto?.camperSeoTitle}
+                </h2>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4">
+                  {t.auto?.camperSeoP1}
+                </p>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  {t.auto?.camperSeoP2}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 1. Truck & Van Cabin Banner */}
         <LazySection minHeight="400px">
         <section className="py-12 sm:py-20 bg-card">
