@@ -58,6 +58,7 @@ import calcStroller from '@/assets/calc-stroller.jpg';
 import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
 import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
+import calcCamperCleaning from '@/assets/calc-camper-cleaning.jpg';
 
 const Services = () => {
   const { t, language } = useLanguage();
