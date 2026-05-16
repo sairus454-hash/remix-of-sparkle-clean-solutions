@@ -111,8 +111,8 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     },
     unit: { ru: 'пакет', en: 'package', pl: 'pakiet', uk: 'пакет' },
     suggestions: [1, 2],
-    // 1 = 450 (textile) / 550 (leather), 2 = 700/800
-    baseEstimator: (qty) => (qty <= 1 ? { min: 450, max: 550 } : { min: 700, max: 800 }),
+    // 1 = 400 (textile) / 500 (leather), 2 = 700/800
+    baseEstimator: (qty) => (qty <= 1 ? { min: 400, max: 500 } : { min: 700, max: 800 }),
     markup: 'none', // car cleaning has NO city markup
   },
   {
