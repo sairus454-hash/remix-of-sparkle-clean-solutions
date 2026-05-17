@@ -250,6 +250,7 @@ const Cleaning = () => {
     { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : 'Глажка', price: cleaningType === 'general' ? 60 : 50, image: calcExtraIroning, unit: 'h' },
     { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : 'Убрать лоток для животных', price: cleaningType === 'general' ? 15 : 10, image: calcExtraPetLitter },
     { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : 'Убрать в шкафу', price: cleaningType === 'general' ? 35 : 30, image: calcExtraCloset },
+    { id: 'tiles', name: language === 'pl' ? 'Czyszczenie płytek' : language === 'en' ? 'Tile cleaning' : language === 'uk' ? 'Чистка плитки' : 'Чистка плитки', price: cleaningType === 'general' ? 12 : 10, image: calcExtraTiles, unit: 'm²' },
   ];
 
   const furnitureItems = [
