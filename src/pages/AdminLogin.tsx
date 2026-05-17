@@ -9,6 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { useToast } from '@/hooks/use-toast';
 import { Lock, Mail, Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const AdminLogin = () => {
   const [email, setEmail] = useState('');
@@ -46,6 +47,11 @@ const AdminLogin = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted p-4">
+      <Helmet>
+        <title>Admin login | MasterClean</title>
+        <meta name="robots" content="noindex, nofollow, noarchive" />
+        <link rel="canonical" href="https://masterclean1885.com/admin/login" />
+      </Helmet>
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <Link to="/" className="flex items-center justify-center gap-2 mb-4">

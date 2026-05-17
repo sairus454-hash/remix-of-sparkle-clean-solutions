@@ -55,6 +55,9 @@ const queryClient = new QueryClient({
   },
 });
 
+const ADMIN_ROOT = '/admin';
+const ADMIN_LOGIN = `${ADMIN_ROOT}/login`;
+
 // Subtle loading fallback — no jarring spinner
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center animate-page-loader">
@@ -143,6 +146,69 @@ const App = () => {
                         <Route path="/cookies" element={<Cookies />} />
                         <Route path="/sitemap" element={<Sitemap />} />
                         <Route path="/city/:slug" element={<CityPage />} />
+                        <Route path="/ru" element={<Index />} />
+                        <Route path="/ru/about" element={<About />} />
+                        <Route path="/ru/services" element={<Services />} />
+                        <Route path="/ru/prices" element={<Prices />} />
+                        <Route path="/ru/equipment" element={<Equipment />} />
+                        <Route path="/ru/impregnation" element={<Impregnation />} />
+                        <Route path="/ru/auto" element={<Auto />} />
+                        <Route path="/ru/ozone" element={<Ozone />} />
+                        <Route path="/ru/windows" element={<Windows />} />
+                        <Route path="/ru/cleaning" element={<Cleaning />} />
+                        <Route path="/ru/floor-cleaning" element={<FloorCleaning />} />
+                        <Route path="/ru/blog" element={<Blog />} />
+                        <Route path="/ru/blog/:id" element={<BlogArticle />} />
+                        <Route path="/ru/handyman" element={<Handyman />} />
+                        <Route path="/ru/reviews" element={<Reviews />} />
+                        <Route path="/ru/privacy-policy" element={<PrivacyPolicy />} />
+                        <Route path="/ru/terms" element={<Terms />} />
+                        <Route path="/ru/contacts" element={<Contacts />} />
+                        <Route path="/ru/cookies" element={<Cookies />} />
+                        <Route path="/ru/sitemap" element={<Sitemap />} />
+                        <Route path="/ru/city/:slug" element={<CityPage />} />
+                        <Route path="/en" element={<Index />} />
+                        <Route path="/en/about" element={<About />} />
+                        <Route path="/en/services" element={<Services />} />
+                        <Route path="/en/prices" element={<Prices />} />
+                        <Route path="/en/equipment" element={<Equipment />} />
+                        <Route path="/en/impregnation" element={<Impregnation />} />
+                        <Route path="/en/auto" element={<Auto />} />
+                        <Route path="/en/ozone" element={<Ozone />} />
+                        <Route path="/en/windows" element={<Windows />} />
+                        <Route path="/en/cleaning" element={<Cleaning />} />
+                        <Route path="/en/floor-cleaning" element={<FloorCleaning />} />
+                        <Route path="/en/blog" element={<Blog />} />
+                        <Route path="/en/blog/:id" element={<BlogArticle />} />
+                        <Route path="/en/handyman" element={<Handyman />} />
+                        <Route path="/en/reviews" element={<Reviews />} />
+                        <Route path="/en/privacy-policy" element={<PrivacyPolicy />} />
+                        <Route path="/en/terms" element={<Terms />} />
+                        <Route path="/en/contacts" element={<Contacts />} />
+                        <Route path="/en/cookies" element={<Cookies />} />
+                        <Route path="/en/sitemap" element={<Sitemap />} />
+                        <Route path="/en/city/:slug" element={<CityPage />} />
+                        <Route path="/uk" element={<Index />} />
+                        <Route path="/uk/about" element={<About />} />
+                        <Route path="/uk/services" element={<Services />} />
+                        <Route path="/uk/prices" element={<Prices />} />
+                        <Route path="/uk/equipment" element={<Equipment />} />
+                        <Route path="/uk/impregnation" element={<Impregnation />} />
+                        <Route path="/uk/auto" element={<Auto />} />
+                        <Route path="/uk/ozone" element={<Ozone />} />
+                        <Route path="/uk/windows" element={<Windows />} />
+                        <Route path="/uk/cleaning" element={<Cleaning />} />
+                        <Route path="/uk/floor-cleaning" element={<FloorCleaning />} />
+                        <Route path="/uk/blog" element={<Blog />} />
+                        <Route path="/uk/blog/:id" element={<BlogArticle />} />
+                        <Route path="/uk/handyman" element={<Handyman />} />
+                        <Route path="/uk/reviews" element={<Reviews />} />
+                        <Route path="/uk/privacy-policy" element={<PrivacyPolicy />} />
+                        <Route path="/uk/terms" element={<Terms />} />
+                        <Route path="/uk/contacts" element={<Contacts />} />
+                        <Route path="/uk/cookies" element={<Cookies />} />
+                        <Route path="/uk/sitemap" element={<Sitemap />} />
+                        <Route path="/uk/city/:slug" element={<CityPage />} />
                         {PREFIXES.flatMap((prefix) =>
                           ROUTES.map((r) => (
                             <Route
@@ -153,9 +219,9 @@ const App = () => {
                           )),
                         )}
                         {/* Admin stays unprefixed */}
-                        <Route path="/admin/login" element={<AdminLogin />} />
+                        <Route path={ADMIN_LOGIN} element={<AdminLogin />} />
                         <Route
-                          path="/admin"
+                          path={ADMIN_ROOT}
                           element={
                             <ProtectedRoute requireAdmin>
                               <Admin />

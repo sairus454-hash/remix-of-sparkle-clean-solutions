@@ -21,6 +21,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from '@/components/ui/alert-dialog';
+import { Helmet } from 'react-helmet-async';
 
 interface Review {
   id: string;
@@ -107,6 +108,11 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Admin | MasterClean</title>
+        <meta name="robots" content="noindex, nofollow, noarchive" />
+        <link rel="canonical" href="https://masterclean1885.com/admin" />
+      </Helmet>
       {/* Header */}
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
