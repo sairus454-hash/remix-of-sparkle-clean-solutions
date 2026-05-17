@@ -34,7 +34,8 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
     language
   } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
-  
+  const [submitStatus, setSubmitStatus] = useState<{ kind: 'idle' | 'success' | 'error'; message?: string }>({ kind: 'idle' });
+
   const [showSuccessAnimation, setShowSuccessAnimation] = useState(false);
   const [date, setDate] = useState<Date | undefined>(selectedDate);
   const [calculatorItems, setCalculatorItems] = useState<CalculatorItem[]>(() => {
