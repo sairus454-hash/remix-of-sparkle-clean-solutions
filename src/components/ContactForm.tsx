@@ -391,19 +391,9 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       speechSynthesis.speak(utterance);
     }
   };
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.name || !formData.phone || !formData.cityAddress || !formData.postalCode || (!formData.time && !date)) {
-      toast({
-        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
-        description: language === 'ru' ? 'Пожалуйста, заполните все обязательные поля' : language === 'pl' ? 'Proszę wypełnić wszystkie wymagane pola' : language === 'uk' ? 'Будь ласка, заповніть всі обов\'язкові поля' : 'Please fill in all required fields',
-        variant: 'destructive'
-      });
-      return;
-    }
-
+  const sendToTelegram = async () => {
     setIsLoading(true);
+    setSubmitStatus({ kind: 'idle' });
     try {
       const paymentLabel = formData.paymentMethod ? `\n💳 ${t.form.paymentType}: ${formData.paymentMethod}` : '';
       const promotionLabel = formData.promotion ? `\n🎁 ${language === 'ru' ? 'Акция' : language === 'pl' ? 'Promocja' : language === 'uk' ? 'Акція' : 'Promotion'}: ${formData.promotion}` : '';
@@ -422,6 +412,15 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         has_calculator: calculatorItems.length > 0,
       });
 
+      const successMsg = language === 'ru'
+        ? 'Заявка успешно отправлена в Telegram. Мы свяжемся с Вами в ближайшее время.'
+        : language === 'pl'
+        ? 'Zgłoszenie wysłane na Telegram. Skontaktujemy się wkrótce.'
+        : language === 'uk'
+        ? 'Заявку успішно надіслано в Telegram. Ми зв\'яжемося з Вами найближчим часом.'
+        : 'Your request was sent to Telegram. We will contact you shortly.';
+
+      setSubmitStatus({ kind: 'success', message: successMsg });
       setShowSuccessAnimation(true);
       playSuccessSound();
       speakSuccess();
@@ -444,14 +443,37 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       clearCalculatorData();
     } catch (error) {
       console.error('Form submission error:', error);
+      const errorMsg = language === 'ru'
+        ? 'Не удалось отправить заявку в Telegram. Проверьте соединение и попробуйте ещё раз.'
+        : language === 'pl'
+        ? 'Nie udało się wysłać zgłoszenia na Telegram. Sprawdź połączenie i spróbuj ponownie.'
+        : language === 'uk'
+        ? 'Не вдалося надіслати заявку в Telegram. Перевірте з\'єднання і спробуйте ще раз.'
+        : 'Failed to send to Telegram. Check your connection and try again.';
+      setSubmitStatus({ kind: 'error', message: errorMsg });
       toast({
-        title: language === 'ru' ? 'Ошибка' : 'Error',
-        description: language === 'ru' ? 'Не удалось отправить заявку. Попробуйте позже.' : 'Failed to send. Please try again.',
+        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
+        description: errorMsg,
         variant: 'destructive'
       });
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.phone || !formData.cityAddress || !formData.postalCode || (!formData.time && !date)) {
+      toast({
+        title: language === 'ru' ? 'Ошибка' : language === 'pl' ? 'Błąd' : language === 'uk' ? 'Помилка' : 'Error',
+        description: language === 'ru' ? 'Пожалуйста, заполните все обязательные поля' : language === 'pl' ? 'Proszę wypełnić wszystkie wymagane pola' : language === 'uk' ? 'Будь ласка, заповніть всі обов\'язкові поля' : 'Please fill in all required fields',
+        variant: 'destructive'
+      });
+      return;
+    }
+
+    await sendToTelegram();
   };
 
   const handleAnimationComplete = useCallback(() => {
