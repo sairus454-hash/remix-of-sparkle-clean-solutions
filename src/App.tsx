@@ -55,6 +55,9 @@ const queryClient = new QueryClient({
   },
 });
 
+const ADMIN_ROOT = '/admin';
+const ADMIN_LOGIN = `${ADMIN_ROOT}/login`;
+
 // Subtle loading fallback — no jarring spinner
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center animate-page-loader">
@@ -125,6 +128,12 @@ const App = () => {
                         <Route path="/" element={<Index />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/services" element={<Services />} />
+                        <Route path="/ru" element={<Index />} />
+                        <Route path="/en" element={<Index />} />
+                        <Route path="/uk" element={<Index />} />
+                        <Route path="/ru/services" element={<Services />} />
+                        <Route path="/en/services" element={<Services />} />
+                        <Route path="/uk/services" element={<Services />} />
                         <Route path="/prices" element={<Prices />} />
                         <Route path="/equipment" element={<Equipment />} />
                         <Route path="/impregnation" element={<Impregnation />} />
@@ -153,9 +162,9 @@ const App = () => {
                           )),
                         )}
                         {/* Admin stays unprefixed */}
-                        <Route path="/admin/login" element={<AdminLogin />} />
+                        <Route path={ADMIN_LOGIN} element={<AdminLogin />} />
                         <Route
-                          path="/admin"
+                          path={ADMIN_ROOT}
                           element={
                             <ProtectedRoute requireAdmin>
                               <Admin />
