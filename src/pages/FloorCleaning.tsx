@@ -369,11 +369,43 @@ const FloorCleaning = () => {
           </div>
         </section>
 
-        {/* Description */}
-        <section className="py-16 bg-card">
+        {/* SEO intro: chemistry & equipment (Carpet Cleaner, Mytee) */}
+        <section className="py-12 bg-card" aria-labelledby="floor-seo-intro">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
+            <div className="max-w-3xl mx-auto">
+              <h2 id="floor-seo-intro" className="font-serif text-2xl md:text-3xl font-bold mb-5 text-center bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                {language === 'pl' && 'Pranie wykładzin i dywanów — profesjonalna chemia i sprzęt Carpet Cleaner oraz Mytee'}
+                {language === 'ru' && 'Химчистка ковролина — качественная химия и оборудование Carpet Cleaner и Mytee'}
+                {language === 'uk' && 'Хімчистка ковроліну — якісна хімія та обладнання Carpet Cleaner і Mytee'}
+                {language === 'en' && 'Carpet cleaning — quality chemistry and Carpet Cleaner & Mytee equipment'}
+              </h2>
+              <div className="space-y-4 text-base md:text-lg text-foreground/80 leading-relaxed">
+                {language === 'pl' && (
+                  <>
+                    <p>Pranie wykładzin i dywanów wykonujemy wyłącznie przy użyciu certyfikowanej chemii profesjonalnej, dobieranej indywidualnie do rodzaju włókna, koloru i charakteru zabrudzeń. Stosowane przez nas preparaty są bezpieczne dla dzieci i zwierząt, skutecznie rozpuszczają tłuszcz, kurz roztoczy oraz plamy organiczne, a po wypłukaniu nie pozostawiają lepkiej warstwy, która ponownie przyciągałaby brud.</p>
+                    <p>Pracujemy na sprzęcie ekstrakcyjnym renomowanych marek <strong>Carpet Cleaner</strong> i <strong>Mytee</strong> — to ekstraktory o dużej mocy ssącej i wysokim ciśnieniu roztworu, które wypłukują brud z głębi runa i odzyskują wodę z włókna. Dzięki temu wykładzina wysycha szybciej, nie pozostają zacieki, a efekt czystości jest widoczny od pierwszego przejścia maszyny.</p>
+                  </>
+                )}
+                {language === 'ru' && (
+                  <>
+                    <p>Химчистку ковролина мы выполняем исключительно качественной профессиональной химией, которую подбираем индивидуально под тип ворса, цвет покрытия и характер загрязнений. Используемые препараты безопасны для детей и домашних животных, эффективно растворяют жир, пылевых клещей и органические пятна, а после полоскания не оставляют липкой плёнки, которая повторно притягивала бы грязь.</p>
+                    <p>Работаем на экстракторном оборудовании проверенных брендов <strong>Carpet Cleaner</strong> и <strong>Mytee</strong> — это машины с высокой мощностью всасывания и высоким давлением подачи раствора, которые вымывают загрязнения из глубины ворса и сразу собирают воду обратно. Благодаря этому ковролин быстрее сохнет, не остаётся разводов, а результат чистоты заметен уже после первого прохода.</p>
+                  </>
+                )}
+                {language === 'uk' && (
+                  <>
+                    <p>Хімчистку ковроліну ми виконуємо виключно якісною професійною хімією, яку добираємо індивідуально під тип ворсу, колір покриття та характер забруднень. Використовувані препарати безпечні для дітей і домашніх тварин, ефективно розчиняють жир, пилових кліщів та органічні плями, а після полоскання не залишають липкої плівки, що повторно притягувала б бруд.</p>
+                    <p>Працюємо на екстракторному обладнанні перевірених брендів <strong>Carpet Cleaner</strong> і <strong>Mytee</strong> — це машини з високою потужністю всмоктування та високим тиском подачі розчину, які вимивають забруднення з глибини ворсу і одразу збирають воду назад. Завдяки цьому ковролін швидше висихає, не залишається розводів, а результат чистоти помітний вже після першого проходу.</p>
+                  </>
+                )}
+                {language === 'en' && (
+                  <>
+                    <p>We clean fitted carpets and rugs exclusively with certified professional chemistry, selected individually for the fibre type, colour and nature of the soiling. The agents we use are safe for children and pets, effectively dissolve grease, dust mites and organic stains, and after rinsing leave no sticky residue that would attract dirt again.</p>
+                    <p>We work with extraction equipment from the reputable brands <strong>Carpet Cleaner</strong> and <strong>Mytee</strong> — high-suction, high-pressure machines that flush dirt from deep within the pile and immediately recover the water. As a result the carpet dries faster, no streaks remain, and the cleaning effect is visible after the very first pass.</p>
+                  </>
+                )}
+              </div>
+              <p className="mt-6 text-base md:text-lg text-foreground/80 leading-relaxed text-center">
                 {c.desc}
               </p>
             </div>
