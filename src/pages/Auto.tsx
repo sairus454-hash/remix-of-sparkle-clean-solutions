@@ -240,7 +240,13 @@ const Auto = () => {
                       ))}
                     </ul>
                     <button
-                      onClick={() => formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                      onClick={() => {
+                        const promoItems: CalculatorItem[] = [
+                          { id: 'autoSeats', name: t.prices.items.autoSeats, price: 200, quantity: 1, category: 'auto' },
+                          { id: 'autoOzoneGift', name: `${t.prices.items.autoOzone} (${t.auto?.ozonePromoBadge || 'Акция'} — gratis)`, price: 0, quantity: 1, category: 'auto' },
+                        ];
+                        handleSendToForm(promoItems, 200);
+                      }}
                       className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-bold shadow-card-hover hover:scale-[1.03] transition-all w-full sm:w-auto self-start"
                     >
                       <Gift className="w-4 h-4" />
