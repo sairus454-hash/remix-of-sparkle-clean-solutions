@@ -19,7 +19,8 @@ export type SeoVariant = 'about' | 'services' | 'prices' | 'auto' | 'ozone' | 'c
 
 type Lang = 'pl' | 'en' | 'ru' | 'uk';
 
-type Block = { title: string; paragraphs: string[] };
+type Section = { h3: string; paragraphs: string[] };
+type Block = { title: string; paragraphs: string[]; sections?: Section[] };
 
 const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
   about: {
