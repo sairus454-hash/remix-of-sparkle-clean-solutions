@@ -298,6 +298,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
         { id: 'carpetFloorLarge', name: t.prices.items.carpetFloorLarge, price: 7, image: calcCarpetLarge, unit: 'm²', priceText: '7-10 zł' },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, image: calcCarpetImpregnation, unit: 'm²' },
         { id: 'tileCleaning', name: t.prices.items.tileCleaning, price: 20, image: calcTileCleaning, unit: 'm²' },
+        { id: 'woodFloorCleaning', name: t.prices.items.woodFloorCleaning, price: 20, image: calcWoodFloorCleaning, unit: 'm²' },
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 30, image: calcCarpetPickup, unit: 'm²' },
         { id: 'carpetCoveringImpregnation', name: t.prices.items.carpetCoveringImpregnation, price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
       ],
