@@ -91,6 +91,7 @@ import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcDrying from '@/assets/calc-drying.jpg';
 import calcImpregnation from '@/assets/calc-impregnation.jpg';
 import calcTileCleaning from '@/assets/calc-tile-cleaning.jpg';
+import calcWoodFloorCleaning from '@/assets/calc-wood-floor-cleaning.jpg';
 import calcMoldRemoval from '@/assets/calc-mold-removal.jpg';
 
 // Windows images
