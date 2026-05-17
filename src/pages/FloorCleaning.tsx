@@ -412,6 +412,67 @@ const FloorCleaning = () => {
           </div>
         </section>
 
+        {/* SEO sub-sections: carpet, upholstery, auto — unique H2 + copy per language */}
+        <section className="py-12 bg-gradient-section" aria-labelledby="floor-seo-subsections">
+          <div className="container mx-auto px-4">
+            <h2 id="floor-seo-subsections" className="sr-only">
+              {language === 'pl' && 'Rodzaje czyszczonych powierzchni'}
+              {language === 'ru' && 'Виды очищаемых поверхностей'}
+              {language === 'uk' && 'Види очищуваних поверхонь'}
+              {language === 'en' && 'Surface types we clean'}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {/* Carpet */}
+              <article className="bg-card rounded-2xl border border-border shadow-card p-6">
+                <h2 className="font-serif text-xl md:text-2xl font-bold mb-3 text-primary">
+                  {language === 'pl' && 'Pranie dywanów i wykładzin dywanowych'}
+                  {language === 'ru' && 'Химчистка ковров и ковролина'}
+                  {language === 'uk' && 'Хімчистка килимів та ковроліну'}
+                  {language === 'en' && 'Carpet and fitted carpet cleaning'}
+                </h2>
+                <p className="text-foreground/80 leading-relaxed text-sm md:text-base">
+                  {language === 'pl' && 'Głębokie pranie ekstrakcyjne dywanów wełnianych, syntetycznych i wykładzin dywanowych w mieszkaniach, biurach i lokalach handlowych. Usuwamy plamy organiczne, kurz, roztocza oraz nieprzyjemne zapachy. Cena od 7 zł/m², z odbiorem do pralni 30 zł/m². Czas schnięcia 2–4 godziny.'}
+                  {language === 'ru' && 'Глубокая экстракторная химчистка шерстяных, синтетических ковров и ковролина в квартирах, офисах и торговых залах. Удаляем органические пятна, пыль, клещей и неприятные запахи. Цена от 7 zł/м², с забором в прачечную — 30 zł/м². Сушка 2–4 часа.'}
+                  {language === 'uk' && 'Глибока екстракторна хімчистка вовняних, синтетичних килимів та ковроліну в квартирах, офісах і торгових залах. Видаляємо органічні плями, пил, кліщів та неприємні запахи. Ціна від 7 zł/м², із забором до пральні — 30 zł/м². Сушіння 2–4 години.'}
+                  {language === 'en' && 'Deep extraction cleaning of wool and synthetic rugs and fitted carpets in apartments, offices and retail spaces. We remove organic stains, dust, mites and odors. From 7 zł/m², pickup service 30 zł/m². Drying time 2–4 hours.'}
+                </p>
+              </article>
+
+              {/* Upholstery / Furniture */}
+              <article className="bg-card rounded-2xl border border-border shadow-card p-6">
+                <h2 className="font-serif text-xl md:text-2xl font-bold mb-3 text-primary">
+                  {language === 'pl' && 'Pranie tapicerki meblowej — sofy i fotele'}
+                  {language === 'ru' && 'Химчистка мягкой мебели — диваны и кресла'}
+                  {language === 'uk' && 'Хімчистка м’яких меблів — дивани та крісла'}
+                  {language === 'en' && 'Upholstery cleaning — sofas and armchairs'}
+                </h2>
+                <p className="text-foreground/80 leading-relaxed text-sm md:text-base">
+                  {language === 'pl' && 'Pranie sof, narożników, foteli i materacy metodą ekstrakcyjną. Bezpieczne dla tkanin naturalnych, mikrofibry i alcantary. Usuwamy ślady potu, tłuszczu, sierści zwierząt i zapachy z głębi pianki. Suszenie tapicerki w prezencie. Sprawdź dedykowaną stronę „Химчистка мебели" po pełen cennik.'}
+                  {language === 'ru' && 'Химчистка диванов, угловых моделей, кресел и матрасов экстракторным методом. Безопасно для натуральных тканей, микрофибры и алькантары. Убираем следы пота, жир, шерсть животных и запахи из глубины поролона. Сушка обивки в подарок. Полный прайс — на странице «Химчистка мебели».'}
+                  {language === 'uk' && 'Хімчистка диванів, кутових моделей, крісел та матраців екстракторним методом. Безпечно для натуральних тканин, мікрофібри та алькантари. Прибираємо сліди поту, жир, шерсть тварин і запахи з глибини поролону. Сушіння оббивки в подарунок. Повний прайс — на сторінці «Хімчистка меблів».'}
+                  {language === 'en' && 'Extraction cleaning of sofas, corner units, armchairs and mattresses. Safe for natural fabrics, microfibre and alcantara. We remove sweat marks, grease, pet hair and deep-set odors from the foam. Upholstery drying included. See the dedicated upholstery page for the full price list.'}
+                </p>
+              </article>
+
+              {/* Auto */}
+              <article className="bg-card rounded-2xl border border-border shadow-card p-6">
+                <h2 className="font-serif text-xl md:text-2xl font-bold mb-3 text-primary">
+                  {language === 'pl' && 'Pranie tapicerki samochodowej i ozonowanie auta'}
+                  {language === 'ru' && 'Химчистка салона авто и озонирование'}
+                  {language === 'uk' && 'Хімчистка салону авто та озонування'}
+                  {language === 'en' && 'Car interior cleaning and ozonation'}
+                </h2>
+                <p className="text-foreground/80 leading-relaxed text-sm md:text-base">
+                  {language === 'pl' && 'Pranie foteli samochodowych, podsufitki, paneli drzwiowych i dywaników. Usuwamy plamy z napojów, tłuszczu i zapach dymu czy zwierząt. Ozonowanie auta za 150 zł eliminuje bakterie, grzyby i wirusy w układzie wentylacji. Cennik i pakiety — na stronie „Химчистка авто".'}
+                  {language === 'ru' && 'Химчистка автомобильных сидений, потолка, дверных карт и ковриков. Удаляем пятна от напитков, жира, запах табака и животных. Озонирование авто за 150 zł устраняет бактерии, грибки и вирусы в системе вентиляции. Прайс и пакеты — на странице «Химчистка авто».'}
+                  {language === 'uk' && 'Хімчистка автомобільних сидінь, стелі салону, дверних карт і килимків. Видаляємо плями від напоїв, жиру, запах тютюну й тварин. Озонування авто за 150 zł усуває бактерії, грибки та віруси у системі вентиляції. Прайс і пакети — на сторінці «Хімчистка авто».'}
+                  {language === 'en' && 'Car seat, headliner, door panel and mat cleaning. We remove drink stains, grease, tobacco smell and pet odors. Car ozonation for 150 zł kills bacteria, fungi and viruses in the ventilation system. Pricing and packages on the dedicated auto cleaning page.'}
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
         {/* 3 Media Expert photos with captions and 3D entrance */}
         <section className="py-12 bg-card overflow-hidden">
           <div className="container mx-auto px-4">
