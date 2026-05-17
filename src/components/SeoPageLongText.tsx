@@ -19,7 +19,8 @@ export type SeoVariant = 'about' | 'services' | 'prices' | 'auto' | 'ozone' | 'c
 
 type Lang = 'pl' | 'en' | 'ru' | 'uk';
 
-type Block = { title: string; paragraphs: string[] };
+type Section = { h3: string; paragraphs: string[] };
+type Block = { title: string; paragraphs: string[]; sections?: Section[] };
 
 const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
   about: {
@@ -176,29 +177,145 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
     pl: {
       title: 'Kontakt — MasterClean Wrocław',
       paragraphs: [
-        'Skontaktuj się z MasterClean, aby zamówić <strong>pranie kanap Wrocław</strong>, <strong>czyszczenie tapicerki Wrocław</strong>, <strong>mycie okien Wrocław</strong> lub <strong>sprzątanie mieszkań Wrocław</strong>. Telefon: +48 575 211 401, e-mail: masterclean@email.com. Pracujemy 7 dni w tygodniu, w tym w weekendy i święta — bez dopłat.',
-        'Możesz też skorzystać z formularza online, czatu w prawym dolnym rogu serwisu lub WhatsApp. Wycena jest darmowa i niezobowiązująca — odpowiadamy zwykle w ciągu kilkunastu minut. Obsługujemy Wrocław, Smolec oraz okoliczne miasta.',
+        'Skontaktuj się z MasterClean, aby zamówić <strong>pranie kanap Wrocław</strong>, <strong>czyszczenie tapicerki Wrocław</strong>, <strong>mycie okien Wrocław</strong> lub <strong>sprzątanie mieszkań Wrocław</strong>. Telefon: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Pracujemy 7 dni w tygodniu, w tym w weekendy i święta — bez dopłat. Adres siedziby: ul. Trawowa 14, 54-614 Wrocław (dolnośląskie), NIP 8943280388, REGON 544066160.',
+        'Możesz też skorzystać z formularza online na tej stronie, czatu w prawym dolnym rogu serwisu lub WhatsApp. Wycena jest darmowa i niezobowiązująca — odpowiadamy zwykle w ciągu kilkunastu minut. Obsługujemy Wrocław, Smolec, Bielany Wrocławskie, Kiełczów oraz okoliczne miasta: Oława, Jelcz-Laskowice, Sobótka, Strzegom, Wałbrzych, Opole, Legnica, Lubin, Brzeg, Kłodzko, Dzierżoniów, Świdnica i Jelenia Góra.',
+      ],
+      sections: [
+        {
+          h3: 'Jak szybko się kontaktujemy',
+          paragraphs: [
+            'Na zgłoszenia z formularza i WhatsApp odpowiadamy zwykle w ciągu 5–15 minut w godzinach 8:00–22:00. W nocy i wcześnie rano (22:00–8:00) najszybszą drogą jest telefon — odbieramy 24/7, ponieważ wiele zleceń (np. <strong>czyszczenie tapicerki Wrocław</strong> po imprezie albo ozonowanie auta) wymaga natychmiastowej reakcji.',
+            'Termin realizacji ustalamy podczas pierwszej rozmowy. Standardowo jesteśmy u klienta tego samego lub następnego dnia roboczego, a dla stałych klientów rezerwujemy preferowane okna czasowe.',
+          ],
+        },
+        {
+          h3: 'Sposoby płatności i dokumenty',
+          paragraphs: [
+            'Akceptujemy gotówkę, BLIK, przelew na konto firmowe oraz płatność kartą u technika. Dla firm wystawiamy fakturę VAT z 7- lub 14-dniowym terminem płatności. Po każdej usłudze klient otrzymuje paragon lub fakturę oraz krótki raport z wykonanych prac.',
+            'Dla wspólnot, biur i restauracji oferujemy stałą obsługę z miesięcznym rozliczeniem zbiorczym, co ułatwia księgowość i pozwala obniżyć koszt jednostkowy każdej wizyty.',
+          ],
+        },
+        {
+          h3: 'Obszar działania i dojazd',
+          paragraphs: [
+            'Baza techniczna znajduje się we Wrocławiu (ul. Trawowa 14, 54-614). Dojazd na terenie Wrocławia i Smolca jest bezpłatny. W innych miastach doliczamy niewielką opłatę paliwową lub łączymy zlecenia, aby koszt dojazdu rozłożyć między klientów — wystarczy zapytać przy ustalaniu terminu.',
+            'Jeśli Twojego miasta nie ma na liście, i tak zadzwoń — bardzo często udaje się dojechać w ramach tras serwisowych po Dolnym Śląsku i Wielkopolsce.',
+          ],
+        },
+        {
+          h3: 'Reklamacje i gwarancja jakości',
+          paragraphs: [
+            'Jeśli efekt pracy nie spełnia Twoich oczekiwań, w ciągu 48 godzin od zakończenia usługi wracamy i poprawiamy nieodpłatnie. Reklamacje przyjmujemy telefonicznie, mailowo lub przez formularz kontaktowy — staramy się rozpatrzyć je tego samego dnia.',
+          ],
+        },
       ],
     },
     en: {
       title: 'Contact — MasterClean Wrocław',
       paragraphs: [
-        'Contact MasterClean to book <strong>sofa cleaning Wrocław</strong>, <strong>upholstery cleaning Wrocław</strong>, <strong>window cleaning Wrocław</strong> or <strong>apartment cleaning Wrocław</strong>. Phone: +48 575 211 401, e-mail: masterclean@email.com. We work 7 days a week, including weekends and holidays — no surcharges.',
-        'You can also use the online form, the chat in the bottom-right corner or WhatsApp. Quotes are free and non-binding — we usually reply within minutes. We serve Wrocław, Smolec and the surrounding towns.',
+        'Contact MasterClean to book <strong>sofa cleaning Wrocław</strong>, <strong>upholstery cleaning Wrocław</strong>, <strong>window cleaning Wrocław</strong> or <strong>apartment cleaning Wrocław</strong>. Phone: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. We work 7 days a week, including weekends and public holidays — no surcharges. Registered office: ul. Trawowa 14, 54-614 Wrocław (dolnośląskie region), Polish tax ID (NIP) 8943280388, REGON 544066160.',
+        'You can also use the online form on this page, the chat widget in the bottom-right corner or WhatsApp. Quotes are free and non-binding — we usually reply within a few minutes. We serve Wrocław, Smolec, Bielany Wrocławskie, Kiełczów and the surrounding cities: Oława, Jelcz-Laskowice, Sobótka, Strzegom, Wałbrzych, Opole, Legnica, Lubin, Brzeg, Kłodzko, Dzierżoniów, Świdnica and Jelenia Góra.',
+      ],
+      sections: [
+        {
+          h3: 'How fast we respond',
+          paragraphs: [
+            'Form and WhatsApp messages are answered within 5–15 minutes between 8:00 and 22:00. At night the fastest channel is a phone call — we pick up 24/7 because many jobs (e.g. <strong>upholstery cleaning Wrocław</strong> after a party or urgent car ozone treatment) cannot wait until morning.',
+            'The exact appointment time is agreed during the first call. By default we visit the same day or the next working day; regular clients can reserve fixed time slots.',
+          ],
+        },
+        {
+          h3: 'Payments and invoicing',
+          paragraphs: [
+            'We accept cash, BLIK, bank transfer and card payments at the technician. Companies receive a VAT invoice with a 7- or 14-day payment term. Every job ends with a receipt or invoice and a short report of the work performed.',
+            'For housing communities, offices and restaurants we offer monthly contracts with a single consolidated invoice, which simplifies accounting and lowers the per-visit price.',
+          ],
+        },
+        {
+          h3: 'Service area and travel costs',
+          paragraphs: [
+            'Our equipment base is in Wrocław (ul. Trawowa 14, 54-614). Travel within Wrocław and Smolec is free. In other cities we add a small fuel fee or combine several jobs to share the trip cost — just ask when booking.',
+            'If your city is not listed, please call anyway — we very often manage to fit you into our service routes across Lower Silesia and Greater Poland.',
+          ],
+        },
+        {
+          h3: 'Complaints and quality guarantee',
+          paragraphs: [
+            'If the result does not meet your expectations, within 48 hours from the end of the service we return and re-do the affected area free of charge. Complaints can be submitted by phone, e-mail or contact form — we try to handle them the same day.',
+          ],
+        },
       ],
     },
     ru: {
       title: 'Контакты — MasterClean Вроцлав',
       paragraphs: [
-        'Свяжитесь с MasterClean, чтобы заказать <strong>химчистку диванов Вроцлав</strong>, <strong>чистку обивки Вроцлав</strong>, <strong>мытьё окон Вроцлав</strong> или <strong>уборку квартир Вроцлав</strong>. Телефон: +48 575 211 401, e-mail: masterclean@email.com. Работаем 7 дней в неделю, включая выходные и праздники — без доплат.',
-        'Также можно воспользоваться онлайн-формой, чатом в правом нижнем углу сайта или WhatsApp. Расчёт бесплатный и ни к чему не обязывает — отвечаем обычно в течение нескольких минут. Обслуживаем Вроцлав, Смолец и окрестные города.',
+        'Свяжитесь с MasterClean, чтобы заказать <strong>химчистку диванов Вроцлав</strong>, <strong>чистку обивки Вроцлав</strong>, <strong>мытьё окон Вроцлав</strong> или <strong>уборку квартир Вроцлав</strong>. Телефон: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Работаем 7 дней в неделю, включая выходные и праздники — без доплат. Юридический адрес: ul. Trawowa 14, 54-614 Wrocław (Нижнесилезское воеводство), NIP 8943280388, REGON 544066160.',
+        'Также можно воспользоваться онлайн-формой на этой странице, чатом в правом нижнем углу сайта или WhatsApp. Расчёт бесплатный и ни к чему не обязывает — отвечаем обычно в течение нескольких минут. Обслуживаем Вроцлав, Смолец, Беляны Вроцлавске, Кельчув и соседние города: Олава, Йельч-Лясковице, Соботка, Стшегом, Валбжих, Ополе, Легница, Любин, Бжег, Клодзко, Дзержонюв, Свидница, Еленя-Гура.',
+      ],
+      sections: [
+        {
+          h3: 'Как быстро мы отвечаем',
+          paragraphs: [
+            'На сообщения из формы и WhatsApp отвечаем за 5–15 минут с 8:00 до 22:00. Ночью и рано утром (22:00–8:00) быстрее всего позвонить — телефон доступен 24/7, потому что многие заказы (например, <strong>чистка обивки Вроцлав</strong> после вечеринки или срочное озонирование авто) не могут ждать до утра.',
+            'Точное время визита согласуем при первом разговоре. Обычно приезжаем в тот же или на следующий рабочий день, а постоянным клиентам резервируем удобные окна.',
+          ],
+        },
+        {
+          h3: 'Способы оплаты и документы',
+          paragraphs: [
+            'Принимаем наличные, BLIK, перевод на счёт фирмы и оплату картой у мастера. Юридическим лицам выставляем VAT-фактуру с отсрочкой 7 или 14 дней. После каждой услуги клиент получает чек или фактуру и краткий отчёт о выполненных работах.',
+            'Для жилых сообществ, офисов и ресторанов предлагаем постоянное обслуживание с единым ежемесячным счётом — это упрощает бухгалтерию и снижает стоимость каждого визита.',
+          ],
+        },
+        {
+          h3: 'География и стоимость выезда',
+          paragraphs: [
+            'База находится во Вроцлаве (ul. Trawowa 14, 54-614). Выезд в пределах Вроцлава и Смолца бесплатный. В другие города добавляем небольшую плату за топливо или объединяем несколько заказов в один маршрут, чтобы разделить стоимость дороги — уточняйте при бронировании.',
+            'Если вашего города нет в списке — всё равно позвоните: чаще всего удаётся подстроиться под текущие маршруты по Нижней Силезии и Великопольскому воеводству.',
+          ],
+        },
+        {
+          h3: 'Гарантия качества и рекламации',
+          paragraphs: [
+            'Если результат вас не устраивает, в течение 48 часов после окончания услуги бесплатно возвращаемся и переделываем проблемный участок. Рекламации принимаем по телефону, e-mail или через форму — стараемся решить вопрос в тот же день.',
+          ],
+        },
       ],
     },
     uk: {
       title: 'Контакти — MasterClean Вроцлав',
       paragraphs: [
-        'Зв\'яжіться з MasterClean, щоб замовити <strong>хімчистку диванів Вроцлав</strong>, <strong>чистку оббивки Вроцлав</strong>, <strong>миття вікон Вроцлав</strong> або <strong>прибирання квартир Вроцлав</strong>. Телефон: +48 575 211 401, e-mail: masterclean@email.com. Працюємо 7 днів на тиждень, включно з вихідними та святами — без доплат.',
-        'Також можна скористатися онлайн-формою, чатом у правому нижньому куті сайту або WhatsApp. Розрахунок безкоштовний — відповідаємо зазвичай за кілька хвилин. Обслуговуємо Вроцлав, Смолець і навколишні міста.',
+        'Зв\'яжіться з MasterClean, щоб замовити <strong>хімчистку диванів Вроцлав</strong>, <strong>чистку оббивки Вроцлав</strong>, <strong>миття вікон Вроцлав</strong> або <strong>прибирання квартир Вроцлав</strong>. Телефон: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Працюємо 7 днів на тиждень, включно з вихідними та святами — без доплат. Юридична адреса: ul. Trawowa 14, 54-614 Wrocław (Нижньосілезьке воєводство), NIP 8943280388, REGON 544066160.',
+        'Також можна скористатися онлайн-формою на цій сторінці, чатом у правому нижньому куті сайту або WhatsApp. Розрахунок безкоштовний і ні до чого не зобов\'язує — відповідаємо зазвичай за кілька хвилин. Обслуговуємо Вроцлав, Смолець, Беляни Вроцлавське, Кельчув та сусідні міста: Олава, Йельч-Лясковіце, Соботка, Стшегом, Валбжих, Ополе, Легниця, Любін, Бжег, Клодзко, Дзержонюв, Свідниця, Єленя-Ґура.',
+      ],
+      sections: [
+        {
+          h3: 'Як швидко ми відповідаємо',
+          paragraphs: [
+            'На повідомлення з форми та WhatsApp відповідаємо за 5–15 хвилин з 8:00 до 22:00. Уночі та рано вранці (22:00–8:00) швидше зателефонувати — телефон доступний 24/7, бо багато замовлень (наприклад, <strong>чистка оббивки Вроцлав</strong> після вечірки чи термінове озонування авто) не можуть чекати до ранку.',
+            'Точний час візиту узгоджуємо під час першої розмови. Зазвичай приїжджаємо того ж або наступного робочого дня, а постійним клієнтам резервуємо зручні вікна.',
+          ],
+        },
+        {
+          h3: 'Способи оплати та документи',
+          paragraphs: [
+            'Приймаємо готівку, BLIK, переказ на рахунок фірми та оплату карткою у майстра. Юридичним особам виставляємо VAT-фактуру з відстрочкою 7 або 14 днів. Після кожної послуги клієнт отримує чек або фактуру та короткий звіт про виконані роботи.',
+            'Для житлових спільнот, офісів і ресторанів пропонуємо постійне обслуговування з єдиним щомісячним рахунком — це спрощує бухгалтерію та знижує вартість кожного візиту.',
+          ],
+        },
+        {
+          h3: 'Географія та вартість виїзду',
+          paragraphs: [
+            'База знаходиться у Вроцлаві (ul. Trawowa 14, 54-614). Виїзд у межах Вроцлава та Смольця безкоштовний. В інші міста додаємо невелику плату за пальне або об\'єднуємо кілька замовлень в один маршрут, щоб поділити вартість дороги — уточнюйте під час бронювання.',
+            'Якщо вашого міста немає у списку — все одно зателефонуйте: найчастіше вдається підлаштуватися під поточні маршрути Нижньою Сілезією та Великопольським воєводством.',
+          ],
+        },
+        {
+          h3: 'Гарантія якості та рекламації',
+          paragraphs: [
+            'Якщо результат вас не влаштовує, протягом 48 годин після закінчення послуги безкоштовно повертаємось і переробляємо проблемну ділянку. Рекламації приймаємо телефоном, e-mail або через форму — намагаємось вирішити питання того ж дня.',
+          ],
+        },
       ],
     },
   },
@@ -231,6 +348,20 @@ const SeoPageLongText = ({ variant }: Props) => {
               className="mb-4 text-muted-foreground leading-relaxed"
               dangerouslySetInnerHTML={{ __html: p }}
             />
+          ))}
+          {data.sections?.map((section, si) => (
+            <div key={`s-${si}`} className="mt-6">
+              <h3 className="font-serif text-lg sm:text-xl font-semibold mb-3 text-foreground">
+                {section.h3}
+              </h3>
+              {section.paragraphs.map((p, pi) => (
+                <p
+                  key={`s-${si}-p-${pi}`}
+                  className="mb-4 text-muted-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: p }}
+                />
+              ))}
+            </div>
           ))}
         </article>
       </div>
