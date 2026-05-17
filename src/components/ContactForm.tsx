@@ -751,6 +751,32 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         {isLoading ? <Loader2 className="w-5 h-5 mr-2 animate-spin" /> : <Send className="w-5 h-5 mr-2" />}
         {t.form.submit}
       </Button>
+
+      {submitStatus.kind === 'success' && (
+        <div role="status" aria-live="polite" className="flex items-start gap-3 p-4 rounded-xl border border-fresh/40 bg-fresh/10 animate-fade-up">
+          <CheckCircle2 className="w-5 h-5 text-fresh flex-shrink-0 mt-0.5" />
+          <p className="text-sm text-foreground leading-relaxed">{submitStatus.message}</p>
+        </div>
+      )}
+
+      {submitStatus.kind === 'error' && (
+        <div role="alert" aria-live="assertive" className="flex flex-col gap-3 p-4 rounded-xl border border-destructive/40 bg-destructive/10 animate-fade-up">
+          <div className="flex items-start gap-3">
+            <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-foreground leading-relaxed">{submitStatus.message}</p>
+          </div>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => sendToTelegram()}
+            disabled={isLoading}
+            className="self-start border-destructive/40 text-destructive hover:bg-destructive hover:text-destructive-foreground"
+          >
+            {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <RefreshCw className="w-4 h-4 mr-2" />}
+            {language === 'ru' ? 'Отправить ещё раз' : language === 'pl' ? 'Wyślij ponownie' : language === 'uk' ? 'Надіслати ще раз' : 'Send again'}
+          </Button>
+        </div>
+      )}
       <p className="flex items-center justify-center gap-1.5 text-center text-sm text-muted-foreground mt-2">
         <Phone className="w-4 h-4" />
         {language === 'ru' ? 'Мы свяжемся с Вами в ближайшее время' : language === 'pl' ? 'Skontaktujemy się z Tobą wkrótce' : language === 'uk' ? 'Ми зв\'яжемося з Вами найближчим часом' : 'We will contact you shortly'}
