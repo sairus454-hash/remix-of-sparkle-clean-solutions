@@ -176,6 +176,7 @@ const ukTranslations = {
          carpetImpregnation: 'Імпрегнація килима',
          carpetCoveringImpregnation: 'Імпрегнація коврового покриття з забором',
          tileCleaning: 'Чистка плитки',
+         woodFloorCleaning: "Чистка дерев'яної підлоги",
          autoComplex: 'Комплексна хімчистка авто',
          autoSeat: 'Хімчистка 1 сидіння',
          autoSeats: 'Хімчистка сидінь (спереду і ззаду)',

@@ -176,6 +176,7 @@ const ruTranslations = {
          carpetImpregnation: 'Импрегнация ковра',
          carpetCoveringImpregnation: 'Импрегнация коврового покрытия с забором',
          tileCleaning: 'Чистка плитки',
+         woodFloorCleaning: 'Чистка деревянного пола',
          autoComplex: 'Комплексная химчистка авто',
          autoSeat: 'Химчистка 1 сидения',
          autoSeats: 'Химчистка сидений (спереди и сзади)',

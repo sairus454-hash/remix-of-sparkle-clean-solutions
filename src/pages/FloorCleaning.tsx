@@ -37,6 +37,7 @@ import imgCarpetLarge from '@/assets/calc-carpet-large.jpg';
 import imgCarpetPickup from '@/assets/calc-carpet-pickup.jpg';
 import imgCarpetImpregnation from '@/assets/calc-carpet-impregnation.jpg';
 import imgTileCleaning from '@/assets/calc-tile-cleaning.jpg';
+import imgWoodFloorCleaning from '@/assets/calc-wood-floor-cleaning.jpg';
 import ozone1room from '@/assets/ozone-1room.jpg';
 import ozone2room from '@/assets/ozone-2room.jpg';
 import ozone3room from '@/assets/ozone-3room.jpg';
@@ -58,6 +59,7 @@ const FloorCleaning = () => {
     { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 30, unit: 'm²', image: imgCarpetPickup },
     { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Impregnacja dywanu', price: 5, unit: 'm²', image: imgCarpetImpregnation },
     { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Czyszczenie płytek', price: 20, unit: 'm²', image: imgTileCleaning },
+    { id: 'woodFloorCleaning', name: t.prices?.items?.woodFloorCleaning || 'Czyszczenie podłogi drewnianej', price: 20, unit: 'm²', image: imgWoodFloorCleaning },
   ];
 
   const handleSendToForm = (calcItems: CalculatorItem[], total: number) => {
