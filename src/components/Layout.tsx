@@ -6,7 +6,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import LocalizedLink from '@/i18n/LocalizedLink';
+import { LocalizedLink } from '@/i18n/LocalizedLink';
 import promoBannerGirl from '@/assets/promo-banner-girl.png';
 import promoBannerImpregnation from '@/assets/promo-banner-impregnation.jpg';
 
