@@ -311,7 +311,7 @@ const plTranslations = {
       heroAlt3: 'Czyszczenie wykładziny w aucie',
       ozonePromoBadge: 'Promocja miesiąca',
       ozonePromoTitle: 'Zamów pranie foteli — ozonowanie gratis!',
-      ozonePromoTitleShort: 'Pranie foteli + ozonowanie GRATIS',
+      
       ozonePromoDesc: 'Przy zamówieniu prania foteli samochodowych otrzymujesz pełne ozonowanie kabiny za darmo. Usuwamy kurz, plamy i wszystkie zapachy podczas jednej wizyty.',
       ozonePromoBenefit1: 'Pranie wszystkich foteli ekstraktorem',
       ozonePromoBenefit2: 'Ozonowanie kabiny gratis (120 zł)',
