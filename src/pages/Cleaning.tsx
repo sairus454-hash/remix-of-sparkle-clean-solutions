@@ -84,6 +84,7 @@ import calcExtraIroning from '@/assets/calc-extra-ironing.jpg';
 import calcExtraPetLitter from '@/assets/calc-extra-pet-litter.jpg';
 import calcExtraHours from '@/assets/calc-extra-hours.jpg';
 import calcExtraCloset from '@/assets/calc-extra-closet.jpg';
+import calcExtraTiles from '@/assets/calc-extra-tiles.jpg';
 import calcExtraMoldRemoval from '@/assets/calc-mold-removal.jpg';
 import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
 import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
