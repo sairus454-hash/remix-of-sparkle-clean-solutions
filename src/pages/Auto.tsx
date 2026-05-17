@@ -19,6 +19,8 @@ import PromotionsSection from '@/components/PromotionsSection';
 import { CalculatorItem } from '@/types/calculator';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 import autoTruckVanBanner from '@/assets/auto-truck-van-banner.jpg';
+import promoAutoOzoneGift from '@/assets/promo-auto-ozone-gift.jpg';
+import { Gift, Sparkle, ShieldCheck } from 'lucide-react';
 import PageFaqSection from '@/components/PageFaqSection';
 import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
@@ -183,6 +185,75 @@ const Auto = () => {
             </div>
           </div>
         </section>
+
+        {/* Ozone Gift Promo */}
+        <LazySection minHeight="400px">
+        <section className="py-12 sm:py-20 bg-gradient-section relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-40">
+            <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-primary/30 blur-3xl" />
+            <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full bg-fresh/30 blur-3xl" />
+          </div>
+          <div className="container mx-auto px-4 relative">
+            <CircularRevealCard index={0}>
+              <div className="max-w-6xl mx-auto rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-fresh shadow-glow border border-primary/40 relative">
+                <Sparkle className="hidden sm:block absolute top-6 right-6 w-6 h-6 text-primary-foreground/80 animate-pulse" />
+                <Sparkle className="hidden sm:block absolute bottom-10 left-10 w-4 h-4 text-primary-foreground/60 animate-pulse" style={{ animationDelay: '0.7s' }} />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div className="relative h-64 sm:h-80 lg:h-auto min-h-[320px] overflow-hidden">
+                    <img
+                      src={promoAutoOzoneGift}
+                      alt={t.auto?.ozonePromoImageAlt || 'Promo'}
+                      loading="lazy"
+                      width={1024}
+                      height={768}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-primary/70 via-primary/20 to-transparent" />
+                    <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400 text-amber-950 text-xs font-bold shadow-glow uppercase tracking-wide" style={{ animation: 'pulse 2s ease-in-out infinite' }}>
+                      <Gift className="w-3.5 h-3.5" />
+                      {t.auto?.ozonePromoBadge || 'Акция'}
+                    </div>
+                  </div>
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center text-primary-foreground">
+                    <div className="inline-flex items-center gap-2 self-start mb-4 px-3 py-1 rounded-full bg-primary-foreground/15 backdrop-blur-sm text-xs font-bold uppercase tracking-wider">
+                      <Sparkle className="w-3.5 h-3.5" />
+                      {t.auto?.ozonePromoBadge || 'Акция месяца'}
+                    </div>
+                    <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 leading-tight drop-shadow-md">
+                      {t.auto?.ozonePromoTitle}
+                    </h2>
+                    <p className="text-sm sm:text-base text-primary-foreground/90 mb-6 leading-relaxed">
+                      {t.auto?.ozonePromoDesc}
+                    </p>
+                    <ul className="space-y-3 mb-6">
+                      {[
+                        { icon: Sparkle, text: t.auto?.ozonePromoBenefit1 },
+                        { icon: Gift, text: t.auto?.ozonePromoBenefit2 },
+                        { icon: ShieldCheck, text: t.auto?.ozonePromoBenefit3 },
+                      ].map((b, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-foreground/15 backdrop-blur-sm flex items-center justify-center">
+                            <b.icon className="w-4 h-4 text-primary-foreground" />
+                          </div>
+                          <p className="text-sm sm:text-base text-primary-foreground/95 font-medium pt-1">{b.text}</p>
+                        </li>
+                      ))}
+                    </ul>
+                    <button
+                      onClick={() => formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-bold shadow-card-hover hover:scale-[1.03] transition-all w-full sm:w-auto self-start"
+                    >
+                      <Gift className="w-4 h-4" />
+                      {t.auto?.ozonePromoCta || 'Заказать со скидкой'}
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </CircularRevealCard>
+          </div>
+        </section>
+        </LazySection>
 
         {/* 1. Truck & Van Cabin Banner */}
         <LazySection minHeight="400px">
