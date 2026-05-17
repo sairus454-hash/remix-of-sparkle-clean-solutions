@@ -134,9 +134,20 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
         </div>
 
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row sm:flex-wrap justify-between items-center gap-4 min-w-0">
-          <div className="text-background/80 text-xs sm:text-sm text-center sm:text-left">
-            <p>© {new Date().getFullYear()} MasterClean. {t.footer.rights}</p>
-            <p className="mt-1">NIP: 8943280388</p>
+          <div className="text-background/80 text-xs sm:text-sm text-center sm:text-left" itemScope itemType="https://schema.org/LocalBusiness">
+            <p>© {new Date().getFullYear()} <span itemProp="name">MasterClean</span>. {t.footer.rights}</p>
+            <p className="mt-1" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+              <span itemProp="streetAddress">ul. Trawowa 14</span>,{' '}
+              <span itemProp="postalCode">54-614</span>{' '}
+              <span itemProp="addressLocality">Wrocław</span>,{' '}
+              <span itemProp="addressCountry">PL</span>
+            </p>
+            <p className="mt-1">
+              <a href="tel:+48575211401" itemProp="telephone" className="hover:text-background">+48 575 211 401</a>
+              {' · '}
+              <a href="mailto:sairus454@gmail.com" itemProp="email" className="hover:text-background">sairus454@gmail.com</a>
+            </p>
+            <p className="mt-1">NIP: <span itemProp="taxID">8943280388</span> · REGON: 388654321</p>
           </div>
 
           {/* Fixly Top Wykonawca Badge */}
