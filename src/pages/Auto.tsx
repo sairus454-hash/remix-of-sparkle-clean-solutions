@@ -15,6 +15,7 @@ import Auto3DCarousel from '@/components/Auto3DCarousel';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Car, Armchair, Layers, Sparkles, ArrowRight, Truck, MapPin, Wind, Wallet } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLocalizedNavigate } from '@/i18n/LocalizedLink';
 import PromotionsSection from '@/components/PromotionsSection';
 import { CalculatorItem } from '@/types/calculator';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
