@@ -568,7 +568,7 @@ const Cleaning = () => {
                       items={filteredExtras}
                       category="extras"
                       groupHighlight={{
-                        count: 4,
+                        count: 5,
                         label: language === 'pl' ? 'Czyszczenie według m² (suwak)' :
                                language === 'en' ? 'Per m² services (slider)' :
                                language === 'uk' ? 'Розрахунок за м² (слайдер)' :
