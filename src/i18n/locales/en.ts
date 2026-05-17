@@ -176,6 +176,7 @@ const enTranslations = {
          carpetImpregnation: 'Carpet Impregnation',
          carpetCoveringImpregnation: 'Carpet Covering Impregnation with Pickup',
          tileCleaning: 'Tile Cleaning',
+         woodFloorCleaning: 'Wood floor cleaning',
          autoComplex: 'Complete Auto Cleaning',
          autoSeat: 'Single Seat Cleaning',
          autoSeats: 'All Seats Cleaning (front and back)',
