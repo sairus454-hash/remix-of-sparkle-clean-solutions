@@ -176,6 +176,7 @@ const plTranslations = {
          carpetImpregnation: 'Impregnacja dywanu',
          carpetCoveringImpregnation: 'Impregnacja wykładziny dywanowej z odbiorem',
          tileCleaning: 'Czyszczenie płytek',
+         woodFloorCleaning: 'Czyszczenie podłogi drewnianej',
          autoComplex: 'Kompleksowe czyszczenie samochodu',
          autoSeat: 'Czyszczenie 1 siedzenia',
          autoSeats: 'Czyszczenie siedzeń (przód i tył)',
