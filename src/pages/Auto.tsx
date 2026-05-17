@@ -49,6 +49,7 @@ const Auto = () => {
   const { showSplash, handleSplashComplete } = useSplash('auto');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useLocalizedNavigate();
 
   const autoItems = [
     { id: 'autoComplex', name: t.prices.items.autoComplex, price: 400, image: calcAutoComplex },
