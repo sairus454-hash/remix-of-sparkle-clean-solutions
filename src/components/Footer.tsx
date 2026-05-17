@@ -135,19 +135,34 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
 
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-muted-foreground/20 flex flex-col sm:flex-row sm:flex-wrap justify-between items-center gap-4 min-w-0">
           <div className="text-background/80 text-xs sm:text-sm text-center sm:text-left" itemScope itemType="https://schema.org/LocalBusiness">
-            <p>© {new Date().getFullYear()} <span itemProp="name">MasterClean</span>. {t.footer.rights}</p>
-            <p className="mt-1" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-              <span itemProp="streetAddress">ul. Trawowa 14</span>,{' '}
-              <span itemProp="postalCode">54-614</span>{' '}
-              <span itemProp="addressLocality">Wrocław</span>,{' '}
-              <span itemProp="addressCountry">PL</span>
-            </p>
+            <meta itemProp="name" content="MasterClean" />
+            <meta itemProp="url" content="https://masterclean1885.com" />
+            <p>© {new Date().getFullYear()} <span>MasterClean</span>. {t.footer.rights}</p>
             <p className="mt-1">
-              <a href="tel:+48575211401" itemProp="telephone" className="hover:text-background">+48 575 211 401</a>
+              <span className="font-semibold">{language === 'pl' ? 'Adres' : language === 'en' ? 'Address' : 'Адрес'}:</span>{' '}
+              <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                <span itemProp="streetAddress">ul. Trawowa 14</span>,{' '}
+                <span itemProp="postalCode">54-614</span>{' '}
+                <span itemProp="addressLocality">Wrocław</span>,{' '}
+                <span itemProp="addressRegion">dolnośląskie</span>,{' '}
+                <span itemProp="addressCountry">PL</span>
+              </span>
+            </p>
+            <span itemProp="geo" itemScope itemType="https://schema.org/GeoCoordinates">
+              <meta itemProp="latitude" content="51.0984969" />
+              <meta itemProp="longitude" content="16.949163" />
+            </span>
+            <p className="mt-1">
+              <span className="font-semibold">{language === 'pl' ? 'Telefon' : language === 'en' ? 'Phone' : 'Телефон'}:</span>{' '}
+              <a href="tel:+48575211401" itemProp="telephone" content="+48575211401" className="hover:text-background">+48 575 211 401</a>
               {' · '}
               <a href="mailto:sairus454@gmail.com" itemProp="email" className="hover:text-background">sairus454@gmail.com</a>
             </p>
-            <p className="mt-1">NIP: <span itemProp="taxID">8943280388</span> · REGON: <span itemProp="identifier">544066160</span></p>
+            <p className="mt-1">
+              <span className="font-semibold">NIP:</span> <span itemProp="taxID">8943280388</span>
+              {' · '}
+              <span className="font-semibold">REGON:</span> <span itemProp="identifier">544066160</span>
+            </p>
           </div>
 
           {/* Fixly Top Wykonawca Badge */}
