@@ -349,6 +349,20 @@ const SeoPageLongText = ({ variant }: Props) => {
               dangerouslySetInnerHTML={{ __html: p }}
             />
           ))}
+          {data.sections?.map((section, si) => (
+            <div key={`s-${si}`} className="mt-6">
+              <h3 className="font-serif text-lg sm:text-xl font-semibold mb-3 text-foreground">
+                {section.h3}
+              </h3>
+              {section.paragraphs.map((p, pi) => (
+                <p
+                  key={`s-${si}-p-${pi}`}
+                  className="mb-4 text-muted-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: p }}
+                />
+              ))}
+            </div>
+          ))}
         </article>
       </div>
     </section>
