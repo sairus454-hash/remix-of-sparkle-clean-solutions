@@ -20,7 +20,7 @@ import { CalculatorItem } from '@/types/calculator';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 import autoTruckVanBanner from '@/assets/auto-truck-van-banner.jpg';
 import promoAutoOzoneGift from '@/assets/promo-auto-ozone-gift.jpg';
-import { Gift, Sparkle, ShieldCheck, Wind as WindIcon } from 'lucide-react';
+import { Gift, Sparkle, ShieldCheck } from 'lucide-react';
 import PageFaqSection from '@/components/PageFaqSection';
 import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
