@@ -6,6 +6,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { LocalizedLink } from '@/i18n/LocalizedLink';
 import promoBannerGirl from '@/assets/promo-banner-girl.png';
 import promoBannerImpregnation from '@/assets/promo-banner-impregnation.jpg';
 
@@ -86,12 +87,12 @@ const Layout = ({ children }: LayoutProps) => {
                     {t.hero.bannerSub}
                   </p>
                 </div>
-                <Link to="/services" className="flex-shrink-0">
+                <LocalizedLink to="/contacts" className="flex-shrink-0">
                   <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
                     {t.hero.bannerCta}
                     <ArrowRight className="w-6 h-6 ml-2" />
                   </Button>
-                </Link>
+                </LocalizedLink>
               </div>
             </div>
 
