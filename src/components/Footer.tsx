@@ -147,7 +147,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               {' · '}
               <a href="mailto:sairus454@gmail.com" itemProp="email" className="hover:text-background">sairus454@gmail.com</a>
             </p>
-            <p className="mt-1">NIP: <span itemProp="taxID">8943280388</span> · REGON: 388654321</p>
+            <p className="mt-1">NIP: <span itemProp="taxID">8943280388</span></p>
           </div>
 
           {/* Fixly Top Wykonawca Badge */}
