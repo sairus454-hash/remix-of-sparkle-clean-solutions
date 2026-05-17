@@ -26,7 +26,6 @@ import carpetStainRemovalBlog from '@/assets/carpet-stain-removal-blog.webp';
 import postRenovationCleaningBlog from '@/assets/post-renovation-cleaning-blog.webp';
 import windowCleaningPriceBlog from '@/assets/ile-kosztuje-mycie-okien-blog.webp';
 import oneTimeVsRegularBlog from '@/assets/sprzatanie-jednorazowe-czy-regularne-blog.webp';
-import oneTimeVsRegularBlog from '@/assets/sprzatanie-jednorazowe-czy-regularne-blog.webp';
 
 export interface BlogArticle {
   id: number;
