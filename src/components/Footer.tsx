@@ -164,7 +164,6 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               <span className="font-semibold">REGON:</span> <span itemProp="identifier">544066160</span>
             </p>
           </div>
-          </div>
 
           {/* Fixly Top Wykonawca Badge */}
           <a href="https://fixly.pl" target="_blank" rel="noopener noreferrer" className="relative group">
