@@ -15,6 +15,7 @@ import Auto3DCarousel from '@/components/Auto3DCarousel';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import { Car, Armchair, Layers, Sparkles, ArrowRight, Truck, MapPin, Wind, Wallet } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLocalizedNavigate } from '@/i18n/LocalizedLink';
 import PromotionsSection from '@/components/PromotionsSection';
 import { CalculatorItem } from '@/types/calculator';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
@@ -48,6 +49,7 @@ const Auto = () => {
   const { showSplash, handleSplashComplete } = useSplash('auto');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
+  const navigate = useLocalizedNavigate();
 
   const autoItems = [
     { id: 'autoComplex', name: t.prices.items.autoComplex, price: 400, image: calcAutoComplex },
@@ -245,7 +247,12 @@ const Auto = () => {
                           { id: 'autoSeats', name: t.prices.items.autoSeats, price: 200, quantity: 1, category: 'auto' },
                           { id: 'autoOzoneGift', name: `${t.prices.items.autoOzone} (${t.auto?.ozonePromoBadge || 'Акция'} — gratis)`, price: 0, quantity: 1, category: 'auto' },
                         ];
-                        handleSendToForm(promoItems, 200);
+                        try {
+                          sessionStorage.setItem('mc_calculator_items', JSON.stringify(promoItems));
+                          sessionStorage.setItem('mc_calculator_total', '200');
+                          window.dispatchEvent(new Event('mc_calculator_updated'));
+                        } catch {}
+                        navigate('/contacts');
                       }}
                       className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-bold shadow-card-hover hover:scale-[1.03] transition-all w-full sm:w-auto self-start"
                     >
