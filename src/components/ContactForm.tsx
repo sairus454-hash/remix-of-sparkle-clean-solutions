@@ -7,7 +7,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Calendar } from '@/components/ui/calendar';
 import { Progress } from '@/components/ui/progress';
 import { toast } from '@/hooks/use-toast';
-import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone, Plus, Minus } from 'lucide-react';
+import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone, Plus, Minus, CheckCircle2, AlertTriangle, RefreshCw } from 'lucide-react';
 import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
