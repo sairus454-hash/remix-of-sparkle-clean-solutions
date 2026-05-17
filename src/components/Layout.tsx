@@ -103,7 +103,7 @@ const Layout = ({ children }: LayoutProps) => {
                     {t.hero.bannerSub}
                   </p>
                 </div>
-                <LocalizedLink to="/contacts" className="flex-shrink-0">
+                <LocalizedLink to="/contacts" className="flex-shrink-0" onClick={handlePromoOrderClick}>
                   <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
                     {t.hero.bannerCta}
                     <ArrowRight className="w-6 h-6 ml-2" />
