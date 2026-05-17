@@ -22,6 +22,22 @@ const Layout = ({ children }: LayoutProps) => {
   const { t, language } = useLanguage();
   const [activeBanner, setActiveBanner] = useState(0);
 
+  const handlePromoOrderClick = () => {
+    try {
+      const sofaName =
+        language === 'pl' ? 'Sofa 3-osobowa (suszenie gratis)' :
+        language === 'en' ? '3-seat sofa (free drying)' :
+        language === 'uk' ? 'Диван тримісний (сушіння в подарунок)' :
+        'Диван трёхместный (сушка в подарок)';
+      const items = [{ id: 'sofa3', name: sofaName, price: 180, quantity: 1, category: 'upholstery' }];
+      sessionStorage.setItem('mc_calculator_items', JSON.stringify(items));
+      sessionStorage.setItem('mc_calculator_total', '180');
+      window.dispatchEvent(new Event('mc_calculator_updated'));
+    } catch {
+      // ignore storage errors (private mode, quota)
+    }
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveBanner((prev) => (prev === 0 ? 1 : 0));
@@ -87,7 +103,7 @@ const Layout = ({ children }: LayoutProps) => {
                     {t.hero.bannerSub}
                   </p>
                 </div>
-                <LocalizedLink to="/contacts" className="flex-shrink-0">
+                <LocalizedLink to="/contacts" className="flex-shrink-0" onClick={handlePromoOrderClick}>
                   <Button className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-bold text-lg sm:text-xl px-8 py-4 sm:py-5 rounded-full shadow-md transition-all hover:scale-105 active:scale-95">
                     {t.hero.bannerCta}
                     <ArrowRight className="w-6 h-6 ml-2" />
