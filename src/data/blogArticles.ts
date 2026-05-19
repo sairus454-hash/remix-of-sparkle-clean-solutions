@@ -27,6 +27,7 @@ import postRenovationCleaningBlog from '@/assets/post-renovation-cleaning-blog.w
 import windowCleaningPriceBlog from '@/assets/ile-kosztuje-mycie-okien-blog.webp';
 import oneTimeVsRegularBlog from '@/assets/sprzatanie-jednorazowe-czy-regularne-blog.webp';
 import sofaCleaningKidsBlog from '@/assets/sofa-cleaning-kids-blog.jpg';
+import sofaCleaningAllergiesBlog from '@/assets/sofa-cleaning-allergies-blog.webp';
 
 export interface BlogArticle {
   id: number;
