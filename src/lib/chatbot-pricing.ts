@@ -77,8 +77,8 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     },
     unit: { ru: 'место', en: 'seat', pl: 'miejsce', uk: 'місце' },
     suggestions: [2, 3, 5, 7],
-    // ~50 PLN per seat, 70 max (after +10% Wrocław base update).
-    baseEstimator: (qty) => ({ min: round5(qty * 50), max: round5(qty * 70) }),
+    // ~40 PLN per seat (corner) to 70 PLN per seat (2-seater).
+    baseEstimator: (qty) => ({ min: round5(qty * 40), max: round5(qty * 70) }),
     markup: 'standard',
   },
   {
