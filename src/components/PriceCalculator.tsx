@@ -38,7 +38,7 @@ const PriceCalculator = () => {
   }, {
     id: 'pillow',
     name: t.prices.items.pillow,
-    price: 10
+    price: 5
   }, {
     id: 'sofa2',
     name: t.prices.items.sofa2,
