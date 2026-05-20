@@ -140,28 +140,28 @@ export const SEO_META: Record<PageKey, Record<Lang, SeoMeta>> = {
 export const FAQS: Record<PageKey, Record<Lang, Faq[]>> = {
   services: {
     pl: [
-      { q: 'Ile kosztuje pranie kanapy?', a: 'Pranie kanapy 2-osobowej od 160 zł, 3-osobowej od 180 zł, narożnika od 230 zł. Cena zależy od stanu i tkaniny.' },
+      { q: 'Ile kosztuje pranie kanapy?', a: 'Pranie kanapy 2-osobowej od 140 zł, 3-osobowej od 170 zł, narożnika od 200 zł. Cena zależy od stanu i tkaniny.' },
       { q: 'Czy pierzecie meble u klienta w domu?', a: 'Tak, pranie tapicerki wykonujemy bezpośrednio u klienta — nie trzeba nigdzie wozić mebli.' },
       { q: 'Ile schnie tapicerka po praniu?', a: 'Średnio 4–8 godzin. Używamy ekstraktora, który odciąga większość wilgoci od razu.' },
       { q: 'Czy chemia jest bezpieczna dla dzieci i alergików?', a: 'Tak, używamy profesjonalnej chemii eko, certyfikowanej, bezpiecznej dla dzieci, alergików i zwierząt.' },
       { q: 'Czy dajecie gwarancję na pranie tapicerki?', a: 'Tak, udzielamy 7-dniowej gwarancji jakości. W razie zastrzeżeń przyjeżdżamy bezpłatnie ponownie.' },
     ],
     ru: [
-      { q: 'Сколько стоит химчистка дивана?', a: 'Химчистка 2-местного дивана от 160 zł, 3-местного от 180 zł, углового от 230 zł. Цена зависит от состояния и ткани.' },
+      { q: 'Сколько стоит химчистка дивана?', a: 'Химчистка 2-местного дивана от 140 zł, 3-местного от 170 zł, углового от 200 zł. Цена зависит от состояния и ткани.' },
       { q: 'Вы чистите мебель у клиента дома?', a: 'Да, химчистку выполняем непосредственно у клиента — никуда вывозить мебель не нужно.' },
       { q: 'Сколько сохнет мебель после чистки?', a: 'В среднем 4–8 часов. Экстрактор сразу вытягивает большую часть влаги.' },
       { q: 'Безопасна ли химия для детей и аллергиков?', a: 'Да, используем профессиональную эко-химию с сертификатами, безопасную для детей, аллергиков и животных.' },
       { q: 'Даёте ли гарантию на услугу?', a: 'Да, 7 дней гарантии качества. При замечаниях бесплатно приедем повторно.' },
     ],
     uk: [
-      { q: 'Скільки коштує хімчистка дивана?', a: 'Хімчистка 2-місного дивана від 160 zł, 3-місного від 180 zł, кутового від 230 zł. Ціна залежить від стану й тканини.' },
+      { q: 'Скільки коштує хімчистка дивана?', a: 'Хімчистка 2-місного дивана від 140 zł, 3-місного від 170 zł, кутового від 200 zł. Ціна залежить від стану й тканини.' },
       { q: 'Ви чистите меблі у клієнта вдома?', a: 'Так, хімчистку виконуємо безпосередньо у клієнта — нікуди вивозити меблі не потрібно.' },
       { q: 'Скільки сохнуть меблі після чистки?', a: 'У середньому 4–8 годин. Екстрактор одразу витягує більшість вологи.' },
       { q: 'Чи безпечна хімія для дітей та алергіків?', a: 'Так, використовуємо професійну еко-хімію з сертифікатами, безпечну для дітей, алергіків і тварин.' },
       { q: 'Чи даєте гарантію на послугу?', a: 'Так, 7 днів гарантії якості. У разі зауважень безкоштовно приїдемо повторно.' },
     ],
     en: [
-      { q: 'How much does sofa cleaning cost?', a: '2-seat sofa from 160 PLN, 3-seat from 180 PLN, corner sofa from 230 PLN. Final price depends on condition and fabric.' },
+      { q: 'How much does sofa cleaning cost?', a: '2-seat sofa from 140 PLN, 3-seat from 170 PLN, corner sofa from 200 PLN. Final price depends on condition and fabric.' },
       { q: 'Do you clean furniture at the client’s home?', a: 'Yes, we clean upholstery on-site — no need to transport the furniture anywhere.' },
       { q: 'How long does upholstery take to dry?', a: 'On average 4–8 hours. Our extractor pulls most of the moisture out immediately.' },
       { q: 'Are the products safe for children and allergy sufferers?', a: 'Yes, we use certified eco-friendly professional chemistry, safe for children, allergy sufferers and pets.' },
