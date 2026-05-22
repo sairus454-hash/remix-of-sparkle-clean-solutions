@@ -5,6 +5,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import fixlyBadge from '@/assets/fixly-top-executor-2025.webp';
 import olawaPartnerBadge from '@/assets/partner-olawa-badge.jpg';
 import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
+import orangeBadge from '@/assets/partner-orange-badge.jpg';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
@@ -247,6 +248,34 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               </a>
             );
           })()}
+
+          {/* Orange Cooperation Badge */}
+          {(() => {
+            const orangeLabel =
+              language === 'ru' ? 'Сотрудничество с Orange'
+              : language === 'uk' ? 'Співпраця з Orange'
+              : language === 'en' ? 'Cooperation with Orange'
+              : 'Współpraca z Orange';
+            return (
+              <a
+                href="https://www.orange.pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={orangeLabel}
+                className="relative group"
+              >
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shadow-lg ring-2 ring-primary/30 hover:scale-105 transition-transform bg-white">
+                  <img
+                    src={orangeBadge}
+                    alt={orangeLabel}
+                    loading="lazy"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </a>
+            );
+          })()}
+
 
           {/* Euro Quality Standard Badge */}
           <div className="flex items-center gap-2 px-3 py-2 rounded-lg border border-primary/30 bg-primary/5">
