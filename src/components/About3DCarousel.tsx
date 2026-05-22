@@ -13,9 +13,12 @@ import aboutBaMediaexpert from '@/assets/mediaexpert-carpet-ba.jpg';
 import aboutBaMediaexpertAisle from '@/assets/about-ba-mediaexpert-aisle.jpg';
 import aboutBaAttic from '@/assets/about-ba-corner-sofa-attic.jpg';
 import aboutBaBalcony from '@/assets/about-ba-balcony-deck.jpg';
+import aboutBaPoolTable from '@/assets/about-ba-pool-table.jpg';
+import aboutBaMattress from '@/assets/about-ba-mattress.jpg';
+import aboutBaCarInterior from '@/assets/about-ba-car-interior.jpg';
 
-const slideImages = [aboutBaBalcony, aboutBaAttic, aboutBa9, aboutBaMediaexpert, aboutBaMediaexpertAisle, aboutBa1, aboutBa2, aboutBa3, aboutBa4, aboutBa5];
-const slideKeys = ['slideBalcony', 'slideAttic', 'slide9', 'slideMediaexpert', 'slideMediaexpertAisle', 'slide1', 'slide2', 'slide3', 'slide4', 'slide5'] as const;
+const slideImages = [aboutBaPoolTable, aboutBaMattress, aboutBaCarInterior, aboutBaBalcony, aboutBaAttic, aboutBa9, aboutBaMediaexpert, aboutBaMediaexpertAisle, aboutBa1, aboutBa2, aboutBa3, aboutBa4, aboutBa5];
+const slideKeys = ['slidePoolTable', 'slideMattress', 'slideCarInterior', 'slideBalcony', 'slideAttic', 'slide9', 'slideMediaexpert', 'slideMediaexpertAisle', 'slide1', 'slide2', 'slide3', 'slide4', 'slide5'] as const;
 
 const About3DCarousel = forwardRef<HTMLElement>((_, _ref) => {
   const { t } = useLanguage();
