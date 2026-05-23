@@ -30,6 +30,7 @@ import sofaCleaningKidsBlog from '@/assets/sofa-cleaning-kids-blog.jpg';
 import sofaCleaningAllergiesBlog from '@/assets/sofa-cleaning-allergies-blog.webp';
 import sofaCornerHomeBlog from '@/assets/sofa-corner-home-cleaning-blog.webp';
 import ozonowanieMieszkaniaSkutecznoscBlog from '@/assets/ozonowanie-mieszkania-skutecznosc-blog.webp';
+import czyszczenieWnetrzaAutaPrzedSprzedazaBlog from '@/assets/czyszczenie-wnetrza-auta-przed-sprzedaza-blog.webp';
 
 export interface BlogArticle {
   id: number;
