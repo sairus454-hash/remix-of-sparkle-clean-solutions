@@ -36,6 +36,11 @@ const round5 = (x: number) => Math.ceil(x / 5) * 5;
 
 export const BASE_CITIES = ['wroclaw', 'smolec', 'wrocław'];
 
+/** Cities where furniture/mattress cleaning uses the same base Wrocław prices */
+export const FURNITURE_MATTRESS_BASE_CITY_SLUGS = [
+  'swidnica', 'legnica', 'sobotka', 'lubin', 'olesnica', 'olawa', 'sroda-slaska', 'tyniec-maly',
+];
+
 export const MIN_ORDER = {
   base: 160,
   other: 220,
