@@ -28,12 +28,24 @@ function normalizeCategory(item: CalculatorItem): string {
   const cat = item.category || item.id;
   if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('cleaning-') || cat.startsWith('extra-') || cat === 'extras') return 'cleaning';
   if (cat === 'other') return 'furniture';
+  // Strip `city-{slug}-` prefix that CityPage adds before the real category id
+  const m = cat.match(/^city-.+-(furniture|mattress|leather|auto|floorCleaning|cleaning|handyman|windows|ozone|other|gardening)$/);
+  if (m) return m[1] === 'cleaning' ? 'cleaning' : m[1];
   return cat;
 }
 
+/** Items eligible for the "furniture cleaning via form" −10% promo */
+function isFurnitureLike(item: CalculatorItem): boolean {
+  const c = normalizeCategory(item);
+  return c === 'furniture' || c === 'leather' || c === 'mattress';
+}
+
+/** Promo: −10% off furniture cleaning when ordered via the contact form */
+export const FORM_FURNITURE_DISCOUNT_PERCENT = 10;
+
 /**
  * Скидка 22% — когда в заказе есть «Уборка» + минимум 1 другая категория услуг.
- * Иначе скидки нет.
+ * Промо −10% — на химчистку мебели/матрасов/кожи при заказе через формуляр (стекается, если 22% не сработала).
  */
 export const useDiscountCalculator = (items: CalculatorItem[]) => {
   const { language } = useLanguage();
@@ -49,14 +61,26 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
     let discountPercent = 0;
     let discountReason = '';
     let discountHint = getDiscountHint(hasCleaning, hasOther, meetsMinimum, originalTotal, language);
+    let discountAmount = 0;
 
     if (hasCleaning && hasOther && meetsMinimum) {
       discountPercent = 22;
       discountReason = getDiscountReason('cleaningPlus', language);
       discountHint = '';
+      discountAmount = Math.round((originalTotal * discountPercent) / 100);
+    } else {
+      // Form-based −10% promo on furniture cleaning items
+      const furnitureSubtotal = items
+        .filter(isFurnitureLike)
+        .reduce((sum, item) => sum + item.price * item.quantity, 0);
+      if (furnitureSubtotal > 0) {
+        discountAmount = Math.round((furnitureSubtotal * FORM_FURNITURE_DISCOUNT_PERCENT) / 100);
+        discountPercent = FORM_FURNITURE_DISCOUNT_PERCENT;
+        discountReason = getFormFurnitureReason(language);
+        discountHint = '';
+      }
     }
 
-    const discountAmount = Math.round((originalTotal * discountPercent) / 100);
     const finalTotal = originalTotal - discountAmount;
 
     return {
@@ -66,7 +90,7 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
       finalTotal,
       discountReason,
       discountHint,
-      hasDiscount: discountPercent > 0,
+      hasDiscount: discountAmount > 0,
       hasFirstOrderDiscount: false,
       firstOrderDiscountAmount: 0,
     };
@@ -74,6 +98,16 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
 
   return discountInfo;
 };
+
+function getFormFurnitureReason(language: string): string {
+  const map: Record<string, string> = {
+    ru: 'Скидка −10% на химчистку мебели при заказе через форму',
+    en: '−10% off furniture cleaning when ordered via the form',
+    pl: 'Rabat −10% na pranie mebli przy zamówieniu przez formularz',
+    uk: 'Знижка −10% на хімчистку меблів при замовленні через форму',
+  };
+  return map[language] || map.ru;
+}
 
 function getDiscountReason(type: 'cleaningPlus', language: string): string {
   const reasons = {
