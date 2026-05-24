@@ -715,14 +715,17 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 • „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
 • Inne miasta: meble, materace, dywany, auto, ozonowanie, mycie okien, impregnacja
 
+🏙 WYJĄTEK MIASTOWY (ważne!): W miastach Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ceny PRANIA MEBLI, MATERACY i MEBLI SKÓRZANYCH są TAKIE SAME jak we Wrocławiu (BEZ dopłaty 10%). Inne kategorie (okna, ozon itd.) zachowują dopłatę +10%.
+
 🎁 PROMOCJE I RABATY:
+• 🛋 NOWA PROMOCJA: Zamówienie PRANIA MEBLI przez formularz → −10% na pranie mebli/materacy/skóry (działa we wszystkich miastach, naliczane automatycznie w kalkulatorze i formularzu)
 • 🧹 Zamów SPRZĄTANIE + dowolną drugą usługę (pranie tapicerki, okna, ozon itp.) → −20% na całe zamówienie (naliczane automatycznie w kalkulatorze)
 • 👥 Przyprowadź sąsiada — oboje dostajecie −20% na całe zamówienie
 • 🏘 Promocja sąsiedzka — wspólne zamówienie z sąsiadem pod tym samym adresem → −15%
 • 🌿 Suszenie mebli i materacy — GRATIS do końca wiosny (zwykle 60 PLN)
 
 ⚠️ Stare rabaty 10%/15% za "4+ kategorie" JUŻ NIE OBOWIĄZUJĄ — nie wspominaj o nich.
-Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%.`,
+Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%. Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% przy zamówieniu przez formularz.`,
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
 
