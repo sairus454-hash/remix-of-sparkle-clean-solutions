@@ -331,6 +331,12 @@ const CityPage = () => {
 
   const isNoGardeningSurcharge = city.slug === 'wroclaw' || city.slug === 'smolec';
 
+  // Cities where furniture/mattress/leather use base Wrocław prices (no +10% markup)
+  const FURN_MAT_BASE_CITIES = new Set([
+    'swidnica', 'legnica', 'sobotka', 'lubin', 'olesnica', 'olawa', 'sroda-slaska', 'tyniec-maly'
+  ]);
+  const isFurnMatBaseCity = FURN_MAT_BASE_CITIES.has(city.slug);
+
   // Floor cleaning items keep base Wrocław prices in every city (no regional markup)
   const carpetItemIds = new Set([
     'carpetCovering',
@@ -378,6 +384,8 @@ const CityPage = () => {
         .map(cat => {
           // Auto: always base Wrocław prices and stays directly after leather furniture
           if (cat.id === 'auto') return cat;
+          // Furniture/mattress/leather get base Wrocław prices in selected cities
+          if (isFurnMatBaseCity && (cat.id === 'furniture' || cat.id === 'mattress' || cat.id === 'leather')) return cat;
           const visibleCat = (cat.id === 'other' || cat.id === 'floorCleaning')
             ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
             : cat;
