@@ -103,7 +103,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
   const { t, language } = useLanguage();
   const isMobile = useIsMobile();
   const navigate = useNavigate();
-  const { isWroclaw, hasPromo, applyPrice } = useCity();
+  const { isWroclaw, hasPromo, applyPrice, furnitureMattressBase } = useCity();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
@@ -115,9 +115,19 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
   const needsConfirmation = (id: string) => REQUIRES_AREA_CONFIRM.has(id) && !confirmedAreaIds.has(id);
   const unconfirmedSelected = selectedItems.find(s => needsConfirmation(s.item.id));
 
+  // Detect the base category id even when wrapped as `city-{slug}-{catId}` from CityPage.
+  const baseCategoryId = (() => {
+    const c = category || '';
+    const m = c.match(/^city-.+-(furniture|mattress|leather|auto|floorCleaning|cleaning|handyman|windows|ozone|other|gardening)$/);
+    return m ? m[1] : c;
+  })();
+
   // Categories where promo (originalPrice/promoBadge) only applies in Wrocław group
   const promoCategories = ['furniture', 'leather', 'mattress'];
-  const shouldStripPromo = !hasPromo && promoCategories.includes(category || '');
+  const shouldStripPromo = !hasPromo && promoCategories.includes(baseCategoryId);
+  // Furniture/mattress/leather keep base Wrocław prices in selected cities
+  const isFurnMatLeather = baseCategoryId === 'furniture' || baseCategoryId === 'mattress' || baseCategoryId === 'leather';
+  const skipMarkup = baseCategoryId === 'auto' || baseCategoryId === 'floorCleaning' || (isFurnMatLeather && furnitureMattressBase);
 
   // Apply city pricing: for non-Wrocław, use originalPrice as base (strip promo), then apply 10% markup
   const displayItems = useMemo(() => {
@@ -126,17 +136,18 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
     return items.map(item => {
       let baseItem = item;
       // Strip promo for non-Wrocław cities on furniture/leather/mattress
-      if (shouldStripPromo && item.originalPrice) {
+      // (but keep promo for furniture-mattress-base cities since they use Wrocław pricing)
+      if (shouldStripPromo && !(isFurnMatLeather && furnitureMattressBase) && item.originalPrice) {
         const { originalPrice, promoBadge, ...rest } = item;
         baseItem = { ...rest, price: originalPrice };
       }
-      // Apply markup for non-Wrocław (skip for 'auto' and 'floorCleaning' — keep base prices everywhere)
-      if (!isWroclaw && category !== 'auto' && category !== 'floorCleaning') {
+      // Apply markup for non-Wrocław (skip for auto, floorCleaning, and furniture/mattress in base-furniture cities)
+      if (!isWroclaw && !skipMarkup) {
         return { ...baseItem, price: applyPrice(baseItem.price) };
       }
       return baseItem;
     });
-  }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, category]);
+  }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, skipMarkup, isFurnMatLeather, furnitureMattressBase]);
 
   const AREA_ITEM_IDS = new Set(['cleaning-standard', 'cleaning-general', 'carpetFloorMedium', 'carpetFloorLarge', 'tileCleaning', 'balcony', 'extra-balcony', 'glassPanels']);
   const isAreaItem = (item: ServiceCardItem) => item.unit === 'm²' && AREA_ITEM_IDS.has(item.id);
