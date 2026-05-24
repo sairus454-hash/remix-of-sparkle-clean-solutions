@@ -36,6 +36,11 @@ const round5 = (x: number) => Math.ceil(x / 5) * 5;
 
 export const BASE_CITIES = ['wroclaw', 'smolec', 'wrocław'];
 
+/** Cities where furniture/mattress cleaning uses the same base Wrocław prices */
+export const FURNITURE_MATTRESS_BASE_CITY_SLUGS = [
+  'swidnica', 'legnica', 'sobotka', 'lubin', 'olesnica', 'olawa', 'sroda-slaska', 'tyniec-maly',
+];
+
 export const MIN_ORDER = {
   base: 160,
   other: 220,
@@ -279,17 +284,22 @@ export const computeEstimate = (
 ): EstimateResult => {
   const base = service.baseEstimator(qty);
   const isBase = isBaseCity(city);
+  const slug = cityToSlug(city);
+  const isFurnMatBase =
+    (service.key === 'furniture' || service.key === 'mattress') &&
+    FURNITURE_MATTRESS_BASE_CITY_SLUGS.includes(slug);
+  const effectiveIsBase = isBase || isFurnMatBase;
   const factor =
-    !isBase && service.markup === 'standard'
+    !effectiveIsBase && service.markup === 'standard'
       ? 1.1
-      : !isBase && service.markup === 'gardening'
+      : !effectiveIsBase && service.markup === 'gardening'
         ? 1.05
         : 1;
 
-  const min = service.markup === 'none' || isBase ? base.min : round5(base.min * factor);
-  const max = service.markup === 'none' || isBase ? base.max : round5(base.max * factor);
+  const min = service.markup === 'none' || effectiveIsBase ? base.min : round5(base.min * factor);
+  const max = service.markup === 'none' || effectiveIsBase ? base.max : round5(base.max * factor);
   const minOrder = isBase ? MIN_ORDER.base : MIN_ORDER.other;
-  return { min, max, isBase, minOrder, belowMin: max < minOrder };
+  return { min, max, isBase: effectiveIsBase, minOrder, belowMin: max < minOrder };
 };
 
 export type ChatLang = 'ru' | 'en' | 'pl' | 'uk';

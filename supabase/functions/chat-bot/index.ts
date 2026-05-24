@@ -233,14 +233,17 @@ const PRICE_LIST = {
 • «Уборка помещений» и «Мастер на час» доступны ТОЛЬКО во Вроцлаве!
 • В остальных городах: химчистка мебели, матрасов, ковров, авто, озонирование, мойка окон, импрегнация
 
+🏙 ИСКЛЮЧЕНИЕ ПО ГОРОДАМ (важно!): В городах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — цены на ХИМЧИСТКУ МЕБЕЛИ, МАТРАСОВ и КОЖАНОЙ МЕБЕЛИ такие же, как во Вроцлаве (БЕЗ наценки 10%). Для остальных категорий (окна, озон и т.д.) наценка 10% сохраняется.
+
 🎁 АКЦИИ И СКИДКИ:
+• 🛋 НОВАЯ АКЦИЯ: Заказ ХИМЧИСТКИ МЕБЕЛИ через формуляр → −10% на химчистку мебели/матрасов/кожи (действует во всех городах, применяется автоматически в калькуляторе и форме заказа)
 • 🧹 Закажи УБОРКУ + любую вторую услугу (химчистка, окна, озон и т.д.) → −20% на весь заказ (применяется автоматически в калькуляторе)
 • 👥 Приведи соседа — оба получаете −20% на весь заказ
 • 🏘 Соседская акция — заказ вместе с соседом по одному адресу → −15%
 • 🌿 Сушение мебели и матрасов — БЕСПЛАТНО до конца весны (вместо 60 PLN)
 
 ⚠️ Скидки 10%/15% за «4+ категории» БОЛЬШЕ НЕ ДЕЙСТВУЮТ — не упоминай их.
-Активно предлагай добавить уборку к химчистке (или наоборот), чтобы клиент получил −20%.`,
+Активно предлагай добавить уборку к химчистке (или наоборот), чтобы клиент получил −20%. Если клиент интересуется только химчисткой мебели — напомни про новую акцию −10% при заказе через форму.`,
   en: `
 CURRENT PRICE LIST (prices in PLN):
 
@@ -470,14 +473,17 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 • "Premises cleaning" and "Handyman" available ONLY in Wrocław!
 • Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
+🏙 CITY EXCEPTION (important!): In Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — FURNITURE, MATTRESS and LEATHER FURNITURE cleaning prices are the SAME as in Wrocław (NO +10% surcharge). Other categories (windows, ozone, etc.) keep the +10% surcharge.
+
 🎁 PROMOTIONS & DISCOUNTS:
+• 🛋 NEW PROMO: FURNITURE CLEANING order via form → −10% off furniture/mattress/leather cleaning (active in all cities, applied automatically in the calculator & order form)
 • 🧹 Order CLEANING + any second service (upholstery, windows, ozone, etc.) → −20% off the whole order (applied automatically in the calculator)
 • 👥 Bring a neighbor — both get −20% off the whole order
 • 🏘 Neighbor promo — joint order with a neighbor at the same address → −15%
 • 🌿 Furniture & mattress drying — FREE until the end of spring (normally 60 PLN)
 
 ⚠️ The old 10%/15% "4+ categories" discounts are NO LONGER ACTIVE — do not mention them.
-Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%.`,
+Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%. If a customer asks only about furniture cleaning — remind them about the new −10% promo for orders placed via the form.`,
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
 
@@ -709,14 +715,17 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 • „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
 • Inne miasta: meble, materace, dywany, auto, ozonowanie, mycie okien, impregnacja
 
+🏙 WYJĄTEK MIASTOWY (ważne!): W miastach Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ceny PRANIA MEBLI, MATERACY i MEBLI SKÓRZANYCH są TAKIE SAME jak we Wrocławiu (BEZ dopłaty 10%). Inne kategorie (okna, ozon itd.) zachowują dopłatę +10%.
+
 🎁 PROMOCJE I RABATY:
+• 🛋 NOWA PROMOCJA: Zamówienie PRANIA MEBLI przez formularz → −10% na pranie mebli/materacy/skóry (działa we wszystkich miastach, naliczane automatycznie w kalkulatorze i formularzu)
 • 🧹 Zamów SPRZĄTANIE + dowolną drugą usługę (pranie tapicerki, okna, ozon itp.) → −20% na całe zamówienie (naliczane automatycznie w kalkulatorze)
 • 👥 Przyprowadź sąsiada — oboje dostajecie −20% na całe zamówienie
 • 🏘 Promocja sąsiedzka — wspólne zamówienie z sąsiadem pod tym samym adresem → −15%
 • 🌿 Suszenie mebli i materacy — GRATIS do końca wiosny (zwykle 60 PLN)
 
 ⚠️ Stare rabaty 10%/15% za "4+ kategorie" JUŻ NIE OBOWIĄZUJĄ — nie wspominaj o nich.
-Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%.`,
+Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%. Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% przy zamówieniu przez formularz.`,
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
 
@@ -946,14 +955,17 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 • «Прибирання приміщень» та «Майстер на годину» доступні ТІЛЬКИ у Вроцлаві!
 • В інших містах: хімчистка меблів, матраців, килимів, авто, озонування, миття вікон, імпрегнація
 
+🏙 ВИНЯТОК ЗА МІСТАМИ (важливо!): У містах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ціни на ХІМЧИСТКУ МЕБЛІВ, МАТРАЦІВ та ШКІРЯНИХ МЕБЛІВ ТАКІ Ж, як у Вроцлаві (БЕЗ надбавки 10%). Інші категорії (вікна, озон тощо) зберігають надбавку +10%.
+
 🎁 АКЦІЇ ТА ЗНИЖКИ:
+• 🛋 НОВА АКЦІЯ: Замовлення ХІМЧИСТКИ МЕБЛІВ через формуляр → −10% на хімчистку меблів/матраців/шкіри (діє в усіх містах, нараховується автоматично в калькуляторі та формі)
 • 🧹 Замов ПРИБИРАННЯ + будь-яку другу послугу (хімчистка, вікна, озон тощо) → −20% на все замовлення (нараховується автоматично в калькуляторі)
 • 👥 Приведи сусіда — обоє отримуєте −20% на все замовлення
 • 🏘 Сусідська акція — спільне замовлення з сусідом за однією адресою → −15%
 • 🌿 Сушіння меблів та матраців — БЕЗКОШТОВНО до кінця весни (зазвичай 60 PLN)
 
 ⚠️ Старі знижки 10%/15% за «4+ категорії» БІЛЬШЕ НЕ ДІЮТЬ — не згадуй про них.
-Активно пропонуй додати прибирання до хімчистки (або навпаки), щоб клієнт отримав −20%.`
+Активно пропонуй додати прибирання до хімчистки (або навпаки), щоб клієнт отримав −20%. Якщо клієнт цікавиться лише хімчисткою меблів — нагадай про нову акцію −10% при замовленні через форму.`
 };
 
 // Module-level Supabase client for faster rate limiting (avoids creating client per request)
