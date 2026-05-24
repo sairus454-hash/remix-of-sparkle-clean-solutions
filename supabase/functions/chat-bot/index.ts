@@ -473,14 +473,17 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 • "Premises cleaning" and "Handyman" available ONLY in Wrocław!
 • Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
+🏙 CITY EXCEPTION (important!): In Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — FURNITURE, MATTRESS and LEATHER FURNITURE cleaning prices are the SAME as in Wrocław (NO +10% surcharge). Other categories (windows, ozone, etc.) keep the +10% surcharge.
+
 🎁 PROMOTIONS & DISCOUNTS:
+• 🛋 NEW PROMO: FURNITURE CLEANING order via form → −10% off furniture/mattress/leather cleaning (active in all cities, applied automatically in the calculator & order form)
 • 🧹 Order CLEANING + any second service (upholstery, windows, ozone, etc.) → −20% off the whole order (applied automatically in the calculator)
 • 👥 Bring a neighbor — both get −20% off the whole order
 • 🏘 Neighbor promo — joint order with a neighbor at the same address → −15%
 • 🌿 Furniture & mattress drying — FREE until the end of spring (normally 60 PLN)
 
 ⚠️ The old 10%/15% "4+ categories" discounts are NO LONGER ACTIVE — do not mention them.
-Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%.`,
+Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%. If a customer asks only about furniture cleaning — remind them about the new −10% promo for orders placed via the form.`,
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
 
