@@ -64,6 +64,28 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
               </div>
             </div>
           </div>
+
+          {/* Furniture cleaning via form -10% */}
+          <div className="relative overflow-hidden p-4 rounded-2xl bg-card/90 border-2 border-orange-400/40 shadow-card ring-2 ring-orange-400/15 animate-fade-in [animation-delay:420ms] [animation-fill-mode:both]">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-orange-500/20 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+            <div className="relative z-10 flex items-start gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center flex-shrink-0">
+                <Sofa className="w-5 h-5 text-white" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="font-serif text-sm font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+                    {t.promotions.formFurnitureTitle}
+                  </h4>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-500 to-amber-500 text-white whitespace-nowrap">
+                    {t.promotions.formFurnitureBadge}
+                  </span>
+                </div>
+                <p className="text-xs text-foreground/80">{t.promotions.formFurnitureDesc}</p>
+                <p className="text-lg font-bold text-orange-600 mt-1">-10%</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
