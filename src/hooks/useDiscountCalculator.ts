@@ -18,6 +18,8 @@ interface CalculatorItem {
   price: number;
   quantity: number;
   category?: string;
+  /** If set, item already has a per-item promo — exclude from form −10% (no stacking) */
+  originalPrice?: number;
 }
 
 // Минимальная сумма заказа для активации скидки 22%
