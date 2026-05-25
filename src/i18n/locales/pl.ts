@@ -75,6 +75,10 @@ const plTranslations = {
       services4plus: 'Zamów sprzątanie + dowolną drugą usługę i otrzymaj 22% rabatu (minimalne zamówienie — 350 zł)',
       dryingFreeSpring: 'Suszenie mebli i materacy do końca wiosny — GRATIS!!!',
       services6plus: 'Przyprowadź sąsiada — oboje otrzymujecie 20% rabatu na całe zamówienie',
+      formFurnitureBadge: '-10% FORMULARZ',
+      formFurnitureTitle: 'Pranie mebli przez formularz — rabat 10%',
+      formFurnitureDesc: 'Zamów pranie mebli, materacy lub skóry przez formularz na stronie — automatyczny rabat −10%. Nie łączy się z innymi promocjami.',
+      formFurnitureCardBadge: '−10% przez formularz',
     },
     about: {
       title: 'O firmie MasterClean',

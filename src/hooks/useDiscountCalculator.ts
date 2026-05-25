@@ -18,6 +18,8 @@ interface CalculatorItem {
   price: number;
   quantity: number;
   category?: string;
+  /** If set, item already has a per-item promo — exclude from form −10% (no stacking) */
+  originalPrice?: number;
 }
 
 // Минимальная сумма заказа для активации скидки 22%
@@ -69,9 +71,10 @@ export const useDiscountCalculator = (items: CalculatorItem[]) => {
       discountHint = '';
       discountAmount = Math.round((originalTotal * discountPercent) / 100);
     } else {
-      // Form-based −10% promo on furniture cleaning items
+      // Form-based −10% promo on furniture cleaning items.
+      // Does NOT stack with per-item promos: skip items that already have an originalPrice (weekly promo).
       const furnitureSubtotal = items
-        .filter(isFurnitureLike)
+        .filter((i) => isFurnitureLike(i) && !i.originalPrice)
         .reduce((sum, item) => sum + item.price * item.quantity, 0);
       if (furnitureSubtotal > 0) {
         discountAmount = Math.round((furnitureSubtotal * FORM_FURNITURE_DISCOUNT_PERCENT) / 100);

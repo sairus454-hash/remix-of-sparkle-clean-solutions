@@ -236,7 +236,7 @@ const PRICE_LIST = {
 🏙 ИСКЛЮЧЕНИЕ ПО ГОРОДАМ (важно!): В городах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — цены на ХИМЧИСТКУ МЕБЕЛИ, МАТРАСОВ и КОЖАНОЙ МЕБЕЛИ такие же, как во Вроцлаве (БЕЗ наценки 10%). Для остальных категорий (окна, озон и т.д.) наценка 10% сохраняется.
 
 🎁 АКЦИИ И СКИДКИ:
-• 🛋 НОВАЯ АКЦИЯ: Заказ ХИМЧИСТКИ МЕБЕЛИ через формуляр → −10% на химчистку мебели/матрасов/кожи (действует во всех городах, применяется автоматически в калькуляторе и форме заказа)
+• 🛋 НОВАЯ АКЦИЯ: Заказ ХИМЧИСТКИ МЕБЕЛИ через формуляр → −10% на химчистку мебели/матрасов/кожи (действует во всех городах, применяется автоматически в калькуляторе и форме заказа; НЕ суммируется с другими акциями)
 • 🧹 Закажи УБОРКУ + любую вторую услугу (химчистка, окна, озон и т.д.) → −20% на весь заказ (применяется автоматически в калькуляторе)
 • 👥 Приведи соседа — оба получаете −20% на весь заказ
 • 🏘 Соседская акция — заказ вместе с соседом по одному адресу → −15%
@@ -476,7 +476,7 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 🏙 CITY EXCEPTION (important!): In Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — FURNITURE, MATTRESS and LEATHER FURNITURE cleaning prices are the SAME as in Wrocław (NO +10% surcharge). Other categories (windows, ozone, etc.) keep the +10% surcharge.
 
 🎁 PROMOTIONS & DISCOUNTS:
-• 🛋 NEW PROMO: FURNITURE CLEANING order via form → −10% off furniture/mattress/leather cleaning (active in all cities, applied automatically in the calculator & order form)
+• 🛋 NEW PROMO: FURNITURE CLEANING order via form → −10% off furniture/mattress/leather cleaning (active in all cities, applied automatically in the calculator & order form; does NOT stack with other promos)
 • 🧹 Order CLEANING + any second service (upholstery, windows, ozone, etc.) → −20% off the whole order (applied automatically in the calculator)
 • 👥 Bring a neighbor — both get −20% off the whole order
 • 🏘 Neighbor promo — joint order with a neighbor at the same address → −15%
@@ -718,7 +718,7 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 🏙 WYJĄTEK MIASTOWY (ważne!): W miastach Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ceny PRANIA MEBLI, MATERACY i MEBLI SKÓRZANYCH są TAKIE SAME jak we Wrocławiu (BEZ dopłaty 10%). Inne kategorie (okna, ozon itd.) zachowują dopłatę +10%.
 
 🎁 PROMOCJE I RABATY:
-• 🛋 NOWA PROMOCJA: Zamówienie PRANIA MEBLI przez formularz → −10% na pranie mebli/materacy/skóry (działa we wszystkich miastach, naliczane automatycznie w kalkulatorze i formularzu)
+• 🛋 NOWA PROMOCJA: Zamówienie PRANIA MEBLI przez formularz → −10% na pranie mebli/materacy/skóry (działa we wszystkich miastach, naliczane automatycznie w kalkulatorze i formularzu; NIE łączy się z innymi promocjami)
 • 🧹 Zamów SPRZĄTANIE + dowolną drugą usługę (pranie tapicerki, okna, ozon itp.) → −20% na całe zamówienie (naliczane automatycznie w kalkulatorze)
 • 👥 Przyprowadź sąsiada — oboje dostajecie −20% na całe zamówienie
 • 🏘 Promocja sąsiedzka — wspólne zamówienie z sąsiadem pod tym samym adresem → −15%
@@ -958,7 +958,7 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 🏙 ВИНЯТОК ЗА МІСТАМИ (важливо!): У містах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ціни на ХІМЧИСТКУ МЕБЛІВ, МАТРАЦІВ та ШКІРЯНИХ МЕБЛІВ ТАКІ Ж, як у Вроцлаві (БЕЗ надбавки 10%). Інші категорії (вікна, озон тощо) зберігають надбавку +10%.
 
 🎁 АКЦІЇ ТА ЗНИЖКИ:
-• 🛋 НОВА АКЦІЯ: Замовлення ХІМЧИСТКИ МЕБЛІВ через формуляр → −10% на хімчистку меблів/матраців/шкіри (діє в усіх містах, нараховується автоматично в калькуляторі та формі)
+• 🛋 НОВА АКЦІЯ: Замовлення ХІМЧИСТКИ МЕБЛІВ через формуляр → −10% на хімчистку меблів/матраців/шкіри (діє в усіх містах, нараховується автоматично в калькуляторі та формі; НЕ сумується з іншими акціями)
 • 🧹 Замов ПРИБИРАННЯ + будь-яку другу послугу (хімчистка, вікна, озон тощо) → −20% на все замовлення (нараховується автоматично в калькуляторі)
 • 👥 Приведи сусіда — обоє отримуєте −20% на все замовлення
 • 🏘 Сусідська акція — спільне замовлення з сусідом за однією адресою → −15%
