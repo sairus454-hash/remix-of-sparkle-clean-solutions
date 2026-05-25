@@ -107,7 +107,7 @@ const PromotionsSection = () => {
               </div>
             </div>
           </CircularRevealCard>
-      </div>
+        </div>
     </section>
   );
 };
