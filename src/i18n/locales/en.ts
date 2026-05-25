@@ -75,6 +75,10 @@ const enTranslations = {
       services4plus: 'Order cleaning + any second service and get 22% off (minimum order — 350 zł)',
       dryingFreeSpring: 'Furniture & mattress drying until end of spring — FREE!!!',
       services6plus: 'Bring a neighbor — both get 20% off the entire order',
+      formFurnitureBadge: '-10% FORM',
+      formFurnitureTitle: 'Furniture cleaning via form — 10% off',
+      formFurnitureDesc: 'Order furniture, mattress or leather cleaning through the website form — automatic −10% discount. Does not stack with other promos.',
+      formFurnitureCardBadge: '−10% via form',
     },
     about: {
       title: 'About Our Company',
