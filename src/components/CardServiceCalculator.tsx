@@ -247,6 +247,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
       price: s.item.price,
       quantity: s.quantity,
       category,
+      ...(s.item.originalPrice ? { originalPrice: s.item.originalPrice } : {}),
     }));
     // Save to sessionStorage for ContactForm to pick up
     try {
