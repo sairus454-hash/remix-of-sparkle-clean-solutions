@@ -1,5 +1,5 @@
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Sparkles, Star, Award } from 'lucide-react';
+import { Sparkles, Star, Award, Sofa } from 'lucide-react';
 
 const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
   const { t } = useLanguage();
