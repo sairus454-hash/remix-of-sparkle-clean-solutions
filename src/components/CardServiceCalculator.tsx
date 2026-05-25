@@ -380,13 +380,19 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
               )}
             </div>
 
-            {item.promoBadge && (
+            {item.promoBadge ? (
               <div className="absolute top-2 left-2 z-10">
                 <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-md animate-pulse">
                   {item.promoBadge}
                 </span>
               </div>
-            )}
+            ) : isFurnMatLeather ? (
+              <div className="absolute top-2 left-2 z-10">
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md">
+                  {t.promotions?.formFurnitureCardBadge || '−10% via form'}
+                </span>
+              </div>
+            ) : null}
 
 
             <div className="p-3 w-full">
