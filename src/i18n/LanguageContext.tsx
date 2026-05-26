@@ -102,6 +102,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Switching language now navigates to the localized URL — single source of truth.
   const setLanguage = (lang: Language) => {
+    // Persist explicit choice so LegacyLangRedirect can keep it sticky across pages.
+    try { localStorage.setItem('language', lang); } catch { /* noop */ }
     if (typeof window === 'undefined') { setLanguageState(lang); return; }
     const { pathname, search, hash } = window.location;
     const stripped = pathname.replace(/^\/(ru|en|uk)(?=\/|$)/, '') || '/';
