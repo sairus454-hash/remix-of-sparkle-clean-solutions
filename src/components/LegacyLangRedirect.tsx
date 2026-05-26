@@ -16,24 +16,36 @@ const LegacyLangRedirect = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!search) return;
-    const params = new URLSearchParams(search);
-    const lang = params.get('lang');
-    if (!lang) return;
-    if (!['ru', 'en', 'uk', 'pl'].includes(lang)) return;
+    // 1) Legacy ?lang= query → prefixed URL
+    if (search) {
+      const params = new URLSearchParams(search);
+      const lang = params.get('lang');
+      if (lang && ['ru', 'en', 'uk', 'pl'].includes(lang)) {
+        params.delete('lang');
+        const cleanSearch = params.toString();
+        const stripped = pathname.replace(/^\/(ru|en|uk)(?=\/|$)/, '') || '/';
+        const next = lang === 'pl'
+          ? stripped
+          : `/${lang}${stripped === '/' ? '' : stripped}`;
+        const target = next + (cleanSearch ? `?${cleanSearch}` : '') + hash;
+        if (target !== pathname + search + hash) {
+          navigate(target, { replace: true });
+          return;
+        }
+      }
+    }
 
-    params.delete('lang');
-    const cleanSearch = params.toString();
-
-    // Strip any existing prefix from current path
-    const stripped = pathname.replace(/^\/(ru|en|uk)(?=\/|$)/, '') || '/';
-    const next = lang === 'pl'
-      ? stripped
-      : `/${lang}${stripped === '/' ? '' : stripped}`;
-    const target = next + (cleanSearch ? `?${cleanSearch}` : '') + hash;
-
-    if (target !== pathname + search + hash) {
-      navigate(target, { replace: true });
+    // 2) Preserve previously chosen language across navigation:
+    //    if URL has NO lang prefix but the user previously picked ru/en/uk,
+    //    redirect to the prefixed URL so language stays sticky.
+    const hasPrefix = /^\/(ru|en|uk)(\/|$)/.test(pathname);
+    if (!hasPrefix) {
+      let stored: string | null = null;
+      try { stored = localStorage.getItem('language'); } catch {}
+      if (stored && ['ru', 'en', 'uk'].includes(stored)) {
+        const next = `/${stored}${pathname === '/' ? '' : pathname}`;
+        navigate(next + search + hash, { replace: true });
+      }
     }
   }, [pathname, search, hash, navigate]);
 
