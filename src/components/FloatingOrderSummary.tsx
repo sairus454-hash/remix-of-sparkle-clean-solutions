@@ -14,7 +14,6 @@ const FloatingOrderSummary = () => {
   const [items, setItems] = useState<CalculatorItem[]>([]);
   const [total, setTotal] = useState(0);
   const discountInfo = useDiscountCalculator(items);
-  const [isExpanded, setIsExpanded] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
