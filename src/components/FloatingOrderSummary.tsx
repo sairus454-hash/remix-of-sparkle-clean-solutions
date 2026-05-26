@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { ShoppingBag, X, ArrowRight, Trash2, Tag } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Tag, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CalculatorItem } from '@/types/calculator';
 import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
+import { localizeHref } from '@/i18n/localizedPath';
 
 const FloatingOrderSummary = () => {
   const { language } = useLanguage();
