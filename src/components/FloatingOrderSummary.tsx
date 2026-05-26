@@ -69,124 +69,94 @@ const FloatingOrderSummary = () => {
   if (!shouldShow && !isVisible) return null;
 
   const labels = {
-    ru: { title: 'Ваш заказ', items: 'услуг', goToOrder: 'Перейти к заявке', clear: 'Очистить' },
-    pl: { title: 'Twoje zamówienie', items: 'usług', goToOrder: 'Przejdź do zamówienia', clear: 'Wyczyść' },
-    uk: { title: 'Ваше замовлення', items: 'послуг', goToOrder: 'Перейти до замовлення', clear: 'Очистити' },
-    en: { title: 'Your order', items: 'services', goToOrder: 'Go to order', clear: 'Clear' },
+    ru: { ordered: 'Заказал', goToOrder: 'Перейти к оформлению', dismiss: 'Скрыть' },
+    pl: { ordered: 'Zamówione', goToOrder: 'Przejdź do zamówienia', dismiss: 'Ukryj' },
+    uk: { ordered: 'Замовлено', goToOrder: 'Перейти до оформлення', dismiss: 'Сховати' },
+    en: { ordered: 'Ordered', goToOrder: 'Go to order', dismiss: 'Hide' },
   };
   const l = labels[language] || labels.en;
 
-  const handleClear = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    sessionStorage.removeItem('mc_calculator_items');
-    sessionStorage.removeItem('mc_calculator_total');
-    setItems([]);
-    setTotal(0);
-    setIsExpanded(false);
+  const handleGoToContacts = () => {
+    // Honor active language prefix so we don't drop the user back to PL.
+    navigate(localizeHref('/contacts', language));
   };
 
-  const handleGoToContacts = () => {
-    setIsExpanded(false);
-    navigate('/contacts');
+  const handleDismiss = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setDismissed(true);
   };
 
   return (
     <div
+      role="button"
+      tabIndex={0}
+      onClick={handleGoToContacts}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleGoToContacts(); }}
+      aria-label={l.goToOrder}
       className={cn(
-        "fixed bottom-4 right-4 z-40 sm:bottom-6 sm:right-6 transition-all duration-300 ease-out",
+        'fixed inset-x-0 bottom-0 z-40 cursor-pointer',
+        'transition-all duration-300 ease-out',
         isVisible && shouldShow
-          ? "opacity-100 scale-100 translate-y-0"
-          : "opacity-0 scale-75 translate-y-10 pointer-events-none"
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-full pointer-events-none',
       )}
     >
-      {/* Expanded view */}
-      <div
-        className={cn(
-          "mb-3 bg-card border border-border rounded-2xl shadow-xl overflow-hidden w-72 sm:w-80 transition-all duration-200 ease-out origin-bottom-right",
-          isExpanded ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-2 pointer-events-none h-0 mb-0"
-        )}
-      >
-        <div className="p-4 border-b border-border flex items-center justify-between">
-          <p className="font-serif font-semibold text-foreground">{l.title}</p>
-          <div className="flex items-center gap-1">
-            <button
-              onClick={handleClear}
-              className="p-1.5 rounded-lg text-destructive hover:bg-destructive/10 transition-colors"
-              title={l.clear}
-            >
-              <Trash2 className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => setIsExpanded(false)}
-              className="p-1.5 rounded-lg text-muted-foreground hover:bg-accent transition-colors"
-            >
-              <X className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-        <div className="p-3 max-h-48 overflow-y-auto space-y-1.5">
-          {items.map((item, i) => (
-            <div key={i} className="flex justify-between text-sm gap-2">
-              <span className="text-muted-foreground truncate flex-1">
-                {item.name} × {item.quantity || 1}
-              </span>
-              <span className="font-medium text-foreground whitespace-nowrap">
-                {item.price * (item.quantity || 1)} zł
-              </span>
-            </div>
-          ))}
-        </div>
-        <div className="p-4 border-t border-border">
-          {discountInfo.hasDiscount ? (
-            <div className="flex items-center gap-1.5 mb-2 text-xs text-fresh">
-              <Tag className="w-3.5 h-3.5" />
-              <span className="font-medium">{discountInfo.discountReason}</span>
-            </div>
-          ) : (
-            discountInfo.discountHint && (
-              <div className="flex items-start gap-1.5 mb-2 text-xs text-foreground bg-primary/5 border border-primary/20 rounded-md p-2">
-                <Tag className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                <span>{discountInfo.discountHint}</span>
-              </div>
-            )
+      <div className="mx-auto max-w-3xl px-3 pb-3 sm:pb-4">
+        <div
+          className={cn(
+            'group relative flex items-center gap-3 sm:gap-4 rounded-2xl shadow-2xl',
+            'bg-primary text-primary-foreground border border-primary/30',
+            'px-4 sm:px-5 py-3 sm:py-3.5',
+            'hover:scale-[1.01] active:scale-[0.99] transition-transform',
           )}
-          <div className="flex justify-between mb-3">
-            <span className="font-medium text-foreground">{labels[language]?.title || 'Total'}</span>
-            <div className="text-right">
-              {discountInfo.hasDiscount && (
-                <span className="text-sm text-muted-foreground line-through mr-2">{discountInfo.originalTotal} zł</span>
-              )}
-              <span className="font-bold text-primary text-lg">{discountInfo.finalTotal} zł</span>
+        >
+          <div className="relative shrink-0">
+            <div className="w-10 h-10 rounded-full bg-primary-foreground/15 flex items-center justify-center">
+              <ShoppingBag className="w-5 h-5" />
             </div>
+            <span className="absolute -top-1.5 -right-1.5 bg-fresh text-white text-[10px] font-bold min-w-5 h-5 px-1 rounded-full flex items-center justify-center shadow-md">
+              {items.length}
+            </span>
           </div>
-          <button
-            onClick={handleGoToContacts}
-            className="w-full py-3 bg-fresh text-white font-semibold rounded-xl hover:bg-fresh/90 transition-colors shadow-glow flex items-center justify-center gap-2"
-          >
-            <ArrowRight className="w-4 h-4" />
+
+          <div className="flex-1 min-w-0">
+            <p className="text-[11px] sm:text-xs uppercase tracking-wide opacity-80 leading-none">
+              {l.ordered}
+            </p>
+            <div className="flex items-baseline gap-2 mt-0.5">
+              <span className="font-serif font-bold text-lg sm:text-xl leading-none">
+                {discountInfo.finalTotal} zł
+              </span>
+              {discountInfo.hasDiscount && (
+                <span className="text-xs sm:text-sm line-through opacity-70 leading-none">
+                  {discountInfo.originalTotal} zł
+                </span>
+              )}
+            </div>
+            {discountInfo.hasDiscount && discountInfo.discountReason && (
+              <p className="hidden sm:flex items-center gap-1 mt-1 text-[11px] opacity-90">
+                <Tag className="w-3 h-3" />
+                <span className="truncate">{discountInfo.discountReason}</span>
+              </p>
+            )}
+          </div>
+
+          <div className="hidden sm:flex items-center gap-1.5 font-semibold text-sm">
             {l.goToOrder}
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </div>
+          <ArrowRight className="sm:hidden w-5 h-5 shrink-0" />
+
+          <button
+            type="button"
+            onClick={handleDismiss}
+            aria-label={l.dismiss}
+            className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-card text-foreground border border-border shadow-md flex items-center justify-center hover:bg-accent transition-colors"
+          >
+            <X className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
-
-      {/* Collapsed badge button */}
-      <button
-        onClick={() => navigate('/contacts')}
-        className={cn(
-          "relative flex items-center gap-2.5 py-3 px-5 rounded-full shadow-xl transition-all duration-200",
-          "bg-primary text-primary-foreground hover:shadow-2xl hover:scale-105 active:scale-95",
-          "border border-primary/20"
-        )}
-      >
-        <ShoppingBag className="w-5 h-5" />
-        <span className="font-semibold">{discountInfo.finalTotal} zł</span>
-        {discountInfo.hasDiscount && (
-          <span className="text-xs line-through opacity-70">{discountInfo.originalTotal}</span>
-        )}
-        <span className="absolute -top-2 -right-2 bg-fresh text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shadow-md">
-          {items.length}
-        </span>
-      </button>
     </div>
   );
 };
