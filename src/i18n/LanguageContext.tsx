@@ -53,7 +53,9 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Keep <html lang> + cache in sync whenever language changes.
   useEffect(() => {
-    try { localStorage.setItem('language', language); } catch { /* noop */ }
+    // NOTE: do NOT write `language` here — URL-driven changes would overwrite
+    // the user's explicit preference (e.g. after raw <Link> navigation to a
+    // PL URL). The explicit preference is set inside setLanguage() below.
     document.documentElement.lang = language;
 
     const cached = cache[language];
