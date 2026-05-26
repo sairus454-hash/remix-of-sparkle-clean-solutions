@@ -53,7 +53,13 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Keep <html lang> + cache in sync whenever language changes.
   useEffect(() => {
-    try { localStorage.setItem('language', language); } catch { /* noop */ }
+    // Persist non-PL preference so it survives raw <Link> navigations to
+    // unprefixed URLs (LegacyLangRedirect re-applies the prefix). PL is the
+    // default — never write 'pl' here, otherwise visiting /ru and then
+    // navigating back to / would lose the user's chosen language.
+    if (language !== 'pl') {
+      try { localStorage.setItem('language', language); } catch { /* noop */ }
+    }
     document.documentElement.lang = language;
 
     const cached = cache[language];
@@ -100,6 +106,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Switching language now navigates to the localized URL — single source of truth.
   const setLanguage = (lang: Language) => {
+    // Persist explicit choice so LegacyLangRedirect can keep it sticky across pages.
+    try { localStorage.setItem('language', lang); } catch { /* noop */ }
     if (typeof window === 'undefined') { setLanguageState(lang); return; }
     const { pathname, search, hash } = window.location;
     const stripped = pathname.replace(/^\/(ru|en|uk)(?=\/|$)/, '') || '/';
