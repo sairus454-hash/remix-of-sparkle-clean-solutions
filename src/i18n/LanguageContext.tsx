@@ -53,9 +53,13 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   // Keep <html lang> + cache in sync whenever language changes.
   useEffect(() => {
-    // NOTE: do NOT write `language` here — URL-driven changes would overwrite
-    // the user's explicit preference (e.g. after raw <Link> navigation to a
-    // PL URL). The explicit preference is set inside setLanguage() below.
+    // Persist non-PL preference so it survives raw <Link> navigations to
+    // unprefixed URLs (LegacyLangRedirect re-applies the prefix). PL is the
+    // default — never write 'pl' here, otherwise visiting /ru and then
+    // navigating back to / would lose the user's chosen language.
+    if (language !== 'pl') {
+      try { localStorage.setItem('language', language); } catch { /* noop */ }
+    }
     document.documentElement.lang = language;
 
     const cached = cache[language];
