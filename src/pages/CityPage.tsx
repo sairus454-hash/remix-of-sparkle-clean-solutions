@@ -627,15 +627,11 @@ const CityPage = () => {
           </div>
         </section>
 
-        {/* Полные блоки акций (как на главной) — только для Wrocław-группы */}
-        {isWroclaw && (
-          <>
-            <MobilePromotionsCard />
-            <div className="hidden md:block">
-              <PromotionsSection />
-            </div>
-          </>
-        )}
+        {/* Полные блоки акций (включая -10% за заказ Химчистки мебели через формуляр) — для всех городов */}
+        <MobilePromotionsCard />
+        <div className="hidden md:block">
+          <PromotionsSection />
+        </div>
 
         {/* Соседская акция — для остальных городов */}
         {!isWroclaw && (
