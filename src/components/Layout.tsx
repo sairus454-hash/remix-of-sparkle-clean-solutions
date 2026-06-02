@@ -1,14 +1,8 @@
-import { ReactNode, lazy, Suspense, useState, useEffect } from 'react';
+import { ReactNode, lazy, Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CleaningBackground from './CleaningBackground';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { LocalizedLink } from '@/i18n/LocalizedLink';
-import promoBannerGirl from '@/assets/promo-banner-girl.png';
-import promoBannerImpregnation from '@/assets/promo-banner-impregnation.jpg';
 
 // Lazy load non-critical components — not needed for initial paint
 const ChatBot = lazy(() => import('./ChatBot'));
@@ -19,31 +13,7 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const { t, language } = useLanguage();
-  const [activeBanner, setActiveBanner] = useState(0);
-
-  const handlePromoOrderClick = () => {
-    try {
-      const sofaName =
-        language === 'pl' ? 'Sofa 3-osobowa (suszenie gratis)' :
-        language === 'en' ? '3-seat sofa (free drying)' :
-        language === 'uk' ? 'Диван тримісний (сушіння в подарунок)' :
-        'Диван трёхместный (сушка в подарок)';
-      const items = [{ id: 'sofa3', name: sofaName, price: 180, quantity: 1, category: 'upholstery' }];
-      sessionStorage.setItem('mc_calculator_items', JSON.stringify(items));
-      sessionStorage.setItem('mc_calculator_total', '180');
-      window.dispatchEvent(new Event('mc_calculator_updated'));
-    } catch {
-      // ignore storage errors (private mode, quota)
-    }
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveBanner((prev) => (prev === 0 ? 1 : 0));
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden relative">
