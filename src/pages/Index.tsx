@@ -556,6 +556,7 @@ const Index = () => {
             const newTotal = merged.reduce((s: number, i: any) => s + i.price * (i.quantity || 1), 0);
             sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
             sessionStorage.setItem('mc_calculator_total', String(newTotal));
+            window.dispatchEvent(new Event('mc_calculator_updated'));
           } catch {}
           formRef.current?.setCalculatorData(items as any, total);
           setTimeout(() => {
