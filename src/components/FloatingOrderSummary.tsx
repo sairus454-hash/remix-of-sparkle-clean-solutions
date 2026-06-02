@@ -43,10 +43,12 @@ const FloatingOrderSummary = () => {
     };
     window.addEventListener('storage', handleStorage);
     window.addEventListener('mc_order_updated', handleCustom);
-    const interval = setInterval(readStorage, 2000);
+    window.addEventListener('mc_calculator_updated', handleCustom);
+    const interval = setInterval(readStorage, 800);
     return () => {
       window.removeEventListener('storage', handleStorage);
       window.removeEventListener('mc_order_updated', handleCustom);
+      window.removeEventListener('mc_calculator_updated', handleCustom);
       clearInterval(interval);
     };
   }, [readStorage]);
