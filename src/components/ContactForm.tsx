@@ -131,6 +131,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
         sessionStorage.removeItem('mc_calculator_items');
         sessionStorage.removeItem('mc_calculator_total');
       }
+      window.dispatchEvent(new Event('mc_calculator_updated'));
       } catch {
         // Ignore unavailable sessionStorage.
       }
