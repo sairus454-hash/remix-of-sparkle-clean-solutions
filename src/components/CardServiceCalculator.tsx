@@ -118,7 +118,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
   // Detect the base category id even when wrapped as `city-{slug}-{catId}` from CityPage.
   const baseCategoryId = (() => {
     const c = category || '';
-    const m = c.match(/^city-.+-(furniture|mattress|leather|auto|floorCleaning|cleaning|handyman|windows|ozone|other|gardening)$/);
+    const m = c.match(/^(?:city-.+|prices)-(furniture|mattress|leather|auto|floorCleaning|cleaning|handyman|windows|ozone|other|gardening)$/);
     return m ? m[1] : c;
   })();
 
