@@ -264,6 +264,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
       const newTotal = merged.reduce((s: number, i: CalculatorItem) => s + i.price * (i.quantity || 1), 0);
       sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
       sessionStorage.setItem('mc_calculator_total', String(newTotal));
+      window.dispatchEvent(new Event('mc_calculator_updated'));
     } catch {}
     toast.success(t.form?.addedToOrder || 'Добавлено в заявку ✓', {
       duration: 2000,
