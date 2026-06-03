@@ -48,7 +48,8 @@ const BlogArticle = () => {
       });
   }, [id]);
 
-  if (!article) return <Navigate to="/blog" replace />;
+  const numericId = Number(id);
+  if (!article || BLOCKED_BLOG_IDS.has(numericId)) return <NotFound />;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
