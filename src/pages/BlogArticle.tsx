@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, Navigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import NotFound from './NotFound';
+
+// Articles intentionally returning 404 (de-indexed at Google's request).
+const BLOCKED_BLOG_IDS = new Set<number>([15, 16, 17, 19, 20, 21]);
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -44,7 +48,8 @@ const BlogArticle = () => {
       });
   }, [id]);
 
-  if (!article) return <Navigate to="/blog" replace />;
+  const numericId = Number(id);
+  if (!article || BLOCKED_BLOG_IDS.has(numericId)) return <NotFound />;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

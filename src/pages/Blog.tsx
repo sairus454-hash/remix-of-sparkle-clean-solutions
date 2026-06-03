@@ -57,7 +57,10 @@ const TikTokIcon = ({ className }: { className?: string }) => (
 
 const Blog = () => {
   const { language } = useLanguage();
-  const articles = [...(blogArticles[language] || blogArticles.ru)].reverse();
+  const BLOCKED_BLOG_IDS = new Set<number>([15, 16, 17, 19, 20, 21]);
+  const articles = [...(blogArticles[language] || blogArticles.ru)]
+    .filter(a => !BLOCKED_BLOG_IDS.has(Number(a.id)))
+    .reverse();
   const titles = blogTitles[language] || blogTitles.ru;
   const labels = commentLabels[language] || commentLabels.ru;
   const { showSplash, handleSplashComplete } = useSplash('blog');
