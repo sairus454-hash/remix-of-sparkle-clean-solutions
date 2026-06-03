@@ -220,6 +220,75 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
 
   const total = selectedItems.reduce((sum, s) => sum + s.item.price * s.quantity, 0);
 
+  // Auto-sync this calculator's current selection to global sessionStorage cart,
+  // so the floating order bar shows the total instantly on every "Order" click.
+  const prevContribRef = useRef<Map<string, CalculatorItem>>(new Map());
+  useEffect(() => {
+    try {
+      const stored: CalculatorItem[] = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+      const map = new Map<string, CalculatorItem>(stored.map(i => [i.id, { ...i }]));
+
+      // Subtract previous contribution from this instance
+      prevContribRef.current.forEach((prevItem, id) => {
+        const cur = map.get(id);
+        if (!cur) return;
+        const newQty = (cur.quantity || 0) - (prevItem.quantity || 0);
+        if (newQty <= 0) map.delete(id);
+        else map.set(id, { ...cur, quantity: newQty });
+      });
+
+      // Add current contribution
+      const newContrib = new Map<string, CalculatorItem>();
+      selectedItems.forEach(s => {
+        const item: CalculatorItem = {
+          id: s.item.id,
+          name: s.item.name,
+          price: s.item.price,
+          quantity: s.quantity,
+          category,
+          ...(s.item.originalPrice ? { originalPrice: s.item.originalPrice } : {}),
+        };
+        newContrib.set(item.id, item);
+        const cur = map.get(item.id);
+        if (cur) {
+          map.set(item.id, { ...cur, quantity: (cur.quantity || 0) + item.quantity });
+        } else {
+          map.set(item.id, { ...item });
+        }
+      });
+      prevContribRef.current = newContrib;
+
+      const merged = Array.from(map.values());
+      const newTotal = merged.reduce((s, i) => s + i.price * (i.quantity || 1), 0);
+      sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+      sessionStorage.setItem('mc_calculator_total', String(newTotal));
+      window.dispatchEvent(new Event('mc_calculator_updated'));
+    } catch {}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedItems, category]);
+
+  // Cleanup on unmount: remove this instance's contribution
+  useEffect(() => {
+    return () => {
+      try {
+        const stored: CalculatorItem[] = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
+        const map = new Map<string, CalculatorItem>(stored.map(i => [i.id, { ...i }]));
+        prevContribRef.current.forEach((prevItem, id) => {
+          const cur = map.get(id);
+          if (!cur) return;
+          const newQty = (cur.quantity || 0) - (prevItem.quantity || 0);
+          if (newQty <= 0) map.delete(id);
+          else map.set(id, { ...cur, quantity: newQty });
+        });
+        const merged = Array.from(map.values());
+        const newTotal = merged.reduce((s, i) => s + i.price * (i.quantity || 1), 0);
+        sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
+        sessionStorage.setItem('mc_calculator_total', String(newTotal));
+        window.dispatchEvent(new Event('mc_calculator_updated'));
+      } catch {}
+    };
+  }, []);
+
   const areaConfirmWarning = () => {
     const item = unconfirmedSelected?.item;
     const name = item?.name || '';
@@ -249,23 +318,9 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
       category,
       ...(s.item.originalPrice ? { originalPrice: s.item.originalPrice } : {}),
     }));
-    // Save to sessionStorage for ContactForm to pick up
-    try {
-      const existing = JSON.parse(sessionStorage.getItem('mc_calculator_items') || '[]');
-      const merged = [...existing];
-      calcItems.forEach(item => {
-        const idx = merged.findIndex((e: CalculatorItem) => e.id === item.id);
-        if (idx >= 0) {
-          merged[idx].quantity = (merged[idx].quantity || 1) + item.quantity;
-        } else {
-          merged.push(item);
-        }
-      });
-      const newTotal = merged.reduce((s: number, i: CalculatorItem) => s + i.price * (i.quantity || 1), 0);
-      sessionStorage.setItem('mc_calculator_items', JSON.stringify(merged));
-      sessionStorage.setItem('mc_calculator_total', String(newTotal));
-      window.dispatchEvent(new Event('mc_calculator_updated'));
-    } catch {}
+    // Storage is already kept in sync by the auto-sync effect above —
+    // just notify listeners and show feedback.
+    window.dispatchEvent(new Event('mc_calculator_updated'));
     toast.success(t.form?.addedToOrder || 'Добавлено в заявку ✓', {
       duration: 2000,
       description: `${calcItems.length} ${calcItems.length === 1 ? 'услуга' : 'услуг'} — ${total} zł`,
