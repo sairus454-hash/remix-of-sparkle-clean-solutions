@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import NotFound from './NotFound';
 
 // Articles intentionally returning 404 (de-indexed at Google's request).
