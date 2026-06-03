@@ -864,6 +864,9 @@ function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
 
   const blogMatch = path.match(/^\/blog\/(\d+)$/);
   if (blogMatch) {
+    // Articles intentionally returning 404 (de-indexed at Google's request).
+    const BLOCKED_BLOG_IDS = new Set(['15', '16', '17', '19', '20', '21']);
+    if (BLOCKED_BLOG_IDS.has(blogMatch[1])) return null;
     // Per-article PL meta exists; for non-PL we currently serve a generic
     // localized blog fallback (per-article translations live in the SPA).
     if (lang === 'pl' && blogPages[blogMatch[1]]) return blogPages[blogMatch[1]];
