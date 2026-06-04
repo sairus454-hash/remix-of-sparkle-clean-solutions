@@ -12,6 +12,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
+import PromoVideo from '@/components/PromoVideo';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
 import mediaexpertTeamEquipment from '@/assets/mediaexpert-team-equipment.jpg';
@@ -214,6 +215,10 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <PromoVideo />
+
+
 
       {/* Blog Icon — hidden on mobile */}
       <section className="hidden sm:block py-6 sm:py-8 bg-card">
