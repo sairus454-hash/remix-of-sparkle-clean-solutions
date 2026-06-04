@@ -13,6 +13,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import CircularRevealCard from '@/components/CircularRevealCard';
 import OferteoBadge from '@/components/OferteoBadge';
 import CarpetCtaBlock from '@/components/CarpetCtaBlock';
+import PromoVideo from '@/components/PromoVideo';
 
 const About3DCarousel = lazy(() => import('@/components/About3DCarousel'));
 const PolandRegionsMap = lazy(() => import('@/components/PolandRegionsMap'));
@@ -445,6 +446,8 @@ const About = () => {
             <PolandRegionsMap />
           </Suspense>
         </LazySection>
+
+        <PromoVideo />
 
         {/* Before/After 3D Carousel */}
         <LazySection minHeight="400px">

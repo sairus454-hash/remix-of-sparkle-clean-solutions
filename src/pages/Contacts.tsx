@@ -10,6 +10,7 @@ import ContactsSplash from '@/components/ContactsSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
 import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
+import PromoVideo from '@/components/PromoVideo';
 import { CalculatorItem } from '@/types/calculator';
 import contactsMapPreview from '@/assets/contacts-map-preview.jpg';
 import PageFaqSection from '@/components/PageFaqSection';
@@ -127,6 +128,8 @@ const Contacts = () => {
           </div>
         </div>
       </section>
+
+      <PromoVideo />
 
       {/* Contact Info & Form */}
       <section className="py-20">
