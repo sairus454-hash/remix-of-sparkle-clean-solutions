@@ -129,6 +129,8 @@ const Contacts = () => {
         </div>
       </section>
 
+      <PromoVideo />
+
       {/* Contact Info & Form */}
       <section className="py-20">
         <div className="container mx-auto px-4">
