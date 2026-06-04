@@ -30,9 +30,8 @@ const PromoVideo = ({ className = '' }: PromoVideoProps) => {
               loop
               muted
               playsInline
-              controls
-              preload="metadata"
-              className="w-full h-full object-cover"
+              preload="auto"
+              className="w-full h-full object-cover pointer-events-none"
               aria-label={title}
             />
           </div>
