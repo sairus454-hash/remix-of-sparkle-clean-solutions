@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Play } from 'lucide-react';
 import promoVideo from '@/assets/masterclean-promo.mp4.asset.json';
 import { useLanguage } from '@/i18n/LanguageContext';
 
@@ -9,6 +10,7 @@ interface PromoVideoProps {
 const PromoVideo = ({ className = '' }: PromoVideoProps) => {
   const { language } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [needsTap, setNeedsTap] = useState(false);
 
   const title =
     language === 'pl'
@@ -19,35 +21,54 @@ const PromoVideo = ({ className = '' }: PromoVideoProps) => {
           ? 'MasterClean 1885 — подивіться нас у дії'
           : 'MasterClean 1885 — посмотрите нас в деле';
 
+  const tapLabel =
+    language === 'pl'
+      ? 'Dotknij, aby odtworzyć'
+      : language === 'en'
+        ? 'Tap to play'
+        : language === 'uk'
+          ? 'Натисніть, щоб відтворити'
+          : 'Нажмите для воспроизведения';
+
+  const tryPlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const p = v.play();
+    if (p && typeof p.then === 'function') {
+      p.then(() => setNeedsTap(false)).catch(() => setNeedsTap(true));
+    }
+  };
+
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     v.muted = true;
     v.defaultMuted = true;
     v.setAttribute('muted', '');
-    const tryPlay = () => {
-      const p = v.play();
-      if (p && typeof p.catch === 'function') {
-        p.catch(() => {
-          // Retry once on user interaction
-          const retry = () => {
-            v.muted = true;
-            v.play().catch(() => {});
-            document.removeEventListener('touchstart', retry);
-            document.removeEventListener('click', retry);
-          };
-          document.addEventListener('touchstart', retry, { once: true, passive: true });
-          document.addEventListener('click', retry, { once: true });
-        });
-      }
-    };
     tryPlay();
+
+    const onFirstInteract = () => {
+      tryPlay();
+    };
+    document.addEventListener('touchstart', onFirstInteract, { once: true, passive: true });
+    document.addEventListener('click', onFirstInteract, { once: true });
+
     const onVisible = () => {
       if (document.visibilityState === 'visible') tryPlay();
     };
     document.addEventListener('visibilitychange', onVisible);
-    return () => document.removeEventListener('visibilitychange', onVisible);
+
+    return () => {
+      document.removeEventListener('touchstart', onFirstInteract);
+      document.removeEventListener('click', onFirstInteract);
+      document.removeEventListener('visibilitychange', onVisible);
+    };
   }, []);
+
+  const handleManualPlay = () => {
+    tryPlay();
+  };
 
   return (
     <section className={`py-10 sm:py-14 ${className}`}>
@@ -67,9 +88,28 @@ const PromoVideo = ({ className = '' }: PromoVideoProps) => {
               {...({ 'webkit-playsinline': 'true' } as Record<string, string>)}
               preload="auto"
               disablePictureInPicture
-              className="w-full h-full object-cover pointer-events-none"
+              onPlaying={() => setNeedsTap(false)}
+              onPause={() => {
+                if (videoRef.current && !videoRef.current.ended) setNeedsTap(true);
+              }}
+              className="w-full h-full object-cover"
               aria-label={title}
             />
+            {needsTap && (
+              <button
+                type="button"
+                onClick={handleManualPlay}
+                aria-label={tapLabel}
+                className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-foreground/40 backdrop-blur-sm transition-opacity hover:bg-foreground/50 cursor-pointer"
+              >
+                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-glow" style={{ animation: 'pulse 2s ease-in-out infinite' }}>
+                  <Play className="w-10 h-10 text-primary-foreground ml-1" fill="currentColor" />
+                </div>
+                <p className="text-background font-semibold text-sm sm:text-base drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+                  {tapLabel}
+                </p>
+              </button>
+            )}
           </div>
         </div>
       </div>
