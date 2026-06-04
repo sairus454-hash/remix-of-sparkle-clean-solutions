@@ -63,10 +63,8 @@ const PromoVideo = ({ className = '' }: PromoVideoProps) => {
               autoPlay
               loop
               muted
-              defaultMuted
               playsInline
-              // @ts-expect-error iOS Safari
-              webkit-playsinline="true"
+              {...({ 'webkit-playsinline': 'true' } as Record<string, string>)}
               preload="auto"
               disablePictureInPicture
               className="w-full h-full object-cover pointer-events-none"
