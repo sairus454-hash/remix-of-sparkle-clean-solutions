@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Play } from 'lucide-react';
-import promoVideo from '@/assets/masterclean-promo.mp4.asset.json';
+import promoVideoMp4 from '@/assets/masterclean-promo.mp4.asset.json';
+import promoVideoWebm from '@/assets/masterclean-promo.webm.asset.json';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 interface PromoVideoProps {
