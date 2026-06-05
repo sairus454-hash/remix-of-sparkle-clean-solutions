@@ -88,6 +88,7 @@ const PromoVideo = ({ className = '' }: PromoVideoProps) => {
               playsInline
               {...({ 'webkit-playsinline': 'true' } as Record<string, string>)}
               preload="auto"
+              poster={promoPoster.url}
               disablePictureInPicture
               onPlaying={() => setNeedsTap(false)}
               onPause={() => {
