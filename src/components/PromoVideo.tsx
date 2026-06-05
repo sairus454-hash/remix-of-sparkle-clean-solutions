@@ -81,7 +81,6 @@ const PromoVideo = ({ className = '' }: PromoVideoProps) => {
           <div className="relative rounded-2xl overflow-hidden shadow-glow border-2 border-border bg-muted aspect-square">
             <video
               ref={videoRef}
-              src={promoVideo.url}
               autoPlay
               loop
               muted
@@ -95,7 +94,10 @@ const PromoVideo = ({ className = '' }: PromoVideoProps) => {
               }}
               className="w-full h-full object-cover"
               aria-label={title}
-            />
+            >
+              <source src={promoVideoWebm.url} type="video/webm" />
+              <source src={promoVideoMp4.url} type="video/mp4" />
+            </video>
             {needsTap && (
               <button
                 type="button"
