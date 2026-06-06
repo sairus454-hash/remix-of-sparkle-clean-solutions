@@ -86,7 +86,7 @@ const CITY_EXTRA_FAQS: Record<string, Record<string, Array<{ q: string; a: strin
 function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
   const faqs = {
     pl: [
-      { q: `Jakie usługi oferujecie w ${cityName}?`, a: isWroclaw ? `W ${cityName} oferujemy pełen zakres usług: pranie tapicerki meblowej i samochodowej, czyszczenie materacy i dywanów, ozonowanie, mycie okien, sprzątanie mieszkań i domów oraz usługi złotej rączki.` : `W ${cityName} oferujemy: pranie tapicerki meblowej i samochodowej, czyszczenie materacy i dywanów, ozonowanie, mycie okien oraz impregnację. Usługi sprzątania i złotej rączki dostępne są wyłącznie we Wrocławiu.` },
+      { q: `Jakie usługi oferujecie w ${cityName}?`, a: isWroclaw ? `W ${cityName} oferujemy pełen zakres usług: pranie tapicerki meblowej i samochodowej, czyszczenie materacy i dywanów, ozonowanie, mycie okien, sprzątanie mieszkań i domów oraz usługi złotej rączki.` : `W ${cityName} oferujemy: pranie tapicerki meblowej i samochodowej, czyszczenie materacy i dywanów, ozonowanie, mycie okien oraz impregnację. Usługi sprzątania i złotej rączki dostępne są wyłącznie w regionie bazowym.` },
       { q: `Ile kosztuje pranie tapicerki w ${cityName}?`, a: isWroclaw ? `Ceny zaczynają się od 36 PLN za pufę. Sofa 2-osobowa — 140 PLN, sofa 3-osobowa — 170 PLN, narożnik — od 200 PLN. Minimalne zamówienie: 160 PLN.` : `Ceny w ${cityName} są o 10% wyższe od bazowych cen wrocławskich. Przykładowo: sofa 2-osobowa — 155 PLN, sofa 3-osobowa — 190 PLN, narożnik — od 220 PLN. Minimalne zamówienie: 220 PLN.` },
       { q: `Jak szybko możecie przyjechać do ${cityName}?`, a: `Realizujemy zamówienia w ${cityName} regularnie. Termin ustalamy indywidualnie — często możemy przyjechać tego samego lub następnego dnia. Zadzwoń: +48 575 211 401.` },
       { q: 'Czy używacie bezpiecznych środków czyszczących?', a: 'Tak! Stosujemy profesjonalną chemię Allegrini, Bissell i Global, która jest bezpieczna dla dzieci, zwierząt i alergików. Używamy sprzętu Kärcher i SantoEmma.' },
@@ -98,7 +98,7 @@ function getFaqData(language: string, cityName: string, isWroclaw: boolean) {
       { q: 'Безопасна ли ваша химия для детей и животных?', a: 'Да! Используем профессиональную химию Allegrini, Bissell и Global — безопасна для детей, животных и аллергиков. Оборудование Kärcher и SantoEmma.' },
     ],
     en: [
-      { q: `What services do you offer in ${cityName}?`, a: isWroclaw ? `In ${cityName} we offer the full range: upholstery and car cleaning, mattress and carpet cleaning, ozonation, window cleaning, house cleaning and handyman services.` : `In ${cityName} we offer: upholstery and car cleaning, mattress and carpet cleaning, ozonation, window cleaning and impregnation. House cleaning and handyman services are available only in Wrocław.` },
+      { q: `What services do you offer in ${cityName}?`, a: isWroclaw ? `In ${cityName} we offer the full range: upholstery and car cleaning, mattress and carpet cleaning, ozonation, window cleaning, house cleaning and handyman services.` : `In ${cityName} we offer: upholstery and car cleaning, mattress and carpet cleaning, ozonation, window cleaning and impregnation. House cleaning and handyman services are available only in the base region.` },
       { q: `How much does upholstery cleaning cost in ${cityName}?`, a: isWroclaw ? `Prices start from 36 PLN for an ottoman. 2-seater sofa — 140 PLN, 3-seater — 170 PLN, corner sofa — from 200 PLN. Minimum order: 160 PLN.` : `Prices in ${cityName} are 10% higher than base Wrocław prices. Example: 2-seater sofa — 155 PLN, 3-seater — 190 PLN, corner sofa — from 220 PLN. Minimum order: 220 PLN.` },
       { q: `How quickly can you come to ${cityName}?`, a: `We regularly serve ${cityName}. Scheduling is individual — often same or next day. Call: +48 575 211 401.` },
       { q: 'Are your cleaning products safe for children and pets?', a: 'Yes! We use professional Allegrini, Bissell and Global cleaning products — safe for children, pets and allergy sufferers. Equipment: Kärcher and SantoEmma.' },
@@ -770,13 +770,13 @@ const CityPage = () => {
                     <Wrench className="w-5 h-5" />
                   </div>
                   <p className="text-sm sm:text-base text-muted-foreground font-medium">
-                    {language === 'pl' && 'Usługi złotej rączki oraz dodatkowe opcje sprzątania (mycie piekarnika, lodówki, okien itd.) dostępne są wyłącznie we Wrocławiu.'}
-                    {language === 'en' && 'Handyman services and additional cleaning options (oven, fridge, windows, etc.) are available only in Wrocław.'}
-                    {language === 'ru' && 'Услуги мастера на час и дополнительные опции уборки (духовка, холодильник, окна и т.д.) доступны только во Вроцлаве.'}
-                    {language === 'uk' && 'Послуги майстра на годину та додаткові опції прибирання (духовка, холодильник, вікна тощо) доступні лише у Вроцлаві.'}
+                    {language === 'pl' && 'Usługi złotej rączki oraz dodatkowe opcje sprzątania (mycie piekarnika, lodówki, okien itd.) dostępne są wyłącznie w regionie bazowym.'}
+                    {language === 'en' && 'Handyman services and additional cleaning options (oven, fridge, windows, etc.) are available only in the base region.'}
+                    {language === 'ru' && 'Услуги мастера на час и дополнительные опции уборки (духовка, холодильник, окна и т.д.) доступны только в базовом регионе.'}
+                    {language === 'uk' && 'Послуги майстра на годину та додаткові опції прибирання (духовка, холодильник, вікна тощо) доступні лише в базовому регіоні.'}
                   </p>
                   <a href="/city/wroclaw" className="inline-block text-sm text-primary hover:underline font-semibold">
-                    {language === 'pl' ? 'Zobacz pełną ofertę dla Wrocławia →' : language === 'en' ? 'See full offer for Wrocław →' : language === 'uk' ? 'Переглянути повну пропозицію для Вроцлава →' : 'Смотреть полный прайс для Вроцлава →'}
+                    {language === 'pl' ? 'Zobacz pełną ofertę →' : language === 'en' ? 'See the full offer →' : language === 'uk' ? 'Переглянути повну пропозицію →' : 'Смотреть полный прайс →'}
                   </a>
                 </div>
               )}

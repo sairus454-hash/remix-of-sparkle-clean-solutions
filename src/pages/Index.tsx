@@ -68,7 +68,7 @@ const Index = () => {
     },
     {
       q: { ru: 'Сколько стоит выезд мастера?', en: 'How much does the call-out cost?', pl: 'Ile kosztuje dojazd?', uk: 'Скільки коштує виїзд майстра?' },
-      a: { ru: 'Выезд по Вроцлаву и Смольцу — бесплатный при заказе от 160 zł. В другие города минимальный заказ 220 zł, выезд включён.', en: 'Call-out within Wrocław and Smolec is free for orders from 160 PLN. In other cities the minimum order is 220 PLN with travel included.', pl: 'Dojazd we Wrocławiu i Smolcu — bezpłatny przy zamówieniu od 160 zł. W innych miastach minimalne zamówienie 220 zł z dojazdem w cenie.', uk: 'Виїзд по Вроцлаву та Смольцу — безкоштовний при замовленні від 160 zł. В інші міста мінімальне замовлення 220 zł, виїзд включено.' },
+      a: { ru: 'В базовом регионе — выезд бесплатный при заказе от 160 zł. В другие города минимальный заказ 220 zł, выезд включён.', en: 'In our base region the call-out is free for orders from 160 PLN. In other cities the minimum order is 220 PLN with travel included.', pl: 'W regionie bazowym dojazd jest bezpłatny przy zamówieniu od 160 zł. W innych miastach minimalne zamówienie 220 zł z dojazdem w cenie.', uk: 'У базовому регіоні виїзд безкоштовний при замовленні від 160 zł. В інші міста мінімальне замовлення 220 zł, виїзд включено.' },
     },
     {
       q: { ru: 'Можно ли заказать на выходные или поздно вечером?', en: 'Can I book for weekends or late evening?', pl: 'Czy można zamówić w weekend lub późnym wieczorem?', uk: 'Чи можна замовити на вихідні або пізно ввечері?' },
@@ -87,23 +87,23 @@ const Index = () => {
   const seoMeta = {
     pl: {
       title: 'MasterClean — Pranie tapicerki, dywanów i aut z dojazdem',
-      description: 'Pranie kanapy, materaca, narożnika i tapicerki samochodowej z dojazdem. Czyszczenie dywanów, ozonowanie, mycie okien. Wrocław i okolice 24/7.',
-      keywords: 'pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, czyszczenie dywanów, ozonowanie, sprzątanie mieszkań, mycie okien, czyszczenie z dojazdem, Wrocław, Opole, Poznań',
+      description: 'Pranie kanapy, materaca, narożnika i tapicerki samochodowej z dojazdem. Czyszczenie dywanów, ozonowanie, mycie okien. Cała Polska, 24/7.',
+      keywords: 'pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, czyszczenie dywanów, ozonowanie, sprzątanie mieszkań, mycie okien, czyszczenie z dojazdem, Polska, Dolny Śląsk, Opole, Poznań',
     },
     ru: {
       title: 'MasterClean — Химчистка мебели, ковров и авто с выездом',
-      description: 'Химчистка дивана, матраса, углового дивана и салона авто с выездом. Чистка ковров, озонирование, мытьё окон. Вроцлав и окрестности 24/7.',
-      keywords: 'химчистка дивана, химчистка матраса, химчистка мебели, чистка ковров, озонирование, уборка квартир, мытьё окон, выезд на дом, Вроцлав, Ополе, Познань',
+      description: 'Химчистка дивана, матраса, углового дивана и салона авто с выездом. Чистка ковров, озонирование, мытьё окон. По всей Польше, 24/7.',
+      keywords: 'химчистка дивана, химчистка матраса, химчистка мебели, чистка ковров, озонирование, уборка квартир, мытьё окон, выезд на дом, Польша, Долносленское воеводство, Ополе, Познань',
     },
     en: {
       title: 'MasterClean — Upholstery, carpet & car cleaning at home',
-      description: 'On-site sofa, mattress, corner couch and car upholstery cleaning. Carpet cleaning, ozone treatment, window washing. Wrocław and area, 24/7.',
-      keywords: 'sofa cleaning, mattress cleaning, upholstery cleaning, carpet cleaning, ozone treatment, apartment cleaning, window washing, on-site service, Wrocław, Opole, Poznań',
+      description: 'On-site sofa, mattress, corner couch and car upholstery cleaning. Carpet cleaning, ozone treatment, window washing. Across Poland, 24/7.',
+      keywords: 'sofa cleaning, mattress cleaning, upholstery cleaning, carpet cleaning, ozone treatment, apartment cleaning, window washing, on-site service, Poland, Lower Silesia, Opole, Poznań',
     },
     uk: {
       title: 'MasterClean — Хімчистка меблів, килимів та авто з виїздом',
-      description: 'Хімчистка дивана, матраца, кутового дивана та салону авто з виїздом. Чищення килимів, озонування, миття вікон. Вроцлав і околиці 24/7.',
-      keywords: 'хімчистка дивана, хімчистка матраца, хімчистка меблів, чищення килимів, озонування, прибирання квартир, миття вікон, виїзд додому, Вроцлав, Ополе, Познань',
+      description: 'Хімчистка дивана, матраца, кутового дивана та салону авто з виїздом. Чищення килимів, озонування, миття вікон. По всій Польщі, 24/7.',
+      keywords: 'хімчистка дивана, хімчистка матраца, хімчистка меблів, чищення килимів, озонування, прибирання квартир, миття вікон, виїзд додому, Польща, Долносленське воєводство, Ополе, Познань',
     },
   } as const;
   const meta = seoMeta[lang];

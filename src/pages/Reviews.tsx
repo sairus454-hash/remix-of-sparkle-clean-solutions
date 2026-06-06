@@ -229,8 +229,8 @@ const Reviews = () => {
   return <>
       <SEO
         title="Opinie o praniu tapicerki — Recenzje MasterClean"
-        description="Opinie klientów o praniu tapicerki meblowej, czyszczeniu dywanów i samochodów w MasterClean. Sprawdź recenzje i zostaw swoją opinię. Wrocław, Opole."
-        keywords="opinie MasterClean, opinie pranie tapicerki, recenzje czyszczenie mebli, opinie chemczystka mebli, opinie czyszczenie dywanów, opinie czyszczenie samochodów, opinie sprzątanie Wrocław, opinie ozonowanie, customer reviews cleaning Poland"
+        description="Opinie klientów o praniu tapicerki meblowej, czyszczeniu dywanów i samochodów w MasterClean. Sprawdź recenzje i zostaw swoją opinię. Cała Polska."
+        keywords="opinie MasterClean, opinie pranie tapicerki, recenzje czyszczenie mebli, opinie chemczystka mebli, opinie czyszczenie dywanów, opinie czyszczenie samochodów, opinie sprzątanie Polska, opinie ozonowanie, customer reviews cleaning Poland"
         canonical="/reviews"
         image="https://masterclean1885.com/og-reviews.jpg"
         breadcrumbs={[{ name: t.nav.reviews, path: '/reviews' }]}

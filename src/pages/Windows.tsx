@@ -56,8 +56,8 @@ import { useSplash } from '@/hooks/useSplash';
       {showSplash && <WindowsSplash onComplete={handleSplashComplete} />}
       <SEO
         title="Mycie okien — Profesjonalne mycie z dojazdem"
-        description="Profesjonalne mycie okien w domu i biurze z dojazdem. Mycie okien na wysokości, bez smug. Czyste okna — więcej światła. Mycie okien Wrocław, Opole, Poznań."
-        keywords="mycie okien, mycie okien profesjonalne, mycie okien z dojazdem, czyszczenie okien, mycie okien na wysokości, mycie okien bez smug, mycie okien cennik, mycie okien Wrocław, mycie okien Opole, mycie okien Poznań, mycie okien w domu, mycie okien w biurze, usługi mycia okien"
+        description="Profesjonalne mycie okien w domu i biurze z dojazdem. Mycie okien na wysokości, bez smug. Czyste okna — więcej światła. Cała Polska."
+        keywords="mycie okien, mycie okien profesjonalne, mycie okien z dojazdem, czyszczenie okien, mycie okien na wysokości, mycie okien bez smug, mycie okien cennik, mycie okien Polska, mycie okien Dolny Śląsk, mycie okien w domu, mycie okien w biurze, usługi mycia okien"
         canonical="/windows"
         image="https://masterclean1885.com/og-windows.jpg"
         breadcrumbs={[{ name: t.nav.windows, path: '/windows' }]}
@@ -66,7 +66,7 @@ import { useSplash } from '@/hooks/useSplash';
            '@type': 'Service',
            serviceType: 'Mycie okien',
            name: 'Profesjonalne mycie okien',
-           description: 'Profesjonalne mycie okien z dojazdem. Okna bez smug, mycie na wysokości. Wrocław, Opole.',
+           description: 'Profesjonalne mycie okien z dojazdem. Okna bez smug, mycie na wysokości. Cała Polska.',
            url: 'https://masterclean1885.com/windows',
            provider: {
              '@type': 'LocalBusiness',
