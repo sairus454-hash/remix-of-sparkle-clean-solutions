@@ -66,7 +66,7 @@ import { useSplash } from '@/hooks/useSplash';
            '@type': 'Service',
            serviceType: 'Mycie okien',
            name: 'Profesjonalne mycie okien',
-           description: 'Profesjonalne mycie okien z dojazdem. Okna bez smug, mycie na wysokości. Wrocław, Opole.',
+           description: 'Profesjonalne mycie okien z dojazdem. Okna bez smug, mycie na wysokości. Cała Polska.',
            url: 'https://masterclean1885.com/windows',
            provider: {
              '@type': 'LocalBusiness',
