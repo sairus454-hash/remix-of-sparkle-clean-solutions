@@ -84,33 +84,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <p className="font-serif text-base sm:text-lg font-semibold mb-3 sm:mb-4">{t.nav.contacts}</p>
             <ul className="space-y-2 sm:space-y-3">
               <li>
-                <a href={googleMapsProfileUrl} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-sm text-background/80 hover:text-background transition-colors touch-manipulation py-1">
-                  <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="leading-tight">{t.contacts.addressValue}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={googleMapsProfileUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="MasterClean 1885 Google Maps"
-                  className="group block overflow-hidden rounded-lg border border-primary/30 bg-background/10 transition-all hover:border-primary/60 hover:bg-background/15"
-                >
-                  <div className="relative h-24 w-full overflow-hidden bg-muted/20">
-                    <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(hsl(var(--background)/0.14)_1px,transparent_1px),linear-gradient(90deg,hsl(var(--background)/0.14)_1px,transparent_1px)] [background-size:18px_18px]" />
-                    <div className="absolute inset-x-0 top-1/2 h-3 -translate-y-1/2 bg-primary/25" />
-                    <div className="absolute inset-y-0 left-1/2 w-4 -translate-x-1/2 bg-fresh/25" />
-                    <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-1">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow transition-transform group-hover:scale-110">
-                        <MapPin className="h-5 w-5" />
-                      </span>
-                      <span className="rounded-full bg-foreground/80 px-2 py-0.5 text-[10px] font-semibold text-background">MasterClean 1885</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
+
                 <a href="tel:+48575211401" onClick={() => import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('footer'))} className="flex items-center gap-2 text-sm text-background/80 hover:text-background transition-colors touch-manipulation py-1">
                   <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                   {t.contacts.phoneValue}
