@@ -68,7 +68,7 @@ const Index = () => {
     },
     {
       q: { ru: 'Сколько стоит выезд мастера?', en: 'How much does the call-out cost?', pl: 'Ile kosztuje dojazd?', uk: 'Скільки коштує виїзд майстра?' },
-      a: { ru: 'Выезд по Вроцлаву и Смольцу — бесплатный при заказе от 160 zł. В другие города минимальный заказ 220 zł, выезд включён.', en: 'Call-out within Wrocław and Smolec is free for orders from 160 PLN. In other cities the minimum order is 220 PLN with travel included.', pl: 'Dojazd we Wrocławiu i Smolcu — bezpłatny przy zamówieniu od 160 zł. W innych miastach minimalne zamówienie 220 zł z dojazdem w cenie.', uk: 'Виїзд по Вроцлаву та Смольцу — безкоштовний при замовленні від 160 zł. В інші міста мінімальне замовлення 220 zł, виїзд включено.' },
+      a: { ru: 'В базовом регионе — выезд бесплатный при заказе от 160 zł. В другие города минимальный заказ 220 zł, выезд включён.', en: 'In our base region the call-out is free for orders from 160 PLN. In other cities the minimum order is 220 PLN with travel included.', pl: 'W regionie bazowym dojazd jest bezpłatny przy zamówieniu od 160 zł. W innych miastach minimalne zamówienie 220 zł z dojazdem w cenie.', uk: 'У базовому регіоні виїзд безкоштовний при замовленні від 160 zł. В інші міста мінімальне замовлення 220 zł, виїзд включено.' },
     },
     {
       q: { ru: 'Можно ли заказать на выходные или поздно вечером?', en: 'Can I book for weekends or late evening?', pl: 'Czy można zamówić w weekend lub późnym wieczorem?', uk: 'Чи можна замовити на вихідні або пізно ввечері?' },
