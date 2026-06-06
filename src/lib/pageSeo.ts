@@ -284,7 +284,7 @@ export const FAQS: Record<PageKey, Record<Lang, Faq[]>> = {
     en: [
       { q: 'How fast do you reply to enquiries?', a: 'On average within a few minutes between 8 a.m. and 10 p.m., at most within 1 hour.' },
       { q: 'Do you work on weekends and holidays?', a: 'Yes, we work 7 days a week, including weekends and holidays — no surcharge.' },
-      { q: 'Which cities do you serve?', a: 'Wrocław and Smolec with no surcharge, plus Opole, Poznań, Zielona Góra, Legnica, Kalisz and 30+ more cities.' },
+      { q: 'Which cities do you serve?', a: 'We work across Poland — Opole, Poznań, Zielona Góra, Legnica, Kalisz, Lower Silesia and 30+ more cities.' },
       { q: 'What is the fastest way to book?', a: 'The fastest way is via WhatsApp or phone +48 575 211 401. We confirm within minutes.' },
       { q: 'Can I get a quote online?', a: 'Yes, use the calculator on the pricing page or send photos via WhatsApp — we send the quote the same day.' },
     ],
