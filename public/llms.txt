@@ -1,6 +1,6 @@
 # MasterClean — Profesjonalne usługi sprzątania i chemczystki
 
-> MasterClean to profesjonalna firma sprzątająca z siedzibą we Wrocławiu, oferująca chemczystkę mebli, tapicerki samochodowej, czyszczenie dywanów, mycie okien, ozonowanie pomieszczeń oraz usługi typu "złoty rączka". Działamy na terenie całej Polski.
+> MasterClean to profesjonalna firma sprzątająca działająca na terenie całej Polski, oferująca chemczystkę mebli, tapicerki samochodowej, czyszczenie dywanów, mycie okien, ozonowanie pomieszczeń oraz usługi typu "złoty rączka". Działamy na terenie całej Polski.
 
 ## Strona główna
 - [Strona główna](https://masterclean1885.com/)
@@ -25,7 +25,7 @@
 ## Kontakt
 - Telefon: +48 883 700 681
 - Strona: https://masterclean1885.com
-- Lokalizacja: Wrocław, Polska (obsługa na terenie całej Polski)
+- Lokalizacja: Polska — działamy na terenie całego kraju (Dolny Śląsk, Wielkopolska, Opolskie, Lubuskie i inne regiony)
 
 ## Języki
 Strona dostępna w 4 językach: polski, angielski, ukraiński, rosyjski.

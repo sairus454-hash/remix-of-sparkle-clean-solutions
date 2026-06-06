@@ -80,8 +80,8 @@ const Impregnation = () => {
       {showSplash && <ImpregnationSplash onComplete={handleSplashComplete} />}
       <SEO
         title="Impregnacja mebli i tkanin — Ochrona tkanin"
-        description="Profesjonalna impregnacja mebli, dywanów i tkanin. Ochrona przed wodą, brudem i plamami. Powłoka hydrofobowa przedłuża żywotność tapicerki. Opole, Wrocław."
-        keywords="impregnacja tkanin, impregnacja mebli, impregnacja dywanów, impregnacja kanapy, ochrona przed plamami, powłoka hydrofobowa, impregnacja tapicerki, impregnacja po praniu, Wrocław, Opole, Poznań"
+        description="Profesjonalna impregnacja mebli, dywanów i tkanin. Ochrona przed wodą, brudem i plamami. Powłoka hydrofobowa przedłuża żywotność tapicerki. Cała Polska."
+        keywords="impregnacja tkanin, impregnacja mebli, impregnacja dywanów, impregnacja kanapy, ochrona przed plamami, powłoka hydrofobowa, impregnacja tapicerki, impregnacja po praniu, Polska, Dolny Śląsk, Opole, Poznań"
         canonical="/impregnation"
         image="https://masterclean1885.com/og-impregnation.jpg"
         breadcrumbs={[{ name: t.impregnation.title, path: '/impregnation' }]}

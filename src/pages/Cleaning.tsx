@@ -336,9 +336,9 @@ const Cleaning = () => {
   return (
     <>
       <SEO
-        title="Sprzątanie mieszkań i domów Wrocław"
-        description="Sprzątanie mieszkań, domów i biur z dojazdem. Generalne, standardowe i po remoncie. Eko środki. Wrocław, Opole. Oblicz koszt online."
-        keywords="sprzątanie mieszkań, sprzątanie domów, sprzątanie biur, sprzątanie generalne, sprzątanie standardowe, sprzątanie po remoncie, firma sprzątająca, usługi sprzątania, sprzątanie z dojazdem, sprzątanie Wrocław, sprzątanie Opole, sprzątanie po budowie, sprzątanie przed wynajmem, house cleaning Poland"
+        title="Sprzątanie mieszkań i domów — cała Polska"
+        description="Sprzątanie mieszkań, domów i biur z dojazdem. Generalne, standardowe i po remoncie. Eko środki. Cała Polska. Oblicz koszt online."
+        keywords="sprzątanie mieszkań, sprzątanie domów, sprzątanie biur, sprzątanie generalne, sprzątanie standardowe, sprzątanie po remoncie, firma sprzątająca, usługi sprzątania, sprzątanie z dojazdem, sprzątanie Polska, sprzątanie Dolny Śląsk, sprzątanie Opole, sprzątanie po budowie, sprzątanie przed wynajmem, house cleaning Poland"
         canonical="/cleaning"
         image="https://masterclean1885.com/og-cleaning.jpg"
         breadcrumbs={[{ name: t.nav.cleaning, path: '/cleaning' }]}
