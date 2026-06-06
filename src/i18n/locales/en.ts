@@ -314,7 +314,7 @@ const enTranslations = {
       truckBannerCta: 'Order cabin dry cleaning',
       camperSeoTitle: 'Camper Van & Caravan Upholstery Cleaning',
       camperSeoP1: 'Your camper is a second home on wheels — you sleep, eat and relax in it after long drives. Fabrics quickly soak up damp odors, road dust and food residue. Professional camper upholstery cleaning restores freshness to seats, mattresses, curtains and carpet without damaging delicate materials.',
-      camperSeoP2: 'We work with a low-pressure extractor and neutral detergents, so the interior dries in just a few hours and is ready for your next trip. We come to your address or directly to the campsite in Wrocław and surrounding areas. Full camper or caravan cleaning costs 400–1000 PLN — depending on size, number of berths and dirt level.',
+      camperSeoP2: 'We work with a low-pressure extractor and neutral detergents, so the interior dries in just a few hours and is ready for your next trip. We come to your address or directly to the campsite in the base region. Full camper or caravan cleaning costs 400–1000 PLN — depending on size, number of berths and dirt level.',
       camperSeoImageAlt: 'Clean camper van interior after upholstery cleaning',
       heroAlt1: 'Car seat cleaning',
       heroAlt2: 'Steam interior cleaning',
