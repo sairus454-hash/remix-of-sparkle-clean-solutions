@@ -263,7 +263,7 @@ export const FAQS: Record<PageKey, Record<Lang, Faq[]>> = {
     pl: [
       { q: 'Jak szybko odpowiadacie na zapytanie?', a: 'Średni czas odpowiedzi to kilka minut w godzinach 8–22, maksymalnie do 1 godziny.' },
       { q: 'Czy pracujecie w weekendy i święta?', a: 'Tak, pracujemy 7 dni w tygodniu, również w weekendy i święta — bez dopłat.' },
-      { q: 'W jakich miastach świadczycie usługi?', a: 'Wrocław i Smolec bez dopłat, oraz Opole, Poznań, Zielona Góra, Legnica, Kalisz i 30+ innych miast.' },
+      { q: 'W jakich miastach świadczycie usługi?', a: 'Działamy na terenie całej Polski — Opole, Poznań, Zielona Góra, Legnica, Kalisz, Dolny Śląsk i 30+ innych miast.' },
       { q: 'Jak najszybciej zarezerwować termin?', a: 'Najszybciej przez WhatsApp lub telefon +48 575 211 401. Termin potwierdzamy w ciągu kilku minut.' },
       { q: 'Czy mogę zamówić wycenę online?', a: 'Tak, użyj kalkulatora na stronie cennika lub wyślij zdjęcia mebli przez WhatsApp — wycenę otrzymasz tego samego dnia.' },
     ],
