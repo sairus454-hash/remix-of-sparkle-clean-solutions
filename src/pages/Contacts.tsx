@@ -41,7 +41,6 @@ const Contacts = () => {
   }, [location.state]);
 
   const contactInfo = [
-    { icon: MapPin, label: t.contacts.address, value: t.contacts.addressValue, isHours: false },
     { icon: Phone, label: t.contacts.phone, value: t.contacts.phoneValue, isHours: false },
     { icon: Mail, label: t.contacts.email, value: t.contacts.emailValue, isHours: false },
     { icon: Clock, label: t.contacts.hours, value: t.contacts.hoursValue, isHours: true },
@@ -173,98 +172,8 @@ const Contacts = () => {
                   );
                 })}
               </div>
-              
-              {/* Google Maps Preview — clickable image */}
-              <div className="mt-8">
-                <CircularRevealCard index={4}>
-                  <a
-                    href="https://www.google.com/maps/place/MasterClean+1885+Pranie+tapicerki+i+ozonowanie,+zlota+rączka/@51.0984969,16.949163,17z/data=!3m1!4b1!4m6!3m5!1s0x23a6312acab4ccd1:0x151f5acde8136ace!8m2!3d51.0984969!4d16.949163!16s%2Fg%2F11xm28yrtl!18m1!1e1?entry=ttu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={language === 'pl' ? 'Otwórz w Google Maps' : language === 'en' ? 'Open in Google Maps' : language === 'uk' ? 'Відкрити в Google Maps' : 'Открыть в Google Maps'}
-                    className="group relative block rounded-2xl overflow-hidden shadow-glow border border-border hover:border-primary/50 transition-all"
-                  >
-                    <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-muted">
-                      <img
-                        src={contactsMapPreview}
-                        alt="MasterClean 1885 — Wrocław, 54-614, ul. Trawowa 14 na mapie"
-                        width={1280}
-                        height={800}
-                        loading="lazy"
-                        decoding="async"
-                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      {/* Map pin marker over image */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full pointer-events-none">
-                        <div className="relative">
-                          <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-glow ring-4 ring-background" style={{ animation: 'pulse 2s ease-in-out infinite' }}>
-                            <MapPin className="w-6 h-6 text-primary-foreground" />
-                          </div>
-                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rotate-45" />
-                        </div>
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-90 group-hover:opacity-100 transition-opacity" />
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 flex items-center justify-between gap-2 text-background">
-                        <div className="flex items-center gap-2 min-w-0">
-                          <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center flex-shrink-0 shadow-glow">
-                            <MapPin className="w-5 h-5 text-primary-foreground" />
-                          </div>
-                          <div className="min-w-0">
-                            <p className="font-semibold text-sm sm:text-base truncate">MasterClean 1885</p>
-                            <p className="text-xs sm:text-sm opacity-90 truncate">
-                              {language === 'pl' ? 'Wrocław — kliknij, aby otworzyć trasę' : language === 'en' ? 'Wrocław — tap to open directions' : language === 'uk' ? 'Вроцлав — натисніть, щоб відкрити маршрут' : 'Вроцлав — нажмите для маршрута'}
-                            </p>
-                          </div>
-                        </div>
-                        <ExternalLink className="w-5 h-5 flex-shrink-0 opacity-90 group-hover:opacity-100 transition-transform group-hover:translate-x-0.5" />
-                      </div>
-                    </div>
-                  </a>
-                </CircularRevealCard>
-
-                {/* Schema.org LocalBusiness microdata (visible address block) */}
-                <div
-                  itemScope
-                  itemType="https://schema.org/LocalBusiness"
-                  className="mt-4 p-4 rounded-xl bg-gradient-card border border-border text-sm"
-                >
-                  <p className="font-semibold text-foreground mb-2" itemProp="name">
-                    MasterClean 1885
-                  </p>
-                  <p
-                    itemProp="address"
-                    itemScope
-                    itemType="https://schema.org/PostalAddress"
-                    className="text-muted-foreground leading-relaxed"
-                  >
-                    <span itemProp="streetAddress">ul. Trawowa 14</span>,{' '}
-                    <span itemProp="postalCode">54-614</span>{' '}
-                    <span itemProp="addressLocality">Wrocław</span>,{' '}
-                    <span itemProp="addressRegion">dolnośląskie</span>,{' '}
-                    <span itemProp="addressCountry">Polska</span>
-                  </p>
-                  <p className="text-muted-foreground mt-2">
-                    <span className="text-foreground font-medium">
-                      {language === 'pl' ? 'Telefon' : language === 'en' ? 'Phone' : language === 'uk' ? 'Телефон' : 'Телефон'}:
-                    </span>{' '}
-                    <a href="tel:+48575211401" itemProp="telephone" className="text-primary hover:underline">
-                      +48 575 211 401
-                    </a>
-                  </p>
-                  <p className="text-muted-foreground">
-                    <span className="text-foreground font-medium">Email:</span>{' '}
-                    <a href="mailto:sairus454@gmail.com" itemProp="email" className="text-primary hover:underline">
-                      sairus454@gmail.com
-                    </a>
-                  </p>
-                  <meta itemProp="url" content="https://masterclean1885.com/contacts" />
-                  <span itemProp="geo" itemScope itemType="https://schema.org/GeoCoordinates">
-                    <meta itemProp="latitude" content="51.0984969" />
-                    <meta itemProp="longitude" content="16.949163" />
-                  </span>
-                </div>
-              </div>
             </div>
+
 
             {/* Form */}
             <CircularRevealCard index={0}>
