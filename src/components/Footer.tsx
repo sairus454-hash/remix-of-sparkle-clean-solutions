@@ -114,20 +114,6 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
             <meta itemProp="url" content="https://masterclean1885.com" />
             <p>© {new Date().getFullYear()} <span>MasterClean</span>. {t.footer.rights}</p>
             <p className="mt-1">
-              <span className="font-semibold">{language === 'pl' ? 'Adres' : language === 'en' ? 'Address' : 'Адрес'}:</span>{' '}
-              <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                <span itemProp="streetAddress">ul. Trawowa 14</span>,{' '}
-                <span itemProp="postalCode">54-614</span>{' '}
-                <span itemProp="addressLocality">Wrocław</span>,{' '}
-                <span itemProp="addressRegion">dolnośląskie</span>,{' '}
-                <span itemProp="addressCountry">PL</span>
-              </span>
-            </p>
-            <span itemProp="geo" itemScope itemType="https://schema.org/GeoCoordinates">
-              <meta itemProp="latitude" content="51.0984969" />
-              <meta itemProp="longitude" content="16.949163" />
-            </span>
-            <p className="mt-1">
               <span className="font-semibold">{language === 'pl' ? 'Telefon' : language === 'en' ? 'Phone' : 'Телефон'}:</span>{' '}
               <a href="tel:+48575211401" itemProp="telephone" content="+48575211401" className="hover:text-background">+48 575 211 401</a>
               {' · '}
