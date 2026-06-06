@@ -255,7 +255,7 @@ export const FAQS: Record<PageKey, Record<Lang, Faq[]>> = {
       { q: 'Are the listed prices final?', a: 'Listed prices are starting prices. The final amount depends on the condition and size — we confirm the quote before starting.' },
       { q: 'Do you issue VAT invoices?', a: 'Yes, on request we issue VAT invoices for both private clients and companies.' },
       { q: 'What payment methods do you accept?', a: 'Cash, BLIK, bank transfer, card and company transfer.' },
-      { q: 'Are there travel surcharges?', a: 'Wrocław and Smolec — no surcharge. Other cities: +10% surcharge (gardening +5%) and 220 PLN minimum order.' },
+      { q: 'Are there travel surcharges?', a: 'In our base region (Lower Silesia, near the office) — no surcharge. Other cities: +10% surcharge (gardening +5%) and 220 PLN minimum order.' },
       { q: 'Do you offer discounts on larger orders?', a: 'Yes. 4+ items: −10%. 6+ items: −15%. Seasonal promos — see the Promotions section.' },
     ],
   },
