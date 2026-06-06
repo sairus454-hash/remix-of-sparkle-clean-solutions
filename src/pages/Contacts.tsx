@@ -41,7 +41,6 @@ const Contacts = () => {
   }, [location.state]);
 
   const contactInfo = [
-    { icon: MapPin, label: t.contacts.address, value: t.contacts.addressValue, isHours: false },
     { icon: Phone, label: t.contacts.phone, value: t.contacts.phoneValue, isHours: false },
     { icon: Mail, label: t.contacts.email, value: t.contacts.emailValue, isHours: false },
     { icon: Clock, label: t.contacts.hours, value: t.contacts.hoursValue, isHours: true },
