@@ -234,7 +234,7 @@ export const FAQS: Record<PageKey, Record<Lang, Faq[]>> = {
       { q: 'Czy ceny w cenniku są ostateczne?', a: 'Ceny w cenniku to ceny startowe. Ostateczna kwota zależy od stanu i metrażu — wycenę potwierdzamy przed rozpoczęciem.' },
       { q: 'Czy wystawiacie fakturę VAT?', a: 'Tak, na życzenie wystawiamy fakturę VAT zarówno klientom prywatnym, jak i firmom.' },
       { q: 'Jakie są formy płatności?', a: 'Akceptujemy gotówkę, BLIK, przelew, kartę i przelew na konto firmowe.' },
-      { q: 'Czy są dopłaty za dojazd?', a: 'Wrocław i Smolec — bez dopłat. Inne miasta: dopłata 10% (ogród 5%) i minimum zamówienia 220 zł.' },
+      { q: 'Czy są dopłaty za dojazd?', a: 'W regionie bazowym (Dolny Śląsk, okolice siedziby) — bez dopłat. Inne miasta: dopłata 10% (ogród 5%) i minimum zamówienia 220 zł.' },
       { q: 'Czy są rabaty na większe zamówienia?', a: 'Tak. 4+ pozycje: 10% rabatu. 6+ pozycji: 15% rabatu. Promocje sezonowe — patrz sekcja Promocje.' },
     ],
     ru: [
