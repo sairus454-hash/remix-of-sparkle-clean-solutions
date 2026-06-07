@@ -496,7 +496,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               <ShoppingCart className="w-5 h-5 text-fresh" />
               <span className="font-semibold text-foreground">{t.form.orderFromCalculator}</span>
             </div>
-            <Button type="button" variant="ghost" size="sm" onClick={clearCalculatorData} className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive">
+            <Button type="button" variant="ghost" size="sm" onClick={clearCalculatorData} className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive" aria-label="Close">
               <X className="w-4 h-4" />
             </Button>
           </div>
