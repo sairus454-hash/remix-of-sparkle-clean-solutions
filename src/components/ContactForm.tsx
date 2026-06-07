@@ -496,7 +496,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               <ShoppingCart className="w-5 h-5 text-fresh" />
               <span className="font-semibold text-foreground">{t.form.orderFromCalculator}</span>
             </div>
-            <Button type="button" variant="ghost" size="sm" onClick={clearCalculatorData} className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive">
+            <Button type="button" variant="ghost" size="sm" onClick={clearCalculatorData} className="h-8 w-8 p-0 text-muted-foreground hover:text-destructive" aria-label="Close">
               <X className="w-4 h-4" />
             </Button>
           </div>
@@ -518,7 +518,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
                 <span className="font-medium text-foreground tabular-nums w-16 text-right">
                   {item.price * item.quantity} {t.prices.currency}
                 </span>
-                <Button type="button" variant="ghost" size="sm" onClick={() => removeCalculatorItem(item.id)} className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive opacity-60 hover:opacity-100 transition-opacity">
+                <Button type="button" variant="ghost" size="sm" onClick={() => removeCalculatorItem(item.id)} className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive opacity-60 hover:opacity-100 transition-opacity" aria-label="Remove item">
                   <X className="w-3.5 h-3.5" />
                 </Button>
               </div>)}
