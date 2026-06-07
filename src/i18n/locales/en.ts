@@ -52,7 +52,7 @@ const enTranslations = {
       aiService: 'Home Services with AI Consultant',
       aiServiceDesc: 'Smart assistant 24/7 for cost calculation and order placement',
       bannerTag: '⚡ This has never happened before!',
-      bannerTitle: '🎉 Furniture & mattress drying\nuntil the end of spring —',
+      bannerTitle: '🎉 Furniture & mattress drying —',
       bannerFree: 'FREE!!!',
       bannerSub: 'Take advantage of the offer • MasterClean',
       bannerCta: 'Order now',
