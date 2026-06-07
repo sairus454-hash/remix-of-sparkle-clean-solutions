@@ -73,7 +73,7 @@ const plTranslations = {
       saveUpTo: 'Oszczędź do 22% na naszych usługach!',
       services4plusBadge: 'PROMOCJA',
       services4plus: 'Zamów sprzątanie + dowolną drugą usługę i otrzymaj 22% rabatu (minimalne zamówienie — 350 zł)',
-      dryingFreeSpring: 'Suszenie mebli i materacy do końca wiosny — GRATIS!!!',
+      dryingFreeSpring: 'Suszenie mebli i materacy — GRATIS!!!',
       services6plus: 'Przyprowadź sąsiada — oboje otrzymujecie 20% rabatu na całe zamówienie',
       formFurnitureBadge: '-10% FORMULARZ',
       formFurnitureTitle: 'Pranie mebli przez formularz — rabat 10%',
