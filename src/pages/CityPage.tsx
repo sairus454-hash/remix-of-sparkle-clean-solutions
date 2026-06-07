@@ -587,7 +587,7 @@ const CityPage = () => {
                       {language === 'pl' ? 'Suszenie mebli — GRATIS!' : language === 'en' ? 'Furniture drying — FREE!' : language === 'uk' ? 'Сушка меблів — БЕЗКОШТОВНО!' : 'Сушка мебели — БЕСПЛАТНО!'}
                     </p>
                     <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                      {language === 'pl' ? 'Do każdego zamówienia dołączamy profesjonalne suszenie — bezpłatnie do końca wiosny.' : language === 'en' ? 'Professional drying included with every order — free until the end of spring.' : language === 'uk' ? 'До кожного замовлення додаємо професійне сушіння — безкоштовно до кінця весни.' : 'К каждому заказу добавляем профессиональную сушку — бесплатно до конца весны.'}
+                      {language === 'pl' ? 'Do każdego zamówienia dołączamy profesjonalne suszenie — bezpłatnie.' : language === 'en' ? 'Professional drying included with every order — free.' : language === 'uk' ? 'До кожного замовлення додаємо професійне сушіння — безкоштовно.' : 'К каждому заказу добавляем профессиональную сушку — бесплатно.'}
                     </p>
                   </div>
                 </div>
