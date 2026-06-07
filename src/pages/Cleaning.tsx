@@ -289,7 +289,7 @@ const Cleaning = () => {
     { id: 'woodFloorCleaning', name: t.prices?.items?.woodFloorCleaning || (language === 'pl' ? 'Czyszczenie podłogi drewnianej' : language === 'en' ? 'Wood floor cleaning' : language === 'uk' ? "Чистка дерев'яної підлоги" : 'Чистка деревянного пола'), price: 20, image: calcWoodFloorCleaning, unit: 'm²' },
     // Other (non-highlighted) services
     { id: 'impregnation', name: language === 'pl' ? 'Impregnacja mebli na 1 rok' : language === 'en' ? 'Furniture impregnation 1 year' : 'Импрегнация мебели на 1 год', price: 80, image: calcImpregnation },
-    { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно до конца весны' },
+    { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно' },
     { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 30, image: calcCarpetPickup, unit: 'm²' },
     { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny' : language === 'en' ? 'Carpet covering impregnation' : 'Импрегнация коврового покрытия'), price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
     { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
