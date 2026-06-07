@@ -52,7 +52,7 @@ const ruTranslations = {
       aiService: 'Сервис бытовых услуг с AI консультантом',
       aiServiceDesc: 'Умный помощник 24/7 для расчёта стоимости и оформления заказа',
       bannerTag: '⚡ Такого ещё не было!',
-      bannerTitle: '🎉 Сушка мебели и матрасов\nдо конца весны —',
+      bannerTitle: '🎉 Сушка мебели и матрасов —',
       bannerFree: 'БЕСПЛАТНО!!!',
       bannerSub: 'Воспользуйтесь акцией • MasterClean',
       bannerCta: 'Заказать сейчас',
