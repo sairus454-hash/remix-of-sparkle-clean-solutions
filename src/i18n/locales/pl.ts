@@ -52,7 +52,7 @@ const plTranslations = {
       aiService: 'Usługi prania tapicerki z konsultantem AI',
       aiServiceDesc: 'Inteligentny asystent 24/7 do wyceny prania tapicerki i składania zamówień',
       bannerTag: '⚡ Takiego jeszcze nie było!',
-      bannerTitle: 'Suszenie mebli i materacy\ndo końca wiosny —',
+      bannerTitle: 'Suszenie mebli i materacy —',
       bannerFree: 'GRATIS!!!',
       bannerSub: 'Skorzystaj z promocji • MasterClean',
       bannerCta: 'Zamów teraz',
