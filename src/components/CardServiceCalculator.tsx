@@ -155,7 +155,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
     switch (id) {
       case 'carpetFloorMedium': return { default: 30, min: 20, max: 50, step: 1 };
       case 'carpetFloorLarge': return { default: 80, min: 50, max: 300, step: 5 };
-      case 'tileCleaning': return { default: 20, min: 5, max: 200, step: 1 };
+      case 'tileCleaning': return { default: 15, min: 5, max: 200, step: 1 };
       case 'balcony':
       case 'extra-balcony': return { default: 5, min: 2, max: 30, step: 1 };
       case 'glassPanels': return { default: 5, min: 1, max: 100, step: 1 };
