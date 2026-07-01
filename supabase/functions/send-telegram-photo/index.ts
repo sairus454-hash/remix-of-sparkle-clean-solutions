@@ -84,15 +84,47 @@ serve(async (req) => {
     }
 
     // Decode base64 to binary
-    const binaryString = atob(imageBase64);
+    let binaryString: string;
+    try {
+      binaryString = atob(imageBase64);
+    } catch {
+      return new Response(
+        JSON.stringify({ error: 'Invalid base64 payload' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
     const bytes = new Uint8Array(binaryString.length);
     for (let i = 0; i < binaryString.length; i++) {
       bytes[i] = binaryString.charCodeAt(i);
     }
 
+    // Validate file magic bytes to ensure it's a real image
+    const detectMime = (b: Uint8Array): string | null => {
+      if (b.length >= 3 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return 'image/jpeg';
+      if (b.length >= 8 && b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47 && b[4] === 0x0d && b[5] === 0x0a && b[6] === 0x1a && b[7] === 0x0a) return 'image/png';
+      if (b.length >= 12 && b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46 && b[8] === 0x57 && b[9] === 0x45 && b[10] === 0x42 && b[11] === 0x50) return 'image/webp';
+      if (b.length >= 6 && b[0] === 0x47 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x38 && (b[4] === 0x37 || b[4] === 0x39) && b[5] === 0x61) return 'image/gif';
+      return null;
+    };
+
+    const detectedMime = detectMime(bytes);
+    if (!detectedMime) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid image file. Only JPEG, PNG, WebP, and GIF are allowed.' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const allowedExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
+    const lowerName = fileName.toLowerCase();
+    const hasAllowedExt = allowedExtensions.some((ext) => lowerName.endsWith(ext));
+    const safeFileName = hasAllowedExt
+      ? fileName
+      : `photo.${detectedMime.split('/')[1] === 'jpeg' ? 'jpg' : detectedMime.split('/')[1]}`;
+
     const formData = new FormData();
     formData.append('chat_id', TELEGRAM_CHAT_ID);
-    formData.append('photo', new Blob([bytes], { type: 'image/jpeg' }), fileName);
+    formData.append('photo', new Blob([bytes], { type: detectedMime }), safeFileName);
     if (caption) {
       formData.append('caption', caption);
     }
