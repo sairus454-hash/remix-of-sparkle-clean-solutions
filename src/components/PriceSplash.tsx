@@ -159,8 +159,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
               key={i}
               className="w-2 h-2 bg-white rounded-full"
               style={{
-                animation: 'dotPulse 0.6s ease-in-out infinite',
-                animationDelay: `${i * 0.15}s`,
+                animation: `dotPulse 0.6s ease-in-out ${i * 0.15}s infinite`,
               }}
             />
           ))}
