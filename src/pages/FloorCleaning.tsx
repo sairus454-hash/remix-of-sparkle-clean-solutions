@@ -58,8 +58,8 @@ const FloorCleaning = () => {
     { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Czyszczenie wykładziny (50+ m²)', price: 7, priceText: '7-10 zł', unit: 'm²', image: imgCarpetLarge },
     { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || 'Pranie dywanów z odbiorem', price: 30, unit: 'm²', image: imgCarpetPickup },
     { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || 'Impregnacja dywanu', price: 5, unit: 'm²', image: imgCarpetImpregnation },
-    { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Czyszczenie płytek', price: 20, unit: 'm²', image: imgTileCleaning },
-    { id: 'woodFloorCleaning', name: t.prices?.items?.woodFloorCleaning || 'Czyszczenie podłogi drewnianej', price: 20, unit: 'm²', image: imgWoodFloorCleaning },
+    { id: 'tileCleaning', name: t.prices?.items?.tileCleaning || 'Czyszczenie płytek', price: 15, unit: 'm²', image: imgTileCleaning },
+    { id: 'woodFloorCleaning', name: t.prices?.items?.woodFloorCleaning || 'Czyszczenie podłogi drewnianej', price: 15, unit: 'm²', image: imgWoodFloorCleaning },
   ];
 
   const handleSendToForm = (calcItems: CalculatorItem[], total: number) => {
