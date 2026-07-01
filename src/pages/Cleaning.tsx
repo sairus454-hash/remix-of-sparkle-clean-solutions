@@ -252,7 +252,7 @@ const Cleaning = () => {
     { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : 'Глажка', price: cleaningType === 'general' ? 60 : 50, image: calcExtraIroning, unit: 'h' },
     { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : 'Убрать лоток для животных', price: cleaningType === 'general' ? 15 : 10, image: calcExtraPetLitter },
     { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : 'Убрать в шкафу', price: cleaningType === 'general' ? 35 : 30, image: calcExtraCloset },
-    { id: 'tiles', name: language === 'pl' ? 'Czyszczenie płytek' : language === 'en' ? 'Tile cleaning' : language === 'uk' ? 'Чистка плитки' : 'Чистка плитки', price: cleaningType === 'general' ? 12 : 10, image: calcExtraTiles, unit: 'm²' },
+    { id: 'tiles', name: language === 'pl' ? 'Czyszczenie płytek' : language === 'en' ? 'Tile cleaning' : language === 'uk' ? 'Чистка плитки' : 'Чистка плитки', price: 15, image: calcExtraTiles, unit: 'm²' },
   ];
 
   const furnitureItems = [
@@ -286,7 +286,7 @@ const Cleaning = () => {
     { id: 'carpetFloorMedium', name: t.prices?.items?.carpetFloorMedium || 'Чистка ковролина (20-50 м²)', price: 10, image: calcCarpetMedium, unit: 'm²' },
     { id: 'carpetFloorLarge', name: t.prices?.items?.carpetFloorLarge || 'Чистка ковролина (50+ м²)', price: 7, image: calcCarpetLarge, unit: 'm²', priceText: '7-10 zł' },
     { id: 'carpetImpregnation', name: t.prices?.items?.carpetImpregnation || (language === 'pl' ? 'Impregnacja dywanu' : language === 'en' ? 'Carpet impregnation' : 'Импрегнация ковра'), price: 5, image: calcCarpetImpregnation, unit: 'm²' },
-    { id: 'woodFloorCleaning', name: t.prices?.items?.woodFloorCleaning || (language === 'pl' ? 'Czyszczenie podłogi drewnianej' : language === 'en' ? 'Wood floor cleaning' : language === 'uk' ? "Чистка дерев'яної підлоги" : 'Чистка деревянного пола'), price: 20, image: calcWoodFloorCleaning, unit: 'm²' },
+    { id: 'woodFloorCleaning', name: t.prices?.items?.woodFloorCleaning || (language === 'pl' ? 'Czyszczenie podłogi drewnianej' : language === 'en' ? 'Wood floor cleaning' : language === 'uk' ? "Чистка дерев'яної підлоги" : 'Чистка деревянного пола'), price: 15, image: calcWoodFloorCleaning, unit: 'm²' },
     // Other (non-highlighted) services
     { id: 'impregnation', name: language === 'pl' ? 'Impregnacja mebli na 1 rok' : language === 'en' ? 'Furniture impregnation 1 year' : 'Импрегнация мебели на 1 год', price: 80, image: calcImpregnation },
     { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно' },
