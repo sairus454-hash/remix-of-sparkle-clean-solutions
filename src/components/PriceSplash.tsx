@@ -40,8 +40,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
             style={{
               left: `${5 + i * 6.5}%`,
               top: '-50px',
-              animation: `coinFall ${1 + Math.random() * 0.5}s ease-in forwards`,
-              animationDelay: `${i * 0.05}s`,
+              animation: `coinFall ${1 + Math.random() * 0.5}s ease-in ${i * 0.05}s forwards`,
             }}
           >
             <div 
@@ -72,8 +71,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
                 left: `calc(50% + ${positions[i].x}px)`,
                 top: `calc(50% + ${positions[i].y}px)`,
                 transform: 'translate(-50%, -50%)',
-                animation: `badgePop 0.4s ease-out forwards, badgeFloat 2s ease-in-out infinite`,
-                animationDelay: `${i * 0.1}s, ${i * 0.1}s`,
+                animation: `badgePop 0.4s ease-out ${i * 0.1}s forwards, badgeFloat 2s ease-in-out ${i * 0.1}s infinite`,
                 opacity: 0,
               }}
             >
@@ -141,8 +139,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
             style={{
               left: `calc(50% + ${Math.cos(i * 45 * Math.PI / 180) * 100}px)`,
               top: `calc(50% + ${Math.sin(i * 45 * Math.PI / 180) * 100}px)`,
-              animation: `sparkle 0.8s ease-out infinite`,
-              animationDelay: `${i * 0.1}s`,
+              animation: `sparkle 0.8s ease-out ${i * 0.1}s infinite`,
             }}
           />
         ))}
@@ -162,8 +159,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
               key={i}
               className="w-2 h-2 bg-white rounded-full"
               style={{
-                animation: 'dotPulse 0.6s ease-in-out infinite',
-                animationDelay: `${i * 0.15}s`,
+                animation: `dotPulse 0.6s ease-in-out ${i * 0.15}s infinite`,
               }}
             />
           ))}

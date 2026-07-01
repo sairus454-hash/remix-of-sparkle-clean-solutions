@@ -56,7 +56,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
           width={480}
           height={720}
           loading="eager"
-          fetchPriority="high"
+          {...({ fetchpriority: 'high' } as any)}
           decoding="sync"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -70,7 +70,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
               src={effectivePoster}
               alt=""
               loading="eager"
-              fetchPriority="high"
+              {...({ fetchpriority: 'high' } as any)}
               decoding="sync"
               className="absolute inset-0 w-full h-full object-cover"
             />
