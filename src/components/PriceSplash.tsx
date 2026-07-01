@@ -71,8 +71,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
                 left: `calc(50% + ${positions[i].x}px)`,
                 top: `calc(50% + ${positions[i].y}px)`,
                 transform: 'translate(-50%, -50%)',
-                animation: `badgePop 0.4s ease-out forwards, badgeFloat 2s ease-in-out infinite`,
-                animationDelay: `${i * 0.1}s, ${i * 0.1}s`,
+                animation: `badgePop 0.4s ease-out ${i * 0.1}s forwards, badgeFloat 2s ease-in-out ${i * 0.1}s infinite`,
                 opacity: 0,
               }}
             >
