@@ -610,7 +610,7 @@ const Index = () => {
                 animation: 'float 5s ease-in-out infinite'
               }}>
                 <div className="relative w-full h-full rounded-2xl overflow-hidden">
-                  <img src={heroImage} alt="MasterClean" className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110" style={{
+                  <img src={heroImage} alt="MasterClean — profesjonalne pranie tapicerki, dywanów i materacy z dojazdem" className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-110" style={{
                     animation: 'slowZoom 25s ease-in-out infinite alternate'
                   }} />
                   <div className="absolute inset-0 bg-gradient-to-tr from-fresh/20 via-transparent to-primary/20 rounded-2xl" />
