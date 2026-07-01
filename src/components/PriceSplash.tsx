@@ -40,8 +40,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
             style={{
               left: `${5 + i * 6.5}%`,
               top: '-50px',
-              animation: `coinFall ${1 + Math.random() * 0.5}s ease-in forwards`,
-              animationDelay: `${i * 0.05}s`,
+              animation: `coinFall ${1 + Math.random() * 0.5}s ease-in ${i * 0.05}s forwards`,
             }}
           >
             <div 
