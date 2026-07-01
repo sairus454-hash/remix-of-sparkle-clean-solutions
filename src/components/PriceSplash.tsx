@@ -139,8 +139,7 @@ const PriceSplash = ({ onComplete }: PriceSplashProps) => {
             style={{
               left: `calc(50% + ${Math.cos(i * 45 * Math.PI / 180) * 100}px)`,
               top: `calc(50% + ${Math.sin(i * 45 * Math.PI / 180) * 100}px)`,
-              animation: `sparkle 0.8s ease-out infinite`,
-              animationDelay: `${i * 0.1}s`,
+              animation: `sparkle 0.8s ease-out ${i * 0.1}s infinite`,
             }}
           />
         ))}
