@@ -102,7 +102,7 @@ const FloorCleaning = () => {
         { q: 'Czy usuwacie plamy z moczu zwierząt i wina?', a: 'Tak — specjalizujemy się w usuwaniu plam organicznych: mocz zwierząt, kawa, wino, krew, tłuszcz. Używamy preparatów enzymatycznych, które rozkładają zabrudzenia i neutralizują zapachy u źródła, nie tylko maskują je.' },
         { q: 'Czy odbieracie dywany do pralni?', a: 'Tak. Oferujemy pranie dywanów z odbiorem od klienta — 30 zł/m². Odbieramy dywan, czyścimy w naszej pralni i odwozimy z powrotem w ciągu 3-5 dni roboczych. Usługa dostępna we Wrocławiu i okolicy.' },
         { q: 'Co to jest impregnacja dywanu i czy warto?', a: 'Impregnacja to nakładanie warstwy ochronnej (Scotchgard / Teflon), która chroni włókna przed wnikaniem brudu i płynów. Dzięki temu plamy łatwiej zetrzeć, a dywan dłużej zachowuje świeżość. Cena — 5 zł/m². Zalecamy po każdym praniu.' },
-        { q: 'Czy czyścicie płytki na balkonie i tarasie?', a: 'Tak — czyścimy płytki ceramiczne i gres na balkonach, tarasach, w kuchniach i łazienkach. Usuwamy zabrudzenia z fug, naloty, tłuste plamy i pozostałości po remontach. Cena — 20 zł/m².' },
+        { q: 'Czy czyścicie płytki na balkonie i tarasie?', a: 'Tak — czyścimy płytki ceramiczne i gres na balkonach, tarasach, w kuchniach i łazienkach. Usuwamy zabrudzenia z fug, naloty, tłuste plamy i pozostałości po remontach. Cena — 15 zł/m².' },
       ],
     },
     ru: {
@@ -138,7 +138,7 @@ const FloorCleaning = () => {
         { q: 'Удаляете ли вы пятна от мочи животных и вина?', a: 'Да — мы специализируемся на удалении органических пятен: моча животных, кофе, вино, кровь, жир. Используем энзимные препараты, которые расщепляют загрязнения и нейтрализуют запахи у источника, а не маскируют их.' },
         { q: 'Забираете ли ковры в прачечную?', a: 'Да. Предлагаем стирку ковров с забором от клиента — 30 zł/м². Забираем ковёр, чистим в нашей прачечной и привозим обратно в течение 3-5 рабочих дней. Услуга доступна во Вроцлаве и пригородах.' },
         { q: 'Что такое импрегнация ковра и нужна ли она?', a: 'Импрегнация — нанесение защитного слоя (Scotchgard / Teflon), который защищает волокна от проникновения грязи и жидкостей. Благодаря этому пятна легче удаляются, а ковёр дольше сохраняет свежий вид. Цена — 5 zł/м². Рекомендуем после каждой чистки.' },
-        { q: 'Чистите ли плитку на балконе и террасе?', a: 'Да — чистим керамическую плитку и керамогранит на балконах, террасах, кухнях и в ванных. Удаляем загрязнения из швов, налёт, жирные пятна и остатки после ремонта. Цена — 20 zł/м².' },
+        { q: 'Чистите ли плитку на балконе и террасе?', a: 'Да — чистим керамическую плитку и керамогранит на балконах, террасах, кухнях и в ванных. Удаляем загрязнения из швов, налёт, жирные пятна и остатки после ремонта. Цена — 15 zł/м².' },
       ],
     },
     en: {
@@ -174,7 +174,7 @@ const FloorCleaning = () => {
         { q: 'Do you remove pet urine and wine stains?', a: 'Yes — we specialize in organic stain removal: pet urine, coffee, wine, blood, grease. We use enzymatic agents that break down dirt and neutralize odors at the source, not just mask them.' },
         { q: 'Do you collect rugs to your laundry?', a: 'Yes. We offer rug cleaning with pickup — 30 zł/m². We collect the rug, clean it in our laundry and return it within 3-5 business days. Service available in Wrocław and surrounding area.' },
         { q: 'What is carpet impregnation and is it worth it?', a: 'Impregnation is a protective layer (Scotchgard / Teflon) that shields fibres from dirt and liquids. Stains become easier to wipe off and the carpet stays fresh longer. Price — 5 zł/m². We recommend it after every cleaning.' },
-        { q: 'Do you clean balcony and terrace tiles?', a: 'Yes — we clean ceramic tiles and porcelain stoneware on balconies, terraces, in kitchens and bathrooms. We remove dirt from grout, deposits, greasy stains and post-renovation residue. Price — 20 zł/m².' },
+        { q: 'Do you clean balcony and terrace tiles?', a: 'Yes — we clean ceramic tiles and porcelain stoneware on balconies, terraces, in kitchens and bathrooms. We remove dirt from grout, deposits, greasy stains and post-renovation residue. Price — 15 zł/m².' },
       ],
     },
     uk: {
@@ -210,7 +210,7 @@ const FloorCleaning = () => {
         { q: 'Чи видаляєте плями від сечі тварин і вина?', a: 'Так — ми спеціалізуємося на органічних плямах: сеча тварин, кава, вино, кров, жир. Використовуємо ензимні препарати, які розщеплюють бруд і нейтралізують запахи біля джерела.' },
         { q: 'Чи забираєте килими до пральні?', a: 'Так. Пропонуємо прання килимів із забором від клієнта — 30 zł/м². Забираємо килим, чистимо в нашій пральні й привозимо назад протягом 3-5 робочих днів.' },
         { q: 'Що таке імпрегнація килима і чи варта вона?', a: 'Імпрегнація — нанесення захисного шару (Scotchgard / Teflon), що захищає волокна від бруду та рідин. Плями легше видаляти, килим довше зберігає свіжість. Ціна — 5 zł/м².' },
-        { q: 'Чи чистите плитку на балконі та терасі?', a: 'Так — чистимо керамічну плитку та керамограніт на балконах, терасах, кухнях і у ванних. Видаляємо бруд зі швів, наліт, жирні плями та залишки після ремонту. Ціна — 20 zł/м².' },
+        { q: 'Чи чистите плитку на балконі та терасі?', a: 'Так — чистимо керамічну плитку та керамограніт на балконах, терасах, кухнях і у ванних. Видаляємо бруд зі швів, наліт, жирні плями та залишки після ремонту. Ціна — 15 zł/м².' },
       ],
     },
   };
