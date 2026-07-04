@@ -53,7 +53,7 @@ const CookieConsent = () => {
       <div className="bg-card border border-border/60 rounded-xl p-4 shadow-xl relative">
         <div className="flex items-start gap-3">
           <Cookie className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-          <p className="text-sm text-foreground/85 leading-relaxed">
+          <p className="text-sm text-foreground leading-relaxed">
             {t.message}{' '}
             <Link to="/cookies" className="text-foreground underline font-medium transition-colors">{t.link}</Link>
           </p>
