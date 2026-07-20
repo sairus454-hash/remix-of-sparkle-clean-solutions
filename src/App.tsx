@@ -45,6 +45,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Cookies = lazy(() => import("./pages/Cookies"));
 const Sitemap = lazy(() => import("./pages/Sitemap"));
 const CityPage = lazy(() => import("./pages/CityPage"));
+const MattressCleaning = lazy(() => import("./pages/MattressCleaning"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -118,6 +119,7 @@ const App = () => {
                       { path: '/cookies', element: <Cookies /> },
                       { path: '/sitemap', element: <Sitemap /> },
                       { path: '/city/:slug', element: <CityPage /> },
+                      { path: '/pranie-materacy', element: <MattressCleaning /> },
                     ];
                     const PREFIXES = ['', '/ru', '/en', '/uk'];
                     return (
@@ -146,6 +148,10 @@ const App = () => {
                         <Route path="/cookies" element={<Cookies />} />
                         <Route path="/sitemap" element={<Sitemap />} />
                         <Route path="/city/:slug" element={<CityPage />} />
+                        <Route path="/pranie-materacy" element={<MattressCleaning />} />
+                        <Route path="/ru/pranie-materacy" element={<MattressCleaning />} />
+                        <Route path="/en/pranie-materacy" element={<MattressCleaning />} />
+                        <Route path="/uk/pranie-materacy" element={<MattressCleaning />} />
                         <Route path="/ru" element={<Index />} />
                         <Route path="/ru/about" element={<About />} />
                         <Route path="/ru/services" element={<Services />} />
