@@ -392,9 +392,6 @@ const CarUpholsteryGuide = () => {
               src={heroImage}
               alt={t.h1}
               className="w-full h-auto rounded-2xl shadow-lg"
-              width={1200}
-              height={800}
-              fetchPriority="high"
             />
           </div>
         </div>
@@ -446,8 +443,6 @@ const CarUpholsteryGuide = () => {
               src={stepImage}
               alt={t.stepsTitle}
               className="w-full h-auto rounded-2xl shadow"
-              width={800}
-              height={600}
             />
             <ol className="space-y-4">
               {t.steps.map((s) => (
