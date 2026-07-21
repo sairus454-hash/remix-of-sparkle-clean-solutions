@@ -46,6 +46,7 @@ const Cookies = lazy(() => import("./pages/Cookies"));
 const Sitemap = lazy(() => import("./pages/Sitemap"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const MattressCleaning = lazy(() => import("./pages/MattressCleaning"));
+const CarUpholsteryGuide = lazy(() => import("./pages/CarUpholsteryGuide"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -120,6 +121,7 @@ const App = () => {
                       { path: '/sitemap', element: <Sitemap /> },
                       { path: '/city/:slug', element: <CityPage /> },
                       { path: '/pranie-materacy', element: <MattressCleaning /> },
+                      { path: '/poradnik-prania-tapicerki-samochodowej', element: <CarUpholsteryGuide /> },
                     ];
                     const PREFIXES = ['', '/ru', '/en', '/uk'];
                     return (
@@ -152,6 +154,10 @@ const App = () => {
                         <Route path="/ru/pranie-materacy" element={<MattressCleaning />} />
                         <Route path="/en/pranie-materacy" element={<MattressCleaning />} />
                         <Route path="/uk/pranie-materacy" element={<MattressCleaning />} />
+                        <Route path="/poradnik-prania-tapicerki-samochodowej" element={<CarUpholsteryGuide />} />
+                        <Route path="/ru/poradnik-prania-tapicerki-samochodowej" element={<CarUpholsteryGuide />} />
+                        <Route path="/en/poradnik-prania-tapicerki-samochodowej" element={<CarUpholsteryGuide />} />
+                        <Route path="/uk/poradnik-prania-tapicerki-samochodowej" element={<CarUpholsteryGuide />} />
                         <Route path="/ru" element={<Index />} />
                         <Route path="/ru/about" element={<About />} />
                         <Route path="/ru/services" element={<Services />} />
