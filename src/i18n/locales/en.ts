@@ -60,7 +60,7 @@ const enTranslations = {
       banner2Title: 'Furniture impregnation for a year\nis now affordable —',
       banner2Highlight: 'PROTECT NOW!',
       banner2Sub: 'Protection from water, dirt and stains • MasterClean',
-      banner2Cta: 'Learn more',
+      banner2Cta: 'Learn about impregnation',
     },
     promotions: {
       title: 'Promotions',
@@ -245,7 +245,7 @@ const enTranslations = {
       minOrderOther: 'Minimum order for other locations — 220 zł',
       cleaningTempNote: '⚠️ Cleaning service is temporarily available in the base region only',
       discountSystem: 'Discount System',
-      clickHere: 'Click here',
+      clickHere: 'View discount details',
     },
     booking: {
       title: 'Available Dates',
@@ -685,7 +685,7 @@ const enTranslations = {
       title: 'Upholstery Impregnation',
       subtitle: 'Professional protection of upholstery from water, dirt and stains',
       cardTitle: 'Impregnation',
-      cardSubtitle: 'Learn more',
+      cardSubtitle: 'Learn about impregnation services',
       what: 'What is Impregnation?',
       whatDesc: 'Upholstery impregnation is a process of treating upholstery fabric with special protective compounds (impregnants) that penetrate the fiber structure, creating an invisible barrier against water, dirt, and stains. It is a popular way to extend the life of furniture and make it easier to care for.',
       benefitsTitle: 'Key Benefits',

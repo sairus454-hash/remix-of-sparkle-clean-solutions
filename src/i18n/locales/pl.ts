@@ -60,7 +60,7 @@ const plTranslations = {
       banner2Title: 'Impregnacja mebli na rok\nstała się dostępna —',
       banner2Highlight: 'CHROŃ TERAZ!',
       banner2Sub: 'Ochrona przed wodą, brudem i plamami • MasterClean',
-      banner2Cta: 'Dowiedz się więcej',
+      banner2Cta: 'Poznaj impregnację mebli',
     },
     promotions: {
       title: 'Promocje',
@@ -245,7 +245,7 @@ const plTranslations = {
       minOrderOther: 'Minimalne zamówienie dla innych miejscowości — 220 zł',
       cleaningTempNote: '⚠️ Usługa sprzątania działa tymczasowo na terenie regionu bazowego',
       discountSystem: 'System rabatowy',
-      clickHere: 'Kliknij tutaj',
+      clickHere: 'Zobacz szczegóły rabatów',
     },
     booking: {
       title: 'Dostępne terminy',
@@ -686,7 +686,7 @@ const plTranslations = {
       title: 'Impregnacja mebli tapicerowanych',
       subtitle: 'Profesjonalna ochrona tapicerki przed wodą, brudem i plamami',
       cardTitle: 'Impregnacja',
-      cardSubtitle: 'Dowiedz się więcej',
+      cardSubtitle: 'Poznaj usługi impregnacji',
       what: 'Czym jest impregnacja?',
       whatDesc: 'Impregnacja mebli tapicerowanych to proces obróbki tkaniny tapicerskiej specjalnymi środkami ochronnymi (impregnaty), które wnikają w strukturę włókien, tworząc niewidzialną barierę przed wodą, brudem i plamami. Jest to popularny sposób na przedłużenie żywotności mebli i ułatwienie ich pielęgnacji.',
       benefitsTitle: 'Główne korzyści',
