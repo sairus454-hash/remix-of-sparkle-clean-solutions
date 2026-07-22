@@ -47,8 +47,11 @@ export function sitemapLastmodPlugin(): Plugin {
         let mm: RegExpExecArray | null;
         while ((mm = blogUrlRe.exec(xml)) !== null) existingIds.add(Number(mm[1]));
 
+        // Blog IDs deliberately de-indexed (return 404). Keep in sync with
+        // BLOCKED_BLOG_IDS in src/pages/Blog.tsx and src/pages/BlogArticle.tsx.
+        const BLOCKED_BLOG_IDS = new Set<number>([15, 16, 17, 19, 20, 21]);
         const missing = [...articles.entries()]
-          .filter(([id]) => !existingIds.has(id))
+          .filter(([id]) => !existingIds.has(id) && !BLOCKED_BLOG_IDS.has(id))
           .sort((a, b) => a[0] - b[0]);
 
         if (missing.length > 0) {
