@@ -116,7 +116,14 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
       setDate(undefined);
       setTime('');
       setTimeout(() => onOpenChange(false), 2000);
-    } catch {
+    } catch (err) {
+      try {
+        (await import('@/lib/gtm')).gtmEvents.formSubmitError('quick_order', {
+          items_count: items.length,
+          total,
+          error_message: (err as Error)?.message?.slice(0, 200),
+        });
+      } catch {}
       toast({
         title: language === 'ru' ? 'Ошибка' : 'Error',
         description: language === 'ru' ? 'Не удалось отправить. Попробуйте позже.' : 'Failed to send. Try again.',
