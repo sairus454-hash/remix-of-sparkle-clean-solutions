@@ -135,6 +135,39 @@
     "sameAs": ["https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z"]
   }
   </script>
+
+  <!-- Organization schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MasterClean",
+    "url": "https://masterclean1885.com",
+    "logo": "https://masterclean1885.com/favicon.png",
+    "email": "masterclean@email.com",
+    "telephone": "+48575211401",
+    "sameAs": ["https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z"],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+48575211401",
+      "contactType": "customer service",
+      "availableLanguage": ["Polish", "Russian", "English", "Ukrainian"],
+      "areaServed": "PL"
+    }]
+  }
+  </script>
+
+  <!-- WebSite schema with SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "MasterClean",
+    "url": "https://masterclean1885.com",
+    "inLanguage": ["pl-PL", "ru-RU", "en-US", "uk-UA"],
+    "publisher": { "@type": "Organization", "name": "MasterClean" }
+  }
+  </script>
 </head>
 
   <body>
