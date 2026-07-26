@@ -83,41 +83,74 @@ const SEO = ({
     ],
   } : null;
 
+  const serviceCatalog: Record<string, { name: string; desc: string }[]> = {
+    pl: [
+      { name: 'Pranie tapicerki meblowej', desc: 'Głębokie pranie sof, foteli i narożników metodą ekstrakcyjną.' },
+      { name: 'Czyszczenie dywanów i wykładzin', desc: 'Pranie dywanów i wykładzin z dojazdem lub w pralni.' },
+      { name: 'Czyszczenie materacy', desc: 'Głębokie pranie materacy z usuwaniem roztoczy i plam.' },
+      { name: 'Czyszczenie wnętrza samochodu', desc: 'Pranie tapicerki, sufitu, foteli, bagażnika i plastików.' },
+      { name: 'Ozonowanie', desc: 'Usuwanie zapachów, wirusów i bakterii generatorem ozonu.' },
+      { name: 'Sprzątanie mieszkań i domów', desc: 'Sprzątanie standardowe, generalne i po remoncie.' },
+      { name: 'Mycie okien', desc: 'Profesjonalne mycie okien, ram i parapetów.' },
+      { name: 'Złota rączka', desc: 'Drobne naprawy, montaż mebli i prace hydrauliczne.' },
+    ],
+    ru: [
+      { name: 'Химчистка мягкой мебели', desc: 'Глубокая чистка диванов, кресел и угловых диванов экстракторным методом.' },
+      { name: 'Чистка ковров и ковролина', desc: 'Химчистка ковров с выездом или в цеху.' },
+      { name: 'Чистка матрасов', desc: 'Глубокая чистка матрасов с удалением клещей и пятен.' },
+      { name: 'Химчистка салона автомобиля', desc: 'Чистка обивки, потолка, сидений, багажника и пластика.' },
+      { name: 'Озонирование', desc: 'Удаление запахов, вирусов и бактерий генератором озона.' },
+      { name: 'Уборка квартир и домов', desc: 'Стандартная, генеральная и уборка после ремонта.' },
+      { name: 'Мытьё окон', desc: 'Профессиональное мытьё окон, рам и подоконников.' },
+      { name: 'Мастер на час', desc: 'Мелкий ремонт, сборка мебели, сантехнические работы.' },
+    ],
+    en: [
+      { name: 'Upholstery cleaning', desc: 'Deep extraction cleaning of sofas, armchairs and corner sofas.' },
+      { name: 'Carpet and rug cleaning', desc: 'Carpet cleaning on-site or at our facility.' },
+      { name: 'Mattress cleaning', desc: 'Deep mattress cleaning with removal of mites and stains.' },
+      { name: 'Car interior cleaning', desc: 'Cleaning of upholstery, headliner, seats, trunk and plastics.' },
+      { name: 'Ozone treatment', desc: 'Removal of odours, viruses and bacteria with an ozone generator.' },
+      { name: 'Apartment and house cleaning', desc: 'Standard, deep and post-renovation cleaning.' },
+      { name: 'Window cleaning', desc: 'Professional cleaning of windows, frames and sills.' },
+      { name: 'Handyman services', desc: 'Small repairs, furniture assembly and plumbing.' },
+    ],
+    uk: [
+      { name: 'Хімчистка меблів', desc: 'Глибока екстракторна чистка диванів, крісел і кутових диванів.' },
+      { name: 'Чистка килимів і покриттів', desc: 'Хімчистка килимів з виїздом або в цеху.' },
+      { name: 'Чистка матраців', desc: 'Глибока чистка матраців з видаленням кліщів і плям.' },
+      { name: 'Хімчистка салону авто', desc: 'Чистка оббивки, стелі, сидінь, багажника й пластику.' },
+      { name: 'Озонування', desc: 'Видалення запахів, вірусів і бактерій генератором озону.' },
+      { name: 'Прибирання квартир і будинків', desc: 'Стандартне, генеральне та після ремонту.' },
+      { name: 'Миття вікон', desc: 'Професійне миття вікон, рам і підвіконь.' },
+      { name: 'Майстер на годину', desc: 'Дрібний ремонт, збирання меблів, сантехнічні роботи.' },
+    ],
+  };
+
+  const services = serviceCatalog[language] || serviceCatalog.pl;
+  const areaServedCities = [
+    'Wrocław','Opole','Legnica','Lubin','Oława','Kalisz','Leszno','Świdnica',
+    'Wałbrzych','Ostrów Wielkopolski','Jelenia Góra','Brzeg','Jelcz-Laskowice',
+    'Strzegom','Sobótka','Kłodzko','Kiełczów','Dzierżoniów',
+  ];
+
   const defaultJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/#business`,
     name: 'MasterClean',
     description,
-    url: SITE_URL,
+    url: canonicalUrl,
     telephone: '+48575211401',
     email: 'masterclean@email.com',
     image: DEFAULT_IMAGE,
+    logo: `${SITE_URL}/favicon.png`,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'PL',
       addressRegion: 'dolnośląskie',
       addressLocality: 'Wrocław',
     },
-    areaServed: [
-      { '@type': 'City', name: 'Wrocław' },
-      { '@type': 'City', name: 'Opole' },
-      { '@type': 'City', name: 'Legnica' },
-      { '@type': 'City', name: 'Lubin' },
-      { '@type': 'City', name: 'Oława' },
-      { '@type': 'City', name: 'Kalisz' },
-      { '@type': 'City', name: 'Leszno' },
-      { '@type': 'City', name: 'Świdnica' },
-      { '@type': 'City', name: 'Wałbrzych' },
-      { '@type': 'City', name: 'Ostrów Wielkopolski' },
-      { '@type': 'City', name: 'Jelenia Góra' },
-      { '@type': 'City', name: 'Brzeg' },
-      { '@type': 'City', name: 'Jelcz-Laskowice' },
-      { '@type': 'City', name: 'Strzegom' },
-      { '@type': 'City', name: 'Sobótka' },
-      { '@type': 'City', name: 'Kłodzko' },
-      { '@type': 'City', name: 'Kiełczów' },
-      { '@type': 'City', name: 'Dzierżoniów' },
-    ],
+    areaServed: areaServedCities.map((name) => ({ '@type': 'City', name })),
     sameAs: [
       'https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z',
     ],
@@ -127,6 +160,27 @@ const SEO = ({
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
       opens: '00:00',
       closes: '23:59',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '187',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'MasterClean',
+      itemListElement: services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.name,
+          description: s.desc,
+          provider: { '@type': 'LocalBusiness', name: 'MasterClean' },
+          areaServed: 'PL',
+        },
+      })),
     },
   };
 
