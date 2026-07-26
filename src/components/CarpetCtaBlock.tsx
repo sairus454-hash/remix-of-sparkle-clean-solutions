@@ -163,7 +163,13 @@ const CarpetCtaBlock = () => {
         name: name.trim(),
       });
       setName(''); setPhone(''); setArea(''); setDate(undefined); setTime('');
-    } catch {
+    } catch (err) {
+      try {
+        (await import('@/lib/gtm')).gtmEvents.formSubmitError('about_carpet_cta', {
+          area: areaNum || 0,
+          error_message: (err as Error)?.message?.slice(0, 200),
+        });
+      } catch {}
       toast({ title: tt.err, description: tt.errDesc, variant: 'destructive' });
     } finally {
       setLoading(false);
