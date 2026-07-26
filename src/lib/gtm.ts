@@ -52,12 +52,35 @@ export const resetScrollDepth = () => {
 initScrollDepth();
 
 // Pre-defined events
+const getLanguage = (): string => {
+  if (typeof document === 'undefined') return 'unknown';
+  const path = typeof window !== 'undefined' ? window.location.pathname : '';
+  const m = path.match(/^\/(ru|en|uk)(\/|$)/);
+  if (m) return m[1];
+  return document.documentElement.lang || 'pl';
+};
+
 export const gtmEvents = {
   formSubmit: (formName: string, extra?: Record<string, unknown>) => {
-    pushEvent('form_submit', { form_name: formName, ...extra });
+    pushEvent('form_submit', {
+      form_name: formName,
+      form_status: 'success',
+      language: getLanguage(),
+      ...extra,
+    });
     // Also fire Google Ads conversion
     pushConversion(undefined, extra?.total as number | undefined);
   },
+
+  formSubmitError: (formName: string, extra?: Record<string, unknown>) => {
+    pushEvent('form_submit_error', {
+      form_name: formName,
+      form_status: 'error',
+      language: getLanguage(),
+      ...extra,
+    });
+  },
+
 
   phoneClick: (location: string) =>
     pushEvent('phone_click', { click_location: location }),

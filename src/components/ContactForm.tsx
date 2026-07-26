@@ -444,6 +444,12 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       clearCalculatorData();
     } catch (error) {
       console.error('Form submission error:', error);
+      try {
+        (await import('@/lib/gtm')).gtmEvents.formSubmitError('contact_form', {
+          has_calculator: calculatorItems.length > 0,
+          error_message: (error as Error)?.message?.slice(0, 200),
+        });
+      } catch {}
       const errorMsg = language === 'ru'
         ? 'Не удалось отправить заявку в Telegram. Проверьте соединение и попробуйте ещё раз.'
         : language === 'pl'

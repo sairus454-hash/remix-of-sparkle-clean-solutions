@@ -92,11 +92,22 @@ const ManagerEstimateDialog = ({ open, onOpenChange, language, service }: Props)
         },
       });
       if (error) throw error;
+      try {
+        (await import('@/lib/gtm')).gtmEvents.formSubmit('manager_estimate', {
+          service: service || t.defaultService,
+        });
+      } catch {}
       toast({ title: t.success });
       setName('');
       setPhone('');
       onOpenChange(false);
     } catch (err) {
+      try {
+        (await import('@/lib/gtm')).gtmEvents.formSubmitError('manager_estimate', {
+          service: service || t.defaultService,
+          error_message: (err as Error)?.message?.slice(0, 200),
+        });
+      } catch {}
       toast({ title: t.error, variant: 'destructive' });
     } finally {
       setLoading(false);

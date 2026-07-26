@@ -212,6 +212,12 @@ const Reviews = () => {
       setShowGooglePrompt(true);
     } catch (error) {
       console.error('Error submitting review:', error);
+      try {
+        (await import('@/lib/gtm')).gtmEvents.formSubmitError('review', {
+          rating,
+          error_message: (error as Error)?.message?.slice(0, 200),
+        });
+      } catch {}
       toast({
         title: 'Error',
         description: 'Failed to submit review. Please try again.',

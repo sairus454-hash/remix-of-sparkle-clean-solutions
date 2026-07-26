@@ -451,6 +451,11 @@ const ChatBot = () => {
       playNotificationSound();
     } catch (error) {
       console.error('Order submit error:', error);
+      try {
+        (await import('@/lib/gtm')).gtmEvents.formSubmitError('chatbot_lead', {
+          error_message: (error as Error)?.message?.slice(0, 200),
+        });
+      } catch {}
       const errorMessage: Message = {
         id: Date.now().toString(),
         role: 'assistant',
