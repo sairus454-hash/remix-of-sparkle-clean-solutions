@@ -947,10 +947,10 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
     image: DEFAULT_IMAGE,
     logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon.png`, width: 256, height: 256 },
     priceRange: '$$',
+    address: {
       '@type': 'PostalAddress',
       addressCountry: 'PL',
       addressRegion: 'dolnośląskie',
-      addressLocality: 'Wrocław',
     },
     areaServed: [
       { '@type': 'City', name: 'Wrocław' },
