@@ -322,26 +322,40 @@ const CarUpholsteryGuide = () => {
 
   useSeoSelfCheck('CarUpholsteryGuide');
 
+  const abs = (p: string) => (p.startsWith('http') ? p : `https://masterclean1885.com${p}`);
+  const pageUrl = 'https://masterclean1885.com/poradnik-prania-tapicerki-samochodowej';
+
   const jsonLd = [
     {
       '@context': 'https://schema.org',
       '@type': 'Article',
-      headline: t.h1,
+      headline: t.h1.slice(0, 110),
       description: t.seoDesc,
+      image: [abs(heroImage)],
       inLanguage: lang,
-      author: { '@type': 'Organization', name: 'MasterClean' },
-      publisher: { '@type': 'Organization', name: 'MasterClean' },
-      mainEntityOfPage: 'https://masterclean1885.com/poradnik-prania-tapicerki-samochodowej',
+      datePublished: '2026-07-20',
+      dateModified: '2026-07-20',
+      author: { '@type': 'Organization', name: 'MasterClean', url: 'https://masterclean1885.com' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'MasterClean',
+        logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/favicon.png', width: 256, height: 256 },
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
     },
     {
       '@context': 'https://schema.org',
       '@type': 'HowTo',
       name: t.stepsTitle,
+      description: t.seoDesc,
+      image: [abs(stepImage)],
+      totalTime: 'PT4H',
       step: t.steps.map((s, i) => ({
         '@type': 'HowToStep',
         position: i + 1,
         name: s.t,
         text: s.d,
+        url: `${pageUrl}#step-${i + 1}`,
       })),
     },
     {
