@@ -938,12 +938,15 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   ${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': `${SITE_URL}/#business`,
     name: 'MasterClean',
     description: meta.description,
     url: SITE_URL,
     telephone: PHONE,
+    email: 'masterclean@email.com',
     image: DEFAULT_IMAGE,
-    address: {
+    logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon.png`, width: 256, height: 256 },
+    priceRange: '$$',
       '@type': 'PostalAddress',
       addressCountry: 'PL',
       addressRegion: 'dolnośląskie',
