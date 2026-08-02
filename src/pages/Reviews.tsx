@@ -243,9 +243,25 @@ const Reviews = () => {
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
+          '@id': 'https://masterclean1885.com/#business',
           name: 'MasterClean',
-          aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', bestRating: '5', ratingCount: '135' },
-          url: 'https://masterclean1885.com/reviews',
+          url: 'https://masterclean1885.com',
+          telephone: '+48575211401',
+          email: 'masterclean@email.com',
+          image: 'https://masterclean1885.com/og-image.jpg',
+          priceRange: '$$',
+          address: {
+            '@type': 'PostalAddress',
+            addressCountry: 'PL',
+            addressRegion: 'dolnośląskie',
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: '4.9',
+            bestRating: '5',
+            worstRating: '1',
+            ratingCount: '135',
+          },
         }}
       />
       {showSplash && <ReviewsSplash onComplete={handleSplashComplete} />}
