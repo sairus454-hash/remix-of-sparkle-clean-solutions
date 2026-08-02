@@ -966,7 +966,6 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
       { '@type': 'City', name: 'Jelenia Góra' },
       { '@type': 'City', name: 'Brzeg' },
     ],
-    priceRange: '$$',
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
