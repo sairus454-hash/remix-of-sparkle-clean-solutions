@@ -93,12 +93,19 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://masterclean1885.com/#business",
     "name": "MasterClean",
     "description": "Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i wnętrz samochodowych. Ozonowanie, sprzątanie, mycie okien.",
     "url": "https://masterclean1885.com",
     "telephone": "+48575211401",
     "email": "masterclean@email.com",
     "image": "https://masterclean1885.com/og-image.jpg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://masterclean1885.com/favicon.png",
+      "width": 256,
+      "height": 256
+    },
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "PL",
@@ -141,9 +148,16 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://masterclean1885.com/#organization",
     "name": "MasterClean",
     "url": "https://masterclean1885.com",
-    "logo": "https://masterclean1885.com/favicon.png",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://masterclean1885.com/favicon.png",
+      "width": 256,
+      "height": 256
+    },
+    "image": "https://masterclean1885.com/og-image.jpg",
     "email": "masterclean@email.com",
     "telephone": "+48575211401",
     "sameAs": ["https://www.google.com/maps/place/MasterClean/@51.953761,19.1343692,6z"],
@@ -162,10 +176,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://masterclean1885.com/#website",
     "name": "MasterClean",
     "url": "https://masterclean1885.com",
     "inLanguage": ["pl-PL", "ru-RU", "en-US", "uk-UA"],
-    "publisher": { "@type": "Organization", "name": "MasterClean" }
+    "publisher": { "@id": "https://masterclean1885.com/#organization" }
   }
   </script>
 </head>

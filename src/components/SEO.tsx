@@ -143,7 +143,12 @@ const SEO = ({
     telephone: '+48575211401',
     email: 'masterclean@email.com',
     image: DEFAULT_IMAGE,
-    logo: `${SITE_URL}/favicon.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE_URL}/favicon.png`,
+      width: 256,
+      height: 256,
+    },
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'PL',

@@ -118,6 +118,7 @@ const Index = () => {
         jsonLd={[{
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
+          '@id': 'https://masterclean1885.com/#business',
           name: 'MasterClean',
           description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i wnętrz samochodowych w Polsce. Ozonowanie, sprzątanie, mycie okien.',
           url: 'https://masterclean1885.com',
