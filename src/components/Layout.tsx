@@ -38,6 +38,8 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </section>
 
+        <Breadcrumbs />
+
         {children}
 
       </main>
