@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react';
 import SEO from '@/components/SEO';
+import PageFaqSection from '@/components/PageFaqSection';
+import { buildFaqJsonLd } from '@/lib/pageSeo';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import BackToOrderButton from '@/components/BackToOrderButton';
@@ -13,7 +15,7 @@ import impregnationCoffeeSpill from '@/assets/impregnation-coffee-spill.jpg';
 import impregnationBeforeAfter from '@/assets/impregnation-before-after.jpg';
 
 const Impregnation = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('impregnation');
 
   const benefits = [
@@ -85,7 +87,7 @@ const Impregnation = () => {
         canonical="/impregnation"
         image="https://masterclean1885.com/og-impregnation.jpg"
         breadcrumbs={[{ name: t.impregnation.title, path: '/impregnation' }]}
-         jsonLd={{
+         jsonLd={[{
            '@context': 'https://schema.org',
            '@type': 'Service',
            serviceType: 'Impregnacja mebli i tkanin',
@@ -107,7 +109,7 @@ const Impregnation = () => {
            offers: [
              { '@type': 'Offer', name: 'Impregnacja (ochrona na 1 rok)', price: '80', priceCurrency: 'PLN' },
            ],
-         }}
+         }, buildFaqJsonLd('impregnation', language)]}
       />
     <Layout>
       <BackToOrderButton />
@@ -285,7 +287,8 @@ const Impregnation = () => {
           </CircularRevealCard>
         </div>
       </section>
-    </Layout>
+    <PageFaqSection page="impregnation" />
+      </Layout>
     </>
   );
 };

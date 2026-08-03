@@ -4,6 +4,8 @@
 // rendered FAQ accordion at the bottom of the page.
 
 export type PageKey = 'services' | 'auto' | 'ozone' | 'prices' | 'contacts';
+// Pages that render a FAQ accordion + FAQPage JSON-LD (superset of PageKey)
+export type FaqPageKey = PageKey | 'cleaning' | 'windows' | 'handyman' | 'impregnation';
 export type Lang = 'pl' | 'ru' | 'uk' | 'en';
 
 export interface SeoMeta {
@@ -138,7 +140,7 @@ export const SEO_META: Record<PageKey, Record<Lang, SeoMeta>> = {
 };
 
 
-export const FAQS: Record<PageKey, Record<Lang, Faq[]>> = {
+export const FAQS: Record<FaqPageKey, Record<Lang, Faq[]>> = {
   services: {
     pl: [
       { q: 'Ile kosztuje pranie kanapy?', a: 'Pranie kanapy 2-osobowej od 140 zł, 3-osobowej od 170 zł, narożnika od 200 zł. Cena zależy od stanu i tkaniny.' },
@@ -289,18 +291,138 @@ export const FAQS: Record<PageKey, Record<Lang, Faq[]>> = {
       { q: 'Can I get a quote online?', a: 'Yes, use the calculator on the pricing page or send photos via WhatsApp — we send the quote the same day.' },
     ],
   },
+  cleaning: {
+    pl: [
+      { q: 'Ile kosztuje sprzątanie mieszkania?', a: 'Sprzątanie standardowe 7 zł/m², generalne 10 zł/m². Minimalna wartość zlecenia 160 zł.' },
+      { q: 'Czym różni się sprzątanie standardowe od generalnego?', a: 'Standardowe to odkurzanie, mycie podłóg, łazienki i kuchni. Generalne obejmuje dodatkowo szafki w środku, okna, fugi, piekarnik i odkamienianie.' },
+      { q: 'Czy przywozicie własne środki i sprzęt?', a: 'Tak, przyjeżdżamy z profesjonalnym sprzętem i ekologicznymi środkami — klient nic nie musi przygotowywać.' },
+      { q: 'Czy sprzątacie po remoncie?', a: 'Tak, wykonujemy sprzątanie po remoncie i budowie — usuwanie pyłu budowlanego, resztek farby, kleju i zabrudzeń poremontowych.' },
+      { q: 'Jak długo trwa sprzątanie mieszkania 50 m²?', a: 'Standardowe zwykle 2–3 godziny, generalne 4–6 godzin, w zależności od stanu lokalu.' },
+    ],
+    ru: [
+      { q: 'Сколько стоит уборка квартиры?', a: 'Стандартная уборка 7 zł/м², генеральная 10 zł/м². Минимальная сумма заказа 160 zł.' },
+      { q: 'Чем отличается стандартная уборка от генеральной?', a: 'Стандартная — пылесос, полы, санузел и кухня. Генеральная дополнительно включает шкафы внутри, окна, швы, духовку и удаление накипи.' },
+      { q: 'Вы привозите свои средства и оборудование?', a: 'Да, приезжаем с профессиональным оборудованием и эко-средствами — готовить ничего не нужно.' },
+      { q: 'Делаете уборку после ремонта?', a: 'Да, выполняем уборку после ремонта и стройки — удаление строительной пыли, следов краски и клея.' },
+      { q: 'Сколько длится уборка квартиры 50 м²?', a: 'Стандартная — обычно 2–3 часа, генеральная — 4–6 часов, в зависимости от состояния.' },
+    ],
+    uk: [
+      { q: 'Скільки коштує прибирання квартири?', a: 'Стандартне прибирання 7 zł/м², генеральне 10 zł/м². Мінімальна сума замовлення 160 zł.' },
+      { q: 'Чим відрізняється стандартне прибирання від генерального?', a: 'Стандартне — пилосос, підлога, санвузол і кухня. Генеральне додатково включає шафи всередині, вікна, шви, духовку та видалення накипу.' },
+      { q: 'Ви привозите свої засоби та обладнання?', a: 'Так, приїжджаємо з професійним обладнанням та еко-засобами — готувати нічого не потрібно.' },
+      { q: 'Чи робите прибирання після ремонту?', a: 'Так, виконуємо прибирання після ремонту та будівництва — видалення будівельного пилу, залишків фарби та клею.' },
+      { q: 'Скільки триває прибирання квартири 50 м²?', a: 'Стандартне — зазвичай 2–3 години, генеральне — 4–6 годин, залежно від стану.' },
+    ],
+    en: [
+      { q: 'How much does apartment cleaning cost?', a: 'Standard cleaning 7 PLN/m², deep cleaning 10 PLN/m². Minimum order value is 160 PLN.' },
+      { q: 'What is the difference between standard and deep cleaning?', a: 'Standard covers vacuuming, floors, bathroom and kitchen. Deep cleaning adds cabinet interiors, windows, grout, oven and limescale removal.' },
+      { q: 'Do you bring your own supplies and equipment?', a: 'Yes, we arrive with professional equipment and eco-friendly products — you do not need to prepare anything.' },
+      { q: 'Do you offer post-renovation cleaning?', a: 'Yes, we handle post-renovation and post-construction cleaning — construction dust, paint and glue residue.' },
+      { q: 'How long does cleaning a 50 m² flat take?', a: 'Standard cleaning usually 2–3 hours, deep cleaning 4–6 hours depending on condition.' },
+    ],
+  },
+  windows: {
+    pl: [
+      { q: 'Ile kosztuje mycie okien?', a: 'Okno jednoskrzydłowe 40 zł, dwuskrzydłowe 50 zł, trzyskrzydłowe 80 zł. Cena obejmuje szybę, ramę i parapet.' },
+      { q: 'Czy mycie ram i parapetów jest w cenie?', a: 'Tak, w cenie każdego okna myjemy szybę z dwóch stron, ramę oraz parapet.' },
+      { q: 'Czy myjecie okna na wysokości?', a: 'Tak, myjemy okna na wysokości przy użyciu teleskopowych systemów z wodą demineralizowaną.' },
+      { q: 'Czy po myciu zostają smugi?', a: 'Nie — pracujemy na wodzie demineralizowanej i ściągaczkach zawodowych, dzięki czemu szyby są bez smug.' },
+      { q: 'Czy myjecie okna zimą?', a: 'Tak, myjemy okna cały rok. Przy temperaturach poniżej zera stosujemy środki mrozoodporne.' },
+    ],
+    ru: [
+      { q: 'Сколько стоит мытьё окон?', a: 'Одностворчатое окно 40 zł, двустворчатое 50 zł, трёхстворчатое 80 zł. В цену входит стекло, рама и подоконник.' },
+      { q: 'Мытьё рам и подоконников входит в цену?', a: 'Да, в цену каждого окна входит стекло с двух сторон, рама и подоконник.' },
+      { q: 'Мойте ли вы окна на высоте?', a: 'Да, работаем на высоте с телескопическими системами и деминерализованной водой.' },
+      { q: 'Остаются ли разводы после мытья?', a: 'Нет — используем деминерализованную воду и профессиональные склизы, стёкла без разводов.' },
+      { q: 'Мойте ли окна зимой?', a: 'Да, работаем круглый год. При минусовой температуре применяем морозостойкие средства.' },
+    ],
+    uk: [
+      { q: 'Скільки коштує миття вікон?', a: 'Одностулкове вікно 40 zł, двостулкове 50 zł, тристулкове 80 zł. У ціну входить скло, рама та підвіконня.' },
+      { q: 'Миття рам і підвіконь входить у ціну?', a: 'Так, у ціну кожного вікна входить скло з двох боків, рама та підвіконня.' },
+      { q: 'Чи миєте вікна на висоті?', a: 'Так, працюємо на висоті з телескопічними системами та демінералізованою водою.' },
+      { q: 'Чи залишаються розводи після миття?', a: 'Ні — використовуємо демінералізовану воду та професійні склізи, скло без розводів.' },
+      { q: 'Чи миєте вікна взимку?', a: 'Так, працюємо цілий рік. За мінусової температури застосовуємо морозостійкі засоби.' },
+    ],
+    en: [
+      { q: 'How much does window cleaning cost?', a: 'Single-sash window 40 PLN, double-sash 50 PLN, triple-sash 80 PLN. The price includes glass, frame and sill.' },
+      { q: 'Are frames and sills included in the price?', a: 'Yes, each window price covers glass on both sides, the frame and the sill.' },
+      { q: 'Do you clean windows at height?', a: 'Yes, we clean windows at height using telescopic pole systems with demineralised water.' },
+      { q: 'Will there be streaks after cleaning?', a: 'No — we use demineralised water and professional squeegees, so the glass dries streak-free.' },
+      { q: 'Do you clean windows in winter?', a: 'Yes, we work all year round. Below freezing we use frost-resistant solutions.' },
+    ],
+  },
+  handyman: {
+    pl: [
+      { q: 'Ile kosztuje usługa złotej rączki?', a: 'Usługi elektryczne od 40 zł, hydrauliczne od 120 zł, udrażnianie kanalizacji od 250 zł. Wycena zawsze przed rozpoczęciem pracy.' },
+      { q: 'Jak szybko możecie przyjechać?', a: 'Zwykle tego samego dnia, a przy awariach hydraulicznych staramy się dojechać w ciągu kilku godzin — pracujemy 24/7.' },
+      { q: 'Czy montujecie meble z paczki?', a: 'Tak, składamy i montujemy meble, szafy, łóżka, kuchnie oraz wieszamy półki, karnisze, obrazy i telewizory.' },
+      { q: 'Czy kupujecie materiały?', a: 'Możemy kupić materiały na miejscu lub użyć tych dostarczonych przez klienta — koszt materiałów rozliczamy według paragonu.' },
+      { q: 'Czy dajecie gwarancję na naprawy?', a: 'Tak, na wykonane prace udzielamy gwarancji. W razie problemu wracamy bezpłatnie.' },
+    ],
+    ru: [
+      { q: 'Сколько стоит услуга мастера на час?', a: 'Электрика от 40 zł, сантехника от 120 zł, прочистка канализации от 250 zł. Смету согласуем до начала работ.' },
+      { q: 'Как быстро вы можете приехать?', a: 'Обычно в тот же день, при аварийной сантехнике — в течение нескольких часов. Работаем 24/7.' },
+      { q: 'Собираете ли мебель?', a: 'Да, собираем и монтируем мебель, шкафы, кровати, кухни, вешаем полки, карнизы, картины и телевизоры.' },
+      { q: 'Покупаете ли материалы?', a: 'Можем купить материалы сами или использовать материалы клиента — расчёт по чеку.' },
+      { q: 'Есть ли гарантия на работы?', a: 'Да, на выполненные работы даём гарантию. При проблеме приезжаем бесплатно.' },
+    ],
+    uk: [
+      { q: 'Скільки коштує послуга майстра на годину?', a: 'Електрика від 40 zł, сантехніка від 120 zł, прочищення каналізації від 250 zł. Кошторис узгоджуємо до початку робіт.' },
+      { q: 'Як швидко ви можете приїхати?', a: 'Зазвичай того ж дня, за аварійної сантехніки — протягом кількох годин. Працюємо 24/7.' },
+      { q: 'Чи збираєте меблі?', a: 'Так, збираємо та монтуємо меблі, шафи, ліжка, кухні, вішаємо полиці, карнизи, картини й телевізори.' },
+      { q: 'Чи купуєте матеріали?', a: 'Можемо купити матеріали самі або використати матеріали клієнта — розрахунок за чеком.' },
+      { q: 'Чи є гарантія на роботи?', a: 'Так, на виконані роботи даємо гарантію. У разі проблеми приїжджаємо безкоштовно.' },
+    ],
+    en: [
+      { q: 'How much do handyman services cost?', a: 'Electrical work from 40 PLN, plumbing from 120 PLN, drain unblocking from 250 PLN. We always quote before starting.' },
+      { q: 'How quickly can you come?', a: 'Usually the same day; for plumbing emergencies within a few hours — we work 24/7.' },
+      { q: 'Do you assemble flat-pack furniture?', a: 'Yes, we assemble furniture, wardrobes, beds and kitchens, and mount shelves, curtain rails, pictures and TVs.' },
+      { q: 'Do you buy the materials?', a: 'We can buy materials for you or use yours — material costs are billed at receipt price.' },
+      { q: 'Do you guarantee your repairs?', a: 'Yes, all work is covered by a guarantee. If anything goes wrong we come back free of charge.' },
+    ],
+  },
+  impregnation: {
+    pl: [
+      { q: 'Ile kosztuje impregnacja tapicerki?', a: 'Impregnacja z ochroną na rok kosztuje od 80 zł i jest najtańsza, gdy wykonujemy ją razem z praniem.' },
+      { q: 'Jak długo działa impregnacja?', a: 'Powłoka hydrofobowa działa około 12 miesięcy przy normalnym użytkowaniu.' },
+      { q: 'Czy impregnat zmienia kolor lub fakturę tkaniny?', a: 'Nie — środek jest bezbarwny i po wyschnięciu nie zmienia koloru ani struktury tkaniny.' },
+      { q: 'Czy impregnacja chroni przed plamami z kawy i wina?', a: 'Tak, ciecze pozostają na powierzchni i można je zetrzeć, zanim wnikną w tkaninę.' },
+      { q: 'Czy impregnat jest bezpieczny dla dzieci i zwierząt?', a: 'Tak, używamy certyfikowanych preparatów bezpiecznych dla dzieci, alergików i zwierząt.' },
+    ],
+    ru: [
+      { q: 'Сколько стоит импрегнация обивки?', a: 'Импрегнация с защитой на год — от 80 zł, дешевле всего вместе с химчисткой.' },
+      { q: 'Сколько действует импрегнация?', a: 'Водоотталкивающее покрытие работает около 12 месяцев при обычной эксплуатации.' },
+      { q: 'Меняет ли средство цвет или текстуру ткани?', a: 'Нет — состав бесцветный и после высыхания не меняет ни цвет, ни структуру ткани.' },
+      { q: 'Защищает ли импрегнация от пятен кофе и вина?', a: 'Да, жидкость остаётся на поверхности, и её можно вытереть до впитывания.' },
+      { q: 'Безопасно ли средство для детей и животных?', a: 'Да, применяем сертифицированные составы, безопасные для детей, аллергиков и животных.' },
+    ],
+    uk: [
+      { q: 'Скільки коштує імпрегнація оббивки?', a: 'Імпрегнація із захистом на рік — від 80 zł, найдешевше разом із хімчисткою.' },
+      { q: 'Скільки діє імпрегнація?', a: 'Водовідштовхувальне покриття працює близько 12 місяців за звичайної експлуатації.' },
+      { q: 'Чи змінює засіб колір або текстуру тканини?', a: 'Ні — склад безбарвний і після висихання не змінює ні колір, ні структуру тканини.' },
+      { q: 'Чи захищає імпрегнація від плям кави та вина?', a: 'Так, рідина залишається на поверхні, і її можна витерти до вбирання.' },
+      { q: 'Чи безпечний засіб для дітей і тварин?', a: 'Так, використовуємо сертифіковані склади, безпечні для дітей, алергіків і тварин.' },
+    ],
+    en: [
+      { q: 'How much does fabric protection cost?', a: 'Impregnation with one-year protection starts at 80 PLN and is cheapest when combined with cleaning.' },
+      { q: 'How long does the protection last?', a: 'The hydrophobic coating lasts about 12 months under normal use.' },
+      { q: 'Does it change the colour or texture of the fabric?', a: 'No — the product is colourless and does not alter colour or texture once dry.' },
+      { q: 'Does it protect against coffee and wine stains?', a: 'Yes, liquids stay on the surface so you can wipe them off before they soak in.' },
+      { q: 'Is the product safe for children and pets?', a: 'Yes, we use certified products that are safe for children, allergy sufferers and pets.' },
+    ],
+  },
 };
 
 export const getSeoMeta = (page: PageKey, language: string): SeoMeta =>
   SEO_META[page][(language as Lang)] || SEO_META[page].pl;
 
-export const getFaqs = (page: PageKey, language: string): Faq[] =>
+export const getFaqs = (page: FaqPageKey, language: string): Faq[] =>
   FAQS[page][(language as Lang)] || FAQS[page].pl;
 
 export const getFaqTitle = (language: string): string =>
   FAQ_TITLE[(language as Lang)] || FAQ_TITLE.pl;
 
-export const buildFaqJsonLd = (page: PageKey, language: string) => ({
+export const buildFaqJsonLd = (page: FaqPageKey, language: string) => ({
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: getFaqs(page, language).map((f) => ({

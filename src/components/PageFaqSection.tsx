@@ -1,9 +1,9 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { getFaqs, getFaqTitle, type PageKey } from '@/lib/pageSeo';
+import { getFaqs, getFaqTitle, type FaqPageKey } from '@/lib/pageSeo';
 
 interface PageFaqSectionProps {
-  page: PageKey;
+  page: FaqPageKey;
 }
 
 /**

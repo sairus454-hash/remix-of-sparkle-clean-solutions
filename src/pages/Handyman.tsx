@@ -3,6 +3,8 @@ import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { useSplash } from '@/hooks/useSplash';
 import SEO from '@/components/SEO';
+import PageFaqSection from '@/components/PageFaqSection';
+import { buildFaqJsonLd } from '@/lib/pageSeo';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
@@ -70,7 +72,7 @@ import imgTreeTrimming from '@/assets/handyman/tree-trimming.jpg';
 import imgYardHelp from '@/assets/handyman/yard-help.jpg';
 
 const Handyman = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('handyman');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);
@@ -164,7 +166,7 @@ const Handyman = () => {
         canonical="/handyman"
         image="https://masterclean1885.com/og-handyman.jpg"
         breadcrumbs={[{ name: t.nav.handyman, path: '/handyman' }]}
-         jsonLd={{
+         jsonLd={[{
            '@context': 'https://schema.org',
            '@type': 'Service',
            serviceType: 'Złota rączka — usługi domowe',
@@ -188,7 +190,7 @@ const Handyman = () => {
              { '@type': 'Offer', name: 'Usługi elektryczne', price: '40', priceCurrency: 'PLN' },
              { '@type': 'Offer', name: 'Udrażnianie kanalizacji', price: '250', priceCurrency: 'PLN' },
            ],
-         }}
+         }, buildFaqJsonLd('handyman', language)]}
       />
     <Layout>
       {showSplash && <HandymanSplash onComplete={handleSplashComplete} />}
@@ -416,7 +418,8 @@ const Handyman = () => {
           }
         }
       `}</style>
-    </Layout>
+    <PageFaqSection page="handyman" />
+      </Layout>
     </>
   );
 };
