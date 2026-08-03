@@ -72,7 +72,7 @@ import imgTreeTrimming from '@/assets/handyman/tree-trimming.jpg';
 import imgYardHelp from '@/assets/handyman/yard-help.jpg';
 
 const Handyman = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('handyman');
   const formRef = useRef<ContactFormRef>(null);
   const formSectionRef = useRef<HTMLDivElement>(null);

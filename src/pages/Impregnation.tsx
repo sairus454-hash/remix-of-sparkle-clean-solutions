@@ -15,7 +15,7 @@ import impregnationCoffeeSpill from '@/assets/impregnation-coffee-spill.jpg';
 import impregnationBeforeAfter from '@/assets/impregnation-before-after.jpg';
 
 const Impregnation = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('impregnation');
 
   const benefits = [

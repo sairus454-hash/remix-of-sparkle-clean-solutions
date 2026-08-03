@@ -19,7 +19,7 @@ import { useSplash } from '@/hooks/useSplash';
  import windowCleaning3 from '@/assets/window-cleaning-3.jpg';
  
  const Windows = () => {
-   const { t } = useLanguage();
+   const { t, language } = useLanguage();
    const formRef = useRef<ContactFormRef>(null);
    const formSectionRef = useRef<HTMLDivElement>(null);
    const { showSplash, handleSplashComplete } = useSplash('windows');
