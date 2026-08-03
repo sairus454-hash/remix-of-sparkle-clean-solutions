@@ -5,6 +5,8 @@ import { toast } from '@/hooks/use-toast';
 import { useSplash } from '@/hooks/useSplash';
 
 import SEO from '@/components/SEO';
+import PageFaqSection from '@/components/PageFaqSection';
+import { buildFaqJsonLd } from '@/lib/pageSeo';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
@@ -342,7 +344,7 @@ const Cleaning = () => {
         canonical="/cleaning"
         image="https://masterclean1885.com/og-cleaning.jpg"
         breadcrumbs={[{ name: t.nav.cleaning, path: '/cleaning' }]}
-         jsonLd={{
+         jsonLd={[{
            '@context': 'https://schema.org',
            '@type': 'Service',
            serviceType: 'Sprzątanie mieszkań i domów',
@@ -365,7 +367,7 @@ const Cleaning = () => {
              { '@type': 'Offer', name: 'Sprzątanie standardowe', price: '7', priceCurrency: 'PLN', unitText: 'za m²' },
              { '@type': 'Offer', name: 'Sprzątanie generalne', price: '10', priceCurrency: 'PLN', unitText: 'za m²' },
            ],
-         }}
+         }, buildFaqJsonLd('cleaning', language)]}
       />
       {showSplash && <CleaningSplash onComplete={handleSplashComplete} />}
       <Layout>
@@ -736,7 +738,8 @@ const Cleaning = () => {
       </section>
 
       <OferteoBadge />
-    </Layout>
+    <PageFaqSection page="cleaning" />
+      </Layout>
     <QuickOrderDialog
       open={quickOrderOpen}
       onOpenChange={setQuickOrderOpen}

@@ -1,5 +1,7 @@
 import { useState, useRef } from 'react';
 import SEO from '@/components/SEO';
+import PageFaqSection from '@/components/PageFaqSection';
+import { buildFaqJsonLd } from '@/lib/pageSeo';
 import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import BackToOrderButton from '@/components/BackToOrderButton';
@@ -61,7 +63,7 @@ import { useSplash } from '@/hooks/useSplash';
         canonical="/windows"
         image="https://masterclean1885.com/og-windows.jpg"
         breadcrumbs={[{ name: t.nav.windows, path: '/windows' }]}
-         jsonLd={{
+         jsonLd={[{
            '@context': 'https://schema.org',
            '@type': 'Service',
            serviceType: 'Mycie okien',
@@ -85,7 +87,7 @@ import { useSplash } from '@/hooks/useSplash';
              { '@type': 'Offer', name: 'Okno dwuskrzydłowe', price: '50', priceCurrency: 'PLN' },
              { '@type': 'Offer', name: 'Okno trzyskrzydłowe', price: '80', priceCurrency: 'PLN' },
            ],
-         }}
+         }, buildFaqJsonLd('windows', language)]}
       />
      <Layout>
        <BackToOrderButton />
@@ -248,7 +250,8 @@ import { useSplash } from '@/hooks/useSplash';
            </div>
          </div>
        </section>
-     </Layout>
+     <PageFaqSection page="windows" />
+      </Layout>
      </>
    );
  };
