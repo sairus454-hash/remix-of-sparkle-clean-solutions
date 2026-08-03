@@ -382,6 +382,7 @@ const CarUpholsteryGuide = () => {
         canonical="/poradnik-prania-tapicerki-samochodowej"
         type="article"
         jsonLd={jsonLd}
+        breadcrumbs={[{ name: t.h1 || t.seoTitle.split('—')[0].trim(), path: '/poradnik-prania-tapicerki-samochodowej' }]}
       />
 
       <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-b from-background to-muted/30">
