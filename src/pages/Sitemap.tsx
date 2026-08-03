@@ -64,6 +64,7 @@ const Sitemap = () => {
         description="Mapa strony MasterClean — pełna lista podstron serwisu: usługi, cennik, kontakt, blog i więcej. Nawigacja po stronie."
         keywords="sitemap, mapa strony, MasterClean strony, nawigacja serwisu, struktura serwisu"
         canonical="/sitemap"
+        breadcrumbs={[{ name: 'Sitemap', path: '/sitemap' }]}
       />
       <div className="container mx-auto px-4 py-16 min-h-[60vh]">
         <h1 className="font-serif text-3xl sm:text-4xl font-bold mb-8 text-foreground">Sitemap</h1>

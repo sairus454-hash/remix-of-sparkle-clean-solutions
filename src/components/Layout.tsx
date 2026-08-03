@@ -2,6 +2,7 @@ import { ReactNode, lazy, Suspense } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import CleaningBackground from './CleaningBackground';
+import Breadcrumbs from './Breadcrumbs';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 // Lazy load non-critical components — not needed for initial paint
@@ -37,6 +38,8 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
           </div>
         </section>
+
+        <Breadcrumbs />
 
         {children}
 
