@@ -69,16 +69,20 @@ const SEO = ({
   // x-default points to the PL (root) version per project convention
   const xDefaultUrl = buildLangUrl('pl');
 
+  // Home label must match the visible breadcrumb trail (nav.home)
+  const homeName =
+    ({ pl: 'Główna', ru: 'Главная', uk: 'Головна', en: 'Home' } as Record<string, string>)[language] || 'Główna';
+
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'MasterClean', item: SITE_URL },
+      { '@type': 'ListItem', position: 1, name: homeName, item: buildLangUrl(language) === canonicalUrl ? `${SITE_URL}${buildLangPath(language)}` : `${SITE_URL}${language === 'pl' ? '' : `/${language}`}` || SITE_URL },
       ...breadcrumbs.map((crumb, i) => ({
         '@type': 'ListItem',
         position: i + 2,
         name: crumb.name,
-        item: `${SITE_URL}${crumb.path}`,
+        item: `${SITE_URL}${language === 'pl' ? '' : `/${language}`}${crumb.path.replace(/^\/(ru|en|uk)(?=\/|$)/, '')}`,
       })),
     ],
   } : null;
