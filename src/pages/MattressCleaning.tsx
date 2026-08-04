@@ -272,7 +272,10 @@ const MattressCleaning = () => {
         keywords={c.seoKw}
         canonical="/pranie-materacy"
         image="/og-image.jpg"
-        breadcrumbs={[{ name: c.h1.split('—')[0].trim(), path: '/pranie-materacy' }]}
+        breadcrumbs={[{
+          name: ({ pl: 'Pranie materacy', ru: 'Химчистка матрасов', uk: 'Хімчистка матраців', en: 'Mattress cleaning' } as Record<string, string>)[language] || 'Pranie materacy',
+          path: '/pranie-materacy',
+        }]}
         jsonLd={[
           {
             '@context': 'https://schema.org',
