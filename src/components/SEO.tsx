@@ -74,7 +74,7 @@ const SEO = ({
     ({ pl: 'Główna', ru: 'Главная', uk: 'Головна', en: 'Home' } as Record<string, string>)[language] || 'Główna';
 
   const langSegment = language === 'pl' ? '' : `/${language}`;
-  const homeUrl = `${SITE_URL}${langSegment}/`;
+  const homeUrl = buildLangUrl(language);
 
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',
