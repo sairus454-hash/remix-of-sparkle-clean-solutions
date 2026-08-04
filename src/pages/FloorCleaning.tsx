@@ -257,7 +257,7 @@ const FloorCleaning = () => {
         keywords={s.kw}
         canonical="/floor-cleaning"
         image="/og-floor-cleaning.jpg"
-        breadcrumbs={[{ name: c.title.split('—')[0].trim(), path: '/floor-cleaning' }]}
+        breadcrumbs={[{ name: t.nav.floorCleaning, path: '/floor-cleaning' }]}
         jsonLd={[
           {
             '@context': 'https://schema.org',
