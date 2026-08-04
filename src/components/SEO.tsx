@@ -73,16 +73,19 @@ const SEO = ({
   const homeName =
     ({ pl: 'Główna', ru: 'Главная', uk: 'Головна', en: 'Home' } as Record<string, string>)[language] || 'Główna';
 
+  const langSegment = language === 'pl' ? '' : `/${language}`;
+  const homeUrl = `${SITE_URL}${langSegment}/`;
+
   const breadcrumbJsonLd = breadcrumbs && breadcrumbs.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: homeName, item: buildLangUrl(language) === canonicalUrl ? `${SITE_URL}${buildLangPath(language)}` : `${SITE_URL}${language === 'pl' ? '' : `/${language}`}` || SITE_URL },
+      { '@type': 'ListItem', position: 1, name: homeName, item: homeUrl },
       ...breadcrumbs.map((crumb, i) => ({
         '@type': 'ListItem',
         position: i + 2,
         name: crumb.name,
-        item: `${SITE_URL}${language === 'pl' ? '' : `/${language}`}${crumb.path.replace(/^\/(ru|en|uk)(?=\/|$)/, '')}`,
+        item: `${SITE_URL}${langSegment}${crumb.path.replace(/^\/(ru|en|uk)(?=\/|$)/, '')}`,
       })),
     ],
   } : null;
