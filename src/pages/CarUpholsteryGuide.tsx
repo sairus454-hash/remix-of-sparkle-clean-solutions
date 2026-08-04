@@ -382,7 +382,15 @@ const CarUpholsteryGuide = () => {
         canonical="/poradnik-prania-tapicerki-samochodowej"
         type="article"
         jsonLd={jsonLd}
-        breadcrumbs={[{ name: t.h1 || t.seoTitle.split('—')[0].trim(), path: '/poradnik-prania-tapicerki-samochodowej' }]}
+        breadcrumbs={[{
+          name: ({
+            pl: 'Poradnik prania tapicerki samochodowej',
+            ru: 'Гид по химчистке автомобильного салона',
+            uk: 'Гід з хімчистки автомобільного салону',
+            en: 'Car upholstery cleaning guide',
+          } as Record<string, string>)[language] || 'Poradnik prania tapicerki samochodowej',
+          path: '/poradnik-prania-tapicerki-samochodowej',
+        }]}
       />
 
       <section className="relative pt-24 pb-12 md:pt-32 md:pb-16 bg-gradient-to-b from-background to-muted/30">
