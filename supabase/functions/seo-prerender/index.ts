@@ -850,6 +850,92 @@ const blogFallbackByLang: Record<Lang, PageMeta> = {
   },
 };
 
+// ---------------------------------------------------------------------------
+// Service / guide landing pages that exist in the SPA router and in sitemap.xml
+// but were missing here — bots received 404 instead of prerendered HTML.
+// ---------------------------------------------------------------------------
+staticPages['/floor-cleaning'] = {
+  title: 'Pranie wykładzin i czyszczenie płytek — 15 zł/m²',
+  description: 'Profesjonalne pranie dywanów, wykładzin dywanowych i czyszczenie płytek ceramicznych metodą ekstrakcyjną. 15 zł/m². Dojazd na terenie Dolnego Śląska.',
+  keywords: 'pranie wykładzin, czyszczenie płytek, pranie dywanów, czyszczenie podłogi drewnianej',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPages['/pranie-materacy'] = {
+  title: 'Pranie materacy — ekstrakcja, roztocza i plamy',
+  description: 'Głębokie pranie materacy metodą ekstrakcyjną: usuwamy roztocza, plamy i zapachy. Sprzęt Santoemma i Kärcher, dojazd do klienta. Rabat −10% przez formularz.',
+  keywords: 'pranie materacy, czyszczenie materaca, usuwanie roztoczy, pranie materaca cena',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPages['/poradnik-prania-tapicerki-samochodowej'] = {
+  title: 'Pranie tapicerki samochodowej — poradnik krok po kroku',
+  description: 'Poradnik prania tapicerki samochodowej: kiedy prać samemu, jakich środków użyć, jakich błędów unikać i kiedy wybrać pranie ekstrakcyjne u profesjonalisty.',
+  keywords: 'pranie tapicerki samochodowej poradnik, jak wyprać fotele, czyszczenie wnętrza auta',
+  image: `${SITE_URL}/og-auto.jpg`,
+  type: 'article',
+};
+
+staticPagesI18n.ru['/floor-cleaning'] = {
+  title: 'Химчистка ковролина и чистка плитки — 15 зł/м²',
+  description: 'Профессиональная экстракторная чистка ковров, ковролина и керамической плитки. 15 зł/м². Выезд по Нижней Силезии и другим регионам Польши.',
+  keywords: 'химчистка ковролина, чистка плитки, чистка ковров, чистка деревянного пола',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPagesI18n.ru['/pranie-materacy'] = {
+  title: 'Химчистка матрасов — экстракция, клещи и пятна',
+  description: 'Глубокая экстракторная химчистка матрасов: удаляем пылевых клещей, пятна и запахи. Оборудование Santoemma и Kärcher, выезд. Скидка −10% через форму.',
+  keywords: 'химчистка матрасов, чистка матраса, удаление клещей, чистка матраса цена',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPagesI18n.ru['/poradnik-prania-tapicerki-samochodowej'] = {
+  title: 'Химчистка обивки авто — пошаговое руководство',
+  description: 'Руководство по химчистке автомобильной обивки: когда чистить самому, какие средства использовать, каких ошибок избегать и когда нужна экстракция.',
+  keywords: 'химчистка обивки авто, как почистить сиденья, чистка салона автомобиля',
+  image: `${SITE_URL}/og-auto.jpg`,
+  type: 'article',
+};
+
+staticPagesI18n.en['/floor-cleaning'] = {
+  title: 'Carpet & tile floor cleaning — 15 PLN/m²',
+  description: 'Professional hot-water extraction cleaning of carpets, fitted carpets and ceramic tile floors. 15 PLN/m². On-site service across Lower Silesia and Poland.',
+  keywords: 'carpet cleaning, tile cleaning, fitted carpet cleaning, wooden floor cleaning',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPagesI18n.en['/pranie-materacy'] = {
+  title: 'Mattress cleaning — extraction, mites and stains',
+  description: 'Deep hot-water extraction mattress cleaning: removes dust mites, stains and odours. Santoemma and Kärcher equipment, on-site. −10% discount via the form.',
+  keywords: 'mattress cleaning, mattress washing, dust mite removal, mattress cleaning price',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPagesI18n.en['/poradnik-prania-tapicerki-samochodowej'] = {
+  title: 'Car upholstery cleaning — step-by-step guide',
+  description: 'A complete guide to car upholstery cleaning: when to DIY, which products to use, mistakes to avoid and when professional hot-water extraction is worth it.',
+  keywords: 'car upholstery cleaning guide, how to clean car seats, car interior cleaning',
+  image: `${SITE_URL}/og-auto.jpg`,
+  type: 'article',
+};
+
+staticPagesI18n.uk['/floor-cleaning'] = {
+  title: 'Хімчистка ковроліну та чищення плитки — 15 zł/м²',
+  description: 'Професійна екстракторна хімчистка килимів, ковроліну та керамічної плитки. 15 zł/м². Виїзд по Нижній Силезії та інших регіонах Польщі.',
+  keywords: 'хімчистка ковроліну, чищення плитки, чищення килимів, чищення дерев’яної підлоги',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPagesI18n.uk['/pranie-materacy'] = {
+  title: 'Хімчистка матраців — екстракція, кліщі та плями',
+  description: 'Глибока екстракторна хімчистка матраців: прибираємо пилових кліщів, плями та запахи. Обладнання Santoemma і Kärcher, виїзд. Знижка −10% через форму.',
+  keywords: 'хімчистка матраців, чищення матраца, видалення кліщів, чищення матраца ціна',
+  image: `${SITE_URL}/og-services.jpg`,
+};
+staticPagesI18n.uk['/poradnik-prania-tapicerki-samochodowej'] = {
+  title: 'Хімчистка оббивки авто — покроковий гайд',
+  description: 'Гайд з хімчистки автомобільної оббивки: коли чистити самому, які засоби обрати, яких помилок уникати та коли потрібна професійна екстракція.',
+  keywords: 'хімчистка оббивки авто, як почистити сидіння, чищення салону автомобіля',
+  image: `${SITE_URL}/og-auto.jpg`,
+  type: 'article',
+};
+
+
+
 function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
   // Static pages: try localized override, fallback to PL
   if (lang !== 'pl' && staticPagesI18n[lang]?.[path]) {
