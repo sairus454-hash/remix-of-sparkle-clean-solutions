@@ -52,7 +52,7 @@ const HeroVideo = ({ src = '/hero-video.mp4', fallbackImage, fallbackImageMobile
       {fallbackImage && isMobile && (
         <img
           src={fallbackImageMobile || fallbackImage}
-          alt="MasterClean — profesjonalne usługi czyszczenia"
+          alt="MasterClean — pranie tapicerki meblowej, kanap i materacy metodą ekstrakcyjną z dojazdem do klienta"
           width={480}
           height={720}
           loading="eager"
