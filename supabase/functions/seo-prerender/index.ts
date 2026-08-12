@@ -1150,6 +1150,43 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
     },
   })}
   </script>
+${type === 'article' ? `
+  <!-- BlogPosting structured data -->
+  <script type="application/ld+json">
+  ${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: (meta.headline || meta.title).slice(0, 110),
+    description: meta.description,
+    image: [image],
+    inLanguage: htmlLang,
+    datePublished: meta.datePublished || undefined,
+    dateModified: meta.datePublished || undefined,
+    keywords: meta.keywords || undefined,
+    author: { '@type': 'Organization', name: 'MasterClean', url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'MasterClean',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon.png`, width: 256, height: 256 },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+    isPartOf: { '@type': 'Blog', '@id': `${SITE_URL}/blog`, name: 'MasterClean Blog' },
+  })}
+  </script>` : ''}
+${meta.faq && meta.faq.length > 0 ? `
+  <!-- FAQPage structured data -->
+  <script type="application/ld+json">
+  ${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: htmlLang,
+    mainEntity: meta.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  })}
+  </script>` : ''}
 
   <!-- Redirect real users to SPA -->
   <noscript>
@@ -1157,8 +1194,13 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   </noscript>
 </head>
 <body>
-  <h1>${escapeHtml(meta.title)}</h1>
+  <h1>${escapeHtml(meta.headline || meta.title)}</h1>
   <p>${escapeHtml(meta.description)}</p>
+${meta.faq && meta.faq.length > 0 ? `
+  <section>
+    <h2>${faqHeading}</h2>
+    ${meta.faq.map((item) => `<h3>${escapeHtml(item.q)}</h3>\n    <p>${escapeHtml(item.a)}</p>`).join('\n    ')}
+  </section>` : ''}
 
   <section>
     <h2>O firmie MasterClean</h2>
