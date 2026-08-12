@@ -1071,6 +1071,12 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   };
   const htmlLang = ['pl', 'ru', 'en', 'uk'].includes(lang) ? lang : 'pl';
   const ogLocale = ogLocaleMap[htmlLang] || 'pl_PL';
+  const faqHeading = ({
+    pl: 'Najczęściej zadawane pytania',
+    ru: 'Часто задаваемые вопросы',
+    en: 'Frequently Asked Questions',
+    uk: 'Часті запитання',
+  } as Record<string, string>)[htmlLang] || 'Najczęściej zadawane pytania';
 
   return `<!DOCTYPE html>
 <html lang="${htmlLang}">
