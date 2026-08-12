@@ -100,13 +100,15 @@ const BlogArticle = () => {
          jsonLd={[
            {
              '@context': 'https://schema.org',
-             '@type': 'Article',
-             headline: article.title.slice(0, 110),
-             description: article.summary,
+             '@type': 'BlogPosting',
+             headline: (article.seo?.h1 || article.title).slice(0, 110),
+             description: article.seo?.description || article.summary,
              image: [article.image?.startsWith('http') ? article.image : `https://masterclean1885.com${article.image}`],
              inLanguage: language,
              datePublished: article.date,
              dateModified: article.date,
+             keywords: article.seo?.keywords,
+             articleSection: article.tag,
              author: { '@type': 'Organization', name: 'MasterClean', url: 'https://masterclean1885.com' },
              publisher: {
                '@type': 'Organization',
@@ -114,10 +116,12 @@ const BlogArticle = () => {
                logo: { '@type': 'ImageObject', url: 'https://masterclean1885.com/favicon.png', width: 256, height: 256 },
              },
              mainEntityOfPage: { '@type': 'WebPage', '@id': `https://masterclean1885.com/blog/${article.id}` },
+             isPartOf: { '@type': 'Blog', '@id': 'https://masterclean1885.com/blog', name: 'MasterClean Blog' },
            },
            ...(article.faq && article.faq.length > 0 ? [{
              '@context': 'https://schema.org',
              '@type': 'FAQPage',
+             inLanguage: language,
              mainEntity: article.faq.map(item => ({
                '@type': 'Question',
                name: item.q,
