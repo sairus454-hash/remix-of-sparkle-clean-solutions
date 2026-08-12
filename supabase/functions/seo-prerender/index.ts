@@ -1041,7 +1041,7 @@ function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
   if (blogMatch) {
     const id = blogMatch[1];
     // Fully translated per-article meta + FAQ (preferred).
-    const localized = blogArticleI18n[lang]?.[id] || blogArticleI18n.pl[id];
+    const localized = blogArticleI18n[lang]?.[id];
     if (localized) return localized;
     // Per-article PL meta exists; for non-PL we serve a generic
     // localized blog fallback (per-article translations live in the SPA).
