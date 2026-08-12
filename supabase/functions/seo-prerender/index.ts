@@ -10,12 +10,23 @@ const PHONE = '+48 575 211 401';
 // Bot user-agent patterns
 const BOT_AGENTS = /googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|telegrambot|applebot|duckduckbot|semrushbot|ahrefsbot|mj12bot|petalbot|saitreport|screaming|sitebulb|seranking|serpstat/i;
 
+interface FaqEntry {
+  q: string;
+  a: string;
+}
+
 interface PageMeta {
   title: string;
   description: string;
   keywords?: string;
   image?: string;
   type?: string;
+  /** Visible H1 / schema headline (falls back to title). */
+  headline?: string;
+  /** ISO date for BlogPosting datePublished / dateModified. */
+  datePublished?: string;
+  /** Rendered as a visible FAQ block + FAQPage JSON-LD. */
+  faq?: FaqEntry[];
 }
 
 const staticPages: Record<string, PageMeta> = {
