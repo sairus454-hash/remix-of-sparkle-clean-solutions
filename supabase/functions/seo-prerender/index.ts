@@ -946,6 +946,84 @@ staticPagesI18n.uk['/poradnik-prania-tapicerki-samochodowej'] = {
 };
 
 
+// =====================================================================
+// Per-article localized blog metadata + FAQ (used for BlogPosting and
+// FAQPage structured data served to crawlers in every language).
+// =====================================================================
+const blogArticleI18n: Record<Lang, Record<string, PageMeta>> = {
+  pl: {
+    '32': {
+      title: 'Czyszczenie wnętrza auta przed sprzedażą - co działa | MasterClean',
+      description: 'Czyszczenie wnętrza auta przed sprzedażą: jak przygotować samochód, co zniechęca kupującego i kiedy zlecić profesjonalne pranie tapicerki.',
+      keywords: 'czyszczenie wnętrza auta przed sprzedażą, przygotowanie auta do sprzedaży, pranie tapicerki samochodowej, usuwanie zapachu z auta, detailing auta przed sprzedażą',
+      headline: 'Czyszczenie wnętrza auta przed sprzedażą - co naprawdę wpływa na cenę',
+      image: `${SITE_URL}/og-auto.jpg`,
+      type: 'article',
+      datePublished: '2026-05-22',
+      faq: [
+        { q: 'Czy czyste wnętrze realnie wpływa na cenę sprzedaży?', a: 'Częściej ogranicza negocjacje niż podnosi cenę. Kupujący rzadziej używa argumentów o zaniedbaniu i szybciej podejmuje decyzję.' },
+        { q: 'Czy wystarczy odkurzyć wnętrze przed prezentacją?', a: 'Tylko jeśli auto było utrzymane w bardzo dobrym stanie. Przy plamach, zapachach lub poszarzałej tapicerce potrzebne jest pełne czyszczenie.' },
+        { q: 'Kiedy zlecić czyszczenie, żeby wnętrze wyschło?', a: 'Minimum 24-48 godzin przed prezentacją, aby tapicerka dobrze wyschła i w kabinie nie było wilgoci.' },
+        { q: 'Czy ozonowanie usuwa zapach papierosów z auta?', a: 'Tak, ale tylko po wcześniejszym wypraniu tapicerki i podsufitki. Bez tego zapach szybko wraca.' },
+        { q: 'Czy myć komorę silnika przed sprzedażą?', a: 'Niekoniecznie. Zbyt błyszcząca komora silnika może wzbudzić podejrzenia o ukrywanie wycieków.' },
+      ],
+    },
+  },
+  ru: {
+    '32': {
+      title: 'Чистка салона авто перед продажей - что работает | MasterClean',
+      description: 'Чистка салона авто перед продажей: как подготовить машину, что отталкивает покупателя и когда стоит заказать профессиональную чистку.',
+      keywords: 'чистка салона авто перед продажей, подготовка авто к продаже, химчистка салона авто, удаление запаха в авто, чистка обивки автомобиля',
+      headline: 'Чистка салона авто перед продажей - что действительно влияет на цену',
+      image: `${SITE_URL}/og-auto.jpg`,
+      type: 'article',
+      datePublished: '2026-05-22',
+      faq: [
+        { q: 'Сильно ли чистый салон влияет на цену продажи?', a: 'Чаще ограничивает торг, чем поднимает цену. Покупатель реже использует аргументы о запущенности и быстрее принимает решение.' },
+        { q: 'Достаточно ли пропылесосить салон перед показом?', a: 'Только если авто было в очень хорошем состоянии. При пятнах, запахах или посеревшей обивке нужна полноценная чистка.' },
+        { q: 'Когда заказать чистку, чтобы салон высох?', a: 'Минимум за 24-48 часов до показа, чтобы обивка хорошо высохла и в кабине не было влажности.' },
+        { q: 'Убирает ли озонирование запах сигарет в авто?', a: 'Да, но только после предварительной чистки обивки и потолка. Без этого запах быстро возвращается.' },
+        { q: 'Стоит ли мыть моторный отсек перед продажей?', a: 'Не обязательно. Слишком блестящий моторный отсек может вызвать подозрения о попытке скрыть протечки.' },
+      ],
+    },
+  },
+  en: {
+    '32': {
+      title: 'Car Interior Cleaning Before Sale - What Works | MasterClean',
+      description: 'Car interior cleaning before sale: how to prepare the car, what puts buyers off and when to order professional cleaning for the best price.',
+      keywords: 'car interior cleaning before sale, prepare car for sale, car upholstery cleaning, remove smell from car, car detailing before sale',
+      headline: 'Car Interior Cleaning Before Sale - What Really Affects the Price',
+      image: `${SITE_URL}/og-auto.jpg`,
+      type: 'article',
+      datePublished: '2026-05-22',
+      faq: [
+        { q: 'Does a clean interior really affect the sale price?', a: 'More often it limits negotiation than raises the price. The buyer uses fewer arguments about neglect and decides faster.' },
+        { q: 'Is vacuuming the interior enough before viewing?', a: 'Only if the car was kept in very good condition. With stains, odors or greyish upholstery a full cleaning is needed.' },
+        { q: 'When to order cleaning so the interior dries?', a: 'At least 24-48 hours before the viewing so the upholstery dries well and there is no dampness in the cabin.' },
+        { q: 'Does ozone treatment remove cigarette smell from a car?', a: 'Yes, but only after prior cleaning of the upholstery and headliner. Without that the smell returns quickly.' },
+        { q: 'Should I wash the engine bay before sale?', a: 'Not necessarily. A too shiny engine bay can raise suspicion of trying to hide leaks.' },
+      ],
+    },
+  },
+  uk: {
+    '32': {
+      title: 'Чистка салону авто перед продажем - що працює | MasterClean',
+      description: 'Чистка салону авто перед продажем: як підготувати машину, що відштовхує покупця та коли варто замовити професійну чистку.',
+      keywords: 'чистка салону авто перед продажем, підготовка авто до продажу, хімчистка салону авто, видалення запаху в авто, чистка оббивки автомобіля',
+      headline: 'Чистка салону авто перед продажем - що справді впливає на ціну',
+      image: `${SITE_URL}/og-auto.jpg`,
+      type: 'article',
+      datePublished: '2026-05-22',
+      faq: [
+        { q: 'Чи сильно чистий салон впливає на ціну продажу?', a: 'Частіше обмежує торг, ніж піднімає ціну. Покупець рідше використовує аргументи про занедбаність і швидше приймає рішення.' },
+        { q: 'Чи достатньо пропилососити салон перед показом?', a: 'Тільки якщо авто було в дуже хорошому стані. При плямах, запахах або посірілій оббивці потрібна повноцінна чистка.' },
+        { q: 'Коли замовити чистку, щоб салон висох?', a: 'Мінімум за 24-48 годин до показу, щоб оббивка добре висохла і в кабіні не було вологості.' },
+        { q: 'Чи прибирає озонування запах сигарет в авто?', a: 'Так, але тільки після попередньої чистки оббивки та стелі. Без цього запах швидко повертається.' },
+        { q: 'Чи варто мити моторний відсік перед продажем?', a: 'Не обовʼязково. Занадто блискучий моторний відсік може викликати підозри щодо приховування протікань.' },
+      ],
+    },
+  },
+};
 
 function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
   // Static pages: try localized override, fallback to PL
@@ -961,9 +1039,13 @@ function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
 
   const blogMatch = path.match(/^\/blog\/(\d+)$/);
   if (blogMatch) {
-    // Per-article PL meta exists; for non-PL we currently serve a generic
+    const id = blogMatch[1];
+    // Fully translated per-article meta + FAQ (preferred).
+    const localized = blogArticleI18n[lang]?.[id] || blogArticleI18n.pl[id];
+    if (localized) return localized;
+    // Per-article PL meta exists; for non-PL we serve a generic
     // localized blog fallback (per-article translations live in the SPA).
-    if (lang === 'pl' && blogPages[blogMatch[1]]) return blogPages[blogMatch[1]];
+    if (lang === 'pl' && blogPages[id]) return blogPages[id];
     return blogFallbackByLang[lang] || blogFallbackByLang.pl;
   }
 
