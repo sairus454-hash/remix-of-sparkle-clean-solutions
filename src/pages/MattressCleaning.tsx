@@ -253,10 +253,10 @@ const MattressCleaning = () => {
   const c = COPY[lang];
 
   const items = [
-    { id: 'mattressSingle', name: t.prices?.items?.mattressSingleDry || 'Materac jednoosobowy', price: 130, image: calcSingle },
-    { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Materac jednoosobowy (2 strony)', price: 200, image: calcSingle },
-    { id: 'mattressDouble', name: t.prices?.items?.mattressDoubleDry || 'Materac dwuosobowy', price: 200, image: calcDouble },
-    { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Materac dwuosobowy (2 strony)', price: 300, image: calcDouble },
+    { id: 'mattressSingle', name: t.prices?.items?.mattressSingleDry || 'Materac jednoosobowy', price: 150, image: calcSingle },
+    { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Materac jednoosobowy (2 strony)', price: 230, image: calcSingle },
+    { id: 'mattressDouble', name: t.prices?.items?.mattressDoubleDry || 'Materac dwuosobowy', price: 230, image: calcDouble },
+    { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Materac dwuosobowy (2 strony)', price: 345, image: calcDouble },
   ];
 
   const handleSendToForm = (calcItems: CalculatorItem[], total: number) => {

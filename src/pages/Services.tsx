@@ -80,28 +80,28 @@ const Services = () => {
   ];
 
   const furnitureItems = [
-    { id: 'pouf', name: t.prices.items.pouf, price: 40, image: calcPouf },
-    { id: 'chairSeat', name: t.prices.items.chairSeat, price: 20, image: calcChairSeat },
-    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 30, image: calcChairBack },
-    { id: 'chairConference', name: t.prices.items.chairConference, price: 40, image: calcChairConference },
-    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 50, image: calcChairSwivel },
-    { id: 'chair', name: t.prices.items.chair, price: 30, image: calcChair },
-    { id: 'armchair', name: t.prices.items.armchair, price: 80, image: calcArmchair },
-    { id: 'pillow', name: t.prices.items.pillow, price: 10, image: calcPillow },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 160, image: calcSofa2 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 180, image: calcSofa3 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 230, image: calcSofaCorner },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 280, image: calcSofaCornerLarge },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 180, image: calcKitchenCorner },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 100, image: calcHeadboard },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 100, image: calcBedframe },
+    { id: 'pouf', name: t.prices.items.pouf, price: 50, image: calcPouf },
+    { id: 'chairSeat', name: t.prices.items.chairSeat, price: 25, image: calcChairSeat },
+    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 35, image: calcChairBack },
+    { id: 'chairConference', name: t.prices.items.chairConference, price: 50, image: calcChairConference },
+    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 60, image: calcChairSwivel },
+    { id: 'chair', name: t.prices.items.chair, price: 35, image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: 95, image: calcArmchair },
+    { id: 'pillow', name: t.prices.items.pillow, price: 15, image: calcPillow },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: 185, image: calcSofa2 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: 210, image: calcSofa3 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 265, image: calcSofaCorner },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 325, image: calcSofaCornerLarge },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 210, image: calcKitchenCorner },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 115, image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 115, image: calcBedframe },
   ];
 
   const mattressItems = [
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 130, image: calcMattressSingle },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 200, image: calcMattressDouble },
-    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 200, image: calcMattressSingle },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 300, image: calcMattressDouble },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 150, image: calcMattressSingle },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 230, image: calcMattressDouble },
+    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 230, image: calcMattressSingle },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 345, image: calcMattressDouble },
   ];
 
   const { t: translations } = useLanguage();
@@ -122,13 +122,13 @@ const Services = () => {
   ];
 
   const leatherItems = [
-    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 50, image: calcLeatherPouf },
-    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 50, image: calcLeatherChair },
-    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 90, image: calcLeatherArmchair },
-    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 160, image: calcLeatherSofa2 },
-    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 200, image: calcLeatherSofa3 },
-    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 250, image: calcLeatherCorner },
-    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 70, image: calcLeatherChairSwivel },
+    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 60, image: calcLeatherPouf },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 60, image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 105, image: calcLeatherArmchair },
+    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 185, image: calcLeatherSofa2 },
+    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 230, image: calcLeatherSofa3 },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 290, image: calcLeatherCorner },
+    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 85, image: calcLeatherChairSwivel },
   ];
 
   const seoMeta = getSeoMeta('services', language);
