@@ -82,8 +82,8 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     },
     unit: { ru: 'место', en: 'seat', pl: 'miejsce', uk: 'місце' },
     suggestions: [2, 3, 5, 7],
-    // ~40 PLN per seat (corner) to 70 PLN per seat (2-seater).
-    baseEstimator: (qty) => ({ min: round5(qty * 40), max: round5(qty * 70) }),
+    // ~46 PLN per seat (corner 230/5) to 85 PLN per seat (2-seater 165/2).
+    baseEstimator: (qty) => ({ min: round5(qty * 46), max: round5(qty * 85) }),
     markup: 'standard',
   },
   {
@@ -99,8 +99,8 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     },
     unit: { ru: 'шт', en: 'pcs', pl: 'szt', uk: 'шт' },
     suggestions: [1, 2, 3],
-    // 130 single, 200 double (Wrocław base after +10% mattress-with-drying update, rounded to tens)
-    baseEstimator: (qty) => ({ min: 130 * qty, max: 200 * qty }),
+    // 150 single, 230 double (Wrocław base after the +15% update, rounded up to 5)
+    baseEstimator: (qty) => ({ min: 150 * qty, max: 230 * qty }),
     markup: 'standard',
   },
   {
