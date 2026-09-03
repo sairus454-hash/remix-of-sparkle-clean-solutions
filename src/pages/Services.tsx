@@ -59,6 +59,7 @@ import calcCarseat from '@/assets/calc-carseat.jpg';
 import calcCarpetMedium from '@/assets/calc-carpet-medium.jpg';
 import calcCarpetLarge from '@/assets/calc-carpet-large.jpg';
 import calcCamperCleaning from '@/assets/calc-camper-cleaning.jpg';
+import { servicePrice, useServicePrices } from '@/data/servicePrices';
 
 const Services = () => {
   const { t, language } = useLanguage();
@@ -80,28 +81,28 @@ const Services = () => {
   ];
 
   const furnitureItems = [
-    { id: 'pouf', name: t.prices.items.pouf, price: 50, image: calcPouf },
-    { id: 'chairSeat', name: t.prices.items.chairSeat, price: 25, image: calcChairSeat },
-    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 35, image: calcChairBack },
-    { id: 'chairConference', name: t.prices.items.chairConference, price: 50, image: calcChairConference },
-    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 60, image: calcChairSwivel },
-    { id: 'chair', name: t.prices.items.chair, price: 35, image: calcChair },
-    { id: 'armchair', name: t.prices.items.armchair, price: 95, image: calcArmchair },
-    { id: 'pillow', name: t.prices.items.pillow, price: 15, image: calcPillow },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 185, image: calcSofa2 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 210, image: calcSofa3 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 265, image: calcSofaCorner },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 325, image: calcSofaCornerLarge },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 210, image: calcKitchenCorner },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 115, image: calcHeadboard },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 115, image: calcBedframe },
+    { id: 'pouf', name: t.prices.items.pouf, price: servicePrice('pouf'), image: calcPouf },
+    { id: 'chairSeat', name: t.prices.items.chairSeat, price: servicePrice('chairSeat'), image: calcChairSeat },
+    { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: servicePrice('chairWithBack'), image: calcChairBack },
+    { id: 'chairConference', name: t.prices.items.chairConference, price: servicePrice('chairConference'), image: calcChairConference },
+    { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: servicePrice('chairSwivel'), image: calcChairSwivel },
+    { id: 'chair', name: t.prices.items.chair, price: servicePrice('chair'), image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: servicePrice('armchair'), image: calcArmchair },
+    { id: 'pillow', name: t.prices.items.pillow, price: servicePrice('pillow'), image: calcPillow },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: servicePrice('sofa2'), image: calcSofa2 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: servicePrice('sofa3'), image: calcSofa3 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: servicePrice('sofaCorner'), image: calcSofaCorner },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: servicePrice('sofaCornerLarge'), image: calcSofaCornerLarge },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: servicePrice('kitchenCorner'), image: calcKitchenCorner },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: servicePrice('bedHeadboard'), image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: servicePrice('bedFrame'), image: calcBedframe },
   ];
 
   const mattressItems = [
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 150, image: calcMattressSingle },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 230, image: calcMattressDouble },
-    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: 230, image: calcMattressSingle },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: 345, image: calcMattressDouble },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: servicePrice('mattressSingle'), image: calcMattressSingle },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: servicePrice('mattressDouble'), image: calcMattressDouble },
+    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2 || 'Матрас односп. с двух сторон', price: servicePrice('mattressSingleDry2'), image: calcMattressSingle },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2 || 'Матрас двусп. с двух сторон', price: servicePrice('mattressDoubleDry2'), image: calcMattressDouble },
   ];
 
   const { t: translations } = useLanguage();
@@ -116,19 +117,19 @@ const Services = () => {
     { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: translations.promotions?.dryingFreeSpring || 'Бесплатно' },
     { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 30, image: calcCarpetPickup, unit: 'm²' },
     { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny dywanowej z odbiorem' : language === 'en' ? 'Carpet covering impregnation with pickup' : 'Импрегнация коврового покрытия с забором'), price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
-    { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
-    { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
+    { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: servicePrice('stroller'), image: calcStroller },
+    { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: servicePrice('carseat'), image: calcCarseat },
     { id: 'camperCleaning', name: t.prices.items.camperCleaning, price: 400, image: calcCamperCleaning, priceText: '400–1000 zł' },
   ];
 
   const leatherItems = [
-    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 60, image: calcLeatherPouf },
-    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 60, image: calcLeatherChair },
-    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 105, image: calcLeatherArmchair },
-    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 185, image: calcLeatherSofa2 },
-    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 230, image: calcLeatherSofa3 },
-    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 290, image: calcLeatherCorner },
-    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 85, image: calcLeatherChairSwivel },
+    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: servicePrice('leatherPouf'), image: calcLeatherPouf },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: servicePrice('leatherChair'), image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: servicePrice('leatherArmchair'), image: calcLeatherArmchair },
+    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: servicePrice('leatherSofa2'), image: calcLeatherSofa2 },
+    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: servicePrice('leatherSofa3'), image: calcLeatherSofa3 },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: servicePrice('leatherSofaCorner'), image: calcLeatherCorner },
+    { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: servicePrice('leatherChairSwivel'), image: calcLeatherChairSwivel },
   ];
 
   const seoMeta = getSeoMeta('services', language);

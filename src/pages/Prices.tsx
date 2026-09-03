@@ -28,6 +28,7 @@ import PageFaqSection from '@/components/PageFaqSection';
 import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
 
 import { CalculatorItem } from '@/types/calculator';
+import { servicePrice, useServicePrices } from '@/data/servicePrices';
 
 const Prices = () => {
   const { t, language } = useLanguage();
@@ -91,45 +92,45 @@ const Prices = () => {
     {
       ...META.furniture,
       items: [
-        { id: 'pouf', name: t.prices.items.pouf, price: 50, image: img('calc-pouf.jpg') },
-        { id: 'chairSeat', name: t.prices.items.chairSeat, price: 25, image: img('calc-chair-seat.jpg') },
-        { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 35, image: img('calc-chair-back.jpg') },
-        { id: 'chairConference', name: t.prices.items.chairConference, price: 50, image: img('calc-chair-conference.jpg') },
-        { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 60, image: img('calc-chair-swivel.jpg') },
-        { id: 'chair', name: t.prices.items.chair, price: 35, image: img('calc-chair.jpg') },
-        { id: 'armchair', name: t.prices.items.armchair, price: 85, image: img('calc-armchair.jpg') },
-        { id: 'pillow', name: t.prices.items.pillow, price: 10, image: img('calc-pillow.jpg') },
-        { id: 'sofa2', name: t.prices.items.sofa2, price: 165, image: img('calc-sofa2.jpg') },
-        { id: 'sofa3', name: t.prices.items.sofa3, price: 200, image: img('calc-sofa3.jpg') },
-        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 230, image: img('calc-sofa-corner.jpg') },
-        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 300, image: img('calc-sofa-corner-large.jpg') },
-        { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 210, image: img('calc-kitchen-corner.jpg') },
-        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 115, image: img('calc-headboard.jpg') },
-        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 115, image: img('calc-bedframe.jpg') },
+        { id: 'pouf', name: t.prices.items.pouf, price: servicePrice('pouf'), image: img('calc-pouf.jpg') },
+        { id: 'chairSeat', name: t.prices.items.chairSeat, price: servicePrice('chairSeat'), image: img('calc-chair-seat.jpg') },
+        { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: servicePrice('chairWithBack'), image: img('calc-chair-back.jpg') },
+        { id: 'chairConference', name: t.prices.items.chairConference, price: servicePrice('chairConference'), image: img('calc-chair-conference.jpg') },
+        { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: servicePrice('chairSwivel'), image: img('calc-chair-swivel.jpg') },
+        { id: 'chair', name: t.prices.items.chair, price: servicePrice('chair'), image: img('calc-chair.jpg') },
+        { id: 'armchair', name: t.prices.items.armchair, price: servicePrice('armchair'), image: img('calc-armchair.jpg') },
+        { id: 'pillow', name: t.prices.items.pillow, price: servicePrice('pillow'), image: img('calc-pillow.jpg') },
+        { id: 'sofa2', name: t.prices.items.sofa2, price: servicePrice('sofa2'), image: img('calc-sofa2.jpg') },
+        { id: 'sofa3', name: t.prices.items.sofa3, price: servicePrice('sofa3'), image: img('calc-sofa3.jpg') },
+        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: servicePrice('sofaCorner'), image: img('calc-sofa-corner.jpg') },
+        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: servicePrice('sofaCornerLarge'), image: img('calc-sofa-corner-large.jpg') },
+        { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: servicePrice('kitchenCorner'), image: img('calc-kitchen-corner.jpg') },
+        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: servicePrice('bedHeadboard'), image: img('calc-headboard.jpg') },
+        { id: 'bedFrame', name: t.prices.items.bedFrame, price: servicePrice('bedFrame'), image: img('calc-bedframe.jpg') },
         
       ],
     },
     {
       ...META.mattress,
       items: [
-        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: 150, image: img('calc-mattress-single.jpg') },
-        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 230, image: img('calc-mattress-single.jpg') },
-        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: 230, image: img('calc-mattress-double.jpg') },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 345, image: img('calc-mattress-double.jpg') },
+        { id: 'mattressSingle', name: t.prices.items.mattressSingleDry, price: servicePrice('mattressSingle'), image: img('calc-mattress-single.jpg') },
+        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: servicePrice('mattressSingleDry2'), image: img('calc-mattress-single.jpg') },
+        { id: 'mattressDouble', name: t.prices.items.mattressDoubleDry, price: servicePrice('mattressDouble'), image: img('calc-mattress-double.jpg') },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: servicePrice('mattressDoubleDry2'), image: img('calc-mattress-double.jpg') },
         
       ],
     },
     {
       ...META.leather,
       items: [
-        { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 60, image: img('calc-leather-pouf.jpg') },
-        { id: 'leatherChair', name: t.prices.items.leatherChair, price: 60, image: img('calc-leather-chair.jpg') },
-        { id: 'leatherPillow', name: t.prices.items.leatherPillow, price: 25, image: img('calc-leather-pouf.jpg') },
-        { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 105, image: img('calc-leather-armchair.jpg') },
-        { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 185, image: img('calc-leather-sofa2.jpg') },
-        { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 230, image: img('calc-leather-sofa3.jpg') },
-        { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 290, image: img('calc-leather-corner.jpg') },
-        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 85, image: img('calc-leather-chair-swivel.jpg') },
+        { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: servicePrice('leatherPouf'), image: img('calc-leather-pouf.jpg') },
+        { id: 'leatherChair', name: t.prices.items.leatherChair, price: servicePrice('leatherChair'), image: img('calc-leather-chair.jpg') },
+        { id: 'leatherPillow', name: t.prices.items.leatherPillow, price: servicePrice('leatherPillow'), image: img('calc-leather-pouf.jpg') },
+        { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: servicePrice('leatherArmchair'), image: img('calc-leather-armchair.jpg') },
+        { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: servicePrice('leatherSofa2'), image: img('calc-leather-sofa2.jpg') },
+        { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: servicePrice('leatherSofa3'), image: img('calc-leather-sofa3.jpg') },
+        { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: servicePrice('leatherSofaCorner'), image: img('calc-leather-corner.jpg') },
+        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: servicePrice('leatherChairSwivel'), image: img('calc-leather-chair-swivel.jpg') },
       ],
     },
     {
@@ -179,8 +180,8 @@ const Prices = () => {
     {
       ...META.other,
       items: [
-        { id: 'stroller', name: t.prices.items.stroller, price: 100, image: img('calc-stroller.jpg') },
-        { id: 'carseat', name: t.prices.items.carseat, price: 80, image: img('calc-carseat.jpg') },
+        { id: 'stroller', name: t.prices.items.stroller, price: servicePrice('stroller'), image: img('calc-stroller.jpg') },
+        { id: 'carseat', name: t.prices.items.carseat, price: servicePrice('carseat'), image: img('calc-carseat.jpg') },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: img('calc-drying.jpg'), promoBadge: t.promotions.dryingFreeSpring },
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80, image: img('calc-impregnation.jpg') },
       ],
