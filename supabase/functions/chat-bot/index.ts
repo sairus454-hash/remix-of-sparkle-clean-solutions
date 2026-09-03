@@ -113,7 +113,7 @@ const PRICE_LIST = {
 ✨ ДОПОЛНИТЕЛЬНО:
 • Детская коляска — 100 PLN
 • Автокресло (детское) — 80 PLN
-• Сушка мебели — 60 PLN (🌿 БЕСПЛАТНО до конца весны!)
+• Сушка мебели — 🌿 БЕСПЛАТНО
 • Импрегнация (защита на 1 год) — 80 PLN
 • Чистка плитки — 20 PLN/м²
 • Импрегнация ковра — 5 PLN/м²
@@ -240,7 +240,7 @@ const PRICE_LIST = {
 • 🧹 Закажи УБОРКУ + любую вторую услугу (химчистка, окна, озон и т.д.) → −20% на весь заказ (применяется автоматически в калькуляторе)
 • 👥 Приведи соседа — оба получаете −20% на весь заказ
 • 🏘 Соседская акция — заказ вместе с соседом по одному адресу → −15%
-• 🌿 Сушение мебели и матрасов — БЕСПЛАТНО до конца весны (вместо 60 PLN)
+• 🌿 Сушение мебели и матрасов — БЕСПЛАТНО
 
 ⚠️ Скидки 10%/15% за «4+ категории» БОЛЬШЕ НЕ ДЕЙСТВУЮТ — не упоминай их.
 Активно предлагай добавить уборку к химчистке (или наоборот), чтобы клиент получил −20%. Если клиент интересуется только химчисткой мебели — напомни про новую акцию −10% при заказе через форму.`,
@@ -480,7 +480,7 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 • 🧹 Order CLEANING + any second service (upholstery, windows, ozone, etc.) → −20% off the whole order (applied automatically in the calculator)
 • 👥 Bring a neighbor — both get −20% off the whole order
 • 🏘 Neighbor promo — joint order with a neighbor at the same address → −15%
-• 🌿 Furniture & mattress drying — FREE until the end of spring (normally 60 PLN)
+• 🌿 Furniture & mattress drying — FREE
 
 ⚠️ The old 10%/15% "4+ categories" discounts are NO LONGER ACTIVE — do not mention them.
 Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%. If a customer asks only about furniture cleaning — remind them about the new −10% promo for orders placed via the form.`,
@@ -594,7 +594,7 @@ Sprzątanie generalne:
 ✨ DODATKOWO:
 • Wózek dziecięcy — 100 PLN
 • Fotelik samochodowy (dziecięcy) — 80 PLN
-• Suszenie mebli — 60 PLN (🌿 GRATIS do końca wiosny!)
+• Suszenie mebli — 🌿 GRATIS
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 20 PLN/m²
 • Impregnacja dywanu — 5 PLN/m²
@@ -722,7 +722,7 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 • 🧹 Zamów SPRZĄTANIE + dowolną drugą usługę (pranie tapicerki, okna, ozon itp.) → −20% na całe zamówienie (naliczane automatycznie w kalkulatorze)
 • 👥 Przyprowadź sąsiada — oboje dostajecie −20% na całe zamówienie
 • 🏘 Promocja sąsiedzka — wspólne zamówienie z sąsiadem pod tym samym adresem → −15%
-• 🌿 Suszenie mebli i materacy — GRATIS do końca wiosny (zwykle 60 PLN)
+• 🌿 Suszenie mebli i materacy — GRATIS
 
 ⚠️ Stare rabaty 10%/15% za "4+ kategorie" JUŻ NIE OBOWIĄZUJĄ — nie wspominaj o nich.
 Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%. Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% przy zamówieniu przez formularz.`,
@@ -834,7 +834,7 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 ✨ ДОДАТКОВО:
 • Дитячий візок — 100 PLN
 • Автокрісло (дитяче) — 80 PLN
-• Сушіння меблів — 60 PLN (🌿 БЕЗКОШТОВНО до кінця весни!)
+• Сушіння меблів — 🌿 БЕЗКОШТОВНО
 • Імпрегнація (захист на 1 рік) — 80 PLN
 • Чистка плитки — 20 PLN/м²
 • Імпрегнація килима — 5 PLN/м²
@@ -962,7 +962,7 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 • 🧹 Замов ПРИБИРАННЯ + будь-яку другу послугу (хімчистка, вікна, озон тощо) → −20% на все замовлення (нараховується автоматично в калькуляторі)
 • 👥 Приведи сусіда — обоє отримуєте −20% на все замовлення
 • 🏘 Сусідська акція — спільне замовлення з сусідом за однією адресою → −15%
-• 🌿 Сушіння меблів та матраців — БЕЗКОШТОВНО до кінця весни (зазвичай 60 PLN)
+• 🌿 Сушіння меблів та матраців — БЕЗКОШТОВНО
 
 ⚠️ Старі знижки 10%/15% за «4+ категорії» БІЛЬШЕ НЕ ДІЮТЬ — не згадуй про них.
 Активно пропонуй додати прибирання до хімчистки (або навпаки), щоб клієнт отримав −20%. Якщо клієнт цікавиться лише хімчисткою меблів — нагадай про нову акцію −10% при замовленні через форму.`
@@ -1121,7 +1121,7 @@ ${SERVICE_PAGES_RU}
 Что нужно?"
 
 ✅ Цена:
-"🛋 Диван трёхместный — 150 PLN
+"🛋 Диван трёхместный — 200 PLN
 
 Безопасно для детей и животных 🐶
 
@@ -1173,7 +1173,7 @@ ${SERVICE_PAGES_RU}
 — ВСЕГДА называй точные цены
 — АКТИВНО ПРОДВИГАЙ АКЦИИ! При любом заказе предлагай добавить уборку (или другую услугу), чтобы получить −20% на весь заказ
 — Главная скидка: УБОРКА + любая ВТОРАЯ услуга = −20% автоматически в калькуляторе
-— Также упоминай: «Приведи соседа — оба −20%», «Соседская акция (один адрес) — −15%», «Сушение мебели/матрасов БЕСПЛАТНО до конца весны»
+— Также упоминай: «Приведи соседа — оба −20%», «Соседская акция (один адрес) — −15%», «Сушение мебели/матрасов БЕСПЛАТНО»
 — Старые скидки 10%/15% за «4+ категории» больше не действуют — НЕ упоминай их
 — При расчёте стоимости ПОКАЗЫВАЙ экономию: «Итого: 310 zł (экономия 78 zł!)»
 
@@ -1289,7 +1289,7 @@ I'll help with cleaning services.
 What do you need?"
 
 ✅ Price:
-"🛋 3-seater sofa — 182 PLN
+"🛋 3-seater sofa — 200 PLN
 
 Safe for kids and pets 🐶
 
@@ -1429,7 +1429,7 @@ Pomogę z usługami sprzątania.
 Czego potrzebujesz?"
 
 ✅ Cena:
-"Sofa 3-osobowa — 182 PLN
+"Sofa 3-osobowa — 200 PLN
 
 Bezpieczne dla dzieci i zwierząt 🐶
 
@@ -1481,7 +1481,7 @@ WAŻNE:
 — ZAWSZE podawaj dokładne ceny
 — AKTYWNIE PROMUJ PROMOCJE! Przy każdym zamówieniu proponuj dodanie sprzątania (lub innej usługi), żeby klient dostał −20% na całe zamówienie
 — Główny rabat: SPRZĄTANIE + dowolna DRUGA usługa = −20% naliczane automatycznie w kalkulatorze
-— Wspominaj też: "Przyprowadź sąsiada — oboje −20%", "Promocja sąsiedzka (ten sam adres) — −15%", "Suszenie mebli/materacy GRATIS do końca wiosny"
+— Wspominaj też: "Przyprowadź sąsiada — oboje −20%", "Promocja sąsiedzka (ten sam adres) — −15%", "Suszenie mebli/materacy GRATIS"
 — Stare rabaty 10%/15% za "4+ kategorie" już NIE obowiązują — NIE wspominaj o nich
 — Przy obliczaniu kosztu POKAŻ OSZCZĘDNOŚCI: "Razem: 310 zł (oszczędność 78 zł!)"
 
