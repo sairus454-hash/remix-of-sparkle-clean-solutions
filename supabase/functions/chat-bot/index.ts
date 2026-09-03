@@ -45,30 +45,30 @@ const PRICE_LIST = {
 • Убрать лоток для животных — 15 PLN
 
 🛋 МЕБЕЛЬ:
-• Пуф — 30 PLN
-• Стул (сиденье) — 15 PLN
-• Стул с спинкой — 25 PLN
-• Стул конференционный — 30 PLN
-• Стул вращающийся — 45 PLN
-• Стул — 25 PLN
-• Кресло — 65 PLN
+• Пуф — 50 PLN
+• Стул (сиденье) — 25 PLN
+• Стул с спинкой — 35 PLN
+• Стул конференционный — 50 PLN
+• Стул вращающийся — 60 PLN
+• Стул — 35 PLN
+• Кресло — 85 PLN
 • Подушка — 10 PLN
-• Диван двухместный — 130 PLN
-• Диван трёхместный — 150 PLN
-• Диван угловой — 180 PLN
-• Большой угловой диван — 210 PLN
+• Диван двухместный — 165 PLN
+• Диван трёхместный — 200 PLN
+• Диван угловой — 230 PLN
+• Большой угловой диван — 300 PLN
 • Ковровое покрытие — 20 PLN/м²
 • Мебель из флока — +50% к обычной цене
 
 🛋 КОЖАНАЯ МЕБЕЛЬ:
-• Пуф (кожа) — 40 PLN
-• Стул (кожа) — 40 PLN
-• Подушка (кожа) — 15 PLN
-• Кресло (кожа) — 75 PLN
-• Стул вращающийся (кожа) — 60 PLN
-• Диван двухместный (кожа) — 145 PLN
-• Диван трёхместный (кожа) — 180 PLN
-• Диван угловой (кожа) — 220 PLN
+• Пуф (кожа) — 60 PLN
+• Стул (кожа) — 60 PLN
+• Подушка (кожа) — 25 PLN
+• Кресло (кожа) — 105 PLN
+• Стул вращающийся (кожа) — 85 PLN
+• Диван двухместный (кожа) — 185 PLN
+• Диван трёхместный (кожа) — 230 PLN
+• Диван угловой (кожа) — 290 PLN
 
 • Чистка 1 сидения — 80 PLN
 • Химчистка сидений (спереди и сзади) — 250 PLN
@@ -85,12 +85,12 @@ const PRICE_LIST = {
 • Химчистка кабины буса — от 400 PLN
 
 🛏 МАТРАСЫ:
-• Матрас двухспальный — 175 PLN
-• Матрас односпальный — 115 PLN
-• Чистка изголовья кровати — 80 PLN
-• Чистка каркаса кровати — 80 PLN
-• Матрас односпальный (2 стороны) — 180 PLN
-• Матрас двухспальный (2 стороны) — 240 PLN
+• Матрас двухспальный — 230 PLN
+• Матрас односпальный — 150 PLN
+• Чистка изголовья кровати — 115 PLN
+• Чистка каркаса кровати — 115 PLN
+• Матрас односпальный (2 стороны) — 230 PLN
+• Матрас двухспальный (2 стороны) — 345 PLN
 
 
 💨 ОЗОНИРОВАНИЕ:
@@ -113,7 +113,7 @@ const PRICE_LIST = {
 ✨ ДОПОЛНИТЕЛЬНО:
 • Детская коляска — 100 PLN
 • Автокресло (детское) — 80 PLN
-• Сушка мебели — 60 PLN (🌿 БЕСПЛАТНО до конца весны!)
+• Сушка мебели — 🌿 БЕСПЛАТНО
 • Импрегнация (защита на 1 год) — 80 PLN
 • Чистка плитки — 20 PLN/м²
 • Импрегнация ковра — 5 PLN/м²
@@ -202,20 +202,20 @@ const PRICE_LIST = {
 • Все остальные города (Opole, Legnica, Lubin и т.д.) — используй ГОТОВУЮ ТАБЛИЦУ ниже, НЕ считай сам!
 
 📊 ГОТОВЫЕ ЦЕНЫ ДЛЯ ДРУГИХ ГОРОДОВ (мебель и матрасы, уже с наценкой 10%, округлены до 5):
-• Пуф — 40 PLN | Стул (сиденье) — 20 PLN | Стул с спинкой — 30 PLN
-• Стул конференционный — 35 PLN | Стул вращающийся — 50 PLN | Стул — 30 PLN
-• Кресло — 85 PLN | Подушка — 15 PLN
-• Диван двухместный — 160 PLN | Диван трёхместный — 185 PLN
-• Диван угловой — 220 PLN | Большой угловой диван — 260 PLN
+• Пуф — 60 PLN | Стул (сиденье) — 30 PLN | Стул с спинкой — 40 PLN
+• Стул конференционный — 60 PLN | Стул вращающийся — 70 PLN | Стул — 40 PLN
+• Кресло — 95 PLN | Подушка — 15 PLN
+• Диван двухместный — 185 PLN | Диван трёхместный — 225 PLN
+• Диван угловой — 255 PLN | Большой угловой диван — 330 PLN
 • Ковровое покрытие — 30 PLN/м²
-• Матрас двухспальный — 215 PLN | Матрас односпальный — 140 PLN
-• Изголовье кровати — 100 PLN | Каркас кровати — 100 PLN
-• Матрас 1-спальный (2 стор.) — 220 PLN | Матрас 2-спальный (2 стор.) — 295 PLN
+• Матрас двухспальный — 255 PLN | Матрас односпальный — 165 PLN
+• Изголовье кровати — 130 PLN | Каркас кровати — 130 PLN
+• Матрас 1-спальный (2 стор.) — 255 PLN | Матрас 2-спальный (2 стор.) — 255 PLN
 
 📊 Кожаная мебель для других городов (наценка 10%, БЕЗ акции, округлены до 5):
-• Пуф (кожа) — 50 PLN | Стул (кожа) — 50 PLN | Подушка (кожа) — 25 PLN
-• Кресло (кожа) — 90 PLN | Стул вращающийся (кожа) — 80 PLN
-• Диван 2-мест. (кожа) — 180 PLN | 3-мест. (кожа) — 220 PLN | Угловой (кожа) — 270 PLN
+• Пуф (кожа) — 70 PLN | Стул (кожа) — 70 PLN | Подушка (кожа) — 30 PLN
+• Кресло (кожа) — 120 PLN | Стул вращающийся (кожа) — 95 PLN
+• Диван 2-мест. (кожа) — 180 PLN | 3-мест. (кожа) — 220 PLN | Угловой (кожа) — 320 PLN
 
 • 🚗 Химчистка авто — БЕЗ наценки во всех городах! Цены такие же, как во Вроцлаве (см. раздел "ХИМЧИСТКА АВТОМОБИЛЕЙ" выше: комплексная — 450 PLN, VIP — 700 PLN, кожа — 550/800 PLN, кабина TIR — 650 PLN, бус — 400 PLN и т.д.)
 • Озонирование 1-комн. — 160 PLN | 2-комн. — 265 PLN
@@ -240,7 +240,7 @@ const PRICE_LIST = {
 • 🧹 Закажи УБОРКУ + любую вторую услугу (химчистка, окна, озон и т.д.) → −20% на весь заказ (применяется автоматически в калькуляторе)
 • 👥 Приведи соседа — оба получаете −20% на весь заказ
 • 🏘 Соседская акция — заказ вместе с соседом по одному адресу → −15%
-• 🌿 Сушение мебели и матрасов — БЕСПЛАТНО до конца весны (вместо 60 PLN)
+• 🌿 Сушение мебели и матрасов — БЕСПЛАТНО
 
 ⚠️ Скидки 10%/15% за «4+ категории» БОЛЬШЕ НЕ ДЕЙСТВУЮТ — не упоминай их.
 Активно предлагай добавить уборку к химчистке (или наоборот), чтобы клиент получил −20%. Если клиент интересуется только химчисткой мебели — напомни про новую акцию −10% при заказе через форму.`,
@@ -284,30 +284,30 @@ Deep cleaning:
 • Pet litter box cleaning — 15 PLN
 
 🛋 FURNITURE:
-• Ottoman — 30 PLN
-• Chair (seat only) — 15 PLN
-• Chair with backrest — 25 PLN
-• Conference chair — 30 PLN
-• Swivel chair — 45 PLN
-• Chair — 25 PLN
-• Armchair — 65 PLN
+• Ottoman — 50 PLN
+• Chair (seat only) — 25 PLN
+• Chair with backrest — 35 PLN
+• Conference chair — 50 PLN
+• Swivel chair — 60 PLN
+• Chair — 35 PLN
+• Armchair — 85 PLN
 • Pillow — 10 PLN
-• 2-seater sofa — 130 PLN
-• 3-seater sofa — 150 PLN
-• Corner sofa — 180 PLN
-• Large corner sofa — 210 PLN
+• 2-seater sofa — 165 PLN
+• 3-seater sofa — 200 PLN
+• Corner sofa — 230 PLN
+• Large corner sofa — 300 PLN
 • Carpet — 20 PLN/m²
 • Flock furniture — +50% to regular price
 
 🛋 LEATHER FURNITURE:
-• Ottoman (leather) — 40 PLN
-• Chair (leather) — 40 PLN
-• Pillow (leather) — 15 PLN
-• Armchair (leather) — 75 PLN
-• Swivel chair (leather) — 60 PLN
-• 2-seater sofa (leather) — 145 PLN
-• 3-seater sofa (leather) — 180 PLN
-• Corner sofa (leather) — 220 PLN
+• Ottoman (leather) — 60 PLN
+• Chair (leather) — 60 PLN
+• Pillow (leather) — 25 PLN
+• Armchair (leather) — 105 PLN
+• Swivel chair (leather) — 85 PLN
+• 2-seater sofa (leather) — 185 PLN
+• 3-seater sofa (leather) — 230 PLN
+• Corner sofa (leather) — 290 PLN
 
 🚗 CAR CLEANING:
 • Single seat cleaning — 80 PLN
@@ -325,12 +325,12 @@ Deep cleaning:
 • Van cabin cleaning — from 400 PLN
 
 🛏 MATTRESSES:
-• Double mattress — 175 PLN
-• Single mattress — 115 PLN
-• Bed headboard cleaning — 80 PLN
-• Bed frame cleaning — 80 PLN
-• Single mattress (2 sides) — 180 PLN
-• Double mattress (2 sides) — 240 PLN
+• Double mattress — 230 PLN
+• Single mattress — 150 PLN
+• Bed headboard cleaning — 115 PLN
+• Bed frame cleaning — 115 PLN
+• Single mattress (2 sides) — 230 PLN
+• Double mattress (2 sides) — 345 PLN
 
 💨 OZONATION:
 • 1-room apartment (20-40 m²) — 144 PLN
@@ -441,20 +441,20 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 • All other cities (Opole, Legnica, Lubin, etc.) — use the READY TABLE below, do NOT calculate manually!
 
 📊 READY PRICES FOR OTHER CITIES (furniture & mattresses, +10% surcharge, rounded to nearest 5):
-• Ottoman — 40 PLN | Chair (seat) — 20 PLN | Chair with backrest — 30 PLN
-• Conference chair — 35 PLN | Swivel chair — 50 PLN | Chair — 30 PLN
-• Armchair — 85 PLN | Pillow — 15 PLN
-• 2-seater sofa — 160 PLN | 3-seater sofa — 185 PLN
-• Corner sofa — 220 PLN | Large corner sofa — 260 PLN
+• Ottoman — 60 PLN | Chair (seat) — 30 PLN | Chair with backrest — 40 PLN
+• Conference chair — 60 PLN | Swivel chair — 70 PLN | Chair — 40 PLN
+• Armchair — 95 PLN | Pillow — 15 PLN
+• 2-seater sofa — 185 PLN | 3-seater sofa — 225 PLN
+• Corner sofa — 255 PLN | Large corner sofa — 330 PLN
 • Carpet — 30 PLN/m²
-• Double mattress — 215 PLN | Single mattress — 140 PLN
-• Bed headboard — 100 PLN | Bed frame — 100 PLN
-• Single mattress (2 sides) — 220 PLN | Double mattress (2 sides) — 295 PLN
+• Double mattress — 255 PLN | Single mattress — 165 PLN
+• Bed headboard — 130 PLN | Bed frame — 130 PLN
+• Single mattress (2 sides) — 255 PLN | Double mattress (2 sides) — 380 PLN
 
 📊 Leather furniture for other cities (+10%, NO promo, rounded to 5):
-• Ottoman (leather) — 50 PLN | Chair (leather) — 50 PLN | Pillow (leather) — 25 PLN
-• Armchair (leather) — 90 PLN | Swivel chair (leather) — 80 PLN
-• 2-seater sofa (leather) — 180 PLN | 3-seater (leather) — 220 PLN | Corner (leather) — 270 PLN
+• Ottoman (leather) — 70 PLN | Chair (leather) — 70 PLN | Pillow (leather) — 30 PLN
+• Armchair (leather) — 120 PLN | Swivel chair (leather) — 95 PLN
+• 2-seater sofa (leather) — 205 PLN | 3-seater (leather) — 255 PLN | Corner (leather) — 320 PLN
 
 📊 Other services for other cities (+10% surcharge, rounded to 5):
 • 🚗 Car cleaning — NO surcharge in any city! Same prices as Wrocław (see "CAR CLEANING" section above: full — 450 PLN, VIP — 700 PLN, leather — 550/800 PLN, truck cabin — 650 PLN, van — 400 PLN, etc.)
@@ -480,7 +480,7 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 • 🧹 Order CLEANING + any second service (upholstery, windows, ozone, etc.) → −20% off the whole order (applied automatically in the calculator)
 • 👥 Bring a neighbor — both get −20% off the whole order
 • 🏘 Neighbor promo — joint order with a neighbor at the same address → −15%
-• 🌿 Furniture & mattress drying — FREE until the end of spring (normally 60 PLN)
+• 🌿 Furniture & mattress drying — FREE
 
 ⚠️ The old 10%/15% "4+ categories" discounts are NO LONGER ACTIVE — do not mention them.
 Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%. If a customer asks only about furniture cleaning — remind them about the new −10% promo for orders placed via the form.`,
@@ -524,31 +524,31 @@ Sprzątanie generalne:
 • Sprzątanie kuwety — 15 PLN
 
 🛋 MEBLE:
-• Pufa — 30 PLN
-• Krzesło (siedzenie) — 15 PLN
-• Krzesło z oparciem — 25 PLN
-• Krzesło konferencyjne — 30 PLN
-• Krzesło obrotowe — 45 PLN
-• Krzesło — 25 PLN
-• Fotel — 65 PLN
+• Pufa — 50 PLN
+• Krzesło (siedzenie) — 25 PLN
+• Krzesło z oparciem — 35 PLN
+• Krzesło konferencyjne — 50 PLN
+• Krzesło obrotowe — 60 PLN
+• Krzesło — 35 PLN
+• Fotel — 85 PLN
 • Poduszka — 10 PLN
-• Sofa 2-osobowa — 130 PLN
-• Sofa 3-osobowa — 150 PLN
-• Sofa narożna — 180 PLN
-• Duża sofa narożna — 260 PLN
-• Narożnik kuchenny — 130 PLN
+• Sofa 2-osobowa — 165 PLN
+• Sofa 3-osobowa — 200 PLN
+• Sofa narożna — 230 PLN
+• Duża sofa narożna — 300 PLN
+• Narożnik kuchenny — 210 PLN
 • Dywan — 20 PLN/m²
 • Meble z floku — +50% do ceny zwykłej
 
 🛋 MEBLE SKÓRZANE:
-• Pufa (skóra) — 40 PLN
-• Krzesło (skóra) — 40 PLN
-• Poduszka (skóra) — 15 PLN
-• Fotel (skóra) — 75 PLN
-• Krzesło obrotowe (skóra) — 60 PLN
-• Sofa 2-osobowa (skóra) — 145 PLN
-• Sofa 3-osobowa (skóra) — 180 PLN
-• Sofa narożna (skóra) — 220 PLN
+• Pufa (skóra) — 60 PLN
+• Krzesło (skóra) — 60 PLN
+• Poduszka (skóra) — 25 PLN
+• Fotel (skóra) — 105 PLN
+• Krzesło obrotowe (skóra) — 85 PLN
+• Sofa 2-osobowa (skóra) — 185 PLN
+• Sofa 3-osobowa (skóra) — 230 PLN
+• Sofa narożna (skóra) — 290 PLN
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie 1 siedzenia — 80 PLN
@@ -566,12 +566,12 @@ Sprzątanie generalne:
 • Czyszczenie kabiny busa — od 400 PLN
 
 🛏 MATERACE:
-• Materac dwuosobowy — 175 PLN
-• Materac jednoosobowy — 115 PLN
-• Czyszczenie zagłówka łóżka — 100 PLN
-• Czyszczenie ramy łóżka — 100 PLN
-• Materac jednoosobowy (2 strony) — 180 PLN
-• Materac dwuosobowy (2 strony) — 300 PLN
+• Materac dwuosobowy — 230 PLN
+• Materac jednoosobowy — 150 PLN
+• Czyszczenie zagłówka łóżka — 115 PLN
+• Czyszczenie ramy łóżka — 115 PLN
+• Materac jednoosobowy (2 strony) — 230 PLN
+• Materac dwuosobowy (2 strony) — 345 PLN
 
 
 💨 OZONOWANIE:
@@ -594,7 +594,7 @@ Sprzątanie generalne:
 ✨ DODATKOWO:
 • Wózek dziecięcy — 100 PLN
 • Fotelik samochodowy (dziecięcy) — 80 PLN
-• Suszenie mebli — 60 PLN (🌿 GRATIS do końca wiosny!)
+• Suszenie mebli — 🌿 GRATIS
 • Impregnacja (ochrona na 1 rok) — 80 PLN
 • Czyszczenie płytek — 20 PLN/m²
 • Impregnacja dywanu — 5 PLN/m²
@@ -683,20 +683,20 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 • Wszystkie inne miasta (Opole, Legnica, Lubin itp.) — użyj GOTOWEJ TABELI poniżej, NIE licz sam!
 
 📊 GOTOWE CENY DLA INNYCH MIAST (meble i materace, już z dopłatą 10%, zaokrąglone do 5):
-• Pufa — 40 PLN | Krzesło (siedzenie) — 20 PLN | Krzesło z oparciem — 30 PLN
-• Krzesło konferencyjne — 35 PLN | Krzesło obrotowe — 50 PLN | Krzesło — 30 PLN
-• Fotel — 85 PLN | Poduszka — 15 PLN
-• Sofa 2-osobowa — 160 PLN | Sofa 3-osobowa — 185 PLN
-• Sofa narożna — 220 PLN | Duża sofa narożna — 260 PLN
+• Pufa — 60 PLN | Krzesło (siedzenie) — 30 PLN | Krzesło z oparciem — 40 PLN
+• Krzesło konferencyjne — 60 PLN | Krzesło obrotowe — 70 PLN | Krzesło — 40 PLN
+• Fotel — 95 PLN | Poduszka — 15 PLN
+• Sofa 2-osobowa — 185 PLN | Sofa 3-osobowa — 225 PLN
+• Sofa narożna — 255 PLN | Duża sofa narożna — 330 PLN
 • Dywan — 30 PLN/m²
-• Materac dwuosobowy — 215 PLN | Materac jednoosobowy — 140 PLN
+• Materac dwuosobowy — 255 PLN | Materac jednoosobowy — 165 PLN
 • Zagłówek łóżka — 100 PLN | Rama łóżka — 100 PLN
-• Materac 1-os. (2 strony) — 220 PLN | Materac 2-os. (2 strony) — 295 PLN
+• Materac 1-os. (2 strony) — 380 PLN | Materac 2-os. (2 strony) — 380 PLN
 
 📊 Meble skórzane dla innych miast (dopłata 10%, BEZ promocji, zaokrąglone do 5):
-• Pufa (skóra) — 50 PLN | Krzesło (skóra) — 50 PLN | Poduszka (skóra) — 25 PLN
-• Fotel (skóra) — 90 PLN | Krzesło obrotowe (skóra) — 80 PLN
-• Sofa 2-os. (skóra) — 180 PLN | 3-os. (skóra) — 220 PLN | Narożna (skóra) — 270 PLN
+• Pufa (skóra) — 70 PLN | Krzesło (skóra) — 70 PLN | Poduszka (skóra) — 30 PLN
+• Fotel (skóra) — 120 PLN | Krzesło obrotowe (skóra) — 95 PLN
+• Sofa 2-os. (skóra) — 205 PLN | 3-os. (skóra) — 255 PLN | Narożna (skóra) — 320 PLN
 
 📊 Inne usługi dla innych miast (dopłata 10%, zaokrąglone do 5):
 • 🚗 Pranie auta — BEZ dopłaty w żadnym mieście! Ceny takie same jak we Wrocławiu (zobacz sekcję "PRANIE TAPICERKI SAMOCHODOWEJ" powyżej: kompleksowe — 450 PLN, VIP — 700 PLN, skóra — 550/800 PLN, kabina TIR — 650 PLN, bus — 400 PLN, itd.)
@@ -722,7 +722,7 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 • 🧹 Zamów SPRZĄTANIE + dowolną drugą usługę (pranie tapicerki, okna, ozon itp.) → −20% na całe zamówienie (naliczane automatycznie w kalkulatorze)
 • 👥 Przyprowadź sąsiada — oboje dostajecie −20% na całe zamówienie
 • 🏘 Promocja sąsiedzka — wspólne zamówienie z sąsiadem pod tym samym adresem → −15%
-• 🌿 Suszenie mebli i materacy — GRATIS do końca wiosny (zwykle 60 PLN)
+• 🌿 Suszenie mebli i materacy — GRATIS
 
 ⚠️ Stare rabaty 10%/15% za "4+ kategorie" JUŻ NIE OBOWIĄZUJĄ — nie wspominaj o nich.
 Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%. Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% przy zamówieniu przez formularz.`,
@@ -766,30 +766,30 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 • Прибирання лотка для тварин — 15 PLN
 
 🛋 МЕБЛІ:
-• Пуф — 30 PLN
-• Стілець (сидіння) — 15 PLN
-• Стілець зі спинкою — 25 PLN
-• Конференц-стілець — 30 PLN
-• Обертовий стілець — 45 PLN
-• Стілець — 25 PLN
-• Крісло — 65 PLN
+• Пуф — 50 PLN
+• Стілець (сидіння) — 35 PLN
+• Стілець зі спинкою — 35 PLN
+• Конференц-стілець — 50 PLN
+• Обертовий стілець — 60 PLN
+• Стілець — 35 PLN
+• Крісло — 85 PLN
 • Подушка — 10 PLN
-• Диван двомісний — 130 PLN
-• Диван тримісний — 150 PLN
-• Диван кутовий — 180 PLN
-• Великий кутовий диван — 210 PLN
+• Диван двомісний — 165 PLN
+• Диван тримісний — 200 PLN
+• Диван кутовий — 230 PLN
+• Великий кутовий диван — 300 PLN
 • Килимове покриття — 20 PLN/м²
 • Меблі з флоку — +50% до звичайної ціни
 
 🛋 ШКІРЯНІ МЕБЛІ:
-• Пуф (шкіра) — 40 PLN
-• Стілець (шкіра) — 40 PLN
-• Подушка (шкіра) — 15 PLN
-• Крісло (шкіра) — 75 PLN
-• Стілець обертовий (шкіра) — 60 PLN
-• Диван двомісний (шкіра) — 145 PLN
-• Диван тримісний (шкіра) — 180 PLN
-• Диван кутовий (шкіра) — 220 PLN
+• Пуф (шкіра) — 60 PLN
+• Стілець (шкіра) — 60 PLN
+• Подушка (шкіра) — 25 PLN
+• Крісло (шкіра) — 105 PLN
+• Стілець обертовий (шкіра) — 85 PLN
+• Диван двомісний (шкіра) — 185 PLN
+• Диван тримісний (шкіра) — 230 PLN
+• Диван кутовий (шкіра) — 290 PLN
 
 🚗 ХІМЧИСТКА АВТО:
 • Чистка 1 сидіння — 80 PLN
@@ -807,12 +807,12 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 • Хімчистка кабіни буса — від 400 PLN
 
 🛏 МАТРАЦИ:
-• Матрац двоспальній — 175 PLN
-• Матрац односпальний — 115 PLN
+• Матрац двоспальній — 230 PLN
+• Матрац односпальний — 150 PLN
 • Чистка узголів'я ліжка — 80 PLN
-• Чистка каркаса ліжка — 80 PLN
-• Матрац односпальний (2 сторони) — 180 PLN
-• Матрац двоспальній (2 сторони) — 240 PLN
+• Чистка каркаса ліжка — 115 PLN
+• Матрац односпальний (2 сторони) — 230 PLN
+• Матрац двоспальній (2 сторони) — 345 PLN
 
 💨 ОЗОНУВАННЯ:
 • 1-кімнатна квартира (20-40 м²) — 144 PLN
@@ -834,7 +834,7 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 ✨ ДОДАТКОВО:
 • Дитячий візок — 100 PLN
 • Автокрісло (дитяче) — 80 PLN
-• Сушіння меблів — 60 PLN (🌿 БЕЗКОШТОВНО до кінця весни!)
+• Сушіння меблів — 🌿 БЕЗКОШТОВНО
 • Імпрегнація (захист на 1 рік) — 80 PLN
 • Чистка плитки — 20 PLN/м²
 • Імпрегнація килима — 5 PLN/м²
@@ -923,20 +923,20 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 • Усі інші міста (Opole, Legnica, Lubin тощо) — використовуй ГОТОВУ ТАБЛИЦЮ нижче, НЕ рахуй сам!
 
 📊 ГОТОВІ ЦІНИ ДЛЯ ІНШИХ МІСТ (меблі та матраци, вже з надбавкою 10%, округлені до 5):
-• Пуф — 40 PLN | Стілець (сидіння) — 20 PLN | Стілець зі спинкою — 30 PLN
-• Стілець конференційний — 35 PLN | Стілець обертовий — 50 PLN | Стілець — 30 PLN
-• Крісло — 85 PLN | Подушка — 15 PLN
-• Диван двомісний — 160 PLN | Диван тримісний — 185 PLN
-• Диван кутовий — 220 PLN | Великий кутовий диван — 260 PLN
+• Пуф — 60 PLN | Стілець (сидіння) — 40 PLN | Стілець зі спинкою — 40 PLN
+• Стілець конференційний — 60 PLN | Стілець обертовий — 70 PLN | Стілець — 40 PLN
+• Крісло — 95 PLN | Подушка — 15 PLN
+• Диван двомісний — 185 PLN | Диван тримісний — 225 PLN
+• Диван кутовий — 255 PLN | Великий кутовий диван — 330 PLN
 • Килимове покриття — 30 PLN/м²
-• Матрац двоспальній — 215 PLN | Матрац односпальний — 140 PLN
-• Узголів'я ліжка — 100 PLN | Каркас ліжка — 100 PLN
-• Матрац 1-спальний (2 стор.) — 220 PLN | Матрац 2-спальний (2 стор.) — 295 PLN
+• Матрац двоспальній — 255 PLN | Матрац односпальний — 165 PLN
+• Узголів'я ліжка — 100 PLN | Каркас ліжка — 130 PLN
+• Матрац 1-спальний (2 стор.) — 255 PLN | Матрац 2-спальний (2 стор.) — 255 PLN
 
 📊 Шкіряні меблі для інших міст (надбавка 10%, БЕЗ акції, округлені до 5):
-• Пуф (шкіра) — 50 PLN | Стілець (шкіра) — 50 PLN | Подушка (шкіра) — 25 PLN
-• Крісло (шкіра) — 90 PLN | Стілець обертовий (шкіра) — 80 PLN
-• Диван 2-місний (шкіра) — 180 PLN | 3-місний (шкіра) — 220 PLN | Кутовий (шкіра) — 270 PLN
+• Пуф (шкіра) — 70 PLN | Стілець (шкіра) — 70 PLN | Подушка (шкіра) — 30 PLN
+• Крісло (шкіра) — 120 PLN | Стілець обертовий (шкіра) — 95 PLN
+• Диван 2-місний (шкіра) — 180 PLN | 3-місний (шкіра) — 255 PLN | Кутовий (шкіра) — 320 PLN
 
 📊 Інші послуги для інших міст (надбавка 10%, округлені до 5):
 • 🚗 Хімчистка авто — БЕЗ надбавки в усіх містах! Ціни такі ж, як у Вроцлаві (див. розділ "ХІМЧИСТКА АВТОМОБІЛІВ" вище: комплексна — 450 PLN, VIP — 700 PLN, шкіра — 550/800 PLN, кабіна TIR — 650 PLN, бус — 400 PLN тощо)
@@ -962,7 +962,7 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 • 🧹 Замов ПРИБИРАННЯ + будь-яку другу послугу (хімчистка, вікна, озон тощо) → −20% на все замовлення (нараховується автоматично в калькуляторі)
 • 👥 Приведи сусіда — обоє отримуєте −20% на все замовлення
 • 🏘 Сусідська акція — спільне замовлення з сусідом за однією адресою → −15%
-• 🌿 Сушіння меблів та матраців — БЕЗКОШТОВНО до кінця весни (зазвичай 60 PLN)
+• 🌿 Сушіння меблів та матраців — БЕЗКОШТОВНО
 
 ⚠️ Старі знижки 10%/15% за «4+ категорії» БІЛЬШЕ НЕ ДІЮТЬ — не згадуй про них.
 Активно пропонуй додати прибирання до хімчистки (або навпаки), щоб клієнт отримав −20%. Якщо клієнт цікавиться лише хімчисткою меблів — нагадай про нову акцію −10% при замовленні через форму.`
@@ -1121,7 +1121,7 @@ ${SERVICE_PAGES_RU}
 Что нужно?"
 
 ✅ Цена:
-"🛋 Диван трёхместный — 150 PLN
+"🛋 Диван трёхместный — 200 PLN
 
 Безопасно для детей и животных 🐶
 
@@ -1173,7 +1173,7 @@ ${SERVICE_PAGES_RU}
 — ВСЕГДА называй точные цены
 — АКТИВНО ПРОДВИГАЙ АКЦИИ! При любом заказе предлагай добавить уборку (или другую услугу), чтобы получить −20% на весь заказ
 — Главная скидка: УБОРКА + любая ВТОРАЯ услуга = −20% автоматически в калькуляторе
-— Также упоминай: «Приведи соседа — оба −20%», «Соседская акция (один адрес) — −15%», «Сушение мебели/матрасов БЕСПЛАТНО до конца весны»
+— Также упоминай: «Приведи соседа — оба −20%», «Соседская акция (один адрес) — −15%», «Сушение мебели/матрасов БЕСПЛАТНО»
 — Старые скидки 10%/15% за «4+ категории» больше не действуют — НЕ упоминай их
 — При расчёте стоимости ПОКАЗЫВАЙ экономию: «Итого: 310 zł (экономия 78 zł!)»
 
@@ -1289,7 +1289,7 @@ I'll help with cleaning services.
 What do you need?"
 
 ✅ Price:
-"🛋 3-seater sofa — 182 PLN
+"🛋 3-seater sofa — 200 PLN
 
 Safe for kids and pets 🐶
 
@@ -1429,7 +1429,7 @@ Pomogę z usługami sprzątania.
 Czego potrzebujesz?"
 
 ✅ Cena:
-"Sofa 3-osobowa — 182 PLN
+"Sofa 3-osobowa — 200 PLN
 
 Bezpieczne dla dzieci i zwierząt 🐶
 
@@ -1481,7 +1481,7 @@ WAŻNE:
 — ZAWSZE podawaj dokładne ceny
 — AKTYWNIE PROMUJ PROMOCJE! Przy każdym zamówieniu proponuj dodanie sprzątania (lub innej usługi), żeby klient dostał −20% na całe zamówienie
 — Główny rabat: SPRZĄTANIE + dowolna DRUGA usługa = −20% naliczane automatycznie w kalkulatorze
-— Wspominaj też: "Przyprowadź sąsiada — oboje −20%", "Promocja sąsiedzka (ten sam adres) — −15%", "Suszenie mebli/materacy GRATIS do końca wiosny"
+— Wspominaj też: "Przyprowadź sąsiada — oboje −20%", "Promocja sąsiedzka (ten sam adres) — −15%", "Suszenie mebli/materacy GRATIS"
 — Stare rabaty 10%/15% za "4+ kategorie" już NIE obowiązują — NIE wspominaj o nich
 — Przy obliczaniu kosztu POKAŻ OSZCZĘDNOŚCI: "Razem: 310 zł (oszczędność 78 zł!)"
 
