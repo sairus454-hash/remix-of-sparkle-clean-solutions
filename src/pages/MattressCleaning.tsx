@@ -16,6 +16,7 @@ import heroImage from '@/assets/mattress-cleaning-service.jpg';
 import mattressBa from '@/assets/mattress-before-after.jpg';
 import calcSingle from '@/assets/calc-mattress-single.jpg';
 import calcDouble from '@/assets/calc-mattress-double.jpg';
+import { servicePrice, useServicePrices } from '@/data/servicePrices';
 
 type Lang = 'pl' | 'ru' | 'en' | 'uk';
 
@@ -253,10 +254,10 @@ const MattressCleaning = () => {
   const c = COPY[lang];
 
   const items = [
-    { id: 'mattressSingle', name: t.prices?.items?.mattressSingleDry || 'Materac jednoosobowy', price: 150, image: calcSingle },
-    { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Materac jednoosobowy (2 strony)', price: 230, image: calcSingle },
-    { id: 'mattressDouble', name: t.prices?.items?.mattressDoubleDry || 'Materac dwuosobowy', price: 230, image: calcDouble },
-    { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Materac dwuosobowy (2 strony)', price: 345, image: calcDouble },
+    { id: 'mattressSingle', name: t.prices?.items?.mattressSingleDry || 'Materac jednoosobowy', price: servicePrice('mattressSingle'), image: calcSingle },
+    { id: 'mattressSingleDry2', name: t.prices?.items?.mattressSingleDry2 || 'Materac jednoosobowy (2 strony)', price: servicePrice('mattressSingleDry2'), image: calcSingle },
+    { id: 'mattressDouble', name: t.prices?.items?.mattressDoubleDry || 'Materac dwuosobowy', price: servicePrice('mattressDouble'), image: calcDouble },
+    { id: 'mattressDoubleDry2', name: t.prices?.items?.mattressDoubleDry2 || 'Materac dwuosobowy (2 strony)', price: servicePrice('mattressDoubleDry2'), image: calcDouble },
   ];
 
   const handleSendToForm = (calcItems: CalculatorItem[], total: number) => {

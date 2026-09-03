@@ -19,6 +19,7 @@ import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useDiscountCalculator, getDiscountTiers, getItemDiscountRole, getDiscountRoleLabel } from '@/hooks/useDiscountCalculator';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { servicePrice, useServicePrices } from '@/data/servicePrices';
 
 interface PriceItem {
   id: string;
@@ -98,21 +99,21 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       icon: <Sofa className="w-5 h-5" />,
       items: [
         { id: 'pouf', name: t.prices.items.pouf, price: 50 },
-        { id: 'chairSeat', name: t.prices.items.chairSeat, price: 25 },
-        { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: 35 },
-        { id: 'chairConference', name: t.prices.items.chairConference, price: 50 },
-        { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: 60 },
-        { id: 'chair', name: t.prices.items.chair, price: 35 },
-        { id: 'armchair', name: t.prices.items.armchair, price: 85 },
-        { id: 'pillow', name: t.prices.items.pillow, price: 10 },
-        { id: 'sofa2', name: t.prices.items.sofa2, price: 165 },
-        { id: 'sofa3', name: t.prices.items.sofa3, price: 200 },
-        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 230 },
-        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 300 },
-        { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 175 },
+        { id: 'chairSeat', name: t.prices.items.chairSeat, price: servicePrice('chairSeat') },
+        { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: servicePrice('chairWithBack') },
+        { id: 'chairConference', name: t.prices.items.chairConference, price: servicePrice('chairConference') },
+        { id: 'chairSwivel', name: t.prices.items.chairSwivel, price: servicePrice('chairSwivel') },
+        { id: 'chair', name: t.prices.items.chair, price: servicePrice('chair') },
+        { id: 'armchair', name: t.prices.items.armchair, price: servicePrice('armchair') },
+        { id: 'pillow', name: t.prices.items.pillow, price: servicePrice('pillow') },
+        { id: 'sofa2', name: t.prices.items.sofa2, price: servicePrice('sofa2') },
+        { id: 'sofa3', name: t.prices.items.sofa3, price: servicePrice('sofa3') },
+        { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: servicePrice('sofaCorner') },
+        { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: servicePrice('sofaCornerLarge') },
+        { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: servicePrice('kitchenCorner') },
         { id: 'carpet', name: t.prices.items.carpet, price: 23, unit: 'm²' },
-        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 115 },
-        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 115 },
+        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: servicePrice('bedHeadboard') },
+        { id: 'bedFrame', name: t.prices.items.bedFrame, price: servicePrice('bedFrame') },
         
       ],
     },
@@ -122,13 +123,13 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       icon: <BedDouble className="w-5 h-5" />,
       items: [
         { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 230 },
-        { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 150 },
-        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 115 },
-        { id: 'bedFrame', name: t.prices.items.bedFrame, price: 115 },
-        { id: 'mattressSingleDry', name: t.prices.items.mattressSingleDry, price: 150 },
-        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: 230 },
-        { id: 'mattressDoubleDry', name: t.prices.items.mattressDoubleDry, price: 230 },
-        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: 345 },
+        { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: servicePrice('mattressSingle') },
+        { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: servicePrice('bedHeadboard') },
+        { id: 'bedFrame', name: t.prices.items.bedFrame, price: servicePrice('bedFrame') },
+        { id: 'mattressSingleDry', name: t.prices.items.mattressSingleDry, price: servicePrice('mattressSingleDry') },
+        { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: servicePrice('mattressSingleDry2') },
+        { id: 'mattressDoubleDry', name: t.prices.items.mattressDoubleDry, price: servicePrice('mattressDoubleDry') },
+        { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: servicePrice('mattressDoubleDry2') },
         
       ],
     },
@@ -138,13 +139,13 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       icon: <Armchair className="w-5 h-5" />,
       items: [
         { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 60 },
-        { id: 'leatherChair', name: t.prices.items.leatherChair, price: 60 },
-        { id: 'leatherPillow', name: t.prices.items.leatherPillow, price: 25 },
-        { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 105 },
-        { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 185 },
-        { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 230 },
-        { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 265 },
-        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: 85 },
+        { id: 'leatherChair', name: t.prices.items.leatherChair, price: servicePrice('leatherChair') },
+        { id: 'leatherPillow', name: t.prices.items.leatherPillow, price: servicePrice('leatherPillow') },
+        { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: servicePrice('leatherArmchair') },
+        { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: servicePrice('leatherSofa2') },
+        { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: servicePrice('leatherSofa3') },
+        { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: servicePrice('leatherSofaCorner') },
+        { id: 'leatherChairSwivel', name: t.prices.items.leatherChairSwivel, price: servicePrice('leatherChairSwivel') },
       ],
     },
     {
@@ -185,8 +186,8 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       items: [
         { id: 'carpetCovering', name: t.prices.items.carpetCovering, price: 15, unit: 'm²' },
         { id: 'carpetPickup', name: t.prices.items.carpetPickup, price: 30, unit: 'm²' },
-        { id: 'stroller', name: t.prices.items.stroller, price: 100 },
-        { id: 'carseat', name: t.prices.items.carseat, price: 80 },
+        { id: 'stroller', name: t.prices.items.stroller, price: servicePrice('stroller') },
+        { id: 'carseat', name: t.prices.items.carseat, price: servicePrice('carseat') },
         { id: 'drying', name: t.prices.items.drying, price: 0 },
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80 },
         { id: 'carpetImpregnation', name: t.prices.items.carpetImpregnation, price: 5, unit: 'm²' },

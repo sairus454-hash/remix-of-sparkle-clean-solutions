@@ -11,6 +11,7 @@ import { Calculator, ChevronRight, Sofa, Car, BedDouble, Home, Sparkles } from '
 import { CalculatorItem } from '@/types/calculator';
 import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
 import { cn } from '@/lib/utils';
+import { servicePrice, useServicePrices } from '@/data/servicePrices';
 
 interface QuickCalculatorProps {
   onOpenFull: () => void;
@@ -47,17 +48,17 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
 
   const furnitureOptions = useMemo(() => [
     { id: 'armchair', name: t.prices.items.armchair, price: applyPrice(85) },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(165) },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(200) },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(230) },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(210) },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(servicePrice('sofa2')) },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(servicePrice('sofa3')) },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(servicePrice('sofaCorner')) },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(servicePrice('kitchenCorner')) },
   ], [t, applyPrice]);
 
   const mattressOptions = useMemo(() => [
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: applyPrice(150) },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: applyPrice(230) },
-    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: applyPrice(230) },
-    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(345) },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: applyPrice(servicePrice('mattressSingle')) },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble || 'Двуспальный матрас', price: applyPrice(servicePrice('mattressDouble')) },
+    { id: 'mattressSingleDry2', name: t.prices.items.mattressSingleDry2, price: applyPrice(servicePrice('mattressSingleDry2')) },
+    { id: 'mattressDoubleDry2', name: t.prices.items.mattressDoubleDry2, price: applyPrice(servicePrice('mattressDoubleDry2')) },
   ], [t, applyPrice]);
 
   // Auto cleaning: no regional markup in any city — base Wrocław prices everywhere

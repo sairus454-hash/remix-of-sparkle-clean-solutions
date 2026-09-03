@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Calculator, Plus, Minus, Trash2 } from 'lucide-react';
+import { servicePrice, useServicePrices } from '@/data/servicePrices';
 interface PriceItem {
   id: string;
   name: string;
@@ -26,35 +27,35 @@ const PriceCalculator = () => {
   {
     id: 'pouf',
     name: t.prices.items.pouf,
-    price: 50
+    price: servicePrice('pouf')
   }, {
     id: 'chair',
     name: t.prices.items.chair,
-    price: 50
+    price: servicePrice('chair')
   }, {
     id: 'armchair',
     name: t.prices.items.armchair,
-    price: 85
+    price: servicePrice('armchair')
   }, {
     id: 'pillow',
     name: t.prices.items.pillow,
-    price: 10
+    price: servicePrice('pillow')
   }, {
     id: 'sofa2',
     name: t.prices.items.sofa2,
-    price: 165
+    price: servicePrice('sofa2')
   }, {
     id: 'sofa3',
     name: t.prices.items.sofa3,
-    price: 200
+    price: servicePrice('sofa3')
   }, {
     id: 'sofaCorner',
     name: t.prices.items.sofaCorner,
-    price: 230
+    price: servicePrice('sofaCorner')
   }, {
     id: 'sofaCornerLarge',
     name: t.prices.items.sofaCornerLarge,
-    price: 300
+    price: servicePrice('sofaCornerLarge')
   }, {
     id: 'carpet',
     name: t.prices.items.carpet,
@@ -63,63 +64,63 @@ const PriceCalculator = () => {
   }, {
     id: 'mattressDouble',
     name: t.prices.items.mattressDouble,
-    price: 190
+    price: servicePrice('mattressDouble')
   }, {
     id: 'mattressSingle',
     name: t.prices.items.mattressSingle,
-    price: 145
+    price: servicePrice('mattressSingle')
   }, {
     id: 'bedHeadboard',
     name: t.prices.items.bedHeadboard,
-    price: 115
+    price: servicePrice('bedHeadboard')
   }, {
     id: 'bedFrame',
     name: t.prices.items.bedFrame,
-    price: 115
+    price: servicePrice('bedFrame')
   },
   // Leather Furniture
   {
     id: 'leatherPouf',
     name: t.prices.items.leatherPouf,
-    price: 70
+    price: servicePrice('leatherPouf')
   }, {
     id: 'leatherChair',
     name: t.prices.items.leatherChair,
-    price: 60
+    price: servicePrice('leatherChair')
   }, {
     id: 'leatherArmchair',
     name: t.prices.items.leatherArmchair,
-    price: 105
+    price: servicePrice('leatherArmchair')
   }, {
     id: 'leatherSofa2',
     name: t.prices.items.leatherSofa2,
-    price: 210
+    price: servicePrice('leatherSofa2')
   }, {
     id: 'leatherSofa3',
     name: t.prices.items.leatherSofa3,
-    price: 255
+    price: servicePrice('leatherSofa3')
   }, {
     id: 'leatherSofaCorner',
     name: t.prices.items.leatherSofaCorner,
-    price: 315
+    price: servicePrice('leatherSofaCorner')
   },
   // Mattress with Drying
   {
     id: 'mattressSingleDry',
     name: t.prices.items.mattressSingleDry,
-    price: 145
+    price: servicePrice('mattressSingleDry')
   }, {
     id: 'mattressSingleDry2',
     name: t.prices.items.mattressSingleDry2,
-    price: 230
+    price: servicePrice('mattressSingleDry2')
   }, {
     id: 'mattressDoubleDry',
     name: t.prices.items.mattressDoubleDry,
-    price: 190
+    price: servicePrice('mattressDoubleDry')
   }, {
     id: 'mattressDoubleDry2',
     name: t.prices.items.mattressDoubleDry2,
-    price: 345
+    price: servicePrice('mattressDoubleDry2')
   },
   // Ozonation
   {
@@ -152,7 +153,7 @@ const PriceCalculator = () => {
   }, {
     id: 'stroller',
     name: t.prices.items.stroller,
-    price: 100
+    price: servicePrice('stroller')
   }, {
     id: 'drying',
     name: t.prices.items.drying,

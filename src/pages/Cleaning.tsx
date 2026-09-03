@@ -78,6 +78,7 @@ import calcExtraHood from '@/assets/calc-extra-hood.jpg';
 import calcExtraCabinets from '@/assets/calc-extra-cabinets.jpg';
 import calcExtraDishes from '@/assets/calc-extra-dishes.jpg';
 import calcExtraFridge from '@/assets/calc-extra-fridge.jpg';
+import { servicePrice, useServicePrices } from '@/data/servicePrices';
 import calcExtraFridgeSmall from '@/assets/calc-extra-fridge-small.jpg';
 import calcExtraMicrowave from '@/assets/calc-extra-microwave.jpg';
 import calcExtraBalcony from '@/assets/calc-extra-balcony.jpg';
@@ -258,28 +259,28 @@ const Cleaning = () => {
   ];
 
   const furnitureItems = [
-    { id: 'pouf', name: t.prices.items.pouf, price: 35, image: calcPouf },
-    { id: 'chair', name: t.prices.items.chair, price: 30, image: calcChair },
-    { id: 'armchair', name: t.prices.items.armchair, price: 85, image: calcArmchair },
-    { id: 'pillow', name: t.prices.items.pillow, price: 10, image: calcPillow },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: 165, image: calcSofa2 },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: 200, image: calcSofa3 },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: 230, image: calcSofaCorner },
-    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: 300, image: calcSofaCornerLarge },
-    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: 210, image: calcKitchenCorner },
-    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: 135, image: calcMattressSingle },
-    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: 205, image: calcMattressDouble },
-    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: 115, image: calcHeadboard },
-    { id: 'bedFrame', name: t.prices.items.bedFrame, price: 115, image: calcBedframe },
+    { id: 'pouf', name: t.prices.items.pouf, price: servicePrice('pouf'), image: calcPouf },
+    { id: 'chair', name: t.prices.items.chair, price: servicePrice('chair'), image: calcChair },
+    { id: 'armchair', name: t.prices.items.armchair, price: servicePrice('armchair'), image: calcArmchair },
+    { id: 'pillow', name: t.prices.items.pillow, price: servicePrice('pillow'), image: calcPillow },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: servicePrice('sofa2'), image: calcSofa2 },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: servicePrice('sofa3'), image: calcSofa3 },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: servicePrice('sofaCorner'), image: calcSofaCorner },
+    { id: 'sofaCornerLarge', name: t.prices.items.sofaCornerLarge, price: servicePrice('sofaCornerLarge'), image: calcSofaCornerLarge },
+    { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: servicePrice('kitchenCorner'), image: calcKitchenCorner },
+    { id: 'mattressSingle', name: t.prices.items.mattressSingle, price: servicePrice('mattressSingle'), image: calcMattressSingle },
+    { id: 'mattressDouble', name: t.prices.items.mattressDouble, price: servicePrice('mattressDouble'), image: calcMattressDouble },
+    { id: 'bedHeadboard', name: t.prices.items.bedHeadboard, price: servicePrice('bedHeadboard'), image: calcHeadboard },
+    { id: 'bedFrame', name: t.prices.items.bedFrame, price: servicePrice('bedFrame'), image: calcBedframe },
   ];
 
   const leatherItems = [
-    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: 60, image: calcLeatherPouf },
-    { id: 'leatherChair', name: t.prices.items.leatherChair, price: 55, image: calcLeatherChair },
-    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: 95, image: calcLeatherArmchair },
-    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: 185, image: calcLeatherSofa2 },
-    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: 230, image: calcLeatherSofa3 },
-    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: 285, image: calcLeatherCorner },
+    { id: 'leatherPouf', name: t.prices.items.leatherPouf, price: servicePrice('leatherPouf'), image: calcLeatherPouf },
+    { id: 'leatherChair', name: t.prices.items.leatherChair, price: servicePrice('leatherChair'), image: calcLeatherChair },
+    { id: 'leatherArmchair', name: t.prices.items.leatherArmchair, price: servicePrice('leatherArmchair'), image: calcLeatherArmchair },
+    { id: 'leatherSofa2', name: t.prices.items.leatherSofa2, price: servicePrice('leatherSofa2'), image: calcLeatherSofa2 },
+    { id: 'leatherSofa3', name: t.prices.items.leatherSofa3, price: servicePrice('leatherSofa3'), image: calcLeatherSofa3 },
+    { id: 'leatherSofaCorner', name: t.prices.items.leatherSofaCorner, price: servicePrice('leatherSofaCorner'), image: calcLeatherCorner },
   ];
 
   const extrasItems = [
@@ -294,8 +295,8 @@ const Cleaning = () => {
     { id: 'drying', name: language === 'pl' ? 'Suszenie mebli' : language === 'en' ? 'Furniture drying' : 'Сушение мебели', price: 0, image: calcDrying, promoBadge: t.promotions?.dryingFreeSpring || 'Бесплатно' },
     { id: 'carpetPickup', name: t.prices?.items?.carpetPickup || (language === 'pl' ? 'Pranie dywanów z odbiorem' : language === 'en' ? 'Carpet washing with pickup' : 'Стирка ковров с забором'), price: 30, image: calcCarpetPickup, unit: 'm²' },
     { id: 'carpetCoveringImpregnation', name: t.prices?.items?.carpetCoveringImpregnation || (language === 'pl' ? 'Impregnacja wykładziny' : language === 'en' ? 'Carpet covering impregnation' : 'Импрегнация коврового покрытия'), price: 3, image: calcCarpetCoveringImpregnation, unit: 'm²' },
-    { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: 100, image: calcStroller },
-    { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: 80, image: calcCarseat },
+    { id: 'stroller', name: language === 'pl' ? 'Wózek dziecięcy' : language === 'en' ? 'Baby stroller' : 'Детская коляска', price: servicePrice('stroller'), image: calcStroller },
+    { id: 'carseat', name: language === 'pl' ? 'Fotelik samochodowy' : language === 'en' ? 'Car seat' : 'Автокресло', price: servicePrice('carseat'), image: calcCarseat },
   ];
 
   const windowItems = [
