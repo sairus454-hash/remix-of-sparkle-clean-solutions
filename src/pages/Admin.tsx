@@ -180,7 +180,7 @@ const Admin = () => {
             </CardHeader>
             <CardContent>
               <div className="text-sm text-muted-foreground">
-                Цены редактируются через Supabase
+                Редактируются во вкладке «{t.admin.prices}»
               </div>
             </CardContent>
           </Card>
