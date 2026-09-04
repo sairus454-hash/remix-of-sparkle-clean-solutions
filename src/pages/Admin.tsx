@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Droplets, LogOut, Star, Trash2, MessageSquare, DollarSign, Loader2, Home, CalendarX } from 'lucide-react';
 import BookingDatesManager from '@/components/admin/BookingDatesManager';
+import PricesManager from '@/components/admin/PricesManager';
 import {
   AlertDialog,
   AlertDialogAction,
