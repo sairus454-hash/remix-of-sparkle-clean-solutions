@@ -18,6 +18,26 @@
     });
     </script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google Ads gtag.js — deferred to after first paint to protect LCP/INP -->
+    <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'AW-18410131732');
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18410131732';
+        document.head.appendChild(s);
+      }, 2500);
+    });
+    </script>
+    <!-- End Google Ads gtag.js -->
+    
+
     
     
     <!-- Primary Meta Tags -->
