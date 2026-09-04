@@ -540,6 +540,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                     variant="outline"
                     size="icon"
                     className="h-9 w-9 rounded-full border-primary/30"
+                    aria-label={decreaseLabel}
                     onClick={(e) => {
                       e.stopPropagation();
                       const newQty = qty - 1;
@@ -554,6 +555,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                     variant="outline"
                     size="icon"
                     className="h-9 w-9 rounded-full border-primary/30"
+                    aria-label={increaseLabel}
                     onClick={(e) => {
                       e.stopPropagation();
                       updateQuantity(item.id, qty + 1);
@@ -640,7 +642,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                   </span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(selected.item.id, selected.quantity - 1)}>
+                  <Button variant="outline" size="icon" className="h-8 w-8" aria-label={decreaseLabel} onClick={() => updateQuantity(selected.item.id, selected.quantity - 1)}>
                     <Minus className="w-3 h-3" />
                   </Button>
                   <Input
@@ -651,7 +653,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                     className="w-14 h-8 text-center text-sm p-1"
                     inputMode="numeric"
                   />
-                  <Button variant="outline" size="icon" className="h-8 w-8" onClick={() => updateQuantity(selected.item.id, selected.quantity + 1)}>
+                  <Button variant="outline" size="icon" className="h-8 w-8" aria-label={increaseLabel} onClick={() => updateQuantity(selected.item.id, selected.quantity + 1)}>
                     <Plus className="w-3 h-3" />
                   </Button>
                 </div>
