@@ -101,6 +101,8 @@ const CascadeCard = ({ children, index }: { children: React.ReactNode; index: nu
 
 const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, largeCards, onSendToForm, onQuickOrder }: CardServiceCalculatorProps) => {
   const { t, language } = useLanguage();
+  const decreaseLabel = language === 'pl' ? 'Zmniejsz ilość' : language === 'en' ? 'Decrease quantity' : language === 'uk' ? 'Зменшити кількість' : 'Уменьшить количество';
+  const increaseLabel = language === 'pl' ? 'Zwiększ ilość' : language === 'en' ? 'Increase quantity' : language === 'uk' ? 'Збільшити кількість' : 'Увеличить количество';
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { isWroclaw, hasPromo, applyPrice, furnitureMattressBase } = useCity();
