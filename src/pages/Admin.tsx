@@ -194,7 +194,15 @@ const Admin = () => {
               <CalendarX className="w-4 h-4" />
               {t.admin.bookingDates}
             </TabsTrigger>
+            <TabsTrigger value="prices" className="flex items-center gap-2">
+              <DollarSign className="w-4 h-4" />
+              {t.admin.prices}
+            </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="prices">
+            <PricesManager />
+          </TabsContent>
 
           <TabsContent value="reviews">
             <Card>
