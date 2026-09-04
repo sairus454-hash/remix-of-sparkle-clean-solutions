@@ -10,6 +10,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { useToast } from '@/hooks/use-toast';
 import { Droplets, LogOut, Star, Trash2, MessageSquare, DollarSign, Loader2, Home, CalendarX } from 'lucide-react';
 import BookingDatesManager from '@/components/admin/BookingDatesManager';
+import PricesManager from '@/components/admin/PricesManager';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -179,7 +180,7 @@ const Admin = () => {
             </CardHeader>
             <CardContent>
               <div className="text-sm text-muted-foreground">
-                Цены редактируются через Supabase
+                Редактируются во вкладке «{t.admin.prices}»
               </div>
             </CardContent>
           </Card>
@@ -193,7 +194,15 @@ const Admin = () => {
               <CalendarX className="w-4 h-4" />
               {t.admin.bookingDates}
             </TabsTrigger>
+            <TabsTrigger value="prices" className="flex items-center gap-2">
+              <DollarSign className="w-4 h-4" />
+              {t.admin.prices}
+            </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="prices">
+            <PricesManager />
+          </TabsContent>
 
           <TabsContent value="reviews">
             <Card>
