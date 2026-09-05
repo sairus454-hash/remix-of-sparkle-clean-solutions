@@ -19,59 +19,60 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Google Ads gtag.js — deferred to after first paint to protect LCP/INP -->
+    <!-- Google Ads gtag.js — stub defined immediately so events queue; script itself loads late (LCP/INP) -->
     <script>
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { window.dataLayer.push(arguments); }
-        window.gtag = gtag;
-        gtag('js', new Date());
-        gtag('config', 'AW-18410131732');
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18410131732';
-        document.head.appendChild(s);
-      }, 2500);
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'AW-18410131732');
+    window.__loadGoogleAds = function () {
+      if (window.__gadsLoading) return;
+      window.__gadsLoading = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18410131732';
+      document.head.appendChild(s);
+    };
+    window.addEventListener('load', function () { setTimeout(window.__loadGoogleAds, 2500); });
     </script>
     <!-- End Google Ads gtag.js -->
 
     <!-- Google Ads phone-click conversion (gtag_report_conversion) — bound to all tel: links -->
     <script>
     window.gtag_report_conversion = function (url) {
+      // Make sure the real gtag.js is being fetched even if the click happens early
+      if (typeof window.__loadGoogleAds === 'function') window.__loadGoogleAds();
       var navigated = false;
       var callback = function () {
         if (navigated) return;
         navigated = true;
         if (typeof (url) !== 'undefined') { window.location = url; }
       };
-      if (typeof window.gtag === 'function') {
-        window.gtag('event', 'conversion', {
-          'send_to': 'AW-18410131732/clZ3COmoie4cEJSi0cpE',
-          'event_callback': callback
-        });
-        // Safety timeout — navigate even if event_callback never fires (gtag.js not yet downloaded)
-        setTimeout(callback, 1500);
-      } else {
-        // gtag not loaded yet — navigate immediately
-        callback();
-      }
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-18410131732/clZ3COmoie4cEJSi0cpE',
+        'event_callback': callback
+      });
+      // Safety timeout — navigate even if event_callback never fires
+      setTimeout(callback, 1200);
       return false;
     };
-    // Delegated click listener: fires gtag_report_conversion on every tel: link (incl. dangerouslySetInnerHTML)
+    // Capture-phase delegated listener: fires on every tel: link, including links
+    // rendered by React or injected via dangerouslySetInnerHTML.
     document.addEventListener('click', function (e) {
-      var link = e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+      var t = e.target;
+      var link = t && t.closest ? t.closest('a[href^="tel:"]') : null;
       if (!link) return;
       e.preventDefault();
-      if (typeof window.gtag_report_conversion === 'function') {
-        window.gtag_report_conversion(link.href);
-      } else {
-        window.location = link.href;
-      }
+      window.gtag_report_conversion(link.href);
+    }, true);
+    // Warm up gtag.js on the first real user interaction so conversions never get lost
+    ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) {
+      window.addEventListener(ev, function once() { window.__loadGoogleAds(); }, { once: true, passive: true });
     });
     </script>
     <!-- End Google Ads phone-click conversion -->
+
 
     
 
