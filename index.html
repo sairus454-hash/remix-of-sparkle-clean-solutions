@@ -64,7 +64,6 @@
       var link = t && t.closest ? t.closest('a[href^="tel:"]') : null;
       if (!link) return;
       e.preventDefault();
-      e.stopPropagation();
       window.gtag_report_conversion(link.href);
     }, true);
     // Warm up gtag.js on the first real user interaction so conversions never get lost
