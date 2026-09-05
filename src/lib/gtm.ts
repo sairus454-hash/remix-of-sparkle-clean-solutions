@@ -13,7 +13,7 @@ export const pushEvent = (event: string, params?: Record<string, unknown>) => {
 // Google Ads conversion event
 export const pushConversion = (conversionLabel?: string, value?: number, currency = 'PLN') => {
   pushEvent('ads_conversion', {
-    send_to: conversionLabel || 'AW-17379470297',
+    send_to: conversionLabel || 'AW-18410131732',
     value,
     currency,
   });
