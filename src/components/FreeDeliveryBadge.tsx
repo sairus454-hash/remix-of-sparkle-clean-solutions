@@ -47,7 +47,11 @@ const FreeDeliveryBadge = () => {
         <button
           onClick={() => {
             if (isMobile) {
-              window.location.href = 'tel:+48575211401';
+              if (typeof window.gtag_report_conversion === 'function') {
+                window.gtag_report_conversion('tel:+48575211401');
+              } else {
+                window.location.href = 'tel:+48575211401';
+              }
               import('@/lib/gtm').then(m => m.gtmEvents.phoneClick('floating_badge'));
             } else {
               setShowPhone(!showPhone);

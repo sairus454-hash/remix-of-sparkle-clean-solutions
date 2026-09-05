@@ -36,6 +36,43 @@
     });
     </script>
     <!-- End Google Ads gtag.js -->
+
+    <!-- Google Ads phone-click conversion (gtag_report_conversion) — bound to all tel: links -->
+    <script>
+    window.gtag_report_conversion = function (url) {
+      var navigated = false;
+      var callback = function () {
+        if (navigated) return;
+        navigated = true;
+        if (typeof (url) !== 'undefined') { window.location = url; }
+      };
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-18410131732/clZ3COmoie4cEJSi0cpE',
+          'event_callback': callback
+        });
+        // Safety timeout — navigate even if event_callback never fires (gtag.js not yet downloaded)
+        setTimeout(callback, 1500);
+      } else {
+        // gtag not loaded yet — navigate immediately
+        callback();
+      }
+      return false;
+    };
+    // Delegated click listener: fires gtag_report_conversion on every tel: link (incl. dangerouslySetInnerHTML)
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+      if (!link) return;
+      e.preventDefault();
+      if (typeof window.gtag_report_conversion === 'function') {
+        window.gtag_report_conversion(link.href);
+      } else {
+        window.location = link.href;
+      }
+    });
+    </script>
+    <!-- End Google Ads phone-click conversion -->
+
     
 
     
