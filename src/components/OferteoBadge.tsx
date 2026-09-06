@@ -4,6 +4,7 @@ import fixlyBadge from '@/assets/fixly-top-2025.png';
 import olawaBadge from '@/assets/partner-olawa-badge-2.jpg';
 import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 import orangeBadge from '@/assets/partner-orange-badge.jpg';
+import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
 
 const OferteoBadge = () => {
   const { language } = useLanguage();
@@ -32,6 +33,11 @@ const OferteoBadge = () => {
     : language === 'uk' ? 'Співпраця з Orange'
     : language === 'en' ? 'Cooperation with Orange'
     : 'Współpraca z Orange';
+  const cccLabel =
+    language === 'ru' ? 'Сотрудничество с CCC'
+    : language === 'uk' ? 'Співпраця з CCC'
+    : language === 'en' ? 'Cooperation with CCC'
+    : 'Współpracujemy z CCC';
 
   return (
     <section className="py-8 bg-gradient-section">
@@ -112,6 +118,22 @@ const OferteoBadge = () => {
             height={180}
             loading="lazy"
             className="w-32 sm:w-40 md:w-48 h-auto rounded-lg drop-shadow-lg"
+          />
+        </a>
+        <a
+          href="https://ccc.eu/pl/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={cccLabel}
+          className="hover:scale-105 transition-transform inline-block"
+        >
+          <img
+            src={cccBadge.url}
+            alt={cccLabel}
+            width={180}
+            height={180}
+            loading="lazy"
+            className="w-32 sm:w-40 md:w-48 aspect-square object-contain rounded-full drop-shadow-lg"
           />
         </a>
       </div>
