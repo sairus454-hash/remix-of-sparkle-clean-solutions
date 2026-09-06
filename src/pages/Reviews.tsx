@@ -17,6 +17,7 @@ import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
 import reviewsInterior1 from '@/assets/reviews-interior-1.jpg';
 import reviewsInterior2 from '@/assets/reviews-interior-2.jpg';
 import reviewsInterior3 from '@/assets/reviews-interior-3.jpg';
+import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
 import { supabase } from '@/integrations/supabase/client';
 
 interface Review {
@@ -331,6 +332,25 @@ const Reviews = () => {
           }}>
               {t.reviews.customerReviews}
             </h2>
+
+            <div className="flex justify-center mb-10">
+              <a
+                href="https://ccc.eu/pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={language === 'ru' ? 'Сотрудничество с CCC' : language === 'uk' ? 'Співпраця з CCC' : language === 'en' ? 'Cooperation with CCC' : 'Współpracujemy z CCC'}
+                className="inline-block transition-transform hover:scale-105"
+              >
+                <img
+                  src={cccBadge.url}
+                  alt={language === 'ru' ? 'Сотрудничество с CCC' : language === 'uk' ? 'Співпраця з CCC' : language === 'en' ? 'Cooperation with CCC' : 'Współpracujemy z CCC'}
+                  width={180}
+                  height={180}
+                  loading="lazy"
+                  className="w-32 sm:w-40 aspect-square rounded-full object-contain drop-shadow-lg"
+                />
+              </a>
+            </div>
             
             {isLoadingReviews ? <div className="flex justify-center py-12">
                 <Loader2 className="w-8 h-8 animate-spin text-primary" />

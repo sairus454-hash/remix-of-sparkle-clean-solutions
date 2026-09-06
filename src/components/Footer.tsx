@@ -6,6 +6,7 @@ import fixlyBadge from '@/assets/fixly-top-executor-2025.webp';
 import olawaPartnerBadge from '@/assets/partner-olawa-badge.jpg';
 import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 import orangeBadge from '@/assets/partner-orange-badge.jpg';
+import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();
@@ -228,6 +229,33 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                   <img
                     src={orangeBadge}
                     alt={orangeLabel}
+                    loading="lazy"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </a>
+            );
+          })()}
+
+          {/* CCC Cooperation Badge */}
+          {(() => {
+            const cccLabel =
+              language === 'ru' ? 'Сотрудничество с CCC'
+              : language === 'uk' ? 'Співпраця з CCC'
+              : language === 'en' ? 'Cooperation with CCC'
+              : 'Współpracujemy z CCC';
+            return (
+              <a
+                href="https://ccc.eu/pl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={cccLabel}
+                className="relative group"
+              >
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/30 hover:scale-105 transition-transform bg-background">
+                  <img
+                    src={cccBadge.url}
+                    alt={cccLabel}
                     loading="lazy"
                     className="w-full h-full object-contain"
                   />
