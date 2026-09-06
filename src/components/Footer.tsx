@@ -6,7 +6,7 @@ import fixlyBadge from '@/assets/fixly-top-executor-2025.webp';
 import olawaPartnerBadge from '@/assets/partner-olawa-badge.jpg';
 import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 import orangeBadge from '@/assets/partner-orange-badge.jpg';
-import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
+import cccBadge from '@/assets/partner-ccc-badge.png';
 
 const Footer = forwardRef<HTMLElement>((_, ref) => {
   const { t, language } = useLanguage();

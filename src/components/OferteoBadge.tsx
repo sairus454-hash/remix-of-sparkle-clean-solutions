@@ -4,7 +4,7 @@ import fixlyBadge from '@/assets/fixly-top-2025.png';
 import olawaBadge from '@/assets/partner-olawa-badge-2.jpg';
 import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 import orangeBadge from '@/assets/partner-orange-badge.jpg';
-import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
+import cccBadge from '@/assets/partner-ccc-badge.png';
 
 const OferteoBadge = () => {
   const { language } = useLanguage();

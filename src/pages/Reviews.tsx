@@ -17,7 +17,7 @@ import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
 import reviewsInterior1 from '@/assets/reviews-interior-1.jpg';
 import reviewsInterior2 from '@/assets/reviews-interior-2.jpg';
 import reviewsInterior3 from '@/assets/reviews-interior-3.jpg';
-import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
+import cccBadge from '@/assets/partner-ccc-badge.png';
 import { supabase } from '@/integrations/supabase/client';
 
 interface Review {
