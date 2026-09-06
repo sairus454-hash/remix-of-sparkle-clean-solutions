@@ -130,10 +130,10 @@ const OferteoBadge = () => {
           <img
             src={cccBadge}
             alt={cccLabel}
-            width={180}
-            height={180}
+            width={1536}
+            height={1024}
             loading="lazy"
-            className="w-32 sm:w-40 md:w-48 aspect-square object-contain rounded-full drop-shadow-lg"
+            className="w-32 sm:w-40 md:w-48 h-auto rounded-2xl object-contain drop-shadow-lg bg-white p-2"
           />
         </a>
       </div>

@@ -344,10 +344,10 @@ const Reviews = () => {
                 <img
                   src={cccBadge}
                   alt={language === 'ru' ? 'Сотрудничество с CCC' : language === 'uk' ? 'Співпраця з CCC' : language === 'en' ? 'Cooperation with CCC' : 'Współpracujemy z CCC'}
-                  width={180}
-                  height={180}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
-                  className="w-32 sm:w-40 aspect-square rounded-full object-contain drop-shadow-lg"
+                  className="w-40 sm:w-48 h-auto rounded-2xl object-contain drop-shadow-lg bg-white p-2"
                 />
               </a>
             </div>
