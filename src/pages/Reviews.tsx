@@ -17,7 +17,7 @@ import leatherSofaImage from '@/assets/leather-sofa-cleaning.jpg';
 import reviewsInterior1 from '@/assets/reviews-interior-1.jpg';
 import reviewsInterior2 from '@/assets/reviews-interior-2.jpg';
 import reviewsInterior3 from '@/assets/reviews-interior-3.jpg';
-import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
+import cccBadge from '@/assets/partner-ccc-badge.png';
 import { supabase } from '@/integrations/supabase/client';
 
 interface Review {
@@ -342,12 +342,12 @@ const Reviews = () => {
                 className="inline-block transition-transform hover:scale-105"
               >
                 <img
-                  src={cccBadge.url}
+                  src={cccBadge}
                   alt={language === 'ru' ? 'Сотрудничество с CCC' : language === 'uk' ? 'Співпраця з CCC' : language === 'en' ? 'Cooperation with CCC' : 'Współpracujemy z CCC'}
-                  width={180}
-                  height={180}
+                  width={1536}
+                  height={1024}
                   loading="lazy"
-                  className="w-32 sm:w-40 aspect-square rounded-full object-contain drop-shadow-lg"
+                  className="w-40 sm:w-48 h-auto rounded-2xl object-contain drop-shadow-lg bg-white p-2"
                 />
               </a>
             </div>

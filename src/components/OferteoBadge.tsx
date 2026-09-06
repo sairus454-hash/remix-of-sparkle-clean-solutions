@@ -4,7 +4,7 @@ import fixlyBadge from '@/assets/fixly-top-2025.png';
 import olawaBadge from '@/assets/partner-olawa-badge-2.jpg';
 import mediaexpertBadge from '@/assets/partner-mediaexpert-badge.jpg';
 import orangeBadge from '@/assets/partner-orange-badge.jpg';
-import cccBadge from '@/assets/partner-ccc-badge.png.asset.json';
+import cccBadge from '@/assets/partner-ccc-badge.png';
 
 const OferteoBadge = () => {
   const { language } = useLanguage();
@@ -128,12 +128,12 @@ const OferteoBadge = () => {
           className="hover:scale-105 transition-transform inline-block"
         >
           <img
-            src={cccBadge.url}
+            src={cccBadge}
             alt={cccLabel}
-            width={180}
-            height={180}
+            width={1536}
+            height={1024}
             loading="lazy"
-            className="w-32 sm:w-40 md:w-48 aspect-square object-contain rounded-full drop-shadow-lg"
+            className="w-32 sm:w-40 md:w-48 h-auto rounded-2xl object-contain drop-shadow-lg bg-white p-2"
           />
         </a>
       </div>
