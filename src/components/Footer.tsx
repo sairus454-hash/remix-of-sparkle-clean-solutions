@@ -254,7 +254,7 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
               >
                 <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-lg ring-2 ring-primary/30 hover:scale-105 transition-transform bg-background">
                   <img
-                    src={cccBadge.url}
+                    src={cccBadge}
                     alt={cccLabel}
                     loading="lazy"
                     className="w-full h-full object-contain"

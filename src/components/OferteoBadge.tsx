@@ -128,7 +128,7 @@ const OferteoBadge = () => {
           className="hover:scale-105 transition-transform inline-block"
         >
           <img
-            src={cccBadge.url}
+            src={cccBadge}
             alt={cccLabel}
             width={180}
             height={180}

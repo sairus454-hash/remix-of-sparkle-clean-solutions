@@ -342,7 +342,7 @@ const Reviews = () => {
                 className="inline-block transition-transform hover:scale-105"
               >
                 <img
-                  src={cccBadge.url}
+                  src={cccBadge}
                   alt={language === 'ru' ? 'Сотрудничество с CCC' : language === 'uk' ? 'Співпраця з CCC' : language === 'en' ? 'Cooperation with CCC' : 'Współpracujemy z CCC'}
                   width={180}
                   height={180}
