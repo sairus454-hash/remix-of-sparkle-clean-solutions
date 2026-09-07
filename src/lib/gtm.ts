@@ -122,6 +122,24 @@ export const gtmEvents = {
   calculatorUse: (service: string, total: number) =>
     pushEvent('calculator_use', { service, total }),
 
+  // Клик по карточке товара/услуги — видно, что открывают чаще
+  selectItem: (params: {
+    item_id: string;
+    item_name: string;
+    item_category?: string;
+    price?: number;
+    action?: 'add' | 'remove' | 'open';
+    location?: string;
+  }) =>
+    pushEvent('select_item', {
+      ...params,
+      action: params.action || 'open',
+      currency: 'PLN',
+      language: getLanguage(),
+      page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+    }),
+
+
   reviewSubmit: (rating: number) =>
     pushEvent('review_submit', { rating }),
 
