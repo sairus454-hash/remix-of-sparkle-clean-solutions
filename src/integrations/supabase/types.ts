@@ -65,6 +65,45 @@ export type Database = {
         }
         Relationships: []
       }
+      item_clicks: {
+        Row: {
+          action: string
+          created_at: string
+          id: string
+          item_category: string | null
+          item_id: string
+          item_name: string
+          language: string | null
+          location: string | null
+          page_path: string | null
+          price: number | null
+        }
+        Insert: {
+          action?: string
+          created_at?: string
+          id?: string
+          item_category?: string | null
+          item_id: string
+          item_name: string
+          language?: string | null
+          location?: string | null
+          page_path?: string | null
+          price?: number | null
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          id?: string
+          item_category?: string | null
+          item_id?: string
+          item_name?: string
+          language?: string | null
+          location?: string | null
+          page_path?: string | null
+          price?: number | null
+        }
+        Relationships: []
+      }
       prices: {
         Row: {
           created_at: string
