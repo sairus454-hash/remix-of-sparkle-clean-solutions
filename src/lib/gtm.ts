@@ -81,15 +81,24 @@ const getLanguage = (): string => {
 
 export const gtmEvents = {
   formSubmit: (formName: string, extra?: Record<string, unknown>) => {
+    const value = extra?.total as number | undefined;
     pushEvent('form_submit', {
       form_name: formName,
       form_status: 'success',
       language: getLanguage(),
       ...extra,
     });
-    // Also fire Google Ads conversion
-    pushConversion(undefined, extra?.total as number | undefined);
+    // Standard lead event (GA4 / Ads)
+    pushEvent('generate_lead', {
+      form_name: formName,
+      language: getLanguage(),
+      value,
+      currency: 'PLN',
+    });
+    // Google Ads conversion
+    pushConversion(undefined, value);
   },
+
 
   formSubmitError: (formName: string, extra?: Record<string, unknown>) => {
     pushEvent('form_submit_error', {
