@@ -12,14 +12,31 @@ export const pushEvent = (event: string, params?: Record<string, unknown>) => {
   window.dataLayer.push({ event, ...params });
 };
 
-// Google Ads conversion event
-export const pushConversion = (conversionLabel?: string, value?: number, currency = 'PLN') => {
+// Google Ads conversion IDs / labels
+export const ADS_ID = 'AW-18410131732';
+// Label used for lead (form submission) conversions.
+// Replace with a dedicated "Zapytanie z formularza" label from Google Ads if you create one.
+export const ADS_LEAD_LABEL = `${ADS_ID}/clZ3COmoie4cEJSi0cpE`;
+
+// Google Ads conversion event — sent both via gtag (direct) and dataLayer (GTM)
+export const pushConversion = (sendTo?: string, value?: number, currency = 'PLN') => {
+  const target = sendTo || ADS_LEAD_LABEL;
   pushEvent('ads_conversion', {
-    send_to: conversionLabel || 'AW-18410131732',
+    send_to: target,
     value,
     currency,
   });
+  try {
+    window.gtag?.('event', 'conversion', {
+      send_to: target,
+      value,
+      currency,
+    });
+  } catch {
+    // ignore — analytics must never break the app
+  }
 };
+
 
 // Scroll depth tracking
 let scrollTracked = new Set<number>();
@@ -64,15 +81,24 @@ const getLanguage = (): string => {
 
 export const gtmEvents = {
   formSubmit: (formName: string, extra?: Record<string, unknown>) => {
+    const value = extra?.total as number | undefined;
     pushEvent('form_submit', {
       form_name: formName,
       form_status: 'success',
       language: getLanguage(),
       ...extra,
     });
-    // Also fire Google Ads conversion
-    pushConversion(undefined, extra?.total as number | undefined);
+    // Standard lead event (GA4 / Ads)
+    pushEvent('generate_lead', {
+      form_name: formName,
+      language: getLanguage(),
+      value,
+      currency: 'PLN',
+    });
+    // Google Ads conversion
+    pushConversion(undefined, value);
   },
+
 
   formSubmitError: (formName: string, extra?: Record<string, unknown>) => {
     pushEvent('form_submit_error', {
@@ -95,6 +121,24 @@ export const gtmEvents = {
 
   calculatorUse: (service: string, total: number) =>
     pushEvent('calculator_use', { service, total }),
+
+  // Клик по карточке товара/услуги — видно, что открывают чаще
+  selectItem: (params: {
+    item_id: string;
+    item_name: string;
+    item_category?: string;
+    price?: number;
+    action?: 'add' | 'remove' | 'open';
+    location?: string;
+  }) =>
+    pushEvent('select_item', {
+      ...params,
+      action: params.action || 'open',
+      currency: 'PLN',
+      language: getLanguage(),
+      page_path: typeof window !== 'undefined' ? window.location.pathname : '',
+    }),
+
 
   reviewSubmit: (rating: number) =>
     pushEvent('review_submit', { rating }),

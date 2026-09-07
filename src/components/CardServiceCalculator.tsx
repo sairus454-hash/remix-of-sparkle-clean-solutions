@@ -168,6 +168,16 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
 
   const addItem = (item: ServiceCardItem) => {
     const existing = selectedItems.find((s) => s.item.id === item.id);
+    // Analytics: which product/service cards users click most
+    import('@/lib/gtm').then(m => m.gtmEvents.selectItem({
+      item_id: item.id,
+      item_name: item.name,
+      item_category: category,
+      price: item.price,
+      action: !existing ? 'add' : (!isAreaItem(item) && existing.quantity === 1 ? 'remove' : 'add'),
+      location: 'card_calculator',
+    })).catch(() => {});
+
     if (existing) {
       // Toggle: remove if already selected with qty 1 (skip toggle for area items)
       if (!isAreaItem(item) && existing.quantity === 1) {
