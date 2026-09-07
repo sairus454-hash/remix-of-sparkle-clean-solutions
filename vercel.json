@@ -76,6 +76,7 @@
     { "source": "/poradnik-prania-tapicerki-samochodowej", "destination": "/index.html" },
     { "source": "/admin", "destination": "/index.html" },
     { "source": "/admin/login", "destination": "/index.html" },
+    { "source": "/admin/stats", "destination": "/index.html" },
     { "source": "/ru", "destination": "/index.html" },
     { "source": "/en", "destination": "/index.html" },
     { "source": "/uk", "destination": "/index.html" },
