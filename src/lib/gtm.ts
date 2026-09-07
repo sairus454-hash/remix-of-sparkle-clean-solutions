@@ -130,14 +130,17 @@ export const gtmEvents = {
     price?: number;
     action?: 'add' | 'remove' | 'open';
     location?: string;
-  }) =>
-    pushEvent('select_item', {
-      ...params,
-      action: params.action || 'open',
-      currency: 'PLN',
-      language: getLanguage(),
-      page_path: typeof window !== 'undefined' ? window.location.pathname : '',
-    }),
+  }) => {
+    const action = params.action || 'open';
+    const language = getLanguage();
+    const page_path = typeof window !== 'undefined' ? window.location.pathname : '';
+    pushEvent('select_item', { ...params, action, currency: 'PLN', language, page_path });
+    // Собираем статистику кликов в собственной базе
+    import('@/lib/itemClickLog')
+      .then((m) => m.logItemClick({ ...params, action, language, page_path }))
+      .catch(() => {});
+  },
+
 
 
   reviewSubmit: (rating: number) =>
