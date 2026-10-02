@@ -104,6 +104,51 @@ export type Database = {
         }
         Relationships: []
       }
+      page_visits: {
+        Row: {
+          created_at: string
+          device: string | null
+          id: string
+          is_landing: boolean
+          language: string | null
+          page_path: string
+          referrer_host: string | null
+          session_id: string
+          source: string
+          utm_campaign: string | null
+          utm_medium: string | null
+          utm_source: string | null
+        }
+        Insert: {
+          created_at?: string
+          device?: string | null
+          id?: string
+          is_landing?: boolean
+          language?: string | null
+          page_path: string
+          referrer_host?: string | null
+          session_id: string
+          source?: string
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Update: {
+          created_at?: string
+          device?: string | null
+          id?: string
+          is_landing?: boolean
+          language?: string | null
+          page_path?: string
+          referrer_host?: string | null
+          session_id?: string
+          source?: string
+          utm_campaign?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Relationships: []
+      }
       prices: {
         Row: {
           created_at: string

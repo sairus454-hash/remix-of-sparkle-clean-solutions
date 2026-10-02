@@ -6,6 +6,13 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    const t = setTimeout(() => {
+      import('@/lib/visitLog').then((m) => m.logPageVisit(pathname)).catch(() => {});
+    }, 1500);
+    return () => clearTimeout(t);
+  }, [pathname]);
+
+  useEffect(() => {
     resetScrollDepth();
 
     if (hash) {
