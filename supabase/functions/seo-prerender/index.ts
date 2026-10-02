@@ -33,7 +33,7 @@ const staticPages: Record<string, PageMeta> = {
   '/': {
     title: 'MasterClean — Pranie tapicerki, czyszczenie i sprzątanie 24/7',
     description: 'Profesjonalne pranie tapicerki meblowej i samochodowej, czyszczenie dywanów, materacy, ozonowanie. Sprzątanie, mycie okien, złota rączka. Wrocław i okolice.',
-    keywords: 'pranie tapicerki, chemczystka mebli, czyszczenie dywanów, materacy, ozonowanie, sprzątanie, mycie okien, Wrocław',
+    keywords: 'pranie tapicerki, pranie mebli, czyszczenie dywanów, materacy, ozonowanie, sprzątanie, mycie okien, Wrocław',
     image: `${SITE_URL}/og-image.jpg`,
   },
   '/about': {
@@ -43,9 +43,9 @@ const staticPages: Record<string, PageMeta> = {
     image: `${SITE_URL}/og-about.jpg`,
   },
   '/services': {
-    title: 'Chemczystka mebli — Pranie tapicerki meblowej',
-    description: 'Profesjonalna chemczystka mebli z dojazdem: pranie tapicerki meblowej i skórzanej, czyszczenie kanap, foteli, materacy. Kalkulator online. Wrocław, Opole.',
-    keywords: 'chemczystka mebli, pranie tapicerki meblowej, pranie kanapy, czyszczenie fotela, pranie materaca',
+    title: 'Pranie mebli — Pranie tapicerki meblowej',
+    description: 'Profesjonalna pranie mebli z dojazdem: pranie tapicerki meblowej i skórzanej, czyszczenie kanap, foteli, materacy. Kalkulator online. Wrocław, Opole.',
+    keywords: 'pranie mebli, pranie tapicerki meblowej, pranie kanapy, czyszczenie fotela, pranie materaca',
     image: `${SITE_URL}/og-services.jpg`,
   },
   '/prices': {
@@ -160,7 +160,7 @@ const cityPages: Record<string, PageMeta> = {
   },
   kalisz: {
     title: 'Pranie tapicerki Kalisz — Regularne dojazdy z Wrocławia',
-    description: 'Profesjonalna chemczystka mebli, czyszczenie dywanów i ozonowanie w Kaliszu. Obsługujemy też Ostrów Wielkopolski i Pleszew.',
+    description: 'Profesjonalna pranie mebli, czyszczenie dywanów i ozonowanie w Kaliszu. Obsługujemy też Ostrów Wielkopolski i Pleszew.',
     keywords: 'pranie tapicerki Kalisz, czyszczenie dywanów Kalisz, ozonowanie Kalisz',
     image: `${SITE_URL}/og-kalisz.jpg`,
   },
@@ -184,7 +184,7 @@ const cityPages: Record<string, PageMeta> = {
   },
   'ostrow-wielkopolski': {
     title: 'Pranie tapicerki Ostrów Wielkopolski — Wielkopolska',
-    description: 'Chemczystka mebli i czyszczenie dywanów w Ostrowie Wielkopolskim. Realizacja wspólnie z Kaliszem. Minimalne zamówienie 300 PLN.',
+    description: 'Pranie mebli i czyszczenie dywanów w Ostrowie Wielkopolskim. Realizacja wspólnie z Kaliszem. Minimalne zamówienie 300 PLN.',
     keywords: 'pranie tapicerki Ostrów Wielkopolski, czyszczenie dywanów Ostrów',
     image: `${SITE_URL}/og-ostrow.jpg`,
   },

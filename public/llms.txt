@@ -1,4 +1,4 @@
-# MasterClean — Profesjonalne usługi sprzątania i chemczystki
+# MasterClean — Profesjonalne usługi sprzątania i prania
 
 > MasterClean to profesjonalna firma sprzątająca działająca na terenie całej Polski, oferująca chemczystkę mebli, tapicerki samochodowej, czyszczenie dywanów, mycie okien, ozonowanie pomieszczeń oraz usługi typu "złoty rączka". Działamy na terenie całej Polski.
 
@@ -6,8 +6,8 @@
 - [Strona główna](https://masterclean1885.com/)
 
 ## Usługi
-- [Chemczystka mebli](https://masterclean1885.com/services): Profesjonalna chemczystka tapicerki meblowej i skórzanej, pranie ekstrakcyjne, usuwanie plam i zapachów.
-- [Chemczystka salonu samochodowego](https://masterclean1885.com/auto): Czyszczenie tapicerki samochodowej, pranie foteli, czyszczenie skóry, ozonowanie wnętrza auta.
+- [Pranie mebli](https://masterclean1885.com/services): Profesjonalna pranie tapicerki meblowej i skórzanej, pranie ekstrakcyjne, usuwanie plam i zapachów.
+- [Pranie salonu samochodowego](https://masterclean1885.com/auto): Czyszczenie tapicerki samochodowej, pranie foteli, czyszczenie skóry, ozonowanie wnętrza auta.
 - [Sprzątanie i porządki](https://masterclean1885.com/cleaning): Generalne sprzątanie mieszkań i domów, sprzątanie po remoncie i budowie, regularna obsługa.
 - [Ozonowanie pomieszczeń](https://masterclean1885.com/ozone): Dezynfekcja ozonem, usuwanie zapachów, bakterii i grzybów z pomieszczeń.
 - [Mycie okien](https://masterclean1885.com/windows): Profesjonalne mycie okien, ram i parapetów w mieszkaniach i biurach.
