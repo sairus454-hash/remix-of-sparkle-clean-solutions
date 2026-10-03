@@ -31,7 +31,7 @@ export const SEO_META: Record<PageKey, Record<Lang, SeoMeta>> = {
     pl: {
       title: 'Pranie tapicerki i mebli | MasterClean',
       description: 'Pranie kanapy, narożnika, materaca i fotela u klienta. Ekstrakcja, eko chemia, gwarancja 7 dni. Dolny Śląsk i inne regiony Polski.',
-      keywords: 'pranie tapicerki, pranie kanapy, pranie narożnika, czyszczenie mebli, chemczystka mebli, pranie sofy, czyszczenie tapicerki Dolny Śląsk, Polska',
+      keywords: 'pranie tapicerki, pranie kanapy, pranie narożnika, czyszczenie mebli, czyszczenie mebli, pranie sofy, czyszczenie tapicerki Dolny Śląsk, Polska',
     },
     ru: {
       title: 'Химчистка мебели и диванов | MasterClean',

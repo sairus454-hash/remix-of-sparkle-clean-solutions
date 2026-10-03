@@ -88,7 +88,7 @@ const Index = () => {
     pl: {
       title: 'MasterClean — Pranie tapicerki, dywanów i aut z dojazdem',
       description: 'Pranie kanapy, materaca, narożnika i tapicerki samochodowej z dojazdem. Czyszczenie dywanów, ozonowanie, mycie okien. Cała Polska, 24/7.',
-      keywords: 'pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, chemczystka mebli, czyszczenie dywanów, ozonowanie, sprzątanie mieszkań, mycie okien, czyszczenie z dojazdem, Polska, Dolny Śląsk, Opole, Poznań',
+      keywords: 'pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, czyszczenie mebli, czyszczenie dywanów, ozonowanie, sprzątanie mieszkań, mycie okien, czyszczenie z dojazdem, Polska, Dolny Śląsk, Opole, Poznań',
     },
     ru: {
       title: 'MasterClean — Химчистка мебели, ковров и авто с выездом',
