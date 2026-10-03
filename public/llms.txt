@@ -1,6 +1,6 @@
 # MasterClean — Profesjonalne usługi sprzątania i prania
 
-> MasterClean to profesjonalna firma sprzątająca działająca na terenie całej Polski, oferująca chemczystkę mebli, tapicerki samochodowej, czyszczenie dywanów, mycie okien, ozonowanie pomieszczeń oraz usługi typu "złoty rączka". Działamy na terenie całej Polski.
+> MasterClean to profesjonalna firma sprzątająca działająca na terenie całej Polski, oferująca czyszczenie mebli, tapicerki samochodowej, czyszczenie dywanów, mycie okien, ozonowanie pomieszczeń oraz usługi typu "złoty rączka". Działamy na terenie całej Polski.
 
 ## Strona główna
 - [Strona główna](https://masterclean1885.com/)

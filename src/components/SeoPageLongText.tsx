@@ -25,7 +25,7 @@ type Block = { title: string; paragraphs: string[]; sections?: Section[] };
 const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
   about: {
     pl: {
-      title: 'O firmie MasterClean — sprzątanie i chemczystka we Wrocławiu',
+      title: 'O firmie MasterClean — sprzątanie i czyszczenie we Wrocławiu',
       paragraphs: [
         'MasterClean to wrocławska firma sprzątająca z ponad 3-letnim doświadczeniem i ponad 1000 zrealizowanych zleceń. Zajmujemy się usługami takimi jak <strong>pranie kanap Wrocław</strong>, <strong>czyszczenie tapicerki Wrocław</strong>, <strong>mycie okien Wrocław</strong> oraz kompleksowe <strong>sprzątanie mieszkań Wrocław</strong>. Nasze ekipy są zweryfikowane, ubezpieczone i regularnie szkolone z obsługi profesjonalnego sprzętu marek Karcher i Pro-Team.',
         'Pracujemy 7 dni w tygodniu — także w weekendy i święta — bez dopłat za nadgodziny. Działamy we Wrocławiu, Smolcu, Bielanach Wrocławskich, Kiełczowie oraz w okolicznych miastach: Oława, Jelcz-Laskowice, Sobótka, Strzegom, Wałbrzych. Każda wycena jest darmowa i niezobowiązująca, a klient zna konkretną kwotę przed rozpoczęciem pracy. Stosujemy hipoalergiczne środki bezpieczne dla dzieci, alergików i zwierząt.',
@@ -115,10 +115,10 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
   },
   auto: {
     pl: {
-      title: 'Auto-detailing i chemczystka samochodowa Wrocław',
+      title: 'Auto-detailing i czyszczenie samochodowa Wrocław',
       paragraphs: [
-        'Wykonujemy chemczystkę wnętrz samochodów we Wrocławiu: pranie foteli, podsufitki, dywaników, bagażnika oraz czyszczenie skóry. Wykorzystujemy ten sam profesjonalny sprzęt ekstrakcyjny, którym realizujemy <strong>pranie kanap Wrocław</strong> i <strong>czyszczenie tapicerki Wrocław</strong> w mieszkaniach. Usuwamy plamy z kawy, mleka, jedzenia, sierść zwierząt oraz nieprzyjemne zapachy.',
-        'Standardowa chemczystka auta osobowego trwa 2–4 godziny, SUV-a i busa 4–6 godzin. Po praniu zalecamy ozonowanie wnętrza, które neutralizuje bakterie i zapachy. Klienci, którzy zamawiają u nas również <strong>sprzątanie mieszkań Wrocław</strong> lub <strong>mycie okien Wrocław</strong>, otrzymują rabat łączony.',
+        'Wykonujemy czyszczenie wnętrz samochodów we Wrocławiu: pranie foteli, podsufitki, dywaników, bagażnika oraz czyszczenie skóry. Wykorzystujemy ten sam profesjonalny sprzęt ekstrakcyjny, którym realizujemy <strong>pranie kanap Wrocław</strong> i <strong>czyszczenie tapicerki Wrocław</strong> w mieszkaniach. Usuwamy plamy z kawy, mleka, jedzenia, sierść zwierząt oraz nieprzyjemne zapachy.',
+        'Standardowa czyszczenie auta osobowego trwa 2–4 godziny, SUV-a i busa 4–6 godzin. Po praniu zalecamy ozonowanie wnętrza, które neutralizuje bakterie i zapachy. Klienci, którzy zamawiają u nas również <strong>sprzątanie mieszkań Wrocław</strong> lub <strong>mycie okien Wrocław</strong>, otrzymują rabat łączony.',
       ],
     },
     en: {
