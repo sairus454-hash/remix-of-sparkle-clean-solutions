@@ -128,6 +128,9 @@ const Admin = () => {
             <span className="text-sm font-medium">{t.admin.dashboard}</span>
           </div>
           <div className="flex items-center gap-4">
+            <Link to="/admin/leads">
+              <Button variant="default" size="sm">Заявки</Button>
+            </Link>
             <Link to="/admin/traffic">
               <Button variant="default" size="sm">Посещаемость</Button>
             </Link>

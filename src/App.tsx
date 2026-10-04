@@ -36,6 +36,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const Admin = lazy(() => import("./pages/Admin"));
 const ItemStats = lazy(() => import("./pages/ItemStats"));
+const Leads = lazy(() => import("./pages/Leads"));
 const TrafficStats = lazy(() => import("./pages/TrafficStats"));
 const Windows = lazy(() => import("./pages/Windows"));
 const Cleaning = lazy(() => import("./pages/Cleaning"));
@@ -239,6 +240,14 @@ const App = () => {
                           element={
                             <ProtectedRoute requireAdmin>
                               <Admin />
+                            </ProtectedRoute>
+                          }
+                        />
+                        <Route
+                          path={`${ADMIN_ROOT}/leads`}
+                          element={
+                            <ProtectedRoute requireAdmin>
+                              <Leads />
                             </ProtectedRoute>
                           }
                         />
