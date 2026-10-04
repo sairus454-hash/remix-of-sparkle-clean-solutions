@@ -84,6 +84,7 @@ const ManagerEstimateDialog = ({ open, onOpenChange, language, service }: Props)
     try {
       const { error } = await supabase.functions.invoke('send-telegram', {
         body: {
+          source: 'manager_estimate',
           name: name.trim(),
           phone: phone.trim(),
           service: service || t.defaultService,

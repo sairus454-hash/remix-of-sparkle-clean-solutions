@@ -122,6 +122,29 @@ serve(async (req) => {
       );
     }
 
+    // Save lead to DB first so it is never lost
+    const ALLOWED_SOURCES = ['contact', 'quick_order', 'manager_estimate', 'chat', 'carpet'];
+    const source = ALLOWED_SOURCES.includes(raw.source) ? raw.source : 'contact';
+    try {
+      const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
+      const { error: dbErr } = await db.from('leads').insert({
+        source,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email || null,
+        service: formData.service || null,
+        message: formData.message || null,
+        city: [formData.city, formData.village].filter(Boolean).join(', ') || null,
+        address: [formData.address, formData.postalCode].filter(Boolean).join(', ') || null,
+        preferred_date: formData.date || null,
+        preferred_time: formData.time || null,
+        payment_type: formData.paymentType || null,
+      });
+      if (dbErr) console.error('Lead insert error:', dbErr.message);
+    } catch (e) {
+      console.error('Lead insert exception:', e);
+    }
+
     const pt = (formData.paymentType || '').toLowerCase();
     const isFaktura = pt.includes('faktura') || pt.includes('фактура');
     const isCash = pt.includes('gotówka') || pt.includes('наличн') || pt.includes('готівк') || pt.includes('cash');

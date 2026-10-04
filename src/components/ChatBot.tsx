@@ -415,7 +415,7 @@ const ChatBot = () => {
       if (chatSummary) detailsParts.push(`\n📝 История чата:\n${chatSummary}`);
 
       const { error } = await supabase.functions.invoke('send-telegram', {
-        body: {
+        body: { source: 'chat',
           name: order.name,
           phone: order.phone,
           service: `🤖 Заявка из чат-бота: ${order.serviceLabel}`,

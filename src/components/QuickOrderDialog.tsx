@@ -68,7 +68,7 @@ const QuickOrderDialog = ({ open, onOpenChange, items, total }: QuickOrderDialog
       message += `\n\n${totalLabel}: ${discountInfo.finalTotal} zł`;
 
       const { error } = await supabase.functions.invoke('send-telegram', {
-        body: {
+        body: { source: 'quick_order',
           name: name.trim(),
           phone: phone.trim(),
           message,
