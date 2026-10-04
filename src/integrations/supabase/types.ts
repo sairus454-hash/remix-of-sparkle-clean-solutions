@@ -104,6 +104,63 @@ export type Database = {
         }
         Relationships: []
       }
+      leads: {
+        Row: {
+          address: string | null
+          city: string | null
+          created_at: string
+          email: string | null
+          id: string
+          is_processed: boolean
+          message: string | null
+          name: string
+          payment_type: string | null
+          phone: string
+          preferred_date: string | null
+          preferred_time: string | null
+          processed_at: string | null
+          service: string | null
+          source: string
+          updated_at: string
+        }
+        Insert: {
+          address?: string | null
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_processed?: boolean
+          message?: string | null
+          name: string
+          payment_type?: string | null
+          phone: string
+          preferred_date?: string | null
+          preferred_time?: string | null
+          processed_at?: string | null
+          service?: string | null
+          source?: string
+          updated_at?: string
+        }
+        Update: {
+          address?: string | null
+          city?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          is_processed?: boolean
+          message?: string | null
+          name?: string
+          payment_type?: string | null
+          phone?: string
+          preferred_date?: string | null
+          preferred_time?: string | null
+          processed_at?: string | null
+          service?: string | null
+          source?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       page_visits: {
         Row: {
           created_at: string
