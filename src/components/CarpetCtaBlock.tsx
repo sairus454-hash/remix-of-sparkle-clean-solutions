@@ -138,7 +138,7 @@ const CarpetCtaBlock = () => {
       ].filter(Boolean).join('\n');
 
       const { error } = await supabase.functions.invoke('send-telegram', {
-        body: {
+        body: { source: 'carpet',
           name: name.trim(),
           phone: phone.trim(),
           message: lines,
