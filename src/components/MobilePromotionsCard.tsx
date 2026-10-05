@@ -23,26 +23,6 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
         </div>
 
         <div className="mt-3 space-y-3 animate-fade-in [animation-delay:120ms] [animation-fill-mode:both]">
-          {/* 4+ Services */}
-          <div className="relative overflow-hidden p-4 rounded-2xl bg-card/90 border border-border/50 shadow-card animate-fade-in [animation-delay:200ms] [animation-fill-mode:both]">
-            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-xl -translate-y-1/2 -translate-x-1/2" />
-            <div className="relative z-10 flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-orange-400 to-cyan-500 flex items-center justify-center flex-shrink-0">
-                <Star className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <h4 className="font-serif text-sm font-bold bg-gradient-to-r from-orange-400 to-cyan-500 bg-clip-text text-transparent">
-                    {t.promotions.services4plus}
-                  </h4>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-400 to-cyan-500 text-white">
-                    {t.promotions.services4plusBadge}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* VIP Deal */}
           <div className="relative overflow-hidden p-4 rounded-2xl bg-card/90 border border-border/50 shadow-card animate-fade-in [animation-delay:320ms] [animation-fill-mode:both]">
             <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-orange-600/15 to-teal-600/10 rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
