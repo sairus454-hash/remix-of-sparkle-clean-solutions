@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { Plus, Minus, Trash2, Send, Percent, Gift, ChevronUp } from 'lucide-react';
+import { Plus, Minus, Trash2, Send, Percent, ChevronUp } from 'lucide-react';
 import {
   Collapsible,
   CollapsibleContent,
@@ -17,7 +17,7 @@ import {
 import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, Home, Armchair } from 'lucide-react';
 import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { useDiscountCalculator, getDiscountTiers, getItemDiscountRole, getDiscountRoleLabel } from '@/hooks/useDiscountCalculator';
+import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { servicePrice, useServicePrices } from '@/data/servicePrices';
 
@@ -354,7 +354,6 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
     }))
   );
 
-  const discountTiers = getDiscountTiers(language);
 
   const getCalculatorItems = (): CalculatorItem[] => {
     return selectedItems.map(s => ({
@@ -632,22 +631,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                       <span className="font-medium text-foreground text-[10px] sm:text-xs block truncate">
                         {selected.item.name}
                       </span>
-                      {(() => {
-                        const role = getItemDiscountRole(getCategoryForItem(selected.item.id));
-                        const label = getDiscountRoleLabel(role, language);
-                        return (
-                          <span
-                            className={cn(
-                              'inline-block mt-0.5 px-1 sm:px-1.5 py-[1px] rounded text-[8px] sm:text-[9px] font-semibold leading-tight',
-                              role === 'cleaning'
-                                ? 'bg-emerald-100 text-emerald-700'
-                                : 'bg-primary/10 text-primary'
-                            )}
-                          >
-                            {label}
-                          </span>
-                        );
-                      })()}
+
                     </div>
 
                     <div className="flex items-center gap-0.5">
@@ -694,33 +678,6 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
             </div>
           </div>
 
-          {/* Discount Tiers Info - Hidden on mobile */}
-          <div className="hidden lg:block p-2 sm:p-3 bg-gradient-to-r from-primary/5 to-fresh/5 rounded-lg border border-primary/20">
-            <div className="flex items-center gap-1.5 sm:gap-2 mb-1.5 sm:mb-2">
-              <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
-              <span className="text-[10px] sm:text-xs font-semibold text-foreground">
-                {language === 'ru' ? 'Скидки' : 
-                 language === 'en' ? 'Discounts' : 
-                 language === 'pl' ? 'Rabaty' : 
-                 'Знижки'}
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-1 sm:gap-2">
-              {discountTiers.map((tier, index) => (
-                <div 
-                  key={index}
-                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-medium ${
-                    selectedItems.length >= parseInt(tier.services) 
-                      ? 'bg-primary text-primary-foreground' 
-                      : 'bg-muted text-muted-foreground'
-                  }`}
-                >
-                  {tier.services}+: <span className="font-bold">{tier.discount}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Total */}
           <div className="pt-2 sm:pt-3 border-t border-border">
             {/* Показываем информацию о скидке - hidden on mobile */}
@@ -740,46 +697,6 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                 </div>
               </div>
             )}
-            {!discountInfo.hasDiscount && discountInfo.discountHint && selectedItems.length > 0 && (() => {
-              const cartCats = new Set(selectedItems.map(s => getCategoryForItem(s.item.id)));
-              const hasCleaningInCart = Array.from(cartCats).some(c => c === 'cleaning' || c.startsWith('cleaning_'));
-              // Recommended "second service": ozonation of 1 room (works in all cities).
-              const recommendedCat = categories.find(c => c.id === 'ozone');
-              const recommendedItem = recommendedCat?.items.find(i => i.id === 'ozone1room') || recommendedCat?.items[0];
-              const recLabels = {
-                addCleaning: { ru: 'Добавить уборку', en: 'Add cleaning', pl: 'Dodaj sprzątanie', uk: 'Додати прибирання' },
-                addRecommended: { ru: 'Добавить', en: 'Add', pl: 'Dodaj', uk: 'Додати' },
-              };
-              const lang = language as 'ru' | 'en' | 'pl' | 'uk';
-              return (
-                <div className="mb-2 sm:mb-3 p-2 sm:p-3 bg-primary/5 rounded-lg border border-primary/30 flex flex-col sm:flex-row sm:items-center gap-2">
-                  <div className="flex items-start gap-2 flex-1">
-                    <Gift className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-xs sm:text-sm text-foreground">{discountInfo.discountHint}</span>
-                  </div>
-                  {!hasCleaningInCart ? (
-                    <Button
-                      size="sm"
-                      onClick={addCleaningToCart}
-                      className="self-start sm:self-auto whitespace-nowrap"
-                    >
-                      <Plus className="w-3.5 h-3.5 mr-1" />
-                      {recLabels.addCleaning[lang] || recLabels.addCleaning.ru}
-                    </Button>
-                  ) : recommendedItem ? (
-                    <Button
-                      size="sm"
-                      onClick={() => addItem(recommendedItem)}
-                      className="self-start sm:self-auto whitespace-nowrap"
-                    >
-                      <Plus className="w-3.5 h-3.5 mr-1" />
-                      {(recLabels.addRecommended[lang] || recLabels.addRecommended.ru)}: {recommendedItem.name} ({recommendedItem.price} {t.prices.currency})
-                    </Button>
-                  ) : null}
-                </div>
-              );
-            })()}
-
             <div className="flex items-center justify-between">
               <span className="text-sm sm:text-base font-medium">{t.calculator.total}</span>
               <span className="text-lg sm:text-xl font-bold text-primary">

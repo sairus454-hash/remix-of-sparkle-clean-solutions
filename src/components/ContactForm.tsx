@@ -5,10 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
-import { Progress } from '@/components/ui/progress';
 import { toast } from '@/hooks/use-toast';
-import { Send, Loader2, CalendarIcon, ShoppingCart, X, Gift, Percent, Info, Phone, Plus, Minus, CheckCircle2, AlertTriangle, RefreshCw } from 'lucide-react';
-import { MIN_ORDER_FOR_DISCOUNT } from '@/hooks/useDiscountCalculator';
+import { Send, Loader2, CalendarIcon, ShoppingCart, X, Percent, Phone, Plus, Minus, CheckCircle2, AlertTriangle, RefreshCw } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { format } from 'date-fns';
 import { ru, pl, uk, enUS } from 'date-fns/locale';
@@ -16,7 +14,7 @@ import { ru, pl, uk, enUS } from 'date-fns/locale';
 import SuccessAnimation from './SuccessAnimation';
 import { supabase } from '@/integrations/supabase/client';
 import { CalculatorItem } from '@/types/calculator';
-import { useDiscountCalculator, getDiscountTiers } from '@/hooks/useDiscountCalculator';
+import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
 export interface ContactFormRef {
   setCalculatorData: (items: CalculatorItem[], total: number) => void;
   setPromotion: (promotion: string) => void;
@@ -62,26 +60,22 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   });
 
   const promotionOptions = useMemo(() => {
-    const labels: Record<string, { none: string; neighbor: string; second: string }> = {
+    const labels: Record<string, { none: string; neighbor: string }> = {
       ru: {
         none: 'Без акции',
         neighbor: '🏘️ Соседская акция — 20% (приведи соседа, оба получают -20%)',
-        second: '➕ Уборка + 2-я услуга — 22% скидки',
       },
       pl: {
         none: 'Bez promocji',
         neighbor: '🏘️ Promocja sąsiedzka — 20% (przyprowadź sąsiada, oboje -20%)',
-        second: '➕ Sprzątanie + 2. usługa — 22% rabatu',
       },
       uk: {
         none: 'Без акції',
         neighbor: '🏘️ Сусідська акція — 20% (приведи сусіда, обидва -20%)',
-        second: '➕ Прибирання + 2-га послуга — 22% знижки',
       },
       en: {
         none: 'No promotion',
         neighbor: '🏘️ Neighbor promo — 20% (bring a neighbor, both get -20%)',
-        second: '➕ Cleaning + 2nd service — 22% off',
       },
     };
     return labels[language] || labels.ru;
@@ -151,13 +145,12 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       price: item.price,
       quantity: item.quantity,
       category: item.category,
+      originalPrice: item.originalPrice,
     })), [calculatorItems]);
 
   // Use the discount calculator hook
   const discountInfo = useDiscountCalculator(discountItems);
 
-  // Get discount tiers for display
-  const discountTiers = getDiscountTiers(language);
 
   // Auto-generate message from calculator data with discount info
   useEffect(() => {
@@ -219,56 +212,15 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
   };
   const showDiscountToast = (items: CalculatorItem[], action: 'updated' | 'removed', itemName?: string) => {
     const total = items.reduce((s, i) => s + i.price * i.quantity, 0);
-    const hasCleaning = items.some(i => {
-      const c = i.category || i.id;
-      return c === 'cleaning' || c.startsWith('cleaning-') || c.startsWith('cleaning_') || c.startsWith('extra-') || c === 'extras';
-    });
-    const hasOther = items.some(i => {
-      const c = i.category || i.id;
-      return !(c === 'cleaning' || c.startsWith('cleaning-') || c.startsWith('cleaning_') || c.startsWith('extra-') || c === 'extras');
-    });
     const titleMap = {
       ru: { updated: 'Количество обновлено', removed: 'Услуга удалена' },
       pl: { updated: 'Ilość zaktualizowana', removed: 'Usługa usunięta' },
       uk: { updated: 'Кількість оновлено', removed: 'Послугу видалено' },
       en: { updated: 'Quantity updated', removed: 'Service removed' },
     };
-    const ready = {
-      ru: 'Скидка 22% активна.', pl: 'Rabat 22% aktywny.', uk: 'Знижка 22% активна.', en: '22% discount active.',
-    };
-    const needMore = (zl: number) => ({
-      ru: `Добавьте ещё на ${zl} zł, чтобы получить −22%.`,
-      pl: `Dodaj jeszcze ${zl} zł, aby otrzymać −22%.`,
-      uk: `Додайте ще ${zl} zł, щоб отримати −22%.`,
-      en: `Add ${zl} zł more to get −22%.`,
-    });
-    const needOther = {
-      ru: 'Добавьте вторую услугу из другой категории, чтобы получить −22%.',
-      pl: 'Dodaj drugą usługę z innej kategorii, aby otrzymać −22%.',
-      uk: 'Додайте другу послугу з іншої категорії, щоб отримати −22%.',
-      en: 'Add a second service from another category to get −22%.',
-    };
-    const needCleaning = {
-      ru: 'Добавьте уборку, чтобы получить −22%.',
-      pl: 'Dodaj sprzątanie, aby otrzymać −22%.',
-      uk: 'Додайте прибирання, щоб отримати −22%.',
-      en: 'Add cleaning to get −22%.',
-    };
     const totalLabel = { ru: 'Итого', pl: 'Razem', uk: 'Разом', en: 'Total' };
-    const lang = (language as 'ru' | 'pl' | 'uk' | 'en');
-    let status: string;
-    if (hasCleaning && hasOther && total >= MIN_ORDER_FOR_DISCOUNT) {
-      const discounted = Math.round(total * 0.78);
-      status = `${ready[lang]} ${totalLabel[lang]}: ${discounted} zł (−${total - discounted} zł)`;
-    } else if (hasCleaning && hasOther) {
-      status = `${needMore(MIN_ORDER_FOR_DISCOUNT - total)[lang]} ${totalLabel[lang]}: ${total} zł`;
-    } else if (hasCleaning) {
-      status = `${needOther[lang]} ${totalLabel[lang]}: ${total} zł`;
-    } else if (hasOther) {
-      status = `${needCleaning[lang]} ${totalLabel[lang]}: ${total} zł`;
-    } else {
-      return;
-    }
+    const lang = language as 'ru' | 'pl' | 'uk' | 'en';
+    const status = `${totalLabel[lang]}: ${total} zł`;
     toast({
       title: titleMap[lang]?.[action] || titleMap.ru[action],
       description: itemName ? `${itemName} · ${status}` : status,
@@ -530,39 +482,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
               </div>)}
           </div>
           
-          {/* Discount Tiers Info */}
-          <div className="mt-3 pt-3 border-t border-fresh/30">
-            <div className="flex items-center gap-1.5 mb-2">
-              <Gift className="w-4 h-4 text-primary" />
-              <span className="text-xs font-semibold text-foreground">{t.calculator.discountSystem}</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {(() => {
-                // Count unique categories for tier highlighting
-                const uniqueCats = new Set(calculatorItems.map(item => {
-                  const cat = item.category || item.id;
-                  if (cat === 'cleaning' || cat.startsWith('cleaning_') || cat.startsWith('cleaning-') || cat.startsWith('extra-')) return 'cleaning';
-                  return cat;
-                }));
-                const catCount = uniqueCats.size;
-                return discountTiers.map((tier, index) => (
-                  <div 
-                    key={index}
-                    className={cn(
-                      "flex items-center gap-1 px-2 py-1 rounded-full text-xs border transition-all",
-                      catCount >= (index === 0 ? 2 : index === 1 ? 4 : 6)
-                        ? "bg-fresh/20 border-fresh/50 text-fresh font-semibold"
-                        : "bg-muted/50 border-border text-muted-foreground"
-                    )}
-                  >
-                    <span>{tier.services}</span>
-                    <span className="font-bold">{tier.discount}</span>
-                  </div>
-                ));
-              })()}
-            </div>
-          </div>
-
           {/* Discount Applied */}
           {discountInfo.hasDiscount && (
             <div className="mt-3 p-2 bg-fresh/20 rounded-lg border border-fresh/40">
@@ -577,42 +496,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             </div>
           )}
 
-          {/* Progress to 22% discount minimum order */}
-          {!discountInfo.hasDiscount && discountInfo.originalTotal > 0 && (() => {
-            const total = discountInfo.originalTotal;
-            const remaining = Math.max(0, MIN_ORDER_FOR_DISCOUNT - total);
-            const pct = Math.min(100, Math.round((total / MIN_ORDER_FOR_DISCOUNT) * 100));
-            const labels: Record<string, { title: string; left: (n: number) => string; reached: string }> = {
-              ru: { title: 'Прогресс до скидки 22%', left: (n) => `Не хватает ${n} zł до минимума ${MIN_ORDER_FOR_DISCOUNT} zł`, reached: `Минимум ${MIN_ORDER_FOR_DISCOUNT} zł достигнут — добавьте вторую услугу для −22%` },
-              pl: { title: 'Postęp do rabatu 22%', left: (n) => `Brakuje ${n} zł do minimum ${MIN_ORDER_FOR_DISCOUNT} zł`, reached: `Minimum ${MIN_ORDER_FOR_DISCOUNT} zł osiągnięte — dodaj drugą usługę, aby otrzymać −22%` },
-              en: { title: 'Progress to 22% discount', left: (n) => `${n} zł left to reach the ${MIN_ORDER_FOR_DISCOUNT} zł minimum`, reached: `${MIN_ORDER_FOR_DISCOUNT} zł minimum reached — add a second service to get −22%` },
-              uk: { title: 'Прогрес до знижки 22%', left: (n) => `Не вистачає ${n} zł до мінімуму ${MIN_ORDER_FOR_DISCOUNT} zł`, reached: `Мінімум ${MIN_ORDER_FOR_DISCOUNT} zł досягнуто — додайте другу послугу для −22%` },
-            };
-            const l = labels[language] || labels.ru;
-            return (
-              <div className="mt-3 p-3 bg-primary/5 rounded-lg border border-primary/20 animate-fade-in">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-primary">{l.title}</span>
-                  <span className="text-xs font-bold text-primary">{total} / {MIN_ORDER_FOR_DISCOUNT} zł</span>
-                </div>
-                <Progress value={pct} className="h-2" />
-                <p className="text-xs text-muted-foreground mt-2">
-                  {remaining > 0 ? l.left(remaining) : l.reached}
-                </p>
-              </div>
-            );
-          })()}
-
-          {/* Smart hint for the active 22% promotion */}
-          {!discountInfo.hasDiscount && discountInfo.discountHint && (
-            <div className="mt-2 p-2.5 bg-primary/10 rounded-lg border border-primary/20 animate-fade-in">
-              <div className="flex items-start gap-1.5">
-                <Info className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span className="text-xs font-semibold text-primary">{discountInfo.discountHint}</span>
-              </div>
-            </div>
-          )}
-          
           {/* Total */}
           <div className="mt-3 pt-3 border-t border-fresh/30 flex justify-between items-center">
             <span className="font-semibold text-foreground">{t.calculator.total}</span>
@@ -700,7 +583,6 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
           <SelectContent>
             <SelectItem value="__none__">{promotionOptions.none}</SelectItem>
             <SelectItem value={promotionOptions.neighbor}>{promotionOptions.neighbor}</SelectItem>
-            <SelectItem value={promotionOptions.second}>{promotionOptions.second}</SelectItem>
           </SelectContent>
         </Select>
       </div>

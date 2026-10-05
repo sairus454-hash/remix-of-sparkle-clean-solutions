@@ -237,13 +237,12 @@ const PRICE_LIST = {
 
 🎁 АКЦИИ И СКИДКИ:
 • 🛋 НОВАЯ АКЦИЯ: Заказ ХИМЧИСТКИ МЕБЕЛИ через формуляр → −10% на химчистку мебели/матрасов/кожи (действует во всех городах, применяется автоматически в калькуляторе и форме заказа; НЕ суммируется с другими акциями)
-• 🧹 Закажи УБОРКУ + любую вторую услугу (химчистка, окна, озон и т.д.) → −20% на весь заказ (применяется автоматически в калькуляторе)
 • 👥 Приведи соседа — оба получаете −20% на весь заказ
 • 🏘 Соседская акция — заказ вместе с соседом по одному адресу → −15%
 • 🌿 Сушение мебели и матрасов — БЕСПЛАТНО
 
 ⚠️ Скидки 10%/15% за «4+ категории» БОЛЬШЕ НЕ ДЕЙСТВУЮТ — не упоминай их.
-Активно предлагай добавить уборку к химчистке (или наоборот), чтобы клиент получил −20%. Если клиент интересуется только химчисткой мебели — напомни про новую акцию −10% при заказе через форму.`,
+Если клиент интересуется только химчисткой мебели — напомни про новую акцию −10% при заказе через форму.`,
   en: `
 CURRENT PRICE LIST (prices in PLN):
 
@@ -477,13 +476,12 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 
 🎁 PROMOTIONS & DISCOUNTS:
 • 🛋 NEW PROMO: FURNITURE CLEANING order via form → −10% off furniture/mattress/leather cleaning (active in all cities, applied automatically in the calculator & order form; does NOT stack with other promos)
-• 🧹 Order CLEANING + any second service (upholstery, windows, ozone, etc.) → −20% off the whole order (applied automatically in the calculator)
 • 👥 Bring a neighbor — both get −20% off the whole order
 • 🏘 Neighbor promo — joint order with a neighbor at the same address → −15%
 • 🌿 Furniture & mattress drying — FREE
 
 ⚠️ The old 10%/15% "4+ categories" discounts are NO LONGER ACTIVE — do not mention them.
-Actively suggest adding cleaning to a dry-cleaning order (or vice versa) so the customer gets −20%. If a customer asks only about furniture cleaning — remind them about the new −10% promo for orders placed via the form.`,
+If a customer asks only about furniture cleaning — remind them about the new −10% promo for orders placed via the form.`,
   pl: `
 AKTUALNY CENNIK (ceny w PLN):
 
@@ -719,13 +717,12 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 
 🎁 PROMOCJE I RABATY:
 • 🛋 NOWA PROMOCJA: Zamówienie PRANIA MEBLI przez formularz → −10% na pranie mebli/materacy/skóry (działa we wszystkich miastach, naliczane automatycznie w kalkulatorze i formularzu; NIE łączy się z innymi promocjami)
-• 🧹 Zamów SPRZĄTANIE + dowolną drugą usługę (pranie tapicerki, okna, ozon itp.) → −20% na całe zamówienie (naliczane automatycznie w kalkulatorze)
 • 👥 Przyprowadź sąsiada — oboje dostajecie −20% na całe zamówienie
 • 🏘 Promocja sąsiedzka — wspólne zamówienie z sąsiadem pod tym samym adresem → −15%
 • 🌿 Suszenie mebli i materacy — GRATIS
 
 ⚠️ Stare rabaty 10%/15% za "4+ kategorie" JUŻ NIE OBOWIĄZUJĄ — nie wspominaj o nich.
-Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby klient dostał −20%. Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% przy zamówieniu przez formularz.`,
+Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% przy zamówieniu przez formularz.`,
   uk: `
 АКТУАЛЬНИЙ ПРАЙС-ЛИСТ (ціни в PLN):
 
@@ -959,13 +956,12 @@ Aktywnie proponuj dodanie sprzątania do prania tapicerki (lub odwrotnie), żeby
 
 🎁 АКЦІЇ ТА ЗНИЖКИ:
 • 🛋 НОВА АКЦІЯ: Замовлення ХІМЧИСТКИ МЕБЛІВ через формуляр → −10% на хімчистку меблів/матраців/шкіри (діє в усіх містах, нараховується автоматично в калькуляторі та формі; НЕ сумується з іншими акціями)
-• 🧹 Замов ПРИБИРАННЯ + будь-яку другу послугу (хімчистка, вікна, озон тощо) → −20% на все замовлення (нараховується автоматично в калькуляторі)
 • 👥 Приведи сусіда — обоє отримуєте −20% на все замовлення
 • 🏘 Сусідська акція — спільне замовлення з сусідом за однією адресою → −15%
 • 🌿 Сушіння меблів та матраців — БЕЗКОШТОВНО
 
 ⚠️ Старі знижки 10%/15% за «4+ категорії» БІЛЬШЕ НЕ ДІЮТЬ — не згадуй про них.
-Активно пропонуй додати прибирання до хімчистки (або навпаки), щоб клієнт отримав −20%. Якщо клієнт цікавиться лише хімчисткою меблів — нагадай про нову акцію −10% при замовленні через форму.`
+Якщо клієнт цікавиться лише хімчисткою меблів — нагадай про нову акцію −10% при замовленні через форму.`
 };
 
 // Module-level Supabase client for faster rate limiting (avoids creating client per request)
@@ -1171,11 +1167,9 @@ ${SERVICE_PAGES_RU}
 
 ВАЖНО:
 — ВСЕГДА называй точные цены
-— АКТИВНО ПРОДВИГАЙ АКЦИИ! При любом заказе предлагай добавить уборку (или другую услугу), чтобы получить −20% на весь заказ
-— Главная скидка: УБОРКА + любая ВТОРАЯ услуга = −20% автоматически в калькуляторе
 — Также упоминай: «Приведи соседа — оба −20%», «Соседская акция (один адрес) — −15%», «Сушение мебели/матрасов БЕСПЛАТНО»
 — Старые скидки 10%/15% за «4+ категории» больше не действуют — НЕ упоминай их
-— При расчёте стоимости ПОКАЗЫВАЙ экономию: «Итого: 310 zł (экономия 78 zł!)»
+— При расчёте стоимости применяй только скидку 10% к мебели/матрасам/коже через форму, без суммирования скидок.
 
 — ВСЕГДА упоминай минимальный заказ: 160 PLN (Вроцлав), 220 PLN (другие города)
 — Если клиент молчит — предложи помощь и кнопку заявки
@@ -1339,11 +1333,9 @@ Ozonation is a process of treating spaces or objects with ozone, which effective
 
 IMPORTANT:
 — ALWAYS give exact prices
-— ACTIVELY PROMOTE PROMOS! For any order, suggest adding cleaning (or another service) so the customer gets −20% off the whole order
-— Main discount: CLEANING + any SECOND service = −20% applied automatically in the calculator
 — Also mention: "Bring a neighbor — both get −20%", "Neighbor promo (same address) — −15%", "Furniture/mattress drying FREE until end of spring"
 — Old 10%/15% "4+ categories" discounts are no longer active — DO NOT mention them
-— When calculating cost, SHOW savings: "Total: 310 zł (saving 78 zł!)"
+— Only apply the 10% furniture/mattress/leather form discount when calculating totals; do not stack discounts.
 — ALWAYS mention minimum order: 160 PLN (Wrocław), 220 PLN (other cities)
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"
@@ -1479,11 +1471,9 @@ Ozonowanie to proces obróbki pomieszczeń lub przedmiotów ozonem, który skute
 
 WAŻNE:
 — ZAWSZE podawaj dokładne ceny
-— AKTYWNIE PROMUJ PROMOCJE! Przy każdym zamówieniu proponuj dodanie sprzątania (lub innej usługi), żeby klient dostał −20% na całe zamówienie
-— Główny rabat: SPRZĄTANIE + dowolna DRUGA usługa = −20% naliczane automatycznie w kalkulatorze
 — Wspominaj też: "Przyprowadź sąsiada — oboje −20%", "Promocja sąsiedzka (ten sam adres) — −15%", "Suszenie mebli/materacy GRATIS"
 — Stare rabaty 10%/15% za "4+ kategorie" już NIE obowiązują — NIE wspominaj o nich
-— Przy obliczaniu kosztu POKAŻ OSZCZĘDNOŚCI: "Razem: 310 zł (oszczędność 78 zł!)"
+— Przy obliczaniu ceny stosuj tylko rabat 10% na meble/materace/skórę przez formularz; nie łącz rabatów.
 
 — ZAWSZE wspominaj o minimalnym zamówieniu: 160 PLN (Wrocław), 220 PLN (inne miasta)
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
@@ -1577,7 +1567,7 @@ Deno.serve(async (req) => {
         body: JSON.stringify({
           model: "google/gemini-3-flash-preview",
           messages: [
-            { role: "system", content: systemPrompt },
+            { role: "system", content: `${systemPrompt}\nThe cleaning + second service promotion is discontinued. Never offer a whole-order discount for combining service categories, even if earlier chat messages mention it. The furniture/mattress/leather form discount remains 10%, without stacking.` },
             ...messages,
           ],
           max_tokens: 250,

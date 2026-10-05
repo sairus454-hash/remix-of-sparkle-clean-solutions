@@ -1,0 +1,2 @@
+# Architecture rules
+- All automatic order discounts must be calculated by `useDiscountCalculator`; presentation and chat must not independently calculate category-combination discounts, so totals remain consistent.
