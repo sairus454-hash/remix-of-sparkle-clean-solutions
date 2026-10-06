@@ -5,8 +5,8 @@ import { resolve } from 'path';
 /**
  * Vite plugin (build-only) that maintains public/sitemap.xml:
  *
- *  1. Rewrites every <lastmod>…</lastmod> to today's date so Google sees the
- *     content as fresh and re-crawls quickly.
+ *  1. Preserves existing page-specific <lastmod> values; never fabricates
+ *     freshness from the build date or a publication-date fallback.
  *  2. Injects xhtml:link rel="alternate" hreflang="…" entries for every
  *     supported language (PL = root, RU = /ru, EN = /en, UK = /uk) so each
  *     localized URL is discoverable and properly clustered with the others.
@@ -21,7 +21,6 @@ export function sitemapLastmodPlugin(): Plugin {
         this.warn(`[sitemap-lastmod] public/sitemap.xml not found, skipping`);
         return;
       }
-      const today = new Date().toISOString().slice(0, 10);
       let xml = readFileSync(sitemapPath, 'utf8');
       const before = xml;
       const SITE = 'https://masterclean1885.com';
@@ -54,8 +53,8 @@ export function sitemapLastmodPlugin(): Plugin {
         if (missing.length > 0) {
           const newEntries = missing
             .map(
-              ([id, date]) =>
-                `  <url><loc>${SITE}/blog/${id}</loc><lastmod>${date}</lastmod><priority>0.6</priority><changefreq>monthly</changefreq></url>`,
+              ([id]) =>
+                `  <url><loc>${SITE}/blog/${id}</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>`,
             )
             .join('\n');
           xml = xml.replace('</urlset>', `${newEntries}\n</urlset>`);
@@ -65,12 +64,6 @@ export function sitemapLastmodPlugin(): Plugin {
           );
         }
       }
-
-      // 1) Refresh lastmod for every URL
-      xml = xml.replace(
-        /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g,
-        `<lastmod>${today}</lastmod>`,
-      );
 
       // 2) Ensure xhtml namespace is declared on the root <urlset>
       if (!/xmlns:xhtml=/.test(xml)) {
@@ -119,10 +112,9 @@ export function sitemapLastmodPlugin(): Plugin {
 
       if (xml !== before) {
         writeFileSync(sitemapPath, xml, 'utf8');
-        const count = (before.match(/<lastmod>/g) || []).length;
         // eslint-disable-next-line no-console
         console.log(
-          `[sitemap-lastmod] Updated ${count} <lastmod> → ${today}, injected hreflang into ${injected} <url> entries`,
+          `[sitemap-lastmod] Synced blog URLs and injected hreflang into ${injected} <url> entries; existing lastmod values preserved`,
         );
       }
     },
