@@ -123,7 +123,7 @@ const Index = () => {
           description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i wnętrz samochodowych w Polsce. Ozonowanie, sprzątanie, mycie okien.',
           url: 'https://masterclean1885.com',
           telephone: '+48575211401',
-          email: 'masterclean@email.com',
+          email: 'sairus454@gmail.com',
           image: 'https://masterclean1885.com/og-image.jpg',
           address: {
             '@type': 'PostalAddress',

@@ -148,7 +148,7 @@ const SEO = ({
     description,
     url: canonicalUrl,
     telephone: '+48575211401',
-    email: 'masterclean@email.com',
+    email: 'sairus454@gmail.com',
     image: DEFAULT_IMAGE,
     logo: {
       '@type': 'ImageObject',

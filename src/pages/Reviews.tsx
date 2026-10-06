@@ -248,7 +248,7 @@ const Reviews = () => {
           name: 'MasterClean',
           url: 'https://masterclean1885.com',
           telephone: '+48575211401',
-          email: 'masterclean@email.com',
+          email: 'sairus454@gmail.com',
           image: 'https://masterclean1885.com/og-image.jpg',
           priceRange: '$$',
           address: {

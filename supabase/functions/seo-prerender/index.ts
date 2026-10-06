@@ -1125,7 +1125,7 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
     description: meta.description,
     url: SITE_URL,
     telephone: PHONE,
-    email: 'masterclean@email.com',
+    email: 'sairus454@gmail.com',
     image: DEFAULT_IMAGE,
     logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon.png`, width: 256, height: 256 },
     priceRange: '$$',
