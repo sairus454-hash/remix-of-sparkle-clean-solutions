@@ -310,8 +310,8 @@ Deep cleaning:
 
 🚗 CAR CLEANING:
 • Single seat cleaning — 80 PLN
-• Seat cleaning (front and back) — 250 PLN
-• Leather seat cleaning — 300 PLN
+• Seat cleaning (front and back) — 300 PLN
+• Leather seat cleaning — 350 PLN
 • Ceiling cleaning — 100 PLN
 • Trunk cleaning — 80 PLN
 • Floor cleaning — 100 PLN
@@ -790,8 +790,8 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 
 🚗 ХІМЧИСТКА АВТО:
 • Чистка 1 сидіння — 80 PLN
-• Хімчистка сидінь (спереду і ззаду) — 250 PLN
-• Чистка сидінь зі шкіри — 300 PLN
+• Хімчистка сидінь (спереду і ззаду) — 300 PLN
+• Чистка сидінь зі шкіри — 350 PLN
 • Чистка стелі — 100 PLN
 • Чистка багажника — 80 PLN
 • Чистка підлоги — 100 PLN
