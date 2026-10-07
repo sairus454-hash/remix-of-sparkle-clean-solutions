@@ -27,16 +27,23 @@ export default async function middleware(request: Request) {
     // back to the site, creating an infinite loop and an empty HTML response.
     prerenderUrl.searchParams.set('_prerender', '1');
 
-    const response = await fetch(prerenderUrl.toString(), {
-      headers: {
-        'user-agent': userAgent,
-        'accept': 'text/html',
-      },
-      redirect: 'manual',
-    });
-    // Safety net: if the function still redirected, fall through to the SPA
-    // shell instead of serving an empty 302 to Googlebot.
-    if (response.status >= 300 && response.status < 400) {
+    let response: Response;
+    try {
+      response = await fetch(prerenderUrl.toString(), {
+        headers: {
+          'user-agent': userAgent,
+          'accept': 'text/html',
+        },
+        redirect: 'manual',
+        signal: AbortSignal.timeout(8000),
+      });
+    } catch {
+      // Prerender timed out / unreachable — serve the SPA shell (200) instead of a 5xx.
+      return;
+    }
+    // Redirects or server errors from the prerender function: fall through to
+    // the SPA shell so Googlebot never sees a 5xx caused by the prerenderer.
+    if (response.status >= 300 && response.status !== 404) {
       return;
     }
     return new Response(response.body, {
