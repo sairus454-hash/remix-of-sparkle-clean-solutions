@@ -71,8 +71,8 @@ const PRICE_LIST = {
 • Диван угловой (кожа) — 290 PLN
 
 • Чистка 1 сидения — 80 PLN
-• Химчистка сидений (спереди и сзади) — 250 PLN
-• Чистка сидений из кожи — 300 PLN
+• Химчистка сидений (спереди и сзади) — 300 PLN
+• Чистка сидений из кожи — 350 PLN
 • Чистка потолка — 100 PLN
 • Чистка багажника — 80 PLN
 • Чистка пола — 100 PLN
@@ -550,8 +550,8 @@ Sprzątanie generalne:
 
 🚗 CZYSZCZENIE AUTA:
 • Czyszczenie 1 siedzenia — 80 PLN
-• Czyszczenie siedzeń (przód i tył) — 250 PLN
-• Czyszczenie siedzeń skórzanych — 300 PLN
+• Czyszczenie siedzeń (przód i tył) — 300 PLN
+• Czyszczenie siedzeń skórzanych — 350 PLN
 • Czyszczenie sufitu — 100 PLN
 • Czyszczenie bagażnika — 80 PLN
 • Czyszczenie podłogi — 100 PLN

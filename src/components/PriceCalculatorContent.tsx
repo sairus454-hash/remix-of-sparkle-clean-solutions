@@ -153,8 +153,8 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       name: t.prices.autoCleaning,
       icon: <Car className="w-5 h-5" />,
       items: [
-        { id: 'autoSeats', name: t.prices.items.autoSeats, price: 200 },
-        { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 250 },
+        { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300 },
+        { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350 },
         { id: 'autoCeiling', name: t.prices.items.autoCeiling, price: 100 },
         { id: 'autoTrunk', name: t.prices.items.autoTrunk, price: 80 },
         { id: 'autoFloor', name: t.prices.items.autoFloor, price: 100 },

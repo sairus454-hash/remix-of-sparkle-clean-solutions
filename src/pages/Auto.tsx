@@ -57,8 +57,8 @@ const Auto = () => {
     { id: 'autoVip', name: t.prices.items.autoVip, price: 700, image: calcAutoVip },
     { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 800, image: calcAutoVipLeather },
     { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80, image: calcAutoSeat },
-    { id: 'autoSeats', name: t.prices.items.autoSeats, price: 200, image: calcAutoSeats },
-    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 250, image: calcAutoLeatherSeats },
+    { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300, image: calcAutoSeats },
+    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350, image: calcAutoLeatherSeats },
     { id: 'autoDoorCard', name: t.prices.items.autoDoorCard, price: 40, image: calcAutoDoor },
     { id: 'autoPlastics', name: t.prices.items.autoPlastics, price: 70, image: calcAutoPlastics },
     { id: 'autoCeiling', name: t.prices.items.autoCeiling, price: 100, image: calcAutoCeiling },
@@ -244,7 +244,7 @@ const Auto = () => {
                     <button
                       onClick={() => {
                         const promoItems: CalculatorItem[] = [
-                          { id: 'autoSeats', name: t.prices.items.autoSeats, price: 200, quantity: 1, category: 'auto' },
+                          { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300, quantity: 1, category: 'auto' },
                           { id: 'autoOzoneGift', name: `${t.prices.items.autoOzone} (${t.auto?.ozonePromoBadge || 'Акция'} — gratis)`, price: 0, quantity: 1, category: 'auto' },
                         ];
                         try {
