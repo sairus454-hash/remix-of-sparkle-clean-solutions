@@ -94,7 +94,7 @@ const COPY: Record<Lang, {
     ctaTitle: 'Zamów profesjonalne pranie tapicerki samochodowej',
     faqTitle: 'Najczęściej zadawane pytania',
     faqs: [
-      { q: 'Ile kosztuje pranie tapicerki samochodowej?', a: 'Pranie samych foteli — od 200 zł. Kompleksowe pranie wnętrza (fotele, kanapa, sufit, dywaniki, boczki, bagażnik) — od 350 zł. Cena zależy od stopnia zabrudzenia i rodzaju tapicerki.' },
+      { q: 'Ile kosztuje pranie tapicerki samochodowej?', a: 'Pranie foteli z przodu i z tyłu — 300 zł. Czyszczenie foteli skórzanych — 350 zł. Kompleksowe pranie wnętrza (fotele, kanapa, sufit, dywaniki, boczki, bagażnik) — od 350 zł. Cena zależy od stopnia zabrudzenia i rodzaju tapicerki.' },
       { q: 'Ile schnie tapicerka po praniu ekstrakcyjnym?', a: 'Przy profesjonalnej ekstrakcji Santoemma — 2–4 godziny latem, do 8 godzin zimą. Przy praniu domowym pianką lub odkurzaczem piorącym — nawet 24–72 godziny.' },
       { q: 'Czy pranie usuwa zapach papierosów z auta?', a: 'Częściowo — ekstrakcja usuwa nikotynę zaklinowaną w tkaninach. Dla pełnego efektu łączymy pranie z ozonowaniem, które neutralizuje molekuły zapachu w powietrzu i wentylacji.' },
       { q: 'Czy można wyprać tapicerkę samochodową w domu?', a: 'Można, jeśli plamy są świeże i powierzchowne. Do głęboko wchłoniętego brudu, plam po napojach, moczu zwierząt lub zapachu dymu potrzebne jest profesjonalne pranie ekstrakcyjne.' },
@@ -163,7 +163,7 @@ const COPY: Record<Lang, {
     ctaTitle: 'Заказать профессиональную химчистку обивки авто',
     faqTitle: 'Часто задаваемые вопросы',
     faqs: [
-      { q: 'Сколько стоит химчистка обивки автомобиля?', a: 'Химчистка только сидений — от 200 zł. Комплексная химчистка салона (сиденья, диван, потолок, коврики, обшивка, багажник) — от 350 zł. Цена зависит от степени загрязнения и типа обивки.' },
+      { q: 'Сколько стоит химчистка обивки автомобиля?', a: 'Химчистка сидений спереди и сзади — 300 zł. Чистка кожаных сидений — 350 zł. Комплексная химчистка салона (сиденья, диван, потолок, коврики, обшивка, багажник) — от 350 zł. Цена зависит от степени загрязнения и типа обивки.' },
       { q: 'Сколько сохнет обивка после экстракторной чистки?', a: 'При профессиональной экстракции Santoemma — 2–4 часа летом, до 8 часов зимой. При домашней чистке пеной или моющим пылесосом — до 24–72 часов.' },
       { q: 'Убирает ли химчистка запах сигарет из авто?', a: 'Частично — экстракция удаляет никотин из тканей. Для полного эффекта совмещаем химчистку с озонированием, которое нейтрализует запах в воздухе и вентиляции.' },
       { q: 'Можно ли почистить обивку авто самому?', a: 'Можно, если пятна свежие и поверхностные. Для глубоко въевшейся грязи, пятен от напитков, мочи животных или запаха дыма нужна профессиональная экстракторная чистка.' },
@@ -232,7 +232,7 @@ const COPY: Record<Lang, {
     ctaTitle: 'Book professional car upholstery cleaning',
     faqTitle: 'Frequently asked questions',
     faqs: [
-      { q: 'How much does car upholstery cleaning cost?', a: 'Seats only — from 200 PLN. Full interior cleaning (seats, rear bench, headliner, mats, door panels, boot) — from 350 PLN. Price depends on the soiling level and upholstery type.' },
+      { q: 'How much does car upholstery cleaning cost?', a: 'Front and rear seat cleaning — 300 PLN. Leather seat cleaning — 350 PLN. Full interior cleaning (seats, rear bench, headliner, mats, door panels, boot) — from 350 PLN. Price depends on the soiling level and upholstery type.' },
       { q: 'How long does upholstery dry after extraction?', a: 'Professional Santoemma extraction — 2–4 hours in summer, up to 8 hours in winter. Home foam or wet-vacuum cleaning — up to 24–72 hours.' },
       { q: 'Does cleaning remove cigarette smell from a car?', a: 'Partly — extraction removes nicotine trapped in fabrics. For full effect we combine cleaning with ozone treatment that neutralises odour molecules in the air and ventilation.' },
       { q: 'Can I clean car upholstery at home?', a: 'Yes, if stains are fresh and surface-level. Deeply embedded dirt, drink stains, pet urine or smoke smell require professional extraction cleaning.' },
@@ -301,7 +301,7 @@ const COPY: Record<Lang, {
     ctaTitle: 'Замовити професійну хімчистку оббивки авто',
     faqTitle: 'Часті запитання',
     faqs: [
-      { q: 'Скільки коштує хімчистка оббивки авто?', a: 'Хімчистка лише сидінь — від 200 zł. Комплексна хімчистка салону (сидіння, диван, стеля, килимки, обшивка, багажник) — від 350 zł. Ціна залежить від ступеня забруднення та типу оббивки.' },
+      { q: 'Скільки коштує хімчистка оббивки авто?', a: 'Хімчистка сидінь спереду і ззаду — 300 zł. Чистка шкіряних сидінь — 350 zł. Комплексна хімчистка салону (сидіння, диван, стеля, килимки, обшивка, багажник) — від 350 zł. Ціна залежить від ступеня забруднення та типу оббивки.' },
       { q: 'Скільки сохне оббивка після екстракторної чистки?', a: 'При професійній екстракції Santoemma — 2–4 години влітку, до 8 годин узимку. При домашній чистці піною чи миючим пилососом — до 24–72 годин.' },
       { q: 'Чи прибирає хімчистка запах сигарет з авто?', a: 'Частково — екстракція видаляє нікотин з тканин. Для повного ефекту поєднуємо чистку з озонуванням, що нейтралізує запах у повітрі та вентиляції.' },
       { q: 'Чи можна почистити оббивку авто вдома?', a: 'Можна, якщо плями свіжі та поверхневі. Для глибоко в’їденого бруду, плям від напоїв, сечі тварин чи запаху диму потрібна професійна екстракторна чистка.' },
