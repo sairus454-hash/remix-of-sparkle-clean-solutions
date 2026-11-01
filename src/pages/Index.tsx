@@ -130,6 +130,8 @@ const Index = () => {
             addressCountry: 'PL',
             addressRegion: 'dolnośląskie',
             addressLocality: 'Wrocław',
+            streetAddress: 'ul. Jedności Narodowej 160',
+            postalCode: '50-302',
           },
           areaServed: [
             { '@type': 'City', name: 'Wrocław' },
