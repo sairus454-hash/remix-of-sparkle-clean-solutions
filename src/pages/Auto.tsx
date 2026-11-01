@@ -158,6 +158,26 @@ const Auto = () => {
            </div>
          </section>
 
+        {/* 0a. Promo banner: BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU! */}
+        <section className="py-10 sm:py-14 bg-primary relative overflow-hidden">
+          <div className="absolute inset-0 opacity-30 pointer-events-none" aria-hidden="true">
+            <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-fresh/40 blur-3xl" />
+            <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-primary-foreground/20 blur-3xl" />
+          </div>
+          <div className="container mx-auto px-4 relative text-center">
+            <p className="font-serif text-2xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tight text-primary-foreground leading-tight drop-shadow-md">
+              BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!
+            </p>
+            <button
+              onClick={() => formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+              className="mt-6 sm:mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-semibold shadow-glow hover:shadow-card-hover hover:scale-[1.02] transition-all"
+            >
+              {t.bannerCta}
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </section>
+
         {/* 0. Camper Cleaning SEO intro */}
         <section className="py-10 sm:py-16 bg-background">
           <div className="container mx-auto px-4">
