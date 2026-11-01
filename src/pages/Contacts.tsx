@@ -72,10 +72,10 @@ const Contacts = () => {
               priceRange: '160-2000 PLN',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'ul. Trawowa 14',
+                streetAddress: 'ul. Jedności Narodowej 160',
                 addressLocality: 'Wrocław',
                 addressRegion: 'dolnośląskie',
-                postalCode: '54-614',
+                postalCode: '50-302',
                 addressCountry: 'PL',
               },
               geo: {

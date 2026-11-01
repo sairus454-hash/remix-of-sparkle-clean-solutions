@@ -177,7 +177,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
     pl: {
       title: 'Kontakt — MasterClean Wrocław',
       paragraphs: [
-        'Skontaktuj się z MasterClean, aby zamówić <strong>pranie kanap Wrocław</strong>, <strong>czyszczenie tapicerki Wrocław</strong>, <strong>mycie okien Wrocław</strong> lub <strong>sprzątanie mieszkań Wrocław</strong>. Telefon: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Pracujemy 7 dni w tygodniu, w tym w weekendy i święta — bez dopłat. Adres siedziby: ul. Trawowa 14, 54-614 Wrocław (dolnośląskie), NIP 8943280388, REGON 544066160.',
+        'Skontaktuj się z MasterClean, aby zamówić <strong>pranie kanap Wrocław</strong>, <strong>czyszczenie tapicerki Wrocław</strong>, <strong>mycie okien Wrocław</strong> lub <strong>sprzątanie mieszkań Wrocław</strong>. Telefon: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Pracujemy 7 dni w tygodniu, w tym w weekendy i święta — bez dopłat. Adres siedziby: ul. Jedności Narodowej 160, 50-302 Wrocław (dolnośląskie), NIP 8943280388, REGON 544066160.',
         'Możesz też skorzystać z formularza online na tej stronie, czatu w prawym dolnym rogu serwisu lub WhatsApp. Wycena jest darmowa i niezobowiązująca — odpowiadamy zwykle w ciągu kilkunastu minut. Obsługujemy Wrocław, Smolec, Bielany Wrocławskie, Kiełczów oraz okoliczne miasta: Oława, Jelcz-Laskowice, Sobótka, Strzegom, Wałbrzych, Opole, Legnica, Lubin, Brzeg, Kłodzko, Dzierżoniów, Świdnica i Jelenia Góra.',
       ],
       sections: [
@@ -198,7 +198,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
         {
           h3: 'Obszar działania i dojazd',
           paragraphs: [
-            'Baza techniczna znajduje się we Wrocławiu (ul. Trawowa 14, 54-614). Dojazd na terenie Wrocławia i Smolca jest bezpłatny. W innych miastach doliczamy niewielką opłatę paliwową lub łączymy zlecenia, aby koszt dojazdu rozłożyć między klientów — wystarczy zapytać przy ustalaniu terminu.',
+            'Baza techniczna znajduje się we Wrocławiu (ul. Jedności Narodowej 160, 50-302). Dojazd na terenie Wrocławia i Smolca jest bezpłatny. W innych miastach doliczamy niewielką opłatę paliwową lub łączymy zlecenia, aby koszt dojazdu rozłożyć między klientów — wystarczy zapytać przy ustalaniu terminu.',
             'Jeśli Twojego miasta nie ma na liście, i tak zadzwoń — bardzo często udaje się dojechać w ramach tras serwisowych po Dolnym Śląsku i Wielkopolsce.',
           ],
         },
@@ -213,7 +213,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
     en: {
       title: 'Contact — MasterClean Wrocław',
       paragraphs: [
-        'Contact MasterClean to book <strong>sofa cleaning Wrocław</strong>, <strong>upholstery cleaning Wrocław</strong>, <strong>window cleaning Wrocław</strong> or <strong>apartment cleaning Wrocław</strong>. Phone: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. We work 7 days a week, including weekends and public holidays — no surcharges. Registered office: ul. Trawowa 14, 54-614 Wrocław (dolnośląskie region), Polish tax ID (NIP) 8943280388, REGON 544066160.',
+        'Contact MasterClean to book <strong>sofa cleaning Wrocław</strong>, <strong>upholstery cleaning Wrocław</strong>, <strong>window cleaning Wrocław</strong> or <strong>apartment cleaning Wrocław</strong>. Phone: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. We work 7 days a week, including weekends and public holidays — no surcharges. Registered office: ul. Jedności Narodowej 160, 50-302 Wrocław (dolnośląskie region), Polish tax ID (NIP) 8943280388, REGON 544066160.',
         'You can also use the online form on this page, the chat widget in the bottom-right corner or WhatsApp. Quotes are free and non-binding — we usually reply within a few minutes. We serve Wrocław, Smolec, Bielany Wrocławskie, Kiełczów and the surrounding cities: Oława, Jelcz-Laskowice, Sobótka, Strzegom, Wałbrzych, Opole, Legnica, Lubin, Brzeg, Kłodzko, Dzierżoniów, Świdnica and Jelenia Góra.',
       ],
       sections: [
@@ -234,7 +234,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
         {
           h3: 'Service area and travel costs',
           paragraphs: [
-            'Our equipment base is in Wrocław (ul. Trawowa 14, 54-614). Travel within Wrocław and Smolec is free. In other cities we add a small fuel fee or combine several jobs to share the trip cost — just ask when booking.',
+            'Our equipment base is in Wrocław (ul. Jedności Narodowej 160, 50-302). Travel within Wrocław and Smolec is free. In other cities we add a small fuel fee or combine several jobs to share the trip cost — just ask when booking.',
             'If your city is not listed, please call anyway — we very often manage to fit you into our service routes across Lower Silesia and Greater Poland.',
           ],
         },
@@ -249,7 +249,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
     ru: {
       title: 'Контакты — MasterClean Вроцлав',
       paragraphs: [
-        'Свяжитесь с MasterClean, чтобы заказать <strong>химчистку диванов Вроцлав</strong>, <strong>чистку обивки Вроцлав</strong>, <strong>мытьё окон Вроцлав</strong> или <strong>уборку квартир Вроцлав</strong>. Телефон: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Работаем 7 дней в неделю, включая выходные и праздники — без доплат. Юридический адрес: ul. Trawowa 14, 54-614 Wrocław (Нижнесилезское воеводство), NIP 8943280388, REGON 544066160.',
+        'Свяжитесь с MasterClean, чтобы заказать <strong>химчистку диванов Вроцлав</strong>, <strong>чистку обивки Вроцлав</strong>, <strong>мытьё окон Вроцлав</strong> или <strong>уборку квартир Вроцлав</strong>. Телефон: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Работаем 7 дней в неделю, включая выходные и праздники — без доплат. Юридический адрес: ul. Jedności Narodowej 160, 50-302 Wrocław (Нижнесилезское воеводство), NIP 8943280388, REGON 544066160.',
         'Также можно воспользоваться онлайн-формой на этой странице, чатом в правом нижнем углу сайта или WhatsApp. Расчёт бесплатный и ни к чему не обязывает — отвечаем обычно в течение нескольких минут. Обслуживаем Вроцлав, Смолец, Беляны Вроцлавске, Кельчув и соседние города: Олава, Йельч-Лясковице, Соботка, Стшегом, Валбжих, Ополе, Легница, Любин, Бжег, Клодзко, Дзержонюв, Свидница, Еленя-Гура.',
       ],
       sections: [
@@ -270,7 +270,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
         {
           h3: 'География и стоимость выезда',
           paragraphs: [
-            'База находится во Вроцлаве (ul. Trawowa 14, 54-614). Выезд в пределах Вроцлава и Смолца бесплатный. В другие города добавляем небольшую плату за топливо или объединяем несколько заказов в один маршрут, чтобы разделить стоимость дороги — уточняйте при бронировании.',
+            'База находится во Вроцлаве (ul. Jedności Narodowej 160, 50-302). Выезд в пределах Вроцлава и Смолца бесплатный. В другие города добавляем небольшую плату за топливо или объединяем несколько заказов в один маршрут, чтобы разделить стоимость дороги — уточняйте при бронировании.',
             'Если вашего города нет в списке — всё равно позвоните: чаще всего удаётся подстроиться под текущие маршруты по Нижней Силезии и Великопольскому воеводству.',
           ],
         },
@@ -285,7 +285,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
     uk: {
       title: 'Контакти — MasterClean Вроцлав',
       paragraphs: [
-        'Зв\'яжіться з MasterClean, щоб замовити <strong>хімчистку диванів Вроцлав</strong>, <strong>чистку оббивки Вроцлав</strong>, <strong>миття вікон Вроцлав</strong> або <strong>прибирання квартир Вроцлав</strong>. Телефон: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Працюємо 7 днів на тиждень, включно з вихідними та святами — без доплат. Юридична адреса: ul. Trawowa 14, 54-614 Wrocław (Нижньосілезьке воєводство), NIP 8943280388, REGON 544066160.',
+        'Зв\'яжіться з MasterClean, щоб замовити <strong>хімчистку диванів Вроцлав</strong>, <strong>чистку оббивки Вроцлав</strong>, <strong>миття вікон Вроцлав</strong> або <strong>прибирання квартир Вроцлав</strong>. Телефон: <a href="tel:+48575211401">+48 575 211 401</a>, e-mail: <a href="mailto:sairus454@gmail.com">sairus454@gmail.com</a>. Працюємо 7 днів на тиждень, включно з вихідними та святами — без доплат. Юридична адреса: ul. Jedności Narodowej 160, 50-302 Wrocław (Нижньосілезьке воєводство), NIP 8943280388, REGON 544066160.',
         'Також можна скористатися онлайн-формою на цій сторінці, чатом у правому нижньому куті сайту або WhatsApp. Розрахунок безкоштовний і ні до чого не зобов\'язує — відповідаємо зазвичай за кілька хвилин. Обслуговуємо Вроцлав, Смолець, Беляни Вроцлавське, Кельчув та сусідні міста: Олава, Йельч-Лясковіце, Соботка, Стшегом, Валбжих, Ополе, Легниця, Любін, Бжег, Клодзко, Дзержонюв, Свідниця, Єленя-Ґура.',
       ],
       sections: [
@@ -306,7 +306,7 @@ const CONTENT: Record<SeoVariant, Record<Lang, Block>> = {
         {
           h3: 'Географія та вартість виїзду',
           paragraphs: [
-            'База знаходиться у Вроцлаві (ul. Trawowa 14, 54-614). Виїзд у межах Вроцлава та Смольця безкоштовний. В інші міста додаємо невелику плату за пальне або об\'єднуємо кілька замовлень в один маршрут, щоб поділити вартість дороги — уточнюйте під час бронювання.',
+            'База знаходиться у Вроцлаві (ul. Jedności Narodowej 160, 50-302). Виїзд у межах Вроцлава та Смольця безкоштовний. В інші міста додаємо невелику плату за пальне або об\'єднуємо кілька замовлень в один маршрут, щоб поділити вартість дороги — уточнюйте під час бронювання.',
             'Якщо вашого міста немає у списку — все одно зателефонуйте: найчастіше вдається підлаштуватися під поточні маршрути Нижньою Сілезією та Великопольським воєводством.',
           ],
         },
