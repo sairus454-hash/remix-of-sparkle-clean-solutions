@@ -91,7 +91,7 @@ const privacyContent = {
         contacts: [
           { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Компания', value: 'MasterClean 1885' },
-          { label: 'Адрес', value: '54-614 Wrocław, ul. Trawowa 14, Польша' },
+          { label: 'Адрес', value: '50-302 Wrocław, ul. Jedności Narodowej 160, Польша' },
         ],
       },
     ],
@@ -184,7 +184,7 @@ const privacyContent = {
         contacts: [
           { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Company', value: 'MasterClean 1885' },
-          { label: 'Address', value: '54-614 Wrocław, ul. Trawowa 14, Poland' },
+          { label: 'Address', value: '50-302 Wrocław, ul. Jedności Narodowej 160, Poland' },
         ],
       },
     ],
@@ -277,7 +277,7 @@ const privacyContent = {
         contacts: [
           { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Firma', value: 'MasterClean 1885' },
-          { label: 'Adres', value: '54-614 Wrocław, ul. Trawowa 14, Polska' },
+          { label: 'Adres', value: '50-302 Wrocław, ul. Jedności Narodowej 160, Polska' },
         ],
       },
     ],
@@ -370,7 +370,7 @@ const privacyContent = {
         contacts: [
           { label: 'Email', value: '<a href="https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com" class="text-primary hover:underline">sairus454@gmail.com</a>' },
           { label: 'Компанія', value: 'MasterClean 1885' },
-          { label: 'Адреса', value: '54-614 Wrocław, ul. Trawowa 14, Польща' },
+          { label: 'Адреса', value: '50-302 Wrocław, ul. Jedności Narodowej 160, Польща' },
         ],
       },
     ],

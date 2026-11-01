@@ -161,6 +161,8 @@ const SEO = ({
       addressCountry: 'PL',
       addressRegion: 'dolnośląskie',
       addressLocality: 'Wrocław',
+      streetAddress: 'ul. Jedności Narodowej 160',
+      postalCode: '50-302',
     },
     areaServed: areaServedCities.map((name) => ({ '@type': 'City', name })),
     sameAs: [

@@ -25,7 +25,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'Администратором сайта является компания MasterClean 1885.',
           'Контактная информация:',
-          'Адрес: 54-614 Wrocław, ul. Trawowa 14, Польша',
+          'Адрес: 50-302 Wrocław, ul. Jedności Narodowej 160, Польша',
           'Email: sairus454@gmail.com',
           'Сайт: masterclean1885.com',
         ],
@@ -72,7 +72,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'Если у вас есть вопросы по поводу использования файлов Cookie, вы можете связаться с нами:',
           'MasterClean 1885',
-          'Адрес: 54-614 Wrocław, ul. Trawowa 14, Польша',
+          'Адрес: 50-302 Wrocław, ul. Jedności Narodowej 160, Польша',
           'Email: sairus454@gmail.com',
           'Сайт: masterclean1885.com',
         ],
@@ -89,7 +89,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'The website administrator is MasterClean 1885.',
           'Contact Information:',
-          'Address: 54-614 Wrocław, ul. Trawowa 14, Poland',
+          'Address: 50-302 Wrocław, ul. Jedności Narodowej 160, Poland',
           'Email: sairus454@gmail.com',
           'Website: masterclean1885.com',
         ],
@@ -136,7 +136,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'If you have any questions about our use of cookies, please contact us:',
           'MasterClean 1885',
-          'Address: 54-614 Wrocław, ul. Trawowa 14, Poland',
+          'Address: 50-302 Wrocław, ul. Jedności Narodowej 160, Poland',
           'Email: sairus454@gmail.com',
           'Website: masterclean1885.com',
         ],
@@ -153,7 +153,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'Administratorem strony jest firma MasterClean 1885.',
           'Informacje kontaktowe:',
-          'Adres: 54-614 Wrocław, ul. Trawowa 14, Polska',
+          'Adres: 50-302 Wrocław, ul. Jedności Narodowej 160, Polska',
           'Email: sairus454@gmail.com',
           'Strona: masterclean1885.com',
         ],
@@ -200,7 +200,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'Jeśli masz pytania dotyczące naszego używania plików cookies, skontaktuj się z nami:',
           'MasterClean 1885',
-          'Adres: 54-614 Wrocław, ul. Trawowa 14, Polska',
+          'Adres: 50-302 Wrocław, ul. Jedności Narodowej 160, Polska',
           'Email: sairus454@gmail.com',
           'Strona: masterclean1885.com',
         ],
@@ -217,7 +217,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'Адміністратором сайту є компанія MasterClean 1885.',
           'Контактна інформація:',
-          'Адреса: 54-614 Вроцлав, вул. Травова 14, Польща',
+          'Адреса: 50-302 Вроцлав, вул. Jedności Narodowej 160, Польща',
           'Email: sairus454@gmail.com',
           'Веб-сайт: masterclean1885.com',
         ],
@@ -264,7 +264,7 @@ const cookieContent: Record<string, CookieContent> = {
         content: [
           'Якщо у вас є питання щодо нашого використання файлів Cookie, зв\'яжіться з нами:',
           'MasterClean 1885',
-          'Адреса: 54-614 Вроцлав, вул. Травова 14, Польща',
+          'Адреса: 50-302 Вроцлав, вул. Jedności Narodowej 160, Польща',
           'Email: sairus454@gmail.com',
           'Веб-сайт: masterclean1885.com',
         ],

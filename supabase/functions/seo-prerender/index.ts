@@ -1133,6 +1133,9 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
       '@type': 'PostalAddress',
       addressCountry: 'PL',
       addressRegion: 'dolnośląskie',
+      addressLocality: 'Wrocław',
+      streetAddress: 'ul. Jedności Narodowej 160',
+      postalCode: '50-302',
     },
     areaServed: [
       { '@type': 'City', name: 'Wrocław' },
@@ -1293,7 +1296,7 @@ ${meta.faq && meta.faq.length > 0 ? `
   <section>
     <h2>Kontakt</h2>
     <p>Telefon: <a href="tel:${PHONE}">${PHONE}</a> — pracujemy 24/7</p>
-    <p>Adres: Wrocław, Dolnośląskie</p>
+    <p>Adres: ul. Jedności Narodowej 160, 50-302 Wrocław</p>
     <p><a href="${SITE_URL}">MasterClean — strona główna</a></p>
     <nav>
       <a href="${SITE_URL}/services">Usługi</a> |
