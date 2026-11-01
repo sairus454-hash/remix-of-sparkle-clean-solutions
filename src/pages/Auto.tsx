@@ -172,7 +172,7 @@ const Auto = () => {
               onClick={() => formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
               className="mt-6 sm:mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-semibold shadow-glow hover:shadow-card-hover hover:scale-[1.02] transition-all"
             >
-              {t.bannerCta}
+              {t.hero?.bannerCta || 'Zamów teraz'}
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
