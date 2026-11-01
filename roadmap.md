@@ -1,5 +1,5 @@
 # Tasks
-- [x] Set leather car seats to 350 PLN and front/rear car seats to 300 PLN across pages, calculators and chatbot; verify both prices.
+- [ ] Finish the car-seat price update: verify leather seats at 350 PLN and front/rear seats at 300 PLN, including the quick-order saved total and chatbot.
 - [ ] Align structured-data email with the existing contact page and verify stale social-preview findings.
 - [ ] Remove build-generated sitemap freshness dates and verify sitemap integrity.
 - [ ] Remove the cleaning + second service promotion from all languages, calculators, forms and chatbot.
