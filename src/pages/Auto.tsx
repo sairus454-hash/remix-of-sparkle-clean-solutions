@@ -18,6 +18,8 @@ import { Link } from 'react-router-dom';
 import { useLocalizedNavigate } from '@/i18n/LocalizedLink';
 import PromotionsSection from '@/components/PromotionsSection';
 import { CalculatorItem } from '@/types/calculator';
+import { AUTO_SEAT_PRICES, createAutoSeatPromoOrder } from '@/lib/autoSeatOrder';
+import { Button } from '@/components/ui/button';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 import autoTruckVanBanner from '@/assets/auto-truck-van-banner.jpg';
 import promoAutoOzoneGift from '@/assets/promo-auto-ozone-gift.jpg';
@@ -57,8 +59,8 @@ const Auto = () => {
     { id: 'autoVip', name: t.prices.items.autoVip, price: 700, image: calcAutoVip },
     { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 800, image: calcAutoVipLeather },
     { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80, image: calcAutoSeat },
-    { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300, image: calcAutoSeats },
-    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350, image: calcAutoLeatherSeats },
+    { id: 'autoSeats', name: t.prices.items.autoSeats, price: AUTO_SEAT_PRICES.autoSeats, image: calcAutoSeats },
+    { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: AUTO_SEAT_PRICES.autoLeatherSeats, image: calcAutoLeatherSeats },
     { id: 'autoDoorCard', name: t.prices.items.autoDoorCard, price: 40, image: calcAutoDoor },
     { id: 'autoPlastics', name: t.prices.items.autoPlastics, price: 70, image: calcAutoPlastics },
     { id: 'autoCeiling', name: t.prices.items.autoCeiling, price: 100, image: calcAutoCeiling },
@@ -115,7 +117,7 @@ const Auto = () => {
               { '@type': 'City', name: 'Kalisz' },
             ],
             offers: [
-              { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: '300', priceCurrency: 'PLN' },
+              { '@type': 'Offer', name: 'Pranie foteli samochodowych', price: String(AUTO_SEAT_PRICES.autoSeats), priceCurrency: 'PLN' },
               { '@type': 'Offer', name: 'Kompleksowe czyszczenie wnętrza', price: '500', priceCurrency: 'PLN' },
               { '@type': 'Offer', name: 'Czyszczenie kabiny ciężarówki (TIR)', price: '650', priceCurrency: 'PLN' },
               { '@type': 'Offer', name: 'Czyszczenie kabiny busa', price: '400', priceCurrency: 'PLN' },
@@ -241,15 +243,15 @@ const Auto = () => {
                         </li>
                       ))}
                     </ul>
-                    <button
+                    <Button
                       onClick={() => {
-                        const promoItems: CalculatorItem[] = [
-                          { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300, quantity: 1, category: 'auto' },
-                          { id: 'autoOzoneGift', name: `${t.prices.items.autoOzone} (${t.auto?.ozonePromoBadge || 'Акция'} — gratis)`, price: 0, quantity: 1, category: 'auto' },
-                        ];
+                        const order = createAutoSeatPromoOrder(
+                          t.prices.items.autoSeats,
+                          `${t.prices.items.autoOzone} (${t.auto?.ozonePromoBadge || 'Акция'} — gratis)`,
+                        );
                         try {
-                          sessionStorage.setItem('mc_calculator_items', JSON.stringify(promoItems));
-                          sessionStorage.setItem('mc_calculator_total', '200');
+                          sessionStorage.setItem('mc_calculator_items', JSON.stringify(order.items));
+                          sessionStorage.setItem('mc_calculator_total', String(order.total));
                           window.dispatchEvent(new Event('mc_calculator_updated'));
                         } catch {}
                         navigate('/contacts');
@@ -259,7 +261,7 @@ const Auto = () => {
                       <Gift className="w-4 h-4" />
                       {t.auto?.ozonePromoCta || 'Заказать со скидкой'}
                       <ArrowRight className="w-4 h-4" />
-                    </button>
+                    </Button>
                   </div>
                 </div>
               </div>
