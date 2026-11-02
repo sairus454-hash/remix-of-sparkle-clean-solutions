@@ -1,7 +1,10 @@
 # Tasks
 - [x] Finish the car-seat price update: leather seats 350 PLN and front/rear seats 300 PLN verified in page/calculator definitions and all chatbot language price lists; quick-order total corrected and verified through the contact form in all four languages; six focused tests passed.
-- [ ] Align structured-data email with the existing contact page and verify stale social-preview findings.
-- [ ] Remove build-generated sitemap freshness dates and verify sitemap integrity.
-- [ ] Remove the cleaning + second service promotion from all languages, calculators, forms and chatbot.
-- [ ] Verify discount behavior and page rendering.
+- [x] Align structured-data email with the existing contact page and verify stale social-preview findings.
+- [x] Remove build-generated sitemap freshness dates and verify sitemap integrity.
+- [x] Remove the cleaning + second service promotion from all languages, calculators, forms and chatbot.
+- [x] Verify discount behavior and page rendering.
+- [x] Add promo banner "BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!" on /auto with translated CTA (bannerCta in all 4 locales).
+- [x] Update company address to ul. Jedności Narodowej 160, 50-302 Wrocław everywhere.
+- [ ] Publish the site so all pending changes go live.
 - [ ] Review the three reported security findings; resolve false positives with approval where required and identify configuration blockers.
