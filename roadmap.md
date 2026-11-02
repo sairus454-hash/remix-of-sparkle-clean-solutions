@@ -6,5 +6,5 @@
 - [x] Verify discount behavior and page rendering.
 - [x] Add promo banner "BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!" on /auto with translated CTA (bannerCta in all 4 locales).
 - [x] Update company address to ul. Jedności Narodowej 160, 50-302 Wrocław everywhere.
-- [ ] Publish the site so all pending changes go live.
+- [x] Publish the site so all pending changes go live.
 - [ ] Review the three reported security findings; resolve false positives with approval where required and identify configuration blockers.
