@@ -671,6 +671,9 @@ const CityPage = () => {
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
+              {{ pl: 'Usługi i cennik', ru: 'Услуги и цены', en: 'Services and prices', uk: 'Послуги та ціни' }[language]} — {city.name}
+            </h2>
             <SmartServiceFilter
               categories={filteredCategories.map(c => ({ id: c.id, title: c.title, icon: c.icon }))}
               activeFilter={activeFilter}
@@ -758,6 +761,9 @@ const CityPage = () => {
         <section ref={formSectionRef} className="py-12 sm:py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
+                {t.form.title} — {city.name}
+              </h2>
               <ContactForm ref={formRef} />
             </div>
           </div>

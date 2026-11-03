@@ -26,7 +26,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main id="main-content" role="main" className="flex-1 pt-14 sm:pt-16 lg:pt-20 relative z-10">
 
         {/* One announcement, without repeated animation copies. */}
-        <section aria-label="Informacja promocyjna" className="py-2 sm:py-2.5 mt-14 sm:mt-16 overflow-hidden shadow-sm bg-primary">
+        <div aria-label="Informacja promocyjna" className="py-2 sm:py-2.5 mt-14 sm:mt-16 overflow-hidden shadow-sm bg-primary">
           <div className="relative">
             <div className="flex justify-center px-4">
                 <p className="text-center text-primary-foreground font-medium text-xs sm:text-sm md:text-lg flex items-center gap-1.5 sm:gap-2">
@@ -35,7 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
                 </p>
             </div>
           </div>
-        </section>
+        </div>
 
         <Breadcrumbs />
 

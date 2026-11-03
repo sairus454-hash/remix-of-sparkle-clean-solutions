@@ -476,6 +476,9 @@ const FloorCleaning = () => {
         {/* 3 Media Expert photos with captions and 3D entrance */}
         <section className="py-12 bg-card overflow-hidden">
           <div className="container mx-auto px-4">
+            <h2 className="font-serif text-3xl font-bold text-foreground text-center mb-8">
+              {{ pl: 'Pranie wykładziny w Media Expert', ru: 'Чистка ковролина в Media Expert', en: 'Carpet cleaning at Media Expert', uk: 'Чищення килимового покриття в Media Expert' }[language]}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto [perspective:1200px]">
               {[
                 {
@@ -550,6 +553,9 @@ const FloorCleaning = () => {
         {/* Calculator */}
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
+            <h2 className="font-serif text-3xl font-bold text-foreground text-center mb-8">
+              {{ pl: 'Cennik prania dywanów i wykładzin', ru: 'Цены чистки ковров и ковролина', en: 'Carpet and rug cleaning prices', uk: 'Ціни чищення килимів і покриттів' }[language]}
+            </h2>
             <div className="max-w-6xl mx-auto">
               <CircularRevealCard index={0}>
                 <div className="bg-card p-6 rounded-2xl shadow-card border border-border">
@@ -745,13 +751,13 @@ const FloorCleaning = () => {
         </section>
 
         {/* SEO Keywords block (visible) */}
-        <section className="py-10 bg-gradient-section">
+        <div className="py-10 bg-gradient-section">
           <div className="container mx-auto px-4">
             <p className="max-w-4xl mx-auto text-xs text-muted-foreground/70 text-center leading-relaxed">
               {c.keywordsBlock}
             </p>
           </div>
-        </section>
+        </div>
         <OferteoBadge />
       </Layout>
     </>

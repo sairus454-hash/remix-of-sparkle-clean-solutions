@@ -439,6 +439,9 @@ const Prices = () => {
         {/* Price Cards by Category */}
         <section className="py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
+              {{ pl: 'Cennik usług według kategorii', ru: 'Цены услуг по категориям', en: 'Service prices by category', uk: 'Ціни послуг за категоріями' }[language]}
+            </h2>
             <div className="max-w-5xl mx-auto mb-6 sm:mb-8">
               <p className="text-xs sm:text-sm font-medium text-muted-foreground mb-2 sm:mb-3 text-center sm:text-left">
                 {filterTitle}
