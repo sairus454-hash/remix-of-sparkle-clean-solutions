@@ -205,7 +205,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
       description: t.prices.furnitureDesc,
       icon: Sofa,
       items: [
-        { id: 'pouf', name: t.prices.items.pouf, price: 50, image: calcPouf },
+        { id: 'pouf', name: t.prices.items.pouf, price: servicePrice('pouf'), image: calcPouf },
         { id: 'chairSeat', name: t.prices.items.chairSeat, price: servicePrice('chairSeat'), image: calcChairSeat },
         { id: 'chairWithBack', name: t.prices.items.chairWithBack, price: servicePrice('chairWithBack'), image: calcChairBack },
         { id: 'chairConference', name: t.prices.items.chairConference, price: servicePrice('chairConference'), image: calcChairConference },
@@ -310,7 +310,7 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
       description: t.prices.otherDesc,
       icon: Package,
       items: [
-        { id: 'stroller', name: t.prices.items.stroller, price: 100, image: calcStroller },
+        { id: 'stroller', name: t.prices.items.stroller, price: servicePrice('stroller'), image: calcStroller },
         { id: 'carseat', name: t.prices.items.carseat, price: servicePrice('carseat'), image: calcCarseat },
         { id: 'drying', name: t.prices.items.drying, price: 0, image: calcDrying, promoBadge: t.promotions.dryingFreeSpring },
         { id: 'impregnation', name: t.prices.items.impregnation, price: 80, image: calcImpregnation },
