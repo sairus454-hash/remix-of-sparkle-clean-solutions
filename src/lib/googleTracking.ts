@@ -48,8 +48,12 @@ export function sendAdsConversion(target = ADS_LEAD_LABEL) {
   refreshTracking();
   const record = readConsent();
   // Local evidence reference; never send visitor consent records or form PII to Google.
-  sessionStorage.setItem('mc-last-conversion-consent', JSON.stringify({ target, at: new Date().toISOString(), visitorId: record?.visitorId, choiceAt: record?.history.at(-1)?.at, region: record?.region }));
-  window.gtag?.('event', 'conversion', { send_to: target });
+  try {
+    const evidence = JSON.parse(sessionStorage.getItem('mc-conversion-consent-history') || '[]');
+    evidence.push({ target, at: new Date().toISOString(), visitorId: record?.visitorId, choiceAt: record?.history.at(-1)?.at, region: record?.region });
+    sessionStorage.setItem('mc-conversion-consent-history', JSON.stringify(evidence));
+    window.gtag?.('event', 'conversion', { send_to: target });
+  } catch { /* Tracking must not interrupt the confirmed customer request. */ }
 }
 export function initializeTracking() {
   bootstrap();
