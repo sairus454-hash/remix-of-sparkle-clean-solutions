@@ -4,74 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
-    <!-- Google Tag Manager — deferred to after first paint -->
-    <script>
-    window.addEventListener('load', function() {
-      setTimeout(function(){
-        window.dataLayer=window.dataLayer||[];
-        window.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-        var f=document.getElementsByTagName('script')[0],
-        j=document.createElement('script');j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id=GTM-T877SQ75';
-        f.parentNode.insertBefore(j,f);
-      }, 2500);
-    });
-    </script>
-    <!-- End Google Tag Manager -->
-
-    <!-- Google Ads gtag.js — stub defined immediately so events queue; script itself loads late (LCP/INP) -->
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', 'AW-18410131732');
-    window.__loadGoogleAds = function () {
-      if (window.__gadsLoading) return;
-      window.__gadsLoading = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-18410131732';
-      document.head.appendChild(s);
-    };
-    window.addEventListener('load', function () { setTimeout(window.__loadGoogleAds, 2500); });
-    </script>
-    <!-- End Google Ads gtag.js -->
-
-    <!-- Google Ads phone-click conversion (gtag_report_conversion) — bound to all tel: links -->
-    <script>
-    window.gtag_report_conversion = function (url) {
-      // Make sure the real gtag.js is being fetched even if the click happens early
-      if (typeof window.__loadGoogleAds === 'function') window.__loadGoogleAds();
-      var navigated = false;
-      var callback = function () {
-        if (navigated) return;
-        navigated = true;
-        if (typeof (url) !== 'undefined') { window.location = url; }
-      };
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-18410131732/clZ3COmoie4cEJSi0cpE',
-        'event_callback': callback
-      });
-      // Safety timeout — navigate even if event_callback never fires
-      setTimeout(callback, 1200);
-      return false;
-    };
-    // Capture-phase delegated listener: fires on every tel: link, including links
-    // rendered by React or injected via dangerouslySetInnerHTML.
-    document.addEventListener('click', function (e) {
-      var t = e.target;
-      var link = t && t.closest ? t.closest('a[href^="tel:"]') : null;
-      if (!link) return;
-      e.preventDefault();
-      window.gtag_report_conversion(link.href);
-    }, true);
-    // Warm up gtag.js on the first real user interaction so conversions never get lost
-    ['pointerdown', 'keydown', 'touchstart'].forEach(function (ev) {
-      window.addEventListener(ev, function once() { window.__loadGoogleAds(); }, { once: true, passive: true });
-    });
-    </script>
-    <!-- End Google Ads phone-click conversion -->
+    <!-- Google tags are initialized by the consent-aware React tracking module. -->
 
 
     
@@ -244,10 +177,7 @@
 </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T877SQ75"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
     <div id="root">
       <h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">MasterClean — Profesjonalne pranie tapicerki i sprzątanie</h1>
       <h2 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Usługi czyszczenia tapicerki, dywanów, materacy</h2>

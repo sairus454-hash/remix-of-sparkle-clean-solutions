@@ -1,4 +1,6 @@
-// Google Tag Manager dataLayer helper
+import { sendAnalytics, sendAdsConversion, ADS_LEAD_LABEL } from './googleTracking';
+export { ADS_ID, ADS_LEAD_LABEL } from './googleTracking';
+// Consent-aware tracking helpers
 declare global {
   interface Window {
     dataLayer: Record<string, unknown>[];
@@ -8,33 +10,17 @@ declare global {
 }
 
 export const pushEvent = (event: string, params?: Record<string, unknown>) => {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event, ...params });
+  sendAnalytics(event, params);
 };
 
 // Google Ads conversion IDs / labels
-export const ADS_ID = 'AW-18410131732';
 // Label used for lead (form submission) conversions.
 // Replace with a dedicated "Zapytanie z formularza" label from Google Ads if you create one.
-export const ADS_LEAD_LABEL = `${ADS_ID}/clZ3COmoie4cEJSi0cpE`;
 
 // Google Ads conversion event — sent both via gtag (direct) and dataLayer (GTM)
 export const pushConversion = (sendTo?: string, value?: number, currency = 'PLN') => {
-  const target = sendTo || ADS_LEAD_LABEL;
-  pushEvent('ads_conversion', {
-    send_to: target,
-    value,
-    currency,
-  });
-  try {
-    window.gtag?.('event', 'conversion', {
-      send_to: target,
-      value,
-      currency,
-    });
-  } catch {
-    // ignore — analytics must never break the app
-  }
+  // A request is not a paid order: do not attach the calculator total as revenue.
+  sendAdsConversion(sendTo || ADS_LEAD_LABEL);
 };
 
 

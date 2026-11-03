@@ -1,4 +1,5 @@
 # Architecture rules
+- Own Google Ads/Analytics loading and event reporting in the consent-aware tracking modules; do not load GTM alongside direct tags, so refusal blocks transmission and conversions have one reporting path.
 - Isolate optional geolocation loading with an error boundary so a failed deferred import cannot blank the visible page.
 - Keep city data, localized search identity and local content shared between React and the crawler renderer under `seo-prerender/city`; frontend data modules re-export these sources to prevent city/homepage divergence.
 - Share localized homepage title/description between React and the crawler renderer through `seo-prerender/homeMeta`; keep the static Polish head fallback aligned to prevent divergent search metadata.

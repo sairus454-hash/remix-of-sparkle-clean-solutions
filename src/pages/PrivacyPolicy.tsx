@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
 import { useLanguage } from '@/i18n/LanguageContext';
+import TrackingDisclosure from '@/components/TrackingDisclosure';
 
 const privacyContent = {
   ru: {
@@ -398,6 +399,7 @@ const PrivacyPolicy = () => {
           <p className="text-muted-foreground text-sm mb-8">{content.lastUpdated}</p>
 
           <div className="prose prose-sm sm:prose-base max-w-none text-foreground/90 space-y-6">
+            <TrackingDisclosure />
             {content.sections.map((section: SectionType, idx: number) => (
               <section key={idx}>
                 <h2 className="font-serif text-xl font-semibold text-foreground">{section.title}</h2>
