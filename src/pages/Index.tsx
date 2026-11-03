@@ -12,6 +12,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import heroBannerImage from '@/assets/hero-banner.jpg';
 import heroBannerMobile from '@/assets/hero-banner-mobile.webp';
 import HeroVideo from '@/components/HeroVideo';
+import { HOME_META } from '../../supabase/functions/seo-prerender/homeMeta';
 
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/masterclean-logo-hero.webp';
@@ -85,23 +86,19 @@ const Index = () => {
 
   const seoMeta = {
     pl: {
-      title: 'MasterClean — Pranie tapicerki, dywanów i aut z dojazdem',
-      description: 'Pranie kanapy, materaca, narożnika i tapicerki samochodowej z dojazdem. Czyszczenie dywanów, ozonowanie, mycie okien. Cała Polska, 24/7.',
+      ...HOME_META.pl,
       keywords: 'pranie kanapy, pranie materaca, pranie narożnika, pranie tapicerki, czyszczenie mebli, czyszczenie dywanów, ozonowanie, sprzątanie mieszkań, mycie okien, czyszczenie z dojazdem, Polska, Dolny Śląsk, Opole, Poznań',
     },
     ru: {
-      title: 'MasterClean — Химчистка мебели, ковров и авто с выездом',
-      description: 'Химчистка дивана, матраса, углового дивана и салона авто с выездом. Чистка ковров, озонирование, мытьё окон. По всей Польше, 24/7.',
+      ...HOME_META.ru,
       keywords: 'химчистка дивана, химчистка матраса, химчистка мебели, чистка ковров, озонирование, уборка квартир, мытьё окон, выезд на дом, Польша, Долносленское воеводство, Ополе, Познань',
     },
     en: {
-      title: 'MasterClean — Upholstery, carpet & car cleaning at home',
-      description: 'On-site sofa, mattress, corner couch and car upholstery cleaning. Carpet cleaning, ozone treatment, window washing. Across Poland, 24/7.',
+      ...HOME_META.en,
       keywords: 'sofa cleaning, mattress cleaning, upholstery cleaning, carpet cleaning, ozone treatment, apartment cleaning, window washing, on-site service, Poland, Lower Silesia, Opole, Poznań',
     },
     uk: {
-      title: 'MasterClean — Хімчистка меблів, килимів та авто з виїздом',
-      description: 'Хімчистка дивана, матраца, кутового дивана та салону авто з виїздом. Чищення килимів, озонування, миття вікон. По всій Польщі, 24/7.',
+      ...HOME_META.uk,
       keywords: 'хімчистка дивана, хімчистка матраца, хімчистка меблів, чищення килимів, озонування, прибирання квартир, миття вікон, виїзд додому, Польща, Долносленське воєводство, Ополе, Познань',
     },
   } as const;
