@@ -232,9 +232,9 @@ const Index = () => {
                   <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-fresh opacity-75" />
                 </div>
                 <div>
-                  <p className="font-serif text-lg sm:text-xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
+                  <h2 className="font-serif text-lg sm:text-xl font-bold bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'shimmer 3s linear infinite' }}>
                     📝 {language === 'ru' ? 'Блог чистоты' : language === 'pl' ? 'Blog czystości' : language === 'uk' ? 'Блог чистоти' : 'Cleanliness Blog'}
-                  </p>
+                  </h2>
                   <p className="text-xs sm:text-sm text-muted-foreground">
                     {language === 'ru' ? 'Полезные советы и статьи' : language === 'pl' ? 'Przydatne porady i artykuły' : language === 'uk' ? 'Корисні поради та статті' : 'Useful tips & articles'}
                   </p>
@@ -260,6 +260,9 @@ const Index = () => {
 
       <section className="hidden sm:block py-10 sm:py-16 bg-card">
         <div className="container mx-auto px-4">
+          <h2 className="font-serif text-2xl font-bold text-foreground text-center mb-6">
+            {{ pl: 'MasterClean w liczbach', ru: 'MasterClean в цифрах', uk: 'MasterClean у цифрах', en: 'MasterClean in numbers' }[lang]}
+          </h2>
           <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8">
             {stats.map((stat, index) => <div key={index} className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-card shadow-card animate-fade-up" style={{
               animationDelay: `${index * 0.1}s`
@@ -301,6 +304,9 @@ const Index = () => {
 
       <section className="py-8 sm:py-12 bg-background">
         <div className="container mx-auto px-4">
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground text-center mb-6">
+            {{ pl: 'Pranie wykładziny w Media Expert', ru: 'Чистка ковролина в Media Expert', uk: 'Чищення килимового покриття в Media Expert', en: 'Carpet cleaning at Media Expert' }[lang]}
+          </h2>
           {/* Mobile: single image */}
           <div
             className="lg:hidden mx-auto rounded-2xl overflow-hidden shadow-elegant bg-muted"

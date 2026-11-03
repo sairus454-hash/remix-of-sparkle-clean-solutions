@@ -426,6 +426,9 @@ const Cleaning = () => {
       {/* Smart filter for service catalogs */}
       <section className="pt-8 pb-2 bg-gradient-section">
         <div className="container mx-auto px-4">
+          <h2 className="font-serif text-2xl font-bold text-foreground mb-6">
+            {{ pl: 'Usługi dodatkowe do sprzątania', ru: 'Дополнительные услуги к уборке', uk: 'Додаткові послуги до прибирання', en: 'Additional cleaning services' }[language]}
+          </h2>
           <SmartServiceFilter
             categories={filterCategories}
             activeFilter={activeFilter}
@@ -695,9 +698,9 @@ const Cleaning = () => {
                           <Droplets className="w-7 h-7 text-white" />
                         </div>
                         <div>
-                          <p className="font-serif text-xl font-semibold text-sky-700 dark:text-sky-300">
+                          <h2 className="font-serif text-xl font-semibold text-sky-700 dark:text-sky-300">
                             {t.nav?.windows || 'Мойка окон'}
-                          </p>
+                          </h2>
                           <p className="text-sm text-muted-foreground">
                             {t.windows?.subtitle || 'Профессиональная мойка окон любой сложности'}
                           </p>
