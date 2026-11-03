@@ -3,6 +3,7 @@ import SEO from '@/components/SEO';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { useRef } from 'react';
+import TrackingDisclosure from '@/components/TrackingDisclosure';
 
 interface CookieContent {
   title: string;
@@ -299,6 +300,7 @@ const Cookies = () => {
             <p className="text-foreground/90 mb-8 leading-relaxed">{content.intro}</p>
 
             <div className="space-y-8">
+              <TrackingDisclosure />
               {content.sections.map((section, idx) => (
                 <div key={idx} className="border-b border-border/30 pb-8 last:border-b-0">
                   <h2 className="text-2xl font-serif font-bold mb-4 text-primary">
