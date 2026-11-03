@@ -41,6 +41,9 @@ const OferteoBadge = () => {
 
   return (
     <section className="py-8 bg-gradient-section">
+      <h2 className="font-serif text-2xl font-bold text-foreground text-center mb-6">
+        {{ pl: 'Partnerzy i wyróżnienia MasterClean', ru: 'Партнёры и награды MasterClean', en: 'MasterClean partners and awards', uk: 'Партнери та відзнаки MasterClean' }[language]}
+      </h2>
       <div className="container mx-auto px-4 flex flex-wrap justify-center items-center gap-6 sm:gap-10">
         <a
           href="https://www.oferteo.pl/pranie-kanap"

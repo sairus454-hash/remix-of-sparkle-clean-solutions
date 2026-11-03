@@ -15,7 +15,7 @@ import dryingImage from '@/assets/drying-system.jpg';
 import equipmentSetImage from '@/assets/equipment-set.jpg';
 
 const Equipment = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('equipment');
 
   const mainFeatures = [
@@ -101,7 +101,7 @@ const Equipment = () => {
       {showSplash && <ExtractorSplash onComplete={handleSplashComplete} />}
       <Layout>
         {/* Impregnation Card */}
-        <section className="py-12 bg-gradient-section">
+        <div className="py-12 bg-gradient-section">
           <div className="container mx-auto px-4">
             <CircularRevealCard index={0}>
               <a 
@@ -127,7 +127,7 @@ const Equipment = () => {
               </a>
             </CircularRevealCard>
           </div>
-        </section>
+        </div>
 
         {/* Hero with Background Photo Slideshow */}
         <section className="relative min-h-[calc(100vh-120px)] overflow-hidden flex items-center">
@@ -161,6 +161,9 @@ const Equipment = () => {
         {/* Main Features */}
         <section className="py-16 bg-card">
           <div className="container mx-auto px-4">
+            <h2 className="font-serif text-3xl font-bold text-foreground text-center mb-8">
+              {{ pl: 'Standardy czyszczenia MasterClean', ru: 'Стандарты чистки MasterClean', en: 'MasterClean cleaning standards', uk: 'Стандарти чищення MasterClean' }[language]}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {mainFeatures.map((feature, index) => (
                 <CircularRevealCard key={index} index={index}>

@@ -127,6 +127,7 @@ import { useSplash } from '@/hooks/useSplash';
        {/* 1. Pricing */}
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
+            <h2 className="font-serif text-3xl font-bold text-foreground text-center mb-8">{t.windows?.calcTitle}</h2>
             <div className="max-w-3xl mx-auto">
               <CircularRevealCard index={0}>
                 <div className="bg-card p-6 rounded-2xl shadow-card border border-border">
@@ -162,6 +163,9 @@ import { useSplash } from '@/hooks/useSplash';
        {/* 3. Photo Gallery */}
        <section className="py-16 bg-card">
          <div className="container mx-auto px-4">
+           <h2 className="font-serif text-3xl font-bold text-foreground text-center mb-8">
+             {{ pl: 'Realizacje mycia okien', ru: 'Примеры мойки окон', en: 'Window cleaning gallery', uk: 'Приклади миття вікон' }[language]}
+           </h2>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
              {galleryImages.map((image, index) => (
                <CircularRevealCard key={index} index={index}>
