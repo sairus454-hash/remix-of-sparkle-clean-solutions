@@ -326,6 +326,8 @@ const enTranslations = {
       ozonePromoBenefit3: '99.9% of bacteria and odours — gone',
       ozonePromoCta: 'Order with promo',
       ozonePromoImageAlt: 'Promo: seat cleaning + free ozone treatment',
+      powerBankText: 'We do not need a socket — we bring our own power station and can clean car upholstery even where there is no electricity or water.',
+      powerBankImageAlt: 'Our own power station — car upholstery cleaning without electricity',
     },
     ozone: {
       title: 'Ozonation',

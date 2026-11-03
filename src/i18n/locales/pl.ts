@@ -327,6 +327,8 @@ const plTranslations = {
       ozonePromoBenefit3: '99,9% bakterii i zapachów — usunięte',
       ozonePromoCta: 'Zamów z promocją',
       ozonePromoImageAlt: 'Promocja: pranie foteli + ozonowanie gratis',
+      powerBankText: 'Nie potrzebujemy prądu z Państwa gniazdka — jeździmy z własną elektrownią. Wyczyścimy tapicerkę auta nawet tam, gdzie nie ma prądu i wody.',
+      powerBankImageAlt: 'Własna elektrownia MasterClean — pranie tapicerki bez prądu u klienta',
     },
     ozone: {
       title: 'Ozonowanie pomieszczeń i samochodów',
