@@ -23,6 +23,7 @@ import { Button } from '@/components/ui/button';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 import autoTruckVanBanner from '@/assets/auto-truck-van-banner.jpg';
 import promoAutoOzoneGift from '@/assets/promo-auto-ozone-gift.jpg';
+import powerStation from '@/assets/power_station.jpg';
 import { Gift, Sparkle, ShieldCheck } from 'lucide-react';
 import PageFaqSection from '@/components/PageFaqSection';
 import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
@@ -164,17 +165,32 @@ const Auto = () => {
             <div className="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-fresh/40 blur-3xl" />
             <div className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full bg-primary-foreground/20 blur-3xl" />
           </div>
-          <div className="container mx-auto px-4 relative text-center">
-            <h2 className="font-serif text-2xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tight text-primary-foreground leading-tight drop-shadow-md">
-              BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!
-            </h2>
-            <button
-              onClick={() => formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-              className="mt-6 sm:mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-semibold shadow-glow hover:shadow-card-hover hover:scale-[1.02] transition-all"
-            >
-              {t.hero?.bannerCta || 'Zamów teraz'}
-              <ArrowRight className="w-4 h-4" />
-            </button>
+          <div className="container mx-auto px-4 relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
+              <div className="text-center md:text-left">
+                <h2 className="font-serif text-2xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tight text-primary-foreground leading-tight drop-shadow-md">
+                  BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!
+                </h2>
+                <p className="mt-4 text-primary-foreground/90 text-base sm:text-lg font-medium leading-relaxed">
+                  {t.auto?.powerBankText || 'Nie potrzebujemy prądu z Państwa gniazdka — jeździmy z własną elektrownią.'}
+                </p>
+                <button
+                  onClick={() => formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  className="mt-6 sm:mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-primary-foreground text-primary font-semibold shadow-glow hover:shadow-card-hover hover:scale-[1.02] transition-all"
+                >
+                  {t.hero?.bannerCta || 'Zamów teraz'}
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
+              <div className="flex justify-center md:justify-end">
+                <img
+                  src={powerStation}
+                  alt={t.auto?.powerBankImageAlt || 'Własna elektrownia MasterClean'}
+                  loading="lazy"
+                  className="w-52 h-52 sm:w-72 sm:h-72 object-cover rounded-3xl shadow-glow border-4 border-primary-foreground/20"
+                />
+              </div>
+            </div>
           </div>
         </section>
 

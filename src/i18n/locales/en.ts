@@ -84,6 +84,7 @@ const enTranslations = {
       subtitleShort: 'MasterClean — furniture & car cleaning, ozone treatment, window washing, carpet cleaning. Modern equipment, safe products.',
       description: 'Our company specializes in professional dry cleaning of all types of textiles. We use only eco-friendly products and modern European-quality equipment.',
       regions: 'We operate in 4 voivodeships: Opole, Lower Silesian, Greater Poland, and Lubusz.',
+      power: 'We work without your electricity — our own power station lets us clean upholstery even where there is no socket.',
       experience: 'Years of Experience',
       clients: 'Happy Clients',
       quality: 'Quality',
@@ -325,6 +326,8 @@ const enTranslations = {
       ozonePromoBenefit3: '99.9% of bacteria and odours — gone',
       ozonePromoCta: 'Order with promo',
       ozonePromoImageAlt: 'Promo: seat cleaning + free ozone treatment',
+      powerBankText: 'We do not need a socket — we bring our own power station and can clean car upholstery even where there is no electricity or water.',
+      powerBankImageAlt: 'Our own power station — car upholstery cleaning without electricity',
     },
     ozone: {
       title: 'Ozonation',

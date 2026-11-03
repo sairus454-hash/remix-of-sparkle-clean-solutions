@@ -84,6 +84,7 @@ const plTranslations = {
       subtitleShort: 'MasterClean — pranie tapicerki, ozonowanie, mycie okien, czyszczenie dywanów. Nowoczesny sprzęt i bezpieczne środki.',
       description: 'Nasza firma MasterClean specjalizuje się w profesjonalnym praniu tapicerki meblowej, czyszczeniu dywanów i materacy. Używamy wyłącznie ekologicznych środków i profesjonalnego sprzętu europejskiej jakości — Kärcher, Santoemma, Mytee.',
       regions: 'Świadczymy usługi prania tapicerki z dojazdem w 4 województwach: opolskim, dolnośląskim, wielkopolskim i lubuskim.',
+      power: 'Pracujemy bez prądu u klienta — własna elektrownia pozwala nam prać tapicerkę nawet tam, gdzie nie ma dostępu do prądu.',
       experience: 'Lat doświadczenia',
       clients: 'Zadowolonych klientów',
       quality: 'Jakość',
@@ -326,6 +327,8 @@ const plTranslations = {
       ozonePromoBenefit3: '99,9% bakterii i zapachów — usunięte',
       ozonePromoCta: 'Zamów z promocją',
       ozonePromoImageAlt: 'Promocja: pranie foteli + ozonowanie gratis',
+      powerBankText: 'Nie potrzebujemy prądu z Państwa gniazdka — jeździmy z własną elektrownią. Wyczyścimy tapicerkę auta nawet tam, gdzie nie ma prądu i wody.',
+      powerBankImageAlt: 'Własna elektrownia MasterClean — pranie tapicerki bez prądu u klienta',
     },
     ozone: {
       title: 'Ozonowanie pomieszczeń i samochodów',
