@@ -989,7 +989,7 @@ ${path === '/auto' ? (() => { const b = AUTO_POWER_BLOCK[lang] || AUTO_POWER_BLO
   <section>
     <h2>${escapeHtml(b.h)}</h2>
     <p>${escapeHtml(b.p)}</p>
-    <img src="${SITE_URL}/power-station.jpg" alt="${escapeHtml(b.alt)}" width="800" height="600">
+    <img src="${SITE_URL}/power-station.jpg" alt="${escapeHtml(b.alt)}" width="680" height="990">
   </section>`; })() : ''}
 ${meta.faq && meta.faq.length > 0 ? `
   <section>
