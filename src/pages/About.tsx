@@ -7,7 +7,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import CleanSplash from '@/components/CleanSplash';
 import LazySection from '@/components/LazySection';
-import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles } from 'lucide-react';
+import { CheckCircle2, Award, Users, Clock, Shield, ThumbsUp, Sparkles, Zap } from 'lucide-react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -371,6 +371,10 @@ const About = () => {
                   }} />
                       <span className="text-foreground">{item}</span>
                     </li>)}
+                  <li className="flex items-center gap-3">
+                    <Zap className="w-5 h-5 text-fresh flex-shrink-0" />
+                    <span className="text-foreground">{t.about.power}</span>
+                  </li>
                 </ul>
               </div>
               
