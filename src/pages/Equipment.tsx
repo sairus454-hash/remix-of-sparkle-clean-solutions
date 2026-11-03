@@ -15,7 +15,7 @@ import dryingImage from '@/assets/drying-system.jpg';
 import equipmentSetImage from '@/assets/equipment-set.jpg';
 
 const Equipment = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('equipment');
 
   const mainFeatures = [
