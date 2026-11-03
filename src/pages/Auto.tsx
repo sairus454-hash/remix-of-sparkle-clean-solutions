@@ -23,7 +23,7 @@ import { Button } from '@/components/ui/button';
 import autoCleaning1 from '@/assets/auto-cleaning-1.jpg';
 import autoTruckVanBanner from '@/assets/auto-truck-van-banner.jpg';
 import promoAutoOzoneGift from '@/assets/promo-auto-ozone-gift.jpg';
-import powerStation from '@/assets/power_station.jpg.asset.json';
+import powerStation from '@/assets/power_station.jpg';
 import { Gift, Sparkle, ShieldCheck } from 'lucide-react';
 import PageFaqSection from '@/components/PageFaqSection';
 import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
