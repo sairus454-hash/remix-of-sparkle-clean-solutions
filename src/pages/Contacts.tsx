@@ -9,12 +9,12 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import ContactsSplash from '@/components/ContactsSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
-import { MapPin, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 import { CalculatorItem } from '@/types/calculator';
-import contactsMapPreview from '@/assets/contacts-map-preview.jpg';
 import PageFaqSection from '@/components/PageFaqSection';
 import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
+import { BUSINESS_ADDRESS, BUSINESS_LOCATION, BUSINESS_MAP_URL } from '@/lib/businessLocation';
 
 interface LocationState {
   calculatorItems?: CalculatorItem[];
@@ -41,6 +41,7 @@ const Contacts = () => {
   }, [location.state]);
 
   const contactInfo = [
+    { icon: MapPin, label: t.contacts.address, value: BUSINESS_ADDRESS, isHours: false },
     { icon: Phone, label: t.contacts.phone, value: t.contacts.phoneValue, isHours: false },
     { icon: Mail, label: t.contacts.email, value: t.contacts.emailValue, isHours: false },
     { icon: Clock, label: t.contacts.hours, value: t.contacts.hoursValue, isHours: true },
@@ -72,18 +73,18 @@ const Contacts = () => {
               priceRange: '160-2000 PLN',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'ul. Jedności Narodowej 160',
-                addressLocality: 'Wrocław',
+                streetAddress: BUSINESS_LOCATION.streetAddress,
+                addressLocality: BUSINESS_LOCATION.city,
                 addressRegion: 'dolnośląskie',
-                postalCode: '50-302',
+                postalCode: BUSINESS_LOCATION.postalCode,
                 addressCountry: 'PL',
               },
               geo: {
                 '@type': 'GeoCoordinates',
-                latitude: 51.0984969,
-                longitude: 16.949163,
+                latitude: BUSINESS_LOCATION.latitude,
+                longitude: BUSINESS_LOCATION.longitude,
               },
-              hasMap: 'https://www.google.com/maps/place/MasterClean+1885+Pranie+tapicerki+i+ozonowanie,+zlota+rączka/@51.0984969,16.949163,17z',
+              hasMap: BUSINESS_MAP_URL,
               openingHoursSpecification: {
                 '@type': 'OpeningHoursSpecification',
                 dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -148,7 +149,7 @@ const Contacts = () => {
                   const wrapperProps = isPhone
                     ? { href: 'tel:+48575211401' }
                     : isAddress
-                      ? { href: 'https://maps.app.goo.gl/uvzboZg432I31j3ZX', target: '_blank', rel: 'noopener noreferrer' }
+                      ? { href: BUSINESS_MAP_URL, target: '_blank', rel: 'noopener noreferrer' }
                       : isEmail
                         ? { href: 'https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com', target: '_blank', rel: 'noopener noreferrer' }
                         : {};
