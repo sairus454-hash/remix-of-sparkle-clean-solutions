@@ -1,0 +1,1015 @@
+export interface CityData {
+  slug: string;
+  name: string;
+  region: string;
+  seo: {
+    title: string;
+    description: string;
+    keywords: string;
+  };
+  content: {
+    pl: { heading: string; subtitle: string; description: string };
+    ru: { heading: string; subtitle: string; description: string };
+    en: { heading: string; subtitle: string; description: string };
+    uk: { heading: string; subtitle: string; description: string };
+  };
+}
+
+export const cities: CityData[] = [
+  {
+    slug: 'wroclaw',
+    name: 'Wrocław',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Wrocław — Dojazd gratis | MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy, ozonowanie i sprzątanie we Wrocławiu. Dojazd gratis. Cennik online.',
+      keywords: 'czyszczenie tapicerki Wrocław, pranie dywanów Wrocław, sprzątanie Wrocław, ozonowanie Wrocław',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia we Wrocławiu',
+        subtitle: 'Stolica Dolnego Śląska — obsługujemy cały Wrocław i okolice',
+        description: 'Wrocław to nasze główne miasto operacyjne. Oferujemy pełen zakres usług czyszczenia tapicerki meblowej, prania dywanów, czyszczenia materacy, ozonowania pomieszczeń i samochodów oraz profesjonalnego sprzątania. Dojazd na terenie Wrocławia gratis przy zamówieniu od 180 PLN. Obsługujemy wszystkie dzielnice: Krzyki, Fabryczna, Psie Pole, Śródmieście i Stare Miasto.',
+      },
+      ru: {
+        heading: 'Услуги химчистки во Вроцлаве',
+        subtitle: 'Столица Нижней Силезии — обслуживаем весь Вроцлав и окрестности',
+        description: 'Вроцлав — наш основной город. Предлагаем полный спектр услуг: химчистка мягкой мебели, чистка ковров, матрасов, озонирование помещений и авто, профессиональная уборка. Бесплатный выезд по Вроцлаву при заказе от 180 PLN. Работаем во всех районах города.',
+      },
+      en: {
+        heading: 'Cleaning Services in Wrocław',
+        subtitle: 'Capital of Lower Silesia — we serve all of Wrocław and surroundings',
+        description: 'Wrocław is our main operational city. We offer a full range of upholstery cleaning, carpet cleaning, mattress cleaning, ozone treatment and professional house cleaning. Free travel within Wrocław for orders from 180 PLN. We cover all districts.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки у Вроцлаві',
+        subtitle: 'Столиця Нижньої Сілезії — обслуговуємо весь Вроцлав та околиці',
+        description: 'Вроцлав — наше основне місто. Пропонуємо повний спектр послуг: хімчистка м\'яких меблів, чистка килимів, матраців, озонування приміщень та авто, професійне прибирання. Безкоштовний виїзд по Вроцлаву при замовленні від 180 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'opole',
+    name: 'Opole',
+    region: 'opolskie',
+    seo: {
+      title: 'Pranie tapicerki Opole — dojazd',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Opolu. Szybki dojazd z Wrocławia.',
+      keywords: 'czyszczenie tapicerki Opole, pranie dywanów Opole, sprzątanie Opole, ozonowanie Opole',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Opolu',
+        subtitle: 'Stolica województwa opolskiego — regularne wyjazdy z Wrocławia',
+        description: 'Opole to jedno z kluczowych miast naszej działalności. Regularnie realizujemy zlecenia w Opolu i powiecie opolskim. Oferujemy pranie tapicerki meblowej, czyszczenie dywanów i wykładzin, ozonowanie mieszkań i biur. Minimalny koszt zamówienia: 300 PLN. Czas dojazdu z Wrocławia — ok. 1 godziny.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Ополе',
+        subtitle: 'Столица Опольского воеводства — регулярные выезды из Вроцлава',
+        description: 'Ополе — одно из ключевых направлений нашей работы. Регулярно выполняем заказы в Ополе и районе. Химчистка мебели, чистка ковров, озонирование квартир и офисов. Минимальный заказ: 300 PLN. Время в пути из Вроцлава — около 1 часа.',
+      },
+      en: {
+        heading: 'Cleaning Services in Opole',
+        subtitle: 'Capital of Opole Voivodeship — regular trips from Wrocław',
+        description: 'Opole is one of our key service cities. We regularly handle orders in Opole and the surrounding area. We offer upholstery cleaning, carpet cleaning, ozone treatment for homes and offices. Minimum order: 300 PLN. Travel time from Wrocław — about 1 hour.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Ополе',
+        subtitle: 'Столиця Опольського воєводства — регулярні виїзди з Вроцлава',
+        description: 'Ополе — один із ключових напрямків нашої роботи. Регулярно виконуємо замовлення в Ополе та районі. Хімчистка меблів, чистка килимів, озонування квартир та офісів. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'legnica',
+    name: 'Legnica',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Legnica — Kärcher',
+      description: 'Czyszczenie kanap, narożników i materacy w Legnicy. Wyjazdy z Wrocławia, sprzęt ekstrakcyjny, środki ekologiczne. Zamów online.',
+      keywords: 'pranie kanapy Legnica, pranie mebli Legnica, czyszczenie narożnika Legnica, ozonowanie Legnica, ekstrakcja Legnica',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Legnicy',
+        subtitle: 'Trzecie co do wielkości miasto Dolnego Śląska',
+        description: 'Legnica to ważny punkt na mapie naszych usług. Świadczymy kompleksowe usługi czyszczenia tapicerki, prania materacy, dywanów oraz ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Obsługujemy również pobliskie miejscowości: Lubin, Chojnów, Złotoryja.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Легнице',
+        subtitle: 'Третий по величине город Нижней Силезии',
+        description: 'Легница — важный пункт на карте наших услуг. Предлагаем комплексную химчистку мебели, матрасов, ковров и озонирование. Используем профессиональное оборудование Kärcher и SantoEmma. Обслуживаем также ближайшие города: Любин, Хойнув, Злоторыя.',
+      },
+      en: {
+        heading: 'Cleaning Services in Legnica',
+        subtitle: 'Third largest city in Lower Silesia',
+        description: 'Legnica is an important point on our service map. We provide comprehensive upholstery cleaning, mattress and carpet cleaning, and ozone treatment. We use professional Kärcher and SantoEmma equipment. We also serve nearby cities.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Легниці',
+        subtitle: 'Третє за величиною місто Нижньої Сілезії',
+        description: 'Легниця — важливий пункт на карті наших послуг. Пропонуємо комплексну хімчистку меблів, матраців, килимів та озонування. Використовуємо професійне обладнання Kärcher і SantoEmma.',
+      },
+    },
+  },
+  {
+    slug: 'olawa',
+    name: 'Oława',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Oława — szybki dojazd',
+      description: 'Pranie kanap, dywanów i materacy w Oławie. Tylko 30 km od Wrocławia — szybki termin, brak ukrytych opłat dojazdu.',
+      keywords: 'pranie kanapy Oława, pranie Oława, czyszczenie materacy Oława, ozonowanie auta Oława',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Oławie',
+        subtitle: 'Zaledwie 30 km od Wrocławia — błyskawiczny dojazd',
+        description: 'W Oławie pierzemy kanapy, narożniki, materace i tapicerkę samochodową z dojazdem do klienta. Sprzęt ekstrakcyjny pozwala wypłukać zabrudzenia z tkaniny, a metodę dobieramy do rodzaju obicia. Przed rozpoczęciem czyszczenia sprawdzamy materiał i ustalamy zakres pracy. Obsługujemy Oławę, Jelcz-Laskowice i okolice — termin wizyty uzgadniamy telefonicznie lub przez formularz.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Олаве',
+        subtitle: 'Всего 30 км от Вроцлава — быстрый выезд',
+        description: 'В Олаве чистим диваны, угловую мебель, матрасы и автомобильную обивку с выездом к клиенту. Экстракторное оборудование промывает ткань, а метод подбираем по материалу обивки. До начала работы проверяем ткань и согласовываем объём чистки. Обслуживаем Олаву, Елч-Ласковице и окрестности; время визита согласовываем по телефону или через форму.',
+      },
+      en: {
+        heading: 'Cleaning Services in Oława',
+        subtitle: 'Just 30 km from Wrocław — fast arrival',
+        description: 'In Oława we clean sofas, corner sofas, mattresses and car upholstery at the customer’s address. Extraction equipment rinses dirt from the fabric, with the method chosen for the upholstery material. Before cleaning, we inspect the fabric and agree the scope of work. We serve Oława, Jelcz-Laskowice and nearby areas; arrange your visit by phone or through the contact form.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Олаві',
+        subtitle: 'Лише 30 км від Вроцлава — швидкий виїзд',
+        description: 'В Олаві чистимо дивани, кутові меблі, матраци та автомобільну оббивку з виїздом до клієнта. Екстракторне обладнання промиває тканину, а метод добираємо за матеріалом оббивки. Перед роботою перевіряємо тканину та узгоджуємо обсяг чищення. Обслуговуємо Олаву, Єльч-Лясковіце та околиці; час візиту узгоджуємо телефоном або через форму.',
+      },
+    },
+  },
+  {
+    slug: 'kalisz',
+    name: 'Kalisz',
+    region: 'wielkopolskie',
+    seo: {
+      title: 'Pranie kanap i mebli Kalisz',
+      description: 'Profesjonalne czyszczenie tapicerki w Kaliszu i okolicach. Ozonowanie pomieszczeń, mycie okien, ekstrakcja głębokich zabrudzeń.',
+      keywords: 'pranie kanapy Kalisz, ekstrakcja Kalisz, czyszczenie materaca Kalisz, mycie okien Kalisz',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Kaliszu',
+        subtitle: 'Najstarsze miasto w Polsce — obsługujemy Wielkopolskę',
+        description: 'Kalisz to jedno z najstarszych miast w Polsce, a my docieramy tu regularnie. Oferujemy profesjonalne pranie tapicerki meblowej, czyszczenie materacy i dywanów, ozonowanie pomieszczeń. Minimalny koszt zamówienia: 300 PLN. Obsługujemy również Ostrów Wielkopolski i Pleszew.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Калише',
+        subtitle: 'Старейший город Польши — обслуживаем Великопольшу',
+        description: 'Калиш — один из старейших городов Польши, и мы регулярно работаем здесь. Химчистка мебели, матрасов, ковров, озонирование помещений. Минимальный заказ: 300 PLN. Обслуживаем также Острув-Великопольский и Плешев.',
+      },
+      en: {
+        heading: 'Cleaning Services in Kalisz',
+        subtitle: 'The oldest city in Poland — we serve Greater Poland',
+        description: 'Kalisz is one of the oldest cities in Poland, and we regularly work here. Professional upholstery cleaning, mattress and carpet cleaning, ozone treatment. Minimum order: 300 PLN. We also serve Ostrów Wielkopolski and Pleszew.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Каліші',
+        subtitle: 'Найстаріше місто Польщі — обслуговуємо Великопольщу',
+        description: 'Каліш — одне з найстаріших міст Польщі, і ми регулярно працюємо тут. Хімчистка меблів, матраців, килимів, озонування приміщень. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'leszno',
+    name: 'Leszno',
+    region: 'wielkopolskie',
+    seo: {
+      title: 'Pranie mebli Leszno — kanapy',
+      description: 'Pranie tapicerki w Lesznie: kanapy, fotele, materace i dywany. Eko-środki, sprzęt ekstrakcyjny, faktury VAT dla firm.',
+      keywords: 'pranie Leszno, pranie kanapy Leszno, pranie fotela Leszno, ekstrakcja mebli Leszno',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Lesznie',
+        subtitle: 'Wielkopolska — regularne dojazdy z Wrocławia',
+        description: 'Leszno leży na trasie Wrocław–Poznań, co umożliwia nam regularne realizowanie zleceń. Oferujemy pranie tapicerki meblowej i samochodowej, czyszczenie materacy, dywanów, wykładzin, ozonowanie. Korzystamy z ekologicznych środków bezpiecznych dla dzieci i zwierząt.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Лешно',
+        subtitle: 'Великопольша — регулярные выезды из Вроцлава',
+        description: 'Лешно расположено на трассе Вроцлав–Познань, что позволяет нам регулярно выполнять заказы. Химчистка мебели и авто, чистка матрасов, ковров, озонирование. Используем экологичные средства, безопасные для детей и животных.',
+      },
+      en: {
+        heading: 'Cleaning Services in Leszno',
+        subtitle: 'Greater Poland — regular trips from Wrocław',
+        description: 'Leszno is located on the Wrocław–Poznań route, allowing us to regularly handle orders. Upholstery and car cleaning, mattress and carpet cleaning, ozone treatment. We use eco-friendly products safe for children and pets.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Лешні',
+        subtitle: 'Великопольща — регулярні виїзди з Вроцлава',
+        description: 'Лешно розташоване на трасі Вроцлав–Познань, що дозволяє нам регулярно виконувати замовлення. Хімчистка меблів та авто, чистка матраців, килимів, озонування. Використовуємо екологічні засоби.',
+      },
+    },
+  },
+  {
+    slug: 'swidnica',
+    name: 'Świdnica',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie kanap i materacy Świdnica — MasterClean',
+      description: 'Czyszczenie tapicerki, dywanów i materacy w Świdnicy. Bezpieczne dla dzieci i alergików, sprzęt SantoEmma.',
+      keywords: 'pranie kanapy Świdnica, pranie mebli Świdnica, czyszczenie materacy Świdnica, alergicy',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Świdnicy',
+        subtitle: 'Dolny Śląsk — miasto z Kościołem Pokoju na liście UNESCO',
+        description: 'Świdnica to piękne miasto z bogatą historią. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Profesjonalny sprzęt pozwala nam osiągać doskonałe rezultaty nawet przy trudnych zabrudzeniach. Obsługujemy także Dzierżoniów i Żarów.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Швиднице',
+        subtitle: 'Нижняя Силезия — город с Храмом Мира из списка ЮНЕСКО',
+        description: 'Швидница — красивый город с богатой историей. Регулярно выполняем заказы на химчистку мебели, матрасов, ковров и озонирование. Профессиональное оборудование позволяет достигать отличных результатов даже при сложных загрязнениях.',
+      },
+      en: {
+        heading: 'Cleaning Services in Świdnica',
+        subtitle: 'Lower Silesia — city with the UNESCO Church of Peace',
+        description: 'Świdnica is a beautiful city with rich history. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional equipment allows us to achieve excellent results even with tough stains.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки у Швидниці',
+        subtitle: 'Нижня Сілезія — місто з Храмом Миру зі списку ЮНЕСКО',
+        description: 'Швидниця — красиве місто з багатою історією. Регулярно виконуємо замовлення на хімчистку меблів, матраців, килимів та озонування.',
+      },
+    },
+  },
+  {
+    slug: 'walbrzych',
+    name: 'Wałbrzych',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie kanap Wałbrzych — pranie',
+      description: 'Pranie tapicerki, materacy i dywanów w Wałbrzychu i okolicach. Dla pensjonatów i klientów indywidualnych. Wycena online.',
+      keywords: 'pranie kanapy Wałbrzych, pranie Wałbrzych, ozonowanie auta Wałbrzych, pensjonaty Wałbrzych',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Wałbrzychu',
+        subtitle: 'Dolnośląskie — miasto Zamku Książ i Tajemniczego Tunelu',
+        description: 'Wałbrzych to drugie co do wielkości miasto na Dolnym Śląsku. Oferujemy pranie tapicerki meblowej, czyszczenie materacy, dywanów, ozonowanie mieszkań i samochodów. Obsługujemy także Szczawno-Zdrój, Boguszów-Gorce i Jedlinę-Zdrój. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Валбжихе',
+        subtitle: 'Нижняя Силезия — город замка Ксёнж и Таинственного тоннеля',
+        description: 'Валбжих — второй по величине город Нижней Силезии. Химчистка мебели, матрасов, ковров, озонирование квартир и автомобилей. Обслуживаем Щавно-Здруй, Богушув-Горце и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Wałbrzych',
+        subtitle: 'Lower Silesia — city of Książ Castle and the Mystery Tunnel',
+        description: 'Wałbrzych is the second largest city in Lower Silesia. We offer upholstery cleaning, mattress and carpet cleaning, ozone treatment for apartments and cars. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки у Валбжиху',
+        subtitle: 'Нижня Сілезія — місто замку Ксьонж та Таємничого тунелю',
+        description: 'Валбжих — друге за величиною місто Нижньої Сілезії. Хімчистка меблів, матраців, килимів, озонування квартир та автомобілів. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'ostrow-wielkopolski',
+    name: 'Ostrów Wielkopolski',
+    region: 'wielkopolskie',
+    seo: {
+      title: 'Pranie tapicerki Ostrów Wielkopolski',
+      description: 'Pranie mebli, czyszczenie dywanów i ozonowanie w Ostrowie Wielkopolskim. Łączymy zlecenia z Kaliszem — niższe koszty dojazdu.',
+      keywords: 'pranie kanapy Ostrów Wielkopolski, pranie Ostrów Wielkopolski, ozonowanie Ostrów',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Ostrowie Wielkopolskim',
+        subtitle: 'Wielkopolska — obsługujemy wspólnie z Kaliszem',
+        description: 'Ostrów Wielkopolski to ważny punkt na mapie Wielkopolski. Realizujemy zlecenia wspólnie z sąsiednim Kaliszem, co pozwala optymalizować koszty dojazdu. Pranie tapicerki, czyszczenie dywanów, materacy, ozonowanie pomieszczeń. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Острув-Великопольском',
+        subtitle: 'Великопольша — обслуживаем вместе с Калишем',
+        description: 'Острув-Великопольский — важный пункт на карте Великопольши. Выполняем заказы совместно с соседним Калишем. Химчистка мебели, ковров, матрасов, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Ostrów Wielkopolski',
+        subtitle: 'Greater Poland — served together with Kalisz',
+        description: 'Ostrów Wielkopolski is an important point in Greater Poland. We handle orders together with nearby Kalisz, optimizing travel costs. Upholstery cleaning, carpet and mattress cleaning, ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Острув-Великопольському',
+        subtitle: 'Великопольща — обслуговуємо разом з Калішем',
+        description: 'Острув-Великопольський — важливий пункт на карті Великопольщі. Виконуємо замовлення спільно з сусіднім Калішем. Хімчистка меблів, килимів, матраців, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'jelenia-gora',
+    name: 'Jelenia Góra',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie mebli Jelenia Góra',
+      description: 'Pranie tapicerki w Jeleniej Górze i Karkonoszach. Obsługa pensjonatów, apartamentów wakacyjnych i domów prywatnych.',
+      keywords: 'pranie kanapy Jelenia Góra, pranie apartamentów Karkonosze, czyszczenie materacy Karpacz',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Jeleniej Górze',
+        subtitle: 'Brama Karkonoszy — czyszczenie w górskim klimacie',
+        description: 'Jelenia Góra to brama do Karkonoszy i popularny region turystyczny. Oferujemy usługi czyszczenia tapicerki, materacy, dywanów, ozonowania dla mieszkańców i właścicieli apartamentów wakacyjnych. Idealne rozwiązanie dla obiektów noclegowych — czyste meble i świeże powietrze dla gości.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Еленя-Гуре',
+        subtitle: 'Ворота Карконоше — чистка в горном климате',
+        description: 'Еленя-Гура — ворота в Карконоше и популярный туристический регион. Услуги химчистки мебели, матрасов, ковров, озонирования для жителей и владельцев апартаментов. Идеальное решение для объектов размещения — чистая мебель и свежий воздух для гостей.',
+      },
+      en: {
+        heading: 'Cleaning Services in Jelenia Góra',
+        subtitle: 'Gateway to the Karkonosze Mountains — cleaning in mountain climate',
+        description: 'Jelenia Góra is the gateway to the Karkonosze Mountains and a popular tourist region. We offer upholstery, mattress and carpet cleaning, ozone treatment for residents and vacation apartment owners. Perfect solution for accommodation facilities.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Єленя-Ґурі',
+        subtitle: 'Ворота Карконоше — чистка в гірському кліматі',
+        description: 'Єленя-Ґура — ворота до Карконоше та популярний туристичний регіон. Послуги хімчистки меблів, матраців, килимів, озонування для мешканців та власників апартаментів.',
+      },
+    },
+  },
+  {
+    slug: 'brzeg',
+    name: 'Brzeg',
+    region: 'opolskie',
+    seo: {
+      title: 'Pranie tapicerki Brzeg — wyjazd',
+      description: 'Czyszczenie kanap, narożników, materacy i dywanów w Brzegu. Łączymy zlecenia na trasie Wrocław–Opole.',
+      keywords: 'pranie kanapy Brzeg, pranie mebli Brzeg, ekstrakcja Brzeg, ozonowanie Brzeg',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Brzegu',
+        subtitle: 'Na trasie Wrocław–Opole — wygodny i szybki dojazd',
+        description: 'Brzeg leży dokładnie na trasie między Wrocławiem a Opolem, co czyni go idealnym punktem naszej obsługi. Oferujemy pełen zakres usług: pranie tapicerki, czyszczenie materacy, dywanów, ozonowanie. Obsługujemy także Namysłów i Grodków. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Бжеге',
+        subtitle: 'На трассе Вроцлав–Ополе — удобный и быстрый выезд',
+        description: 'Бжег расположен на трассе между Вроцлавом и Ополе. Полный спектр услуг: химчистка мебели, матрасов, ковров, озонирование. Обслуживаем также Намыслув и Гродкув. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Brzeg',
+        subtitle: 'On the Wrocław–Opole route — convenient and fast access',
+        description: 'Brzeg is located right on the route between Wrocław and Opole. Full range of services: upholstery cleaning, mattress and carpet cleaning, ozone treatment. We also serve Namysłów and Grodków. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Бжегу',
+        subtitle: 'На трасі Вроцлав–Ополе — зручний та швидкий доїзд',
+        description: 'Бжег розташований на трасі між Вроцлавом та Ополе. Повний спектр послуг: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'lubin',
+    name: 'Lubin',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie mebli Lubin',
+      description: 'Pranie tapicerki, czyszczenie materacy i ozonowanie w Lubinie. Faktury VAT, obsługa firm Zagłębia Miedziowego.',
+      keywords: 'pranie kanapy Lubin, pranie biur Lubin, czyszczenie materaca Lubin, ozonowanie firm Lubin',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Lubinie',
+        subtitle: 'Zagłębie Miedziowe — regularne dojazdy z Wrocławia',
+        description: 'Lubin to ważne miasto Zagłębia Miedziowego na Dolnym Śląsku. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, prania materacy, dywanów, wykładzin oraz ozonowania pomieszczeń. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Obsługujemy również Polkowice, Głogów i okolice. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Любине',
+        subtitle: 'Медный бассейн — регулярные выезды из Вроцлава',
+        description: 'Любин — важный город Медного бассейна в Нижней Силезии. Регулярно выполняем заказы на химчистку мебели, матрасов, ковров и озонирование. Используем профессиональное оборудование Kärcher и SantoEmma. Обслуживаем также Полковице, Глогув и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Lubin',
+        subtitle: 'Copper Basin — regular trips from Wrocław',
+        description: 'Lubin is an important city in the Copper Basin of Lower Silesia. We regularly handle upholstery cleaning, mattress and carpet cleaning, and ozone treatment. We use professional Kärcher and SantoEmma equipment. We also serve Polkowice, Głogów and surrounding areas. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Любіні',
+        subtitle: 'Мідний басейн — регулярні виїзди з Вроцлава',
+        description: 'Любін — важливе місто Мідного басейну в Нижній Сілезії. Регулярно виконуємо замовлення на хімчистку меблів, матраців, килимів та озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'jelcz-laskowice',
+    name: 'Jelcz-Laskowice',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Jelcz-Laskowice',
+      description: 'Czyszczenie kanap i materacy w Jelczu-Laskowicach. Krótkie plecho dojazdu z Wrocławia, terminy w 1–2 dni.',
+      keywords: 'pranie kanapy Jelcz-Laskowice, pranie Jelcz, czyszczenie materacy Laskowice',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Jelczu-Laskowicach',
+        subtitle: 'Zaledwie 25 km od Wrocławia — szybki dojazd',
+        description: 'Jelcz-Laskowice to miasto w bezpośrednim sąsiedztwie Wrocławia i Oławy. Regularnie realizujemy zlecenia prania tapicerki meblowej, czyszczenia materacy, dywanów, wykładzin oraz ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Елч-Ласковице',
+        subtitle: 'Всего 25 км от Вроцлава — быстрый выезд',
+        description: 'Елч-Ласковице расположен рядом с Вроцлавом и Олавой. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Используем профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Jelcz-Laskowice',
+        subtitle: 'Just 25 km from Wrocław — fast arrival',
+        description: 'Jelcz-Laskowice is located near Wrocław and Oława. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Єлч-Ласковіце',
+        subtitle: 'Лише 25 км від Вроцлава — швидкий виїзд',
+        description: 'Єлч-Ласковіце розташований поруч з Вроцлавом та Олавою. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'strzegom',
+    name: 'Strzegom',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie kanapy Strzegom — czyszczenie tapicerki',
+      description: 'Pranie mebli, czyszczenie dywanów i materacy w Strzegomiu. Także obsługa zakładów przemysłowych w okolicy.',
+      keywords: 'pranie kanapy Strzegom, pranie Strzegom, czyszczenie materacy Strzegom',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Strzegomiu',
+        subtitle: 'Dolny Śląsk — stolica polskiego granitu',
+        description: 'Strzegom to miasto znane z wydobycia granitu, leżące niedaleko Świdnicy. Oferujemy profesjonalne pranie tapicerki meblowej, czyszczenie materacy, dywanów, wykładzin oraz ozonowanie pomieszczeń. Obsługujemy również Jawor i okolice. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Стшегоме',
+        subtitle: 'Нижняя Силезия — столица польского гранита',
+        description: 'Стшегом — город, известный добычей гранита, расположен недалеко от Швидницы. Химчистка мебели, матрасов, ковров, озонирование. Обслуживаем также Явор и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Strzegom',
+        subtitle: 'Lower Silesia — the capital of Polish granite',
+        description: 'Strzegom is known for granite mining, located near Świdnica. We offer upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Jawor and surroundings. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Стшегомі',
+        subtitle: 'Нижня Сілезія — столиця польського граніту',
+        description: 'Стшегом — місто, відоме видобутком граніту, розташоване неподалік Швидниці. Хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'sobotka',
+    name: 'Sobótka',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie mebli Sobótka — u stóp Ślęży',
+      description: 'Pranie kanap, materacy i tapicerki samochodowej w Sobótce. Wyjazd z Wrocławia w niespełna godzinę.',
+      keywords: 'pranie kanapy Sobótka, ozonowanie auta Sobótka, czyszczenie materacy Sobótka, Ślęża',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Sobótce',
+        subtitle: 'U podnóża Ślęży — blisko Wrocławia',
+        description: 'Sobótka leży u podnóża góry Ślęży, zaledwie 35 km od Wrocławia. Oferujemy pranie tapicerki meblowej, czyszczenie materacy, dywanów, ozonowanie pomieszczeń i samochodów. Szybki dojazd z Wrocławia. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Собутке',
+        subtitle: 'У подножия горы Сленжа — рядом с Вроцлавом',
+        description: 'Собутка расположена у подножия горы Сленжа, всего 35 км от Вроцлава. Химчистка мебели, матрасов, ковров, озонирование помещений и авто. Быстрый выезд из Вроцлава. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Sobótka',
+        subtitle: 'At the foot of Mount Ślęża — near Wrocław',
+        description: 'Sobótka lies at the foot of Mount Ślęża, just 35 km from Wrocław. We offer upholstery, mattress and carpet cleaning, ozone treatment. Fast arrival from Wrocław. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Собутці',
+        subtitle: 'Біля підніжжя гори Сленжа — поруч з Вроцлавом',
+        description: 'Собутка розташована біля підніжжя гори Сленжа, лише 35 км від Вроцлава. Хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'klodzko',
+    name: 'Kłodzko',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Kłodzko',
+      description: 'Pranie mebli, materacy i dywanów w Kłodzku. Specjalizacja: obiekty noclegowe Polanicy, Kudowy i Bystrzycy.',
+      keywords: 'pranie kanapy Kłodzko, czyszczenie pensjonatów Kotlina Kłodzka, ozonowanie Polanica-Zdrój',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Kłodzku',
+        subtitle: 'Stolica Kotliny Kłodzkiej — serwis dla mieszkańców i turystyki',
+        description: 'Kłodzko to stolica Ziemi Kłodzkiej i ważny ośrodek turystyczny. Oferujemy pranie tapicerki meblowej, czyszczenie materacy, dywanów, ozonowanie pomieszczeń. Idealne rozwiązanie dla pensjonatów i apartamentów. Obsługujemy również Polanicę-Zdrój, Kudowę-Zdrój i Bystrzycę Kłodzką. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Клодзко',
+        subtitle: 'Столица Клодзкой котловины — сервис для жителей и туризма',
+        description: 'Клодзко — столица Клодзкой земли и важный туристический центр. Химчистка мебели, матрасов, ковров, озонирование. Отличное решение для пансионатов и апартаментов. Обслуживаем Поланицу-Здруй, Кудову-Здруй и Быстрицу-Клодзку. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Kłodzko',
+        subtitle: 'Capital of Kłodzko Valley — service for residents and tourism',
+        description: 'Kłodzko is the capital of Kłodzko Land and an important tourist center. We offer upholstery, mattress and carpet cleaning, ozone treatment. Perfect for guesthouses and apartments. We also serve Polanica-Zdrój, Kudowa-Zdrój and Bystrzyca Kłodzka. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Клодзко',
+        subtitle: 'Столиця Клодзької котловини — сервіс для мешканців і туризму',
+        description: 'Клодзко — столиця Клодзької землі та важливий туристичний центр. Хімчистка меблів, матраців, килимів, озонування. Обслуговуємо також Поланицю-Здруй та Кудову-Здруй. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'kielczow',
+    name: 'Kiełczów',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie kanap Kiełczów — wyjazd w 15 minut',
+      description: 'Czyszczenie tapicerki, materacy i dywanów w Kiełczowie. Najszybszy dojazd na obrzeżach Wrocławia.',
+      keywords: 'pranie kanapy Kiełczów, pranie Kiełczów, ozonowanie auta Kiełczów',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Kiełczowie',
+        subtitle: 'Tuż przy Wrocławiu — szybki i wygodny dojazd',
+        description: 'Kiełczów to dynamicznie rozwijająca się miejscowość w bezpośrednim sąsiedztwie Wrocławia. Oferujemy pranie tapicerki meblowej, czyszczenie materacy, dywanów, wykładzin, ozonowanie pomieszczeń i samochodów. Dojazd z Wrocławia zajmuje zaledwie kilkanaście minut. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Келчуве',
+        subtitle: 'Рядом с Вроцлавом — быстрый и удобный выезд',
+        description: 'Келчув — динамично развивающийся населённый пункт рядом с Вроцлавом. Химчистка мебели, матрасов, ковров, озонирование помещений и авто. Время в пути из Вроцлава — всего 15 минут. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Kiełczów',
+        subtitle: 'Right next to Wrocław — fast and convenient access',
+        description: 'Kiełczów is a rapidly growing town right next to Wrocław. We offer upholstery, mattress and carpet cleaning, ozone treatment. Travel time from Wrocław — just 15 minutes. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Келчуві',
+        subtitle: 'Поруч з Вроцлавом — швидкий та зручний доїзд',
+        description: 'Келчув — населений пункт, що динамічно розвивається поруч з Вроцлавом. Хімчистка меблів, матраців, килимів, озонування. Час у дорозі з Вроцлава — лише 15 хвилин. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'dzierzoniow',
+    name: 'Dzierżoniów',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Dzierżoniów',
+      description: 'Pranie kanap i materacy w Dzierżoniowie oraz okolicach Gór Sowich. Bezpieczne środki dla rodzin z dziećmi.',
+      keywords: 'pranie kanapy Dzierżoniów, pranie Bielawa, czyszczenie materaca Pieszyce',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Dzierżoniowie',
+        subtitle: 'Dolny Śląsk — miasto u podnóża Gór Sowich',
+        description: 'Dzierżoniów to urokliwe miasto u podnóża Gór Sowich. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Obsługujemy również Bielawę, Pieszyce i Piławę Górną. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Дзержонюве',
+        subtitle: 'Нижняя Силезия — город у подножия Совиных гор',
+        description: 'Дзержонюв — живописный город у подножия Совиных гор. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Обслуживаем Белаву, Пешице и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Dzierżoniów',
+        subtitle: 'Lower Silesia — city at the foot of the Owl Mountains',
+        description: 'Dzierżoniów is a charming city at the foot of the Owl Mountains. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Bielawa, Pieszyce and surroundings. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Дзержонюві',
+        subtitle: 'Нижня Сілезія — місто біля підніжжя Совиних гір',
+        description: 'Дзержонюв — мальовниче місто біля підніжжя Совиних гір. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'nysa',
+    name: 'Nysa',
+    region: 'opolskie',
+    seo: {
+      title: 'Pranie tapicerki Nysa — Otmuchów, Paczków',
+      description: 'Pranie kanap, materacy i dywanów w Nysie. Obsługa Otmuchowa, Paczkowa i mieszkań nad jeziorem nyskim.',
+      keywords: 'pranie kanapy Nysa, czyszczenie materacy Nysa, ozonowanie Otmuchów, pranie Paczków',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Nysie',
+        subtitle: 'Województwo opolskie — perła Śląska nad Nysą Kłodzką',
+        description: 'Nysa to jedno z najstarszych i najpiękniejszych miast Opolszczyzny, nazywane „śląskim Rzymem". Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Нысе',
+        subtitle: 'Опольское воеводство — жемчужина Силезии на реке Ныса-Клодзка',
+        description: 'Ныса — один из старейших и красивейших городов Опольщины, называемый «силезским Римом». Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Nysa',
+        subtitle: 'Opole Voivodeship — the pearl of Silesia on Nysa Kłodzka river',
+        description: 'Nysa is one of the oldest and most beautiful cities in the Opole region, called the "Silesian Rome." We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Нисі',
+        subtitle: 'Опольське воєводство — перлина Сілезії на річці Ниса-Клодзка',
+        description: 'Ниса — одне з найстаріших та найкрасивіших міст Опольщини, зване «сілезьким Римом». Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'brzeg-dolny',
+    name: 'Brzeg Dolny',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie kanap Brzeg Dolny',
+      description: 'Pranie tapicerki, materacy i dywanów w Brzegu Dolnym. Łączymy zlecenia ze Środą Śląską i Trzebnicą.',
+      keywords: 'pranie kanapy Brzeg Dolny, pranie Brzeg Dolny, ozonowanie auta Brzeg Dolny',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Brzegu Dolnym',
+        subtitle: 'Dolny Śląsk — zaledwie 40 km od Wrocławia',
+        description: 'Brzeg Dolny to malownicze miasto nad Odrą, położone w pobliżu Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, prania materacy, dywanów oraz ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Бжег-Дольном',
+        subtitle: 'Нижняя Силезия — всего 40 км от Вроцлава',
+        description: 'Бжег-Дольный — живописный город на Одре вблизи Вроцлава. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Brzeg Dolny',
+        subtitle: 'Lower Silesia — just 40 km from Wrocław',
+        description: 'Brzeg Dolny is a picturesque town on the Oder river near Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Бжег-Дольному',
+        subtitle: 'Нижня Сілезія — лише 40 км від Вроцлава',
+        description: 'Бжег-Дольний — мальовниче місто на Одрі поблизу Вроцлава. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'sroda-slaska',
+    name: 'Środa Śląska',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Środa Śląska — domy nad Odrą',
+      description: 'Czyszczenie kanap, materacy i dywanów w Środzie Śląskiej. Dojazd z Wrocławia w 40 minut, bez kosztów ukrytych.',
+      keywords: 'pranie kanapy Środa Śląska, pranie Środa Śląska, czyszczenie materacy',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Środzie Śląskiej',
+        subtitle: 'Dolny Śląsk — miasto słynnego skarbu średzkie',
+        description: 'Środa Śląska to historyczne miasto znane ze słynnego skarbu średzkiego. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Profesjonalny sprzęt Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Сьроде-Слёнской',
+        subtitle: 'Нижняя Силезия — город знаменитого средского клада',
+        description: 'Сьрода-Слёнска — историческое город, известный знаменитым средским кладом. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Środa Śląska',
+        subtitle: 'Lower Silesia — city of the famous Środa Treasure',
+        description: 'Środa Śląska is a historic city known for the famous Środa Treasure. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Сьроді-Сльонській',
+        subtitle: 'Нижня Сілезія — місто знаменитого середського скарбу',
+        description: 'Сьрода-Сльонска — історичне місто, відоме знаменитим середським скарбом. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'glogow',
+    name: 'Głogów',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie mebli i kanap Głogów',
+      description: 'Pranie tapicerki, czyszczenie materacy i dywanów w Głogowie. Współpraca z firmami Zagłębia Miedziowego.',
+      keywords: 'pranie kanapy Głogów, pranie Głogów, czyszczenie materacy Głogów, ozonowanie biur',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Głogowie',
+        subtitle: 'Dolny Śląsk — historyczne miasto nad Odrą',
+        description: 'Głogów to jedno z najstarszych miast Dolnego Śląska z bogatą historią. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Obsługujemy również Polkowice i okolice. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Глогуве',
+        subtitle: 'Нижняя Силезия — исторический город на Одре',
+        description: 'Глогув — один из старейших городов Нижней Силезии с богатой историей. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Обслуживаем также Полковице и окрестности. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Głogów',
+        subtitle: 'Lower Silesia — historic city on the Oder river',
+        description: 'Głogów is one of the oldest cities in Lower Silesia with rich history. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Polkowice and surroundings. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Глогуві',
+        subtitle: 'Нижня Сілезія — історичне місто на Одрі',
+        description: 'Глогув — одне з найстаріших міст Нижньої Сілезії з багатою історією. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'olesnica',
+    name: 'Oleśnica',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Oleśnica',
+      description: 'Pranie mebli i dywanów w Oleśnicy. Tylko 30 km od Wrocławia — terminy w 1–2 dni, eko-środki.',
+      keywords: 'pranie kanapy Oleśnica, pranie mebli Oleśnica, czyszczenie materacy Oleśnica',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Oleśnicy',
+        subtitle: 'Dolny Śląsk — miasto z pięknym zamkiem Książąt Oleśnickich',
+        description: 'Oleśnica to urokliwe miasto z pięknym zamkiem i bogatą historią. Położona zaledwie 30 km od Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Олесьнице',
+        subtitle: 'Нижняя Силезия — город с красивым замком Олесьницких князей',
+        description: 'Олесьница — очаровательный город с красивым замком и богатой историей. Расположена всего в 30 км от Вроцлава. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Oleśnica',
+        subtitle: 'Lower Silesia — city with beautiful Oleśnica Castle',
+        description: 'Oleśnica is a charming city with a beautiful castle and rich history, located just 30 km from Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Олесьниці',
+        subtitle: 'Нижня Сілезія — місто з красивим замком Олесьницьких князів',
+        description: 'Олесьниця — чарівне місто з красивим замком і багатою історією. Розташована лише за 30 км від Вроцлава. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'namyslow',
+    name: 'Namysłów',
+    region: 'opolskie',
+    seo: {
+      title: 'Pranie tapicerki Namysłów',
+      description: 'Pranie kanap, materacy i dywanów w Namysłowie i okolicach. Łączymy wyjazdy z Brzegiem i Kluczborkiem.',
+      keywords: 'pranie kanapy Namysłów, pranie Namysłów, czyszczenie materacy Namysłów',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Namysłowie',
+        subtitle: 'Województwo opolskie — miasto znane z browaru i średniowiecznych murów',
+        description: 'Namysłów to historyczne miasto znane z browaru i dobrze zachowanych średniowiecznych murów obronnych. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Намыслуве',
+        subtitle: 'Опольское воеводство — город пивоварни и средневековых стен',
+        description: 'Намыслув — исторический город, известный пивоварней и хорошо сохранившимися средневековыми оборонительными стенами. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Namysłów',
+        subtitle: 'Opole Voivodeship — city known for its brewery and medieval walls',
+        description: 'Namysłów is a historic city known for its brewery and well-preserved medieval defensive walls. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Намислуві',
+        subtitle: 'Опольське воєводство — місто пивоварні та середньовічних мурів',
+        description: 'Намислув — історичне місто, відоме пивоварнею та добре збереженими середньовічними оборонними мурами. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'polkowice',
+    name: 'Polkowice',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Polkowice',
+      description: 'Pranie mebli, czyszczenie materacy i ozonowanie w Polkowicach. Faktury VAT, obsługa firm.',
+      keywords: 'pranie kanapy Polkowice, pranie biur Polkowice, ozonowanie Polkowice, faktura VAT',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Polkowicach',
+        subtitle: 'Zagłębie Miedziowe — dynamicznie rozwijające się miasto',
+        description: 'Polkowice to nowoczesne i dynamicznie rozwijające się miasto w sercu Zagłębia Miedziowego. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Obsługujemy również Lubin i Głogów. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Полковицах',
+        subtitle: 'Медный бассейн — динамично развивающийся город',
+        description: 'Полковице — современный и динамично развивающийся город в сердце Медного бассейна. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Обслуживаем также Любин и Глогув. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Polkowice',
+        subtitle: 'Copper Basin — a dynamically developing city',
+        description: 'Polkowice is a modern and dynamically developing city in the heart of the Copper Basin. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. We also serve Lubin and Głogów. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Полковицях',
+        subtitle: 'Мідний басейн — динамічно розвинуте місто',
+        description: 'Полковице — сучасне та динамічно розвинуте місто в серці Мідного басейну. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'smolec',
+    name: 'Smolec',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Smolec — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Smolcu. Ceny jak we Wrocławiu. Dojazd gratis.',
+      keywords: 'czyszczenie tapicerki Smolec, pranie dywanów Smolec, ozonowanie Smolec, sprzątanie Smolec',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Smolcu',
+        subtitle: 'Tuż przy Wrocławiu — ceny miejskie, dojazd gratis',
+        description: 'Smolec to dynamicznie rozwijająca się miejscowość bezpośrednio przy Wrocławiu. Oferujemy pełen zakres usług: pranie tapicerki meblowej i samochodowej, czyszczenie materacy, dywanów, ozonowanie, mycie okien, sprzątanie i usługi złotej rączki — w cenach wrocławskich. Dojazd gratis przy zamówieniu od 180 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Смольце',
+        subtitle: 'Рядом с Вроцлавом — городские цены, бесплатный выезд',
+        description: 'Смолец — динамично развивающийся пригород Вроцлава. Предлагаем полный спектр услуг: химчистка мебели и авто, чистка матрасов и ковров, озонирование, мойка окон, уборка и мастер на час — по вроцлавским ценам. Бесплатный выезд при заказе от 180 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Smolec',
+        subtitle: 'Right next to Wrocław — city prices, free travel',
+        description: 'Smolec is a dynamically growing suburb right next to Wrocław. We offer the full range of services: upholstery and car cleaning, mattress and carpet cleaning, ozone treatment, window cleaning, house cleaning and handyman — at Wrocław prices. Free travel for orders from 180 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки у Смольці',
+        subtitle: 'Поруч з Вроцлавом — міські ціни, безкоштовний виїзд',
+        description: 'Смолець — динамічно розвинутий передмістя Вроцлава. Пропонуємо повний спектр послуг: хімчистка меблів та авто, чистка матраців і килимів, озонування, миття вікон, прибирання та майстер на годину — за вроцлавськими цінами. Безкоштовний виїзд при замовленні від 180 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'katy-wroclawskie',
+    name: 'Kąty Wrocławskie',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie kanap Kąty Wrocławskie',
+      description: 'Pranie tapicerki, materacy i dywanów w Kątach Wrocławskich. Krótkie plecho dojazdu, terminy w 1–2 dni.',
+      keywords: 'pranie kanapy Kąty Wrocławskie, pranie Kąty Wrocławskie, czyszczenie materacy',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Kątach Wrocławskich',
+        subtitle: 'Blisko Wrocławia — wygodny dojazd i atrakcyjne ceny',
+        description: 'Kąty Wrocławskie to urokliwa gmina w bezpośrednim sąsiedztwie Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Profesjonalny sprzęt Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Контах Вроцлавских',
+        subtitle: 'Рядом с Вроцлавом — удобный выезд и привлекательные цены',
+        description: 'Конты Вроцлавские — живописная гмина рядом с Вроцлавом. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Kąty Wrocławskie',
+        subtitle: 'Near Wrocław — convenient access and attractive prices',
+        description: 'Kąty Wrocławskie is a charming municipality right next to Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Контах Вроцлавських',
+        subtitle: 'Поруч з Вроцлавом — зручний виїзд та привабливі ціни',
+        description: 'Конти Вроцлавські — мальовнича ґміна поруч з Вроцлавом. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'siechnice',
+    name: 'Siechnice',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Siechnice — tuż za Wrocławiem',
+      description: 'Czyszczenie kanap, materacy i dywanów w Siechnicach. Wyjazd z Wrocławia w 15–20 minut.',
+      keywords: 'pranie kanapy Siechnice, pranie mebli Siechnice, czyszczenie materacy',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Siechnicach',
+        subtitle: 'Tuż za Wrocławiem — szybki dojazd i profesjonalna obsługa',
+        description: 'Siechnice to dynamicznie rozwijająca się gmina na obrzeżach Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, materacy, dywanów i ozonowania. Korzystamy z profesjonalnego sprzętu Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Сехницах',
+        subtitle: 'Сразу за Вроцлавом — быстрый выезд и профессиональное обслуживание',
+        description: 'Сехнице — динамично развивающаяся гмина на окраине Вроцлава. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Siechnice',
+        subtitle: 'Just outside Wrocław — fast arrival and professional service',
+        description: 'Siechnice is a dynamically growing municipality on the outskirts of Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Сехницях',
+        subtitle: 'Відразу за Вроцлавом — швидкий виїзд і професійне обслуговування',
+        description: 'Сехнице — динамічно розвинута ґміна на околиці Вроцлава. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'tyniec-maly',
+    name: 'Tyniec Mały',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie tapicerki Tyniec Mały',
+      description: 'Pranie kanap, materacy i dywanów w Tyńcu Małym. Spokojne osiedle pod Wrocławiem — częste wyjazdy.',
+      keywords: 'pranie kanapy Tyniec Mały, pranie Tyniec Mały, czyszczenie materacy',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Tyńcu Małym',
+        subtitle: 'W sąsiedztwie Wrocławia — profesjonalne czyszczenie na miejscu',
+        description: 'Tyniec Mały to spokojne osiedle w bezpośrednim sąsiedztwie Wrocławia. Regularnie realizujemy zlecenia czyszczenia tapicerki, materacy, dywanów i ozonowania. Profesjonalny sprzęt i ekologiczne środki czyszczące. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Тыньце Малом',
+        subtitle: 'По соседству с Вроцлавом — профессиональная чистка на месте',
+        description: 'Тынец Малы — тихий район рядом с Вроцлавом. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование и экологичные средства. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Tyniec Mały',
+        subtitle: 'Next to Wrocław — professional cleaning on site',
+        description: 'Tyniec Mały is a quiet residential area right next to Wrocław. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional equipment and eco-friendly cleaning products. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Тиньці Малому',
+        subtitle: 'Поруч з Вроцлавом — професійне чищення на місці',
+        description: 'Тинець Малий — тихий район поруч з Вроцлавом. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'zmigrod',
+    name: 'Żmigród',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Pranie kanap Żmigród — Dolina Baryczy',
+      description: 'Pranie mebli i materacy w Żmigrodzie. Obsługa pensjonatów Doliny Baryczy oraz Trzebnicy i Milicza.',
+      keywords: 'pranie kanapy Żmigród, pranie Dolina Baryczy, czyszczenie materacy Trzebnica',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Żmigrodzie',
+        subtitle: 'Dolina Baryczy — profesjonalne usługi czyszczenia',
+        description: 'Żmigród to malownicze miasto w Dolinie Baryczy. Regularnie realizujemy zlecenia czyszczenia tapicerki meblowej, materacy, dywanów i ozonowania. Profesjonalny sprzęt Kärcher i SantoEmma. Minimalny koszt zamówienia: 300 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Жмигруде',
+        subtitle: 'Долина Барычи — профессиональные услуги чистки',
+        description: 'Жмигруд — живописный город в Долине Барычи. Регулярно выполняем заказы: химчистка мебели, матрасов, ковров, озонирование. Профессиональное оборудование Kärcher и SantoEmma. Минимальный заказ: 300 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Żmigród',
+        subtitle: 'Barycz Valley — professional cleaning services',
+        description: 'Żmigród is a picturesque town in the Barycz Valley. We regularly handle upholstery, mattress and carpet cleaning, and ozone treatment. Professional Kärcher and SantoEmma equipment. Minimum order: 300 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Жмігруді',
+        subtitle: 'Долина Баричі — професійні послуги чищення',
+        description: 'Жмігруд — мальовниче місто в Долині Баричі. Регулярно виконуємо замовлення: хімчистка меблів, матраців, килимів, озонування. Мінімальне замовлення: 300 PLN.',
+      },
+    },
+  },
+  {
+    slug: 'bielany-wroclawskie',
+    name: 'Bielany Wrocławskie',
+    region: 'dolnośląskie',
+    seo: {
+      title: 'Czyszczenie tapicerki Bielany Wrocławskie — MasterClean',
+      description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w Bielanach Wrocławskich. Ceny jak we Wrocławiu. Dojazd gratis.',
+      keywords: 'czyszczenie tapicerki Bielany Wrocławskie, pranie dywanów Bielany Wrocławskie, ozonowanie Bielany Wrocławskie',
+    },
+    content: {
+      pl: {
+        heading: 'Usługi czyszczenia w Bielanach Wrocławskich',
+        subtitle: 'Tuż przy Wrocławiu — ceny miejskie, dojazd gratis',
+        description: 'Bielany Wrocławskie to prężnie rozwijająca się miejscowość w bezpośrednim sąsiedztwie Wrocławia. Oferujemy pełen zakres usług: pranie tapicerki meblowej i samochodowej, czyszczenie materacy, dywanów, ozonowanie, mycie okien, sprzątanie i usługi złotej rączki — w cenach wrocławskich. Dojazd gratis przy zamówieniu od 180 PLN.',
+      },
+      ru: {
+        heading: 'Услуги химчистки в Беланах Вроцлавских',
+        subtitle: 'Рядом с Вроцлавом — городские цены, бесплатный выезд',
+        description: 'Беланы Вроцлавские — динамично развивающийся пригород Вроцлава. Предлагаем полный спектр услуг: химчистка мебели и авто, чистка матрасов и ковров, озонирование, мойка окон, уборка и мастер на час — по вроцлавским ценам. Бесплатный выезд при заказе от 180 PLN.',
+      },
+      en: {
+        heading: 'Cleaning Services in Bielany Wrocławskie',
+        subtitle: 'Right next to Wrocław — city prices, free travel',
+        description: 'Bielany Wrocławskie is a dynamically growing suburb right next to Wrocław. We offer the full range of services: upholstery and car cleaning, mattress and carpet cleaning, ozone treatment, window cleaning, house cleaning and handyman — at Wrocław prices. Free travel for orders from 180 PLN.',
+      },
+      uk: {
+        heading: 'Послуги хімчистки в Беланах Вроцлавських',
+        subtitle: 'Поруч з Вроцлавом — міські ціни, безкоштовний виїзд',
+        description: 'Белани Вроцлавські — динамічно розвинуте передмістя Вроцлава. Пропонуємо повний спектр послуг: хімчистка меблів та авто, чистка матраців і килимів, озонування, миття вікон, прибирання та майстер на годину — за вроцлавськими цінами. Безкоштовний виїзд при замовленні від 180 PLN.',
+      },
+    },
+  },
+];
+
+export const getCityBySlug = (slug: string): CityData | undefined => {
+  return cities.find(c => c.slug === slug);
+};

@@ -10,6 +10,7 @@ import ProtectedRoute from "@/components/ProtectedRoute";
 import ScrollToTop from "@/components/ScrollToTop";
 import LegacyLangRedirect from "@/components/LegacyLangRedirect";
 import IdleMount from "@/components/IdleMount";
+import OptionalFeatureBoundary from "@/components/OptionalFeatureBoundary";
 const GeoCityRedirect = lazy(() => import("@/components/GeoCityRedirect"));
 
 // Defer non-critical global components — they don't affect FCP/LCP
@@ -84,7 +85,9 @@ const App = () => {
                 <Suspense fallback={null}><PWAUpdatePrompt /></Suspense>
                 <ScrollToTop />
                 <LegacyLangRedirect />
-                <Suspense fallback={null}><GeoCityRedirect /></Suspense>
+                <OptionalFeatureBoundary>
+                  <Suspense fallback={null}><GeoCityRedirect /></Suspense>
+                </OptionalFeatureBoundary>
 
                 <IdleMount timeout={2500}>
                   <Suspense fallback={null}>

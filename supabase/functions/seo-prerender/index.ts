@@ -1,4 +1,5 @@
 import { HOME_META } from './homeMeta.ts';
+import { getCityPage, renderCityBody } from './city/citySeo.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -133,197 +134,6 @@ const staticPages: Record<string, PageMeta> = {
   },
 };
 
-// ALL city pages with unique titles and descriptions
-const cityPages: Record<string, PageMeta> = {
-  wroclaw: {
-    title: 'Pranie tapicerki Wrocław — Dojazd gratis | MasterClean',
-    description: 'Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy, ozonowanie i sprzątanie we Wrocławiu. Pełen zakres usług. Dojazd gratis od 180 PLN.',
-    keywords: 'pranie tapicerki Wrocław, czyszczenie dywanów Wrocław, sprzątanie Wrocław, ozonowanie Wrocław',
-    image: `${SITE_URL}/og-wroclaw.jpg`,
-  },
-  opole: {
-    title: 'Czyszczenie tapicerki Opole — Dojazd z Wrocławia',
-    description: 'Pranie tapicerki meblowej, czyszczenie dywanów, materacy i ozonowanie w Opolu. Regularne wyjazdy z Wrocławia. Sprzęt Kärcher.',
-    keywords: 'czyszczenie tapicerki Opole, pranie dywanów Opole, ozonowanie Opole',
-    image: `${SITE_URL}/og-opole.jpg`,
-  },
-  legnica: {
-    title: 'Pranie tapicerki Legnica — Profesjonalny sprzęt Kärcher',
-    description: 'Kompleksowe czyszczenie tapicerki, materacy i dywanów w Legnicy. Sprzęt Kärcher i SantoEmma. Obsługujemy Lubin, Chojnów, Złotoryję.',
-    keywords: 'pranie tapicerki Legnica, czyszczenie dywanów Legnica, czyszczenie Legnica',
-    image: `${SITE_URL}/og-legnica.jpg`,
-  },
-  olawa: {
-    title: 'Czyszczenie tapicerki Oława — 30 km od Wrocławia',
-    description: 'Pranie tapicerki i czyszczenie dywanów w Oławie. Bliskość Wrocławia gwarantuje szybki dojazd. Obsługujemy Jelcz-Laskowice.',
-    keywords: 'czyszczenie tapicerki Oława, pranie dywanów Oława, sprzątanie Oława',
-    image: `${SITE_URL}/og-olawa.jpg`,
-  },
-  kalisz: {
-    title: 'Pranie tapicerki Kalisz — Regularne dojazdy z Wrocławia',
-    description: 'Profesjonalna pranie mebli, czyszczenie dywanów i ozonowanie w Kaliszu. Obsługujemy też Ostrów Wielkopolski i Pleszew.',
-    keywords: 'pranie tapicerki Kalisz, czyszczenie dywanów Kalisz, ozonowanie Kalisz',
-    image: `${SITE_URL}/og-kalisz.jpg`,
-  },
-  leszno: {
-    title: 'Czyszczenie tapicerki Leszno — Na trasie Wrocław–Poznań',
-    description: 'Pranie tapicerki meblowej i samochodowej w Lesznie. Regularne dojazdy na trasie Wrocław–Poznań. Ekologiczne środki.',
-    keywords: 'czyszczenie tapicerki Leszno, pranie dywanów Leszno, czyszczenie Leszno',
-    image: `${SITE_URL}/og-leszno.jpg`,
-  },
-  swidnica: {
-    title: 'Pranie tapicerki Świdnica — Dolny Śląsk | MasterClean',
-    description: 'Czyszczenie tapicerki, materacy i dywanów w Świdnicy. Miasto z Kościołem Pokoju UNESCO. Obsługujemy Dzierżoniów i Żarów.',
-    keywords: 'pranie tapicerki Świdnica, czyszczenie dywanów Świdnica, ozonowanie Świdnica',
-    image: `${SITE_URL}/og-swidnica.jpg`,
-  },
-  walbrzych: {
-    title: 'Czyszczenie tapicerki Wałbrzych — Zamów online',
-    description: 'Pranie tapicerki meblowej, czyszczenie materacy i ozonowanie w Wałbrzychu. Drugie miasto Dolnego Śląska. Sprzęt Kärcher.',
-    keywords: 'czyszczenie tapicerki Wałbrzych, pranie dywanów Wałbrzych, ozonowanie Wałbrzych',
-    image: `${SITE_URL}/og-walbrzych.jpg`,
-  },
-  'ostrow-wielkopolski': {
-    title: 'Pranie tapicerki Ostrów Wielkopolski — Wielkopolska',
-    description: 'Pranie mebli i czyszczenie dywanów w Ostrowie Wielkopolskim. Realizacja wspólnie z Kaliszem. Minimalne zamówienie 300 PLN.',
-    keywords: 'pranie tapicerki Ostrów Wielkopolski, czyszczenie dywanów Ostrów',
-    image: `${SITE_URL}/og-ostrow.jpg`,
-  },
-  'jelenia-gora': {
-    title: 'Czyszczenie tapicerki Jelenia Góra — Karkonosze',
-    description: 'Pranie tapicerki i ozonowanie w Jeleniej Górze. Idealne dla pensjonatów i apartamentów w Karkonoszach. Dojazd z Wrocławia.',
-    keywords: 'czyszczenie tapicerki Jelenia Góra, pranie dywanów Jelenia Góra, ozonowanie Jelenia Góra',
-    image: `${SITE_URL}/og-jelenia-gora.jpg`,
-  },
-  brzeg: {
-    title: 'Pranie tapicerki Brzeg — Na trasie Wrocław–Opole',
-    description: 'Czyszczenie tapicerki, materacy i dywanów w Brzegu. Położony na trasie Wrocław–Opole. Obsługujemy Namysłów i Grodków.',
-    keywords: 'pranie tapicerki Brzeg, czyszczenie dywanów Brzeg, sprzątanie Brzeg',
-    image: `${SITE_URL}/og-brzeg.jpg`,
-  },
-  lubin: {
-    title: 'Czyszczenie tapicerki Lubin — Zagłębie Miedziowe',
-    description: 'Pranie tapicerki meblowej, czyszczenie materacy i ozonowanie w Lubinie. Obsługujemy Polkowice, Głogów i okolice.',
-    keywords: 'czyszczenie tapicerki Lubin, pranie dywanów Lubin, ozonowanie Lubin',
-    image: `${SITE_URL}/og-lubin.jpg`,
-  },
-  'jelcz-laskowice': {
-    title: 'Pranie tapicerki Jelcz-Laskowice — Blisko Wrocławia',
-    description: 'Czyszczenie tapicerki i dywanów w Jelczu-Laskowicach. Zaledwie 25 km od Wrocławia — szybki dojazd. Sprzęt Kärcher.',
-    keywords: 'pranie tapicerki Jelcz-Laskowice, czyszczenie dywanów Jelcz-Laskowice',
-    image: `${SITE_URL}/og-jelcz-laskowice.jpg`,
-  },
-  strzegom: {
-    title: 'Czyszczenie tapicerki Strzegom — Granit i czystość',
-    description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Strzegomiu. Stolica polskiego granitu. Dojazd z Wrocławia.',
-    keywords: 'czyszczenie tapicerki Strzegom, pranie dywanów Strzegom, ozonowanie Strzegom',
-    image: `${SITE_URL}/og-strzegom.jpg`,
-  },
-  sobotka: {
-    title: 'Pranie tapicerki Sobótka — U podnóża Ślęży',
-    description: 'Czyszczenie tapicerki i ozonowanie w Sobótce. Miasto u podnóża góry Ślęży. Szybki dojazd z Wrocławia.',
-    keywords: 'pranie tapicerki Sobótka, czyszczenie dywanów Sobótka, ozonowanie Sobótka',
-    image: `${SITE_URL}/og-sobotka.jpg`,
-  },
-  klodzko: {
-    title: 'Czyszczenie tapicerki Kłodzko — Kotlina Kłodzka',
-    description: 'Pranie tapicerki i ozonowanie w Kłodzku. Idealne dla pensjonatów w Kotlinie Kłodzkiej. Obsługujemy Polanicę i Kudowę-Zdrój.',
-    keywords: 'czyszczenie tapicerki Kłodzko, pranie dywanów Kłodzko, ozonowanie Kłodzko',
-    image: `${SITE_URL}/og-klodzko.jpg`,
-  },
-  kielczow: {
-    title: 'Pranie tapicerki Kiełczów — Tuż przy Wrocławiu',
-    description: 'Czyszczenie tapicerki i dywanów w Kiełczowie. Dynamiczna miejscowość obok Wrocławia. Dojazd w 15 minut.',
-    keywords: 'pranie tapicerki Kiełczów, czyszczenie dywanów Kiełczów',
-    image: `${SITE_URL}/og-kielczow.jpg`,
-  },
-  dzierzoniow: {
-    title: 'Czyszczenie tapicerki Dzierżoniów — Góry Sowie',
-    description: 'Pranie tapicerki, czyszczenie dywanów i ozonowanie w Dzierżoniowie. Miasto u podnóża Gór Sowich. Obsługujemy Bielawę.',
-    keywords: 'czyszczenie tapicerki Dzierżoniów, pranie dywanów Dzierżoniów',
-    image: `${SITE_URL}/og-dzierzoniow.jpg`,
-  },
-  nysa: {
-    title: 'Pranie tapicerki Nysa — Śląski Rzym | MasterClean',
-    description: 'Czyszczenie tapicerki i ozonowanie w Nysie. Perła Opolszczyzny nad Nysą Kłodzką. Profesjonalny sprzęt Kärcher.',
-    keywords: 'pranie tapicerki Nysa, czyszczenie dywanów Nysa, ozonowanie Nysa',
-    image: `${SITE_URL}/og-nysa.jpg`,
-  },
-  'brzeg-dolny': {
-    title: 'Czyszczenie tapicerki Brzeg Dolny — Nad Odrą',
-    description: 'Pranie tapicerki i czyszczenie dywanów w Brzegu Dolnym. Malownicze miasto nad Odrą, 40 km od Wrocławia.',
-    keywords: 'czyszczenie tapicerki Brzeg Dolny, pranie dywanów Brzeg Dolny',
-    image: `${SITE_URL}/og-brzeg-dolny.jpg`,
-  },
-  'sroda-slaska': {
-    title: 'Pranie tapicerki Środa Śląska — Skarb Średzki',
-    description: 'Czyszczenie tapicerki i ozonowanie w Środzie Śląskiej. Historyczne miasto ze słynnym skarbem średzkim.',
-    keywords: 'pranie tapicerki Środa Śląska, czyszczenie dywanów Środa Śląska',
-    image: `${SITE_URL}/og-sroda-slaska.jpg`,
-  },
-  glogow: {
-    title: 'Czyszczenie tapicerki Głogów — Dolny Śląsk',
-    description: 'Pranie tapicerki i czyszczenie dywanów w Głogowie. Jedno z najstarszych miast Dolnego Śląska. Obsługujemy Polkowice.',
-    keywords: 'czyszczenie tapicerki Głogów, pranie dywanów Głogów, ozonowanie Głogów',
-    image: `${SITE_URL}/og-glogow.jpg`,
-  },
-  olesnica: {
-    title: 'Pranie tapicerki Oleśnica — 30 km od Wrocławia',
-    description: 'Czyszczenie tapicerki i dywanów w Oleśnicy. Urokliwe miasto z zamkiem, zaledwie 30 km od Wrocławia.',
-    keywords: 'pranie tapicerki Oleśnica, czyszczenie dywanów Oleśnica',
-    image: `${SITE_URL}/og-olesnica.jpg`,
-  },
-  namyslow: {
-    title: 'Czyszczenie tapicerki Namysłów — Opolszczyzna',
-    description: 'Pranie tapicerki i ozonowanie w Namysłowie. Historyczne miasto z browarem i średniowiecznymi murami obronnymi.',
-    keywords: 'czyszczenie tapicerki Namysłów, pranie dywanów Namysłów',
-    image: `${SITE_URL}/og-namyslow.jpg`,
-  },
-  polkowice: {
-    title: 'Pranie tapicerki Polkowice — Zagłębie Miedziowe',
-    description: 'Czyszczenie tapicerki i dywanów w Polkowicach. Nowoczesne miasto w sercu Zagłębia Miedziowego. Obsługujemy Lubin i Głogów.',
-    keywords: 'pranie tapicerki Polkowice, czyszczenie dywanów Polkowice',
-    image: `${SITE_URL}/og-polkowice.jpg`,
-  },
-  smolec: {
-    title: 'Czyszczenie tapicerki Smolec — Ceny jak we Wrocławiu',
-    description: 'Pranie tapicerki w Smolcu w cenach wrocławskich. Pełen zakres usług: meble, dywany, ozonowanie, sprzątanie. Dojazd gratis.',
-    keywords: 'czyszczenie tapicerki Smolec, pranie dywanów Smolec, sprzątanie Smolec',
-    image: `${SITE_URL}/og-smolec.jpg`,
-  },
-  'katy-wroclawskie': {
-    title: 'Pranie tapicerki Kąty Wrocławskie — Blisko Wrocławia',
-    description: 'Czyszczenie tapicerki i dywanów w Kątach Wrocławskich. Atrakcyjne ceny i profesjonalny sprzęt Kärcher.',
-    keywords: 'pranie tapicerki Kąty Wrocławskie, czyszczenie dywanów Kąty Wrocławskie',
-    image: `${SITE_URL}/og-katy-wroclawskie.jpg`,
-  },
-  siechnice: {
-    title: 'Czyszczenie tapicerki Siechnice — Szybki dojazd',
-    description: 'Pranie tapicerki i czyszczenie dywanów w Siechnicach. Dynamiczna gmina na obrzeżach Wrocławia. Profesjonalna obsługa.',
-    keywords: 'czyszczenie tapicerki Siechnice, pranie dywanów Siechnice',
-    image: `${SITE_URL}/og-siechnice.jpg`,
-  },
-  'tyniec-maly': {
-    title: 'Pranie tapicerki Tyniec Mały — Okolice Wrocławia',
-    description: 'Czyszczenie tapicerki i ozonowanie w Tyńcu Małym. Spokojna okolica w sąsiedztwie Wrocławia. Ekologiczne środki.',
-    keywords: 'pranie tapicerki Tyniec Mały, czyszczenie dywanów Tyniec Mały',
-    image: `${SITE_URL}/og-tyniec-maly.jpg`,
-  },
-  zmigrod: {
-    title: 'Czyszczenie tapicerki Żmigród — Dolina Baryczy',
-    description: 'Pranie tapicerki i czyszczenie dywanów w Żmigrodzie. Miasto w malowniczej Dolinie Baryczy. Profesjonalny sprzęt.',
-    keywords: 'czyszczenie tapicerki Żmigród, pranie dywanów Żmigród',
-    image: `${SITE_URL}/og-zmigrod.jpg`,
-  },
-  'bielany-wroclawskie': {
-    title: 'Pranie tapicerki Bielany Wrocławskie — Ceny miejskie',
-    description: 'Czyszczenie tapicerki w Bielanach Wrocławskich w cenach wrocławskich. Pełen zakres usług: meble, dywany, ozonowanie, sprzątanie.',
-    keywords: 'pranie tapicerki Bielany Wrocławskie, czyszczenie dywanów Bielany',
-    image: `${SITE_URL}/og-bielany-wroclawskie.jpg`,
-  },
-};
-
-// Blog articles with unique meta per article
 const blogPages: Record<string, PageMeta> = {
   '1': {
     title: 'Jak często czyścić sofę? Porady ekspertów — MasterClean',
@@ -779,55 +589,6 @@ const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
   },
 };
 
-// City display names (used for localized city page templates)
-const cityDisplayNames: Record<string, string> = {
-  wroclaw: 'Wrocław', opole: 'Opole', legnica: 'Legnica', olawa: 'Oława',
-  kalisz: 'Kalisz', leszno: 'Leszno', swidnica: 'Świdnica', walbrzych: 'Wałbrzych',
-  'ostrow-wielkopolski': 'Ostrów Wielkopolski', 'jelenia-gora': 'Jelenia Góra',
-  brzeg: 'Brzeg', lubin: 'Lubin', 'jelcz-laskowice': 'Jelcz-Laskowice',
-  strzegom: 'Strzegom', sobotka: 'Sobótka', klodzko: 'Kłodzko',
-  kielczow: 'Kiełczów', dzierzoniow: 'Dzierżoniów', nysa: 'Nysa',
-  'brzeg-dolny': 'Brzeg Dolny', 'sroda-slaska': 'Środa Śląska', glogow: 'Głogów',
-  olesnica: 'Oleśnica', namyslow: 'Namysłów', polkowice: 'Polkowice',
-  smolec: 'Smolec', 'katy-wroclawskie': 'Kąty Wrocławskie', siechnice: 'Siechnice',
-  'tyniec-maly': 'Tyniec Mały', zmigrod: 'Żmigród', 'bielany-wroclawskie': 'Bielany Wrocławskie',
-};
-
-function buildCityMeta(slug: string, lang: Lang): PageMeta {
-  const name = cityDisplayNames[slug] || slug;
-  const image = `${SITE_URL}/og-${slug}.jpg`;
-  switch (lang) {
-    case 'ru':
-      return {
-        title: `Химчистка мебели ${name} — MasterClean`,
-        description: `Профессиональная химчистка мебели, чистка ковров, матрасов, озонирование и уборка в городе ${name}. Современное оборудование Kärcher и SantoEmma.`,
-        keywords: `химчистка мебели ${name}, чистка ковров ${name}, озонирование ${name}, уборка ${name}`,
-        image,
-      };
-    case 'en':
-      return {
-        title: `Upholstery cleaning in ${name} — MasterClean`,
-        description: `Professional upholstery cleaning, carpets, mattresses, ozone treatment and home cleaning in ${name}. Kärcher and SantoEmma equipment.`,
-        keywords: `upholstery cleaning ${name}, carpet cleaning ${name}, ozone ${name}, cleaning service ${name}`,
-        image,
-      };
-    case 'uk':
-      return {
-        title: `Хімчистка меблів ${name} — MasterClean`,
-        description: `Професійна хімчистка меблів, чищення килимів, матраців, озонування та прибирання у місті ${name}. Сучасне обладнання Kärcher і SantoEmma.`,
-        keywords: `хімчистка меблів ${name}, чищення килимів ${name}, озонування ${name}, прибирання ${name}`,
-        image,
-      };
-    default:
-      return cityPages[slug] || {
-        title: `Pranie tapicerki ${name} — MasterClean`,
-        description: `Profesjonalne pranie tapicerki, czyszczenie dywanów, materacy i ozonowanie w mieście ${name}.`,
-        keywords: `pranie tapicerki ${name}, czyszczenie dywanów ${name}`,
-        image,
-      };
-  }
-}
-
 const blogFallbackByLang: Record<Lang, PageMeta> = {
   pl: {
     title: 'Blog MasterClean — porady czyszczenia, prania tapicerki i pielęgnacji',
@@ -1031,8 +792,10 @@ function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
   if (staticPages[path]) return staticPages[path];
 
   const cityMatch = path.match(/^\/city\/([a-z-]+)$/);
-  if (cityMatch && cityDisplayNames[cityMatch[1]]) {
-    return buildCityMeta(cityMatch[1], lang);
+  if (cityMatch) {
+    const page = getCityPage(cityMatch[1], lang);
+    if (page) return { ...page, faq: page.generated.faqs };
+    return null;
   }
 
   const blogMatch = path.match(/^\/blog\/(\d+)$/);
@@ -1068,6 +831,9 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
     pl: 'pl_PL', ru: 'ru_RU', en: 'en_US', uk: 'uk_UA',
   };
   const htmlLang = ['pl', 'ru', 'en', 'uk'].includes(lang) ? lang : 'pl';
+  const citySlug = path.match(/^\/city\/([a-z-]+)$/)?.[1];
+  const localCityBody = citySlug ? renderCityBody(citySlug, htmlLang as Lang, escapeHtml) : '';
+  const localCityPage = citySlug ? getCityPage(citySlug, htmlLang as Lang) : undefined;
   const ogLocale = ogLocaleMap[htmlLang] || 'pl_PL';
   const faqHeading = ({
     pl: 'Najczęściej zadawane pytania',
@@ -1093,6 +859,7 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   <meta property="og:type" content="${type}">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:image" content="${image}">
+  <meta property="og:image:alt" content="${escapeHtml(meta.headline || meta.title)}">
   <meta property="og:locale" content="${ogLocale}">
   ${Object.entries(ogLocaleMap)
     .filter(([l]) => l !== htmlLang)
@@ -1105,6 +872,7 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   <meta name="twitter:title" content="${escapeHtml(meta.title)}">
   <meta name="twitter:description" content="${escapeHtml(meta.description)}">
   <meta name="twitter:image" content="${image}">
+  <meta name="twitter:image:alt" content="${escapeHtml(meta.headline || meta.title)}">
 
   <!-- Hreflang — each language lives at its own URL prefix (PL = root) -->
   <link rel="alternate" hreflang="pl" href="${buildLangUrl('pl')}">
@@ -1157,6 +925,16 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
     },
   })}
   </script>
+${localCityPage ? `<script type="application/ld+json">${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: localCityPage.headline,
+  description: meta.description,
+  url: canonicalUrl,
+  inLanguage: htmlLang,
+  areaServed: { '@type': 'City', name: localCityPage.city.name },
+  provider: { '@id': `${SITE_URL}/#business` },
+})}</script>` : ''}
 ${type === 'article' ? `
   <!-- BlogPosting structured data -->
   <script type="application/ld+json">
@@ -1195,10 +973,7 @@ ${meta.faq && meta.faq.length > 0 ? `
   })}
   </script>` : ''}
 
-  <!-- Redirect real users to SPA -->
-  <noscript>
-    <meta http-equiv="refresh" content="0;url=${canonicalUrl}">
-  </noscript>
+
 </head>
 <body>
   <h1>${escapeHtml(meta.headline || meta.title)}</h1>
@@ -1209,6 +984,7 @@ ${meta.faq && meta.faq.length > 0 ? `
     ${meta.faq.map((item) => `<h3>${escapeHtml(item.q)}</h3>\n    <p>${escapeHtml(item.a)}</p>`).join('\n    ')}
   </section>` : ''}
 
+${localCityBody || `
   <section>
     <h2>O firmie MasterClean</h2>
     <p>MasterClean to profesjonalna firma czyszcząca działająca od 2021 roku we Wrocławiu i okolicach. Specjalizujemy się w praniu tapicerki meblowej i samochodowej, czyszczeniu dywanów, materacy, foteli, kanap oraz narożników. Wykonujemy również ozonowanie pomieszczeń i samochodów, mycie okien, sprzątanie mieszkań, domów i biur, a także drobne naprawy domowe (złota rączka).</p>
@@ -1305,7 +1081,7 @@ ${meta.faq && meta.faq.length > 0 ? `
       <a href="${SITE_URL}/contacts">Kontakt</a> |
       <a href="${SITE_URL}/blog">Blog</a>
     </nav>
-  </section>
+  </section>`}
 </body>
 </html>`;
 }
