@@ -125,22 +125,22 @@ export const cities: CityData[] = [
       pl: {
         heading: 'Usługi czyszczenia w Oławie',
         subtitle: 'Zaledwie 30 km od Wrocławia — błyskawiczny dojazd',
-        description: 'Oława znajduje się w bezpośrednim sąsiedztwie Wrocławia, co pozwala nam realizować zlecenia szybko i wygodnie. Oferujemy pranie tapicerki, czyszczenie materacy, dywanów, ozonowanie oraz sprzątanie mieszkań i domów. Obsługujemy również Jelcz-Laskowice i okolice.',
+        description: 'W Oławie pierzemy kanapy, narożniki, materace i tapicerkę samochodową z dojazdem do klienta. Sprzęt ekstrakcyjny pozwala wypłukać zabrudzenia z tkaniny, a metodę dobieramy do rodzaju obicia. Przed rozpoczęciem czyszczenia sprawdzamy materiał i ustalamy zakres pracy. Obsługujemy Oławę, Jelcz-Laskowice i okolice — termin wizyty uzgadniamy telefonicznie lub przez formularz.',
       },
       ru: {
         heading: 'Услуги химчистки в Олаве',
         subtitle: 'Всего 30 км от Вроцлава — быстрый выезд',
-        description: 'Олава расположена в непосредственной близости от Вроцлава, что позволяет нам быстро выполнять заказы. Химчистка мебели, матрасов, ковров, озонирование и уборка квартир и домов. Обслуживаем также Елч-Ласковице и окрестности.',
+        description: 'В Олаве чистим диваны, угловую мебель, матрасы и автомобильную обивку с выездом к клиенту. Экстракторное оборудование промывает ткань, а метод подбираем по материалу обивки. До начала работы проверяем ткань и согласовываем объём чистки. Обслуживаем Олаву, Елч-Ласковице и окрестности; время визита согласовываем по телефону или через форму.',
       },
       en: {
         heading: 'Cleaning Services in Oława',
         subtitle: 'Just 30 km from Wrocław — fast arrival',
-        description: 'Oława is located near Wrocław, allowing us to handle orders quickly. We offer upholstery cleaning, mattress and carpet cleaning, ozone treatment and house cleaning. We also serve Jelcz-Laskowice and surrounding areas.',
+        description: 'In Oława we clean sofas, corner sofas, mattresses and car upholstery at the customer’s address. Extraction equipment rinses dirt from the fabric, with the method chosen for the upholstery material. Before cleaning, we inspect the fabric and agree the scope of work. We serve Oława, Jelcz-Laskowice and nearby areas; arrange your visit by phone or through the contact form.',
       },
       uk: {
         heading: 'Послуги хімчистки в Олаві',
         subtitle: 'Лише 30 км від Вроцлава — швидкий виїзд',
-        description: 'Олава розташована поруч із Вроцлавом, що дозволяє нам швидко виконувати замовлення. Хімчистка меблів, матраців, килимів, озонування та прибирання квартир і будинків.',
+        description: 'В Олаві чистимо дивани, кутові меблі, матраци та автомобільну оббивку з виїздом до клієнта. Екстракторне обладнання промиває тканину, а метод добираємо за матеріалом оббивки. Перед роботою перевіряємо тканину та узгоджуємо обсяг чищення. Обслуговуємо Олаву, Єльч-Лясковіце та околиці; час візиту узгоджуємо телефоном або через форму.',
       },
     },
   },
