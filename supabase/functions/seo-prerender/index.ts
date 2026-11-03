@@ -1,3 +1,5 @@
+import { HOME_META } from './homeMeta.ts';
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
@@ -31,8 +33,7 @@ interface PageMeta {
 
 const staticPages: Record<string, PageMeta> = {
   '/': {
-    title: 'MasterClean — Pranie tapicerki, czyszczenie i sprzątanie 24/7',
-    description: 'Profesjonalne pranie tapicerki meblowej i samochodowej, czyszczenie dywanów, materacy, ozonowanie. Sprzątanie, mycie okien, złota rączka. Wrocław i okolice.',
+    ...HOME_META.pl,
     keywords: 'pranie tapicerki, pranie mebli, czyszczenie dywanów, materacy, ozonowanie, sprzątanie, mycie okien, Wrocław',
     image: `${SITE_URL}/og-image.jpg`,
   },
@@ -511,8 +512,7 @@ type Lang = 'pl' | 'ru' | 'en' | 'uk';
 const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
   ru: {
     '/': {
-      title: 'MasterClean — Химчистка мебли, чистка и уборка 24/7',
-      description: 'Профессиональная химчистка мягкой мебели и автомобилей, чистка ковров, матрасов, озонирование. Уборка, мытьё окон, муж на час. Вроцлав и окрестности.',
+      ...HOME_META.ru,
       keywords: 'химчистка мебели, чистка дивана, чистка ковров, матрасов, озонирование, уборка, мытьё окон, Вроцлав',
       image: `${SITE_URL}/og-image.jpg`,
     },
@@ -601,8 +601,7 @@ const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
   },
   en: {
     '/': {
-      title: 'MasterClean — Upholstery, carpet cleaning & home cleaning 24/7',
-      description: 'Professional upholstery and car interior cleaning, carpets, mattresses, ozone treatment. House cleaning, window washing, handyman. Wroclaw and surroundings.',
+      ...HOME_META.en,
       keywords: 'upholstery cleaning, sofa cleaning, carpet cleaning, mattress cleaning, ozone, cleaning service, window washing, Wroclaw',
       image: `${SITE_URL}/og-image.jpg`,
     },
@@ -691,8 +690,7 @@ const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
   },
   uk: {
     '/': {
-      title: 'MasterClean — Хімчистка меблів, чищення та прибирання 24/7',
-      description: 'Професійна хімчистка м\'яких меблів і авто, чищення килимів, матраців, озонування. Прибирання, миття вікон, майстер на годину. Вроцлав і околиці.',
+      ...HOME_META.uk,
       keywords: 'хімчистка меблів, чищення дивана, чищення килимів, матраців, озонування, прибирання, миття вікон, Вроцлав',
       image: `${SITE_URL}/og-image.jpg`,
     },
