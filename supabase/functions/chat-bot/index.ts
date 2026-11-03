@@ -283,7 +283,7 @@ Deep cleaning:
 • Pet litter box cleaning — 15 PLN
 
 🛋 FURNITURE:
-• Ottoman — 50 PLN
+• Ottoman — 45 PLN
 • Chair (seat only) — 25 PLN
 • Chair with backrest — 30 PLN
 • Conference chair — 45 PLN
