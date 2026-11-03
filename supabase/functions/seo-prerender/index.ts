@@ -833,6 +833,7 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   const htmlLang = ['pl', 'ru', 'en', 'uk'].includes(lang) ? lang : 'pl';
   const citySlug = path.match(/^\/city\/([a-z-]+)$/)?.[1];
   const localCityBody = citySlug ? renderCityBody(citySlug, htmlLang as Lang, escapeHtml) : '';
+  const localCityPage = citySlug ? getCityPage(citySlug, htmlLang as Lang) : undefined;
   const ogLocale = ogLocaleMap[htmlLang] || 'pl_PL';
   const faqHeading = ({
     pl: 'Najczęściej zadawane pytania',
@@ -924,6 +925,16 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
     },
   })}
   </script>
+${localCityPage ? `<script type="application/ld+json">${JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: localCityPage.headline,
+  description: meta.description,
+  url: canonicalUrl,
+  inLanguage: htmlLang,
+  areaServed: { '@type': 'City', name: localCityPage.city.name },
+  provider: { '@id': `${SITE_URL}/#business` },
+})}</script>` : ''}
 ${type === 'article' ? `
   <!-- BlogPosting structured data -->
   <script type="application/ld+json">

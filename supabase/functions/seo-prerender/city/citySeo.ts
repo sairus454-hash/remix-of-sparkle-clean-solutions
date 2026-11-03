@@ -4,7 +4,7 @@ import { generateCityContent } from './cityContentGenerator.ts';
 
 export type CityLanguage = 'pl' | 'ru' | 'en' | 'uk';
 const SITE_URL = 'https://masterclean1885.com';
-const OLАWA_META = {
+const OLAWA_META = {
   pl: {
     title: 'Pranie tapicerki Oława – kanapy, materace, narożniki | MasterClean',
     description: 'Profesjonalne pranie kanap, narożników, materacy i tapicerki samochodowej w Oławie. Dojazd do klienta, profesjonalny sprzęt i szybkie terminy. Zadzwoń!',
@@ -43,7 +43,7 @@ export function getCitySeo(city: CityData, lang: CityLanguage) {
     uk: `Хімчистка меблів ${city.name} | MasterClean`,
   }[lang];
   const description = {
-    pl: `Pranie kanap, narożników, materacy i tapicerki samochodowej ${location}. Dojazd do klienta, profesjonalny sprzęt. Sprawdź ceny i umów termin online.`,
+    pl: `Pranie kanap, narożników, materacy i tapicerki samochodowej ${location}. Dojazd do klienta, profesjonalny sprzęt. Sprawdź ceny i zamów online.`,
     ru: `Химчистка диванов, угловой мебели, матрасов и салонов авто ${location}. Выезд к клиенту и профессиональное оборудование. Узнайте цены и закажите онлайн.`,
     en: `Sofa, corner sofa, mattress and car upholstery cleaning ${location}. We come to you with professional equipment. Check prices and book your visit online.`,
     uk: `Хімчистка диванів, кутових меблів, матраців та салонів авто ${location}. Виїзд до клієнта, професійне обладнання. Дізнайтеся ціни та замовте онлайн.`,
@@ -53,7 +53,7 @@ export function getCitySeo(city: CityData, lang: CityLanguage) {
   const imageCities = new Set(['wroclaw', 'opole', 'legnica', 'lubin', 'olawa', 'kalisz', 'leszno', 'swidnica', 'walbrzych', 'jelenia-gora', 'brzeg', 'ostrow']);
   return {
     title, description,
-    ...(city.slug === 'olawa' ? OLАWA_META[lang] : {}),
+    ...(city.slug === 'olawa' ? OLAWA_META[lang] : {}),
     headline: heading,
     keywords: lang === 'pl' ? city.seo.keywords : `${heading}, ${city.name}, MasterClean`,
     image: `${SITE_URL}/${imageCities.has(imageSlug) ? `og-${imageSlug}.jpg` : 'og-image.jpg'}`,
