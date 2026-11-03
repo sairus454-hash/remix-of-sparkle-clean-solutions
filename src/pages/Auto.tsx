@@ -184,7 +184,7 @@ const Auto = () => {
               </div>
               <div className="flex justify-center md:justify-end">
                 <img
-                  src={powerStation.url}
+                  src={powerStation}
                   alt={t.auto?.powerBankImageAlt || 'Własna elektrownia MasterClean'}
                   loading="lazy"
                   className="w-52 h-52 sm:w-72 sm:h-72 object-cover rounded-3xl shadow-glow border-4 border-primary-foreground/20"
