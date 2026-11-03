@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Align homepage title/description in four languages across React, static head and crawler renderer, preserving other cities.
 - [x] Correct contact-page coordinates and clickable map address for ul. Jedności Narodowej 160, 50-302 Wrocław.
 - [ ] Match contact-page hours to Google Maps — blocked: full weekly schedule not retrievable; owner skipped the schedule question. Existing hours unchanged, not verified.
 - [x] Finish the car-seat price update: leather seats 350 PLN and front/rear seats 300 PLN verified in page/calculator definitions and all chatbot language price lists; quick-order total corrected and verified through the contact form in all four languages; six focused tests passed.

@@ -1,4 +1,5 @@
 # Architecture rules
+- Share localized homepage title/description between React and the crawler renderer through `seo-prerender/homeMeta`; keep the static Polish head fallback aligned to prevent divergent search metadata.
 - Keep contact-page address, geo coordinates and map destination in `businessLocation` so visible contact details and structured data cannot diverge.
 - All automatic order discounts must be calculated by `useDiscountCalculator`; presentation and chat must not independently calculate category-combination discounts, so totals remain consistent.
 - Keep the existing sitemap plugin; never derive lastmod from build time or publication-date fallbacks, because it must reflect significant page-specific content changes.
