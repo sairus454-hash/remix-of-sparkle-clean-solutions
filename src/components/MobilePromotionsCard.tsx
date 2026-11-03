@@ -14,9 +14,9 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
               <Sparkles className="w-6 h-6 text-white" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-serif text-base font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent truncate">
+              <h2 className="font-serif text-base font-bold bg-gradient-to-r from-orange-500 to-teal-500 bg-clip-text text-transparent truncate">
                 🔥 {t.promotions.title}
-              </p>
+              </h2>
               <p className="text-xs text-muted-foreground truncate">{t.promotions.saveUpTo}</p>
             </div>
           </div>
@@ -32,9 +32,9 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
-                  <h4 className="font-serif text-sm font-bold bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">
+                  <h3 className="font-serif text-sm font-bold bg-gradient-to-r from-orange-600 to-teal-600 bg-clip-text text-transparent">
                     {t.promotions.services6plus}
-                  </h4>
+                  </h3>
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-600 to-teal-600 text-white">
                     -20%
                   </span>
@@ -54,9 +54,9 @@ const MobilePromotionsCard = ({ className = '' }: { className?: string }) => {
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
-                  <h4 className="font-serif text-sm font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+                  <h3 className="font-serif text-sm font-bold bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
                     {t.promotions.formFurnitureTitle}
-                  </h4>
+                  </h3>
                   <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-500 to-amber-500 text-white whitespace-nowrap">
                     {t.promotions.formFurnitureBadge}
                   </span>

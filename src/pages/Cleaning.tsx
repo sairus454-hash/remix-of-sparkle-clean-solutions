@@ -695,9 +695,9 @@ const Cleaning = () => {
                           <Droplets className="w-7 h-7 text-white" />
                         </div>
                         <div>
-                          <p className="font-serif text-xl font-semibold text-sky-700 dark:text-sky-300">
+                          <h2 className="font-serif text-xl font-semibold text-sky-700 dark:text-sky-300">
                             {t.nav?.windows || 'Мойка окон'}
-                          </p>
+                          </h2>
                           <p className="text-sm text-muted-foreground">
                             {t.windows?.subtitle || 'Профессиональная мойка окон любой сложности'}
                           </p>

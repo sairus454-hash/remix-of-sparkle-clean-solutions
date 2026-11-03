@@ -413,6 +413,9 @@ const Auto = () => {
         <LazySection minHeight="300px">
         <section className="py-12 sm:py-20 bg-gradient-section">
           <div className="container mx-auto px-4">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground text-center mb-8">
+              {{ pl: 'Zakres czyszczenia wnętrza auta', ru: 'Что входит в чистку салона авто', uk: 'Що входить у чищення салону авто', en: 'Car interior cleaning services' }[language]}
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
               {services.map((service, index) => (
                 <CircularRevealCard key={index} index={index}>
@@ -421,7 +424,7 @@ const Auto = () => {
                       <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                     </div>
                     <div className="min-w-0">
-                      <h2 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">{service.title}</h2>
+                      <h3 className="font-serif text-lg sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">{service.title}</h3>
                       <p className="text-sm sm:text-base text-muted-foreground">{service.description}</p>
                     </div>
                   </div>
@@ -442,7 +445,7 @@ const Auto = () => {
                 </svg>
               </div>
               <div>
-                <p className="font-semibold text-amber-900 dark:text-amber-100 mb-1 sm:mb-2">{t.auto?.noteTitle || 'Чистим только тканевые коврики'}</p>
+                <h2 className="font-semibold text-amber-900 dark:text-amber-100 mb-1 sm:mb-2">{t.auto?.noteTitle || 'Чистим только тканевые коврики'}</h2>
                 <p className="text-sm sm:text-base text-amber-800 dark:text-amber-200">{t.auto?.noteDesc || 'Мы специализируемся на чистке тканевых ковриков и ковровых покрытий. Резиновые коврики мы не чистим — их можно вымыть самостоятельно дома.'}</p>
               </div>
             </div>
