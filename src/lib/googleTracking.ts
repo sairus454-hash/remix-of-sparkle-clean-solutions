@@ -8,7 +8,7 @@ let adsConfigured = false;
 let analyticsConfigured = false;
 function bootstrap() {
   window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function (...args: unknown[]) { window.dataLayer.push(args as unknown as Record<string, unknown>); };
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments as unknown as Record<string, unknown>); };
 }
 export function refreshTracking() {
   bootstrap();

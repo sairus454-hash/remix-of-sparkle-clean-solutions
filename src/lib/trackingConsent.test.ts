@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { canTrack, CONSENT_KEY, NOTICE_VERSION, readConsent, requiresConsent, saveConsent } from './trackingConsent';
-import { ADS_ID, ADS_LEAD_LABEL, ADS_PHONE_LABEL, sendAdsConversion } from './googleTracking';
+import { ADS_ID, ADS_LEAD_LABEL, ADS_PHONE_LABEL, sendAdsConversion, refreshTracking } from './googleTracking';
 describe('agreed basic consent route', () => {
   beforeEach(() => { localStorage.clear(); sessionStorage.clear(); window.gtag = vi.fn(); window.dataLayer = []; });
   it('blocks Polish and unknown regions before acceptance', () => {
@@ -29,5 +29,14 @@ describe('agreed basic consent route', () => {
   it('never replays a conversion blocked before acceptance', () => {
     sendAdsConversion(); saveConsent(true, true, 'pl');
     expect(window.gtag).not.toHaveBeenCalled();
+  });
+  it('queues commands in the Arguments format consumed by the Google tag', () => {
+    window.gtag = undefined;
+    saveConsent(true, false, 'pl');
+    refreshTracking();
+    sendAdsConversion();
+    const command = window.dataLayer.find(entry => entry[0] === 'event' && entry[1] === 'conversion');
+    expect(Object.prototype.toString.call(command)).toBe('[object Arguments]');
+    expect(command?.[2]).toEqual({ send_to: 'AW-17379470297/r2XtCMGYjoIcENnXlt9A' });
   });
 });
