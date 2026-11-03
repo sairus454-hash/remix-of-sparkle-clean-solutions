@@ -187,7 +187,7 @@ const Index = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-xl">
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white leading-tight" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.7), 0 4px 16px rgba(0,0,0,0.4)' }}>
-                {t.hero.title}
+                {HOME_META[language].headline}
               </h1>
               <p className="text-base sm:text-lg text-white font-medium mb-6 leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
                 <span className="hidden sm:inline">{t.hero.subtitle}</span>
@@ -400,10 +400,11 @@ const Index = () => {
         </div>
       </section>
 
-      <Suspense fallback={null}><MobilePromotionsCard /></Suspense>
+      {isMobile && <Suspense fallback={null}><MobilePromotionsCard className="!block" /></Suspense>}
 
+      {!isMobile && (
       <LazySection minHeight="400px">
-      <section id="promotions" className="hidden sm:block py-12 sm:py-20 bg-gradient-section content-auto">
+      <section id="promotions" className="py-12 sm:py-20 bg-gradient-section content-auto">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12">
             {/* Premium animated icon */}
@@ -515,6 +516,7 @@ const Index = () => {
         </div>
       </section>
       </LazySection>
+      )}
 
       {/* Price Section */}
       <LazySection minHeight="300px">

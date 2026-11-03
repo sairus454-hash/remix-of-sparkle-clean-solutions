@@ -1,4 +1,5 @@
 # Tasks
+- [x] Remove repeated promotional announcement and duplicate homepage promotion markup; homepage H1 targets Wrocław in four languages and matches deployed crawler HTML. Verified at 390, 700 and 1280px; visitor changes require publication.
 - [x] Align city-page titles, descriptions, H1, local service content and image ALT across visitors and Google in four languages; 124 browser/crawler pairs verified, Oława uses supplied Polish metadata. Crawler deployed; visitor changes require website publication.
 - [x] Fix current SEO findings: localized section headings on homepage/auto/cleaning and shared mobile promotions; guide verified already correct; local descriptions include upholstery, mattresses and carpets. Browser checks and build passed; both findings marked fixed awaiting rescan.
 - [x] Align homepage title/description in four languages across React, static head and crawler renderer, preserving other cities; preview and deployed crawler responses verified. Website publication remains owner-controlled.
