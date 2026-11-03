@@ -30,32 +30,7 @@ import { getServiceCategoryMeta } from '@/lib/serviceCategoryMeta';
 import CleaningPricingTopBlock from '@/components/CleaningPricingTopBlock';
 import olawaPartnerBadge from '@/assets/partner-olawa-badge-3.jpg';
 import { servicePrice, useServicePrices } from '@/data/servicePrices';
-
-// Per-city, per-language SEO overrides for cities that need extra optimization
-const CITY_SEO_OVERRIDES: Record<string, Record<string, { title: string; description: string; keywords: string }>> = {
-  olawa: {
-    pl: {
-      title: 'Pranie tapicerki Oława — partner Miasta Oława',
-      description: 'Pranie kanap, dywanów, materacy i ozonowanie w Oławie. Oficjalny partner Administracji Miasta Oława. Dojazd 30 min z Wrocławia, ceny od 36 PLN.',
-      keywords: 'pranie kanapy Oława, czyszczenie tapicerki Oława, czyszczenie materaca Oława, ozonowanie Oława, pranie dywanu Oława, mycie okien Oława',
-    },
-    ru: {
-      title: 'Химчистка мебели Олава — партнёр администрации',
-      description: 'Химчистка диванов, матрасов, ковров и озонирование в Олаве. Партнёр Администрации города Олава. Выезд за 30 минут из Вроцлава, цены от 36 PLN.',
-      keywords: 'химчистка мебели Олава, химчистка дивана Олава, чистка матраса Олава, озонирование Олава, мойка окон Олава',
-    },
-    en: {
-      title: 'Upholstery Cleaning Oława — City Partner',
-      description: 'Sofa, mattress, carpet cleaning and ozonation in Oława. Official partner of the Oława City Administration. 30 min from Wrocław, prices from 36 PLN.',
-      keywords: 'upholstery cleaning Oława, sofa cleaning Oława, mattress cleaning Oława, ozone treatment Oława, window cleaning Oława',
-    },
-    uk: {
-      title: 'Хімчистка меблів Олава — партнер міста',
-      description: 'Хімчистка диванів, матраців, килимів та озонування в Олаві. Партнер Адміністрації міста Олава. Виїзд за 30 хвилин з Вроцлава, ціни від 36 PLN.',
-      keywords: 'хімчистка меблів Олава, чистка дивана Олава, чистка матраца Олава, озонування Олава, миття вікон Олава',
-    },
-  },
-};
+import { getCitySeo, cityImageAlt } from '../../supabase/functions/seo-prerender/city/citySeo';
 
 // Per-city extra FAQs (in addition to base + generated)
 const CITY_EXTRA_FAQS: Record<string, Record<string, Array<{ q: string; a: string }>>> = {
@@ -147,11 +122,10 @@ const CityPage = () => {
   const extraFaqs = CITY_EXTRA_FAQS[city.slug]?.[language] || [];
   const faqData = [...extraFaqs, ...generated.faqs, ...baseFaqs];
 
-  // Per-city SEO overrides (title/description/keywords)
-  const seoOverride = CITY_SEO_OVERRIDES[city.slug]?.[language];
-  const seoTitle = seoOverride?.title || city.seo.title;
-  const seoDescription = seoOverride?.description || city.seo.description;
-  const seoKeywords = seoOverride?.keywords || city.seo.keywords;
+  const citySeo = getCitySeo(city, lang);
+  const seoTitle = citySeo.title;
+  const seoDescription = citySeo.description;
+  const seoKeywords = citySeo.keywords;
 
   const META = getServiceCategoryMeta(t);
   const categories = [
@@ -402,14 +376,7 @@ const CityPage = () => {
         description={seoDescription}
         keywords={seoKeywords}
         canonical={`/city/${city.slug}`}
-        image={(() => {
-          // Map city slug → existing OG image filename. Fallback to default OG when no city-specific image exists.
-          const ogCities = new Set(['wroclaw','opole','legnica','lubin','olawa','kalisz','leszno','swidnica','walbrzych','jelenia-gora','brzeg']);
-          const slug = city.slug === 'ostrow-wielkopolski' ? 'ostrow' : city.slug;
-          return ogCities.has(slug)
-            ? `https://masterclean1885.com/og-${slug}.jpg`
-            : 'https://masterclean1885.com/og-image.jpg';
-        })()}
+        image={citySeo.image}
         breadcrumbs={[{ name: city.name, path: `/city/${city.slug}` }]}
         jsonLd={{
           '@context': 'https://schema.org',
@@ -418,7 +385,7 @@ const CityPage = () => {
               '@type': 'Service',
               name: `MasterClean — ${city.name}`,
               description: seoDescription,
-              url: `https://masterclean1885.com/city/${city.slug}`,
+              url: `https://masterclean1885.com${lang === 'pl' ? '' : `/${lang}`}/city/${city.slug}`,
               areaServed: {
                 '@type': 'City',
                 name: city.name,
@@ -431,8 +398,10 @@ const CityPage = () => {
                 address: {
                   '@type': 'PostalAddress',
                   addressCountry: 'PL',
-                  addressRegion: city.region,
-                  addressLocality: city.name,
+                  addressRegion: 'dolnośląskie',
+                  addressLocality: 'Wrocław',
+                  streetAddress: 'ul. Jedności Narodowej 160',
+                  postalCode: '50-302',
                 },
               },
               offers: {
@@ -467,7 +436,7 @@ const CityPage = () => {
                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-background/80 backdrop-blur-sm border border-border/50 flex items-center justify-center shadow-glow p-2" style={{ animation: 'float 3s ease-in-out infinite' }}>
                     <img
                       src={`/coats/${city.slug}.png`}
-                      alt={`Herb ${city.name}`}
+                      alt={`${({ pl: 'Herb', ru: 'Герб', en: 'Coat of arms', uk: 'Герб' })[lang]} ${city.name}`}
                       className="w-full h-full object-contain drop-shadow-md"
                       loading="eager"
                     />
@@ -477,7 +446,7 @@ const CityPage = () => {
                 </div>
               </div>
               <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                {cityContent.heading}
+                {citySeo.headline}
               </h1>
               <p className="text-base sm:text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-fade-up px-4 font-medium" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
                 {cityContent.subtitle}
@@ -746,7 +715,7 @@ const CityPage = () => {
                       <div className="overflow-hidden">
                         <div className="p-4 sm:p-5 pt-0">
                           <CardServiceCalculator
-                            items={cat.items}
+                            items={cat.items.map(item => ({ ...item, imageAlt: cityImageAlt(item.name, city.name) }))}
                             category={`city-${city.slug}-${cat.id}`}
                             groupHighlight={cat.id === 'floorCleaning' ? {
                               count: 5,
