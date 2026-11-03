@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Align Google tracking with the verified Ads account, extend existing cookie consent with evidence/withdrawal, update disclosure and test accepted/refused form events; publication is owner-controlled.
 - [x] Fix section-heading finding across about, auto, cleaning, city pages, prices, equipment, windows, floor cleaning and shared partner strip; guide verified already complete. Checked 36 localized pages: one H1, section H2 and sequential levels. Visitor changes require publication.
 - [x] Remove repeated promotional announcement and duplicate homepage promotion markup; homepage H1 targets Wrocław in four languages and matches deployed crawler HTML. Verified at 390, 700 and 1280px; visitor changes require publication.
 - [x] Align city-page titles, descriptions, H1, local service content and image ALT across visitors and Google in four languages; 124 browser/crawler pairs verified, Oława uses supplied Polish metadata. Crawler deployed; visitor changes require website publication.
