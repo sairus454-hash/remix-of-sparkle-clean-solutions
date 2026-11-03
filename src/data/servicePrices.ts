@@ -10,22 +10,22 @@ import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
 export const BASE_SERVICE_PRICES: Record<string, number> = {
-  // Мебель
-  pouf: 50,
-  chair: 35,
+  // Мебель (Вроцлав: снижено на 10%, округлено до 5)
+  pouf: 45,
+  chair: 30,
   chairSeat: 25,
-  chairWithBack: 35,
-  chairConference: 50,
-  chairSwivel: 60,
-  armchair: 95,
+  chairWithBack: 30,
+  chairConference: 45,
+  chairSwivel: 55,
+  armchair: 85,
   pillow: 15,
-  sofa2: 185,
-  sofa3: 210,
-  sofaCorner: 265,
-  sofaCornerLarge: 325,
-  kitchenCorner: 210,
-  carseat: 80,
-  stroller: 100,
+  sofa2: 165,
+  sofa3: 190,
+  sofaCorner: 240,
+  sofaCornerLarge: 295,
+  kitchenCorner: 190,
+  carseat: 70,
+  stroller: 90,
   // Матрасы и кровати
   mattressSingle: 150,
   mattressDouble: 230,
