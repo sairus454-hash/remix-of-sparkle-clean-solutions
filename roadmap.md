@@ -1,5 +1,5 @@
 # Tasks
-- [ ] Fix current SEO findings: section headings on homepage/auto/cleaning/guide and complete local search description.
+- [x] Fix current SEO findings: localized section headings on homepage/auto/cleaning and shared mobile promotions; guide verified already correct; local descriptions include upholstery, mattresses and carpets. Browser checks and build passed; both findings marked fixed awaiting rescan.
 - [x] Align homepage title/description in four languages across React, static head and crawler renderer, preserving other cities; preview and deployed crawler responses verified. Website publication remains owner-controlled.
 - [x] Correct contact-page coordinates and clickable map address for ul. Jedności Narodowej 160, 50-302 Wrocław.
 - [ ] Match contact-page hours to Google Maps — blocked: full weekly schedule not retrievable; owner skipped the schedule question. Existing hours unchanged, not verified.
