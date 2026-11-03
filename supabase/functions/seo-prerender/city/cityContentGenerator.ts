@@ -1,4 +1,4 @@
-import { CityProfile } from './cityProfiles';
+import type { CityProfile } from './cityProfiles.ts';
 
 type Lang = 'pl' | 'ru' | 'en' | 'uk';
 

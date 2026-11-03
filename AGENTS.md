@@ -1,4 +1,5 @@
 # Architecture rules
+- Keep city data, localized search identity and local content shared between React and the crawler renderer under `seo-prerender/city`; frontend data modules re-export these sources to prevent city/homepage divergence.
 - Share localized homepage title/description between React and the crawler renderer through `seo-prerender/homeMeta`; keep the static Polish head fallback aligned to prevent divergent search metadata.
 - Keep contact-page address, geo coordinates and map destination in `businessLocation` so visible contact details and structured data cannot diverge.
 - All automatic order discounts must be calculated by `useDiscountCalculator`; presentation and chat must not independently calculate category-combination discounts, so totals remain consistent.

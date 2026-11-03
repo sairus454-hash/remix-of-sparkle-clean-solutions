@@ -19,6 +19,7 @@ interface ServiceCardItem {
   price: number;
   originalPrice?: number;
   image: string;
+  imageAlt?: string;
   unit?: string;
   priceText?: string;
   promoBadge?: string;
@@ -411,7 +412,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
             <div className="w-full aspect-square overflow-hidden bg-accent/20 relative">
               <img
                 src={item.image}
-                alt={item.name}
+                alt={item.imageAlt || item.name}
                 loading="lazy"
                 decoding="async"
                 className={cn(
@@ -639,7 +640,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
               >
                 <img
                   src={selected.item.image}
-                  alt={selected.item.name}
+                  alt={selected.item.imageAlt || selected.item.name}
                   className="w-10 h-10 rounded-lg object-cover flex-shrink-0"
                 />
                 <div className="flex-1 min-w-0">
