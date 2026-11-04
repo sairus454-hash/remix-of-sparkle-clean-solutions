@@ -1,4 +1,4 @@
-const BOT_AGENTS = /googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|telegrambot|applebot|duckduckbot|semrushbot|ahrefsbot|mj12bot|petalbot|saitreport|screaming|sitebulb|seranking|serpstat/i;
+const BOT_AGENTS = /googlebot|bingbot|yandex|baiduspider|facebookexternalhit|facebookcatalog|meta-externalagent|meta-externalfetcher|facebot|twitterbot|discordbot|skypeuripreview|google-inspectiontool|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|telegrambot|applebot|duckduckbot|semrushbot|ahrefsbot|mj12bot|petalbot|saitreport|screaming|sitebulb|seranking|serpstat/i;
 
 const PRERENDER_URL = 'https://iycukvmyvphufsdhlzmj.supabase.co/functions/v1/seo-prerender';
 

@@ -1,4 +1,5 @@
 import { HOME_META } from './homeMeta.ts';
+import { BLOG_META } from './blogMeta.ts';
 import { getCityPage, renderCityBody } from './city/citySeo.ts';
 
 const corsHeaders = {
@@ -11,7 +12,7 @@ const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`;
 const PHONE = '+48 575 211 401';
 
 // Bot user-agent patterns
-const BOT_AGENTS = /googlebot|bingbot|yandex|baiduspider|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|telegrambot|applebot|duckduckbot|semrushbot|ahrefsbot|mj12bot|petalbot|saitreport|screaming|sitebulb|seranking|serpstat/i;
+const BOT_AGENTS = /googlebot|bingbot|yandex|baiduspider|facebookexternalhit|facebookcatalog|meta-externalagent|meta-externalfetcher|facebot|twitterbot|discordbot|skypeuripreview|google-inspectiontool|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|slackbot|vkShare|W3C_Validator|whatsapp|telegrambot|applebot|duckduckbot|semrushbot|ahrefsbot|mj12bot|petalbot|saitreport|screaming|sitebulb|seranking|serpstat/i;
 
 interface FaqEntry {
   q: string;
@@ -801,13 +802,15 @@ function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
   const blogMatch = path.match(/^\/blog\/(\d+)$/);
   if (blogMatch) {
     const id = blogMatch[1];
+    const sharedMeta = BLOG_META[lang][id as keyof typeof BLOG_META[typeof lang]];
+    if (!sharedMeta) return null;
     // Fully translated per-article meta + FAQ (preferred).
     const localized = blogArticleI18n[lang]?.[id];
-    if (localized) return localized;
+    if (localized) return { ...localized, ...sharedMeta };
     // Per-article PL meta exists; for non-PL we serve a generic
     // localized blog fallback (per-article translations live in the SPA).
-    if (lang === 'pl' && blogPages[id]) return blogPages[id];
-    return blogFallbackByLang[lang] || blogFallbackByLang.pl;
+    if (lang === 'pl' && blogPages[id]) return { ...blogPages[id], ...sharedMeta };
+    return { ...blogFallbackByLang[lang], ...sharedMeta };
   }
 
   return null;

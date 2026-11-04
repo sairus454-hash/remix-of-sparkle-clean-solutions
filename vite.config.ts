@@ -4,6 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 import { sitemapLastmodPlugin } from "./scripts/sitemap-lastmod";
+import { blogSeoMetaPlugin } from "./scripts/blog-seo-meta";
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -15,6 +16,7 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
+    blogSeoMetaPlugin(),
     sitemapLastmodPlugin(),
     mode === "development" && componentTagger(),
     VitePWA({
