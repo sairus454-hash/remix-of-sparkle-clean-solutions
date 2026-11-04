@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Improve homepage search snippet and route-specific crawler social previews; verify tests and public crawler HTML.
 - [ ] Launch MasterClean car-cleaning Search campaign with approved keywords/copy, 50 PLN/day, only successful form enquiries, Wrocław plus 5 km around Smolec — tracking verified; awaiting user's go-ahead for the approval card; Smolec radius validated at creation. No campaign created or spend changed.
 - [x] Verify public tracking receipt: live lead conversion answered by Google with 204; the earlier 'abort' was a test-browser artifact for background sends. Refusal and withdrawal block Google. Attribution to ad clicks unverifiable until the campaign runs.
 - [x] Align Google tracking with verified Ads account; existing cookie banner stores separate advertising/analytics decisions, notice evidence and withdrawal history; disclosure updated. Five tests and preview form-success simulation, refusal and withdrawal verified. Public deployment/provider receipt remain pending owner publication, not claimed as verified.
