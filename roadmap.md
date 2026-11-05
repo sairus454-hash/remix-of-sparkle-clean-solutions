@@ -1,4 +1,5 @@
 # Tasks
+- [ ] Give /auto its own shared four-language metadata, service text, photos and FAQ in React and crawler HTML; verify homepage and Oława retain their own identity.
 - [x] Improve homepage search snippet and route-specific crawler social previews: 321 crawler URLs and eight tests passed; crawler deployed, website/middleware changes reach the live site on next publication.
 - [x] Launch MasterClean car-cleaning Search campaign 24425775569 with approved copy, 50 PLN/day, successful form enquiries, Wrocław and 5 km around Smolec; completed in previous requests.
 - [x] Verify public tracking receipt: live lead conversion answered by Google with 204; the earlier 'abort' was a test-browser artifact for background sends. Refusal and withdrawal block Google. Attribution to ad clicks unverifiable until the campaign runs.
