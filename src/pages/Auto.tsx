@@ -27,6 +27,7 @@ import powerStation from '@/assets/power_station.jpg';
 import { Gift, Sparkle, ShieldCheck } from 'lucide-react';
 import PageFaqSection from '@/components/PageFaqSection';
 import { getSeoMeta, buildFaqJsonLd } from '@/lib/pageSeo';
+import { AUTO_PAGE } from '../../supabase/functions/seo-prerender/autoPage';
 
 // Auto calculator images
 import calcAutoComplex from '@/assets/calc-auto-complex.jpg';
@@ -87,6 +88,8 @@ const Auto = () => {
   };
 
   const seoMeta = getSeoMeta('auto', language);
+  const autoPage = AUTO_PAGE[language];
+  const pageUrl = `https://masterclean1885.com${language === 'pl' ? '' : `/${language}`}/auto`;
 
   return (
     <>
@@ -101,10 +104,12 @@ const Auto = () => {
           {
             '@context': 'https://schema.org',
             '@type': 'Service',
-            serviceType: 'Pranie tapicerki samochodów osobowych i ciężarowych',
-            name: 'Pranie tapicerki samochodów osobowych i ciężarowych',
-            description: 'Mobilne pranie tapicerki samochodów osobowych i ciężarowych z dojazdem. Czyszczenie foteli, dywaników, kabin TIR i busów.',
-            url: 'https://masterclean1885.com/auto',
+            serviceType: autoPage.headline,
+            name: autoPage.headline,
+            description: autoPage.description,
+            url: pageUrl,
+            inLanguage: language,
+            mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
             provider: {
               '@type': 'LocalBusiness',
               name: 'MasterClean',
@@ -149,7 +154,7 @@ const Auto = () => {
                    </div>
                  </div>
                  <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 animate-fade-up text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animation: 'float 3s ease-in-out infinite' }}>
-                   {t.auto.title}
+                   {autoPage.headline}
                  </h1>
                  <p className="text-base sm:text-lg animate-fade-up text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
                    {t.auto.subtitle}
@@ -169,10 +174,10 @@ const Auto = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
               <div className="text-center md:text-left">
                 <h2 className="font-serif text-2xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tight text-primary-foreground leading-tight drop-shadow-md">
-                  BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!
+                  {autoPage.power.h}
                 </h2>
                 <p className="mt-4 text-primary-foreground/90 text-base sm:text-lg font-medium leading-relaxed">
-                  {t.auto?.powerBankText || 'Nie potrzebujemy prądu z Państwa gniazdka — jeździmy z własną elektrownią.'}
+                  {autoPage.power.p}
                 </p>
                 <button
                   onClick={() => formSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
@@ -185,7 +190,7 @@ const Auto = () => {
               <div className="flex justify-center md:justify-end">
                 <img
                   src={powerStation}
-                  alt={t.auto?.powerBankImageAlt || 'Własna elektrownia MasterClean'}
+                  alt={autoPage.power.alt}
                   loading="lazy"
                   className="w-52 h-52 sm:w-72 sm:h-72 object-cover rounded-3xl shadow-glow border-4 border-primary-foreground/20"
                 />
@@ -193,6 +198,18 @@ const Auto = () => {
             </div>
           </div>
         </section>
+
+        <div className="container mx-auto px-4 py-10 sm:py-14">
+          <img src="/og-auto.jpg" alt={autoPage.imageAlt} width={1129} height={630} loading="lazy" className="mx-auto mb-8 w-full max-w-2xl rounded-lg object-cover aspect-video" />
+          <div className="grid gap-8 md:grid-cols-2">
+            {autoPage.sections.map(section => (
+              <section key={section.h}>
+                <h2 className="font-serif text-2xl font-semibold text-foreground mb-3">{section.h}</h2>
+                <p className="text-muted-foreground leading-relaxed">{section.p}</p>
+              </section>
+            ))}
+          </div>
+        </div>
 
         {/* 0. Camper Cleaning SEO intro */}
         <section className="py-10 sm:py-16 bg-background">
