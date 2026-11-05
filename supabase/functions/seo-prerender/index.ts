@@ -1,3 +1,4 @@
+import { AUTO_PAGE, AUTO_FAQ, renderAutoBody } from './autoPage.ts';
 import { HOME_META } from './homeMeta.ts';
 import { BLOG_META } from './blogMeta.ts';
 import { getCityPage, renderCityBody } from './city/citySeo.ts';
@@ -786,6 +787,7 @@ const blogArticleI18n: Record<Lang, Record<string, PageMeta>> = {
 };
 
 function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
+  if (path === '/auto') return { ...AUTO_PAGE[lang], image: `${SITE_URL}/og-auto.jpg`, faq: AUTO_FAQ[lang] };
   // Static pages: try localized override, fallback to PL
   if (lang !== 'pl' && staticPagesI18n[lang]?.[path]) {
     return { ...staticPages[path], ...staticPagesI18n[lang][path] };
@@ -815,13 +817,6 @@ function getPageMeta(path: string, lang: Lang = 'pl'): PageMeta | null {
 
   return null;
 }
-
-const AUTO_POWER_BLOCK: Record<string, { h: string; p: string; alt: string }> = {
-  pl: { h: 'BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!', p: 'Nie potrzebujemy prądu z Państwa gniazdka — jeździmy z własną elektrownią. Wyczyścimy tapicerkę auta nawet tam, gdzie nie ma prądu i wody.', alt: 'Własna elektrownia MasterClean — pranie tapicerki bez prądu u klienta' },
-  ru: { h: 'BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!', p: 'Нам не нужна ваша розетка — возим с собой собственную электростанцию. Вычистим обивку авто даже там, где нет электричества и воды.', alt: 'Собственная электростанция MasterClean — химчистка авто без электричества' },
-  en: { h: 'BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!', p: 'We do not need a socket — we bring our own power station and can clean car upholstery even where there is no electricity or water.', alt: 'Our own power station — car upholstery cleaning without electricity' },
-  uk: { h: 'BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU!', p: 'Нам не потрібна ваша розетка — возимо з собою власну електростанцію. Вичистимо оббивку авто навіть там, де немає електрики та води.', alt: 'Власна електростанція MasterClean — хімчистка авто без електрики' },
-};
 
 function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   // `path` is the LOGICAL path (already stripped of any /ru, /en, /uk prefix
@@ -945,6 +940,14 @@ ${localCityPage ? `<script type="application/ld+json">${JSON.stringify({
   areaServed: { '@type': 'City', name: localCityPage.city.name },
   provider: { '@id': `${SITE_URL}/#business` },
 })}</script>` : ''}
+${path === '/auto' ? `<script type="application/ld+json">${JSON.stringify({
+  '@context': 'https://schema.org', '@type': 'Service', '@id': `${canonicalUrl}#service`,
+  name: meta.headline, description: meta.description, url: canonicalUrl,
+  inLanguage: htmlLang, image: `${SITE_URL}/auto-cleaning-page.jpg`,
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+  provider: { '@id': `${SITE_URL}/#business` },
+  areaServed: ['Wrocław', 'Smolec'].map(name => ({ '@type': 'City', name })),
+})}</script>` : ''}
 ${type === 'article' ? `
   <!-- BlogPosting structured data -->
   <script type="application/ld+json">
@@ -988,19 +991,13 @@ ${meta.faq && meta.faq.length > 0 ? `
 <body>
   <h1>${escapeHtml(meta.headline || meta.title)}</h1>
   <p>${escapeHtml(meta.description)}</p>
-${path === '/auto' ? (() => { const b = AUTO_POWER_BLOCK[lang] || AUTO_POWER_BLOCK.pl; return `
-  <section>
-    <h2>${escapeHtml(b.h)}</h2>
-    <p>${escapeHtml(b.p)}</p>
-    <img src="${SITE_URL}/power-station.jpg" alt="${escapeHtml(b.alt)}" width="680" height="990">
-  </section>`; })() : ''}
 ${meta.faq && meta.faq.length > 0 ? `
   <section>
     <h2>${faqHeading}</h2>
     ${meta.faq.map((item) => `<h3>${escapeHtml(item.q)}</h3>\n    <p>${escapeHtml(item.a)}</p>`).join('\n    ')}
   </section>` : ''}
 
-${localCityBody || `
+${path === '/auto' ? renderAutoBody(htmlLang as Lang, escapeHtml) : localCityBody || `
   <section>
     <h2>O firmie MasterClean</h2>
     <p>MasterClean to profesjonalna firma czyszcząca działająca od 2021 roku we Wrocławiu i okolicach. Specjalizujemy się w praniu tapicerki meblowej i samochodowej, czyszczeniu dywanów, materacy, foteli, kanap oraz narożników. Wykonujemy również ozonowanie pomieszczeń i samochodów, mycie okien, sprzątanie mieszkań, domów i biur, a także drobne naprawy domowe (złota rączka).</p>

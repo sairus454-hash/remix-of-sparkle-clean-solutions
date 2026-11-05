@@ -1,3 +1,4 @@
+import { AUTO_PAGE, AUTO_FAQ } from '../../supabase/functions/seo-prerender/autoPage';
 // Centralised localised SEO metadata + FAQs for the main marketing pages.
 // Each page reads `SEO_META[page][language]` for <title>/<description>/keywords
 // and `FAQS[page][language]` for both the FAQPage JSON-LD entry and the
@@ -49,28 +50,7 @@ export const SEO_META: Record<PageKey, Record<Lang, SeoMeta>> = {
       keywords: 'upholstery cleaning, sofa cleaning, corner sofa cleaning, mattress cleaning, armchair cleaning, on-site cleaning Poland',
     },
   },
-  auto: {
-    pl: {
-      title: 'Pranie tapicerki samochodowej z dojazdem — MasterClean',
-      description: 'Mobilne pranie tapicerki aut osobowych, busów i kabin TIR. Czyszczenie foteli, podsufitki, dywaników, ozonowanie. Dojazd: Dolny Śląsk i inne regiony.',
-      keywords: 'pranie tapicerki samochodowej, czyszczenie wnętrza auta, kabina TIR, pranie tapicerki busa, ozonowanie auta, detailing Polska',
-    },
-    ru: {
-      title: 'Химчистка авто с выездом — салон, TIR, бус | MasterClean',
-      description: 'Мобильная химчистка салона легковых авто, бусов и кабин TIR. Чистка сидений, потолка, ковриков, озонирование. Выезд по Польше.',
-      keywords: 'химчистка авто, химчистка салона, химчистка кабины TIR, химчистка буса, чистка сидений, озонирование авто Польша',
-    },
-    uk: {
-      title: 'Хімчистка авто з виїздом — салон, TIR, бус | MasterClean',
-      description: 'Мобільна хімчистка салону легкових авто, бусів і кабін TIR. Чистка сидінь, стелі, килимків, озонування. Виїзд по Польщі.',
-      keywords: 'хімчистка авто, хімчистка салону, хімчистка кабіни TIR, хімчистка буса, чистка сидінь, озонування авто Польща',
-    },
-    en: {
-      title: 'Mobile Car Interior Cleaning — TIR, Vans | MasterClean',
-      description: 'Mobile car interior cleaning for cars, vans and TIR cabins. Seat, ceiling, floor mats and ozone treatment. On-site service across Poland.',
-      keywords: 'car interior cleaning, mobile car detailing, TIR cabin cleaning, van interior cleaning, car ozone treatment Poland',
-    },
-  },
+  auto: AUTO_PAGE,
   ozone: {
     pl: {
       title: 'Ozonowanie mieszkań, biur i aut — MasterClean',
@@ -171,36 +151,7 @@ export const FAQS: Record<FaqPageKey, Record<Lang, Faq[]>> = {
       { q: 'Do you offer a guarantee?', a: 'Yes, a 7-day quality guarantee. If anything is wrong we return free of charge.' },
     ],
   },
-  auto: {
-    pl: [
-      { q: 'Czy pierzecie tapicerkę auta z dojazdem?', a: 'Tak, dojeżdżamy do klienta z własnym sprzętem i prądem. Wystarczy miejsce parkingowe.' },
-      { q: 'Ile trwa pranie tapicerki samochodu?', a: 'Kompleksowe pranie wnętrza zajmuje 2–4 godziny w zależności od stanu auta i wybranego pakietu.' },
-      { q: 'Czy czyścicie kabiny TIR i busy?', a: 'Tak, mamy doświadczenie z kabinami ciężarówek (TIR) oraz busów dostawczych i pasażerskich.' },
-      { q: 'Czy usuwacie nieprzyjemne zapachy z auta?', a: 'Tak, łączymy pranie tapicerki z ozonowaniem, co skutecznie usuwa zapachy dymu, jedzenia i zwierząt.' },
-      { q: 'Czy czyścicie gumowe dywaniki?', a: 'Nie, specjalizujemy się tylko w tapicerce i dywanikach materiałowych. Gumowe można umyć samodzielnie.' },
-    ],
-    ru: [
-      { q: 'Делаете химчистку авто с выездом?', a: 'Да, выезжаем к клиенту со своим оборудованием и электропитанием. Нужно лишь место для парковки.' },
-      { q: 'Сколько длится химчистка салона?', a: 'Комплексная химчистка занимает 2–4 часа в зависимости от состояния авто и пакета.' },
-      { q: 'Чистите ли кабины TIR и бусы?', a: 'Да, у нас есть опыт с кабинами грузовиков (TIR), грузовыми и пассажирскими бусами.' },
-      { q: 'Удаляете ли неприятные запахи из салона?', a: 'Да, сочетаем химчистку с озонированием — это эффективно убирает запахи дыма, еды и животных.' },
-      { q: 'Чистите ли резиновые коврики?', a: 'Нет, мы специализируемся только на тканевых ковриках и тапицерии. Резиновые можно вымыть самостоятельно.' },
-    ],
-    uk: [
-      { q: 'Робите хімчистку авто з виїздом?', a: 'Так, виїжджаємо до клієнта зі своїм обладнанням і живленням. Потрібне лише місце для паркування.' },
-      { q: 'Скільки триває хімчистка салону?', a: 'Комплексна хімчистка триває 2–4 години залежно від стану авто й пакету.' },
-      { q: 'Чи чистите кабіни TIR та буси?', a: 'Так, маємо досвід із кабінами вантажівок (TIR), вантажними й пасажирськими бусами.' },
-      { q: 'Чи прибираєте неприємні запахи з авто?', a: 'Так, поєднуємо хімчистку з озонуванням — це ефективно усуває запахи диму, їжі й тварин.' },
-      { q: 'Чи чистите гумові килимки?', a: 'Ні, ми спеціалізуємось лише на тканинних килимках і оббивці. Гумові можна вимити самостійно.' },
-    ],
-    en: [
-      { q: 'Do you offer mobile car interior cleaning?', a: 'Yes, we come to the client with our own equipment and power source. We only need a parking spot.' },
-      { q: 'How long does interior cleaning take?', a: 'A complete interior detail takes 2–4 hours depending on the condition of the car and the chosen package.' },
-      { q: 'Do you clean TIR cabins and vans?', a: 'Yes, we have experience with truck (TIR) cabins as well as cargo and passenger vans.' },
-      { q: 'Can you remove bad odours from the car?', a: 'Yes, we combine upholstery cleaning with ozone treatment, which effectively removes smoke, food and pet odours.' },
-      { q: 'Do you clean rubber floor mats?', a: 'No, we specialise in fabric mats and upholstery only. Rubber mats can be washed at home.' },
-    ],
-  },
+  auto: AUTO_FAQ,
   ozone: {
     pl: [
       { q: 'Czy ozonowanie jest bezpieczne?', a: 'Tak, jeśli jest wykonywane przez profesjonalistów. Po zabiegu pomieszczenie wietrzymy 30–60 minut, a ozon szybko zamienia się w tlen.' },
