@@ -200,7 +200,7 @@ const Auto = () => {
         </section>
 
         <div className="container mx-auto px-4 py-10 sm:py-14">
-          <img src={autoCleaning1} alt={autoPage.imageAlt} width={1024} height={1024} loading="lazy" className="mx-auto mb-8 w-full max-w-2xl rounded-lg object-cover aspect-video" />
+          <img src="/og-auto.jpg" alt={autoPage.imageAlt} width={1129} height={630} loading="lazy" className="mx-auto mb-8 w-full max-w-2xl rounded-lg object-cover aspect-video" />
           <div className="grid gap-8 md:grid-cols-2">
             {autoPage.sections.map(section => (
               <section key={section.h}>

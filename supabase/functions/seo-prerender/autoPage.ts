@@ -67,7 +67,7 @@ export function renderAutoBody(lang: AutoLang, escape: (text: string) => string)
   const page = AUTO_PAGE[lang];
   const prefix = lang === 'pl' ? '' : `/${lang}`;
   return `<main>
-    <img src="https://masterclean1885.com/auto-cleaning-page.jpg" alt="${escape(page.imageAlt)}" width="1024" height="1024" fetchpriority="high">
+    <img src="https://masterclean1885.com/og-auto.jpg" alt="${escape(page.imageAlt)}" width="1129" height="630" fetchpriority="high">
     ${page.sections.map(section => `<section><h2>${escape(section.h)}</h2><p>${escape(section.p)}</p></section>`).join('\n')}
     <section><h2>${escape(page.power.h)}</h2><p>${escape(page.power.p)}</p><img src="https://masterclean1885.com/power-station.jpg" alt="${escape(page.power.alt)}" width="680" height="990" loading="lazy"></section>
     <p><a href="https://masterclean1885.com${prefix}/contacts">${escape(page.contact)}</a></p>

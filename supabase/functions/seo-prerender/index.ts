@@ -943,7 +943,7 @@ ${localCityPage ? `<script type="application/ld+json">${JSON.stringify({
 ${path === '/auto' ? `<script type="application/ld+json">${JSON.stringify({
   '@context': 'https://schema.org', '@type': 'Service', '@id': `${canonicalUrl}#service`,
   name: meta.headline, description: meta.description, url: canonicalUrl,
-  inLanguage: htmlLang, image: `${SITE_URL}/auto-cleaning-page.jpg`,
+  inLanguage: htmlLang, image: `${SITE_URL}/og-auto.jpg`,
   mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
   provider: { '@id': `${SITE_URL}/#business` },
   areaServed: ['Wrocław', 'Smolec'].map(name => ({ '@type': 'City', name })),
