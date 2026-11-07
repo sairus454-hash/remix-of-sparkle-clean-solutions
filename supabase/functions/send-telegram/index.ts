@@ -41,6 +41,52 @@ const MAX_EMAIL = 255;
 const MAX_SHORT = 200;
 const MAX_MESSAGE = 2000;
 
+// Short forms on /auto and /ozone also notify the owner by email (Gmail connector).
+const EMAIL_SOURCES = ['quick_auto', 'quick_ozone'];
+const OWNER_EMAIL = 'sairus454@gmail.com';
+const GMAIL_GATEWAY = 'https://connector-gateway.lovable.dev/google_mail/gmail/v1';
+
+const b64 = (s: string) =>
+  btoa(Array.from(new TextEncoder().encode(s), (b) => String.fromCharCode(b)).join(''));
+const mimeHeader = (v: string) => (/^[\x00-\x7F]*$/.test(v) ? v : `=?UTF-8?B?${b64(v)}?=`);
+const stripCrlf = (v: string) => v.replace(/[\r\n]+/g, ' ');
+
+async function sendOwnerEmail(subject: string, body: string): Promise<boolean> {
+  const lovableKey = Deno.env.get('LOVABLE_API_KEY');
+  const gmailKey = Deno.env.get('GOOGLE_MAIL_API_KEY');
+  if (!lovableKey || !gmailKey) {
+    console.error('Missing Gmail connector credentials');
+    return false;
+  }
+  const raw = b64([
+    `To: ${OWNER_EMAIL}`,
+    `Subject: ${mimeHeader(stripCrlf(subject))}`,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset="UTF-8"',
+    '',
+    body,
+  ].join('\r\n')).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  try {
+    const res = await fetch(`${GMAIL_GATEWAY}/users/me/messages/send`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${lovableKey}`,
+        'X-Connection-Api-Key': gmailKey,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ raw }),
+    });
+    if (!res.ok) {
+      console.error(`Gmail send failed [${res.status}]: ${await res.text()}`);
+      return false;
+    }
+    return true;
+  } catch (e) {
+    console.error('Gmail send exception:', e);
+    return false;
+  }
+}
+
 function sanitize(val: unknown, maxLen: number): string {
   if (typeof val !== 'string') return '';
   return val.trim().slice(0, maxLen);
@@ -123,7 +169,7 @@ serve(async (req) => {
     }
 
     // Save lead to DB first so it is never lost
-    const ALLOWED_SOURCES = ['contact', 'quick_order', 'manager_estimate', 'chat', 'carpet'];
+    const ALLOWED_SOURCES = ['contact', 'quick_order', 'manager_estimate', 'chat', 'carpet', ...EMAIL_SOURCES];
     const source = ALLOWED_SOURCES.includes(raw.source) ? raw.source : 'contact';
     try {
       const db = createClient(Deno.env.get('SUPABASE_URL')!, Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);
@@ -178,6 +224,24 @@ serve(async (req) => {
 
     const message = lines.join('\n');
 
+    let emailSent = false;
+    if (EMAIL_SOURCES.includes(source)) {
+      const emailLines = [
+        'Новая заявка с сайта masterclean1885.com',
+        '',
+        `Услуга: ${formData.service || '-'}`,
+        `Имя: ${formData.name}`,
+        `Телефон: ${formData.phone}`,
+        `Желаемая дата: ${formData.date || '-'}`,
+        '',
+        'Заявка также сохранена в админке: https://masterclean1885.com/admin/leads',
+      ];
+      emailSent = await sendOwnerEmail(
+        `Заявка: ${formData.service || 'сайт'} — ${formData.name}, ${formData.phone}`,
+        emailLines.join('\r\n'),
+      );
+    }
+
     const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
     const telegramResponse = await fetch(telegramUrl, {
@@ -194,6 +258,12 @@ serve(async (req) => {
 
     if (!telegramResponse.ok) {
       console.error('Telegram API error:', telegramResult);
+      if (emailSent) {
+        return new Response(
+          JSON.stringify({ success: true }),
+          { status: 200, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+        );
+      }
       return new Response(
         JSON.stringify({ error: 'Failed to send message' }),
         { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
