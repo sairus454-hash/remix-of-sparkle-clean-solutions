@@ -6,6 +6,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import BackToOrderButton from '@/components/BackToOrderButton';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
+import QuickLeadForm from '@/components/QuickLeadForm';
 import OzoneSplash from '@/components/OzoneSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import HeroSlideshow from '@/components/HeroSlideshow';
@@ -138,6 +139,8 @@ const Ozone = () => {
           </div>
         </div>
       </section>
+
+      <QuickLeadForm service="ozone" />
 
       {/* 1. Pricing */}
       <section className="py-20">

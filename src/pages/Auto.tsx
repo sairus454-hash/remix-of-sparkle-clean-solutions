@@ -8,6 +8,7 @@ import { useLanguage } from '@/i18n/LanguageContext';
 import Layout from '@/components/Layout';
 import BackToOrderButton from '@/components/BackToOrderButton';
 import ContactForm, { ContactFormRef } from '@/components/ContactForm';
+import QuickLeadForm from '@/components/QuickLeadForm';
 import AutoSplash from '@/components/AutoSplash';
 import HeroVideo from '@/components/HeroVideo';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -163,6 +164,8 @@ const Auto = () => {
              </div>
            </div>
          </section>
+
+        <QuickLeadForm service="auto" />
 
         {/* 0a. Promo banner: BEZ PRĄDU. BEZ WODY. BEZ PROBLEMU! */}
         <section className="py-10 sm:py-14 bg-primary relative overflow-hidden">

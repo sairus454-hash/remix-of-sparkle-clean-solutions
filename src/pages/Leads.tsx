@@ -34,6 +34,8 @@ const SOURCES: Record<string, string> = {
   manager_estimate: 'Оценка менеджера',
   chat: 'Чат',
   carpet: 'Ковры',
+  quick_auto: 'Короткая форма /auto',
+  quick_ozone: 'Короткая форма /ozone',
 };
 
 const Leads = () => {
