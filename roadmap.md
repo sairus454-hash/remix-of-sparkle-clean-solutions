@@ -1,6 +1,6 @@
 # Tasks
-- [ ] Sitemap: /auto lastmod set to its real 2026-11-05 content change; publish, then resubmit sitemap in Search Console. Manual "Request indexing" for /auto is owner-only in Search Console.
-- [ ] Lead form on /auto and /ozone (name, phone, date) delivering to the owner's email.
+- [x] Sitemap: /auto lastmod set to its real 2026-11-05 content change, published and resubmitted to Search Console (204). Manual "Request indexing" for /auto is owner-only in Search Console.
+- [x] Short lead form on /auto and /ozone (name, phone, date): stored in leads, Telegram + Gmail email to owner; test email confirmed in inbox, test row deleted, live pages show the form.
 - [x] Give /auto its own four-language metadata, text, photos and FAQ for visitors and Google; published, crawler deployed, live checks on 4 languages passed.
 - [x] Improve homepage search snippet and route-specific crawler social previews: 321 crawler URLs and eight tests passed; crawler deployed, website/middleware changes reach the live site on next publication.
 - [x] Launch MasterClean car-cleaning Search campaign 24425775569 with approved copy, 50 PLN/day, successful form enquiries, Wrocław and 5 km around Smolec; completed in previous requests.
