@@ -347,7 +347,7 @@ const enTranslations = {
       app5: 'Warehouses',
       app6: 'Shops and retail premises',
       businessTitle: 'Ozone treatment for warehouses, shops and premises',
-      businessDesc: 'We treat not only apartments and houses, but also warehouses, shops, offices and retail premises in Wrocław and the surrounding area. We come with our own equipment and schedule the work around your business hours, for example in the evening or at the weekend. For larger spaces we prepare a quote after a short call.',
+      businessDesc: 'We treat not only apartments and houses, but also warehouses, shops, offices and retail premises in Wrocław and the surrounding area. We come with our own equipment. To get a price for your space, send a request through the form or call us.',
       prepTitle: 'What you need to know before cleaning?',
       prep1: 'Treatment must be carried out in a clean room. Standard room height is 2.95 m',
       prep2: 'Ventilation openings and any cracks and gaps must be sealed',

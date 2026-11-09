@@ -348,7 +348,7 @@ const plTranslations = {
       app5: 'Magazyny',
       app6: 'Sklepy i lokale handlowe',
       businessTitle: 'Ozonowanie magazynów, sklepów i lokali',
-      businessDesc: 'Ozonujemy nie tylko mieszkania i domy, ale też magazyny, sklepy, biura i lokale handlowe we Wrocławiu i okolicach. Przyjeżdżamy z własnym sprzętem, a termin dopasowujemy do godzin pracy firmy, np. wieczorem lub w weekend. Wycenę dla większej powierzchni przygotujemy po krótkiej rozmowie.',
+      businessDesc: 'Ozonujemy nie tylko mieszkania i domy, ale też magazyny, sklepy, biura i lokale handlowe we Wrocławiu i okolicach. Przyjeżdżamy z własnym sprzętem. Aby poznać cenę dla Twojej powierzchni, wyślij zapytanie przez formularz lub zadzwoń.',
       prepTitle: 'Co musisz wiedzieć przed rozpoczęciem sprzątania?',
       prep1: 'Obróbka musi być przeprowadzona w czystym pomieszczeniu. Standardowa wysokość pomieszczenia wynosi 2,95 m',
       prep2: 'Otwory wentylacyjne oraz wszelkie szczeliny i pęknięcia muszą być uszczelnione',
