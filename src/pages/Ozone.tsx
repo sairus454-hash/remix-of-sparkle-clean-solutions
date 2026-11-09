@@ -11,7 +11,7 @@ import OzoneSplash from '@/components/OzoneSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
-import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle } from 'lucide-react';
+import { Wind, CheckCircle2, Car, Home, Building2, Wrench, AlertCircle, Warehouse, Store } from 'lucide-react';
 import ozoneRoom from '@/assets/ozone-room.jpg';
 import ozoneBg from '@/assets/ozone-bg.jpg';
 import ozoneCar from '@/assets/ozone-car.jpg';
@@ -49,6 +49,8 @@ const Ozone = () => {
     { icon: Home, title: t.ozone.app2 },
     { icon: Building2, title: t.ozone.app3 },
     { icon: Wrench, title: t.ozone.app4 },
+    { icon: Warehouse, title: t.ozone.app5 },
+    { icon: Store, title: t.ozone.app6 },
   ];
 
   const ozoneItems = [
@@ -223,7 +225,7 @@ const Ozone = () => {
           <h2 className="font-serif text-3xl font-bold text-center mb-12 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
             {t.ozone.applications}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {applications.map((app, index) => (
               <CircularRevealCard key={index} index={index}>
                 <div className="group p-6 rounded-2xl bg-gradient-card border border-border text-center hover:shadow-card-hover transition-all duration-300 h-full">
@@ -234,6 +236,10 @@ const Ozone = () => {
                 </div>
               </CircularRevealCard>
             ))}
+          </div>
+          <div className="max-w-3xl mx-auto mt-12 text-center">
+            <h3 className="font-serif text-2xl font-bold text-foreground mb-4">{t.ozone.businessTitle}</h3>
+            <p className="text-muted-foreground leading-relaxed">{t.ozone.businessDesc}</p>
           </div>
         </div>
       </section>
