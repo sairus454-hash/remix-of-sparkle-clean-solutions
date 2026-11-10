@@ -547,37 +547,6 @@ const CityPage = () => {
                 {language === 'pl' ? '🎁 Aktualne promocje' : language === 'en' ? '🎁 Current promotions' : language === 'uk' ? '🎁 Актуальні акції' : '🎁 Актуальные акции'}
               </h2>
               <div className="grid gap-3 sm:gap-4">
-                {/* Free drying */}
-                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-fresh/30 bg-fresh/5 p-4 sm:p-5">
-                  <div className="w-10 h-10 rounded-lg bg-fresh/20 flex items-center justify-center flex-shrink-0">
-                    <Droplets className="w-5 h-5 text-fresh" />
-                  </div>
-                  <div>
-                    <p className="text-sm sm:text-base font-semibold text-foreground">
-                      {language === 'pl' ? 'Suszenie mebli — GRATIS!' : language === 'en' ? 'Furniture drying — FREE!' : language === 'uk' ? 'Сушка меблів — БЕЗКОШТОВНО!' : 'Сушка мебели — БЕСПЛАТНО!'}
-                    </p>
-                    <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                      {language === 'pl' ? 'Do każdego zamówienia dołączamy profesjonalne suszenie — bezpłatnie.' : language === 'en' ? 'Professional drying included with every order — free.' : language === 'uk' ? 'До кожного замовлення додаємо професійне сушіння — безкоштовно.' : 'К каждому заказу добавляем профессиональную сушку — бесплатно.'}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Multi-service discount */}
-                <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-primary/30 bg-primary/5 p-4 sm:p-5">
-                  <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Percent className="w-5 h-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm sm:text-base font-semibold text-foreground">
-                      {language === 'pl' ? 'Rabaty za wiele usług: do -15%' : language === 'en' ? 'Multi-service discounts: up to -15%' : language === 'uk' ? 'Знижки за кілька послуг: до -15%' : 'Скидки за несколько услуг: до -15%'}
-                    </p>
-                    <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                      {language === 'pl' ? '2 kategorie usług — 5%, 4 kategorie — 10%, 6 kategorii — 15% VIP. Automatyczny rabat w kalkulatorze!' : language === 'en' ? '2 service categories — 5%, 4 categories — 10%, 6 categories — 15% VIP. Auto-calculated!' : language === 'uk' ? '2 категорії послуг — 5%, 4 категорії — 10%, 6 категорій — 15% VIP. Автоматичний розрахунок!' : '2 категории услуг — 5%, 4 категории — 10%, 6 категорий — 15% VIP. Автоматический расчёт!'}
-                    </p>
-                  </div>
-                </div>
-
-
                 {/* Free delivery */}
                 <div className="flex items-start gap-3 sm:gap-4 rounded-xl border border-border bg-card p-4 sm:p-5">
                   <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
