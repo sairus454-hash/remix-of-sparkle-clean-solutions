@@ -841,6 +841,9 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   const localCityBody = citySlug ? renderCityBody(citySlug, htmlLang as Lang, escapeHtml) : '';
   const localCityPage = citySlug ? getCityPage(citySlug, htmlLang as Lang) : undefined;
   const ogLocale = ogLocaleMap[htmlLang] || 'pl_PL';
+  // Visitor-identical page content; /auto keeps its dedicated crawler body.
+  const snapshot = path === '/auto' ? undefined : getPageSnapshot(cleanPath, htmlLang as Lang);
+  const crawlerNav = renderCrawlerNav(htmlLang as Lang, cleanPath, escapeHtml);
   const faqHeading = ({
     pl: 'Najczęściej zadawane pytania',
     ru: 'Часто задаваемые вопросы',
@@ -1099,6 +1102,7 @@ ${path === '/auto' ? renderAutoBody(htmlLang as Lang, escapeHtml) : localCityBod
       <a href="${SITE_URL}/blog">Blog</a>
     </nav>
   </section>`}
+${crawlerNav}`}
 </body>
 </html>`;
 }
