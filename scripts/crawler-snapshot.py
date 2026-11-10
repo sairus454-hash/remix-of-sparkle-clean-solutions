@@ -63,7 +63,9 @@ async ({stableImg}) => {
       if (cs.display === 'none' || cs.visibility === 'hidden') return;
       if (tag === 'BUTTON') {
         // Keep only disclosure triggers (FAQ questions); calculator controls are noise.
+        // Price cards are selectable buttons: keep their text when it is descriptive.
         if (n.getAttribute('aria-controls') && !n.getAttribute('aria-haspopup')) n.childNodes.forEach(walk);
+        else if ((n.innerText || '').trim().length >= 12) { out.push('<p>'); n.childNodes.forEach(walk); out.push('</p>'); }
         return;
       }
       if (tag === 'IMG') {
@@ -88,6 +90,7 @@ async ({stableImg}) => {
         out.push(`</${tag.toLowerCase()}>`);
       } else {
         n.childNodes.forEach(walk);
+        out.push(' ');
       }
       const extra = n.getAttribute && n.getAttribute('data-snap-after');
       if (extra && captured.has(extra)) out.push(captured.get(extra));
