@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 import {
   Home, Coins, Package, Car, Wind, Armchair, BedDouble,
   Sofa, Sparkles, Wrench, ChevronDown, MapPin,
-  Gift, Percent, Droplets, Tag, Leaf
+  Gift, Tag, Leaf
 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { getCityBySlug } from '@/data/cities';
