@@ -2,6 +2,7 @@ import { AUTO_PAGE, AUTO_FAQ, renderAutoBody } from './autoPage.ts';
 import { HOME_META } from './homeMeta.ts';
 import { BLOG_META } from './blogMeta.ts';
 import { getCityPage, renderCityBody } from './city/citySeo.ts';
+import { getPageSnapshot, renderCrawlerNav } from './crawlerNav.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -989,6 +990,11 @@ ${meta.faq && meta.faq.length > 0 ? `
 
 </head>
 <body>
+${snapshot ? `<main>${snapshot.replace('</h1>', `</h1>\n<img src="${image}" alt="${escapeHtml(meta.headline || meta.title)}" width="1200" height="630" fetchpriority="high">`)}</main>
+${renderCrawlerNav(htmlLang as Lang, path, escapeHtml)}
+<p><a href="tel:${PHONE}">${PHONE}</a> — ul. Jedności Narodowej 160, 50-302 Wrocław</p>
+</body>
+</html>` : ''}
   <h1>${escapeHtml(meta.headline || meta.title)}</h1>
   <p>${escapeHtml(meta.description)}</p>
 ${meta.faq && meta.faq.length > 0 ? `

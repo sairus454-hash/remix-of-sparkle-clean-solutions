@@ -50,7 +50,7 @@ const HEADINGS: Record<NavLang, { services: string; cities: string }> = {
 /** Site-wide internal links so every crawler page connects to services and city pages. */
 export function renderCrawlerNav(lang: NavLang, currentPath: string, escape: (v: string) => string): string {
   const prefix = lang === 'pl' ? '' : `/${lang}`;
-  const url = (path: string) => `${SITE_URL}${prefix}${path === '/' ? '' : path}` || SITE_URL;
+  const url = (path: string) => path === '/' ? `${SITE_URL}${prefix || '/'}` : `${SITE_URL}${prefix}${path}`;
   const services = SERVICE_LINKS
     .filter(([path]) => path !== currentPath)
     .map(([path, label]) => `<li><a href="${url(path)}">${escape(label[lang])}</a></li>`)
