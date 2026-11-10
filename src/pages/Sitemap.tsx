@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/i18n/LanguageContext';
 
 const sitemapUrls = [
   { loc: '/', label: 'Strona główna', priority: '1.0', changefreq: 'weekly' },
@@ -56,18 +57,27 @@ const sitemapUrls = [
 
 const DOMAIN = 'https://masterclean1885.com';
 
+const SITEMAP_HEADING: Record<string, { h1: string; title: string; crumb: string }> = {
+  pl: { h1: 'Mapa strony MasterClean', title: 'Mapa strony — MasterClean', crumb: 'Mapa strony' },
+  ru: { h1: 'Карта сайта MasterClean', title: 'Карта сайта — MasterClean', crumb: 'Карта сайта' },
+  en: { h1: 'MasterClean site map', title: 'Sitemap — MasterClean', crumb: 'Site map' },
+  uk: { h1: 'Карта сайту MasterClean', title: 'Карта сайту — MasterClean', crumb: 'Карта сайту' },
+};
+
 const Sitemap = () => {
+  const { language } = useLanguage();
+  const heading = SITEMAP_HEADING[language] ?? SITEMAP_HEADING.pl;
   return (
     <Layout>
       <SEO
-        title="Sitemap | MasterClean"
+        title={heading.title}
         description="Mapa strony MasterClean — pełna lista podstron serwisu: usługi, cennik, kontakt, blog i więcej. Nawigacja po stronie."
         keywords="sitemap, mapa strony, MasterClean strony, nawigacja serwisu, struktura serwisu"
         canonical="/sitemap"
-        breadcrumbs={[{ name: 'Sitemap', path: '/sitemap' }]}
+        breadcrumbs={[{ name: heading.crumb, path: '/sitemap' }]}
       />
       <div className="container mx-auto px-4 py-16 min-h-[60vh]">
-        <h1 className="font-serif text-3xl sm:text-4xl font-bold mb-8 text-foreground">Sitemap</h1>
+        <h1 className="font-serif text-3xl sm:text-4xl font-bold mb-8 text-foreground">{heading.h1}</h1>
 
         {/* Visual sitemap */}
         <div className="mb-12">
