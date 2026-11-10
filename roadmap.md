@@ -1,7 +1,7 @@
 # Tasks
-- [ ] Indexing fix 1: own crawler body (text, FAQ, links) for service pages instead of 96%-homepage copy (ozone, mattresses, prices, cleaning and other service pages), 4 languages.
-- [ ] Indexing fix 2: richer city crawler pages + internal links (services, nearby cities) on all crawler pages.
-- [ ] Indexing fix 3: delete 3 bogus sitemap entries (/windows, /services, /about) in Search Console.
+- [x] Indexing fix 1: crawler serves each page's own visible content (317 pages, 4 languages) instead of the homepage copy; deployed and live-checked (one H1, homepage overlap 4–65% instead of 96%).
+- [x] Indexing fix 2: city crawler pages now carry full visitor content (~1 100–1 300 words) and every crawler page links to all services and 31 city pages.
+- [x] Indexing fix 3: deleted 3 bogus sitemap entries (/windows, /services, /about) in Search Console (204).
 - [ ] Indexing fix 4: redirect masterclean1885.pl → .com — blocked: domain lives in another Vercel project (owner action).
 - [ ] Indexing fix 5: "Request indexing" in Search Console — owner-only manual action after publication.
 - [x] Sitemap: /auto lastmod set to its real 2026-11-05 content change, published and resubmitted to Search Console (204). Manual "Request indexing" for /auto is owner-only in Search Console.
