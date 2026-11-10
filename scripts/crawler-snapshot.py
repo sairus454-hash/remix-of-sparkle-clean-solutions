@@ -137,11 +137,14 @@ def sitemap_paths():
     return out
 
 
-async def capture(base: str, outdir: str, shard: int, shards: int):
+async def capture(base: str, outdir: str, shard: int, shards: int, only: str = ""):
+    """`only` (regex) limits capture to matching paths; later files override earlier ones in build."""
     from playwright.async_api import async_playwright
-    paths = [p for i, p in enumerate(sitemap_paths()) if i % shards == shard]
+    selected = [p for p in sitemap_paths() if not only or re.search(only, p)]
+    paths = [p for i, p in enumerate(selected) if i % shards == shard]
     Path(outdir).mkdir(parents=True, exist_ok=True)
-    out = open(Path(outdir) / f"shard{shard}.jsonl", "a", encoding="utf-8")
+    name = f"shard{'z' + str(abs(hash(only)) % 10000) + '_' if only else ''}{shard}.jsonl"
+    out = open(Path(outdir) / name, "a", encoding="utf-8")
     async with async_playwright() as pw:
         browser = await pw.chromium.launch(headless=True)
         ctx = await browser.new_context(viewport={"width": 1280, "height": 1800})
@@ -166,7 +169,7 @@ async def capture(base: str, outdir: str, shard: int, shards: int):
 
 def build(outdir: str):
     by_lang = {"pl": {}, "ru": {}, "en": {}, "uk": {}}
-    for f in sorted(Path(outdir).glob("shard*.jsonl")):
+    for f in sorted(Path(outdir).glob("shard*.jsonl"), key=lambda p: p.stat().st_mtime):
         for line in f.read_text(encoding="utf-8").splitlines():
             row = json.loads(line)
             m = re.match(r"^/(ru|en|uk)(?=/|$)", row["path"])
@@ -188,6 +191,6 @@ def build(outdir: str):
 if __name__ == "__main__":
     cmd = sys.argv[1]
     if cmd == "capture":
-        asyncio.run(capture(sys.argv[2], sys.argv[3], int(sys.argv[4]), int(sys.argv[5])))
+        asyncio.run(capture(sys.argv[2], sys.argv[3], int(sys.argv[4]), int(sys.argv[5]), sys.argv[6] if len(sys.argv) > 6 else ""))
     elif cmd == "build":
         build(sys.argv[2])
