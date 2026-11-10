@@ -1,5 +1,6 @@
 # Architecture rules
 - Share auto-page metadata, localized service copy and FAQ through `seo-prerender/autoPage`; render its own crawler body instead of the generic homepage catalogue to keep /auto independent and aligned with visitors.
+- Serve crawlers each sitemap page's own visible content from `seo-prerender/snapshots` (regenerate with `scripts/crawler-snapshot.py` after content changes) plus the shared `crawlerNav` links; never fall back to one shared catalogue body, because Google drops near-duplicate pages from the index.
 - Generate crawler blog titles/descriptions from the frontend article source with `blogSeoMetaPlugin`; keep social-preview crawler recognition aligned in middleware and the edge renderer so shared links retain their own identity.
 - Own Google Ads/Analytics loading and event reporting in the consent-aware tracking modules; do not load GTM alongside direct tags, so refusal blocks transmission and conversions have one reporting path.
 - Isolate optional geolocation loading with an error boundary so a failed deferred import cannot blank the visible page.

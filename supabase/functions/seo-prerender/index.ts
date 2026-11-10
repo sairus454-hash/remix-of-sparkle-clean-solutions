@@ -2,6 +2,7 @@ import { AUTO_PAGE, AUTO_FAQ, renderAutoBody } from './autoPage.ts';
 import { HOME_META } from './homeMeta.ts';
 import { BLOG_META } from './blogMeta.ts';
 import { getCityPage, renderCityBody } from './city/citySeo.ts';
+import { getPageSnapshot, renderCrawlerNav } from './crawlerNav.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -840,6 +841,9 @@ function buildHtml(path: string, meta: PageMeta, lang: string = 'pl'): string {
   const localCityBody = citySlug ? renderCityBody(citySlug, htmlLang as Lang, escapeHtml) : '';
   const localCityPage = citySlug ? getCityPage(citySlug, htmlLang as Lang) : undefined;
   const ogLocale = ogLocaleMap[htmlLang] || 'pl_PL';
+  // Visitor-identical page content; /auto keeps its dedicated crawler body.
+  const snapshot = path === '/auto' ? undefined : getPageSnapshot(cleanPath, htmlLang as Lang);
+  const crawlerNav = renderCrawlerNav(htmlLang as Lang, cleanPath, escapeHtml);
   const faqHeading = ({
     pl: 'Najczęściej zadawane pytania',
     ru: 'Часто задаваемые вопросы',
@@ -989,6 +993,9 @@ ${meta.faq && meta.faq.length > 0 ? `
 
 </head>
 <body>
+${snapshot ? `<main>${snapshot.replace('</h1>', `</h1>\n<img src="${image}" alt="${escapeHtml(meta.headline || meta.title)}" width="1200" height="630" fetchpriority="high">`)}</main>
+${crawlerNav}
+<p><a href="tel:${PHONE}">${PHONE}</a> — ul. Jedności Narodowej 160, 50-302 Wrocław</p>` : `
   <h1>${escapeHtml(meta.headline || meta.title)}</h1>
   <p>${escapeHtml(meta.description)}</p>
 ${meta.faq && meta.faq.length > 0 ? `
@@ -1095,6 +1102,7 @@ ${path === '/auto' ? renderAutoBody(htmlLang as Lang, escapeHtml) : localCityBod
       <a href="${SITE_URL}/blog">Blog</a>
     </nav>
   </section>`}
+${crawlerNav}`}
 </body>
 </html>`;
 }
