@@ -105,8 +105,8 @@ async ({stableImg}) => {
     if (btn.getAttribute('aria-expanded') !== 'true') { btn.click(); await sleep(120); }
     const region = document.getElementById(id);
     if (!region) continue;
-    capturedIds.add(id);
     const html = serialize(region);
+    capturedIds.add(id);
     if (html.trim()) captured.set(id, html);
     const holder = btn.closest('h1,h2,h3,h4') || btn;
     holder.setAttribute('data-snap-after', id);
