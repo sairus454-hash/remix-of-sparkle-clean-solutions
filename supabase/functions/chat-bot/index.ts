@@ -119,7 +119,7 @@ const PRICE_LIST = {
 • Импрегнация ковра — 5 PLN/м²
 • Чистка ковролина (20-50 м²) — 15 PLN/м²
 • Чистка ковролина (50+ м²) — 7-10 PLN/м²
-• Стирка ковров с забором и доставкой — 30 PLN/м²
+• Стирка ковров с забором и доставкой — 30 PLN/м² (минимальный заказ 100 PLN)
 
 🧹🚐 СТИРКА КОВРОВ С ЗАБОРОМ (подробно):
 Услуга «Стирка ковров с забором» — это профессиональная глубокая стирка ковров в нашей мастерской.
@@ -131,6 +131,7 @@ const PRICE_LIST = {
 5. Чистый и свежий ковёр доставляется обратно к вам домой.
 
 Цена: 30 PLN за 1 м² (измеряется длина × ширина ковра).
+Минимальный заказ на стирку ковров с забором — 100 PLN (если площадь меньше, стоимость всё равно 100 PLN). Обязательно сообщай клиенту об этом минимуме.
 Пример: ковёр 2×3 м = 6 м² × 30 PLN = 180 PLN.
 
 Преимущества:
@@ -357,7 +358,7 @@ Deep cleaning:
 • Carpet impregnation — 5 PLN/m²
 • Carpet floor cleaning (20-50 m²) — 15 PLN/m²
 • Carpet floor cleaning (50+ m²) — 7-10 PLN/m²
-• Carpet washing with pickup & delivery — 30 PLN/m²
+• Carpet washing with pickup & delivery — 30 PLN/m² (minimum order 100 PLN)
 
 🧹🚐 CARPET WASHING WITH PICKUP (details):
 "Carpet washing with pickup" is a professional deep carpet washing service at our workshop.
@@ -369,6 +370,7 @@ How it works:
 5. The clean, fresh carpet is delivered back to your home.
 
 Price: 30 PLN per 1 m² (measured length × width of carpet).
+Minimum order for carpet washing with pickup is 100 PLN (a smaller area still costs 100 PLN). Always tell the customer about this minimum.
 Example: a 2×3 m carpet = 6 m² × 30 PLN = 180 PLN.
 
 Benefits:
@@ -598,7 +600,7 @@ Sprzątanie generalne:
 • Impregnacja dywanu — 5 PLN/m²
 • Czyszczenie wykładziny (20-50 m²) — 15 PLN/m²
 • Czyszczenie wykładziny (50+ m²) — 7-10 PLN/m²
-• Pranie dywanów z odbiorem i dostawą — 30 PLN/m²
+• Pranie dywanów z odbiorem i dostawą — 30 PLN/m² (minimalne zamówienie 100 PLN)
 
 🧹🚐 PRANIE DYWANÓW Z ODBIOREM (szczegóły):
 Usługa „Pranie dywanów z odbiorem" to profesjonalne głębokie pranie dywanów w naszym warsztacie.
@@ -610,6 +612,7 @@ Jak to działa:
 5. Czysty i świeży dywan dostarczamy z powrotem do Twojego domu.
 
 Cena: 30 PLN za 1 m² (mierzone długość × szerokość dywanu).
+Minimalne zamówienie na pranie dywanów z odbiorem to 100 PLN (przy mniejszym metrażu koszt wynosi 100 PLN). Zawsze informuj klienta o tym minimum.
 Przykład: dywan 2×3 m = 6 m² × 30 PLN = 180 PLN.
 
 Korzyści:
@@ -837,7 +840,7 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 • Імпрегнація килима — 5 PLN/м²
 • Чистка килимового покриття (20-50 м²) — 15 PLN/м²
 • Чистка килимового покриття (50+ м²) — 7-10 PLN/м²
-• Прання килимів із забором та доставкою — 30 PLN/м²
+• Прання килимів із забором та доставкою — 30 PLN/м² (мінімальне замовлення 100 PLN)
 
 🧹🚐 ПРАННЯ КИЛИМІВ ІЗ ЗАБОРОМ (детально):
 Послуга «Прання килимів із забором» — це професійне глибоке прання килимів у нашій майстерні.
@@ -849,6 +852,7 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 5. Чистий та свіжий килим доставляється назад до вашого дому.
 
 Ціна: 30 PLN за 1 м² (вимірюється довжина × ширина килима).
+Мінімальне замовлення на прання килимів із забором — 100 PLN (якщо площа менша, вартість однаково 100 PLN). Обов'язково повідомляй клієнту про цей мінімум.
 Приклад: килим 2×3 м = 6 м² × 30 PLN = 180 PLN.
 
 Переваги:

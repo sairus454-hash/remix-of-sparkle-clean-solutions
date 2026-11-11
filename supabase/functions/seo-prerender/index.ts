@@ -1038,7 +1038,7 @@ ${path === '/auto' ? renderAutoBody(htmlLang as Lang, escapeHtml) : localCityBod
       <li>Pranie fotela — od 65 PLN</li>
       <li>Pranie krzesła — od 25 PLN</li>
       <li>Czyszczenie dywanu u klienta — 15 PLN/m²</li>
-      <li>Pranie dywanów z odbiorem i dostawą — 30 PLN/m²</li>
+      <li>Pranie dywanów z odbiorem i dostawą — 30 PLN/m² (minimalne zamówienie 100 PLN)</li>
       <li>Czyszczenie wykładziny dywanowej (20–50 m²) — 10 PLN/m²</li>
       <li>Czyszczenie wykładziny dywanowej (50+ m²) — 7–10 PLN/m²</li>
       <li>Czyszczenie płytek — 20 PLN/m²</li>
