@@ -27,3 +27,4 @@
 - [x] Update company address to ul. Jedności Narodowej 160, 50-302 Wrocław everywhere.
 - [x] Publish the site so all pending changes go live.
 - [ ] Review the three reported security findings; resolve false positives with approval where required and identify configuration blockers.
+- [x] Carpet washing with pickup: 100 zł minimum shown on price cards, calculator, order form (with shortfall, also in the request text) and chatbot in 4 languages; Google copy refreshed and live-checked. Visitors see it after publication.

@@ -15,6 +15,7 @@ import SuccessAnimation from './SuccessAnimation';
 import { supabase } from '@/integrations/supabase/client';
 import { CalculatorItem } from '@/types/calculator';
 import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
+import { carpetPickupFormNote } from '@/lib/carpetPickupMinimum';
 export interface ContactFormRef {
   setCalculatorData: (items: CalculatorItem[], total: number) => void;
   setPromotion: (promotion: string) => void;
@@ -150,6 +151,7 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
 
   // Use the discount calculator hook
   const discountInfo = useDiscountCalculator(discountItems);
+  const carpetMinNote = useMemo(() => carpetPickupFormNote(calculatorItems, language), [calculatorItems, language]);
 
 
   // Auto-generate message from calculator data with discount info
@@ -171,13 +173,17 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
       }
       
       message += `\n\n${totalLabel} ${discountInfo.finalTotal} ${t.prices.currency}`;
+
+      if (carpetMinNote) {
+        message += `\n\n⚠️ ${carpetMinNote}`;
+      }
       
       setFormData(prev => ({
         ...prev,
         message
       }));
     }
-  }, [calculatorItems, discountInfo, t, language]);
+  }, [calculatorItems, discountInfo, carpetMinNote, t, language]);
   const locales = {
     ru,
     pl,
@@ -502,6 +508,13 @@ const ContactForm = forwardRef<ContactFormRef, ContactFormProps>(({
             <span className="text-lg font-bold text-primary">{discountInfo.finalTotal} {t.prices.currency}</span>
           </div>
           
+          {carpetMinNote && (
+            <div className="mt-3 flex items-start gap-1.5 rounded-lg border border-border bg-muted/50 p-2 text-xs text-foreground" role="note">
+              <AlertTriangle className="w-4 h-4 flex-shrink-0 text-primary" />
+              <span>{carpetMinNote}</span>
+            </div>
+          )}
+
           <p className="text-xs text-muted-foreground mt-2">{t.form.checkOrder}</p>
         </div>}
 
