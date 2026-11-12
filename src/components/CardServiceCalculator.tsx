@@ -12,6 +12,7 @@ import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import QuickOrderDialog from './QuickOrderDialog';
 import { useCity } from '@/hooks/useCity';
+import { isCarpetPickup, carpetPickupMinNote } from '@/lib/carpetPickupMinimum';
 
 interface ServiceCardItem {
   id: string;
@@ -491,6 +492,11 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
                   selected ? "text-primary" : "text-primary/80 group-hover:text-primary"
                 )}>
                   {item.priceText || `${item.price} zł`}{item.unit ? `/${item.unit}` : ''}
+                </p>
+              )}
+              {isCarpetPickup(item.id) && (
+                <p className="mt-1 text-[11px] sm:text-xs font-medium text-muted-foreground leading-tight">
+                  {carpetPickupMinNote(language)}
                 </p>
               )}
             </div>

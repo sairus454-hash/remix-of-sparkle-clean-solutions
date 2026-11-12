@@ -18,6 +18,7 @@ import { ChevronDown, Sofa, Car, BedDouble, Droplets, Sparkles, Square, Wrench, 
 import { CalculatorItem } from '@/types/calculator';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useDiscountCalculator } from '@/hooks/useDiscountCalculator';
+import { isCarpetPickup, carpetPickupMinNote } from '@/lib/carpetPickupMinimum';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { servicePrice, useServicePrices } from '@/data/servicePrices';
 
@@ -545,7 +546,12 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
                           onClick={() => addItem(item)}
                         >
                           <Plus className="w-4 h-4 mr-2 flex-shrink-0 text-primary" />
-                          <span className="text-xs sm:text-sm">{item.name}</span>
+                          <span className="text-xs sm:text-sm">
+                            {item.name}
+                            {isCarpetPickup(item.id) && (
+                              <span className="block text-[11px] text-muted-foreground">{carpetPickupMinNote(language)}</span>
+                            )}
+                          </span>
                         </Button>
                       </div>
                     );
