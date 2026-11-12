@@ -17,3 +17,11 @@ describe('carpet pickup minimum order', () => {
     expect(carpetPickupFormNote([{ id: 'sofa2', price: 165, quantity: 1 }], 'pl')).toBeNull();
   });
 });
+
+describe('carpet pickup order form note', () => {
+  it('tells the customer the 100 zł minimum and how much is missing', () => {
+    const note = carpetPickupFormNote([{ id: 'carpetPickup', price: 30, quantity: 2 }], 'pl');
+    expect(note).toContain('100 zł');
+    expect(note).toContain('40 zł');
+  });
+});
