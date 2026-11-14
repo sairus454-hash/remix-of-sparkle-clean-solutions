@@ -37,10 +37,7 @@ const BlogArticle = () => {
   useEffect(() => {
     if (!id) return;
     supabase
-      .from('blog_comments')
-      .select('*')
-      .eq('article_id', Number(id))
-      .order('created_at', { ascending: false })
+      .rpc('get_blog_comments', { p_article_id: Number(id) })
       .then(({ data }) => {
         if (data) setComments(data as Comment[]);
       });
@@ -65,11 +62,7 @@ const BlogArticle = () => {
       if (!error && fnData?.success) {
         toast({ title: labels.success });
         setText('');
-        const { data } = await supabase
-          .from('blog_comments')
-          .select('*')
-          .eq('article_id', article.id)
-          .order('created_at', { ascending: false });
+        const { data } = await supabase.rpc('get_blog_comments', { p_article_id: article.id });
         if (data) setComments(data as Comment[]);
       } else if (fnData?.error) {
         toast({ title: fnData.error, variant: 'destructive' });
