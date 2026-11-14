@@ -367,6 +367,15 @@ export type Database = {
         Returns: boolean
       }
       cleanup_expired_rate_limits: { Args: never; Returns: undefined }
+      get_blog_comments: {
+        Args: { p_article_id: number }
+        Returns: {
+          created_at: string
+          id: string
+          name: string
+          text: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
