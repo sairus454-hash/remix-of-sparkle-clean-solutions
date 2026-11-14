@@ -14,6 +14,10 @@ export interface ItemClickPayload {
 // Simple in-session throttle so rapid repeat clicks don't spam the table
 const recent = new Map<string, number>();
 
+// The database accepts only these values (see item_clicks insert policy)
+const ACTIONS = ['open', 'add', 'remove'];
+const LANGS = ['pl', 'ru', 'en', 'uk'];
+
 export const logItemClick = async (payload: ItemClickPayload) => {
   try {
     const key = `${payload.item_id}|${payload.action || 'open'}`;
@@ -23,14 +27,14 @@ export const logItemClick = async (payload: ItemClickPayload) => {
     recent.set(key, now);
 
     await supabase.from('item_clicks').insert({
-      item_id: payload.item_id.slice(0, 120),
-      item_name: payload.item_name.slice(0, 200),
+      item_id: payload.item_id.slice(0, 120) || 'unknown',
+      item_name: payload.item_name.slice(0, 200) || 'unknown',
       item_category: payload.item_category?.slice(0, 80) ?? null,
-      price: typeof payload.price === 'number' ? payload.price : null,
-      action: payload.action || 'open',
+      price: typeof payload.price === 'number' && payload.price >= 0 && payload.price <= 100000 ? payload.price : null,
+      action: ACTIONS.includes(payload.action || '') ? payload.action : 'open',
       location: payload.location?.slice(0, 80) ?? null,
-      language: payload.language?.slice(0, 5) ?? null,
-      page_path: payload.page_path?.slice(0, 200) ?? null,
+      language: LANGS.find((l) => payload.language?.toLowerCase().startsWith(l)) ?? null,
+      page_path: payload.page_path?.startsWith('/') ? payload.page_path.slice(0, 200) : null,
     });
   } catch {
     // analytics must never break the app
