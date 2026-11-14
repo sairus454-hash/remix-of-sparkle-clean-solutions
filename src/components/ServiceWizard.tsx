@@ -44,6 +44,7 @@ const FORM_SERVICE_KEY: Record<string, string> = {
   windows: 'windows',
   ozone: 'ozone',
   floor: 'carpet',
+  carpetPickup: 'carpet',
   handyman: 'handyman',
 };
 

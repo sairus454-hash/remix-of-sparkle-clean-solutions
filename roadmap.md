@@ -28,3 +28,4 @@
 - [x] Publish the site so all pending changes go live.
 - [ ] Review the three reported security findings; resolve false positives with approval where required and identify configuration blockers.
 - [x] Carpet washing with pickup: 100 zł minimum shown on price cards, calculator, order form (with shortfall, also in the request text) and chatbot in 4 languages; Google copy refreshed and live-checked. Visitors see it after publication.
+- [x] Show carpet washing with pickup (30 zł/m², 100 zł minimum) on the Prices page in Wrocław; chatbot treats 100 zł as this service's own minimum and the in-chat quick estimate offers it; tests, chatbot reply and Google copy of /prices checked. Visitors see it after publication.

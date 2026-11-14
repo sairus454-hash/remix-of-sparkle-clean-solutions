@@ -11,6 +11,7 @@ export type ServiceKey =
   | 'windows'
   | 'ozone'
   | 'floor'
+  | 'carpetPickup'
   | 'handyman'
   | 'gardening';
 
@@ -30,7 +31,11 @@ export interface ServiceMenuItem {
   markup: 'standard' | 'gardening' | 'none';
   /** Suggested quantity chips */
   suggestions: number[];
+  /** Service-specific minimum order that replaces the general 160/220 PLN minimum */
+  minOrder?: number;
 }
+
+import { CARPET_PICKUP_MIN_ORDER } from './carpetPickupMinimum';
 
 const round5 = (x: number) => Math.ceil(x / 5) * 5;
 
@@ -185,6 +190,29 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     markup: 'none', // floor cleaning has NO city markup
   },
   {
+    key: 'carpetPickup',
+    emoji: '🧺',
+    url: '/floor-cleaning',
+    label: {
+      ru: 'Стирка ковров с забором',
+      en: 'Carpet washing with pickup',
+      pl: 'Pranie dywanów z odbiorem',
+      uk: 'Прання килимів із забором',
+    },
+    quantityPrompt: {
+      ru: 'Какая площадь ковра, м²? (длина × ширина)',
+      en: 'Carpet area in m²? (length × width)',
+      pl: 'Powierzchnia dywanu w m²? (długość × szerokość)',
+      uk: 'Площа килима в м²? (довжина × ширина)',
+    },
+    unit: { ru: 'м²', en: 'm²', pl: 'm²', uk: 'м²' },
+    suggestions: [2, 4, 6, 10],
+    // 30 PLN/m², pickup and delivery included
+    baseEstimator: (qty) => ({ min: 30 * qty, max: 30 * qty }),
+    markup: 'none',
+    minOrder: CARPET_PICKUP_MIN_ORDER,
+  },
+  {
     key: 'handyman',
     emoji: '🔧',
     url: '/handyman',
@@ -298,7 +326,7 @@ export const computeEstimate = (
 
   const min = service.markup === 'none' || effectiveIsBase ? base.min : round5(base.min * factor);
   const max = service.markup === 'none' || effectiveIsBase ? base.max : round5(base.max * factor);
-  const minOrder = isBase ? MIN_ORDER.base : MIN_ORDER.other;
+  const minOrder = service.minOrder ?? (isBase ? MIN_ORDER.base : MIN_ORDER.other);
   return { min, max, isBase: effectiveIsBase, minOrder, belowMin: max < minOrder };
 };
 

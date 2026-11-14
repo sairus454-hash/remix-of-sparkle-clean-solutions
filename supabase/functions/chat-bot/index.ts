@@ -142,7 +142,7 @@ const PRICE_LIST = {
 ✅ Подходит для любых типов ковров: шерстяных, синтетических, ручной работы
 
 ⏳ Срок выполнения: обычно 3-5 рабочих дней.
-📏 Минимальный заказ на стирку ковров: 160 PLN (Вроцлав) / 220 PLN (другие города).
+📏 Минимальный заказ на стирку ковров с забором: 100 PLN (общий минимум 160/220 PLN к этой услуге не применяется).
 
 🔧 МАСТЕР НА ЧАС:
 
@@ -229,6 +229,7 @@ const PRICE_LIST = {
 ⚠️ МИНИМАЛЬНЫЙ ЗАКАЗ:
 • Вроцлав и пригород (до 10 км) — 160 PLN
 • Другие населённые пункты (дальше 10 км) — 220 PLN
+• ИСКЛЮЧЕНИЕ: стирка ковров с забором — свой минимум 100 PLN
 
 ⚠️ ОГРАНИЧЕНИЯ ПО ГОРОДАМ:
 • «Уборка помещений» и «Мастер на час» доступны ТОЛЬКО во Вроцлаве!
@@ -381,7 +382,7 @@ Benefits:
 ✅ Suitable for all carpet types: wool, synthetic, handmade
 
 ⏳ Turnaround time: usually 3-5 business days.
-📏 Minimum order for carpet washing: 160 PLN (Wrocław) / 220 PLN (other cities).
+📏 Minimum order for carpet washing with pickup: 100 PLN (the general 160/220 PLN minimum does not apply to this service).
 
 🔧 HANDYMAN:
 
@@ -469,6 +470,7 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 ⚠️ MINIMUM ORDER:
 • Wrocław and suburbs (within 10 km) — 160 PLN
 • Other locations (beyond 10 km) — 220 PLN
+• EXCEPTION: carpet washing with pickup — its own minimum of 100 PLN
 
 ⚠️ CITY RESTRICTIONS:
 • "Premises cleaning" and "Handyman" available ONLY in Wrocław!
@@ -623,7 +625,7 @@ Korzyści:
 ✅ Odpowiednie dla wszystkich typów dywanów: wełnianych, syntetycznych, ręcznie robionych
 
 ⏳ Czas realizacji: zwykle 3-5 dni roboczych.
-📏 Minimalne zamówienie na pranie dywanów: 160 PLN (Wrocław) / 220 PLN (inne miasta).
+📏 Minimalne zamówienie na pranie dywanów z odbiorem: 100 PLN (ogólne minimum 160/220 PLN nie dotyczy tej usługi).
 
 🔧 ZŁOTA RĄCZKA:
 
@@ -711,6 +713,7 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 ⚠️ MINIMALNE ZAMÓWIENIE:
 • Wrocław i przedmieścia (do 10 km) — 160 PLN
 • Inne miejscowości (dalej niż 10 km) — 220 PLN
+• WYJĄTEK: pranie dywanów z odbiorem — własne minimum 100 PLN
 
 ⚠️ OGRANICZENIA WG MIAST:
 • „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
@@ -863,7 +866,7 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 ✅ Підходить для будь-яких типів килимів: вовняних, синтетичних, ручної роботи
 
 ⏳ Термін виконання: зазвичай 3-5 робочих днів.
-📏 Мінімальне замовлення на прання килимів: 160 PLN (Вроцлав) / 220 PLN (інші міста).
+📏 Мінімальне замовлення на прання килимів із забором: 100 PLN (загальний мінімум 160/220 PLN до цієї послуги не застосовується).
 
 🔧 МАЙСТЕР НА ГОДИНУ:
 
@@ -951,6 +954,7 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 ⚠️ МІНІМАЛЬНЕ ЗАМОВЛЕННЯ:
 • Вроцлав і передмістя (до 10 км) — 160 PLN
 • Інші населені пункти (далі 10 км) — 220 PLN
+• ВИНЯТОК: прання килимів із забором — власний мінімум 100 PLN
 
 ⚠️ ОБМЕЖЕННЯ ЗА МІСТАМИ:
 • «Прибирання приміщень» та «Майстер на годину» доступні ТІЛЬКИ у Вроцлаві!
@@ -1175,7 +1179,7 @@ ${SERVICE_PAGES_RU}
 — Старые скидки 10%/15% за «4+ категории» больше не действуют — НЕ упоминай их
 — При расчёте стоимости применяй только скидку 10% к мебели/матрасам/коже через форму, без суммирования скидок.
 
-— ВСЕГДА упоминай минимальный заказ: 160 PLN (Вроцлав), 220 PLN (другие города)
+— ВСЕГДА упоминай минимальный заказ: 160 PLN (Вроцлав), 220 PLN (другие города); для стирки ковров с забором — 100 PLN
 — Если клиент молчит — предложи помощь и кнопку заявки
 — Если вопрос сложный — предложи "Связаться с менеджером"
 
@@ -1340,7 +1344,7 @@ IMPORTANT:
 — Also mention: "Bring a neighbor — both get −20%", "Neighbor promo (same address) — −15%", "Furniture/mattress drying FREE until end of spring"
 — Old 10%/15% "4+ categories" discounts are no longer active — DO NOT mention them
 — Only apply the 10% furniture/mattress/leather form discount when calculating totals; do not stack discounts.
-— ALWAYS mention minimum order: 160 PLN (Wrocław), 220 PLN (other cities)
+— ALWAYS mention minimum order: 160 PLN (Wrocław), 220 PLN (other cities); for carpet washing with pickup — 100 PLN
 — If client is silent — offer help and request button
 — If question is complex — suggest "Contact Manager"
 
@@ -1479,7 +1483,7 @@ WAŻNE:
 — Stare rabaty 10%/15% za "4+ kategorie" już NIE obowiązują — NIE wspominaj o nich
 — Przy obliczaniu ceny stosuj tylko rabat 10% na meble/materace/skórę przez formularz; nie łącz rabatów.
 
-— ZAWSZE wspominaj o minimalnym zamówieniu: 160 PLN (Wrocław), 220 PLN (inne miasta)
+— ZAWSZE wspominaj o minimalnym zamówieniu: 160 PLN (Wrocław), 220 PLN (inne miasta); dla prania dywanów z odbiorem — 100 PLN
 — Jeśli klient milczy — zaproponuj pomoc i przycisk zapytania
 — Jeśli pytanie jest trudne — zaproponuj "Kontakt z menedżerem"
 
