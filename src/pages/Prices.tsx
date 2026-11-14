@@ -253,7 +253,7 @@ const Prices = () => {
     const visible = filtered.filter(c => c.id !== 'cleaning');
     return isWroclaw
       ? visible.map(cat => (cat.id === 'other' || cat.id === 'floorCleaning')
-          ? { ...cat, items: cat.items.filter(item => !hiddenOtherServicesOutsideBase.includes(item.id)) }
+          ? { ...cat, items: cat.items.filter(item => item.id === 'carpetPickup' || !hiddenOtherServicesOutsideBase.includes(item.id)) }
           : cat
         )
       : visible.map(cat => (cat.id === 'other' || cat.id === 'floorCleaning')
