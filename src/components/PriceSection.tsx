@@ -54,8 +54,6 @@ import calcAutoTrunk from '@/assets/calc-auto-trunk.jpg';
 import calcAutoOzone from '@/assets/calc-auto-ozone.jpg';
 import calcAutoTruck from '@/assets/calc-auto-truck.jpg';
 import calcAutoVan from '@/assets/calc-auto-van.jpg';
-import calcAutoVip from '@/assets/calc-auto-vip.jpg';
-import calcAutoVipLeather from '@/assets/calc-auto-vip-leather.jpg';
 
 // Ozone images
 import ozone1room from '@/assets/ozone-1room.jpg';
@@ -259,8 +257,6 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
       items: [
         { id: 'autoComplex', name: t.prices.items.autoComplex, price: 400, image: calcAutoComplex },
         { id: 'autoComplexLeather', name: t.prices.items.autoComplexLeather, price: 500, image: calcAutoLeather },
-        { id: 'autoVip', name: t.prices.items.autoVip, price: 700, image: calcAutoVip },
-        { id: 'autoVipLeather', name: t.prices.items.autoVipLeather, price: 800, image: calcAutoVipLeather },
         { id: 'autoSeat', name: t.prices.items.autoSeat, price: 80, image: calcAutoSeat },
         { id: 'autoSeats', name: t.prices.items.autoSeats, price: 300, image: calcAutoSeats },
         { id: 'autoLeatherSeats', name: t.prices.items.autoLeatherSeats, price: 350, image: calcAutoLeatherSeats },

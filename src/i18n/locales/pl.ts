@@ -197,8 +197,6 @@ const plTranslations = {
          autoTruckCabin: 'Czyszczenie kabiny ciągnika',
          autoVanCabin: 'Czyszczenie kabiny busa',
          camperCleaning: 'Pranie kampera',
-         autoVip: 'VIP czyszczenie samochodu',
-         autoVipLeather: 'VIP czyszczenie samochodu (skóra)',
          autoComplexLeather: 'Kompleksowe czyszczenie auta — skóra (bagażnik, podsufitka, siedzenia, plastiki, podłoga)',
          autoDoorCard: 'Czyszczenie panelu drzwiowego',
          autoLeatherSeats: 'Czyszczenie foteli skórzanych',

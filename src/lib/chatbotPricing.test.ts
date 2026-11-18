@@ -22,3 +22,18 @@ describe('chat quick estimate — carpet washing with pickup', () => {
     expect(computeEstimate(furniture, 2, 'Wrocław').minOrder).toBe(160);
   });
 });
+
+
+describe('car quick estimate — remaining complete cleaning packages', () => {
+  const auto = SERVICES_MENU.find((service) => service.key === 'auto');
+
+  it('offers complete textile cleaning for 400 PLN instead of VIP', () => {
+    if (!auto) throw new Error('Missing auto service');
+    expect(computeEstimate(auto, 1, 'Wrocław')).toMatchObject({ min: 400, max: 400 });
+  });
+
+  it('offers complete leather cleaning for 500 PLN instead of VIP leather', () => {
+    if (!auto) throw new Error('Missing auto service');
+    expect(computeEstimate(auto, 2, 'Opole')).toMatchObject({ min: 500, max: 500 });
+  });
+});

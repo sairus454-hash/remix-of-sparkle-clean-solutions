@@ -114,15 +114,15 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     url: '/auto',
     label: { ru: 'Химчистка авто', en: 'Car cleaning', pl: 'Pranie auta', uk: 'Хімчистка авто' },
     quantityPrompt: {
-      ru: 'Какой пакет интересует? (комплекс = 1, VIP = 2)',
-      en: 'Which package? (full = 1, VIP = 2)',
-      pl: 'Który pakiet? (kompleks = 1, VIP = 2)',
-      uk: 'Який пакет? (комплекс = 1, VIP = 2)',
+      ru: 'Какой салон? (ткань = 1, кожа = 2)',
+      en: 'Which interior? (textile = 1, leather = 2)',
+      pl: 'Jaka tapicerka? (materiał = 1, skóra = 2)',
+      uk: 'Який салон? (тканина = 1, шкіра = 2)',
     },
     unit: { ru: 'пакет', en: 'package', pl: 'pakiet', uk: 'пакет' },
     suggestions: [1, 2],
-    // 1 = 400 (textile) / 500 (leather), 2 = 700/800
-    baseEstimator: (qty) => (qty <= 1 ? { min: 400, max: 500 } : { min: 700, max: 800 }),
+    // 1 = complete textile cleaning, 2 = complete leather cleaning.
+    baseEstimator: (qty) => (qty <= 1 ? { min: 400, max: 400 } : { min: 500, max: 500 }),
     markup: 'none', // car cleaning has NO city markup
   },
   {

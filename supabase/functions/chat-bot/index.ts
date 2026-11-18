@@ -79,8 +79,6 @@ const PRICE_LIST = {
 • Чистка дверной карты — 40 PLN
 • Комплексная химчистка авто — 450 PLN
 • Комплексная чистка авто (кожа) — 550 PLN
-• VIP химчистка авто — 700 PLN
-• VIP химчистка авто (кожа) — 800 PLN
 • Химчистка кабины тягача — от 650 PLN
 • Химчистка кабины буса — от 400 PLN
 
@@ -218,7 +216,7 @@ const PRICE_LIST = {
 • Кресло (кожа) — 120 PLN | Стул вращающийся (кожа) — 95 PLN
 • Диван 2-мест. (кожа) — 180 PLN | 3-мест. (кожа) — 220 PLN | Угловой (кожа) — 320 PLN
 
-• 🚗 Химчистка авто — БЕЗ наценки во всех городах! Цены такие же, как во Вроцлаве (см. раздел "ХИМЧИСТКА АВТОМОБИЛЕЙ" выше: комплексная — 450 PLN, VIP — 700 PLN, кожа — 550/800 PLN, кабина TIR — 650 PLN, бус — 400 PLN и т.д.)
+• 🚗 Химчистка авто — БЕЗ наценки во всех городах! Цены такие же, как во Вроцлаве (см. раздел "ХИМЧИСТКА АВТОМОБИЛЕЙ" выше: комплексная — 450 PLN, кожа — 550 PLN, кабина TIR — 650 PLN, бус — 400 PLN и т.д.)
 • Озонирование 1-комн. — 160 PLN | 2-комн. — 265 PLN
 • Окно одностворч. — 45 PLN | двустворч. — 55 PLN
 
@@ -320,8 +318,6 @@ Deep cleaning:
 • Door panel cleaning — 40 PLN
 • Full car cleaning — 450 PLN
 • Full car cleaning (leather) — 550 PLN
-• VIP car cleaning — 700 PLN
-• VIP car cleaning (leather) — 800 PLN
 • Truck cabin cleaning — from 650 PLN
 • Van cabin cleaning — from 400 PLN
 
@@ -459,7 +455,7 @@ Cities served: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Świdnic
 • 2-seater sofa (leather) — 205 PLN | 3-seater (leather) — 255 PLN | Corner (leather) — 320 PLN
 
 📊 Other services for other cities (+10% surcharge, rounded to 5):
-• 🚗 Car cleaning — NO surcharge in any city! Same prices as Wrocław (see "CAR CLEANING" section above: full — 450 PLN, VIP — 700 PLN, leather — 550/800 PLN, truck cabin — 650 PLN, van — 400 PLN, etc.)
+• 🚗 Car cleaning — NO surcharge in any city! Same prices as Wrocław (see "CAR CLEANING" section above: full — 450 PLN, leather — 550 PLN, truck cabin — 650 PLN, van — 400 PLN, etc.)
 • Ozonation 1-room — 160 PLN | 2-room — 265 PLN
 • Single-sash window — 45 PLN | Double-sash — 55 PLN
 
@@ -562,8 +558,6 @@ Sprzątanie generalne:
 • Czyszczenie panelu drzwi — 40 PLN
 • Kompleksowe czyszczenie auta — 450 PLN
 • Kompleksowe czyszczenie auta (skóra) — 550 PLN
-• VIP czyszczenie samochodu — 700 PLN
-• VIP czyszczenie samochodu (skóra) — 800 PLN
 • Czyszczenie kabiny ciągnika — od 650 PLN
 • Czyszczenie kabiny busa — od 400 PLN
 
@@ -702,7 +696,7 @@ Obsługiwane miasta: Wrocław, Opole, Legnica, Lubin, Oława, Kalisz, Leszno, Ś
 • Sofa 2-os. (skóra) — 205 PLN | 3-os. (skóra) — 255 PLN | Narożna (skóra) — 320 PLN
 
 📊 Inne usługi dla innych miast (dopłata 10%, zaokrąglone do 5):
-• 🚗 Pranie auta — BEZ dopłaty w żadnym mieście! Ceny takie same jak we Wrocławiu (zobacz sekcję "PRANIE TAPICERKI SAMOCHODOWEJ" powyżej: kompleksowe — 450 PLN, VIP — 700 PLN, skóra — 550/800 PLN, kabina TIR — 650 PLN, bus — 400 PLN, itd.)
+• 🚗 Pranie auta — BEZ dopłaty w żadnym mieście! Ceny takie same jak we Wrocławiu (zobacz sekcję "PRANIE TAPICERKI SAMOCHODOWEJ" powyżej: kompleksowe — 450 PLN, skóra — 550 PLN, kabina TIR — 650 PLN, bus — 400 PLN, itd.)
 • Ozonowanie 1-pok. — 160 PLN | 2-pok. — 265 PLN
 • Okno jednoskrzydłowe — 45 PLN | dwuskrzydłowe — 55 PLN
 
@@ -804,8 +798,6 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 • Чистка дверної панелі — 40 PLN
 • Комплексна хімчистка авто — 450 PLN
 • Комплексна чистка авто (шкіра) — 550 PLN
-• VIP хімчистка авто — 700 PLN
-• VIP хімчистка авто (шкіра) — 800 PLN
 • Хімчистка кабіни тягача — від 650 PLN
 • Хімчистка кабіни буса — від 400 PLN
 
@@ -943,7 +935,7 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 • Диван 2-місний (шкіра) — 180 PLN | 3-місний (шкіра) — 255 PLN | Кутовий (шкіра) — 320 PLN
 
 📊 Інші послуги для інших міст (надбавка 10%, округлені до 5):
-• 🚗 Хімчистка авто — БЕЗ надбавки в усіх містах! Ціни такі ж, як у Вроцлаві (див. розділ "ХІМЧИСТКА АВТОМОБІЛІВ" вище: комплексна — 450 PLN, VIP — 700 PLN, шкіра — 550/800 PLN, кабіна TIR — 650 PLN, бус — 400 PLN тощо)
+• 🚗 Хімчистка авто — БЕЗ надбавки в усіх містах! Ціни такі ж, як у Вроцлаві (див. розділ "ХІМЧИСТКА АВТОМОБІЛІВ" вище: комплексна — 450 PLN, шкіра — 550 PLN, кабіна TIR — 650 PLN, бус — 400 PLN тощо)
 • Озонування 1-кімн. — 160 PLN | 2-кімн. — 265 PLN
 • Вікно одностулкове — 45 PLN | двостулкове — 55 PLN
 

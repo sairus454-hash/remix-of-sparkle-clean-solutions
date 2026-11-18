@@ -197,8 +197,6 @@ const ukTranslations = {
          autoTruckCabin: 'Хімчистка кабіни тягача',
          autoVanCabin: 'Хімчистка кабіни буса',
          camperCleaning: 'Хімчистка кемпінга',
-         autoVip: 'VIP хімчистка авто',
-         autoVipLeather: 'VIP хімчистка авто (шкіра)',
          autoComplexLeather: 'Комплексне чищення авто — шкіра (багажник, стеля, сидіння, пластики, підлога)',
          autoDoorCard: 'Чистка дверної карти',
          autoLeatherSeats: 'Чистка сидінь зі шкіри',
