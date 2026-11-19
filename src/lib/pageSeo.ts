@@ -1,4 +1,5 @@
 import { AUTO_PAGE, AUTO_FAQ } from '../../supabase/functions/seo-prerender/autoPage';
+import { CONTACTS_META } from '../../supabase/functions/seo-prerender/contactsMeta';
 // Centralised localised SEO metadata + FAQs for the main marketing pages.
 // Each page reads `SEO_META[page][language]` for <title>/<description>/keywords
 // and `FAQS[page][language]` for both the FAQPage JSON-LD entry and the
@@ -97,23 +98,19 @@ export const SEO_META: Record<PageKey, Record<Lang, SeoMeta>> = {
   },
   contacts: {
     pl: {
-      title: 'Kontakt MasterClean — telefon i e-mail',
-      description: 'Skontaktuj się z MasterClean: tel. +48 575 211 401, czat 24/7, e-mail sairus454@gmail.com. Zamów pranie tapicerki, ozonowanie lub sprzątanie.',
+      ...CONTACTS_META.pl,
       keywords: 'kontakt MasterClean, telefon firma sprzątająca, zamów pranie tapicerki, e-mail MasterClean, kontakt czyszczenie mebli',
     },
     ru: {
-      title: 'Контакты MasterClean — телефон и e-mail',
-      description: 'Свяжитесь с MasterClean: тел. +48 575 211 401, чат 24/7, e-mail sairus454@gmail.com. Закажите химчистку мебели, озонирование или уборку.',
+      ...CONTACTS_META.ru,
       keywords: 'контакты MasterClean, телефон химчистка, заказать химчистку мебели, e-mail MasterClean, контакты уборка',
     },
     uk: {
-      title: 'Контакти MasterClean — телефон і e-mail',
-      description: 'Зв’яжіться з MasterClean: тел. +48 575 211 401, чат 24/7, e-mail sairus454@gmail.com. Замовте хімчистку меблів, озонування чи прибирання.',
+      ...CONTACTS_META.uk,
       keywords: 'контакти MasterClean, телефон хімчистка, замовити хімчистку меблів, e-mail MasterClean, контакти прибирання',
     },
     en: {
-      title: 'Contact MasterClean — Phone and Email',
-      description: 'Get in touch with MasterClean: phone +48 575 211 401, 24/7 chat, e-mail sairus454@gmail.com. Book upholstery cleaning, ozone treatment or housekeeping.',
+      ...CONTACTS_META.en,
       keywords: 'contact MasterClean, cleaning company phone, book upholstery cleaning, MasterClean email, cleaning contact Poland',
     },
   },

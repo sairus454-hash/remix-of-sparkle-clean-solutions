@@ -1,5 +1,6 @@
 import { AUTO_PAGE, AUTO_FAQ, renderAutoBody } from './autoPage.ts';
 import { HOME_META } from './homeMeta.ts';
+import { CONTACTS_META } from './contactsMeta.ts';
 import { BLOG_META } from './blogMeta.ts';
 import { getCityPage, renderCityBody } from './city/citySeo.ts';
 import { getPageSnapshot, renderCrawlerNav } from './crawlerNav.ts';
@@ -108,8 +109,7 @@ const staticPages: Record<string, PageMeta> = {
     image: `${SITE_URL}/og-reviews.jpg`,
   },
   '/contacts': {
-    title: 'Kontakt — MasterClean | Zadzwoń 24/7',
-    description: 'Skontaktuj się z MasterClean. Telefon: +48 575 211 401. Pracujemy 24/7. Wrocław, Opole, Legnica i inne miasta.',
+    ...CONTACTS_META.pl,
     keywords: 'kontakt MasterClean, telefon, adres, formularz kontaktowy, Wrocław',
     image: `${SITE_URL}/og-contacts.jpg`,
   },
@@ -396,8 +396,7 @@ const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
       image: `${SITE_URL}/og-reviews.jpg`,
     },
     '/contacts': {
-      title: 'Контакты — MasterClean | Звоните 24/7',
-      description: 'Свяжитесь с MasterClean. Телефон: +48 575 211 401. Работаем 24/7. Вроцлав, Ополе, Легница и другие города.',
+      ...CONTACTS_META.ru,
       keywords: 'контакты MasterClean, телефон, адрес, форма связи, Вроцлав',
       image: `${SITE_URL}/og-contacts.jpg`,
     },
@@ -485,8 +484,7 @@ const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
       image: `${SITE_URL}/og-reviews.jpg`,
     },
     '/contacts': {
-      title: 'Contact MasterClean — Call 24/7',
-      description: 'Get in touch with MasterClean. Phone: +48 575 211 401. We work 24/7. Wroclaw, Opole, Legnica and more.',
+      ...CONTACTS_META.en,
       keywords: 'MasterClean contact, phone, address, contact form, Wroclaw',
       image: `${SITE_URL}/og-contacts.jpg`,
     },
@@ -574,8 +572,7 @@ const staticPagesI18n: Record<Exclude<Lang, 'pl'>, Record<string, PageMeta>> = {
       image: `${SITE_URL}/og-reviews.jpg`,
     },
     '/contacts': {
-      title: 'Контакти — MasterClean | Телефонуйте 24/7',
-      description: 'Зв\'яжіться з MasterClean. Телефон: +48 575 211 401. Працюємо 24/7. Вроцлав, Ополе, Легниця та інші міста.',
+      ...CONTACTS_META.uk,
       keywords: 'контакти MasterClean, телефон, адреса, форма зв\'язку, Вроцлав',
       image: `${SITE_URL}/og-contacts.jpg`,
     },

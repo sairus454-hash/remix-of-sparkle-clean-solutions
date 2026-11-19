@@ -14,6 +14,13 @@ import impregnationWaterBeading from '@/assets/impregnation-water-beading.jpg';
 import impregnationCoffeeSpill from '@/assets/impregnation-coffee-spill.jpg';
 import impregnationBeforeAfter from '@/assets/impregnation-before-after.jpg';
 
+const NOTE_TITLE = {
+  pl: 'Kiedy wykonać impregnację mebli?',
+  ru: 'Когда проводить импрегнацию мебели?',
+  en: 'When to impregnate your furniture?',
+  uk: 'Коли проводити імпрегнацію меблів?',
+} as const;
+
 const Impregnation = () => {
   const { t, language } = useLanguage();
   const { showSplash, handleSplashComplete } = useSplash('impregnation');
@@ -280,6 +287,7 @@ const Impregnation = () => {
                   <CheckCircle className="w-6 h-6 text-fresh" />
                 </div>
                 <div>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">{NOTE_TITLE[language as keyof typeof NOTE_TITLE] ?? NOTE_TITLE.pl}</h2>
                   <p className="text-muted-foreground leading-relaxed">{t.impregnation.note}</p>
                 </div>
               </div>
