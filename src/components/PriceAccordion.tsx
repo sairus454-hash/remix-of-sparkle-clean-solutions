@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef } from 'react';
+import { CLEANING_PER_M2 } from '../../supabase/functions/_shared/cleaningPrices';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useLanguage } from '@/i18n/LanguageContext';
 import PriceItem from '@/components/PriceItem';
@@ -37,8 +38,8 @@ const PriceAccordion = ({ categories, className = '' }: PriceAccordionProps) => 
   const [cleaningArea, setCleaningArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const STANDARD_PRICE_PER_M2 = 7;
-  const GENERAL_PRICE_PER_M2 = 10;
+  const STANDARD_PRICE_PER_M2 = CLEANING_PER_M2.standard;
+  const GENERAL_PRICE_PER_M2 = CLEANING_PER_M2.general;
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
   
   const toggleExtra = (id: string) => {

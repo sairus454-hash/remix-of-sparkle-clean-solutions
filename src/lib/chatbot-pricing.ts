@@ -1,3 +1,4 @@
+import { HOUSE_CLEANING_PRICES } from '../../supabase/functions/_shared/cleaningPrices';
 // Quick price estimate logic for the in-chat wizard.
 // Mirrors the project pricing engine: Wrocław/Smolec base price; other cities
 // +10% (Gardening +5%) rounded UP to nearest 5. Floor-cleaning and auto are
@@ -66,11 +67,11 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     unit: { ru: 'м²', en: 'm²', pl: 'm²', uk: 'м²' },
     suggestions: [80, 120, 180],
     // Flat-rate tiers for standard house cleaning:
-    // up to 100 m² → 350 zł, 100–150 m² → 400 zł, over 150 m² → 500 zł.
+    // up to 100 m², 100–150 m², over 150 m² (shared cleaning price list).
     baseEstimator: (qty) => {
-      if (qty <= 100) return { min: 350, max: 350 };
-      if (qty <= 150) return { min: 400, max: 400 };
-      return { min: 500, max: 500 };
+      if (qty <= 100) return { min: HOUSE_CLEANING_PRICES.h100, max: HOUSE_CLEANING_PRICES.h100 };
+      if (qty <= 150) return { min: HOUSE_CLEANING_PRICES.h150, max: HOUSE_CLEANING_PRICES.h150 };
+      return { min: HOUSE_CLEANING_PRICES.h150plus, max: HOUSE_CLEANING_PRICES.h150plus };
     },
     markup: 'standard',
   },

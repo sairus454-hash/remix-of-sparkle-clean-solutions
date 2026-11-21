@@ -1,3 +1,5 @@
+import { CLEANING_EXTRA_PRICES as CXP } from '../../supabase/functions/_shared/cleaningPrices';
+
 export interface CleaningExtra {
   id: string;
   name: string;
@@ -7,15 +9,15 @@ export interface CleaningExtra {
 }
 
 export const cleaningExtras: CleaningExtra[] = [
-  { id: 'oven', name: 'Помоем духовку', standardPrice: 40, generalPrice: 50 },
-  { id: 'hood', name: 'Помоем вытяжку', standardPrice: 40, generalPrice: 50 },
-  { id: 'cabinets', name: 'Уберем в кухонных шкафчиках', standardPrice: 40, generalPrice: 40 },
-  { id: 'dishes', name: 'Помоем посуду', standardPrice: 25, generalPrice: 30 },
-  { id: 'fridge', name: 'Почистим холодильник', standardPrice: 40, generalPrice: 50 },
-  { id: 'fridgeSmall', name: 'Холодильник малый', standardPrice: 20, generalPrice: 20 },
-  { id: 'microwave', name: 'Помоем микроволновку', standardPrice: 10, generalPrice: 10 },
-  { id: 'balcony', name: 'Уберем на балконе', standardPrice: 8, generalPrice: 8, unit: '/m²' },
-  { id: 'ironing', name: 'Глажка', standardPrice: 50, generalPrice: 60, unit: '/ч' },
-  { id: 'petLitter', name: 'Убрать лоток для животных', standardPrice: 10, generalPrice: 15 },
-  { id: 'closet', name: 'Убрать в шкафу', standardPrice: 30, generalPrice: 35 },
+  { id: 'oven', name: 'Помоем духовку', standardPrice: CXP.oven.standard, generalPrice: CXP.oven.general },
+  { id: 'hood', name: 'Помоем вытяжку', standardPrice: CXP.hood.standard, generalPrice: CXP.hood.general },
+  { id: 'cabinets', name: 'Уберем в кухонных шкафчиках', standardPrice: CXP.cabinets.standard, generalPrice: CXP.cabinets.general },
+  { id: 'dishes', name: 'Помоем посуду', standardPrice: CXP.dishes.standard, generalPrice: CXP.dishes.general },
+  { id: 'fridge', name: 'Почистим холодильник', standardPrice: CXP.fridge.standard, generalPrice: CXP.fridge.general },
+  { id: 'fridgeSmall', name: 'Холодильник малый', standardPrice: CXP.fridgeSmall.standard, generalPrice: CXP.fridgeSmall.general },
+  { id: 'microwave', name: 'Помоем микроволновку', standardPrice: CXP.microwave.standard, generalPrice: CXP.microwave.general },
+  { id: 'balcony', name: 'Уберем на балконе', standardPrice: CXP.balcony.standard, generalPrice: CXP.balcony.general, unit: '/m²' },
+  { id: 'ironing', name: 'Глажка', standardPrice: CXP.ironing.standard, generalPrice: CXP.ironing.general, unit: '/ч' },
+  { id: 'petLitter', name: 'Убрать лоток для животных', standardPrice: CXP.petLitter.standard, generalPrice: CXP.petLitter.general },
+  { id: 'closet', name: 'Убрать в шкафу', standardPrice: CXP.closet.standard, generalPrice: CXP.closet.general },
 ];

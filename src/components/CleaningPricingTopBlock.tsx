@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { CLEANING_EXTRA_PRICES as CXP } from '../../supabase/functions/_shared/cleaningPrices';
 import { Card, CardContent } from '@/components/ui/card';
 import { Sparkles } from 'lucide-react';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -21,17 +22,17 @@ const CleaningPricingTopBlock = ({ onSendToForm }: Props) => {
   const { t, language } = useLanguage();
 
   const cleaningExtrasItems = useMemo(() => [
-    { id: 'oven', name: language === 'pl' ? 'Mycie piekarnika' : language === 'en' ? 'Oven cleaning' : language === 'uk' ? 'Миття духовки' : 'Помоем духовку', price: 40, image: img('calc-extra-oven.jpg') },
-    { id: 'hood', name: language === 'pl' ? 'Mycie okapu' : language === 'en' ? 'Hood cleaning' : language === 'uk' ? 'Миття витяжки' : 'Помоем вытяжку', price: 40, image: img('calc-extra-hood.jpg') },
-    { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : language === 'uk' ? 'Прибирання кухонних шафок' : 'Уберем в кухонных шкафчиках', price: 40, image: img('calc-extra-cabinets.jpg') },
-    { id: 'dishes', name: language === 'pl' ? 'Mycie naczyń' : language === 'en' ? 'Dishwashing' : language === 'uk' ? 'Миття посуду' : 'Помоем посуду', price: 25, image: img('calc-extra-dishes.jpg') },
-    { id: 'fridge', name: language === 'pl' ? 'Czyszczenie lodówki' : language === 'en' ? 'Fridge cleaning' : language === 'uk' ? 'Чистка холодильника' : 'Почистим холодильник', price: 40, image: img('calc-extra-fridge.jpg') },
-    { id: 'fridgeSmall', name: language === 'pl' ? 'Mała lodówka' : language === 'en' ? 'Small fridge' : language === 'uk' ? 'Малий холодильник' : 'Холодильник малый', price: 20, image: img('calc-extra-fridge-small.jpg') },
-    { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : language === 'uk' ? 'Миття мікрохвильовки' : 'Помоем микроволновку', price: 10, image: img('calc-extra-microwave.jpg') },
-    { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : language === 'uk' ? 'Прибирання балкону' : 'Уберем на балконе', price: 8, image: img('calc-extra-balcony.jpg'), unit: 'm²' },
-    { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : language === 'uk' ? 'Прасування' : 'Глажка', price: 50, image: img('calc-extra-ironing.jpg'), unit: 'h' },
-    { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : language === 'uk' ? 'Прибирання лотка тварин' : 'Убрать лоток для животных', price: 10, image: img('calc-extra-pet-litter.jpg') },
-    { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : language === 'uk' ? 'Прибирання в шафі' : 'Убрать в шкафу', price: 30, image: img('calc-extra-closet.jpg') },
+    { id: 'oven', name: language === 'pl' ? 'Mycie piekarnika' : language === 'en' ? 'Oven cleaning' : language === 'uk' ? 'Миття духовки' : 'Помоем духовку', price: CXP.oven.standard, image: img('calc-extra-oven.jpg') },
+    { id: 'hood', name: language === 'pl' ? 'Mycie okapu' : language === 'en' ? 'Hood cleaning' : language === 'uk' ? 'Миття витяжки' : 'Помоем вытяжку', price: CXP.hood.standard, image: img('calc-extra-hood.jpg') },
+    { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : language === 'uk' ? 'Прибирання кухонних шафок' : 'Уберем в кухонных шкафчиках', price: CXP.cabinets.standard, image: img('calc-extra-cabinets.jpg') },
+    { id: 'dishes', name: language === 'pl' ? 'Mycie naczyń' : language === 'en' ? 'Dishwashing' : language === 'uk' ? 'Миття посуду' : 'Помоем посуду', price: CXP.dishes.standard, image: img('calc-extra-dishes.jpg') },
+    { id: 'fridge', name: language === 'pl' ? 'Czyszczenie lodówki' : language === 'en' ? 'Fridge cleaning' : language === 'uk' ? 'Чистка холодильника' : 'Почистим холодильник', price: CXP.fridge.standard, image: img('calc-extra-fridge.jpg') },
+    { id: 'fridgeSmall', name: language === 'pl' ? 'Mała lodówka' : language === 'en' ? 'Small fridge' : language === 'uk' ? 'Малий холодильник' : 'Холодильник малый', price: CXP.fridgeSmall.standard, image: img('calc-extra-fridge-small.jpg') },
+    { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : language === 'uk' ? 'Миття мікрохвильовки' : 'Помоем микроволновку', price: CXP.microwave.standard, image: img('calc-extra-microwave.jpg') },
+    { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : language === 'uk' ? 'Прибирання балкону' : 'Уберем на балконе', price: CXP.balcony.standard, image: img('calc-extra-balcony.jpg'), unit: 'm²' },
+    { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : language === 'uk' ? 'Прасування' : 'Глажка', price: CXP.ironing.standard, image: img('calc-extra-ironing.jpg'), unit: 'h' },
+    { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : language === 'uk' ? 'Прибирання лотка тварин' : 'Убрать лоток для животных', price: CXP.petLitter.standard, image: img('calc-extra-pet-litter.jpg') },
+    { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : language === 'uk' ? 'Прибирання в шафі' : 'Убрать в шкафу', price: CXP.closet.standard, image: img('calc-extra-closet.jpg') },
   ], [language]);
 
   const extrasSubtitle = language === 'pl'

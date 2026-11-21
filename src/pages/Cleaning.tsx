@@ -1,4 +1,5 @@
 import { useState, useRef, useMemo, lazy, Suspense } from 'react';
+import { CLEANING_PER_M2, CLEANING_EXTRA_PRICES as CXP } from '../../supabase/functions/_shared/cleaningPrices';
 import LazySection from '@/components/LazySection';
 import MobilePromotionsCard from '@/components/MobilePromotionsCard';
 import { toast } from '@/hooks/use-toast';
@@ -117,7 +118,7 @@ const Cleaning = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   
-  const pricePerMeter = cleaningType === 'standard' ? 7 : 10;
+  const pricePerMeter = cleaningType === 'standard' ? CLEANING_PER_M2.standard : CLEANING_PER_M2.general;
   const totalPrice = area * pricePerMeter;
   
   const cleaningTypeLabel = cleaningType === 'standard' 
@@ -244,17 +245,17 @@ const Cleaning = () => {
   ];
 
   const cleaningExtrasItems = [
-    { id: 'oven', name: language === 'pl' ? 'Mycie piekarnika' : language === 'en' ? 'Oven cleaning' : 'Помоем духовку', price: cleaningType === 'general' ? 50 : 40, image: calcExtraOven },
-    { id: 'hood', name: language === 'pl' ? 'Mycie okapu' : language === 'en' ? 'Hood cleaning' : 'Помоем вытяжку', price: cleaningType === 'general' ? 50 : 40, image: calcExtraHood },
-    { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : 'Уберем в кухонных шкафчиках', price: 40, image: calcExtraCabinets },
-    { id: 'dishes', name: language === 'pl' ? 'Mycie naczyń' : language === 'en' ? 'Dishwashing' : 'Помоем посуду', price: cleaningType === 'general' ? 30 : 25, image: calcExtraDishes },
-    { id: 'fridge', name: language === 'pl' ? 'Czyszczenie lodówki' : language === 'en' ? 'Fridge cleaning' : 'Почистим холодильник', price: cleaningType === 'general' ? 50 : 40, image: calcExtraFridge },
-    { id: 'fridgeSmall', name: language === 'pl' ? 'Mała lodówka' : language === 'en' ? 'Small fridge' : language === 'uk' ? 'Малий холодильник' : 'Холодильник малый', price: 20, image: calcExtraFridgeSmall },
-    { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : 'Помоем микроволновку', price: 10, image: calcExtraMicrowave },
-    { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : 'Уберем на балконе', price: 8, image: calcExtraBalcony, unit: 'm²' },
-    { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : 'Глажка', price: cleaningType === 'general' ? 60 : 50, image: calcExtraIroning, unit: 'h' },
-    { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : 'Убрать лоток для животных', price: cleaningType === 'general' ? 15 : 10, image: calcExtraPetLitter },
-    { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : 'Убрать в шкафу', price: cleaningType === 'general' ? 35 : 30, image: calcExtraCloset },
+    { id: 'oven', name: language === 'pl' ? 'Mycie piekarnika' : language === 'en' ? 'Oven cleaning' : 'Помоем духовку', price: CXP.oven[cleaningType], image: calcExtraOven },
+    { id: 'hood', name: language === 'pl' ? 'Mycie okapu' : language === 'en' ? 'Hood cleaning' : 'Помоем вытяжку', price: CXP.hood[cleaningType], image: calcExtraHood },
+    { id: 'cabinets', name: language === 'pl' ? 'Sprzątanie szafek kuchennych' : language === 'en' ? 'Kitchen cabinets' : 'Уберем в кухонных шкафчиках', price: CXP.cabinets[cleaningType], image: calcExtraCabinets },
+    { id: 'dishes', name: language === 'pl' ? 'Mycie naczyń' : language === 'en' ? 'Dishwashing' : 'Помоем посуду', price: CXP.dishes[cleaningType], image: calcExtraDishes },
+    { id: 'fridge', name: language === 'pl' ? 'Czyszczenie lodówki' : language === 'en' ? 'Fridge cleaning' : 'Почистим холодильник', price: CXP.fridge[cleaningType], image: calcExtraFridge },
+    { id: 'fridgeSmall', name: language === 'pl' ? 'Mała lodówka' : language === 'en' ? 'Small fridge' : language === 'uk' ? 'Малий холодильник' : 'Холодильник малый', price: CXP.fridgeSmall[cleaningType], image: calcExtraFridgeSmall },
+    { id: 'microwave', name: language === 'pl' ? 'Mycie mikrofalówki' : language === 'en' ? 'Microwave cleaning' : 'Помоем микроволновку', price: CXP.microwave[cleaningType], image: calcExtraMicrowave },
+    { id: 'balcony', name: language === 'pl' ? 'Sprzątanie balkonu' : language === 'en' ? 'Balcony cleaning' : 'Уберем на балконе', price: CXP.balcony[cleaningType], image: calcExtraBalcony, unit: 'm²' },
+    { id: 'ironing', name: language === 'pl' ? 'Prasowanie' : language === 'en' ? 'Ironing' : 'Глажка', price: CXP.ironing[cleaningType], image: calcExtraIroning, unit: 'h' },
+    { id: 'petLitter', name: language === 'pl' ? 'Sprzątanie kuwety' : language === 'en' ? 'Pet litter' : 'Убрать лоток для животных', price: CXP.petLitter[cleaningType], image: calcExtraPetLitter },
+    { id: 'closet', name: language === 'pl' ? 'Sprzątanie w szafie' : language === 'en' ? 'Closet cleaning' : 'Убрать в шкафу', price: CXP.closet[cleaningType], image: calcExtraCloset },
     { id: 'tiles', name: language === 'pl' ? 'Czyszczenie płytek' : language === 'en' ? 'Tile cleaning' : language === 'uk' ? 'Чистка плитки' : 'Чистка плитки', price: 15, image: calcExtraTiles, unit: 'm²' },
   ];
 
@@ -365,8 +366,8 @@ const Cleaning = () => {
              { '@type': 'City', name: 'Kalisz' },
            ],
            offers: [
-             { '@type': 'Offer', name: 'Sprzątanie standardowe', price: '7', priceCurrency: 'PLN', unitText: 'za m²' },
-             { '@type': 'Offer', name: 'Sprzątanie generalne', price: '10', priceCurrency: 'PLN', unitText: 'za m²' },
+             { '@type': 'Offer', name: 'Sprzątanie standardowe', price: String(CLEANING_PER_M2.standard), priceCurrency: 'PLN', unitText: 'za m²' },
+             { '@type': 'Offer', name: 'Sprzątanie generalne', price: String(CLEANING_PER_M2.general), priceCurrency: 'PLN', unitText: 'za m²' },
            ],
          }, buildFaqJsonLd('cleaning', language)]}
       />
@@ -795,13 +796,13 @@ const CleaningCalculatorContent = ({
           <TabsTrigger value="standard" className="py-3 text-sm">
             <div className="text-center">
               <div className="font-medium">{t.cleaning?.standardCleaning || 'Стандартная'}</div>
-              <div className="text-xs text-muted-foreground">7 PLN/м²</div>
+              <div className="text-xs text-muted-foreground">{CLEANING_PER_M2.standard} PLN/м²</div>
             </div>
           </TabsTrigger>
           <TabsTrigger value="general" className="py-3 text-sm">
             <div className="text-center">
               <div className="font-medium">{t.cleaning?.generalCleaning || 'Генеральная'}</div>
-              <div className="text-xs text-muted-foreground">10 PLN/м²</div>
+              <div className="text-xs text-muted-foreground">{CLEANING_PER_M2.general} PLN/м²</div>
             </div>
           </TabsTrigger>
         </TabsList>

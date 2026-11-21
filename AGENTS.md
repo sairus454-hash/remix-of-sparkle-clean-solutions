@@ -12,3 +12,4 @@
 - Build the auto-seat ozone-gift quick order through `createAutoSeatPromoOrder` so its stored total and seat price cannot diverge; automatic discounts remain exclusively in `useDiscountCalculator`.
 - Route every site lead through the `send-telegram` edge function: it stores the row in `leads` first, then notifies (Telegram; Gmail email for sources listed in `EMAIL_SOURCES`), so no request is lost when one channel fails.
 - Share contact-page title/description between React and the crawler renderer through `seo-prerender/contactsMeta`, so the search snippet cannot diverge from what visitors see.
+- Keep apartment/house cleaning and cleaning add-on prices in `supabase/functions/_shared/cleaningPrices`; website price lists, calculators, FAQ and the chat-bot read it so cleaning prices cannot diverge.

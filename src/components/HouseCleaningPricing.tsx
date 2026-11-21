@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { HOUSE_CLEANING_PRICES } from '../../supabase/functions/_shared/cleaningPrices';
 import { Button } from '@/components/ui/button';
 import { Home, Sparkles } from 'lucide-react';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -47,9 +48,9 @@ const T: Record<string, any> = {
 };
 
 const tiers = [
-  { id: 'h100', label: 'до 100 m²', labels: { pl: 'do 100 m²', en: 'up to 100 m²', ru: 'до 100 m²', uk: 'до 100 m²' }, price: 350 },
-  { id: 'h150', label: '100–150 m²', labels: { pl: '100–150 m²', en: '100–150 m²', ru: '100–150 m²', uk: '100–150 m²' }, price: 400 },
-  { id: 'h150plus', label: '>150 m²', labels: { pl: 'powyżej 150 m²', en: 'over 150 m²', ru: 'свыше 150 m²', uk: 'понад 150 m²' }, price: 500 },
+  { id: 'h100', label: 'до 100 m²', labels: { pl: 'do 100 m²', en: 'up to 100 m²', ru: 'до 100 m²', uk: 'до 100 m²' }, price: HOUSE_CLEANING_PRICES.h100 },
+  { id: 'h150', label: '100–150 m²', labels: { pl: '100–150 m²', en: '100–150 m²', ru: '100–150 m²', uk: '100–150 m²' }, price: HOUSE_CLEANING_PRICES.h150 },
+  { id: 'h150plus', label: '>150 m²', labels: { pl: 'powyżej 150 m²', en: 'over 150 m²', ru: 'свыше 150 m²', uk: 'понад 150 m²' }, price: HOUSE_CLEANING_PRICES.h150plus },
 ];
 
 const HouseCleaningPricing = ({ language, onOrder }: Props) => {

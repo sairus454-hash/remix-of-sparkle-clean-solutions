@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { CLEANING_PER_M2 } from '../../supabase/functions/_shared/cleaningPrices';
 import { useCity } from '@/hooks/useCity';
 import CleaningExtrasCheckboxes, { getExtrasTotal } from '@/components/CleaningExtrasCheckboxes';
 import { useNavigate } from 'react-router-dom';
@@ -35,8 +36,8 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const [mattressType, setMattressType] = useState<string>('mattressDouble');
   const [autoType, setAutoType] = useState<string>('autoSeats');
 
-  const STANDARD_PRICE_PER_M2 = applyPrice(7);
-  const GENERAL_PRICE_PER_M2 = applyPrice(10);
+  const STANDARD_PRICE_PER_M2 = applyPrice(CLEANING_PER_M2.standard);
+  const GENERAL_PRICE_PER_M2 = applyPrice(CLEANING_PER_M2.general);
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
 
   const serviceOptions = [

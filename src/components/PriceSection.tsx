@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
+import { CLEANING_PER_M2, CLEANING_EXTRA_PRICES as CXP } from '../../supabase/functions/_shared/cleaningPrices';
 import { useLanguage } from '@/i18n/LanguageContext';
 import CardServiceCalculator from '@/components/CardServiceCalculator';
 import CircularRevealCard from '@/components/CircularRevealCard';
@@ -179,22 +180,22 @@ const PriceSection = ({ defaultAllOpen = false, showFilters = false, excludeCate
       description: t.cleaning?.subtitle || 'Профессиональная уборка помещений',
       icon: Home,
       items: [
-        { id: 'cleaning-standard', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'}`, price: 7, image: heroHouseCleaning, unit: 'm²' },
-        { id: 'cleaning-general', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'}`, price: 10, image: heroHouseCleaning2, unit: 'm²' },
-        { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: 40, image: calcExtraOven },
-        { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: 40, image: calcExtraHood },
-        { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: 55, image: calcExtraCabinets },
-        { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: 25, image: calcExtraDishes },
-        { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: 40, image: calcExtraFridge },
-        { id: 'extra-fridgeSmall', name: t.cleaning?.extras?.fridgeSmall || 'Холодильник малый', price: 20, image: calcExtraFridgeSmall },
-        { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: 20, image: calcExtraMicrowave },
-        { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: 30, image: calcExtraBalcony },
-        { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: 30, image: calcExtraWindowInside },
-        { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: 50, image: calcExtraIroning, unit: 'ч' },
-        { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: 10, image: calcExtraPetLitter },
-        { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: 50, image: calcExtraHours, unit: 'ч' },
-        { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: 30, image: calcExtraCloset },
-        { id: 'extra-moldRemoval', name: t.cleaning?.extras?.moldRemoval || 'Устранение грибка со стены', price: 80, image: calcMoldRemoval },
+        { id: 'cleaning-standard', name: `${t.cleaning?.standardCleaning || 'Стандартная уборка'}`, price: CLEANING_PER_M2.standard, image: heroHouseCleaning, unit: 'm²' },
+        { id: 'cleaning-general', name: `${t.cleaning?.generalCleaning || 'Генеральная уборка'}`, price: CLEANING_PER_M2.general, image: heroHouseCleaning2, unit: 'm²' },
+        { id: 'extra-oven', name: t.cleaning?.extras?.oven || 'Помоем духовку', price: CXP.oven.standard, image: calcExtraOven },
+        { id: 'extra-hood', name: t.cleaning?.extras?.hood || 'Помоем вытяжку', price: CXP.hood.standard, image: calcExtraHood },
+        { id: 'extra-cabinets', name: t.cleaning?.extras?.cabinets || 'Уберем в кухонных шкафчиках', price: CXP.cabinets.standard, image: calcExtraCabinets },
+        { id: 'extra-dishes', name: t.cleaning?.extras?.dishes || 'Помоем посуду', price: CXP.dishes.standard, image: calcExtraDishes },
+        { id: 'extra-fridge', name: t.cleaning?.extras?.fridge || 'Почистим холодильник', price: CXP.fridge.standard, image: calcExtraFridge },
+        { id: 'extra-fridgeSmall', name: t.cleaning?.extras?.fridgeSmall || 'Холодильник малый', price: CXP.fridgeSmall.standard, image: calcExtraFridgeSmall },
+        { id: 'extra-microwave', name: t.cleaning?.extras?.microwave || 'Помоем микроволновку', price: CXP.microwave.standard, image: calcExtraMicrowave },
+        { id: 'extra-balcony', name: t.cleaning?.extras?.balcony || 'Уберем на балконе', price: CXP.balcony.standard, image: calcExtraBalcony },
+        { id: 'extra-windowInside', name: t.cleaning?.extras?.windowInside || 'Мытье окон (внутр. сторона)', price: CXP.windowInside.standard, image: calcExtraWindowInside },
+        { id: 'extra-ironing', name: t.cleaning?.extras?.ironing || 'Глажка', price: CXP.ironing.standard, image: calcExtraIroning, unit: 'ч' },
+        { id: 'extra-petLitter', name: t.cleaning?.extras?.petLitter || 'Убрать лоток для животных', price: CXP.petLitter.standard, image: calcExtraPetLitter },
+        { id: 'extra-extraHours', name: t.cleaning?.extras?.extraHours || 'Дополнительные часы', price: CXP.extraHours.standard, image: calcExtraHours, unit: 'ч' },
+        { id: 'extra-closet', name: t.cleaning?.extras?.closet || 'Убрать в шкафу', price: CXP.closet.standard, image: calcExtraCloset },
+        { id: 'extra-moldRemoval', name: t.cleaning?.extras?.moldRemoval || 'Устранение грибка со стены', price: CXP.moldRemoval.standard, image: calcMoldRemoval },
       ],
     },
     {

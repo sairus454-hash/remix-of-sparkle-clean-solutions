@@ -1,4 +1,5 @@
 import { AUTO_PAGE, AUTO_FAQ } from '../../supabase/functions/seo-prerender/autoPage';
+import { CLEANING_PER_M2 } from '../../supabase/functions/_shared/cleaningPrices';
 import { CONTACTS_META } from '../../supabase/functions/seo-prerender/contactsMeta';
 // Centralised localised SEO metadata + FAQs for the main marketing pages.
 // Each page reads `SEO_META[page][language]` for <title>/<description>/keywords
@@ -241,28 +242,28 @@ export const FAQS: Record<FaqPageKey, Record<Lang, Faq[]>> = {
   },
   cleaning: {
     pl: [
-      { q: 'Ile kosztuje sprzątanie mieszkania?', a: 'Sprzątanie standardowe 7 zł/m², generalne 10 zł/m². Minimalna wartość zlecenia 160 zł.' },
+      { q: 'Ile kosztuje sprzątanie mieszkania?', a: `Sprzątanie standardowe ${CLEANING_PER_M2.standard} zł/m², generalne ${CLEANING_PER_M2.general} zł/m². Minimalna wartość zlecenia 160 zł.` },
       { q: 'Czym różni się sprzątanie standardowe od generalnego?', a: 'Standardowe to odkurzanie, mycie podłóg, łazienki i kuchni. Generalne obejmuje dodatkowo szafki w środku, okna, fugi, piekarnik i odkamienianie.' },
       { q: 'Czy przywozicie własne środki i sprzęt?', a: 'Tak, przyjeżdżamy z profesjonalnym sprzętem i ekologicznymi środkami — klient nic nie musi przygotowywać.' },
       { q: 'Czy sprzątacie po remoncie?', a: 'Tak, wykonujemy sprzątanie po remoncie i budowie — usuwanie pyłu budowlanego, resztek farby, kleju i zabrudzeń poremontowych.' },
       { q: 'Jak długo trwa sprzątanie mieszkania 50 m²?', a: 'Standardowe zwykle 2–3 godziny, generalne 4–6 godzin, w zależności od stanu lokalu.' },
     ],
     ru: [
-      { q: 'Сколько стоит уборка квартиры?', a: 'Стандартная уборка 7 zł/м², генеральная 10 zł/м². Минимальная сумма заказа 160 zł.' },
+      { q: 'Сколько стоит уборка квартиры?', a: `Стандартная уборка ${CLEANING_PER_M2.standard} zł/м², генеральная ${CLEANING_PER_M2.general} zł/м². Минимальная сумма заказа 160 zł.` },
       { q: 'Чем отличается стандартная уборка от генеральной?', a: 'Стандартная — пылесос, полы, санузел и кухня. Генеральная дополнительно включает шкафы внутри, окна, швы, духовку и удаление накипи.' },
       { q: 'Вы привозите свои средства и оборудование?', a: 'Да, приезжаем с профессиональным оборудованием и эко-средствами — готовить ничего не нужно.' },
       { q: 'Делаете уборку после ремонта?', a: 'Да, выполняем уборку после ремонта и стройки — удаление строительной пыли, следов краски и клея.' },
       { q: 'Сколько длится уборка квартиры 50 м²?', a: 'Стандартная — обычно 2–3 часа, генеральная — 4–6 часов, в зависимости от состояния.' },
     ],
     uk: [
-      { q: 'Скільки коштує прибирання квартири?', a: 'Стандартне прибирання 7 zł/м², генеральне 10 zł/м². Мінімальна сума замовлення 160 zł.' },
+      { q: 'Скільки коштує прибирання квартири?', a: `Стандартне прибирання ${CLEANING_PER_M2.standard} zł/м², генеральне ${CLEANING_PER_M2.general} zł/м². Мінімальна сума замовлення 160 zł.` },
       { q: 'Чим відрізняється стандартне прибирання від генерального?', a: 'Стандартне — пилосос, підлога, санвузол і кухня. Генеральне додатково включає шафи всередині, вікна, шви, духовку та видалення накипу.' },
       { q: 'Ви привозите свої засоби та обладнання?', a: 'Так, приїжджаємо з професійним обладнанням та еко-засобами — готувати нічого не потрібно.' },
       { q: 'Чи робите прибирання після ремонту?', a: 'Так, виконуємо прибирання після ремонту та будівництва — видалення будівельного пилу, залишків фарби та клею.' },
       { q: 'Скільки триває прибирання квартири 50 м²?', a: 'Стандартне — зазвичай 2–3 години, генеральне — 4–6 годин, залежно від стану.' },
     ],
     en: [
-      { q: 'How much does apartment cleaning cost?', a: 'Standard cleaning 7 PLN/m², deep cleaning 10 PLN/m². Minimum order value is 160 PLN.' },
+      { q: 'How much does apartment cleaning cost?', a: `Standard cleaning ${CLEANING_PER_M2.standard} PLN/m², deep cleaning ${CLEANING_PER_M2.general} PLN/m². Minimum order value is 160 PLN.` },
       { q: 'What is the difference between standard and deep cleaning?', a: 'Standard covers vacuuming, floors, bathroom and kitchen. Deep cleaning adds cabinet interiors, windows, grout, oven and limescale removal.' },
       { q: 'Do you bring your own supplies and equipment?', a: 'Yes, we arrive with professional equipment and eco-friendly products — you do not need to prepare anything.' },
       { q: 'Do you offer post-renovation cleaning?', a: 'Yes, we handle post-renovation and post-construction cleaning — construction dust, paint and glue residue.' },

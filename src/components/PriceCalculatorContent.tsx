@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { CLEANING_PER_M2 } from '../../supabase/functions/_shared/cleaningPrices';
 import { useCity } from '@/hooks/useCity';
 import { cn } from '@/lib/utils';
 import { useNavigate } from 'react-router-dom';
@@ -60,8 +61,8 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
   const [cleaningArea, setCleaningArea] = useState(50);
   const [cleaningType, setCleaningType] = useState<'standard' | 'general'>('standard');
   
-  const STANDARD_PRICE_PER_M2 = applyPrice(7);
-  const GENERAL_PRICE_PER_M2 = applyPrice(10);
+  const STANDARD_PRICE_PER_M2 = applyPrice(CLEANING_PER_M2.standard);
+  const GENERAL_PRICE_PER_M2 = applyPrice(CLEANING_PER_M2.general);
   const [selectedExtras, setSelectedExtras] = useState<string[]>([]);
   
   const toggleExtra = (id: string) => {

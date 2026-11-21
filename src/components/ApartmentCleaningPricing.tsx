@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { APARTMENT_CLEANING_PRICES } from '../../supabase/functions/_shared/cleaningPrices';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Home, Sparkles } from 'lucide-react';
@@ -84,9 +85,9 @@ const frequencies = [
 ] as const;
 
 const apartments = [
-  { id: 'a40', label: '<40m²', basePrice: 199 },
-  { id: 'a60', label: '<60m²', basePrice: 239 },
-  { id: 'a80', label: '<80m²', basePrice: 279 },
+  { id: 'a40', label: '<40m²', basePrice: APARTMENT_CLEANING_PRICES.a40 },
+  { id: 'a60', label: '<60m²', basePrice: APARTMENT_CLEANING_PRICES.a60 },
+  { id: 'a80', label: '<80m²', basePrice: APARTMENT_CLEANING_PRICES.a80 },
 ];
 
 const ApartmentCleaningPricing = ({ language, onOrder }: Props) => {
