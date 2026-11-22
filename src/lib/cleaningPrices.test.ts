@@ -47,3 +47,14 @@ describe('cleaning price increase', () => {
     expect(computeEstimate(cleaning, 80, 'Wrocław')).toMatchObject({ min: 420, max: 420 });
   });
 });
+
+describe('chat-bot cleaning add-ons match the website', () => {
+  it('chat-bot reads cabinets, microwave and balcony from the shared price list', async () => {
+    const { readFileSync } = await import('node:fs');
+    const src = readFileSync('supabase/functions/chat-bot/index.ts', 'utf8');
+    expect(src.match(/\$\{CXP\.cabinets\.standard\} PLN/g)?.length).toBe(4);
+    expect(src.match(/\$\{CXP\.microwave\.standard\} PLN/g)?.length).toBe(4);
+    expect(src.match(/\$\{CXP\.balcony\.general\} PLN\/(m|м)²/g)?.length).toBe(4);
+    expect([CLEANING_EXTRA_PRICES.cabinets.standard, CLEANING_EXTRA_PRICES.microwave.standard, CLEANING_EXTRA_PRICES.balcony.general]).toEqual([42, 11, 9]);
+  });
+});

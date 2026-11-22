@@ -1,4 +1,4 @@
-import { CLEANING_PER_M2 } from '../_shared/cleaningPrices.ts';
+import { CLEANING_PER_M2, CLEANING_EXTRA_PRICES as CXP } from '../_shared/cleaningPrices.ts';
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -29,21 +29,21 @@ const PRICE_LIST = {
 
 🧹➕ ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ К УБОРКЕ:
 Стандартная уборка:
-• Помоем духовку — 42 PLN
-• Помоем вытяжку — 42 PLN
-• Уберем в кухонных шкафчиках — 58 PLN
-• Помоем посуду — 27 PLN
-• Почистим холодильник — 42 PLN
-• Помоем микроволновку — 21 PLN
-• Мытье окон (внутренняя сторона, шт.) — 32 PLN
-• Дополнительные часы — 53 PLN/ч
-• Убрать в шкафу — 32 PLN
-• Устранение грибка со стены — 84 PLN
+• Помоем духовку — ${CXP.oven.standard} PLN
+• Помоем вытяжку — ${CXP.hood.standard} PLN
+• Уберем в кухонных шкафчиках — ${CXP.cabinets.standard} PLN
+• Помоем посуду — ${CXP.dishes.standard} PLN
+• Почистим холодильник — ${CXP.fridge.standard} PLN
+• Помоем микроволновку — ${CXP.microwave.standard} PLN
+• Мытье окон (внутренняя сторона, шт.) — ${CXP.windowInside.standard} PLN
+• Дополнительные часы — ${CXP.extraHours.standard} PLN/ч
+• Убрать в шкафу — ${CXP.closet.standard} PLN
+• Устранение грибка со стены — ${CXP.moldRemoval.standard} PLN
 
 Генеральная уборка:
-• Уберем на балконе — 37 PLN
-• Глажка — 63 PLN/ч
-• Убрать лоток для животных — 16 PLN
+• Уберем на балконе — ${CXP.balcony.general} PLN/м²
+• Глажка — ${CXP.ironing.general} PLN/ч
+• Убрать лоток для животных — ${CXP.petLitter.general} PLN
 
 🛋 МЕБЕЛЬ:
 • Пуф — 45 PLN
@@ -267,21 +267,21 @@ Deep cleaning includes EVERYTHING from standard, PLUS:
 
 🧹➕ CLEANING ADD-ONS:
 Standard cleaning:
-• Oven cleaning — 42 PLN
-• Hood cleaning — 42 PLN
-• Kitchen cabinet cleaning — 58 PLN
-• Dish washing — 27 PLN
-• Fridge cleaning — 42 PLN
-• Microwave cleaning — 21 PLN
-• Window cleaning (inside, per unit) — 32 PLN
-• Extra hours — 53 PLN/h
-• Wardrobe cleaning — 32 PLN
-• Wall mold removal — 84 PLN
+• Oven cleaning — ${CXP.oven.standard} PLN
+• Hood cleaning — ${CXP.hood.standard} PLN
+• Kitchen cabinet cleaning — ${CXP.cabinets.standard} PLN
+• Dish washing — ${CXP.dishes.standard} PLN
+• Fridge cleaning — ${CXP.fridge.standard} PLN
+• Microwave cleaning — ${CXP.microwave.standard} PLN
+• Window cleaning (inside, per unit) — ${CXP.windowInside.standard} PLN
+• Extra hours — ${CXP.extraHours.standard} PLN/h
+• Wardrobe cleaning — ${CXP.closet.standard} PLN
+• Wall mold removal — ${CXP.moldRemoval.standard} PLN
 
 Deep cleaning:
-• Balcony cleaning — 37 PLN
-• Ironing — 63 PLN/h
-• Pet litter box cleaning — 16 PLN
+• Balcony cleaning — ${CXP.balcony.general} PLN/m²
+• Ironing — ${CXP.ironing.general} PLN/h
+• Pet litter box cleaning — ${CXP.petLitter.general} PLN
 
 🛋 FURNITURE:
 • Ottoman — 45 PLN
@@ -506,21 +506,21 @@ Sprzątanie generalne obejmuje WSZYSTKO ze standardowego, PLUS:
 
 🧹➕ USŁUGI DODATKOWE DO SPRZĄTANIA:
 Sprzątanie standardowe:
-• Czyszczenie piekarnika — 42 PLN
-• Czyszczenie okapu — 42 PLN
-• Sprzątanie szafek kuchennych — 58 PLN
-• Mycie naczyń — 27 PLN
-• Czyszczenie lodówki — 42 PLN
-• Czyszczenie mikrofalówki — 21 PLN
-• Mycie okien (strona wewnętrzna, szt.) — 32 PLN
-• Dodatkowe godziny — 53 PLN/godz.
-• Sprzątanie szafy — 32 PLN
-• Usuwanie grzyba ze ściany — 84 PLN
+• Czyszczenie piekarnika — ${CXP.oven.standard} PLN
+• Czyszczenie okapu — ${CXP.hood.standard} PLN
+• Sprzątanie szafek kuchennych — ${CXP.cabinets.standard} PLN
+• Mycie naczyń — ${CXP.dishes.standard} PLN
+• Czyszczenie lodówki — ${CXP.fridge.standard} PLN
+• Czyszczenie mikrofalówki — ${CXP.microwave.standard} PLN
+• Mycie okien (strona wewnętrzna, szt.) — ${CXP.windowInside.standard} PLN
+• Dodatkowe godziny — ${CXP.extraHours.standard} PLN/godz.
+• Sprzątanie szafy — ${CXP.closet.standard} PLN
+• Usuwanie grzyba ze ściany — ${CXP.moldRemoval.standard} PLN
 
 Sprzątanie generalne:
-• Sprzątanie balkonu — 37 PLN
-• Prasowanie — 63 PLN/godz.
-• Sprzątanie kuwety — 16 PLN
+• Sprzątanie balkonu — ${CXP.balcony.general} PLN/m²
+• Prasowanie — ${CXP.ironing.general} PLN/godz.
+• Sprzątanie kuwety — ${CXP.petLitter.general} PLN
 
 🛋 MEBLE:
 • Pufa — 45 PLN
@@ -747,21 +747,21 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 
 🧹➕ ДОДАТКОВІ ПОСЛУГИ ДО ПРИБИРАННЯ:
 Стандартне прибирання:
-• Чистка духовки — 42 PLN
-• Чистка витяжки — 42 PLN
-• Прибирання кухонних шафок — 58 PLN
-• Миття посуду — 27 PLN
-• Чистка холодильника — 42 PLN
-• Чистка мікрохвильовки — 21 PLN
-• Миття вікон (внутрішня сторона, шт.) — 32 PLN
-• Додаткові години — 53 PLN/год
-• Прибирання шафи — 32 PLN
-• Усунення грибка зі стіни — 84 PLN
+• Чистка духовки — ${CXP.oven.standard} PLN
+• Чистка витяжки — ${CXP.hood.standard} PLN
+• Прибирання кухонних шафок — ${CXP.cabinets.standard} PLN
+• Миття посуду — ${CXP.dishes.standard} PLN
+• Чистка холодильника — ${CXP.fridge.standard} PLN
+• Чистка мікрохвильовки — ${CXP.microwave.standard} PLN
+• Миття вікон (внутрішня сторона, шт.) — ${CXP.windowInside.standard} PLN
+• Додаткові години — ${CXP.extraHours.standard} PLN/год
+• Прибирання шафи — ${CXP.closet.standard} PLN
+• Усунення грибка зі стіни — ${CXP.moldRemoval.standard} PLN
 
 Генеральне прибирання:
-• Прибирання балкона — 37 PLN
-• Прасування — 63 PLN/год
-• Прибирання лотка для тварин — 16 PLN
+• Прибирання балкона — ${CXP.balcony.general} PLN/м²
+• Прасування — ${CXP.ironing.general} PLN/год
+• Прибирання лотка для тварин — ${CXP.petLitter.general} PLN
 
 🛋 МЕБЛІ:
 • Пуф — 45 PLN
