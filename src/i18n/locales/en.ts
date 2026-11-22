@@ -367,6 +367,12 @@ const enTranslations = {
       emailValue: 'sairus454@gmail.com',
       hours: 'Working Hours',
       hoursValue: '24/7',
+      pageTitle: 'Contact MasterClean in Wrocław',
+      pageSubtitle: 'Call or message us on WhatsApp, send an email or the booking form — we answer 24/7. We travel across Wrocław, Lower Silesia and 30+ cities in Poland.',
+      methodsTitle: 'How to reach us',
+      whatsapp: 'WhatsApp',
+      area: 'Service area',
+      areaValue: 'Wrocław, Smolec, Lower Silesia and 30+ cities in Poland',
     },
     form: {
       title: 'Request a Quote',

@@ -368,6 +368,12 @@ const plTranslations = {
       emailValue: 'sairus454@gmail.com',
       hours: 'Godziny pracy',
       hoursValue: '24/7',
+      pageTitle: 'Kontakt MasterClean we Wrocławiu',
+      pageSubtitle: 'Zadzwoń lub napisz na WhatsApp, wyślij e-mail albo formularz — odbieramy 24/7. Dojeżdżamy we Wrocławiu, na Dolnym Śląsku i do 30+ miast w Polsce.',
+      methodsTitle: 'Jak się z nami skontaktować',
+      whatsapp: 'WhatsApp',
+      area: 'Obszar działania',
+      areaValue: 'Wrocław, Smolec, Dolny Śląsk i 30+ miast w Polsce',
     },
     form: {
       title: 'Złóż zapytanie',

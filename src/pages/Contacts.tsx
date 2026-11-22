@@ -9,7 +9,7 @@ import ContactForm, { ContactFormRef } from '@/components/ContactForm';
 import ContactsSplash from '@/components/ContactsSplash';
 import CircularRevealCard from '@/components/CircularRevealCard';
 import PremiumGlareBackground from '@/components/PremiumGlareBackground';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Navigation } from 'lucide-react';
 
 import { CalculatorItem } from '@/types/calculator';
 import PageFaqSection from '@/components/PageFaqSection';
@@ -40,10 +40,27 @@ const Contacts = () => {
     }
   }, [location.state]);
 
-  const contactInfo = [
-    { icon: MapPin, label: t.contacts.address, value: BUSINESS_ADDRESS, isHours: false },
-    { icon: Phone, label: t.contacts.phone, value: t.contacts.phoneValue, isHours: false },
-    { icon: Mail, label: t.contacts.email, value: t.contacts.emailValue, isHours: false },
+  const contactInfo: Array<{
+    icon: typeof Phone;
+    label: string;
+    value: string;
+    isHours?: boolean;
+    href?: string;
+    external?: boolean;
+    onClick?: () => void;
+  }> = [
+    { icon: Phone, label: t.contacts.phone, value: t.contacts.phoneValue, href: 'tel:+48575211401' },
+    {
+      icon: MessageCircle,
+      label: t.contacts.whatsapp,
+      value: t.contacts.phoneValue,
+      href: 'https://wa.me/48575211401',
+      external: true,
+      onClick: () => { import('@/lib/gtm').then((m) => m.gtmEvents.whatsappClick('contacts_page')); },
+    },
+    { icon: Mail, label: t.contacts.email, value: t.contacts.emailValue, href: 'https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com', external: true },
+    { icon: MapPin, label: t.contacts.address, value: BUSINESS_ADDRESS, href: BUSINESS_MAP_URL, external: true },
+    { icon: Navigation, label: t.contacts.area, value: t.contacts.areaValue },
     { icon: Clock, label: t.contacts.hours, value: t.contacts.hoursValue, isHours: true },
   ];
 
@@ -120,10 +137,10 @@ const Contacts = () => {
               </div>
             </div>
             <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-fade-up bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto] drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-              {t.contacts.title}
+              {t.contacts.pageTitle}
             </h1>
             <p className="text-lg text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] animate-fade-up" style={{ animationDelay: '0.1s', textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
-              {t.contacts.subtitle}
+              {t.contacts.pageSubtitle}
             </p>
           </div>
         </div>
@@ -138,25 +155,22 @@ const Contacts = () => {
             {/* Contact Info */}
             <div>
               <h2 className="font-serif text-2xl font-bold mb-8 bg-gradient-to-r from-primary via-fresh to-primary bg-clip-text text-transparent bg-[length:200%_auto]" style={{ animation: 'float 3s ease-in-out infinite, shimmer 3s linear infinite' }}>
-                {t.contacts.title}
+                {t.contacts.methodsTitle}
               </h2>
               <div className="space-y-6">
                 {contactInfo.map((item, index) => {
-                  const isPhone = item.icon === Phone;
-                  const isAddress = item.icon === MapPin;
-                  const isEmail = item.icon === Mail;
-                  const Wrapper = isPhone || isAddress || isEmail ? 'a' : 'div';
-                  const wrapperProps = isPhone
-                    ? { href: 'tel:+48575211401' }
-                    : isAddress
-                      ? { href: BUSINESS_MAP_URL, target: '_blank', rel: 'noopener noreferrer' }
-                      : isEmail
-                        ? { href: 'https://mail.google.com/mail/?view=cm&to=sairus454@gmail.com', target: '_blank', rel: 'noopener noreferrer' }
-                        : {};
+                  const Wrapper = item.href ? 'a' : 'div';
+                  const wrapperProps = item.href
+                    ? {
+                        href: item.href,
+                        onClick: item.onClick,
+                        ...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}),
+                      }
+                    : {};
 
                   return (
                     <CircularRevealCard key={index} index={index}>
-                      <Wrapper {...wrapperProps} className={`flex gap-4 p-4 rounded-xl bg-gradient-card border border-border ${isPhone || isAddress || isEmail ? 'hover:border-primary/50 transition-colors cursor-pointer' : ''}`}>
+                      <Wrapper {...wrapperProps} className={`flex gap-4 p-4 rounded-xl bg-gradient-card border border-border ${item.href ? 'hover:border-primary/50 transition-colors cursor-pointer' : ''}`}>
                         <div className="w-12 h-12 rounded-lg bg-gradient-hero flex items-center justify-center flex-shrink-0 shadow-glow" style={{ animation: 'float 3s ease-in-out infinite' }}>
                           <item.icon className="w-5 h-5 text-primary-foreground" style={{ animation: 'pulse 2s ease-in-out infinite' }} />
                         </div>

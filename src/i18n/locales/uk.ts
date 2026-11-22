@@ -367,6 +367,12 @@ const ukTranslations = {
       emailValue: 'sairus454@gmail.com',
       hours: 'Години роботи',
       hoursValue: '24/7',
+      pageTitle: 'Контакти MasterClean у Вроцлаві',
+      pageSubtitle: 'Зателефонуйте або напишіть у WhatsApp, надішліть e-mail чи заявку — відповідаємо 24/7. Виїжджаємо по Вроцлаву, Нижній Сілезії та в 30+ міст Польщі.',
+      methodsTitle: 'Як з нами звʼязатися',
+      whatsapp: 'WhatsApp',
+      area: 'Зона виїзду',
+      areaValue: 'Вроцлав, Смолець, Нижня Сілезія та 30+ міст Польщі',
     },
     form: {
       title: 'Залишити заявку',
