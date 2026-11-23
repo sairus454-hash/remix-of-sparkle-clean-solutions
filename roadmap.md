@@ -31,3 +31,4 @@
 - [x] Show carpet washing with pickup (30 zł/m², 100 zł minimum) on the Prices page in Wrocław; chatbot treats 100 zł as this service's own minimum and the in-chat quick estimate offers it; tests, chatbot reply and Google copy of /prices checked. Visitors see it after publication.
 
 - [x] Remove both VIP car-cleaning services from all localized pages, calculators and chatbot; regenerated 132 affected crawler snapshots, verified 20 localized pages and focused tests.
+- [x] Fabric sofas +15% only in Wrocław/Smolec (190/220/280/340 zł); other cities and leather sofas unchanged — pages, calculators, stored prices, chatbot (4 languages) and Google copy updated. Visitors see it after publication.
