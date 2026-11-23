@@ -52,7 +52,7 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
   const { t, language } = useLanguage();
   const navigate = useNavigate();
   const isMobile = useIsMobile();
-  const { applyPrice, isWroclaw } = useCity();
+  const { applyPrice, isWroclaw, itemBase } = useCity();
   const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([]);
   const [openCategory, setOpenCategory] = useState<string | null>(null);
   const [isCartExpanded, setIsCartExpanded] = useState(false);
@@ -271,10 +271,10 @@ const PriceCalculatorContent = React.forwardRef<HTMLDivElement, PriceCalculatorC
       ...cat,
       items: cat.items.map(item => ({
         ...item,
-        price: cat.id === 'auto' ? item.price : applyPrice(item.price),
+        price: cat.id === 'auto' ? item.price : applyPrice(itemBase(item.id, item.price)),
       })),
     })),
-    [baseCategories, applyPrice]
+    [baseCategories, applyPrice, itemBase]
   );
 
   const [justRemoved, setJustRemoved] = useState<string | null>(null);

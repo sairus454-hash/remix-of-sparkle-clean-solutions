@@ -28,6 +28,8 @@ export interface ServiceMenuItem {
   unit: { ru: string; en: string; pl: string; uk: string };
   /** Estimator: returns base PLN price for given quantity (Wrocław base) */
   baseEstimator: (qty: number) => { min: number; max: number };
+  /** Wrocław/Smolec-only estimator when that group's prices differ from the regional base */
+  wroclawEstimator?: (qty: number) => { min: number; max: number };
   /** Markup type for non-base cities */
   markup: 'standard' | 'gardening' | 'none';
   /** Suggested quantity chips */
@@ -88,8 +90,11 @@ export const SERVICES_MENU: ServiceMenuItem[] = [
     },
     unit: { ru: 'место', en: 'seat', pl: 'miejsce', uk: 'місце' },
     suggestions: [2, 3, 5, 7],
-    // ~46 PLN per seat (corner 230/5) to 85 PLN per seat (2-seater 165/2).
+    // Other cities keep the previous sofa base: ~46 PLN per seat (corner 230/5)
+    // to 85 PLN per seat (2-seater 165/2), before city markup.
     baseEstimator: (qty) => ({ min: round5(qty * 46), max: round5(qty * 85) }),
+    // Wrocław/Smolec sofas +15% (Nov 2026): corner 280/5 = 56 to 2-seater 190/2 = 95 PLN per seat.
+    wroclawEstimator: (qty) => ({ min: round5(qty * 56), max: round5(qty * 95) }),
     markup: 'standard',
   },
   {
@@ -311,8 +316,8 @@ export const computeEstimate = (
   qty: number,
   city: string,
 ): EstimateResult => {
-  const base = service.baseEstimator(qty);
   const isBase = isBaseCity(city);
+  const base = isBase && service.wroclawEstimator ? service.wroclawEstimator(qty) : service.baseEstimator(qty);
   const slug = cityToSlug(city);
   const isFurnMatBase =
     (service.key === 'furniture' || service.key === 'mattress') &&

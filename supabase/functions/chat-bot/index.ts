@@ -54,10 +54,10 @@ const PRICE_LIST = {
 • Стул — 30 PLN
 • Кресло — 85 PLN
 • Подушка — 15 PLN
-• Диван двухместный — 165 PLN
-• Диван трёхместный — 190 PLN
-• Диван угловой — 240 PLN
-• Большой угловой диван — 295 PLN
+• Диван двухместный — 190 PLN
+• Диван трёхместный — 220 PLN
+• Диван угловой — 280 PLN
+• Большой угловой диван — 340 PLN
 • Ковровое покрытие — 20 PLN/м²
 • Мебель из флока — +50% к обычной цене
 
@@ -234,7 +234,7 @@ const PRICE_LIST = {
 • «Уборка помещений» и «Мастер на час» доступны ТОЛЬКО во Вроцлаве!
 • В остальных городах: химчистка мебели, матрасов, ковров, авто, озонирование, мойка окон, импрегнация
 
-🏙 ИСКЛЮЧЕНИЕ ПО ГОРОДАМ (важно!): В городах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — цены на ХИМЧИСТКУ МЕБЕЛИ, МАТРАСОВ и КОЖАНОЙ МЕБЕЛИ такие же, как во Вроцлаве (БЕЗ наценки 10%). Для остальных категорий (окна, озон и т.д.) наценка 10% сохраняется.
+🏙 ИСКЛЮЧЕНИЕ ПО ГОРОДАМ (важно!): В городах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — цены на ХИМЧИСТКУ МЕБЕЛИ, МАТРАСОВ и КОЖАНОЙ МЕБЕЛИ такие же, как во Вроцлаве (БЕЗ наценки 10%). Для остальных категорий (окна, озон и т.д.) наценка 10% сохраняется. ⚠️ Кроме ТКАНЕВЫХ ДИВАНОВ: в этих городах они стоят по прежним ценам — двухместный 165, трёхместный 190, угловой 240, большой угловой 295 PLN (повышение цен диванов действует только во Вроцлаве и Смольце).
 
 🎁 АКЦИИ И СКИДКИ:
 • 🛋 НОВАЯ АКЦИЯ: Заказ ХИМЧИСТКИ МЕБЕЛИ через формуляр → −10% на химчистку мебели/матрасов/кожи (действует во всех городах, применяется автоматически в калькуляторе и форме заказа; НЕ суммируется с другими акциями)
@@ -292,10 +292,10 @@ Deep cleaning:
 • Chair — 30 PLN
 • Armchair — 85 PLN
 • Pillow — 15 PLN
-• 2-seater sofa — 165 PLN
-• 3-seater sofa — 190 PLN
-• Corner sofa — 240 PLN
-• Large corner sofa — 295 PLN
+• 2-seater sofa — 190 PLN
+• 3-seater sofa — 220 PLN
+• Corner sofa — 280 PLN
+• Large corner sofa — 340 PLN
 • Carpet — 20 PLN/m²
 • Flock furniture — +50% to regular price
 
@@ -473,7 +473,7 @@ Formula (if item not in table, except car cleaning): FULL_price (no promo) × 1.
 • "Premises cleaning" and "Handyman" available ONLY in Wrocław!
 • Other cities: upholstery, mattress, carpet, car cleaning, ozonation, window cleaning, impregnation
 
-🏙 CITY EXCEPTION (important!): In Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — FURNITURE, MATTRESS and LEATHER FURNITURE cleaning prices are the SAME as in Wrocław (NO +10% surcharge). Other categories (windows, ozone, etc.) keep the +10% surcharge.
+🏙 CITY EXCEPTION (important!): In Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — FURNITURE, MATTRESS and LEATHER FURNITURE cleaning prices are the SAME as in Wrocław (NO +10% surcharge). Other categories (windows, ozone, etc.) keep the +10% surcharge. ⚠️ Except FABRIC SOFAS: in these cities they keep the previous prices — 2-seater 165, 3-seater 190, corner 240, large corner 295 PLN (the sofa price increase applies only in Wrocław and Smolec).
 
 🎁 PROMOTIONS & DISCOUNTS:
 • 🛋 NEW PROMO: FURNITURE CLEANING order via form → −10% off furniture/mattress/leather cleaning (active in all cities, applied automatically in the calculator & order form; does NOT stack with other promos)
@@ -531,10 +531,10 @@ Sprzątanie generalne:
 • Krzesło — 30 PLN
 • Fotel — 85 PLN
 • Poduszka — 15 PLN
-• Sofa 2-osobowa — 165 PLN
-• Sofa 3-osobowa — 190 PLN
-• Sofa narożna — 240 PLN
-• Duża sofa narożna — 295 PLN
+• Sofa 2-osobowa — 190 PLN
+• Sofa 3-osobowa — 220 PLN
+• Sofa narożna — 280 PLN
+• Duża sofa narożna — 340 PLN
 • Narożnik kuchenny — 190 PLN
 • Dywan — 20 PLN/m²
 • Meble z floku — +50% do ceny zwykłej
@@ -714,7 +714,7 @@ Formuła (jeśli pozycji nie ma w tabeli, oprócz auta): PEŁNA_cena (bez promoc
 • „Sprzątanie pomieszczeń" i „Złota rączka" dostępne TYLKO we Wrocławiu!
 • Inne miasta: meble, materace, dywany, auto, ozonowanie, mycie okien, impregnacja
 
-🏙 WYJĄTEK MIASTOWY (ważne!): W miastach Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ceny PRANIA MEBLI, MATERACY i MEBLI SKÓRZANYCH są TAKIE SAME jak we Wrocławiu (BEZ dopłaty 10%). Inne kategorie (okna, ozon itd.) zachowują dopłatę +10%.
+🏙 WYJĄTEK MIASTOWY (ważne!): W miastach Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ceny PRANIA MEBLI, MATERACY i MEBLI SKÓRZANYCH są TAKIE SAME jak we Wrocławiu (BEZ dopłaty 10%). Inne kategorie (okna, ozon itd.) zachowują dopłatę +10%. ⚠️ Poza SOFAMI TAPICEROWANYMI: w tych miastach obowiązują dotychczasowe ceny — sofa 2-osobowa 165, 3-osobowa 190, narożna 240, duża narożna 295 PLN (podwyżka cen sof dotyczy tylko Wrocławia i Smolca).
 
 🎁 PROMOCJE I RABATY:
 • 🛋 NOWA PROMOCJA: Zamówienie PRANIA MEBLI przez formularz → −10% na pranie mebli/materacy/skóry (działa we wszystkich miastach, naliczane automatycznie w kalkulatorze i formularzu; NIE łączy się z innymi promocjami)
@@ -772,10 +772,10 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 • Стілець — 30 PLN
 • Крісло — 85 PLN
 • Подушка — 15 PLN
-• Диван двомісний — 165 PLN
-• Диван тримісний — 190 PLN
-• Диван кутовий — 240 PLN
-• Великий кутовий диван — 295 PLN
+• Диван двомісний — 190 PLN
+• Диван тримісний — 220 PLN
+• Диван кутовий — 280 PLN
+• Великий кутовий диван — 340 PLN
 • Килимове покриття — 20 PLN/м²
 • Меблі з флоку — +50% до звичайної ціни
 
@@ -953,7 +953,7 @@ Jeśli klient pyta tylko o pranie mebli — przypomnij o nowej promocji −10% p
 • «Прибирання приміщень» та «Майстер на годину» доступні ТІЛЬКИ у Вроцлаві!
 • В інших містах: хімчистка меблів, матраців, килимів, авто, озонування, миття вікон, імпрегнація
 
-🏙 ВИНЯТОК ЗА МІСТАМИ (важливо!): У містах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ціни на ХІМЧИСТКУ МЕБЛІВ, МАТРАЦІВ та ШКІРЯНИХ МЕБЛІВ ТАКІ Ж, як у Вроцлаві (БЕЗ надбавки 10%). Інші категорії (вікна, озон тощо) зберігають надбавку +10%.
+🏙 ВИНЯТОК ЗА МІСТАМИ (важливо!): У містах Świdnica, Legnica, Sobótka, Lubin, Oleśnica, Oława, Środa Śląska, Tyniec Mały — ціни на ХІМЧИСТКУ МЕБЛІВ, МАТРАЦІВ та ШКІРЯНИХ МЕБЛІВ ТАКІ Ж, як у Вроцлаві (БЕЗ надбавки 10%). Інші категорії (вікна, озон тощо) зберігають надбавку +10%. ⚠️ Крім ТКАНИННИХ ДИВАНІВ: у цих містах вони коштують за попередніми цінами — двомісний 165, тримісний 190, кутовий 240, великий кутовий 295 PLN (підвищення цін на дивани діє лише у Вроцлаві та Смольці).
 
 🎁 АКЦІЇ ТА ЗНИЖКИ:
 • 🛋 НОВА АКЦІЯ: Замовлення ХІМЧИСТКИ МЕБЛІВ через формуляр → −10% на хімчистку меблів/матраців/шкіри (діє в усіх містах, нараховується автоматично в калькуляторі та формі; НЕ сумується з іншими акціями)

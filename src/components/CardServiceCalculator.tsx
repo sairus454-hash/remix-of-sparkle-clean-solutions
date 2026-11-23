@@ -107,7 +107,7 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
   const increaseLabel = language === 'pl' ? 'Zwiększ ilość' : language === 'en' ? 'Increase quantity' : language === 'uk' ? 'Збільшити кількість' : 'Увеличить количество';
   const isMobile = useIsMobile();
   const navigate = useNavigate();
-  const { isWroclaw, hasPromo, applyPrice, furnitureMattressBase } = useCity();
+  const { isWroclaw, hasPromo, applyPrice, furnitureMattressBase, itemBase } = useCity();
   const [selectedItems, setSelectedItems] = useState<{ item: ServiceCardItem; quantity: number }[]>([]);
   const [justAdded, setJustAdded] = useState<string | null>(null);
   const [quickOrderOpen, setQuickOrderOpen] = useState(false);
@@ -145,13 +145,16 @@ const CardServiceCalculator = ({ items, category, noDiscount, groupHighlight, la
         const { originalPrice, promoBadge, ...rest } = item;
         baseItem = { ...rest, price: originalPrice };
       }
+      // Sofas outside the Wrocław group keep their own (pre-increase) base
+      const regionalBase = itemBase(baseItem.id, baseItem.price);
+      if (regionalBase !== baseItem.price) baseItem = { ...baseItem, price: regionalBase };
       // Apply markup for non-Wrocław (skip for auto, floorCleaning, and furniture/mattress in base-furniture cities)
       if (!isWroclaw && !skipMarkup) {
         return { ...baseItem, price: applyPrice(baseItem.price) };
       }
       return baseItem;
     });
-  }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, skipMarkup, isFurnMatLeather, furnitureMattressBase]);
+  }, [items, isWroclaw, hasPromo, noDiscount, shouldStripPromo, applyPrice, skipMarkup, isFurnMatLeather, furnitureMattressBase, itemBase]);
 
   const AREA_ITEM_IDS = new Set(['cleaning-standard', 'cleaning-general', 'carpetFloorMedium', 'carpetFloorLarge', 'tileCleaning', 'balcony', 'extra-balcony', 'glassPanels']);
   const isAreaItem = (item: ServiceCardItem) => item.unit === 'm²' && AREA_ITEM_IDS.has(item.id);

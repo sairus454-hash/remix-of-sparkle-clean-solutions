@@ -19,10 +19,11 @@ export const BASE_SERVICE_PRICES: Record<string, number> = {
   chairSwivel: 55,
   armchair: 85,
   pillow: 15,
-  sofa2: 165,
-  sofa3: 190,
-  sofaCorner: 240,
-  sofaCornerLarge: 295,
+  // Диваны (Вроцлав/Смолец: +15% с 23.11.2026, округлено вверх до 5)
+  sofa2: 190,
+  sofa3: 220,
+  sofaCorner: 280,
+  sofaCornerLarge: 340,
   kitchenCorner: 190,
   carseat: 70,
   stroller: 90,
@@ -47,6 +48,22 @@ export const BASE_SERVICE_PRICES: Record<string, number> = {
   leatherSofa3: 230,
   leatherSofaCorner: 290,
 };
+
+/**
+ * Базовые цены тканевых диванов для городов вне группы Вроцлава (до городской
+ * наценки). Повышение 2026-11-23 действует только во Вроцлаве и Смольце —
+ * в остальных городах диваны считаются от прежней базы.
+ */
+export const REGIONAL_SOFA_BASE_PRICES: Record<string, number> = {
+  sofa2: 165,
+  sofa3: 190,
+  sofaCorner: 240,
+  sofaCornerLarge: 295,
+};
+
+/** База позиции для города: вне группы Вроцлава диваны берут прежнюю базу. */
+export const cityBasePrice = (id: string, price: number, isWroclawGroup: boolean): number =>
+  isWroclawGroup ? price : REGIONAL_SOFA_BASE_PRICES[id] ?? price;
 
 export type ServicePriceKey = keyof typeof BASE_SERVICE_PRICES;
 

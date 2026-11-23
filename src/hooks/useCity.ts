@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getCityBySlug, CityData } from '@/data/cities';
+import { cityBasePrice } from '@/data/servicePrices';
 
 const CITY_STORAGE_KEY = 'masterclean_selected_city';
 
@@ -35,6 +36,8 @@ export interface CityInfo {
   furnitureMattressBase: boolean;
   /** Round price up to nearest 5 */
   applyPrice: (price: number) => number;
+  /** Item base before city markup (sofas outside the Wrocław group keep their own base) */
+  itemBase: (id: string, price: number) => number;
 }
 
 export function useCity(): CityInfo {
@@ -64,6 +67,8 @@ export function useCity(): CityInfo {
       return Math.ceil(marked / 5) * 5;
     };
 
-    return { city, slug: city?.slug || null, isWroclaw, multiplier, hasPromo, furnitureMattressBase, applyPrice };
+    const itemBase = (id: string, price: number): number => cityBasePrice(id, price, isWroclaw);
+
+    return { city, slug: city?.slug || null, isWroclaw, multiplier, hasPromo, furnitureMattressBase, applyPrice, itemBase };
   }, [location.pathname]);
 }

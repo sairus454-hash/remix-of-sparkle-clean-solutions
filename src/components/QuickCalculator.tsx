@@ -24,7 +24,7 @@ type ServiceType = 'cleaning' | 'furniture' | 'mattress' | 'auto' | null;
 const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
   const { t, language } = useLanguage();
   const navigate = useNavigate();
-  const { applyPrice } = useCity();
+  const { applyPrice, itemBase } = useCity();
   
   // Step 1: Service type
   const [serviceType, setServiceType] = useState<ServiceType>(null);
@@ -49,11 +49,11 @@ const QuickCalculator = ({ onOpenFull, onClose }: QuickCalculatorProps) => {
 
   const furnitureOptions = useMemo(() => [
     { id: 'armchair', name: t.prices.items.armchair, price: applyPrice(85) },
-    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(servicePrice('sofa2')) },
-    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(servicePrice('sofa3')) },
-    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(servicePrice('sofaCorner')) },
+    { id: 'sofa2', name: t.prices.items.sofa2, price: applyPrice(itemBase('sofa2', servicePrice('sofa2'))) },
+    { id: 'sofa3', name: t.prices.items.sofa3, price: applyPrice(itemBase('sofa3', servicePrice('sofa3'))) },
+    { id: 'sofaCorner', name: t.prices.items.sofaCorner, price: applyPrice(itemBase('sofaCorner', servicePrice('sofaCorner'))) },
     { id: 'kitchenCorner', name: t.prices.items.kitchenCorner, price: applyPrice(servicePrice('kitchenCorner')) },
-  ], [t, applyPrice]);
+  ], [t, applyPrice, itemBase]);
 
   const mattressOptions = useMemo(() => [
     { id: 'mattressSingle', name: t.prices.items.mattressSingle || 'Односпальный матрас', price: applyPrice(servicePrice('mattressSingle')) },
